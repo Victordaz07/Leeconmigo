@@ -1,9 +1,9 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import { useEffect, useState } from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { GATE_COPY, gateKey, gateMessage, gateSubmit, isLocked, startGate, type PinKey } from '@lee-conmigo/ui-core';
-import { ChevronLeftIcon, colors, fontFamily, gradients, GradientView, KiteIcon, PinPad, radius, RoundButton } from '@lee-conmigo/ui-native';
+import { ChevronLeftIcon, colors, fontFamily, gradients, GradientView, KiteIcon, PinPad, radius, RoundButton, useLayout } from '@lee-conmigo/ui-native';
 import { storyImage } from '../story-assets';
 
 interface ParentGateScreenProps {
@@ -57,17 +57,50 @@ export function ParentGateScreen({ savedPin, onOpen, onBack }: ParentGateScreenP
   const hint = gate.phase === 'confirm' ? GATE_COPY.confirmHint : creating ? GATE_COPY.createHint : GATE_COPY.enterHint;
   const message = gateMessage(locked ? 'locked' : gate.message === 'locked' ? 'none' : gate.message);
   const hero = storyImage(HERO);
+  const layout = useLayout();
+  // Teléfono o vertical: sin la mitad de arte; acostado con poca altura, el título a la izquierda y el teclado a la derecha.
+  const showArt = !layout.narrow && !layout.portrait && !layout.short;
+  const sideBySide = layout.short && !layout.portrait;
+  const backButton = (
+    <RoundButton onPress={onBack} label="Volver">
+      <ChevronLeftIcon />
+    </RoundButton>
+  );
+  const heading = (
+    <View style={styles.heading}>
+      <Text style={styles.kicker}>{creating ? `PASO ${gate.phase === 'confirm' ? 2 : 1} DE 2 · SOLO PARA PADRES` : 'MODO PADRES'}</Text>
+      <Text style={[styles.title, layout.phone && styles.titleSmall]}>{title}</Text>
+      <Text style={styles.hint}>{hint}</Text>
+      {!showArt && <Text style={styles.privacySmall}>La voz de tu hijo nunca se graba ni se almacena.</Text>}
+    </View>
+  );
+  const message_ = (
+    <Text style={styles.message} accessibilityLiveRegion="polite">
+      {message ?? ' '}
+    </Text>
+  );
+
+  if (!showArt) {
+    return (
+      <ScrollView style={styles.compactScreen} contentContainerStyle={[styles.compactContent, { paddingTop: insets.top + 12, paddingBottom: insets.bottom + 16, paddingHorizontal: layout.gutter }]}>
+        <View style={styles.compactTop}>{backButton}</View>
+        <View style={[styles.compactBody, sideBySide && styles.compactRow]}>
+          {heading}
+          <View style={styles.padCol}>
+            <PinPad filled={gate.digits.length} onKey={press} onSubmit={submit} disabled={locked} compact={layout.phone} />
+            {message_}
+          </View>
+        </View>
+      </ScrollView>
+    );
+  }
 
   return (
     <View style={styles.screen}>
       <View style={styles.art}>
         {hero && <Image source={hero} style={FILL} resizeMode="cover" />}
         <LinearGradient colors={['rgba(16,24,64,0)', 'rgba(16,24,64,0.75)']} locations={[0.35, 1]} style={StyleSheet.absoluteFill} />
-        <View style={[styles.back, { top: insets.top + 20 }]}>
-          <RoundButton onPress={onBack} label="Volver">
-            <ChevronLeftIcon />
-          </RoundButton>
-        </View>
+        <View style={[styles.back, { top: insets.top + 20 }]}>{backButton}</View>
         <View style={[styles.artText, { paddingBottom: insets.bottom + 36 }]}>
           <View style={styles.brand}>
             <GradientView gradient={gradients.brand} style={styles.logo}>
@@ -81,13 +114,9 @@ export function ParentGateScreen({ savedPin, onOpen, onBack }: ParentGateScreenP
       </View>
 
       <View style={[styles.panel, { paddingTop: insets.top + 40, paddingBottom: insets.bottom + 24 }]}>
-        <Text style={styles.kicker}>{creating ? `PASO ${gate.phase === 'confirm' ? 2 : 1} DE 2 · SOLO PARA PADRES` : 'MODO PADRES'}</Text>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.hint}>{hint}</Text>
+        {heading}
         <PinPad filled={gate.digits.length} onKey={press} onSubmit={submit} disabled={locked} />
-        <Text style={styles.message} accessibilityLiveRegion="polite">
-          {message ?? ' '}
-        </Text>
+        {message_}
       </View>
     </View>
   );
@@ -105,6 +134,15 @@ const styles = StyleSheet.create({
   brandText: { fontFamily: fontFamily.ui.black, fontSize: 28, color: '#ffffff' },
   tagline: { fontFamily: fontFamily.ui.black, fontSize: 40, lineHeight: 46, color: '#ffffff' },
   privacy: { fontFamily: fontFamily.ui.semibold, fontSize: 17, color: '#ffffff' },
+  compactScreen: { flex: 1, backgroundColor: colors.app },
+  compactContent: { flexGrow: 1 },
+  compactTop: { flexDirection: 'row' },
+  compactBody: { flexGrow: 1, alignItems: 'center', justifyContent: 'center', gap: 18 },
+  compactRow: { flexDirection: 'row', justifyContent: 'space-evenly', gap: 24 },
+  padCol: { alignItems: 'center', gap: 6 },
+  heading: { alignItems: 'center', gap: 10, maxWidth: 420, flexShrink: 1 },
+  titleSmall: { fontSize: 28 },
+  privacySmall: { fontFamily: fontFamily.ui.semibold, fontSize: 14, color: colors.okDark, textAlign: 'center' },
   panel: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 14, paddingHorizontal: 32 },
   kicker: { fontFamily: fontFamily.ui.black, fontSize: 14, letterSpacing: 1, color: colors.muted },
   title: { fontFamily: fontFamily.ui.black, fontSize: 36, color: colors.navy, textAlign: 'center' },

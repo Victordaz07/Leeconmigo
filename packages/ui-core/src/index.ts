@@ -12,3 +12,5 @@ export { effortReason, effortStars, ENERGY_OPTIONS, energyOption, FOCUS_FACES, K
 export type { EffortInput, Energy, EnergyOption, FocusSelfReport } from './effort.ts';
 export { GATE_COPY, gateKey, gateMessage, gateSubmit, isCompletePin, isLocked, MAX_PIN_ATTEMPTS, PIN_LENGTH, PIN_LOCK_SECONDS, startGate } from './pin.ts';
 export type { GateMessage, GatePhase, GateState, PinKey } from './pin.ts';
+export { columnsFor, itemWidth, layoutFor, PHONE_MAX_SHORT_SIDE } from './layout.ts';
+export type { Layout, NavStyle } from './layout.ts';

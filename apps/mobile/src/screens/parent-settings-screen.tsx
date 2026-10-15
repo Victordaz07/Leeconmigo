@@ -3,7 +3,7 @@ import { Pressable, ScrollView, StyleSheet, Switch, Text, TextInput, View } from
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { LanguageCode } from '@lee-conmigo/contracts';
 import { DAILY_GOAL_PRESETS } from '@lee-conmigo/ui-core';
-import { Button, ChevronLeftIcon, colors, fontFamily, radius, RoundButton, shadows } from '@lee-conmigo/ui-native';
+import { Button, ChevronLeftIcon, colors, fontFamily, radius, RoundButton, shadows, useLayout } from '@lee-conmigo/ui-native';
 import type { ChildProfile } from '../app-state';
 
 interface ParentSettingsScreenProps {
@@ -32,6 +32,8 @@ const LANGUAGES: { id: LanguageCode; label: string }[] = [
  */
 export function ParentSettingsScreen({ initial, isNew, onSave, onCancel, onResetProgress, onRemove, onChangePin }: ParentSettingsScreenProps) {
   const insets = useSafeAreaInsets();
+  const layout = useLayout();
+  const one = layout.narrow || layout.portrait;
   const [p, setP] = useState(initial);
   const [confirm, setConfirm] = useState<'reset' | 'remove' | null>(null);
   const set = <K extends keyof ChildProfile>(key: K, value: ChildProfile[K]) => setP((prev) => ({ ...prev, [key]: value }));
@@ -39,14 +41,14 @@ export function ParentSettingsScreen({ initial, isNew, onSave, onCancel, onReset
 
   return (
     <View style={styles.screen}>
-      <View style={[styles.header, { paddingTop: insets.top + 20 }]}>
+      <View style={[styles.header, { paddingTop: insets.top + (layout.phone ? 10 : 20), paddingHorizontal: layout.gutter }]}>
         <RoundButton onPress={onCancel} label="Volver sin guardar">
           <ChevronLeftIcon />
         </RoundButton>
-        <Text style={styles.title}>{isNew ? 'Agregar niño' : `Ajustes de ${initial.name}`}</Text>
+        <Text style={[styles.title, layout.phone && styles.titleSmall]} numberOfLines={2}>{isNew ? 'Agregar niño' : `Ajustes de ${initial.name}`}</Text>
         <Button label={isNew ? 'Agregar' : 'Guardar'} onPress={() => onSave({ ...p, name })} disabled={!name} />
       </View>
-      <ScrollView contentContainerStyle={[styles.content, { paddingBottom: insets.bottom + 32 }]}>
+      <ScrollView contentContainerStyle={[styles.content, one && styles.contentOne, { paddingHorizontal: layout.gutter, paddingBottom: insets.bottom + 32 }]}>
         <View style={styles.column}>
           <Section title="Perfil">
             <TextInput value={p.name} onChangeText={(v) => set('name', v)} placeholder="Nombre" placeholderTextColor={colors.muted} style={styles.input} maxLength={24} accessibilityLabel="Nombre del niño" />
@@ -62,22 +64,6 @@ export function ParentSettingsScreen({ initial, isNew, onSave, onCancel, onReset
             <Text style={styles.note}>Si lo pregunta, la misión dura 20, 15 u 8 minutos según cómo llegue. Si no, se usa el tiempo de arriba.</Text>
           </Section>
 
-          {!isNew && (
-            <Section title="Datos">
-              {onChangePin && <Button label="Cambiar el PIN" variant="secondary" onPress={onChangePin} />}
-              {confirm === 'reset' ? (
-                <Confirm text={`¿Borrar todo el progreso de ${initial.name}? No se puede deshacer.`} yes="Sí, borrar" onYes={() => onResetProgress?.()} onNo={() => setConfirm(null)} />
-              ) : (
-                <Button label={`Borrar el progreso de ${initial.name}`} variant="secondary" onPress={() => setConfirm('reset')} />
-              )}
-              {onRemove &&
-                (confirm === 'remove' ? (
-                  <Confirm text={`¿Quitar a ${initial.name} y su progreso?`} yes="Sí, quitar" onYes={onRemove} onNo={() => setConfirm(null)} />
-                ) : (
-                  <Button label={`Quitar a ${initial.name}`} variant="secondary" onPress={() => setConfirm('remove')} />
-                ))}
-            </Section>
-          )}
         </View>
 
         <View style={styles.column}>
@@ -97,6 +83,22 @@ export function ParentSettingsScreen({ initial, isNew, onSave, onCancel, onReset
             </View>
             <Text style={styles.note}>La voz se procesa en la tableta y no se guarda ni se envía. Kitewise solo guarda tiempos, preguntas y palabras que costaron.</Text>
           </Section>
+          {!isNew && (
+            <Section title="Datos">
+              {onChangePin && <Button label="Cambiar el PIN" variant="secondary" onPress={onChangePin} />}
+              {confirm === 'reset' ? (
+                <Confirm text={`¿Borrar todo el progreso de ${initial.name}? No se puede deshacer.`} yes="Sí, borrar" onYes={() => onResetProgress?.()} onNo={() => setConfirm(null)} />
+              ) : (
+                <Button label={`Borrar el progreso de ${initial.name}`} variant="secondary" onPress={() => setConfirm('reset')} />
+              )}
+              {onRemove &&
+                (confirm === 'remove' ? (
+                  <Confirm text={`¿Quitar a ${initial.name} y su progreso?`} yes="Sí, quitar" onYes={onRemove} onNo={() => setConfirm(null)} />
+                ) : (
+                  <Button label={`Quitar a ${initial.name}`} variant="secondary" onPress={() => setConfirm('remove')} />
+                ))}
+            </Section>
+          )}
         </View>
       </ScrollView>
     </View>
@@ -153,10 +155,12 @@ function Confirm({ text, yes, onYes, onNo }: { text: string; yes: string; onYes:
 
 const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: colors.app },
-  header: { flexDirection: 'row', alignItems: 'center', gap: 16, paddingHorizontal: 40, paddingBottom: 16 },
+  header: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingBottom: 12 },
+  titleSmall: { fontSize: 24 },
+  contentOne: { flexDirection: 'column', alignItems: 'stretch' },
   title: { flex: 1, fontFamily: fontFamily.ui.black, fontSize: 34, color: colors.navy },
-  content: { flexDirection: 'row', gap: 16, paddingHorizontal: 40, alignItems: 'flex-start' },
-  column: { flex: 1, gap: 16 },
+  content: { flexDirection: 'row', gap: 16, alignItems: 'flex-start' },
+  column: { flex: 1, flexBasis: 'auto', gap: 16 },
   card: { backgroundColor: '#ffffff', borderRadius: radius.card, padding: 22, gap: 12, boxShadow: shadows.card },
   cardSoon: { opacity: 0.7 },
   sectionHead: { flexDirection: 'row', alignItems: 'center', gap: 10 },

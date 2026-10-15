@@ -3,7 +3,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { TodayReport } from '@lee-conmigo/session-engine';
 import type { StoryRepository } from '@lee-conmigo/story-engine';
 import { energyOption } from '@lee-conmigo/ui-core';
-import { Button, ChevronLeftIcon, colors, fontFamily, gradients, GradientView, radius, RoundButton, shadows } from '@lee-conmigo/ui-native';
+import { Button, ChevronLeftIcon, colors, fontFamily, gradients, GradientView, radius, RoundButton, shadows, useLayout } from '@lee-conmigo/ui-native';
 import type { ChildProfile } from '../app-state';
 import { storyImage } from '../story-assets';
 
@@ -27,19 +27,21 @@ const BAR_MAX = 120;
 export function ParentHomeScreen({ profile, report, repository, onBack, onSettings }: ParentHomeScreenProps) {
   const insets = useSafeAreaInsets();
   const r = report;
+  const layout = useLayout();
+  const one = layout.narrow || layout.portrait;
   const maxWeek = Math.max(r.goalMinutes, ...r.week.map((d) => d.minutes));
   return (
-    <ScrollView style={styles.screen} contentContainerStyle={[styles.content, { paddingTop: insets.top + 24, paddingBottom: insets.bottom + 24 }]}>
-      <View style={styles.header}>
+    <ScrollView style={styles.screen} contentContainerStyle={[styles.content, { paddingHorizontal: layout.gutter, paddingTop: insets.top + (layout.phone ? 12 : 24), paddingBottom: insets.bottom + 24 }]}>
+      <View style={[styles.header, layout.narrow && styles.headerNarrow]}>
         <RoundButton onPress={onBack} label="Salir de Modo padres">
           <ChevronLeftIcon />
         </RoundButton>
         <View style={styles.flex}>
           <Text style={styles.kicker}>Modo padres · {WEEKDAY[new Date().getDay()]}</Text>
-          <Text style={styles.title}>Hoy con {profile.name}</Text>
+          <Text style={[styles.title, layout.phone && styles.titleSmall]}>Hoy con {profile.name}</Text>
         </View>
         <Button label="Ajustes" variant="secondary" onPress={onSettings} />
-        <View style={styles.childChip}>
+        <View style={[styles.childChip, layout.narrow && styles.hidden]}>
           <GradientView gradient={gradients[profile.avatar]} style={styles.childAvatar}>
             <Text style={styles.childInitial}>{profile.name.slice(0, 1).toUpperCase()}</Text>
           </GradientView>
@@ -47,14 +49,14 @@ export function ParentHomeScreen({ profile, report, repository, onBack, onSettin
         </View>
       </View>
 
-      <View style={styles.statsRow}>
+      <View style={[styles.statsRow, layout.narrow && styles.wrap]}>
         <Stat glyph="⏱" gradient="brand" label="Minutos de lectura" value={`${r.validMinutes} de ${r.goalMinutes}`} />
         <Stat glyph="◎" gradient="green" label="Preguntas" value={r.comprehensionTotal ? `${r.comprehensionCorrect} de ${r.comprehensionTotal}` : 'Ninguna hoy'} />
         <Stat glyph="☺" gradient="goldDiag" label={`Enfoque (según ${profile.name})`} value={r.focusSelfReport ? FOCUS_LABEL[r.focusSelfReport] : 'No lo dijo hoy'} />
       </View>
 
-      <View style={styles.columns}>
-        <View style={[styles.card, styles.left]}>
+      <View style={[styles.columns, one && styles.columnsOne]}>
+        <View style={[styles.card, styles.left, one && styles.leftOne]}>
           <Text style={styles.h3}>Lo que hizo hoy</Text>
           {r.activities.length === 0 ? (
             <Text style={styles.empty}>Hoy todavía no ha leído.</Text>
@@ -99,7 +101,7 @@ export function ParentHomeScreen({ profile, report, repository, onBack, onSettin
           <Text style={styles.weekNote}>Verde: llegó a la meta de {r.goalMinutes} min.</Text>
         </View>
 
-        <View style={styles.right}>
+        <View style={[styles.right, one && styles.rightOne]}>
           <View style={styles.card}>
             <Text style={styles.h3}>Para practicar juntos</Text>
             {r.wordsToday.length ? (
@@ -143,7 +145,7 @@ function Stat({ glyph, gradient, label, value }: { glyph: string; gradient: keyo
       </GradientView>
       <View style={styles.flex}>
         <Text style={styles.statLabel}>{label}</Text>
-        <Text style={styles.statValue} numberOfLines={1}>
+        <Text style={styles.statValue} numberOfLines={2}>
           {value}
         </Text>
       </View>
@@ -154,7 +156,14 @@ function Stat({ glyph, gradient, label, value }: { glyph: string; gradient: keyo
 const styles = StyleSheet.create({
   flex: { flex: 1 },
   screen: { flex: 1, backgroundColor: colors.app },
-  content: { paddingHorizontal: 40, gap: 18, flexGrow: 1 },
+  content: { gap: 18, flexGrow: 1 },
+  headerNarrow: { flexWrap: 'wrap' },
+  titleSmall: { fontSize: 26 },
+  hidden: { display: 'none' },
+  wrap: { flexWrap: 'wrap' },
+  columnsOne: { flexDirection: 'column' },
+  leftOne: { flexGrow: 0, flexShrink: 0, flexBasis: 'auto', minHeight: 0 },
+  rightOne: { flexGrow: 0, flexBasis: 'auto' },
   header: { flexDirection: 'row', alignItems: 'center', gap: 16 },
   kicker: { fontFamily: fontFamily.ui.bold, fontSize: 14, color: colors.muted },
   title: { fontFamily: fontFamily.ui.black, fontSize: 34, color: colors.navy },
@@ -164,11 +173,11 @@ const styles = StyleSheet.create({
   childName: { fontFamily: fontFamily.ui.extrabold, fontSize: 16, color: colors.ink },
   statsRow: { flexDirection: 'row', gap: 16 },
   card: { backgroundColor: '#ffffff', borderRadius: radius.card, padding: 22, gap: 10, boxShadow: shadows.card },
-  stat: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: 16 },
+  stat: { flex: 1, minWidth: 200, flexDirection: 'row', alignItems: 'center', gap: 16 },
   statIcon: { width: 56, height: 56, borderRadius: 16, alignItems: 'center', justifyContent: 'center' },
   statGlyph: { fontSize: 26, color: '#ffffff' },
   statLabel: { fontFamily: fontFamily.ui.bold, fontSize: 14, color: colors.muted },
-  statValue: { fontFamily: fontFamily.ui.black, fontSize: 28, color: colors.navy },
+  statValue: { fontFamily: fontFamily.ui.black, fontSize: 24, color: colors.navy },
   columns: { flexDirection: 'row', gap: 16, flexGrow: 1 },
   left: { flex: 1, minHeight: 420 },
   right: { flex: 0.9, gap: 16 },
@@ -181,11 +190,11 @@ const styles = StyleSheet.create({
   activityMeta: { fontFamily: fontFamily.ui.bold, fontSize: 14, color: colors.muted },
   subjectBadge: { width: 36, height: 36, borderRadius: 10, alignItems: 'center', justifyContent: 'center', marginRight: 6 },
   subjectBadgeText: { fontFamily: fontFamily.ui.black, fontSize: 14, color: '#ffffff' },
-  week: { flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 12, paddingTop: 16 },
+  week: { flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 4, paddingTop: 16 },
   barCol: { alignItems: 'center', gap: 8 },
   barTrack: { height: BAR_MAX, justifyContent: 'flex-end' },
-  bar: { width: 40, borderRadius: 10 },
-  barEmpty: { width: 40, height: 4, borderRadius: 2, backgroundColor: colors.track },
+  bar: { width: 30, borderRadius: 10 },
+  barEmpty: { width: 30, height: 4, borderRadius: 2, backgroundColor: colors.track },
   barLabel: { fontFamily: fontFamily.ui.black, fontSize: 13, color: colors.muted },
   weekNote: { fontFamily: fontFamily.ui.semibold, fontSize: 13, color: colors.muted, textAlign: 'center' },
   words: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },

@@ -4,7 +4,7 @@ import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-nati
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { StoryRepository } from '@lee-conmigo/story-engine';
 import { NOTEBOOK_TABS, readingMinutesOfWordCount, subjectById } from '@lee-conmigo/ui-core';
-import { Button, ChevronLeftIcon, colors, fontFamily, gradients, GradientView, radius, RoundButton, SubjectTab } from '@lee-conmigo/ui-native';
+import { Button, ChevronLeftIcon, colors, fontFamily, gradients, GradientView, radius, RoundButton, SubjectTab, useLayout } from '@lee-conmigo/ui-native';
 import type { ChildProfile } from '../app-state';
 import type { LibraryModel, StoryEntry } from '../library-model';
 import { storyImage } from '../story-assets';
@@ -35,6 +35,49 @@ export function NotebookScreen({ profile, model, repository, onBack, onRead }: N
   const minutes = readingMinutesOfWordCount(selected.entry.wordCount);
   const questions = Math.min(3, story.pages.filter((p) => p.checkpoint).length);
   const cta = selected.resumePage !== null && selected.resumePage > 0 ? `Seguir en la página ${selected.resumePage + 1} ›` : selected.completed ? 'Leer otra vez ›' : 'Empezar ›';
+  const layout = useLayout();
+
+  // Teléfono (o tablet en vertical): una sola columna que se desplaza — primero la historia elegida, luego el índice.
+  if (layout.narrow || layout.short || layout.portrait) {
+    const g = layout.gutter;
+    return (
+      <ScrollView style={styles.paperScreen} contentContainerStyle={{ paddingTop: insets.top + 12, paddingBottom: insets.bottom + 24, paddingLeft: insets.left + g, paddingRight: insets.right + g, gap: 14 }}>
+        <View style={styles.topRow}>
+          <RoundButton onPress={onBack} label="Volver">
+            <ChevronLeftIcon />
+          </RoundButton>
+          <GradientView gradient={gradients.subjLectura} style={styles.subjectPill}>
+            <Text style={styles.subjectPillText}>
+              {lectura.glyph} {lectura.name}
+            </Text>
+          </GradientView>
+          <View style={styles.flex} />
+          <Text style={styles.meta}>Nivel {profile.level}</Text>
+        </View>
+        <Text style={[styles.kicker, { color: colors.subjLectura }]}>
+          HISTORIA {index + 1} DE {model.stories.length}
+        </Text>
+        <Text style={[styles.title, styles.titleNarrow]} numberOfLines={3}>
+          {story.title}
+        </Text>
+        {story.description ? <Text style={styles.desc}>{story.description}</Text> : null}
+        {cover && <Image source={cover} style={[styles.cover, { height: Math.min(220, Math.round((layout.width - 2 * g) * 0.5)) }]} resizeMode="cover" />}
+        <View style={styles.cards}>
+          <MomentCard title="Leer" detail={`${minutes.min}–${minutes.max} min`} color={colors.phaseAprender} ledge={colors.phaseAprenderLedge} small={layout.phone} />
+          <MomentCard title="Preguntas" detail={questions ? `${questions} ${questions === 1 ? 'pregunta' : 'preguntas'}` : 'Sin preguntas'} color={colors.phaseExplorar} ledge={colors.phaseExplorarLedge} small={layout.phone} />
+          <MomentCard title="Repaso" detail="Por sílabas" color={colors.phasePracticar} ledge={colors.phasePracticarLedge} small={layout.phone} />
+        </View>
+        <Button label={cta} large onPress={() => onRead(story.id)} />
+        <Text style={styles.footerText}>★ Las palabras que te cuesten vuelven en el repaso.</Text>
+        <Text style={[styles.h3, { marginTop: 8 }]}>Índice</Text>
+        <View style={styles.index}>
+          {model.stories.map((s, i) => (
+            <IndexRow key={s.entry.id} n={i + 1} item={s} selected={s.entry.id === selected.entry.id} suggested={s.entry.id === model.featured.entry.id} onPress={() => setSelectedId(s.entry.id)} />
+          ))}
+        </View>
+      </ScrollView>
+    );
+  }
 
   return (
     <View style={[styles.desk, { paddingTop: insets.top + 16, paddingBottom: insets.bottom + 16, paddingLeft: insets.left + 20 }]}>
@@ -120,10 +163,12 @@ function IndexRow({ n, item, selected, suggested, onPress }: { n: number; item: 
   );
 }
 
-function MomentCard({ title, detail, color, ledge }: { title: string; detail: string; color: string; ledge: string }) {
+function MomentCard({ title, detail, color, ledge, small }: { title: string; detail: string; color: string; ledge: string; small?: boolean }) {
   return (
-    <View style={[styles.card, { backgroundColor: color, boxShadow: `inset 0px -5px 0px ${ledge}` }]}>
-      <Text style={styles.cardTitle}>{title}</Text>
+    <View style={[styles.card, small && styles.cardSmall, { backgroundColor: color, boxShadow: `inset 0px -5px 0px ${ledge}` }]}>
+      <Text style={[styles.cardTitle, small && styles.cardTitleSmall]} numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.7}>
+        {title}
+      </Text>
       <Text style={styles.cardDetail}>{detail}</Text>
     </View>
   );
@@ -135,6 +180,8 @@ const FILL = { position: 'absolute', top: 0, left: 0, width: '100%', height: '10
 const styles = StyleSheet.create({
   flex: { flex: 1 },
   desk: { flex: 1, flexDirection: 'row', backgroundColor: colors.desk },
+  paperScreen: { flex: 1, backgroundColor: colors.paper },
+  titleNarrow: { fontSize: 30 },
   spread: { flex: 1, flexDirection: 'row', backgroundColor: colors.paper, borderRadius: radius.panel, overflow: 'hidden', boxShadow: '0px 18px 40px rgba(30, 35, 64, 0.18)' },
   page: { flex: 1, padding: 28, gap: 14 },
   rightPage: { paddingRight: 32 },
@@ -160,8 +207,10 @@ const styles = StyleSheet.create({
   title: { fontFamily: fontFamily.ui.black, fontSize: 40, color: colors.navy },
   desc: { fontFamily: fontFamily.ui.semibold, fontSize: 17, color: colors.inkSoft, lineHeight: 26 },
   cover: { height: 150, borderRadius: radius.card, width: '100%' },
-  cards: { flexDirection: 'row', gap: 12 },
-  card: { flex: 1, borderRadius: radius.tile, padding: 14, minHeight: 92, gap: 4 },
+  cards: { flexDirection: 'row', flexWrap: 'wrap', gap: 12 },
+  card: { flex: 1, minWidth: 96, borderRadius: radius.tile, padding: 14, minHeight: 84, gap: 4 },
+  cardSmall: { padding: 10, minWidth: 90 },
+  cardTitleSmall: { fontSize: 16 },
   cardTitle: { fontFamily: fontFamily.ui.black, fontSize: 20, color: colors.ink },
   cardDetail: { fontFamily: fontFamily.ui.bold, fontSize: 14, color: colors.inkSoft },
   footer: { flexDirection: 'row', alignItems: 'center', gap: 12 },

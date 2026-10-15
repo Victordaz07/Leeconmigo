@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useCallback, useMemo, useState } from 'react';
 import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Button, Card, colors, fontFamily, GearIcon, HomeIcon, NavRail, TrophyIcon, type NavRailItem } from '@lee-conmigo/ui-native';
+import { Button, Card, colors, fontFamily, GearIcon, HomeIcon, NavRail, TrophyIcon, useLayout, type NavRailItem } from '@lee-conmigo/ui-native';
 import { todayReport } from '@lee-conmigo/session-engine';
 import { energyOption, type Energy } from '@lee-conmigo/ui-core';
 import { newChildProfile, PROFILES, progressStoreFor, resetProgressFor, type ChildProfile } from './src/app-state';
@@ -51,6 +51,8 @@ export default function App() {
 
 function Root() {
   const fontsLoaded = useAppFonts();
+  const layout = useLayout();
+  const insets = useSafeAreaInsets();
   const repository = useMemo(() => createBundledRepository(), []);
   // TEMPORAL: perfiles y PIN en memoria hasta RN-08 (docs/11). Al reiniciar la app vuelven a los de partida.
   const [profiles, setProfiles] = useState<ChildProfile[]>(PROFILES);
@@ -180,9 +182,11 @@ function Root() {
   if (route.name === 'showcase') return <Showcase onBack={() => setRoute({ name: 'dev' })} />;
   if (route.name === 'dev') return <DevList repository={repository} onOpen={(storyId) => setRoute({ name: 'reading', storyId, from: 'home' })} onShowcase={() => setRoute({ name: 'showcase' })} onBack={home} />;
 
+  const onNav = (key: string) => (key === 'dev' ? setRoute({ name: 'dev' }) : key === 'padres' ? setRoute({ name: 'parentGate', next: 'parents' }) : undefined);
+  const nav = <NavRail items={RAIL} bottomItems={RAIL_BOTTOM} active="home" onSelect={onNav} variant={layout.nav} bottomInset={insets.bottom} />;
   return (
-    <View style={styles.row}>
-      <NavRail items={RAIL} bottomItems={RAIL_BOTTOM} active="home" onSelect={(key) => (key === 'dev' ? setRoute({ name: 'dev' }) : key === 'padres' ? setRoute({ name: 'parentGate', next: 'parents' }) : undefined)} />
+    <View style={[styles.row, layout.nav === 'bottom' && styles.column]}>
+      {layout.nav !== 'bottom' && nav}
       <View style={styles.screen}>
         <HomeScreen
           profile={profile}
@@ -193,6 +197,7 @@ function Root() {
           onSwitchProfile={switchProfile}
         />
       </View>
+      {layout.nav === 'bottom' && nav}
     </View>
   );
 }
@@ -234,6 +239,7 @@ function DevList({ repository, onOpen, onShowcase, onBack }: { repository: Retur
 
 const styles = StyleSheet.create({
   row: { flex: 1, flexDirection: 'row', backgroundColor: colors.app },
+  column: { flexDirection: 'column' },
   screen: { flex: 1, backgroundColor: colors.app },
   list: { paddingHorizontal: 24, gap: 12 },
   header: { gap: 12, marginBottom: 12 },

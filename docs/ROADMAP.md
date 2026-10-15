@@ -20,7 +20,7 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | K4 | Padres: P1, P2, P4 | ✅ | A | PIN, panel de hoy con datos reales, ajustes + agregar niño + lectura libre; Enfoque = K7 |
 | K5 | Practicar (B8, G9, G10) + repaso 1-3-7 | ⬜ | – | siguiente |
 | K6 | Unidades/lecciones + Aprender/Explorar + camino (B5–B7); 1.ª unidad de Matemáticas | ⬜ | – | necesita contenido |
-| K7 | Modo Enfoque (B10, B12), oscuro (G1–G3), vertical (G4–G6) | ⬜ | – | |
+| K7 | Modo Enfoque (B10, B12), oscuro (G1–G3), vertical (G4–G6) | 🟡 | A | vertical + teléfono ✅ (`layoutFor`); faltan Enfoque y modo oscuro |
 | K8 | Mi cuaderno, Logros, informe PDF, foto de tarea | ⬜ | – | foto espera C13 |
 | **RN** | **Migración a React Native + Expo** (D7, `docs/11`) | | | |
 | RN-00 | Registrar decisión, plan de migración y lista legal | ✅ | A | `claude/gracious-shannon-a0238d` |

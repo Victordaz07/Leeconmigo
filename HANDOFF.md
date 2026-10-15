@@ -1,9 +1,9 @@
 # HANDOFF — estado actual
 Actualizado: 2026-10-15 · Cuenta: A · Rama: claude/gracious-shannon-a0238d
-Último commit: ver `git log -1` ("K4: …")
+Último commit: ver `git log -1`
 
 ## Tarea en curso
-Ninguna a medias. K4 ✅ (Padres: PIN P1, panel P2, ajustes P4). Siguiente: K5.
+Ninguna a medias. K4 ✅ y app adaptable a teléfonos ✅. Siguiente: lo que Victor reporte al probar en su teléfono; luego K5.
 
 ## Hecho en RN-01
 - [x] `apps/mobile` (Expo SDK 57, RN 0.86, TS) dentro del monorepo
@@ -22,6 +22,7 @@ Ninguna a medias. K4 ✅ (Padres: PIN P1, panel P2, ajustes P4). Siguiente: K5.
 - [x] K3: cierre por esfuerzo (D11), elegir perfil, energía del día; progreso aparte por niño
 - [x] APK demo instalado por Victor ("la app funciona… vamos por buen camino"); pasos en `apps/mobile/README.md`
 - [x] K4: Modo padres — PIN (P1), Hoy con el niño (P2), Ajustes + Agregar niño + lectura libre (P4)
+- [x] Pantallas adaptables a teléfono y vertical (`ui-core/layout.ts`, `useLayout`) — pedido de Victor
 
 ## Siguiente paso exacto
 **K5 — Practicar (B8) + pistas (G9, G10) + repaso 1-3-7.** Referencias: `docs/design/kitewise/screens/B8.webp`, `G9.webp`,
@@ -41,8 +42,9 @@ Victor dijo que la app tiene "muchos detalles que corregir": si manda la lista, 
 - `android/` e `ios/` no se versionan (los genera Expo).
 - Lógica de vista compartida va en `packages/ui-core` (sin React); `packages/ui` la re-exporta — no duplicarla.
 - Cero SDKs de analítica/anuncios/reporte de errores (D8).
+- Toda pantalla nueva usa `useLayout()` (teléfono vertical/acostado y tablet): probar en 390×844, 844×390, 800×1280 y 1280×800.
 - Expo está en 57.0.29 (hay 57.0.30): no usar `npm dedupe`; actualizar regenerando el lockfile en tarea aparte.
 - `npm ci` en la nube: usar `--ignore-scripts` (postinstall de `onnxruntime-node`).
 
 ## Estado de pruebas
-`npm test`: 1100/1100 ✅ · `npm run typecheck`: ✅ (incluye mobile, ui-native y ui-core)
+`npm test`: 1105/1105 ✅ · `npm run typecheck`: ✅ (incluye mobile, ui-native y ui-core)

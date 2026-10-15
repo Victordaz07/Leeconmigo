@@ -1,8 +1,8 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { SUBJECTS } from '@lee-conmigo/ui-core';
-import { Button, colors, fontFamily, gradients, GradientView, NotebookCover, radius, SessionPhases, StatChip } from '@lee-conmigo/ui-native';
+import { columnsFor, itemWidth, SUBJECTS } from '@lee-conmigo/ui-core';
+import { Button, colors, fontFamily, gradients, GradientView, navRailWidth, NotebookCover, radius, SessionPhases, StatChip, useLayout } from '@lee-conmigo/ui-native';
 import type { ChildProfile } from '../app-state';
 import type { LibraryModel } from '../library-model';
 import { storyImage } from '../story-assets';
@@ -26,15 +26,23 @@ interface HomeScreenProps {
  */
 export function HomeScreen({ profile, minutes, model, onContinue, onOpenReading, onSwitchProfile }: HomeScreenProps) {
   const insets = useSafeAreaInsets();
+  const layout = useLayout();
+  const { narrow, gutter } = layout;
+  const available = layout.width - navRailWidth(layout.nav) - 2 * gutter - (layout.nav === 'bottom' ? 0 : insets.right);
+  const gap = narrow ? 12 : 14;
+  const cols = columnsFor(available, narrow ? 150 : 160, gap);
+  const coverWidth = itemWidth(available, cols, gap);
   const { featured, featuredStory, stats } = model;
   const cover = featuredStory.cover ? storyImage(featuredStory.cover.src) : storyImage(featuredStory.pages[0].illustration.src);
   const resumeLabel = featured.resumePage !== null && featured.resumePage > 0 ? `${featuredStory.title} · página ${featured.resumePage + 1}` : featuredStory.title;
 
   return (
-    <ScrollView style={styles.screen} contentContainerStyle={[styles.content, { paddingTop: insets.top + 28, paddingBottom: insets.bottom + 28 }]}>
+    <ScrollView style={styles.screen} contentContainerStyle={[styles.content, { paddingHorizontal: gutter, paddingTop: insets.top + (narrow ? 16 : 28), paddingBottom: (layout.nav === 'bottom' ? 0 : insets.bottom) + 24 }]}>
       <View style={styles.header}>
-        <View style={styles.greeting}>
-          <Text style={styles.hello}>¡Hola, {profile.name}!</Text>
+        <View style={[styles.greeting, narrow && styles.greetingNarrow]}>
+          <Text style={[styles.hello, narrow && styles.helloNarrow]} numberOfLines={1} adjustsFontSizeToFit>
+            ¡Hola, {profile.name}!
+          </Text>
           <Text style={styles.sub}>Hoy son {minutes} minutos. Yo te guío.</Text>
         </View>
         <StatChip icon={<Text style={styles.flame}>🔥</Text>} label={`${stats.streakDays} ${stats.streakDays === 1 ? 'día' : 'días'}`} accessibilityLabel={`Racha de ${stats.streakDays} días`} />
@@ -46,18 +54,22 @@ export function HomeScreen({ profile, minutes, model, onContinue, onOpenReading,
         </Pressable>
       </View>
 
-      <View style={styles.mission}>
+      <View style={[styles.mission, narrow && styles.missionNarrow]}>
         {cover && <Image source={cover} style={FILL} resizeMode="cover" />}
-        <LinearGradient colors={['rgba(16,24,64,0.9)', 'rgba(16,24,64,0.55)', 'rgba(16,24,64,0)']} locations={[0, 0.45, 0.8]} start={{ x: 0, y: 0.5 }} end={{ x: 1, y: 0.5 }} style={StyleSheet.absoluteFill} />
-        <View style={styles.missionText}>
+        {narrow ? (
+          <LinearGradient colors={['rgba(16,24,64,0.05)', 'rgba(16,24,64,0.55)', 'rgba(16,24,64,0.92)']} locations={[0, 0.45, 1]} style={StyleSheet.absoluteFill} />
+        ) : (
+          <LinearGradient colors={['rgba(16,24,64,0.9)', 'rgba(16,24,64,0.55)', 'rgba(16,24,64,0)']} locations={[0, 0.45, 0.8]} start={{ x: 0, y: 0.5 }} end={{ x: 1, y: 0.5 }} style={StyleSheet.absoluteFill} />
+        )}
+        <View style={[styles.missionText, narrow && styles.missionTextNarrow]}>
           <Text style={styles.missionKicker}>MISIÓN DE HOY · {minutes} MIN</Text>
-          <Text style={styles.missionTitle} numberOfLines={2}>
+          <Text style={[styles.missionTitle, narrow && styles.missionTitleNarrow]} numberOfLines={2}>
             {featuredStory.title}
           </Text>
           {/* Los momentos de una sesión de Lectura de hoy (leer → preguntas → repaso), no los 4 de Kitewise: esos llegan en K5/K6. */}
           <SessionPhases phases={[{ label: 'Leer', state: 'current' }, { label: 'Preguntas', state: 'todo' }, { label: 'Repaso', state: 'todo' }]} />
         </View>
-        <View style={styles.missionCta}>
+        <View style={[styles.missionCta, narrow && styles.missionCtaNarrow]}>
           <Button label="Seguir ›" variant="cta" large onPress={onContinue} />
         </View>
       </View>
@@ -68,7 +80,7 @@ export function HomeScreen({ profile, minutes, model, onContinue, onOpenReading,
           Nivel {profile.level} · {LANGUAGE_NAME[profile.language]}
         </Text>
       </View>
-      <View style={styles.shelf}>
+      <View style={[styles.shelf, { gap }]}>
         {SUBJECTS.map((s) => {
           const isReading = s.id === 'lectura';
           return (
@@ -83,6 +95,7 @@ export function HomeScreen({ profile, minutes, model, onContinue, onOpenReading,
               segments={isReading ? model.readingSegments : 0}
               soon={!s.available}
               onPress={isReading ? onOpenReading : undefined}
+              width={coverWidth}
             />
           );
         })}
@@ -96,10 +109,12 @@ const FILL = { position: 'absolute', top: 0, left: 0, width: '100%', height: '10
 
 const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: colors.app },
-  content: { paddingHorizontal: 36, gap: 22 },
-  header: { flexDirection: 'row', alignItems: 'center', gap: 12 },
-  greeting: { flex: 1 },
+  content: { gap: 22 },
+  header: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: 12 },
+  greeting: { flex: 1, minWidth: 220 },
+  greetingNarrow: { flexBasis: '100%' },
   hello: { fontFamily: fontFamily.ui.black, fontSize: 38, color: colors.navy },
+  helloNarrow: { fontSize: 30 },
   sub: { fontFamily: fontFamily.ui.bold, fontSize: 17, color: colors.muted },
   flame: { fontSize: 16 },
   star: { fontSize: 18, color: colors.ink },
@@ -110,8 +125,12 @@ const styles = StyleSheet.create({
   missionKicker: { fontFamily: fontFamily.ui.black, fontSize: 14, letterSpacing: 1, color: 'rgba(255,255,255,0.85)' },
   missionTitle: { fontFamily: fontFamily.ui.black, fontSize: 34, color: '#ffffff' },
   missionCta: { paddingRight: 32, alignSelf: 'flex-end', paddingBottom: 26 },
+  missionNarrow: { height: 'auto', minHeight: 210, flexDirection: 'column', alignItems: 'stretch', justifyContent: 'flex-end', paddingVertical: 20 },
+  missionTextNarrow: { flexGrow: 0, flexShrink: 0, flexBasis: 'auto', paddingLeft: 20, paddingRight: 20 },
+  missionTitleNarrow: { fontSize: 26 },
+  missionCtaNarrow: { alignSelf: 'flex-start', paddingLeft: 20, paddingRight: 0, paddingBottom: 0, paddingTop: 14 },
   shelfHeader: { flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between' },
   h2: { fontFamily: fontFamily.ui.black, fontSize: 26, color: colors.navy },
   shelfMeta: { fontFamily: fontFamily.ui.bold, fontSize: 14, color: colors.muted },
-  shelf: { flexDirection: 'row', flexWrap: 'wrap', gap: 14, minHeight: 340 },
+  shelf: { flexDirection: 'row', flexWrap: 'wrap' },
 });

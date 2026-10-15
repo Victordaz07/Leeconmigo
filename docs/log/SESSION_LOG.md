@@ -181,3 +181,25 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
 - Verificado: Playwright — crear PIN, PIN equivocado y correcto, P2 tras leer, agregar a "Lía" (nivel 2), editar a Noah
   con lectura libre y leer en modo libre. `npm test` 1100 ✅, typecheck ✅, build web ✅, export android ✅.
 - Pendiente: Lexend / reglilla (Lectura cómoda), Modo Enfoque (K7), pestañas Semana/Aula de P2, informe PDF (K8).
+
+## 2026-10-15 · Cuenta A · Pantallas que se adaptan (teléfono)
+- Pedido de Victor tras probar el APK: "el app está 100 % hecha para tablets… en teléfonos no se ajusta, todo está
+  rígido y se distorsiona".
+- Hecho: `ui-core/layout.ts` (`layoutFor`, `columnsFor`, `itemWidth`, con pruebas) + `useLayout()` en `ui-native`.
+  Regla: teléfono = lado corto < 600 dp; en vertical la navegación va ABAJO (diseño G4); teléfono acostado = riel
+  compacto; tablet acostada = como antes.
+  - `NavRail` con variantes `rail` / `railCompact` / `bottom`. `ReadingRail` horizontal (barra de abajo) y compacta.
+  - Inicio: encabezado que se acomoda, misión apilada, cuadernos en cuadrícula según el ancho (2 columnas en teléfono).
+  - Perfiles, ¿Cómo llegas? (tarjetas en fila en teléfono vertical), cuaderno en una columna en pantallas estrechas o
+    verticales.
+  - Lectura: vertical = ilustración arriba + texto abajo (G5); teléfono acostado = ilustración a la izquierda + texto a la
+    derecha. El cómic con globos se muestra completo solo si los globos se leen (escala ≥ 0.42) y no en vertical; si no,
+    la ilustración va con el texto en la hoja (arte y texto separados, docs/05). Letra de lectura ×0.8 en teléfono (mín.
+    18 px).
+  - Diálogos (Preparación, pausa, sin micrófono, ayuda, cierre) se desplazan y se achican en pantallas chicas.
+  - Padres: PIN sin la mitad de arte en teléfono/vertical (teclado más chico; acostado, título y teclado lado a lado);
+    panel y ajustes en una columna.
+- Ojo (React Native Web): `flex: 0` colapsa la vista; usar `flexGrow: 0, flexShrink: 0, flexBasis: 'auto'`.
+  `height: undefined` no anula una altura: usar `'auto'`. `adjustsFontSizeToFit` no funciona en web.
+- Verificado: capturas en 390×844, 844×390, 800×1280 y 1280×800 de todas las pantallas sin errores; `npm test` 1105 ✅,
+  typecheck ✅, build web ✅, export android ✅. Falta que Victor lo pruebe en su teléfono.

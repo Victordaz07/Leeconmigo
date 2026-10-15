@@ -9,6 +9,8 @@ interface PinPadProps {
   onKey: (key: PinKey) => void;
   onSubmit: () => void;
   disabled?: boolean;
+  /** Teclas más chicas (teléfono). */
+  compact?: boolean;
 }
 
 const ROWS: PinKey[][] = [
@@ -18,30 +20,31 @@ const ROWS: PinKey[][] = [
 ];
 
 /** Teclado del PIN de padres (Kitewise P1): 4 puntos + teclas físicas grandes, ⌫ y ✓ verde. */
-export function PinPad({ filled, onKey, onSubmit, disabled }: PinPadProps) {
+export function PinPad({ filled, onKey, onSubmit, disabled, compact }: PinPadProps) {
   const ready = filled === PIN_LENGTH && !disabled;
+  const key = compact ? { width: 76, height: 52 } : null;
   return (
-    <View style={styles.wrap}>
+    <View style={[styles.wrap, compact && styles.wrapCompact]}>
       <View style={styles.dots} accessibilityLabel={`${filled} de ${PIN_LENGTH} dígitos`}>
         {Array.from({ length: PIN_LENGTH }, (_, i) => (
           <View key={i} style={[styles.dot, i < filled && styles.dotOn]} />
         ))}
       </View>
-      <View style={[styles.grid, disabled && styles.disabled]}>
+      <View style={[styles.grid, compact && styles.gridCompact, disabled && styles.disabled]}>
         {ROWS.map((row, r) => (
-          <View key={r} style={styles.row}>
+          <View key={r} style={[styles.row, compact && styles.gridCompact]}>
             {row.map((k) => (
-              <Key key={k} label={k} onPress={() => onKey(k)} disabled={disabled} />
+              <Key key={k} label={k} onPress={() => onKey(k)} disabled={disabled} size={key} />
             ))}
           </View>
         ))}
-        <View style={styles.row}>
-          <Key label="⌫" a11y="Borrar" tone="soft" onPress={() => onKey('back')} disabled={disabled} />
-          <Key label="0" onPress={() => onKey('0')} disabled={disabled} />
+        <View style={[styles.row, compact && styles.gridCompact]}>
+          <Key label="⌫" a11y="Borrar" tone="soft" onPress={() => onKey('back')} disabled={disabled} size={key} />
+          <Key label="0" onPress={() => onKey('0')} disabled={disabled} size={key} />
           <Pressable onPress={onSubmit} disabled={!ready} accessibilityRole="button" accessibilityLabel="Listo" accessibilityState={{ disabled: !ready }} style={!ready && styles.notReady}>
             {({ pressed }) => (
               <View style={[styles.okLedge, { paddingBottom: pressed ? 1 : 5, paddingTop: pressed ? 4 : 0 }]}>
-                <GradientView gradient={gradients.green} style={styles.key}>
+                <GradientView gradient={gradients.green} style={[styles.key, key]}>
                   <Text style={[styles.keyText, styles.okText]}>✓</Text>
                 </GradientView>
               </View>
@@ -53,12 +56,12 @@ export function PinPad({ filled, onKey, onSubmit, disabled }: PinPadProps) {
   );
 }
 
-function Key({ label, a11y, tone, onPress, disabled }: { label: string; a11y?: string; tone?: 'soft'; onPress: () => void; disabled?: boolean }) {
+function Key({ label, a11y, tone, onPress, disabled, size }: { label: string; a11y?: string; tone?: 'soft'; onPress: () => void; disabled?: boolean; size?: { width: number; height: number } | null }) {
   return (
     <Pressable onPress={onPress} disabled={disabled} accessibilityRole="button" accessibilityLabel={a11y ?? label}>
       {({ pressed }) => (
         <View style={[styles.keyLedge, { paddingBottom: pressed ? 1 : 5, paddingTop: pressed ? 4 : 0 }]}>
-          <View style={[styles.key, tone === 'soft' ? styles.keySoft : styles.keyWhite]}>
+          <View style={[styles.key, size, tone === 'soft' ? styles.keySoft : styles.keyWhite]}>
             <Text style={styles.keyText}>{label}</Text>
           </View>
         </View>
@@ -76,6 +79,8 @@ const styles = StyleSheet.create({
   dot: { width: 30, height: 30, borderRadius: 15, backgroundColor: colors.track },
   dotOn: { backgroundColor: colors.brand },
   grid: { gap: 14 },
+  wrapCompact: { gap: 16 },
+  gridCompact: { gap: 10 },
   row: { flexDirection: 'row', gap: 14 },
   keyLedge: { borderRadius: radius.tile, backgroundColor: colors.line, boxShadow: shadows.soft },
   okLedge: { borderRadius: radius.tile, backgroundColor: colors.okDark },

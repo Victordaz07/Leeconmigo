@@ -15,15 +15,18 @@ interface NotebookCoverProps {
   /** Materia sin contenido todavía: se ve, pero atenuada y con "Pronto". */
   soon?: boolean;
   onPress?: () => void;
+  /** Ancho fijo calculado por la cuadrícula (`itemWidth`); sin él, la tarjeta se estira. */
+  width?: number;
 }
 
 const SPIRAL_DOTS = 9;
 
 /** Portada de un cuaderno en la estantería de Inicio (B3): espiral, arte, ícono de materia, título y progreso. */
-export function NotebookCover({ title, subtitle, image, glyph, color, gradient, segments, soon, onPress }: NotebookCoverProps) {
+export function NotebookCover({ title, subtitle, image, glyph, color, gradient, segments, soon, onPress, width }: NotebookCoverProps) {
+  const artHeight = width ? Math.round(Math.min(150, Math.max(96, width * 0.62))) : 150;
   return (
-    <Pressable onPress={soon ? undefined : onPress} disabled={soon} accessibilityRole="button" accessibilityLabel={soon ? `${title}, pronto` : title} style={({ pressed }) => [styles.card, pressed && styles.pressed]}>
-      <View style={styles.art}>
+    <Pressable onPress={soon ? undefined : onPress} disabled={soon} accessibilityRole="button" accessibilityLabel={soon ? `${title}, pronto` : title} style={({ pressed }) => [styles.card, width ? { width, flex: undefined, minWidth: undefined } : null, pressed && styles.pressed]}>
+      <View style={[styles.art, { height: artHeight }]}>
         {image ? <Image source={image} style={FILL} resizeMode="cover" /> : <GradientView gradient={gradient} style={[StyleSheet.absoluteFill, styles.placeholder]}><Text style={styles.bigGlyph}>{glyph}</Text></GradientView>}
         <View style={styles.spiral} pointerEvents="none">
           {Array.from({ length: SPIRAL_DOTS }, (_, i) => (

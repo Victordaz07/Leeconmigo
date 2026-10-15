@@ -3,7 +3,7 @@ import { Image, Pressable, ScrollView, StyleSheet, Text, View, type LayoutChange
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { Story } from '@lee-conmigo/contracts';
 import { copy, isBalloonPage, subjectById, wordMark, type WordMark } from '@lee-conmigo/ui-core';
-import { Button, Card, ClosingCard, CoachBubble, colors, ComicPage, DialogCard, fontFamily, gradients, GradientView, HelpSheet, MicBadge, MicOffIcon, radius, readSize, ReadingRail, ReadingText, SubjectTab } from '@lee-conmigo/ui-native';
+import { Button, Card, ClosingCard, CoachBubble, colors, ComicPage, DialogCard, fontFamily, gradients, GradientView, HelpSheet, MicBadge, MicOffIcon, radius, readSize, ReadingRail, ReadingText, SubjectTab, useLayout } from '@lee-conmigo/ui-native';
 import type { Energy } from '@lee-conmigo/ui-core';
 import { progressStoreFor, type ChildProfile } from '../app-state';
 import { useReadingSession, type ReadingSession } from '../session/use-reading-session';
@@ -13,7 +13,20 @@ import { storyImage } from '../story-assets';
 const lectura = subjectById('lectura');
 
 /** Letra de lectura por banda de nivel (Kitewise `--read-size-*`: 1–2, 3–4, 5–6). */
-const readFontFor = (level: number) => (level <= 2 ? readSize.g12 : level <= 4 ? readSize.g34 : readSize.g56);
+const readFontFor = (level: number, phone: boolean) => {
+  const base = level <= 2 ? readSize.g12 : level <= 4 ? readSize.g34 : readSize.g56;
+  // En teléfono, un poco más chica (nunca menos de 18 px: docs/06 legibilidad).
+  return phone ? Math.max(18, Math.round(base * 0.8)) : base;
+};
+
+/**
+ * Por debajo de esta escala los globos del cómic quedan con letra muy chica: el cómic se muestra como ilustración arriba (o
+ * a un lado) y el texto en la hoja de lectura. Arte y texto son capas separadas (docs/05), así que se puede.
+ */
+const MIN_COMIC_SCALE = 0.42;
+
+/** Cómo se acomoda la página: `side` (hoja a la derecha sobre la ilustración), `stack` (ilustración arriba, texto abajo), `split` (ilustración a la izquierda, texto a la derecha). */
+type PageMode = 'side' | 'stack' | 'split';
 
 /**
  * Lectura dentro del cuaderno (Kitewise B9, G7, G8; docs/13 K2). Riel izquierdo con las páginas, el micrófono, la ayuda y
@@ -35,6 +48,10 @@ export function ReadingScreen({ story, profile, energy, goalMinutes, onExit }: R
   const session = useReadingSession(story, { store: progressStoreFor(profile.id), energy: energy ?? undefined, dailyGoalMinutes: goalMinutes, freeReading: profile.freeReading });
   const { flow, reading, view, actions, prefs } = session;
   const insets = useSafeAreaInsets();
+  const layout = useLayout();
+  // Vertical: barra abajo (G5). Acostado: riel a la izquierda, compacto en teléfono.
+  const horizontalBar = layout.portrait;
+  const pageMode: PageMode = layout.portrait ? 'stack' : layout.short || layout.narrow ? 'split' : 'side';
 
   const markOf = useCallback((i: number) => wordMark(i, reading, flow.screen, prefs), [reading, flow.screen, prefs]);
   const exit = () => {
@@ -45,24 +62,30 @@ export function ReadingScreen({ story, profile, energy, goalMinutes, onExit }: R
   // El indicador del micrófono nunca miente (docs/06): antes de empezar no escucha; sin permiso o en modo libre no hay micrófono.
   const mic = session.freeReading || session.voiceProblem ? null : { tone: flow.screen === 'reading' ? view.micTone : ('idle' as const), listening: flow.screen === 'reading' && view.listening };
   const inReading = flow.screen === 'reading';
+  const rail = (
+    <ReadingRail
+      page={session.pageIndex + 1}
+      pageCount={story.pages.length}
+      onBack={exit}
+      mic={mic}
+      onHelp={inReading && !session.freeReading ? actions.askHelp : undefined}
+      onListen={inReading && !session.freeReading ? actions.readStart : undefined}
+      onNextPage={inReading && session.freeReading ? actions.freeAdvance : undefined}
+      horizontal={horizontalBar}
+      compact={layout.phone}
+      bottomInset={insets.bottom}
+    />
+  );
 
   return (
-    <View style={[styles.screen, { paddingTop: insets.top, paddingBottom: insets.bottom, paddingLeft: insets.left }]}>
-      <ReadingRail
-        page={session.pageIndex + 1}
-        pageCount={story.pages.length}
-        onBack={exit}
-        mic={mic}
-        onHelp={inReading && !session.freeReading ? actions.askHelp : undefined}
-        onListen={inReading && !session.freeReading ? actions.readStart : undefined}
-        onNextPage={inReading && session.freeReading ? actions.freeAdvance : undefined}
-      />
+    <View style={[styles.screen, horizontalBar && styles.screenColumn, { paddingTop: insets.top, paddingBottom: horizontalBar ? 0 : insets.bottom, paddingLeft: insets.left }]}>
+      {!horizontalBar && rail}
       <View style={[styles.main, { paddingRight: insets.right }]}>
-        <PageView session={session} markOf={markOf} />
+        <PageView session={session} markOf={markOf} mode={pageMode} phone={layout.phone} />
 
         {inReading && !session.showPauseCard && (
-          <View style={styles.coach} pointerEvents="none">
-            <CoachBubble message={session.freeReading ? copy.states.freeHint : view.feedback} />
+          <View style={[styles.coach, layout.phone && styles.coachSmall]} pointerEvents="none">
+            <CoachBubble message={session.freeReading ? copy.states.freeHint : view.feedback} compact={layout.phone} />
           </View>
         )}
 
@@ -118,6 +141,7 @@ export function ReadingScreen({ story, profile, energy, goalMinutes, onExit }: R
           </DialogCard>
         )}
       </View>
+      {horizontalBar && rail}
 
       <HelpSheet word={session.help?.word ?? null} entry={session.help?.entry} audience={prefs.audience} onListen={actions.pronounce} onClose={actions.closeHelp} />
     </View>
@@ -125,7 +149,7 @@ export function ReadingScreen({ story, profile, energy, goalMinutes, onExit }: R
 }
 
 /** La página según su tipo, a lo más grande que quepa en el espacio disponible. */
-function PageView({ session, markOf }: { session: ReadingSession; markOf: (i: number) => WordMark }) {
+function PageView({ session, markOf, mode, phone }: { session: ReadingSession; markOf: (i: number) => WordMark; mode: PageMode; phone: boolean }) {
   const { story, page, words, actions, view, flow, reading } = session;
   const [area, setArea] = useState({ width: 0, height: 0 });
   const onLayout = (e: LayoutChangeEvent) => {
@@ -135,10 +159,13 @@ function PageView({ session, markOf }: { session: ReadingSession; markOf: (i: nu
   const image = storyImage(page.illustration.src);
   const ratio = page.illustration.width / page.illustration.height;
 
-  if (isBalloonPage(page)) {
-    // Cómic con globos dibujados (G7): la ilustración completa, lo más grande que quepa.
-    const width = Math.floor(Math.min(area.width - 32, (area.height - 32) * ratio));
-    const height = Math.floor(width / ratio);
+  const balloon = isBalloonPage(page);
+  // Cómic con globos dibujados (G7): la ilustración completa, lo más grande que quepa — si así los globos se leen bien.
+  const width = Math.floor(Math.min(area.width - 32, (area.height - 32) * ratio));
+  const height = Math.floor(width / ratio);
+  // En vertical siempre ilustración arriba y texto abajo (G5); acostado, el cómic completo si los globos se leen bien.
+  const comicReadable = balloon && mode !== 'stack' && (area.width === 0 || width / page.illustration.width >= MIN_COMIC_SCALE);
+  if (balloon && comicReadable) {
     return (
       <View style={styles.comicArea} onLayout={onLayout}>
         {width > 0 && (
@@ -160,13 +187,22 @@ function PageView({ session, markOf }: { session: ReadingSession; markOf: (i: nu
     );
   }
 
-  // Página de texto (B9): la ilustración de fondo y el texto en una hoja de papel a la derecha. El texto manda (docs/05).
+  // Página de texto (B9): la ilustración y el texto en una hoja de papel. El texto manda (docs/05). En pantallas chicas,
+  // ilustración arriba y texto abajo (G5) o lado a lado. Un cómic con globos ilegibles a este tamaño se lee igual aquí.
   const progress = words.length ? Math.min(1, (reading.hasHeardVoice ? reading.currentWordIndex : 0) / words.length) : 0;
+  const pageMode: PageMode = balloon && mode === 'side' ? 'split' : mode;
+  const artBox =
+    pageMode === 'stack'
+      ? { width: area.width, height: Math.round(Math.min(area.height * 0.42, area.width / ratio)) }
+      : pageMode === 'split'
+        ? { width: Math.round(area.width * 0.42), height: area.height }
+        : null;
   return (
-    <View style={styles.textArea} onLayout={onLayout}>
-      {image && <Image source={image} style={FILL} resizeMode="cover" accessibilityLabel={page.illustration.alt ?? ''} />}
-      <View style={styles.sheet}>
-        <View style={styles.sheetHead}>
+    <View style={[styles.textArea, pageMode === 'split' && styles.textAreaRow]} onLayout={onLayout}>
+      {image && artBox && <Image source={image} style={artBox} resizeMode="cover" accessibilityLabel={page.illustration.alt ?? ''} />}
+      {image && !artBox && <Image source={image} style={FILL} resizeMode="cover" accessibilityLabel={page.illustration.alt ?? ''} />}
+      <View style={pageMode === 'side' ? styles.sheet : styles.sheetInline}>
+        <View style={[styles.sheetHead, pageMode !== 'side' && styles.sheetHeadSmall]}>
           <Text style={styles.sheetTitle} numberOfLines={1}>
             {story.title}
           </Text>
@@ -175,33 +211,39 @@ function PageView({ session, markOf }: { session: ReadingSession; markOf: (i: nu
           </View>
           <Text style={styles.elapsed}>{copy.reading.elapsed(session.elapsed)}</Text>
         </View>
-        <ScrollView style={styles.flex} contentContainerStyle={styles.sheetBody}>
-          <ReadingText page={page} words={words} markOf={markOf} onWordPress={actions.tapWord} fontSize={readFontFor(story.level)} currentParagraph={session.currentParagraph} />
+        <ScrollView style={styles.flex} contentContainerStyle={[styles.sheetBody, pageMode !== 'side' && styles.sheetBodySmall]}>
+          <ReadingText page={page} words={words} markOf={markOf} onWordPress={actions.tapWord} fontSize={readFontFor(story.level, phone)} currentParagraph={session.currentParagraph} />
         </ScrollView>
       </View>
-      <View style={styles.tab}>
-        <SubjectTab label={lectura.tab} gradient={gradients[lectura.gradientToken]} active />
-      </View>
+      {pageMode === 'side' && (
+        <View style={styles.tab}>
+          <SubjectTab label={lectura.tab} gradient={gradients[lectura.gradientToken]} active />
+        </View>
+      )}
     </View>
   );
 }
 
 function PrepOverlay({ session }: { session: ReadingSession }) {
   const audience = session.prefs.audience;
+  const { narrow, short } = useLayout();
+  const small = narrow || short;
   return (
     <View style={styles.overlay}>
-      <Card style={styles.overlayCard}>
-        <Text style={styles.overlayTitle}>{copy.prep.title[audience]}</Text>
+      <ScrollView style={styles.flex} contentContainerStyle={[styles.overlayCenter, small && styles.overlayCenterSmall]}>
+      <Card style={[styles.overlayCard, small && styles.overlayCardSmall]}>
+        <Text style={[styles.overlayTitle, small && styles.overlayTitleSmall]}>{copy.prep.title[audience]}</Text>
         {copy.prep.tips[audience].map((t) => (session.freeReading && t.icon === '2' ? { ...t, text: copy.prep.freeTip } : t)).map((tip) => (
           <View key={tip.text} style={styles.tip}>
             <View style={[styles.tipIcon, { backgroundColor: tip.color }]}>
               <Text style={styles.tipIconText}>{tip.icon}</Text>
             </View>
-            <Text style={styles.tipText}>{tip.text}</Text>
+            <Text style={[styles.tipText, small && styles.tipTextSmall]}>{tip.text}</Text>
           </View>
         ))}
-        <Button label={copy.prep.start} large onPress={session.actions.begin} />
+        <Button label={copy.prep.start} large={!small} onPress={session.actions.begin} />
       </Card>
+      </ScrollView>
     </View>
   );
 }
@@ -238,6 +280,12 @@ const FILL = { position: 'absolute', top: 0, left: 0, width: '100%', height: '10
 const styles = StyleSheet.create({
   flex: { flex: 1 },
   screen: { flex: 1, flexDirection: 'row', backgroundColor: colors.app },
+  screenColumn: { flexDirection: 'column' },
+  textAreaRow: { flexDirection: 'row' },
+  sheetInline: { flex: 1, backgroundColor: colors.paper },
+  sheetHeadSmall: { paddingHorizontal: 18, paddingTop: 14 },
+  sheetBodySmall: { paddingHorizontal: 18, paddingTop: 14, paddingBottom: 72 },
+  coachSmall: { left: 12, bottom: 12 },
   main: { flex: 1 },
   comicArea: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 16 },
   comicFrame: { borderRadius: radius.tile, overflow: 'hidden', boxShadow: '0px 10px 26px rgba(30, 35, 64, 0.18)' },
@@ -252,7 +300,12 @@ const styles = StyleSheet.create({
   tab: { position: 'absolute', right: 0, top: 90 },
   coach: { position: 'absolute', left: 24, bottom: 24 },
   micOff: { width: 96, height: 96, borderRadius: 48, alignItems: 'center', justifyContent: 'center', borderWidth: 8, borderColor: '#e6e9f1' },
-  overlay: { ...StyleSheet.absoluteFill, backgroundColor: 'rgba(20, 22, 28, 0.45)', alignItems: 'center', justifyContent: 'center', padding: 24 },
+  overlay: { ...StyleSheet.absoluteFill, backgroundColor: 'rgba(20, 22, 28, 0.45)' },
+  overlayCenter: { flexGrow: 1, alignItems: 'center', justifyContent: 'center', padding: 24 },
+  overlayCenterSmall: { padding: 12 },
+  overlayCardSmall: { padding: 18, gap: 10 },
+  overlayTitleSmall: { fontSize: 24 },
+  tipTextSmall: { fontSize: 16 },
   overlayCard: { width: '100%', maxWidth: 560, gap: 16, padding: 28, borderRadius: radius.panel },
   overlayTitle: { fontFamily: fontFamily.ui.black, fontSize: 30, color: colors.navy, textAlign: 'center' },
   tip: { flexDirection: 'row', alignItems: 'center', gap: 14 },

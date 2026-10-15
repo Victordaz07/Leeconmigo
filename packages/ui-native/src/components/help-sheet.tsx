@@ -1,4 +1,4 @@
-import { Modal, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import type { Audience, VocabularyEntry } from '@lee-conmigo/contracts';
 import { copy } from '@lee-conmigo/ui-core';
 import { colors, fontFamily, radius } from '../tokens.ts';
@@ -24,9 +24,10 @@ export function HelpSheet({ word, entry, audience, onListen, onClose }: HelpShee
   return (
     <Modal visible={word !== null} transparent animationType="fade" onRequestClose={onClose} supportedOrientations={['portrait', 'landscape']}>
       <Pressable style={styles.scrim} onPress={onClose} accessibilityLabel="Cerrar ayuda">
+        <ScrollView style={styles.scroll} contentContainerStyle={styles.center}>
         <Pressable style={styles.card} onPress={() => {}} accessibilityViewIsModal>
           <View style={styles.head}>
-            <Text style={styles.word} accessibilityLabel={word ?? ''}>
+            <Text style={styles.word} accessibilityLabel={word ?? ''} adjustsFontSizeToFit numberOfLines={2}>
               {syllables}
             </Text>
             <Pressable onPress={onListen} accessibilityRole="button" accessibilityLabel={copy.help.listenWord} style={({ pressed }) => [styles.speaker, pressed && styles.pressed]}>
@@ -42,16 +43,19 @@ export function HelpSheet({ word, entry, audience, onListen, onClose }: HelpShee
             <Button label={copy.states.keepReading} variant="secondary" onPress={onClose} />
           </View>
         </Pressable>
+        </ScrollView>
       </Pressable>
     </Modal>
   );
 }
 
 const styles = StyleSheet.create({
-  scrim: { flex: 1, backgroundColor: 'rgba(20, 22, 28, 0.25)', alignItems: 'center', justifyContent: 'center', padding: 24 },
-  card: { width: '100%', maxWidth: 520, backgroundColor: '#ffffff', borderRadius: radius.panel, padding: 26, gap: 12, boxShadow: '0px 24px 60px rgba(0, 0, 0, 0.3)' },
+  scrim: { flex: 1, backgroundColor: 'rgba(20, 22, 28, 0.25)' },
+  scroll: { flex: 1 },
+  center: { flexGrow: 1, alignItems: 'center', justifyContent: 'center', padding: 16 },
+  card: { width: '100%', maxWidth: 520, backgroundColor: '#ffffff', borderRadius: radius.panel, padding: 22, gap: 12, boxShadow: '0px 24px 60px rgba(0, 0, 0, 0.3)' },
   head: { flexDirection: 'row', alignItems: 'center', gap: 16 },
-  word: { flex: 1, fontFamily: fontFamily.read.bold, fontSize: 40, color: colors.ink },
+  word: { flex: 1, fontFamily: fontFamily.read.bold, fontSize: 36, color: colors.ink },
   speaker: { width: 64, height: 64, borderRadius: 32, alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff1e6', boxShadow: 'inset 0px -4px 0px #f7be9c' },
   pressed: { transform: [{ translateY: 2 }] },
   def: { fontFamily: fontFamily.ui.bold, fontSize: 19, color: colors.inkSoft },
