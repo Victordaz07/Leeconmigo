@@ -66,3 +66,35 @@ export function KiteIcon({ size = 32 }: { size?: number }) {
     </Svg>
   );
 }
+
+/** Altavoz (escuchar). */
+export function SpeakerIcon({ size = 24, color = '#E8662B' }: { size?: number; color?: string }) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.3}>
+      <Path d="M3.5 9.5h3.8L12 5.3v13.4l-4.7-4.2H3.5z" fill={color} />
+      <Path d="M15.5 9a4 4 0 010 6M18.3 6.3a7.6 7.6 0 010 11.4" />
+    </Svg>
+  );
+}
+
+/** Signo de pregunta en círculo (ayuda). */
+export function HelpIcon({ size = 26 }: { size?: number }) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24">
+      <Path d="M12 2a10 10 0 110 20 10 10 0 010-20z" fill="#1E6FE8" />
+      <Path d="M9.4 9.3a2.7 2.7 0 015.2.9c0 1.8-2.6 2.2-2.6 3.8" stroke="#fff" strokeWidth={2.2} fill="none" strokeLinecap="round" />
+      <Path d="M12 16.6v.4" stroke="#fff" strokeWidth={2.6} strokeLinecap="round" />
+    </Svg>
+  );
+}
+
+/** Micrófono tachado (sin permiso). */
+export function MicOffIcon({ size = 48 }: { size?: number }) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2}>
+      <Rect x={9} y={3} width={6} height={11} rx={3} fill="#fff" />
+      <Path d="M5.5 11a6.5 6.5 0 0013 0M12 17.5V21M9 21h6" />
+      <Path d="M4 20L20 4" strokeWidth={2.4} />
+    </Svg>
+  );
+}

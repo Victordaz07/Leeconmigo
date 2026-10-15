@@ -50,6 +50,17 @@ export function useReadingSession(story: Story, { store, prefs = defaultPrefs, n
   const [reading, setReading] = useState<ReadingSessionState>(engine.getState());
   const [timer, setTimer] = useState<ReadingTimerSnapshot>(engine.getTimerSnapshot());
   const [auto, setAuto] = useState(false);
+  /**
+   * Problema con la voz que impide escuchar (Kitewise G11). Por ahora solo se simula desde el panel DEV; el motor real lo
+   * informará en RN-07 (`SpeechEngine.onError`, código `permission-denied`/`not-available`). Nunca se cae a la nube (D1).
+   */
+  const [voiceProblem, setVoiceProblem] = useState<'permission-denied' | 'not-available' | null>(null);
+  /** "Modo libre": se lee sin micrófono y se pasa de página con un botón (como el modo lectura libre de la app web). */
+  const [freeReading, setFreeReading] = useState(false);
+  /** El niño cerró la tarjeta de pausa larga ("Seguir leyendo"): no se vuelve a mostrar hasta la próxima pausa larga. */
+  const [pauseDismissed, setPauseDismissed] = useState(false);
+  /** Instante en que se cargó la página actual (modo libre: el tiempo real leído se acredita al pasar de página). */
+  const pageStartedAt = useRef(now().getTime());
 
   const wordsRef = useRef(words);
   wordsRef.current = words;
@@ -117,6 +128,7 @@ export function useReadingSession(story: Story, { store, prefs = defaultPrefs, n
     dispatch(action);
     if (next.screen === 'reading' && next.pageIndex !== flow.pageIndex) {
       engine.loadPage(tokenizePage(story.pages[next.pageIndex]));
+      pageStartedAt.current = now().getTime();
       saveResume(next.pageIndex);
     }
   };
@@ -138,8 +150,14 @@ export function useReadingSession(story: Story, { store, prefs = defaultPrefs, n
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [flow.screen, engine]);
 
+  // Cuando la pausa larga termina, la tarjeta vuelve a poder mostrarse en la siguiente.
+  useEffect(() => {
+    if (reading.pause !== 'long') setPauseDismissed(false);
+  }, [reading.pause]);
+
   const begin = () => {
     summarySaved.current = false;
+    pageStartedAt.current = now().getTime();
     engine.startSession(words);
     saveResume(flow.pageIndex);
     dispatch({ type: 'reading.begin' });
@@ -161,6 +179,25 @@ export function useReadingSession(story: Story, { store, prefs = defaultPrefs, n
     stopSpeaking();
   };
 
+  /**
+   * Modo libre: el niño (o el padre) confirma con un botón que la página ya se leyó. Se acredita como tiempo válido el tiempo
+   * real desde que se cargó la página y se termina la página por el mismo camino que el panel DEV (igual que la web).
+   */
+  const freeAdvance = () => {
+    const elapsedMs = Math.max(0, now().getTime() - pageStartedAt.current);
+    const from = engine.timer.machine.confirmedMs;
+    if (elapsedMs > 0) engine.timer.machine.ingest({ fromMs: from, toMs: from + elapsedMs, valid: true });
+    engine.simulate.completePage();
+  };
+
+  const startFreeReading = () => {
+    setFreeReading(true);
+    setVoiceProblem(null);
+    engine.simulate.autoRead(false);
+  };
+
+  const current = reading.hasHeardVoice ? words[Math.min(reading.currentWordIndex, words.length - 1)] : undefined;
+
   const helpWord = reading.helpWordIndex !== null ? words[reading.helpWordIndex] : undefined;
   const helpKey = helpWord ? vocabularyKey(helpWord.text) : '';
 
@@ -180,6 +217,13 @@ export function useReadingSession(story: Story, { store, prefs = defaultPrefs, n
     { label: 'Pide ayuda', run: () => engine.requestHelp() },
     { label: 'Léeme el comienzo', run: () => engine.requestReadStart() },
     { label: 'Terminar página', run: sim.completePage },
+    {
+      label: 'Sin micrófono',
+      run: () => {
+        sim.autoRead(false);
+        setVoiceProblem('permission-denied');
+      },
+    },
     { label: 'Reiniciar', run: restart },
   ];
 
@@ -195,6 +239,12 @@ export function useReadingSession(story: Story, { store, prefs = defaultPrefs, n
     /** Tiempo LEÍDO (docs/06: cuenta hacia arriba; solo avanza con lectura válida). */
     elapsed: formatDuration(timer.validSeconds),
     help: helpWord ? { word: cleanWord(helpWord.text), entry: story.vocabulary[helpKey] } : null,
+    /** Párrafo que se está leyendo (para atenuar los siguientes); `null` antes de oír la voz. */
+    currentParagraph: current ? { block: current.blockIndex, line: current.lineIndex } : null,
+    voiceProblem,
+    freeReading,
+    /** Tarjeta "Te espero…" de la pausa larga (B11). Nunca en modo libre: nadie le habla al micrófono. */
+    showPauseCard: flow.screen === 'reading' && reading.pause === 'long' && !pauseDismissed && !freeReading && reading.helpWordIndex === null,
     actions: {
       begin,
       restart,
@@ -202,6 +252,13 @@ export function useReadingSession(story: Story, { store, prefs = defaultPrefs, n
       tapWord: (i: number) => engine.requestHelp(i),
       closeHelp: () => engine.closeHelp(),
       pronounce,
+      askHelp: () => engine.requestHelp(),
+      readStart: () => engine.requestReadStart(),
+      dismissPause: () => setPauseDismissed(true),
+      freeAdvance,
+      startFreeReading,
+      /** "Pedir permiso": con el motor real abrirá el permiso del sistema (RN-07). Con el simulador solo cierra el aviso. */
+      requestVoicePermission: () => setVoiceProblem(null),
     },
     dev: {
       simulations,

@@ -1,8 +1,9 @@
 import { Modal, Pressable, StyleSheet, Text, View } from 'react-native';
 import type { Audience, VocabularyEntry } from '@lee-conmigo/contracts';
 import { copy } from '@lee-conmigo/ui-core';
-import { colors, fontFamily, radius, shadows } from '../tokens.ts';
+import { colors, fontFamily, radius } from '../tokens.ts';
 import { Button } from './button.tsx';
+import { SpeakerIcon } from './icons.tsx';
 
 interface HelpSheetProps {
   /** Palabra con la ayuda abierta (sin puntuación). `null` = cerrada. */
@@ -14,21 +15,23 @@ interface HelpSheetProps {
 }
 
 /**
- * Ayuda de una palabra (docs/03 "ayuda de pronunciación", docs/04 Help modal): la palabra dividida en sílabas, escucharla,
- * definición corta, sinónimo y ejemplo si la historia los trae. Nunca dice "mal": es una ayuda que el niño pidió.
+ * Ayuda de una palabra (Kitewise G13, docs/03 "ayuda de pronunciación"): la palabra en sílabas ("en·re·da·da"), botón para
+ * escucharla, definición corta y ejemplo si la historia los trae. Nunca dice "mal": es una ayuda que el niño pidió.
+ * "Guardar en mi cuaderno" llega con Mi cuaderno (K8); hasta entonces no se muestra un botón que no hace nada.
  */
 export function HelpSheet({ word, entry, audience, onListen, onClose }: HelpSheetProps) {
-  const syllables = entry?.syllables ?? (word ? [word] : []);
+  const syllables = entry?.syllables?.length ? entry.syllables.join('·') : (word ?? '');
   return (
     <Modal visible={word !== null} transparent animationType="fade" onRequestClose={onClose} supportedOrientations={['portrait', 'landscape']}>
       <Pressable style={styles.scrim} onPress={onClose} accessibilityLabel="Cerrar ayuda">
-        <Pressable style={styles.card} onPress={() => {}}>
-          <View style={styles.syllables}>
-            {syllables.map((s, i) => (
-              <View key={i} style={styles.syllable}>
-                <Text style={styles.syllableText}>{s}</Text>
-              </View>
-            ))}
+        <Pressable style={styles.card} onPress={() => {}} accessibilityViewIsModal>
+          <View style={styles.head}>
+            <Text style={styles.word} accessibilityLabel={word ?? ''}>
+              {syllables}
+            </Text>
+            <Pressable onPress={onListen} accessibilityRole="button" accessibilityLabel={copy.help.listenWord} style={({ pressed }) => [styles.speaker, pressed && styles.pressed]}>
+              <SpeakerIcon size={26} />
+            </Pressable>
           </View>
           <Text style={styles.def}>
             {entry?.definition ?? copy.help.defaultDef[audience]}
@@ -36,8 +39,7 @@ export function HelpSheet({ word, entry, audience, onListen, onClose }: HelpShee
           </Text>
           {entry?.example ? <Text style={styles.example}>{copy.help.example(entry.example).trim()}</Text> : null}
           <View style={styles.actions}>
-            <Button label={copy.help.listenWord} onPress={onListen} />
-            <Button label={copy.help.done} variant="secondary" onPress={onClose} />
+            <Button label={copy.states.keepReading} variant="secondary" onPress={onClose} />
           </View>
         </Pressable>
       </Pressable>
@@ -46,12 +48,13 @@ export function HelpSheet({ word, entry, audience, onListen, onClose }: HelpShee
 }
 
 const styles = StyleSheet.create({
-  scrim: { flex: 1, backgroundColor: 'rgba(20, 22, 28, 0.55)', alignItems: 'center', justifyContent: 'center', padding: 24 },
-  card: { width: '100%', maxWidth: 620, backgroundColor: colors.cream, borderRadius: radius.panel, padding: 28, gap: 18, boxShadow: '0px 30px 70px rgba(0, 0, 0, 0.4)' },
-  syllables: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 10 },
-  syllable: { backgroundColor: colors.focus, borderRadius: radius.tile, paddingHorizontal: 18, paddingVertical: 8, boxShadow: shadows.soft },
-  syllableText: { fontFamily: fontFamily.read.bold, fontSize: 44, color: colors.ink },
-  def: { fontFamily: fontFamily.ui.semibold, fontSize: 20, color: colors.inkSoft, textAlign: 'center' },
-  example: { fontFamily: fontFamily.read.regular, fontSize: 18, color: colors.muted, textAlign: 'center', fontStyle: 'italic' },
-  actions: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 14 },
+  scrim: { flex: 1, backgroundColor: 'rgba(20, 22, 28, 0.25)', alignItems: 'center', justifyContent: 'center', padding: 24 },
+  card: { width: '100%', maxWidth: 520, backgroundColor: '#ffffff', borderRadius: radius.panel, padding: 26, gap: 12, boxShadow: '0px 24px 60px rgba(0, 0, 0, 0.3)' },
+  head: { flexDirection: 'row', alignItems: 'center', gap: 16 },
+  word: { flex: 1, fontFamily: fontFamily.read.bold, fontSize: 40, color: colors.ink },
+  speaker: { width: 64, height: 64, borderRadius: 32, alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff1e6', boxShadow: 'inset 0px -4px 0px #f7be9c' },
+  pressed: { transform: [{ translateY: 2 }] },
+  def: { fontFamily: fontFamily.ui.bold, fontSize: 19, color: colors.inkSoft },
+  example: { fontFamily: fontFamily.read.regular, fontSize: 18, color: colors.muted },
+  actions: { flexDirection: 'row', flexWrap: 'wrap', gap: 12, marginTop: 6 },
 });

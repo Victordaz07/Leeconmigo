@@ -15,13 +15,20 @@ interface ReadingTextProps {
   onWordPress: (index: number) => void;
   /** Tamaño de letra en px (docs/06: ajustable). */
   fontSize?: number;
+  /**
+   * Párrafo que se está leyendo (Kitewise G8/G13): los que vienen DESPUÉS se atenúan para ayudar a concentrarse; los ya
+   * leídos y el actual se ven normales. `null` = todo normal (antes de empezar a leer).
+   */
+  currentParagraph?: { block: number; line: number } | null;
 }
+
+const isAfter = (b: number, l: number, cur: { block: number; line: number }) => b > cur.block || (b === cur.block && l > cur.line);
 
 /**
  * Texto de una página en modo "illustrated reader": cada cuadro (bloque) con su título opcional y sus párrafos. Las
  * palabras son texto real de la app (docs/05: nunca imagen) y cada una se puede tocar.
  */
-export function ReadingText({ page, words, markOf, onWordPress, fontSize = 27 }: ReadingTextProps) {
+export function ReadingText({ page, words, markOf, onWordPress, fontSize = 27, currentParagraph = null }: ReadingTextProps) {
   const lineHeight = Math.round(fontSize * 1.6);
   return (
     <View style={styles.page}>
@@ -29,7 +36,7 @@ export function ReadingText({ page, words, markOf, onWordPress, fontSize = 27 }:
         <View key={block.id} style={styles.block}>
           {block.title ? <Text style={[styles.title, { fontSize: fontSize * 0.9 }]}>{block.title}</Text> : null}
           {block.lines.map((_, l) => (
-            <Text key={l} style={[styles.paragraph, { fontSize, lineHeight }]}>
+            <Text key={l} style={[styles.paragraph, { fontSize, lineHeight }, currentParagraph && isAfter(b, l, currentParagraph) && styles.upcoming]}>
               {words
                 .filter((w) => w.blockIndex === b && w.lineIndex === l)
                 .map((w) => (
@@ -58,4 +65,5 @@ const styles = StyleSheet.create({
   block: { gap: 12 },
   title: { fontFamily: fontFamily.read.bold, color: colors.navy },
   paragraph: { fontFamily: fontFamily.read.regular, color: colors.ink },
+  upcoming: { color: colors.muted2 },
 });

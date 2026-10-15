@@ -257,6 +257,22 @@ export const copy = {
     defaultDef: 'Una palabra que practicaste hoy.',
   },
 
+  /** Estados de la lectura de Kitewise (B11 pausa, G11 sin micrófono, G13 ayuda). Tono de acompañamiento, nunca alarma. */
+  states: {
+    pauseTitle: 'Te espero… ¡sigue leyendo cuando quieras!',
+    pauseMessage: 'El tiempo está en pausa. No pierdes nada.',
+    pauseStop: 'Terminé por hoy',
+    pauseContinue: 'Seguir leyendo',
+    voiceTitle: 'Necesito oírte para ayudarte a leer.',
+    voiceMessage: 'Un adulto debe darme permiso. Mientras tanto puedes leer con el botón.',
+    voiceUnavailableMessage: 'En esta tableta no puedo escucharte. Puedes leer con el botón.',
+    voiceAskAdult: 'Pedir permiso a mamá o papá',
+    voiceFreeReading: 'Leer con botón (modo libre)',
+    keepReading: 'Seguir leyendo',
+    nextPage: 'Siguiente página',
+    freeHint: 'Lee la página y toca › para seguir.',
+  },
+
   end: {
     title: '¡Terminaste la historia!',
     time: 'Tiempo',

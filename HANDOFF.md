@@ -1,9 +1,9 @@
 # HANDOFF — estado actual
 Actualizado: 2026-10-15 · Cuenta: A · Rama: claude/gracious-shannon-a0238d
-Último commit: ver `git log -1` ("K1: Inicio y cuaderno …")
+Último commit: ver `git log -1` ("K2: lectura …")
 
 ## Tarea en curso
-Ninguna a medias. K1 ✅ (Inicio B3 + cuaderno B4). Siguiente: K2.
+Ninguna a medias. K2 ✅ (lectura B9 + estados B11, G11, G13). Siguiente: K3.
 
 ## Hecho en RN-01
 - [x] `apps/mobile` (Expo SDK 57, RN 0.86, TS) dentro del monorepo
@@ -18,18 +18,20 @@ Ninguna a medias. K1 ✅ (Inicio B3 + cuaderno B4). Siguiente: K2.
 - [x] K1 (parte): tokens de Kitewise en `ui-native/src/tokens.ts` con prueba de paridad
 - [x] K1: componentes + Inicio (B3) + Cuaderno (B4)
 - [x] D10: nombre oficial Kitewise (`com.kitewise.app`)
+- [x] K2: lectura en el cuaderno (riel, hoja de papel, coach estrella) + pausa, sin micrófono, ayuda
 
 ## Siguiente paso exacto
-**K2 — Lectura dentro del cuaderno (B9) + estados (B11, G11–G13).** Referencias: `docs/design/kitewise/screens/B9.webp`,
-`B11.webp`, `G11.webp` (sin micrófono), `G12.webp` (sin conexión), `G13.webp` (palabra difícil).
-1. `apps/mobile/src/screens/reading-screen.tsx`: rediseñar al estilo B9 — riel izquierdo angosto con Volver, "2 / 6"
-   (página), puntos de progreso por página, micrófono, botón de ayuda "?" y altavoz; ilustración grande; texto en
-   tarjeta de papel a la derecha con barra de progreso arriba y pestaña "Lectura". El cómic (`ComicPage`) se queda igual.
-2. B11 pausa: tarjeta ámbar "Te espero…" (hoy el coach solo cambia el mensaje).
-3. G13: la `HelpSheet` al estilo del diseño (mirar G13.webp).
-4. G11/G12: estados de "sin permiso de micrófono" y "sin conexión" — con `FakeReadingEngine` solo se pueden simular
-   (agregar botones DEV); el real llega con RN-07.
-Mantener: arte y texto separados, nunca rojo, el indicador del micrófono nunca miente.
+**K3 — Cierre (B13), perfiles (B1) y "¿Cómo llegas?" (B2).** Referencias: `docs/design/kitewise/screens/B13.webp`, `B1.webp`,
+`B2.webp`.
+1. B13 en `reading-screen.tsx` (reemplaza `EndOverlay`, hay un TODO): "¡Buen trabajo, {nombre}!", 3 estrellas POR
+   ESFUERZO (no por precisión: decidir cómo con `starsFor`/esfuerzo — p. ej. terminar = 1, ayuda pedida o reintento = +1,
+   lectura sin pausas largas = +1; documentarlo y probarlo en ui-core), tarjetas Tiempo / Papalote (+m) / Sello del día /
+   Vuelven (palabras practicadas), "¿Cómo estuvo tu enfoque?" con 3 caritas (se guarda en el resumen como autoevaluación;
+   agregar el campo al contrato `SessionSummary` como opcional), botones "Guardar en mi cuaderno" (solo si K8 existe; si no,
+   no mostrarlo) y "Listo".
+2. B1 Elegir perfil: avatares + "Agregar niño" (pide PIN → K4). Perfiles en `app-state.ts` (todavía en memoria).
+3. B2 ¿Cómo llegas?: 3 opciones 20/15/8 min → guarda `energy` en la sesión (`SPEC.md` §7 `Session`).
+Pregunta abierta para Victor si hace falta: cómo se calculan las estrellas "por esfuerzo".
 
 ## Cuidado con
 - **No borrar `apps/reader` ni `packages/ui`**: Noah sigue usando la app Capacitor hasta RN-CP2.

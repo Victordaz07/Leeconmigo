@@ -121,3 +121,19 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
   módulos) y `npm dedupe` lo rompió (subió a 58). Se quedó en 57.0.29: expo-doctor solo avisa del parche nuevo.
   Actualizar regenerando el lockfile con cuidado en una tarea aparte. React Native Web: imágenes que llenan un
   contenedor necesitan `width/height: '100%'` (no basta `absoluteFill`).
+
+## 2026-10-15 · Cuenta A · K2
+- Hecho: lectura al estilo Kitewise. `ui-native`: `ReadingRail` (volver, "n / N", puntos de página, micrófono, ayuda,
+  escuchar, "›" en modo libre), `CoachBubble` (estrella + globo; reemplaza la barra de coach), `DialogCard` (B11, G11),
+  `HelpSheet` rediseñada (G13: "en·re·da·da", altavoz, definición, "Seguir leyendo"), íconos `SpeakerIcon`, `HelpIcon`,
+  `MicOffIcon`; `ReadingText` atenúa los párrafos que vienen después del actual. Textos nuevos en `copy.states`.
+  Hook: `voiceProblem` (simulado con DEV "Sin micrófono"; el motor real lo dará en RN-07 vía `SpeechEngine.onError`),
+  modo libre (pasar página con botón, acredita el tiempo real como en la web), tarjeta de pausa que el niño puede cerrar,
+  párrafo actual. Página de texto (B9): ilustración de fondo + hoja de papel a la derecha + pestaña Lectura; letra por
+  banda de nivel (30/25/21 px).
+- Verificado: recorrido Playwright (texto → pausa larga → cerrar → ayuda → sin micrófono → modo libre → "›" → página
+  2; cómic con riel) sin errores. Bug encontrado y arreglado: con "sin micrófono" el riel seguía mostrando el micrófono
+  verde escuchando → ahora se oculta (docs/06). `npm test` 1088 ✅, typecheck ✅, build web ✅, export android ✅.
+- Pendiente: G12 (sin conexión) — se pospone hasta que existan paquetes de contenido descargables; el texto del diseño
+  ("se sincroniza cuando vuelva el internet") contradice "sin nube en v1" y habrá que ajustarlo. "Guardar en mi
+  cuaderno" (G13) llega con Mi cuaderno (K8). "Pedir permiso" abrirá el permiso del sistema con el motor real (RN-07).
