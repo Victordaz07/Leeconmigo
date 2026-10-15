@@ -57,6 +57,12 @@ device. See `docs/07-PRIVACY-AUDIO.md`.
 @docs/07-PRIVACY-AUDIO.md
 @docs/08-ROADMAP.md
 @docs/09-OPEN-DECISIONS.md
+@docs/DECISIONS.md
+
+Plan Maestro v2 (propuesta de lectura + matemáticas + Modo Enfoque, con su
+reconciliación contra lo ya construido): `docs/10-PLAN-MAESTRO-V2.md`. Las
+partes que chocan con una `DECISIÓN` están en `docs/DECISIONS.md` →
+"Pendientes de confirmar" y no se aplican hasta que Victor responda.
 
 ## Current stage (see 08-ROADMAP.md for detail)
 
@@ -67,3 +73,38 @@ device. See `docs/07-PRIVACY-AUDIO.md`.
   yet. **Do not build the real SpeechEngine/Android audio layer before that
   test produces a decision** — build everything else against
   `FakeSpeechEngine` first.
+
+## PROTOCOLO DE RELEVO (obligatorio)
+
+Este proyecto lo trabajan dos cuentas de Claude (A y B). Los créditos pueden
+acabarse en cualquier momento, sin aviso. El repo es la única memoria
+compartida. Por eso:
+
+AL INICIAR (o con `/retomar`):
+1. Lee `HANDOFF.md`, luego `docs/ROADMAP.md` y las últimas 3 entradas de
+   `docs/log/SESSION_LOG.md`.
+2. Corre `git status`, `git log --oneline -10` y `npm test` (sin
+   `node_modules`: `npm ci --ignore-scripts` primero).
+3. Si hay cambios sin commit, revísalos antes de tocar nada.
+4. Di en una línea dónde estás y cuál es el siguiente paso.
+
+MIENTRAS TRABAJAS:
+5. Tareas pequeñas (máx. ~30–45 min). Si una tarea es grande, divídela en
+   `docs/ROADMAP.md`.
+6. Después de CADA paso que funcione: commit + push (mensaje "F3-02: ...").
+7. Actualiza `HANDOFF.md` cada vez que completes un checkbox, NO solo al final.
+8. Si algo queda a medias, commit con prefijo "WIP:" y explica en `HANDOFF.md`
+   dónde quedó.
+
+AL TERMINAR UNA TAREA (o con `/relevo` al ver el aviso de ~80–90 % de límite):
+9. Agrega entrada a `docs/log/SESSION_LOG.md`, marca ✅ en `docs/ROADMAP.md`,
+   actualiza `HANDOFF.md` con la siguiente tarea, commit + push.
+
+NUNCA:
+- Re-discutir algo ya registrado en `docs/DECISIONS.md` (sección "Confirmadas").
+- Aplicar algo de "Pendientes de confirmar" sin respuesta de Victor.
+- Dejar trabajo sin push.
+- Guardar o enviar audio del niño fuera del dispositivo.
+
+`docs/DEVLOG.md` sigue siendo la bitácora narrativa larga (el porqué
+detallado de cada cambio grande); `SESSION_LOG.md` es la corta para el relevo.
