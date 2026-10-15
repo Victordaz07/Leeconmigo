@@ -6,3 +6,5 @@ export { cleanWord, currentLineOf, deriveReadingView, FAST_WPM, readingMinutes, 
 export type { MicTone, ReadingView, ReadingViewInput, WordMark } from './view-model.ts';
 export { bestFontSize, fitText, isBalloonPage, measureWordEm, TEXT_LINE_HEIGHT, TEXT_PARAGRAPH_GAP, TEXT_WIDTH_SAFETY, TEXT_WORD_GAP } from './text-fit.ts';
 export type { TextFit, TextFitInput, TextRow } from './text-fit.ts';
+export { NOTEBOOK_TABS, progressSegments, subjectById, SUBJECTS } from './subjects.ts';
+export type { Subject, SubjectId } from './subjects.ts';

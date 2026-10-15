@@ -14,8 +14,8 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | F0-02 | Decidir tipografía/paleta (C2, C3) | ✅ | – | resuelto por el diseño Kitewise (D9) |
 | **K** | **Kitewise** (D9, `docs/13`) — construido sobre la app nativa | | | |
 | K0 | Guardar el diseño en el repo, registrar decisiones y plan | ✅ | A | `docs/design/kitewise/`, `docs/13` |
-| K1 | Tokens Kitewise + NotebookCover/SubjectTab/NavRail/SessionPhases; Inicio (B3) y Cuaderno de Lectura (B4) | 🟡 | A | siguiente |
-| K2 | Lectura en el cuaderno (B9) + estados (B11, G11–G13) | ⬜ | – | |
+| K1 | Tokens Kitewise + NotebookCover/SubjectTab/NavRail/SessionPhases; Inicio (B3) y Cuaderno de Lectura (B4) | ✅ | A | progreso real en memoria (persistencia = RN-08) |
+| K2 | Lectura en el cuaderno (B9) + estados (B11, G11–G13) | ⬜ | – | siguiente |
 | K3 | Cierre (B13), perfiles (B1), ¿Cómo llegas? (B2) | ⬜ | – | |
 | K4 | Padres: P1, P2, P4 | ⬜ | – | |
 | K5 | Practicar (B8, G9, G10) + repaso 1-3-7 | ⬜ | – | |

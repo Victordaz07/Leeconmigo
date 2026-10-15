@@ -2,20 +2,30 @@ import { StatusBar } from 'expo-status-bar';
 import { useMemo, useState } from 'react';
 import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
-import type { StoryCatalogEntry } from '@lee-conmigo/contracts';
-import { Button, Card, colors, fontFamily } from '@lee-conmigo/ui-native';
+import { Button, Card, colors, fontFamily, GearIcon, HomeIcon, NavRail, TrophyIcon, type NavRailItem } from '@lee-conmigo/ui-native';
+import { DEFAULT_CHILD, progressStore } from './src/app-state';
 import { createBundledRepository } from './src/bundled-stories';
 import { useAppFonts } from './src/fonts';
+import { buildLibraryModel } from './src/library-model';
+import { HomeScreen } from './src/screens/home-screen';
+import { NotebookScreen } from './src/screens/notebook-screen';
 import { ReadingScreen } from './src/screens/reading-screen';
 import { Showcase } from './src/screens/showcase';
 
-const LANGUAGE_NAME: Record<string, string> = { es: 'Español', en: 'English' };
+type Route = { name: 'home' } | { name: 'notebook' } | { name: 'reading'; storyId: string; from: 'home' | 'notebook' } | { name: 'dev' } | { name: 'showcase' };
 
-type Route = { name: 'list' } | { name: 'showcase' } | { name: 'reading'; storyId: string };
+const RAIL: NavRailItem[] = [
+  { key: 'home', label: 'Inicio', icon: (on) => <HomeIcon active={on} /> },
+  { key: 'logros', label: 'Logros', icon: (on) => <TrophyIcon active={on} /> },
+];
+const RAIL_BOTTOM: NavRailItem[] = [
+  { key: 'padres', label: 'Padres', icon: () => <GearIcon /> },
+  ...(__DEV__ ? [{ key: 'dev', label: 'DEV', icon: () => <Text style={{ fontSize: 20 }}>⚙</Text> }] : []),
+];
 
 /**
- * App nativa (docs/11). Por ahora: lista de historias reales (RN-01) → pantalla de lectura con el simulador (RN-04) y, en
- * desarrollo, la muestra de componentes (RN-02). Inicio/Biblioteca/Ficha de verdad llegan en RN-06.
+ * Kitewise (D9/D10, docs/13): Inicio con la estantería de cuadernos (B3) → cuaderno de Lectura (B4) → lectura. Logros y
+ * Padres llegan en K4/K8. En desarrollo, "DEV" abre la lista completa de historias y la muestra de componentes.
  */
 export default function App() {
   return (
@@ -29,59 +39,92 @@ export default function App() {
 function Root() {
   const fontsLoaded = useAppFonts();
   const repository = useMemo(() => createBundledRepository(), []);
-  const stories = useMemo(() => repository.list(), [repository]);
-  const [route, setRoute] = useState<Route>({ name: 'list' });
-  const insets = useSafeAreaInsets();
+  const [route, setRoute] = useState<Route>({ name: 'home' });
+  // Sube cada vez que se sale de una lectura: el progreso cambió y hay que recalcular Inicio y el cuaderno.
+  const [progressVersion, setProgressVersion] = useState(0);
+  const model = useMemo(() => buildLibraryModel(repository, progressStore, DEFAULT_CHILD), [repository, progressVersion]);
 
   if (!fontsLoaded) return <View style={styles.screen} />;
-  if (route.name === 'showcase') return <Showcase onBack={() => setRoute({ name: 'list' })} />;
+
   if (route.name === 'reading') {
     const story = repository.get(route.storyId);
-    if (story) return <ReadingScreen key={story.id} story={story} onExit={() => setRoute({ name: 'list' })} />;
+    const back = route.from;
+    if (story) {
+      return (
+        <ReadingScreen
+          key={story.id}
+          story={story}
+          onExit={() => {
+            setProgressVersion((v) => v + 1);
+            setRoute(back === 'home' ? { name: 'home' } : { name: 'notebook' });
+          }}
+        />
+      );
+    }
   }
+  if (route.name === 'notebook') {
+    return <NotebookScreen profile={DEFAULT_CHILD} model={model} repository={repository} onBack={() => setRoute({ name: 'home' })} onRead={(storyId) => setRoute({ name: 'reading', storyId, from: 'notebook' })} />;
+  }
+  if (route.name === 'showcase') return <Showcase onBack={() => setRoute({ name: 'dev' })} />;
+  if (route.name === 'dev') return <DevList repository={repository} onOpen={(storyId) => setRoute({ name: 'reading', storyId, from: 'home' })} onShowcase={() => setRoute({ name: 'showcase' })} onBack={() => setRoute({ name: 'home' })} />;
 
   return (
-    <View style={styles.screen}>
-      <FlatList
-        data={stories}
-        keyExtractor={(s) => s.id}
-        contentContainerStyle={[styles.list, { paddingTop: insets.top + 24, paddingBottom: insets.bottom + 32 }]}
-        ListHeaderComponent={
-          <View style={styles.header}>
-            <Text style={styles.title}>Kitewise</Text>
-            <Text style={styles.subtitle}>{stories.length} historias listas para leer</Text>
-            {__DEV__ && <Button label="Ver componentes" variant="secondary" onPress={() => setRoute({ name: 'showcase' })} />}
-          </View>
-        }
-        renderItem={({ item }) => <StoryRow story={item} onOpen={() => setRoute({ name: 'reading', storyId: item.id })} />}
-      />
+    <View style={styles.row}>
+      <NavRail items={RAIL} bottomItems={RAIL_BOTTOM} active="home" onSelect={(key) => key === 'dev' && setRoute({ name: 'dev' })} />
+      <View style={styles.screen}>
+        <HomeScreen
+          profile={DEFAULT_CHILD}
+          model={model}
+          onContinue={() => setRoute({ name: 'reading', storyId: model.featured.entry.id, from: 'home' })}
+          onOpenReading={() => setRoute({ name: 'notebook' })}
+        />
+      </View>
     </View>
   );
 }
 
-function StoryRow({ story, onOpen }: { story: StoryCatalogEntry; onOpen: () => void }) {
+const LANGUAGE_NAME: Record<string, string> = { es: 'Español', en: 'English' };
+
+/** Solo desarrollo: todas las historias (todos los idiomas y niveles) y la muestra de componentes. */
+function DevList({ repository, onOpen, onShowcase, onBack }: { repository: ReturnType<typeof createBundledRepository>; onOpen: (id: string) => void; onShowcase: () => void; onBack: () => void }) {
+  const insets = useSafeAreaInsets();
+  const stories = repository.list();
   return (
-    <Pressable onPress={onOpen} accessibilityRole="button" accessibilityLabel={`Leer ${story.title}`}>
-      {({ pressed }) => (
-        <Card style={pressed ? styles.pressed : undefined}>
-          <Text style={styles.cardTitle}>{story.title}</Text>
-          <Text style={styles.cardMeta}>
-            Nivel {story.level} · {LANGUAGE_NAME[story.language] ?? story.language} · {story.pageCount}{' '}
-            {story.pageCount === 1 ? 'página' : 'páginas'}
-          </Text>
-        </Card>
+    <FlatList
+      style={styles.screen}
+      data={stories}
+      keyExtractor={(s) => s.id}
+      contentContainerStyle={[styles.list, { paddingTop: insets.top + 24, paddingBottom: insets.bottom + 32 }]}
+      ListHeaderComponent={
+        <View style={styles.header}>
+          <Text style={styles.title}>DEV · {stories.length} variantes</Text>
+          <View style={styles.headerButtons}>
+            <Button label="‹ Inicio" variant="secondary" onPress={onBack} />
+            <Button label="Ver componentes" variant="secondary" onPress={onShowcase} />
+          </View>
+        </View>
+      }
+      renderItem={({ item }) => (
+        <Pressable onPress={() => onOpen(item.id)} accessibilityRole="button" accessibilityLabel={`Leer ${item.title}`}>
+          <Card>
+            <Text style={styles.cardTitle}>{item.title}</Text>
+            <Text style={styles.cardMeta}>
+              {item.id} · Nivel {item.level} · {LANGUAGE_NAME[item.language] ?? item.language} · {item.pageCount} págs.
+            </Text>
+          </Card>
+        </Pressable>
       )}
-    </Pressable>
+    />
   );
 }
 
 const styles = StyleSheet.create({
+  row: { flex: 1, flexDirection: 'row', backgroundColor: colors.app },
   screen: { flex: 1, backgroundColor: colors.app },
   list: { paddingHorizontal: 24, gap: 12 },
-  header: { gap: 4, marginBottom: 12, alignItems: 'flex-start' },
-  title: { fontFamily: fontFamily.ui.black, fontSize: 32, color: colors.navy },
-  subtitle: { fontFamily: fontFamily.ui.semibold, fontSize: 16, color: colors.muted, marginBottom: 12 },
+  header: { gap: 12, marginBottom: 12 },
+  headerButtons: { flexDirection: 'row', gap: 12 },
+  title: { fontFamily: fontFamily.ui.black, fontSize: 28, color: colors.navy },
   cardTitle: { fontFamily: fontFamily.ui.extrabold, fontSize: 20, color: colors.ink },
   cardMeta: { fontFamily: fontFamily.ui.semibold, fontSize: 14, color: colors.muted, marginTop: 4 },
-  pressed: { opacity: 0.85, transform: [{ scale: 0.99 }] },
 });

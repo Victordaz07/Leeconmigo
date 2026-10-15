@@ -107,3 +107,17 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
 - Hecho: Victor decidió "Kitewise el nombre oficial" (D10, resuelve C12). App nativa: nombre "Kitewise", slug
   `kitewise`, identificador `com.kitewise.app`. CLAUDE.md, docs/12 (búsqueda de marca de "Kitewise"), docs/13 y
   README de apps/mobile actualizados. Repo, paquetes `@lee-conmigo/*` y la app Capacitor de Noah conservan el nombre.
+
+## 2026-10-15 · Cuenta A · K1
+- Hecho: Inicio (B3) y cuaderno de Lectura abierto (B4) en la app nativa. `ui-core/subjects.ts` (6 materias; solo
+  Lectura disponible, el resto "Pronto"; `progressSegments` 3 segmentos sin porcentaje). `ui-native`: `NavRail`,
+  `NotebookCover`, `SessionPhases`, `SubjectTab`, `StatChip`, íconos, botón `cta` amarillo. App: `app-state.ts`
+  (perfil fijo Noah/es/nivel 3 hasta K3; `MemoryProgressStore` hasta RN-08), `library-model.ts` (misión de hoy =
+  historia a medias → primera sin terminar), `home-screen.tsx`, `notebook-screen.tsx`; la lectura guarda resumen y
+  punto de reanudación. Lista de RN-01 y muestra de componentes quedan tras "DEV" en el riel (solo desarrollo).
+- Verificado: recorrido web Inicio → cuaderno → leer una página → volver: racha "1 día", "página 2", "Seguir en la
+  página 2" (datos reales). tsc ✅, `npm test` 1088/1088 ✅, build web ✅, export android ✅.
+- Notas: Expo publicó 57.0.30; subirlo duplicaba `expo` en node_modules (el lockfile fija 57.0.29 para los demás
+  módulos) y `npm dedupe` lo rompió (subió a 58). Se quedó en 57.0.29: expo-doctor solo avisa del parche nuevo.
+  Actualizar regenerando el lockfile con cuidado en una tarea aparte. React Native Web: imágenes que llenan un
+  contenedor necesitan `width/height: '100%'` (no basta `absoluteFill`).

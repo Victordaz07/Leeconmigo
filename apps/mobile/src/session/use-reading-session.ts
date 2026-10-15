@@ -4,15 +4,16 @@
  * callbacks (docs/02, regla de desacoplamiento).
  *
  * Versión nativa reducida de `apps/reader/src/use-session.ts` (RN-04, docs/11): mismo `FakeReadingEngine`, mismo
- * `reduceFlow` y mismo modelo de vista (`@lee-conmigo/ui-core`). Todavía SIN preguntas de comprensión, repaso ni
- * progreso guardado (RN-06/RN-08): al terminar una página se pasa a la siguiente y, tras la última, al fin.
+ * `reduceFlow` y mismo modelo de vista (`@lee-conmigo/ui-core`). Todavía SIN preguntas de comprensión ni repaso (RN-06):
+ * al terminar una página se pasa a la siguiente y, tras la última, al fin. El progreso (resumen de la sesión y dónde
+ * retomar) se guarda en el `ProgressStore` que se le pase — solo datos derivados (docs/07).
  * Cuando exista el motor de voz nativo (RN-07), se cambia aquí la línea que crea el motor.
  */
 import { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { AppState } from 'react-native';
 import type { ReadingSessionState, ReadingTimerSnapshot, Story } from '@lee-conmigo/contracts';
 import { FakeReadingEngine, vocabularyKey } from '@lee-conmigo/reading-engine';
-import { formatDuration, initialFlow, reduceFlow, type FlowAction } from '@lee-conmigo/session-engine';
+import { buildSessionSummary, formatDuration, initialFlow, reduceFlow, type FlowAction, type ProgressStore } from '@lee-conmigo/session-engine';
 import { tokenizePage, type StoryWord } from '@lee-conmigo/story-engine';
 import { cleanWord, defaultPrefs, deriveReadingView, type ReaderPrefs } from '@lee-conmigo/ui-core';
 import { speak, stopSpeaking } from '../tts';
@@ -28,9 +29,20 @@ export interface DevSimulation {
   run: () => void;
 }
 
-export function useReadingSession(story: Story, prefs: ReaderPrefs = defaultPrefs) {
+export interface ReadingSessionOptions {
+  store: ProgressStore;
+  prefs?: ReaderPrefs;
+  /** Reloj inyectable (pruebas). */
+  now?: () => Date;
+}
+
+export function useReadingSession(story: Story, { store, prefs = defaultPrefs, now = () => new Date() }: ReadingSessionOptions) {
   const [engine] = useState(() => new FakeReadingEngine());
-  const [flow, dispatch] = useReducer(reduceFlow, { ...initialFlow, screen: 'prep' });
+  // Se retoma donde se quedó (a nivel de página), como en la app web.
+  const [flow, dispatch] = useReducer(reduceFlow, null, () => {
+    const start = Math.min(store.resumePoint(story.id)?.pageIndex ?? 0, story.pages.length - 1);
+    return { ...initialFlow, screen: 'prep' as const, pageIndex: start, startPage: start };
+  });
   const pageIndex = Math.min(flow.pageIndex, story.pages.length - 1);
   const page = story.pages[pageIndex];
   const isLastPage = pageIndex === story.pages.length - 1;
@@ -41,6 +53,29 @@ export function useReadingSession(story: Story, prefs: ReaderPrefs = defaultPref
 
   const wordsRef = useRef(words);
   wordsRef.current = words;
+  const flowRef = useRef(flow);
+  flowRef.current = flow;
+  /** Ya se guardó el resumen de esta sesión (para no guardarlo dos veces). */
+  const summarySaved = useRef(false);
+
+  const saveResume = (pageIndex: number) => store.setResumePoint({ storyId: story.id, pageIndex, updatedAt: now().toISOString() });
+
+  /** Guarda el resumen de la sesión en curso (una sola vez; sin páginas leídas no hay nada que guardar). */
+  const persistSession = () => {
+    const f = flowRef.current;
+    if (summarySaved.current || f.totals.pagesRead === 0) return;
+    summarySaved.current = true;
+    const t = engine.getTimerSnapshot();
+    store.saveSummary(
+      buildSessionSummary({
+        story: { id: story.id, language: story.language, level: story.level, pageCount: story.pages.length, category: story.category },
+        flow: f,
+        validReadingSeconds: t.validSeconds,
+        sessionSeconds: t.sessionSeconds,
+        now: now(),
+      }),
+    );
+  };
   const screenRef = useRef(flow.screen);
   screenRef.current = flow.screen;
 
@@ -80,7 +115,10 @@ export function useReadingSession(story: Story, prefs: ReaderPrefs = defaultPref
     const next = reduceFlow(flow, action);
     if (next === flow) return;
     dispatch(action);
-    if (next.screen === 'reading' && next.pageIndex !== flow.pageIndex) engine.loadPage(tokenizePage(story.pages[next.pageIndex]));
+    if (next.screen === 'reading' && next.pageIndex !== flow.pageIndex) {
+      engine.loadPage(tokenizePage(story.pages[next.pageIndex]));
+      saveResume(next.pageIndex);
+    }
   };
 
   // Al terminar una página, seguir sola tras el aviso. TODO(RN-06): pregunta de comprensión y repaso por sílabas.
@@ -91,22 +129,33 @@ export function useReadingSession(story: Story, prefs: ReaderPrefs = defaultPref
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [flow.screen]);
 
+  // Al terminar la historia: se cierra el temporizador, se guarda el resumen y ya no hay nada que retomar.
   useEffect(() => {
-    if (flow.screen === 'end') engine.simulate.completeStory();
+    if (flow.screen !== 'end') return;
+    engine.simulate.completeStory();
+    persistSession();
+    store.clearResumePoint(story.id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [flow.screen, engine]);
 
   const begin = () => {
+    summarySaved.current = false;
     engine.startSession(words);
+    saveResume(flow.pageIndex);
     dispatch({ type: 'reading.begin' });
   };
 
   const restart = () => {
+    summarySaved.current = false;
     engine.simulate.autoRead(false);
     engine.startSession(tokenizePage(story.pages[0]));
+    saveResume(0);
     dispatch({ type: 'restart' });
   };
 
+  /** Salir de la lectura (botón Volver): lo leído hasta ahora cuenta y queda guardado dónde retomar. */
   const leave = () => {
+    persistSession();
     engine.simulate.autoRead(false);
     engine.stopSession();
     stopSpeaking();

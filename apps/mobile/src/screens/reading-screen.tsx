@@ -4,6 +4,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { Story } from '@lee-conmigo/contracts';
 import { copy, isBalloonPage, wordMark, type WordMark } from '@lee-conmigo/ui-core';
 import { Button, Card, ChevronLeftIcon, CoachBar, colors, ComicPage, fontFamily, HelpSheet, radius, ReadingText, RoundButton } from '@lee-conmigo/ui-native';
+import { progressStore } from '../app-state';
 import { useReadingSession, type ReadingSession } from '../session/use-reading-session';
 import { storyImage } from '../story-assets';
 
@@ -13,7 +14,7 @@ import { storyImage } from '../story-assets';
  * el texto dentro de los globos dibujados, o ilustración junto al texto (páginas sin globos).
  */
 export function ReadingScreen({ story, onExit }: { story: Story; onExit: () => void }) {
-  const session = useReadingSession(story);
+  const session = useReadingSession(story, { store: progressStore });
   const { flow, reading, view, words, page, pageIndex, actions, prefs } = session;
   const insets = useSafeAreaInsets();
 

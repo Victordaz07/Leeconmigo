@@ -3,12 +3,14 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { colors, fontFamily, gradients, minTouch, radius, shadows } from '../tokens.ts';
 import { GradientView } from './gradient-view.tsx';
 
-type Variant = 'primary' | 'secondary';
+type Variant = 'primary' | 'secondary' | 'cta';
 
 /** Cara y "borde físico" de cada variante (docs/05: botones píldora con sombra inferior sólida, nunca planos). */
 const VARIANT = {
   primary: { face: gradients.brandCta, ledge: colors.brandLedge, text: '#ffffff', glow: shadows.brandGlow },
   secondary: { face: gradients.nav, ledge: colors.line, text: colors.navy, glow: shadows.soft },
+  /** Amarillo "Seguir" (banner de misión, Kitewise). */
+  cta: { face: gradients.cta, ledge: '#d99a00', text: colors.ink, glow: '0px 10px 22px rgba(217, 154, 0, 0.35)' },
 } as const;
 
 const LEDGE = 5;
