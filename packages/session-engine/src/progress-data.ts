@@ -48,7 +48,7 @@ export interface ProgressStats {
 const WEEKDAY_LABELS = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
 
 /** Día del calendario en formato `YYYY-MM-DD`, en hora LOCAL (no UTC: un resumen de las 11 de la noche no debe caer en otro día). */
-function dayKey(d: Date): string {
+export function dayKey(d: Date): string {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 }
 

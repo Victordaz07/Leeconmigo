@@ -1,8 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Button, Card, colors, fontFamily, GearIcon, HomeIcon, NavRail, TrophyIcon, type NavRailItem } from '@lee-conmigo/ui-native';
+import { todayReport } from '@lee-conmigo/session-engine';
 import { energyOption, type Energy } from '@lee-conmigo/ui-core';
 import { PROFILES, progressStoreFor, type ChildProfile } from './src/app-state';
 import { createBundledRepository } from './src/bundled-stories';
@@ -12,11 +13,13 @@ import { buildLibraryModel } from './src/library-model';
 import { EnergyScreen } from './src/screens/energy-screen';
 import { HomeScreen } from './src/screens/home-screen';
 import { NotebookScreen } from './src/screens/notebook-screen';
+import { ParentGateScreen } from './src/screens/parent-gate-screen';
+import { ParentHomeScreen } from './src/screens/parent-home-screen';
 import { ProfilesScreen } from './src/screens/profiles-screen';
 import { ReadingScreen } from './src/screens/reading-screen';
 import { Showcase } from './src/screens/showcase';
 
-type Route = { name: 'home' } | { name: 'notebook' } | { name: 'reading'; storyId: string; from: 'home' | 'notebook' } | { name: 'dev' } | { name: 'showcase' };
+type Route = { name: 'home' } | { name: 'parentGate' } | { name: 'parents' } | { name: 'notebook' } | { name: 'reading'; storyId: string; from: 'home' | 'notebook' } | { name: 'dev' } | { name: 'showcase' };
 
 const RAIL: NavRailItem[] = [
   { key: 'home', label: 'Inicio', icon: (on) => <HomeIcon active={on} /> },
@@ -47,6 +50,12 @@ function Root() {
   // `undefined` = todavía no respondió "¿Cómo llegas hoy?"; `null` = no se pregunta (ajuste de padres).
   const [energy, setEnergy] = useState<Energy | null | undefined>(undefined);
   const [route, setRoute] = useState<Route>({ name: 'home' });
+  // TEMPORAL: en memoria hasta RN-08 (docs/11). Al reiniciar la app se vuelve a crear.
+  const [parentPin, setParentPin] = useState<string | null>(null);
+  const openParents = useCallback((created: string | null) => {
+    if (created) setParentPin(created);
+    setRoute({ name: 'parents' });
+  }, []);
   // Sube cada vez que se sale de una lectura: el progreso cambió y hay que recalcular Inicio y el cuaderno.
   const [progressVersion, setProgressVersion] = useState(0);
   const model = useMemo(() => (profile ? buildLibraryModel(repository, progressStoreFor(profile.id), profile) : null), [repository, profile, progressVersion]);
@@ -92,6 +101,18 @@ function Root() {
       );
     }
   }
+  if (route.name === 'parentGate') return <ParentGateScreen savedPin={parentPin} onOpen={openParents} onBack={() => setRoute({ name: 'home' })} />;
+  if (route.name === 'parents') {
+    return (
+      <ParentHomeScreen
+        profile={profile}
+        report={todayReport(progressStoreFor(profile.id).summaries(), minutes)}
+        repository={repository}
+        onBack={() => setRoute({ name: 'home' })}
+        onSettings={() => {}}
+      />
+    );
+  }
   if (route.name === 'notebook') {
     return <NotebookScreen profile={profile} model={model} repository={repository} onBack={() => setRoute({ name: 'home' })} onRead={(storyId) => setRoute({ name: 'reading', storyId, from: 'notebook' })} />;
   }
@@ -100,7 +121,7 @@ function Root() {
 
   return (
     <View style={styles.row}>
-      <NavRail items={RAIL} bottomItems={RAIL_BOTTOM} active="home" onSelect={(key) => key === 'dev' && setRoute({ name: 'dev' })} />
+      <NavRail items={RAIL} bottomItems={RAIL_BOTTOM} active="home" onSelect={(key) => (key === 'dev' ? setRoute({ name: 'dev' }) : key === 'padres' ? setRoute({ name: 'parentGate' }) : undefined)} />
       <View style={styles.screen}>
         <HomeScreen
           profile={profile}

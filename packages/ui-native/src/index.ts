@@ -23,3 +23,4 @@ export { CoachBubble } from './components/coach-bubble.tsx';
 export { DialogCard } from './components/dialog-card.tsx';
 export { ReadingRail } from './components/reading-rail.tsx';
 export { ClosingCard, type ClosingStat } from './components/closing-card.tsx';
+export { PinPad } from './components/pin-pad.tsx';
