@@ -165,3 +165,19 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
   también redirige a Maven Central). El script vive fuera del repo: si hace falta, recrearlo igual.
 - Pendiente: probarlo en la tablet/teléfono de Victor (no hay emulador aquí). Tamaño: se puede bajar mucho con un AAB
   para la tienda (Play entrega solo la arquitectura del equipo).
+
+## 2026-10-15 · Cuenta A · K4
+- Hecho: Modo padres en la app nativa.
+  - P1 candado: `ui-core/pin.ts` (crear + confirmar, o entrar; tras 5 intentos espera 30 s; mensajes neutros) con
+    pruebas; `PinPad` en `ui-native`; `parent-gate-screen.tsx`. Se abre desde "Padres" del riel y desde "Agregar niño".
+  - P2 "Hoy con {niño}": `session-engine/parent-report.ts` (`todayReport`, con pruebas) — minutos de hoy vs. meta,
+    preguntas, enfoque según el niño (carita de B13), lo que leyó, palabras para practicar juntos, cómo llegó, la semana.
+    Solo datos guardados; si no hay, lo dice. Sin "Aula" (C13) ni "Enfoque adaptativo" (K7).
+  - P4 ajustes (`parent-settings-screen.tsx`): nombre, nivel 1–6 (aclara que no es el grado escolar), idioma, tiempo
+    diario, "¿Cómo llegas?", **lectura libre** (nuevo `ChildProfile.freeReading` → la sesión empieza sin micrófono y el
+    consejo 2 de Preparación cambia), privacidad (audio: nunca), cambiar PIN, borrar progreso, quitar niño (si hay más de
+    uno). Modo Enfoque aparece como "Pronto". La misma pantalla crea un niño nuevo (B1 "Agregar niño").
+  - Perfiles y PIN viven en el estado de `App.tsx` (memoria) hasta RN-08.
+- Verificado: Playwright — crear PIN, PIN equivocado y correcto, P2 tras leer, agregar a "Lía" (nivel 2), editar a Noah
+  con lectura libre y leer en modo libre. `npm test` 1100 ✅, typecheck ✅, build web ✅, export android ✅.
+- Pendiente: Lexend / reglilla (Lectura cómoda), Modo Enfoque (K7), pestañas Semana/Aula de P2, informe PDF (K8).

@@ -17,8 +17,8 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | K1 | Tokens Kitewise + NotebookCover/SubjectTab/NavRail/SessionPhases; Inicio (B3) y Cuaderno de Lectura (B4) | ✅ | A | progreso real en memoria (persistencia = RN-08) |
 | K2 | Lectura en el cuaderno (B9) + estados (B11, G11–G13) | ✅ | A | G12 (sin conexión) pospuesto: hoy todo va dentro de la app, no hay nada que descargar |
 | K3 | Cierre (B13), perfiles (B1), ¿Cómo llegas? (B2) | ✅ | A | estrellas por esfuerzo (D11); "Agregar niño" espera el PIN (K4) |
-| K4 | Padres: P1, P2, P4 | ⬜ | – | siguiente |
-| K5 | Practicar (B8, G9, G10) + repaso 1-3-7 | ⬜ | – | |
+| K4 | Padres: P1, P2, P4 | ✅ | A | PIN, panel de hoy con datos reales, ajustes + agregar niño + lectura libre; Enfoque = K7 |
+| K5 | Practicar (B8, G9, G10) + repaso 1-3-7 | ⬜ | – | siguiente |
 | K6 | Unidades/lecciones + Aprender/Explorar + camino (B5–B7); 1.ª unidad de Matemáticas | ⬜ | – | necesita contenido |
 | K7 | Modo Enfoque (B10, B12), oscuro (G1–G3), vertical (G4–G6) | ⬜ | – | |
 | K8 | Mi cuaderno, Logros, informe PDF, foto de tarea | ⬜ | – | foto espera C13 |
@@ -36,7 +36,7 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | **P** | **Publicación** (D8, `docs/12`) | | | |
 | P-01 | Revisión con abogado (COPPA / California) | ⬜ | Victor | |
 | P-02 | Política de privacidad, términos, avisos y descargos (borradores para el abogado) | ⬜ | – | |
-| P-03 | Botón "Borrar todos los datos" + candado de padres para enlaces externos | ⬜ | – | en la app nueva |
+| P-03 | Botón "Borrar todos los datos" + candado de padres para enlaces externos | 🟡 | A | "Borrar el progreso" por niño en P4; falta borrar TODO (con RN-08) |
 | P-04 | Cuenta Google Play + prueba cerrada con familias | ⬜ | Victor | depende de C11 |
 | P-05 | Búsqueda de marca "Lee Conmigo" + términos de las herramientas de ilustración | ⬜ | Victor | |
 | **F1** | **Repo y relevo** | | | |
@@ -46,7 +46,7 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | F1-04 | Script `npm run check` = typecheck + test, para que `/retomar` sea un solo comando | ⬜ | – | |
 | **F2** | **Base de la app** | | | |
 | F2-01 | PIN de padre | ✅ | – | `apps/reader/src/parent-settings.ts` |
-| F2-01b | Perfiles múltiples (selector con avatar) | ⏸️ | – | C6 |
+| F2-01b | Perfiles múltiples (selector con avatar) | ✅ | A | app nativa (K3/K4), resuelto por D9 |
 | F2-02 | Tokens de diseño de F0 + componentes base | 🟡 | – | tokens del prototipo ya en `packages/ui/src/styles/tokens.css`; faltan los de F0 |
 | F2-03 | Navegación niño / padre | ✅ | – | ya existía |
 | F2-04a | Modo Enfoque: tipos `FocusSettings` + `FOCUS_PRESETS` + resolución por horario (lógica pura + tests) | ⬜ | – | contracts + session-engine |

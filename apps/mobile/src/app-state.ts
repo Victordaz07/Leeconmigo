@@ -17,13 +17,28 @@ export interface ChildProfile extends ReadingProfile {
   avatar: 'sunDiag' | 'coralDiag' | 'blueDiag' | 'violetDiag' | 'greenDiag';
   /** Preguntar "¿Cómo llegas hoy?" al empezar (Ajustes de padres, P4). */
   askEnergy: boolean;
+  /** Lectura libre: un adulto lee (o el niño lee sin micrófono) y la página se pasa con un botón. */
+  freeReading: boolean;
 }
 
 export const PROFILES: ChildProfile[] = [
-  { id: 'noah', name: 'Noah', language: 'es', level: 3, dailyGoalMinutes: DEFAULT_DAILY_GOAL_MINUTES, avatar: 'sunDiag', askEnergy: true },
+  { id: 'noah', name: 'Noah', language: 'es', level: 3, dailyGoalMinutes: DEFAULT_DAILY_GOAL_MINUTES, avatar: 'sunDiag', askEnergy: true, freeReading: false },
 ];
 
+const AVATARS: ChildProfile['avatar'][] = ['sunDiag', 'blueDiag', 'violetDiag', 'greenDiag', 'coralDiag'];
+
+/** Perfil nuevo ("Agregar niño", tras el PIN): valores de partida que el padre ajusta antes de guardar. */
+export function newChildProfile(existing: ChildProfile[]): ChildProfile {
+  const n = existing.length;
+  return { id: `child-${Date.now().toString(36)}`, name: '', language: 'es', level: 1, dailyGoalMinutes: DEFAULT_DAILY_GOAL_MINUTES, avatar: AVATARS[n % AVATARS.length], askEnergy: true, freeReading: false };
+}
+
 const stores = new Map<string, ProgressStore>();
+
+/** Borra el progreso guardado de un niño ("Borrar el progreso", P4; docs/12 P-03). */
+export function resetProgressFor(profileId: string): void {
+  stores.delete(profileId);
+}
 
 /** El progreso de cada niño va aparte (racha, estrellas, dónde retomar). */
 export function progressStoreFor(profileId: string): ProgressStore {

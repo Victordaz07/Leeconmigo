@@ -38,9 +38,12 @@ export interface ReadingSessionOptions {
   energy?: Energy;
   /** Meta diaria del padre (min): para el "sello del día" del cierre. */
   dailyGoalMinutes?: number;
+  /** Empezar en lectura libre (ajuste de padres, P4): sin micrófono, la página se pasa con un botón. */
+  freeReading?: boolean;
 }
 
-export function useReadingSession(story: Story, { store, prefs = defaultPrefs, now = () => new Date(), energy, dailyGoalMinutes = 15 }: ReadingSessionOptions) {
+export function useReadingSession(story: Story, options: ReadingSessionOptions) {
+  const { store, prefs = defaultPrefs, now = () => new Date(), energy, dailyGoalMinutes = 15 } = options;
   const [engine] = useState(() => new FakeReadingEngine());
   // Se retoma donde se quedó (a nivel de página), como en la app web.
   const [flow, dispatch] = useReducer(reduceFlow, null, () => {
@@ -60,7 +63,7 @@ export function useReadingSession(story: Story, { store, prefs = defaultPrefs, n
    */
   const [voiceProblem, setVoiceProblem] = useState<'permission-denied' | 'not-available' | null>(null);
   /** "Modo libre": se lee sin micrófono y se pasa de página con un botón (como el modo lectura libre de la app web). */
-  const [freeReading, setFreeReading] = useState(false);
+  const [freeReading, setFreeReading] = useState(options.freeReading ?? false);
   /** El niño cerró la tarjeta de pausa larga ("Seguir leyendo"): no se vuelve a mostrar hasta la próxima pausa larga. */
   const [pauseDismissed, setPauseDismissed] = useState(false);
   /** Instante en que se cargó la página actual (modo libre: el tiempo real leído se acredita al pasar de página). */

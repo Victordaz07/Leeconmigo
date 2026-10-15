@@ -32,7 +32,7 @@ interface ReadingScreenProps {
 }
 
 export function ReadingScreen({ story, profile, energy, goalMinutes, onExit }: ReadingScreenProps) {
-  const session = useReadingSession(story, { store: progressStoreFor(profile.id), energy: energy ?? undefined, dailyGoalMinutes: goalMinutes });
+  const session = useReadingSession(story, { store: progressStoreFor(profile.id), energy: energy ?? undefined, dailyGoalMinutes: goalMinutes, freeReading: profile.freeReading });
   const { flow, reading, view, actions, prefs } = session;
   const insets = useSafeAreaInsets();
 
@@ -192,7 +192,7 @@ function PrepOverlay({ session }: { session: ReadingSession }) {
     <View style={styles.overlay}>
       <Card style={styles.overlayCard}>
         <Text style={styles.overlayTitle}>{copy.prep.title[audience]}</Text>
-        {copy.prep.tips[audience].map((tip) => (
+        {copy.prep.tips[audience].map((t) => (session.freeReading && t.icon === '2' ? { ...t, text: copy.prep.freeTip } : t)).map((tip) => (
           <View key={tip.text} style={styles.tip}>
             <View style={[styles.tipIcon, { backgroundColor: tip.color }]}>
               <Text style={styles.tipIconText}>{tip.icon}</Text>

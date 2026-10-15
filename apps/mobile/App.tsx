@@ -5,7 +5,7 @@ import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-cont
 import { Button, Card, colors, fontFamily, GearIcon, HomeIcon, NavRail, TrophyIcon, type NavRailItem } from '@lee-conmigo/ui-native';
 import { todayReport } from '@lee-conmigo/session-engine';
 import { energyOption, type Energy } from '@lee-conmigo/ui-core';
-import { PROFILES, progressStoreFor, type ChildProfile } from './src/app-state';
+import { newChildProfile, PROFILES, progressStoreFor, resetProgressFor, type ChildProfile } from './src/app-state';
 import { createBundledRepository } from './src/bundled-stories';
 import { SHOW_DEV_TOOLS } from './src/dev-tools';
 import { useAppFonts } from './src/fonts';
@@ -15,11 +15,17 @@ import { HomeScreen } from './src/screens/home-screen';
 import { NotebookScreen } from './src/screens/notebook-screen';
 import { ParentGateScreen } from './src/screens/parent-gate-screen';
 import { ParentHomeScreen } from './src/screens/parent-home-screen';
+import { ParentSettingsScreen } from './src/screens/parent-settings-screen';
 import { ProfilesScreen } from './src/screens/profiles-screen';
 import { ReadingScreen } from './src/screens/reading-screen';
 import { Showcase } from './src/screens/showcase';
 
-type Route = { name: 'home' } | { name: 'parentGate' } | { name: 'parents' } | { name: 'notebook' } | { name: 'reading'; storyId: string; from: 'home' | 'notebook' } | { name: 'dev' } | { name: 'showcase' };
+type Route =
+  | { name: 'home' }
+  | { name: 'parentGate'; next: 'parents' | 'addChild' }
+  | { name: 'parents' }
+  | { name: 'settings'; isNew: boolean }
+  | { name: 'notebook' } | { name: 'reading'; storyId: string; from: 'home' | 'notebook' } | { name: 'dev' } | { name: 'showcase' };
 
 const RAIL: NavRailItem[] = [
   { key: 'home', label: 'Inicio', icon: (on) => <HomeIcon active={on} /> },
@@ -46,31 +52,54 @@ export default function App() {
 function Root() {
   const fontsLoaded = useAppFonts();
   const repository = useMemo(() => createBundledRepository(), []);
-  const [profile, setProfile] = useState<ChildProfile | null>(null);
+  // TEMPORAL: perfiles y PIN en memoria hasta RN-08 (docs/11). Al reiniciar la app vuelven a los de partida.
+  const [profiles, setProfiles] = useState<ChildProfile[]>(PROFILES);
+  const [profileId, setProfileId] = useState<string | null>(null);
+  const profile = profiles.find((p) => p.id === profileId) ?? null;
   // `undefined` = todavía no respondió "¿Cómo llegas hoy?"; `null` = no se pregunta (ajuste de padres).
   const [energy, setEnergy] = useState<Energy | null | undefined>(undefined);
   const [route, setRoute] = useState<Route>({ name: 'home' });
-  // TEMPORAL: en memoria hasta RN-08 (docs/11). Al reiniciar la app se vuelve a crear.
   const [parentPin, setParentPin] = useState<string | null>(null);
-  const openParents = useCallback((created: string | null) => {
-    if (created) setParentPin(created);
-    setRoute({ name: 'parents' });
-  }, []);
-  // Sube cada vez que se sale de una lectura: el progreso cambió y hay que recalcular Inicio y el cuaderno.
+  const gateNext = route.name === 'parentGate' ? route.next : 'parents';
+  const openGated = useCallback(
+    (created: string | null) => {
+      if (created) setParentPin(created);
+      setRoute(gateNext === 'addChild' ? { name: 'settings', isNew: true } : { name: 'parents' });
+    },
+    [gateNext],
+  );
+  // Sube cada vez que cambia el progreso (se salió de una lectura, se borró): hay que recalcular Inicio y el cuaderno.
   const [progressVersion, setProgressVersion] = useState(0);
   const model = useMemo(() => (profile ? buildLibraryModel(repository, progressStoreFor(profile.id), profile) : null), [repository, profile, progressVersion]);
 
   if (!fontsLoaded) return <View style={styles.screen} />;
 
+  const home = () => setRoute({ name: 'home' });
+  if (route.name === 'parentGate') return <ParentGateScreen savedPin={parentPin} onOpen={openGated} onBack={home} />;
+  if (route.name === 'settings' && route.isNew) {
+    return (
+      <ParentSettingsScreen
+        initial={newChildProfile(profiles)}
+        isNew
+        onSave={(p) => {
+          setProfiles((list) => [...list, p]);
+          home();
+        }}
+        onCancel={home}
+      />
+    );
+  }
+
   if (!profile || !model) {
     return (
       <ProfilesScreen
-        profiles={PROFILES}
+        profiles={profiles}
         onPick={(p) => {
-          setProfile(p);
+          setProfileId(p.id);
           setEnergy(p.askEnergy ? undefined : null);
-          setRoute({ name: 'home' });
+          home();
         }}
+        onAdd={() => setRoute({ name: 'parentGate', next: 'addChild' })}
       />
     );
   }
@@ -78,7 +107,7 @@ function Root() {
 
   const minutes = energy ? energyOption(energy).minutes : profile.dailyGoalMinutes;
   const switchProfile = () => {
-    setProfile(null);
+    setProfileId(null);
     setEnergy(undefined);
   };
 
@@ -101,27 +130,59 @@ function Root() {
       );
     }
   }
-  if (route.name === 'parentGate') return <ParentGateScreen savedPin={parentPin} onOpen={openParents} onBack={() => setRoute({ name: 'home' })} />;
   if (route.name === 'parents') {
     return (
       <ParentHomeScreen
         profile={profile}
         report={todayReport(progressStoreFor(profile.id).summaries(), minutes)}
         repository={repository}
-        onBack={() => setRoute({ name: 'home' })}
-        onSettings={() => {}}
+        onBack={home}
+        onSettings={() => setRoute({ name: 'settings', isNew: false })}
+      />
+    );
+  }
+  if (route.name === 'settings') {
+    const toPanel = () => setRoute({ name: 'parents' });
+    return (
+      <ParentSettingsScreen
+        initial={profile}
+        isNew={false}
+        onSave={(p) => {
+          setProfiles((list) => list.map((x) => (x.id === p.id ? p : x)));
+          toPanel();
+        }}
+        onCancel={toPanel}
+        onResetProgress={() => {
+          resetProgressFor(profile.id);
+          setProgressVersion((v) => v + 1);
+          toPanel();
+        }}
+        onRemove={
+          profiles.length > 1
+            ? () => {
+                resetProgressFor(profile.id);
+                setProfiles((list) => list.filter((x) => x.id !== profile.id));
+                switchProfile();
+                home();
+              }
+            : undefined
+        }
+        onChangePin={() => {
+          setParentPin(null);
+          setRoute({ name: 'parentGate', next: 'parents' });
+        }}
       />
     );
   }
   if (route.name === 'notebook') {
-    return <NotebookScreen profile={profile} model={model} repository={repository} onBack={() => setRoute({ name: 'home' })} onRead={(storyId) => setRoute({ name: 'reading', storyId, from: 'notebook' })} />;
+    return <NotebookScreen profile={profile} model={model} repository={repository} onBack={home} onRead={(storyId) => setRoute({ name: 'reading', storyId, from: 'notebook' })} />;
   }
   if (route.name === 'showcase') return <Showcase onBack={() => setRoute({ name: 'dev' })} />;
-  if (route.name === 'dev') return <DevList repository={repository} onOpen={(storyId) => setRoute({ name: 'reading', storyId, from: 'home' })} onShowcase={() => setRoute({ name: 'showcase' })} onBack={() => setRoute({ name: 'home' })} />;
+  if (route.name === 'dev') return <DevList repository={repository} onOpen={(storyId) => setRoute({ name: 'reading', storyId, from: 'home' })} onShowcase={() => setRoute({ name: 'showcase' })} onBack={home} />;
 
   return (
     <View style={styles.row}>
-      <NavRail items={RAIL} bottomItems={RAIL_BOTTOM} active="home" onSelect={(key) => (key === 'dev' ? setRoute({ name: 'dev' }) : key === 'padres' ? setRoute({ name: 'parentGate' }) : undefined)} />
+      <NavRail items={RAIL} bottomItems={RAIL_BOTTOM} active="home" onSelect={(key) => (key === 'dev' ? setRoute({ name: 'dev' }) : key === 'padres' ? setRoute({ name: 'parentGate', next: 'parents' }) : undefined)} />
       <View style={styles.screen}>
         <HomeScreen
           profile={profile}

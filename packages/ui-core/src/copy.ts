@@ -199,6 +199,8 @@ export const copy = {
       ],
     },
     start: 'Comenzar lectura',
+    /** En lectura libre no se escucha: el consejo 2 se cambia por este (el micrófono nunca miente, docs/06). */
+    freeTip: 'Cuando termines una página, toca › para seguir.',
   },
 
   reading: {

@@ -1,9 +1,9 @@
 # HANDOFF — estado actual
 Actualizado: 2026-10-15 · Cuenta: A · Rama: claude/gracious-shannon-a0238d
-Último commit: ver `git log -1` ("K3: …")
+Último commit: ver `git log -1` ("K4: …")
 
 ## Tarea en curso
-Ninguna a medias. K3 ✅ (cierre B13, perfiles B1, ¿Cómo llegas? B2). Siguiente: K4.
+Ninguna a medias. K4 ✅ (Padres: PIN P1, panel P2, ajustes P4). Siguiente: K5.
 
 ## Hecho en RN-01
 - [x] `apps/mobile` (Expo SDK 57, RN 0.86, TS) dentro del monorepo
@@ -20,17 +20,19 @@ Ninguna a medias. K3 ✅ (cierre B13, perfiles B1, ¿Cómo llegas? B2). Siguient
 - [x] D10: nombre oficial Kitewise (`com.kitewise.app`)
 - [x] K2: lectura en el cuaderno (riel, hoja de papel, coach estrella) + pausa, sin micrófono, ayuda
 - [x] K3: cierre por esfuerzo (D11), elegir perfil, energía del día; progreso aparte por niño
+- [x] APK demo instalado por Victor ("la app funciona… vamos por buen camino"); pasos en `apps/mobile/README.md`
+- [x] K4: Modo padres — PIN (P1), Hoy con el niño (P2), Ajustes + Agregar niño + lectura libre (P4)
 
 ## Siguiente paso exacto
-**K4 — Padres: bienvenida + PIN (P1), panel de hoy (P2), ajustes (P4).** Referencias: `docs/design/kitewise/screens/P1.webp`,
-`P2.webp`, `P4.webp`, `SPEC.md`.
-1. PIN de padres en la app nativa (la lógica de la web está en `apps/reader/src/parent-settings.ts`: reutilizar o pasar
-   a `session-engine`/`ui-core` lo que sea puro). El ícono "Padres" del `NavRail` abre el candado.
-2. P2 panel de hoy con datos REALES del `progressStoreFor(id)` (minutos válidos, historias, palabras practicadas,
-   caritas de enfoque `focusSelfReport`, energía). Nunca grabaciones; "La voz de tu hijo nunca se graba ni se almacena."
-3. P4 ajustes: meta diaria, nivel, idioma, preguntar energía (`askEnergy`), Modo Enfoque (solo guardar el ajuste; aplicarlo
-   es K7), "Borrar todos los datos" (P-03). Con PIN: activar "Agregar niño" en B1 (`profiles-screen.tsx`).
-Todo sigue en memoria hasta RN-08.
+**K5 — Practicar (B8) + pistas (G9, G10) + repaso 1-3-7.** Referencias: `docs/design/kitewise/screens/B8.webp`, `G9.webp`,
+`G10.webp`, `SPEC.md` §6.
+1. Mirar cómo funcionan hoy las preguntas de comprensión en la app nativa (`reading-screen.tsx`, `flow.ts` de
+   session-engine) antes de tocar nada.
+2. `ConfidencePicker` (Seguro / Más o menos / Adivino) antes de «Comprobar»; `HintLadder` de 3 escalones (pista →
+   ejemplo → ver respuesta), "Lo veo luego" manda la pregunta al repaso. Nunca «incorrecto» ni rojo.
+3. Tipos V/F y ordenar (F4-03b) si el esquema de historia los permite; si no, proponer el cambio de esquema.
+4. Repaso espaciado 1-3-7 días (F4-04): lógica pura con pruebas; lo que vuelve aparece al empezar ("retos que regresan").
+Victor dijo que la app tiene "muchos detalles que corregir": si manda la lista, atenderla ANTES de seguir con K5.
 
 ## Cuidado con
 - **No borrar `apps/reader` ni `packages/ui`**: Noah sigue usando la app Capacitor hasta RN-CP2.
@@ -43,4 +45,4 @@ Todo sigue en memoria hasta RN-08.
 - `npm ci` en la nube: usar `--ignore-scripts` (postinstall de `onnxruntime-node`).
 
 ## Estado de pruebas
-`npm test`: 1093/1093 ✅ · `npm run typecheck`: ✅ (incluye mobile, ui-native y ui-core)
+`npm test`: 1100/1100 ✅ · `npm run typecheck`: ✅ (incluye mobile, ui-native y ui-core)

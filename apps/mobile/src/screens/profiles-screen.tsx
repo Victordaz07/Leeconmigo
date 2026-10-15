@@ -5,13 +5,15 @@ import type { ChildProfile } from '../app-state';
 interface ProfilesScreenProps {
   profiles: ChildProfile[];
   onPick: (profile: ChildProfile) => void;
+  /** "Agregar niño": pasa por el PIN de padres. */
+  onAdd: () => void;
 }
 
 /**
- * Elegir perfil (Kitewise B1): "¿Quién aprende hoy?" — un toque por avatar. "Agregar niño" va detrás del PIN de padres (K4);
- * hasta que exista, se muestra pero no abre nada. El encabezado usa un cielo de color: el arte del diseño era solo referencia.
+ * Elegir perfil (Kitewise B1): "¿Quién aprende hoy?" — un toque por avatar. "Agregar niño" pide el PIN de padres (P1) y
+ * abre Ajustes con un perfil nuevo (P4). El encabezado usa un cielo de color: el arte del diseño era solo referencia.
  */
-export function ProfilesScreen({ profiles, onPick }: ProfilesScreenProps) {
+export function ProfilesScreen({ profiles, onPick, onAdd }: ProfilesScreenProps) {
   return (
     <View style={styles.screen}>
       <GradientView gradient={gradients.sky} style={styles.sky}>
@@ -33,11 +35,11 @@ export function ProfilesScreen({ profiles, onPick }: ProfilesScreenProps) {
             <Text style={styles.meta}>Nivel {p.level}</Text>
           </Pressable>
         ))}
-        <View style={[styles.card, styles.add]} accessible accessibilityLabel="Agregar niño, con PIN de padres, pronto">
+        <Pressable onPress={onAdd} accessibilityRole="button" accessibilityLabel="Agregar niño, con PIN de padres" style={({ pressed }) => [styles.card, styles.add, pressed && styles.pressed]}>
           <Text style={styles.plus}>+</Text>
           <Text style={styles.addText}>Agregar niño</Text>
-          <Text style={styles.addMeta}>con PIN de padres · pronto</Text>
-        </View>
+          <Text style={styles.addMeta}>con PIN de padres</Text>
+        </Pressable>
       </View>
     </View>
   );
