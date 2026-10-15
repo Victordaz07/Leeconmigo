@@ -16,10 +16,7 @@ export const DEFAULT_MAX_FONT_PX = 56;
 /** Letra mínima en pantalla (px de diseño): por debajo, el texto se vería demasiado pequeño para leer. */
 export const MIN_FONT_SCREEN_PX = 12;
 
-/** ¿Todos los cuadros de la página tienen globo dibujado y caja de texto? Entonces se lee con el reparto "ajustado". */
-export function isBalloonPage(page: StoryPage): boolean {
-  return page.blocks.length > 0 && page.blocks.every((b) => !!b.layout?.balloon && !!b.layout.text);
-}
+export { isBalloonPage } from '@lee-conmigo/ui-core';
 
 const JUSTIFY = { left: 'flex-start', center: 'center', right: 'flex-end' } as const;
 const TEXT_ALIGN = { left: 'left', center: 'center', right: 'right' } as const;

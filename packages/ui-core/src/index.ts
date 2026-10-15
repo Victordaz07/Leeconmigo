@@ -4,3 +4,5 @@ export { defaultPrefs, DAILY_GOAL_PRESETS, DEFAULT_DAILY_GOAL_MINUTES } from './
 export type { ReaderPrefs } from './types.ts';
 export { cleanWord, currentLineOf, deriveReadingView, FAST_WPM, readingMinutes, readingMinutesOfWordCount, SLOW_WPM, wordMark } from './view-model.ts';
 export type { MicTone, ReadingView, ReadingViewInput, WordMark } from './view-model.ts';
+export { bestFontSize, fitText, isBalloonPage, measureWordEm, TEXT_LINE_HEIGHT, TEXT_PARAGRAPH_GAP, TEXT_WIDTH_SAFETY, TEXT_WORD_GAP } from './text-fit.ts';
+export type { TextFit, TextFitInput, TextRow } from './text-fit.ts';

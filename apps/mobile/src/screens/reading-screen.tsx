@@ -1,15 +1,16 @@
 import { useCallback, useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, Pressable, ScrollView, StyleSheet, Text, View, type LayoutChangeEvent } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { Story } from '@lee-conmigo/contracts';
-import { copy, wordMark } from '@lee-conmigo/ui-core';
-import { Button, Card, ChevronLeftIcon, CoachBar, colors, fontFamily, HelpSheet, radius, ReadingText, RoundButton } from '@lee-conmigo/ui-native';
+import { copy, isBalloonPage, wordMark, type WordMark } from '@lee-conmigo/ui-core';
+import { Button, Card, ChevronLeftIcon, CoachBar, colors, ComicPage, fontFamily, HelpSheet, radius, ReadingText, RoundButton } from '@lee-conmigo/ui-native';
 import { useReadingSession, type ReadingSession } from '../session/use-reading-session';
+import { storyImage } from '../story-assets';
 
 /**
- * Pantalla de lectura nativa (RN-04, docs/11). Con `FakeReadingEngine`: la lectura se simula con el panel de desarrollo
- * (abajo, solo en `__DEV__`) hasta conectar la voz real (RN-07). Modo "illustrated reader" (texto); el cómic con globos
- * sobre la ilustración llega en RN-05.
+ * Pantalla de lectura nativa (RN-04/RN-05, docs/11). Con `FakeReadingEngine`: la lectura se simula con el panel de
+ * desarrollo (abajo, solo en `__DEV__`) hasta conectar la voz real (RN-07). Cada página se muestra según su tipo: cómic con
+ * el texto dentro de los globos dibujados, o ilustración junto al texto (páginas sin globos).
  */
 export function ReadingScreen({ story, onExit }: { story: Story; onExit: () => void }) {
   const session = useReadingSession(story);
@@ -36,9 +37,7 @@ export function ReadingScreen({ story, onExit }: { story: Story; onExit: () => v
         </View>
       </View>
 
-      <ScrollView style={styles.card} contentContainerStyle={styles.cardContent}>
-        <ReadingText page={page} words={words} markOf={markOf} onWordPress={actions.tapWord} fontSize={prefs.textSize} />
-      </ScrollView>
+      <PageView session={session} markOf={markOf} />
 
       {/* Antes de empezar el micrófono NO escucha: el indicador nunca debe decir lo contrario (docs/06). */}
       <CoachBar
@@ -60,6 +59,53 @@ export function ReadingScreen({ story, onExit }: { story: Story; onExit: () => v
       {flow.screen === 'end' && <EndOverlay session={session} onExit={exit} />}
 
       <HelpSheet word={session.help?.word ?? null} entry={session.help?.entry} audience={prefs.audience} onListen={actions.pronounce} onClose={actions.closeHelp} />
+    </View>
+  );
+}
+
+/** La página según su tipo, a lo más grande que quepa en el espacio disponible. */
+function PageView({ session, markOf }: { session: ReadingSession; markOf: (i: number) => WordMark }) {
+  const { page, words, actions, prefs, view, flow, reading } = session;
+  const [area, setArea] = useState({ width: 0, height: 0 });
+  const onLayout = (e: LayoutChangeEvent) => {
+    const { width, height } = e.nativeEvent.layout;
+    setArea((a) => (a.width === width && a.height === height ? a : { width, height }));
+  };
+  const image = storyImage(page.illustration.src);
+  const ratio = page.illustration.width / page.illustration.height;
+
+  if (isBalloonPage(page)) {
+    const width = Math.floor(Math.min(area.width, area.height * ratio));
+    const height = Math.floor(width / ratio);
+    return (
+      <View style={styles.area} onLayout={onLayout}>
+        {width > 0 && (
+          <View style={styles.comicFrame}>
+            <ComicPage
+              page={page}
+              words={words}
+              image={image}
+              width={width}
+              height={height}
+              currentBlock={view.currentBlock}
+              highlightActive={flow.screen === 'reading' && reading.hasHeardVoice}
+              markOf={markOf}
+              onWordPress={actions.tapWord}
+            />
+          </View>
+        )}
+      </View>
+    );
+  }
+
+  // Página de texto: la ilustración acompaña (al lado en horizontal, arriba en vertical) y el texto manda (docs/05).
+  const landscape = area.width >= area.height;
+  return (
+    <View style={[styles.area, { flexDirection: landscape ? 'row' : 'column', gap: 16 }]} onLayout={onLayout}>
+      {image && <Image source={image} style={[styles.sideImage, landscape ? { width: '40%', height: '100%' } : { width: '100%', height: '35%' }]} resizeMode="contain" />}
+      <ScrollView style={styles.card} contentContainerStyle={styles.cardContent}>
+        <ReadingText page={page} words={words} markOf={markOf} onWordPress={actions.tapWord} fontSize={prefs.textSize} />
+      </ScrollView>
     </View>
   );
 }
@@ -133,7 +179,10 @@ const styles = StyleSheet.create({
   title: { flex: 1, fontFamily: fontFamily.ui.black, fontSize: 24, color: colors.navy },
   chip: { backgroundColor: '#ffffff', borderRadius: radius.pill, paddingHorizontal: 16, paddingVertical: 8 },
   chipText: { fontFamily: fontFamily.ui.extrabold, fontSize: 15, color: colors.inkSoft },
-  card: { flex: 1, backgroundColor: colors.cream, borderRadius: radius.panel, boxShadow: '0px 1px 0px #e3e8f4, 0px 10px 26px rgba(30, 35, 64, 0.08)' },
+  area: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+  comicFrame: { borderRadius: radius.tile, overflow: 'hidden', boxShadow: '0px 10px 26px rgba(30, 35, 64, 0.18)' },
+  sideImage: { borderRadius: radius.tile },
+  card: { flex: 1, alignSelf: 'stretch', backgroundColor: colors.cream, borderRadius: radius.panel, boxShadow: '0px 1px 0px #e3e8f4, 0px 10px 26px rgba(30, 35, 64, 0.08)' },
   cardContent: { padding: 32 },
   overlay: { ...StyleSheet.absoluteFill, backgroundColor: 'rgba(20, 22, 28, 0.45)', alignItems: 'center', justifyContent: 'center', padding: 24 },
   overlayCard: { width: '100%', maxWidth: 560, gap: 16, padding: 28, borderRadius: radius.panel },

@@ -12,3 +12,5 @@ export { HelpSheet } from './components/help-sheet.tsx';
 export { ReadingText } from './components/reading-text.tsx';
 export { wordStyle } from './components/word-style.ts';
 export { RoundButton } from './components/round-button.tsx';
+export { BalloonText, DEFAULT_MAX_FONT_PX, MIN_FONT_SCREEN_PX } from './components/balloon-text.tsx';
+export { ComicPage } from './components/comic-page.tsx';

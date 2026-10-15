@@ -1,9 +1,9 @@
 # HANDOFF — estado actual
 Actualizado: 2026-10-15 · Cuenta: A · Rama: claude/gracious-shannon-a0238d
-Último commit: ver `git log -1` ("RN-04: …")
+Último commit: ver `git log -1` ("RN-05: …")
 
 ## Tarea en curso
-Ninguna a medias. RN-01 ✅ en código (falta verla en Android real) · RN-02 ✅ · RN-04 ✅.
+Ninguna a medias. RN-01 ✅ en código (falta verla en Android real) · RN-02 ✅ · RN-04 ✅ · RN-05 ✅.
 
 ## Hecho en RN-01
 - [x] `apps/mobile` (Expo SDK 57, RN 0.86, TS) dentro del monorepo
@@ -13,6 +13,7 @@ Ninguna a medias. RN-01 ✅ en código (falta verla en Android real) · RN-02 �
 - [ ] Abrir en el Android de Victor (`cd apps/mobile && npx expo run:android`)
 - [x] RN-02: `packages/ui-native` (tokens, Button, Card, MicBadge) + fuentes
 - [x] RN-04: pantalla de lectura con simulador (`apps/mobile/src/screens/reading-screen.tsx`) + `packages/ui-core`
+- [x] RN-05: cómic con globos (`fitText` en ui-core, `ComicPage` en ui-native) + ilustraciones
 
 ## Siguiente paso exacto
 1. Victor prueba en su Android (`apps/mobile/README.md`): lista → tocar una historia → "Comenzar lectura" → panel
@@ -36,4 +37,4 @@ Ninguna a medias. RN-01 ✅ en código (falta verla en Android real) · RN-02 �
 - `npm ci` en la nube: usar `--ignore-scripts` (postinstall de `onnxruntime-node`).
 
 ## Estado de pruebas
-`npm test`: 1076/1076 ✅ · `npm run typecheck`: ✅ (incluye mobile, ui-native y ui-core)
+`npm test`: 1084/1084 ✅ · `npm run typecheck`: ✅ (incluye mobile, ui-native y ui-core)

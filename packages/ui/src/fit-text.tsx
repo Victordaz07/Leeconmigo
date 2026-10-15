@@ -5,23 +5,8 @@
 import { useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import type { TextVAlign } from '@lee-conmigo/contracts';
 
-/**
- * Tamaño más grande en [min, max] para el que `fits` es verdadero (búsqueda binaria, precisión de 0,5 px). Si ni el mínimo cabe,
- * devuelve el mínimo (el texto se verá justo, pero nunca más pequeño que eso); si el tope cabe, devuelve el tope.
- */
-export function bestFontSize(fits: (px: number) => boolean, min: number, max: number): number {
-  if (max <= min) return min;
-  if (fits(max)) return max;
-  if (!fits(min)) return min;
-  let lo = min;
-  let hi = max;
-  while (hi - lo > 0.5) {
-    const mid = (lo + hi) / 2;
-    if (fits(mid)) lo = mid;
-    else hi = mid;
-  }
-  return Math.floor(lo * 2) / 2;
-}
+export { bestFontSize } from '@lee-conmigo/ui-core';
+import { bestFontSize } from '@lee-conmigo/ui-core';
 
 export interface FitBoxInfo {
   /** Letra usada (px de pantalla). */
