@@ -26,7 +26,7 @@ Verificado en el repo (2026-10-15): los paquetes de lógica no dependen del nave
 | `packages/session-engine` | ~600 | **Se reutiliza**; el almacenamiento ya está detrás de una interfaz (`progress-store.ts`) → implementación nueva para el teléfono |
 | `packages/story-engine` | ~860 + historias JSON | **Se reutiliza** (historias, validación, tokenización) |
 | `packages/speech-engine` | ~1.230 | `FakeSpeechEngine` se reutiliza. `WhisperSpeechEngine` es solo web (Transformers.js + AudioWorklet) → nuevo `WhisperNativeSpeechEngine` |
-| `packages/ui` | ~4.400 | **Se rehace** como `packages/ui-native` (React Native no usa HTML/CSS) |
+| `packages/ui` | ~4.400 | **Se rehace** como `packages/ui-native` (React Native no usa HTML/CSS). La lógica de vista pura (textos `copy`, `ReaderPrefs`, `deriveReadingView`, `wordMark`) ya se movió a `packages/ui-core`, compartida por las dos apps |
 | `apps/reader` | ~1.500 | **Se rehace** como `apps/mobile` (Expo) |
 | Pruebas | 1068 | Las de los paquetes de lógica siguen valiendo sin cambios; las de UI se rehacen |
 

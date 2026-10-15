@@ -10,11 +10,17 @@
     ".": "./src/index.ts",
     "./tokens.css": "./src/styles/tokens.css"
   },
-  "scripts": { "typecheck": "tsc -p tsconfig.json" },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json"
+  },
   "dependencies": {
     "@lee-conmigo/contracts": "*",
     "@lee-conmigo/session-engine": "*",
-    "@lee-conmigo/story-engine": "*"
+    "@lee-conmigo/story-engine": "*",
+    "@lee-conmigo/ui-core": "*"
   },
-  "peerDependencies": { "react": "^19.0.0", "react-dom": "^19.0.0" }
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
 }

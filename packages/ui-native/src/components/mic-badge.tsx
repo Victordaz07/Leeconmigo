@@ -1,13 +1,12 @@
 import { useEffect, useRef } from 'react';
 import { Animated, Easing, StyleSheet, View } from 'react-native';
+import type { MicTone } from '@lee-conmigo/ui-core';
 import { colors, durations, gradients } from '../tokens.ts';
 import { GradientView } from './gradient-view.tsx';
 import { MicIcon } from './icons.tsx';
 import { useReducedMotion } from './use-reduced-motion.ts';
 
-/** Estado visual del micrófono (docs/05: verde = escuchando, gris = pausa/ayuda, ámbar = pausa larga). */
-export type MicTone = 'ok' | 'idle' | 'warn';
-
+/** Color de cada estado del micrófono (docs/05: verde = escuchando, gris = pausa/ayuda, ámbar = pausa larga). */
 const TONE = {
   ok: { color: colors.okMid, gradient: gradients.micOk },
   idle: { color: colors.slate400, gradient: gradients.micIdle },

@@ -60,3 +60,20 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
   empaquetados), web ✅ con capturas, `expo-doctor` 21/21 ✅, `npm test` 1071/1071 ✅.
 - Notas: en React Native cada peso de fuente es una familia (`fontFamily.ui.black`), nunca usar `fontWeight` con
   fuentes propias. `boxShadow` necesita `rgba()`, no `rgb(r g b / a)`.
+
+## 2026-10-15 · Cuenta A · RN-04
+- Hecho: pantalla de lectura nativa con `FakeReadingEngine`. Nuevo `packages/ui-core` (puro, sin React): `copy`,
+  `ReaderPrefs`, `deriveReadingView` y `wordMark` (marca semántica de cada palabra) — movidos desde `packages/ui`,
+  que ahora los re-exporta (la web no cambió: sus 101 pruebas pasan sin tocarlas; `wordVisual` traduce `wordMark`
+  a CSS). En `ui-native`: `ReadingText` (palabras tocables), `CoachBar`, `HelpSheet` (sílabas, definición,
+  escuchar), `RoundButton`, `wordStyle`. En la app: `src/session/use-reading-session.ts` (motor + flujo + vista;
+  pausa al pasar a segundo plano con `AppState`), `src/screens/reading-screen.tsx` (preparación, lectura, aviso
+  de página, fin, panel DEV), `src/tts.ts` (`expo-speech`).
+- Verificado: recorrido completo en la vista web con Playwright (preparación → leer → dudosa → pausa larga →
+  ayuda → terminar página → página 2), sin errores de consola. tsc ✅, `npm test` 1076/1076 ✅, build web ✅,
+  `expo export` android ✅, `expo-doctor` 21/21 ✅.
+- Pendiente (RN-06): pregunta de comprensión y repaso por sílabas (hoy se salta de página en página),
+  progreso guardado. Límite conocido: en Android el subrayado no toma color ni punteado (solo iOS).
+- Notas: bug encontrado y arreglado — en "preparación" el micrófono decía "Te escucho" (el view-model de la web no
+  pinta el coach en esa pantalla); en nativo se fuerza "Listo para escuchar" en gris (docs/06: el indicador del
+  micrófono nunca miente).

@@ -13,3 +13,12 @@ export function MicIcon({ size = 24, big }: { size?: number; big?: boolean }) {
     </Svg>
   );
 }
+
+/** Flecha "volver". */
+export function ChevronLeftIcon({ size = 24, color = '#1b2a6b' }: { size?: number; color?: string }) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeLinecap="round" strokeLinejoin="round" strokeWidth={3.2}>
+      <Path d="M15 5l-7 7 7 7" />
+    </Svg>
+  );
+}
