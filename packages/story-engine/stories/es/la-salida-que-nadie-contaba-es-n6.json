@@ -1,0 +1,897 @@
+{
+  "id": "la-salida-que-nadie-contaba-es-n6",
+  "familyId": "la-salida-que-nadie-contaba",
+  "language": "es",
+  "title": "La salida que nadie contaba",
+  "level": 6,
+  "category": "oficios",
+  "description": "Imani aprende a cuidar a su equipo.",
+  "cover": {
+    "src": "stories/la-salida-que-nadie-contaba/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Escena de la carrera equivocada."
+  },
+  "heroFocus": {
+    "x": 30,
+    "y": 55
+  },
+  "reviewWords": [
+    "evacuación",
+    "recorrido",
+    "obstáculo"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/la-salida-que-nadie-contaba/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de la carrera equivocada."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b01",
+          "voice": "narration",
+          "title": "La carrera equivocada",
+          "lines": [
+            "Imani pensaba que una bombera debía ser la primera persona en llegar a todas partes. En la jornada abierta de la estación, fue la primera en subir al camión rojo, la primera en ponerse un casco de prueba y la primera en tocar la mesa donde el capitán Solís preparaba un ejercicio.",
+            "Su hermanito Damián llegó detrás, sujetando un dragón rojo de papel. La maestra Farah había llevado a varios niños para preparar la feria de profesiones de la escuela.",
+            "Solís les mostró un modelo de cartón del centro comunitario: dos puertas de salida y un árbol fuera del edificio. «¿Dónde termina un recorrido seguro?», preguntó.",
+            "Imani puso una ficha justo en la puerta. El capitán movió la ficha hasta el árbol.",
+            "Allí tendrían que reunirse y decir a los adultos quiénes habían salido. A Imani le pareció fácil.",
+            "Todavía no había intentado hacerlo con todos los niños moviéndose a la vez."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿A dónde mueve Solís la ficha de Imani?",
+            "options": [
+              {
+                "text": "Hasta el árbol exterior"
+              },
+              {
+                "text": "Dentro del camión"
+              },
+              {
+                "text": "Debajo de la mesa"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Hasta el árbol exterior.",
+            "retryFeedback": "Vuelve a esa parte: piensa quién salió, por dónde y dónde se reunieron."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué había olvidado Imani al pensar en salir?",
+            "options": [
+              {
+                "text": "Dibujar el dragón"
+              },
+              {
+                "text": "Reunir y contar a las personas"
+              },
+              {
+                "text": "Ponerse casco de prueba"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Reunir y contar a las personas.",
+            "retryFeedback": "Vuelve a esa parte: piensa quién salió, por dónde y dónde se reunieron."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b02",
+          "voice": "narration",
+          "title": "Dos puertas, un árbol",
+          "lines": [
+            "Solís puso fichas de colores en las salas del modelo. Una salida quedaba cerca del escenario; la otra llevaba hacia el patio lateral.",
+            "Farah pidió a cada niño que encontrara dos caminos posibles desde la sala de reuniones. Damián colocó su dragón junto a una mesa y movió una ficha hasta la puerta más cercana.",
+            "Imani tomó un atajo por un pasillo que en el modelo parecía ancho, pero Solís lo cerró con una pieza de cartón: a veces una ruta prevista no se puede usar. Entonces ella halló la otra puerta.",
+            "El capitán no les enseñaba a entrar en un incendio; practicaban cómo salir y reunirse afuera. Imani dibujó los dos recorridos en un papel doblado.",
+            "Puso un círculo alrededor del árbol. «Y si falta alguien, se lo dicen al personal de emergencias», explicó Farah.",
+            "«No vuelvan a buscarlo». Damián quiso dibujar también su dragón.",
+            "Imani le dejó una esquina."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Cuántas salidas tiene el modelo?",
+            "options": [
+              {
+                "text": "Cuatro"
+              },
+              {
+                "text": "Dos"
+              },
+              {
+                "text": "Una"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Dos.",
+            "retryFeedback": "Vuelve a esa parte: piensa quién salió, por dónde y dónde se reunieron."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Para qué practican una segunda ruta?",
+            "options": [
+              {
+                "text": "Quieren correr más"
+              },
+              {
+                "text": "El árbol se mueve"
+              },
+              {
+                "text": "La primera puede quedar bloqueada"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! La primera puede quedar bloqueada.",
+            "retryFeedback": "Vuelve a esa parte: piensa quién salió, por dónde y dónde se reunieron."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/la-salida-que-nadie-contaba/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de el dragón se queda."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b03",
+          "voice": "narration",
+          "title": "El dragón se queda",
+          "lines": [
+            "La estación tenía un recorrido de práctica hecho con cortinas de tela y puertas de cartón. No había fuego ni humo.",
+            "Unas banderas indicaban qué pasillo debían imaginar bloqueado. Cuando sonó la señal del ejercicio, Imani se adelantó.",
+            "Pasó por la salida correcta y vio a Farah junto al árbol del patio con Damián. Entonces el pequeño levantó las manos vacías: su dragón seguía sobre la mesa de dentro.",
+            "Imani giró para recogerlo. Solís, que supervisaba el ejercicio, la detuvo antes de que regresara.",
+            "«En una emergencia verdadera, nadie vuelve por un objeto», le recordó. Imani sintió que todos la miraban.",
+            "Damián estaba a salvo, pero su cara se arrugó al pensar en el dragón. «Puedo hacerte otro», dijo ella.",
+            "La respuesta le salió con esfuerzo. No quería ser la primera en salir si eso significaba olvidar algo importante; estaba aprendiendo que lo importante era una persona, no un juguete."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué queda dentro durante el ejercicio?",
+            "options": [
+              {
+                "text": "El casco de Solís"
+              },
+              {
+                "text": "El mapa de Farah"
+              },
+              {
+                "text": "El dragón de papel"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! El dragón de papel.",
+            "retryFeedback": "Vuelve a esa parte: piensa quién salió, por dónde y dónde se reunieron."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué Imani no regresa por él?",
+            "options": [
+              {
+                "text": "Una persona está a salvo y un objeto puede dejarse"
+              },
+              {
+                "text": "El dragón sabe volar solo"
+              },
+              {
+                "text": "La puerta es de cartón"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Una persona está a salvo y un objeto puede dejarse.",
+            "retryFeedback": "Vuelve a esa parte: piensa quién salió, por dónde y dónde se reunieron."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p04",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b04",
+          "voice": "narration",
+          "title": "La cuenta que falta",
+          "lines": [
+            "Al terminar el ejercicio, Solís no preguntó quién había sido más rápido. Dio a Farah una lista de los participantes y pidió comprobarla en el punto de reunión.",
+            "Contaron una vez. Faltaba una ficha, no un niño: uno de los voluntarios había salido por la segunda puerta y esperaba junto a otro árbol.",
+            "Era una sorpresa preparada para la práctica. Un adulto habló con el otro grupo y lo llevó al sitio acordado.",
+            "Imani comprendió que decir «todos salieron» no bastaba si nadie sabía dónde estaba cada persona. Farah anotó el horario del ejercicio para repetirlo con los adultos encargados del centro comunitario.",
+            "Imani guardó el mapa doblado en su bolsillo. La semana siguiente tendrían una noche de preparación allí antes de la feria escolar.",
+            "Prometió enseñarle a Damián dónde quedaba el árbol correcto. Él alzó el dragón recuperado después de la práctica y dijo que también lo aprendería."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Dónde espera el voluntario?",
+            "options": [
+              {
+                "text": "Junto a otro árbol"
+              },
+              {
+                "text": "En el camión"
+              },
+              {
+                "text": "Dentro del armario"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Junto a otro árbol.",
+            "retryFeedback": "Vuelve a esa parte: piensa quién salió, por dónde y dónde se reunieron."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué no basta decir que todos salieron?",
+            "options": [
+              {
+                "text": "Las fichas son pequeñas"
+              },
+              {
+                "text": "Hay que saber dónde se reunió cada persona"
+              },
+              {
+                "text": "El ejercicio fue largo"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Hay que saber dónde se reunió cada persona.",
+            "retryFeedback": "Vuelve a esa parte: piensa quién salió, por dónde y dónde se reunieron."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p05",
+      "illustration": {
+        "src": "stories/la-salida-que-nadie-contaba/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de las cajas junto a la puerta."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b05",
+          "voice": "narration",
+          "title": "Las cajas junto a la puerta",
+          "lines": [
+            "En la noche de preparación, el centro comunitario estaba lleno de mesas. Los niños ensayaban cómo mostrar sus proyectos a visitantes.",
+            "Imani acomodó un pequeño modelo de dos puertas en su mesa mientras Damián hacía volar el dragón entre las sillas vacías. Farah supervisaba el montaje.",
+            "Una pantalla plegable y varias cajas quedaron demasiado cerca de la salida lateral. Imani se lo mostró.",
+            "Farah habló con los adultos encargados y apartaron las cajas para dejar libre el paso. Imani esperaba sentir que había salvado el día, pero solo había señalado un detalle antes de que causara problemas.",
+            "Un poco después, otros voluntarios movieron la pantalla para hacer sitio a un grupo que llegaba tarde. Nadie notó que una de sus patas quedó torcida junto al pasillo.",
+            "Imani estaba ocupada recortando fichas y no la vio. El plan seguía en el bolsillo; la sala, entretanto, no dejaba de cambiar."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué objetos estaban cerca de la salida lateral?",
+            "options": [
+              {
+                "text": "Un árbol y una manguera"
+              },
+              {
+                "text": "Cajas y una pantalla plegable"
+              },
+              {
+                "text": "Una bicicleta y un gato"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Cajas y una pantalla plegable.",
+            "retryFeedback": "Vuelve a esa parte: piensa quién salió, por dónde y dónde se reunieron."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué vuelve a cambiar el pasillo?",
+            "options": [
+              {
+                "text": "El mapa se borra"
+              },
+              {
+                "text": "Damián abre otra puerta"
+              },
+              {
+                "text": "Unos voluntarios mueven la pantalla después"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Unos voluntarios mueven la pantalla después.",
+            "retryFeedback": "Vuelve a esa parte: piensa quién salió, por dónde y dónde se reunieron."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p06",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b06",
+          "voice": "narration",
+          "title": "Una alarma de verdad",
+          "lines": [
+            "La alarma sonó cuando aún faltaban mesas por preparar. Imani levantó la cabeza, pensando primero en la práctica de la estación.",
+            "Farah miró hacia un cuarto de almacenamiento cerrado; una pequeña nube gris salía por la rendija alta. La maestra indicó a los niños que dejaran todo y fueran con ella hacia la salida.",
+            "Un adulto llamó a emergencias desde fuera. Imani dejó el camión de cartón a medio construir.",
+            "Damián apoyó su dragón en la mesa para tomar la mano de otro niño más pequeño. Nadie abrió la puerta del cuarto ni trató de investigar el humo.",
+            "La gente avanzó sin correr y sin volver por sus cosas. El sonido de la alarma no era un juego esta vez.",
+            "Imani notó que sus piernas querían moverse más rápido que las de Farah. Se quedó con el grupo y sacó el mapa doblado solo para recordar adónde debían llegar."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q06",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿De dónde ven salir un poco de humo?",
+            "options": [
+              {
+                "text": "Del camión de cartón"
+              },
+              {
+                "text": "Del árbol"
+              },
+              {
+                "text": "De un cuarto cerrado"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! De un cuarto cerrado.",
+            "retryFeedback": "Vuelve a esa parte: piensa quién salió, por dónde y dónde se reunieron."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué hacen los niños cuando suena la alarma real?",
+            "options": [
+              {
+                "text": "Dejan sus cosas y salen con Farah"
+              },
+              {
+                "text": "Abren el cuarto para mirar"
+              },
+              {
+                "text": "Buscan las maquetas"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Dejan sus cosas y salen con Farah.",
+            "retryFeedback": "Vuelve a esa parte: piensa quién salió, por dónde y dónde se reunieron."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p07",
+      "illustration": {
+        "src": "stories/la-salida-que-nadie-contaba/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de el pasillo cambia."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b07",
+          "voice": "narration",
+          "title": "El pasillo cambia",
+          "lines": [
+            "Al doblar hacia la salida lateral, Farah vio la pantalla plegable inclinada. La gente que pasaba la había desplazado y ahora estrechaba el corredor.",
+            "La maestra detuvo al grupo antes del obstáculo. El humo estaba lejos, pero nadie sabía si seguiría allí.",
+            "Farah señaló la otra salida despejada y guió a los niños por el recorrido alternativo que habían practicado. Imani reconoció la curva del pasillo en su mapa.",
+            "No empujó la pantalla ni mandó a nadie por su cuenta; caminó con Farah y Damián hacia la puerta. Una voluntaria adulta llevó a otras personas por la salida lateral que seguía disponible desde otra sala, evitando la pantalla.",
+            "Dos grupos llegaron al exterior por caminos distintos. El edificio había cambiado desde el dibujo de cartón, pero el ensayo les dio más de una forma de salir.",
+            "Imani guardó el mapa en cuanto pisó el patio."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q07",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué estrecha el corredor?",
+            "options": [
+              {
+                "text": "Una pantalla plegable desplazada"
+              },
+              {
+                "text": "Un dragón gigante"
+              },
+              {
+                "text": "Una manguera rota"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Una pantalla plegable desplazada.",
+            "retryFeedback": "Vuelve a esa parte: piensa quién salió, por dónde y dónde se reunieron."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué Farah usa la otra salida?",
+            "options": [
+              {
+                "text": "Olvidó el mapa"
+              },
+              {
+                "text": "El camino previsto ya no es seguro para su grupo"
+              },
+              {
+                "text": "Quiere llegar última"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! El camino previsto ya no es seguro para su grupo.",
+            "retryFeedback": "Vuelve a esa parte: piensa quién salió, por dónde y dónde se reunieron."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p08",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b08",
+          "voice": "narration",
+          "title": "Un nombre sin respuesta",
+          "lines": [
+            "Farah llevó a su grupo al árbol acordado y empezó a contar. Imani buscó el suéter azul de Damián.",
+            "Había ido junto a ella hasta la puerta, pero en la salida otro adulto había guiado a los niños más pequeños hacia el lado opuesto del patio. Imani no lo veía.",
+            "Recordó el dragón sobre la mesa y sintió un impulso de entrar a buscarlo a él. No lo hizo.",
+            "Se acercó a Farah y dijo su nombre, la ropa que llevaba y el último lugar donde lo había visto. El capitán Solís acababa de llegar con el equipo de bomberos.",
+            "Escuchó la información y pidió a otro adulto comprobar el grupo de la segunda salida mientras sus compañeros atendían el edificio. Nadie dio por hecho que Damián estaba dentro, pero tampoco lo borró de la cuenta.",
+            "Imani esperaba bajo el árbol, con las manos vacías."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q08",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿A quién no ve Imani en su grupo?",
+            "options": [
+              {
+                "text": "A Camila"
+              },
+              {
+                "text": "A Damián"
+              },
+              {
+                "text": "Al capitán Solís"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! A Damián.",
+            "retryFeedback": "Vuelve a esa parte: piensa quién salió, por dónde y dónde se reunieron."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué hace en vez de regresar al edificio?",
+            "options": [
+              {
+                "text": "Busca al dragón adentro"
+              },
+              {
+                "text": "Se separa del grupo"
+              },
+              {
+                "text": "Da información precisa a Farah y Solís"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Da información precisa a Farah y Solís.",
+            "retryFeedback": "Vuelve a esa parte: piensa quién salió, por dónde y dónde se reunieron."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p09",
+      "illustration": {
+        "src": "stories/la-salida-que-nadie-contaba/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de el otro grupo."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b09",
+          "voice": "narration",
+          "title": "El otro grupo",
+          "lines": [
+            "Por la radio llegó una respuesta: Damián estaba con la voluntaria que había salido por la otra puerta. Había seguido al niño pequeño cuya mano sostenía.",
+            "La voluntaria conocía el punto de reunión y lo llevó hasta Farah, sin dejar a los demás niños solos. Damián corrió los últimos pasos hacia Imani, pero ella esperó a que Farah lo registrara con el grupo antes de abrazarlo.",
+            "Desde el árbol vieron a los bomberos trabajar en el edificio. Más tarde Solís explicó a los adultos que habían localizado el origen del humo en un equipo del cuarto cerrado; el personal especializado revisaría todo antes de volver a usar el lugar.",
+            "Nadie regresó aquella noche por las maquetas. A Damián le dolió perder de vista su dragón, aunque ya sabía que las personas salían primero.",
+            "Imani prometió hacer otro si el de papel no sobrevivía. Esta vez la promesa le resultó fácil."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q09",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Dónde estaba Damián?",
+            "options": [
+              {
+                "text": "En el cuarto del humo"
+              },
+              {
+                "text": "Dentro del camión"
+              },
+              {
+                "text": "Con el grupo de la segunda salida"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Con el grupo de la segunda salida.",
+            "retryFeedback": "Vuelve a esa parte: piensa quién salió, por dónde y dónde se reunieron."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué Farah lo registra antes del abrazo?",
+            "options": [
+              {
+                "text": "Para completar la cuenta del grupo"
+              },
+              {
+                "text": "Para devolver el dragón"
+              },
+              {
+                "text": "Para salir otra vez"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Para completar la cuenta del grupo.",
+            "retryFeedback": "Vuelve a esa parte: piensa quién salió, por dónde y dónde se reunieron."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p10",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b10",
+          "voice": "narration",
+          "title": "Después de las sirenas",
+          "lines": [
+            "Al día siguiente, Farah llamó a las familias. Todos habían salido y el centro seguía cerrado mientras lo revisaban.",
+            "Con autorización de los encargados, un adulto recogió más tarde las maquetas intactas; también encontró el dragón, algo arrugado. Imani estudió su modelo y vio que faltaba una pieza: había dibujado dos puertas, pero ninguna ficha mostraba a los adultos reuniendo los grupos en el árbol.",
+            "Añadió figuras de colores y un lugar donde registrar quién había llegado. Solís, al verla trabajar en la estación, dijo que las emergencias no se resuelven por una sola persona que corra delante.",
+            "Hay equipos, decisiones, comunicaciones y revisiones después. Imani le contó cómo había esperado sin saber dónde estaba Damián.",
+            "El capitán no le prometió que nunca volvería a sentir miedo. Le dijo que había compartido una información precisa con quienes podían actuar.",
+            "Eso también era parte del trabajo."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q10",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué añade Imani al modelo?",
+            "options": [
+              {
+                "text": "Figuras y un lugar para registrar llegadas"
+              },
+              {
+                "text": "Una tercera sirena"
+              },
+              {
+                "text": "Un cuarto sin puertas"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Figuras y un lugar para registrar llegadas.",
+            "retryFeedback": "Vuelve a esa parte: piensa quién salió, por dónde y dónde se reunieron."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué reconoce Solís de la ayuda de Imani?",
+            "options": [
+              {
+                "text": "Fue la primera en correr"
+              },
+              {
+                "text": "Dio información a quienes podían actuar"
+              },
+              {
+                "text": "Apagó el fuego sola"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Dio información a quienes podían actuar.",
+            "retryFeedback": "Vuelve a esa parte: piensa quién salió, por dónde y dónde se reunieron."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p11",
+      "illustration": {
+        "src": "stories/la-salida-que-nadie-contaba/page-11.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de la feria de las dos salidas."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b11",
+          "voice": "narration",
+          "title": "La feria de las dos salidas",
+          "lines": [
+            "La feria escolar se celebró la semana siguiente en el gimnasio, como estaba previsto. Imani llevó el centro comunitario de cartón.",
+            "Los visitantes ponían fichas en salas distintas y probaban qué pasaba si un pasillo quedaba cerrado. El juego no terminaba al sacar la ficha por la puerta: había que reunirlas y contarlas junto al árbol.",
+            "Camila, que presentaba una clínica veterinaria en miniatura, movió una figura por la segunda salida y preguntó quién avisaría al primer grupo. Abril observó que una pantalla móvil podía cambiar el espacio aunque el plano siguiera igual.",
+            "Imani añadió ambas preguntas al juego. Damián colocó al dragón arrugado junto al árbol; nadie tenía que ir a buscarlo.",
+            "Elián y otros niños probaron rutas nuevas. Imani no contó el incidente para parecer valiente.",
+            "Quería que los visitantes vieran que un plan sirve cuando alguien lo practica, lo revisa y sabe pedir ayuda."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q11",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Dónde se celebra la feria escolar?",
+            "options": [
+              {
+                "text": "En el camión"
+              },
+              {
+                "text": "En el gimnasio"
+              },
+              {
+                "text": "En el cuarto cerrado"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! En el gimnasio.",
+            "retryFeedback": "Vuelve a esa parte: piensa quién salió, por dónde y dónde se reunieron."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Cuándo termina el juego de Imani?",
+            "options": [
+              {
+                "text": "Al cruzar cualquier puerta"
+              },
+              {
+                "text": "Cuando el dragón vuelve a la mesa"
+              },
+              {
+                "text": "Cuando las figuras salen y se cuentan junto al árbol"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Cuando las figuras salen y se cuentan junto al árbol.",
+            "retryFeedback": "Vuelve a esa parte: piensa quién salió, por dónde y dónde se reunieron."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p12",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b12",
+          "voice": "narration",
+          "title": "La última ficha",
+          "lines": [
+            "Al recoger la mesa, Imani encontró una ficha azul bajo el modelo. La puso junto a las demás antes de guardarlas.",
+            "Damián le preguntó si aún quería ser bombera, ahora que sabía lo difícil que podía sentirse una alarma de verdad. «Sí», respondió.",
+            "Le gustaban el camión y los cascos, pero ya no eran lo más interesante. Quería aprender a trabajar con otros, a estudiar un lugar antes de necesitarlo y a escuchar cuando alguien decía que faltaba una persona.",
+            "Solís pasó para despedirse. Imani le enseñó el árbol de cartón rodeado de fichas y la salida que antes nadie había contado.",
+            "Damián levantó el dragón arrugado, cuyas alas seguían abiertas. Imani sabía que una emergencia no era una aventura que se buscara.",
+            "Pero si algún día volvía a sonar una alarma, recordaría que salir, quedarse fuera y dar información podía ayudar a que todos llegaran al mismo árbol."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q12",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué encuentra Imani bajo la maqueta?",
+            "options": [
+              {
+                "text": "Un casco"
+              },
+              {
+                "text": "Una llave"
+              },
+              {
+                "text": "Una ficha azul"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Una ficha azul.",
+            "retryFeedback": "Vuelve a esa parte: piensa quién salió, por dónde y dónde se reunieron."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué le interesa ahora de ser bombera?",
+            "options": [
+              {
+                "text": "Trabajar en equipo, planear y escuchar"
+              },
+              {
+                "text": "Ser siempre la primera"
+              },
+              {
+                "text": "Buscar emergencias para divertirse"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Trabajar en equipo, planear y escuchar.",
+            "retryFeedback": "Vuelve a esa parte: piensa quién salió, por dónde y dónde se reunieron."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "evacuación": {
+      "syllables": [
+        "e",
+        "va",
+        "cua",
+        "ción"
+      ],
+      "definition": "salida ordenada hacia un lugar seguro",
+      "synonym": "desalojo",
+      "example": "Practicamos un simulacro de evacuación en la escuela."
+    },
+    "recorrido": {
+      "syllables": [
+        "re",
+        "co",
+        "rri",
+        "do"
+      ],
+      "definition": "camino que se sigue",
+      "synonym": "trayecto",
+      "example": "El autobús hace el mismo recorrido todos los días por el centro."
+    },
+    "obstáculo": {
+      "syllables": [
+        "obs",
+        "tá",
+        "cu",
+        "lo"
+      ],
+      "definition": "algo que impide pasar",
+      "synonym": "impedimento",
+      "example": "Puso una silla como obstáculo para que el perro no saliera."
+    },
+    "punto de reunión": {
+      "syllables": [
+        "pun",
+        "to de re",
+        "u",
+        "nión"
+      ],
+      "definition": "lugar acordado para juntarse afuera",
+      "synonym": "punto de encuentro",
+      "example": "El punto de reunión de la familia en caso de incendio era el buzón de la calle."
+    },
+    "voluntario": {
+      "syllables": [
+        "vo",
+        "lun",
+        "ta",
+        "rio"
+      ],
+      "definition": "persona que ayuda por decisión propia",
+      "example": "Se ofreció como voluntario para repartir los libros nuevos."
+    },
+    "inspección": {
+      "syllables": [
+        "ins",
+        "pec",
+        "ción"
+      ],
+      "definition": "revisión cuidadosa de un lugar",
+      "synonym": "revisión",
+      "example": "El bombero hizo una inspección de las salidas de emergencia."
+    },
+    "coordinación": {
+      "syllables": [
+        "co",
+        "or",
+        "di",
+        "na",
+        "ción"
+      ],
+      "definition": "organización de tareas entre personas",
+      "synonym": "organización",
+      "example": "La coordinación entre los maestros hizo que el simulacro saliera bien."
+    }
+  }
+}

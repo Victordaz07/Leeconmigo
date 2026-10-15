@@ -1,0 +1,439 @@
+{
+  "id": "el-puente-de-las-luciernagas-en-n2",
+  "familyId": "el-puente-de-las-luciernagas",
+  "language": "en",
+  "title": "The Firefly Bridge",
+  "level": 2,
+  "category": "amistad",
+  "description": "Mila and Pipo help a hedgehog cross a stream and learn when to step back and wait.",
+  "cover": {
+    "src": "stories/el-puente-de-las-luciernagas/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Mila, Pipo and a hedgehog beside a bark bridge lit by fireflies."
+  },
+  "heroFocus": {
+    "x": 48,
+    "y": 40
+  },
+  "reviewWords": [
+    "sunset",
+    "fireflies",
+    "hedgehog"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/el-puente-de-las-luciernagas/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mila and Pipo walk among fireflies and find a hedgehog beside a stream with no bridge."
+      },
+      "template": "two-up",
+      "blocks": [
+        {
+          "id": "b01",
+          "title": "Lights along the path",
+          "voice": "narration",
+          "lines": [
+            "Mila and her little dragon, Pipo, went for a walk at sunset.",
+            "Fireflies blinked among the flowers beside the quiet, rainwashed garden path."
+          ]
+        },
+        {
+          "id": "b02",
+          "title": "A missing bridge",
+          "voice": "narration",
+          "lines": [
+            "They spotted a hedgehog staring across a tiny stream, unsure where to go.",
+            "Heavy rain had washed away the little bridge it used to cross."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Which animal did they find on the bank?",
+            "options": [
+              {
+                "text": "A rabbit"
+              },
+              {
+                "text": "A hedgehog"
+              },
+              {
+                "text": "A turtle"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Yes! A hedgehog is waiting beside the water.",
+            "retryFeedback": "Look for the little animal with prickles on its back."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What had happened to the hedgehog’s bridge?",
+            "options": [
+              {
+                "text": "The rain washed the bridge away"
+              },
+              {
+                "text": "The hedgehog lost a flower"
+              },
+              {
+                "text": "Pipo turned out the lights"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s right: the rain carried the bridge away.",
+            "retryFeedback": "Read what the rain did, then look at the wet twigs."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/el-puente-de-las-luciernagas/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "A leaf bends over the water and Pipo cannot move a heavy branch."
+      },
+      "template": "two-up",
+      "blocks": [
+        {
+          "id": "b03",
+          "title": "The leaf bends",
+          "voice": "narration",
+          "lines": [
+            "Mila tried laying a large leaf between the banks of the stream.",
+            "It bent in the middle and drooped into the water beside the muddy bank."
+          ]
+        },
+        {
+          "id": "b04",
+          "title": "A heavy branch",
+          "voice": "narration",
+          "lines": [
+            "Pipo found a branch and pushed it with his front paws planted firmly against it.",
+            "He pushed harder, but it was much too heavy for him."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What does Pipo try to push?",
+            "options": [
+              {
+                "text": "A small stone"
+              },
+              {
+                "text": "A green leaf"
+              },
+              {
+                "text": "A branch"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "Yes! Pipo is trying to move a branch.",
+            "retryFeedback": "Look at what Pipo is pushing with his front paws."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What went wrong with their first two ideas?",
+            "options": [
+              {
+                "text": "Both materials disappeared"
+              },
+              {
+                "text": "The leaf bent and the branch was too heavy"
+              },
+              {
+                "text": "The hedgehog fell asleep"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Exactly: they needed something firm that they could move.",
+            "retryFeedback": "Compare what happened to the leaf with Pipo’s effort to push the branch."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/el-puente-de-las-luciernagas/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mila chooses bark and stones and builds a small crossing over the stream."
+      },
+      "template": "two-up",
+      "blocks": [
+        {
+          "id": "b05",
+          "title": "Bark and two stones",
+          "voice": "narration",
+          "lines": [
+            "Mila looked for something lighter and found a wide piece of bark.",
+            "She also picked up two smooth stones to support it."
+          ]
+        },
+        {
+          "id": "b06",
+          "title": "A new bridge",
+          "voice": "narration",
+          "lines": [
+            "She placed a stone on each bank and rested the bark across them.",
+            "Pipo watched their new bridge take shape above the water."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What supports the ends of the bark?",
+            "options": [
+              {
+                "text": "Two stones"
+              },
+              {
+                "text": "Two flowers"
+              },
+              {
+                "text": "Two wings"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Yes! A stone holds up each end.",
+            "retryFeedback": "Look at the grey objects underneath the bark."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why did Mila rest the bark on stones?",
+            "options": [
+              {
+                "text": "To hide the hedgehog"
+              },
+              {
+                "text": "To hold the bark above the water"
+              },
+              {
+                "text": "To cover all the flowers"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s right: the stones keep the bark above the water.",
+            "retryFeedback": "Look at the ends of the bark and the water flowing below."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p04",
+      "illustration": {
+        "src": "stories/el-puente-de-las-luciernagas/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mila tests the bridge with a pebble and notices the hedgehog hesitating at the entrance."
+      },
+      "template": "two-up",
+      "blocks": [
+        {
+          "id": "b07",
+          "title": "Testing the bridge",
+          "voice": "narration",
+          "lines": [
+            "Before inviting the hedgehog over, Mila placed a pebble in the middle.",
+            "The bark held steady, so she took the pebble away."
+          ]
+        },
+        {
+          "id": "b08",
+          "title": "The hedgehog waits",
+          "voice": "narration",
+          "lines": [
+            "The hedgehog moved closer, then stopped at the edge of the path.",
+            "Mila noticed that she and Pipo were partly blocking its way."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What did Mila use to test the bridge?",
+            "options": [
+              {
+                "text": "A feather"
+              },
+              {
+                "text": "An apple"
+              },
+              {
+                "text": "A pebble"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "Yes! She tested it with a little pebble.",
+            "retryFeedback": "Look for the small grey object Mila places on the bark."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why did Mila add a pebble before inviting the hedgehog over?",
+            "options": [
+              {
+                "text": "That the bridge would stay steady"
+              },
+              {
+                "text": "That Pipo could learn to swim"
+              },
+              {
+                "text": "That the fireflies would stop glowing"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Exactly: she wanted to see whether the bark would hold steady.",
+            "retryFeedback": "Read what Mila watched for when she put weight on the bridge."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p05",
+      "illustration": {
+        "src": "stories/el-puente-de-las-luciernagas/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mila and Pipo step back as fireflies glow and the hedgehog crosses the bridge."
+      },
+      "template": "two-up",
+      "blocks": [
+        {
+          "id": "b09",
+          "title": "Room to move",
+          "voice": "narration",
+          "lines": [
+            "They stepped back and waited quietly, giving the little animal room.",
+            "Above the bridge, the fireflies looked like tiny yellow lamps."
+          ]
+        },
+        {
+          "id": "b10",
+          "title": "Across at last",
+          "voice": "narration",
+          "lines": [
+            "The hedgehog slowly crossed and continued along the path between the bright purple flowers.",
+            "Mila learned that sometimes helping means knowing when to wait."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Who uses the little bark bridge?",
+            "options": [
+              {
+                "text": "The hedgehog"
+              },
+              {
+                "text": "A bird"
+              },
+              {
+                "text": "A fish"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Yes! The hedgehog can continue its walk.",
+            "retryFeedback": "Look for the little animal with prickles on the bridge."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What helped the hedgehog besides having a bridge?",
+            "options": [
+              {
+                "text": "Being pushed"
+              },
+              {
+                "text": "Another heavy branch"
+              },
+              {
+                "text": "Room and time to cross"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s right: giving it space and time was another way to help.",
+            "retryFeedback": "Compare where Mila and Pipo stood before and after they stepped back."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "sunset": {
+      "syllables": [
+        "sun",
+        "set"
+      ],
+      "definition": "The time when the sun goes down."
+    },
+    "fireflies": {
+      "syllables": [
+        "fire",
+        "flies"
+      ],
+      "definition": "Little insects that glow in the dark."
+    },
+    "hedgehog": {
+      "syllables": [
+        "hedge",
+        "hog"
+      ],
+      "definition": "A small animal covered in short prickles."
+    },
+    "drooped": {
+      "syllables": [
+        "drooped"
+      ],
+      "definition": "Bent or hung downward."
+    },
+    "support": {
+      "syllables": [
+        "sup",
+        "port"
+      ],
+      "definition": "Hold something up."
+    },
+    "steady": {
+      "syllables": [
+        "stead",
+        "y"
+      ],
+      "definition": "Staying in place without shaking."
+    },
+    "blocking": {
+      "syllables": [
+        "block",
+        "ing"
+      ],
+      "definition": "Stopping someone from getting past."
+    },
+    "quietly": {
+      "syllables": [
+        "qui",
+        "et",
+        "ly"
+      ],
+      "definition": "Without making much noise."
+    }
+  }
+}

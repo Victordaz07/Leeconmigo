@@ -1,0 +1,336 @@
+{
+  "id": "estrella-desaparecida-c3-es-n2",
+  "familyId": "estrella-desaparecida-c3",
+  "language": "es",
+  "title": "3. Lo que ocurrió de verdad",
+  "level": 2,
+  "category": "misterio",
+  "description": "Capítulo 3 de 3 de «El caso de la estrella desaparecida». Leer en orden.",
+  "cover": {
+    "src": "stories/estrella-desaparecida-c3/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "El caso de la estrella desaparecida"
+  },
+  "pages": [
+    {
+      "id": "p07",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c3/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Destapan la estrella, examinan las pistas y prueban cómo se abre el lazo flojo."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b25",
+          "voice": "narration",
+          "lines": [
+            "Los hermanos levantan la tela de rayas y encuentran la estrella completa. Pico también parece sorprendido."
+          ],
+          "title": "¡Ahí está!"
+        },
+        {
+          "id": "b26",
+          "voice": "narration",
+          "lines": [
+            "Nico sostiene el aro mientras Luna examina la cinta. El adorno está intacto y el lazo está suelto."
+          ],
+          "title": "Entera, pero suelta"
+        },
+        {
+          "id": "b27",
+          "voice": "narration",
+          "lines": [
+            "Reúnen las pistas sobre la mesa, junto al carro. Necesitan una explicación que tenga sentido para todas."
+          ],
+          "title": "Juntan las pistas"
+        },
+        {
+          "id": "b28",
+          "voice": "narration",
+          "lines": [
+            "Luna prueba el lazo flojo: al tirar de un extremo, se abre. Así pudo soltarse del gancho."
+          ],
+          "title": "La prueba del lazo"
+        }
+      ],
+      "checkpoint": {
+        "id": "q07",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Dónde estaba la estrella?",
+            "options": [
+              {
+                "text": "Debajo del banco"
+              },
+              {
+                "text": "Dentro del carro"
+              },
+              {
+                "text": "Encima del tejado"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Dentro del carro.",
+            "retryFeedback": "Fíjate en lo que ocurre al tirar del extremo del lazo."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué demuestra la prueba del lazo flojo?",
+            "options": [
+              {
+                "text": "Que podía abrirse al tirar de un extremo"
+              },
+              {
+                "text": "Que el gato lo abrió"
+              },
+              {
+                "text": "Que todo nudo se suelta siempre"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Que podía abrirse al tirar de un extremo.",
+            "retryFeedback": "Fíjate en lo que ocurre al tirar del extremo del lazo."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p08",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c3/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reconstrucción: viento, lazo suelto, estrella que cae y queda tapada, carro que deja rastros."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b29",
+          "voice": "narration",
+          "lines": [
+            "Volvemos al comienzo. La cinta se agitaba con el viento y el carro estaba justo debajo."
+          ],
+          "title": "Vuelve el viento"
+        },
+        {
+          "id": "b30",
+          "voice": "narration",
+          "lines": [
+            "El lazo se deshizo y la estrella cayó dentro del carro. Pico miraba hacia delante y no lo vio."
+          ],
+          "title": "Cae en el carro"
+        },
+        {
+          "id": "b31",
+          "voice": "narration",
+          "lines": [
+            "Al caer, una parte de la tela se dobló sobre el adorno. Por eso quedó oculto."
+          ],
+          "title": "La tela la tapa"
+        },
+        {
+          "id": "b32",
+          "voice": "narration",
+          "lines": [
+            "El carro dejó dos líneas en el barro. La cinta se enganchó y perdió un pedacito junto a la ramita."
+          ],
+          "title": "La cinta se engancha"
+        }
+      ],
+      "checkpoint": {
+        "id": "q08",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué ocultó la estrella dentro del carro?",
+            "options": [
+              {
+                "text": "Una caja"
+              },
+              {
+                "text": "Un abrigo"
+              },
+              {
+                "text": "Una parte de la tela"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Una parte de la tela.",
+            "retryFeedback": "Sigue las cuatro imágenes de esta página en orden."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué orden coincide con las imágenes?",
+            "options": [
+              {
+                "text": "La tela se mueve, el gato ata la estrella y llega el viento"
+              },
+              {
+                "text": "El lazo se suelta, la estrella cae y la tela la tapa"
+              },
+              {
+                "text": "El carro se vacía, la estrella vuela al gancho y el lazo se aprieta"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! El lazo se suelta, la estrella cae y la tela la tapa.",
+            "retryFeedback": "Sigue las cuatro imágenes de esta página en orden."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p09",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c3/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Llevan la estrella de vuelta, hacen un nudo doble, lo prueban y celebran la fiesta."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b33",
+          "voice": "narration",
+          "lines": [
+            "De nuevo en el presente, Luna y Nico llevan la estrella a su lugar. Ya saben cómo desapareció."
+          ],
+          "title": "De vuelta al gancho"
+        },
+        {
+          "id": "b34",
+          "voice": "narration",
+          "lines": [
+            "Luna ata un nudo doble mientras Nico sostiene el adorno. Esta vez revisan el cierre juntos."
+          ],
+          "title": "Un nudo doble"
+        },
+        {
+          "id": "b35",
+          "voice": "narration",
+          "lines": [
+            "Tiran suavemente para probarlo. Aunque los banderines se mueven, la estrella sigue bien sujeta al gancho."
+          ],
+          "title": "Comprueban que aguanta"
+        },
+        {
+          "id": "b36",
+          "voice": "narration",
+          "lines": [
+            "La fiesta comienza con la estrella en su sitio. Observar, comparar y comprobar los ayudó a resolver el misterio."
+          ],
+          "title": "¡Empieza la fiesta!"
+        }
+      ],
+      "checkpoint": {
+        "id": "q09",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué hace Luna para sujetar mejor la estrella?",
+            "options": [
+              {
+                "text": "Un nudo doble"
+              },
+              {
+                "text": "Un dibujo"
+              },
+              {
+                "text": "Un corte en la cinta"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Un nudo doble.",
+            "retryFeedback": "Observa el nudo y lo que hacen antes de empezar la fiesta."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué dan un tirón suave al terminar?",
+            "options": [
+              {
+                "text": "Para volver a perderla"
+              },
+              {
+                "text": "Para que el gato se acerque"
+              },
+              {
+                "text": "Para comprobar que el arreglo funciona"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Para comprobar que el arreglo funciona.",
+            "retryFeedback": "Observa el nudo y lo que hacen antes de empezar la fiesta."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "lazo": {
+      "syllables": [
+        "la",
+        "zo"
+      ],
+      "definition": "Nudo con vueltas que se puede deshacer tirando de un extremo."
+    },
+    "gancho": {
+      "syllables": [
+        "gan",
+        "cho"
+      ],
+      "definition": "Pieza curva que sirve para colgar cosas."
+    },
+    "prueba": {
+      "syllables": [
+        "prue",
+        "ba"
+      ],
+      "definition": "Dato o acción que ayuda a comprobar una idea."
+    },
+    "aro": {
+      "syllables": [
+        "a",
+        "ro"
+      ],
+      "definition": "Pieza con forma de círculo."
+    },
+    "intacto": {
+      "syllables": [
+        "in",
+        "tac",
+        "to"
+      ],
+      "definition": "Que no tiene daños."
+    },
+    "extremo": {
+      "syllables": [
+        "ex",
+        "tre",
+        "mo"
+      ],
+      "definition": "Punta o parte final de algo."
+    },
+    "banderines": {
+      "syllables": [
+        "ban",
+        "de",
+        "ri",
+        "nes"
+      ],
+      "definition": "Banderas pequeñas que se usan para decorar."
+    }
+  },
+  "heroFocus": {
+    "x": 35,
+    "y": 62
+  },
+  "reviewWords": [
+    "lazo",
+    "gancho",
+    "prueba"
+  ]
+}

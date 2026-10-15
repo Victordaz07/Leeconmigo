@@ -1,0 +1,849 @@
+{
+  "id": "el-puente-que-desaparecia-en-n6",
+  "familyId": "el-puente-que-desaparecia",
+  "language": "en",
+  "title": "The Bridge That Kept Disappearing",
+  "level": 6,
+  "category": "oficios",
+  "description": "Zoe learns to design video games.",
+  "cover": {
+    "src": "stories/el-puente-que-desaparecia/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Scene of a robot and an island."
+  },
+  "heroFocus": {
+    "x": 30,
+    "y": 55
+  },
+  "reviewWords": [
+    "program",
+    "icon",
+    "prototype"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/el-puente-que-desaparecia/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Scene of a robot and an island."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b01",
+          "voice": "narration",
+          "title": "A Robot and an Island",
+          "lines": [
+            "Zoe wanted to make video games. For the career fair, she designed one about a little robot carrying seeds to an island.",
+            "Her aunt Rosa, a programmer, showed her how to draw the route on paper first. Zoe sketched a shore, two platforms, and a bridge that appeared when a player pressed the correct button.",
+            "Leo, her neighbor, wanted to be the first player. Zoe thought he would see the green bridge across the green field right away.",
+            "No one else had tested the game yet."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What did the robot carry to the island?",
+            "options": [
+              {
+                "text": "Seeds"
+              },
+              {
+                "text": "The bridge disappeared too quickly"
+              },
+              {
+                "text": "Pause did not work on the last plank"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! Seeds.",
+            "retryFeedback": "Look for the action observed on this page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why did Zoe need another player?",
+            "options": [
+              {
+                "text": "Leo knew more seeds"
+              },
+              {
+                "text": "Rosa had no computer"
+              },
+              {
+                "text": "Her own test could not reveal every difficulty"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! Her own test could not reveal every difficulty.",
+            "retryFeedback": "Think about what changed after observing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b02",
+          "voice": "narration",
+          "title": "The First Version",
+          "lines": [
+            "On Zoe’s screen, arrow keys moved the robot. There were two round buttons: a green one opened the bridge, and a red one returned the robot to the start.",
+            "Zoe had drawn both without symbols. When she played, she reached the island in seconds and the seeds turned the empty ground into a garden.",
+            "“It works,” she announced. Rosa asked whether working in Zoe’s hands meant it was ready for everyone.",
+            "Zoe opened the door for Leo."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "How did Zoe move the robot?",
+            "options": [
+              {
+                "text": "A mode without a countdown"
+              },
+              {
+                "text": "She saved them for a future version"
+              },
+              {
+                "text": "With the keyboard arrow keys"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! With the keyboard arrow keys.",
+            "retryFeedback": "Look for the action observed on this page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What was Rosa trying to learn?",
+            "options": [
+              {
+                "text": "Whether the robot had a name"
+              },
+              {
+                "text": "Whether others could use the game too"
+              },
+              {
+                "text": "Whether Zoe could draw gardens"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! Whether others could use the game too.",
+            "retryFeedback": "Think about what changed after observing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/el-puente-que-desaparecia/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Scene of the invisible bridge."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b03",
+          "voice": "narration",
+          "title": "The Invisible Bridge",
+          "lines": [
+            "Leo guided the robot to the shore. He looked at the two circles and chose one.",
+            "The robot returned to the start. He tried again more slowly, and the same thing happened.",
+            "“I cannot tell which button is which, and the bridge gets lost in the grass,” he explained. Zoe almost told him to look harder, but Rosa suggested listening without interrupting.",
+            "Leo pointed to the screen: the circles looked similar to him, and the edge of the bridge barely showed."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What problem did Leo describe?",
+            "options": [
+              {
+                "text": "Leo"
+              },
+              {
+                "text": "He could not distinguish the buttons or bridge"
+              },
+              {
+                "text": "An animation of sprouts and the robot"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! He could not distinguish the buttons or bridge.",
+            "retryFeedback": "Look for the action observed on this page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What helped Zoe improve?",
+            "options": [
+              {
+                "text": "Listening to Leo’s experience"
+              },
+              {
+                "text": "Telling him to look harder"
+              },
+              {
+                "text": "Removing the bridge"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! Listening to Leo’s experience.",
+            "retryFeedback": "Think about what changed after observing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p04",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b04",
+          "voice": "narration",
+          "title": "Change the Question",
+          "lines": [
+            "Zoe wrote in her notebook, “What did I do wrong?” Rosa gently crossed out the word wrong and suggested a different question: “What does the player need to know what to do?” Zoe realized that color had been her only clue. The game could keep its colors, but it needed more signals.",
+            "Leo suggested a bridge icon on the button that opened it and a home icon on the one that restarted the level. Zoe also drew a dark outline around each plank of the bridge."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What clue did Zoe add to the buttons?",
+            "options": [
+              {
+                "text": "Bridge and home icons"
+              },
+              {
+                "text": "She organized them with changes and tests"
+              },
+              {
+                "text": "Listen to the players"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! Bridge and home icons.",
+            "retryFeedback": "Look for the action observed on this page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why did icons improve the buttons?",
+            "options": [
+              {
+                "text": "They shortened the game"
+              },
+              {
+                "text": "They changed the seeds"
+              },
+              {
+                "text": "They added a clue besides color"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! They added a clue besides color.",
+            "retryFeedback": "Think about what changed after observing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p05",
+      "illustration": {
+        "src": "stories/el-puente-que-desaparecia/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Scene of a different version."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b05",
+          "voice": "narration",
+          "title": "A Different Version",
+          "lines": [
+            "The next day, Zoe showed the revised game. Leo recognized the bridge button by its icon without naming a color.",
+            "The dark outline made the path visible. He crossed, but the bridge vanished before the robot reached the last plank.",
+            "“Now I can see what to do, but it ends too quickly,” he said. Zoe checked her timer.",
+            "She had set it for the speed at which she played. Instead of defending her favorite time, she wrote it down as a new problem."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What new difficulty appeared next?",
+            "options": [
+              {
+                "text": "Pause did not work on the last plank"
+              },
+              {
+                "text": "Seeds"
+              },
+              {
+                "text": "The bridge disappeared too quickly"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! The bridge disappeared too quickly.",
+            "retryFeedback": "Look for the action observed on this page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What did the second test show?",
+            "options": [
+              {
+                "text": "The bridge never appeared"
+              },
+              {
+                "text": "Solving one problem can reveal another"
+              },
+              {
+                "text": "Leo did not want to play"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! Solving one problem can reveal another.",
+            "retryFeedback": "Think about what changed after observing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p06",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b06",
+          "voice": "narration",
+          "title": "Take Your Time Mode",
+          "lines": [
+            "Rosa helped Zoe make a mode without a countdown. The main challenge remained for players who wanted it, but Leo could explore without rushing.",
+            "Zoe added a visible pause so any player could stop. Leo carried the seeds to the island and played again, this time for fun rather than to prove anything.",
+            "Zoe discovered that offering choices did not remove the adventure. It let more people find their own way to enjoy it."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q06",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What did Zoe add for playing without rushing?",
+            "options": [
+              {
+                "text": "With the keyboard arrow keys"
+              },
+              {
+                "text": "A mode without a countdown"
+              },
+              {
+                "text": "She saved them for a future version"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! A mode without a countdown.",
+            "retryFeedback": "Look for the action observed on this page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What did Zoe learn about options?",
+            "options": [
+              {
+                "text": "They let people enjoy a game in different ways"
+              },
+              {
+                "text": "They remove all adventure"
+              },
+              {
+                "text": "They prevent testing"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! They let people enjoy a game in different ways.",
+            "retryFeedback": "Think about what changed after observing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p07",
+      "illustration": {
+        "src": "stories/el-puente-que-desaparecia/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Scene of another player, another clue."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b07",
+          "voice": "narration",
+          "title": "Another Player, Another Clue",
+          "lines": [
+            "Zoe invited Mina, who often played with the sound very low because she shared a room. When the seeds reached the island, a bell rang, but nothing visible happened right away.",
+            "Mina thought the level was still going. Zoe and Rosa watched quietly before explaining.",
+            "They added an animation: green shoots rose from the earth and the robot lifted its arms. Now the ending made sense without the bell.",
+            "Zoe understood that one test with Leo could not reveal every need."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q07",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What was added so the ending worked without sound?",
+            "options": [
+              {
+                "text": "An animation of sprouts and the robot"
+              },
+              {
+                "text": "Leo"
+              },
+              {
+                "text": "He could not distinguish the buttons or bridge"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! An animation of sprouts and the robot.",
+            "retryFeedback": "Look for the action observed on this page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why test with Mina?",
+            "options": [
+              {
+                "text": "They needed a different island"
+              },
+              {
+                "text": "Leo took the keyboard"
+              },
+              {
+                "text": "Another person could reveal another barrier"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! Another person could reveal another barrier.",
+            "retryFeedback": "Think about what changed after observing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p08",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b08",
+          "voice": "narration",
+          "title": "The Change List",
+          "lines": [
+            "In her notebook, Zoe organized the comments into a list: recognize buttons, see the bridge, control the time, and understand the ending. Beside each point she wrote what she had changed and who had tested it.",
+            "Rosa explained that programming also means revising, listening, and testing again. Zoe could not promise the game would work the same way for everyone, but she could keep asking.",
+            "She invited two more classmates and left pencils for them to draw anything confusing."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q08",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What did Zoe do with the comments?",
+            "options": [
+              {
+                "text": "Listen to the players"
+              },
+              {
+                "text": "Bridge and home icons"
+              },
+              {
+                "text": "She organized them with changes and tests"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! She organized them with changes and tests.",
+            "retryFeedback": "Look for the action observed on this page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What does the change list represent?",
+            "options": [
+              {
+                "text": "A seed recipe"
+              },
+              {
+                "text": "Listening, revising, and testing"
+              },
+              {
+                "text": "A winners list"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! Listening, revising, and testing.",
+            "retryFeedback": "Think about what changed after observing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p09",
+      "illustration": {
+        "src": "stories/el-puente-que-desaparecia/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Scene of the final rehearsal."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b09",
+          "voice": "narration",
+          "title": "The Final Rehearsal",
+          "lines": [
+            "The afternoon before the fair, Leo chose take-your-time mode and Mina turned the sound off. Both saw the icons, found the bridge, and understood when the plants grew.",
+            "Zoe tried the timed challenge and had fun. Then a small bug appeared: the pause button did not respond while the robot stood on the last plank.",
+            "Rosa and Zoe repeated the steps to find where it happened. They fixed it and tested again.",
+            "The game was better because it could still accept corrections."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q09",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What bug did they find at the end?",
+            "options": [
+              {
+                "text": "The bridge disappeared too quickly"
+              },
+              {
+                "text": "Pause did not work on the last plank"
+              },
+              {
+                "text": "Seeds"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! Pause did not work on the last plank.",
+            "retryFeedback": "Look for the action observed on this page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why test again after the fix?",
+            "options": [
+              {
+                "text": "To check that pause worked"
+              },
+              {
+                "text": "To recolor the robot"
+              },
+              {
+                "text": "To count the trees"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! To check that pause worked.",
+            "retryFeedback": "Think about what changed after observing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p10",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b10",
+          "voice": "narration",
+          "title": "The Invitation",
+          "lines": [
+            "Zoe set up her table with a screen, a simple controller, and paper cards showing the icons. She left room for two players and a display that made no grand promises: there was a game to try and comments that could help improve it.",
+            "Leo brought a little drawing of an island with different trees. Mina suggested letting the robot choose among several seeds.",
+            "Zoe saved both ideas for a future version. She did not have to add them at the last minute to listen sincerely."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q10",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What did Zoe do with the new ideas?",
+            "options": [
+              {
+                "text": "She saved them for a future version"
+              },
+              {
+                "text": "With the keyboard arrow keys"
+              },
+              {
+                "text": "A mode without a countdown"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! She saved them for a future version.",
+            "retryFeedback": "Look for the action observed on this page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why save ideas for later?",
+            "options": [
+              {
+                "text": "She did not want to play with Leo"
+              },
+              {
+                "text": "She lost her cards"
+              },
+              {
+                "text": "She could hear them without rushing changes"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! She could hear them without rushing changes.",
+            "retryFeedback": "Think about what changed after observing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p11",
+      "illustration": {
+        "src": "stories/el-puente-que-desaparecia/page-11.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Scene of everyone crosses."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b11",
+          "voice": "narration",
+          "title": "Everyone Crosses",
+          "lines": [
+            "At the school fair, Zoe invited other children to play. Camila chose take-your-time mode.",
+            "Samuel noticed that the bridge lights also had clear outlines. Imani found the pause button, and Gael cheered when sprouts filled the island.",
+            "Leo explained to a visitor why the icons helped. Zoe thanked each person without claiming her game was perfect.",
+            "She had made an adventure, but her favorite part was watching different people find a path through it."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q11",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Who explained why the icons helped?",
+            "options": [
+              {
+                "text": "He could not distinguish the buttons or bridge"
+              },
+              {
+                "text": "An animation of sprouts and the robot"
+              },
+              {
+                "text": "Leo"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! Leo.",
+            "retryFeedback": "Look for the action observed on this page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What does the fair show?",
+            "options": [
+              {
+                "text": "Zoe played alone"
+              },
+              {
+                "text": "Different players found ways to take part"
+              },
+              {
+                "text": "The game only worked with sound"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! Different players found ways to take part.",
+            "retryFeedback": "Think about what changed after observing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p12",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b12",
+          "voice": "narration",
+          "title": "The Next Level",
+          "lines": [
+            "When the gym was empty, Zoe turned off the screen. She had once thought a programmer was someone who wrote instructions without mistakes.",
+            "Now she knew a programmer also made questions for the people who would use what was built. In her notebook she drew another island, but left the bridge blank.",
+            "She wanted to hear from players before deciding what it would be. Rosa helped her pack the boxes.",
+            "Zoe could already imagine a new level with more than one way across."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q12",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What did Zoe want to do before designing the next bridge?",
+            "options": [
+              {
+                "text": "She organized them with changes and tests"
+              },
+              {
+                "text": "Listen to the players"
+              },
+              {
+                "text": "Bridge and home icons"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! Listen to the players.",
+            "retryFeedback": "Look for the action observed on this page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What did Zoe learn about programming?",
+            "options": [
+              {
+                "text": "It includes listening to users"
+              },
+              {
+                "text": "It requires never making mistakes"
+              },
+              {
+                "text": "It is only about drawing robots"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! It includes listening to users.",
+            "retryFeedback": "Think about what changed after observing."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "program": {
+      "syllables": [
+        "pro",
+        "gram"
+      ],
+      "definition": "To make instructions for a computer.",
+      "synonym": "code",
+      "example": "He learned to program a simple game on his computer."
+    },
+    "icon": {
+      "syllables": [
+        "i",
+        "con"
+      ],
+      "definition": "A small image representing an action.",
+      "synonym": "symbol",
+      "example": "She tapped the camera icon to take a photo."
+    },
+    "prototype": {
+      "syllables": [
+        "pro",
+        "to",
+        "type"
+      ],
+      "definition": "An early version used to test an idea.",
+      "synonym": "model",
+      "example": "The team built a cardboard prototype before making the real toy."
+    },
+    "accessibility": {
+      "syllables": [
+        "ac",
+        "ces",
+        "si",
+        "bil",
+        "i",
+        "ty"
+      ],
+      "definition": "Design that helps different people use something.",
+      "example": "The ramp improves the library's accessibility for wheelchairs."
+    },
+    "debug": {
+      "syllables": [
+        "de",
+        "bug"
+      ],
+      "definition": "To find and fix a problem in a program.",
+      "synonym": "fix",
+      "example": "He spent the afternoon debugging the program until it stopped crashing."
+    },
+    "option": {
+      "syllables": [
+        "op",
+        "tion"
+      ],
+      "definition": "One of several choices.",
+      "synonym": "choice",
+      "example": "The menu had three dessert options to choose from."
+    }
+  }
+}

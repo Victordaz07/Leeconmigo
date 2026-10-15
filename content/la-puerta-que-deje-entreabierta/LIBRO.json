@@ -1,0 +1,323 @@
+{
+  "id": "isa-bella-la-puerta-que-deje-entreabierta",
+  "title": {
+    "es": "La puerta que dejé entreabierta",
+    "en": "The Door I Left Ajar"
+  },
+  "age_range": [
+    10,
+    13
+  ],
+  "narration": "first_person_isa",
+  "chapters": [
+    {
+      "number": 1,
+      "start_page": 1,
+      "title": {
+        "es": "La niña de las estrellas",
+        "en": "The Girl Who Made Stars"
+      }
+    },
+    {
+      "number": 2,
+      "start_page": 5,
+      "title": {
+        "es": "Lo que no dije",
+        "en": "What I Didn't Say"
+      }
+    },
+    {
+      "number": 3,
+      "start_page": 9,
+      "title": {
+        "es": "Una puerta distinta",
+        "en": "A Different Kind of Door"
+      }
+    }
+  ],
+  "images": {
+    "character_sheet": "imagenes/personajes.png",
+    "cover": "imagenes/portada.png"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "chapter": 1,
+      "text": {
+        "es": "Cuando tenía siete años, mi mamá y yo fabricábamos estrellas de papel en la mesa de la cocina. Ella doblaba una punta y yo doblaba la otra. Si la estrella salía torcida, decíamos que estaba bailando. Yo le contaba absolutamente todo: lo que había soñado, lo que me daba miedo y hasta la parte aburrida de las películas. Bella, mi mamá, decía que algún día echaría de menos tantas preguntas. Yo no le creía. Pensaba que siempre seríamos nosotras dos y nuestra mesa llena de estrellas.",
+        "en": "When I was seven, Mom and I made paper stars at the kitchen table. She folded one point and I folded the other. If a star came out crooked, we said it was dancing. I told her absolutely everything: what I had dreamed, what frightened me, even the boring parts of movies. Bella, my mom, said that someday she would miss all my questions. I didn't believe her. I thought it would always be the two of us and our table covered with stars."
+      },
+      "illustration": "imagenes/escena_01.png",
+      "questions": {
+        "es": [
+          "¿Qué hacían Isa y Bella juntas cuando Isa era pequeña?",
+          "¿Por qué crees que el recuerdo de las estrellas vuelve al final?"
+        ],
+        "en": [
+          "What did Isa and Bella do together when Isa was little?",
+          "Why do you think the paper-star memory returns near the end?"
+        ]
+      }
+    },
+    {
+      "number": 2,
+      "chapter": 1,
+      "text": {
+        "es": "Cinco años después, la mesa seguía allí, pero yo ya no quería contar lo mismo. Había empezado un proyecto de fotografía con mi amiga Marisol. Las fotos no me salían como las imaginaba y tampoco sabía si quería enseñárselas a nadie. Cuando mamá preguntó «¿Qué tal la escuela?», contesté «bien». Ella preguntó qué significaba «bien». Yo me puse los audífonos, aunque no estaba escuchando música. Me sentí cruel en cuanto lo hice. También me molestó sentir que debía dar un informe de cada pensamiento que tenía.",
+        "en": "Five years later, the table was still there, but I didn't want to tell her the same things. I had started a photography project with my friend Marisol. My pictures weren't coming out the way I imagined, and I didn't even know if I wanted anyone to see them. When Mom asked, “How was school?” I said, “Fine.” She asked what “fine” meant. I put on my headphones, though I wasn't listening to music. I felt mean as soon as I did it. I also hated feeling as if I owed someone a report on every thought in my head."
+      },
+      "illustration": "imagenes/escena_02.png",
+      "questions": {
+        "es": [
+          "¿Por qué Isa se pone los audífonos sin escuchar música?",
+          "¿Puede Isa querer a Bella y desear privacidad al mismo tiempo? Explica."
+        ],
+        "en": [
+          "Why does Isa put on her headphones without playing music?",
+          "Can Isa love Bella and want privacy at the same time? Explain."
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "chapter": 1,
+      "text": {
+        "es": "Mamá intentó acercarse de otras maneras. Dejó fruta cortada junto a mi cuaderno y me ofreció revisar las fotos. Le dije que no hacía falta. Al rato asomó la cabeza por la puerta para recordarme que cenábamos en casa de la tía Nora. «Te conviene llevar el suéter», añadió. Yo respondí como si acabara de darme una orden terrible. Después vi el suéter sobre mi cama y me dio rabia que hubiera acertado: afuera hacía frío. Una parte de mí quería que me cuidara. Otra quería decidir por mi cuenta cuándo necesitaba ayuda.",
+        "en": "Mom tried other ways to get close. She left sliced fruit beside my notebook and offered to look over the pictures. I said I didn't need help. Later she appeared at my door to remind me we were having dinner at Aunt Nora's. “You might want a sweater,” she added. I answered as if she had given me a terrible order. Then I saw the sweater on my bed and was annoyed that she had been right: it was cold outside. Part of me wanted her to take care of me. Another part wanted to decide for myself when I needed help."
+      },
+      "illustration": null,
+      "questions": {
+        "es": [
+          "¿Qué dos deseos opuestos reconoce Isa sobre el cuidado de su mamá?",
+          "¿Por qué le molesta que Bella acierte con el suéter?"
+        ],
+        "en": [
+          "What two opposite wishes does Isa notice about her mother’s care?",
+          "Why does it bother her that Bella was right about the sweater?"
+        ]
+      }
+    },
+    {
+      "number": 4,
+      "chapter": 1,
+      "text": {
+        "es": "En casa de Nora, alguien encontró una foto mía con dos coletas y una capa hecha con una toalla. Mamá contó cómo, a los siete, yo había anunciado que salvaría a todas las personas tristes con abrazos. Mis primos se rieron con cariño. Yo había hecho cosas más vergonzosas esa misma semana, pero aquella historia me ardió en la cara. Era como si todos pudieran ver una versión de mí que ya no había elegido mostrar. «Mamá, para», dije. Ella sonrió, pensando que yo bromeaba, y terminó la anécdota. Dejé el postre en la mesa y salí al pasillo.",
+        "en": "At Nora's house, someone found a picture of me with two pigtails and a towel for a cape. Mom told everyone how, at seven, I had announced I would save every sad person with a hug. My cousins laughed kindly. I had done more embarrassing things that very week, but this story made my face burn. It was as if everybody could see a version of me I hadn't chosen to show. “Mom, stop,” I said. She smiled, thinking I was joking, and finished the story. I left my dessert on the table and went into the hall."
+      },
+      "illustration": "imagenes/escena_04.png",
+      "questions": {
+        "es": [
+          "¿Cómo se siente Isa durante la anécdota de la capa?",
+          "¿Qué pudo haber hecho Bella al escuchar «Mamá, para»?"
+        ],
+        "en": [
+          "How does Isa feel during the story about the cape?",
+          "What could Bella have done when Isa said, “Mom, stop”?"
+        ]
+      }
+    },
+    {
+      "number": 5,
+      "chapter": 2,
+      "text": {
+        "es": "De camino a casa, mamá dijo que nadie se estaba burlando. Yo dije que eso no cambiaba nada. «Tú solo conoces a la niña que yo era», solté. Vi cómo apretaba el volante. No quise retirar las palabras, pero tampoco había querido herirla así. En mi cuarto cerré la puerta hasta dejar una rendija. Mamá se detuvo al otro lado. «Debí preguntarte antes de contar esa historia», dijo. Yo miré la luz bajo la puerta y no respondí. Su disculpa era real. Mi vergüenza también. Las dos cosas podían existir a la vez.",
+        "en": "On the way home, Mom said nobody had been laughing at me. I said that didn't change anything. “You only know the kid I used to be,” I blurted out. I saw her grip the steering wheel. I didn't want to take the words back, but I hadn't meant to hurt her like that. In my room, I closed the door until only a crack remained. Mom stopped on the other side. “I should have asked before telling that story,” she said. I watched the light beneath the door and didn't answer. Her apology was real. So was my embarrassment. Both could exist at once."
+      },
+      "illustration": "imagenes/escena_05.png",
+      "questions": {
+        "es": [
+          "¿Qué admite Bella junto a la puerta?",
+          "¿Por qué la disculpa no borra de inmediato la vergüenza de Isa?"
+        ],
+        "en": [
+          "What does Bella admit outside the door?",
+          "Why doesn’t the apology immediately erase Isa’s embarrassment?"
+        ]
+      }
+    },
+    {
+      "number": 6,
+      "chapter": 2,
+      "text": {
+        "es": "El lunes llegué tarde a nuestra reunión del proyecto. Marisol había escogido tres fotos para la exposición y yo cambié dos sin consultarle. Estaba segura de que las mías mostraban mejor los murales del barrio. Ella miró la pantalla y me preguntó si su trabajo no contaba. «Solo intentaba mejorarlo», dije. Reconocí la frase en cuanto salió de mi boca: sonaba demasiado a «solo quería ayudarte». Marisol guardó su cámara. No gritó. Eso hizo más difícil fingir que el problema era suyo.",
+        "en": "On Monday I arrived late to our project meeting. Marisol had chosen three photographs for the exhibition, and I replaced two without asking her. I was sure mine showed the neighborhood murals better. She looked at the screen and asked if her work counted for anything. “I was only trying to make it better,” I said. I recognized the sentence the moment it left my mouth: it sounded far too much like “I only wanted to help.” Marisol put away her camera. She didn't shout. That made it harder to pretend the problem was hers."
+      },
+      "illustration": "imagenes/escena_06.png",
+      "questions": {
+        "es": [
+          "¿Qué cambió Isa en el proyecto sin permiso?",
+          "¿En qué se parece su explicación a algo que Bella podría haber dicho?"
+        ],
+        "en": [
+          "What did Isa change in the project without permission?",
+          "How does her explanation sound like something Bella might have said?"
+        ]
+      }
+    },
+    {
+      "number": 7,
+      "chapter": 2,
+      "text": {
+        "es": "Pasé la tarde componiendo un mensaje perfecto para Marisol. Lo borré once veces. Uno sonaba como una excusa; otro parecía una confesión ante un juez. Quise contarle a mamá, pero imaginé una lista de consejos y una llamada a la madre de Marisol. Dejé el teléfono boca abajo. Entonces vi una de nuestras fotos antiguas: en ella aparecían dos sombras sosteniendo la misma cámara. No se podía saber quién había tomado la decisión de disparar. Tal vez ese era precisamente el problema. Yo había tratado un proyecto compartido como si solo me perteneciera.",
+        "en": "I spent the afternoon writing a perfect message to Marisol. I deleted it eleven times. One version sounded like an excuse; another sounded like a confession before a judge. I wanted to tell Mom, but I pictured a list of advice and a phone call to Marisol's mother. I turned my phone face down. Then I saw one of our old pictures: two shadows held the same camera. You couldn't tell who had decided to press the shutter. Maybe that was exactly the problem. I had treated a shared project as though it belonged only to me."
+      },
+      "illustration": null,
+      "questions": {
+        "es": [
+          "¿Qué descubre Isa al mirar la foto de las sombras?",
+          "¿Por qué le cuesta escribir a Marisol?"
+        ],
+        "en": [
+          "What does Isa realize when she sees the picture of their shadows?",
+          "Why is writing to Marisol so difficult?"
+        ]
+      }
+    },
+    {
+      "number": 8,
+      "chapter": 2,
+      "text": {
+        "es": "Encontré a mamá lavando dos tazas. «Necesito contarte algo», dije, «pero primero escúchame sin resolverlo por mí». Bella cerró el grifo. Se sentó y dejó el teléfono lejos. Le hablé de las fotos y de la cara de Marisol. Mamá abrió la boca una vez y volvió a cerrarla. Cuando terminé, preguntó: «¿Qué crees que necesita escuchar tu amiga?». No era la respuesta que había ensayado discutir. Le dije que Marisol necesitaba saber que su trabajo importaba y poder elegir conmigo. Mamá asintió. «Eso sí puedes decírselo tú».",
+        "en": "I found Mom washing two mugs. “I need to tell you something,” I said, “but please listen before trying to solve it for me.” Bella turned off the tap. She sat down and put her phone away. I told her about the pictures and Marisol's face. Mom opened her mouth once and closed it again. When I finished, she asked, “What do you think your friend needs to hear?” It wasn't the answer I had rehearsed arguing against. I said Marisol needed to know her work mattered and that she could choose with me. Mom nodded. “You can tell her that yourself.”"
+      },
+      "illustration": "imagenes/escena_08.png",
+      "questions": {
+        "es": [
+          "¿Qué pide Isa antes de contarle su problema a Bella?",
+          "¿Qué hace Bella para mostrar que la escucha?"
+        ],
+        "en": [
+          "What does Isa ask before telling Bella her problem?",
+          "What does Bella do to show she is listening?"
+        ]
+      }
+    },
+    {
+      "number": 9,
+      "chapter": 3,
+      "text": {
+        "es": "Al día siguiente pedí hablar con Marisol. No empecé explicando por qué mis fotos eran buenas. «Cambié las tuyas sin preguntar. Lo siento», dije. Ella tardó en responder. Me contó que había elegido una imagen de la pared rota porque el mural no estaba terminado: mostraba a los vecinos trabajando juntos. Yo había preferido una pared bonita y completa. Miramos las dos versiones. Decidimos incluir ambas y escribir juntas por qué las habíamos escogido. Marisol no dijo que todo estaba olvidado. Me pasó la cámara para que revisáramos el encuadre. Fue un comienzo.",
+        "en": "The next day I asked to talk to Marisol. I didn't begin by explaining why my pictures were good. “I replaced yours without asking. I'm sorry,” I said. She took a while to answer. She had chosen a picture of a damaged wall because the mural wasn't finished: it showed neighbors working together. I had preferred a pretty, completed wall. We looked at both versions. We decided to include both and write together about why we had chosen them. Marisol didn't say everything was forgotten. She passed me the camera so we could check the frame. It was a beginning."
+      },
+      "illustration": null,
+      "questions": {
+        "es": [
+          "¿Cómo se disculpa Isa con Marisol?",
+          "¿Qué significado diferente tenía para cada una la foto del mural?"
+        ],
+        "en": [
+          "How does Isa apologize to Marisol?",
+          "What different meanings did the mural picture have for each girl?"
+        ]
+      }
+    },
+    {
+      "number": 10,
+      "chapter": 3,
+      "text": {
+        "es": "Esa noche le pregunté a mamá por qué había contado lo de mi capa. «Porque me encanta esa niña», dijo. «Y a veces olvido preguntarme si a ti te gustaría que otros la conocieran así». Le expliqué que no quería esconder todos nuestros recuerdos; solo quería poder escoger cuáles eran míos para contar. Ella me pidió que le avisara cuando quisiera espacio sin hacerla adivinar. Acordamos algo pequeño: tocaría antes de entrar, preguntaría antes de compartir mis historias y yo intentaría decir «ahora no, después sí» en vez de desaparecer detrás de mis audífonos.",
+        "en": "That night I asked Mom why she had told the story about my cape. “Because I love that little girl,” she said. “And sometimes I forget to ask if you want other people to meet her that way.” I explained that I didn't want to hide all our memories; I just wanted a say in which of my stories were shared. She asked me to tell her when I needed space instead of making her guess. We made a small agreement: she would knock before entering and ask before sharing my stories. I would try saying, “Not now, but later,” instead of vanishing behind my headphones."
+      },
+      "illustration": null,
+      "questions": {
+        "es": [
+          "¿Qué acuerdos concretos hacen madre e hija?",
+          "¿Qué diferencia hay entre guardar un recuerdo y compartirlo con otros?"
+        ],
+        "en": [
+          "What specific agreements do mother and daughter make?",
+          "What is the difference between keeping a memory and sharing it with others?"
+        ]
+      }
+    },
+    {
+      "number": 11,
+      "chapter": 3,
+      "text": {
+        "es": "El sábado salimos a fotografiar murales para el proyecto. Mamá llevó agua; yo escogí la ruta. Frente a una pared azul, me contó que a mi edad también decía «bien» cuando no sabía explicar un día complicado. No lo dijo para ganar una discusión. Por primera vez se me ocurrió que Bella había sido una niña de doce años antes de ser mi mamá. Le presté la cámara y tomó una foto inclinada. «Está bailando», dije. Nos reímos por la estrella de papel que ninguna de las dos había mencionado en años.",
+        "en": "On Saturday we went out to photograph murals for the project. Mom brought water; I chose the route. In front of a blue wall, she told me that at my age she had also said “fine” when she couldn't explain a difficult day. She wasn't saying it to win an argument. For the first time, it occurred to me that Bella had been a twelve-year-old girl before she was my mom. I handed her the camera, and she took a crooked picture. “It's dancing,” I said. We laughed about the paper star neither of us had mentioned in years."
+      },
+      "illustration": "imagenes/escena_11.png",
+      "questions": {
+        "es": [
+          "¿Qué decide Isa en la salida del sábado?",
+          "¿Qué cambia cuando imagina a Bella a los doce años?"
+        ],
+        "en": [
+          "What does Isa decide on their Saturday outing?",
+          "What changes when she imagines Bella at age twelve?"
+        ]
+      }
+    },
+    {
+      "number": 12,
+      "chapter": 3,
+      "text": {
+        "es": "En casa, subí a mi cuarto para elegir las fotos con Marisol. Mamá no entró cuando vio la puerta entreabierta: tocó con los nudillos y esperó. «¿Quieres ver una?», le pregunté. Le mostré la foto torcida y luego otra que todavía no me gustaba. No le conté todos mis pensamientos; algunos seguían siendo solo míos. Ella tampoco necesitó conocerlos todos para sentarse a mi lado. De pequeña pensaba que crecer significaba alejarme. Ahora empezaba a entender que también podía aprender una forma nueva de acercarme.",
+        "en": "Back home, I went upstairs to choose the pictures with Marisol. Mom didn't come in when she saw my door ajar: she knocked and waited. “Want to see one?” I asked. I showed her the crooked photo, then another I still didn't like. I didn't tell her every thought I had; some still belonged only to me. She didn't need to know them all to sit beside me. When I was little, I thought growing up meant moving away. Now I was beginning to understand that I could also learn a new way to come close."
+      },
+      "illustration": null,
+      "questions": {
+        "es": [
+          "¿Qué hace Bella antes de entrar al cuarto?",
+          "¿Cómo muestra el final que Isa conserva su privacidad y su cercanía con Bella?"
+        ],
+        "en": [
+          "What does Bella do before entering the room?",
+          "How does the ending show that Isa keeps both privacy and closeness?"
+        ]
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "es": "privacidad",
+      "en": "privacy"
+    },
+    {
+      "es": "vergüenza",
+      "en": "embarrassment"
+    },
+    {
+      "es": "rendija",
+      "en": "crack / narrow opening"
+    },
+    {
+      "es": "suposición",
+      "en": "assumption"
+    },
+    {
+      "es": "escuchar",
+      "en": "to listen"
+    },
+    {
+      "es": "consentimiento",
+      "en": "consent"
+    },
+    {
+      "es": "mural",
+      "en": "mural"
+    },
+    {
+      "es": "encuadre",
+      "en": "framing"
+    },
+    {
+      "es": "disculpa",
+      "en": "apology"
+    },
+    {
+      "es": "acuerdo",
+      "en": "agreement"
+    },
+    {
+      "es": "compartir",
+      "en": "to share"
+    },
+    {
+      "es": "autonomía",
+      "en": "autonomy"
+    }
+  ],
+  "integration_note": "Editorial source; map fields and validate against app contract before import."
+}

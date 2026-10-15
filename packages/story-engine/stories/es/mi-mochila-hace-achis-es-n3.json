@@ -1,0 +1,321 @@
+{
+  "id": "mi-mochila-hace-achis-es-n3",
+  "familyId": "mi-mochila-hace-achis",
+  "language": "es",
+  "title": "Mi mochila hace ¡achís!",
+  "level": 3,
+  "category": "amistad",
+  "description": "Mila descubre a un pequeño dragón que estornuda burbujas y observa cómo ayudarlo.",
+  "cover": {
+    "src": "stories/mi-mochila-hace-achis/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Mila junto a su mochila azul, con un pequeño dragón y burbujas."
+  },
+  "heroFocus": {
+    "x": 50,
+    "y": 47
+  },
+  "reviewWords": [
+    "descubrimiento",
+    "hocico",
+    "manualidades"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/mi-mochila-hace-achis/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de cómic: La mochila se mueve, Un visitante diminuto, Burbujas por todas partes."
+      },
+      "template": "three-up",
+      "blocks": [
+        {
+          "id": "b01",
+          "title": "La mochila se mueve",
+          "lines": [
+            "Mila revisaba sus cosas cuando oyó un ruido bajo la mesa.",
+            "Su mochila azul temblaba sobre la alfombra, aunque nadie la tocaba.",
+            "Se arrodilló para escuchar mejor.",
+            "Dentro, algo se movió y rozó la tela."
+          ]
+        },
+        {
+          "id": "b02",
+          "title": "Un visitante diminuto",
+          "lines": [
+            "Abrió el cierre despacio y aparecieron dos ojos brillantes.",
+            "Un dragón verde, apenas más grande que su mano, asomó la cabeza.",
+            "Mila retrocedió sorprendida y enseguida sonrió.",
+            "El visitante parecía tan confundido como ella."
+          ]
+        },
+        {
+          "id": "b03",
+          "title": "Burbujas por todas partes",
+          "lines": [
+            "El dragón arrugó la nariz y soltó un estornudo que llenó el aire de burbujas.",
+            "Mila intentó atrapar una, encantada con aquel descubrimiento.",
+            "Entonces notó que su visitante se frotaba el hocico y volvía a estornudar.",
+            "Para ella era divertido; para él, quizá resultaba bastante molesto."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué salió de la nariz del dragón?",
+            "options": [
+              {
+                "text": "Humo oscuro"
+              },
+              {
+                "text": "Burbujas"
+              },
+              {
+                "text": "Hojas verdes"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Sí! De su nariz salieron burbujas.",
+            "retryFeedback": "Mira qué flotó en el cuarto después del estornudo."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué detalle muestra que algo molestaba al dragón?",
+            "options": [
+              {
+                "text": "Se acomodó para dormir"
+              },
+              {
+                "text": "Se frotaba la nariz y estornudaba"
+              },
+              {
+                "text": "Se escondió bajo una mesa"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Así es: se frotaba la nariz y seguía estornudando.",
+            "retryFeedback": "Vuelve al último cuadro de esta página y observa su nariz."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/mi-mochila-hace-achis/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de cómic: Un poco de agua, La pista amarilla."
+      },
+      "template": "two-up",
+      "blocks": [
+        {
+          "id": "b04",
+          "title": "Un poco de agua",
+          "lines": [
+            "Mila pensó que un poco de agua podría ayudarlo y le acercó un tazón.",
+            "El dragón bebió mientras ella esperaba con atención, sin apartar los ojos de su nariz.",
+            "Durante unos segundos todo estuvo tranquilo, pero enseguida apareció otra burbuja.",
+            "Su primera idea no había resuelto el problema: necesitaba observar mejor."
+          ]
+        },
+        {
+          "id": "b05",
+          "title": "La pista amarilla",
+          "lines": [
+            "Esta vez Mila dejó de seguir las burbujas y miró alrededor de la mochila.",
+            "Del bolsillo delantero sobresalía una pluma amarilla que usaba para sus manualidades.",
+            "Cuando el dragón acercaba la cabeza, la punta suave le rozaba la nariz.",
+            "Ahí estaba la pista: los estornudos comenzaban justo después de aquel roce."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué le rozaba la nariz al dragón?",
+            "options": [
+              {
+                "text": "El tazón"
+              },
+              {
+                "text": "La alfombra"
+              },
+              {
+                "text": "Una pluma amarilla"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! La pluma amarilla le rozaba la nariz.",
+            "retryFeedback": "Busca lo que sobresale del bolsillo de la mochila."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué pista relaciona la pluma con los estornudos?",
+            "options": [
+              {
+                "text": "La pluma era del mismo color que el agua"
+              },
+              {
+                "text": "El roce de la pluma ocurría antes de estornudar"
+              },
+              {
+                "text": "El dragón se dormía al verla"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Sí: el roce de la pluma iba seguido de un estornudo.",
+            "retryFeedback": "Piensa qué tocaba su nariz justo antes de estornudar."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/mi-mochila-hace-achis/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de cómic: Se acabaron las cosquillas, Un amigo tranquilo."
+      },
+      "template": "two-up",
+      "blocks": [
+        {
+          "id": "b06",
+          "title": "Se acabaron las cosquillas",
+          "lines": [
+            "Mila retiró la pluma con cuidado y la llevó al vaso de materiales, al otro lado del cuarto.",
+            "Después regresó junto a la mochila y esperó en silencio.",
+            "El dragón olfateó el aire, movió las orejas y se relajó.",
+            "Ya no estornudaba; la pluma había sido la causa de las cosquillas."
+          ]
+        },
+        {
+          "id": "b07",
+          "title": "Un amigo tranquilo",
+          "lines": [
+            "El pequeño visitante se acomodó dentro de la mochila abierta y cerró los ojos.",
+            "Mila lo contempló mientras la última burbuja flotaba hacia el techo.",
+            "Al principio había intentado ayudarlo sin saber qué ocurría.",
+            "Ahora comprendía que quedarse quieta y prestar atención también podía ser una buena manera de cuidar a alguien."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Dónde puso Mila la pluma?",
+            "options": [
+              {
+                "text": "Dentro de la mochila"
+              },
+              {
+                "text": "En un vaso, lejos de la mochila"
+              },
+              {
+                "text": "Debajo del dragón"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Sí! La dejó en un vaso, lejos de su amigo.",
+            "retryFeedback": "Sigue la pluma amarilla hasta el vaso de materiales."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué acción de Mila le permitió encontrar una solución?",
+            "options": [
+              {
+                "text": "Observar qué tocaba la nariz del dragón"
+              },
+              {
+                "text": "Dar más y más agua al dragón"
+              },
+              {
+                "text": "Atrapar todas las burbujas"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Exacto: observar con atención la ayudó a encontrar la causa.",
+            "retryFeedback": "Recuerda qué descubrió cuando dejó de mirar las burbujas."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "descubrimiento": {
+      "syllables": [
+        "des",
+        "cu",
+        "bri",
+        "mien",
+        "to"
+      ],
+      "definition": "Algo que acabas de encontrar o conocer.",
+      "synonym": "hallazgo",
+      "example": "Encontrar la cueva fue el mayor descubrimiento del verano."
+    },
+    "hocico": {
+      "syllables": [
+        "ho",
+        "ci",
+        "co"
+      ],
+      "definition": "Parte de la cara de un animal donde están la nariz y la boca.",
+      "synonym": "morro",
+      "example": "El perro metió el hocico en la caja buscando comida."
+    },
+    "manualidades": {
+      "syllables": [
+        "ma",
+        "nua",
+        "li",
+        "da",
+        "des"
+      ],
+      "definition": "Trabajos creativos que hacemos con las manos.",
+      "synonym": "artesanías",
+      "example": "Hicimos manualidades con cartón y pintura en la clase de arte."
+    },
+    "causa": {
+      "syllables": [
+        "cau",
+        "sa"
+      ],
+      "definition": "Lo que hace que algo suceda.",
+      "synonym": "motivo",
+      "example": "La lluvia fue la causa de que cancelaran el partido."
+    },
+    "contempló": {
+      "syllables": [
+        "con",
+        "tem",
+        "pló"
+      ],
+      "definition": "Miró algo con atención y calma.",
+      "synonym": "observó",
+      "example": "Contempló el atardecer desde la ventana durante varios minutos."
+    },
+    "comprendía": {
+      "syllables": [
+        "com",
+        "pren",
+        "dí",
+        "a"
+      ],
+      "definition": "Entendía lo que estaba pasando.",
+      "synonym": "entendía",
+      "example": "No comprendía por qué su amigo estaba tan callado."
+    }
+  }
+}

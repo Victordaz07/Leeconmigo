@@ -1,0 +1,440 @@
+{
+  "id": "dev-tres-paginas",
+  "language": "es",
+  "title": "Prueba: tres páginas",
+  "level": 1,
+  "description": "Historia de PRUEBA para desarrollo: sirve para probar varias páginas, una página de solo texto, la pregunta de cada página y la reanudación. NO es una historia final.",
+  "dev": true,
+  "cover": {
+    "src": "stories/la-luna-y-la-puerta-azul/cover.webp",
+    "width": 540,
+    "height": 225,
+    "alt": "El conejo junto a la puerta azul del bosque"
+  },
+  "reviewWords": [
+    "sendero",
+    "puente",
+    "estrella"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/la-luna-y-la-puerta-azul/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El bosque de noche, con la luna, las montañas y una puerta azul"
+      },
+      "blocks": [
+        {
+          "id": "d01",
+          "title": "Empieza el día",
+          "voice": "narration",
+          "lines": [
+            "El conejo despertó muy contento.",
+            "Hoy quería explorar el bosque."
+          ],
+          "layout": {
+            "bubble": {
+              "leftPct": 1.1,
+              "topPct": 1.5,
+              "widthPct": 21.2
+            },
+            "panel": {
+              "x0": 0,
+              "y0": 0,
+              "x1": 405,
+              "y1": 305
+            }
+          }
+        },
+        {
+          "id": "d02",
+          "title": "Mira afuera",
+          "voice": "narration",
+          "lines": [
+            "Abrió la ventana y respiró hondo.",
+            "El aire olía a flores."
+          ],
+          "layout": {
+            "bubble": {
+              "leftPct": 28.6,
+              "topPct": 1.3,
+              "widthPct": 15.2
+            },
+            "panel": {
+              "x0": 405,
+              "y0": 0,
+              "x1": 770,
+              "y1": 305
+            }
+          }
+        },
+        {
+          "id": "d03",
+          "title": "Sale a caminar",
+          "voice": "dialogue",
+          "lines": [
+            "Tomó su mochila y salió.",
+            "—¡Vamos a descubrir algo! —dijo."
+          ],
+          "layout": {
+            "bubble": {
+              "leftPct": 51.2,
+              "topPct": 2.6,
+              "widthPct": 14.6
+            },
+            "panel": {
+              "x0": 770,
+              "y0": 0,
+              "x1": 1090,
+              "y1": 320
+            }
+          }
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué quería hacer el conejo hoy?",
+            "options": [
+              {
+                "text": "Dormir todo el día"
+              },
+              {
+                "text": "Explorar el bosque",
+                "imageRegion": [
+                  385,
+                  345,
+                  190,
+                  290
+                ]
+              },
+              {
+                "text": "Ir a la escuela"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Sí! Quería explorar el bosque.",
+            "retryFeedback": "Casi. Lee otra vez el primer cuadro."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Cómo se sentía el conejo al despertar?",
+            "options": [
+              {
+                "text": "Contento y con ganas de aventura"
+              },
+              {
+                "text": "Enfermo y sin ganas de salir"
+              },
+              {
+                "text": "Enojado con sus amigos"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Así es: despertó muy contento.",
+            "retryFeedback": "Relee el primer cuadro y piénsalo otra vez."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/la-luna-y-la-puerta-azul/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El bosque de noche, con la luna, las montañas y una puerta azul"
+      },
+      "blocks": [
+        {
+          "id": "d04",
+          "title": "El camino",
+          "voice": "narration",
+          "lines": [
+            "El sendero era largo y estrecho.",
+            "Las hojas crujían bajo sus patas."
+          ]
+        },
+        {
+          "id": "d05",
+          "title": "Un río",
+          "voice": "narration",
+          "lines": [
+            "Cerca del camino corría un río pequeño.",
+            "El agua brillaba con la luz de la luna."
+          ]
+        },
+        {
+          "id": "d06",
+          "title": "Piensa",
+          "voice": "narration",
+          "lines": [
+            "El conejo se detuvo un momento.",
+            "¿Cómo podía cruzar hasta el otro lado?"
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué encontró el conejo cerca del camino?",
+            "options": [
+              {
+                "text": "Un río pequeño"
+              },
+              {
+                "text": "Una casa enorme"
+              },
+              {
+                "text": "Un tren"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Muy bien! Era un río pequeño.",
+            "retryFeedback": "Casi. Mira el segundo cuadro otra vez."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué se detuvo el conejo?",
+            "options": [
+              {
+                "text": "Estaba cansado de caminar"
+              },
+              {
+                "text": "No sabía cómo cruzar el río"
+              },
+              {
+                "text": "Quería volver a su casa"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Exacto: tenía que cruzar hasta el otro lado.",
+            "retryFeedback": "Relee el último cuadro y piénsalo otra vez."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/la-luna-y-la-puerta-azul/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Un mundo mágico con nubes, estrellas y caminos en el cielo"
+      },
+      "blocks": [
+        {
+          "id": "d07",
+          "title": "Un puente",
+          "voice": "narration",
+          "lines": [
+            "Encontró un puente de piedra.",
+            "Lo cruzó despacito, paso a paso."
+          ],
+          "layout": {
+            "bubble": {
+              "leftPct": 32.2,
+              "topPct": 67.2,
+              "widthPct": 19.5
+            },
+            "panel": {
+              "x0": 460,
+              "y0": 680,
+              "x1": 950,
+              "y1": 1024
+            }
+          }
+        },
+        {
+          "id": "d08",
+          "title": "Al otro lado",
+          "voice": "dialogue",
+          "lines": [
+            "Al otro lado lo esperaba una estrella.",
+            "—¡Bienvenido! —dijo la estrella."
+          ],
+          "layout": {
+            "bubble": {
+              "leftPct": 79.6,
+              "topPct": 69.1,
+              "widthPct": 19.6
+            },
+            "panel": {
+              "x0": 950,
+              "y0": 690,
+              "x1": 1536,
+              "y1": 1024
+            }
+          }
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Quién esperaba al conejo?",
+            "options": [
+              {
+                "text": "Un lobo"
+              },
+              {
+                "text": "Una estrella",
+                "imageRegion": [
+                  385,
+                  345,
+                  190,
+                  290
+                ]
+              },
+              {
+                "text": "Un pez"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Exacto! Lo esperaba una estrella.",
+            "retryFeedback": "Casi. Mira el dibujo otra vez."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Cómo cruzó el conejo el puente?",
+            "options": [
+              {
+                "text": "Corriendo muy rápido"
+              },
+              {
+                "text": "Con mucho cuidado, paso a paso"
+              },
+              {
+                "text": "Saltando sin mirar"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Sí: lo cruzó despacito.",
+            "retryFeedback": "Relee el primer cuadro de esta página."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "explorar": {
+      "syllables": [
+        "ex",
+        "plo",
+        "rar"
+      ],
+      "definition": "Ir a un lugar para conocerlo y descubrir cosas."
+    },
+    "bosque": {
+      "syllables": [
+        "bos",
+        "que"
+      ],
+      "definition": "Un lugar con muchísimos árboles."
+    },
+    "mochila": {
+      "syllables": [
+        "mo",
+        "chi",
+        "la"
+      ],
+      "definition": "Una bolsa que se lleva en la espalda."
+    },
+    "sendero": {
+      "syllables": [
+        "sen",
+        "de",
+        "ro"
+      ],
+      "definition": "Un camino angosto por donde se camina.",
+      "synonym": "camino"
+    },
+    "estrecho": {
+      "syllables": [
+        "es",
+        "tre",
+        "cho"
+      ],
+      "definition": "Que tiene poco ancho.",
+      "synonym": "angosto"
+    },
+    "pequeño": {
+      "syllables": [
+        "pe",
+        "que",
+        "ño"
+      ],
+      "definition": "De poco tamaño.",
+      "synonym": "chiquito"
+    },
+    "brillaba": {
+      "syllables": [
+        "bri",
+        "lla",
+        "ba"
+      ],
+      "definition": "Daba mucha luz."
+    },
+    "detuvo": {
+      "syllables": [
+        "de",
+        "tu",
+        "vo"
+      ],
+      "definition": "Dejó de caminar."
+    },
+    "cruzar": {
+      "syllables": [
+        "cru",
+        "zar"
+      ],
+      "definition": "Pasar de un lado al otro."
+    },
+    "puente": {
+      "syllables": [
+        "puen",
+        "te"
+      ],
+      "definition": "Algo que se construye para cruzar un río."
+    },
+    "piedra": {
+      "syllables": [
+        "pie",
+        "dra"
+      ],
+      "definition": "Un material duro que se encuentra en la tierra."
+    },
+    "estrella": {
+      "syllables": [
+        "es",
+        "tre",
+        "lla"
+      ],
+      "definition": "Un punto de luz que brilla en el cielo."
+    },
+    "bienvenido": {
+      "syllables": [
+        "bien",
+        "ve",
+        "ni",
+        "do"
+      ],
+      "definition": "Lo que se dice a quien llega para que se sienta bien."
+    },
+    "descubrir": {
+      "syllables": [
+        "des",
+        "cu",
+        "brir"
+      ],
+      "definition": "Encontrar algo por primera vez."
+    }
+  }
+}

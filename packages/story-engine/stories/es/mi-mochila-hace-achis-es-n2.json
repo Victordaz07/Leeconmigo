@@ -1,0 +1,306 @@
+{
+  "id": "mi-mochila-hace-achis-es-n2",
+  "familyId": "mi-mochila-hace-achis",
+  "language": "es",
+  "title": "Mi mochila hace ¡achís!",
+  "level": 2,
+  "category": "amistad",
+  "description": "Mila descubre a un pequeño dragón que estornuda burbujas y observa cómo ayudarlo.",
+  "cover": {
+    "src": "stories/mi-mochila-hace-achis/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Mila junto a su mochila azul, con un pequeño dragón y burbujas."
+  },
+  "heroFocus": {
+    "x": 50,
+    "y": 47
+  },
+  "reviewWords": [
+    "curiosidad",
+    "carcajada",
+    "estornudó"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/mi-mochila-hace-achis/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de cómic: La mochila se mueve, Un visitante diminuto, Burbujas por todas partes."
+      },
+      "template": "three-up",
+      "blocks": [
+        {
+          "id": "b01",
+          "title": "La mochila se mueve",
+          "lines": [
+            "Mila estaba preparando sus cosas cuando escuchó un ruido extraño.",
+            "Su mochila azul se movía sobre la alfombra.",
+            "—Yo no guardé nada que pudiera saltar —murmuró, acercándose con curiosidad."
+          ]
+        },
+        {
+          "id": "b02",
+          "title": "Un visitante diminuto",
+          "lines": [
+            "Abrió la mochila con cuidado y encontró dos ojos brillantes.",
+            "Un pequeño dragón verde asomó la cabeza entre sus cosas.",
+            "Mila dio un salto y después soltó una carcajada."
+          ]
+        },
+        {
+          "id": "b03",
+          "title": "Burbujas por todas partes",
+          "lines": [
+            "El visitante arrugó la nariz y estornudó.",
+            "En lugar de fuego, salieron burbujas que flotaron por el cuarto.",
+            "Mila quiso atraparlas, pero notó que el dragón seguía frotándose la nariz."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué salió de la nariz del dragón?",
+            "options": [
+              {
+                "text": "Humo oscuro"
+              },
+              {
+                "text": "Burbujas"
+              },
+              {
+                "text": "Hojas verdes"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Sí! De su nariz salieron burbujas.",
+            "retryFeedback": "Mira qué flotó en el cuarto después del estornudo."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué detalle muestra que algo molestaba al dragón?",
+            "options": [
+              {
+                "text": "Se acomodó para dormir"
+              },
+              {
+                "text": "Se frotaba la nariz y estornudaba"
+              },
+              {
+                "text": "Se escondió bajo una mesa"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Así es: se frotaba la nariz y seguía estornudando.",
+            "retryFeedback": "Vuelve al último cuadro de esta página y observa su nariz."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/mi-mochila-hace-achis/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de cómic: Un poco de agua, La pista amarilla."
+      },
+      "template": "two-up",
+      "blocks": [
+        {
+          "id": "b04",
+          "title": "Un poco de agua",
+          "lines": [
+            "—Tal vez tienes sed —dijo Mila.",
+            "Le acercó un tazón con agua y esperó mientras bebía.",
+            "El dragón parecía contento, hasta que otra burbuja salió volando.",
+            "El agua no había resuelto el problema."
+          ]
+        },
+        {
+          "id": "b05",
+          "title": "La pista amarilla",
+          "lines": [
+            "Mila se quedó quieta y observó mejor.",
+            "Una pluma amarilla sobresalía del bolsillo delantero de la mochila.",
+            "Cada vez que el dragón se acercaba, la punta le rozaba la nariz."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué le rozaba la nariz al dragón?",
+            "options": [
+              {
+                "text": "El tazón"
+              },
+              {
+                "text": "La alfombra"
+              },
+              {
+                "text": "Una pluma amarilla"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! La pluma amarilla le rozaba la nariz.",
+            "retryFeedback": "Busca lo que sobresale del bolsillo de la mochila."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué pista relaciona la pluma con los estornudos?",
+            "options": [
+              {
+                "text": "La pluma era del mismo color que el agua"
+              },
+              {
+                "text": "El roce de la pluma ocurría antes de estornudar"
+              },
+              {
+                "text": "El dragón se dormía al verla"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Sí: el roce de la pluma iba seguido de un estornudo.",
+            "retryFeedback": "Piensa qué tocaba su nariz justo antes de estornudar."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/mi-mochila-hace-achis/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de cómic: Se acabaron las cosquillas, Un amigo tranquilo."
+      },
+      "template": "two-up",
+      "blocks": [
+        {
+          "id": "b06",
+          "title": "Se acabaron las cosquillas",
+          "lines": [
+            "—¡Te está haciendo cosquillas!",
+            "Mila sacó la pluma y la llevó al vaso de sus materiales, al otro lado del cuarto.",
+            "Esperó un momento.",
+            "Esta vez no hubo ningún estornudo."
+          ]
+        },
+        {
+          "id": "b07",
+          "title": "Un amigo tranquilo",
+          "lines": [
+            "El dragón se acomodó dentro de la mochila y cerró los ojos.",
+            "Mila sonrió mientras la última burbuja subía hacia el techo.",
+            "Su nuevo amigo ya podía descansar tranquilo."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Dónde puso Mila la pluma?",
+            "options": [
+              {
+                "text": "Dentro de la mochila"
+              },
+              {
+                "text": "En un vaso, lejos de la mochila"
+              },
+              {
+                "text": "Debajo del dragón"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Sí! La dejó en un vaso, lejos de su amigo.",
+            "retryFeedback": "Sigue la pluma amarilla hasta el vaso de materiales."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué acción de Mila le permitió encontrar una solución?",
+            "options": [
+              {
+                "text": "Observar qué tocaba la nariz del dragón"
+              },
+              {
+                "text": "Dar más y más agua al dragón"
+              },
+              {
+                "text": "Atrapar todas las burbujas"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Exacto: observar con atención la ayudó a encontrar la causa.",
+            "retryFeedback": "Recuerda qué descubrió cuando dejó de mirar las burbujas."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "curiosidad": {
+      "syllables": [
+        "cu",
+        "rio",
+        "si",
+        "dad"
+      ],
+      "definition": "Ganas de saber o descubrir algo."
+    },
+    "carcajada": {
+      "syllables": [
+        "car",
+        "ca",
+        "ja",
+        "da"
+      ],
+      "definition": "Risa fuerte y alegre."
+    },
+    "estornudó": {
+      "syllables": [
+        "es",
+        "tor",
+        "nu",
+        "dó"
+      ],
+      "definition": "Expulsó aire de golpe por la nariz y la boca."
+    },
+    "sobresalía": {
+      "syllables": [
+        "so",
+        "bre",
+        "sa",
+        "lí",
+        "a"
+      ],
+      "definition": "Se veía porque una parte salía hacia afuera."
+    },
+    "rozaba": {
+      "syllables": [
+        "ro",
+        "za",
+        "ba"
+      ],
+      "definition": "Tocaba algo muy suavemente."
+    },
+    "materiales": {
+      "syllables": [
+        "ma",
+        "te",
+        "ria",
+        "les"
+      ],
+      "definition": "Cosas que usamos para hacer un trabajo."
+    }
+  }
+}

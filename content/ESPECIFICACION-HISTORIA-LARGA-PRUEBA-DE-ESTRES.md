@@ -1,0 +1,267 @@
+# Especificación: historia larga "prueba de estrés" (14 páginas, 40 cuadros, las 13 plantillas + una página de solo texto)
+
+Esta es la siguiente historia, diseñada **para romper cosas a propósito**. Cada página existe para poner a prueba una parte del sistema
+(sección 3), así que **hay que seguirla al pie de la letra**: las plantillas, el número de cuadros, las preguntas y hasta las palabras
+"incómodas" no son adornos. Complementa a [`GUIA-DE-CONTENIDO.md`](GUIA-DE-CONTENIDO.md) (formato, reglas, rectángulos de cada plantilla y
+prompts base); si algo se contradice, **manda esta especificación para esta historia**.
+
+## 0. Resumen
+
+| Parámetro | Valor |
+|---|---|
+| Título ES / EN | **Mila, Pipo y la noche en que se apagaron las luciérnagas** / **Mila, Pipo, and the Night the Fireflies Went Dark** (título largo a propósito: prueba cómo se acomoda en Inicio, ficha y banner) |
+| `familyId` | `la-noche-sin-luces` |
+| Variantes | 6: `la-noche-sin-luces-{es,en}-n{1,2,3}` (mismo esqueleto, arte compartido) |
+| Páginas / cuadros | **14 páginas · 40 cuadros** (`b01`…`b40`) · 1 pregunta en 7 páginas (`q01`…`q07`) |
+| Plantillas | **Las 13, una vez cada una** + **una página de solo texto** (= las 14 páginas). Ver la tabla de la sección 2 |
+| Estilo de página | **Viñetas dinámicas de cómic/manga** (diagonales, rayo, explosión) y **páginas de libro** (ilustración + tarjeta de texto grande). Las diagonales, el rayo y la explosión **los dibuja la ilustración**; el texto siempre va en globos o tarjetas rectangulares |
+| Ilustraciones | 13 de página + 1 portada + 1 dibujo sencillo para la página de solo texto = **15 imágenes** (40 escenas en 15 imágenes: ~2,7 por imagen) |
+| Extensión | N1: **350–450 palabras** · N2: **700–950** · N3: **1150–1400** (bastante más que la guía de docs/01, a propósito: ~6 / 13 / 20 min leyendo a 60 palabras por minuto). Lo manda la tabla de caracteres de la sección 4.1: es el techo real |
+| Personajes | **Mila** y **Pipo** (los de las otras historias, mismo diseño) + **Tito** (erizo, salió en *El puente de las luciérnagas*) + **Dora** (cigüeña, nueva) |
+| Estilo de arte | **Minimalista, plano (2D)**, barato de generar — sección 6 |
+
+---
+
+## 1. Qué cambia respecto a las historias anteriores
+
+1. **Más páginas y más cuadros por página.** 14 páginas (antes 3–5) con hasta **6 cuadros en una sola imagen**: el costo de arte sube mucho menos que el número de escenas.
+2. **Composiciones de cómic de verdad.** Además de las cuadrículas rectas, hay páginas con **divisiones inclinadas** (`slant-2`, `slant-3`, `manga-6`), un **divisor en forma de rayo**
+   (`bolt-2`) y una **explosión central** que es el globo de un ¡Pum! (`burst-2`), como en las referencias de viñetas que se han compartido.
+3. **Cuadros más grandes donde hay más texto.** Las páginas **de libro** (`book-1/2/3`) ponen la ilustración arriba y una **tarjeta de texto grande debajo**: no tapa el dibujo y la letra sale grande.
+4. **Presupuesto de texto por cuadro** (sección 4). Las historias anteriores en nivel 3 llenaban el **130–160 %** de sus cuadros y la letra quedaba pequeña; aquí cada cuadro tiene un límite medido con `npm run stories:budget`.
+5. **Imágenes guía por plantilla** en `content/plantillas/<plantilla>.png` (viñetas y globos vacíos en su sitio) para pasarlas al generador de imágenes.
+
+---
+
+## 2. Historia y plan de páginas (igual en las 6 variantes: mismo argumento, cada idioma escrito natural, no traducido)
+
+**Premisa.** Al atardecer, Mila y Pipo salen al jardín con un frasco vacío para ver a las luciérnagas… pero no hay ninguna. Las luciérnagas no desaparecieron: una nube gorda tapó la luna y
+**se escondieron porque les dio miedo la oscuridad** (cuando tienen miedo, apagan su luz). Con Tito, cruzan el puente de corteza hasta la colina, donde la cigüeña Dora guarda "el libro de las luces"
+y les propone una adivinanza (la respuesta es **un libro**). Aprenden la solución: **respirar hondo, contar hasta tres y cantar bajito** para darles valor. Las luciérnagas se encienden una por una,
+luego todas; la nube se va. Vuelven a casa por el puente, iluminados. **Mensaje:** tener miedo no apaga la luz, solo la esconde; y ayudar a otros a ser valientes también es ser valiente.
+
+**Estribillo (obligatorio, para probar repeticiones):** ES `Una luz, dos luces… ¿dónde están las luces?` (43 caracteres) / EN `One light, two lights… where are the lights?` (44 caracteres).
+Va **siempre como una sola frase** (una línea de `lines`) y **sin cambiar una letra**, para que quepa hasta en las cajas más chicas (`b13`, N1: tope 49).
+Aparece **5 veces**, en `b01` (p01), `b13` (p04), uno de los cuadros de p08, `b33` (p11) y `b40` (p14). En las 4 primeras es **idéntico** palabra por palabra dentro de cada idioma y nivel;
+en la última cambia el final: ES `Una luz, dos luces… ¡aquí están las luces!` / EN `One light, two lights… there are the lights!`.
+
+| Pág. | Plantilla | Cuadros | Escena | Pregunta |
+|---|---|---|---|---|
+| p01 | `book-1` | b01 | Atardecer en el jardín; Mila y Pipo salen con un frasco vacío. **Estribillo (1.ª vez).** Página de apertura con tarjeta grande. | — |
+| p02 | `four-up` | b02–b05 | (1) el jardín en penumbra, sin luces · (2) Mila mira el frasco vacío · (3) Pipo olfatea un rastro · (4) aparece **Tito** llorando: "¡Se apagaron!" | `q01` |
+| p03 | `slant-2` | b06–b07 | (1) Tito explica: una nube gorda tapó la luna y las luciérnagas se escondieron · (2) Mila decide ir a buscarlas. Diálogo entre los tres. | — |
+| p04 | `six-up` | b08–b13 | **Seis escenas rápidas** del camino, con onomatopeyas: ¡Crac! (ramita) · ¡Splash! (charco) · ¡Uuuh! (búho) · ¡Pum, pum! (el corazón de Tito) · ¡Achís! (Pipo) · llegan al arroyo. **Estribillo (2.ª vez)** en el último. | — |
+| p05 | `slant-3` | b14–b16 | Cruzan el puente de corteza **de uno en uno**: (1) arriba, ancho: el puente y el arroyo; (2) primero Tito · (3) después Pipo… y al final Mila. Cuentan: uno, dos, tres. | `q02` |
+| p06 | `book-2` | b17–b18 | (1) Llegan al árbol hueco de la colina; baja **Dora**, la cigüeña, con un libro · (2) Dora dice la **adivinanza**. | `q03` |
+| p07 | `burst-2` | b19–b20 | **Trueno.** (1) la explosión central: solo ¡Pum! (ver sección 4.1) · (2) abajo a la derecha, Tito se esconde detrás de Mila. | — |
+| p08 | *(sin plantilla: página de solo texto)* | b21–b23 | Interludio: Mila **piensa** en la adivinanza y descubre la respuesta (un libro). **Estribillo (3.ª vez).** | `q04` |
+| p09 | `manga-6` | b24–b29 | Dora enseña, en seis viñetas de tamaños distintos: (1) el libro abierto · (2) respirar hondo · (3) uno · (4) dos · (5) tres · (6) cantar bajito. | — |
+| p10 | `book-3` | b30–b32 | Tres luciérnagas se encienden **una tras otra** (una, dos, tres), cada una en su columna. | `q05` |
+| p11 | `bolt-2` | b33–b34 | Estalla la luz, contando **de cuatro a nueve** (con letras): (1) arriba, cuatro–seis + **estribillo (4.ª vez)** · (2) abajo, siete–nueve. | — |
+| p12 | `two-up` | b35–b36 | (1) Todas las luciérnagas salen y la nube se va · (2) Tito se ríe; ya no llora. | `q06` |
+| p13 | `three-up` | b37–b39 | Vuelven por el puente iluminados: (1) Pipo lleva el frasco lleno de luz · (2) cruzan de nuevo · (3) (ancho) Mila entiende el mensaje. | — |
+| p14 | `full` | b40 | Cierre a página completa: la casa y el jardín lleno de luces; un solo globo ancho. **Estribillo (5.ª vez, con final distinto).** | `q07` |
+
+**Ids fijos.** Páginas `p01`…`p14`; cuadros `b01`…`b40` **corridos** (no se reinician por página); preguntas `q01`…`q07` en las páginas
+`p02, p05, p06, p08, p10, p12, p14`. Las 6 variantes tienen **exactamente** el mismo esqueleto (`template`, ids, rutas de imagen, número de cuadros).
+
+---
+
+## 3. Qué pone a prueba cada página (y qué debe pasar en el sistema)
+
+| Pág. | Qué se prueba | Lo que debe verse / pasar |
+|---|---|---|
+| p01 | `book-1`: tarjeta de texto enorme; **título largo**; `heroFocus` lejos del centro en la portada | Letra grande (≈40 px) sin recortes; el banner de Inicio y la ficha muestran bien un título de 56 caracteres |
+| p02 | `four-up`; primera pregunta de la historia | Aro que salta de cuadro a cuadro |
+| p03 | **`slant-2`**: viñetas inclinadas y globos de anchos distintos; diálogo de 3 turnos | Cambio de cuadro a mitad de diálogo |
+| p04 | **`six-up`**: 6 cuadros con la caja más pequeña; onomatopeyas; **sobrecarga controlada** en N3 | Letra ≥ 20 px en todos (salvo b10 y b13 de N3); contador "3/6" |
+| p05 | **`slant-3`**: cuadro ancho arriba + 2 abajo con divisiones inclinadas; **números con letras** | Sin tokens raros; conteo correcto |
+| p06 | `book-2` (2 ilustraciones + 2 tarjetas) + adivinanza | Texto grande en dos columnas |
+| p07 | **`burst-2`: explosión central con 1–3 palabras** (¡Pum!, ¡Pum! ¡Pum!, ¡Pum! ¡Pum! ¡Pum!) | Texto centrado dentro de la estrella; un cuadro de 1 palabra; repetición de palabras iguales seguidas |
+| p08 | **Página de solo texto** dentro de una historia de cómic | El panel lateral con el texto; la pantalla cambia de reparto y vuelve al siguiente cómic sin saltos raros |
+| p09 | **`manga-6`**: seis viñetas inclinadas con globos de **seis tamaños distintos** (caben 105 a 224 caracteres) | Auto-ajuste de letra distinto por cuadro; el más chico (b26) al límite |
+| p10 | `book-3`: tres columnas estrechas y altas | Texto corrido en cajas estrechas, letra ≥ 26 px |
+| p11 | **`bolt-2`**: divisor en rayo; contar de cuatro a nueve; estribillo | Cambio de cuadro entre esquinas opuestas de la página |
+| p12 | `two-up`; pregunta de causa y efecto | — |
+| p13 | `three-up`; página **sin pregunta** al final del recorrido | Pasa directo a la página siguiente |
+| p14 | **`full`**: un solo cuadro, la última página, pregunta de 2 opciones | Repaso final con muchas palabras difíciles acumuladas; resumen |
+| Toda la historia | **14 páginas**: reanudación a mitad (p09), pausa en segundo plano, resumen de una sesión larga, progreso de página en el riel | `completion` 1,0; `comprehensionTotal` 7 |
+
+---
+
+## 4. Reglas de texto (más estrictas que la guía base)
+
+### 4.1 Presupuesto de caracteres por cuadro
+Capacidad aproximada de cada caja con una letra cómoda (`npm run stories:budget` la calcula; cuenta los espacios y todas las frases del cuadro juntas):
+
+| Plantilla | Caracteres por cuadro (en orden de lectura) |
+|---|---|
+| `book-1` | **824** |
+| `full` | **475** |
+| `book-2` | **386** · **386** |
+| `book-3` | **285** · **285** · **286** |
+| `slant-3` | **376** (arriba, ancho) · **163** · **175** |
+| `three-up` | **164** · **163** · **256** (abajo, ancho) |
+| `two-up` | **191** · **191** |
+| `slant-2` | **176** · **162** |
+| `bolt-2` | **175** · **171** |
+| `four-up` | **175** en cada cuadro |
+| `manga-6` | **155** · **182** · **105** · **224** · **196** · **141** |
+| `six-up` | **109** en cada cuadro |
+| `burst-2` | **53** en el 1.º (la explosión; aquí se pide **solo 1–3 palabras cortas, ≤ 17 caracteres**, es la excepción a la regla de uso por nivel) · **167** en el 2.º |
+
+| Nivel | Uso del presupuesto | Frases por cuadro |
+|---|---|---|
+| N1 | ≤ **45 %** (y nunca más de 90 caracteres) | 1–2, cortas (≤ 45 caracteres cada una) |
+| N2 | ≤ **80 %** | 2–3 |
+| N3 | **85–100 %** | 3–4 (máximo permitido: 4), algunas largas (≤ 120 caracteres) |
+
+**Tope real:** un cuadro admite como máximo **4 frases de 120 caracteres = 480**. Por eso en `book-1` (capacidad 824) y `full` (475) el N3 se mide contra **480**, no contra su capacidad.
+
+**Tabla exacta por cuadro** (caracteres **con espacios**, todas las frases del cuadro juntas; N3 = mínimo–máximo). Es la que debe seguir el generador de texto:
+
+| Cuadro | Página · plantilla | N1 ≤ | N2 ≤ | N3 |
+|---|---|---:|---:|---:|
+| `b01` | p01 · book-1 (lleva el estribillo: 43–44 caracteres + 3 frases de 120 como máximo = **406–407**) | 90 | 384 | 350–406 |
+| `b02`–`b05` | p02 · four-up | 78 | 140 | 148–175 |
+| `b06` | p03 · slant-2 | 79 | 140 | 149–176 |
+| `b07` | p03 · slant-2 | 72 | 129 | 137–162 |
+| `b08`, `b09`, `b11`, `b12` | p04 · six-up | 49 | 87 | 92–109 |
+| `b10`, `b13` | p04 · six-up | 49 | 88 | **125–135 (sobrecarga, ver abajo)** |
+| `b14` | p05 · slant-3 (ancho) | 90 | 300 | 319–376 |
+| `b15` | p05 · slant-3 | 73 | 130 | 138–163 |
+| `b16` | p05 · slant-3 | 78 | 140 | 148–175 |
+| `b17`, `b18` | p06 · book-2 | 90 | 308 | 328–386 |
+| `b19` | p07 · burst-2 (explosión) | 7 | 13 | 14–17 |
+| `b20` | p07 · burst-2 | 75 | 133 | 141–167 |
+| `b21`–`b23` | p08 · página de solo texto | *sin caja*: **3 frases en total (una por cuadro)** | **4 frases en total** | **6 frases en total** |
+| `b24` | p09 · manga-6 | 69 | 124 | 131–155 |
+| `b25` | p09 · manga-6 | 81 | 145 | 154–182 |
+| `b26` | p09 · manga-6 (la más chica) | 47 | 84 | 89–105 |
+| `b27` | p09 · manga-6 (la más grande) | 90 | 179 | 190–224 |
+| `b28` | p09 · manga-6 | 88 | 156 | 166–196 |
+| `b29` | p09 · manga-6 | 63 | 112 | 119–141 |
+| `b30`, `b31`, `b32` | p10 · book-3 | 90 | 228 | 242–285 |
+| `b33` | p11 · bolt-2 | 78 | 140 | 148–175 |
+| `b34` | p11 · bolt-2 | 76 | 136 | 145–171 |
+| `b35`, `b36` | p12 · two-up | 85 | 152 | 162–191 |
+| `b37` | p13 · three-up | 73 | 131 | 139–164 |
+| `b38` | p13 · three-up | 73 | 130 | 138–163 |
+| `b39` | p13 · three-up (ancho) | 90 | 204 | 217–256 |
+| `b40` | p14 · full | 90 | 380 | 403–475 |
+
+**Cuadro de la explosión (`b19`):** N1 `¡Pum!` · N2 `¡Pum! ¡Pum!` · N3 `¡Pum! ¡Pum! ¡Pum!` (EN: `Boom!`, `Boom! Boom!`, `Boom! Boom! Boom!`).
+
+**Sobrecarga controlada (a propósito, solo N3):** los cuadros **`b10` y `b13`** (`six-up`, p04) deben llegar a **~120 %** de su presupuesto (**125–135 caracteres**, no más).
+Es para ver cómo se comporta el sistema cuando un texto no cabe (aviso del editor, letra mínima, barra inferior). El resto de los cuadros de las 6 variantes **no** debe pasar del 100 %.
+`b13` lleva además el estribillo (43 caracteres): en N1 es **todo** el cuadro; en N2 y N3 va acompañado de una o más frases cortas.
+
+### 4.2 Frases y palabras "incómodas" (obligatorias, repartidas por la historia)
+Todas de forma natural, sin forzar. Cada punto aparece **al menos una vez en cada variante** (en el idioma que corresponda):
+
+- **Letras especiales**: palabras con **ü** (*cigüeña*), **ñ** (*niño, pequeño, otoño*), **vocales acentuadas** y **mayúscula acentuada al empezar frase** (*Él, Éramos, Ánimo*), signos **¿ ¡** y rayas de diálogo pegadas
+  (`—¡Ánimo! —dijo Dora.`). En inglés: la cigüeña es *stork*; basta con las demás.
+- **Palabras muy largas** (12+ letras): *iluminadísimo*, *extraordinariamente*, *resplandeciente* (EN: *extraordinary*, *unbelievably*, *illuminated*).
+- **Palabras de una sola letra**: *y, a, o, e* (EN: *I, a*). **Repeticiones** dentro de un cuadro (*"Pum, pum, pum"*, *"más y más y más"*).
+- **Onomatopeyas** cortas: ¡Crac! ¡Splash! ¡Uuuh! ¡Achís! ¡Pum! (EN: *Crack! Splash! Whoo! Achoo! Boom!*).
+- **Contracciones y apóstrofos en inglés**: *don't, can't, it's, Mila's, o'clock* (con apóstrofo recto `'` **y** curvo `’` mezclados).
+- **Números con letras**, incluidos ordinales (*primero, segundo, tercero*) y de cuatro a nueve en p11.
+- **Diálogo** con al menos 3 turnos seguidos entre personajes distintos (p03 y p12), con raya de apertura y de cierre.
+- **El estribillo** (sección 2) idéntico en sus 4 primeras apariciones.
+- **Una frase de exactamente 120 caracteres** y **un cuadro de 4 frases** (máximo permitido) por variante N3.
+
+### 4.3 Página de solo texto (p08)
+Sin `template`. Tres cuadros (`b21`–`b23`) con **3 / 4 / 6 frases** en N1 / N2 / N3 entre los tres (en N1, una por cuadro: no puede haber cuadros vacíos) (cada frase ≤ 120 caracteres). Incluye el estribillo (3.ª vez).
+Su ilustración es un dibujo pequeño y sencillo (sección 6); lleva `alt`.
+
+---
+
+## 5. Preguntas (7) y vocabulario
+
+### 5.1 Preguntas
+| Id | Página | Tipo | Opciones | `correctIndex` | Notas |
+|---|---|---|---|---:|---|
+| `q01` | p02 | literal (quién lloraba) | 3 | 0 | |
+| `q02` | p05 | secuencia (quién cruzó primero / último) | 3 | 2 | |
+| `q03` | p06 | literal (qué guarda Dora) | 3 | 1 | opciones **largas** (≥ 60 caracteres) en la variante Lector |
+| `q04` | p08 | inferencia (cómo supo Mila la respuesta) | 3 | 1 | Explorador: opciones muy cortas · Lector: razonamiento |
+| `q05` | p10 | secuencia (orden en que se encendieron) | 3 | 0 | |
+| `q06` | p12 | causa y efecto (por qué se encendieron) | 3 | 2 | |
+| `q07` | p14 | tema / mensaje | **2** | 1 | única con solo 2 opciones |
+
+Reglas de siempre: variantes `explorador` y `lector`; el feedback **nunca** dice "incorrecto"; `retryFeedback` es una pista concreta (qué página o cuadro mirar).
+
+### 5.2 Vocabulario y repaso
+- **Cantidad por variante:** N1 ≥ 12 · N2 ≥ 20 · N3 ≥ 30 palabras (cada una debe aparecer en el texto de esa variante).
+- **Sílabas:** de 2 a 8 (incluye *iluminadísimo* y *extraordinariamente*); alguna de **una** sílaba (que **no** puede ir en `reviewWords`).
+- Con **ü, ñ y acentos**: `cigüeña` (`ci`-`güe`-`ña`), `niño`, `luciérnaga`, `adivinanza` (`a`-`di`-`vi`-`nan`-`za`), `oscuridad`, `parpadeó`.
+- Al menos **8** con `synonym`. `definition` corta, del nivel de la variante.
+- **`reviewWords`: 3** con **≥ 3 sílabas**. ES: `luciérnaga`, `adivinanza`, `oscuridad`. EN: `adventure`, `courageous`, `illuminate`.
+
+---
+
+## 6. Arte: minimalista y barato
+
+**Estilo.** Ilustración **plana 2D** (vectorial / papel recortado), sin texturas ni iluminación volumétrica. Mismos **diseños** de Mila (cabello rizado con un broche de estrella,
+overol amarillo, playera turquesa, tenis rojos), Pipo (dragón verde menta) y Tito (erizo café) que en las historias anteriores, **simplificados a formas planas**.
+Paleta fija de **6 colores + blanco**: azul noche `#1B2450`, morado `#5B4B8A`, verde menta `#8FD3B6`, amarillo luz `#FFD84D`, naranja `#F29E4C`, crema `#FDF6E6`.
+Fondos: **un solo degradado** de cielo + **máximo 3 elementos** por viñeta (árbol, arbusto, piedra…). Las luciérnagas son puntos amarillos con un halo suave.
+
+**Por qué ahorra.** El costo depende del número de imágenes, no de los detalles: 15 imágenes para 40 escenas. Las páginas de varias viñetas se piden **en una sola generación**
+con la imagen guía de la plantilla adjunta como referencia de composición; si una viñeta sale mal, se corrige esa página, no las demás.
+
+**Viñetas dinámicas.** En `slant-2`, `slant-3`, `bolt-2` y `manga-6` la **forma** de las viñetas (diagonales, rayo) es la de la imagen guía: canales blancos de ~18 px entre viñetas, borde fino oscuro.
+Los globos siguen siendo **rectángulos redondeados vacíos** dentro de su viñeta. En `burst-2` el globo del primer cuadro es una **estrella de 14 puntas** crema con borde oscuro, vacía.
+
+**Pautas por página** (imagen guía: `content/plantillas/<plantilla>.png`, 1536 × 1024; adjúntala siempre; la `-numerada` es solo para personas):
+| Página | Plantilla | Qué dibujar (y qué NO poner en el área del texto) |
+|---|---|---|
+| p01 | `book-1` | Una sola escena ancha en la mitad de arriba (jardín al atardecer, Mila y Pipo con el frasco). La tarjeta crema de abajo, **vacía**. |
+| p02 | `four-up` | Cuatro viñetas; cada personaje **abajo** en su viñeta (el globo va arriba). |
+| p03 | `slant-2` | Dos viñetas altas separadas por la diagonal; personajes en la mitad inferior (globo arriba). Tito a la izquierda, Mila y Pipo a la derecha. |
+| p04 | `six-up` | Seis viñetas simples: **un personaje u objeto grande por viñeta**, fondo de un solo color; nada en la franja de arriba (globo). |
+| p05 | `slant-3` | Arriba una vista ancha del arroyo con el puente de corteza (globo ancho arriba a la izquierda); abajo, Tito cruzando (izquierda) y Pipo y Mila (derecha). |
+| p06 | `book-2` | Dos ilustraciones (árbol hueco / Dora con el libro) y dos tarjetas vacías debajo. |
+| p07 | `burst-2` | Arriba, cielo morado con un relámpago; abajo, Tito escondido detrás de Mila. La **estrella central vacía** cruza el canal entre las dos viñetas. |
+| p08 | *(texto)* | Un dibujo sencillo (Mila pensando, con una bombilla o un libro): **sin** globos ni tarjetas. |
+| p09 | `manga-6` | Seis viñetas de tamaños distintos: primer plano de un libro abierto, Mila respirando, tres viñetas con un dedo levantado (uno, dos, tres) y Mila cantando. Sin nada importante bajo los globos. |
+| p10 | `book-3` | Tres columnas altas: una luciérnaga encendiéndose en cada una; tarjetas vacías debajo. |
+| p11 | `bolt-2` | Arriba a la izquierda, seis luces que se encienden; abajo a la derecha, tres más y el cielo despejándose. El rayo es el divisor. |
+| p12 | `two-up` | Dos viñetas altas: el cielo lleno de luces y Tito riendo. |
+| p13 | `three-up` | Dos viñetas arriba (Pipo con el frasco; el puente) y una ancha abajo (Mila mirando el cielo). |
+| p14 | `full` | La casa y el jardín llenos de puntos de luz, a página completa; el globo ancho de arriba, **vacío**. |
+| portada | — | Sin texto ni globos. Mila y Pipo **abajo a la izquierda**, el cielo con puntos de luz a la derecha y arriba. **`heroFocus` `{ "x": 25, "y": 68 }`** (lejos del centro, a propósito). |
+
+**Reglas de siempre:** ningún texto, letra, número ni onomatopeya dibujados en la imagen; los globos y las tarjetas **vacíos**, crema con borde `#1B2450`, en los rectángulos exactos de la plantilla.
+
+---
+
+## 7. Entrega
+
+```
+packages/story-engine/stories/{es,en}/la-noche-sin-luces-{es,en}-n{1,2,3}.json          (6 archivos)
+apps/reader/public/stories/la-noche-sin-luces/page-01.png … page-14.png, cover.png     (15 imágenes; tú las entregas en PNG y yo las convierto a WebP)
+    (en el JSON la ruta ya se escribe con la extensión final: "stories/la-noche-sin-luces/page-01.webp")
+content/la-noche-sin-luces/  (hoja de personajes, prompts usados, un texto legible por cuadro y nivel)
+```
+- `familyId`, `id`, `language`, `level`, `title` (≤ 60 caracteres), `description` (≤ 200), `cover` + `heroFocus`, `reviewWords`, `pages[]` con `template` (sin coordenadas; p08 sin `template`), `vocabulary`.
+- Títulos de cuadro (`title`) ≤ 28 caracteres. `alt` de cada ilustración con la escena descrita.
+- **Autoverificación antes de entregarla:** `npm run stories:check` (formato, imágenes, esqueleto común) **y** `npm run stories:budget` (presupuesto de texto): solo `b10` y `b13` de N3 pueden marcar ⚠.
+
+---
+
+## 8. Prompts
+
+Los prompts listos para pegar (texto: uno por variante; imagen: uno por página) están en
+[`PROMPT-GPT-LA-NOCHE-SIN-LUCES.md`](PROMPT-GPT-LA-NOCHE-SIN-LUCES.md). Ese archivo es autocontenido: lleva el contrato JSON, el plan de páginas, la tabla de caracteres y las reglas de esta especificación.
+**Si algo de aquí cambia, se cambia allí también.**
+
+---
+
+## 9. Qué revisaré yo al recibirla (para que sepas qué esperar)
+
+1. `stories:check` y `stories:budget` en verde (salvo la sobrecarga controlada).
+2. Cada plantilla sobre arte real: ¿los globos dibujados coinciden con los rectángulos? Si no, ajusto las cajas con el modo editor (queda en `layouts/la-noche-sin-luces.layout.json`).
+3. Lectura completa de las 6 variantes con el simulador (la prueba automática ya lo hace) + recorrido a mano de p03, p04, p05, p07, p08, p09 y p11.
+4. Reanudar a mitad (p09), segundo plano, resumen final con `completion` 1,0 y `comprehensionTotal` 7, y el editor sobre `manga-6`, `burst-2` y `book-3`.
+5. Un informe de lo que falle o se vea mal: **lo que rompa se arregla en el motor**, no en el contenido.

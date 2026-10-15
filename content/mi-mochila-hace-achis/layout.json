@@ -1,0 +1,187 @@
+{
+  "storyId": "mi-mochila-hace-achis",
+  "canvas": {
+    "width": 1536,
+    "height": 1024
+  },
+  "sharedArtwork": true,
+  "bakedText": false,
+  "coordinateSpace": "Píxeles de la imagen original. Los porcentajes se calculan respecto a toda la imagen, no respecto a una viñeta.",
+  "textRects": "Zonas interiores conservadoras de los recuadros vacíos, con margen para no tocar sus bordes.",
+  "pages": [
+    {
+      "id": "p01",
+      "image": "images/page-01.png",
+      "blocks": [
+        {
+          "id": "b01",
+          "panel": {
+            "x0": 0,
+            "y0": 0,
+            "x1": 763,
+            "y1": 518
+          },
+          "textRectPx": {
+            "x": 50,
+            "y": 34,
+            "width": 670,
+            "height": 100
+          },
+          "textRectPct": {
+            "leftPct": 3.2552,
+            "topPct": 3.3203,
+            "widthPct": 43.6198,
+            "heightPct": 9.7656
+          }
+        },
+        {
+          "id": "b02",
+          "panel": {
+            "x0": 774,
+            "y0": 0,
+            "x1": 1536,
+            "y1": 518
+          },
+          "textRectPx": {
+            "x": 819,
+            "y": 34,
+            "width": 660,
+            "height": 100
+          },
+          "textRectPct": {
+            "leftPct": 53.3203,
+            "topPct": 3.3203,
+            "widthPct": 42.9688,
+            "heightPct": 9.7656
+          }
+        },
+        {
+          "id": "b03",
+          "panel": {
+            "x0": 0,
+            "y0": 529,
+            "x1": 1536,
+            "y1": 1024
+          },
+          "textRectPx": {
+            "x": 50,
+            "y": 553,
+            "width": 1430,
+            "height": 70
+          },
+          "textRectPct": {
+            "leftPct": 3.2552,
+            "topPct": 54.0039,
+            "widthPct": 93.099,
+            "heightPct": 6.8359
+          }
+        }
+      ]
+    },
+    {
+      "id": "p02",
+      "image": "images/page-02.png",
+      "blocks": [
+        {
+          "id": "b04",
+          "panel": {
+            "x0": 0,
+            "y0": 0,
+            "x1": 765,
+            "y1": 1024
+          },
+          "textRectPx": {
+            "x": 50,
+            "y": 36,
+            "width": 675,
+            "height": 114
+          },
+          "textRectPct": {
+            "leftPct": 3.2552,
+            "topPct": 3.5156,
+            "widthPct": 43.9453,
+            "heightPct": 11.1328
+          }
+        },
+        {
+          "id": "b05",
+          "panel": {
+            "x0": 774,
+            "y0": 0,
+            "x1": 1536,
+            "y1": 1024
+          },
+          "textRectPx": {
+            "x": 812,
+            "y": 36,
+            "width": 675,
+            "height": 114
+          },
+          "textRectPct": {
+            "leftPct": 52.8646,
+            "topPct": 3.5156,
+            "widthPct": 43.9453,
+            "heightPct": 11.1328
+          }
+        }
+      ]
+    },
+    {
+      "id": "p03",
+      "image": "images/page-03.png",
+      "blocks": [
+        {
+          "id": "b06",
+          "panel": {
+            "x0": 0,
+            "y0": 0,
+            "x1": 765,
+            "y1": 1024
+          },
+          "textRectPx": {
+            "x": 43,
+            "y": 39,
+            "width": 680,
+            "height": 134
+          },
+          "textRectPct": {
+            "leftPct": 2.7995,
+            "topPct": 3.8086,
+            "widthPct": 44.2708,
+            "heightPct": 13.0859
+          }
+        },
+        {
+          "id": "b07",
+          "panel": {
+            "x0": 775,
+            "y0": 0,
+            "x1": 1536,
+            "y1": 1024
+          },
+          "textRectPx": {
+            "x": 814,
+            "y": 39,
+            "width": 680,
+            "height": 134
+          },
+          "textRectPct": {
+            "leftPct": 52.9948,
+            "topPct": 3.8086,
+            "widthPct": 44.2708,
+            "heightPct": 13.0859
+          }
+        }
+      ]
+    }
+  ],
+  "integrationNotes": [
+    "Resolver las rutas images/... desde la carpeta raíz de este paquete.",
+    "Preservar la relación 3:2; usar el rectángulo real de la imagen al posicionar texto si existe letterboxing.",
+    "Renderizar texto real accesible, nunca dibujarlo permanentemente en el PNG.",
+    "Al cambiar idioma o nivel conservar page.id y block.id y usar las mismas imágenes y coordenadas.",
+    "No confundir las 1–4 cadenas de lines con un número garantizado de líneas tipográficas: el salto visual depende de fuente, tamaño y ancho.",
+    "Para conservar letra grande cuando un bloque no quepa, presentar sus segmentos sucesivamente en el mismo recuadro. Es una propuesta de adaptación de UI, no una capacidad verificada del prototipo.",
+    "No truncar, no usar puntos suspensivos, no ocultar palabras y no superponer texto a las ilustraciones."
+  ]
+}

@@ -1,0 +1,341 @@
+{
+  "id": "estrella-desaparecida-c2-es-n2",
+  "familyId": "estrella-desaparecida-c2",
+  "language": "es",
+  "title": "2. La sombra que engañaba",
+  "level": 2,
+  "category": "misterio",
+  "description": "Capítulo 2 de 3 de «El caso de la estrella desaparecida». Leer en orden.",
+  "cover": {
+    "src": "stories/estrella-desaparecida-c2/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "El caso de la estrella desaparecida"
+  },
+  "pages": [
+    {
+      "id": "p04",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c2/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "La sombra cambia, llaman a la puerta y Pico abre con un farol junto a un perchero."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b13",
+          "voice": "narration",
+          "lines": [
+            "Los hermanos siguen ante el taller. La sombra parece enorme, pero todavía no han visto qué la produce."
+          ],
+          "title": "Frente al taller"
+        },
+        {
+          "id": "b14",
+          "voice": "narration",
+          "lines": [
+            "Al moverse la luz del interior, la silueta cambia. Luna se fija en esa relación."
+          ],
+          "title": "La sombra cambia"
+        },
+        {
+          "id": "b15",
+          "voice": "narration",
+          "lines": [
+            "Nico toca la puerta en vez de salir corriendo. Quieren comprobar qué ocurre dentro."
+          ],
+          "title": "Tocan la puerta"
+        },
+        {
+          "id": "b16",
+          "voice": "narration",
+          "lines": [
+            "Pico abre con un farol en la mano. Un abrigo morado cuelga detrás de él."
+          ],
+          "title": "Pico abre"
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Quién abre la puerta?",
+            "options": [
+              {
+                "text": "El gato"
+              },
+              {
+                "text": "Pico"
+              },
+              {
+                "text": "Un monstruo"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Pico.",
+            "retryFeedback": "Observa qué lleva Pico y qué hay detrás de él."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué pregunta sirve para comprobar la primera impresión?",
+            "options": [
+              {
+                "text": "Qué objeto y qué luz forman la sombra"
+              },
+              {
+                "text": "Por qué todos los talleres son peligrosos"
+              },
+              {
+                "text": "Cómo escapar de una criatura que aún no han visto"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Qué objeto y qué luz forman la sombra.",
+            "retryFeedback": "Observa qué lleva Pico y qué hay detrás de él."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p05",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c2/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Comprueban la sombra del abrigo y descubren barro y cinta en una rueda del carro."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b17",
+          "voice": "narration",
+          "lines": [
+            "Mueve el farol junto al perchero y la sombra cambia otra vez. Ahora pueden ver cómo se forma."
+          ],
+          "title": "Se mueve el farol"
+        },
+        {
+          "id": "b18",
+          "voice": "narration",
+          "lines": [
+            "Nico toca la manga del abrigo y sonríe. Su primera impresión no era una prueba."
+          ],
+          "title": "Solo era ropa"
+        },
+        {
+          "id": "b19",
+          "voice": "narration",
+          "lines": [
+            "Luna descubre un carro naranja estacionado dentro. Sus ruedas moradas todavía conservan barro del camino."
+          ],
+          "title": "El carro naranja"
+        },
+        {
+          "id": "b20",
+          "voice": "narration",
+          "lines": [
+            "De una rueda cuelga una cinta azul con puntos blancos. Luna acerca su pedacito para compararlos."
+          ],
+          "title": "La cinta en la rueda"
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué produce la sombra junto al farol?",
+            "options": [
+              {
+                "text": "La estrella"
+              },
+              {
+                "text": "Un árbol gigante"
+              },
+              {
+                "text": "Un perchero con un abrigo"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Un perchero con un abrigo.",
+            "retryFeedback": "Busca dos coincidencias: las marcas del suelo y la tela azul."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué datos relacionan el carro con el rastro?",
+            "options": [
+              {
+                "text": "Solo que es de color naranja"
+              },
+              {
+                "text": "Sus ruedas embarradas y la cinta que coincide"
+              },
+              {
+                "text": "Que Pico lleva una gorra"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Sus ruedas embarradas y la cinta que coincide.",
+            "retryFeedback": "Busca dos coincidencias: las marcas del suelo y la tela azul."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p06",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c2/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Relacionan el recorrido del carro con el gancho y descubren una punta amarilla bajo la tela."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b21",
+          "voice": "narration",
+          "lines": [
+            "Las líneas del suelo entran por la puerta y llegan al carro. Las pistas comienzan a conectarse."
+          ],
+          "title": "El mismo camino"
+        },
+        {
+          "id": "b22",
+          "voice": "narration",
+          "lines": [
+            "Pico señala el gancho de la estación: había pasado por debajo con el carro antes de entrar."
+          ],
+          "title": "Aquí colgaba"
+        },
+        {
+          "id": "b23",
+          "voice": "narration",
+          "lines": [
+            "Luna levanta un poco la tela de rayas que cubre la carga. Algo amarillo aparece debajo."
+          ],
+          "title": "Levantan la tela"
+        },
+        {
+          "id": "b24",
+          "voice": "narration",
+          "lines": [
+            "También asoma parte de un aro morado. Nico lo reconoce, pero tendrán que destapar todo para comprobarlo."
+          ],
+          "title": "¿Qué asoma ahí?"
+        }
+      ],
+      "checkpoint": {
+        "id": "q06",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué asoma debajo de la tela?",
+            "options": [
+              {
+                "text": "Una punta amarilla y un aro morado"
+              },
+              {
+                "text": "Una pata de gato"
+              },
+              {
+                "text": "Una piedra verde"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Una punta amarilla y un aro morado.",
+            "retryFeedback": "Solo se ve una parte. Piensa cómo comprobar el resto."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué deben hacer antes de asegurar que es la estrella?",
+            "options": [
+              {
+                "text": "Acusar a Pico"
+              },
+              {
+                "text": "Dejar de investigar"
+              },
+              {
+                "text": "Destapar y observar el objeto completo"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Destapar y observar el objeto completo.",
+            "retryFeedback": "Solo se ve una parte. Piensa cómo comprobar el resto."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "gancho": {
+      "syllables": [
+        "gan",
+        "cho"
+      ],
+      "definition": "Pieza curva que sirve para colgar cosas."
+    },
+    "taller": {
+      "syllables": [
+        "ta",
+        "ller"
+      ],
+      "definition": "Lugar donde se hacen o arreglan cosas."
+    },
+    "sombra": {
+      "syllables": [
+        "som",
+        "bra"
+      ],
+      "definition": "Zona oscura que aparece cuando un objeto tapa la luz."
+    },
+    "silueta": {
+      "syllables": [
+        "si",
+        "lue",
+        "ta"
+      ],
+      "definition": "Forma exterior de algo, sin sus detalles."
+    },
+    "prueba": {
+      "syllables": [
+        "prue",
+        "ba"
+      ],
+      "definition": "Dato o acción que ayuda a comprobar una idea."
+    },
+    "farol": {
+      "syllables": [
+        "fa",
+        "rol"
+      ],
+      "definition": "Objeto que protege una luz y permite alumbrar."
+    },
+    "perchero": {
+      "syllables": [
+        "per",
+        "che",
+        "ro"
+      ],
+      "definition": "Mueble con ganchos para colgar ropa."
+    },
+    "aro": {
+      "syllables": [
+        "a",
+        "ro"
+      ],
+      "definition": "Pieza con forma de círculo."
+    }
+  },
+  "heroFocus": {
+    "x": 35,
+    "y": 62
+  },
+  "reviewWords": [
+    "gancho",
+    "taller",
+    "sombra"
+  ]
+}

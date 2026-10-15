@@ -1,0 +1,876 @@
+{
+  "id": "la-manana-de-los-doce-minutos-en-n6",
+  "familyId": "la-manana-de-los-doce-minutos",
+  "language": "en",
+  "title": "The Twelve-Minute Morning",
+  "level": 6,
+  "category": "misterio",
+  "description": "A mystery at the observatory.",
+  "cover": {
+    "src": "stories/la-manana-de-los-doce-minutos/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Scene of a kite, twice."
+  },
+  "heroFocus": {
+    "x": 30,
+    "y": 55
+  },
+  "reviewWords": [
+    "observatory",
+    "receiver",
+    "reflection"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/la-manana-de-los-doce-minutos/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Scene of a kite, twice."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b01",
+          "voice": "narration",
+          "title": "A kite, twice",
+          "lines": [
+            "Luna arrived at the neighborhood observatory with rain still clinging to her jacket. She had promised to help Rafa prepare a science-fair demonstration.",
+            "Her aunt Inés showed them a ring of mirrors that collected flashes from the sky and sent them to a small receiver. Pip, their wheeled robot, would record the light.",
+            "Luna wanted the project to be spectacular. When Inés went to fetch a protective cover, Luna turned one mirror slightly toward a bright cloud.",
+            "Rafa was busy connecting Pip and didn’t see her. Outside, a yellow kite crossed the window.",
+            "A bell rang. Twelve minutes later the same kite passed again, with the same torn corner."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What crosses the observatory window?",
+            "options": [
+              {
+                "text": "The yellow kite with its torn corner"
+              },
+              {
+                "text": "A red plane"
+              },
+              {
+                "text": "A fish-shaped cloud"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! The yellow kite with its torn corner.",
+            "retryFeedback": "Look again at the scene and the clue they tested."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What detail makes Luna suspect a repeat?",
+            "options": [
+              {
+                "text": "A fish-shaped cloud"
+              },
+              {
+                "text": "The yellow kite with its torn corner"
+              },
+              {
+                "text": "A red plane"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! The yellow kite with its torn corner.",
+            "retryFeedback": "Look again at the scene and the clue they tested."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/la-manana-de-los-doce-minutos/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Scene of the returning cup."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b02",
+          "voice": "narration",
+          "title": "The returning cup",
+          "lines": [
+            "Rafa wondered if there were two identical kites. Then a cup fell from the telescope table, broke, and left a star-shaped puddle.",
+            "Luna reached for a towel. Before she could grab it, light swept around the ring.",
+            "The cup appeared whole again on the table; the towel was still in Luna’s hand. Outside, the kite approached once more.",
+            "Pip kept its recording of the crash and added a second file. Inés returned from the next room with the cover.",
+            "She remembered the broken cup too. All four had been close to the ring when it flashed.",
+            "They didn’t know whether the whole neighborhood was repeating twelve minutes or whether only they could remember. Inés asked everyone to leave the switches alone until they understood more."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What becomes whole again?",
+            "options": [
+              {
+                "text": "The kite; every neighbor"
+              },
+              {
+                "text": "The cup; Luna, Rafa, Inés, and Pip"
+              },
+              {
+                "text": "The window; Luna alone"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! The cup; Luna, Rafa, Inés, and Pip.",
+            "retryFeedback": "Look again at the scene and the clue they tested."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Who keeps memories near the ring?",
+            "options": [
+              {
+                "text": "The window; Luna alone"
+              },
+              {
+                "text": "The kite; every neighbor"
+              },
+              {
+                "text": "The cup; Luna, Rafa, Inés, and Pip"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! The cup; Luna, Rafa, Inés, and Pip.",
+            "retryFeedback": "Look again at the scene and the clue they tested."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b03",
+          "voice": "narration",
+          "title": "The notebook stays",
+          "lines": [
+            "Luna wrote three clues in a notebook: the kite, the bell, and the cup. In the next cycle Rafa held the cup away from the edge.",
+            "It didn’t fall this time, but the kite crossed at the same moment and light swept the ring again. The notebook kept its new notes.",
+            "Inés saw that they could change small things inside the room while scenes outside started over. Through the glass, a woman opened a blue umbrella, stepped over a loose paving stone, and walked on.",
+            "She did it again in the next cycle. Luna wanted to go out and warn her.",
+            "Inés stopped her. They didn’t know whether leaving the observatory would make them forget the clues.",
+            "First they needed to find the cause from somewhere safe."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What keeps the new notes?",
+            "options": [
+              {
+                "text": "The umbrella; it is cold"
+              },
+              {
+                "text": "The bell; it is late"
+              },
+              {
+                "text": "The notebook; they don't know what leaving might do"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! The notebook; they don't know what leaving might do.",
+            "retryFeedback": "Look again at the scene and the clue they tested."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why does Inés ask them to stay inside?",
+            "options": [
+              {
+                "text": "The notebook; they don't know what leaving might do"
+              },
+              {
+                "text": "The umbrella; it is cold"
+              },
+              {
+                "text": "The bell; it is late"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! The notebook; they don't know what leaving might do.",
+            "retryFeedback": "Look again at the scene and the clue they tested."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p04",
+      "illustration": {
+        "src": "stories/la-manana-de-los-doce-minutos/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Scene of the kite’s shadow."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b04",
+          "voice": "narration",
+          "title": "The kite’s shadow",
+          "lines": [
+            "Rafa held a sheet of white paper behind the receiver to see the beam. Pip filmed the ring while Inés watched her gauges.",
+            "When the kite passed in front of the sun, its shadow crossed the sheet. A bright spot appeared at the receiver’s edge a moment later.",
+            "Luna thought the shadow was triggering the machine. Rafa shook his head: the kite came first, but that did not prove it was the cause.",
+            "On the next cycle a cloud hid the sun, and the spot appeared anyway. They compared Pip’s recordings.",
+            "The spot traveled in a circle through the mirrors, faster with every lap. The kite was only a clock they could see through the window."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What does Pip reveal about the light?",
+            "options": [
+              {
+                "text": "The beam circles mirrors even beneath a cloud"
+              },
+              {
+                "text": "The kite has a motor"
+              },
+              {
+                "text": "Rafa missed it"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! The beam circles mirrors even beneath a cloud.",
+            "retryFeedback": "Look again at the scene and the clue they tested."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why is the kite not the cause of the loop?",
+            "options": [
+              {
+                "text": "Rafa missed it"
+              },
+              {
+                "text": "The beam circles mirrors even beneath a cloud"
+              },
+              {
+                "text": "The kite has a motor"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! The beam circles mirrors even beneath a cloud.",
+            "retryFeedback": "Look again at the scene and the clue they tested."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p05",
+      "illustration": {
+        "src": "stories/la-manana-de-los-doce-minutos/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Scene of the mirror out of line."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b05",
+          "voice": "narration",
+          "title": "The mirror out of line",
+          "lines": [
+            "Inés spread the ring’s diagram on the table. One mirror was meant to send light back toward the sky.",
+            "Now it returned the beam to the receiver. Luna saw the small fingerprint she had left when she moved it.",
+            "Her throat tightened. If she spoke, Rafa would know she had changed their experiment without asking him.",
+            "Pip projected two images on the wall: before the turn, the flash went out through the high window; afterward it stayed trapped in the ring. Luna admitted she had moved the mirror to make their demonstration better.",
+            "Rafa pressed his lips together. He didn’t say everything was her fault, but he didn’t pretend it didn’t matter.",
+            "Inés thanked her. They had a possible cause to test."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What does Luna admit moving?",
+            "options": [
+              {
+                "text": "Pip; it can erase notes"
+              },
+              {
+                "text": "A mirror; now they can test a possible cause"
+              },
+              {
+                "text": "The telescope; they will win a prize"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! A mirror; now they can test a possible cause.",
+            "retryFeedback": "Look again at the scene and the clue they tested."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why does telling the truth help?",
+            "options": [
+              {
+                "text": "The telescope; they will win a prize"
+              },
+              {
+                "text": "Pip; it can erase notes"
+              },
+              {
+                "text": "A mirror; now they can test a possible cause"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! A mirror; now they can test a possible cause.",
+            "retryFeedback": "Look again at the scene and the clue they tested."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p06",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b06",
+          "voice": "narration",
+          "title": "A test that fails",
+          "lines": [
+            "Luna suggested covering the receiver. Inés checked the manual and fitted the cover herself.",
+            "The next flash was dimmer, but the room still returned to the same morning. Blocking one exit didn’t break the circle: a backup battery kept the machine running.",
+            "Rafa pointed out a safety catch behind the ring. Only Inés could reach and operate it.",
+            "The catch locked while the beam passed, leaving a few seconds of darkness between laps. Pip could measure that gap.",
+            "Luna had hoped one quick idea would fix her mistake. Now she agreed to do something less dazzling: count intervals, compare recordings, and listen to Rafa.",
+            "Their notebook held several pages of clues. Each cycle taught them one part of the mechanism."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q06",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Who fits the cover?",
+            "options": [
+              {
+                "text": "Rafa; the ring is off"
+              },
+              {
+                "text": "Luna; the battery breaks"
+              },
+              {
+                "text": "Inés; the cover does not stop the loop"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! Inés; the cover does not stop the loop.",
+            "retryFeedback": "Look again at the scene and the clue they tested."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What does the failed test show?",
+            "options": [
+              {
+                "text": "Inés; the cover does not stop the loop"
+              },
+              {
+                "text": "Rafa; the ring is off"
+              },
+              {
+                "text": "Luna; the battery breaks"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! Inés; the cover does not stop the loop.",
+            "retryFeedback": "Look again at the scene and the clue they tested."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p07",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b07",
+          "voice": "narration",
+          "title": "Twelve is not eleven",
+          "lines": [
+            "Pip showed that the dark interval lasted only a few seconds. Rafa drew a mark for each lap of the beam.",
+            "Luna used the kite to tell when the end of the cycle was near, but their counts disagreed: one time they saw eleven laps, the next time twelve. They checked the recordings.",
+            "A reflection in the window looked like one extra lap. Rafa turned off the table lamp, and the false reflection vanished.",
+            "Now they could track the real beam. Inés readied the safety catch without touching the ring yet.",
+            "She would make the move; the children would call the timing from behind the safety line. Luna took a breath.",
+            "A tested plan mattered more than sounding certain."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q07",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What looked like an extra lap?",
+            "options": [
+              {
+                "text": "A window reflection; they need the real interval"
+              },
+              {
+                "text": "A new kite; they want to fly"
+              },
+              {
+                "text": "A cup; they want to measure water"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! A window reflection; they need the real interval.",
+            "retryFeedback": "Look again at the scene and the clue they tested."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why compare records before using the catch?",
+            "options": [
+              {
+                "text": "A cup; they want to measure water"
+              },
+              {
+                "text": "A window reflection; they need the real interval"
+              },
+              {
+                "text": "A new kite; they want to fly"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! A window reflection; they need the real interval.",
+            "retryFeedback": "Look again at the scene and the clue they tested."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p08",
+      "illustration": {
+        "src": "stories/la-manana-de-los-doce-minutos/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Scene of the bell comes early."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b08",
+          "voice": "narration",
+          "title": "The bell comes early",
+          "lines": [
+            "On their next attempt the bell sounded earlier than expected. Luna lifted her hand to call the moment, but Rafa saw the kite was still far away.",
+            "It wasn’t the neighborhood bell: Pip had played its own recording when its memory filled up. They stopped counting and deleted only extra copies, keeping the important records.",
+            "In the following cycle Luna watched the kite; Rafa tracked the true spot of light; Inés watched the catch. No single clue was enough.",
+            "As the kite’s torn edge reached the window frame, Pip showed the dark gap. Rafa called, “Now!” Inés moved the catch.",
+            "The ring went still. They did not yet know whether time outside had moved forward."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q08",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What false sound confuses them?",
+            "options": [
+              {
+                "text": "Rafa's phone; they lost the key"
+              },
+              {
+                "text": "Pip's recorded bell; they need a reliable cue"
+              },
+              {
+                "text": "Thunder; they want to sleep"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! Pip's recorded bell; they need a reliable cue.",
+            "retryFeedback": "Look again at the scene and the clue they tested."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why wait for another cycle?",
+            "options": [
+              {
+                "text": "Thunder; they want to sleep"
+              },
+              {
+                "text": "Rafa's phone; they lost the key"
+              },
+              {
+                "text": "Pip's recorded bell; they need a reliable cue"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! Pip's recorded bell; they need a reliable cue.",
+            "retryFeedback": "Look again at the scene and the clue they tested."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p09",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b09",
+          "voice": "narration",
+          "title": "A new minute",
+          "lines": [
+            "The kite crossed the window. They waited for it to appear again.",
+            "Instead it vanished behind a roof, and a smaller red kite entered the sky. The woman with the blue umbrella turned a corner without repeating her walk.",
+            "Pip recorded a minute unlike any they had seen before. Inés left the ring off and called the observatory team to check it before another demonstration.",
+            "Rafa asked Luna why she had waited so long to tell him about the mirror. She didn’t offer an excuse.",
+            "She had wanted to surprise him, and then she was afraid he would be angry. He was angry, he said, but he would rather know the truth and work with her.",
+            "Luna offered to show him every note she had made."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q09",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Which kite follows the yellow one?",
+            "options": [
+              {
+                "text": "Another yellow one; the cup falls"
+              },
+              {
+                "text": "None; the sun goes out"
+              },
+              {
+                "text": "A red one; the outside scene no longer repeats"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! A red one; the outside scene no longer repeats.",
+            "retryFeedback": "Look again at the scene and the clue they tested."
+          },
+          {
+            "audience": "lector",
+            "prompt": "How do they know a new minute has arrived?",
+            "options": [
+              {
+                "text": "A red one; the outside scene no longer repeats"
+              },
+              {
+                "text": "Another yellow one; the cup falls"
+              },
+              {
+                "text": "None; the sun goes out"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! A red one; the outside scene no longer repeats.",
+            "retryFeedback": "Look again at the scene and the clue they tested."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p10",
+      "illustration": {
+        "src": "stories/la-manana-de-los-doce-minutos/page-10.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Scene of the fair does not repeat."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b10",
+          "voice": "narration",
+          "title": "The fair does not repeat",
+          "lines": [
+            "The science fair arrived two days later. Inés would not switch on the ring while it was still being checked.",
+            "Luna and Rafa made a different demonstration with a flashlight, three fixed mirrors, and a sheet of card to show how a reflection can fool the eye. Pip displayed simple drawings, not data from the unsafe experiment.",
+            "When a visitor asked if a kite could send time backward, Luna explained the difference between a clue that helps you measure and a cause. Rafa told the story of the false window reflection.",
+            "They did not win a prize for the flashiest machine. They got plenty of questions, some they could not answer.",
+            "They wrote down the best ones to investigate with Inés. Luna liked knowing there was no button to repeat her answer."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q10",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What do they use at the fair?",
+            "options": [
+              {
+                "text": "A flashlight and fixed mirrors; clue versus cause"
+              },
+              {
+                "text": "The live ring; prize versus punishment"
+              },
+              {
+                "text": "A kite; fear versus courage"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! A flashlight and fixed mirrors; clue versus cause.",
+            "retryFeedback": "Look again at the scene and the clue they tested."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What distinction do they explain?",
+            "options": [
+              {
+                "text": "A kite; fear versus courage"
+              },
+              {
+                "text": "A flashlight and fixed mirrors; clue versus cause"
+              },
+              {
+                "text": "The live ring; prize versus punishment"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! A flashlight and fixed mirrors; clue versus cause.",
+            "retryFeedback": "Look again at the scene and the clue they tested."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p11",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b11",
+          "voice": "narration",
+          "title": "The note that remains",
+          "lines": [
+            "While packing up, Luna found the first notebook page with its three clues: kite, bell, cup. She kept it and wrote a new question on the back: what changes when we count things together?",
+            "Rafa answered without writing. “We spot mistakes sooner.” Pip swivelled its blue eye as if it agreed.",
+            "Inés asked them to help put away the dismantled mirrors, one at a time, without rushing. Outside, the yellow kite went by with its torn corner mended.",
+            "Luna watched it until it vanished. She did not need to see it again to know time was moving forward.",
+            "They had a whole day ahead, and this time she planned to share her ideas before moving anything."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q11",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What does Luna keep from day one?",
+            "options": [
+              {
+                "text": "The kite; tie it to the ring"
+              },
+              {
+                "text": "A notebook page; share her ideas"
+              },
+              {
+                "text": "The broken cup; hide it"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! A notebook page; share her ideas.",
+            "retryFeedback": "Look again at the scene and the clue they tested."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What will she do before moving anything new?",
+            "options": [
+              {
+                "text": "The broken cup; hide it"
+              },
+              {
+                "text": "The kite; tie it to the ring"
+              },
+              {
+                "text": "A notebook page; share her ideas"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! A notebook page; share her ideas.",
+            "retryFeedback": "Look again at the scene and the clue they tested."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p12",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b12",
+          "voice": "narration",
+          "title": "An hour to explore",
+          "lines": [
+            "A week later Inés invited their class to the observatory. The ring was still dismantled; in its place stood a table of magnifiers, shadows, and little reflective surfaces.",
+            "Luna and Rafa helped the others investigate. Each group observed first, suggested an explanation, and found a way to test it.",
+            "One child thought Pip had a light inside its wheel. Another showed that the glow came from the window.",
+            "No one laughed at the first idea. Luna remembered how easy it was to mistake the order of events for a cause.",
+            "As they left, the bell rang only once. Rafa held up two fingers as a joke; Luna shook her head and smiled.",
+            "That hour could not be repeated, and that made it better."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q12",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What does the class investigate?",
+            "options": [
+              {
+                "text": "Races; they award a medal"
+              },
+              {
+                "text": "Boats; they erase it at once"
+              },
+              {
+                "text": "Light and reflections; they test it without mockery"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! Light and reflections; they test it without mockery.",
+            "retryFeedback": "Look again at the scene and the clue they tested."
+          },
+          {
+            "audience": "lector",
+            "prompt": "How do they treat a failed explanation?",
+            "options": [
+              {
+                "text": "Light and reflections; they test it without mockery"
+              },
+              {
+                "text": "Races; they award a medal"
+              },
+              {
+                "text": "Boats; they erase it at once"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! Light and reflections; they test it without mockery.",
+            "retryFeedback": "Look again at the scene and the clue they tested."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "observatory": {
+      "syllables": [
+        "ob",
+        "ser",
+        "va",
+        "to",
+        "ry"
+      ],
+      "definition": "a place for studying the sky",
+      "example": "We visited an observatory to see Saturn's rings through a telescope."
+    },
+    "receiver": {
+      "syllables": [
+        "re",
+        "ceiv",
+        "er"
+      ],
+      "definition": "a device that takes in a signal",
+      "example": "The radio receiver could pick up stations from all over the country."
+    },
+    "reflection": {
+      "syllables": [
+        "re",
+        "flec",
+        "tion"
+      ],
+      "definition": "light bouncing off a surface",
+      "synonym": "glare",
+      "example": "He saw the reflection of the sun in the car's rearview mirror."
+    },
+    "interval": {
+      "syllables": [
+        "in",
+        "ter",
+        "val"
+      ],
+      "definition": "time between two events",
+      "synonym": "gap",
+      "example": "There was a ten-minute interval between each train."
+    },
+    "hypothesis": {
+      "syllables": [
+        "hy",
+        "poth",
+        "e",
+        "sis"
+      ],
+      "definition": "an idea that still needs testing",
+      "synonym": "guess",
+      "example": "She proposed a different hypothesis to explain the noise in the attic."
+    },
+    "mechanism": {
+      "syllables": [
+        "mech",
+        "a",
+        "nism"
+      ],
+      "definition": "parts that make something work",
+      "synonym": "machinery",
+      "example": "The watchmaker opened the clock to check its mechanism."
+    }
+  }
+}

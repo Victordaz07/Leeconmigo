@@ -1,0 +1,131 @@
+{
+  "images": "11 PNG completos, 1536x1024",
+  "chapters": 3,
+  "storyPages": 9,
+  "sharedPanels": 36,
+  "textVariants": 18,
+  "questionsPerChapterVariant": 3,
+  "questionAudiences": [
+    "explorador",
+    "lector"
+  ],
+  "optionsPerQuestion": 3,
+  "words": {
+    "c1-en-nivel-1": 120,
+    "c1-en-nivel-2": 198,
+    "c1-en-nivel-3": 306,
+    "c1-es-nivel-1": 122,
+    "c1-es-nivel-2": 198,
+    "c1-es-nivel-3": 300,
+    "c2-en-nivel-1": 118,
+    "c2-en-nivel-2": 204,
+    "c2-en-nivel-3": 319,
+    "c2-es-nivel-1": 118,
+    "c2-es-nivel-2": 193,
+    "c2-es-nivel-3": 318,
+    "c3-en-nivel-1": 116,
+    "c3-en-nivel-2": 216,
+    "c3-en-nivel-3": 322,
+    "c3-es-nivel-1": 117,
+    "c3-es-nivel-2": 208,
+    "c3-es-nivel-3": 317
+  },
+  "textFit": {
+    "c1-en-nivel-1": {
+      "fontSize": 28,
+      "lineHeight": 31,
+      "maxWrappedLines": 2
+    },
+    "c1-en-nivel-2": {
+      "fontSize": 22,
+      "lineHeight": 25,
+      "maxWrappedLines": 2
+    },
+    "c1-en-nivel-3": {
+      "fontSize": 20,
+      "lineHeight": 24,
+      "maxWrappedLines": 3
+    },
+    "c1-es-nivel-1": {
+      "fontSize": 28,
+      "lineHeight": 31,
+      "maxWrappedLines": 2
+    },
+    "c1-es-nivel-2": {
+      "fontSize": 22,
+      "lineHeight": 25,
+      "maxWrappedLines": 2
+    },
+    "c1-es-nivel-3": {
+      "fontSize": 20,
+      "lineHeight": 24,
+      "maxWrappedLines": 3
+    },
+    "c2-en-nivel-1": {
+      "fontSize": 28,
+      "lineHeight": 31,
+      "maxWrappedLines": 2
+    },
+    "c2-en-nivel-2": {
+      "fontSize": 22,
+      "lineHeight": 25,
+      "maxWrappedLines": 2
+    },
+    "c2-en-nivel-3": {
+      "fontSize": 20,
+      "lineHeight": 24,
+      "maxWrappedLines": 3
+    },
+    "c2-es-nivel-1": {
+      "fontSize": 28,
+      "lineHeight": 31,
+      "maxWrappedLines": 2
+    },
+    "c2-es-nivel-2": {
+      "fontSize": 22,
+      "lineHeight": 25,
+      "maxWrappedLines": 2
+    },
+    "c2-es-nivel-3": {
+      "fontSize": 20,
+      "lineHeight": 24,
+      "maxWrappedLines": 3
+    },
+    "c3-en-nivel-1": {
+      "fontSize": 28,
+      "lineHeight": 31,
+      "maxWrappedLines": 2
+    },
+    "c3-en-nivel-2": {
+      "fontSize": 22,
+      "lineHeight": 25,
+      "maxWrappedLines": 2
+    },
+    "c3-en-nivel-3": {
+      "fontSize": 20,
+      "lineHeight": 24,
+      "maxWrappedLines": 3
+    },
+    "c3-es-nivel-1": {
+      "fontSize": 28,
+      "lineHeight": 31,
+      "maxWrappedLines": 2
+    },
+    "c3-es-nivel-2": {
+      "fontSize": 22,
+      "lineHeight": 25,
+      "maxWrappedLines": 2
+    },
+    "c3-es-nivel-3": {
+      "fontSize": 20,
+      "lineHeight": 24,
+      "maxWrappedLines": 3
+    }
+  },
+  "safeBoxes": "99% o más de fondo claro en todas las zonas; revisión visual complementaria realizada",
+  "editorialStatus": "Arte y textos completos; integración con la app pendiente",
+  "limitations": [
+    "Ajuste tipográfico comprobado con DejaVu Sans, pendiente en la fuente real de la app.",
+    "Contrato story.ts y lector real no disponibles; JSON editorial, sin afirmar validación de integración."
+  ]
+}

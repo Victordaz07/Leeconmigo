@@ -1,0 +1,2555 @@
+{
+  "id": "el-mapa-de-la-puerta-desaparecida",
+  "status": "libro-completo-editorial",
+  "title": {
+    "es": "El mapa de la puerta desaparecida",
+    "en": "The Map of the Missing Doorway"
+  },
+  "cover": "imagenes/portada.png",
+  "characterSheet": "imagenes/personajes.png",
+  "canvas": {
+    "width": 1536,
+    "height": 1024
+  },
+  "chapters": [
+    {
+      "number": 1,
+      "pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "title": {
+        "es": "Una entrada que ya no existe",
+        "en": "A doorway that is no longer there"
+      }
+    },
+    {
+      "number": 2,
+      "pages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "title": {
+        "es": "El camino que faltaba",
+        "en": "A route we could not see"
+      }
+    },
+    {
+      "number": 3,
+      "pages": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "title": {
+        "es": "Tres fotografías",
+        "en": "Three photographs"
+      }
+    },
+    {
+      "number": 4,
+      "pages": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "title": {
+        "es": "El círculo rojo",
+        "en": "The red circle"
+      }
+    },
+    {
+      "number": 5,
+      "pages": [
+        17,
+        18,
+        19,
+        20
+      ],
+      "title": {
+        "es": "Volver por otra puerta",
+        "en": "A different way back"
+      }
+    }
+  ],
+  "pageCount": 20,
+  "wordCount": {
+    "es": 4629,
+    "en": 4459
+  },
+  "estimatedReadingMinutesAt140Wpm": {
+    "es": 33.1,
+    "en": 31.9
+  },
+  "pages": [
+    {
+      "id": "p01",
+      "chapter": 1,
+      "layout": "side-right",
+      "image": "imagenes/pagina-01.png",
+      "languages": {
+        "es": {
+          "title": "Un mapa entre las páginas",
+          "paragraphs": [
+            "Inés estaba ordenando los libros de su abuela cuando un papel doblado cayó sobre la mesa. Su primo Teo dejó de apilar cuentos y se acercó.",
+            "Era un mapa. Tenía calles dibujadas a lápiz, una mancha de taza y un círculo rojo junto a un árbol.",
+            "—Seguro que señala un tesoro —dijo Teo.",
+            "Inés reconoció la fuente de la plaza. Más abajo estaba la casa de su abuela, con sus tres ventanas y el pequeño patio.",
+            "Pero había algo extraño: el dibujo mostraba una puerta donde ella solo recordaba una pared.",
+            "Teo buscó una fecha en las esquinas. No encontró ninguna. Tampoco había una explicación para el círculo rojo.",
+            "—Podemos preguntarle a la abuela —propuso.",
+            "Inés miró hacia el patio, iluminado por el sol de la tarde.",
+            "—Primero veamos si el resto coincide.",
+            "Extendieron el papel con cuidado y salieron. A veces, para entender un dibujo, había que mirar fuera de él."
+          ],
+          "alt": "Inés y Teo descubren un mapa en un libro antiguo.",
+          "checkpoint": {
+            "id": "q01",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Qué cayó del libro?",
+                "options": [
+                  {
+                    "text": "Una moneda"
+                  },
+                  {
+                    "text": "Un mapa"
+                  },
+                  {
+                    "text": "Una llave"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Vuelve al libro y mira qué cayó."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Por qué conviene mirar el patio?",
+                "options": [
+                  {
+                    "text": "Para buscar un cofre al azar"
+                  },
+                  {
+                    "text": "Para copiar el libro"
+                  },
+                  {
+                    "text": "Para comparar el dibujo con el lugar"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Vuelve al libro y mira qué cayó."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "A map between the pages",
+          "paragraphs": [
+            "Inés was sorting her grandmother's books when a folded sheet slipped onto the table. Her cousin Teo stopped stacking stories and came over.",
+            "It was a map, with pencilled streets, a round tea stain, and a red circle beside a tree.",
+            "“Treasure,” Teo announced. “It has to be.”",
+            "Inés recognised the fountain in the square. Below it was Grandma's house, complete with three windows and its little courtyard.",
+            "One detail puzzled her. The drawing showed a doorway where she remembered nothing but a wall.",
+            "Teo searched the corners for a date. There wasn't one. Nothing explained the red circle either.",
+            "“We could ask Grandma,” he suggested.",
+            "Inés glanced towards the courtyard, bright with afternoon sunshine.",
+            "“Let's see what else matches first.”",
+            "They carefully opened out the map and headed outside. Perhaps the best way to understand what was on the paper was to look beyond it."
+          ],
+          "alt": "Inés and Teo discover an old map in a book.",
+          "checkpoint": {
+            "id": "q01",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "What fell from the book?",
+                "options": [
+                  {
+                    "text": "A coin"
+                  },
+                  {
+                    "text": "A map"
+                  },
+                  {
+                    "text": "A key"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Look at the book and what slipped out."
+              },
+              {
+                "audience": "lector",
+                "prompt": "Why should they look at the courtyard?",
+                "options": [
+                  {
+                    "text": "To hunt for a random chest"
+                  },
+                  {
+                    "text": "To copy the book"
+                  },
+                  {
+                    "text": "To compare it with the drawing"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Look at the book and what slipped out."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p02",
+      "chapter": 1,
+      "layout": "panorama-bottom",
+      "image": "imagenes/pagina-02.png",
+      "languages": {
+        "es": {
+          "title": "La puerta que faltaba",
+          "paragraphs": [
+            "En el patio, Teo sostuvo el mapa mientras Inés comparaba el dibujo con lo que tenían delante. Las tres ventanas coincidían. También la esquina del tejado y el lugar del naranjo.",
+            "—Aquí debería estar la puerta —dijo él.",
+            "Solo había una pared.",
+            "Inés se acercó. Entre el yeso gastado distinguió una curva de ladrillos. La siguió con la mirada: bajaba por ambos lados hasta el suelo.",
+            "—Mira. Parece un arco.",
+            "Teo levantó la cabeza. Ahora también podía verlo.",
+            "—Entonces el mapa estaba bien.",
+            "—Esa parte coincide —respondió Inés—. Todavía no sabemos qué significa el círculo.",
+            "Durante un momento guardaron silencio. Al otro lado del muro se oyó caer algo pequeño, quizá una naranja.",
+            "Inés pensó en la puerta tapada. El patio siempre le había parecido un lugar conocido. De pronto tenía una pregunta escondida en una de sus paredes.",
+            "Doblaron el mapa y fueron a buscar a la abuela."
+          ],
+          "alt": "Comparan mapa y arco tapiado; una viñeta muestra un detalle del mapa.",
+          "checkpoint": {
+            "id": "q02",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Qué forma encontró Inés en la pared?",
+                "options": [
+                  {
+                    "text": "Una ventana azul"
+                  },
+                  {
+                    "text": "Una estrella"
+                  },
+                  {
+                    "text": "Un arco de ladrillos"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Observa los ladrillos bajo el yeso."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Qué apoya la idea de una puerta anterior?",
+                "options": [
+                  {
+                    "text": "El arco que continúa hasta el suelo"
+                  },
+                  {
+                    "text": "Que Teo quiera un tesoro"
+                  },
+                  {
+                    "text": "El color de las macetas"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Observa los ladrillos bajo el yeso."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "The missing doorway",
+          "paragraphs": [
+            "Outside, Teo held the map while Inés checked it against the courtyard. The three windows matched. So did the corner of the roof and the position of the orange tree.",
+            "“The door should be here,” he said.",
+            "There was only a wall.",
+            "Inés moved closer. Beneath the worn plaster, she noticed a curve of bricks. Her eyes followed it down both sides, all the way to the ground.",
+            "“Look. Doesn't that seem like an arch?”",
+            "Teo glanced up. Once she pointed it out, he could see it too.",
+            "“So the map was right!”",
+            "“That part fits,” said Inés. “We still don't know what the circle means.”",
+            "They listened. Something small dropped on the other side of the wall. An orange, perhaps.",
+            "Inés had always thought she knew this courtyard. Now one of its walls seemed to be holding a question.",
+            "They folded the map and went to find Grandma."
+          ],
+          "alt": "They compare the map and bricked arch; an inset shows the map.",
+          "checkpoint": {
+            "id": "q02",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "What shape did Inés find in the wall?",
+                "options": [
+                  {
+                    "text": "A blue window"
+                  },
+                  {
+                    "text": "A star"
+                  },
+                  {
+                    "text": "A brick arch"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Follow the bricks beneath the plaster."
+              },
+              {
+                "audience": "lector",
+                "prompt": "What supports the idea of an old doorway?",
+                "options": [
+                  {
+                    "text": "The arch curving down to the ground"
+                  },
+                  {
+                    "text": "Teo wanting treasure"
+                  },
+                  {
+                    "text": "The colour of the pots"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Follow the bricks beneath the plaster."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p03",
+      "chapter": 1,
+      "layout": "side-left",
+      "image": "imagenes/pagina-03.png",
+      "languages": {
+        "es": {
+          "title": "Lo que guarda un mapa",
+          "paragraphs": [
+            "La abuela Elena estaba sentada junto al naranjo. Cuando vio el papel, pasó un dedo por la mancha redonda y sonrió.",
+            "—Esta taza dejó huella hace muchísimos años.",
+            "Entró en casa y regresó con una caja de fotografías. Eligió una en la que aparecía la puerta abierta. Detrás se veía un jardín.",
+            "—Lo cuidábamos entre varias familias. Dibujé ese mapa cuando tenía más o menos tu edad, Inés.",
+            "Teo señaló el círculo rojo. —¿Y aquí enterraron algo?",
+            "La abuela negó con la cabeza. —Ahí nos reuníamos. Cada familia traía semillas distintas.",
+            "Inés observó la foto. El árbol parecía pequeño; ahora sus ramas asomaban por encima del muro.",
+            "—¿Todavía existe el jardín?",
+            "—No lo sé. Hace años que no entro.",
+            "Teo volvió a mirar el círculo. Ya no parecía una promesa de monedas. —Entonces habrá que averiguarlo.",
+            "La abuela les entregó la fotografía. Esta vez saldrían a investigar con dos pistas, no con una."
+          ],
+          "alt": "Elena enseña una foto del antiguo arco abierto; aparece ampliada arriba.",
+          "checkpoint": {
+            "id": "q03",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Quién dibujó el mapa?",
+                "options": [
+                  {
+                    "text": "La abuela Elena"
+                  },
+                  {
+                    "text": "Teo"
+                  },
+                  {
+                    "text": "La bibliotecaria"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Compara lo que hay en la foto con el patio."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Qué muestra la fotografía antigua?",
+                "options": [
+                  {
+                    "text": "Un cofre enterrado"
+                  },
+                  {
+                    "text": "La puerta abierta hacia un jardín"
+                  },
+                  {
+                    "text": "El jardín exactamente como está hoy"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Compara lo que hay en la foto con el patio."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "What a map can keep",
+          "paragraphs": [
+            "Grandma Elena was sitting near the orange tree. When she saw the paper, she traced the round stain with a fingertip and smiled.",
+            "“That cup left its mark a very long time ago.”",
+            "She went indoors and returned with a box of photographs. In one picture, the doorway stood open, with a garden beyond it.",
+            "“Several families looked after it together. I drew this map when I was about your age, Inés.”",
+            "Teo pointed at the red circle. “Did you bury something here?”",
+            "Grandma shook her head. “That was our meeting spot. Every family brought different seeds.”",
+            "Inés studied the photo. The tree looked small. Now its branches reached above the wall.",
+            "“Is the garden still there?”",
+            "“I don't know. I haven't been inside for years.”",
+            "Teo looked at the circle again. He was no longer imagining a pile of coins. “Then we should find out.”",
+            "Grandma handed them the photograph. They would have two clues to follow this time."
+          ],
+          "alt": "Elena shows a photograph of the old open arch, enlarged above.",
+          "checkpoint": {
+            "id": "q03",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "Who drew the old map?",
+                "options": [
+                  {
+                    "text": "Grandma Elena"
+                  },
+                  {
+                    "text": "Teo"
+                  },
+                  {
+                    "text": "The librarian"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Compare the old photo with the yard."
+              },
+              {
+                "audience": "lector",
+                "prompt": "What does the old photograph show?",
+                "options": [
+                  {
+                    "text": "A buried chest"
+                  },
+                  {
+                    "text": "A doorway open onto a garden"
+                  },
+                  {
+                    "text": "The garden exactly as it looks today"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Compare the old photo with the yard."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p04",
+      "chapter": 1,
+      "layout": "bottom",
+      "image": "imagenes/pagina-04.png",
+      "languages": {
+        "es": {
+          "title": "Un muro después de la lluvia",
+          "paragraphs": [
+            "Inés sostuvo la fotografía frente al arco tapiado del patio. Quería saber qué había ocurrido con la puerta, pero la abuela Elena tardó en responder. Miró primero el borde arrugado del mapa.",
+            "—Hubo una tormenta muy fuerte. El agua entró por el arco y aflojó parte del muro. Los adultos lo tapiaron para que nadie cruzara por allí mientras lo reparaban.",
+            "Teo miró hacia la pared del patio.",
+            "—Entonces no cerraron el jardín porque alguien escondiera un tesoro.",
+            "La abuela sonrió un poco.",
+            "—No que yo sepa. Después de la tormenta, mi amiga Ema se mudó. Dejé de entrar y, con los años, pensé que el jardín se había perdido.",
+            "Inés comparó la foto con el mapa. La puerta era real; las piedras del arco también. Sin embargo, ninguna de esas pistas mostraba qué había ahora al otro lado.",
+            "—Podría existir otra entrada —dijo—. Pero primero debemos encontrarla. Y preguntar antes de pasar.",
+            "La abuela les dejó conservar la fotografía. Junto al mapa viejo, les ofrecía algo más útil que una suposición: una forma de comprobarla."
+          ],
+          "alt": "La foto antigua y una escena de la reparación después de la tormenta.",
+          "checkpoint": {
+            "id": "q04",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Por qué tapiaron el arco?",
+                "options": [
+                  {
+                    "text": "Para impedir leer"
+                  },
+                  {
+                    "text": "Para evitar cruzar un muro inseguro"
+                  },
+                  {
+                    "text": "Para ocultar monedas"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Recuerda qué ocurrió con el muro durante la tormenta."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Qué todavía no saben sobre el jardín?",
+                "options": [
+                  {
+                    "text": "Si hubo una tormenta"
+                  },
+                  {
+                    "text": "Si existió una puerta"
+                  },
+                  {
+                    "text": "Cómo está ahora"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Recuerda qué ocurrió con el muro durante la tormenta."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "A wall after the rain",
+          "paragraphs": [
+            "Inés held the photograph up to the bricked-up arch in the courtyard. She wanted to know what had happened, but Grandma Elena took a moment to answer. She touched the creased edge of the map.",
+            "“There was a terrible storm. Water rushed through the arch and loosened part of the wall. The grown-ups bricked it up so no one would try to cross while they worked.”",
+            "Teo glanced towards the courtyard.",
+            "“So nobody closed the garden to hide treasure.”",
+            "“Not as far as I know,” Grandma said, smiling. “My friend Ema moved away soon afterwards. I stopped visiting and gradually came to think the garden was gone.”",
+            "Inés laid the photograph beside the map. The opening had certainly existed. Some of its curved bricks were still there. Neither clue, however, showed what lay beyond the wall today.",
+            "“There might be another way in,” she said. “We should find it, then ask before going through.”",
+            "Grandma let them take the photograph. It gave them something more useful than a guess: a way to check their ideas."
+          ],
+          "alt": "An old photo and a scene of repairs after the storm.",
+          "checkpoint": {
+            "id": "q04",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "Why did they brick up the arch?",
+                "options": [
+                  {
+                    "text": "To prevent reading"
+                  },
+                  {
+                    "text": "The wall was unsafe to cross"
+                  },
+                  {
+                    "text": "To hide coins"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Recall what the storm did to the wall."
+              },
+              {
+                "audience": "lector",
+                "prompt": "What do they still not know?",
+                "options": [
+                  {
+                    "text": "Whether a storm happened"
+                  },
+                  {
+                    "text": "Whether there was a doorway"
+                  },
+                  {
+                    "text": "What the garden is like today"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Recall what the storm did to the wall."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p05",
+      "chapter": 2,
+      "layout": "bottom",
+      "image": "imagenes/pagina-05.png",
+      "languages": {
+        "es": {
+          "title": "Dos caminos",
+          "paragraphs": [
+            "A la mañana siguiente, los primos salieron con el mapa, la fotografía y un lápiz. Teo quería correr hasta la pared; Inés le pidió que empezaran en la esquina de la calle.",
+            "—Si nos colocamos mal, todo el dibujo parecerá equivocado.",
+            "Buscaron dos cosas que no habían cambiado: la forma inclinada de un tejado y las tres ventanas de la casa. Pusieron el papel frente a ellos hasta que ambos detalles quedaron en su sitio.",
+            "Entonces apareció una posibilidad. El dibujo mostraba un callejón detrás del jardín. Desde el patio de la abuela, los edificios lo ocultaban.",
+            "—Así que la puerta tapiada no era el único camino —dijo Teo.",
+            "—Era el camino que conocía la abuela —corrigió Inés—. Todavía no sabemos si el otro sigue abierto.",
+            "Caminaron hasta el cruce. A un lado, la calle se llenaba de bicicletas y tiendas. Al otro, una senda estrecha desaparecía detrás de las casas.",
+            "Teo señaló el borde del mapa, donde la línea continuaba más allá del doblez.",
+            "Esta vez no discutieron por cuál pista seguir. Fueron juntos hacia la senda."
+          ],
+          "alt": "Los primos buscan otra ruta en el callejón.",
+          "checkpoint": {
+            "id": "q05",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Qué otro camino aparece en el mapa?",
+                "options": [
+                  {
+                    "text": "Un túnel bajo la casa"
+                  },
+                  {
+                    "text": "Un puente rojo"
+                  },
+                  {
+                    "text": "Un callejón detrás del jardín"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Busca dos detalles que no hayan cambiado."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Por qué alinean ventanas y tejado?",
+                "options": [
+                  {
+                    "text": "Para orientar bien el mapa"
+                  },
+                  {
+                    "text": "Para contar tejas como tesoro"
+                  },
+                  {
+                    "text": "Para mover la casa"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Busca dos detalles que no hayan cambiado."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "Two routes",
+          "paragraphs": [
+            "The next morning the cousins set out with their map, the photograph, and a pencil. Teo wanted to race straight to the wall. Inés asked him to begin at the street corner instead.",
+            "“If we face the wrong way, every part of the drawing will look wrong.”",
+            "They found two things that had stayed put: the sloping edge of a roof and the three windows of Grandma's house. They turned the paper until both landmarks lined up.",
+            "Then they noticed a narrow lane drawn behind the garden. Grandma's courtyard gave no view of it; the houses stood in the way.",
+            "“So that bricked-up door wasn't the only route,” Teo said.",
+            "“It wasn't the only route back then,” Inés replied. “We still have to find out whether this one exists now.”",
+            "They reached a fork. Shops and bicycles filled one direction. The other was a slender passage between rows of houses.",
+            "Teo pointed to a line continuing beyond a crease in the map. This time they agreed on their next move. Side by side, they followed the passage."
+          ],
+          "alt": "The cousins seek a different route through the lane.",
+          "checkpoint": {
+            "id": "q05",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "What other route appears on the map?",
+                "options": [
+                  {
+                    "text": "A tunnel below the house"
+                  },
+                  {
+                    "text": "A red bridge"
+                  },
+                  {
+                    "text": "A lane behind the garden"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Find two landmarks that stayed put."
+              },
+              {
+                "audience": "lector",
+                "prompt": "Why line up the windows and roof?",
+                "options": [
+                  {
+                    "text": "To orient the map correctly"
+                  },
+                  {
+                    "text": "To count treasure tiles"
+                  },
+                  {
+                    "text": "To move the house"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Find two landmarks that stayed put."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p06",
+      "chapter": 2,
+      "layout": "text-only",
+      "image": null,
+      "languages": {
+        "es": {
+          "title": "Un doblez engañoso",
+          "paragraphs": [
+            "El callejón parecía más corto en el mapa. Había macetas, bicicletas apoyadas en las paredes y puertas nuevas donde antes solo figuraban patios. Los primos avanzaron sin entrar en ninguna propiedad.",
+            "Teo contó los tejados de la fotografía: uno, dos, tres. Desde el otro extremo del callejón se veían cuatro. Se detuvo y volvió a contar.",
+            "—¿Nos saltamos una casa?",
+            "Inés miró la esquina del papel. El doblez atravesaba precisamente una línea del dibujo. Cuando lo aplanó, apareció un pequeño patio que Teo había tomado por parte de la calle.",
+            "—No era una casa que faltaba. Leímos dos líneas como si fueran una.",
+            "Tomaron nota de los detalles que sí podían comprobar. Una pared tenía las mismas ventanas estrechas de la foto; más allá, las ramas de un naranjo asomaban sobre las tejas. No bastaba para identificar el jardín. Muchas casas tenían naranjos.",
+            "Teo propuso medir las distancias con pasos. La esquina de la casa quedaba a dieciocho pasos del naranjo visible y a muchos más del arco, pero una fila de macetas desviaba el recorrido. Inés anotó los números sin ponerlos sobre el mapa antiguo. Si caminaban por otra ruta, los pasos cambiarían. Sirvieron para describir el camino de hoy, no para corregir a ciegas el dibujo de su abuela. Teo entendió entonces por qué ella llevaba una hoja aparte: las pistas nuevas necesitaban su propio espacio.",
+            "Al final de la senda apareció una verja azul casi cubierta de hojas. Teo quiso acercarse, pero Inés señaló un sendero que conducía a viviendas.",
+            "—Primero averigüemos a quién pertenece. Una pista sobre un lugar no nos da permiso para entrar.",
+            "En una casa cercana se oyó abrir una ventana. Un vecino mayor observaba las plantas con una regadera. Era la primera persona a quien podían preguntar, y Teo dejó de estudiar el mapa para saludarlo."
+          ],
+          "alt": null,
+          "checkpoint": {
+            "id": "q06",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Qué confundió Teo con una calle?",
+                "options": [
+                  {
+                    "text": "Un pequeño patio en un doblez"
+                  },
+                  {
+                    "text": "Una fotografía"
+                  },
+                  {
+                    "text": "La verja azul"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Mira con cuidado el doblez del papel."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Para qué sirve la hoja nueva?",
+                "options": [
+                  {
+                    "text": "Para no mirar las casas"
+                  },
+                  {
+                    "text": "Para separar pistas actuales del mapa viejo"
+                  },
+                  {
+                    "text": "Para alterar el dibujo original"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Mira con cuidado el doblez del papel."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "A misleading fold",
+          "paragraphs": [
+            "The lane seemed shorter on paper. Flowerpots crowded its edges. Bicycles leaned against walls, and new doorways opened where the old map showed only yards. The cousins kept to the public path.",
+            "Teo counted rooftops in the photograph: one, two, three. He could see four from the far end of the lane. He counted again.",
+            "“Did a house appear out of nowhere?”",
+            "Inés flattened the map. A deep fold ran across two lines. Between them sat a tiny courtyard that Teo had mistaken for part of the street.",
+            "“No missing house,” she said. “We read two lines as one.”",
+            "They noted only what they could actually check. A wall had narrow windows like the ones in the photograph. Farther on, orange branches reached above a roof. That did not prove they had found the garden; several homes grew oranges.",
+            "Teo suggested measuring the distances in footsteps. It took eighteen steps from the house corner to a spot where they could see the orange branches, and many more to the arch. Pots forced them to turn along the way. Inés wrote the numbers on their separate sheet. A different route would change the count, so it could describe today's walk without silently changing Grandma's old drawing. Teo began to see why she had brought a fresh page: new evidence needed room of its own.",
+            "A blue gate appeared at the end of the passage, nearly hidden by leaves. Teo moved towards it, then saw Inés looking at the nearby houses.",
+            "“Let's find out whose place it is before we go farther,” she said. “A clue doesn't give us permission to enter.”",
+            "A window opened nearby. An older neighbour was watering his plants. Teo lowered the map and said hello."
+          ],
+          "alt": null,
+          "checkpoint": {
+            "id": "q06",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "What did Teo mistake for part of the street?",
+                "options": [
+                  {
+                    "text": "A courtyard hidden by a fold"
+                  },
+                  {
+                    "text": "A photograph"
+                  },
+                  {
+                    "text": "The blue gate"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Look carefully at the fold in the paper."
+              },
+              {
+                "audience": "lector",
+                "prompt": "Why keep a new sheet?",
+                "options": [
+                  {
+                    "text": "To avoid looking at houses"
+                  },
+                  {
+                    "text": "To separate new clues from the old map"
+                  },
+                  {
+                    "text": "To change the original drawing"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Look carefully at the fold in the paper."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p07",
+      "chapter": 2,
+      "layout": "side-left",
+      "image": "imagenes/pagina-07.png",
+      "languages": {
+        "es": {
+          "title": "La verja entre las hojas",
+          "paragraphs": [
+            "El vecino se llamaba Samuel. Escuchó con paciencia, aunque al principio confundió la fotografía con la casa de otra familia.",
+            "—Mira el tejado —dijo Inés, mostrándole la esquina inclinada—. ¿Es este callejón?",
+            "Samuel acercó los lentes a la imagen.",
+            "—Sí. Hace años lo arreglaron después de la tormenta. Aquella verja azul lleva a un jardín. Antes se entraba también desde el patio de Elena.",
+            "Teo levantó el mapa, triunfante. Pero Samuel añadió:",
+            "—No sé quién lo cuida ahora. Hace tiempo que no hablo con la persona que tiene la llave.",
+            "La confirmación les daba un camino, no una invitación. Agradecieron la ayuda y fueron hasta la verja sin empujarla. Entre las hojas vieron una bisagra nueva y pintura reciente.",
+            "—Alguien ha trabajado aquí —dijo Teo.",
+            "—O al menos ha pintado una verja —respondió Inés.",
+            "Samuel los oyó y soltó una risa. Los primos volvieron a mirar: un pequeño sendero, usado a menudo, llegaba hasta el otro lado. La pintura y el suelo contaban cosas distintas, pero apuntaban a la misma pregunta: ¿quién entraba por allí?"
+          ],
+          "alt": "Samuel señala la verja azul al conversar con los primos.",
+          "checkpoint": {
+            "id": "q07",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿A dónde lleva la verja azul según Samuel?",
+                "options": [
+                  {
+                    "text": "A un tren"
+                  },
+                  {
+                    "text": "Al jardín"
+                  },
+                  {
+                    "text": "A la biblioteca"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Un camino y el permiso son cosas distintas."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Por qué preguntan antes de entrar?",
+                "options": [
+                  {
+                    "text": "Porque perdieron el mapa"
+                  },
+                  {
+                    "text": "Porque la verja no es azul"
+                  },
+                  {
+                    "text": "Tener una pista no les da permiso"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Un camino y el permiso son cosas distintas."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "The gate among the leaves",
+          "paragraphs": [
+            "The neighbour introduced himself as Samuel. He listened carefully, though at first he thought the photograph showed another family's home.",
+            "“Look at the roof,” Inés said, pointing to its sloping corner. “Is this the lane?”",
+            "Samuel held the picture close to his glasses.",
+            "“Yes. They repaired it after the storm years ago. That blue gate leads to a garden. People once entered from Elena's courtyard too.”",
+            "Teo raised the map in delight, but Samuel went on.",
+            "“I don't know who tends it now. It's been a while since I spoke to the person with the key.”",
+            "They thanked him. His answer gave them a route, not an invitation. At the gate, they stopped without pushing it. Fresh paint covered one hinge.",
+            "“Someone's been working here,” Teo said.",
+            "“Or someone painted a hinge,” Inés answered.",
+            "Samuel overheard and laughed. The cousins looked again. A well-used little path led to the other side of the gate. Paint and footprints were different clues, but both raised the same question: who had been coming through?"
+          ],
+          "alt": "Samuel points out the blue gate while speaking with the cousins.",
+          "checkpoint": {
+            "id": "q07",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "Where does Samuel say the blue gate leads?",
+                "options": [
+                  {
+                    "text": "To a train"
+                  },
+                  {
+                    "text": "To the garden"
+                  },
+                  {
+                    "text": "To the library"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "A route and permission are different things."
+              },
+              {
+                "audience": "lector",
+                "prompt": "Why ask before entering?",
+                "options": [
+                  {
+                    "text": "They lost the map"
+                  },
+                  {
+                    "text": "The gate is not blue"
+                  },
+                  {
+                    "text": "Finding a clue is not permission"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "A route and permission are different things."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p08",
+      "chapter": 2,
+      "layout": "text-only",
+      "image": null,
+      "languages": {
+        "es": {
+          "title": "Lo que no se ve",
+          "paragraphs": [
+            "Teo llamó una vez a la verja. Esperaron. Nadie contestó, aunque una sombra se movió entre las plantas. Quizá era una persona, quizá las ramas bajo el viento.",
+            "—Podríamos asomarnos por arriba —propuso Teo.",
+            "—Podríamos volver cuando haya alguien —dijo Inés.",
+            "Él guardó las manos en los bolsillos. No quería rendirse, pero reconoció que verla de cerca no resolvería todas sus dudas.",
+            "Desde la calle pudieron observar algo más sin entrar: el suelo junto a la verja estaba húmedo y había una manguera enrollada dentro. A Teo le pareció una prueba definitiva de que el jardín seguía vivo.",
+            "—Eso nos dice que alguien ha regado —dijo Inés—. No nos dice cuánto queda del jardín de la foto.",
+            "Sacaron el papel antiguo. Allí se veía una puerta abierta, un árbol pequeño y un banco junto al círculo rojo. En el presente no podían ver ni el banco ni el suelo de esa parte.",
+            "Inés pidió a Teo que nombrara una cosa que hubieran observado y una que solo imaginaban. Él dijo que el suelo estaba mojado; imaginar que el banco seguía en su lugar era otra cosa. Cuando le tocó a ella, admitió que había visto una sombra y la había llamado persona por un momento. Los dos se sorprendieron de lo fácil que era llenar un espacio que no podían ver. Antes de marcharse, comprobaron que la verja continuara cerrada y guardaron la foto en una carpeta para que no se doblara más.",
+            "Decidieron acudir a la biblioteca del barrio. La abuela recordaba una caja de fotografías que las familias habían donado después de reparar la calle.",
+            "Al regresar, Teo dibujó la verja azul al margen de una hoja nueva, separado del mapa viejo para no confundir lo que acababan de encontrar con lo que alguien había dibujado años atrás. Inés añadió la fecha del día.",
+            "—Ahora sí tenemos dos mapas —dijo—: uno del pasado y otro que estamos empezando nosotros."
+          ],
+          "alt": null,
+          "checkpoint": {
+            "id": "q08",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Qué había junto a la verja?",
+                "options": [
+                  {
+                    "text": "Una caja de monedas"
+                  },
+                  {
+                    "text": "El banco antiguo"
+                  },
+                  {
+                    "text": "Suelo mojado y una manguera"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Separa lo que ves de lo que imaginas."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Qué NO demuestra la tierra mojada?",
+                "options": [
+                  {
+                    "text": "Que todo el jardín siga igual que antes"
+                  },
+                  {
+                    "text": "Que algo recibió agua"
+                  },
+                  {
+                    "text": "Que observaron el suelo"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Separa lo que ves de lo que imaginas."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "What we cannot see",
+          "paragraphs": [
+            "Teo knocked once on the gate. They waited. No one answered, though something moved among the leaves. It might have been a person. It might have been branches shifting in the breeze.",
+            "“We could peek over,” Teo suggested.",
+            "“We could come back when someone's here,” said Inés.",
+            "He put his hands in his pockets. He did not want to give up, but even a peek would leave many questions unanswered.",
+            "From the lane they could see wet ground and a coiled hose inside the gate. To Teo, that proved the whole old garden was still there.",
+            "“It proves somebody watered something,” Inés said. “We can't see how much of the garden in the picture remains.”",
+            "The photograph showed an open doorway, a young tree, and a bench near the red circle. None of those were visible from where they stood.",
+            "Inés asked Teo for one thing they had observed and one thing they had only imagined. The ground was wet, he said; the old bench still standing there was a guess. Inés admitted that she had taken a moving shadow for a person, though she had not seen anybody clearly. Both were surprised by how readily their minds filled an unseen space. Before they left, they made sure the gate remained shut and slipped the photograph into a folder to protect its edges.",
+            "They decided to visit the neighbourhood library. Grandma remembered that families had donated photographs after repairs to the street.",
+            "Back at home, Teo drew the blue gate on a clean sheet of paper. He kept the new drawing apart from the old map so yesterday's evidence and today's discoveries would not become mixed up. Inés wrote the date on their sheet.",
+            "“Now we have two maps,” she said. “One from then, and one we're making ourselves.”"
+          ],
+          "alt": null,
+          "checkpoint": {
+            "id": "q08",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "What was near the gate?",
+                "options": [
+                  {
+                    "text": "A box of coins"
+                  },
+                  {
+                    "text": "The old bench"
+                  },
+                  {
+                    "text": "Wet ground and a hose"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Separate what you see from what you imagine."
+              },
+              {
+                "audience": "lector",
+                "prompt": "What does wet ground NOT prove?",
+                "options": [
+                  {
+                    "text": "That the whole garden is unchanged"
+                  },
+                  {
+                    "text": "That something was watered"
+                  },
+                  {
+                    "text": "That they looked at the ground"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Separate what you see from what you imagine."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p09",
+      "chapter": 3,
+      "layout": "bottom",
+      "image": "imagenes/pagina-09.png",
+      "languages": {
+        "es": {
+          "title": "Fotos en orden",
+          "paragraphs": [
+            "La bibliotecaria les acercó un álbum de imágenes del barrio. En una fotografía, el arco del patio de la abuela estaba abierto. En otra, tomada después de la tormenta, los ladrillos ya lo cubrían.",
+            "Teo puso ambas fotos una al lado de la otra. Inés buscó en cada una el mismo tejado. La segunda mostraba plantas creciendo detrás de la pared, incluso después de que cerraran el paso.",
+            "—Así que no abandonaron el jardín aquel mismo día —dijo.",
+            "La bibliotecaria encontró una tercera foto, más reciente. Mostraba la verja azul desde la calle. Al fondo se distinguía el naranjo, mucho más alto.",
+            "Ninguna foto permitía ver dónde se encontraba hoy el círculo rojo. Pero las tres, ordenadas por fecha, contaban un cambio que el mapa no podía mostrar.",
+            "—Las imágenes no son tres vistas del mismo momento —dijo Teo, corrigiendo su primera impresión.",
+            "Inés sonrió. Habían encontrado un jardín que seguía recibiendo cuidados. Faltaba hablar con quien lo cuidaba y descubrir si aquel punto del mapa tenía aún algún significado."
+          ],
+          "alt": "En la biblioteca comparan fotografías antiguas y nuevas.",
+          "checkpoint": {
+            "id": "q09",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Dónde compararon las fotos?",
+                "options": [
+                  {
+                    "text": "En la biblioteca"
+                  },
+                  {
+                    "text": "Dentro del patio cerrado"
+                  },
+                  {
+                    "text": "En una estación"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Piensa qué foto se hizo antes y cuál después."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Por qué ordenarlas por fecha?",
+                "options": [
+                  {
+                    "text": "Para borrar la tormenta"
+                  },
+                  {
+                    "text": "Para entender los cambios"
+                  },
+                  {
+                    "text": "Para adivinar quién tomó cada foto"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Piensa qué foto se hizo antes y cuál después."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "Photographs in order",
+          "paragraphs": [
+            "The librarian brought out an album of neighbourhood pictures. In one photograph Grandma's courtyard arch stood open. In another, taken after the storm, bricks already filled the opening.",
+            "Teo placed the pictures side by side. Inés found the same roof in both. Plants were still growing beyond the closed doorway in the later image.",
+            "“So they didn't abandon the garden when they closed the arch,” she said.",
+            "The librarian found a newer photograph, showing the blue gate from the street. Far behind it, the orange tree had grown much taller.",
+            "None of the pictures revealed the position of the red circle today. But lined up by date, the photographs showed a change the old map could not explain on its own.",
+            "“These aren't three views of one afternoon,” Teo said, revising his first idea.",
+            "Inés smiled. Someone had continued looking after the garden. They still needed to meet that person and find out whether the mark on the map meant anything now."
+          ],
+          "alt": "They compare older and newer photos in the library.",
+          "checkpoint": {
+            "id": "q09",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "Where did they compare photos?",
+                "options": [
+                  {
+                    "text": "At the library"
+                  },
+                  {
+                    "text": "Inside a locked yard"
+                  },
+                  {
+                    "text": "At a station"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Which photo was taken first?"
+              },
+              {
+                "audience": "lector",
+                "prompt": "Why put the photos in date order?",
+                "options": [
+                  {
+                    "text": "To erase the storm"
+                  },
+                  {
+                    "text": "To understand changes over time"
+                  },
+                  {
+                    "text": "To guess every photographer"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Which photo was taken first?"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p10",
+      "chapter": 3,
+      "layout": "text-only",
+      "image": null,
+      "languages": {
+        "es": {
+          "title": "Alguien tras la verja",
+          "paragraphs": [
+            "La bibliotecaria permitió que copiaran las fechas en su hoja nueva. No se llevaron las fotografías: las examinaron en la mesa y dejaron el álbum exactamente donde estaba.",
+            "De vuelta al callejón, Inés repasó lo que sabían. La pared había sido cerrada por seguridad. El jardín había seguido verde al menos un tiempo después. Una imagen reciente mostraba la verja azul.",
+            "—Entonces la abuela se equivocó al decir que desapareció —concluyó Teo.",
+            "—Dijo que eso le parecía —respondió ella—. Hace años que no entra. A nosotros también nos pareció que un dibujo podía señalar un tesoro.",
+            "Teo dejó de caminar. No le gustaba oír aquella comparación, pero era justa. Una buena idea podía empezar una búsqueda; no tenía por qué terminarla.",
+            "Se detuvieron para preparar una pregunta que Nora pudiera responder sin sentirse interrogada. Teo quería decir: «¿Dónde escondieron las cosas de Ema?». Inés sugirió empezar de otra manera: «¿Sigue alguien cuidando este jardín?». Buscar un lugar no les daba derecho a exigir recuerdos privados. Samuel había compartido lo que sabía; ahora debían dejar que la persona de la verja eligiera cuánto quería contar. Teo dobló el papel, dejando visible solo la parte del callejón. Si la mujer reconocía algo, podían mostrar el resto después.",
+            "Llamaron a la verja. Esta vez oyeron pasos, aunque tardaron en llegar. Una mujer apareció entre las hojas. Llevaba tierra en el delantal y una llave en la mano.",
+            "—Buenos días —dijo Inés—. Somos los nietos de Elena, la vecina del patio de atrás. ¿Podemos hacerle una pregunta sobre este jardín?",
+            "La mujer miró el mapa que Teo sostenía, después la fotografía antigua. Su expresión cambió al reconocer el arco.",
+            "—Pasen por aquí cuando abra —respondió—. Me llamo Nora. Mi madre guardaba una imagen como esa.",
+            "Teo miró a Inés. Habían encontrado a alguien que podía responder, pero todavía no sabían qué historia iba a contarles."
+          ],
+          "alt": null,
+          "checkpoint": {
+            "id": "q10",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Quién aparece al abrir la verja?",
+                "options": [
+                  {
+                    "text": "La bibliotecaria"
+                  },
+                  {
+                    "text": "Nora"
+                  },
+                  {
+                    "text": "Ema"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Recuerda cómo saludaron a la persona de la verja."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Cómo empiezan a hablar con ella?",
+                "options": [
+                  {
+                    "text": "Exigiendo una llave"
+                  },
+                  {
+                    "text": "Diciendo que ya conocen todo"
+                  },
+                  {
+                    "text": "Pidiendo permiso para preguntar"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Recuerda cómo saludaron a la persona de la verja."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "Someone at the gate",
+          "paragraphs": [
+            "The librarian let them copy dates onto their new sheet. They studied the photographs at the table and put the album back where it belonged.",
+            "On their way to the lane, Inés reviewed what they knew. The opening had been blocked for safety. The garden had remained green afterwards, at least for a time. A more recent picture showed the blue gate.",
+            "“So Grandma was wrong to say it disappeared,” Teo said.",
+            "“She said she thought it had,” Inés replied. “She hasn't been inside for years. We thought a red circle might mean buried treasure, remember?”",
+            "Teo slowed down. He didn't enjoy the comparison, but he knew she was right. A guess could begin an investigation; it didn't have to end one.",
+            "Before knocking, they thought about what to ask. Teo's first idea was, “Where did Ema hide her things?” Inés offered another: “Does someone still look after this garden?” Discovering a route did not entitle them to anybody's private memories. Samuel had shared what he knew; the person behind the gate could choose what to tell them. Teo folded the map so only the lane was visible. If she recognised it, they could show the rest later.",
+            "They knocked at the gate. This time they heard footsteps. A woman came through the leaves, soil on her apron and a key in her hand.",
+            "“Hello,” said Inés. “We're Elena's grandchildren from the courtyard behind this wall. May we ask you about the garden?”",
+            "The woman looked first at Teo's map, then at the old photograph. Her expression changed when she recognised the arch.",
+            "“You can come in when I open up,” she said. “I'm Nora. My mother kept a picture like that.”",
+            "Teo glanced at Inés. At last they had found someone who might tell them more, though they had no idea what story she would share."
+          ],
+          "alt": null,
+          "checkpoint": {
+            "id": "q10",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "Who appears at the gate?",
+                "options": [
+                  {
+                    "text": "The librarian"
+                  },
+                  {
+                    "text": "Nora"
+                  },
+                  {
+                    "text": "Ema"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Remember how they greeted the person at the gate."
+              },
+              {
+                "audience": "lector",
+                "prompt": "How do they begin the conversation?",
+                "options": [
+                  {
+                    "text": "By demanding a key"
+                  },
+                  {
+                    "text": "By claiming they know everything"
+                  },
+                  {
+                    "text": "By asking permission to ask"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Remember how they greeted the person at the gate."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p11",
+      "chapter": 3,
+      "layout": "side-left",
+      "image": "imagenes/pagina-11.png",
+      "languages": {
+        "es": {
+          "title": "La otra entrada",
+          "paragraphs": [
+            "Nora abrió la verja azul. Antes de invitarlos a pasar, les pidió que cerraran el pestillo después de entrar. Los primos obedecieron y dejaron las bicicletas de otros vecinos donde estaban.",
+            "Dentro había senderos estrechos, macetas y un naranjo más alto que la pared. La puerta tapiada se veía desde el otro lado: un arco de ladrillos antiguos interrumpido por otros más nuevos.",
+            "—Es la misma —susurró Teo.",
+            "Nora comparó su fotografía con el muro.",
+            "—Mi madre hablaba mucho de Elena. De niñas cuidaban juntas una parte del jardín.",
+            "Inés señaló el círculo rojo del mapa. Nora miró el papel, pero no respondió enseguida.",
+            "—Aquí han cambiado muchas cosas. Enseñadme primero desde dónde se hizo ese dibujo.",
+            "Teo comprendió el problema. Desde el patio de la abuela se habría entrado mirando hacia el naranjo; desde la verja azul llegaban por el lado contrario. Si giraban el papel sin fijarse en el arco, podían buscar el círculo en el lugar equivocado.",
+            "Se colocaron junto al muro. El jardín ya no estaba perdido, pero encontrar una entrada no significaba haber entendido el mapa."
+          ],
+          "alt": "Nora abre la verja azul a los primos.",
+          "checkpoint": {
+            "id": "q11",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Qué hay del otro lado del muro?",
+                "options": [
+                  {
+                    "text": "Una montaña"
+                  },
+                  {
+                    "text": "Una habitación vacía"
+                  },
+                  {
+                    "text": "Un jardín cuidado"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Ubica el arco antes de girar el mapa."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Qué puede confundirlos al girar el mapa?",
+                "options": [
+                  {
+                    "text": "Entraron desde una dirección distinta"
+                  },
+                  {
+                    "text": "El mapa se hizo grande"
+                  },
+                  {
+                    "text": "El arco tiene otro color"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Ubica el arco antes de girar el mapa."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "The other entrance",
+          "paragraphs": [
+            "Nora opened the blue gate. Before inviting them through, she asked the children to fasten the latch behind them. They did, leaving the neighbours' bicycles untouched.",
+            "Narrow paths crossed the garden. Pots lined the edges, and an orange tree rose above the wall. From this side they could see the old entrance: a curved arch filled with newer bricks.",
+            "“That's the same one,” Teo whispered.",
+            "Nora held their photograph beside the wall.",
+            "“My mother talked about Elena often. They looked after part of this garden together when they were young.”",
+            "Inés showed her the red circle. Nora studied the map without answering immediately.",
+            "“So much has changed. Show me where the person drawing it would have stood.”",
+            "Teo saw the difficulty. From Grandma's courtyard, visitors once walked in facing the orange tree. From the blue gate they arrived in the opposite direction. Turning the paper without checking the arch could put the red circle on the wrong side of the path.",
+            "The cousins stood by the wall. They had found the garden, but finding its gate did not mean they had understood the map."
+          ],
+          "alt": "Nora opens the blue gate to the cousins.",
+          "checkpoint": {
+            "id": "q11",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "What is on the other side of the wall?",
+                "options": [
+                  {
+                    "text": "A mountain"
+                  },
+                  {
+                    "text": "An empty room"
+                  },
+                  {
+                    "text": "A tended garden"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Find the arch before turning the map."
+              },
+              {
+                "audience": "lector",
+                "prompt": "Why might turning the map confuse them?",
+                "options": [
+                  {
+                    "text": "They entered from another direction"
+                  },
+                  {
+                    "text": "The map grew larger"
+                  },
+                  {
+                    "text": "The arch changed colour"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Find the arch before turning the map."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p12",
+      "chapter": 3,
+      "layout": "text-only",
+      "image": null,
+      "languages": {
+        "es": {
+          "title": "El jardín de hoy",
+          "paragraphs": [
+            "El jardín no se parecía exactamente a la fotografía. El banco de madera estaba bajo otra sombra. Una hilera de macetas ocupaba el lugar donde Teo esperaba encontrar una fuente. Cerca de la verja, una mesa nueva sostenía herramientas limpias.",
+            "Nora les explicó que algunas plantas habían sido reemplazadas después de inviernos fríos y que varias familias venían a regar. El arco antiguo no se había abierto de nuevo: esa parte del muro necesitaba mantenerse segura.",
+            "Teo buscaba con la vista un gran círculo rojo. No lo había. Señaló una maceta redonda pintada de ese color, pero Inés observó que estaba recién barnizada. El mapa era mucho más viejo.",
+            "—Puede que alguien la haya movido —dijo él.",
+            "—Puede ser. ¿Qué podríamos usar como referencia que no se mueve tan fácilmente?",
+            "Buscaron la curva del arco, la esquina del muro y la base ancha del árbol. Nora les permitió caminar por los senderos y les indicó dónde no pisar los brotes.",
+            "Inés descubrió que el tronco actual estaba más lejos de la pared de lo que le había parecido desde fuera. La foto antigua mostraba un árbol pequeño, pero no tenía una marca que dijera si era ese mismo árbol o uno anterior. Tampoco demostraba que el banco siempre hubiera estado en el mismo sitio.",
+            "Para hacerse entender, Inés dibujó el arco en su cuaderno, el árbol que veía hoy y la posición aproximada de las macetas. Dejó sin terminar el lugar del banco antiguo. Teo señaló el hueco blanco: parecía un error. Pero Inés dijo que lo había dejado así porque todavía no sabían dónde estaba antes. Nora aprobó el dibujo. Un espacio en blanco podía ser más honrado que poner una marca bonita en el lugar equivocado. Teo cogió el lápiz y añadió una pequeña pregunta junto al hueco, en la hoja nueva.",
+            "Se sentaron un momento. La búsqueda avanzaba más despacio de lo que Teo esperaba, y eso lo irritó.",
+            "—Encontramos el jardín. ¿Por qué no podemos encontrar un punto pintado?",
+            "Nora le ofreció agua.",
+            "—Porque un lugar cambia mientras las personas siguen viviendo en él —dijo—. Si miráis con paciencia, tal vez encontréis una marca que haya durado más que la pintura de una maceta."
+          ],
+          "alt": null,
+          "checkpoint": {
+            "id": "q12",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Qué objeto rojo parecía una pista reciente?",
+                "options": [
+                  {
+                    "text": "Una maceta recién pintada"
+                  },
+                  {
+                    "text": "Un libro"
+                  },
+                  {
+                    "text": "Una bicicleta"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Pregunta qué pista existía cuando se dibujó el mapa."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Por qué dejan un hueco en el dibujo nuevo?",
+                "options": [
+                  {
+                    "text": "Nora prohibió dibujar"
+                  },
+                  {
+                    "text": "Todavía no saben dónde estuvo el banco"
+                  },
+                  {
+                    "text": "Olvidaron su lápiz"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Pregunta qué pista existía cuando se dibujó el mapa."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "The garden today",
+          "paragraphs": [
+            "The garden did not look exactly like the photograph. Its wooden bench now stood in different shade. Pots occupied the spot where Teo expected a fountain, and a new table by the gate held clean tools.",
+            "Nora explained that families had replanted after cold winters. People still came to water. The old entrance had stayed sealed because that stretch of wall needed to remain safe.",
+            "Teo searched for a bright red circle. He found a round flowerpot painted red, but Inés noticed its glossy finish. The map was much older.",
+            "“Perhaps they moved the pot,” Teo suggested.",
+            "“Perhaps. What could we compare that wouldn't move so easily?”",
+            "They found the curve of the arch, a wall corner, and the broad base of the tree. Nora let them use the paths and showed them where new shoots were growing.",
+            "The tree stood farther from the wall than Inés had guessed from outside. The photograph showed a younger tree but did not prove it was the same one. Nor did it prove that the bench had always stood here.",
+            "Inés drew the arch in her notebook, followed by today's tree and the approximate positions of the pots. She left the old bench out. Teo pointed at the empty space; he thought the drawing looked unfinished. It was unfinished, she told him. They did not know where the bench had stood before. Nora liked that answer. An honest blank could be more useful than a neat mark placed in the wrong spot. Teo took the pencil and put a small question on their new sheet beside the gap.",
+            "They sat for a while. Their progress felt too slow to Teo.",
+            "“We found the garden. How can one painted mark be harder?”",
+            "Nora brought them water.",
+            "“Places change while people keep living in them,” she said. “Look for something that lasts longer than paint on a pot.”"
+          ],
+          "alt": null,
+          "checkpoint": {
+            "id": "q12",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "Which newer red object looked like a clue?",
+                "options": [
+                  {
+                    "text": "A freshly painted pot"
+                  },
+                  {
+                    "text": "A book"
+                  },
+                  {
+                    "text": "A bicycle"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Which clue existed when the map was made?"
+              },
+              {
+                "audience": "lector",
+                "prompt": "Why leave a gap in their new drawing?",
+                "options": [
+                  {
+                    "text": "Nora forbade drawing"
+                  },
+                  {
+                    "text": "They do not know where the bench was"
+                  },
+                  {
+                    "text": "They forgot the pencil"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Which clue existed when the map was made?"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p13",
+      "chapter": 4,
+      "layout": "bottom",
+      "image": "imagenes/pagina-13.png",
+      "languages": {
+        "es": {
+          "title": "Las semillas de Ema",
+          "paragraphs": [
+            "Nora sacó de la mesa una caja pequeña y levantó la tapa. Dentro había semillas de distintas formas, separadas en bolsitas que ella había hecho. Algunas eran lisas como cuentas; otras, planas como monedas.",
+            "—Mi madre, Ema, guardó una parte cuando se mudó. Me enseñó a plantarlas y años después pude volver a cuidar este jardín.",
+            "Teo preguntó si la caja era el tesoro del mapa. Nora negó con una sonrisa.",
+            "—Es importante para mí, pero Elena dibujó ese círculo antes de que existiera esta caja.",
+            "Inés dejó el mapa junto a la fotografía. En ambas, el arco y el naranjo podían servir para orientarse. La caja explicaba quién había seguido cuidando las plantas, no dónde se había reunido la gente.",
+            "Nora entregó una semilla a cada niño para que la observaran sin sembrarla todavía. Teo pasó su dedo por la pequeña superficie rugosa.",
+            "—Pensábamos que aquí no quedaba nada —admitió.",
+            "—Quedaba mucho trabajo de otras personas —respondió Nora—. Y ahora estamos añadiendo el nuestro.",
+            "Inés miró otra vez hacia el suelo. Entre las macetas nuevas asomaba un borde de piedra de color apagado."
+          ],
+          "alt": "Nora enseña semillas de Ema dentro del jardín.",
+          "checkpoint": {
+            "id": "q13",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Qué conservó Ema?",
+                "options": [
+                  {
+                    "text": "Un tren"
+                  },
+                  {
+                    "text": "Semillas"
+                  },
+                  {
+                    "text": "Llaves de oro"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Compara cuándo apareció cada objeto."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Por qué la caja no es el círculo original?",
+                "options": [
+                  {
+                    "text": "Es más redonda que el sol"
+                  },
+                  {
+                    "text": "Nora la puso sobre la mesa"
+                  },
+                  {
+                    "text": "Apareció después de que dibujaran el mapa"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Compara cuándo apareció cada objeto."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "Ema’s seeds",
+          "paragraphs": [
+            "Nora took a small box from the table and opened its lid. Inside were seeds of many shapes, sorted into little envelopes she had made. Some were as smooth as beads. Others lay flat like coins.",
+            "“My mother, Ema, saved some when she moved away. She taught me to grow them, and years later I was able to help look after this place again.”",
+            "Teo asked whether the box was the map's treasure. Nora smiled and shook her head.",
+            "“It matters to me. But Elena drew the circle long before this box existed.”",
+            "Inés set the map beside the photograph. The arch and orange tree could help them find their bearings in both. The box explained who had kept the plants growing. It did not show where the families had met.",
+            "Nora gave each child a seed to examine, asking them not to plant it just yet. Teo rolled his between his fingers.",
+            "“We thought nothing was left here,” he admitted.",
+            "“Other people kept working,” Nora said. “Now we can add our part.”",
+            "Inés looked down. Between newer pots, she could make out the edge of a faded red stone."
+          ],
+          "alt": "Nora shows Ema’s seeds in the garden.",
+          "checkpoint": {
+            "id": "q13",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "What did Ema save?",
+                "options": [
+                  {
+                    "text": "A train"
+                  },
+                  {
+                    "text": "Seeds"
+                  },
+                  {
+                    "text": "Golden keys"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Compare when each object appeared."
+              },
+              {
+                "audience": "lector",
+                "prompt": "Why is the box not the original circle?",
+                "options": [
+                  {
+                    "text": "It is rounder than the sun"
+                  },
+                  {
+                    "text": "Nora placed it on a table"
+                  },
+                  {
+                    "text": "It came after the map was drawn"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Compare when each object appeared."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p14",
+      "chapter": 4,
+      "layout": "text-only",
+      "image": null,
+      "languages": {
+        "es": {
+          "title": "Un círculo bajo las hojas",
+          "paragraphs": [
+            "La piedra estaba casi oculta bajo una capa de tierra. Inés no quiso levantarla. Pidió permiso a Nora para apartar unas hojas sueltas con la mano, y debajo aparecieron otras piedras del mismo color.",
+            "No formaban una línea recta. Teo retrocedió dos pasos para ver mejor. Un arco pequeño continuaba hacia la sombra del naranjo.",
+            "—Un círculo —dijo.",
+            "—Una parte de uno —precisó Inés. Quedaba todavía un lado tapado por macetas.",
+            "Nora movió las macetas más ligeras. Allí estaba el resto: una rueda de piedras gastadas alrededor de un espacio de tierra. La vieja foto no mostraba bien el suelo porque las personas lo cubrían con sus zapatos. El mapa sí lo marcaba.",
+            "Teo puso el dedo sobre el círculo de tinta roja. Inés orientó el papel usando primero el arco del muro y luego la esquina de la casa. La marca quedó cerca del círculo de piedras. No exactamente encima: los dibujos hechos a mano no medían como reglas.",
+            "Nora les contó que había encontrado aquellas piedras al remover tierra para plantar flores. No las había puesto ella allí. Teo sintió la tentación de llamar a eso la prueba final, pero recordó que también podían existir otras marcas parecidas en el jardín. Rodearon el círculo con la mirada, sin desenterrar nada. La combinación del arco, la esquina fija y la marca próxima al mapa hacía más fuerte su explicación. Saber por qué alguien había dibujado el círculo requería hablar con quien lo trazó.",
+            "Inés pensó en la primera mañana, cuando habían mirado el mapa de frente sin preguntarse desde dónde estaba dibujado. Su primo había seguido una idea equivocada sobre un tesoro; ella misma había estado a punto de confundir el naranjo actual con el de la fotografía.",
+            "—Podemos decir que probablemente es el lugar —concluyó—. Y preguntarle a la abuela si recuerda las piedras.",
+            "Teo se agachó al borde, sin pisar el centro. Allí no había tapa, cerradura ni hueco escondido. Era un espacio para estar juntos. Por primera vez, la posibilidad le pareció mejor que las monedas que había imaginado."
+          ],
+          "alt": null,
+          "checkpoint": {
+            "id": "q14",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Qué encontraron bajo las hojas?",
+                "options": [
+                  {
+                    "text": "Una trampa"
+                  },
+                  {
+                    "text": "Una bolsa de oro"
+                  },
+                  {
+                    "text": "Piedras rojas formando una curva"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Une varias pistas en vez de elegir una sola."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Qué vuelve más fuerte la explicación?",
+                "options": [
+                  {
+                    "text": "Comparar arco, esquina y piedras juntos"
+                  },
+                  {
+                    "text": "Solo mirar una maceta"
+                  },
+                  {
+                    "text": "Desenterrar todas las plantas"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Une varias pistas en vez de elegir una sola."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "A circle beneath the leaves",
+          "paragraphs": [
+            "The red stone was nearly hidden under soil. Inés did not pull it out. She asked Nora if they could sweep aside some loose leaves. More stones of the same faded colour appeared beneath them.",
+            "They did not form a straight line. Teo stepped back and spotted a curve running towards the orange tree.",
+            "“A circle,” he said.",
+            "“Part of one,” Inés replied. Pots covered the far side.",
+            "Nora moved the lighter pots. The rest of the stones formed a worn ring around a patch of earth. In the old photograph people's shoes hid the ground. On the map, Elena had drawn the mark clearly.",
+            "Teo put a finger on the inked circle. Inés aligned the map with the wall's arch first, then the corner of the house. The mark fell near the stones, though not precisely on them. A hand-drawn map was no measuring instrument.",
+            "Nora remembered noticing the stones while preparing a flowerbed. She had not put them there. Teo was tempted to call that proof, then realised other stone patterns might exist nearby. They looked around without digging anything up. The arch, the steady wall corner, and the mark's place on the map made their explanation stronger together. What the person drawing the map had meant by the circle still required a conversation with that person.",
+            "Inés remembered their first morning. They had faced the drawing without thinking about the direction from which it had been made. Teo had imagined treasure. She had nearly assumed today's tree must be the one in the photograph.",
+            "“It's probably the place,” she said. “Let's ask Grandma whether she remembers these stones.”",
+            "Teo crouched at the edge without stepping inside. There was no hidden lid or locked compartment. Someone had made a place for people to stand together. For the first time, that seemed better to him than the coins he had pictured."
+          ],
+          "alt": null,
+          "checkpoint": {
+            "id": "q14",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "What lay beneath the leaves?",
+                "options": [
+                  {
+                    "text": "A trap"
+                  },
+                  {
+                    "text": "A bag of gold"
+                  },
+                  {
+                    "text": "Red stones forming a curve"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Use several clues together."
+              },
+              {
+                "audience": "lector",
+                "prompt": "What strengthens their explanation?",
+                "options": [
+                  {
+                    "text": "Comparing arch, corner, and stones together"
+                  },
+                  {
+                    "text": "Looking only at one pot"
+                  },
+                  {
+                    "text": "Digging up every plant"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Use several clues together."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p15",
+      "chapter": 4,
+      "layout": "side-left",
+      "image": "imagenes/pagina-15.png",
+      "languages": {
+        "es": {
+          "title": "La marca que quedó",
+          "paragraphs": [
+            "Regresaron al arco para mirar una vez más. Nora sujetó la foto antigua; Teo sostuvo el mapa; Inés señaló el círculo de piedras en el suelo.",
+            "Desde aquel lugar se veía la diferencia entre los tiempos. Un banco nuevo estaba junto a la mesa. La maceta roja se hallaba cerca de la verja. Pero el anillo gastado seguía a la misma distancia de la esquina del muro.",
+            "—Tenías razón al buscar una forma redonda —dijo Inés a Teo—. Solo necesitábamos saber cuál existía ya cuando hicieron el mapa.",
+            "Él levantó la foto a la altura de sus ojos.",
+            "—Y tú tenías razón sobre la puerta. No sobre todas las cosas que había detrás.",
+            "Se rieron sin burlarse. Nora les contó que algunas familias usaban aquel círculo para compartir esquejes y semillas. Había sobrevivido a la tormenta, a las reparaciones y a muchos cambios pequeños.",
+            "—Mi madre quería que la gente siguiera reuniéndose aquí —dijo.",
+            "Inés pensó en la abuela Elena mirando su patio desde el otro lado del muro. A pocos pasos había continuado una costumbre que ella creía perdida. Los niños ya podían llevarle una respuesta; aún querían comprender por qué nadie había vuelto a llamarla."
+          ],
+          "alt": "Los niños comparan el mapa con el círculo de piedras.",
+          "checkpoint": {
+            "id": "q15",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Qué seguía en su sitio?",
+                "options": [
+                  {
+                    "text": "El círculo de piedras gastadas"
+                  },
+                  {
+                    "text": "El banco de la foto"
+                  },
+                  {
+                    "text": "La maceta recién pintada"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Busca qué objetos se pudieron mover y cuál quedó."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Por qué Teo cambia su primera idea?",
+                "options": [
+                  {
+                    "text": "Nora dijo que era un juego"
+                  },
+                  {
+                    "text": "Las pistas apuntan a un lugar de reunión"
+                  },
+                  {
+                    "text": "La abuela encontró monedas"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Busca qué objetos se pudieron mover y cuál quedó."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "The mark that remained",
+          "paragraphs": [
+            "They returned to the arch for another look. Nora held the old photograph, Teo the map, while Inés pointed towards the ring of worn stones.",
+            "From there they could see what time had changed. A newer bench stood near the table, and the red pot belonged by the gate. Yet the stone circle remained the same distance from the corner of the wall.",
+            "“You were right to look for something round,” Inés told Teo. “We just needed to find what was there when the map was drawn.”",
+            "He raised the photograph to eye level.",
+            "“And you were right about the doorway. That didn't mean you knew everything behind it.”",
+            "They laughed together. Nora explained that families sometimes used the ring to exchange cuttings and seeds. It had survived the storm, the repairs, and many smaller changes.",
+            "“My mother wanted people to keep gathering here,” she said.",
+            "Inés thought of Grandma gazing at her courtyard from the other side of the wall. Just a short walk away, a familiar custom had carried on without her. The children had an answer to bring back. They still wanted to know why no one had told her."
+          ],
+          "alt": "The children compare the map with the ring of stones.",
+          "checkpoint": {
+            "id": "q15",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "What was still in place?",
+                "options": [
+                  {
+                    "text": "The worn stone circle"
+                  },
+                  {
+                    "text": "The bench from the photo"
+                  },
+                  {
+                    "text": "The newly painted pot"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Which objects could move, and which remained?"
+              },
+              {
+                "audience": "lector",
+                "prompt": "Why does Teo revise his first guess?",
+                "options": [
+                  {
+                    "text": "Nora called it a game"
+                  },
+                  {
+                    "text": "The clues point to a meeting place"
+                  },
+                  {
+                    "text": "Grandma found coins"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Which objects could move, and which remained?"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p16",
+      "chapter": 4,
+      "layout": "text-only",
+      "image": null,
+      "languages": {
+        "es": {
+          "title": "Un camino seguro",
+          "paragraphs": [
+            "Los primos no intentaron quitar los ladrillos del arco. Nora explicó que la pared había sido revisada y que era mejor dejar cerrado aquel paso; la verja azul servía para entrar sin riesgo. Encontrar un lugar no siempre significaba recuperar exactamente el camino anterior.",
+            "Teo lo escribió en la hoja nueva. Había dibujado dos recorridos: uno terminaba en la puerta antigua; el otro daba la vuelta por el callejón. Ambos llegaban al mismo jardín, pero solo uno podía usarse ahora.",
+            "Antes de irse, pidieron permiso para contarle a la abuela lo que habían visto. Nora aceptó encantada y señaló la caja de semillas.",
+            "—Decidle que aún conservamos algunas de las plantas de Ema.",
+            "El nombre hizo que Inés levantara la vista.",
+            "—La abuela cree que Ema se fue sin volver a saber nada de este sitio.",
+            "Nora se quedó callada. Ella era niña cuando su madre se mudó y no conocía todas las razones. Recordaba, sin embargo, un álbum en casa lleno de fotografías del jardín. Ema lo sacaba cada vez que alguien le preguntaba por su antiguo barrio.",
+            "—Nunca habló como si no le importara —dijo Nora—. Tal vez las dos perdieron la forma de encontrarse.",
+            "Inés ensayó en voz baja cómo explicárselo a su abuela. No quería decir «te equivocaste» como si una sensación de pérdida fuera una respuesta de examen. Diría que habían visto plantas, una caja de semillas y piedras que podían corresponder al viejo lugar de reunión. También le contaría lo que no sabían: cuándo se habían movido el banco y las macetas. Teo añadió que la verja estaba abierta con permiso, y que el arco debía permanecer cerrado. Entre los dos prepararon una invitación, no un veredicto.",
+            "En la salida, Inés y Teo cerraron con cuidado el pestillo de la verja. La historia de la puerta estaba casi resuelta; la historia de las dos amigas necesitaba una pregunta distinta. De camino a casa decidieron no afirmar que alguien había olvidado a la otra sin escuchar primero a ambas familias."
+          ],
+          "alt": null,
+          "checkpoint": {
+            "id": "q16",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Por dónde pueden entrar ahora?",
+                "options": [
+                  {
+                    "text": "Por una ventana"
+                  },
+                  {
+                    "text": "Por la verja azul"
+                  },
+                  {
+                    "text": "Por los ladrillos del arco"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Piensa qué saben de las dos amigas y qué falta preguntar."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Qué todavía NO deben asegurar?",
+                "options": [
+                  {
+                    "text": "Que Nora guarda semillas"
+                  },
+                  {
+                    "text": "Que el arco continúa cerrado"
+                  },
+                  {
+                    "text": "Que una amiga olvidó a la otra"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Piensa qué saben de las dos amigas y qué falta preguntar."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "A safe route",
+          "paragraphs": [
+            "The cousins did not try to remove the bricks. Nora explained that the wall had been inspected and that the old opening needed to stay closed. People could enter safely by the blue gate. Finding a place did not mean they had to use exactly the old route.",
+            "Teo wrote that on their new sheet. He had drawn two paths. One ended at Grandma's old doorway. The other went around the block. Both reached the garden, but only one worked today.",
+            "Before leaving, they asked whether they could tell Grandma what they had found. Nora was delighted. She pointed to the seed box.",
+            "“Tell her we still grow some of Ema's plants.”",
+            "Inés looked up at the name.",
+            "“Grandma thinks Ema left and never heard about the garden again.”",
+            "Nora paused. She had been small when her mother moved, and she did not know every reason. She did remember an album at home filled with garden photographs. Ema took it out whenever someone asked about her old neighbourhood.",
+            "“She never spoke as though she didn't care,” Nora said. “Perhaps they simply lost a way to reach one another.”",
+            "Inés rehearsed what she would tell Grandma. She did not want to say “you were wrong” as though missing a place were an exam answer. She would describe the plants, the seed box, and stones that might mark the old meeting spot. She would also explain what remained unclear: when the bench and pots had moved. Teo added that they had permission to visit by the blue gate and that the old arch should stay closed. Between them, they prepared an invitation instead of a verdict.",
+            "Teo carefully fastened the gate behind them. The mystery of the doorway was nearly solved. The question about the two friends needed a different kind of investigation. On their way home, the cousins agreed they could not claim either woman had forgotten the other before hearing more."
+          ],
+          "alt": null,
+          "checkpoint": {
+            "id": "q16",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "How can they enter now?",
+                "options": [
+                  {
+                    "text": "Through a window"
+                  },
+                  {
+                    "text": "Through the blue gate"
+                  },
+                  {
+                    "text": "Through the bricks"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "What do they know about the two friends?"
+              },
+              {
+                "audience": "lector",
+                "prompt": "What should they NOT claim yet?",
+                "options": [
+                  {
+                    "text": "That Nora saves seeds"
+                  },
+                  {
+                    "text": "That the arch stays closed"
+                  },
+                  {
+                    "text": "That either friend forgot the other"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "What do they know about the two friends?"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p17",
+      "chapter": 5,
+      "layout": "bottom",
+      "image": "imagenes/pagina-17.png",
+      "languages": {
+        "es": {
+          "title": "El álbum de Ema",
+          "paragraphs": [
+            "Al día siguiente Nora los invitó a mirar el álbum que su madre le había dejado. Se sentaron en el jardín, bajo un cielo nublado. Había fotografías de cosechas pequeñas, manos sosteniendo macetas y personas riéndose dentro del círculo de piedras.",
+            "En varias imágenes aparecía la joven Elena. A veces sostenía una regadera; otras escuchaba a Ema hablar. Teo quiso llevarle el álbum de inmediato, pero Nora pidió que escogieran solo una foto para enseñársela primero. Las demás pertenecían también a otras familias.",
+            "Entre las páginas encontraron un sobre doblado. Nora no lo abrió: era una carta de su madre guardada junto a un retrato del jardín. Había una dirección antigua escrita fuera, pero Nora prefería preguntar a Ema antes de compartirla.",
+            "—Lo que sí puedo contaros —dijo— es que mi madre conserva estas fotos. Le encantará saber que Elena se acuerda de ella.",
+            "Inés aceptó ese límite. La existencia de una carta no les permitía inventar su contenido. Podían llevar una fotografía que Nora había autorizado, mostrar el mapa y contar lo que sabían de verdad.",
+            "Una gota de lluvia cayó sobre la mesa. Los primos guardaron el papel antiguo en una carpeta. Habían seguido una marca roja y encontrado más que un lugar; ahora debían tratar con el mismo cuidado los recuerdos de otras personas."
+          ],
+          "alt": "Nora muestra un álbum a los niños en el jardín.",
+          "checkpoint": {
+            "id": "q17",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Qué les dejó ver Nora?",
+                "options": [
+                  {
+                    "text": "Un cofre de oro"
+                  },
+                  {
+                    "text": "Un mapa de estrellas"
+                  },
+                  {
+                    "text": "Un álbum de fotografías"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Recuerda que el sobre pertenece a otra persona."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Por qué no leen el sobre cerrado?",
+                "options": [
+                  {
+                    "text": "Deben respetar la privacidad y preguntar"
+                  },
+                  {
+                    "text": "Ya conocen su contenido"
+                  },
+                  {
+                    "text": "No saben abrir papel"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Recuerda que el sobre pertenece a otra persona."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "Ema’s album",
+          "paragraphs": [
+            "The next day Nora invited them to see the album her mother had left with her. They sat in the garden beneath a cloudy sky. Its photographs showed little harvests, hands carrying pots, and neighbours laughing inside the ring of red stones.",
+            "Young Elena appeared in several pictures. Sometimes she held a watering can; sometimes she listened while Ema spoke. Teo wanted to take the whole album to Grandma, but Nora asked them to choose one picture. The other photographs belonged to other families' memories too.",
+            "They came across a folded envelope between the pages. Nora left it closed. Her mother had kept it beside a garden photograph, and Nora wanted to speak with her before showing it to anyone.",
+            "“What I can tell you,” she said, “is that my mother still has these pictures. She'll be glad to hear Elena remembers her.”",
+            "Inés accepted that boundary. Finding an envelope did not tell them what was inside. They could carry the photograph Nora had offered, share the map, and explain what they actually knew.",
+            "A drop of rain landed on the table. The cousins slipped the old paper into a folder. The red circle had led them somewhere real. Other people's memories deserved as much care as the old map."
+          ],
+          "alt": "Nora shows the children an album in the garden.",
+          "checkpoint": {
+            "id": "q17",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "What did Nora show them?",
+                "options": [
+                  {
+                    "text": "A gold chest"
+                  },
+                  {
+                    "text": "A star map"
+                  },
+                  {
+                    "text": "A photo album"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Remember whose envelope it is."
+              },
+              {
+                "audience": "lector",
+                "prompt": "Why leave the envelope closed?",
+                "options": [
+                  {
+                    "text": "Respect privacy and ask first"
+                  },
+                  {
+                    "text": "They already know its contents"
+                  },
+                  {
+                    "text": "They cannot open paper"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Remember whose envelope it is."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p18",
+      "chapter": 5,
+      "layout": "text-only",
+      "image": null,
+      "languages": {
+        "es": {
+          "title": "Una carta devuelta",
+          "paragraphs": [
+            "La abuela Elena escuchó todo sin interrumpir. Inés le mostró la foto del círculo de piedras. Teo desplegó su mapa nuevo y le enseñó el camino que daba la vuelta por el callejón.",
+            "—¿Así que no han abierto el arco? —preguntó ella.",
+            "—No hace falta —respondió Teo—. La verja azul está bien y Nora nos dejó pasar.",
+            "Elena reconoció a la joven de la fotografía y se quedó un momento en silencio. Después buscó una caja en un armario. Dentro había un sobre con una antigua carta suya. La oficina de correos se la había devuelto años atrás: Ema ya no vivía en aquella dirección.",
+            "—Pensé que necesitaba empezar una vida nueva y no quise molestarla —dijo Elena—. Nunca le pregunté a nadie si tenía otro modo de escribirle.",
+            "Inés recordó el álbum de Nora. Ambas mujeres habían guardado recuerdos del mismo jardín. Aquello no probaba exactamente qué había pensado cada una durante todos esos años, pero dejaba menos espacio para su idea de que se habían olvidado.",
+            "—Nora puede preguntarle a su madre si quiere recibir un mensaje —propuso.",
+            "La abuela tomó un papel limpio. Le costó encontrar la primera frase; al fin escribió que había visto de nuevo el círculo donde compartían semillas y que le gustaría saber cómo estaba Ema.",
+            "La abuela leyó su nueva frase en voz alta y volvió a escribirla. Le parecía demasiado formal. Inés le recordó cómo Ema aparecía en las fotos: riendo, con las manos manchadas de tierra. Elena dejó de buscar palabras perfectas. Escribió una anécdota sobre la primera semilla que habían plantado juntas y sobre una regadera que perdía agua. Cuando terminó, no pidió a sus nietos que adivinaran lo que Ema sentiría al recibirla. Solo les dio las gracias por traerle un camino y la posibilidad de preguntar.",
+            "Teo quiso prometerle una respuesta inmediata. Se detuvo antes de hacerlo. Las cartas, como las plantas, tardaban su tiempo. En cambio podía ofrecer algo que sí estaba a su alcance.",
+            "—¿Quieres que mañana te acompañemos por la verja azul?",
+            "Elena miró la foto, luego a sus nietos. Asintió."
+          ],
+          "alt": null,
+          "checkpoint": {
+            "id": "q18",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Qué le devolvieron a Elena años atrás?",
+                "options": [
+                  {
+                    "text": "Una carta para Ema"
+                  },
+                  {
+                    "text": "Una semilla"
+                  },
+                  {
+                    "text": "La verja azul"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "¿Qué depende de los niños y qué depende de Ema?"
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Qué pueden prometer los niños ahora?",
+                "options": [
+                  {
+                    "text": "Volver a abrir el muro"
+                  },
+                  {
+                    "text": "Acompañarla por el camino seguro"
+                  },
+                  {
+                    "text": "Una respuesta inmediata de Ema"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "¿Qué depende de los niños y qué depende de Ema?"
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "A returned letter",
+          "paragraphs": [
+            "Grandma Elena listened without interrupting. Inés showed her a photograph of the stones. Teo unfolded his new map and traced the route through the lane.",
+            "“So the old doorway is still blocked?” Grandma asked.",
+            "“It can stay that way,” Teo said. “The blue gate works, and Nora let us in.”",
+            "Elena recognised her younger self in the picture. Then she brought out a box from a cupboard. It held a letter she had once sent to Ema. The post office had returned it: Ema no longer lived at that address.",
+            "“I thought she wanted a fresh start, and I didn't want to bother her,” Grandma said. “I never asked whether anyone knew a new way to reach her.”",
+            "Inés remembered Nora's album. Both women had held on to the same garden. That did not tell the children exactly what either friend had thought for all those years, but it made forgetting seem much less likely.",
+            "“Nora could ask her mother whether she'd like to hear from you,” Inés said.",
+            "Grandma picked up a clean sheet. It took a while to begin. At last she wrote that she had seen the stone circle again, and that she would love to know how Ema was doing.",
+            "Grandma read her new sentence aloud and rewrote it. It sounded too formal. Inés recalled Ema in the photographs: laughing, her hands covered in soil. Elena stopped searching for a perfect opening. She wrote about the first seed they had planted together and a watering can that always leaked. When she finished, she did not ask the children to predict what Ema would feel on reading it. She thanked them for bringing her a route, and a chance to ask for herself.",
+            "Teo almost promised a quick reply, then stopped. Letters, like plants, could take time. He could offer something else right now.",
+            "“Shall we take you through the blue gate tomorrow?”",
+            "Grandma looked from the photo to her grandchildren and nodded."
+          ],
+          "alt": null,
+          "checkpoint": {
+            "id": "q18",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "What had been returned to Elena years before?",
+                "options": [
+                  {
+                    "text": "A letter to Ema"
+                  },
+                  {
+                    "text": "A seed"
+                  },
+                  {
+                    "text": "The blue gate"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "What can the children do for Grandma today?"
+              },
+              {
+                "audience": "lector",
+                "prompt": "What can the children promise now?",
+                "options": [
+                  {
+                    "text": "To open the old wall"
+                  },
+                  {
+                    "text": "To take her by the safe route"
+                  },
+                  {
+                    "text": "An immediate answer from Ema"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "What can the children do for Grandma today?"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p19",
+      "chapter": 5,
+      "layout": "side-left",
+      "image": "imagenes/pagina-19.png",
+      "languages": {
+        "es": {
+          "title": "Volver",
+          "paragraphs": [
+            "La mañana siguiente amaneció despejada. Elena caminó con Inés y Teo por el callejón. Se detuvo una vez para observar la pared desde fuera; nunca la había visto desde aquel lado.",
+            "Nora abrió la verja. La abuela no buscó el banco antiguo. Siguió directamente el sendero hasta encontrar el círculo de piedras, ahora medio sombreado por el naranjo.",
+            "—Se siente más pequeño —dijo.",
+            "—Quizá tú creciste —respondió Teo.",
+            "Todos rieron. Elena pasó la mano por una piedra gastada sin moverla. Nora le enseñó las semillas que Ema había guardado y el álbum que todavía cuidaba.",
+            "—¿Podrías preguntarle si quiere recibir mi carta? —dijo Elena.",
+            "—Por supuesto. Le diré también que viniste hoy.",
+            "No hubo una respuesta milagrosa al instante. Elena permaneció un rato en el jardín, conversó con Nora y ayudó a colocar unas macetas fuera del paso. Inés comprendió que volver no exigía que cada detalle se hubiera conservado intacto.",
+            "Al salir, la abuela eligió la verja azul. Miró una vez hacia el arco cerrado y sonrió: ahora conocía un camino para regresar."
+          ],
+          "alt": "Elena vuelve al jardín por la verja azul con sus nietos.",
+          "checkpoint": {
+            "id": "q19",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿A dónde vuelve Elena?",
+                "options": [
+                  {
+                    "text": "A una estación"
+                  },
+                  {
+                    "text": "Al jardín por la verja azul"
+                  },
+                  {
+                    "text": "Al sótano de la biblioteca"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "El arco sigue cerrado: sigue el nuevo camino."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Qué cambió en su regreso?",
+                "options": [
+                  {
+                    "text": "La pared desapareció"
+                  },
+                  {
+                    "text": "El mapa se volvió nuevo"
+                  },
+                  {
+                    "text": "Encontró otra ruta aunque el arco sigue cerrado"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "El arco sigue cerrado: sigue el nuevo camino."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "Coming back",
+          "paragraphs": [
+            "The next morning brought clear skies. Elena followed Inés and Teo along the lane. Once, she stopped to look at the outside of her own courtyard wall. She had never seen it from this direction.",
+            "Nora opened the blue gate. Grandma did not search for the old bench. She followed the path until she reached the ring of stones, half shaded by the orange tree.",
+            "“It feels smaller,” she said.",
+            "“Maybe you got taller,” Teo replied.",
+            "They laughed. Elena rested a hand on one worn stone without moving it. Nora showed her the seeds Ema had saved and the album she still cared for.",
+            "“Would you ask whether she wants my letter?” Elena said.",
+            "“Of course. I'll tell her you came today, too.”",
+            "No miraculous answer arrived on the spot. Elena stayed a while, talking to Nora and helping move pots away from the path. Inés realised that returning did not require every detail to have remained unchanged.",
+            "When they left, Grandma chose the blue gate. She glanced once towards the sealed arch and smiled. Now she knew how to come back."
+          ],
+          "alt": "Elena returns to the garden with her grandchildren.",
+          "checkpoint": {
+            "id": "q19",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "Where does Elena return?",
+                "options": [
+                  {
+                    "text": "To a station"
+                  },
+                  {
+                    "text": "To the garden by the blue gate"
+                  },
+                  {
+                    "text": "To the library basement"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "The old arch is still closed: follow the new route."
+              },
+              {
+                "audience": "lector",
+                "prompt": "What changed about her return?",
+                "options": [
+                  {
+                    "text": "The wall vanished"
+                  },
+                  {
+                    "text": "The map became new"
+                  },
+                  {
+                    "text": "She found another route while the arch stayed shut"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "The old arch is still closed: follow the new route."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p20",
+      "chapter": 5,
+      "layout": "bottom",
+      "image": "imagenes/pagina-20.png",
+      "languages": {
+        "es": {
+          "title": "Leer bajo el naranjo",
+          "paragraphs": [
+            "Con permiso de Nora, una tarde llevaron libros al jardín. No abrieron el arco tapiado: cada familia entró por la verja azul. Unos niños se sentaron en el círculo de piedras y otros bajo la sombra del naranjo.",
+            "Teo eligió una historia de aventuras. Inés llevó su hoja nueva, donde había dibujado la verja y la ruta actual. La abuela conservó el mapa antiguo dentro del libro del que había salido.",
+            "—¿Todavía piensas que el círculo marcaba un tesoro? —preguntó Inés.",
+            "Teo miró a la gente que compartía libros y semillas.",
+            "—Pensé en monedas. Después pensé que no había nada. Me equivoqué las dos veces.",
+            "Nora trajo agua y Elena leyó en voz alta. Al terminar una página, los niños compararon el dibujo viejo con lo que veían alrededor. Algunas cosas faltaban; otras habían crecido.",
+            "La carta para Ema estaba lista. Quizá su respuesta llegaría más tarde. Por ahora, Elena había recuperado un lugar donde podían volver a encontrarse.",
+            "Inés cerró su cuaderno sin marcar el jardín como un misterio resuelto para siempre. Al día siguiente habría brotes nuevos, historias distintas y tal vez más preguntas. Sabían qué camino podían seguir para hacerlas juntos."
+          ],
+          "alt": "Familias leen juntas bajo el naranjo; Nora trae agua.",
+          "checkpoint": {
+            "id": "q20",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Qué comparten bajo el naranjo?",
+                "options": [
+                  {
+                    "text": "Monedas enterradas"
+                  },
+                  {
+                    "text": "Puertas nuevas"
+                  },
+                  {
+                    "text": "Libros y semillas"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Mira qué hacen juntos al final."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Qué aprendieron del círculo rojo?",
+                "options": [
+                  {
+                    "text": "Señalaba un lugar para reunirse"
+                  },
+                  {
+                    "text": "Garantizaba encontrar oro"
+                  },
+                  {
+                    "text": "Todos los mapas muestran el presente"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Mira qué hacen juntos al final."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "Reading beneath the orange tree",
+          "paragraphs": [
+            "With Nora's permission, they brought books to the garden one afternoon. Everyone entered by the blue gate. The old arch stayed safely sealed. Some children settled inside the circle of stones; others read beneath the orange tree.",
+            "Teo chose an adventure story. Inés brought the new sheet on which she had drawn the gate and today's route. Grandma kept the original map inside the book where they had found it.",
+            "“Do you still think the circle marked buried treasure?” Inés asked.",
+            "Teo watched neighbours sharing books and seeds.",
+            "“First I imagined coins. Then I thought nothing was there. I got both guesses wrong.”",
+            "Nora brought water while Elena read aloud. At the end of a page, the children compared the old drawing with the garden around them. Some things were gone; others had grown.",
+            "The letter to Ema was ready. Perhaps an answer would arrive later. For now, Grandma had found a place she could visit again.",
+            "Inés closed her notebook without marking the mystery solved forever. Tomorrow there would be new shoots, different stories, and probably more questions. At least they knew a way to ask them together."
+          ],
+          "alt": "Families read under the orange tree; Nora brings water.",
+          "checkpoint": {
+            "id": "q20",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "What do they share beneath the tree?",
+                "options": [
+                  {
+                    "text": "Buried coins"
+                  },
+                  {
+                    "text": "New doors"
+                  },
+                  {
+                    "text": "Books and seeds"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Look at what the neighbours share at the end."
+              },
+              {
+                "audience": "lector",
+                "prompt": "What did the red circle mean?",
+                "options": [
+                  {
+                    "text": "A place to gather"
+                  },
+                  {
+                    "text": "A promise of gold"
+                  },
+                  {
+                    "text": "That every map shows the present"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Look at what the neighbours share at the end."
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "vocabulary": {
+    "es": {
+      "tapiaron": {
+        "syllables": [
+          "ta",
+          "pia",
+          "ron"
+        ],
+        "definition": "Cerraron un hueco con ladrillos."
+      },
+      "arco": {
+        "syllables": [
+          "ar",
+          "co"
+        ],
+        "definition": "Construcción curva sobre una abertura."
+      },
+      "verja": {
+        "syllables": [
+          "ver",
+          "ja"
+        ],
+        "definition": "Puerta o cerca hecha de barrotes."
+      },
+      "bisagra": {
+        "syllables": [
+          "bi",
+          "sa",
+          "gra"
+        ],
+        "definition": "Pieza que permite abrir una puerta."
+      },
+      "pestillo": {
+        "syllables": [
+          "pes",
+          "ti",
+          "llo"
+        ],
+        "definition": "Pieza que mantiene cerrada una puerta."
+      },
+      "esquejes": {
+        "syllables": [
+          "es",
+          "que",
+          "jes"
+        ],
+        "definition": "Trozos de planta que pueden echar raíces."
+      },
+      "sendero": {
+        "syllables": [
+          "sen",
+          "de",
+          "ro"
+        ],
+        "definition": "Camino estrecho para caminar."
+      },
+      "álbum": {
+        "syllables": [
+          "ál",
+          "bum"
+        ],
+        "definition": "Libro o carpeta de fotografías."
+      }
+    },
+    "en": {
+      "arch": {
+        "syllables": [
+          "arch"
+        ],
+        "definition": "Curved opening in a wall."
+      },
+      "courtyard": {
+        "syllables": [
+          "court",
+          "yard"
+        ],
+        "definition": "Open space beside or within a building."
+      },
+      "landmarks": {
+        "syllables": [
+          "land",
+          "marks"
+        ],
+        "definition": "Features that help you recognise a place."
+      },
+      "hinge": {
+        "syllables": [
+          "hinge"
+        ],
+        "definition": "Part that allows a door to swing."
+      },
+      "latch": {
+        "syllables": [
+          "latch"
+        ],
+        "definition": "Small fastener that keeps a gate closed."
+      },
+      "cuttings": {
+        "syllables": [
+          "cut",
+          "tings"
+        ],
+        "definition": "Pieces of a plant that can grow roots."
+      },
+      "album": {
+        "syllables": [
+          "al",
+          "bum"
+        ],
+        "definition": "Book or folder of photographs."
+      },
+      "envelope": {
+        "syllables": [
+          "en",
+          "ve",
+          "lope"
+        ],
+        "definition": "Paper cover for a letter."
+      }
+    }
+  }
+}

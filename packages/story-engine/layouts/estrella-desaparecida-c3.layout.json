@@ -1,0 +1,186 @@
+{
+  "familyId": "estrella-desaparecida-c3",
+  "version": 1,
+  "pages": {
+    "p07": {
+      "blocks": {
+        "b25": {
+          "balloon": {
+            "x": 22,
+            "y": 15,
+            "width": 718,
+            "height": 114
+          },
+          "text": {
+            "x": 43,
+            "y": 30,
+            "width": 676,
+            "height": 84
+          }
+        },
+        "b26": {
+          "balloon": {
+            "x": 795,
+            "y": 15,
+            "width": 716,
+            "height": 113
+          },
+          "text": {
+            "x": 816,
+            "y": 30,
+            "width": 674,
+            "height": 83
+          }
+        },
+        "b27": {
+          "balloon": {
+            "x": 22,
+            "y": 498,
+            "width": 718,
+            "height": 109
+          },
+          "text": {
+            "x": 43,
+            "y": 513,
+            "width": 676,
+            "height": 79
+          }
+        },
+        "b28": {
+          "balloon": {
+            "x": 794,
+            "y": 497,
+            "width": 718,
+            "height": 110
+          },
+          "text": {
+            "x": 815,
+            "y": 512,
+            "width": 676,
+            "height": 80
+          }
+        }
+      }
+    },
+    "p08": {
+      "blocks": {
+        "b29": {
+          "balloon": {
+            "x": 23,
+            "y": 15,
+            "width": 717,
+            "height": 112
+          },
+          "text": {
+            "x": 44,
+            "y": 30,
+            "width": 675,
+            "height": 82
+          }
+        },
+        "b30": {
+          "balloon": {
+            "x": 794,
+            "y": 15,
+            "width": 716,
+            "height": 112
+          },
+          "text": {
+            "x": 815,
+            "y": 30,
+            "width": 674,
+            "height": 82
+          }
+        },
+        "b31": {
+          "balloon": {
+            "x": 22,
+            "y": 496,
+            "width": 719,
+            "height": 111
+          },
+          "text": {
+            "x": 43,
+            "y": 511,
+            "width": 677,
+            "height": 81
+          }
+        },
+        "b32": {
+          "balloon": {
+            "x": 793,
+            "y": 497,
+            "width": 717,
+            "height": 109
+          },
+          "text": {
+            "x": 814,
+            "y": 512,
+            "width": 675,
+            "height": 79
+          }
+        }
+      }
+    },
+    "p09": {
+      "blocks": {
+        "b33": {
+          "balloon": {
+            "x": 23,
+            "y": 15,
+            "width": 718,
+            "height": 111
+          },
+          "text": {
+            "x": 44,
+            "y": 30,
+            "width": 676,
+            "height": 81
+          }
+        },
+        "b34": {
+          "balloon": {
+            "x": 795,
+            "y": 15,
+            "width": 717,
+            "height": 111
+          },
+          "text": {
+            "x": 816,
+            "y": 30,
+            "width": 675,
+            "height": 81
+          }
+        },
+        "b35": {
+          "balloon": {
+            "x": 22,
+            "y": 497,
+            "width": 717,
+            "height": 108
+          },
+          "text": {
+            "x": 43,
+            "y": 512,
+            "width": 675,
+            "height": 78
+          }
+        },
+        "b36": {
+          "balloon": {
+            "x": 794,
+            "y": 496,
+            "width": 718,
+            "height": 109
+          },
+          "text": {
+            "x": 815,
+            "y": 511,
+            "width": 676,
+            "height": 79
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "@lee-conmigo/story-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Esquema, validación y tokenización de historias; historia piloto",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": { ".": "./src/index.ts" },
+  "scripts": { "typecheck": "tsc -p tsconfig.json" },
+  "dependencies": { "@lee-conmigo/contracts": "*", "@lee-conmigo/reading-engine": "*" }
+}

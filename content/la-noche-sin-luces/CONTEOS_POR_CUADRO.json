@@ -1,0 +1,2222 @@
+[
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p01",
+    "block": "b01",
+    "characters": 86,
+    "minimum": 0,
+    "maximum": 90,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p02",
+    "block": "b02",
+    "characters": 58,
+    "minimum": 0,
+    "maximum": 78,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p02",
+    "block": "b03",
+    "characters": 50,
+    "minimum": 0,
+    "maximum": 78,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p02",
+    "block": "b04",
+    "characters": 60,
+    "minimum": 0,
+    "maximum": 78,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p02",
+    "block": "b05",
+    "characters": 54,
+    "minimum": 0,
+    "maximum": 78,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p03",
+    "block": "b06",
+    "characters": 69,
+    "minimum": 0,
+    "maximum": 79,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p03",
+    "block": "b07",
+    "characters": 50,
+    "minimum": 0,
+    "maximum": 72,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p04",
+    "block": "b08",
+    "characters": 28,
+    "minimum": 0,
+    "maximum": 49,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p04",
+    "block": "b09",
+    "characters": 31,
+    "minimum": 0,
+    "maximum": 49,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p04",
+    "block": "b10",
+    "characters": 33,
+    "minimum": 0,
+    "maximum": 49,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p04",
+    "block": "b11",
+    "characters": 38,
+    "minimum": 0,
+    "maximum": 49,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p04",
+    "block": "b12",
+    "characters": 33,
+    "minimum": 0,
+    "maximum": 49,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p04",
+    "block": "b13",
+    "characters": 44,
+    "minimum": 0,
+    "maximum": 49,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p05",
+    "block": "b14",
+    "characters": 61,
+    "minimum": 0,
+    "maximum": 90,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p05",
+    "block": "b15",
+    "characters": 46,
+    "minimum": 0,
+    "maximum": 73,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p05",
+    "block": "b16",
+    "characters": 61,
+    "minimum": 0,
+    "maximum": 78,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p06",
+    "block": "b17",
+    "characters": 70,
+    "minimum": 0,
+    "maximum": 90,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p06",
+    "block": "b18",
+    "characters": 64,
+    "minimum": 0,
+    "maximum": 90,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p07",
+    "block": "b19",
+    "characters": 5,
+    "minimum": 0,
+    "maximum": 7,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p07",
+    "block": "b20",
+    "characters": 53,
+    "minimum": 0,
+    "maximum": 75,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p09",
+    "block": "b24",
+    "characters": 56,
+    "minimum": 0,
+    "maximum": 69,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p09",
+    "block": "b25",
+    "characters": 51,
+    "minimum": 0,
+    "maximum": 81,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p09",
+    "block": "b26",
+    "characters": 41,
+    "minimum": 0,
+    "maximum": 47,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p09",
+    "block": "b27",
+    "characters": 60,
+    "minimum": 0,
+    "maximum": 90,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p09",
+    "block": "b28",
+    "characters": 62,
+    "minimum": 0,
+    "maximum": 88,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p09",
+    "block": "b29",
+    "characters": 46,
+    "minimum": 0,
+    "maximum": 63,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p10",
+    "block": "b30",
+    "characters": 58,
+    "minimum": 0,
+    "maximum": 90,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p10",
+    "block": "b31",
+    "characters": 58,
+    "minimum": 0,
+    "maximum": 90,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p10",
+    "block": "b32",
+    "characters": 57,
+    "minimum": 0,
+    "maximum": 90,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p11",
+    "block": "b33",
+    "characters": 61,
+    "minimum": 0,
+    "maximum": 78,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p11",
+    "block": "b34",
+    "characters": 56,
+    "minimum": 0,
+    "maximum": 76,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p12",
+    "block": "b35",
+    "characters": 62,
+    "minimum": 0,
+    "maximum": 85,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p12",
+    "block": "b36",
+    "characters": 59,
+    "minimum": 0,
+    "maximum": 85,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p13",
+    "block": "b37",
+    "characters": 57,
+    "minimum": 0,
+    "maximum": 73,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p13",
+    "block": "b38",
+    "characters": 64,
+    "minimum": 0,
+    "maximum": 73,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p13",
+    "block": "b39",
+    "characters": 62,
+    "minimum": 0,
+    "maximum": 90,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n1",
+    "page": "p14",
+    "block": "b40",
+    "characters": 81,
+    "minimum": 0,
+    "maximum": 90,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p01",
+    "block": "b01",
+    "characters": 230,
+    "minimum": 0,
+    "maximum": 384,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p02",
+    "block": "b02",
+    "characters": 111,
+    "minimum": 0,
+    "maximum": 140,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p02",
+    "block": "b03",
+    "characters": 106,
+    "minimum": 0,
+    "maximum": 140,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p02",
+    "block": "b04",
+    "characters": 111,
+    "minimum": 0,
+    "maximum": 140,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p02",
+    "block": "b05",
+    "characters": 112,
+    "minimum": 0,
+    "maximum": 140,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p03",
+    "block": "b06",
+    "characters": 118,
+    "minimum": 0,
+    "maximum": 140,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p03",
+    "block": "b07",
+    "characters": 99,
+    "minimum": 0,
+    "maximum": 129,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p04",
+    "block": "b08",
+    "characters": 46,
+    "minimum": 0,
+    "maximum": 87,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p04",
+    "block": "b09",
+    "characters": 62,
+    "minimum": 0,
+    "maximum": 87,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p04",
+    "block": "b10",
+    "characters": 64,
+    "minimum": 0,
+    "maximum": 88,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p04",
+    "block": "b11",
+    "characters": 66,
+    "minimum": 0,
+    "maximum": 87,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p04",
+    "block": "b12",
+    "characters": 59,
+    "minimum": 0,
+    "maximum": 87,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p04",
+    "block": "b13",
+    "characters": 75,
+    "minimum": 0,
+    "maximum": 88,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p05",
+    "block": "b14",
+    "characters": 234,
+    "minimum": 0,
+    "maximum": 300,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p05",
+    "block": "b15",
+    "characters": 118,
+    "minimum": 0,
+    "maximum": 130,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p05",
+    "block": "b16",
+    "characters": 108,
+    "minimum": 0,
+    "maximum": 140,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p06",
+    "block": "b17",
+    "characters": 238,
+    "minimum": 0,
+    "maximum": 308,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p06",
+    "block": "b18",
+    "characters": 213,
+    "minimum": 0,
+    "maximum": 308,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p07",
+    "block": "b19",
+    "characters": 11,
+    "minimum": 0,
+    "maximum": 13,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p07",
+    "block": "b20",
+    "characters": 116,
+    "minimum": 0,
+    "maximum": 133,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p09",
+    "block": "b24",
+    "characters": 109,
+    "minimum": 0,
+    "maximum": 124,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p09",
+    "block": "b25",
+    "characters": 123,
+    "minimum": 0,
+    "maximum": 145,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p09",
+    "block": "b26",
+    "characters": 74,
+    "minimum": 0,
+    "maximum": 84,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p09",
+    "block": "b27",
+    "characters": 145,
+    "minimum": 0,
+    "maximum": 179,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p09",
+    "block": "b28",
+    "characters": 131,
+    "minimum": 0,
+    "maximum": 156,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p09",
+    "block": "b29",
+    "characters": 110,
+    "minimum": 0,
+    "maximum": 112,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p10",
+    "block": "b30",
+    "characters": 165,
+    "minimum": 0,
+    "maximum": 228,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p10",
+    "block": "b31",
+    "characters": 183,
+    "minimum": 0,
+    "maximum": 228,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p10",
+    "block": "b32",
+    "characters": 179,
+    "minimum": 0,
+    "maximum": 228,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p11",
+    "block": "b33",
+    "characters": 100,
+    "minimum": 0,
+    "maximum": 140,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p11",
+    "block": "b34",
+    "characters": 113,
+    "minimum": 0,
+    "maximum": 136,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p12",
+    "block": "b35",
+    "characters": 107,
+    "minimum": 0,
+    "maximum": 152,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p12",
+    "block": "b36",
+    "characters": 111,
+    "minimum": 0,
+    "maximum": 152,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p13",
+    "block": "b37",
+    "characters": 106,
+    "minimum": 0,
+    "maximum": 131,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p13",
+    "block": "b38",
+    "characters": 113,
+    "minimum": 0,
+    "maximum": 130,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p13",
+    "block": "b39",
+    "characters": 184,
+    "minimum": 0,
+    "maximum": 204,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n2",
+    "page": "p14",
+    "block": "b40",
+    "characters": 200,
+    "minimum": 0,
+    "maximum": 380,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p01",
+    "block": "b01",
+    "characters": 407,
+    "minimum": 408,
+    "maximum": 480,
+    "intentional_overload": false,
+    "documented_exception": true
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p02",
+    "block": "b02",
+    "characters": 169,
+    "minimum": 148,
+    "maximum": 175,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p02",
+    "block": "b03",
+    "characters": 173,
+    "minimum": 148,
+    "maximum": 175,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p02",
+    "block": "b04",
+    "characters": 171,
+    "minimum": 148,
+    "maximum": 175,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p02",
+    "block": "b05",
+    "characters": 166,
+    "minimum": 148,
+    "maximum": 175,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p03",
+    "block": "b06",
+    "characters": 165,
+    "minimum": 149,
+    "maximum": 176,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p03",
+    "block": "b07",
+    "characters": 153,
+    "minimum": 137,
+    "maximum": 162,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p04",
+    "block": "b08",
+    "characters": 97,
+    "minimum": 92,
+    "maximum": 109,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p04",
+    "block": "b09",
+    "characters": 99,
+    "minimum": 92,
+    "maximum": 109,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p04",
+    "block": "b10",
+    "characters": 127,
+    "minimum": 125,
+    "maximum": 135,
+    "intentional_overload": true,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p04",
+    "block": "b11",
+    "characters": 101,
+    "minimum": 92,
+    "maximum": 109,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p04",
+    "block": "b12",
+    "characters": 101,
+    "minimum": 92,
+    "maximum": 109,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p04",
+    "block": "b13",
+    "characters": 128,
+    "minimum": 125,
+    "maximum": 135,
+    "intentional_overload": true,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p05",
+    "block": "b14",
+    "characters": 321,
+    "minimum": 319,
+    "maximum": 376,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p05",
+    "block": "b15",
+    "characters": 154,
+    "minimum": 138,
+    "maximum": 163,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p05",
+    "block": "b16",
+    "characters": 167,
+    "minimum": 148,
+    "maximum": 175,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p06",
+    "block": "b17",
+    "characters": 355,
+    "minimum": 328,
+    "maximum": 386,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p06",
+    "block": "b18",
+    "characters": 347,
+    "minimum": 328,
+    "maximum": 386,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p07",
+    "block": "b19",
+    "characters": 17,
+    "minimum": 14,
+    "maximum": 17,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p07",
+    "block": "b20",
+    "characters": 162,
+    "minimum": 141,
+    "maximum": 167,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p09",
+    "block": "b24",
+    "characters": 142,
+    "minimum": 131,
+    "maximum": 155,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p09",
+    "block": "b25",
+    "characters": 178,
+    "minimum": 154,
+    "maximum": 182,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p09",
+    "block": "b26",
+    "characters": 95,
+    "minimum": 89,
+    "maximum": 105,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p09",
+    "block": "b27",
+    "characters": 215,
+    "minimum": 190,
+    "maximum": 224,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p09",
+    "block": "b28",
+    "characters": 186,
+    "minimum": 166,
+    "maximum": 196,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p09",
+    "block": "b29",
+    "characters": 129,
+    "minimum": 119,
+    "maximum": 141,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p10",
+    "block": "b30",
+    "characters": 271,
+    "minimum": 242,
+    "maximum": 285,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p10",
+    "block": "b31",
+    "characters": 272,
+    "minimum": 242,
+    "maximum": 285,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p10",
+    "block": "b32",
+    "characters": 264,
+    "minimum": 242,
+    "maximum": 285,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p11",
+    "block": "b33",
+    "characters": 153,
+    "minimum": 148,
+    "maximum": 175,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p11",
+    "block": "b34",
+    "characters": 162,
+    "minimum": 145,
+    "maximum": 171,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p12",
+    "block": "b35",
+    "characters": 175,
+    "minimum": 162,
+    "maximum": 191,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p12",
+    "block": "b36",
+    "characters": 182,
+    "minimum": 162,
+    "maximum": 191,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p13",
+    "block": "b37",
+    "characters": 163,
+    "minimum": 139,
+    "maximum": 164,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p13",
+    "block": "b38",
+    "characters": 160,
+    "minimum": 138,
+    "maximum": 163,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p13",
+    "block": "b39",
+    "characters": 248,
+    "minimum": 217,
+    "maximum": 256,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-en-n3",
+    "page": "p14",
+    "block": "b40",
+    "characters": 407,
+    "minimum": 403,
+    "maximum": 475,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p01",
+    "block": "b01",
+    "characters": 82,
+    "minimum": 0,
+    "maximum": 90,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p02",
+    "block": "b02",
+    "characters": 47,
+    "minimum": 0,
+    "maximum": 78,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p02",
+    "block": "b03",
+    "characters": 47,
+    "minimum": 0,
+    "maximum": 78,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p02",
+    "block": "b04",
+    "characters": 48,
+    "minimum": 0,
+    "maximum": 78,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p02",
+    "block": "b05",
+    "characters": 42,
+    "minimum": 0,
+    "maximum": 78,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p03",
+    "block": "b06",
+    "characters": 66,
+    "minimum": 0,
+    "maximum": 79,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p03",
+    "block": "b07",
+    "characters": 58,
+    "minimum": 0,
+    "maximum": 72,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p04",
+    "block": "b08",
+    "characters": 28,
+    "minimum": 0,
+    "maximum": 49,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p04",
+    "block": "b09",
+    "characters": 31,
+    "minimum": 0,
+    "maximum": 49,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p04",
+    "block": "b10",
+    "characters": 32,
+    "minimum": 0,
+    "maximum": 49,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p04",
+    "block": "b11",
+    "characters": 45,
+    "minimum": 0,
+    "maximum": 49,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p04",
+    "block": "b12",
+    "characters": 31,
+    "minimum": 0,
+    "maximum": 49,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p04",
+    "block": "b13",
+    "characters": 43,
+    "minimum": 0,
+    "maximum": 49,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p05",
+    "block": "b14",
+    "characters": 66,
+    "minimum": 0,
+    "maximum": 90,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p05",
+    "block": "b15",
+    "characters": 45,
+    "minimum": 0,
+    "maximum": 73,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p05",
+    "block": "b16",
+    "characters": 62,
+    "minimum": 0,
+    "maximum": 78,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p06",
+    "block": "b17",
+    "characters": 67,
+    "minimum": 0,
+    "maximum": 90,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p06",
+    "block": "b18",
+    "characters": 68,
+    "minimum": 0,
+    "maximum": 90,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p07",
+    "block": "b19",
+    "characters": 5,
+    "minimum": 0,
+    "maximum": 7,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p07",
+    "block": "b20",
+    "characters": 53,
+    "minimum": 0,
+    "maximum": 75,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p09",
+    "block": "b24",
+    "characters": 51,
+    "minimum": 0,
+    "maximum": 69,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p09",
+    "block": "b25",
+    "characters": 47,
+    "minimum": 0,
+    "maximum": 81,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p09",
+    "block": "b26",
+    "characters": 34,
+    "minimum": 0,
+    "maximum": 47,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p09",
+    "block": "b27",
+    "characters": 53,
+    "minimum": 0,
+    "maximum": 90,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p09",
+    "block": "b28",
+    "characters": 49,
+    "minimum": 0,
+    "maximum": 88,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p09",
+    "block": "b29",
+    "characters": 46,
+    "minimum": 0,
+    "maximum": 63,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p10",
+    "block": "b30",
+    "characters": 54,
+    "minimum": 0,
+    "maximum": 90,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p10",
+    "block": "b31",
+    "characters": 69,
+    "minimum": 0,
+    "maximum": 90,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p10",
+    "block": "b32",
+    "characters": 71,
+    "minimum": 0,
+    "maximum": 90,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p11",
+    "block": "b33",
+    "characters": 64,
+    "minimum": 0,
+    "maximum": 78,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p11",
+    "block": "b34",
+    "characters": 44,
+    "minimum": 0,
+    "maximum": 76,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p12",
+    "block": "b35",
+    "characters": 58,
+    "minimum": 0,
+    "maximum": 85,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p12",
+    "block": "b36",
+    "characters": 56,
+    "minimum": 0,
+    "maximum": 85,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p13",
+    "block": "b37",
+    "characters": 65,
+    "minimum": 0,
+    "maximum": 73,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p13",
+    "block": "b38",
+    "characters": 56,
+    "minimum": 0,
+    "maximum": 73,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p13",
+    "block": "b39",
+    "characters": 70,
+    "minimum": 0,
+    "maximum": 90,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n1",
+    "page": "p14",
+    "block": "b40",
+    "characters": 76,
+    "minimum": 0,
+    "maximum": 90,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p01",
+    "block": "b01",
+    "characters": 209,
+    "minimum": 0,
+    "maximum": 384,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p02",
+    "block": "b02",
+    "characters": 104,
+    "minimum": 0,
+    "maximum": 140,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p02",
+    "block": "b03",
+    "characters": 106,
+    "minimum": 0,
+    "maximum": 140,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p02",
+    "block": "b04",
+    "characters": 102,
+    "minimum": 0,
+    "maximum": 140,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p02",
+    "block": "b05",
+    "characters": 102,
+    "minimum": 0,
+    "maximum": 140,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p03",
+    "block": "b06",
+    "characters": 105,
+    "minimum": 0,
+    "maximum": 140,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p03",
+    "block": "b07",
+    "characters": 96,
+    "minimum": 0,
+    "maximum": 129,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p04",
+    "block": "b08",
+    "characters": 50,
+    "minimum": 0,
+    "maximum": 87,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p04",
+    "block": "b09",
+    "characters": 64,
+    "minimum": 0,
+    "maximum": 87,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p04",
+    "block": "b10",
+    "characters": 64,
+    "minimum": 0,
+    "maximum": 88,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p04",
+    "block": "b11",
+    "characters": 60,
+    "minimum": 0,
+    "maximum": 87,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p04",
+    "block": "b12",
+    "characters": 60,
+    "minimum": 0,
+    "maximum": 87,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p04",
+    "block": "b13",
+    "characters": 69,
+    "minimum": 0,
+    "maximum": 88,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p05",
+    "block": "b14",
+    "characters": 207,
+    "minimum": 0,
+    "maximum": 300,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p05",
+    "block": "b15",
+    "characters": 106,
+    "minimum": 0,
+    "maximum": 130,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p05",
+    "block": "b16",
+    "characters": 109,
+    "minimum": 0,
+    "maximum": 140,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p06",
+    "block": "b17",
+    "characters": 235,
+    "minimum": 0,
+    "maximum": 308,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p06",
+    "block": "b18",
+    "characters": 240,
+    "minimum": 0,
+    "maximum": 308,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p07",
+    "block": "b19",
+    "characters": 11,
+    "minimum": 0,
+    "maximum": 13,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p07",
+    "block": "b20",
+    "characters": 125,
+    "minimum": 0,
+    "maximum": 133,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p09",
+    "block": "b24",
+    "characters": 122,
+    "minimum": 0,
+    "maximum": 124,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p09",
+    "block": "b25",
+    "characters": 119,
+    "minimum": 0,
+    "maximum": 145,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p09",
+    "block": "b26",
+    "characters": 63,
+    "minimum": 0,
+    "maximum": 84,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p09",
+    "block": "b27",
+    "characters": 133,
+    "minimum": 0,
+    "maximum": 179,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p09",
+    "block": "b28",
+    "characters": 136,
+    "minimum": 0,
+    "maximum": 156,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p09",
+    "block": "b29",
+    "characters": 109,
+    "minimum": 0,
+    "maximum": 112,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p10",
+    "block": "b30",
+    "characters": 175,
+    "minimum": 0,
+    "maximum": 228,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p10",
+    "block": "b31",
+    "characters": 192,
+    "minimum": 0,
+    "maximum": 228,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p10",
+    "block": "b32",
+    "characters": 186,
+    "minimum": 0,
+    "maximum": 228,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p11",
+    "block": "b33",
+    "characters": 98,
+    "minimum": 0,
+    "maximum": 140,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p11",
+    "block": "b34",
+    "characters": 115,
+    "minimum": 0,
+    "maximum": 136,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p12",
+    "block": "b35",
+    "characters": 106,
+    "minimum": 0,
+    "maximum": 152,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p12",
+    "block": "b36",
+    "characters": 118,
+    "minimum": 0,
+    "maximum": 152,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p13",
+    "block": "b37",
+    "characters": 107,
+    "minimum": 0,
+    "maximum": 131,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p13",
+    "block": "b38",
+    "characters": 116,
+    "minimum": 0,
+    "maximum": 130,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p13",
+    "block": "b39",
+    "characters": 178,
+    "minimum": 0,
+    "maximum": 204,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n2",
+    "page": "p14",
+    "block": "b40",
+    "characters": 208,
+    "minimum": 0,
+    "maximum": 380,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p01",
+    "block": "b01",
+    "characters": 406,
+    "minimum": 408,
+    "maximum": 480,
+    "intentional_overload": false,
+    "documented_exception": true
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p02",
+    "block": "b02",
+    "characters": 170,
+    "minimum": 148,
+    "maximum": 175,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p02",
+    "block": "b03",
+    "characters": 170,
+    "minimum": 148,
+    "maximum": 175,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p02",
+    "block": "b04",
+    "characters": 167,
+    "minimum": 148,
+    "maximum": 175,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p02",
+    "block": "b05",
+    "characters": 165,
+    "minimum": 148,
+    "maximum": 175,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p03",
+    "block": "b06",
+    "characters": 160,
+    "minimum": 149,
+    "maximum": 176,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p03",
+    "block": "b07",
+    "characters": 155,
+    "minimum": 137,
+    "maximum": 162,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p04",
+    "block": "b08",
+    "characters": 97,
+    "minimum": 92,
+    "maximum": 109,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p04",
+    "block": "b09",
+    "characters": 101,
+    "minimum": 92,
+    "maximum": 109,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p04",
+    "block": "b10",
+    "characters": 127,
+    "minimum": 125,
+    "maximum": 135,
+    "intentional_overload": true,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p04",
+    "block": "b11",
+    "characters": 101,
+    "minimum": 92,
+    "maximum": 109,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p04",
+    "block": "b12",
+    "characters": 101,
+    "minimum": 92,
+    "maximum": 109,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p04",
+    "block": "b13",
+    "characters": 129,
+    "minimum": 125,
+    "maximum": 135,
+    "intentional_overload": true,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p05",
+    "block": "b14",
+    "characters": 319,
+    "minimum": 319,
+    "maximum": 376,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p05",
+    "block": "b15",
+    "characters": 158,
+    "minimum": 138,
+    "maximum": 163,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p05",
+    "block": "b16",
+    "characters": 173,
+    "minimum": 148,
+    "maximum": 175,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p06",
+    "block": "b17",
+    "characters": 342,
+    "minimum": 328,
+    "maximum": 386,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p06",
+    "block": "b18",
+    "characters": 363,
+    "minimum": 328,
+    "maximum": 386,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p07",
+    "block": "b19",
+    "characters": 17,
+    "minimum": 14,
+    "maximum": 17,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p07",
+    "block": "b20",
+    "characters": 164,
+    "minimum": 141,
+    "maximum": 167,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p09",
+    "block": "b24",
+    "characters": 155,
+    "minimum": 131,
+    "maximum": 155,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p09",
+    "block": "b25",
+    "characters": 171,
+    "minimum": 154,
+    "maximum": 182,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p09",
+    "block": "b26",
+    "characters": 96,
+    "minimum": 89,
+    "maximum": 105,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p09",
+    "block": "b27",
+    "characters": 213,
+    "minimum": 190,
+    "maximum": 224,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p09",
+    "block": "b28",
+    "characters": 192,
+    "minimum": 166,
+    "maximum": 196,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p09",
+    "block": "b29",
+    "characters": 134,
+    "minimum": 119,
+    "maximum": 141,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p10",
+    "block": "b30",
+    "characters": 259,
+    "minimum": 242,
+    "maximum": 285,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p10",
+    "block": "b31",
+    "characters": 262,
+    "minimum": 242,
+    "maximum": 285,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p10",
+    "block": "b32",
+    "characters": 264,
+    "minimum": 242,
+    "maximum": 285,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p11",
+    "block": "b33",
+    "characters": 154,
+    "minimum": 148,
+    "maximum": 175,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p11",
+    "block": "b34",
+    "characters": 166,
+    "minimum": 145,
+    "maximum": 171,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p12",
+    "block": "b35",
+    "characters": 172,
+    "minimum": 162,
+    "maximum": 191,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p12",
+    "block": "b36",
+    "characters": 183,
+    "minimum": 162,
+    "maximum": 191,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p13",
+    "block": "b37",
+    "characters": 157,
+    "minimum": 139,
+    "maximum": 164,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p13",
+    "block": "b38",
+    "characters": 156,
+    "minimum": 138,
+    "maximum": 163,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p13",
+    "block": "b39",
+    "characters": 243,
+    "minimum": 217,
+    "maximum": 256,
+    "intentional_overload": false,
+    "documented_exception": false
+  },
+  {
+    "variant": "la-noche-sin-luces-es-n3",
+    "page": "p14",
+    "block": "b40",
+    "characters": 405,
+    "minimum": 403,
+    "maximum": 475,
+    "intentional_overload": false,
+    "documented_exception": false
+  }
+]

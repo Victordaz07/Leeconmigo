@@ -1,0 +1,1026 @@
+{
+  "id": "la-noche-sin-luces-es-n2",
+  "familyId": "la-noche-sin-luces",
+  "language": "es",
+  "title": "Mila, Pipo y la noche en que se apagaron las luciérnagas",
+  "level": 2,
+  "category": "amistad",
+  "description": "Mila, Pipo y sus amigos buscan las luces perdidas y descubren cómo la calma y la compañía ayudan a encontrar valor.",
+  "cover": {
+    "src": "stories/la-noche-sin-luces/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Mila y Pipo, abajo a la izquierda, miran un cielo nocturno lleno de luciérnagas."
+  },
+  "heroFocus": {
+    "x": 25,
+    "y": 68
+  },
+  "reviewWords": [
+    "luciérnaga",
+    "adivinanza",
+    "oscuridad"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mila sale de casa con un frasco vacío y Pipo la acompaña al jardín al atardecer."
+      },
+      "template": "book-1",
+      "blocks": [
+        {
+          "id": "b01",
+          "title": "Al jardín",
+          "voice": "narration",
+          "lines": [
+            "Mila y Pipo salen al jardín con un frasco vacío para mirar las luces de la noche.",
+            "El cielo de otoño pierde su color naranja y las sombras se alargan junto a la casa.",
+            "Una luz, dos luces… ¿dónde están las luces?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El jardín oscuro, Mila con el frasco, Pipo olfateando el suelo y Tito llorando, en cuatro viñetas."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b02",
+          "title": "Sin luces",
+          "voice": "narration",
+          "lines": [
+            "Bajo el árbol, el jardín está en penumbra.",
+            "Las hojas se mueven, pero no aparece ningún puntito amarillo."
+          ]
+        },
+        {
+          "id": "b03",
+          "title": "El frasco vacío",
+          "voice": "narration",
+          "lines": [
+            "Mila alza el frasco vacío para verlo mejor.",
+            "Busca una luciérnaga cerca del arbusto y solo encuentra hojas."
+          ]
+        },
+        {
+          "id": "b04",
+          "title": "Un rastro",
+          "voice": "narration",
+          "lines": [
+            "Pipo acerca la nariz a la tierra mojada.",
+            "Él descubre un rastro pequeño que se pierde entre las raíces."
+          ]
+        },
+        {
+          "id": "b05",
+          "title": "Tito llora",
+          "voice": "dialogue",
+          "lines": [
+            "Tito sale del arbusto con lágrimas en las mejillas.",
+            "—¡Se apagaron! —dice el erizo, señalando el cielo."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Quién estaba llorando?",
+            "options": [
+              {
+                "text": "Tito"
+              },
+              {
+                "text": "Mila"
+              },
+              {
+                "text": "Dora"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Sí, Tito llegó con lágrimas en las mejillas.",
+            "retryFeedback": "Mira el último cuadro de la página dos: busca las lágrimas."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué personaje necesitaba consuelo al llegar al jardín?",
+            "options": [
+              {
+                "text": "Tito, que lloraba por las luces apagadas."
+              },
+              {
+                "text": "Mila, porque había perdido el frasco."
+              },
+              {
+                "text": "Dora, porque no encontraba su libro."
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Eso es: Tito estaba preocupado y sus amigos lo escucharon.",
+            "retryFeedback": "Vuelve a la página dos y observa quién aparece llorando."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Tito señala la nube que cubre la luna; Mila y Pipo se preparan para ayudarlo."
+      },
+      "template": "slant-2",
+      "blocks": [
+        {
+          "id": "b06",
+          "title": "La nube",
+          "voice": "dialogue",
+          "lines": [
+            "—Una nube tapó la luna —explica Tito.",
+            "—La oscuridad asustó a las luciérnagas y escondieron su luz —añade."
+          ]
+        },
+        {
+          "id": "b07",
+          "title": "Vamos juntos",
+          "voice": "dialogue",
+          "lines": [
+            "—Vamos a buscarlas juntos —propone Mila.",
+            "—Yo iré con ustedes, aunque tenga miedo —responde Pipo."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p04",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Una ramita rota, Pipo en un charco, un búho, Tito asustado, Pipo estornudando y el arroyo."
+      },
+      "template": "six-up",
+      "blocks": [
+        {
+          "id": "b08",
+          "title": "La ramita",
+          "voice": "narration",
+          "lines": [
+            "¡Crac!",
+            "Una ramita se rompe bajo el zapato de Mila."
+          ]
+        },
+        {
+          "id": "b09",
+          "title": "El charco",
+          "voice": "narration",
+          "lines": [
+            "¡Splash!",
+            "Pipo cae en un charco y levanta gotas hasta sus orejas."
+          ]
+        },
+        {
+          "id": "b10",
+          "title": "El búho",
+          "voice": "narration",
+          "lines": [
+            "¡Uuuh!",
+            "Un búho canta desde su rama y los tres se quedan quietos."
+          ]
+        },
+        {
+          "id": "b11",
+          "title": "El corazón de Tito",
+          "voice": "narration",
+          "lines": [
+            "¡Pum, pum!",
+            "El corazón de Tito golpea como un tambor pequeño."
+          ]
+        },
+        {
+          "id": "b12",
+          "title": "El estornudo",
+          "voice": "narration",
+          "lines": [
+            "¡Achís!",
+            "Pipo estornuda, se sacude la nariz y sigue adelante."
+          ]
+        },
+        {
+          "id": "b13",
+          "title": "El arroyo",
+          "voice": "narration",
+          "lines": [
+            "Ya están junto al arroyo.",
+            "Una luz, dos luces… ¿dónde están las luces?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p05",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El puente de corteza sobre el arroyo; Tito cruza mientras Pipo y Mila esperan su turno."
+      },
+      "template": "slant-3",
+      "blocks": [
+        {
+          "id": "b14",
+          "title": "El puente de corteza",
+          "voice": "narration",
+          "lines": [
+            "El puente de corteza que construyeron sigue apoyado sobre sus dos piedras.",
+            "Mila mira la otra orilla y recuerda que deben cruzar de uno en uno.",
+            "El agua corre por debajo mientras los amigos preparan sus pasos."
+          ]
+        },
+        {
+          "id": "b15",
+          "title": "El primero",
+          "voice": "narration",
+          "lines": [
+            "Tito cruza primero con las patas muy juntas.",
+            "Cuenta uno al llegar a la otra orilla y se vuelve para mirar."
+          ]
+        },
+        {
+          "id": "b16",
+          "title": "Los siguientes",
+          "voice": "narration",
+          "lines": [
+            "Pipo va segundo, con la cola levantada.",
+            "Mila va tercera y dice tres al llegar; todos han cruzado con cuidado."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Quién cruzó primero?",
+            "options": [
+              {
+                "text": "Mila"
+              },
+              {
+                "text": "Pipo"
+              },
+              {
+                "text": "Tito"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "Sí, Tito fue el primero en cruzar.",
+            "retryFeedback": "Mira el cuadro de abajo a la izquierda en la página cinco."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué orden siguieron para cruzar el puente?",
+            "options": [
+              {
+                "text": "Mila, Tito y Pipo."
+              },
+              {
+                "text": "Pipo, Mila y Tito."
+              },
+              {
+                "text": "Tito, Pipo y Mila."
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "Exacto: esperaron su turno y cruzaron de uno en uno.",
+            "retryFeedback": "Relee los dos cuadros de abajo en la página cinco y sigue sus turnos."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p06",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mila, Pipo y Tito ante el árbol hueco; Dora sostiene su libro azul con una estrella."
+      },
+      "template": "book-2",
+      "blocks": [
+        {
+          "id": "b17",
+          "title": "Dora y su libro",
+          "voice": "narration",
+          "lines": [
+            "En lo alto de la colina hay un árbol hueco donde vive Dora, la cigüeña.",
+            "Ella baja con un libro azul que tiene una estrella amarilla en la tapa.",
+            "Es el libro de las luces, y sus hojas guardan una manera de ayudar a quienes sienten miedo."
+          ]
+        },
+        {
+          "id": "b18",
+          "title": "La adivinanza",
+          "voice": "dialogue",
+          "lines": [
+            "Dora les propone una adivinanza antes de abrir el libro.",
+            "—Tengo hojas, pero no soy árbol; cuento historias, pero no tengo boca: ¿qué soy? —pregunta.",
+            "Mila repite las pistas bajito mientras Pipo mira las hojas del árbol y Tito escucha atento."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué guarda Dora?",
+            "options": [
+              {
+                "text": "Un frasco"
+              },
+              {
+                "text": "El libro de las luces"
+              },
+              {
+                "text": "Una rama"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Sí, Dora cuida el libro de las luces.",
+            "retryFeedback": "Mira lo que Dora sostiene en la página seis."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué guarda Dora en el árbol hueco de la colina?",
+            "options": [
+              {
+                "text": "Un frasco de cristal que sirve para llevar el agua del arroyo hasta su casa."
+              },
+              {
+                "text": "El libro de las luces, cuyas páginas muestran cómo ayudar a quienes sienten miedo."
+              },
+              {
+                "text": "Una caja de hojas secas que usa para cubrir el puente cuando empieza a llover."
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Sí, el libro guarda una forma de ayudar a los demás.",
+            "retryFeedback": "Vuelve a la página seis: observa la tapa con la estrella y relee lo que trae Dora."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p07",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Un relámpago cruza el cielo; Tito se esconde detrás de Mila bajo una estrella vacía de cómic."
+      },
+      "template": "burst-2",
+      "blocks": [
+        {
+          "id": "b19",
+          "title": "El trueno",
+          "voice": "narration",
+          "lines": [
+            "¡Pum! ¡Pum!"
+          ]
+        },
+        {
+          "id": "b20",
+          "title": "Muy cerca",
+          "voice": "narration",
+          "lines": [
+            "Un trueno hace que Tito se esconda detrás de Mila.",
+            "Tiembla como un niño que oye un ruido nuevo, pero ella se queda a su lado."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p08",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mila sentada pensando, con una bombilla amarilla sobre la cabeza y un libro a su lado."
+      },
+      "blocks": [
+        {
+          "id": "b21",
+          "title": "La canción",
+          "voice": "narration",
+          "lines": [
+            "Una luz, dos luces… ¿dónde están las luces?"
+          ]
+        },
+        {
+          "id": "b22",
+          "title": "Las pistas",
+          "voice": "narration",
+          "lines": [
+            "Mila piensa que las hojas pueden ser verdes o estar hechas de papel.",
+            "También recuerda las historias que lee en casa."
+          ]
+        },
+        {
+          "id": "b23",
+          "title": "La respuesta",
+          "voice": "dialogue",
+          "lines": [
+            "—¡Un libro! —dice al juntar las dos pistas de la adivinanza."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué pista ayudó a Mila?",
+            "options": [
+              {
+                "text": "El trueno"
+              },
+              {
+                "text": "Las hojas"
+              },
+              {
+                "text": "El charco"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Sí, pensó en las hojas de papel de un libro.",
+            "retryFeedback": "Relee la página ocho y fíjate en las dos clases de hojas."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Cómo encontró Mila la respuesta a la adivinanza?",
+            "options": [
+              {
+                "text": "Escuchó el trueno y pensó que venía de una tapa."
+              },
+              {
+                "text": "Relacionó las hojas de papel con las historias de un libro."
+              },
+              {
+                "text": "Miró el frasco y descubrió una luz escondida dentro."
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Eso es: unió las pistas para encontrar una respuesta que encajara.",
+            "retryFeedback": "Relee el pensamiento de Mila en la página ocho: ¿qué objeto tiene hojas y cuenta historias?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p09",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Un libro abierto, Mila respirando, Dora contando con uno, dos y tres dedos, y Mila cantando."
+      },
+      "template": "manga-6",
+      "blocks": [
+        {
+          "id": "b24",
+          "title": "El libro abierto",
+          "voice": "narration",
+          "lines": [
+            "Dora abre el libro y muestra sus dibujos.",
+            "En las páginas hay un pecho que respira, dedos que cuentan y una boca que canta."
+          ]
+        },
+        {
+          "id": "b25",
+          "title": "Respirar hondo",
+          "voice": "dialogue",
+          "lines": [
+            "—¡Ánimo! —dice Dora con voz tranquila.",
+            "Todos toman aire por la nariz y lo sueltan despacio, como si movieran una pluma."
+          ]
+        },
+        {
+          "id": "b26",
+          "title": "Uno",
+          "voice": "narration",
+          "lines": [
+            "Dora levanta un dedo y dice uno.",
+            "Tito la mira e imita el gesto."
+          ]
+        },
+        {
+          "id": "b27",
+          "title": "Dos",
+          "voice": "narration",
+          "lines": [
+            "Dora muestra dos dedos y cuenta dos sin correr.",
+            "Los amigos siguen el ritmo juntos, dejando un ratito de calma entre un número y otro."
+          ]
+        },
+        {
+          "id": "b28",
+          "title": "Tres",
+          "voice": "narration",
+          "lines": [
+            "Dora levanta tres dedos para terminar la cuenta.",
+            "Pipo ya no aprieta las alas contra el cuerpo y Tito siente que su corazón va más lento."
+          ]
+        },
+        {
+          "id": "b29",
+          "title": "Cantar bajito",
+          "voice": "narration",
+          "lines": [
+            "Mila empieza una canción muy suave.",
+            "Pipo la acompaña más y más y más, siempre bajito para no asustar a nadie."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-10.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Tres luciérnagas en columnas separadas, con brillos de intensidad creciente."
+      },
+      "template": "book-3",
+      "blocks": [
+        {
+          "id": "b30",
+          "title": "La primera luz",
+          "voice": "narration",
+          "lines": [
+            "Una luciérnaga parpadeó cerca de una hoja y dejó ver un brillo pequeño.",
+            "Es la primera que se anima a salir de su escondite.",
+            "Los amigos siguen cantando sin acercarse demasiado."
+          ]
+        },
+        {
+          "id": "b31",
+          "title": "La segunda luz",
+          "voice": "narration",
+          "lines": [
+            "La segunda luciérnaga enciende su luz junto a otra hoja del camino.",
+            "Mila mira cómo los dos puntitos brillan a la vez.",
+            "No intenta atraparlos: el frasco puede llenarse de luz sin cerrar su boca."
+          ]
+        },
+        {
+          "id": "b32",
+          "title": "La tercera luz",
+          "voice": "narration",
+          "lines": [
+            "La tercera aparece resplandeciente entre las hojas oscuras del jardín.",
+            "Ya hay tres pequeñas luces que parecen escucharse unas a otras.",
+            "Tito siente una alegría extraordinariamente grande."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Cómo aparecieron las primeras luces?",
+            "options": [
+              {
+                "text": "Una, luego dos y luego tres"
+              },
+              {
+                "text": "Tres y luego una"
+              },
+              {
+                "text": "Todas a la vez"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Sí, se encendieron una tras otra.",
+            "retryFeedback": "Sigue las tres columnas de la página diez, de izquierda a derecha."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué describe mejor cómo comenzaron a encenderse?",
+            "options": [
+              {
+                "text": "La primera salió y después se sumaron otras dos."
+              },
+              {
+                "text": "Las tres se apagaron antes de que saliera la primera."
+              },
+              {
+                "text": "Todas las luciérnagas del jardín se encendieron a la vez."
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Exacto: la luz fue apareciendo poco a poco.",
+            "retryFeedback": "Relee las tres columnas de la página diez y busca primera, segunda y tercera."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p11",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-11.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Seis luces sobre el cielo oscuro; otras tres aparecen mientras la nube se aleja y los amigos miran."
+      },
+      "template": "bolt-2",
+      "blocks": [
+        {
+          "id": "b33",
+          "title": "Cuatro, cinco, seis",
+          "voice": "narration",
+          "lines": [
+            "Cuatro, cinco, seis: las luces crecen sobre el camino.",
+            "Una luz, dos luces… ¿dónde están las luces?"
+          ]
+        },
+        {
+          "id": "b34",
+          "title": "Siete, ocho, nueve",
+          "voice": "narration",
+          "lines": [
+            "Siete, ocho, nueve: aparecen otras tres entre las ramas.",
+            "El cielo se llena de puntitos y la nube empieza a moverse."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p12",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-12.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El cielo se llena de luciérnagas y la nube se aleja; Tito ríe feliz."
+      },
+      "template": "two-up",
+      "blocks": [
+        {
+          "id": "b35",
+          "title": "Salen todas",
+          "voice": "dialogue",
+          "lines": [
+            "—La nube se va y salen todas —dice Mila.",
+            "—Nuestra canción les dio valor —responde Pipo, mirando las luces."
+          ]
+        },
+        {
+          "id": "b36",
+          "title": "La risa de Tito",
+          "voice": "dialogue",
+          "lines": [
+            "—Y ustedes me dieron valor a mí —añade Tito.",
+            "El erizo se ríe con ganas; las lágrimas ya se han secado en sus mejillas."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q06",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué ayudó a las luciérnagas?",
+            "options": [
+              {
+                "text": "Un grito"
+              },
+              {
+                "text": "Una carrera"
+              },
+              {
+                "text": "Una canción suave"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "Sí, la canción suave las ayudó a sentirse acompañadas.",
+            "retryFeedback": "Recuerda cómo cantan en la página nueve y mira las luces de la página doce."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué se animaron a salir las luciérnagas?",
+            "options": [
+              {
+                "text": "Porque Tito golpeó el árbol para despertarlas."
+              },
+              {
+                "text": "Porque Mila las encerró dentro del frasco."
+              },
+              {
+                "text": "Porque las voces suaves y la compañía les dieron valor."
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "Sí, los amigos las ayudaron con calma y compañía.",
+            "retryFeedback": "Relee lo que dice Pipo en la página doce y recuerda la canción."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p13",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-13.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Pipo lleva el frasco luminoso, los amigos cruzan el puente y Mila contempla el cielo."
+      },
+      "template": "three-up",
+      "blocks": [
+        {
+          "id": "b37",
+          "title": "Un frasco de luz",
+          "voice": "narration",
+          "lines": [
+            "Pipo lleva el frasco abierto, lleno del reflejo de las luces.",
+            "Las luciérnagas vuelan libres a su alrededor."
+          ]
+        },
+        {
+          "id": "b38",
+          "title": "De vuelta al puente",
+          "voice": "narration",
+          "lines": [
+            "Los amigos cruzan de nuevo el puente de corteza.",
+            "Esta vez ven las piedras, el agua y el lugar donde apoyan cada pie."
+          ]
+        },
+        {
+          "id": "b39",
+          "title": "El valor de ayudar",
+          "voice": "narration",
+          "lines": [
+            "Mila entiende que ser valiente no es dejar de sentir miedo.",
+            "También es quedarse cerca de un amigo y ayudarlo a intentarlo, paso a paso.",
+            "Su pequeño grupo regresa a casa más unido."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p14",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-14.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "La casa y el jardín bajo un cielo nocturno lleno de luces amarillas."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b40",
+          "title": "Las luces de casa",
+          "voice": "narration",
+          "lines": [
+            "La casa los espera junto a un jardín alegre e iluminadísimo.",
+            "Mila deja el frasco abierto en el suelo, feliz de ver que la luz puede acompañarlos sin estar encerrada.",
+            "Una luz, dos luces… ¡aquí están las luces!"
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q07",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué hicieron los amigos?",
+            "options": [
+              {
+                "text": "Dejaron solo a Tito"
+              },
+              {
+                "text": "Se ayudaron a ser valientes"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Sí, se acompañaron y se dieron valor.",
+            "retryFeedback": "Piensa en cómo se sentía Tito al principio y cómo termina la historia."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué nos enseña esta aventura?",
+            "options": [
+              {
+                "text": "Ser valiente significa no tener miedo nunca."
+              },
+              {
+                "text": "Ayudar a otros a encontrar valor también es ser valiente."
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Así es: podemos sentir miedo y aun así acompañar a alguien.",
+            "retryFeedback": "Relee lo que comprende Mila en la página trece y mira el final en la catorce."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "luciérnaga": {
+      "syllables": [
+        "lu",
+        "ciér",
+        "na",
+        "ga"
+      ],
+      "definition": "Insecto que produce una pequeña luz."
+    },
+    "adivinanza": {
+      "syllables": [
+        "a",
+        "di",
+        "vi",
+        "nan",
+        "za"
+      ],
+      "definition": "Pregunta con pistas para descubrir algo.",
+      "synonym": "acertijo"
+    },
+    "oscuridad": {
+      "syllables": [
+        "os",
+        "cu",
+        "ri",
+        "dad"
+      ],
+      "definition": "Falta de luz.",
+      "synonym": "penumbra"
+    },
+    "cigüeña": {
+      "syllables": [
+        "ci",
+        "güe",
+        "ña"
+      ],
+      "definition": "Ave grande de patas y pico largos."
+    },
+    "niño": {
+      "syllables": [
+        "ni",
+        "ño"
+      ],
+      "definition": "Persona que todavía está creciendo.",
+      "synonym": "pequeño"
+    },
+    "parpadeó": {
+      "syllables": [
+        "par",
+        "pa",
+        "de",
+        "ó"
+      ],
+      "definition": "Brilló y se apagó un instante.",
+      "synonym": "centelleó"
+    },
+    "iluminadísimo": {
+      "syllables": [
+        "i",
+        "lu",
+        "mi",
+        "na",
+        "dí",
+        "si",
+        "mo"
+      ],
+      "definition": "Que tiene muchísima luz.",
+      "synonym": "muy brillante"
+    },
+    "extraordinariamente": {
+      "syllables": [
+        "ex",
+        "tra",
+        "or",
+        "di",
+        "na",
+        "ria",
+        "men",
+        "te"
+      ],
+      "definition": "De una manera muy especial.",
+      "synonym": "enormemente"
+    },
+    "resplandeciente": {
+      "syllables": [
+        "res",
+        "plan",
+        "de",
+        "cien",
+        "te"
+      ],
+      "definition": "Que brilla mucho.",
+      "synonym": "reluciente"
+    },
+    "luz": {
+      "syllables": [
+        "luz"
+      ],
+      "definition": "Claridad que nos permite ver.",
+      "synonym": "claridad"
+    },
+    "vacío": {
+      "syllables": [
+        "va",
+        "cí",
+        "o"
+      ],
+      "definition": "Que no tiene nada dentro.",
+      "synonym": "desocupado"
+    },
+    "rastro": {
+      "syllables": [
+        "ras",
+        "tro"
+      ],
+      "definition": "Señal que deja alguien al pasar.",
+      "synonym": "huella"
+    },
+    "mojada": {
+      "syllables": [
+        "mo",
+        "ja",
+        "da"
+      ],
+      "definition": "Que tiene agua.",
+      "synonym": "húmeda"
+    },
+    "frasco": {
+      "syllables": [
+        "fras",
+        "co"
+      ],
+      "definition": "Recipiente pequeño, aquí de cristal.",
+      "synonym": "bote"
+    },
+    "corazón": {
+      "syllables": [
+        "co",
+        "ra",
+        "zón"
+      ],
+      "definition": "Parte del cuerpo que impulsa la sangre."
+    },
+    "arroyo": {
+      "syllables": [
+        "ar",
+        "ro",
+        "yo"
+      ],
+      "definition": "Corriente pequeña de agua.",
+      "synonym": "riachuelo"
+    },
+    "corteza": {
+      "syllables": [
+        "cor",
+        "te",
+        "za"
+      ],
+      "definition": "Capa que cubre el tronco de un árbol."
+    },
+    "primero": {
+      "syllables": [
+        "pri",
+        "me",
+        "ro"
+      ],
+      "definition": "Que va antes que los demás.",
+      "synonym": "inicial"
+    },
+    "segundo": {
+      "syllables": [
+        "se",
+        "gun",
+        "do"
+      ],
+      "definition": "Que va justo después del primero."
+    },
+    "hueco": {
+      "syllables": [
+        "hue",
+        "co"
+      ],
+      "definition": "Que tiene un espacio vacío dentro."
+    }
+  }
+}

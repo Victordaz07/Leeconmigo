@@ -1,0 +1,854 @@
+{
+  "id": "el-puente-que-desaparecia-es-n6",
+  "familyId": "el-puente-que-desaparecia",
+  "language": "es",
+  "title": "El puente que desaparecía",
+  "level": 6,
+  "category": "oficios",
+  "description": "Zoe aprende a diseñar videojuegos.",
+  "cover": {
+    "src": "stories/el-puente-que-desaparecia/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Escena de un robot y una isla."
+  },
+  "heroFocus": {
+    "x": 30,
+    "y": 55
+  },
+  "reviewWords": [
+    "programar",
+    "icono",
+    "prototipo"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/el-puente-que-desaparecia/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de un robot y una isla."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b01",
+          "voice": "narration",
+          "title": "Un robot y una isla",
+          "lines": [
+            "Zoe quería crear videojuegos. Para la feria de profesiones diseñó uno sobre un pequeño robot que llevaba semillas a una isla.",
+            "Su tía Rosa, programadora, le mostró cómo dibujar primero el recorrido en papel. Zoe trazó una orilla, dos plataformas y un puente que aparecía al pulsar el botón correcto.",
+            "Leo, su vecino, quiso ser el primer jugador. Zoe pensaba que en cuanto viera el puente verde sobre el campo verde, sabría cruzar.",
+            "Todavía nadie más había probado el juego."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué debía llevar el robot a la isla?",
+            "options": [
+              {
+                "text": "Semillas"
+              },
+              {
+                "text": "El puente desaparecía demasiado rápido"
+              },
+              {
+                "text": "La pausa no respondía en la última tabla"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Semillas.",
+            "retryFeedback": "Busca la acción observada en esta página."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué Zoe necesitaba otro jugador?",
+            "options": [
+              {
+                "text": "Leo conocía más semillas"
+              },
+              {
+                "text": "Rosa no tenía computadora"
+              },
+              {
+                "text": "Su propia prueba no mostraba todas las dificultades"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Su propia prueba no mostraba todas las dificultades.",
+            "retryFeedback": "Piensa en lo que cambió después de observar."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b02",
+          "voice": "narration",
+          "title": "La primera versión",
+          "lines": [
+            "En la pantalla de Zoe, el robot avanzaba con las flechas del teclado. Había dos botones redondos: uno verde abría el puente y uno rojo devolvía al robot al inicio.",
+            "Zoe había dibujado ambos sin símbolos. Cuando ella jugaba, llegaba a la isla en pocos segundos y las semillas convertían el suelo vacío en un jardín.",
+            "«Funciona», anunció. Rosa preguntó si funcionar en las manos de Zoe significaba que ya estaba listo para todos.",
+            "Zoe abrió la puerta para que entrara Leo."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Cómo movía Zoe al robot?",
+            "options": [
+              {
+                "text": "Un modo sin cuenta regresiva"
+              },
+              {
+                "text": "Las guardó para una versión futura"
+              },
+              {
+                "text": "Con las flechas del teclado"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Con las flechas del teclado.",
+            "retryFeedback": "Busca la acción observada en esta página."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué quería averiguar Rosa?",
+            "options": [
+              {
+                "text": "Si el robot tenía nombre"
+              },
+              {
+                "text": "Si otros también podían usar el juego"
+              },
+              {
+                "text": "Si Zoe sabía dibujar jardines"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Si otros también podían usar el juego.",
+            "retryFeedback": "Piensa en lo que cambió después de observar."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/el-puente-que-desaparecia/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de el puente invisible."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b03",
+          "voice": "narration",
+          "title": "El puente invisible",
+          "lines": [
+            "Leo llevó el robot hasta la orilla. Miró los dos círculos y eligió uno.",
+            "El robot volvió al principio. Lo intentó otra vez, más despacio, y volvió a pasar lo mismo.",
+            "«No sé cuál botón es cuál, y el puente se pierde en el pasto», explicó. Zoe estuvo a punto de decirle que simplemente mirara mejor, pero Rosa le propuso escuchar sin interrumpir.",
+            "Leo señaló la pantalla: para él, los dos círculos se parecían y el borde del puente casi no aparecía."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué problema describió Leo?",
+            "options": [
+              {
+                "text": "Leo"
+              },
+              {
+                "text": "No distinguía los botones ni el puente"
+              },
+              {
+                "text": "Una animación de brotes y del robot"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! No distinguía los botones ni el puente.",
+            "retryFeedback": "Busca la acción observada en esta página."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué ayudó a Zoe a mejorar?",
+            "options": [
+              {
+                "text": "Escuchar la experiencia de Leo"
+              },
+              {
+                "text": "Decirle que mirara mejor"
+              },
+              {
+                "text": "Quitar el puente"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Escuchar la experiencia de Leo.",
+            "retryFeedback": "Piensa en lo que cambió después de observar."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p04",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b04",
+          "voice": "narration",
+          "title": "Cambiar la pregunta",
+          "lines": [
+            "Zoe escribió en su libreta: «¿Qué hice mal?». Rosa tachó con suavidad la palabra mal y sugirió otra pregunta: «¿Qué necesita el jugador para saber qué hacer?».",
+            "Zoe se dio cuenta de que había usado el color como única pista. El juego podía conservar sus colores, pero necesitaba más señales.",
+            "Leo propuso un icono de puente en el botón que lo abría y un icono de casa en el que reiniciaba. Zoe dibujó también un borde oscuro alrededor de cada tabla del puente."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué pista añadió Zoe a los botones?",
+            "options": [
+              {
+                "text": "Iconos de puente y casa"
+              },
+              {
+                "text": "Los organizó junto a los cambios y pruebas"
+              },
+              {
+                "text": "Escuchar a los jugadores"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Iconos de puente y casa.",
+            "retryFeedback": "Busca la acción observada en esta página."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué los iconos mejoraban los botones?",
+            "options": [
+              {
+                "text": "Hacían el juego más corto"
+              },
+              {
+                "text": "Cambiaban las semillas"
+              },
+              {
+                "text": "Daban una pista además del color"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Daban una pista además del color.",
+            "retryFeedback": "Piensa en lo que cambió después de observar."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p05",
+      "illustration": {
+        "src": "stories/el-puente-que-desaparecia/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de una versión distinta."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b05",
+          "voice": "narration",
+          "title": "Una versión distinta",
+          "lines": [
+            "Al día siguiente, Zoe enseñó el juego revisado. Leo reconoció el botón del puente por su icono sin tener que nombrar un color.",
+            "El borde oscuro hacía visible el camino. Cruzó, pero el puente desapareció antes de que el robot alcanzara la última tabla.",
+            "«Ahora veo qué hacer, pero se acaba muy rápido», dijo. Zoe miró su temporizador.",
+            "Lo había ajustado según la velocidad con que ella misma jugaba. En vez de defender su tiempo favorito, lo anotó como un problema nuevo."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué dificultad apareció después?",
+            "options": [
+              {
+                "text": "La pausa no respondía en la última tabla"
+              },
+              {
+                "text": "Semillas"
+              },
+              {
+                "text": "El puente desaparecía demasiado rápido"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! El puente desaparecía demasiado rápido.",
+            "retryFeedback": "Busca la acción observada en esta página."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué mostró la segunda prueba?",
+            "options": [
+              {
+                "text": "El puente nunca apareció"
+              },
+              {
+                "text": "Resolver una dificultad puede revelar otra"
+              },
+              {
+                "text": "Leo no quería jugar"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Resolver una dificultad puede revelar otra.",
+            "retryFeedback": "Piensa en lo que cambió después de observar."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p06",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b06",
+          "voice": "narration",
+          "title": "Modo sin prisa",
+          "lines": [
+            "Rosa ayudó a Zoe a crear una opción sin cuenta regresiva. El desafío principal seguía para quien lo quisiera, pero Leo podía explorar el recorrido sin correr.",
+            "Zoe añadió una pausa visible para que cualquier jugador pudiera detenerse. Leo llevó las semillas a la isla y volvió a jugar, esta vez por gusto, no para demostrar nada.",
+            "Zoe descubrió que dar opciones no le quitaba aventura al juego. Permitía que más personas encontraran su propia manera de disfrutarlo."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q06",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué añadió Zoe para jugar sin correr?",
+            "options": [
+              {
+                "text": "Con las flechas del teclado"
+              },
+              {
+                "text": "Un modo sin cuenta regresiva"
+              },
+              {
+                "text": "Las guardó para una versión futura"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Un modo sin cuenta regresiva.",
+            "retryFeedback": "Busca la acción observada en esta página."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué descubrió Zoe sobre las opciones?",
+            "options": [
+              {
+                "text": "Permiten distintas maneras de disfrutar"
+              },
+              {
+                "text": "Eliminan toda aventura"
+              },
+              {
+                "text": "Impiden probar el juego"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Permiten distintas maneras de disfrutar.",
+            "retryFeedback": "Piensa en lo que cambió después de observar."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p07",
+      "illustration": {
+        "src": "stories/el-puente-que-desaparecia/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de otra persona, otra pista."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b07",
+          "voice": "narration",
+          "title": "Otra persona, otra pista",
+          "lines": [
+            "Zoe invitó a Mina, que solía jugar con el sonido muy bajo porque compartía habitación. Cuando las semillas llegaban a la isla, sonaba una campana, pero no ocurría nada visible de inmediato.",
+            "Mina creyó que el nivel seguía. Zoe y Rosa observaron en silencio antes de explicar.",
+            "Añadieron una animación: brotes verdes salían de la tierra y el robot levantaba los brazos. Ahora el final podía entenderse sin la campana.",
+            "Zoe comprendió que una prueba con Leo no revelaba todas las necesidades."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q07",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué se añadió para entender el final sin sonido?",
+            "options": [
+              {
+                "text": "Una animación de brotes y del robot"
+              },
+              {
+                "text": "Leo"
+              },
+              {
+                "text": "No distinguía los botones ni el puente"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Una animación de brotes y del robot.",
+            "retryFeedback": "Busca la acción observada en esta página."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué probaron con Mina?",
+            "options": [
+              {
+                "text": "Necesitaban cambiar de isla"
+              },
+              {
+                "text": "Leo se llevó el teclado"
+              },
+              {
+                "text": "Otra persona podía revelar otra barrera"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Otra persona podía revelar otra barrera.",
+            "retryFeedback": "Piensa en lo que cambió después de observar."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p08",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b08",
+          "voice": "narration",
+          "title": "La lista de cambios",
+          "lines": [
+            "En su libreta, Zoe organizó los comentarios en una lista: reconocer botones, ver el puente, controlar el tiempo y entender el final. Al lado de cada punto anotó lo que había cambiado y quién lo había probado.",
+            "Rosa explicó que programar también consiste en revisar, escuchar y volver a probar. Zoe no podía prometer que el juego serviría igual para todas las personas, pero sí podía seguir preguntando.",
+            "Invitó a dos compañeros más y dejó lápices para que dibujaran cualquier parte confusa."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q08",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué hizo Zoe con los comentarios?",
+            "options": [
+              {
+                "text": "Escuchar a los jugadores"
+              },
+              {
+                "text": "Iconos de puente y casa"
+              },
+              {
+                "text": "Los organizó junto a los cambios y pruebas"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Los organizó junto a los cambios y pruebas.",
+            "retryFeedback": "Busca la acción observada en esta página."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué representa la lista de cambios?",
+            "options": [
+              {
+                "text": "Una receta de semillas"
+              },
+              {
+                "text": "Un proceso de escuchar, ajustar y probar"
+              },
+              {
+                "text": "Una lista de ganadores"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Un proceso de escuchar, ajustar y probar.",
+            "retryFeedback": "Piensa en lo que cambió después de observar."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p09",
+      "illustration": {
+        "src": "stories/el-puente-que-desaparecia/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de el ensayo final."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b09",
+          "voice": "narration",
+          "title": "El ensayo final",
+          "lines": [
+            "La tarde anterior a la feria, Leo eligió el modo sin prisa y Mina apagó el sonido. Ambos vieron los iconos, encontraron el puente y comprendieron cuándo crecían las plantas.",
+            "Zoe probó también el desafío con tiempo y se divirtió. Entonces apareció un fallo pequeño: el botón de pausa no respondía cuando el robot estaba en la última tabla.",
+            "Rosa y Zoe siguieron los pasos hasta encontrar dónde ocurría. Lo corrigieron y repitieron la prueba.",
+            "El juego era mejor porque todavía aceptaba correcciones."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q09",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué fallo encontraron al final?",
+            "options": [
+              {
+                "text": "El puente desaparecía demasiado rápido"
+              },
+              {
+                "text": "La pausa no respondía en la última tabla"
+              },
+              {
+                "text": "Semillas"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! La pausa no respondía en la última tabla.",
+            "retryFeedback": "Busca la acción observada en esta página."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué repitieron la prueba tras corregir?",
+            "options": [
+              {
+                "text": "Para comprobar que la pausa funcionara"
+              },
+              {
+                "text": "Para cambiar el color del robot"
+              },
+              {
+                "text": "Para contar los árboles"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Para comprobar que la pausa funcionara.",
+            "retryFeedback": "Piensa en lo que cambió después de observar."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p10",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b10",
+          "voice": "narration",
+          "title": "La invitación",
+          "lines": [
+            "Zoe preparó su mesa con una pantalla, un mando sencillo y tarjetas de papel que mostraban los iconos. Dejó sitio para dos jugadores y un cartel sin promesas exageradas: había un juego para probar y comentarios que podían ayudar a mejorarlo.",
+            "Leo llevó un pequeño dibujo de una isla con árboles distintos. Mina sugirió que el robot pudiera escoger entre varias semillas.",
+            "Zoe guardó ambas ideas para una versión futura. No tenía que añadirlas a última hora para escuchar de verdad."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q10",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué hizo Zoe con las ideas nuevas?",
+            "options": [
+              {
+                "text": "Las guardó para una versión futura"
+              },
+              {
+                "text": "Con las flechas del teclado"
+              },
+              {
+                "text": "Un modo sin cuenta regresiva"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Las guardó para una versión futura.",
+            "retryFeedback": "Busca la acción observada en esta página."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué Zoe guardó ideas para después?",
+            "options": [
+              {
+                "text": "No quería jugar con Leo"
+              },
+              {
+                "text": "Había perdido sus tarjetas"
+              },
+              {
+                "text": "Podía escucharlas sin hacer cambios apresurados"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Podía escucharlas sin hacer cambios apresurados.",
+            "retryFeedback": "Piensa en lo que cambió después de observar."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p11",
+      "illustration": {
+        "src": "stories/el-puente-que-desaparecia/page-11.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de todos cruzan."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b11",
+          "voice": "narration",
+          "title": "Todos cruzan",
+          "lines": [
+            "En la feria escolar, Zoe invitó a otros niños a jugar. Camila eligió el modo sin prisa.",
+            "Samuel observó cómo las luces del puente tenían también un contorno claro. Imani encontró el botón de pausa y Gael celebró cuando los brotes llenaron la isla.",
+            "Leo explicó a un visitante por qué los iconos ayudaban. Zoe agradeció cada comentario sin decir que su juego ya era perfecto.",
+            "Había creado una aventura, pero lo que más le gustaba era ver a diferentes personas encontrar un camino."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q11",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Quién explicó por qué ayudaban los iconos?",
+            "options": [
+              {
+                "text": "No distinguía los botones ni el puente"
+              },
+              {
+                "text": "Una animación de brotes y del robot"
+              },
+              {
+                "text": "Leo"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Leo.",
+            "retryFeedback": "Busca la acción observada en esta página."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué muestra la feria?",
+            "options": [
+              {
+                "text": "Zoe jugó sola"
+              },
+              {
+                "text": "Distintos jugadores encontraron caminos para participar"
+              },
+              {
+                "text": "El juego solo servía con sonido"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Distintos jugadores encontraron caminos para participar.",
+            "retryFeedback": "Piensa en lo que cambió después de observar."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p12",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b12",
+          "voice": "narration",
+          "title": "El siguiente nivel",
+          "lines": [
+            "Cuando el gimnasio quedó vacío, Zoe apagó la pantalla. Antes había pensado que una programadora era alguien que escribía instrucciones sin equivocarse.",
+            "Ahora sabía que también diseñaba preguntas para las personas que usarían lo creado. En su libreta dibujó otra isla, pero dejó el puente en blanco.",
+            "Quería escuchar a los jugadores antes de decidir cómo sería. Rosa la acompañó a guardar las cajas.",
+            "Zoe ya imaginaba un próximo nivel, abierto a más de una forma de cruzar."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q12",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué quería hacer Zoe antes de diseñar el próximo puente?",
+            "options": [
+              {
+                "text": "Los organizó junto a los cambios y pruebas"
+              },
+              {
+                "text": "Escuchar a los jugadores"
+              },
+              {
+                "text": "Iconos de puente y casa"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Escuchar a los jugadores.",
+            "retryFeedback": "Busca la acción observada en esta página."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué aprendió Zoe sobre programar?",
+            "options": [
+              {
+                "text": "Incluye escuchar a quienes usarán el producto"
+              },
+              {
+                "text": "Exige no equivocarse jamás"
+              },
+              {
+                "text": "Consiste solo en dibujar robots"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Incluye escuchar a quienes usarán el producto.",
+            "retryFeedback": "Piensa en lo que cambió después de observar."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "programar": {
+      "syllables": [
+        "pro",
+        "gra",
+        "mar"
+      ],
+      "definition": "Crear instrucciones para que una computadora haga algo.",
+      "synonym": "codificar",
+      "example": "Aprendió a programar un juego sencillo en su computadora."
+    },
+    "icono": {
+      "syllables": [
+        "i",
+        "co",
+        "no"
+      ],
+      "definition": "Dibujo pequeño que representa una acción.",
+      "synonym": "símbolo",
+      "example": "Tocó el icono de la cámara para tomar una foto."
+    },
+    "prototipo": {
+      "syllables": [
+        "pro",
+        "to",
+        "ti",
+        "po"
+      ],
+      "definition": "Primera versión para probar una idea.",
+      "synonym": "modelo",
+      "example": "El equipo construyó un prototipo de cartón antes de fabricar el juguete de verdad."
+    },
+    "accesibilidad": {
+      "syllables": [
+        "ac",
+        "ce",
+        "si",
+        "bi",
+        "li",
+        "dad"
+      ],
+      "definition": "Diseño que facilita que diferentes personas puedan usar algo.",
+      "example": "La rampa mejora la accesibilidad de la biblioteca para sillas de ruedas."
+    },
+    "depurar": {
+      "syllables": [
+        "de",
+        "pu",
+        "rar"
+      ],
+      "definition": "Encontrar y corregir fallos de un programa.",
+      "synonym": "corregir",
+      "example": "Pasó la tarde depurando el programa hasta que dejó de fallar."
+    },
+    "opción": {
+      "syllables": [
+        "op",
+        "ción"
+      ],
+      "definition": "Una de varias posibilidades entre las que se puede elegir.",
+      "synonym": "alternativa",
+      "example": "El menú tenía tres opciones de postre para elegir."
+    }
+  }
+}

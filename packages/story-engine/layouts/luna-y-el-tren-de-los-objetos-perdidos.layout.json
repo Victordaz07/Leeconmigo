@@ -1,0 +1,288 @@
+{
+  "familyId": "luna-y-el-tren-de-los-objetos-perdidos",
+  "version": 1,
+  "pages": {
+    "p02": {
+      "blocks": {
+        "b02": {
+          "balloon": {
+            "x": 17,
+            "y": 643,
+            "width": 472,
+            "height": 364
+          },
+          "text": {
+            "x": 38,
+            "y": 658,
+            "width": 430,
+            "height": 334
+          }
+        },
+        "b03": {
+          "balloon": {
+            "x": 531,
+            "y": 643,
+            "width": 472,
+            "height": 364
+          },
+          "text": {
+            "x": 552,
+            "y": 658,
+            "width": 430,
+            "height": 334
+          }
+        },
+        "b04": {
+          "balloon": {
+            "x": 1047,
+            "y": 643,
+            "width": 474,
+            "height": 364
+          },
+          "text": {
+            "x": 1068,
+            "y": 658,
+            "width": 432,
+            "height": 334
+          }
+        }
+      }
+    },
+    "p06": {
+      "blocks": {
+        "b18": {
+          "balloon": {
+            "x": 851,
+            "y": 15,
+            "width": 666,
+            "height": 148
+          },
+          "text": {
+            "x": 872,
+            "y": 30,
+            "width": 624,
+            "height": 118
+          }
+        }
+      }
+    },
+    "p09": {
+      "blocks": {
+        "b28": {
+          "text": {
+            "x": 683,
+            "y": 431,
+            "width": 170,
+            "height": 115
+          }
+        }
+      }
+    },
+    "p10": {
+      "blocks": {
+        "b32": {
+          "balloon": {
+            "x": 23,
+            "y": 529,
+            "width": 714,
+            "height": 130
+          },
+          "text": {
+            "x": 44,
+            "y": 544,
+            "width": 672,
+            "height": 100
+          }
+        },
+        "b33": {
+          "balloon": {
+            "x": 795,
+            "y": 529,
+            "width": 714,
+            "height": 130
+          },
+          "text": {
+            "x": 816,
+            "y": 544,
+            "width": 672,
+            "height": 100
+          }
+        }
+      }
+    },
+    "p11": {
+      "blocks": {
+        "b36": {
+          "balloon": {
+            "x": 23,
+            "y": 531,
+            "width": 718,
+            "height": 124
+          },
+          "text": {
+            "x": 44,
+            "y": 546,
+            "width": 676,
+            "height": 94
+          }
+        },
+        "b37": {
+          "balloon": {
+            "x": 795,
+            "y": 531,
+            "width": 718,
+            "height": 124
+          },
+          "text": {
+            "x": 816,
+            "y": 546,
+            "width": 676,
+            "height": 94
+          }
+        }
+      }
+    },
+    "p13": {
+      "blocks": {
+        "b43": {
+          "balloon": {
+            "x": 21,
+            "y": 373,
+            "width": 448,
+            "height": 120
+          },
+          "text": {
+            "x": 42,
+            "y": 388,
+            "width": 406,
+            "height": 90
+          }
+        },
+        "b44": {
+          "balloon": {
+            "x": 611,
+            "y": 373,
+            "width": 904,
+            "height": 120
+          },
+          "text": {
+            "x": 632,
+            "y": 388,
+            "width": 862,
+            "height": 90
+          }
+        },
+        "b45": {
+          "balloon": {
+            "x": 21,
+            "y": 723,
+            "width": 800,
+            "height": 112
+          },
+          "text": {
+            "x": 42,
+            "y": 738,
+            "width": 758,
+            "height": 82
+          }
+        },
+        "b46": {
+          "balloon": {
+            "x": 931,
+            "y": 723,
+            "width": 584,
+            "height": 110
+          },
+          "text": {
+            "x": 952,
+            "y": 738,
+            "width": 542,
+            "height": 80
+          }
+        }
+      }
+    },
+    "p14": {
+      "blocks": {
+        "b47": {
+          "balloon": {
+            "x": 21,
+            "y": 713,
+            "width": 722,
+            "height": 290
+          },
+          "text": {
+            "x": 42,
+            "y": 728,
+            "width": 680,
+            "height": 260
+          }
+        },
+        "b48": {
+          "balloon": {
+            "x": 793,
+            "y": 713,
+            "width": 724,
+            "height": 290
+          },
+          "text": {
+            "x": 814,
+            "y": 728,
+            "width": 682,
+            "height": 260
+          }
+        }
+      }
+    },
+    "p15": {
+      "blocks": {
+        "b51": {
+          "balloon": {
+            "x": 23,
+            "y": 531,
+            "width": 718,
+            "height": 126
+          },
+          "text": {
+            "x": 44,
+            "y": 546,
+            "width": 676,
+            "height": 96
+          }
+        },
+        "b52": {
+          "balloon": {
+            "x": 795,
+            "y": 531,
+            "width": 720,
+            "height": 126
+          },
+          "text": {
+            "x": 816,
+            "y": 546,
+            "width": 678,
+            "height": 96
+          }
+        }
+      }
+    },
+    "p16": {
+      "blocks": {
+        "b53": {
+          "balloon": {
+            "x": 21,
+            "y": 713,
+            "width": 1496,
+            "height": 292
+          },
+          "text": {
+            "x": 42,
+            "y": 728,
+            "width": 1454,
+            "height": 262
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,226 @@
+{
+  "familyId": "nico-01-la-puerta-de-papel",
+  "version": 1,
+  "pages": {
+    "b1-p01": {
+      "blocks": {
+        "b01": {
+          "balloon": {
+            "x": 996,
+            "y": 0,
+            "width": 540,
+            "height": 775
+          },
+          "text": {
+            "x": 1017,
+            "y": 15,
+            "width": 498,
+            "height": 745
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "b1-p02": {
+      "blocks": {
+        "b02": {
+          "balloon": {
+            "x": 993,
+            "y": 0,
+            "width": 543,
+            "height": 1024
+          },
+          "text": {
+            "x": 1014,
+            "y": 15,
+            "width": 501,
+            "height": 994
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "b1-p04": {
+      "blocks": {
+        "b04": {
+          "balloon": {
+            "x": 908,
+            "y": 0,
+            "width": 628,
+            "height": 1024
+          },
+          "text": {
+            "x": 929,
+            "y": 15,
+            "width": 586,
+            "height": 994
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "b1-p06": {
+      "blocks": {
+        "b06": {
+          "balloon": {
+            "x": 1149,
+            "y": 0,
+            "width": 387,
+            "height": 538
+          },
+          "text": {
+            "x": 1170,
+            "y": 15,
+            "width": 345,
+            "height": 508
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "b1-p09": {
+      "blocks": {
+        "b09": {
+          "balloon": {
+            "x": 1180,
+            "y": 0,
+            "width": 356,
+            "height": 773
+          },
+          "text": {
+            "x": 1201,
+            "y": 15,
+            "width": 314,
+            "height": 743
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "b1-p03": {
+      "blocks": {
+        "b03": {
+          "balloon": {
+            "x": 90,
+            "y": 70,
+            "width": 1356,
+            "height": 884
+          },
+          "text": {
+            "x": 111,
+            "y": 85,
+            "width": 1314,
+            "height": 854
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "b1-p05": {
+      "blocks": {
+        "b05": {
+          "balloon": {
+            "x": 90,
+            "y": 70,
+            "width": 1356,
+            "height": 884
+          },
+          "text": {
+            "x": 111,
+            "y": 85,
+            "width": 1314,
+            "height": 854
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "b1-p07": {
+      "blocks": {
+        "b07": {
+          "balloon": {
+            "x": 90,
+            "y": 70,
+            "width": 1356,
+            "height": 884
+          },
+          "text": {
+            "x": 111,
+            "y": 85,
+            "width": 1314,
+            "height": 854
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "b1-p08": {
+      "blocks": {
+        "b08": {
+          "balloon": {
+            "x": 90,
+            "y": 70,
+            "width": 1356,
+            "height": 884
+          },
+          "text": {
+            "x": 111,
+            "y": 85,
+            "width": 1314,
+            "height": 854
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "b1-p10": {
+      "blocks": {
+        "b10": {
+          "balloon": {
+            "x": 90,
+            "y": 70,
+            "width": 1356,
+            "height": 884
+          },
+          "text": {
+            "x": 111,
+            "y": 85,
+            "width": 1314,
+            "height": 854
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    }
+  }
+}

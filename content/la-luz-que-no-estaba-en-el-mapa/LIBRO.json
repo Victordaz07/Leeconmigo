@@ -1,0 +1,970 @@
+{
+  "slug": "la_luz_que_no_estaba_en_el_mapa",
+  "title": {
+    "es": "La luz que no estaba en el mapa",
+    "en": "The Light That Was Not on the Map"
+  },
+  "subtitle": {
+    "es": "Samuel aprende a investigar el mar",
+    "en": "Samuel learns to investigate the sea"
+  },
+  "chapters": [
+    {
+      "es": "Una pregunta en la orilla",
+      "en": "A Question by the Shore"
+    },
+    {
+      "es": "Dos luces diferentes",
+      "en": "Two Different Lights"
+    },
+    {
+      "es": "Lo que sabemos",
+      "en": "What We Know"
+    }
+  ],
+  "cover": "imagenes/portada.png",
+  "character_sheet": "imagenes/personajes.png",
+  "pages": [
+    {
+      "id": "la_luz_que_no_estaba_en_el_mapa-p01",
+      "number": 1,
+      "chapter": 1,
+      "image": "imagenes/pagina-01.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "Un punto azul",
+          "paragraphs": [
+            "Samuel soñaba con estudiar los animales y las plantas del mar. Una tarde caminó por el paseo costero con su mamá y la bióloga marina Lucía.",
+            "Desde la baranda, vio un punto azul en una ola. Luego apareció otro, más cerca del muelle.",
+            "«¡El mar tiene estrellas!», dijo. Lucía sonrió, pero no le dio un nombre al brillo.",
+            "Le pidió que describiera exactamente lo que había visto. Samuel anotó dos puntos azules que aparecieron y desaparecieron.",
+            "También anotó que el cielo ya estaba oscuro."
+          ],
+          "alt": "Escena de un punto azul.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué anotó Samuel al principio?",
+              "options": [
+                "Dos puntos azules que aparecieron y desaparecieron",
+                "Describió su color, duración y lugar",
+                "Un reflejo constante y unos destellos breves"
+              ],
+              "correctIndex": 0,
+              "hint": "Busca la acción observada en esta página."
+            },
+            "lector": {
+              "question": "¿Por qué Lucía pidió una descripción?",
+              "options": [
+                "Para elegir un nombre bonito",
+                "Para saber quién llegó primero",
+                "Para separar lo visto de una explicación"
+              ],
+              "correctIndex": 2,
+              "hint": "Piensa en lo que cambió después de observar."
+            }
+          }
+        },
+        "en": {
+          "title": "A Blue Spark",
+          "paragraphs": [
+            "Samuel dreamed of studying the animals and plants of the sea. One evening he walked along the coastal path with his mother and marine biologist Lucía.",
+            "From behind the railing, he saw a blue spark in a wave. Then another appeared nearer the pier.",
+            "“The sea has stars!” he said. Lucía smiled, but she did not name the glow.",
+            "She asked him to describe exactly what he had seen. Samuel recorded two blue sparks that appeared and vanished.",
+            "He also wrote that the sky was already dark."
+          ],
+          "alt": "Scene of a blue spark.",
+          "checkpoint": {
+            "explorador": {
+              "question": "What did Samuel record first?",
+              "options": [
+                "Two blue sparks that appeared and vanished",
+                "He described their color, duration, and place",
+                "A steady reflection and brief flashes"
+              ],
+              "correctIndex": 0,
+              "hint": "Look for the action observed on this page."
+            },
+            "lector": {
+              "question": "Why did Lucía ask for a description?",
+              "options": [
+                "To choose a pretty name",
+                "To learn who arrived first",
+                "To separate what was seen from an explanation"
+              ],
+              "correctIndex": 2,
+              "hint": "Think about what changed after observing."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_luz_que_no_estaba_en_el_mapa-p02",
+      "number": 2,
+      "chapter": 1,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "Una idea brillante",
+          "paragraphs": [
+            "En casa, Samuel abrió un libro de oceanografía. Leyó que algunos seres marinos producen luz: eso se llama bioluminiscencia.",
+            "Se imaginó diminutos organismos brillando en cada ola. Quiso regresar corriendo a la playa para tocar el agua, pero su mamá le recordó el acuerdo con Lucía: observarían desde el paseo y revisarían los avisos locales antes de acercarse a la costa.",
+            "Samuel dibujó una estrella junto a su idea. Debajo escribió otra posibilidad: quizá alguna lámpara se reflejaba en el agua."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué otra explicación escribió Samuel?",
+              "options": [
+                "La cámara cambió el aspecto de la oscuridad",
+                "Separó los interruptores de las dos luces",
+                "El reflejo de una lámpara"
+              ],
+              "correctIndex": 2,
+              "hint": "Busca la acción observada en esta página."
+            },
+            "lector": {
+              "question": "¿Por qué Samuel no tocó el agua?",
+              "options": [
+                "Porque la luz estaba en el cielo",
+                "Porque el grupo acordó observar con seguridad",
+                "Porque no le gustaba el mar"
+              ],
+              "correctIndex": 1,
+              "hint": "Piensa en lo que cambió después de observar."
+            }
+          }
+        },
+        "en": {
+          "title": "A Bright Idea",
+          "paragraphs": [
+            "At home, Samuel opened an oceanography book. He read that some sea creatures produce light.",
+            "This is called bioluminescence. He imagined tiny organisms glowing in each wave.",
+            "He wanted to race back to the beach and touch the water, but his mother reminded him of their agreement with Lucía: they would observe from the path and check local advisories before going near the shore. Samuel drew a star beside his idea.",
+            "Under it he wrote another possibility: perhaps a lamp was reflecting on the water."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "What other explanation did Samuel write down?",
+              "options": [
+                "The camera changed how the darkness looked",
+                "He separated the switches for the two lights",
+                "A lamp reflecting on the water"
+              ],
+              "correctIndex": 2,
+              "hint": "Look for the action observed on this page."
+            },
+            "lector": {
+              "question": "Why did Samuel stay out of the water?",
+              "options": [
+                "The light was in the sky",
+                "The group had agreed to observe safely",
+                "He disliked the sea"
+              ],
+              "correctIndex": 1,
+              "hint": "Think about what changed after observing."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_luz_que_no_estaba_en_el_mapa-p03",
+      "number": 3,
+      "chapter": 1,
+      "image": "imagenes/pagina-03.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "La baranda del muelle",
+          "paragraphs": [
+            "Al día siguiente, Lucía llevó una libreta, un reloj y un pequeño plano del paseo. No necesitaban entrar al agua.",
+            "Se colocaron detrás de la baranda, lejos de las rocas resbaladizas. Samuel descubrió una lámpara amarilla en el extremo del muelle.",
+            "Su reflejo hacía una línea larga que temblaba aunque ninguna ola rompiera. Lucía le preguntó si era igual a los puntos azules de la noche anterior.",
+            "Samuel negó con la cabeza: la línea permanecía; los puntos habían aparecido solo por instantes."
+          ],
+          "alt": "Escena de la baranda del muelle.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿En qué se distinguía el reflejo amarillo?",
+              "options": [
+                "Que no sabían con seguridad el origen",
+                "Permanecía visible como una línea",
+                "Solo que no los observaron en esa visita"
+              ],
+              "correctIndex": 1,
+              "hint": "Busca la acción observada en esta página."
+            },
+            "lector": {
+              "question": "¿Por qué importaba comparar la línea y los puntos?",
+              "options": [
+                "Podían tener causas distintas",
+                "Ambos eran dibujos",
+                "La baranda tenía el mismo color"
+              ],
+              "correctIndex": 0,
+              "hint": "Piensa en lo que cambió después de observar."
+            }
+          }
+        },
+        "en": {
+          "title": "The Pier Railing",
+          "paragraphs": [
+            "The next day, Lucía brought a notebook, a watch, and a small map of the path. They did not need to enter the water.",
+            "They stood behind the railing, away from slippery rocks. Samuel spotted a yellow lamp at the end of the pier.",
+            "Its reflection made a long line that trembled even when no wave broke. Lucía asked whether it matched the blue sparks from the night before.",
+            "Samuel shook his head: the line stayed in place, but the sparks had lasted only moments."
+          ],
+          "alt": "Scene of the pier railing.",
+          "checkpoint": {
+            "explorador": {
+              "question": "How was the yellow reflection different?",
+              "options": [
+                "That they did not know the source for certain",
+                "It stayed visible as a line",
+                "Only that they did not observe them on that visit"
+              ],
+              "correctIndex": 1,
+              "hint": "Look for the action observed on this page."
+            },
+            "lector": {
+              "question": "Why compare the line and the sparks?",
+              "options": [
+                "They might have different causes",
+                "They were both drawings",
+                "The railing was the same color"
+              ],
+              "correctIndex": 0,
+              "hint": "Think about what changed after observing."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_luz_que_no_estaba_en_el_mapa-p04",
+      "number": 4,
+      "chapter": 1,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "El mapa de preguntas",
+          "paragraphs": [
+            "Samuel preparó una tabla con tres columnas: lugar, momento y aspecto de la luz. Lucía añadió una cuarta: lo que todavía no sabían.",
+            "El niño marcó la lámpara del muelle y el sitio donde había visto las chispas azules. Eran lugares cercanos, pero no idénticos.",
+            "«Si dos luces se ven juntas, ¿tienen que venir de lo mismo?», preguntó. Lucía dijo que esa era una buena pregunta científica.",
+            "La tabla no resolvía el misterio; ayudaba a no mezclar pistas distintas."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Para qué servía la tabla?",
+              "options": [
+                "Para separar las pistas y lo desconocido",
+                "El origen exacto de los destellos azules",
+                "La consideraría y corregiría su explicación"
+              ],
+              "correctIndex": 0,
+              "hint": "Busca la acción observada en esta página."
+            },
+            "lector": {
+              "question": "¿Por qué agregaron lo que no sabían?",
+              "options": [
+                "Para llenar la libreta",
+                "Para evitar mirar el muelle",
+                "Para no convertir una idea en un hecho"
+              ],
+              "correctIndex": 2,
+              "hint": "Piensa en lo que cambió después de observar."
+            }
+          }
+        },
+        "en": {
+          "title": "A Map of Questions",
+          "paragraphs": [
+            "Samuel made a chart with three columns: place, time, and appearance of the light. Lucía added a fourth: what they still did not know.",
+            "He marked the pier lamp and the place where he had seen the blue sparks. The places were close, but not identical.",
+            "“If two lights appear near each other, must they have the same cause?” he asked. Lucía said it was a good scientific question.",
+            "The chart did not solve the mystery; it kept different clues from being mixed together."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "What was the chart for?",
+              "options": [
+                "To separate clues from unknowns",
+                "The exact source of the blue flashes",
+                "Consider it and revise his explanation"
+              ],
+              "correctIndex": 0,
+              "hint": "Look for the action observed on this page."
+            },
+            "lector": {
+              "question": "Why include what they did not know?",
+              "options": [
+                "To fill the notebook",
+                "To avoid looking at the pier",
+                "So an idea would not become a claimed fact"
+              ],
+              "correctIndex": 2,
+              "hint": "Think about what changed after observing."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_luz_que_no_estaba_en_el_mapa-p05",
+      "number": 5,
+      "chapter": 2,
+      "image": "imagenes/pagina-05.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "La segunda noche",
+          "paragraphs": [
+            "Volvieron con la mamá de Samuel al anochecer. Lucía confirmó que el paseo seguía abierto y que no había un aviso que cambiara su plan.",
+            "La lámpara amarilla encendió su línea larga. Un rato después, una ola mostró tres destellos azules breves, separados de aquella línea.",
+            "Samuel casi gritó «¡bioluminiscencia!», pero recordó la cuarta columna. Describió primero: azul, breve, cerca de la espuma.",
+            "Lucía tomó nota del horario. Ninguno cruzó la baranda ni recogió agua."
+          ],
+          "alt": "Escena de la segunda noche.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué hizo Samuel antes de ponerle nombre a los destellos?",
+              "options": [
+                "Un reflejo constante y unos destellos breves",
+                "Dos puntos azules que aparecieron y desaparecieron",
+                "Describió su color, duración y lugar"
+              ],
+              "correctIndex": 2,
+              "hint": "Busca la acción observada en esta página."
+            },
+            "lector": {
+              "question": "¿Por qué Samuel describió antes de nombrar?",
+              "options": [
+                "Esperaba que amaneciera",
+                "Quería registrar la pista sin adelantar la conclusión",
+                "Olvidó la palabra lámpara"
+              ],
+              "correctIndex": 1,
+              "hint": "Piensa en lo que cambió después de observar."
+            }
+          }
+        },
+        "en": {
+          "title": "The Second Night",
+          "paragraphs": [
+            "They returned with Samuel’s mother at dusk. Lucía checked that the path was open and that no advisory changed their plan.",
+            "The yellow lamp cast its long line. Later, a wave showed three brief blue flashes, separate from that line.",
+            "Samuel almost shouted “Bioluminescence!” but remembered the fourth column. He described them first: blue, brief, near the foam.",
+            "Lucía wrote down the time. No one crossed the railing or collected water."
+          ],
+          "alt": "Scene of the second night.",
+          "checkpoint": {
+            "explorador": {
+              "question": "What did Samuel do before naming the flashes?",
+              "options": [
+                "A steady reflection and brief flashes",
+                "Two blue sparks that appeared and vanished",
+                "He described their color, duration, and place"
+              ],
+              "correctIndex": 2,
+              "hint": "Look for the action observed on this page."
+            },
+            "lector": {
+              "question": "Why describe before naming the light?",
+              "options": [
+                "He was waiting for sunrise",
+                "To record the clue before reaching a conclusion",
+                "He forgot the word lamp"
+              ],
+              "correctIndex": 1,
+              "hint": "Think about what changed after observing."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_luz_que_no_estaba_en_el_mapa-p06",
+      "number": 6,
+      "chapter": 2,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "Una foto que engaña",
+          "paragraphs": [
+            "En el teléfono de su mamá, una fotografía mostró una banda azul muy brillante. Samuel pensó que ya tenía la prueba.",
+            "Entonces compararon la pantalla con lo que habían visto a simple vista. El teléfono había aclarado toda la escena; hasta las nubes parecían luminosas.",
+            "Lucía explicó que una foto ayuda a recordar, pero la cámara cambia cómo se ve la oscuridad. Guardaron la imagen junto a las notas, sin dejar que sustituyera la observación.",
+            "Samuel escribió: «La foto muestra una luz; no dice sola de dónde vino»."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Por qué la foto no bastaba como prueba?",
+              "options": [
+                "El reflejo de una lámpara",
+                "La cámara cambió el aspecto de la oscuridad",
+                "Separó los interruptores de las dos luces"
+              ],
+              "correctIndex": 1,
+              "hint": "Busca la acción observada en esta página."
+            },
+            "lector": {
+              "question": "¿Qué aprendió Samuel de la fotografía?",
+              "options": [
+                "Una imagen puede cambiar cómo se ve la escena",
+                "Toda foto demuestra una especie",
+                "Las nubes producen luz marina"
+              ],
+              "correctIndex": 0,
+              "hint": "Piensa en lo que cambió después de observar."
+            }
+          }
+        },
+        "en": {
+          "title": "A Misleading Photo",
+          "paragraphs": [
+            "On his mother’s phone, a photo showed a very bright blue band. Samuel thought he finally had proof.",
+            "Then they compared the screen with what they had seen with their own eyes. The phone had brightened the whole scene; even the clouds looked luminous.",
+            "Lucía explained that a photo helps memory, but a camera changes how darkness looks. They kept the picture with their notes without letting it replace the observation.",
+            "Samuel wrote, “The photo shows a light; it cannot tell us its cause by itself.”"
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "Why was the photo not enough proof?",
+              "options": [
+                "A lamp reflecting on the water",
+                "The camera changed how the darkness looked",
+                "He separated the switches for the two lights"
+              ],
+              "correctIndex": 1,
+              "hint": "Look for the action observed on this page."
+            },
+            "lector": {
+              "question": "What did Samuel learn from the photo?",
+              "options": [
+                "A picture can change how a scene looks",
+                "Every photo proves a species",
+                "Clouds make marine light"
+              ],
+              "correctIndex": 0,
+              "hint": "Think about what changed after observing."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_luz_que_no_estaba_en_el_mapa-p07",
+      "number": 7,
+      "chapter": 2,
+      "image": "imagenes/pagina-07.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "La mañana sin brillo",
+          "paragraphs": [
+            "A la mañana siguiente, el mar parecía gris y verde. Samuel creyó que el fenómeno se había ido para siempre.",
+            "Lucía señaló que no ver luz de día no demostraba que ninguna criatura capaz de producirla estuviera allí. Tampoco demostraba que sí estuviera.",
+            "Desde el paseo observaron las olas y anotaron la marea. Una gaviota caminaba sobre arena húmeda.",
+            "Samuel comprendió que investigar el mar también significa aceptar que una visita puede dejar preguntas abiertas."
+          ],
+          "alt": "Escena de la mañana sin brillo.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué demostraba no ver destellos durante el día?",
+              "options": [
+                "Solo que no los observaron en esa visita",
+                "Que no sabían con seguridad el origen",
+                "Permanecía visible como una línea"
+              ],
+              "correctIndex": 0,
+              "hint": "Busca la acción observada en esta página."
+            },
+            "lector": {
+              "question": "¿Qué significa la visita sin brillo?",
+              "options": [
+                "Las olas dejaron de existir",
+                "La lámpara cambió de sitio",
+                "Una ausencia observada no resuelve todo el misterio"
+              ],
+              "correctIndex": 2,
+              "hint": "Piensa en lo que cambió después de observar."
+            }
+          }
+        },
+        "en": {
+          "title": "The Morning Without a Glow",
+          "paragraphs": [
+            "The next morning, the sea looked gray and green. Samuel thought the phenomenon was gone forever.",
+            "Lucía pointed out that not seeing light in daylight did not prove that no light-making creatures were there. It did not prove that they were there, either.",
+            "From the path they watched the waves and recorded the tide. A gull walked across wet sand.",
+            "Samuel understood that studying the sea sometimes means accepting that a visit leaves questions open."
+          ],
+          "alt": "Scene of the morning without a glow.",
+          "checkpoint": {
+            "explorador": {
+              "question": "What did seeing no flashes by day prove?",
+              "options": [
+                "Only that they did not observe them on that visit",
+                "That they did not know the source for certain",
+                "It stayed visible as a line"
+              ],
+              "correctIndex": 0,
+              "hint": "Look for the action observed on this page."
+            },
+            "lector": {
+              "question": "What did the glowless visit mean?",
+              "options": [
+                "Waves had vanished",
+                "The lamp had moved",
+                "One absence did not settle the whole mystery"
+              ],
+              "correctIndex": 2,
+              "hint": "Think about what changed after observing."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_luz_que_no_estaba_en_el_mapa-p08",
+      "number": 8,
+      "chapter": 2,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "Preguntar a quienes saben",
+          "paragraphs": [
+            "Lucía mostró a Samuel cómo consultar información de un centro de investigación y los avisos públicos de la costa. Algunas especies pueden producir luz, pero ciertos cambios del agua también requieren precaución.",
+            "No era responsable decir que cualquier brillo azul significaba una playa segura. Para identificar organismos concretos harían falta métodos y permisos que ellos no tenían.",
+            "Samuel eligió una frase para su libreta: «Vimos destellos compatibles con luz biológica; no identificamos su origen». Le pareció menos emocionante que una respuesta absoluta, pero mucho más honesta."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué no pudieron identificar?",
+              "options": [
+                "La consideraría y corregiría su explicación",
+                "Para separar las pistas y lo desconocido",
+                "El origen exacto de los destellos azules"
+              ],
+              "correctIndex": 2,
+              "hint": "Busca la acción observada en esta página."
+            },
+            "lector": {
+              "question": "¿Por qué Lucía no identificó una especie?",
+              "options": [
+                "Lina apagó la maqueta",
+                "No tenían evidencia ni métodos suficientes",
+                "Samuel perdió su mapa"
+              ],
+              "correctIndex": 1,
+              "hint": "Piensa en lo que cambió después de observar."
+            }
+          }
+        },
+        "en": {
+          "title": "Ask the People Who Know",
+          "paragraphs": [
+            "Lucía showed Samuel how to check information from a research center and public coastal advisories. Some species can produce light, but some changes in the water also call for caution.",
+            "It would not be responsible to claim that every blue glow meant a safe beach. Identifying particular organisms would require methods and permission they did not have.",
+            "Samuel chose a sentence for his notebook: “We saw flashes consistent with biological light; we did not identify their source.” It sounded less exciting than a certain answer, but much more honest."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "What could they not identify?",
+              "options": [
+                "Consider it and revise his explanation",
+                "To separate clues from unknowns",
+                "The exact source of the blue flashes"
+              ],
+              "correctIndex": 2,
+              "hint": "Look for the action observed on this page."
+            },
+            "lector": {
+              "question": "Why did Lucía not identify a species?",
+              "options": [
+                "Lina turned off the model",
+                "They lacked enough evidence and methods",
+                "Samuel lost his map"
+              ],
+              "correctIndex": 1,
+              "hint": "Think about what changed after observing."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_luz_que_no_estaba_en_el_mapa-p09",
+      "number": 9,
+      "chapter": 3,
+      "image": "imagenes/pagina-09.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "Dos dibujos",
+          "paragraphs": [
+            "Para la feria escolar, Samuel hizo dos dibujos grandes. En uno, la lámpara proyectaba una línea amarilla constante.",
+            "En el otro, pequeñas marcas azules aparecían junto a una ola y luego se apagaban. No dibujó monstruos marinos ni una especie que no habían encontrado.",
+            "Su amiga Lina sugirió hacer una maqueta con una luz fija y tres luces pequeñas que se encendieran por turnos. Samuel aceptó.",
+            "Quería que los visitantes pudieran comparar las pistas, igual que él lo había hecho desde la baranda."
+          ],
+          "alt": "Escena de dos dibujos.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué mostraban los dos dibujos?",
+              "options": [
+                "Describió su color, duración y lugar",
+                "Un reflejo constante y unos destellos breves",
+                "Dos puntos azules que aparecieron y desaparecieron"
+              ],
+              "correctIndex": 1,
+              "hint": "Busca la acción observada en esta página."
+            },
+            "lector": {
+              "question": "¿Por qué evitó dibujar una especie concreta?",
+              "options": [
+                "No la habían identificado",
+                "No sabía dibujar",
+                "No tenían lápiz azul"
+              ],
+              "correctIndex": 0,
+              "hint": "Piensa en lo que cambió después de observar."
+            }
+          }
+        },
+        "en": {
+          "title": "Two Drawings",
+          "paragraphs": [
+            "For the school fair, Samuel made two large drawings. In one, the lamp cast a steady yellow line.",
+            "In the other, little blue marks appeared beside a wave and then went dark. He did not draw sea monsters or a species they had not found.",
+            "His friend Lina suggested a model with one steady light and three small lights that flashed in turn. Samuel agreed.",
+            "He wanted visitors to compare the clues just as he had done from behind the railing."
+          ],
+          "alt": "Scene of two drawings.",
+          "checkpoint": {
+            "explorador": {
+              "question": "What did the two drawings show?",
+              "options": [
+                "He described their color, duration, and place",
+                "A steady reflection and brief flashes",
+                "Two blue sparks that appeared and vanished"
+              ],
+              "correctIndex": 1,
+              "hint": "Look for the action observed on this page."
+            },
+            "lector": {
+              "question": "Why did Samuel avoid drawing a species?",
+              "options": [
+                "They had not identified one",
+                "He could not draw",
+                "He had no blue pencil"
+              ],
+              "correctIndex": 0,
+              "hint": "Think about what changed after observing."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_luz_que_no_estaba_en_el_mapa-p10",
+      "number": 10,
+      "chapter": 3,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "Una prueba de feria",
+          "paragraphs": [
+            "Lina probó la maqueta con Samuel. Cuando encendieron todas las luces a la vez, los visitantes no distinguían la diferencia.",
+            "Separaron los interruptores: primero brillaba la línea amarilla y después parpadeaban los puntos azules. Ahora una niña pequeña pudo decir que una luz continuaba y la otra no.",
+            "Samuel no había reproducido el mar verdadero. Había construido un modelo para mostrar una comparación.",
+            "Añadió un espacio vacío en el cartel para nuevas observaciones, porque su pregunta seguía viva."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué cambió Samuel en la maqueta?",
+              "options": [
+                "Separó los interruptores de las dos luces",
+                "El reflejo de una lámpara",
+                "La cámara cambió el aspecto de la oscuridad"
+              ],
+              "correctIndex": 0,
+              "hint": "Busca la acción observada en esta página."
+            },
+            "lector": {
+              "question": "¿Qué mejoró al separar los interruptores?",
+              "options": [
+                "Las luces brillaron menos",
+                "El cartel quedó más grande",
+                "Los visitantes pudieron comparar dos patrones"
+              ],
+              "correctIndex": 2,
+              "hint": "Piensa en lo que cambió después de observar."
+            }
+          }
+        },
+        "en": {
+          "title": "A Fair Test",
+          "paragraphs": [
+            "Lina tested the model with Samuel. When they switched on all the lights at once, visitors could not tell them apart.",
+            "They separated the switches: first the yellow line glowed, then the blue points blinked. Now a younger child could say that one light lasted and the other did not.",
+            "Samuel had not recreated the real sea. He had built a model to show a comparison.",
+            "He left an empty place on the display for new observations because his question was still alive."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "What did Samuel change in the model?",
+              "options": [
+                "He separated the switches for the two lights",
+                "A lamp reflecting on the water",
+                "The camera changed how the darkness looked"
+              ],
+              "correctIndex": 0,
+              "hint": "Look for the action observed on this page."
+            },
+            "lector": {
+              "question": "What improved when switches were separated?",
+              "options": [
+                "The lights grew dimmer",
+                "The display became larger",
+                "Visitors could compare two patterns"
+              ],
+              "correctIndex": 2,
+              "hint": "Think about what changed after observing."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_luz_que_no_estaba_en_el_mapa-p11",
+      "number": 11,
+      "chapter": 3,
+      "image": "imagenes/pagina-11.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "La mesa del océano",
+          "paragraphs": [
+            "En la feria, Samuel presentó la maqueta. Gael se acercó con un vasito de postre y preguntó si las chispas azules eran animales.",
+            "«No lo sabemos con seguridad», respondió Samuel. Imani observó la línea amarilla y dijo que el modelo le ayudaba a notar la diferencia.",
+            "Samuel invitó a los dos a describir antes de adivinar. Su mesa no prometía resolver el misterio esa tarde.",
+            "Enseñaba algo que un biólogo marino hace todos los días: cuidar las observaciones y hacer mejores preguntas."
+          ],
+          "alt": "Escena de la mesa del océano.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué respuesta honesta dio Samuel en la feria?",
+              "options": [
+                "Permanecía visible como una línea",
+                "Solo que no los observaron en esa visita",
+                "Que no sabían con seguridad el origen"
+              ],
+              "correctIndex": 2,
+              "hint": "Busca la acción observada en esta página."
+            },
+            "lector": {
+              "question": "¿Qué enseñaba la mesa de Samuel?",
+              "options": [
+                "A tocar animales marinos",
+                "A describir y preguntar con cuidado",
+                "A declarar seguro cualquier brillo"
+              ],
+              "correctIndex": 1,
+              "hint": "Piensa en lo que cambió después de observar."
+            }
+          }
+        },
+        "en": {
+          "title": "The Ocean Table",
+          "paragraphs": [
+            "At the fair, Samuel presented the model. Gael approached with a dessert cup and asked whether the blue sparks were animals.",
+            "“We do not know for certain,” Samuel replied. Imani studied the yellow line and said the model helped her notice the difference.",
+            "Samuel invited both friends to describe before guessing. His table did not promise to solve the mystery that afternoon.",
+            "It taught something a marine biologist does every day: care for observations and ask better questions."
+          ],
+          "alt": "Scene of the ocean table.",
+          "checkpoint": {
+            "explorador": {
+              "question": "What honest answer did Samuel give at the fair?",
+              "options": [
+                "It stayed visible as a line",
+                "Only that they did not observe them on that visit",
+                "That they did not know the source for certain"
+              ],
+              "correctIndex": 2,
+              "hint": "Look for the action observed on this page."
+            },
+            "lector": {
+              "question": "What did Samuel’s table teach?",
+              "options": [
+                "How to touch sea animals",
+                "Careful description and better questions",
+                "That every glow means safe water"
+              ],
+              "correctIndex": 1,
+              "hint": "Think about what changed after observing."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_luz_que_no_estaba_en_el_mapa-p12",
+      "number": 12,
+      "chapter": 3,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "Una pregunta encendida",
+          "paragraphs": [
+            "Cuando terminó la feria, Samuel guardó el mapa y las notas. Seguía queriendo descubrir qué había brillado junto a las olas.",
+            "Lucía le recordó que estudiar el océano lleva muchas visitas, instrumentos y trabajo en equipo. Samuel miró el espacio vacío de su cartel.",
+            "Allí cabía una observación futura, incluso si contradecía su primera idea. Se sintió como un científico de verdad: curioso, paciente y dispuesto a corregirse.",
+            "La luz azul ya no era solo un espectáculo; era el comienzo de una pregunta."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué haría Samuel con una observación que contradijera su idea?",
+              "options": [
+                "El origen exacto de los destellos azules",
+                "La consideraría y corregiría su explicación",
+                "Para separar las pistas y lo desconocido"
+              ],
+              "correctIndex": 1,
+              "hint": "Busca la acción observada en esta página."
+            },
+            "lector": {
+              "question": "¿Por qué dejó espacio para nuevas notas?",
+              "options": [
+                "Podía revisar su idea con nueva evidencia",
+                "Le faltó pintura",
+                "Quería añadir una receta"
+              ],
+              "correctIndex": 0,
+              "hint": "Piensa en lo que cambió después de observar."
+            }
+          }
+        },
+        "en": {
+          "title": "A Question Still Glowing",
+          "paragraphs": [
+            "When the fair ended, Samuel put away the map and his notes. He still wanted to learn what had glowed near the waves.",
+            "Lucía reminded him that studying the ocean takes many visits, instruments, and teamwork. Samuel looked at the empty place on his display.",
+            "It could hold a future observation, even one that challenged his first idea. He felt like a real scientist: curious, patient, and willing to revise his thinking.",
+            "The blue light was no longer just a spectacle; it was the start of a question."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "What would Samuel do with an observation that challenged his idea?",
+              "options": [
+                "The exact source of the blue flashes",
+                "Consider it and revise his explanation",
+                "To separate clues from unknowns"
+              ],
+              "correctIndex": 1,
+              "hint": "Look for the action observed on this page."
+            },
+            "lector": {
+              "question": "Why leave room for more notes?",
+              "options": [
+                "He could revise his idea with new evidence",
+                "He ran out of paint",
+                "He wanted to add a recipe"
+              ],
+              "correctIndex": 0,
+              "hint": "Think about what changed after observing."
+            }
+          }
+        }
+      }
+    }
+  ],
+  "vocabulary": {
+    "es": [
+      {
+        "word": "bioluminiscencia",
+        "syllables": "bio-lu-mi-nis-cen-cia",
+        "definition": "Luz producida por algunos seres vivos."
+      },
+      {
+        "word": "observación",
+        "syllables": "ob-ser-va-ción",
+        "definition": "Descripción cuidadosa de lo que se percibe."
+      },
+      {
+        "word": "reflejo",
+        "syllables": "re-fle-jo",
+        "definition": "Luz que rebota en una superficie."
+      },
+      {
+        "word": "marea",
+        "syllables": "ma-re-a",
+        "definition": "Subida y bajada periódica del nivel del mar."
+      },
+      {
+        "word": "hipótesis",
+        "syllables": "hi-pó-te-sis",
+        "definition": "Explicación posible que todavía debe comprobarse."
+      },
+      {
+        "word": "modelo",
+        "syllables": "mo-de-lo",
+        "definition": "Representación que ayuda a estudiar o explicar algo."
+      }
+    ],
+    "en": [
+      {
+        "word": "bioluminescence",
+        "syllables": "bi-o-lu-mi-nes-cence",
+        "definition": "Light made by some living things."
+      },
+      {
+        "word": "observation",
+        "syllables": "ob-ser-va-tion",
+        "definition": "A careful description of what is noticed."
+      },
+      {
+        "word": "reflection",
+        "syllables": "re-flec-tion",
+        "definition": "Light that bounces from a surface."
+      },
+      {
+        "word": "tide",
+        "syllables": "tide",
+        "definition": "The regular rise and fall of sea level."
+      },
+      {
+        "word": "hypothesis",
+        "syllables": "hy-poth-e-sis",
+        "definition": "A possible explanation that still needs testing."
+      },
+      {
+        "word": "model",
+        "syllables": "mod-el",
+        "definition": "A representation that helps explain something."
+      }
+    ]
+  }
+}

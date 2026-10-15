@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prompts para GPT · La noche sin luces</title>
+<style>
+  :root {
+    --bg: #f6f7fb; --card: #ffffff; --ink: #1e2340; --muted: #5c6485; --line: #dfe3ef;
+    --accent: #1e6fe8; --accent-ink: #ffffff; --ok: #22a95c; --warn: #f0a020; --code-bg: #f0f2f9; --pre-bg: #10152e; --pre-ink: #e8ecff;
+    --shadow: 0 1px 2px rgba(30,35,64,.06), 0 6px 18px rgba(30,35,64,.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1226; --card: #181c38; --ink: #e8ecff; --muted: #a0a8cf; --line: #2a3060;
+      --accent: #4b97ff; --accent-ink: #08122b; --code-bg: #232850; --pre-bg: #0a0d1f; --pre-ink: #e8ecff;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 6px 18px rgba(0,0,0,.3);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f1226; --card: #181c38; --ink: #e8ecff; --muted: #a0a8cf; --line: #2a3060;
+    --accent: #4b97ff; --accent-ink: #08122b; --code-bg: #232850; --pre-bg: #0a0d1f; --pre-ink: #e8ecff;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 6px 18px rgba(0,0,0,.3);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  header { padding: 28px 16px 8px; max-width: 1080px; margin: 0 auto; }
+  header h1 { margin: 0 0 4px; font-size: clamp(1.4rem, 4vw, 2rem); line-height: 1.2; }
+  header p { margin: 0; color: var(--muted); }
+  .tabs { position: sticky; top: 0; z-index: 10; background: var(--bg); border-bottom: 1px solid var(--line); }
+  .tabs-in { max-width: 1080px; margin: 0 auto; padding: 10px 16px; display: flex; gap: 8px; overflow-x: auto; }
+  .tab { appearance: none; border: 1px solid var(--line); background: var(--card); color: var(--ink); border-radius: 999px; padding: 8px 16px; font: inherit; font-weight: 700; cursor: pointer; white-space: nowrap; }
+  .tab[aria-selected="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  main { max-width: 1080px; margin: 0 auto; padding: 20px 16px 80px; }
+  section.panel { display: none; }
+  section.panel.on { display: block; }
+  h2 { margin: 28px 0 8px; font-size: 1.35rem; }
+  h3 { margin: 22px 0 6px; font-size: 1.12rem; }
+  h4, h5 { margin: 16px 0 4px; }
+  p { margin: 8px 0; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 22px 0; }
+  a { color: var(--accent); }
+  .lnk { font-weight: 700; }
+  code { background: var(--code-bg); padding: 1px 6px; border-radius: 6px; font: .9em ui-monospace, "JetBrains Mono", Consolas, monospace; }
+  pre.code { background: var(--pre-bg); color: var(--pre-ink); padding: 14px 16px; border-radius: 12px; overflow: auto; font: 13px/1.5 ui-monospace, "JetBrains Mono", Consolas, monospace; white-space: pre-wrap; word-break: break-word; }
+  pre.code code { background: none; padding: 0; font: inherit; }
+  blockquote { margin: 12px 0; padding: 10px 16px; border-left: 4px solid var(--warn); background: var(--card); border-radius: 0 12px 12px 0; box-shadow: var(--shadow); }
+  blockquote p { margin: 4px 0; }
+  .tw { overflow-x: auto; margin: 12px 0; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+  table { border-collapse: collapse; width: 100%; font-size: .93rem; }
+  th, td { padding: 8px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+  th { background: var(--code-bg); font-weight: 800; white-space: nowrap; }
+  tr:last-child td { border-bottom: 0; }
+  td.r, th.r { text-align: right; }
+  ul, ol { padding-left: 1.3rem; }
+  li { margin: 4px 0; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px; box-shadow: var(--shadow); margin: 14px 0; }
+  .card h3 { margin-top: 0; }
+  .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: var(--card); }
+  .seg button { appearance: none; border: 0; background: transparent; color: var(--ink); padding: 8px 18px; font: inherit; font-weight: 800; cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+  .lbl { font-weight: 800; color: var(--muted); font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; }
+  .btn { appearance: none; border: 0; border-radius: 999px; padding: 10px 20px; font: inherit; font-weight: 800; cursor: pointer; background: var(--accent); color: var(--accent-ink); box-shadow: 0 3px 0 rgba(0,0,0,.18); }
+  .btn:active { transform: translateY(2px); box-shadow: 0 1px 0 rgba(0,0,0,.18); }
+  .btn.ghost { background: var(--card); color: var(--ink); border: 1px solid var(--line); box-shadow: none; }
+  .btn.ok { background: var(--ok); color: #fff; }
+  .btn.sm { padding: 6px 14px; font-size: .88rem; }
+  .bar { position: sticky; top: 58px; z-index: 5; background: var(--bg); padding: 10px 0; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; border-bottom: 1px dashed var(--line); }
+  .meta { color: var(--muted); font-size: .9rem; }
+  .pg { display: grid; grid-template-columns: 220px 1fr; gap: 16px; }
+  .pg img { width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); background: #fff; display: block; }
+  .pg .noimg { display: grid; place-items: center; text-align: center; min-height: 120px; border: 2px dashed var(--line); border-radius: 10px; color: var(--muted); padding: 10px; font-size: .9rem; }
+  .pg .scene { margin: 6px 0 10px; }
+  .tag { display: inline-block; background: var(--code-bg); border-radius: 999px; padding: 2px 10px; font-weight: 800; font-size: .82rem; margin-right: 6px; }
+  .gal { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px; }
+  .gal .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .gal figure { margin: 0; }
+  .gal img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--line); background: #fff; display: block; }
+  .gal figcaption { font-size: .8rem; color: var(--muted); margin: 3px 0 4px; }
+  .check { display: flex; gap: 8px; align-items: center; margin: 4px 0; }
+  .check input { width: 20px; height: 20px; accent-color: var(--ok); }
+  .checks { columns: 2 260px; }
+  .prompt-box { max-height: 520px; }
+  details > summary { cursor: pointer; font-weight: 800; }
+  @media (max-width: 640px) {
+    .pg { grid-template-columns: 1fr; }
+    .bar { top: 54px; }
+  }
+  @media print { .tabs, .bar, .btn { display: none !important; } section.panel { display: block !important; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Prompts para GPT — <em>Mila, Pipo y la noche en que se apagaron las luciérnagas</em></h1>
+  <p>Todo en un archivo: cómo usarlo, el prompt de texto (6 variantes), los prompts de imagen (15), las imágenes guía de las plantillas y la especificación completa.</p>
+</header>
+
+<div class="tabs"><div class="tabs-in" role="tablist" id="tabs"></div></div>
+
+<main>
+  <section class="panel" id="p-uso" data-title="1 · Cómo usarlo">
+    __USE_HTML__
+    <div class="card">
+      <h3>Lo que llevas entregado</h3>
+      <p class="meta">Se guarda en este navegador (no sale de aquí).</p>
+      <div class="lbl">Textos (JSON)</div>
+      <div class="checks" id="chk-json"></div>
+      <div class="lbl" style="margin-top:10px">Imágenes (PNG)</div>
+      <div class="checks" id="chk-img"></div>
+    </div>
+  </section>
+
+  <section class="panel" id="p-texto" data-title="2 · Prompt de texto">
+    <h2>Prompt de TEXTO — una conversación nueva por variante</h2>
+    <p>Elige el idioma y el nivel: el prompt se actualiza solo (id, idioma, nivel y título). Pégalo en una <strong>conversación nueva</strong> de GPT, guarda la respuesta con el nombre indicado y repite con las otras 5 variantes.</p>
+    <div class="bar">
+      <span class="lbl">Idioma</span>
+      <div class="seg" id="seg-lang"><button data-v="es">Español</button><button data-v="en">English</button></div>
+      <span class="lbl">Nivel</span>
+      <div class="seg" id="seg-level"><button data-v="1">1</button><button data-v="2">2</button><button data-v="3">3</button></div>
+      <button class="btn" id="copy-text">Copiar prompt</button>
+    </div>
+    <p class="meta">Guarda la respuesta como <code id="fname"></code> · <span id="plen"></span></p>
+    <pre class="code prompt-box" id="text-prompt"></pre>
+  </section>
+
+  <section class="panel" id="p-imagen" data-title="3 · Prompts de imagen">
+    <h2>Prompts de IMAGEN — una generación por página</h2>
+    <blockquote><p><strong>Las plantillas de ejemplo no se tocan.</strong> La imagen guía es la plantilla: GPT debe copiarla tal cual (mismas viñetas, diagonales y globos vacíos en el mismo sitio), no reinterpretarla. Adjunta siempre la guía <strong>sin «numerada»</strong> y la hoja de personajes.</p></blockquote>
+
+    <div class="card">
+      <h3>0 · Hoja de personajes</h3>
+      <p>Adjunta la hoja de Mila, Pipo y Tito (la de <em>El puente de las luciérnagas</em>). <strong>Dora es nueva</strong>: genera primero su hoja con este prompt.</p>
+      <div class="row" style="margin-bottom:10px">
+        <button class="btn ghost sm" data-dl="characters">Descargar hoja de Mila, Pipo y Tito</button>
+        <button class="btn sm" data-copy="dora">Copiar prompt de Dora</button>
+      </div>
+      <pre class="code" id="dora"></pre>
+    </div>
+
+    <div class="card">
+      <h3>1 · Prompt base</h3>
+      <p>Va en <strong>todas</strong> las páginas. Los botones de cada página ya lo traen completo con su escena; aquí lo ves entero.</p>
+      <button class="btn sm" data-copy="base" style="margin-bottom:10px">Copiar prompt base</button>
+      <pre class="code" id="base"></pre>
+    </div>
+
+    <h3>2 · Página por página (14 páginas + portada)</h3>
+    <div id="pages"></div>
+    <blockquote><p><strong>Si una página sale mal</strong> (viñetas movidas, globos deformados o con texto): pídela otra vez añadiendo <em>«La imagen guía es la plantilla exacta: copia sus viñetas y globos sin cambiar su forma ni su posición»</em>. Si aun así se desvía un poco, mándamela igual: en el modo editor ajusto las cajas de texto a los globos que dibujó.</p></blockquote>
+  </section>
+
+  <section class="panel" id="p-plantillas" data-title="4 · Guías de plantilla">
+    <h2>Imágenes guía de las 13 plantillas</h2>
+    <p>La de la <strong>izquierda</strong> es la que se adjunta al generador (viñetas grises y globos vacíos en su sitio). La <strong>numerada</strong> es solo para ti: muestra el orden de lectura. Toca «Descargar» para bajar cada una.</p>
+    <div class="gal" id="gal"></div>
+  </section>
+
+  <section class="panel" id="p-spec" data-title="5 · Especificación">
+    __SPEC_HTML__
+  </section>
+</main>
+
+<script>
+const DATA = __DATA__;
+
+const $ = (s, r = document) => r.querySelector(s);
+const el = (tag, attrs = {}, kids = []) => {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === 'class') n.className = v; else if (k === 'text') n.textContent = v; else if (k === 'html') n.innerHTML = v; else n.setAttribute(k, v);
+  }
+  for (const c of [].concat(kids)) if (c) n.append(c);
+  return n;
+};
+const store = {
+  get(k, d) { try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* sin almacenamiento */ } },
+};
+
+async function copyText(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) { await navigator.clipboard.writeText(text); return true; }
+  } catch { /* cae al método antiguo */ }
+  const ta = el('textarea', { style: 'position:fixed;left:-9999px;top:0' });
+  ta.value = text;
+  document.body.append(ta);
+  ta.select();
+  let ok = false;
+  try { ok = document.execCommand('copy'); } catch { ok = false; }
+  ta.remove();
+  return ok;
+}
+function flash(btn, ok = true) {
+  const old = btn.dataset.label || btn.textContent;
+  btn.dataset.label = old;
+  btn.textContent = ok ? '¡Copiado!' : 'No se pudo copiar: selecciona el texto a mano';
+  btn.classList.add('ok');
+  setTimeout(() => { btn.textContent = old; btn.classList.remove('ok'); }, 1600);
+}
+function download(name, dataUri) {
+  const a = el('a', { href: dataUri, download: name });
+  document.body.append(a);
+  a.click();
+  a.remove();
+}
+
+/* ---------- pestañas ---------- */
+const panels = [...document.querySelectorAll('section.panel')];
+const tabs = $('#tabs');
+function show(id) {
+  panels.forEach((p) => p.classList.toggle('on', p.id === id));
+  tabs.querySelectorAll('.tab').forEach((t) => t.setAttribute('aria-selected', String(t.dataset.id === id)));
+  try { history.replaceState(null, '', '#' + id); } catch { /* file:// puede negarlo */ }
+  window.scrollTo({ top: 0 });
+}
+panels.forEach((p) => tabs.append(el('button', { class: 'tab', role: 'tab', 'data-id': p.id, text: p.dataset.title })));
+tabs.addEventListener('click', (e) => { const t = e.target.closest('.tab'); if (t) show(t.dataset.id); });
+show(panels.some((p) => '#' + p.id === location.hash) ? location.hash.slice(1) : 'p-uso');
+
+/* ---------- prompt de texto ---------- */
+let lang = store.get('lang', 'es');
+let level = store.get('level', 1);
+function buildTextPrompt() {
+  const langName = lang === 'es' ? 'es (español)' : 'en (inglés)';
+  return DATA.textPrompt
+    .replaceAll('Idioma: <es | en>', 'Idioma: ' + langName)
+    .replaceAll('Nivel: <1 | 2 | 3>', 'Nivel: ' + level)
+    .replaceAll('<idioma>', lang)
+    .replaceAll('<nivel>', String(level))
+    .replaceAll('"language": "<es|en>"', '"language": "' + lang + '"')
+    .replaceAll('"level": <1|2|3>', '"level": ' + level)
+    .replaceAll('"<título en ese idioma, ≤ 60 caracteres>"', '"' + DATA.titles[lang] + '"');
+}
+function renderText() {
+  const p = buildTextPrompt();
+  $('#text-prompt').textContent = p;
+  $('#fname').textContent = 'la-noche-sin-luces-' + lang + '-n' + level + '.json';
+  $('#plen').textContent = p.length.toLocaleString('es') + ' caracteres';
+  $('#seg-lang').querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.v === lang)));
+  $('#seg-level').querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.v === String(level))));
+}
+$('#seg-lang').addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) { lang = b.dataset.v; store.set('lang', lang); renderText(); } });
+$('#seg-level').addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) { level = Number(b.dataset.v); store.set('level', level); renderText(); } });
+$('#copy-text').addEventListener('click', async (e) => flash(e.currentTarget, await copyText(buildTextPrompt())));
+renderText();
+
+/* ---------- imágenes ---------- */
+$('#dora').textContent = DATA.dora;
+$('#base').textContent = DATA.base;
+const fullImagePrompt = (scene) => DATA.base.replace('<pega aquí la fila de la página>', scene);
+document.body.addEventListener('click', async (e) => {
+  const c = e.target.closest('[data-copy]');
+  if (c) { flash(c, await copyText(DATA[c.dataset.copy])); return; }
+  const d = e.target.closest('[data-dl]');
+  if (d) {
+    const k = d.dataset.dl;
+    if (k === 'characters') download('personajes-mila-pipo-tito.webp', DATA.characters);
+    else if (k.startsWith('n:')) download(k.slice(2) + '-numerada.png', DATA.numbered[k.slice(2)]);
+    else download(k + '.png', DATA.guides[k]);
+  }
+});
+
+const pagesEl = $('#pages');
+for (const pg of DATA.pages) {
+  const scene = pg.scene;
+  const left = pg.template
+    ? el('div', {}, [el('img', { src: DATA.guides[pg.template], alt: 'Guía ' + pg.template })])
+    : el('div', { class: 'noimg', text: 'Sin plantilla: no se adjunta guía' });
+  const btns = el('div', { class: 'row' });
+  const b1 = el('button', { class: 'btn sm', text: 'Copiar prompt completo' });
+  b1.addEventListener('click', async () => flash(b1, await copyText(fullImagePrompt(scene))));
+  const b2 = el('button', { class: 'btn ghost sm', text: 'Copiar solo la escena' });
+  b2.addEventListener('click', async () => flash(b2, await copyText(scene)));
+  btns.append(b1, b2);
+  if (pg.template) btns.append(el('button', { class: 'btn ghost sm', 'data-dl': pg.template, text: 'Descargar guía (' + pg.template + '.png)' }));
+  const right = el('div', {}, [
+    el('div', {}, [
+      el('span', { class: 'tag', text: pg.file }),
+      pg.page ? el('span', { class: 'tag', text: pg.page }) : null,
+      pg.template ? el('span', { class: 'tag', text: pg.template }) : null,
+    ]),
+    el('p', { class: 'meta', text: pg.template ? 'Adjunta: la hoja de personajes + ' + pg.template + '.png (sin «numerada»).' : 'Adjunta: solo la hoja de personajes.' }),
+    el('p', { class: 'scene', text: scene }),
+    btns,
+  ]);
+  pagesEl.append(el('div', { class: 'card pg' }, [left, right]));
+}
+
+/* ---------- galería ---------- */
+const gal = $('#gal');
+for (const name of DATA.templates) {
+  const fig = (label, src, dl) => el('figure', {}, [
+    el('img', { src, alt: label + ' ' + name }),
+    el('figcaption', { text: label }),
+    el('button', { class: 'btn ghost sm', 'data-dl': dl, text: 'Descargar' }),
+  ]);
+  gal.append(el('div', { class: 'card' }, [
+    el('h3', { text: name + ' · ' + DATA.counts[name] + (DATA.counts[name] === 1 ? ' cuadro' : ' cuadros') }),
+    el('div', { class: 'pair' }, [fig('Guía (para GPT)', DATA.guides[name], name), fig('Numerada (para ti)', DATA.numbered[name], 'n:' + name)]),
+  ]));
+}
+
+/* ---------- lista de entrega ---------- */
+function checklist(host, key, names) {
+  const saved = store.get(key, {});
+  for (const n of names) {
+    const id = key + '-' + n;
+    const cb = el('input', { type: 'checkbox', id });
+    cb.checked = !!saved[n];
+    cb.addEventListener('change', () => { saved[n] = cb.checked; store.set(key, saved); });
+    host.append(el('label', { class: 'check', for: id }, [cb, el('span', { text: n })]));
+  }
+}
+const jsons = [];
+for (const l of ['es', 'en']) for (const n of [1, 2, 3]) jsons.push('la-noche-sin-luces-' + l + '-n' + n + '.json');
+checklist($('#chk-json'), 'json', jsons);
+checklist($('#chk-img'), 'img', DATA.pages.map((p) => p.file));
+</script>
+</body>
+</html>

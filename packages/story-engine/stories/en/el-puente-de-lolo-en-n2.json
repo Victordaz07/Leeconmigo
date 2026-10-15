@@ -1,0 +1,544 @@
+{
+  "id": "el-puente-de-lolo-en-n2",
+  "familyId": "el-puente-de-lolo",
+  "language": "en",
+  "title": "Lolo’s Little Bridge",
+  "level": 2,
+  "category": "amistad",
+  "description": "Ada and Bruno try a new idea to help Lolo cross a puddle.",
+  "cover": {
+    "src": "stories/el-puente-de-lolo/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Ada and Bruno watch Lolo cross a bark bridge."
+  },
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Ada and Bruno greet Lolo; a puddle separates him from a green leaf."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b01",
+          "voice": "narration",
+          "lines": [
+            "Ada the rabbit and Bruno the turtle greet their friend Lolo.",
+            "The little snail is following the path."
+          ],
+          "title": "Three friends"
+        },
+        {
+          "id": "b02",
+          "voice": "narration",
+          "lines": [
+            "Lolo spots a green leaf across the puddle.",
+            "He wants a taste."
+          ],
+          "title": "The goal"
+        },
+        {
+          "id": "b03",
+          "voice": "narration",
+          "lines": [
+            "Water blocks the path ahead.",
+            "Lolo stops at the muddy edge."
+          ],
+          "title": "The puddle"
+        },
+        {
+          "id": "b04",
+          "voice": "narration",
+          "lines": [
+            "Ada kneels beside him.",
+            "Bruno notices a big yellow leaf."
+          ],
+          "title": "The yellow leaf"
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What blocks Lolo’s path?",
+            "options": [
+              {
+                "text": "A puddle"
+              },
+              {
+                "text": "A door"
+              },
+              {
+                "text": "A train"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! A puddle.",
+            "retryFeedback": "Follow the path from Lolo to the green leaf."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Where is the leaf Lolo wants?",
+            "options": [
+              {
+                "text": "Inside his shell"
+              },
+              {
+                "text": "Across the puddle"
+              },
+              {
+                "text": "Under the log"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! Across the puddle.",
+            "retryFeedback": "Follow the path from Lolo to the green leaf."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "They test a yellow leaf as a bridge; it bends and they remove it."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b05",
+          "voice": "narration",
+          "lines": [
+            "Bruno picks up the fallen leaf.",
+            "It is wide but thin."
+          ],
+          "title": "Picking it up"
+        },
+        {
+          "id": "b06",
+          "voice": "narration",
+          "lines": [
+            "Together, they lay it across the puddle.",
+            "Could this be a bridge?"
+          ],
+          "title": "Over the water"
+        },
+        {
+          "id": "b07",
+          "voice": "narration",
+          "lines": [
+            "Bruno tests it with one finger.",
+            "The leaf bends into the water."
+          ],
+          "title": "It bends"
+        },
+        {
+          "id": "b08",
+          "voice": "narration",
+          "lines": [
+            "Ada takes the wet leaf away.",
+            "Bruno points towards a fallen log."
+          ],
+          "title": "Looking for something else"
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What happens to the yellow leaf?",
+            "options": [
+              {
+                "text": "It turns into stone"
+              },
+              {
+                "text": "It stays straight"
+              },
+              {
+                "text": "It bends into the water"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! It bends into the water.",
+            "retryFeedback": "Look at the middle of the leaf when Bruno presses it."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why does Bruno test the leaf first?",
+            "options": [
+              {
+                "text": "To see if it works as a bridge"
+              },
+              {
+                "text": "To give Lolo a snack"
+              },
+              {
+                "text": "To hide the puddle"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! To see if it works as a bridge.",
+            "retryFeedback": "Look at the middle of the leaf when Bruno presses it."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "They collect bark and two stones and prepare the supports on the banks."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b09",
+          "voice": "narration",
+          "lines": [
+            "Ada finds a broad piece of bark.",
+            "It feels firm."
+          ],
+          "title": "The bark"
+        },
+        {
+          "id": "b10",
+          "voice": "narration",
+          "lines": [
+            "Bruno picks up two flat stones.",
+            "These could support the bridge."
+          ],
+          "title": "The stones"
+        },
+        {
+          "id": "b11",
+          "voice": "narration",
+          "lines": [
+            "They carry everything back to the puddle.",
+            "Lolo is waiting there."
+          ],
+          "title": "Coming back"
+        },
+        {
+          "id": "b12",
+          "voice": "narration",
+          "lines": [
+            "They put one stone on each bank.",
+            "Both rest on dry ground."
+          ],
+          "title": "The supports"
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "How many stones does Bruno pick up?",
+            "options": [
+              {
+                "text": "One"
+              },
+              {
+                "text": "Two"
+              },
+              {
+                "text": "Three"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! Two.",
+            "retryFeedback": "Look at Bruno’s hands and both sides of the puddle."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Where do they put the stones?",
+            "options": [
+              {
+                "text": "In the middle of the water"
+              },
+              {
+                "text": "On top of Lolo"
+              },
+              {
+                "text": "One on each dry bank"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! One on each dry bank.",
+            "retryFeedback": "Look at Bruno’s hands and both sides of the puddle."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p04",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "They place the bark, test the bridge, and Lolo begins to climb onto it."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b13",
+          "voice": "narration",
+          "lines": [
+            "The bark goes across the two stones.",
+            "The banks are joined!"
+          ],
+          "title": "The bridge"
+        },
+        {
+          "id": "b14",
+          "voice": "narration",
+          "lines": [
+            "Bruno presses the middle to test it.",
+            "This bridge stays straight."
+          ],
+          "title": "It holds"
+        },
+        {
+          "id": "b15",
+          "voice": "narration",
+          "lines": [
+            "They check the ends as well.",
+            "Both are resting firmly."
+          ],
+          "title": "Checking it"
+        },
+        {
+          "id": "b16",
+          "voice": "narration",
+          "lines": [
+            "Lolo stretches towards the bridge.",
+            "He begins to climb onto it."
+          ],
+          "title": "Lolo climbs on"
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What happens when Bruno tests the bark?",
+            "options": [
+              {
+                "text": "It stays straight"
+              },
+              {
+                "text": "It disappears"
+              },
+              {
+                "text": "It turns into a leaf"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! It stays straight.",
+            "retryFeedback": "Compare this bridge with the yellow leaf that bent."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What do they do before Lolo climbs on?",
+            "options": [
+              {
+                "text": "Put the stones away"
+              },
+              {
+                "text": "Check the bridge"
+              },
+              {
+                "text": "Move the green leaf"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! Check the bridge.",
+            "retryFeedback": "Compare this bridge with the yellow leaf that bent."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p05",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Lolo crosses, eats a leaf, and an ant also uses the bridge."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b17",
+          "voice": "narration",
+          "lines": [
+            "Now he is above the water.",
+            "His friends watch him glide along."
+          ],
+          "title": "Crossing"
+        },
+        {
+          "id": "b18",
+          "voice": "narration",
+          "lines": [
+            "Lolo reaches the other bank.",
+            "His green leaf is close."
+          ],
+          "title": "Made it"
+        },
+        {
+          "id": "b19",
+          "voice": "narration",
+          "lines": [
+            "He takes a little bite.",
+            "That was worth the trip!"
+          ],
+          "title": "The reward"
+        },
+        {
+          "id": "b20",
+          "voice": "narration",
+          "lines": [
+            "An ant crosses the bridge too.",
+            "Their work helps another visitor."
+          ],
+          "title": "Another visitor"
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Who uses the bridge next?",
+            "options": [
+              {
+                "text": "A fish"
+              },
+              {
+                "text": "A bird"
+              },
+              {
+                "text": "An ant"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! An ant.",
+            "retryFeedback": "Look at the tiny visitor and remember what the friends changed."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What helped them solve the problem?",
+            "options": [
+              {
+                "text": "Trying a new material together"
+              },
+              {
+                "text": "Repeating without changing anything"
+              },
+              {
+                "text": "Leaving Lolo alone"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! Trying a new material together.",
+            "retryFeedback": "Look at the tiny visitor and remember what the friends changed."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "rabbit": {
+      "syllables": [
+        "rab",
+        "bit"
+      ],
+      "definition": "An animal with long ears that hops."
+    },
+    "turtle": {
+      "syllables": [
+        "tur",
+        "tle"
+      ],
+      "definition": "An animal with a protective shell."
+    },
+    "snail": {
+      "syllables": [
+        "snail"
+      ],
+      "definition": "A small animal that glides along with a shell on its back."
+    },
+    "puddle": {
+      "syllables": [
+        "pud",
+        "dle"
+      ],
+      "definition": "A small pool of water on the ground."
+    },
+    "bark": {
+      "syllables": [
+        "bark"
+      ],
+      "definition": "The outer covering of a tree trunk."
+    },
+    "bank": {
+      "syllables": [
+        "bank"
+      ],
+      "definition": "The ground at the edge of water."
+    },
+    "bridge": {
+      "syllables": [
+        "bridge"
+      ],
+      "definition": "A way across a gap or water."
+    },
+    "bends": {
+      "syllables": [
+        "bends"
+      ],
+      "definition": "Changes from straight to curved."
+    },
+    "firmly": {
+      "syllables": [
+        "firm",
+        "ly"
+      ],
+      "definition": "In a secure, steady way."
+    },
+    "ant": {
+      "syllables": [
+        "ant"
+      ],
+      "definition": "A small insect with six legs."
+    },
+    "support": {
+      "syllables": [
+        "sup",
+        "port"
+      ],
+      "definition": "To hold something up."
+    }
+  },
+  "heroFocus": {
+    "x": 30,
+    "y": 62
+  },
+  "reviewWords": [
+    "rabbit",
+    "turtle",
+    "puddle"
+  ]
+}

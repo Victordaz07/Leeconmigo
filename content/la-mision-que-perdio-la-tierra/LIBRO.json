@@ -1,0 +1,1021 @@
+{
+  "slug": "la_mision_que_perdio_la_tierra",
+  "title": {
+    "es": "La misión que perdió la Tierra",
+    "en": "The Mission That Lost Earth"
+  },
+  "subtitle": {
+    "es": "Elián sueña con ser astronauta",
+    "en": "Elián dreams of becoming an astronaut"
+  },
+  "chapters": [
+    {
+      "es": "La ruta de Elián",
+      "en": "Elián’s route"
+    },
+    {
+      "es": "Lo que tapa la Luna",
+      "en": "What the Moon blocks"
+    },
+    {
+      "es": "Una señal entre todos",
+      "en": "A signal built together"
+    }
+  ],
+  "cover": "imagenes/portada.png",
+  "character_sheet": "imagenes/personajes.png",
+  "pages": [
+    {
+      "id": "la_mision_que_perdio_la_tierra-p01",
+      "number": 1,
+      "chapter": 1,
+      "image": "imagenes/pagina-01.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "El casco que le quedaba grande",
+          "paragraphs": [
+            "Elián llevaba semanas diciendo que sería astronauta. En casa había aprendido los nombres de los planetas y había construido un vehículo lunar con cajas de cartón.",
+            "Lo difícil era otra cosa: cuando alguien le pedía dirigir al equipo, las manos le temblaban. No quería que Asha, su amiga, lo notara.",
+            "Aquella mañana llegaron al centro espacial del barrio para una misión simulada. En una sala rodeada de pantallas, la ingeniera Nora les mostró un paisaje de la Luna, un vehículo pequeño de cuatro ruedas y un modelo de la Tierra suspendido sobre el horizonte.",
+            "Todo ocurriría dentro del simulador; nadie iba a despegar. La tarea era conducir el vehículo hasta una zona iluminada antes de que la noche lunar alcanzara el cráter.",
+            "Elián recibió el mapa. Asha tendría la radio y las observaciones."
+          ],
+          "alt": "Escena de el casco que le quedaba grande.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Dónde ocurre la misión?",
+              "options": [
+                "En un simulador del centro espacial",
+                "En la Luna real",
+                "En el mar"
+              ],
+              "correctIndex": 0,
+              "hint": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+            },
+            "lector": {
+              "question": "¿Qué le preocupa a Elián al dirigir?",
+              "options": [
+                "olvidar su mochila",
+                "que otros noten su miedo",
+                "no tener casco"
+              ],
+              "correctIndex": 1,
+              "hint": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+            }
+          }
+        },
+        "en": {
+          "title": "The helmet that felt too big",
+          "paragraphs": [
+            "Elián had been telling everyone he would become an astronaut. At home he knew the planets by name and had built a lunar rover out of cardboard.",
+            "The hard part was different: whenever someone asked him to lead, his hands shook. He did not want his friend Asha to notice.",
+            "That morning they came to the neighborhood space center for a simulated mission. Inside a room of screens, engineer Nora showed them a Moon landscape, a small four-wheeled rover, and a model of Earth hanging above the horizon.",
+            "Everything would happen inside the simulator; no one was launching into space. Their task was to guide the rover to a sunlit area before lunar night reached the crater.",
+            "Elián received the map. Asha would manage radio calls and observations."
+          ],
+          "alt": "Scene of the helmet that felt too big.",
+          "checkpoint": {
+            "explorador": {
+              "question": "Where does the mission take place?",
+              "options": [
+                "In a space-center simulator",
+                "On the real Moon",
+                "At sea"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again: what did they see, and what did they decide to do?"
+            },
+            "lector": {
+              "question": "What worries Elián about leading?",
+              "options": [
+                "he forgot his bag",
+                "others might notice his fear",
+                "he has no helmet"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again: what did they see, and what did they decide to do?"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_mision_que_perdio_la_tierra-p02",
+      "number": 2,
+      "chapter": 1,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "La primera señal",
+          "paragraphs": [
+            "La sala oscureció y el suelo vibró suavemente para imitar el movimiento de una nave. En la pantalla central apareció el vehículo bajando una pendiente gris.",
+            "La Tierra era un disco azul pequeño, visible entre dos montañas. Nora explicó que el vehículo recibía órdenes por radio cuando podía “ver” la Tierra o un satélite repetidor.",
+            "Asha comprobó la señal: un pulso, una respuesta y una imagen del camino. Todo funcionaba.",
+            "Elián tenía que escoger entre una ruta larga por terreno plano y un atajo junto al borde del cráter. Vio que el atajo ahorraba tiempo.",
+            "Asha quiso revisar una elevación dibujada en el mapa, pero Elián dijo que ya la había calculado. En realidad solo había mirado la distancia.",
+            "Pulsó la ruta corta. El vehículo giró."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué ruta escoge Elián?",
+              "options": [
+                "Una línea recta",
+                "El atajo",
+                "La ruta larga"
+              ],
+              "correctIndex": 1,
+              "hint": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+            },
+            "lector": {
+              "question": "¿Qué olvidó revisar antes de elegir?",
+              "options": [
+                "el color del vehículo",
+                "la edad de Nora",
+                "la altura del terreno"
+              ],
+              "correctIndex": 2,
+              "hint": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+            }
+          }
+        },
+        "en": {
+          "title": "The first signal",
+          "paragraphs": [
+            "The room dimmed, and the floor gave a gentle vibration to imitate a spacecraft. On the central screen the rover rolled down a gray slope.",
+            "Earth was a small blue disc between two mountains. Nora explained that the rover could receive radio commands when it could “see” Earth or an orbiting relay satellite.",
+            "Asha checked the signal: one pulse, one reply, and a picture of the path. Everything worked.",
+            "Elián had to choose between a long, level route and a shortcut along the crater rim. The shortcut saved time.",
+            "Asha wanted to check a rise marked on the map, but Elián said he had already worked it out. In fact, he had only looked at distance.",
+            "He pressed the short route. The rover turned."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "Which route does Elián choose?",
+              "options": [
+                "A straight line",
+                "The shortcut",
+                "The long path"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again: what did they see, and what did they decide to do?"
+            },
+            "lector": {
+              "question": "What did he fail to check?",
+              "options": [
+                "the rover color",
+                "Nora's age",
+                "the terrain height"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again: what did they see, and what did they decide to do?"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_mision_que_perdio_la_tierra-p03",
+      "number": 3,
+      "chapter": 1,
+      "image": "imagenes/pagina-03.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "El borde del cráter",
+          "paragraphs": [
+            "Al principio, el atajo pareció perfecto. El vehículo pasó sobre rocas bajas y envió fotografías de huellas de polvo.",
+            "Elián se enderezó en la silla. Entonces una pared del cráter comenzó a crecer en la ventana virtual.",
+            "La Tierra bajó detrás de ella hasta desaparecer. La radio devolvió un sonido seco, sin imagen.",
+            "Asha repitió el intento. Nada.",
+            "En el mapa, el vehículo seguía avanzando hacia una zona de sombra. Elián quiso ordenar que diera vuelta, pero Nora le mostró la consola: sin señal, una orden nueva no podía llegar.",
+            "Asha señaló la elevación que había querido revisar. Elián la reconoció.",
+            "El camino era corto porque cruzaba detrás de una pared alta. La Tierra no se había perdido; ellos habían perdido la línea para hablar con ella."
+          ],
+          "alt": "Escena de el borde del cráter.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué oculta el cráter?",
+              "options": [
+                "El satélite",
+                "El mapa",
+                "La vista de la Tierra"
+              ],
+              "correctIndex": 2,
+              "hint": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+            },
+            "lector": {
+              "question": "¿Por qué no llega una orden nueva?",
+              "options": [
+                "la pared bloquea la señal",
+                "la batería está llena",
+                "Nora apagó todo"
+              ],
+              "correctIndex": 0,
+              "hint": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+            }
+          }
+        },
+        "en": {
+          "title": "The crater rim",
+          "paragraphs": [
+            "At first the shortcut seemed perfect. The rover crossed low rocks and sent pictures of tracks in the dust.",
+            "Elián sat taller. Then a crater wall began to rise across the virtual window.",
+            "Earth slipped behind it and vanished. The radio returned a dry click with no picture.",
+            "Asha tried again. Nothing.",
+            "On the map the rover was still heading toward shadow. Elián wanted to order it to turn, but Nora pointed to the console: without a signal, a new command could not arrive.",
+            "Asha indicated the rise she had wanted to check. Elián recognized it.",
+            "The route was shorter because it ran behind a high wall. Earth had not been lost; they had lost a clear line to speak with it."
+          ],
+          "alt": "Scene of the crater rim.",
+          "checkpoint": {
+            "explorador": {
+              "question": "What does the crater hide?",
+              "options": [
+                "The satellite",
+                "The map",
+                "Earth's view"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again: what did they see, and what did they decide to do?"
+            },
+            "lector": {
+              "question": "Why can't a new command reach the rover?",
+              "options": [
+                "the wall blocks the signal",
+                "the battery is full",
+                "Nora switched everything off"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again: what did they see, and what did they decide to do?"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_mision_que_perdio_la_tierra-p04",
+      "number": 4,
+      "chapter": 1,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "Una respuesta que no llega",
+          "paragraphs": [
+            "Nora anunció que la simulación seguiría. Podían detenerla si alguien se sentía incómodo, pero el ejercicio consistía en entender el problema antes de actuar.",
+            "Elián abrió y cerró los dedos. Pensó en decir que la pantalla estaba fallando.",
+            "Asha acercó las fotografías: en la última aún se veía una franja de cielo claro. Quizá el vehículo estaba cerca de salir de la sombra, dijo.",
+            "Nora preguntó qué sabían con certeza. Sabían dónde desapareció la Tierra de la imagen, cuál ruta había elegido Elián y que el vehículo aún tenía batería.",
+            "No sabían exactamente dónde estaba ahora. Elián respiró hondo.",
+            "«Elegí el atajo sin revisar la altura», admitió. Asha no celebró el error.",
+            "Se sentó a su lado y le pidió que buscaran juntos otra forma de recuperar la señal."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué admite Elián?",
+              "options": [
+                "No revisó la altura",
+                "Rompió el vehículo",
+                "No sabe leer"
+              ],
+              "correctIndex": 0,
+              "hint": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+            },
+            "lector": {
+              "question": "¿Qué cambia cuando deja de culpar a la pantalla?",
+              "options": [
+                "Asha termina sola",
+                "pueden investigar la ruta",
+                "abandonan la misión"
+              ],
+              "correctIndex": 1,
+              "hint": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+            }
+          }
+        },
+        "en": {
+          "title": "No answer comes back",
+          "paragraphs": [
+            "Nora said the simulation would continue. They could pause if anyone felt uncomfortable, but the exercise was to understand the problem before acting.",
+            "Elián opened and closed his hands. He considered saying the screen must be broken.",
+            "Asha enlarged the last pictures. The final one still showed a narrow strip of bright sky.",
+            "Perhaps the rover was close to leaving the shadow. Nora asked what they knew for certain.",
+            "They knew where Earth vanished from the picture, which route Elián had chosen, and that the rover still had power. They did not know its exact position now.",
+            "Elián drew a breath. “I chose the shortcut without checking the height,” he admitted.",
+            "Asha did not celebrate his mistake. She pulled up a chair and asked him to look for another way to regain the signal together."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "What does Elián admit?",
+              "options": [
+                "He missed the height",
+                "He broke the rover",
+                "He cannot read"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again: what did they see, and what did they decide to do?"
+            },
+            "lector": {
+              "question": "What changes when he stops blaming the screen?",
+              "options": [
+                "Asha finishes alone",
+                "they can investigate the route",
+                "they quit"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again: what did they see, and what did they decide to do?"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_mision_que_perdio_la_tierra-p05",
+      "number": 5,
+      "chapter": 2,
+      "image": "imagenes/pagina-05.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "Una pelota entre dos voces",
+          "paragraphs": [
+            "Nora apagó por un momento la imagen del cráter y trajo dos pelotas: una azul para la Tierra y otra gris para la Luna. Asha puso una ficha diminuta sobre la pelota gris.",
+            "Desde esa posición, la Luna misma tapaba la vista de la Tierra. Elián movió la ficha hacia el borde; el disco azul reapareció.",
+            "Nora colocó un pequeño satélite sobre un alambre alto. Si el repetidor podía ver a la vez la ficha y la Tierra, llevaría un mensaje entre ambas.",
+            "Pero orbitaba: solo habría una ventana breve. Asha sonrió porque por fin entendía el mapa.",
+            "Elián también vio su equivocación en tres dimensiones. Pedir ayuda no había hecho el problema más grande; lo había vuelto visible."
+          ],
+          "alt": "Escena de una pelota entre dos voces.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué objetos usa Nora?",
+              "options": [
+                "Dos lámparas",
+                "Globos de Tierra y Luna",
+                "Pelotas de juego"
+              ],
+              "correctIndex": 1,
+              "hint": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+            },
+            "lector": {
+              "question": "¿Qué explica la pelota gris entre el vehículo y la azul?",
+              "options": [
+                "la Tierra se ha ido",
+                "el vehículo no tiene ruedas",
+                "la Luna tapa la línea de visión"
+              ],
+              "correctIndex": 2,
+              "hint": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+            }
+          }
+        },
+        "en": {
+          "title": "A ball between two voices",
+          "paragraphs": [
+            "Nora paused the crater view and brought out two balls: blue for Earth, gray for the Moon. Asha set a tiny marker on the gray ball.",
+            "From there the Moon itself blocked the blue one. Elián moved the marker toward the rim, and Earth came back into view.",
+            "Nora placed a little satellite high on a wire. If the relay could see both marker and Earth, it could carry a message between them.",
+            "But it was orbiting; the window would be brief. Asha smiled because the map finally made sense.",
+            "Elián could see his mistake in three dimensions too. Asking for help had not made the problem larger.",
+            "It had made the shape of it visible."
+          ],
+          "alt": "Scene of a ball between two voices.",
+          "checkpoint": {
+            "explorador": {
+              "question": "What objects does Nora use?",
+              "options": [
+                "Two lamps",
+                "Earth and Moon globes",
+                "Game balls"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again: what did they see, and what did they decide to do?"
+            },
+            "lector": {
+              "question": "What does the gray ball blocking the blue one show?",
+              "options": [
+                "Earth is gone",
+                "the rover has no wheels",
+                "the Moon blocks the view"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again: what did they see, and what did they decide to do?"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_mision_que_perdio_la_tierra-p06",
+      "number": 6,
+      "chapter": 2,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "El satélite no espera",
+          "paragraphs": [
+            "Volvieron a encender el simulador. Un punto plateado cruzaba lentamente la parte alta de la pantalla: el repetidor.",
+            "Nora les mostró que tardaría poco en llegar a la zona desde donde vería la Tierra y el vehículo. Elián propuso enviarle muchas órdenes cuando apareciera.",
+            "Asha preguntó cuál enviaría primero. Si el vehículo recibía mensajes diferentes al mismo tiempo, podía gastar batería intentando cambiar de dirección.",
+            "Decidieron preparar una sola instrucción: detenerse, girar hacia una pendiente suave y esperar nueva confirmación. Elián leyó el mapa en voz alta; Asha comprobó la pendiente con las fotografías.",
+            "Nora no hizo el trabajo por ellos. Les recordó que aún podían pausar la simulación.",
+            "Los dos eligieron seguir, esta vez con un plan compartido."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué puede llevar la señal?",
+              "options": [
+                "Una cometa",
+                "Una montaña",
+                "Un satélite repetidor"
+              ],
+              "correctIndex": 2,
+              "hint": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+            },
+            "lector": {
+              "question": "¿Por qué preparan una sola instrucción?",
+              "options": [
+                "evitan órdenes contradictorias",
+                "quieren jugar",
+                "no hay batería"
+              ],
+              "correctIndex": 0,
+              "hint": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+            }
+          }
+        },
+        "en": {
+          "title": "The satellite will not wait",
+          "paragraphs": [
+            "They switched the simulator on again. A silver point moved slowly across the top of the screen: the relay.",
+            "Nora showed them that it would soon reach a place where it could see both Earth and the rover. Elián suggested sending every possible command when it appeared.",
+            "Asha asked which should come first. If the rover received conflicting messages at once, it might use power turning back and forth.",
+            "They prepared one instruction: stop, turn toward a gentle slope, and wait for confirmation. Elián read the map aloud; Asha checked the slope against the photographs.",
+            "Nora did not do the work for them. She reminded them they could still pause the simulation.",
+            "Both chose to continue, now with a shared plan."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "What can carry the signal?",
+              "options": [
+                "A kite",
+                "A mountain",
+                "An orbiting relay"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again: what did they see, and what did they decide to do?"
+            },
+            "lector": {
+              "question": "Why prepare only one command?",
+              "options": [
+                "conflicting commands would waste power",
+                "they want to play",
+                "there is no battery"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again: what did they see, and what did they decide to do?"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_mision_que_perdio_la_tierra-p07",
+      "number": 7,
+      "chapter": 2,
+      "image": "imagenes/pagina-07.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "Un mensaje demasiado temprano",
+          "paragraphs": [
+            "Elián preparó la instrucción y colocó el dedo sobre el envío. Cuando el satélite se acercó a la parte alta del cráter, pulsó.",
+            "La consola mostró que el mensaje había salido, pero no llegó ninguna confirmación. Asha comprobó el recorrido.",
+            "Lo habían mandado antes de que el repetidor pudiera ver el vehículo. La orden no se había guardado para después.",
+            "Elián sintió que el calor le subía a la cara. Esta vez no fingió que todo iba bien.",
+            "Anotó el momento del envío y pidió a Asha que le dijera qué referencia usar. Ella eligió la sombra de una pequeña montaña que se movía sobre la pantalla.",
+            "Cuando tocara una roca redonda, el satélite estaría en la ventana correcta. Ensayaron la señal sin pulsar ningún botón."
+          ],
+          "alt": "Escena de un mensaje demasiado temprano.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Cuándo envía Elián el primer mensaje?",
+              "options": [
+                "Demasiado temprano",
+                "Después del final",
+                "En la noche real"
+              ],
+              "correctIndex": 0,
+              "hint": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+            },
+            "lector": {
+              "question": "¿Por qué ese intento no recibe respuesta?",
+              "options": [
+                "no hay consola",
+                "el repetidor aún no ve el vehículo",
+                "Nora está dormida"
+              ],
+              "correctIndex": 1,
+              "hint": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+            }
+          }
+        },
+        "en": {
+          "title": "A message too early",
+          "paragraphs": [
+            "Elián readied the instruction and held a finger above Send. As the satellite approached the crater, he pressed.",
+            "The console showed the message leaving, but no confirmation came back. Asha checked its path.",
+            "They had sent it before the relay could see the rover. The command had not been saved for later.",
+            "Elián felt his face grow hot. This time he did not pretend everything was fine.",
+            "He noted when he had sent the message and asked Asha what landmark they could use. She chose the shadow of a little mountain crossing the screen.",
+            "When it touched a round rock, the relay would have the right view. They practiced calling that moment without pressing any button."
+          ],
+          "alt": "Scene of a message too early.",
+          "checkpoint": {
+            "explorador": {
+              "question": "When does Elián send the first message?",
+              "options": [
+                "Too early",
+                "After the end",
+                "At real night"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again: what did they see, and what did they decide to do?"
+            },
+            "lector": {
+              "question": "Why does that attempt get no reply?",
+              "options": [
+                "there is no console",
+                "the relay cannot see the rover yet",
+                "Nora is asleep"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again: what did they see, and what did they decide to do?"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_mision_que_perdio_la_tierra-p08",
+      "number": 8,
+      "chapter": 2,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "La sombra y la ventana",
+          "paragraphs": [
+            "El satélite completó otra vuelta. Asha siguió el borde de la sombra; Elián mantuvo lista la instrucción acordada.",
+            "Nora observó los indicadores sin intervenir. En cuanto la sombra tocó la roca redonda, Asha dijo «ahora».",
+            "Elián envió la orden una sola vez. Hubo silencio.",
+            "Un pequeño aviso confirmó que el repetidor la había recibido; aún faltaba que llegara al vehículo. El simulador representaba ese retraso para que nadie esperara una respuesta instantánea desde tan lejos.",
+            "Elián quiso pulsar otra vez. Asha puso el cuaderno entre su mano y el botón, sin regañarlo.",
+            "Contaron juntos mientras el satélite avanzaba. La batería del vehículo continuaba bajando en el mapa.",
+            "Esperar, descubrió Elián, también podía ser una acción del equipo."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué referencia sigue Asha?",
+              "options": [
+                "Una campana",
+                "Una sombra y una roca",
+                "Un árbol y un río"
+              ],
+              "correctIndex": 1,
+              "hint": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+            },
+            "lector": {
+              "question": "¿Por qué esperan después de enviar la orden?",
+              "options": [
+                "el botón está roto",
+                "deben salir",
+                "la señal tarda en llegar"
+              ],
+              "correctIndex": 2,
+              "hint": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+            }
+          }
+        },
+        "en": {
+          "title": "The shadow and the window",
+          "paragraphs": [
+            "The satellite completed another orbit. Asha tracked the edge of the shadow while Elián kept their agreed instruction ready.",
+            "Nora watched the gauges without intervening. As the shadow touched the round rock, Asha said, “Now.” Elián sent the command once.",
+            "Silence. A small indicator confirmed that the relay had received it; the rover still had to get it.",
+            "The simulator included that delay so no one expected an instant reply across such a distance. Elián wanted to press again.",
+            "Asha placed the notebook between his hand and the button, without scolding him. They counted together while the satellite moved on.",
+            "The rover’s battery continued to fall on the map. Elián discovered that waiting could be part of teamwork too."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "What landmark does Asha track?",
+              "options": [
+                "A bell",
+                "A shadow and a round rock",
+                "A tree and river"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again: what did they see, and what did they decide to do?"
+            },
+            "lector": {
+              "question": "Why do they wait after sending the command?",
+              "options": [
+                "the button is broken",
+                "they must leave",
+                "the signal takes time"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again: what did they see, and what did they decide to do?"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_mision_que_perdio_la_tierra-p09",
+      "number": 9,
+      "chapter": 3,
+      "image": "imagenes/pagina-09.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "Una fotografía nueva",
+          "paragraphs": [
+            "Llegó una imagen borrosa. Era el vehículo detenido junto a tres piedras oscuras, exactamente donde el mapa indicaba.",
+            "Elián buscó la pendiente suave y Asha comprobó que salía de la sombra. En la siguiente ventana enviaron una sola orden para avanzar.",
+            "El vehículo subió despacio. La luz tocó primero su antena, luego los paneles de energía.",
+            "La batería dejó de caer. Por encima del borde del cráter apareció de nuevo el disco azul de la Tierra, pequeño pero inconfundible.",
+            "Nora terminó la simulación y encendió las luces reales del salón. Elián miró a Asha.",
+            "Habían cometido errores y aun así habían terminado la misión. Él había querido dirigir como alguien que nunca dudaba.",
+            "Se sentía orgulloso de haber dicho lo que no sabía."
+          ],
+          "alt": "Escena de una fotografía nueva.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué aparece sobre el cráter otra vez?",
+              "options": [
+                "El Sol",
+                "La cometa",
+                "La Tierra"
+              ],
+              "correctIndex": 2,
+              "hint": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+            },
+            "lector": {
+              "question": "¿Qué muestra que el vehículo salió de peligro?",
+              "options": [
+                "la luz llega a los paneles y la batería se estabiliza",
+                "se rompe la antena",
+                "el mapa desaparece"
+              ],
+              "correctIndex": 0,
+              "hint": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+            }
+          }
+        },
+        "en": {
+          "title": "A new photograph",
+          "paragraphs": [
+            "A blurry image arrived. The rover had stopped beside three dark stones, exactly where the map suggested.",
+            "Elián found the gentle slope, and Asha checked that it led out of shadow. During the next relay window they sent one command to move forward.",
+            "The rover climbed slowly. Sunlight touched its antenna, then its power panels.",
+            "The battery stopped falling. Above the crater rim the small blue disc of Earth appeared again, unmistakable.",
+            "Nora ended the simulation and switched on the real room lights. Elián looked at Asha.",
+            "They had made mistakes and still completed the mission. He had wanted to lead like someone who never doubted himself.",
+            "Now he was proud of saying what he did not know."
+          ],
+          "alt": "Scene of a new photograph.",
+          "checkpoint": {
+            "explorador": {
+              "question": "What reappears above the crater?",
+              "options": [
+                "The Sun",
+                "The kite",
+                "Earth"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again: what did they see, and what did they decide to do?"
+            },
+            "lector": {
+              "question": "What shows the rover is out of danger?",
+              "options": [
+                "sunlight reaches its panels and power steadies",
+                "the antenna breaks",
+                "the map vanishes"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again: what did they see, and what did they decide to do?"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_mision_que_perdio_la_tierra-p10",
+      "number": 10,
+      "chapter": 3,
+      "image": "imagenes/pagina-10.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "La feria de los futuros",
+          "paragraphs": [
+            "La semana siguiente, Elián y Asha llevaron un modelo del cráter a la feria escolar de profesiones. Colocaron una pelota gris, una azul y un satélite de alambre para que los visitantes probaran cuándo se podía enviar una señal.",
+            "Elián contó también su decisión equivocada. No la escondió detrás del final feliz.",
+            "Una niña de trenzas bajas y overol verde menta se detuvo ante el modelo. Se llamaba Abril y quería ser arquitecta.",
+            "Preguntó si un refugio lunar debería construirse en la sombra para protegerse del calor. Elián no sabía la respuesta completa; Asha señaló que necesitarían estudiar energía, temperatura y comunicación.",
+            "Abril dibujó tres posibles lugares en su cuaderno. Quedaron en comparar sus ideas otro día.",
+            "La feria era más interesante cuando las preguntas de alguien abrían caminos nuevos."
+          ],
+          "alt": "Escena de la feria de los futuros.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Con quién conversa Elián en la feria?",
+              "options": [
+                "Con Abril",
+                "Con Bruno",
+                "Con Sira"
+              ],
+              "correctIndex": 0,
+              "hint": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+            },
+            "lector": {
+              "question": "¿Qué pregunta nueva abre Abril?",
+              "options": [
+                "dónde guardar una llave",
+                "dónde convendría construir un refugio lunar",
+                "cómo navegar el mar"
+              ],
+              "correctIndex": 1,
+              "hint": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+            }
+          }
+        },
+        "en": {
+          "title": "The future fair",
+          "paragraphs": [
+            "The following week Elián and Asha brought a crater model to the school’s careers fair. They set out a gray ball, a blue one, and a wire satellite so visitors could test when a message could travel.",
+            "Elián told them about his wrong turn too. He did not hide it behind the happy ending.",
+            "A girl with two low braids and mint-green overalls stopped at their table. Her name was Abril, and she wanted to become an architect.",
+            "Would a Moon shelter belong in the shade to keep it cool? Elián did not know the whole answer.",
+            "Asha said they would need to study power, temperature, and communication. Abril sketched three possible sites in her notebook.",
+            "They agreed to compare ideas another day. The fair became more interesting when another person’s question opened a new path."
+          ],
+          "alt": "Scene of the future fair.",
+          "checkpoint": {
+            "explorador": {
+              "question": "Who talks to Elián at the fair?",
+              "options": [
+                "Abril",
+                "Bruno",
+                "Sira"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again: what did they see, and what did they decide to do?"
+            },
+            "lector": {
+              "question": "What new question does Abril raise?",
+              "options": [
+                "where to keep a key",
+                "where a Moon shelter might belong",
+                "how to sail"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again: what did they see, and what did they decide to do?"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_mision_que_perdio_la_tierra-p11",
+      "number": 11,
+      "chapter": 3,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "Una pregunta difícil",
+          "paragraphs": [
+            "Un visitante pequeño preguntó si Elián había sentido miedo cuando la Tierra desapareció de la pantalla. Elián miró a Nora, que conversaba con otra familia, y luego a Asha.",
+            "Podía fingir que solo había sido un juego. «Sí», respondió.",
+            "«Pensé que todos esperaban que yo supiera qué hacer». El niño observó el cráter de cartón y movió la ficha detrás de la pelota gris.",
+            "Tampoco se veía la Tierra desde allí. Elián le mostró cómo buscar un lugar para el repetidor.",
+            "Abril regresó con su cuaderno y escuchó la explicación. Cuando el visitante consiguió unir las dos vistas, sonrió.",
+            "Elián comprendió que contar el miedo no arruinaba la aventura. Permitía que otra persona se imaginara dentro de ella y encontrara una salida."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué cuenta Elián al visitante pequeño?",
+              "options": [
+                "Que todo fue real",
+                "Que sintió miedo",
+                "Que nunca dudó"
+              ],
+              "correctIndex": 1,
+              "hint": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+            },
+            "lector": {
+              "question": "¿Por qué decir que tuvo miedo ayuda al visitante?",
+              "options": [
+                "debe callarse",
+                "debe ponerse casco",
+                "puede imaginar una salida para sí mismo"
+              ],
+              "correctIndex": 2,
+              "hint": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+            }
+          }
+        },
+        "en": {
+          "title": "A hard question",
+          "paragraphs": [
+            "A younger visitor asked if Elián had been afraid when Earth vanished from the screen. Elián glanced at Nora, who was talking with another family, and then at Asha.",
+            "He could pretend it had only been a game. “Yes,” he said.",
+            "“I thought everyone expected me to know what to do.” The child examined the cardboard crater and moved a marker behind the gray ball. Earth disappeared from that viewpoint too.",
+            "Elián showed him how to place the relay where it could see both sides. Abril came back with her notebook and listened.",
+            "When the visitor connected the two views, he smiled. Elián realized that speaking about fear did not spoil the adventure.",
+            "It let someone else imagine being there and finding a way out."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "What does Elián tell the younger visitor?",
+              "options": [
+                "It was real",
+                "He was afraid",
+                "He never doubted"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again: what did they see, and what did they decide to do?"
+            },
+            "lector": {
+              "question": "Why does mentioning fear help?",
+              "options": [
+                "the child must be quiet",
+                "the child needs a helmet",
+                "the child can imagine finding a way too"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again: what did they see, and what did they decide to do?"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_mision_que_perdio_la_tierra-p12",
+      "number": 12,
+      "chapter": 3,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "La ruta de mañana",
+          "paragraphs": [
+            "Al cerrar la feria, Elián guardó el satélite de alambre con cuidado. Asha le preguntó si seguía queriendo ser astronauta después de tantos problemas.",
+            "«Más que antes», dijo. Ya no pensaba solo en despegar y mirar la Tierra desde arriba.",
+            "Quería aprender a leer mapas difíciles, escuchar a su equipo y hacer preguntas cuando faltara una pieza. Nora les recordó que podrían volver al centro espacial para otra simulación, siempre que prepararan juntos el recorrido.",
+            "Abril pasó a despedirse y les enseñó un dibujo nuevo: un refugio con una ventana que miraba al cielo y otra hacia un compañero de equipo. Elián se rio.",
+            "Su próxima misión todavía no tenía mapa, pero ya sabía a quién pediría que lo revisara."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué guarda Elián al cerrar?",
+              "options": [
+                "Una piedra lunar",
+                "Una medalla",
+                "El satélite de alambre"
+              ],
+              "correctIndex": 2,
+              "hint": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+            },
+            "lector": {
+              "question": "¿Qué desea aprender para otra misión?",
+              "options": [
+                "mapas, escucha y preguntas",
+                "órdenes rápidas",
+                "hacerlo todo solo"
+              ],
+              "correctIndex": 0,
+              "hint": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+            }
+          }
+        },
+        "en": {
+          "title": "Tomorrow’s route",
+          "paragraphs": [
+            "As the fair closed, Elián packed away the wire satellite carefully. Asha asked whether he still wanted to be an astronaut after so many problems.",
+            "“More than before,” he said. He no longer thought only about launching and looking down at Earth.",
+            "He wanted to learn to read difficult maps, listen to a crew, and ask questions when a piece was missing. Nora reminded them they could return to the space center for another simulation if they planned the route together.",
+            "Abril stopped by to say goodbye and showed them a fresh sketch: a shelter with one window toward the sky and another toward a teammate. Elián laughed.",
+            "His next mission did not have a map yet, but he knew whom he would ask to check it."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "What does Elián pack away?",
+              "options": [
+                "A Moon rock",
+                "A medal",
+                "The wire satellite"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again: what did they see, and what did they decide to do?"
+            },
+            "lector": {
+              "question": "What does he want to learn for another mission?",
+              "options": [
+                "maps, listening, and questions",
+                "fast orders",
+                "doing everything alone"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again: what did they see, and what did they decide to do?"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "vocabulary": {
+    "es": [
+      {
+        "word": "simulación",
+        "syllables": "si-mu-la-ción",
+        "definition": "representación para practicar sin riesgo"
+      },
+      {
+        "word": "cráter",
+        "syllables": "crá-ter",
+        "definition": "hueco grande en la superficie lunar"
+      },
+      {
+        "word": "antena",
+        "syllables": "an-te-na",
+        "definition": "pieza que envía o recibe señales"
+      },
+      {
+        "word": "repetidor",
+        "syllables": "re-pe-ti-dor",
+        "definition": "satélite que transmite una señal a otro lugar"
+      },
+      {
+        "word": "órbita",
+        "syllables": "ór-bi-ta",
+        "definition": "recorrido de un objeto alrededor de otro"
+      },
+      {
+        "word": "pendiente",
+        "syllables": "pen-dien-te",
+        "definition": "terreno que sube o baja"
+      }
+    ],
+    "en": [
+      {
+        "word": "simulation",
+        "syllables": "sim-u-la-tion",
+        "definition": "a model used for safe practice"
+      },
+      {
+        "word": "crater",
+        "syllables": "cra-ter",
+        "definition": "a large hollow on the Moon"
+      },
+      {
+        "word": "antenna",
+        "syllables": "an-ten-na",
+        "definition": "a part that sends or receives signals"
+      },
+      {
+        "word": "relay",
+        "syllables": "re-lay",
+        "definition": "a satellite that passes a signal onward"
+      },
+      {
+        "word": "orbit",
+        "syllables": "or-bit",
+        "definition": "a path around another object"
+      },
+      {
+        "word": "slope",
+        "syllables": "slope",
+        "definition": "ground rising or falling"
+      }
+    ]
+  }
+}

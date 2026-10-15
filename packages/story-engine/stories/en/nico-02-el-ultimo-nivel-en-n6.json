@@ -1,0 +1,734 @@
+{
+  "id": "nico-02-el-ultimo-nivel-en-n6",
+  "familyId": "nico-02-el-ultimo-nivel",
+  "language": "en",
+  "title": "2. The Last Level",
+  "level": 6,
+  "category": "fantasia",
+  "description": "Book 2 of 3 in the «Nico, Hero of the Books» series. An adventure that needs three voices. Read in order.",
+  "cover": {
+    "src": "stories/nico-02-el-ultimo-nivel/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": ""
+  },
+  "heroFocus": {
+    "x": 30,
+    "y": 55
+  },
+  "reviewWords": [
+    "model",
+    "possibility",
+    "ending"
+  ],
+  "pages": [
+    {
+      "id": "b2-p01",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "blocks": [
+        {
+          "id": "b01",
+          "voice": "narration",
+          "title": "An impossible explanation",
+          "lines": [
+            "Nico invited Alma and Teo to the library when their class project stalled. They couldn't even agree how big their model should be.",
+            "Nico brought out the blue book and told them about the lighthouse. Teo thought it was a joke until a drop fell from a dry page onto his drawing.",
+            "Alma asked them to open it with all three seated together. The city had changed.",
+            "Its canals remained, but some bridges ended in white space. Nico read the first sentence of the new story.",
+            "A paper door appeared before them. Teo stepped back; Alma wanted to go at once.",
+            "They agreed on two rules: no one would cross a doorway without telling the others, and anyone could ask to return."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Who opens the book with Nico?",
+            "options": [
+              {
+                "text": "The teacher and Lidia"
+              },
+              {
+                "text": "Alma and Teo"
+              },
+              {
+                "text": "Sira alone"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! Alma and Teo.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why agree on a return rule?",
+            "options": [
+              {
+                "text": "To score points"
+              },
+              {
+                "text": "To close the book forever"
+              },
+              {
+                "text": "So everyone can feel safe"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! So everyone can feel safe.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b2-p02",
+      "illustration": {
+        "src": "stories/nico-02-el-ultimo-nivel/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Illustration of the enemy's name."
+      },
+      "blocks": [
+        {
+          "id": "b02",
+          "voice": "narration",
+          "title": "The enemy's name",
+          "lines": [
+            "They found Sira in a strangely quiet neighborhood. People remembered how their stories began, but not how they ended.",
+            "At the square, a play stopped before its final act: every actor froze just as a choice had to be made. Sira showed them a page with a wide erased patch.",
+            "People said the Eraser lived in the library at the city's center and kept its endings. Nico wanted to charge straight there.",
+            "Teo noticed a bridge fading beneath their feet. Alma pointed out a back street the neighbors could still use.",
+            "They helped everyone across first. As the last child reached safety, the bridge vanished altogether."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What happens to the bridge?",
+            "options": [
+              {
+                "text": "It turns to stone"
+              },
+              {
+                "text": "It crosses the sky"
+              },
+              {
+                "text": "It vanishes after the last neighbor crosses"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! It vanishes after the last neighbor crosses.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What comes before hunting the Eraser?",
+            "options": [
+              {
+                "text": "Helping neighbors reach safety"
+              },
+              {
+                "text": "Splitting up to race"
+              },
+              {
+                "text": "Collecting prizes"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! Helping neighbors reach safety.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b2-p03",
+      "illustration": {
+        "src": "stories/nico-02-el-ultimo-nivel/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Illustration of three paths."
+      },
+      "blocks": [
+        {
+          "id": "b03",
+          "voice": "narration",
+          "title": "Three paths",
+          "lines": [
+            "The central library had three entrances: an unfinished bridge, a hall of mirrors, and a garden of locked doors. Nico favored the bridge; he knew how to find routes.",
+            "Alma suspected the mirrors hid a clue. Teo didn't want to split up.",
+            "They argued until the book shuddered and one entrance blurred. Alma took a breath.",
+            "She suggested trying each route together and drawing what they learned. In the garden they found keys of every shape, but none fit a lock.",
+            "Teo noticed that a door shifted whenever someone said what they hoped to find beyond it. The first one opened when he voiced his own idea."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "How many entrances do they see?",
+            "options": [
+              {
+                "text": "Three"
+              },
+              {
+                "text": "One"
+              },
+              {
+                "text": "Ten"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! Three.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          },
+          {
+            "audience": "lector",
+            "prompt": "How do they move past the argument?",
+            "options": [
+              {
+                "text": "Leave it to luck"
+              },
+              {
+                "text": "Test routes together and record clues"
+              },
+              {
+                "text": "Each takes a path"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! Test routes together and record clues.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b2-p04",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "blocks": [
+        {
+          "id": "b04",
+          "voice": "narration",
+          "title": "The map's mistake",
+          "lines": [
+            "Back in the real world, their model had a problem too. The street Teo had measured wouldn't fit on its cardboard base.",
+            "Nico suggested cutting it. Teo was upset: it was the part he had worked hardest on.",
+            "Alma asked them to set the pieces down without glue and look from above. The street wasn't the problem.",
+            "They had placed the bridge on the wrong side. Nico admitted he had marked its position without asking.",
+            "They started a fresh base. As he wrote about it in his notebook, Nico noticed a pattern: in the paper city they had also wasted time defending routes before looking at the map together."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Which piece was misplaced?",
+            "options": [
+              {
+                "text": "The table"
+              },
+              {
+                "text": "The bridge"
+              },
+              {
+                "text": "Teo's street"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! The bridge.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What does Nico admit at school?",
+            "options": [
+              {
+                "text": "Teo cannot measure"
+              },
+              {
+                "text": "The model does not matter"
+              },
+              {
+                "text": "He positioned it without asking"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! He positioned it without asking.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b2-p05",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "blocks": [
+        {
+          "id": "b05",
+          "voice": "narration",
+          "title": "The hall of mirrors",
+          "lines": [
+            "They returned to the book the next day. Mirrors showed possible endings.",
+            "In one, Nico found the pages alone. In another, Alma solved everything without speaking.",
+            "In a third, Teo never crossed the door because he was frightened. Each child saw the fear they carried.",
+            "Nico wanted to cover his mirror. Teo stopped him. 'A possible ending isn't the ending we have to choose.' Each frame had an empty space where a decision belonged.",
+            "The three talked through what they would do if something went wrong. As they made plans aloud, the mirrors stopped showing fixed endings and revealed paths that could still change."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What do the mirrors show?",
+            "options": [
+              {
+                "text": "A sea chart"
+              },
+              {
+                "text": "Lidia's past"
+              },
+              {
+                "text": "Possible endings"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! Possible endings.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why don't they have to obey a mirror?",
+            "options": [
+              {
+                "text": "A possible future can still change"
+              },
+              {
+                "text": "Mirrors always lie"
+              },
+              {
+                "text": "They see no reflection"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! A possible future can still change.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b2-p06",
+      "illustration": {
+        "src": "stories/nico-02-el-ultimo-nivel/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Illustration of the eraser."
+      },
+      "blocks": [
+        {
+          "id": "b06",
+          "voice": "narration",
+          "title": "The Eraser",
+          "lines": [
+            "The final path led to a giant desk. Behind it waited the Eraser, a figure made of rubber crumbs and unfinished pages, not a monster with fangs.",
+            "With every sweep it rubbed out a question before anyone could answer. 'Then nobody can get it wrong,' it said. Hundreds of last paragraphs sat trapped in jars on its desk.",
+            "Nico grabbed one, but the sentence fell apart in his hands. Alma understood: they couldn't paste these endings back into place.",
+            "Each character had to choose what happened next. The Eraser pointed to three exits and promised to let them go if they stopped asking others to decide.",
+            "That sounded easy. The city's people would remain trapped."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q06",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Where are the endings kept?",
+            "options": [
+              {
+                "text": "Inside jars"
+              },
+              {
+                "text": "Beneath the bridge"
+              },
+              {
+                "text": "In a backpack"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! Inside jars.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What is missing from erased stories?",
+            "options": [
+              {
+                "text": "A bigger picture"
+              },
+              {
+                "text": "A chance to choose"
+              },
+              {
+                "text": "A sword fight"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! A chance to choose.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b2-p07",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "blocks": [
+        {
+          "id": "b07",
+          "voice": "narration",
+          "title": "The project becomes a clue",
+          "lines": [
+            "At school they worked on the display. Teo had made cards with two routes, but classmates always chose the one that looked like the right answer.",
+            "Alma changed the question from 'Which path wins?' to 'Whom would you help first, and why?' The replies were different, and each started a conversation. Nico thought about the Eraser's jars.",
+            "They didn't need one perfect ending. They needed to give people room to choose.",
+            "On a sheet they drew stations for the paper city: the theater, bridge, and garden. Beside each one, they left a space where a character could explain a choice.",
+            "It would take time to try. All three agreed to go back together."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q07",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What does Alma change on the cards?",
+            "options": [
+              {
+                "text": "The bridge size"
+              },
+              {
+                "text": "The question"
+              },
+              {
+                "text": "The cardboard color"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! The question.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What do varied answers show Nico?",
+            "options": [
+              {
+                "text": "Only one route exists"
+              },
+              {
+                "text": "The cards must be erased"
+              },
+              {
+                "text": "An open question invites different ideas"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! An open question invites different ideas.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b2-p08",
+      "illustration": {
+        "src": "stories/nico-02-el-ultimo-nivel/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Illustration of an ending no one wrote alone."
+      },
+      "blocks": [
+        {
+          "id": "b08",
+          "voice": "narration",
+          "title": "An ending no one wrote alone",
+          "lines": [
+            "At the theater, Teo asked the actors what they wanted to do after the pause. One chose to search for a missing character; another lit the lamps and asked the audience for help.",
+            "The play moved on. In the garden, a neighbor chose to share her seeds, and a new path appeared.",
+            "Nico returned to the bridge and asked the boat crews where they needed planks. Each decision restored a little ground.",
+            "The Eraser tried to rub the roads away but couldn't reach every voice at once. Sira arrived with the neighbors and their own plans, some very different from the children's.",
+            "The jars opened. The Eraser shrank until it could fit in Nico's palm."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q08",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Who helps restore the city?",
+            "options": [
+              {
+                "text": "Nico alone"
+              },
+              {
+                "text": "The Eraser alone"
+              },
+              {
+                "text": "Its people and the three friends"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! Its people and the three friends.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why does the Eraser weaken?",
+            "options": [
+              {
+                "text": "Many people choose and speak"
+              },
+              {
+                "text": "It runs out of rubber"
+              },
+              {
+                "text": "Nico finds a sword"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! Many people choose and speak.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b2-p09",
+      "illustration": {
+        "src": "stories/nico-02-el-ultimo-nivel/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Illustration of an eraser with a purpose."
+      },
+      "blocks": [
+        {
+          "id": "b09",
+          "voice": "narration",
+          "title": "An eraser with a purpose",
+          "lines": [
+            "Nico nearly tossed the Eraser into the canal. Teo pointed out that an eraser could help fix a map without destroying the whole thing.",
+            "They left it in the mapmakers' workshop, where no one would have an ending chosen for them and anyone could revise a line. Sira showed them the lit lighthouse and a bridge that hadn't been there before.",
+            "They returned to school before their display opened. A corner of the model was crooked; they straightened it together.",
+            "When a visitor chose a route none of them had expected, Nico didn't correct her. He asked why, then added a path.",
+            "A shared project could grow when someone else noticed something new."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q09",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Where do they leave the Eraser?",
+            "options": [
+              {
+                "text": "In the mapmakers' workshop"
+              },
+              {
+                "text": "In the canal"
+              },
+              {
+                "text": "At school"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! In the mapmakers' workshop.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why keep an eraser at all?",
+            "options": [
+              {
+                "text": "It's a key"
+              },
+              {
+                "text": "It helps revise without forcing an ending"
+              },
+              {
+                "text": "It's a trophy"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! It helps revise without forcing an ending.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b2-p10",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "blocks": [
+        {
+          "id": "b10",
+          "voice": "narration",
+          "title": "A door for others",
+          "lines": [
+            "The exhibit ended, but several children asked for another adventure. Alma suggested a reading corner at the neighborhood library, with maps and cards inviting others to invent routes.",
+            "Teo offered to build a portable shelf. Nico wanted to bring the blue book, though he didn't know if anyone else could enter it.",
+            "Grandma Lidia reminded him that a magic door wasn't required for a person to feel inside a story. They could listen, draw, and ask questions.",
+            "That night a fresh blank page appeared. It didn't look damaged.",
+            "It was waiting for a story they hadn't lived yet. In his notebook Nico wrote three names instead of one."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q10",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What do they plan to make?",
+            "options": [
+              {
+                "text": "A race track"
+              },
+              {
+                "text": "A reading corner"
+              },
+              {
+                "text": "A real lighthouse"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! A reading corner.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What does Lidia remind Nico?",
+            "options": [
+              {
+                "text": "Everyone enters the blue book"
+              },
+              {
+                "text": "He must store the model"
+              },
+              {
+                "text": "A story can draw you in without magic"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! A story can draw you in without magic.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          }
+        ]
+      },
+      "template": "full"
+    }
+  ],
+  "vocabulary": {
+    "model": {
+      "syllables": [
+        "mod",
+        "el"
+      ],
+      "definition": "a small version of something",
+      "synonym": "replica",
+      "example": "He built a model of his house out of cardboard and sticks."
+    },
+    "hinge": {
+      "syllables": [
+        "hinge"
+      ],
+      "definition": "the joint that lets a door turn",
+      "example": "The door's hinge squeaked every time it opened."
+    },
+    "possibility": {
+      "syllables": [
+        "pos",
+        "si",
+        "bil",
+        "i",
+        "ty"
+      ],
+      "definition": "something that could happen",
+      "synonym": "chance",
+      "example": "There's a possibility it will rain tomorrow afternoon."
+    },
+    "ending": {
+      "syllables": [
+        "end",
+        "ing"
+      ],
+      "definition": "the last part of a story",
+      "synonym": "conclusion",
+      "example": "The ending of the movie surprised everyone in the theater."
+    },
+    "force": {
+      "syllables": [
+        "force"
+      ],
+      "definition": "make others accept a choice",
+      "synonym": "pressure",
+      "example": "The coach tried to force new rules onto the team."
+    },
+    "exhibit": {
+      "syllables": [
+        "ex",
+        "hib",
+        "it"
+      ],
+      "definition": "a display of work for visitors",
+      "synonym": "display",
+      "example": "She entered the science exhibit with a cardboard volcano."
+    }
+  }
+}

@@ -1,0 +1,594 @@
+{
+  "id": "la-octava-linterna-en-n5",
+  "familyId": "la-octava-linterna",
+  "language": "en",
+  "title": "The Eighth Lantern",
+  "level": 5,
+  "category": "misterio",
+  "description": "Luz discovers that listening matters more than solving the mystery.",
+  "cover": {
+    "src": "stories/la-octava-linterna/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Luz and Nico look at the row of lit paper lanterns in the square at dusk."
+  },
+  "heroFocus": {
+    "x": 20,
+    "y": 55
+  },
+  "reviewWords": [
+    "lantern",
+    "demand",
+    "preparations"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/la-octava-linterna/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Luz counts the paper lanterns and finds one empty hook."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b01",
+          "voice": "narration",
+          "title": "The Empty Hook",
+          "lines": [
+            "Every autumn, the neighborhood lit paper lanterns in the square. Luz knew their order by heart: the first seven lit the food stalls; the last one had a blue star and glowed beside the path.",
+            "That afternoon, Luz counted once. Then she counted again. Seven lights, and one empty hook.",
+            "“Maybe it broke,” Nico said.",
+            "Luz studied the hook. It was clean and firm. No one seemed to have tried to hang anything there. Around them, music began as people set up the tables."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What does Luz notice when she counts the lanterns?",
+            "options": [
+              {
+                "text": "Seven lights and one empty hook"
+              },
+              {
+                "text": "That all the lanterns are lit"
+              },
+              {
+                "text": "That the food stalls are missing"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She counted seven lights and one empty hook.",
+            "retryFeedback": "Look for what Luz finds after counting twice."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why does the empty hook seem strange to Luz, beyond just a missing lantern?",
+            "options": [
+              {
+                "text": "It was clean and firm, as if no one had tried to hang anything there"
+              },
+              {
+                "text": "It had someone else's name written on it"
+              },
+              {
+                "text": "It was bigger than the other hooks"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! The clean, firm hook was a clue that something didn't add up.",
+            "retryFeedback": "Reread how Luz describes the hook."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/la-octava-linterna/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Luz and Nico ask the festival organizer about the missing lantern."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b02",
+          "voice": "narration",
+          "title": "Before Rushing to Look",
+          "lines": [
+            "Nico thought someone might have moved the lantern. Luz nearly ran off to search for it, but stopped. A missing lantern did not, by itself, explain what had happened.",
+            "They asked the festival organizer. She looked up from a box of battery lights.",
+            "“Doña Sabina brings it every year,” she said. “I haven’t seen her today.”",
+            "Luz knew Sabina well enough to greet her in the street, though they had rarely talked. She remembered Sabina staying until the end to watch the lights from the edge of the square."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Who tells them Doña Sabina brings the lantern every year?",
+            "options": [
+              {
+                "text": "The festival organizer"
+              },
+              {
+                "text": "Nico"
+              },
+              {
+                "text": "A random neighbor"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! The organizer told them.",
+            "retryFeedback": "Look for who Luz and Nico ask."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why does Luz stop instead of running off to search for the lantern right away?",
+            "options": [
+              {
+                "text": "A missing lantern didn't, by itself, explain what had happened"
+              },
+              {
+                "text": "Because she didn't care about finding it"
+              },
+              {
+                "text": "Because Nico asked her to wait"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! Luz realized she needed more information before acting.",
+            "retryFeedback": "Think about what Luz thinks right before she stops."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/la-octava-linterna/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Luz finds an old photo of Doña Sabina with the blue-star lantern."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b03",
+          "voice": "narration",
+          "title": "The Photo on the Board",
+          "lines": [
+            "On the community center board were photos from past festivals. Luz found one of Sabina smiling beside a honey-colored lantern. Its blue star stood out even in the old picture.",
+            "“That’s the one,” Nico said. “Let’s ask if she has it.”",
+            "Luz felt uneasy about the words. They sounded as if Sabina owed them something. She didn’t owe an explanation to two curious children.",
+            "“We can ask how she is and whether she’d like to come,” Luz replied.",
+            "They walked along the side lane, which reached Sabina’s home without the square’s steps."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What does Luz find on the community center board?",
+            "options": [
+              {
+                "text": "A photo of Sabina with the blue-star lantern"
+              },
+              {
+                "text": "A map of the square"
+              },
+              {
+                "text": "A list of names"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She found an old photo of Sabina with the lantern.",
+            "retryFeedback": "Look for what Luz sees on the board."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why does Luz feel uneasy about how Nico suggests asking Sabina?",
+            "options": [
+              {
+                "text": "It sounded like a demand, and Sabina didn't owe them an explanation"
+              },
+              {
+                "text": "Nico was talking too loudly"
+              },
+              {
+                "text": "She preferred not to talk to adults"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! Luz felt Nico's words sounded like a demand, not a kind question.",
+            "retryFeedback": "Reread what Luz thinks about Nico's words."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p04",
+      "illustration": {
+        "src": "stories/la-octava-linterna/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Luz and Nico see Doña Sabina and the lantern through her window."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b04",
+          "voice": "narration",
+          "title": "Let's Knock First",
+          "lines": [
+            "Sabina’s window faced the street. On a table behind the glass sat the lantern. Its blue star faced outward. It was neither broken nor lost.",
+            "Luz felt she had solved the mystery. But when she saw Sabina sitting by the table, the question changed. If the lantern was there, why wasn’t Sabina at the festival?",
+            "Nico pointed to the object. Luz gently lowered his hand.",
+            "“Let’s knock first,” she said. “And listen.”",
+            "Sabina opened the door after the bell rang."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What did Luz think when she saw the empty hook, and how did her question change at the window?",
+            "options": [
+              {
+                "text": "She was looking for an object; seeing it safe, the question became why Sabina wasn't there"
+              },
+              {
+                "text": "She thought the lantern was broken; seeing it whole, she stopped caring"
+              },
+              {
+                "text": "She thought someone stole it; seeing it, she got angry"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! First she was looking for an object; seeing it safe, the question became why Sabina wasn't at the festival.",
+            "retryFeedback": "Think about the question Luz asks herself right after seeing the lantern through the window."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What does Luz decide to do before jumping to conclusions, upon seeing Sabina through the window?",
+            "options": [
+              {
+                "text": "Knock and listen, instead of pointing out the lantern right away"
+              },
+              {
+                "text": "Take the lantern without saying anything"
+              },
+              {
+                "text": "Leave without a word"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She said, “Let's knock first, and listen,” before acting.",
+            "retryFeedback": "Look for Luz's exact words before Sabina opens the door."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p05",
+      "illustration": {
+        "src": "stories/la-octava-linterna/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Doña Sabina explains from her doorway why she stayed home."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b05",
+          "voice": "narration",
+          "title": "What Was Really Missing",
+          "lines": [
+            "Sabina invited them to talk from the doorway. She explained that the walk to the square had become tiring for her lately. She had thought of asking for help, but didn’t want everyone to interrupt their preparations. So she left the lantern on the table.",
+            "“From here I can hear a little of the music,” she said with a smile. “I can’t see the lights.”",
+            "Luz looked at the cane by the chair, then at the lantern. She had come looking for an object. Now she understood someone was missing.",
+            "“We could take the lantern for you,” Nico offered. Sabina thanked him, but did not answer at once."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Why did Sabina leave the lantern on the table this year?",
+            "options": [
+              {
+                "text": "The walk to the square had become tiring for her lately"
+              },
+              {
+                "text": "She no longer liked the festival"
+              },
+              {
+                "text": "She completely forgot about it"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! The walk to the square had become tiring for her lately.",
+            "retryFeedback": "Look for what Sabina explains from the doorway."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why did Luz choose to listen before taking the lantern?",
+            "options": [
+              {
+                "text": "She discovered a person was missing, not just an object"
+              },
+              {
+                "text": "Because Nico asked her to"
+              },
+              {
+                "text": "Because the lantern no longer worked"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She realized the problem wasn't the lantern — it was that Sabina was missing.",
+            "retryFeedback": "Think about what Luz understands when she looks at the cane and the lantern together."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p06",
+      "illustration": {
+        "src": "stories/la-octava-linterna/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Doña Sabina talks with Luz and Nico about changing the festival route."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b06",
+          "voice": "narration",
+          "title": "A Level Lane",
+          "lines": [
+            "“I like seeing it light up among the people,” Sabina finally said. “But I don’t want to make everyone change the festival.”",
+            "Luz leaned against the doorframe, leaving the way clear. She could not promise anything without asking the people who planned the celebration.",
+            "“What if we ask them to begin on this lane? It’s level, and the square is at the end. You could watch from here or join us for part of it, whichever you prefer.”",
+            "Sabina thought for a moment.",
+            "“Ask them,” she said. “If it works for everyone, I’d like to try.”"
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q06",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What worries Sabina about bringing the lantern to the festival?",
+            "options": [
+              {
+                "text": "She doesn't want to make everyone change the celebration for her"
+              },
+              {
+                "text": "She doesn't want anyone to see her lantern"
+              },
+              {
+                "text": "She'd rather the festival be canceled"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She didn't want to make everyone change the festival for her.",
+            "retryFeedback": "Look for what Sabina says at the start of the page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What does Luz propose that respects both Sabina's wishes and the festival's?",
+            "options": [
+              {
+                "text": "Starting the route on Sabina's lane, letting her choose how much to join"
+              },
+              {
+                "text": "Canceling this year's festival"
+              },
+              {
+                "text": "Asking Sabina to walk faster"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She proposed starting on Sabina's lane, letting her choose how much to join.",
+            "retryFeedback": "Reread Luz's proposal about the level lane."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p07",
+      "illustration": {
+        "src": "stories/la-octava-linterna/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Neighbors check the side lane for the new lantern route."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b07",
+          "voice": "narration",
+          "title": "The New Route",
+          "lines": [
+            "The organizer listened to the idea. Moving the start was not enough: they had to check the path and how to hang the lanterns safely. Adults looked over the lane. The lights ran on batteries and could hang from sturdy supports beside the lane.",
+            "Nico sketched the new route without blocking anyone’s doorway. Luz went back to tell Sabina the plan and asked whether it still suited her. Sabina chose to sit at her door.",
+            "As night fell, neighbors began gathering in the side lane."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q07",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Who made the decisions about the new route?",
+            "options": [
+              {
+                "text": "The organizer and the neighborhood adults, checking the lane together"
+              },
+              {
+                "text": "Only Luz and Nico, without telling anyone"
+              },
+              {
+                "text": "Only Sabina, without talking to anyone else"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! The adults checked the lane and decided together how to do it safely.",
+            "retryFeedback": "Look for who checks the lane before the route changes."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why does Luz go back to tell Sabina the plan before moving forward?",
+            "options": [
+              {
+                "text": "To make sure the change still felt right to her"
+              },
+              {
+                "text": "Because she had forgotten to tell her earlier"
+              },
+              {
+                "text": "Because Sabina demanded it"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She wanted to be sure the plan still suited Sabina.",
+            "retryFeedback": "Think about why Luz goes back to talk with Sabina."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p08",
+      "illustration": {
+        "src": "stories/la-octava-linterna/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "The eighth lantern glows beside Doña Sabina's door as the neighborhood gathers."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b08",
+          "voice": "narration",
+          "title": "The Eighth Light",
+          "lines": [
+            "Seven lanterns lit up, one after another. The eighth, with its blue star, glowed beside Sabina’s door. She watched the paper turn golden from within. Nico stopped counting and simply looked.",
+            "“I thought a light was missing,” Luz said softly.",
+            "“And you asked about me,” Sabina replied.",
+            "Later, some neighbors walked toward the square while others stayed to talk in the lane. Luz looked at the complete row. The empty hook had been a clue, but only listening to Sabina had shown them what to do with it."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q08",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Where did the eighth lantern glow that night?",
+            "options": [
+              {
+                "text": "Beside Sabina's door"
+              },
+              {
+                "text": "In the center of the square"
+              },
+              {
+                "text": "Inside Sabina's house"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! It glowed beside Sabina's door.",
+            "retryFeedback": "Look for where the eighth lantern was hung at the end."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What does Luz mean when she says the empty hook was a clue, but listening to Sabina showed them what to do with it?",
+            "options": [
+              {
+                "text": "Noticing something was missing wasn't enough — listening showed how to truly help"
+              },
+              {
+                "text": "The empty hook didn't matter at all"
+              },
+              {
+                "text": "They should have taken the lantern without asking"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! A clue only helps once it's paired with truly listening to the person.",
+            "retryFeedback": "Reread the very last sentence of the story."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "lantern": {
+      "syllables": [
+        "lan",
+        "tern"
+      ],
+      "definition": "A portable light people can carry or hang.",
+      "synonym": "lamp",
+      "example": "We used a lantern to look for something under the bed during the blackout."
+    },
+    "hook": {
+      "syllables": [
+        "hook"
+      ],
+      "definition": "A curved piece used for hanging something.",
+      "example": "We hung the keys on a hook by the door."
+    },
+    "demand": {
+      "syllables": [
+        "de",
+        "mand"
+      ],
+      "definition": "To ask for something as if it must be given.",
+      "synonym": "insist",
+      "example": "She went to the store to demand her money back."
+    },
+    "route": {
+      "syllables": [
+        "route"
+      ],
+      "definition": "The path followed to get somewhere.",
+      "synonym": "path",
+      "example": "The bus takes the same route through downtown every day."
+    },
+    "preparations": {
+      "syllables": [
+        "prep",
+        "a",
+        "ra",
+        "tions"
+      ],
+      "definition": "Things done to get ready for an event.",
+      "synonym": "arrangements",
+      "example": "They started the preparations for the party early in the morning."
+    },
+    "clue": {
+      "syllables": [
+        "clue"
+      ],
+      "definition": "A detail that helps you understand something.",
+      "synonym": "hint",
+      "example": "The first clue in the game was hidden under the rug."
+    }
+  }
+}

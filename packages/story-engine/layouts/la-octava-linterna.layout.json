@@ -1,0 +1,14 @@
+{
+  "familyId": "la-octava-linterna",
+  "version": 1,
+  "pages": {
+    "p01": { "blocks": { "b01": { "balloon": { "x": 985, "y": 130, "width": 469, "height": 792 }, "text": { "x": 1006, "y": 145, "width": 427, "height": 762 }, "align": "left", "valign": "top", "textMode": "lines", "maxFontPx": 30 } } },
+    "p02": { "blocks": { "b02": { "balloon": { "x": 985, "y": 130, "width": 469, "height": 792 }, "text": { "x": 1006, "y": 145, "width": 427, "height": 762 }, "align": "left", "valign": "top", "textMode": "lines", "maxFontPx": 30 } } },
+    "p03": { "blocks": { "b03": { "balloon": { "x": 985, "y": 130, "width": 469, "height": 792 }, "text": { "x": 1006, "y": 145, "width": 427, "height": 762 }, "align": "left", "valign": "top", "textMode": "lines", "maxFontPx": 30 } } },
+    "p04": { "blocks": { "b04": { "balloon": { "x": 985, "y": 130, "width": 469, "height": 792 }, "text": { "x": 1006, "y": 145, "width": 427, "height": 762 }, "align": "left", "valign": "top", "textMode": "lines", "maxFontPx": 30 } } },
+    "p05": { "blocks": { "b05": { "balloon": { "x": 985, "y": 130, "width": 469, "height": 792 }, "text": { "x": 1006, "y": 145, "width": 427, "height": 762 }, "align": "left", "valign": "top", "textMode": "lines", "maxFontPx": 30 } } },
+    "p06": { "blocks": { "b06": { "balloon": { "x": 985, "y": 130, "width": 469, "height": 792 }, "text": { "x": 1006, "y": 145, "width": 427, "height": 762 }, "align": "left", "valign": "top", "textMode": "lines", "maxFontPx": 30 } } },
+    "p07": { "blocks": { "b07": { "balloon": { "x": 985, "y": 130, "width": 469, "height": 792 }, "text": { "x": 1006, "y": 145, "width": 427, "height": 762 }, "align": "left", "valign": "top", "textMode": "lines", "maxFontPx": 30 } } },
+    "p08": { "blocks": { "b08": { "balloon": { "x": 985, "y": 130, "width": 469, "height": 792 }, "text": { "x": 1006, "y": 145, "width": 427, "height": 762 }, "align": "left", "valign": "top", "textMode": "lines", "maxFontPx": 30 } } }
+  }
+}

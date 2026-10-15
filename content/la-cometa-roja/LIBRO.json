@@ -1,0 +1,128 @@
+{
+  "id": "la_cometa_roja_n3",
+  "level": 3,
+  "age_range": "7–9",
+  "title": {
+    "es": "La cometa roja",
+    "en": "The Red Kite"
+  },
+  "characters": "Nia (8 años) y su hermano Teo (5 años)",
+  "cover": "imagenes/portada.png",
+  "character_sheet": "imagenes/personajes.png",
+  "pages": [
+    {
+      "number": 1,
+      "text": {
+        "es": "La lluvia paró justo después del almuerzo. Nia miró el patio de la escuela. El cielo tenía un claro azul.\n\n—¡Ahora sí! —le dijo a Teo.\n\nHabían esperado toda la semana para probar su cometa roja. Nia tomó el carrete mientras Teo la miraba con atención. Una brisa levantó la cometa un poco. Los dos dieron un salto de alegría.",
+        "en": "The rain stopped just after lunch. Nia looked across the schoolyard. There was a patch of blue in the sky.\n\n“Now we can try!” she told Teo.\n\nThey had waited all week to fly their red kite. Nia took the spool while Teo watched closely. A breeze lifted the kite a little. They both jumped with joy."
+      },
+      "illustration": "imagenes/escena_01.png",
+      "background": "paginas_sin_texto/pagina_01.png"
+    },
+    {
+      "number": 2,
+      "text": {
+        "es": "Entonces llegó una ráfaga fuerte. La cuerda se deslizó de los dedos de Nia. La cometa subió, dio una vuelta y cayó sobre el roble grande. Su cola azul quedó atrapada en una rama alta.\n\n—Se fue —murmuró Teo.\n\nNia miró hacia arriba. Todavía podían ver el rojo entre las hojas, pero la rama estaba demasiado lejos.",
+        "en": "Then a strong gust came. The string slipped from Nia’s fingers. The kite rose, spun once, and landed in the big oak. Its blue tail caught on a high branch.\n\n“It’s gone,” Teo whispered.\n\nNia looked up. They could still see red among the leaves, but the branch was much too high."
+      },
+      "illustration": "imagenes/escena_02.png",
+      "background": "paginas_sin_texto/pagina_02.png"
+    },
+    {
+      "number": 3,
+      "text": {
+        "es": "Teo quiso acercarse al tronco.\n\n—No vamos a subir —dijo Nia—. La rama está muy alta.\n\nSe sentaron un momento bajo el árbol. Teo tenía los ojos llenos de lágrimas. Nia también estaba triste, pero vio pasar a el encargado del patio.\n\n—Vamos a pedirle ayuda —propuso.\n\nNia explicó dónde estaba la cola azul. El encargado siguió con la mirada la dirección que Nia señalaba.",
+        "en": "Teo stepped toward the trunk.\n\n“We aren’t going to climb,” Nia said. “That branch is too high.”\n\nThey sat under the tree for a moment. Teo’s eyes filled with tears. Nia felt sad too, but she saw the school caretaker passing by.\n\n“Let’s ask him for help,” she said.\n\nNia explained where the blue tail was. He looked in the direction Nia pointed."
+      },
+      "illustration": "imagenes/escena_03.png",
+      "background": "paginas_sin_texto/pagina_03.png"
+    },
+    {
+      "number": 4,
+      "text": {
+        "es": "El encargado trajo una vara larga. Nia y Teo esperaron a varios pasos del árbol.\n\nLa punta de la vara tocó la cometa. La cometa se movió una vez. Luego otra. Por fin se soltó y bajó despacio hasta el suelo.\n\n—¡Volvió! —gritó Teo.\n\nNia dio las gracias. Al recogerla, notó una pequeña rotura cerca del centro.",
+        "en": "The caretaker brought a long pole. Nia and Teo waited several steps from the tree.\n\nThe tip touched the kite. The kite moved once. Then again. At last it came free and floated down to the ground.\n\n“It’s back!” Teo cried.\n\nNia thanked the caretaker. When she picked up the kite, she noticed a small tear near the center."
+      },
+      "illustration": "imagenes/escena_04.png",
+      "background": "paginas_sin_texto/pagina_04.png"
+    },
+    {
+      "number": 5,
+      "text": {
+        "es": "—No puede volar así —dijo Teo.\n\n—Todavía no —respondió Nia.\n\nEn una mesa del patio, pusieron la cometa boca arriba. El encargado les dio un trocito de papel fuerte y cinta. Nia sostuvo la cometa. Teo alisó el parche con cuidado.\n\nEl parche quedó firme. Nia tiró muy suave de la cola azul para comprobar que también seguía bien atada.",
+        "en": "“It can’t fly like that,” Teo said.\n\n“Not yet,” Nia answered.\n\nAt a courtyard table, they laid the kite face up. The caretaker gave them a bit of strong paper and tape. Nia held the kite. Teo smoothed the patch with care.\n\nThe patch felt firm. Nia gave the blue tail a very gentle tug to check that it was still tied on."
+      },
+      "illustration": "imagenes/escena_05.png",
+      "background": "paginas_sin_texto/pagina_05.png"
+    },
+    {
+      "number": 6,
+      "text": {
+        "es": "Más tarde, la brisa regresó. Nia tomó la cuerda y Teo sostuvo la cometa hasta que el aire la levantó. Esta vez Nia sujetó bien el carrete.\n\nLa cometa roja voló por encima del roble. El pequeño parche brillaba bajo el sol.\n\n—Parece una estrella —dijo Teo.\n\nNia sonrió. Habían perdido la cometa por un rato, pero encontraron una manera de traerla de vuelta. Ahora volaba más alto que antes.",
+        "en": "Later, the breeze returned. Nia took the string, and Teo held the kite until the air lifted it. This time Nia held the spool firmly.\n\nThe red kite flew above the oak. Its little patch shone in the sun.\n\n“It looks like a star,” Teo said.\n\nNia smiled. They had lost the kite for a while, but they found a way to bring it back. Now it flew higher than before."
+      },
+      "illustration": "imagenes/escena_06.png",
+      "background": "paginas_sin_texto/pagina_06.png"
+    }
+  ],
+  "questions": [
+    {
+      "es": "¿Qué hizo que la cometa terminara en el roble?",
+      "en": "What made the kite land in the oak?"
+    },
+    {
+      "es": "¿Por qué Nia decidió pedir ayuda en vez de subir al árbol?",
+      "en": "Why did Nia ask for help instead of climbing the tree?"
+    },
+    {
+      "es": "¿Qué hicieron Nia y Teo antes de volar la cometa otra vez?",
+      "en": "What did Nia and Teo do before flying the kite again?"
+    },
+    {
+      "es": "¿Qué otra cosa podrías reparar en lugar de tirarla?",
+      "en": "What else could you repair instead of throwing it away?"
+    }
+  ],
+  "vocabulary": [
+    {
+      "es": "ráfaga",
+      "en": "gust",
+      "definicion": "Viento que llega de golpe."
+    },
+    {
+      "es": "atrapada",
+      "en": "caught",
+      "definicion": "Que no puede soltarse fácilmente."
+    },
+    {
+      "es": "rotura",
+      "en": "tear",
+      "definicion": "Parte que se ha roto."
+    },
+    {
+      "es": "parche",
+      "en": "patch",
+      "definicion": "Pieza pequeña que cubre una rotura."
+    },
+    {
+      "es": "carrete",
+      "en": "spool",
+      "definicion": "Objeto donde se enrolla una cuerda."
+    }
+  ],
+  "page_backgrounds": {
+    "cover": "paginas_sin_texto/portada.png",
+    "pixel_size": [
+      1536,
+      1024
+    ],
+    "text_box_pixels": {
+      "x": 985,
+      "y": 130,
+      "width": 469,
+      "height": 792
+    },
+    "note": "Blank illustration layers; render accessible selectable ES/EN text externally."
+  },
+  "integration_note": "Editorial JSON. Adapt fields to the application story contract before importing."
+}

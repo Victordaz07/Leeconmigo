@@ -1,0 +1,461 @@
+{
+  "id": "la-cometa-roja-es-n3",
+  "familyId": "la-cometa-roja",
+  "language": "es",
+  "title": "La cometa roja",
+  "level": 3,
+  "category": "amistad",
+  "description": "Nia y Teo aprenden que perder algo no siempre significa perderlo para siempre.",
+  "cover": {
+    "src": "stories/la-cometa-roja/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Nia y Teo sostienen su cometa roja bajo un roble grande."
+  },
+  "heroFocus": {
+    "x": 30,
+    "y": 48
+  },
+  "reviewWords": [
+    "ráfaga",
+    "atrapada",
+    "rotura"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/la-cometa-roja/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Nia y Teo en el patio de la escuela con su cometa roja después de la lluvia."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b01",
+          "voice": "narration",
+          "title": "La cometa roja",
+          "lines": [
+            "La lluvia paró justo después del almuerzo. Nia miró el patio de la escuela. El cielo tenía un claro azul.",
+            "—¡Ahora sí! —le dijo a Teo.",
+            "Habían esperado toda la semana para probar su cometa roja. Nia tomó el carrete mientras Teo la miraba con atención. Una brisa levantó la cometa un poco. Los dos dieron un salto de alegría."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué esperaban hacer Nia y Teo toda la semana?",
+            "options": [
+              {
+                "text": "Volar su cometa roja"
+              },
+              {
+                "text": "Ir a la escuela"
+              },
+              {
+                "text": "Ver la lluvia"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Esperaban volar su cometa roja.",
+            "retryFeedback": "Busca lo que Nia y Teo habían esperado hacer."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué señal les mostró que por fin podían volar la cometa?",
+            "options": [
+              {
+                "text": "Un claro azul apareció en el cielo después de la lluvia"
+              },
+              {
+                "text": "Teo se lo pidió a la maestra"
+              },
+              {
+                "text": "El carrete se soltó solo"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! El cielo se despejó justo después del almuerzo.",
+            "retryFeedback": "Piensa en lo que Nia ve en el cielo al principio."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/la-cometa-roja/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "La cometa roja queda atrapada en la rama alta de un roble."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b02",
+          "voice": "narration",
+          "title": "Atrapada en el roble",
+          "lines": [
+            "Entonces llegó una ráfaga fuerte. La cuerda se deslizó de los dedos de Nia. La cometa subió, dio una vuelta y cayó sobre el roble grande. Su cola azul quedó atrapada en una rama alta.",
+            "—Se fue —murmuró Teo.",
+            "Nia miró hacia arriba. Todavía podían ver el rojo entre las hojas, pero la rama estaba demasiado lejos."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué hizo que la cometa terminara en el roble?",
+            "options": [
+              {
+                "text": "Llegó una ráfaga fuerte de viento"
+              },
+              {
+                "text": "Nia la soltó a propósito"
+              },
+              {
+                "text": "Teo la lanzó muy alto"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Llegó una ráfaga fuerte y la cuerda se le escapó a Nia.",
+            "retryFeedback": "Busca lo que pasó justo antes de que la cometa subiera."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué Nia y Teo todavía podían ver la cometa, pero no podían recuperarla?",
+            "options": [
+              {
+                "text": "Porque la rama donde quedó atrapada estaba demasiado alta"
+              },
+              {
+                "text": "Porque la cometa se había roto por completo"
+              },
+              {
+                "text": "Porque no sabían en qué árbol había caído"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Veían el rojo entre las hojas, pero la rama estaba fuera de su alcance.",
+            "retryFeedback": "Piensa en lo que dice Nia sobre la rama al final de la página."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/la-cometa-roja/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Nia y Teo piden ayuda al encargado del patio para recuperar la cometa."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b03",
+          "voice": "narration",
+          "title": "Pedir ayuda",
+          "lines": [
+            "Teo quiso acercarse al tronco.",
+            "—No vamos a subir —dijo Nia—. La rama está muy alta.",
+            "Se sentaron un momento bajo el árbol. Teo tenía los ojos llenos de lágrimas. Nia también estaba triste, pero vio pasar a el encargado del patio.",
+            "—Vamos a pedirle ayuda —propuso.",
+            "Nia explicó dónde estaba la cola azul. El encargado siguió con la mirada la dirección que Nia señalaba."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Por qué Nia decidió pedir ayuda en vez de subir al árbol?",
+            "options": [
+              {
+                "text": "Porque la rama estaba muy alta para subir con seguridad"
+              },
+              {
+                "text": "Porque no le importaba recuperar la cometa"
+              },
+              {
+                "text": "Porque Teo se lo prohibió"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Dijo que no iban a subir porque la rama estaba muy alta.",
+            "retryFeedback": "Busca las palabras exactas de Nia sobre la rama."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué le permitió a Nia pedir ayuda de una manera clara?",
+            "options": [
+              {
+                "text": "Saber exactamente dónde estaba la cola azul para señalársela"
+              },
+              {
+                "text": "Que Teo dejara de llorar primero"
+              },
+              {
+                "text": "Que la maestra los llamara"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Nia explicó dónde estaba la cola azul para que el encargado supiera dónde mirar.",
+            "retryFeedback": "Piensa en lo que Nia hace justo después de pedir ayuda."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p04",
+      "illustration": {
+        "src": "stories/la-cometa-roja/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El encargado del patio usa una vara larga para bajar la cometa del árbol."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b04",
+          "voice": "narration",
+          "title": "La vara larga",
+          "lines": [
+            "El encargado trajo una vara larga. Nia y Teo esperaron a varios pasos del árbol.",
+            "La punta de la vara tocó la cometa. La cometa se movió una vez. Luego otra. Por fin se soltó y bajó despacio hasta el suelo.",
+            "—¡Volvió! —gritó Teo.",
+            "Nia dio las gracias. Al recogerla, notó una pequeña rotura cerca del centro."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué usó el encargado para bajar la cometa?",
+            "options": [
+              {
+                "text": "Una vara larga"
+              },
+              {
+                "text": "Una escalera"
+              },
+              {
+                "text": "Una cuerda nueva"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Trajo una vara larga.",
+            "retryFeedback": "Busca lo que trae el encargado del patio."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué descubrió Nia justo cuando recuperó la cometa?",
+            "options": [
+              {
+                "text": "Una pequeña rotura cerca del centro"
+              },
+              {
+                "text": "Que la cola azul había desaparecido"
+              },
+              {
+                "text": "Que el carrete estaba roto"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Notó una pequeña rotura cerca del centro al recogerla.",
+            "retryFeedback": "Vuelve a leer la última frase de la página."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p05",
+      "illustration": {
+        "src": "stories/la-cometa-roja/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Nia y Teo ponen un parche a la cometa en una mesa del patio."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b05",
+          "voice": "narration",
+          "title": "El parche",
+          "lines": [
+            "—No puede volar así —dijo Teo.",
+            "—Todavía no —respondió Nia.",
+            "En una mesa del patio, pusieron la cometa boca arriba. El encargado les dio un trocito de papel fuerte y cinta. Nia sostuvo la cometa. Teo alisó el parche con cuidado.",
+            "El parche quedó firme. Nia tiró muy suave de la cola azul para comprobar que también seguía bien atada."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué hicieron Nia y Teo antes de volar la cometa otra vez?",
+            "options": [
+              {
+                "text": "Le pusieron un parche a la rotura"
+              },
+              {
+                "text": "Compraron una cometa nueva"
+              },
+              {
+                "text": "Le pidieron a la maestra que la reparara"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Pusieron un parche de papel fuerte sobre la rotura.",
+            "retryFeedback": "Busca lo que hacen Nia y Teo en la mesa del patio."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué Nia tiró suavemente de la cola azul antes de intentar volar la cometa?",
+            "options": [
+              {
+                "text": "Para comprobar que seguía bien atada, no solo que el parche quedara firme"
+              },
+              {
+                "text": "Porque quería quitar la cola"
+              },
+              {
+                "text": "Porque Teo se lo pidió como juego"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Quería asegurarse de que todo -el parche y la cola- estuviera listo.",
+            "retryFeedback": "Vuelve a leer la última frase de la página."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p06",
+      "illustration": {
+        "src": "stories/la-cometa-roja/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "La cometa roja parchada vuela alto sobre el roble bajo el sol."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b06",
+          "voice": "narration",
+          "title": "Más alto que antes",
+          "lines": [
+            "Más tarde, la brisa regresó. Nia tomó la cuerda y Teo sostuvo la cometa hasta que el aire la levantó. Esta vez Nia sujetó bien el carrete.",
+            "La cometa roja voló por encima del roble. El pequeño parche brillaba bajo el sol.",
+            "—Parece una estrella —dijo Teo.",
+            "Nia sonrió. Habían perdido la cometa por un rato, pero encontraron una manera de traerla de vuelta. Ahora volaba más alto que antes."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q06",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué hizo Nia diferente esta vez al sujetar el carrete?",
+            "options": [
+              {
+                "text": "Lo sujetó bien, con firmeza"
+              },
+              {
+                "text": "Se lo dio a Teo"
+              },
+              {
+                "text": "Lo dejó en el suelo"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Esta vez Nia sujetó bien el carrete.",
+            "retryFeedback": "Busca lo que hace Nia con el carrete al principio de la página."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué aprendieron Nia y Teo al final de la historia?",
+            "options": [
+              {
+                "text": "Que perder algo no siempre significa que esté perdido para siempre"
+              },
+              {
+                "text": "Que nunca deben volar cometas cerca de árboles"
+              },
+              {
+                "text": "Que el encargado del patio no quiere ayudar"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Encontraron una manera de traerla de vuelta, y voló más alto que antes.",
+            "retryFeedback": "Piensa en lo que dice Nia al final sobre haber perdido la cometa."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "ráfaga": {
+      "syllables": [
+        "rá",
+        "fa",
+        "ga"
+      ],
+      "definition": "Viento que llega de golpe.",
+      "synonym": "racha",
+      "example": "Una ráfaga de viento se llevó el sombrero de mi abuelo."
+    },
+    "atrapada": {
+      "syllables": [
+        "a",
+        "tra",
+        "pa",
+        "da"
+      ],
+      "definition": "Que no puede soltarse fácilmente.",
+      "synonym": "enganchada",
+      "example": "La pelota quedó atrapada entre las ramas del árbol."
+    },
+    "rotura": {
+      "syllables": [
+        "ro",
+        "tu",
+        "ra"
+      ],
+      "definition": "Parte que se ha roto.",
+      "synonym": "ruptura",
+      "example": "Reparó la rotura de su mochila con un poco de pegamento."
+    },
+    "parche": {
+      "syllables": [
+        "par",
+        "che"
+      ],
+      "definition": "Pieza pequeña que cubre una rotura.",
+      "synonym": "remiendo",
+      "example": "Le puso un parche al neumático de la bicicleta."
+    },
+    "carrete": {
+      "syllables": [
+        "ca",
+        "rre",
+        "te"
+      ],
+      "definition": "Objeto donde se enrolla una cuerda.",
+      "synonym": "bobina",
+      "example": "Enrolló el hilo de pescar en un carrete de plástico."
+    }
+  }
+}

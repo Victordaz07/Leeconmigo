@@ -1,0 +1,357 @@
+{
+  "id": "estrella-desaparecida-c1-en-n2",
+  "familyId": "estrella-desaparecida-c1",
+  "language": "en",
+  "title": "1. The Trail That Did Not Walk",
+  "level": 2,
+  "category": "misterio",
+  "description": "Chapter 1 of 3 of “The Case of the Missing Star”. Read in order.",
+  "cover": {
+    "src": "stories/estrella-desaparecida-c1/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "The Case of the Missing Star"
+  },
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c1/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "They decorate for a party; the star disappears, leaving an empty hook and two trails in the mud."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b01",
+          "voice": "narration",
+          "lines": [
+            "Luna and her little brother Nico help Pico the stork decorate the station for a party."
+          ],
+          "title": "Getting ready"
+        },
+        {
+          "id": "b02",
+          "voice": "narration",
+          "lines": [
+            "The star hangs from a loose bow. Wind shakes the ribbon as Pico moves his cart past."
+          ],
+          "title": "The hanging star"
+        },
+        {
+          "id": "b03",
+          "voice": "narration",
+          "lines": [
+            "When the children look back, the hook is empty. The star has vanished while they were busy."
+          ],
+          "title": "It's gone!"
+        },
+        {
+          "id": "b04",
+          "voice": "narration",
+          "lines": [
+            "They spot two different trails in the mud: small pawprints towards the garden and long lines the other way."
+          ],
+          "title": "Two trails"
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What has disappeared?",
+            "options": [
+              {
+                "text": "The bench"
+              },
+              {
+                "text": "The star"
+              },
+              {
+                "text": "The station"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! The star.",
+            "retryFeedback": "Look at the hook first, then at the trails on the ground."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What must they learn before saying someone took it?",
+            "options": [
+              {
+                "text": "How it disappeared"
+              },
+              {
+                "text": "Every neighbour’s name"
+              },
+              {
+                "text": "How many flags there are"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! How it disappeared.",
+            "retryFeedback": "Look at the hook first, then at the trails on the ground."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c1/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "They follow pawprints to a cat, search by the bench, and return to the other trail."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b05",
+          "voice": "narration",
+          "lines": [
+            "Nico chooses the pawprints, and Luna follows. Whoever passed here might offer a clue."
+          ],
+          "title": "Trail to the garden"
+        },
+        {
+          "id": "b06",
+          "voice": "narration",
+          "lines": [
+            "The tracks lead to a black-and-white cat. Its small paws look like the prints on the path."
+          ],
+          "title": "The cat by the bench"
+        },
+        {
+          "id": "b07",
+          "voice": "narration",
+          "lines": [
+            "The children check beside the bench and underneath it, but they do not find the missing star."
+          ],
+          "title": "Not here"
+        },
+        {
+          "id": "b08",
+          "voice": "narration",
+          "lines": [
+            "They return to the fork to try the other trail. They still need an explanation."
+          ],
+          "title": "Back to the crossing"
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Where do the little pawprints lead?",
+            "options": [
+              {
+                "text": "To the roof"
+              },
+              {
+                "text": "To the cart"
+              },
+              {
+                "text": "To the cat beside the bench"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! To the cat beside the bench.",
+            "retryFeedback": "Pawprints show who passed; check whether they also found the decoration."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What can they say after searching beside the bench?",
+            "options": [
+              {
+                "text": "The cat hid the star"
+              },
+              {
+                "text": "They did not find it there"
+              },
+              {
+                "text": "The star stopped existing"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! They did not find it there.",
+            "retryFeedback": "Pawprints show who passed; check whether they also found the decoration."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c1/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Dotted ribbon beside wheel marks leads them to a window with a huge shadow."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b09",
+          "voice": "narration",
+          "lines": [
+            "Luna notices a scrap of blue ribbon caught beside the two long lines in the mud."
+          ],
+          "title": "The ribbon scrap"
+        },
+        {
+          "id": "b10",
+          "voice": "narration",
+          "lines": [
+            "White dots cover the scrap, just like the star's ribbon. This is something they can compare."
+          ],
+          "title": "The same dots"
+        },
+        {
+          "id": "b11",
+          "voice": "narration",
+          "lines": [
+            "The lines lead them to the wooden workshop. Luna keeps the scrap as they approach the door."
+          ],
+          "title": "To the workshop"
+        },
+        {
+          "id": "b12",
+          "voice": "narration",
+          "lines": [
+            "An enormous shadow fills the glowing window. Nico pauses: what could be making that shape?"
+          ],
+          "title": "A huge shadow"
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What pattern is on the blue ribbon scrap?",
+            "options": [
+              {
+                "text": "White dots"
+              },
+              {
+                "text": "Red stripes"
+              },
+              {
+                "text": "Black flowers"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! White dots.",
+            "retryFeedback": "Compare the ribbon pattern with the one at the beginning."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What links the workshop trail to the star?",
+            "options": [
+              {
+                "text": "The workshop has a window"
+              },
+              {
+                "text": "The shadow looks big"
+              },
+              {
+                "text": "Matching ribbon beside the long lines"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! Matching ribbon beside the long lines.",
+            "retryFeedback": "Compare the ribbon pattern with the one at the beginning."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "stork": {
+      "syllables": [
+        "stork"
+      ],
+      "definition": "A bird with a long beak and long legs."
+    },
+    "ribbon": {
+      "syllables": [
+        "rib",
+        "bon"
+      ],
+      "definition": "A narrow strip of fabric used for tying or decorating."
+    },
+    "bow": {
+      "syllables": [
+        "bow"
+      ],
+      "definition": "A knot with loops that can be loosened by pulling an end."
+    },
+    "hook": {
+      "syllables": [
+        "hook"
+      ],
+      "definition": "A curved piece used to hang something."
+    },
+    "pawprints": {
+      "syllables": [
+        "paw",
+        "prints"
+      ],
+      "definition": "Marks left by an animal’s feet."
+    },
+    "trail": {
+      "syllables": [
+        "trail"
+      ],
+      "definition": "Marks that show where something has passed."
+    },
+    "workshop": {
+      "syllables": [
+        "work",
+        "shop"
+      ],
+      "definition": "A place where things are made or repaired."
+    },
+    "shadow": {
+      "syllables": [
+        "shad",
+        "ow"
+      ],
+      "definition": "A dark shape made when something blocks light."
+    },
+    "scrap": {
+      "syllables": [
+        "scrap"
+      ],
+      "definition": "A small piece left or torn from something."
+    },
+    "explanation": {
+      "syllables": [
+        "ex",
+        "pla",
+        "na",
+        "tion"
+      ],
+      "definition": "An account of how or why something happened."
+    },
+    "compare": {
+      "syllables": [
+        "com",
+        "pare"
+      ],
+      "definition": "To look for similarities and differences."
+    }
+  },
+  "heroFocus": {
+    "x": 35,
+    "y": 62
+  },
+  "reviewWords": [
+    "ribbon",
+    "pawprints",
+    "workshop"
+  ]
+}

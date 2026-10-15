@@ -1,0 +1,1026 @@
+{
+  "slug": "la_torre_que_se_volvio_bosque",
+  "title": {
+    "es": "La torre que se volvió bosque",
+    "en": "The Tower That Became a Forest"
+  },
+  "subtitle": {
+    "es": "Gael descubre otra forma de cocinar",
+    "en": "Gael finds another way to cook"
+  },
+  "chapters": [
+    {
+      "es": "Una idea muy alta",
+      "en": "A very tall idea"
+    },
+    {
+      "es": "El secreto de la caída",
+      "en": "Why the tower fell"
+    },
+    {
+      "es": "Un bosque en cada vaso",
+      "en": "A forest in every cup"
+    }
+  ],
+  "cover": "imagenes/portada.png",
+  "character_sheet": null,
+  "pages": [
+    {
+      "id": "la_torre_que_se_volvio_bosque-p01",
+      "number": 1,
+      "chapter": 1,
+      "image": "imagenes/pagina-01.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "Un postre de tres pisos",
+          "paragraphs": [
+            "Gael coleccionaba recetas como otros niños coleccionaban estampitas. En su cuaderno había platos inventados, comidas de su familia y dibujos que parecían edificios comestibles.",
+            "Para la feria de profesiones de la escuela quería presentar un postre que obligara a todos a levantar la cabeza: una torre de tres pisos de bizcocho suave, crema y frutas. Su tía Amara, pastelera, le permitió trabajar en la cocina comunitaria bajo su supervisión.",
+            "Hana, su amiga, ayudaría a registrar las pruebas y a montar la mesa. Gael trazó la torre en una hoja tan grande que tuvo que pegar dos papeles.",
+            "En la base colocó la capa más ancha; arriba, un montón de fruta brillante. Amara observó el dibujo y preguntó cuánto pesaría la parte alta.",
+            "Gael respondió que no parecía mucho. Hana escribió la pregunta en un margen.",
+            "Nadie había probado todavía la respuesta."
+          ],
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué quiere presentar Gael?",
+              "options": [
+                "Una torre de bizcocho, crema y fruta",
+                "Una sopa",
+                "Un camión de cartón"
+              ],
+              "correctIndex": 0,
+              "hint": "Vuelve a mirar qué cambió entre el dibujo, la prueba y el plato servido."
+            },
+            "lector": {
+              "question": "¿Qué pregunta hace Amara sobre el dibujo?",
+              "options": [
+                "Quién cerró la puerta",
+                "Cuánto pesará la parte alta",
+                "Dónde está el dragón"
+              ],
+              "correctIndex": 1,
+              "hint": "Vuelve a mirar qué cambió entre el dibujo, la prueba y el plato servido."
+            }
+          },
+          "alt": "Escena de un postre de tres pisos."
+        },
+        "en": {
+          "title": "A three-story dessert",
+          "paragraphs": [
+            "Gael collected recipes the way other children collected stickers. His notebook held invented dishes, family meals, and sketches that resembled edible buildings.",
+            "For the school careers fair he wanted to present a dessert that made everyone look up: a three-story tower of soft cake, cream, and fruit. His aunt Amara, a pastry chef, let him work in the community kitchen under her supervision.",
+            "His friend Hana would record the tests and help set the table. Gael drew the tower on a sheet so large he had to tape two pages together.",
+            "He made the bottom layer the widest and piled gleaming fruit on top. Amara studied the sketch and asked how much weight its top would hold.",
+            "Gael said it did not look heavy. Hana wrote the question in the margin.",
+            "Nobody had tested the answer yet."
+          ],
+          "checkpoint": {
+            "explorador": {
+              "question": "What does Gael want to present?",
+              "options": [
+                "A tower of cake, cream, and fruit",
+                "A soup",
+                "A cardboard engine"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again at what changed between the sketch, test, and served dessert."
+            },
+            "lector": {
+              "question": "What does Amara ask about the sketch?",
+              "options": [
+                "Who shut the door",
+                "How much the top will weigh",
+                "Where the dragon is"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again at what changed between the sketch, test, and served dessert."
+            }
+          },
+          "alt": "Scene of a three-story dessert."
+        }
+      }
+    },
+    {
+      "id": "la_torre_que_se_volvio_bosque-p02",
+      "number": 2,
+      "chapter": 1,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "La mesa de las pruebas",
+          "paragraphs": [
+            "Amara preparó los ingredientes y se encargó del horno y las tareas que exigían calor. Gael mezcló bajo su mirada y comparó el tamaño de tres moldes.",
+            "Hana lavó la fruta y la secó con paciencia, mientras Gael se impacientaba por empezar a decorar. El primer bizcocho salió esponjoso y dorado.",
+            "Olía tan bien que Damián, un niño que esperaba a su hermana en otra actividad, se asomó desde la puerta. Amara le explicó que no podía probar nada sin hablar antes con el adulto responsable y revisar los ingredientes.",
+            "Gael intentó mover la capa grande mientras aún estaba tibia. Amara le pidió que esperara.",
+            "«Un dibujo no se derrite», dijo ella, «pero la crema sí puede cambiar». Gael miró el reloj.",
+            "Si seguían esperando, tal vez la torre no estaría lista para fotografiarla antes de la feria. Decidió que la capa estaba suficientemente fría y preparó la primera cucharada de crema."
+          ],
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué trabajo se reserva Amara?",
+              "options": [
+                "Hacer el cartel",
+                "El horno y las tareas con calor",
+                "Dibujar las fresas"
+              ],
+              "correctIndex": 1,
+              "hint": "Vuelve a mirar qué cambió entre el dibujo, la prueba y el plato servido."
+            },
+            "lector": {
+              "question": "¿Por qué pide esperar antes de poner crema?",
+              "options": [
+                "La fruta no está pintada",
+                "Hana se fue",
+                "La capa sigue tibia y puede ablandarla"
+              ],
+              "correctIndex": 2,
+              "hint": "Vuelve a mirar qué cambió entre el dibujo, la prueba y el plato servido."
+            }
+          },
+          "alt": ""
+        },
+        "en": {
+          "title": "The testing table",
+          "paragraphs": [
+            "Amara set out the ingredients and handled the oven and any work involving heat. Gael mixed under her eye and compared the sizes of three cake pans.",
+            "Hana washed the fruit and dried it carefully while Gael grew impatient to decorate. The first cake came out soft and golden.",
+            "It smelled so good that Damián, a boy waiting for his sister at another activity, peeked through the doorway. Amara explained that he could not taste anything before checking with the adult in charge and reviewing the ingredients.",
+            "Gael tried to move the large layer while it was still warm. Amara asked him to wait.",
+            "“A drawing never melts,” she said, “but cream can change.” Gael watched the clock. If they kept waiting, perhaps the tower would not be ready to photograph before the fair.",
+            "He decided the cake was cool enough and reached for the first spoonful of cream."
+          ],
+          "checkpoint": {
+            "explorador": {
+              "question": "Which jobs does Amara handle?",
+              "options": [
+                "Making a sign",
+                "The oven and hot tasks",
+                "Drawing strawberries"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again at what changed between the sketch, test, and served dessert."
+            },
+            "lector": {
+              "question": "Why does she ask him to wait before adding cream?",
+              "options": [
+                "The fruit is not painted",
+                "Hana has left",
+                "Warm cake may soften it"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again at what changed between the sketch, test, and served dessert."
+            }
+          },
+          "alt": ""
+        }
+      }
+    },
+    {
+      "id": "la_torre_que_se_volvio_bosque-p03",
+      "number": 3,
+      "chapter": 1,
+      "image": "imagenes/pagina-03.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "Un temblor de fresa",
+          "paragraphs": [
+            "Las dos primeras capas se mantuvieron en pie. Gael extendió la crema, puso la tercera encima y acomodó las frutas más bonitas en la cima.",
+            "Hana notó que una fresa descendía lentamente por un costado. Señaló otra que se hundía en la crema.",
+            "Gael pensó que podía taparlas con más fruta. Colocó un racimo a la derecha.",
+            "La torre se inclinó a la izquierda. Antes de que nadie pudiera tocarla, las capas se deslizaron unas sobre otras y acabaron desordenadas en la bandeja limpia.",
+            "No tocaron el suelo, pero ya no parecían una torre. Gael sintió que se le calentaban las orejas.",
+            "Amara apartó la bandeja para comprobar qué partes podían aprovecharse de manera segura; Hana recogió el cuaderno para que no se manchara. En él seguía intacto el dibujo perfecto.",
+            "El postre real se había movido de un modo que el lápiz no había previsto."
+          ],
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Dónde caen las capas?",
+              "options": [
+                "En el suelo",
+                "Dentro de un horno",
+                "En una bandeja limpia"
+              ],
+              "correctIndex": 2,
+              "hint": "Vuelve a mirar qué cambió entre el dibujo, la prueba y el plato servido."
+            },
+            "lector": {
+              "question": "¿Qué muestra la fresa que se desliza?",
+              "options": [
+                "La torre empieza a perder estabilidad",
+                "La crema está congelada",
+                "Falta un plato"
+              ],
+              "correctIndex": 0,
+              "hint": "Vuelve a mirar qué cambió entre el dibujo, la prueba y el plato servido."
+            }
+          },
+          "alt": "Escena de un temblor de fresa."
+        },
+        "en": {
+          "title": "A strawberry tremor",
+          "paragraphs": [
+            "The first two layers stood. Gael spread the cream, set the third one above them, and arranged the prettiest fruit on top.",
+            "Hana noticed one strawberry slowly traveling down a side. She pointed to another sinking into the cream.",
+            "Gael thought he could cover them with more fruit. He added a bunch on the right.",
+            "The tower leaned left. Before anyone could touch it, the layers slid across one another and landed in a heap on the clean tray.",
+            "Nothing touched the floor, but it no longer resembled a tower. Gael felt his ears grow hot.",
+            "Amara set the tray aside to check what could safely be used; Hana rescued the notebook from the spill. In it the perfect sketch remained untouched.",
+            "The real dessert had moved in a way his pencil had never predicted."
+          ],
+          "checkpoint": {
+            "explorador": {
+              "question": "Where do the layers land?",
+              "options": [
+                "On the floor",
+                "Inside an oven",
+                "On a clean tray"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again at what changed between the sketch, test, and served dessert."
+            },
+            "lector": {
+              "question": "What does the sliding strawberry suggest?",
+              "options": [
+                "The tower is becoming unstable",
+                "The cream is frozen",
+                "A plate is missing"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again at what changed between the sketch, test, and served dessert."
+            }
+          },
+          "alt": "Scene of a strawberry tremor."
+        }
+      }
+    },
+    {
+      "id": "la_torre_que_se_volvio_bosque-p04",
+      "number": 4,
+      "chapter": 1,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "La fotografía que no quería",
+          "paragraphs": [
+            "Gael quiso cerrar el cuaderno. En la feria habría mesas de animales, plantas, edificios y vehículos; su montón de bizcocho no parecía una profesión.",
+            "Hana tomó una foto de la bandeja antes de que él la escondiera. «Es una pista», dijo.",
+            "Gael casi le pidió que la borrara. Amara les ofreció dos platos: en uno puso un poco de crema que había estado lejos del bizcocho tibio; en el otro, una cucharada de la crema blanda de la torre.",
+            "La diferencia se veía sin probarla. Hana colocó tres fichas de cartón sobre una esponja para representar la fruta de arriba.",
+            "La esponja cedió. Gael señaló dos posibles causas: la crema se había ablandado y el peso de la fruta no estaba bien distribuido.",
+            "Amara no le dijo cuál era la única respuesta. Le preguntó qué podrían cambiar en una prueba pequeña antes de usar los ingredientes restantes."
+          ],
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué fotografía Hana?",
+              "options": [
+                "La torre caída en la bandeja",
+                "Un dragón de papel",
+                "El camión de bomberos"
+              ],
+              "correctIndex": 0,
+              "hint": "Vuelve a mirar qué cambió entre el dibujo, la prueba y el plato servido."
+            },
+            "lector": {
+              "question": "¿Qué dos pistas identifican?",
+              "options": [
+                "Fruta azul y horno frío",
+                "Crema blanda y peso mal repartido",
+                "Vasos rotos y humo"
+              ],
+              "correctIndex": 1,
+              "hint": "Vuelve a mirar qué cambió entre el dibujo, la prueba y el plato servido."
+            }
+          },
+          "alt": ""
+        },
+        "en": {
+          "title": "The photo he did not want",
+          "paragraphs": [
+            "Gael wanted to close his notebook. The fair would have tables about animals, plants, buildings, and vehicles; his cake pile did not look like a profession.",
+            "Hana photographed the tray before he could hide it. “It is a clue,” she said.",
+            "Gael almost asked her to delete the picture. Amara offered them two plates: one held cream kept away from the warm cake; the other held a spoonful of the tower’s softened cream.",
+            "They could see the difference without tasting it. Hana set three cardboard markers on a sponge to stand for the fruit above.",
+            "The sponge gave way. Gael named two possible causes: the cream had softened, and the fruit’s weight was poorly distributed.",
+            "Amara did not declare a single answer. She asked what they could change in a small test before using their remaining ingredients."
+          ],
+          "checkpoint": {
+            "explorador": {
+              "question": "What does Hana photograph?",
+              "options": [
+                "The fallen tower on the tray",
+                "A paper dragon",
+                "A fire engine"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again at what changed between the sketch, test, and served dessert."
+            },
+            "lector": {
+              "question": "What two clues do they identify?",
+              "options": [
+                "Blue fruit and a cold oven",
+                "Softened cream and uneven weight",
+                "Broken cups and smoke"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again at what changed between the sketch, test, and served dessert."
+            }
+          },
+          "alt": ""
+        }
+      }
+    },
+    {
+      "id": "la_torre_que_se_volvio_bosque-p05",
+      "number": 5,
+      "chapter": 2,
+      "image": "imagenes/pagina-05.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "Dos torres pequeñas",
+          "paragraphs": [
+            "Gael y Hana montaron dos torres diminutas con porciones que Amara había reservado para ensayar. Ambas tenían la misma cantidad de bizcocho.",
+            "En la primera pusieron crema sobre una pieza aún tibia y la fruta encima; en la segunda esperaron a que la pieza se enfriara y repartieron la fruta en capas más bajas. Las dejaron sobre la mesa de pruebas mientras ordenaban la cocina.",
+            "La primera perdió forma. La segunda siguió en pie, aunque Gael vio que su centro se movía si tocaba la bandeja.",
+            "No era una demostración perfecta: habían cambiado más de una cosa entre ambas. Hana lo escribió en el cuaderno.",
+            "«Sabemos que esta versión aguanta mejor», dijo, «pero no cuál cambio ayudó más». A Gael le habría gustado declarar el misterio resuelto.",
+            "Amara sonrió al ver que dejaban la duda anotada. También le recordó que una mesa llena de visitantes se movería más que aquella mesa quieta."
+          ],
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Cuántas torres pequeñas comparan?",
+              "options": [
+                "Una",
+                "Dos",
+                "Cinco"
+              ],
+              "correctIndex": 1,
+              "hint": "Vuelve a mirar qué cambió entre el dibujo, la prueba y el plato servido."
+            },
+            "lector": {
+              "question": "¿Por qué Hana no declara una causa única?",
+              "options": [
+                "La cámara no funciona",
+                "Falta el cuaderno",
+                "Cambiaron más de una cosa entre pruebas"
+              ],
+              "correctIndex": 2,
+              "hint": "Vuelve a mirar qué cambió entre el dibujo, la prueba y el plato servido."
+            }
+          },
+          "alt": "Escena de dos torres pequeñas."
+        },
+        "en": {
+          "title": "Two small towers",
+          "paragraphs": [
+            "Gael and Hana assembled two tiny towers from portions Amara had set aside for testing. Both used the same amount of cake.",
+            "In the first they spread cream over a still-warm piece and placed fruit above; in the second they waited for the piece to cool and divided the fruit among lower layers. They left both on the testing table while tidying the kitchen.",
+            "The first lost its shape. The second stood, though Gael saw its center move when he touched the tray.",
+            "This was not a perfect experiment: they had changed more than one thing between the two. Hana wrote that in the notebook.",
+            "“We know this version holds better,” she said, “but not which change helped most.” Gael would have liked to call the mystery solved. Amara smiled when she saw them leave the question open.",
+            "She also reminded him that a table crowded with visitors would move more than this quiet one."
+          ],
+          "checkpoint": {
+            "explorador": {
+              "question": "How many small towers do they compare?",
+              "options": [
+                "One",
+                "Two",
+                "Five"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again at what changed between the sketch, test, and served dessert."
+            },
+            "lector": {
+              "question": "Why can Hana not name one certain cause?",
+              "options": [
+                "The camera broke",
+                "The notebook is missing",
+                "They changed more than one thing"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again at what changed between the sketch, test, and served dessert."
+            }
+          },
+          "alt": "Scene of two small towers."
+        }
+      }
+    },
+    {
+      "id": "la_torre_que_se_volvio_bosque-p06",
+      "number": 6,
+      "chapter": 2,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "El viaje imposible",
+          "paragraphs": [
+            "La feria no se celebraría en la cocina. Habría que llevar el postre al gimnasio, atravesar una puerta pesada, subir una pequeña rampa y encontrar un sitio entre otras mesas.",
+            "Gael tomó la torre de prueba y caminó despacio por la cocina. Se inclinó solo al girar una esquina; la fruta de arriba se desplazó.",
+            "Hana extendió una bandeja debajo antes de que cayera. «Podemos hacer una base más ancha», propuso Gael.",
+            "Pero quedaba poco tiempo y Amara había separado los ingredientes suficientes para una sola tanda final. Podían ensayar otra idea, no cocinar torres nuevas hasta acertar por casualidad.",
+            "Gael abrió el cuaderno en la primera página y vio que había dibujado el postre desde la mesa, nunca en movimiento. Tal vez el problema ya no era cómo sostenerlo.",
+            "Tal vez tenía que decidir qué quería que sintiera una persona al probarlo, aunque no mirara hacia arriba."
+          ],
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Por dónde deben transportar el postre?",
+              "options": [
+                "Un bosque real",
+                "La luna",
+                "Puerta, rampa y mesas del gimnasio"
+              ],
+              "correctIndex": 2,
+              "hint": "Vuelve a mirar qué cambió entre el dibujo, la prueba y el plato servido."
+            },
+            "lector": {
+              "question": "¿Qué había omitido el primer dibujo?",
+              "options": [
+                "Cómo viajaría la torre",
+                "El nombre de Amara",
+                "La cantidad de sillas"
+              ],
+              "correctIndex": 0,
+              "hint": "Vuelve a mirar qué cambió entre el dibujo, la prueba y el plato servido."
+            }
+          },
+          "alt": ""
+        },
+        "en": {
+          "title": "The impossible trip",
+          "paragraphs": [
+            "The fair would not happen in the kitchen. They would have to carry the dessert to the gym, pass through a heavy door, travel up a short ramp, and find a place among other tables.",
+            "Gael picked up the test tower and walked slowly around the kitchen. He leaned only a little as he turned a corner; fruit shifted on top.",
+            "Hana slipped a tray beneath it before it fell. “We could make the base wider,” Gael suggested.",
+            "But time was short, and Amara had reserved enough ingredients for one final batch. They could test another idea, not cook towers until one happened to work.",
+            "Gael opened his notebook to the first page and realized he had drawn the dessert standing on a table, never moving. Perhaps the question was no longer how to hold it up.",
+            "Perhaps he had to decide what he wanted a visitor to experience while tasting it, even without looking up."
+          ],
+          "checkpoint": {
+            "explorador": {
+              "question": "What must the dessert travel through?",
+              "options": [
+                "A real forest",
+                "The Moon",
+                "Door, ramp, and gym tables"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again at what changed between the sketch, test, and served dessert."
+            },
+            "lector": {
+              "question": "What did the first sketch leave out?",
+              "options": [
+                "How the tower would travel",
+                "Amara’s name",
+                "The number of chairs"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again at what changed between the sketch, test, and served dessert."
+            }
+          },
+          "alt": ""
+        }
+      }
+    },
+    {
+      "id": "la_torre_que_se_volvio_bosque-p07",
+      "number": 7,
+      "chapter": 2,
+      "image": "imagenes/pagina-07.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "El vaso transparente",
+          "paragraphs": [
+            "Hana encontró unos vasos transparentes que Amara usaba para mostrar capas. Gael tomó una porción de bizcocho que su tía había declarado apta para aprovechar, la acomodó en el fondo y añadió crema y fruta.",
+            "No era una torre: cada capa se apoyaba en las paredes del vaso. Hana la levantó, dio la vuelta a la mesa y la devolvió sin que nada se deslizara.",
+            "Gael preparó otro vaso con menos fruta arriba y más colores a los lados. Los dos parecían pequeños jardines vistos a través de una ventana.",
+            "Damián regresó y los llamó «bosques de postre». Gael se rio por primera vez desde la caída.",
+            "Amara revisó la preparación y el plan de conservación para llevarlos a la feria. Gael aún podía intentar la torre grande, pero ya no quería apostar toda la mesa a que se mantuviera inmóvil.",
+            "Dibujó seis vasos en el margen del cuaderno."
+          ],
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué encuentra Hana?",
+              "options": [
+                "Vasos transparentes",
+                "Un horno nuevo",
+                "Una escalera"
+              ],
+              "correctIndex": 0,
+              "hint": "Vuelve a mirar qué cambió entre el dibujo, la prueba y el plato servido."
+            },
+            "lector": {
+              "question": "¿Por qué el nuevo postre viaja mejor?",
+              "options": [
+                "Es más alto",
+                "Cada capa se apoya en el vaso",
+                "Tiene más fruta arriba"
+              ],
+              "correctIndex": 1,
+              "hint": "Vuelve a mirar qué cambió entre el dibujo, la prueba y el plato servido."
+            }
+          },
+          "alt": "Escena de el vaso transparente."
+        },
+        "en": {
+          "title": "The clear cup",
+          "paragraphs": [
+            "Hana found clear cups that Amara used for displaying layers. Gael took a portion of cake his aunt had approved for reuse, placed it at the bottom, and added cream and fruit.",
+            "It was not a tower: each layer rested against the cup. Hana picked it up, walked around the table, and set it down without anything sliding.",
+            "Gael made another cup with less fruit at the top and more color along the sides. The pair resembled tiny gardens seen through windows.",
+            "Damián came back and called them “dessert forests.” Gael laughed for the first time since the fall. Amara checked the preparation and storage plan for bringing them to the fair.",
+            "Gael could still attempt the great tower, but he no longer wanted to risk his entire table on keeping it perfectly still. He drew six cups in the notebook margin."
+          ],
+          "checkpoint": {
+            "explorador": {
+              "question": "What does Hana find?",
+              "options": [
+                "Clear cups",
+                "A new oven",
+                "A ladder"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again at what changed between the sketch, test, and served dessert."
+            },
+            "lector": {
+              "question": "Why does the new dessert travel better?",
+              "options": [
+                "It is taller",
+                "The cup supports every layer",
+                "It has more fruit on top"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again at what changed between the sketch, test, and served dessert."
+            }
+          },
+          "alt": "Scene of the clear cup."
+        }
+      }
+    },
+    {
+      "id": "la_torre_que_se_volvio_bosque-p08",
+      "number": 8,
+      "chapter": 2,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "El sabor desde abajo",
+          "paragraphs": [
+            "Gael creyó que bastaba con colocar los ingredientes en cualquier orden. Amara le pidió que probara una porción que hubiera sido preparada para degustar y describiera qué encontraba primero.",
+            "La crema tapaba la fruta. Gael cambió el siguiente vaso: bizcocho en el fondo, un poco de crema, fruta visible junto al cristal y otra capa suave encima.",
+            "Hana comparó los dos sin mirar el dibujo original. En el segundo sentía diferentes texturas con cada cucharada.",
+            "Gael ajustó la proporción para que nadie encontrara solo bizcocho seco en el fondo. Su tía se encargó de verificar los ingredientes y de mantener el postre en condiciones adecuadas para servirlo; Gael no ofreció muestras por su cuenta.",
+            "Al final no había una torre disminuida dentro de un vaso. Había un postre pensado para ser comido desde arriba hasta abajo, y cada cucharada debía tener una pequeña sorpresa."
+          ],
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué cambia Gael en el siguiente vaso?",
+              "options": [
+                "El nombre de Hana",
+                "El orden y equilibrio de las capas",
+                "La forma de la escuela"
+              ],
+              "correctIndex": 1,
+              "hint": "Vuelve a mirar qué cambió entre el dibujo, la prueba y el plato servido."
+            },
+            "lector": {
+              "question": "¿Qué descubre al probarlo?",
+              "options": [
+                "Solo se prueba la crema",
+                "No necesita fruta",
+                "Cada cucharada puede tener texturas distintas"
+              ],
+              "correctIndex": 2,
+              "hint": "Vuelve a mirar qué cambió entre el dibujo, la prueba y el plato servido."
+            }
+          },
+          "alt": ""
+        },
+        "en": {
+          "title": "Flavor from the bottom up",
+          "paragraphs": [
+            "Gael thought the ingredients could be stacked in any order. Amara asked him to taste a portion prepared for sampling and describe what came first.",
+            "The cream hid the fruit. Gael changed the next cup: cake on the bottom, a little cream, fruit visible against the glass, and another soft layer above.",
+            "Hana compared them without looking at his original sketch. The second had different textures in each spoonful.",
+            "Gael adjusted the balance so nobody would reach only dry cake at the bottom. His aunt checked the ingredients and kept the dessert properly for serving; Gael did not offer samples on his own.",
+            "In the end it was not a smaller tower inside a cup. It was a dessert designed to be eaten from top to bottom, with a small surprise in each spoonful."
+          ],
+          "checkpoint": {
+            "explorador": {
+              "question": "What does Gael change in the next cup?",
+              "options": [
+                "Hana’s name",
+                "The order and balance of layers",
+                "The shape of the school"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again at what changed between the sketch, test, and served dessert."
+            },
+            "lector": {
+              "question": "What does he learn by tasting?",
+              "options": [
+                "Only cream can be tasted",
+                "Fruit is unnecessary",
+                "Each spoonful can have different textures"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again at what changed between the sketch, test, and served dessert."
+            }
+          },
+          "alt": ""
+        }
+      }
+    },
+    {
+      "id": "la_torre_que_se_volvio_bosque-p09",
+      "number": 9,
+      "chapter": 3,
+      "image": "imagenes/pagina-09.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "La prueba del pasillo",
+          "paragraphs": [
+            "Antes de dar por terminado el trabajo, Hana propuso una prueba final: llevar seis vasos de muestra por el recorrido entre la cocina y la puerta del gimnasio. Amara supervisó el ensayo con porciones reservadas.",
+            "Gael tomó la bandeja por las dos asas; Hana sostuvo abierta la puerta pesada. En la pequeña rampa los vasos se juntaron a un lado y uno se inclinó.",
+            "Se detuvieron antes de que cayera. Gael había resuelto cómo sostener cada postre, pero no cómo impedir que chocaran entre sí.",
+            "Con ayuda de Amara colocaron separadores firmes en la bandeja y probaron de nuevo con el camino despejado. Esta vez cada vaso llegó a su sitio.",
+            "Gael dibujó los separadores junto a la receta. El detalle no cambiaba el sabor, pero sí la posibilidad de compartirlo.",
+            "Agradeció que Hana hubiera pensado en caminar con el postre en vez de admirarlo quieto."
+          ],
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué ocurre en la rampa?",
+              "options": [
+                "Los vasos vuelan",
+                "Amara pierde el cuaderno",
+                "Un vaso se inclina cuando se juntan"
+              ],
+              "correctIndex": 2,
+              "hint": "Vuelve a mirar qué cambió entre el dibujo, la prueba y el plato servido."
+            },
+            "lector": {
+              "question": "¿Para qué añaden separadores a la bandeja?",
+              "options": [
+                "Para impedir que los vasos choquen",
+                "Para esconder el postre",
+                "Para hacerlo más alto"
+              ],
+              "correctIndex": 0,
+              "hint": "Vuelve a mirar qué cambió entre el dibujo, la prueba y el plato servido."
+            }
+          },
+          "alt": "Escena de la prueba del pasillo."
+        },
+        "en": {
+          "title": "The hallway test",
+          "paragraphs": [
+            "Before calling the work finished, Hana suggested one last test: carrying six sample cups along the route from the kitchen to the gym door. Amara supervised the rehearsal with portions set aside for testing.",
+            "Gael held both tray handles; Hana kept the heavy door open. On the short ramp the cups slid together and one tilted.",
+            "They stopped before it fell. Gael had solved how to hold each dessert, but not how to stop the cups from bumping one another.",
+            "With Amara’s help they added firm dividers to the tray and tried again along a clear path. This time every cup reached its place.",
+            "Gael drew the dividers beside his recipe. The detail did not change the flavor, but it changed whether he could share it.",
+            "He thanked Hana for imagining the dessert in motion instead of admiring it while it stood still."
+          ],
+          "checkpoint": {
+            "explorador": {
+              "question": "What happens on the ramp?",
+              "options": [
+                "The cups fly away",
+                "Amara loses the notebook",
+                "One cup tilts as cups slide together"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again at what changed between the sketch, test, and served dessert."
+            },
+            "lector": {
+              "question": "Why add dividers to the tray?",
+              "options": [
+                "To keep cups from bumping together",
+                "To hide the dessert",
+                "To make it taller"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again at what changed between the sketch, test, and served dessert."
+            }
+          },
+          "alt": "Scene of the hallway test."
+        }
+      }
+    },
+    {
+      "id": "la_torre_que_se_volvio_bosque-p10",
+      "number": 10,
+      "chapter": 3,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "La mesa tiembla",
+          "paragraphs": [
+            "La mañana de la feria, un carro de materiales pasó junto a la mesa de Gael y la hizo vibrar. Él miró los vasos; las capas siguieron donde estaban.",
+            "Después llegaron otros estudiantes con maquetas y tableros. Gael dejó espacio para que Amara mantuviera el postre preparado para servir y mostrara a los adultos responsables la lista de ingredientes.",
+            "Hana colocó a un lado el dibujo de la torre y la foto de su caída; al otro, las pruebas pequeñas. Gael prefería esconder la foto, pero un niño observó el montón de bizcocho y preguntó cómo se había convertido en los vasitos.",
+            "Gael le explicó las pistas: calor, peso y movimiento. No fingió que había planeado el bosque desde el principio.",
+            "El niño movió con cuidado uno de los vasos y miró las capas a través del cristal. «Ahora puedo verlo por todos lados», dijo.",
+            "Gael comprendió que su nuevo postre también contaba una historia."
+          ],
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué vibra al pasar un carro?",
+              "options": [
+                "La mesa de Gael",
+                "El árbol del patio",
+                "La puerta del horno"
+              ],
+              "correctIndex": 0,
+              "hint": "Vuelve a mirar qué cambió entre el dibujo, la prueba y el plato servido."
+            },
+            "lector": {
+              "question": "¿Por qué deja visible la foto de la caída?",
+              "options": [
+                "Quiere culpar a Hana",
+                "Permite contar cómo cambió la idea",
+                "Es la única foto bonita"
+              ],
+              "correctIndex": 1,
+              "hint": "Vuelve a mirar qué cambió entre el dibujo, la prueba y el plato servido."
+            }
+          },
+          "alt": ""
+        },
+        "en": {
+          "title": "The table shakes",
+          "paragraphs": [
+            "On fair morning a supply cart passed Gael’s table and made it tremble. He watched the cups; their layers stayed in place.",
+            "Then other students arrived with models and display boards. Gael left room for Amara to keep the dessert ready for serving and show the ingredient list to the responsible adults.",
+            "Hana placed the original tower sketch and the photo of its collapse on one side, the small tests on the other. Gael would rather have hidden the photo, but a child studied the pile of cake and asked how it had become these cups.",
+            "Gael described the clues: warmth, weight, and movement. He did not pretend he had planned the forest from the beginning.",
+            "The child gently turned one cup and looked through the clear side. “Now I can see it from every direction,” he said.",
+            "Gael realized his new dessert told a story too."
+          ],
+          "checkpoint": {
+            "explorador": {
+              "question": "What shakes as a cart passes?",
+              "options": [
+                "Gael’s table",
+                "The courtyard tree",
+                "The oven door"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again at what changed between the sketch, test, and served dessert."
+            },
+            "lector": {
+              "question": "Why show the photo of the collapse?",
+              "options": [
+                "He wants to blame Hana",
+                "It helps tell how his idea changed",
+                "It is the only pretty photo"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again at what changed between the sketch, test, and served dessert."
+            }
+          },
+          "alt": ""
+        }
+      }
+    },
+    {
+      "id": "la_torre_que_se_volvio_bosque-p11",
+      "number": 11,
+      "chapter": 3,
+      "image": "imagenes/pagina-11.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "Visitantes del bosque",
+          "paragraphs": [
+            "Camila pasó de su mesa veterinaria con su cuaderno y quiso saber qué había cambiado después de la primera prueba. Imani, que enseñaba dos salidas de un edificio, puso una ficha de cartón en lo alto del dibujo y preguntó si todos los vasos podían transportarse sin ayuda.",
+            "Gael mostró cómo los llevaban en una bandeja firme bajo la supervisión de Amara. Abril se detuvo ante los colores visibles y comentó que el vaso permitía mirar cada capa sin desmontar nada.",
+            "No era la misma feria desde los ojos de todos: cada niño encontraba una pregunta distinta en el postre. Cuando llegó el momento de probarlo, Amara coordinó las porciones con la escuela y las familias.",
+            "Gael escuchó opiniones: una niña quería más fruta, otro prefería una capa de bizcocho más pequeña. Anotó ambas.",
+            "La receta ya no terminaba con el primer aplauso; podía seguir cambiando después de ser servida."
+          ],
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué pregunta Camila?",
+              "options": [
+                "A qué hora sale el camión",
+                "Qué cambió después de la primera prueba",
+                "Dónde está Miga"
+              ],
+              "correctIndex": 1,
+              "hint": "Vuelve a mirar qué cambió entre el dibujo, la prueba y el plato servido."
+            },
+            "lector": {
+              "question": "¿Qué aprende Gael de las opiniones?",
+              "options": [
+                "Todos prefieren lo mismo",
+                "El bosque debe ser más alto",
+                "La receta puede mejorar después de servirla"
+              ],
+              "correctIndex": 2,
+              "hint": "Vuelve a mirar qué cambió entre el dibujo, la prueba y el plato servido."
+            }
+          },
+          "alt": "Escena de visitantes del bosque."
+        },
+        "en": {
+          "title": "Visitors to the forest",
+          "paragraphs": [
+            "Camila came from her veterinary table with her notebook and asked what had changed after the first test. Imani, showing two ways out of a building, set a cardboard marker at the top of the drawing and asked whether all the cups could travel safely.",
+            "Gael showed how they carried them on a steady tray under Amara’s supervision. Abril stopped to study the visible colors and said the cup let her see each layer without taking anything apart.",
+            "The fair did not look the same through everyone’s eyes: each child found a different question in the dessert. When it was time for tasting, Amara coordinated portions with the school and families.",
+            "Gael listened to responses: one girl wanted more fruit, another preferred less cake. He noted both.",
+            "The recipe did not end with the first round of applause; it could keep changing after people tasted it."
+          ],
+          "checkpoint": {
+            "explorador": {
+              "question": "What does Camila ask?",
+              "options": [
+                "When the engine leaves",
+                "What changed after the first test",
+                "Where Miga is"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again at what changed between the sketch, test, and served dessert."
+            },
+            "lector": {
+              "question": "What does Gael learn from visitors?",
+              "options": [
+                "Everyone prefers the same thing",
+                "The forest must be taller",
+                "The recipe can improve after serving"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again at what changed between the sketch, test, and served dessert."
+            }
+          },
+          "alt": "Scene of visitors to the forest."
+        }
+      }
+    },
+    {
+      "id": "la_torre_que_se_volvio_bosque-p12",
+      "number": 12,
+      "chapter": 3,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "Una receta con dos finales",
+          "paragraphs": [
+            "Al recoger los vasos vacíos, Gael encontró la foto de la torre caída bajo su cuaderno. Esta vez no quiso borrarla.",
+            "En la página siguiente dibujó una flecha hacia el primer vaso transparente y otra hacia un postre nuevo que tal vez probaría otro día. Su tía le preguntó si todavía quería ser chef.",
+            "«Más que antes», dijo Gael. Había creído que cocinar consistía en lograr exactamente el dibujo inicial.",
+            "Ahora había visto a Amara revisar lo que servían, a Hana registrar pruebas y a los visitantes descubrir cosas que él no había notado. Le gustaba inventar sabores, pero también quería aprender a trabajar con ingredientes reales, tiempo real y personas reales.",
+            "Damián apareció con el último vaso del bosque, ya vacío, y pidió que algún día construyeran un postre en forma de dragón. Gael abrió una página limpia.",
+            "Esta vez empezó por dibujar cómo lo llevarían a la mesa."
+          ],
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué pide Damián para otro día?",
+              "options": [
+                "Una torre idéntica",
+                "Un árbol de cartón",
+                "Un postre con forma de dragón"
+              ],
+              "correctIndex": 2,
+              "hint": "Vuelve a mirar qué cambió entre el dibujo, la prueba y el plato servido."
+            },
+            "lector": {
+              "question": "¿Por dónde empieza el nuevo dibujo de Gael?",
+              "options": [
+                "Por cómo llevarán el postre a la mesa",
+                "Por poner más peso arriba",
+                "Por esconder la foto vieja"
+              ],
+              "correctIndex": 0,
+              "hint": "Vuelve a mirar qué cambió entre el dibujo, la prueba y el plato servido."
+            }
+          },
+          "alt": ""
+        },
+        "en": {
+          "title": "A recipe with two endings",
+          "paragraphs": [
+            "While collecting the empty cups, Gael found the photograph of the fallen tower beneath his notebook. This time he did not want to delete it.",
+            "On the next page he drew an arrow toward the first clear cup and another toward a new dessert he might try someday. His aunt asked if he still wanted to be a chef.",
+            "“More than before,” Gael said. He had believed cooking meant producing exactly the first drawing.",
+            "Now he had watched Amara check what they served, Hana record tests, and visitors discover things he had missed. He loved inventing flavors, but he also wanted to learn to work with real ingredients, real time, and real people.",
+            "Damián appeared with the last forest cup, already empty, and asked if they could make a dragon-shaped dessert someday. Gael opened a clean page.",
+            "This time he began by drawing how they would carry it to the table."
+          ],
+          "checkpoint": {
+            "explorador": {
+              "question": "What does Damián request for another day?",
+              "options": [
+                "An identical tower",
+                "A cardboard tree",
+                "A dragon-shaped dessert"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again at what changed between the sketch, test, and served dessert."
+            },
+            "lector": {
+              "question": "How does Gael begin his new sketch?",
+              "options": [
+                "By planning how to carry it to the table",
+                "By piling weight on top",
+                "By hiding the old photo"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again at what changed between the sketch, test, and served dessert."
+            }
+          },
+          "alt": ""
+        }
+      }
+    }
+  ],
+  "vocabulary": {
+    "es": [
+      {
+        "word": "pastelera",
+        "syllables": "pas-te-le-ra",
+        "definition": "persona que prepara postres como oficio"
+      },
+      {
+        "word": "bizcocho",
+        "syllables": "biz-co-cho",
+        "definition": "pastel suave horneado"
+      },
+      {
+        "word": "capa",
+        "syllables": "ca-pa",
+        "definition": "parte colocada encima de otra"
+      },
+      {
+        "word": "textura",
+        "syllables": "tex-tu-ra",
+        "definition": "cómo se siente un alimento al tocarlo o comerlo"
+      },
+      {
+        "word": "proporción",
+        "syllables": "pro-por-ción",
+        "definition": "relación entre cantidades"
+      },
+      {
+        "word": "estabilidad",
+        "syllables": "es-ta-bi-li-dad",
+        "definition": "capacidad de mantenerse en su sitio"
+      },
+      {
+        "word": "ingrediente",
+        "syllables": "in-gre-dien-te",
+        "definition": "alimento usado para preparar una receta"
+      }
+    ],
+    "en": [
+      {
+        "word": "pastry chef",
+        "syllables": "pas-try chef",
+        "definition": "a professional who makes desserts"
+      },
+      {
+        "word": "sponge cake",
+        "syllables": "sponge cake",
+        "definition": "a light baked cake"
+      },
+      {
+        "word": "layer",
+        "syllables": "lay-er",
+        "definition": "one part placed on another"
+      },
+      {
+        "word": "texture",
+        "syllables": "tex-ture",
+        "definition": "how a food feels when touched or eaten"
+      },
+      {
+        "word": "proportion",
+        "syllables": "pro-por-tion",
+        "definition": "the relationship between amounts"
+      },
+      {
+        "word": "stability",
+        "syllables": "sta-bil-i-ty",
+        "definition": "the ability to stay in place"
+      },
+      {
+        "word": "ingredient",
+        "syllables": "in-gre-di-ent",
+        "definition": "a food used in a recipe"
+      }
+    ]
+  }
+}

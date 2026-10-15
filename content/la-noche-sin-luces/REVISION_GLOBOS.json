@@ -1,0 +1,861 @@
+{
+  "method": "Approximate connected cream regions; not an engine layout or OCR validation.",
+  "pages": [
+    {
+      "page": "p01",
+      "template": "book-1",
+      "boxes": [
+        {
+          "guide": [
+            25,
+            717,
+            1511,
+            999
+          ],
+          "detected": [
+            27,
+            717,
+            1511,
+            998
+          ],
+          "edge_difference_px": [
+            2,
+            0,
+            0,
+            -1
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        }
+      ]
+    },
+    {
+      "page": "p02",
+      "template": "four-up",
+      "boxes": [
+        {
+          "guide": [
+            27,
+            19,
+            736,
+            159
+          ],
+          "detected": [
+            28,
+            19,
+            736,
+            157
+          ],
+          "edge_difference_px": [
+            1,
+            0,
+            0,
+            -2
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        },
+        {
+          "guide": [
+            800,
+            19,
+            1509,
+            159
+          ],
+          "detected": [
+            800,
+            19,
+            1508,
+            157
+          ],
+          "edge_difference_px": [
+            0,
+            0,
+            -1,
+            -2
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        },
+        {
+          "guide": [
+            27,
+            536,
+            736,
+            676
+          ],
+          "detected": [
+            28,
+            533,
+            736,
+            670
+          ],
+          "edge_difference_px": [
+            1,
+            -3,
+            0,
+            -6
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        },
+        {
+          "guide": [
+            800,
+            536,
+            1509,
+            676
+          ],
+          "detected": [
+            800,
+            533,
+            1508,
+            670
+          ],
+          "edge_difference_px": [
+            0,
+            -3,
+            -1,
+            -6
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        }
+      ]
+    },
+    {
+      "page": "p03",
+      "template": "slant-2",
+      "boxes": [
+        {
+          "guide": [
+            25,
+            19,
+            735,
+            159
+          ],
+          "detected": [
+            26,
+            19,
+            735,
+            158
+          ],
+          "edge_difference_px": [
+            1,
+            0,
+            0,
+            -1
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        },
+        {
+          "guide": [
+            855,
+            19,
+            1511,
+            159
+          ],
+          "detected": [
+            856,
+            19,
+            1510,
+            158
+          ],
+          "edge_difference_px": [
+            1,
+            0,
+            -1,
+            -1
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        }
+      ]
+    },
+    {
+      "page": "p04",
+      "template": "six-up",
+      "boxes": [
+        {
+          "guide": [
+            25,
+            19,
+            480,
+            159
+          ],
+          "detected": [
+            26,
+            19,
+            480,
+            158
+          ],
+          "edge_difference_px": [
+            1,
+            0,
+            0,
+            -1
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        },
+        {
+          "guide": [
+            540,
+            19,
+            995,
+            159
+          ],
+          "detected": [
+            540,
+            19,
+            995,
+            158
+          ],
+          "edge_difference_px": [
+            0,
+            0,
+            0,
+            -1
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        },
+        {
+          "guide": [
+            1055,
+            19,
+            1511,
+            159
+          ],
+          "detected": [
+            1055,
+            19,
+            1511,
+            157
+          ],
+          "edge_difference_px": [
+            0,
+            0,
+            0,
+            -2
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        },
+        {
+          "guide": [
+            25,
+            536,
+            480,
+            676
+          ],
+          "detected": [
+            26,
+            535,
+            480,
+            674
+          ],
+          "edge_difference_px": [
+            1,
+            -1,
+            0,
+            -2
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        },
+        {
+          "guide": [
+            540,
+            536,
+            995,
+            676
+          ],
+          "detected": [
+            540,
+            535,
+            995,
+            674
+          ],
+          "edge_difference_px": [
+            0,
+            -1,
+            0,
+            -2
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        },
+        {
+          "guide": [
+            1055,
+            536,
+            1511,
+            676
+          ],
+          "detected": [
+            1055,
+            535,
+            1511,
+            674
+          ],
+          "edge_difference_px": [
+            0,
+            -1,
+            0,
+            -2
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        }
+      ]
+    },
+    {
+      "page": "p05",
+      "template": "slant-3",
+      "boxes": [
+        {
+          "guide": [
+            27,
+            19,
+            1509,
+            159
+          ],
+          "detected": [
+            27,
+            19,
+            1509,
+            158
+          ],
+          "edge_difference_px": [
+            0,
+            0,
+            0,
+            -1
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        },
+        {
+          "guide": [
+            25,
+            601,
+            685,
+            741
+          ],
+          "detected": [
+            27,
+            580,
+            684,
+            726
+          ],
+          "edge_difference_px": [
+            2,
+            -21,
+            -1,
+            -15
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        },
+        {
+          "guide": [
+            805,
+            577,
+            1511,
+            717
+          ],
+          "detected": [
+            805,
+            577,
+            1511,
+            710
+          ],
+          "edge_difference_px": [
+            0,
+            0,
+            0,
+            -7
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        }
+      ]
+    },
+    {
+      "page": "p06",
+      "template": "book-2",
+      "boxes": [
+        {
+          "guide": [
+            25,
+            717,
+            738,
+            999
+          ],
+          "detected": [
+            25,
+            717,
+            738,
+            999
+          ],
+          "edge_difference_px": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        },
+        {
+          "guide": [
+            798,
+            717,
+            1511,
+            999
+          ],
+          "detected": [
+            798,
+            717,
+            1511,
+            999
+          ],
+          "edge_difference_px": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        }
+      ]
+    },
+    {
+      "page": "p07",
+      "template": "burst-2",
+      "boxes": [
+        {
+          "guide": [
+            609,
+            325,
+            927,
+            651
+          ],
+          "detected": [
+            609,
+            332,
+            925,
+            645
+          ],
+          "edge_difference_px": [
+            0,
+            7,
+            -2,
+            -6
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        },
+        {
+          "guide": [
+            821,
+            861,
+            1509,
+            999
+          ],
+          "detected": [
+            822,
+            860,
+            1509,
+            997
+          ],
+          "edge_difference_px": [
+            1,
+            -1,
+            0,
+            -2
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        }
+      ]
+    },
+    {
+      "page": "p09",
+      "template": "manga-6",
+      "boxes": [
+        {
+          "guide": [
+            25,
+            19,
+            655,
+            159
+          ],
+          "detected": [
+            27,
+            19,
+            654,
+            158
+          ],
+          "edge_difference_px": [
+            2,
+            0,
+            -1,
+            -1
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        },
+        {
+          "guide": [
+            775,
+            19,
+            1511,
+            159
+          ],
+          "detected": [
+            776,
+            19,
+            1510,
+            156
+          ],
+          "edge_difference_px": [
+            1,
+            0,
+            -1,
+            -3
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        },
+        {
+          "guide": [
+            25,
+            377,
+            465,
+            517
+          ],
+          "detected": [
+            26,
+            375,
+            520,
+            510
+          ],
+          "edge_difference_px": [
+            1,
+            -2,
+            55,
+            -7
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        },
+        {
+          "guide": [
+            615,
+            377,
+            1511,
+            517
+          ],
+          "detected": [
+            616,
+            373,
+            1510,
+            510
+          ],
+          "edge_difference_px": [
+            1,
+            -4,
+            -1,
+            -7
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        },
+        {
+          "guide": [
+            25,
+            727,
+            815,
+            867
+          ],
+          "detected": [
+            27,
+            722,
+            832,
+            851
+          ],
+          "edge_difference_px": [
+            2,
+            -5,
+            17,
+            -16
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        },
+        {
+          "guide": [
+            935,
+            727,
+            1511,
+            867
+          ],
+          "detected": [
+            926,
+            722,
+            1511,
+            851
+          ],
+          "edge_difference_px": [
+            -9,
+            -5,
+            0,
+            -16
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        }
+      ]
+    },
+    {
+      "page": "p10",
+      "template": "book-3",
+      "boxes": [
+        {
+          "guide": [
+            21,
+            677,
+            484,
+            1003
+          ],
+          "detected": [
+            22,
+            677,
+            484,
+            1002
+          ],
+          "edge_difference_px": [
+            1,
+            0,
+            0,
+            -1
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        },
+        {
+          "guide": [
+            536,
+            677,
+            999,
+            1003
+          ],
+          "detected": [
+            537,
+            677,
+            999,
+            1002
+          ],
+          "edge_difference_px": [
+            1,
+            0,
+            0,
+            -1
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        },
+        {
+          "guide": [
+            1051,
+            677,
+            1515,
+            1003
+          ],
+          "detected": [
+            1052,
+            677,
+            1514,
+            1002
+          ],
+          "edge_difference_px": [
+            1,
+            0,
+            -1,
+            -1
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        }
+      ]
+    },
+    {
+      "page": "p11",
+      "template": "bolt-2",
+      "boxes": [
+        {
+          "guide": [
+            27,
+            19,
+            735,
+            159
+          ],
+          "detected": [
+            28,
+            18,
+            734,
+            158
+          ],
+          "edge_difference_px": [
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        },
+        {
+          "guide": [
+            805,
+            861,
+            1509,
+            999
+          ],
+          "detected": [
+            805,
+            861,
+            1508,
+            998
+          ],
+          "edge_difference_px": [
+            0,
+            0,
+            -1,
+            -1
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        }
+      ]
+    },
+    {
+      "page": "p12",
+      "template": "two-up",
+      "boxes": [
+        {
+          "guide": [
+            30,
+            18,
+            744,
+            168
+          ],
+          "detected": [
+            30,
+            18,
+            743,
+            167
+          ],
+          "edge_difference_px": [
+            0,
+            0,
+            -1,
+            -1
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        },
+        {
+          "guide": [
+            792,
+            18,
+            1506,
+            168
+          ],
+          "detected": [
+            792,
+            18,
+            1506,
+            167
+          ],
+          "edge_difference_px": [
+            0,
+            0,
+            0,
+            -1
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        }
+      ]
+    },
+    {
+      "page": "p13",
+      "template": "three-up",
+      "boxes": [
+        {
+          "guide": [
+            32,
+            18,
+            742,
+            150
+          ],
+          "detected": [
+            33,
+            18,
+            741,
+            148
+          ],
+          "edge_difference_px": [
+            1,
+            0,
+            -1,
+            -2
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        },
+        {
+          "guide": [
+            798,
+            16,
+            1506,
+            148
+          ],
+          "detected": [
+            798,
+            15,
+            1505,
+            147
+          ],
+          "edge_difference_px": [
+            0,
+            -1,
+            -1,
+            -1
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        },
+        {
+          "guide": [
+            30,
+            538,
+            1506,
+            640
+          ],
+          "detected": [
+            31,
+            536,
+            1504,
+            638
+          ],
+          "edge_difference_px": [
+            1,
+            -2,
+            -2,
+            -2
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        }
+      ]
+    },
+    {
+      "page": "p14",
+      "template": "full",
+      "boxes": [
+        {
+          "guide": [
+            30,
+            18,
+            1506,
+            190
+          ],
+          "detected": [
+            30,
+            17,
+            1506,
+            186
+          ],
+          "edge_difference_px": [
+            0,
+            -1,
+            0,
+            -4
+          ],
+          "guideInterior20pxInsideDetectedBounds": true
+        }
+      ]
+    }
+  ],
+  "limitations": "Approximate cream-region boundaries, not pixel-perfect alignment or a font fit test. The burst is nonrectangular. The application editor remains authoritative."
+}

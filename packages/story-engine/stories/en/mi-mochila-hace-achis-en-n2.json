@@ -1,0 +1,297 @@
+{
+  "id": "mi-mochila-hace-achis-en-n2",
+  "familyId": "mi-mochila-hace-achis",
+  "language": "en",
+  "title": "My Backpack Keeps Sneezing!",
+  "level": 2,
+  "category": "amistad",
+  "description": "Mila discovers a tiny dragon that sneezes bubbles and watches closely to find out how to help.",
+  "cover": {
+    "src": "stories/mi-mochila-hace-achis/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Mila beside a blue backpack with a tiny dragon and floating bubbles."
+  },
+  "heroFocus": {
+    "x": 50,
+    "y": 47
+  },
+  "reviewWords": [
+    "rustle",
+    "carefully",
+    "giggles"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/mi-mochila-hace-achis/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Comic page: A wiggling backpack, A tiny visitor, Bubbles everywhere."
+      },
+      "template": "three-up",
+      "blocks": [
+        {
+          "id": "b01",
+          "title": "A wiggling backpack",
+          "lines": [
+            "Mila was getting her things ready when she heard a strange rustle.",
+            "Her blue backpack wiggled on the rug.",
+            "“I didn’t pack anything that could jump,” she whispered, leaning closer."
+          ]
+        },
+        {
+          "id": "b02",
+          "title": "A tiny visitor",
+          "lines": [
+            "She carefully opened the zipper and found two bright eyes looking up at her.",
+            "A tiny green dragon peeked out of the bag.",
+            "Mila jumped back, then burst into giggles."
+          ]
+        },
+        {
+          "id": "b03",
+          "title": "Bubbles everywhere",
+          "lines": [
+            "The visitor scrunched up its nose and sneezed.",
+            "Bubbles floated into the room instead of fire.",
+            "Mila reached to catch one, but the dragon kept rubbing its nose.",
+            "Something was bothering it."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What came out of the dragon’s nose?",
+            "options": [
+              {
+                "text": "Dark smoke"
+              },
+              {
+                "text": "Bubbles"
+              },
+              {
+                "text": "Green leaves"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Yes! Bubbles came out of its nose.",
+            "retryFeedback": "Look at what floated through the room after the sneeze."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Which detail shows that something was bothering the dragon?",
+            "options": [
+              {
+                "text": "It curled up to sleep"
+              },
+              {
+                "text": "It rubbed its nose and kept sneezing"
+              },
+              {
+                "text": "It hid under a table"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s right: it rubbed its nose and kept sneezing.",
+            "retryFeedback": "Look back at the last panel on this page and watch its nose."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/mi-mochila-hace-achis/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Comic page: A drink of water, The yellow clue."
+      },
+      "template": "two-up",
+      "blocks": [
+        {
+          "id": "b04",
+          "title": "A drink of water",
+          "lines": [
+            "“Maybe you need a drink,” Mila said.",
+            "She brought a bowl of water and waited while the dragon drank.",
+            "It looked happy for a moment.",
+            "Then another sneeze sent a bubble sailing past her."
+          ]
+        },
+        {
+          "id": "b05",
+          "title": "The yellow clue",
+          "lines": [
+            "Mila sat still and watched closely.",
+            "A yellow feather poked out of the backpack’s front pocket.",
+            "Whenever the dragon leaned toward the bag, the soft tip brushed against its nose."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What brushed against the dragon’s nose?",
+            "options": [
+              {
+                "text": "The bowl"
+              },
+              {
+                "text": "The rug"
+              },
+              {
+                "text": "A yellow feather"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "Yes! The yellow feather brushed its nose.",
+            "retryFeedback": "Look for the thing sticking out of the backpack pocket."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Which clue connects the feather to the sneezes?",
+            "options": [
+              {
+                "text": "The feather matched the water"
+              },
+              {
+                "text": "The feather touched its nose before a sneeze"
+              },
+              {
+                "text": "The dragon fell asleep when it saw the feather"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Exactly: a tickle from the feather came before a sneeze.",
+            "retryFeedback": "Think about what touched its nose just before it sneezed."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/mi-mochila-hace-achis/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Comic page: No more tickles, A peaceful new friend."
+      },
+      "template": "two-up",
+      "blocks": [
+        {
+          "id": "b06",
+          "title": "No more tickles",
+          "lines": [
+            "“That feather is tickling you!”",
+            "Mila pulled it from the pocket and placed it in her craft cup across the room.",
+            "She waited a little longer.",
+            "This time, there was no sneeze."
+          ]
+        },
+        {
+          "id": "b07",
+          "title": "A peaceful new friend",
+          "lines": [
+            "The dragon snuggled into the open backpack and closed its eyes.",
+            "Mila smiled as the last bubble drifted toward the ceiling.",
+            "Her new friend could finally enjoy a peaceful rest."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Where did Mila put the feather?",
+            "options": [
+              {
+                "text": "Inside the backpack"
+              },
+              {
+                "text": "In a cup across the room"
+              },
+              {
+                "text": "Under the dragon"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Yes! She put it in a cup, away from her friend.",
+            "retryFeedback": "Follow the yellow feather to the craft cup."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What helped Mila find a solution?",
+            "options": [
+              {
+                "text": "Watching what touched the dragon’s nose"
+              },
+              {
+                "text": "Giving the dragon more and more water"
+              },
+              {
+                "text": "Catching every bubble"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Exactly: watching closely helped her find the cause.",
+            "retryFeedback": "Remember what she noticed when she stopped watching the bubbles."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "rustle": {
+      "syllables": [
+        "rus",
+        "tle"
+      ],
+      "definition": "A soft sound made when things move against each other."
+    },
+    "carefully": {
+      "syllables": [
+        "care",
+        "ful",
+        "ly"
+      ],
+      "definition": "In a way that takes care to avoid a mistake."
+    },
+    "giggles": {
+      "syllables": [
+        "gig",
+        "gles"
+      ],
+      "definition": "Small, happy laughs."
+    },
+    "bothering": {
+      "syllables": [
+        "both",
+        "er",
+        "ing"
+      ],
+      "definition": "Making someone feel uncomfortable or upset."
+    },
+    "snuggled": {
+      "syllables": [
+        "snug",
+        "gled"
+      ],
+      "definition": "Settled into a warm, comfortable spot."
+    },
+    "peaceful": {
+      "syllables": [
+        "peace",
+        "ful"
+      ],
+      "definition": "Quiet and calm."
+    }
+  }
+}

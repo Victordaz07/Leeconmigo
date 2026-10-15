@@ -1,0 +1,879 @@
+{
+  "id": "la-mision-que-perdio-la-tierra-es-n6",
+  "familyId": "la-mision-que-perdio-la-tierra",
+  "language": "es",
+  "title": "La misión que perdió la Tierra",
+  "level": 6,
+  "category": "oficios",
+  "description": "Elián sueña con ser astronauta.",
+  "cover": {
+    "src": "stories/la-mision-que-perdio-la-tierra/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Escena de el casco que le quedaba grande."
+  },
+  "heroFocus": {
+    "x": 30,
+    "y": 55
+  },
+  "reviewWords": [
+    "simulación",
+    "cráter",
+    "antena"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/la-mision-que-perdio-la-tierra/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de el casco que le quedaba grande."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b01",
+          "voice": "narration",
+          "title": "El casco que le quedaba grande",
+          "lines": [
+            "Elián llevaba semanas diciendo que sería astronauta. En casa había aprendido los nombres de los planetas y había construido un vehículo lunar con cajas de cartón.",
+            "Lo difícil era otra cosa: cuando alguien le pedía dirigir al equipo, las manos le temblaban. No quería que Asha, su amiga, lo notara.",
+            "Aquella mañana llegaron al centro espacial del barrio para una misión simulada. En una sala rodeada de pantallas, la ingeniera Nora les mostró un paisaje de la Luna, un vehículo pequeño de cuatro ruedas y un modelo de la Tierra suspendido sobre el horizonte.",
+            "Todo ocurriría dentro del simulador; nadie iba a despegar. La tarea era conducir el vehículo hasta una zona iluminada antes de que la noche lunar alcanzara el cráter.",
+            "Elián recibió el mapa. Asha tendría la radio y las observaciones."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Dónde ocurre la misión?",
+            "options": [
+              {
+                "text": "En un simulador del centro espacial"
+              },
+              {
+                "text": "En la Luna real"
+              },
+              {
+                "text": "En el mar"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! En un simulador del centro espacial.",
+            "retryFeedback": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué le preocupa a Elián al dirigir?",
+            "options": [
+              {
+                "text": "olvidar su mochila"
+              },
+              {
+                "text": "que otros noten su miedo"
+              },
+              {
+                "text": "no tener casco"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! que otros noten su miedo.",
+            "retryFeedback": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b02",
+          "voice": "narration",
+          "title": "La primera señal",
+          "lines": [
+            "La sala oscureció y el suelo vibró suavemente para imitar el movimiento de una nave. En la pantalla central apareció el vehículo bajando una pendiente gris.",
+            "La Tierra era un disco azul pequeño, visible entre dos montañas. Nora explicó que el vehículo recibía órdenes por radio cuando podía “ver” la Tierra o un satélite repetidor.",
+            "Asha comprobó la señal: un pulso, una respuesta y una imagen del camino. Todo funcionaba.",
+            "Elián tenía que escoger entre una ruta larga por terreno plano y un atajo junto al borde del cráter. Vio que el atajo ahorraba tiempo.",
+            "Asha quiso revisar una elevación dibujada en el mapa, pero Elián dijo que ya la había calculado. En realidad solo había mirado la distancia.",
+            "Pulsó la ruta corta. El vehículo giró."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué ruta escoge Elián?",
+            "options": [
+              {
+                "text": "Una línea recta"
+              },
+              {
+                "text": "El atajo"
+              },
+              {
+                "text": "La ruta larga"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! El atajo.",
+            "retryFeedback": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué olvidó revisar antes de elegir?",
+            "options": [
+              {
+                "text": "el color del vehículo"
+              },
+              {
+                "text": "la edad de Nora"
+              },
+              {
+                "text": "la altura del terreno"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! la altura del terreno.",
+            "retryFeedback": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/la-mision-que-perdio-la-tierra/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de el borde del cráter."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b03",
+          "voice": "narration",
+          "title": "El borde del cráter",
+          "lines": [
+            "Al principio, el atajo pareció perfecto. El vehículo pasó sobre rocas bajas y envió fotografías de huellas de polvo.",
+            "Elián se enderezó en la silla. Entonces una pared del cráter comenzó a crecer en la ventana virtual.",
+            "La Tierra bajó detrás de ella hasta desaparecer. La radio devolvió un sonido seco, sin imagen.",
+            "Asha repitió el intento. Nada.",
+            "En el mapa, el vehículo seguía avanzando hacia una zona de sombra. Elián quiso ordenar que diera vuelta, pero Nora le mostró la consola: sin señal, una orden nueva no podía llegar.",
+            "Asha señaló la elevación que había querido revisar. Elián la reconoció.",
+            "El camino era corto porque cruzaba detrás de una pared alta. La Tierra no se había perdido; ellos habían perdido la línea para hablar con ella."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué oculta el cráter?",
+            "options": [
+              {
+                "text": "El satélite"
+              },
+              {
+                "text": "El mapa"
+              },
+              {
+                "text": "La vista de la Tierra"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! La vista de la Tierra.",
+            "retryFeedback": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué no llega una orden nueva?",
+            "options": [
+              {
+                "text": "la pared bloquea la señal"
+              },
+              {
+                "text": "la batería está llena"
+              },
+              {
+                "text": "Nora apagó todo"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! la pared bloquea la señal.",
+            "retryFeedback": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p04",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b04",
+          "voice": "narration",
+          "title": "Una respuesta que no llega",
+          "lines": [
+            "Nora anunció que la simulación seguiría. Podían detenerla si alguien se sentía incómodo, pero el ejercicio consistía en entender el problema antes de actuar.",
+            "Elián abrió y cerró los dedos. Pensó en decir que la pantalla estaba fallando.",
+            "Asha acercó las fotografías: en la última aún se veía una franja de cielo claro. Quizá el vehículo estaba cerca de salir de la sombra, dijo.",
+            "Nora preguntó qué sabían con certeza. Sabían dónde desapareció la Tierra de la imagen, cuál ruta había elegido Elián y que el vehículo aún tenía batería.",
+            "No sabían exactamente dónde estaba ahora. Elián respiró hondo.",
+            "«Elegí el atajo sin revisar la altura», admitió. Asha no celebró el error.",
+            "Se sentó a su lado y le pidió que buscaran juntos otra forma de recuperar la señal."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué admite Elián?",
+            "options": [
+              {
+                "text": "No revisó la altura"
+              },
+              {
+                "text": "Rompió el vehículo"
+              },
+              {
+                "text": "No sabe leer"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! No revisó la altura.",
+            "retryFeedback": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué cambia cuando deja de culpar a la pantalla?",
+            "options": [
+              {
+                "text": "Asha termina sola"
+              },
+              {
+                "text": "pueden investigar la ruta"
+              },
+              {
+                "text": "abandonan la misión"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! pueden investigar la ruta.",
+            "retryFeedback": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p05",
+      "illustration": {
+        "src": "stories/la-mision-que-perdio-la-tierra/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de una pelota entre dos voces."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b05",
+          "voice": "narration",
+          "title": "Una pelota entre dos voces",
+          "lines": [
+            "Nora apagó por un momento la imagen del cráter y trajo dos pelotas: una azul para la Tierra y otra gris para la Luna. Asha puso una ficha diminuta sobre la pelota gris.",
+            "Desde esa posición, la Luna misma tapaba la vista de la Tierra. Elián movió la ficha hacia el borde; el disco azul reapareció.",
+            "Nora colocó un pequeño satélite sobre un alambre alto. Si el repetidor podía ver a la vez la ficha y la Tierra, llevaría un mensaje entre ambas.",
+            "Pero orbitaba: solo habría una ventana breve. Asha sonrió porque por fin entendía el mapa.",
+            "Elián también vio su equivocación en tres dimensiones. Pedir ayuda no había hecho el problema más grande; lo había vuelto visible."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué objetos usa Nora?",
+            "options": [
+              {
+                "text": "Dos lámparas"
+              },
+              {
+                "text": "Globos de Tierra y Luna"
+              },
+              {
+                "text": "Pelotas de juego"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Globos de Tierra y Luna.",
+            "retryFeedback": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué explica la pelota gris entre el vehículo y la azul?",
+            "options": [
+              {
+                "text": "la Tierra se ha ido"
+              },
+              {
+                "text": "el vehículo no tiene ruedas"
+              },
+              {
+                "text": "la Luna tapa la línea de visión"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! la Luna tapa la línea de visión.",
+            "retryFeedback": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p06",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b06",
+          "voice": "narration",
+          "title": "El satélite no espera",
+          "lines": [
+            "Volvieron a encender el simulador. Un punto plateado cruzaba lentamente la parte alta de la pantalla: el repetidor.",
+            "Nora les mostró que tardaría poco en llegar a la zona desde donde vería la Tierra y el vehículo. Elián propuso enviarle muchas órdenes cuando apareciera.",
+            "Asha preguntó cuál enviaría primero. Si el vehículo recibía mensajes diferentes al mismo tiempo, podía gastar batería intentando cambiar de dirección.",
+            "Decidieron preparar una sola instrucción: detenerse, girar hacia una pendiente suave y esperar nueva confirmación. Elián leyó el mapa en voz alta; Asha comprobó la pendiente con las fotografías.",
+            "Nora no hizo el trabajo por ellos. Les recordó que aún podían pausar la simulación.",
+            "Los dos eligieron seguir, esta vez con un plan compartido."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q06",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué puede llevar la señal?",
+            "options": [
+              {
+                "text": "Una cometa"
+              },
+              {
+                "text": "Una montaña"
+              },
+              {
+                "text": "Un satélite repetidor"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Un satélite repetidor.",
+            "retryFeedback": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué preparan una sola instrucción?",
+            "options": [
+              {
+                "text": "evitan órdenes contradictorias"
+              },
+              {
+                "text": "quieren jugar"
+              },
+              {
+                "text": "no hay batería"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! evitan órdenes contradictorias.",
+            "retryFeedback": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p07",
+      "illustration": {
+        "src": "stories/la-mision-que-perdio-la-tierra/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de un mensaje demasiado temprano."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b07",
+          "voice": "narration",
+          "title": "Un mensaje demasiado temprano",
+          "lines": [
+            "Elián preparó la instrucción y colocó el dedo sobre el envío. Cuando el satélite se acercó a la parte alta del cráter, pulsó.",
+            "La consola mostró que el mensaje había salido, pero no llegó ninguna confirmación. Asha comprobó el recorrido.",
+            "Lo habían mandado antes de que el repetidor pudiera ver el vehículo. La orden no se había guardado para después.",
+            "Elián sintió que el calor le subía a la cara. Esta vez no fingió que todo iba bien.",
+            "Anotó el momento del envío y pidió a Asha que le dijera qué referencia usar. Ella eligió la sombra de una pequeña montaña que se movía sobre la pantalla.",
+            "Cuando tocara una roca redonda, el satélite estaría en la ventana correcta. Ensayaron la señal sin pulsar ningún botón."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q07",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Cuándo envía Elián el primer mensaje?",
+            "options": [
+              {
+                "text": "Demasiado temprano"
+              },
+              {
+                "text": "Después del final"
+              },
+              {
+                "text": "En la noche real"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Demasiado temprano.",
+            "retryFeedback": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué ese intento no recibe respuesta?",
+            "options": [
+              {
+                "text": "no hay consola"
+              },
+              {
+                "text": "el repetidor aún no ve el vehículo"
+              },
+              {
+                "text": "Nora está dormida"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! el repetidor aún no ve el vehículo.",
+            "retryFeedback": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p08",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b08",
+          "voice": "narration",
+          "title": "La sombra y la ventana",
+          "lines": [
+            "El satélite completó otra vuelta. Asha siguió el borde de la sombra; Elián mantuvo lista la instrucción acordada.",
+            "Nora observó los indicadores sin intervenir. En cuanto la sombra tocó la roca redonda, Asha dijo «ahora».",
+            "Elián envió la orden una sola vez. Hubo silencio.",
+            "Un pequeño aviso confirmó que el repetidor la había recibido; aún faltaba que llegara al vehículo. El simulador representaba ese retraso para que nadie esperara una respuesta instantánea desde tan lejos.",
+            "Elián quiso pulsar otra vez. Asha puso el cuaderno entre su mano y el botón, sin regañarlo.",
+            "Contaron juntos mientras el satélite avanzaba. La batería del vehículo continuaba bajando en el mapa.",
+            "Esperar, descubrió Elián, también podía ser una acción del equipo."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q08",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué referencia sigue Asha?",
+            "options": [
+              {
+                "text": "Una campana"
+              },
+              {
+                "text": "Una sombra y una roca"
+              },
+              {
+                "text": "Un árbol y un río"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Una sombra y una roca.",
+            "retryFeedback": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué esperan después de enviar la orden?",
+            "options": [
+              {
+                "text": "el botón está roto"
+              },
+              {
+                "text": "deben salir"
+              },
+              {
+                "text": "la señal tarda en llegar"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! la señal tarda en llegar.",
+            "retryFeedback": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p09",
+      "illustration": {
+        "src": "stories/la-mision-que-perdio-la-tierra/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de una fotografía nueva."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b09",
+          "voice": "narration",
+          "title": "Una fotografía nueva",
+          "lines": [
+            "Llegó una imagen borrosa. Era el vehículo detenido junto a tres piedras oscuras, exactamente donde el mapa indicaba.",
+            "Elián buscó la pendiente suave y Asha comprobó que salía de la sombra. En la siguiente ventana enviaron una sola orden para avanzar.",
+            "El vehículo subió despacio. La luz tocó primero su antena, luego los paneles de energía.",
+            "La batería dejó de caer. Por encima del borde del cráter apareció de nuevo el disco azul de la Tierra, pequeño pero inconfundible.",
+            "Nora terminó la simulación y encendió las luces reales del salón. Elián miró a Asha.",
+            "Habían cometido errores y aun así habían terminado la misión. Él había querido dirigir como alguien que nunca dudaba.",
+            "Se sentía orgulloso de haber dicho lo que no sabía."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q09",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué aparece sobre el cráter otra vez?",
+            "options": [
+              {
+                "text": "El Sol"
+              },
+              {
+                "text": "La cometa"
+              },
+              {
+                "text": "La Tierra"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! La Tierra.",
+            "retryFeedback": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué muestra que el vehículo salió de peligro?",
+            "options": [
+              {
+                "text": "la luz llega a los paneles y la batería se estabiliza"
+              },
+              {
+                "text": "se rompe la antena"
+              },
+              {
+                "text": "el mapa desaparece"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! la luz llega a los paneles y la batería se estabiliza.",
+            "retryFeedback": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p10",
+      "illustration": {
+        "src": "stories/la-mision-que-perdio-la-tierra/page-10.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de la feria de los futuros."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b10",
+          "voice": "narration",
+          "title": "La feria de los futuros",
+          "lines": [
+            "La semana siguiente, Elián y Asha llevaron un modelo del cráter a la feria escolar de profesiones. Colocaron una pelota gris, una azul y un satélite de alambre para que los visitantes probaran cuándo se podía enviar una señal.",
+            "Elián contó también su decisión equivocada. No la escondió detrás del final feliz.",
+            "Una niña de trenzas bajas y overol verde menta se detuvo ante el modelo. Se llamaba Abril y quería ser arquitecta.",
+            "Preguntó si un refugio lunar debería construirse en la sombra para protegerse del calor. Elián no sabía la respuesta completa; Asha señaló que necesitarían estudiar energía, temperatura y comunicación.",
+            "Abril dibujó tres posibles lugares en su cuaderno. Quedaron en comparar sus ideas otro día.",
+            "La feria era más interesante cuando las preguntas de alguien abrían caminos nuevos."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q10",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Con quién conversa Elián en la feria?",
+            "options": [
+              {
+                "text": "Con Abril"
+              },
+              {
+                "text": "Con Bruno"
+              },
+              {
+                "text": "Con Sira"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Con Abril.",
+            "retryFeedback": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué pregunta nueva abre Abril?",
+            "options": [
+              {
+                "text": "dónde guardar una llave"
+              },
+              {
+                "text": "dónde convendría construir un refugio lunar"
+              },
+              {
+                "text": "cómo navegar el mar"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! dónde convendría construir un refugio lunar.",
+            "retryFeedback": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p11",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b11",
+          "voice": "narration",
+          "title": "Una pregunta difícil",
+          "lines": [
+            "Un visitante pequeño preguntó si Elián había sentido miedo cuando la Tierra desapareció de la pantalla. Elián miró a Nora, que conversaba con otra familia, y luego a Asha.",
+            "Podía fingir que solo había sido un juego. «Sí», respondió.",
+            "«Pensé que todos esperaban que yo supiera qué hacer». El niño observó el cráter de cartón y movió la ficha detrás de la pelota gris.",
+            "Tampoco se veía la Tierra desde allí. Elián le mostró cómo buscar un lugar para el repetidor.",
+            "Abril regresó con su cuaderno y escuchó la explicación. Cuando el visitante consiguió unir las dos vistas, sonrió.",
+            "Elián comprendió que contar el miedo no arruinaba la aventura. Permitía que otra persona se imaginara dentro de ella y encontrara una salida."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q11",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué cuenta Elián al visitante pequeño?",
+            "options": [
+              {
+                "text": "Que todo fue real"
+              },
+              {
+                "text": "Que sintió miedo"
+              },
+              {
+                "text": "Que nunca dudó"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Que sintió miedo.",
+            "retryFeedback": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué decir que tuvo miedo ayuda al visitante?",
+            "options": [
+              {
+                "text": "debe callarse"
+              },
+              {
+                "text": "debe ponerse casco"
+              },
+              {
+                "text": "puede imaginar una salida para sí mismo"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! puede imaginar una salida para sí mismo.",
+            "retryFeedback": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p12",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b12",
+          "voice": "narration",
+          "title": "La ruta de mañana",
+          "lines": [
+            "Al cerrar la feria, Elián guardó el satélite de alambre con cuidado. Asha le preguntó si seguía queriendo ser astronauta después de tantos problemas.",
+            "«Más que antes», dijo. Ya no pensaba solo en despegar y mirar la Tierra desde arriba.",
+            "Quería aprender a leer mapas difíciles, escuchar a su equipo y hacer preguntas cuando faltara una pieza. Nora les recordó que podrían volver al centro espacial para otra simulación, siempre que prepararan juntos el recorrido.",
+            "Abril pasó a despedirse y les enseñó un dibujo nuevo: un refugio con una ventana que miraba al cielo y otra hacia un compañero de equipo. Elián se rio.",
+            "Su próxima misión todavía no tenía mapa, pero ya sabía a quién pediría que lo revisara."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q12",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué guarda Elián al cerrar?",
+            "options": [
+              {
+                "text": "Una piedra lunar"
+              },
+              {
+                "text": "Una medalla"
+              },
+              {
+                "text": "El satélite de alambre"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! El satélite de alambre.",
+            "retryFeedback": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué desea aprender para otra misión?",
+            "options": [
+              {
+                "text": "mapas, escucha y preguntas"
+              },
+              {
+                "text": "órdenes rápidas"
+              },
+              {
+                "text": "hacerlo todo solo"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! mapas, escucha y preguntas.",
+            "retryFeedback": "Revisa esa escena: ¿qué vieron y qué decidieron hacer?"
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "simulación": {
+      "syllables": [
+        "si",
+        "mu",
+        "la",
+        "ción"
+      ],
+      "definition": "representación para practicar sin riesgo",
+      "synonym": "ensayo",
+      "example": "Los astronautas hicieron una simulación del despegue antes del vuelo real."
+    },
+    "cráter": {
+      "syllables": [
+        "crá",
+        "ter"
+      ],
+      "definition": "hueco grande en la superficie lunar",
+      "example": "La nave fotografió un enorme cráter en la superficie de la Luna."
+    },
+    "antena": {
+      "syllables": [
+        "an",
+        "te",
+        "na"
+      ],
+      "definition": "pieza que envía o recibe señales",
+      "example": "Subieron a la azotea para arreglar la antena de televisión."
+    },
+    "repetidor": {
+      "syllables": [
+        "re",
+        "pe",
+        "ti",
+        "dor"
+      ],
+      "definition": "satélite que transmite una señal a otro lugar",
+      "synonym": "retransmisor",
+      "example": "La señal del celular pasa por un repetidor instalado en la montaña."
+    },
+    "órbita": {
+      "syllables": [
+        "ór",
+        "bi",
+        "ta"
+      ],
+      "definition": "recorrido de un objeto alrededor de otro",
+      "example": "La Luna tarda un mes en completar su órbita alrededor de la Tierra."
+    },
+    "pendiente": {
+      "syllables": [
+        "pen",
+        "dien",
+        "te"
+      ],
+      "definition": "terreno que sube o baja",
+      "synonym": "cuesta",
+      "example": "Bajamos la pendiente de la colina en bicicleta con mucho cuidado."
+    }
+  }
+}

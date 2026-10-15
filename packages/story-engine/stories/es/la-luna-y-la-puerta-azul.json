@@ -1,0 +1,912 @@
+{
+  "id": "la-luna-y-la-puerta-azul",
+  "language": "es",
+  "title": "La luna y la puerta azul",
+  "level": 1,
+  "description": "Historia piloto del prototipo de Reading Session (Claude Design). NO es una historia final.",
+  "category": "fantasia",
+  "reviewWords": [
+    "montañas",
+    "descubrir",
+    "puerta"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/la-luna-y-la-puerta-azul/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Un conejo descubre una puerta azul en el bosque bajo la luna"
+      },
+      "blocks": [
+        {
+          "id": "b01",
+          "title": "El conejo despierta",
+          "lines": [
+            "El pequeño conejo despertó antes de que saliera el sol.",
+            "Algo extraño parecía estar esperándolo."
+          ],
+          "layout": {
+            "bubble": {
+              "leftPct": 1.1,
+              "topPct": 1.5,
+              "widthPct": 21.2
+            },
+            "panel": {
+              "x0": 0,
+              "y0": 0,
+              "x1": 405,
+              "y1": 305
+            }
+          }
+        },
+        {
+          "id": "b02",
+          "title": "Mira por la ventana",
+          "lines": [
+            "Se acercó a la ventana y miró hacia afuera.",
+            "El cielo estaba cambiando."
+          ],
+          "layout": {
+            "bubble": {
+              "leftPct": 28.6,
+              "topPct": 1.3,
+              "widthPct": 15.2
+            },
+            "panel": {
+              "x0": 405,
+              "y0": 0,
+              "x1": 770,
+              "y1": 305
+            }
+          }
+        },
+        {
+          "id": "b03",
+          "title": "Sale de casa",
+          "lines": [
+            "El conejo salió de su casa y comenzó a caminar.",
+            "Quería descubrir qué estaba pasando."
+          ],
+          "layout": {
+            "bubble": {
+              "leftPct": 51.2,
+              "topPct": 2.6,
+              "widthPct": 14.6
+            },
+            "panel": {
+              "x0": 770,
+              "y0": 0,
+              "x1": 1090,
+              "y1": 320
+            }
+          }
+        },
+        {
+          "id": "b04",
+          "title": "Mira la luna",
+          "lines": [
+            "Entonces levantó la vista.",
+            "La luna brillaba enorme sobre las montañas."
+          ],
+          "layout": {
+            "bubble": {
+              "leftPct": 73.9,
+              "topPct": 1,
+              "widthPct": 18.1
+            },
+            "panel": {
+              "x0": 1090,
+              "y0": 0,
+              "x1": 1536,
+              "y1": 330
+            }
+          }
+        },
+        {
+          "id": "b05",
+          "title": "La puerta azul",
+          "lines": [
+            "De repente, vio algo entre los árboles.",
+            "¡Era una puerta azul en medio del bosque!"
+          ],
+          "layout": {
+            "bubble": {
+              "leftPct": 0.8,
+              "topPct": 32.8,
+              "widthPct": 19.3
+            },
+            "panel": {
+              "x0": 0,
+              "y0": 315,
+              "x1": 560,
+              "y1": 640
+            }
+          }
+        },
+        {
+          "id": "b06",
+          "title": "Se acerca",
+          "lines": [
+            "El conejo caminó lentamente hacia la puerta.",
+            "—¿Qué habrá detrás? —se preguntó."
+          ],
+          "layout": {
+            "bubble": {
+              "leftPct": 37.6,
+              "topPct": 31.2,
+              "widthPct": 17.7
+            },
+            "panel": {
+              "x0": 540,
+              "y0": 320,
+              "x1": 960,
+              "y1": 670
+            }
+          }
+        },
+        {
+          "id": "b07",
+          "title": "Abre la puerta",
+          "lines": [
+            "Respiró hondo y tomó el pomo con cuidado.",
+            "Luego abrió la puerta."
+          ],
+          "layout": {
+            "bubble": {
+              "leftPct": 82.8,
+              "topPct": 35.4,
+              "widthPct": 16.4
+            },
+            "panel": {
+              "x0": 960,
+              "y0": 330,
+              "x1": 1536,
+              "y1": 690
+            }
+          }
+        },
+        {
+          "id": "b08",
+          "title": "Cruza al otro lado",
+          "lines": [
+            "Una luz dorada llenó todo a su alrededor.",
+            "El conejo dio un paso y entró."
+          ],
+          "layout": {
+            "bubble": {
+              "leftPct": 0.8,
+              "topPct": 66,
+              "widthPct": 17.5
+            },
+            "panel": {
+              "x0": 0,
+              "y0": 650,
+              "x1": 460,
+              "y1": 1024
+            }
+          }
+        },
+        {
+          "id": "b09",
+          "title": "El mundo mágico",
+          "lines": [
+            "Al otro lado había nubes, estrellas y caminos en el cielo.",
+            "—¡Guau! —dijo el conejo—. ¡Es increíble!"
+          ],
+          "layout": {
+            "bubble": {
+              "leftPct": 32.2,
+              "topPct": 67.2,
+              "widthPct": 19.5
+            },
+            "panel": {
+              "x0": 460,
+              "y0": 680,
+              "x1": 950,
+              "y1": 1024
+            }
+          }
+        },
+        {
+          "id": "b10",
+          "title": "Conoce a la estrella",
+          "lines": [
+            "Una pequeña estrella flotó hasta él y sonrió.",
+            "—Te estaba esperando.",
+            "El conejo abrió los ojos sorprendido.",
+            "—¿A mí?"
+          ],
+          "layout": {
+            "bubble": {
+              "leftPct": 79.6,
+              "topPct": 69.1,
+              "widthPct": 19.6
+            },
+            "panel": {
+              "x0": 950,
+              "y0": 690,
+              "x1": 1536,
+              "y1": 1024
+            }
+          }
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué encontró el conejo en medio del bosque?",
+            "options": [
+              {
+                "text": "Un bosque",
+                "imageRegion": [
+                  0,
+                  330,
+                  330,
+                  300
+                ]
+              },
+              {
+                "text": "Una puerta azul",
+                "imageRegion": [
+                  385,
+                  345,
+                  190,
+                  290
+                ]
+              },
+              {
+                "text": "Un río"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Exacto! Encontró una puerta azul.",
+            "retryFeedback": "Casi. Mira el dibujo otra vez."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué crees que el conejo respiró hondo antes de abrir la puerta?",
+            "options": [
+              {
+                "text": "Estaba cansado de tanto caminar"
+              },
+              {
+                "text": "Estaba nervioso por lo que habría detrás"
+              },
+              {
+                "text": "Quería oler las flores del bosque"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Sí: no sabía qué iba a encontrar.",
+            "retryFeedback": "Relee el cuadro 6 y piénsalo otra vez."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "abrió": {
+      "syllables": [
+        "a",
+        "brió"
+      ]
+    },
+    "acercó": {
+      "syllables": [
+        "a",
+        "cer",
+        "có"
+      ]
+    },
+    "afuera": {
+      "syllables": [
+        "a",
+        "fue",
+        "ra"
+      ]
+    },
+    "algo": {
+      "syllables": [
+        "al",
+        "go"
+      ]
+    },
+    "alrededor": {
+      "syllables": [
+        "al",
+        "re",
+        "de",
+        "dor"
+      ],
+      "definition": "Por todos lados, en todo lo que está cerca."
+    },
+    "antes": {
+      "syllables": [
+        "an",
+        "tes"
+      ]
+    },
+    "árboles": {
+      "syllables": [
+        "ár",
+        "bo",
+        "les"
+      ],
+      "illustrationRegion": [
+        0,
+        330,
+        330,
+        300
+      ]
+    },
+    "azul": {
+      "syllables": [
+        "a",
+        "zul"
+      ]
+    },
+    "bosque": {
+      "syllables": [
+        "bos",
+        "que"
+      ],
+      "definition": "Un lugar con muchísimos árboles juntos.",
+      "illustrationRegion": [
+        0,
+        330,
+        330,
+        300
+      ]
+    },
+    "brillaba": {
+      "syllables": [
+        "bri",
+        "lla",
+        "ba"
+      ],
+      "definition": "Daba mucha luz, como una lámpara en la oscuridad.",
+      "synonym": "relucía"
+    },
+    "cambiando": {
+      "syllables": [
+        "cam",
+        "bian",
+        "do"
+      ]
+    },
+    "caminar": {
+      "syllables": [
+        "ca",
+        "mi",
+        "nar"
+      ]
+    },
+    "caminó": {
+      "syllables": [
+        "ca",
+        "mi",
+        "nó"
+      ]
+    },
+    "caminos": {
+      "syllables": [
+        "ca",
+        "mi",
+        "nos"
+      ]
+    },
+    "casa": {
+      "syllables": [
+        "ca",
+        "sa"
+      ],
+      "illustrationRegion": [
+        780,
+        60,
+        180,
+        250
+      ]
+    },
+    "cielo": {
+      "syllables": [
+        "cie",
+        "lo"
+      ],
+      "illustrationRegion": [
+        1090,
+        0,
+        330,
+        140
+      ]
+    },
+    "comenzó": {
+      "syllables": [
+        "co",
+        "men",
+        "zó"
+      ]
+    },
+    "conejo": {
+      "syllables": [
+        "co",
+        "ne",
+        "jo"
+      ],
+      "illustrationRegion": [
+        110,
+        90,
+        260,
+        220
+      ]
+    },
+    "cuidado": {
+      "syllables": [
+        "cui",
+        "da",
+        "do"
+      ]
+    },
+    "descubrir": {
+      "syllables": [
+        "des",
+        "cu",
+        "brir"
+      ],
+      "definition": "Encontrar o conocer algo que antes no sabías.",
+      "synonym": "encontrar"
+    },
+    "despertó": {
+      "syllables": [
+        "des",
+        "per",
+        "tó"
+      ]
+    },
+    "detrás": {
+      "syllables": [
+        "de",
+        "trás"
+      ]
+    },
+    "dijo": {
+      "syllables": [
+        "di",
+        "jo"
+      ]
+    },
+    "dorada": {
+      "syllables": [
+        "do",
+        "ra",
+        "da"
+      ],
+      "definition": "Del color del oro, amarilla y brillante."
+    },
+    "enorme": {
+      "syllables": [
+        "e",
+        "nor",
+        "me"
+      ],
+      "definition": "Muy, muy grande.",
+      "synonym": "gigante"
+    },
+    "entonces": {
+      "syllables": [
+        "en",
+        "ton",
+        "ces"
+      ]
+    },
+    "entre": {
+      "syllables": [
+        "en",
+        "tre"
+      ]
+    },
+    "entró": {
+      "syllables": [
+        "en",
+        "tró"
+      ]
+    },
+    "esperando": {
+      "syllables": [
+        "es",
+        "pe",
+        "ran",
+        "do"
+      ]
+    },
+    "esperándolo": {
+      "syllables": [
+        "es",
+        "pe",
+        "rán",
+        "do",
+        "lo"
+      ],
+      "definition": "Quedarse en un lugar hasta que alguien llegue."
+    },
+    "estaba": {
+      "syllables": [
+        "es",
+        "ta",
+        "ba"
+      ]
+    },
+    "estar": {
+      "syllables": [
+        "es",
+        "tar"
+      ]
+    },
+    "estrella": {
+      "syllables": [
+        "es",
+        "tre",
+        "lla"
+      ],
+      "illustrationRegion": [
+        1215,
+        830,
+        130,
+        120
+      ]
+    },
+    "estrellas": {
+      "syllables": [
+        "es",
+        "tre",
+        "llas"
+      ],
+      "illustrationRegion": [
+        620,
+        690,
+        300,
+        120
+      ]
+    },
+    "extraño": {
+      "syllables": [
+        "ex",
+        "tra",
+        "ño"
+      ],
+      "definition": "Algo raro, que no pasa todos los días.",
+      "synonym": "raro"
+    },
+    "flotó": {
+      "syllables": [
+        "flo",
+        "tó"
+      ],
+      "definition": "Se quedó en el aire, sin caer."
+    },
+    "guau": {
+      "syllables": [
+        "guau"
+      ]
+    },
+    "había": {
+      "syllables": [
+        "ha",
+        "bí",
+        "a"
+      ]
+    },
+    "habrá": {
+      "syllables": [
+        "ha",
+        "brá"
+      ]
+    },
+    "hacia": {
+      "syllables": [
+        "ha",
+        "cia"
+      ]
+    },
+    "hasta": {
+      "syllables": [
+        "has",
+        "ta"
+      ]
+    },
+    "hondo": {
+      "syllables": [
+        "hon",
+        "do"
+      ],
+      "definition": "Profundo, llenando mucho los pulmones.",
+      "synonym": "profundo"
+    },
+    "increíble": {
+      "syllables": [
+        "in",
+        "cre",
+        "í",
+        "ble"
+      ],
+      "definition": "Tan sorprendente que casi no se puede creer.",
+      "synonym": "asombroso"
+    },
+    "lado": {
+      "syllables": [
+        "la",
+        "do"
+      ]
+    },
+    "lentamente": {
+      "syllables": [
+        "len",
+        "ta",
+        "men",
+        "te"
+      ],
+      "definition": "Despacito, sin prisa.",
+      "synonym": "despacio"
+    },
+    "levantó": {
+      "syllables": [
+        "le",
+        "van",
+        "tó"
+      ]
+    },
+    "llenó": {
+      "syllables": [
+        "lle",
+        "nó"
+      ]
+    },
+    "luego": {
+      "syllables": [
+        "lue",
+        "go"
+      ]
+    },
+    "luna": {
+      "syllables": [
+        "lu",
+        "na"
+      ],
+      "illustrationRegion": [
+        1385,
+        5,
+        150,
+        125
+      ]
+    },
+    "medio": {
+      "syllables": [
+        "me",
+        "dio"
+      ]
+    },
+    "miró": {
+      "syllables": [
+        "mi",
+        "ró"
+      ]
+    },
+    "montañas": {
+      "syllables": [
+        "mon",
+        "ta",
+        "ñas"
+      ],
+      "definition": "Tierras muy altas, mucho más altas que una colina.",
+      "illustrationRegion": [
+        1150,
+        40,
+        300,
+        150
+      ]
+    },
+    "nubes": {
+      "syllables": [
+        "nu",
+        "bes"
+      ],
+      "illustrationRegion": [
+        460,
+        840,
+        490,
+        180
+      ]
+    },
+    "ojos": {
+      "syllables": [
+        "o",
+        "jos"
+      ]
+    },
+    "otro": {
+      "syllables": [
+        "o",
+        "tro"
+      ]
+    },
+    "parecía": {
+      "syllables": [
+        "pa",
+        "re",
+        "cí",
+        "a"
+      ]
+    },
+    "pasando": {
+      "syllables": [
+        "pa",
+        "san",
+        "do"
+      ]
+    },
+    "paso": {
+      "syllables": [
+        "pa",
+        "so"
+      ]
+    },
+    "pequeña": {
+      "syllables": [
+        "pe",
+        "que",
+        "ña"
+      ]
+    },
+    "pequeño": {
+      "syllables": [
+        "pe",
+        "que",
+        "ño"
+      ]
+    },
+    "pomo": {
+      "syllables": [
+        "po",
+        "mo"
+      ],
+      "definition": "La perilla redonda que giras con la mano para abrir una puerta.",
+      "illustrationRegion": [
+        1270,
+        500,
+        130,
+        150
+      ]
+    },
+    "preguntó": {
+      "syllables": [
+        "pre",
+        "gun",
+        "tó"
+      ]
+    },
+    "puerta": {
+      "syllables": [
+        "puer",
+        "ta"
+      ],
+      "definition": "Una puerta es una entrada que se puede abrir o cerrar para pasar de un lugar a otro.",
+      "illustrationRegion": [
+        385,
+        345,
+        190,
+        290
+      ]
+    },
+    "quería": {
+      "syllables": [
+        "que",
+        "rí",
+        "a"
+      ]
+    },
+    "repente": {
+      "syllables": [
+        "re",
+        "pen",
+        "te"
+      ]
+    },
+    "respiró": {
+      "syllables": [
+        "res",
+        "pi",
+        "ró"
+      ],
+      "definition": "Tomó aire y lo dejó salir despacito."
+    },
+    "saliera": {
+      "syllables": [
+        "sa",
+        "lie",
+        "ra"
+      ]
+    },
+    "salió": {
+      "syllables": [
+        "sa",
+        "lió"
+      ]
+    },
+    "sobre": {
+      "syllables": [
+        "so",
+        "bre"
+      ]
+    },
+    "sol": {
+      "illustrationRegion": [
+        610,
+        20,
+        160,
+        210
+      ]
+    },
+    "sonrió": {
+      "syllables": [
+        "son",
+        "rió"
+      ]
+    },
+    "sorprendido": {
+      "syllables": [
+        "sor",
+        "pren",
+        "di",
+        "do"
+      ],
+      "definition": "Cuando algo te pasa sin que lo esperaras.",
+      "synonym": "asombrado"
+    },
+    "todo": {
+      "syllables": [
+        "to",
+        "do"
+      ]
+    },
+    "tomó": {
+      "syllables": [
+        "to",
+        "mó"
+      ]
+    },
+    "una": {
+      "syllables": [
+        "u",
+        "na"
+      ]
+    },
+    "ventana": {
+      "syllables": [
+        "ven",
+        "ta",
+        "na"
+      ],
+      "illustrationRegion": [
+        610,
+        20,
+        160,
+        210
+      ]
+    },
+    "vista": {
+      "syllables": [
+        "vis",
+        "ta"
+      ]
+    }
+  },
+  "cover": {
+    "src": "stories/la-luna-y-la-puerta-azul/cover.webp",
+    "width": 540,
+    "height": 225,
+    "alt": "El conejo junto a la puerta azul del bosque"
+  }
+}

@@ -1,0 +1,333 @@
+{
+  "id": "estrella-desaparecida-c1-es-n2",
+  "familyId": "estrella-desaparecida-c1",
+  "language": "es",
+  "title": "1. La pista que no caminaba",
+  "level": 2,
+  "category": "misterio",
+  "description": "Capítulo 1 de 3 de «El caso de la estrella desaparecida». Leer en orden.",
+  "cover": {
+    "src": "stories/estrella-desaparecida-c1/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "El caso de la estrella desaparecida"
+  },
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c1/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Preparan una fiesta con una estrella; luego el gancho aparece vacío y hay dos rastros en el barro."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b01",
+          "voice": "narration",
+          "lines": [
+            "Luna y su hermano Nico ayudan a Pico, la cigüeña, a decorar la estación para una fiesta."
+          ],
+          "title": "Preparan la fiesta"
+        },
+        {
+          "id": "b02",
+          "voice": "narration",
+          "lines": [
+            "La estrella cuelga de un lazo flojo. El viento lo agita mientras Pico lleva su carro."
+          ],
+          "title": "La estrella cuelga"
+        },
+        {
+          "id": "b03",
+          "voice": "narration",
+          "lines": [
+            "Al volver la mirada, los hermanos descubren el gancho vacío. La estrella ha desaparecido sin que lo notaran."
+          ],
+          "title": "¡Desapareció!"
+        },
+        {
+          "id": "b04",
+          "voice": "narration",
+          "lines": [
+            "En el barro distinguen dos rastros: unas huellas pequeñas van al jardín y dos líneas siguen otro camino."
+          ],
+          "title": "Dos rastros"
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué ha desaparecido?",
+            "options": [
+              {
+                "text": "El banco"
+              },
+              {
+                "text": "La estrella"
+              },
+              {
+                "text": "La estación"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! La estrella.",
+            "retryFeedback": "Mira primero el gancho y después los rastros del suelo."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Antes de decir que alguien se la llevó, ¿qué falta saber?",
+            "options": [
+              {
+                "text": "Cómo desapareció"
+              },
+              {
+                "text": "El nombre de todos los vecinos"
+              },
+              {
+                "text": "Cuántos banderines hay"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Cómo desapareció.",
+            "retryFeedback": "Mira primero el gancho y después los rastros del suelo."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c1/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Siguen huellas hasta un gato, buscan junto al banco y regresan al otro camino."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b05",
+          "voice": "narration",
+          "lines": [
+            "Nico elige las huellas y Luna lo sigue. Tal vez quien pasó por allí sepa algo."
+          ],
+          "title": "Huellas al jardín"
+        },
+        {
+          "id": "b06",
+          "voice": "narration",
+          "lines": [
+            "Las marcas llegan hasta un gato blanco y negro. Sus patas se parecen a las huellas."
+          ],
+          "title": "El gato del banco"
+        },
+        {
+          "id": "b07",
+          "voice": "narration",
+          "lines": [
+            "Los hermanos miran junto al banco y debajo de él, pero no encuentran la estrella."
+          ],
+          "title": "No está aquí"
+        },
+        {
+          "id": "b08",
+          "voice": "narration",
+          "lines": [
+            "Regresan al cruce para examinar el otro rastro. Aún no tienen una explicación para lo ocurrido."
+          ],
+          "title": "Vuelven al cruce"
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Adónde llevan las huellas pequeñas?",
+            "options": [
+              {
+                "text": "Al tejado"
+              },
+              {
+                "text": "Al carro"
+              },
+              {
+                "text": "Al gato junto al banco"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Al gato junto al banco.",
+            "retryFeedback": "Encontrar unas huellas explica quién pasó; mira si también encontraron el adorno."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué pueden afirmar después de buscar junto al banco?",
+            "options": [
+              {
+                "text": "Que el gato escondió la estrella"
+              },
+              {
+                "text": "Que no la encontraron allí"
+              },
+              {
+                "text": "Que la estrella dejó de existir"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Que no la encontraron allí.",
+            "retryFeedback": "Encontrar unas huellas explica quién pasó; mira si también encontraron el adorno."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c1/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Encuentran cinta de puntos junto a marcas de ruedas y llegan a una ventana con una gran sombra."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b09",
+          "voice": "narration",
+          "lines": [
+            "Luna descubre un trocito de cinta azul enganchado junto a las dos líneas del barro."
+          ],
+          "title": "El trocito de cinta"
+        },
+        {
+          "id": "b10",
+          "voice": "narration",
+          "lines": [
+            "La cinta tiene puntos blancos, igual que la que sostenía la estrella. Es una pista que pueden comparar."
+          ],
+          "title": "Los mismos puntos"
+        },
+        {
+          "id": "b11",
+          "voice": "narration",
+          "lines": [
+            "Siguen las líneas hasta el taller de madera. Luna lleva el trocito de cinta para seguir investigando."
+          ],
+          "title": "Hasta el taller"
+        },
+        {
+          "id": "b12",
+          "voice": "narration",
+          "lines": [
+            "Una sombra enorme ocupa la ventana iluminada. Nico se detiene: ¿qué puede producir una forma así?"
+          ],
+          "title": "Una sombra enorme"
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué tiene el trocito de cinta azul?",
+            "options": [
+              {
+                "text": "Puntos blancos"
+              },
+              {
+                "text": "Rayas rojas"
+              },
+              {
+                "text": "Flores negras"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Puntos blancos.",
+            "retryFeedback": "Compara el dibujo de la cinta con la que viste al comienzo."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué relaciona el camino al taller con la estrella?",
+            "options": [
+              {
+                "text": "Que el taller tiene una ventana"
+              },
+              {
+                "text": "Que la sombra parece grande"
+              },
+              {
+                "text": "La cinta con el mismo dibujo junto a las líneas"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! La cinta con el mismo dibujo junto a las líneas.",
+            "retryFeedback": "Compara el dibujo de la cinta con la que viste al comienzo."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "cigüeña": {
+      "syllables": [
+        "ci",
+        "güe",
+        "ña"
+      ],
+      "definition": "Ave de patas y pico largos."
+    },
+    "lazo": {
+      "syllables": [
+        "la",
+        "zo"
+      ],
+      "definition": "Nudo con vueltas que se puede deshacer tirando de un extremo."
+    },
+    "gancho": {
+      "syllables": [
+        "gan",
+        "cho"
+      ],
+      "definition": "Pieza curva que sirve para colgar cosas."
+    },
+    "huellas": {
+      "syllables": [
+        "hue",
+        "llas"
+      ],
+      "definition": "Marcas que dejan los pies o las patas."
+    },
+    "rastro": {
+      "syllables": [
+        "ras",
+        "tro"
+      ],
+      "definition": "Señales que deja alguien o algo al pasar."
+    },
+    "taller": {
+      "syllables": [
+        "ta",
+        "ller"
+      ],
+      "definition": "Lugar donde se hacen o arreglan cosas."
+    },
+    "sombra": {
+      "syllables": [
+        "som",
+        "bra"
+      ],
+      "definition": "Zona oscura que aparece cuando un objeto tapa la luz."
+    }
+  },
+  "heroFocus": {
+    "x": 35,
+    "y": 62
+  },
+  "reviewWords": [
+    "cigüeña",
+    "lazo",
+    "gancho"
+  ]
+}

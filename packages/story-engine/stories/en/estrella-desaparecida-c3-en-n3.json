@@ -1,0 +1,389 @@
+{
+  "id": "estrella-desaparecida-c3-en-n3",
+  "familyId": "estrella-desaparecida-c3",
+  "language": "en",
+  "title": "3. What Really Happened",
+  "level": 3,
+  "category": "misterio",
+  "description": "Chapter 3 of 3 of “The Case of the Missing Star”. Read in order.",
+  "cover": {
+    "src": "stories/estrella-desaparecida-c3/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "The Case of the Missing Star"
+  },
+  "pages": [
+    {
+      "id": "p07",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c3/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "They uncover the star, examine the evidence, and test the loose bow."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b25",
+          "voice": "narration",
+          "lines": [
+            "Luna and Nico lift the striped cloth completely away.",
+            "There is the star, with its purple ring and the dotted ribbon trailing towards one of the cart's wheels."
+          ],
+          "title": "There it is!"
+        },
+        {
+          "id": "b26",
+          "voice": "narration",
+          "lines": [
+            "The decoration is undamaged.",
+            "Luna notices the undone bow and the small torn edge of ribbon;",
+            "their explanation will need to account for those details too."
+          ],
+          "title": "Whole, but loose"
+        },
+        {
+          "id": "b27",
+          "voice": "narration",
+          "lines": [
+            "They place the star and ribbon beside the cart to bring the evidence together.",
+            "Finding the object answers where it was, but not how it arrived."
+          ],
+          "title": "Putting it together"
+        },
+        {
+          "id": "b28",
+          "voice": "narration",
+          "lines": [
+            "Luna gently pulls one end of the loose bow and watches it open.",
+            "The test shows it could come free without cutting the ribbon or breaking the ring."
+          ],
+          "title": "Testing the bow"
+        }
+      ],
+      "checkpoint": {
+        "id": "q07",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Where was the star?",
+            "options": [
+              {
+                "text": "Under the bench"
+              },
+              {
+                "text": "Inside the cart"
+              },
+              {
+                "text": "On the roof"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! Inside the cart.",
+            "retryFeedback": "Watch what happens when the ribbon end is pulled."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What does testing the loose bow show?",
+            "options": [
+              {
+                "text": "It could open when one end was pulled"
+              },
+              {
+                "text": "The cat untied it"
+              },
+              {
+                "text": "Every knot always comes loose"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! It could open when one end was pulled.",
+            "retryFeedback": "Watch what happens when the ribbon end is pulled."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p08",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c3/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reconstruction: wind loosens the bow, the star falls and is covered, and the cart leaves traces."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b29",
+          "voice": "narration",
+          "lines": [
+            "The story returns to the moment before the disappearance.",
+            "Wind shook the flags and ribbon while the cart passed directly beneath the star on its hook."
+          ],
+          "title": "The wind returns"
+        },
+        {
+          "id": "b30",
+          "voice": "narration",
+          "lines": [
+            "The bow finally slipped open, dropping the star onto the cloth inside the cart.",
+            "Pico was looking ahead, so he did not see what happened behind him."
+          ],
+          "title": "Falls into the cart"
+        },
+        {
+          "id": "b31",
+          "voice": "narration",
+          "lines": [
+            "As the decoration landed, a loose fold of cloth flipped over it.",
+            "The star remained whole inside the cart, even though nobody could see it from outside."
+          ],
+          "title": "Covered by the cloth"
+        },
+        {
+          "id": "b32",
+          "voice": "narration",
+          "lines": [
+            "The wheels left long lines in the mud.",
+            "A trailing ribbon end caught beside the path, tearing off the small scrap the children would discover later."
+          ],
+          "title": "The ribbon catches"
+        }
+      ],
+      "checkpoint": {
+        "id": "q08",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What hid the star inside the cart?",
+            "options": [
+              {
+                "text": "A box"
+              },
+              {
+                "text": "A coat"
+              },
+              {
+                "text": "A fold of cloth"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! A fold of cloth.",
+            "retryFeedback": "Follow this page’s four pictures in order."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Which order matches the pictures?",
+            "options": [
+              {
+                "text": "The cloth moves, the cat ties the star, then wind arrives"
+              },
+              {
+                "text": "The bow opens, the star falls, and the cloth covers it"
+              },
+              {
+                "text": "The cart empties, the star flies up, and the bow tightens"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! The bow opens, the star falls, and the cloth covers it.",
+            "retryFeedback": "Follow this page’s four pictures in order."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p09",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c3/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "They return the star, tie a double knot, test it, and enjoy the party."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b33",
+          "voice": "narration",
+          "lines": [
+            "Back in the present, they return the star to its hook.",
+            "A fall and a ride explain the clues without needing to imagine that somebody stole it."
+          ],
+          "title": "Back to the hook"
+        },
+        {
+          "id": "b34",
+          "voice": "narration",
+          "lines": [
+            "Luna ties a double knot while Nico holds the decoration steady.",
+            "Understanding what failed lets them change the fastening instead of simply hanging it the same way."
+          ],
+          "title": "A double knot"
+        },
+        {
+          "id": "b35",
+          "voice": "narration",
+          "lines": [
+            "They test the knot with a gentle tug and watch it stay firm.",
+            "Looking secure is not enough; they check whether their repair actually works this time."
+          ],
+          "title": "Testing it holds"
+        },
+        {
+          "id": "b36",
+          "voice": "narration",
+          "lines": [
+            "The party begins with the star in place.",
+            "The children have learned that a good explanation must fit the evidence, even when it challenges their first suspicion."
+          ],
+          "title": "The party begins!"
+        }
+      ],
+      "checkpoint": {
+        "id": "q09",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "How does Luna fasten the star more securely?",
+            "options": [
+              {
+                "text": "With a double knot"
+              },
+              {
+                "text": "With a drawing"
+              },
+              {
+                "text": "By cutting the ribbon"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! With a double knot.",
+            "retryFeedback": "Look at the knot and what they do before the party starts."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why do they give the star a gentle tug at the end?",
+            "options": [
+              {
+                "text": "To lose it again"
+              },
+              {
+                "text": "To attract the cat"
+              },
+              {
+                "text": "To check that their repair works"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! To check that their repair works.",
+            "retryFeedback": "Look at the knot and what they do before the party starts."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "ribbon": {
+      "syllables": [
+        "rib",
+        "bon"
+      ],
+      "definition": "A narrow strip of fabric used for tying or decorating.",
+      "example": "She tied a red ribbon around the gift before giving it away."
+    },
+    "bow": {
+      "syllables": [
+        "bow"
+      ],
+      "definition": "A knot with loops that can be loosened by pulling an end.",
+      "synonym": "knot",
+      "example": "He tied a bow on his shoelaces so they wouldn't come undone."
+    },
+    "hook": {
+      "syllables": [
+        "hook"
+      ],
+      "definition": "A curved piece used to hang something.",
+      "example": "We hung the keys on a hook by the door."
+    },
+    "evidence": {
+      "syllables": [
+        "ev",
+        "i",
+        "dence"
+      ],
+      "definition": "Information used to check an explanation.",
+      "synonym": "proof",
+      "example": "She kept the photo as evidence that she arrived first."
+    },
+    "scrap": {
+      "syllables": [
+        "scrap"
+      ],
+      "definition": "A small piece left or torn from something.",
+      "synonym": "piece",
+      "example": "He used a scrap of fabric to patch the torn backpack."
+    },
+    "explanation": {
+      "syllables": [
+        "ex",
+        "pla",
+        "na",
+        "tion"
+      ],
+      "definition": "An account of how or why something happened.",
+      "synonym": "reason",
+      "example": "She gave a simple explanation for why she was late."
+    },
+    "decoration": {
+      "syllables": [
+        "dec",
+        "o",
+        "ra",
+        "tion"
+      ],
+      "definition": "Something used to make a place look special.",
+      "synonym": "ornament",
+      "example": "We hung paper decorations around the classroom for the party."
+    },
+    "suspicion": {
+      "syllables": [
+        "sus",
+        "pi",
+        "cion"
+      ],
+      "definition": "An idea that might be true but needs checking.",
+      "synonym": "doubt",
+      "example": "He had a suspicion that someone had borrowed his pencil without asking."
+    },
+    "undamaged": {
+      "syllables": [
+        "un",
+        "dam",
+        "aged"
+      ],
+      "definition": "Not broken or harmed.",
+      "synonym": "unharmed",
+      "example": "The package arrived undamaged after the long trip."
+    },
+    "fastening": {
+      "syllables": [
+        "fas",
+        "ten",
+        "ing"
+      ],
+      "definition": "A way of holding something in place.",
+      "synonym": "clasp",
+      "example": "The fastening on her backpack kept it from opening by accident."
+    }
+  },
+  "heroFocus": {
+    "x": 35,
+    "y": 62
+  },
+  "reviewWords": [
+    "ribbon",
+    "evidence",
+    "explanation"
+  ]
+}

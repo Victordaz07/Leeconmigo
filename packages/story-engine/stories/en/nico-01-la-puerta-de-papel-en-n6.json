@@ -1,0 +1,736 @@
+{
+  "id": "nico-01-la-puerta-de-papel-en-n6",
+  "familyId": "nico-01-la-puerta-de-papel",
+  "language": "en",
+  "title": "1. The Paper Door",
+  "level": 6,
+  "category": "fantasia",
+  "description": "Book 1 of 3 in the «Nico, Hero of the Books» series. Nico's first leap. Read in order.",
+  "cover": {
+    "src": "stories/nico-01-la-puerta-de-papel/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Illustration of the jump that failed."
+  },
+  "heroFocus": {
+    "x": 30,
+    "y": 55
+  },
+  "reviewWords": [
+    "pulley",
+    "current",
+    "supplies"
+  ],
+  "pages": [
+    {
+      "id": "b1-p01",
+      "illustration": {
+        "src": "stories/nico-01-la-puerta-de-papel/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Illustration of the jump that failed."
+      },
+      "blocks": [
+        {
+          "id": "b01",
+          "voice": "narration",
+          "title": "The jump that failed",
+          "lines": [
+            "Nico wanted to be a superhero. He had practiced leaps across the playground until the toes of his sneakers wore thin.",
+            "That morning he tried to clear a wide puddle and landed in the middle. Two classmates laughed; Alma offered a hand.",
+            "Nico said he didn't need one, though his socks were soaked. In class, the teacher asked for volunteers to read aloud.",
+            "Nico hid behind his book. When he felt nervous, the words seemed to race ahead of his eyes.",
+            "After recess he found an old blue volume on the library's return cart. The cover had no title.",
+            "When he opened it, he heard water."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What does Nico find in the library?",
+            "options": [
+              {
+                "text": "An untitled blue book"
+              },
+              {
+                "text": "A flying cape"
+              },
+              {
+                "text": "A gold key"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! An untitled blue book.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why does Nico hide during reading time?",
+            "options": [
+              {
+                "text": "He dislikes his friends"
+              },
+              {
+                "text": "Nerves make the words race ahead"
+              },
+              {
+                "text": "He wants to sleep"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! Nerves make the words race ahead.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b1-p02",
+      "illustration": {
+        "src": "stories/nico-01-la-puerta-de-papel/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Illustration of the first rule."
+      },
+      "blocks": [
+        {
+          "id": "b02",
+          "voice": "narration",
+          "title": "The first rule",
+          "lines": [
+            "A shining wave rose from the page and became a bridge. The library floor fell away.",
+            "A heartbeat later Nico stood in a city of canals, its lighthouses glowing in broad daylight. His sneakers were still wet.",
+            "A girl in a green cape rowed toward him. Her name was Sira, and she was searching for the key to the tallest lighthouse.",
+            "Without its light, the boats would lose the harbor after dark. Nico glanced back.",
+            "The paper bridge still joined the open book, floating like a window. A bell rang in the real library, and he was back in his chair.",
+            "The book had closed beneath his elbow. No one else had seen the wave.",
+            "A real drop of water rested in the margin."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Where does the book take Nico?",
+            "options": [
+              {
+                "text": "His house"
+              },
+              {
+                "text": "A city of canals"
+              },
+              {
+                "text": "The Moon"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! A city of canals.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What does the drop suggest afterward?",
+            "options": [
+              {
+                "text": "It rained in class"
+              },
+              {
+                "text": "Sira left"
+              },
+              {
+                "text": "The adventure left a real trace"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! The adventure left a real trace.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b1-p03",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "blocks": [
+        {
+          "id": "b03",
+          "voice": "narration",
+          "title": "Wishing isn't enough",
+          "lines": [
+            "Nico opened the book again. He returned to the same pier, where Sira was holding a rope.",
+            "The key was across the canal in a tower with no stairs. Nico stretched out his arms like a movie hero and commanded the water to fly him there.",
+            "The water ignored him. He slipped and got wet a second time.",
+            "Sira didn't laugh. She showed him three empty boats tied to posts and asked which one might carry them.",
+            "Nico nearly guessed, then watched the current. Two boats tugged toward the rocks; the third rocked beside a quiet route.",
+            "They climbed into that one. Nico learned something disappointing and useful: this world didn't hand out powers just because he wanted them."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Which boat do they choose?",
+            "options": [
+              {
+                "text": "The one heading for rocks"
+              },
+              {
+                "text": "The shiniest one"
+              },
+              {
+                "text": "The one beside a calm current"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! The one beside a calm current.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What does Nico learn when his command fails?",
+            "options": [
+              {
+                "text": "He must observe and choose"
+              },
+              {
+                "text": "He can command water"
+              },
+              {
+                "text": "He can never help"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! He must observe and choose.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b1-p04",
+      "illustration": {
+        "src": "stories/nico-01-la-puerta-de-papel/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Illustration of the door without a handle."
+      },
+      "blocks": [
+        {
+          "id": "b04",
+          "voice": "narration",
+          "title": "The door without a handle",
+          "lines": [
+            "The tower had a smooth door and a high window. Sira found old rope marks on the floor.",
+            "Nico spotted a rusty pulley above the frame, almost hidden by vines. They threaded the boat rope through it and pulled together.",
+            "The window opened, but the key fell into a bowl too deep for either of them to reach. Sira suggested tipping it over.",
+            "Nico heard water below and thought of the boats that needed the light. If they broke the bowl, the key might slip through a crack.",
+            "He asked her to stop. They sat there, damp and out of ideas.",
+            "At last Nico said, 'I need help thinking.' Sira smiled. She had been waiting for him to ask."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What is above the door?",
+            "options": [
+              {
+                "text": "A pulley"
+              },
+              {
+                "text": "A dragon"
+              },
+              {
+                "text": "A clock"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! A pulley.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why does Nico stop them from tipping the bowl?",
+            "options": [
+              {
+                "text": "The key no longer matters"
+              },
+              {
+                "text": "The key might be lost"
+              },
+              {
+                "text": "He is sleepy"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! The key might be lost.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b1-p05",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "blocks": [
+        {
+          "id": "b05",
+          "voice": "narration",
+          "title": "Two small ideas",
+          "lines": [
+            "Sira kept a magnet tied to her oar to collect loose nails from the canal. Nico had a strip of ribbon in his backpack pocket.",
+            "They tied the magnet to the ribbon, but it stopped short. Nico remembered the boat rope.",
+            "With the pieces knotted together, they lowered the magnet and heard a click. The key came up coated in salt.",
+            "Neither of them had found the whole answer alone. On the climb to the lighthouse, the page behind him began to flutter as if someone might close it.",
+            "Nico was afraid of being trapped. Sira pointed to the bright doorway. 'If you need to go back, go.",
+            "I can climb the rest.' Nico held the book open with a stone and chose to go a little farther."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What lifts the key out?",
+            "options": [
+              {
+                "text": "A ladder"
+              },
+              {
+                "text": "A magnet and ropes"
+              },
+              {
+                "text": "A sword"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! A magnet and ropes.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why does their plan work?",
+            "options": [
+              {
+                "text": "The water grants a power"
+              },
+              {
+                "text": "Sira has another key"
+              },
+              {
+                "text": "They combine their ideas and tools"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! They combine their ideas and tools.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b1-p06",
+      "illustration": {
+        "src": "stories/nico-01-la-puerta-de-papel/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Illustration of the wrong light."
+      },
+      "blocks": [
+        {
+          "id": "b06",
+          "voice": "narration",
+          "title": "The wrong light",
+          "lines": [
+            "At the top they discovered two lighthouses: a tall one with clean glass, and a smaller one pointing toward the reefs. Nico rushed to the tall lamp with the key, but Sira saw boats steering away from shore.",
+            "The little lamp was already on, confusing them. Switching it off seemed easy until they noticed it also lit the staircase for the keepers.",
+            "Sira called a keeper from the window. Together the three of them moved a mirror, keeping the steps bright while turning the beam away from the sea.",
+            "Only then did they light the tall tower. The boats changed course.",
+            "Nico hadn't defeated anyone. He had stopped to see whom his choice might affect."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q06",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What redirects the small light?",
+            "options": [
+              {
+                "text": "A cloud"
+              },
+              {
+                "text": "A curtain"
+              },
+              {
+                "text": "A mirror"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! A mirror.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why not simply turn off the little lamp?",
+            "options": [
+              {
+                "text": "It lights the keepers' stairs"
+              },
+              {
+                "text": "They cannot find it"
+              },
+              {
+                "text": "The key will not turn"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! It lights the keepers' stairs.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b1-p07",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "blocks": [
+        {
+          "id": "b07",
+          "voice": "narration",
+          "title": "Across the table",
+          "lines": [
+            "The librarian announced the end of reading hour, and the book snapped shut. Nico was back with a knotted ribbon in his pocket and a new thought in his head.",
+            "At the next table, Teo struggled with a map for their class project. He had erased one corner so often that the paper was nearly torn.",
+            "Nico wanted to tell him how to fix it. He remembered the bowl, the magnet, and the hard words he had finally said. 'Want to figure it out together?' he asked.",
+            "Teo showed him his routes. Nico saw where two paths crossed.",
+            "They drew the bridge first and the streets after. When Alma arrived, they asked her to check their route.",
+            "She spotted an exit neither boy had seen."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q07",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What do Nico and Teo draw?",
+            "options": [
+              {
+                "text": "A map with a bridge"
+              },
+              {
+                "text": "A spaceship"
+              },
+              {
+                "text": "A movie poster"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! A map with a bridge.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          },
+          {
+            "audience": "lector",
+            "prompt": "How does Nico help differently now?",
+            "options": [
+              {
+                "text": "He finishes it silently"
+              },
+              {
+                "text": "He asks and thinks with Teo"
+              },
+              {
+                "text": "He grabs the pencil"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! He asks and thinks with Teo.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b1-p08",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "blocks": [
+        {
+          "id": "b08",
+          "voice": "narration",
+          "title": "One line aloud",
+          "lines": [
+            "The next day was reading day in class. Nico still hated the idea of making a mistake in front of everyone.",
+            "He didn't suddenly become a person who felt no fear. He raised his hand when a short line came up.",
+            "He stumbled on a word and asked for a moment. The teacher waited.",
+            "Alma pointed to the syllable without saying it for him. Nico sounded it out and read to the period.",
+            "At recess he told his friends the blue book felt different. He wasn't ready to explain the water bridge; he barely understood it himself.",
+            "He showed them the salty ribbon. Alma examined it and asked why it smelled of the sea."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q08",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What does Nico read in class?",
+            "options": [
+              {
+                "text": "A speech"
+              },
+              {
+                "text": "One short line"
+              },
+              {
+                "text": "A whole book"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! One short line.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What changes when he stumbles?",
+            "options": [
+              {
+                "text": "He loses courage forever"
+              },
+              {
+                "text": "Alma reads it all"
+              },
+              {
+                "text": "He asks for time and continues"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! He asks for time and continues.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b1-p09",
+      "illustration": {
+        "src": "stories/nico-01-la-puerta-de-papel/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Illustration of the city says goodbye."
+      },
+      "blocks": [
+        {
+          "id": "b09",
+          "voice": "narration",
+          "title": "The city says goodbye",
+          "lines": [
+            "That afternoon Nico opened the book by the library window. The tall lighthouse was still shining.",
+            "Sira waved from her boat, now packed with supplies for other harbors. 'I thought heroes had to do everything alone,' Nico said. 'I thought that too,' she answered, handing him a map with no routes drawn on it. Three paths waited at its edge.",
+            "Nico understood it wasn't an order to return; it was an invitation to imagine what story might come next. He closed the volume gently.",
+            "Across the real room, Teo and Alma were disagreeing over a poster for class. This time he walked over before they called him."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q09",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What does Sira give Nico?",
+            "options": [
+              {
+                "text": "A crown"
+              },
+              {
+                "text": "A broken compass"
+              },
+              {
+                "text": "A map without routes"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! A map without routes.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What can the blank paths mean?",
+            "options": [
+              {
+                "text": "New stories can be imagined"
+              },
+              {
+                "text": "He must leave his friends"
+              },
+              {
+                "text": "The map is faulty"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! New stories can be imagined.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b1-p10",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "blocks": [
+        {
+          "id": "b10",
+          "voice": "narration",
+          "title": "The missing page",
+          "lines": [
+            "The three friends compared sketches. Teo wanted a model; Alma wanted a question game.",
+            "Nico proposed a display with both: a little cardboard city and cards inviting visitors to invent routes. They could build it together.",
+            "As they packed up, the blue book opened by itself near the end. A huge building cast a shadow across the paper.",
+            "Beyond it was a blank corner, as though someone had cut away part of the story. Nico wanted to leap in at once.",
+            "Then he remembered the library was closing and his friends knew nothing about the book. He tucked it into his bag, wrote down what he'd seen, and decided to talk to them first.",
+            "Sometimes an adventure begins by waiting for the right moment."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q10",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What appears near the end?",
+            "options": [
+              {
+                "text": "A missing blank patch"
+              },
+              {
+                "text": "A sunken lighthouse"
+              },
+              {
+                "text": "A school prize"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! A missing blank patch.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why does Nico wait before leaping?",
+            "options": [
+              {
+                "text": "He forgot the book"
+              },
+              {
+                "text": "He wants to talk with his friends and choose the time"
+              },
+              {
+                "text": "He dislikes reading now"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! He wants to talk with his friends and choose the time.",
+            "retryFeedback": "Take another look at that scene and notice what each person did."
+          }
+        ]
+      },
+      "template": "full"
+    }
+  ],
+  "vocabulary": {
+    "pulley": {
+      "syllables": [
+        "pull",
+        "ey"
+      ],
+      "definition": "a wheel that helps lift with a rope",
+      "example": "They used a pulley to lift the heavy boxes to the second floor."
+    },
+    "reef": {
+      "syllables": [
+        "reef"
+      ],
+      "definition": "rocks near the sea's surface",
+      "example": "Colorful fish swam around the reef."
+    },
+    "pier": {
+      "syllables": [
+        "pier"
+      ],
+      "definition": "a place boats can stop",
+      "synonym": "dock",
+      "example": "The fishing boats were tied up at the pier."
+    },
+    "current": {
+      "syllables": [
+        "cur",
+        "rent"
+      ],
+      "definition": "water moving in one direction",
+      "synonym": "flow",
+      "example": "The river's current carried the leaf downstream."
+    },
+    "supplies": {
+      "syllables": [
+        "sup",
+        "plies"
+      ],
+      "definition": "things packed for a journey",
+      "synonym": "materials",
+      "example": "They packed supplies before starting the long hike."
+    },
+    "syllable": {
+      "syllables": [
+        "syl",
+        "la",
+        "ble"
+      ],
+      "definition": "one sound part of a word",
+      "example": "The word 'cat' has one syllable."
+    }
+  }
+}

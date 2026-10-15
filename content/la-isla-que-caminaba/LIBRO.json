@@ -1,0 +1,990 @@
+{
+  "slug": "la_isla_que_caminaba",
+  "title": {
+    "es": "La isla que caminaba",
+    "en": "The Island That Walked"
+  },
+  "subtitle": {
+    "es": "El misterio de la laguna",
+    "en": "The lagoon mystery"
+  },
+  "chapters": [
+    {
+      "es": "Una isla fuera de lugar",
+      "en": "An island out of place"
+    },
+    {
+      "es": "Lo que mueve la marea",
+      "en": "What the tide moves"
+    },
+    {
+      "es": "Un mapa para todos",
+      "en": "A map for everyone"
+    }
+  ],
+  "cover": "imagenes/portada.png",
+  "character_sheet": "imagenes/personajes.png",
+  "pages": [
+    {
+      "id": "la_isla_que_caminaba-p01",
+      "number": 1,
+      "chapter": 1,
+      "image": "imagenes/pagina-01.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "La cinta roja",
+          "paragraphs": [
+            "Desde el mirador de madera, Maya podía ver una pequeña isla de juncos en la laguna. No aparecía en los mapas viejos de su abuelo Nando.",
+            "La tarde anterior, ella había atado una cinta roja a una rama caída que flotaba junto a la orilla de la isla, para reconocerla desde lejos. Ahora la cinta brillaba al otro lado del canal.",
+            "Tomás aseguró que Maya debía haber elegido otra rama. Ella sacó el dibujo que él había hecho el día anterior: la cinta estaba cerca de una torre de observación, no frente al muelle.",
+            "Nando les recordó que no bajaran al barro ni intentaran cruzar solos. Un banco de garzas jóvenes usaba los juncos como refugio.",
+            "Si la isla se había movido, podían investigarlo desde tierra."
+          ],
+          "alt": "Escena de la cinta roja.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué marca la rama de la isla?",
+              "options": [
+                "Una cinta roja; ubica la misma rama",
+                "Una campana; indica la hora",
+                "Una bandera azul; señala la ruta"
+              ],
+              "correctIndex": 0,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            },
+            "lector": {
+              "question": "¿Por qué comparan el dibujo de ayer?",
+              "options": [
+                "Una bandera azul; señala la ruta",
+                "Una cinta roja; ubica la misma rama",
+                "Una campana; indica la hora"
+              ],
+              "correctIndex": 1,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            }
+          }
+        },
+        "en": {
+          "title": "The red ribbon",
+          "paragraphs": [
+            "From the wooden lookout Maya could see a small island of reeds in the lagoon. It was missing from her grandpa Nando’s old maps.",
+            "The day before she had tied a red ribbon to a fallen branch floating beside its shore so she could recognize the place from far away. Now the ribbon gleamed across the channel.",
+            "Tomás said she must have picked a different branch. She took out the drawing he had made yesterday: the ribbon had been near the birdwatching tower, not opposite the pier.",
+            "Nando reminded them not to step into the mud or cross the water alone. Young herons sheltered among the reeds.",
+            "If the island had moved, they could investigate from land."
+          ],
+          "alt": "Scene of the red ribbon.",
+          "checkpoint": {
+            "explorador": {
+              "question": "What marks the island branch?",
+              "options": [
+                "A red ribbon; it identifies the same branch",
+                "A bell; it tells time",
+                "A blue flag; it marks the route"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again at the scene and the clue they tested."
+            },
+            "lector": {
+              "question": "Why compare yesterday's drawing?",
+              "options": [
+                "A blue flag; it marks the route",
+                "A red ribbon; it identifies the same branch",
+                "A bell; it tells time"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again at the scene and the clue they tested."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_isla_que_caminaba-p02",
+      "number": 2,
+      "chapter": 1,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "Una acusación rápida",
+          "paragraphs": [
+            "Un pescador llamado Bruno pasaba cada mañana en su barca cerca de los juncos. Maya pensó que los habría arrastrado para abrir paso.",
+            "Tomás dijo que no era justo culparlo sin verlo. Justo entonces Bruno llegó al muelle con una red llena de hojas, no de peces.",
+            "Había retirado basura que se enredaba en el motor. Maya le preguntó si había movido la isla.",
+            "Bruno negó con sorpresa; su barca era demasiado pequeña para tirar de tantos juncos. Les mostró una marca de agua en el poste: aquella mañana la marea había subido más que el día anterior.",
+            "Nando pidió a los niños que anotaran esa observación. Maya se sintió incómoda por haber empezado con una acusación en vez de una pregunta."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué muestra Bruno en el poste?",
+              "options": [
+                "Un nido; lo mueve",
+                "Una marca de agua; acusa a Bruno demasiado pronto",
+                "Una cuerda nueva; se esconde"
+              ],
+              "correctIndex": 1,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            },
+            "lector": {
+              "question": "¿Qué hace Maya antes de tener pruebas?",
+              "options": [
+                "Una cuerda nueva; se esconde",
+                "Un nido; lo mueve",
+                "Una marca de agua; acusa a Bruno demasiado pronto"
+              ],
+              "correctIndex": 2,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            }
+          }
+        },
+        "en": {
+          "title": "A quick accusation",
+          "paragraphs": [
+            "A fisher named Bruno passed near the reeds in his boat every morning. Maya thought he might have dragged the island aside to clear his route.",
+            "Tomás said it was unfair to blame him without seeing it happen. Bruno arrived at the pier carrying a net full of leaves, not fish.",
+            "He had cleared litter tangled around his motor. Maya asked whether he had moved the island.",
+            "Bruno looked surprised and said his boat was far too small to pull so many reeds. He showed them a water mark on a post: the tide had risen higher that morning.",
+            "Nando asked the children to note what they had seen. Maya felt uneasy about starting with an accusation instead of a question."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "What does Bruno show on the post?",
+              "options": [
+                "A nest; she moves it",
+                "A water mark; she blames Bruno too soon",
+                "A new rope; she hides"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again at the scene and the clue they tested."
+            },
+            "lector": {
+              "question": "What does Maya do before she has evidence?",
+              "options": [
+                "A new rope; she hides",
+                "A nest; she moves it",
+                "A water mark; she blames Bruno too soon"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again at the scene and the clue they tested."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_isla_que_caminaba-p03",
+      "number": 3,
+      "chapter": 1,
+      "image": "imagenes/pagina-03.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "Dos dibujos diferentes",
+          "paragraphs": [
+            "Tomás y Maya dibujaron la isla desde el mismo banco al amanecer y al atardecer. En el primer dibujo, la cinta quedaba detrás de un poste; en el segundo, asomaba a su derecha.",
+            "La rama no había cambiado de forma. El agua sí: cuando bajaba, aparecía una franja de barro oscuro entre la isla y el manglar.",
+            "Maya creyó ver allí una huella larga, como si algo hubiera rozado el fondo. Tomás señaló otra posibilidad: el poste podía hacer que pareciera moverse una isla fija, según donde se sentaran.",
+            "Para comprobarlo marcaron el lugar de sus zapatos sobre la tarima y dibujaron también dos árboles de la orilla, que no podían desplazarse con la marea. Los árboles coincidían; la cinta no."
+          ],
+          "alt": "Escena de dos dibujos diferentes.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué queda alineado en ambos dibujos?",
+              "options": [
+                "La cinta; para decorarla",
+                "Las barcas; para contarlas",
+                "Los árboles; así controlan el punto de vista"
+              ],
+              "correctIndex": 2,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            },
+            "lector": {
+              "question": "¿Por qué marcan el lugar de sus zapatos?",
+              "options": [
+                "Los árboles; así controlan el punto de vista",
+                "La cinta; para decorarla",
+                "Las barcas; para contarlas"
+              ],
+              "correctIndex": 0,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            }
+          }
+        },
+        "en": {
+          "title": "Two different drawings",
+          "paragraphs": [
+            "Tomás and Maya sketched the island from the same bench at dawn and again at dusk. In the first drawing the ribbon sat behind a post; in the second it showed to the post’s right.",
+            "The branch had not changed shape. The water had: when the tide fell, a band of dark mud appeared between the island and the mangroves.",
+            "Maya thought she saw a long scrape there, as if something had brushed the bottom. Tomás suggested another possibility.",
+            "A fixed island might only seem to move if they sat in different places. They marked where their shoes stood on the deck and drew two trees on the shore as well.",
+            "The trees lined up in both sketches. The ribbon did not."
+          ],
+          "alt": "Scene of two different drawings.",
+          "checkpoint": {
+            "explorador": {
+              "question": "What lines up in both drawings?",
+              "options": [
+                "The ribbon; for decoration",
+                "The boats; to count them",
+                "The trees; it controls their viewpoint"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again at the scene and the clue they tested."
+            },
+            "lector": {
+              "question": "Why mark where their shoes stand?",
+              "options": [
+                "The trees; it controls their viewpoint",
+                "The ribbon; for decoration",
+                "The boats; to count them"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again at the scene and the clue they tested."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_isla_que_caminaba-p04",
+      "number": 4,
+      "chapter": 1,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "Una garza espera",
+          "paragraphs": [
+            "En la mañana siguiente la isla parecía más cerca de la torre. Una garza joven se asomó entre los juncos y volvió a esconderse.",
+            "Maya quería verla de cerca, pero Nando les prestó sus binoculares para observar sin molestarla. Entre las raíces descubrieron una línea oscura que entraba y salía del agua.",
+            "Parecía una cuerda vieja. Bruno explicó que antes había una plataforma flotante para medir la profundidad de la laguna; la retiraron de los mapas cuando dejó de usarse.",
+            "Nadie recordaba dónde había acabado. La isla de juncos era demasiado densa para ver qué llevaba debajo.",
+            "Maya anotó dos hipótesis: la cuerda la sujetaba o la cuerda solo había quedado atrapada allí. Harían falta más pistas."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué ven entre las raíces?",
+              "options": [
+                "Una cuerda; observan sin molestar a la garza",
+                "Un ancla; quieren nadar",
+                "Un tesoro; no hay luz"
+              ],
+              "correctIndex": 0,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            },
+            "lector": {
+              "question": "¿Por qué usan binoculares?",
+              "options": [
+                "Un tesoro; no hay luz",
+                "Una cuerda; observan sin molestar a la garza",
+                "Un ancla; quieren nadar"
+              ],
+              "correctIndex": 1,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            }
+          }
+        },
+        "en": {
+          "title": "A heron waits",
+          "paragraphs": [
+            "The next morning the island seemed nearer the tower. A young heron peeked between the reeds, then hid.",
+            "Maya wanted a closer look, but Nando lent them binoculars so they could watch without disturbing it. Among the roots they spotted a dark line that dipped in and out of the water.",
+            "It looked like an old rope. Bruno said the lagoon had once held a floating platform for measuring depth; it had vanished from the maps when it stopped being used.",
+            "Nobody remembered where it ended up. The reeds were too thick to see what lay underneath.",
+            "Maya wrote down two ideas: the rope might hold the island, or it might merely be tangled there. They needed another clue."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "What do they see among the roots?",
+              "options": [
+                "A rope; they watch without disturbing the heron",
+                "An anchor; they want to swim",
+                "Treasure; there is no light"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again at the scene and the clue they tested."
+            },
+            "lector": {
+              "question": "Why do they use binoculars?",
+              "options": [
+                "Treasure; there is no light",
+                "A rope; they watch without disturbing the heron",
+                "An anchor; they want to swim"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again at the scene and the clue they tested."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_isla_que_caminaba-p05",
+      "number": 5,
+      "chapter": 2,
+      "image": "imagenes/pagina-05.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "El agua que sube",
+          "paragraphs": [
+            "Nando llevó a los niños a una reunión de quienes cuidaban la laguna. Una guardaparques, Elisa, les mostró un registro de mareas sin dejar que subieran a ninguna barca.",
+            "El nivel alto coincidía con los días en que la cinta cambiaba más de sitio. Si los juncos crecían sobre una plataforma, la marea podía levantarla.",
+            "Pero ¿por qué volvía siempre cerca del mismo poste? Tomás dibujó un círculo alrededor del poste, usando su lápiz como si fuera la punta de una cuerda.",
+            "Maya vio que las posiciones de sus dibujos caían cerca de ese arco. Elisa propuso revisar la plataforma desde una barca de trabajo cuando las condiciones fueran seguras.",
+            "Mientras tanto, nadie debía acercarse al refugio de las garzas."
+          ],
+          "alt": "Escena de el agua que sube.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Cuándo se mueve más la cinta?",
+              "options": [
+                "De noche; alguien la remolca",
+                "Con agua alta; la isla gira atada al poste",
+                "Con viento frío; la isla tiene patas"
+              ],
+              "correctIndex": 1,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            },
+            "lector": {
+              "question": "¿Qué puede explicar el arco de Tomás?",
+              "options": [
+                "Con viento frío; la isla tiene patas",
+                "De noche; alguien la remolca",
+                "Con agua alta; la isla gira atada al poste"
+              ],
+              "correctIndex": 2,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            }
+          }
+        },
+        "en": {
+          "title": "When the water rises",
+          "paragraphs": [
+            "Nando took the children to a meeting of people who cared for the lagoon. A ranger named Elisa showed them tide records while making clear that the children would not take a boat out.",
+            "High water lined up with the days when the ribbon shifted farthest. If reeds were growing on a platform, the tide could lift it.",
+            "But why did it keep returning near the same post? Tomás drew a circle around the post, using his pencil like the end of a rope.",
+            "Maya saw that their recorded positions fell near that arc. Elisa offered to inspect from a workboat when conditions were safe.",
+            "Until then, nobody should approach the herons’ shelter."
+          ],
+          "alt": "Scene of when the water rises.",
+          "checkpoint": {
+            "explorador": {
+              "question": "When does the ribbon shift farther?",
+              "options": [
+                "At night; someone tows it",
+                "At high tide; the island swings around the post",
+                "In cold wind; the island has legs"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again at the scene and the clue they tested."
+            },
+            "lector": {
+              "question": "What might Tomás's arc explain?",
+              "options": [
+                "In cold wind; the island has legs",
+                "At night; someone tows it",
+                "At high tide; the island swings around the post"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again at the scene and the clue they tested."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_isla_que_caminaba-p06",
+      "number": 6,
+      "chapter": 2,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "El mapa demasiado seguro",
+          "paragraphs": [
+            "Maya preparó un mapa para la reunión del sábado y dibujó una flecha grande: «La isla viaja hacia el este». Tomás le señaló que habían visto posiciones, no una dirección permanente.",
+            "La marea podía moverla de ida y vuelta. Maya borró la flecha.",
+            "En su lugar dejó varios puntos unidos por una curva y espacio para nuevas observaciones. Al mostrárselo a Nando, él preguntó qué ocurriría con las barcas si alguien siguiera una línea dibujada con demasiada seguridad.",
+            "Maya entendió que un mapa puede ayudar o confundir. Separó en colores lo que habían visto, lo que creían posible y lo que todavía no sabían.",
+            "La isla seguía allí, pero su explicación se volvió más honesta."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué borra Maya de su mapa?",
+              "options": [
+                "Los árboles; se movieron",
+                "El muelle; no existe",
+                "Una flecha única; no conocen una dirección permanente"
+              ],
+              "correctIndex": 2,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            },
+            "lector": {
+              "question": "¿Por qué quita esa señal?",
+              "options": [
+                "Una flecha única; no conocen una dirección permanente",
+                "Los árboles; se movieron",
+                "El muelle; no existe"
+              ],
+              "correctIndex": 0,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            }
+          }
+        },
+        "en": {
+          "title": "A map too certain",
+          "paragraphs": [
+            "Maya made a map for Saturday’s meeting and drew a large arrow: “The island travels east.” Tomás pointed out that they had seen positions, not a permanent direction. The tide might move it back and forth.",
+            "Maya erased the arrow. She drew several dots joined by a curve instead, leaving room for later sightings.",
+            "When she showed Nando, he asked what might happen if a boat followed a line drawn with too much certainty. Maya realized a map could help people or mislead them.",
+            "She used different colors for what they had seen, what they thought might be true, and what they still did not know. The island remained in place for the moment; their explanation had become more honest."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "What does Maya erase from her map?",
+              "options": [
+                "The trees; they moved",
+                "The pier; it isn't real",
+                "One fixed arrow; they don't know a permanent direction"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again at the scene and the clue they tested."
+            },
+            "lector": {
+              "question": "Why remove that mark?",
+              "options": [
+                "One fixed arrow; they don't know a permanent direction",
+                "The trees; they moved",
+                "The pier; it isn't real"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again at the scene and the clue they tested."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_isla_que_caminaba-p07",
+      "number": 7,
+      "chapter": 2,
+      "image": "imagenes/pagina-07.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "Lo que había debajo",
+          "paragraphs": [
+            "Elisa regresó con una compañera en la barca de trabajo, ambas con chalecos y equipo. Maya, Tomás y Nando observaron desde el mirador.",
+            "La barca no tocó los juncos. Desde una distancia prudente, Elisa usó una cámara con vara telescópica para mirar bajo el borde.",
+            "En la pantalla se veían tablones viejos cubiertos de raíces: la antigua plataforma seguía allí. Una cuerda la unía a un poste, pero el nudo estaba flojo y permitía un gran arco.",
+            "La marea levantaba los tablones; el viento los empujaba hasta tensar la cuerda. Al bajar el agua, el borde rozaba el barro y dejaba aquella huella.",
+            "La isla no caminaba. Tampoco estaba completamente fija."
+          ],
+          "alt": "Escena de lo que había debajo.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué hay bajo los juncos?",
+              "options": [
+                "Una plataforma; roza al bajar la marea",
+                "Un pez gigante; nada en círculos",
+                "Una roca; rueda con viento"
+              ],
+              "correctIndex": 0,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            },
+            "lector": {
+              "question": "¿Qué produce la huella en el barro?",
+              "options": [
+                "Una roca; rueda con viento",
+                "Una plataforma; roza al bajar la marea",
+                "Un pez gigante; nada en círculos"
+              ],
+              "correctIndex": 1,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            }
+          }
+        },
+        "en": {
+          "title": "What lay beneath",
+          "paragraphs": [
+            "Elisa returned with another ranger in a workboat, both wearing life jackets and carrying equipment. Maya, Tomás, and Nando watched from the lookout.",
+            "The boat never touched the reeds. From a careful distance Elisa used a camera on a long pole to see below the edge.",
+            "The screen showed old planks covered in roots: the missing platform was still there. A rope connected it to a post, but its loose knot allowed a wide arc.",
+            "The tide lifted the planks, and the wind pushed them until the rope pulled tight. When the water fell, the edge scraped the mud, leaving that long mark.",
+            "The island was not walking. It was not completely fixed either."
+          ],
+          "alt": "Scene of what lay beneath.",
+          "checkpoint": {
+            "explorador": {
+              "question": "What lies beneath the reeds?",
+              "options": [
+                "A platform; it rubs as the tide falls",
+                "A giant fish; it swims in circles",
+                "A rock; it rolls in wind"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again at the scene and the clue they tested."
+            },
+            "lector": {
+              "question": "What makes the scrape in the mud?",
+              "options": [
+                "A rock; it rolls in wind",
+                "A platform; it rubs as the tide falls",
+                "A giant fish; it swims in circles"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again at the scene and the clue they tested."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_isla_que_caminaba-p08",
+      "number": 8,
+      "chapter": 2,
+      "image": "imagenes/pagina-08.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "Un problema para las barcas",
+          "paragraphs": [
+            "Bruno explicó que, cuando la isla se desplazaba hacia el canal, algunas barcas debían acercarse a una zona poco profunda. Quería una ruta segura.",
+            "Elisa recordó que las garzas aún usaban los juncos para refugiarse. Mover la plataforma de inmediato podría alterar su nido.",
+            "Alguien propuso cortar toda la cuerda; Nando preguntó qué ocurriría si la isla flotaba sin control. Maya se acordó de su flecha demasiado segura.",
+            "Esta vez no ofreció una solución antes de escuchar. Tomás mostró los puntos de su mapa y Bruno señaló un paso alternativo durante marea baja.",
+            "Elisa dijo que el equipo de la laguna revisaría esa opción y marcaría la ruta después de comprobar la profundidad."
+          ],
+          "alt": "Escena de un problema para las barcas.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué necesitan las barcas?",
+              "options": [
+                "Más ruido; la garza no oye",
+                "Una ruta segura; la isla quedaría sin control",
+                "Una carrera; la cuerda es nueva"
+              ],
+              "correctIndex": 1,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            },
+            "lector": {
+              "question": "¿Por qué no cortan la cuerda enseguida?",
+              "options": [
+                "Una carrera; la cuerda es nueva",
+                "Más ruido; la garza no oye",
+                "Una ruta segura; la isla quedaría sin control"
+              ],
+              "correctIndex": 2,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            }
+          }
+        },
+        "en": {
+          "title": "A problem for boats",
+          "paragraphs": [
+            "Bruno explained that when the island drifted toward the channel, boats had to pass a shallow stretch. He wanted a safer route.",
+            "Elisa reminded everyone that the herons still sheltered among the reeds. Moving the platform immediately could disturb their nest.",
+            "Someone suggested cutting the rope. Nando asked what would happen if the island floated away without control.",
+            "Maya remembered her overconfident arrow. This time she listened before suggesting a fix.",
+            "Tomás showed the points on their map, and Bruno identified another possible passage at low tide. Elisa said the lagoon team would check its depth and mark a route if it proved safe."
+          ],
+          "alt": "Scene of a problem for boats.",
+          "checkpoint": {
+            "explorador": {
+              "question": "What do boats need?",
+              "options": [
+                "More noise; the heron cannot hear",
+                "A safe route; the island could drift freely",
+                "A race; the rope is new"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again at the scene and the clue they tested."
+            },
+            "lector": {
+              "question": "Why not cut the rope immediately?",
+              "options": [
+                "A race; the rope is new",
+                "More noise; the heron cannot hear",
+                "A safe route; the island could drift freely"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again at the scene and the clue they tested."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_isla_que_caminaba-p09",
+      "number": 9,
+      "chapter": 3,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "Una disculpa en el muelle",
+          "paragraphs": [
+            "Al salir de la reunión, Maya encontró a Bruno limpiando su red. Le dijo que lo había acusado sin pruebas y que lo sentía.",
+            "Bruno respondió que entender la laguna requería hacer preguntas, incluso las difíciles, pero que era mejor empezar por una pregunta de verdad. Le enseñó a distinguir los remolinos que marcaban agua poco profunda, sin invitarla a entrar.",
+            "Tomás se acercó con su cuaderno. Maya le agradeció por no aceptar su primera explicación solo para evitar una discusión.",
+            "Él admitió que al principio también había pensado que su cinta se había movido con otra rama. Ninguno había acertado desde el primer día.",
+            "Lo importante era que sus dibujos les habían permitido cambiar de idea."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Con quién se disculpa Maya?",
+              "options": [
+                "Con la garza; deja de dibujar",
+                "Con Nando; abandona el mapa",
+                "Con Bruno; ahora pregunta antes de culpar"
+              ],
+              "correctIndex": 2,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            },
+            "lector": {
+              "question": "¿Qué cambió en su forma de investigar?",
+              "options": [
+                "Con Bruno; ahora pregunta antes de culpar",
+                "Con la garza; deja de dibujar",
+                "Con Nando; abandona el mapa"
+              ],
+              "correctIndex": 0,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            }
+          }
+        },
+        "en": {
+          "title": "An apology at the pier",
+          "paragraphs": [
+            "After the meeting Maya found Bruno cleaning his net. She said she had blamed him without evidence and was sorry.",
+            "Bruno said understanding the lagoon meant asking questions, even hard ones, but it was better to begin with a real question. From the pier he showed her the little swirls that marked shallow water.",
+            "Tomás arrived with his sketchbook. Maya thanked him for not agreeing with her first explanation just to avoid an argument.",
+            "He admitted that at first he too had thought her ribbon had moved with a different branch. Neither had been right on day one.",
+            "Their drawings had let them change their minds."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "Whom does Maya apologize to?",
+              "options": [
+                "The heron; she stops drawing",
+                "Nando; she abandons the map",
+                "Bruno; she now asks before blaming"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again at the scene and the clue they tested."
+            },
+            "lector": {
+              "question": "How has her investigation changed?",
+              "options": [
+                "Bruno; she now asks before blaming",
+                "The heron; she stops drawing",
+                "Nando; she abandons the map"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again at the scene and the clue they tested."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_isla_que_caminaba-p10",
+      "number": 10,
+      "chapter": 3,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "Las señales nuevas",
+          "paragraphs": [
+            "Días después, el equipo de la laguna colocó señales en la ruta alternativa tras medir la profundidad. Las barcas pudieron pasar sin rozar la isla.",
+            "Elisa explicó que esperarían a que acabara la temporada de cría antes de decidir, con especialistas, si había que asegurar mejor la plataforma. Maya y Tomás no se apropiaron del refugio ni retiraron la cinta mientras las garzas lo usaban.",
+            "En el mirador instalaron un mapa que mostraba varias posiciones posibles, no una flecha única. Debajo dejaron espacio para nuevas fechas y observaciones de los vecinos.",
+            "Bruno fue el primero en añadir una. A Maya le gustó ver que el mapa seguía creciendo incluso cuando ella no estaba allí."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Quién marca la ruta alternativa?",
+              "options": [
+                "El equipo de la laguna; las garzas están criando",
+                "Maya sola; no encuentra cuerda",
+                "Los turistas; falta pintura"
+              ],
+              "correctIndex": 0,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            },
+            "lector": {
+              "question": "¿Por qué esperan para asegurar la plataforma?",
+              "options": [
+                "Los turistas; falta pintura",
+                "El equipo de la laguna; las garzas están criando",
+                "Maya sola; no encuentra cuerda"
+              ],
+              "correctIndex": 1,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            }
+          }
+        },
+        "en": {
+          "title": "New markers",
+          "paragraphs": [
+            "Days later the lagoon team marked the alternate route after measuring its depth. Boats could pass without brushing the island.",
+            "Elisa said specialists would decide whether to secure the platform more firmly after nesting season. Maya and Tomás did not claim the birds’ shelter or remove the ribbon while the herons used it.",
+            "At the lookout they put up a map showing several possible positions, not one fixed arrow. They left room for neighbors to add dates and sightings.",
+            "Bruno was the first to add one. Maya liked seeing the map grow when she was not even there."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "Who marks the alternate route?",
+              "options": [
+                "The lagoon team; the herons are nesting",
+                "Maya alone; she cannot find rope",
+                "Tourists; paint is missing"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again at the scene and the clue they tested."
+            },
+            "lector": {
+              "question": "Why wait before securing the platform?",
+              "options": [
+                "Tourists; paint is missing",
+                "The lagoon team; the herons are nesting",
+                "Maya alone; she cannot find rope"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again at the scene and the clue they tested."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_isla_que_caminaba-p11",
+      "number": 11,
+      "chapter": 3,
+      "image": "imagenes/pagina-11.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "La isla y el nombre",
+          "paragraphs": [
+            "Una garza joven levantó el vuelo al atardecer y cruzó la laguna sin mirar el mapa. La cinta roja se movía suavemente en los juncos.",
+            "Tomás preguntó si debían cambiar el título de su proyecto ahora que sabían lo de la plataforma. Maya miró el arco de posiciones y respondió que la isla sí se movía, aunque no como ellos habían imaginado.",
+            "«La isla que caminaba» era un buen nombre para una pregunta, no para una explicación. Nando sonrió.",
+            "Les recordó que la laguna cambiaría otra vez con la próxima marea y que nadie podía dibujar todos sus caminos en una sola hoja. Maya dejó un lápiz junto al mapa para quien llegara después."
+          ],
+          "alt": "Escena de la isla y el nombre.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué deja Maya junto al mapa?",
+              "options": [
+                "Un premio; ya saben todo",
+                "Un lápiz; la investigación continúa",
+                "Una llave; la isla está cerrada"
+              ],
+              "correctIndex": 1,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            },
+            "lector": {
+              "question": "¿Qué significa que otros añadan observaciones?",
+              "options": [
+                "Una llave; la isla está cerrada",
+                "Un premio; ya saben todo",
+                "Un lápiz; la investigación continúa"
+              ],
+              "correctIndex": 2,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            }
+          }
+        },
+        "en": {
+          "title": "The island and its name",
+          "paragraphs": [
+            "A young heron flew across the lagoon at dusk without glancing at the map. The red ribbon shifted gently among the reeds.",
+            "Tomás asked if they should rename their project now that they knew about the platform. Maya looked at the arc of recorded positions.",
+            "The island did move, she said, though not as they had imagined. “The Island That Walked” was a good name for a question, not a complete explanation.",
+            "Nando smiled. The next tide would change the lagoon again, and no single page could hold all its paths.",
+            "Maya left a pencil beside the map for the next person who came to look."
+          ],
+          "alt": "Scene of the island and its name.",
+          "checkpoint": {
+            "explorador": {
+              "question": "What does Maya leave by the map?",
+              "options": [
+                "A prize; they know everything",
+                "A pencil; the investigation continues",
+                "A key; the island is closed"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again at the scene and the clue they tested."
+            },
+            "lector": {
+              "question": "What do new observations mean?",
+              "options": [
+                "A key; the island is closed",
+                "A prize; they know everything",
+                "A pencil; the investigation continues"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again at the scene and the clue they tested."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_isla_que_caminaba-p12",
+      "number": 12,
+      "chapter": 3,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "La próxima marea",
+          "paragraphs": [
+            "En la siguiente salida de observación, Maya no encontró la cinta donde la esperaba. Tomás levantó el cuaderno y señaló el nivel del agua: la marea era más baja de lo habitual.",
+            "No corrieron a declarar que la isla había escapado. Buscaron la referencia de los dos árboles y vieron la cinta detrás de una hoja ancha.",
+            "Cerca de ellos, una familia preguntó cómo podía moverse una isla. Maya les mostró los puntos del mapa, la cuerda y el arco que trazaba la plataforma.",
+            "El niño menor quiso dibujar su propia predicción para el día siguiente. Maya le dio el lápiz y pidió que dejara espacio para corregirla.",
+            "La laguna aún tenía cosas que contar, y ellos ya sabían cómo escucharla."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Dónde encuentran la cinta al final?",
+              "options": [
+                "Bajo el agua; acusan a Bruno",
+                "En otra isla; dejan de mirar",
+                "Detrás de una hoja; comprueban referencias"
+              ],
+              "correctIndex": 2,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            },
+            "lector": {
+              "question": "¿Cómo responden al no verla primero?",
+              "options": [
+                "Detrás de una hoja; comprueban referencias",
+                "Bajo el agua; acusan a Bruno",
+                "En otra isla; dejan de mirar"
+              ],
+              "correctIndex": 0,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            }
+          }
+        },
+        "en": {
+          "title": "The next tide",
+          "paragraphs": [
+            "On their next observation day Maya did not find the ribbon where she expected it. Tomás lifted his notebook and pointed to the waterline: the tide was lower than usual.",
+            "They did not rush to announce that the island had escaped. They lined up the two shore trees and found the ribbon behind a broad leaf.",
+            "A family nearby asked how an island could move. Maya showed them the points on the map, the rope, and the arc made by the platform.",
+            "The youngest child wanted to draw a prediction for tomorrow. Maya handed over the pencil and asked him to leave room to revise it.",
+            "The lagoon still had more to tell them, and now they knew how to listen."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "Where is the ribbon at the end?",
+              "options": [
+                "Underwater; they blame Bruno",
+                "On a different island; they stop looking",
+                "Behind a leaf; they check their landmarks"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again at the scene and the clue they tested."
+            },
+            "lector": {
+              "question": "What do they do when it is not where expected?",
+              "options": [
+                "Behind a leaf; they check their landmarks",
+                "Underwater; they blame Bruno",
+                "On a different island; they stop looking"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again at the scene and the clue they tested."
+            }
+          }
+        }
+      }
+    }
+  ],
+  "vocabulary": {
+    "es": [
+      {
+        "word": "manglar",
+        "syllables": "man-glar",
+        "definition": "grupo de árboles que crecen junto al agua"
+      },
+      {
+        "word": "marea",
+        "syllables": "ma-re-a",
+        "definition": "subida y bajada del mar"
+      },
+      {
+        "word": "plataforma",
+        "syllables": "pla-ta-for-ma",
+        "definition": "superficie plana que sostiene algo"
+      },
+      {
+        "word": "hipótesis",
+        "syllables": "hi-pó-te-sis",
+        "definition": "explicación que se puede comprobar"
+      },
+      {
+        "word": "guardaparques",
+        "syllables": "guar-da-par-ques",
+        "definition": "persona que cuida un lugar natural"
+      },
+      {
+        "word": "remolino",
+        "syllables": "re-mo-li-no",
+        "definition": "agua que gira en un sitio"
+      }
+    ],
+    "en": [
+      {
+        "word": "mangrove",
+        "syllables": "man-grove",
+        "definition": "a tree growing along tidal water"
+      },
+      {
+        "word": "tide",
+        "syllables": "tide",
+        "definition": "the sea rising and falling"
+      },
+      {
+        "word": "platform",
+        "syllables": "plat-form",
+        "definition": "a flat surface that supports things"
+      },
+      {
+        "word": "hypothesis",
+        "syllables": "hy-poth-e-sis",
+        "definition": "an idea that can be tested"
+      },
+      {
+        "word": "ranger",
+        "syllables": "rang-er",
+        "definition": "a person caring for a natural place"
+      },
+      {
+        "word": "eddy",
+        "syllables": "ed-dy",
+        "definition": "water swirling in a small area"
+      }
+    ]
+  }
+}

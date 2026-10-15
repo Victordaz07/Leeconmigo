@@ -1,0 +1,68 @@
+{
+  "status": "passed",
+  "scope": "Reglas documentadas del paquete; no es npm run stories:check.",
+  "image_dimensions_checked": true,
+  "variants": [
+    {
+      "id": "el-puente-de-las-luciernagas-en-n1",
+      "words": 131,
+      "max_line_characters": 53,
+      "max_estimated_bubble_rows": 2,
+      "pages": 5,
+      "blocks": 10,
+      "checkpoints": 5,
+      "vocabulary": 8
+    },
+    {
+      "id": "el-puente-de-las-luciernagas-en-n2",
+      "words": 235,
+      "max_line_characters": 91,
+      "max_estimated_bubble_rows": 3,
+      "pages": 5,
+      "blocks": 10,
+      "checkpoints": 5,
+      "vocabulary": 8
+    },
+    {
+      "id": "el-puente-de-las-luciernagas-en-n3",
+      "words": 462,
+      "max_line_characters": 83,
+      "max_estimated_bubble_rows": 5,
+      "pages": 5,
+      "blocks": 10,
+      "checkpoints": 5,
+      "vocabulary": 9
+    },
+    {
+      "id": "el-puente-de-las-luciernagas-es-n1",
+      "words": 118,
+      "max_line_characters": 46,
+      "max_estimated_bubble_rows": 2,
+      "pages": 5,
+      "blocks": 10,
+      "checkpoints": 5,
+      "vocabulary": 8
+    },
+    {
+      "id": "el-puente-de-las-luciernagas-es-n2",
+      "words": 233,
+      "max_line_characters": 88,
+      "max_estimated_bubble_rows": 3,
+      "pages": 5,
+      "blocks": 10,
+      "checkpoints": 5,
+      "vocabulary": 8
+    },
+    {
+      "id": "el-puente-de-las-luciernagas-es-n3",
+      "words": 446,
+      "max_line_characters": 82,
+      "max_estimated_bubble_rows": 5,
+      "pages": 5,
+      "blocks": 10,
+      "checkpoints": 5,
+      "vocabulary": 9
+    }
+  ],
+  "errors": []
+}

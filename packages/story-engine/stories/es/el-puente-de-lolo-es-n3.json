@@ -1,0 +1,606 @@
+{
+  "id": "el-puente-de-lolo-es-n3",
+  "familyId": "el-puente-de-lolo",
+  "language": "es",
+  "title": "El puente de Lolo",
+  "level": 3,
+  "category": "amistad",
+  "description": "Ada y Bruno prueban distintas ideas para ayudar a Lolo a cruzar un charco.",
+  "cover": {
+    "src": "stories/el-puente-de-lolo/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Ada y Bruno acompañan a Lolo en un puente de corteza."
+  },
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Ada y Bruno saludan a Lolo; un charco lo separa de una hoja verde."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b01",
+          "voice": "narration",
+          "lines": [
+            "Ada, la coneja, pasea con Bruno, la tortuga, cuando encuentran a su amigo Lolo.",
+            "El pequeño caracol avanza por el sendero."
+          ],
+          "title": "Los tres amigos"
+        },
+        {
+          "id": "b02",
+          "voice": "narration",
+          "lines": [
+            "Al otro lado de un charco crece una planta de hojas verdes.",
+            "Lolo alarga las antenas: quiere llegar hasta una de ellas."
+          ],
+          "title": "La meta"
+        },
+        {
+          "id": "b03",
+          "voice": "narration",
+          "lines": [
+            "El agua ocupa el camino y Lolo se detiene en la orilla.",
+            "La hoja parece cercana, pero él todavía no puede alcanzarla."
+          ],
+          "title": "El charco"
+        },
+        {
+          "id": "b04",
+          "voice": "narration",
+          "lines": [
+            "Ada se agacha para acompañar a Lolo mientras Bruno mira alrededor.",
+            "Sobre la hierba descubre una hoja amarilla que podría servirles."
+          ],
+          "title": "La hoja amarilla"
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué corta el camino de Lolo?",
+            "options": [
+              {
+                "text": "Un charco"
+              },
+              {
+                "text": "Una puerta"
+              },
+              {
+                "text": "Un tren"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Un charco.",
+            "retryFeedback": "Sigue el camino desde Lolo hasta la hoja verde."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Dónde está la hoja que quiere Lolo?",
+            "options": [
+              {
+                "text": "Dentro de su concha"
+              },
+              {
+                "text": "Al otro lado del charco"
+              },
+              {
+                "text": "Debajo del tronco"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Al otro lado del charco.",
+            "retryFeedback": "Sigue el camino desde Lolo hasta la hoja verde."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Prueban una hoja amarilla como puente; se dobla y la retiran."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b05",
+          "voice": "narration",
+          "lines": [
+            "Bruno levanta la hoja con las dos manos y observa su tamaño.",
+            "Es bastante grande para alcanzar las dos orillas del charco."
+          ],
+          "title": "La recogen"
+        },
+        {
+          "id": "b06",
+          "voice": "narration",
+          "lines": [
+            "Ada y Bruno colocan la hoja sobre el agua, con un extremo en cada lado.",
+            "Desde arriba, parece un puente para Lolo."
+          ],
+          "title": "Sobre el agua"
+        },
+        {
+          "id": "b07",
+          "voice": "narration",
+          "lines": [
+            "Antes de dejarlo subir, Bruno aprieta el centro con un dedo.",
+            "La hoja se dobla y toca el agua: no es bastante firme."
+          ],
+          "title": "Se dobla"
+        },
+        {
+          "id": "b08",
+          "voice": "narration",
+          "lines": [
+            "Ada levanta la hoja mojada y la deja en la hierba.",
+            "Bruno señala un tronco caído; quizá encuentren allí otro material."
+          ],
+          "title": "Buscan otra cosa"
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué le pasa a la hoja amarilla?",
+            "options": [
+              {
+                "text": "Se convierte en piedra"
+              },
+              {
+                "text": "Se queda recta"
+              },
+              {
+                "text": "Se dobla hacia el agua"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Se dobla hacia el agua.",
+            "retryFeedback": "Mira el centro de la hoja cuando Bruno lo aprieta."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué Bruno prueba la hoja primero?",
+            "options": [
+              {
+                "text": "Para ver si sirve de puente"
+              },
+              {
+                "text": "Para darle de comer a Lolo"
+              },
+              {
+                "text": "Para esconder el charco"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Para ver si sirve de puente.",
+            "retryFeedback": "Mira el centro de la hoja cuando Bruno lo aprieta."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Recogen corteza y dos piedras y preparan los apoyos en las orillas."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b09",
+          "voice": "narration",
+          "lines": [
+            "Junto al tronco, Ada descubre un trozo suelto de corteza, ancho y alargado.",
+            "Lo levanta para llevarlo hasta el charco."
+          ],
+          "title": "La corteza"
+        },
+        {
+          "id": "b10",
+          "voice": "narration",
+          "lines": [
+            "Bruno encuentra dos piedras planas y recoge una con cada mano.",
+            "Las usarán como apoyos para los extremos del nuevo puente."
+          ],
+          "title": "Las piedras"
+        },
+        {
+          "id": "b11",
+          "voice": "narration",
+          "lines": [
+            "Los dos regresan al charco llevando los materiales que encontraron.",
+            "Lolo sigue esperando en la misma orilla y los ve acercarse."
+          ],
+          "title": "De vuelta"
+        },
+        {
+          "id": "b12",
+          "voice": "narration",
+          "lines": [
+            "Bruno coloca una piedra en cada orilla, sobre el suelo seco.",
+            "Ada sostiene la corteza mientras prepara el siguiente paso."
+          ],
+          "title": "Los apoyos"
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Cuántas piedras recoge Bruno?",
+            "options": [
+              {
+                "text": "Una"
+              },
+              {
+                "text": "Dos"
+              },
+              {
+                "text": "Tres"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Dos.",
+            "retryFeedback": "Mira las manos de Bruno y los dos lados del charco."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Dónde ponen las piedras?",
+            "options": [
+              {
+                "text": "En el centro del agua"
+              },
+              {
+                "text": "Encima de Lolo"
+              },
+              {
+                "text": "Una en cada orilla seca"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Una en cada orilla seca.",
+            "retryFeedback": "Mira las manos de Bruno y los dos lados del charco."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p04",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Colocan la corteza, comprueban el puente y Lolo comienza a subir."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b13",
+          "voice": "narration",
+          "lines": [
+            "Entre los dos apoyan la corteza sobre las piedras, dejando el centro por encima del agua.",
+            "Ahora hay un camino entre ambas orillas."
+          ],
+          "title": "El puente"
+        },
+        {
+          "id": "b14",
+          "voice": "narration",
+          "lines": [
+            "Bruno prueba el centro como hizo con la hoja amarilla.",
+            "Esta vez la corteza permanece recta y no toca el agua."
+          ],
+          "title": "Queda firme"
+        },
+        {
+          "id": "b15",
+          "voice": "narration",
+          "lines": [
+            "Ada revisa un extremo y Bruno comprueba el otro.",
+            "Los dos quedan bien apoyados; ahora pueden dejar que Lolo comience a cruzar."
+          ],
+          "title": "Revisan todo"
+        },
+        {
+          "id": "b16",
+          "voice": "narration",
+          "lines": [
+            "Lolo estira el cuerpo hasta tocar la corteza y empieza a subir despacio.",
+            "Sus amigos se apartan para darle espacio."
+          ],
+          "title": "Lolo sube"
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué ocurre al probar la corteza?",
+            "options": [
+              {
+                "text": "Se mantiene recta"
+              },
+              {
+                "text": "Desaparece"
+              },
+              {
+                "text": "Se convierte en hoja"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Se mantiene recta.",
+            "retryFeedback": "Compara este puente con la hoja amarilla que se dobló."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué hacen antes de que Lolo suba?",
+            "options": [
+              {
+                "text": "Guardan las piedras"
+              },
+              {
+                "text": "Comprueban el puente"
+              },
+              {
+                "text": "Llevan la hoja a otro lugar"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Comprueban el puente.",
+            "retryFeedback": "Compara este puente con la hoja amarilla que se dobló."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p05",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Lolo cruza, come una hoja y una hormiga también utiliza el puente."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b17",
+          "voice": "narration",
+          "lines": [
+            "A mitad del puente, Lolo continúa deslizándose hacia la hoja verde.",
+            "El agua queda debajo y sus amigos esperan en la orilla."
+          ],
+          "title": "Cruzando"
+        },
+        {
+          "id": "b18",
+          "voice": "narration",
+          "lines": [
+            "La parte delantera de su cuerpo alcanza el suelo seco del otro lado.",
+            "Un poco más, y todo su cuerpo deja el puente."
+          ],
+          "title": "Al otro lado"
+        },
+        {
+          "id": "b19",
+          "voice": "narration",
+          "lines": [
+            "Lolo llega a la planta y da un pequeño mordisco a la hoja.",
+            "Después del esfuerzo, disfruta de su merienda verde."
+          ],
+          "title": "La recompensa"
+        },
+        {
+          "id": "b20",
+          "voice": "narration",
+          "lines": [
+            "Una hormiga descubre el puente y también lo cruza mientras los tres amigos la observan.",
+            "Su trabajo ha abierto un camino para alguien más."
+          ],
+          "title": "Otra visita"
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Quién usa después el puente?",
+            "options": [
+              {
+                "text": "Un pez"
+              },
+              {
+                "text": "Un pájaro"
+              },
+              {
+                "text": "Una hormiga"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Una hormiga.",
+            "retryFeedback": "Observa al visitante pequeño y recuerda qué cambiaron los amigos."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué les ayudó a resolver el problema?",
+            "options": [
+              {
+                "text": "Probar otro material y colaborar"
+              },
+              {
+                "text": "Repetir sin cambiar nada"
+              },
+              {
+                "text": "Dejar a Lolo solo"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Probar otro material y colaborar.",
+            "retryFeedback": "Observa al visitante pequeño y recuerda qué cambiaron los amigos."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "coneja": {
+      "syllables": [
+        "co",
+        "ne",
+        "ja"
+      ],
+      "definition": "Animal de orejas largas que se mueve dando saltos.",
+      "example": "La coneja de la granja movía las orejas apenas escuchaba un ruido."
+    },
+    "tortuga": {
+      "syllables": [
+        "tor",
+        "tu",
+        "ga"
+      ],
+      "definition": "Animal con un caparazón que protege su cuerpo.",
+      "example": "La tortuga del estanque tarda mucho en cruzar de un lado a otro."
+    },
+    "caracol": {
+      "syllables": [
+        "ca",
+        "ra",
+        "col"
+      ],
+      "definition": "Animal pequeño que se desliza y lleva una concha.",
+      "example": "Después de la lluvia aparecieron varios caracoles sobre la acera."
+    },
+    "charco": {
+      "syllables": [
+        "char",
+        "co"
+      ],
+      "definition": "Agua acumulada en un hueco del suelo.",
+      "synonym": "poza",
+      "example": "Saltamos sobre los charcos que dejó la lluvia camino a la escuela."
+    },
+    "corteza": {
+      "syllables": [
+        "cor",
+        "te",
+        "za"
+      ],
+      "definition": "Capa exterior del tronco de un árbol.",
+      "synonym": "cáscara",
+      "example": "El escarabajo caminaba despacio sobre la corteza del árbol."
+    },
+    "orilla": {
+      "syllables": [
+        "o",
+        "ri",
+        "lla"
+      ],
+      "definition": "Borde de una zona de agua.",
+      "synonym": "borde",
+      "example": "Dejamos las sandalias en la orilla del río antes de meter los pies al agua."
+    },
+    "puente": {
+      "syllables": [
+        "puen",
+        "te"
+      ],
+      "definition": "Paso que permite cruzar por encima de un obstáculo.",
+      "synonym": "pasarela",
+      "example": "Cruzamos el puente para llegar más rápido al otro lado del parque."
+    },
+    "firme": {
+      "syllables": [
+        "fir",
+        "me"
+      ],
+      "definition": "Que no se mueve o dobla fácilmente.",
+      "synonym": "estable",
+      "example": "Antes de subir a la escalera, comprobó que estuviera firme."
+    },
+    "extremos": {
+      "syllables": [
+        "ex",
+        "tre",
+        "mos"
+      ],
+      "definition": "Las dos partes donde termina algo alargado.",
+      "synonym": "puntas",
+      "example": "Sujetamos la cuerda por los dos extremos para tender la ropa."
+    },
+    "hormiga": {
+      "syllables": [
+        "hor",
+        "mi",
+        "ga"
+      ],
+      "definition": "Insecto pequeño de seis patas.",
+      "example": "Una fila de hormigas cruzaba la acera cargando migas de pan."
+    },
+    "sendero": {
+      "syllables": [
+        "sen",
+        "de",
+        "ro"
+      ],
+      "definition": "Camino estrecho para pasar.",
+      "synonym": "vereda",
+      "example": "Seguimos el sendero del bosque hasta llegar al mirador."
+    },
+    "materiales": {
+      "syllables": [
+        "ma",
+        "te",
+        "ria",
+        "les"
+      ],
+      "definition": "Cosas que se usan para construir algo.",
+      "synonym": "insumos",
+      "example": "Compramos los materiales para construir una caja de madera."
+    },
+    "apoyos": {
+      "syllables": [
+        "a",
+        "po",
+        "yos"
+      ],
+      "definition": "Partes sobre las que descansa otra cosa.",
+      "synonym": "soportes",
+      "example": "Los apoyos de la mesa estaban un poco flojos, así que los ajustamos."
+    },
+    "antenas": {
+      "syllables": [
+        "an",
+        "te",
+        "nas"
+      ],
+      "definition": "Prolongaciones de la cabeza de algunos animales.",
+      "example": "El caracol movía sus antenas para sentir por dónde caminaba."
+    }
+  },
+  "heroFocus": {
+    "x": 30,
+    "y": 62
+  },
+  "reviewWords": [
+    "puente",
+    "corteza",
+    "hormiga"
+  ]
+}

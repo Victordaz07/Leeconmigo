@@ -1,0 +1,290 @@
+{
+  "id": "mi-mochila-hace-achis-en-n1",
+  "familyId": "mi-mochila-hace-achis",
+  "language": "en",
+  "title": "My Backpack Keeps Sneezing!",
+  "level": 1,
+  "category": "amistad",
+  "description": "Mila discovers a tiny dragon that sneezes bubbles and watches closely to find out how to help.",
+  "cover": {
+    "src": "stories/mi-mochila-hace-achis/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Mila beside a blue backpack with a tiny dragon and floating bubbles."
+  },
+  "heroFocus": {
+    "x": 50,
+    "y": 47
+  },
+  "reviewWords": [
+    "backpack",
+    "dragon",
+    "bubbles"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/mi-mochila-hace-achis/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Comic page: A wiggling backpack, A tiny visitor, Bubbles everywhere."
+      },
+      "template": "three-up",
+      "blocks": [
+        {
+          "id": "b01",
+          "title": "A wiggling backpack",
+          "lines": [
+            "Mila heard a funny noise.",
+            "Her blue backpack was wiggling."
+          ]
+        },
+        {
+          "id": "b02",
+          "title": "A tiny visitor",
+          "lines": [
+            "She slowly opened it.",
+            "A tiny dragon poked out its head!"
+          ]
+        },
+        {
+          "id": "b03",
+          "title": "Bubbles everywhere",
+          "lines": [
+            "The dragon sneezed.",
+            "Bubbles floated from its nose.",
+            "Mila laughed, then took a closer look at her little visitor."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What came out of the dragon’s nose?",
+            "options": [
+              {
+                "text": "Dark smoke"
+              },
+              {
+                "text": "Bubbles"
+              },
+              {
+                "text": "Green leaves"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Yes! Bubbles came out of its nose.",
+            "retryFeedback": "Look at what floated through the room after the sneeze."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why did Mila take a closer look at the dragon?",
+            "options": [
+              {
+                "text": "It sneezed bubbles"
+              },
+              {
+                "text": "It was reading"
+              },
+              {
+                "text": "The backpack changed color"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Yes: the sneeze and bubbles caught her attention.",
+            "retryFeedback": "Read what the dragon did just before Mila looked closer."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/mi-mochila-hace-achis/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Comic page: A drink of water, The yellow clue."
+      },
+      "template": "two-up",
+      "blocks": [
+        {
+          "id": "b04",
+          "title": "A drink of water",
+          "lines": [
+            "“Are you thirsty?” she asked.",
+            "Mila brought a bowl of water.",
+            "The dragon drank, but then it sneezed again."
+          ]
+        },
+        {
+          "id": "b05",
+          "title": "The yellow clue",
+          "lines": [
+            "Mila looked at the backpack pocket.",
+            "A yellow feather was brushing against the dragon’s nose."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What brushed against the dragon’s nose?",
+            "options": [
+              {
+                "text": "The bowl"
+              },
+              {
+                "text": "The rug"
+              },
+              {
+                "text": "A yellow feather"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "Yes! The yellow feather brushed its nose.",
+            "retryFeedback": "Look for the thing sticking out of the backpack pocket."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Which clue connects the feather to the sneezes?",
+            "options": [
+              {
+                "text": "The feather matched the water"
+              },
+              {
+                "text": "The feather touched its nose before a sneeze"
+              },
+              {
+                "text": "The dragon fell asleep when it saw the feather"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Exactly: a tickle from the feather came before a sneeze.",
+            "retryFeedback": "Think about what touched its nose just before it sneezed."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/mi-mochila-hace-achis/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Comic page: No more tickles, A peaceful new friend."
+      },
+      "template": "two-up",
+      "blocks": [
+        {
+          "id": "b06",
+          "title": "No more tickles",
+          "lines": [
+            "Mila took out the feather.",
+            "She put it in a cup across the room.",
+            "No more tickles!"
+          ]
+        },
+        {
+          "id": "b07",
+          "title": "A peaceful new friend",
+          "lines": [
+            "The dragon curled up inside the open backpack.",
+            "Mila smiled.",
+            "Her new friend could finally rest."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Where did Mila put the feather?",
+            "options": [
+              {
+                "text": "Inside the backpack"
+              },
+              {
+                "text": "In a cup across the room"
+              },
+              {
+                "text": "Under the dragon"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Yes! She put it in a cup, away from her friend.",
+            "retryFeedback": "Follow the yellow feather to the craft cup."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What helped Mila find a solution?",
+            "options": [
+              {
+                "text": "Watching what touched the dragon’s nose"
+              },
+              {
+                "text": "Giving the dragon more and more water"
+              },
+              {
+                "text": "Catching every bubble"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Exactly: watching closely helped her find the cause.",
+            "retryFeedback": "Remember what she noticed when she stopped watching the bubbles."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "backpack": {
+      "syllables": [
+        "back",
+        "pack"
+      ],
+      "definition": "A bag you can carry on your back."
+    },
+    "dragon": {
+      "syllables": [
+        "drag",
+        "on"
+      ],
+      "definition": "An imaginary animal that may have wings."
+    },
+    "bubbles": {
+      "syllables": [
+        "bub",
+        "bles"
+      ],
+      "definition": "Light, round shapes filled with air."
+    },
+    "feather": {
+      "syllables": [
+        "feath",
+        "er"
+      ],
+      "definition": "One of the soft pieces that cover a bird."
+    },
+    "tickles": {
+      "syllables": [
+        "tick",
+        "les"
+      ],
+      "definition": "Light touches that may make you laugh."
+    },
+    "visitor": {
+      "syllables": [
+        "vis",
+        "i",
+        "tor"
+      ],
+      "definition": "Someone who comes to see you."
+    }
+  }
+}

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Lee Conmigo</string>
+    <string name="title_activity_main">Lee Conmigo</string>
+    <string name="package_name">com.leeconmigo.app</string>
+    <string name="custom_url_scheme">com.leeconmigo.app</string>
+</resources>

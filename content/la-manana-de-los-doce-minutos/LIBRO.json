@@ -1,0 +1,1006 @@
+{
+  "slug": "la_manana_de_los_doce_minutos",
+  "title": {
+    "es": "La mañana de los doce minutos",
+    "en": "The Twelve-Minute Morning"
+  },
+  "subtitle": {
+    "es": "Un misterio en el observatorio",
+    "en": "A mystery at the observatory"
+  },
+  "chapters": [
+    {
+      "es": "La cometa repetida",
+      "en": "The repeating kite"
+    },
+    {
+      "es": "Una pista cada vez",
+      "en": "One clue at a time"
+    },
+    {
+      "es": "El minuto que sigue",
+      "en": "The next minute"
+    }
+  ],
+  "cover": "imagenes/portada.png",
+  "character_sheet": "imagenes/personajes.png",
+  "pages": [
+    {
+      "id": "la_manana_de_los_doce_minutos-p01",
+      "number": 1,
+      "chapter": 1,
+      "image": "imagenes/pagina-01.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "Una cometa dos veces",
+          "paragraphs": [
+            "Luna llegó al observatorio del barrio con el cuello de la chaqueta aún mojado por la lluvia. Había prometido ayudar a Rafa a preparar una demostración para la feria de ciencias.",
+            "Su tía Inés les mostró un aro de espejos que recogía destellos del cielo y los enviaba a un pequeño receptor. Pip, el robot de ruedas, grabaría el movimiento de la luz.",
+            "Luna quería que su proyecto fuera asombroso. Cuando Inés fue por una cubierta protectora, Luna giró un espejo un poco para que enfocara una nube brillante.",
+            "Rafa estaba ocupado conectando a Pip y no la vio. Afuera, una cometa amarilla pasó frente a la ventana.",
+            "Una campana anunció la hora. Doce minutos más tarde, la misma cometa pasó otra vez, con la misma esquina rasgada."
+          ],
+          "alt": "Escena de una cometa dos veces.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué cruza la ventana del observatorio?",
+              "options": [
+                "La cometa amarilla con la esquina rasgada",
+                "Un avión rojo",
+                "Una nube en forma de pez"
+              ],
+              "correctIndex": 0,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            },
+            "lector": {
+              "question": "¿Qué detalle hace que Luna sospeche una repetición?",
+              "options": [
+                "Una nube en forma de pez",
+                "La cometa amarilla con la esquina rasgada",
+                "Un avión rojo"
+              ],
+              "correctIndex": 1,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            }
+          }
+        },
+        "en": {
+          "title": "A kite, twice",
+          "paragraphs": [
+            "Luna arrived at the neighborhood observatory with rain still clinging to her jacket. She had promised to help Rafa prepare a science-fair demonstration.",
+            "Her aunt Inés showed them a ring of mirrors that collected flashes from the sky and sent them to a small receiver. Pip, their wheeled robot, would record the light.",
+            "Luna wanted the project to be spectacular. When Inés went to fetch a protective cover, Luna turned one mirror slightly toward a bright cloud.",
+            "Rafa was busy connecting Pip and didn’t see her. Outside, a yellow kite crossed the window.",
+            "A bell rang. Twelve minutes later the same kite passed again, with the same torn corner."
+          ],
+          "alt": "Scene of a kite, twice.",
+          "checkpoint": {
+            "explorador": {
+              "question": "What crosses the observatory window?",
+              "options": [
+                "The yellow kite with its torn corner",
+                "A red plane",
+                "A fish-shaped cloud"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again at the scene and the clue they tested."
+            },
+            "lector": {
+              "question": "What detail makes Luna suspect a repeat?",
+              "options": [
+                "A fish-shaped cloud",
+                "The yellow kite with its torn corner",
+                "A red plane"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again at the scene and the clue they tested."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_manana_de_los_doce_minutos-p02",
+      "number": 2,
+      "chapter": 1,
+      "image": "imagenes/pagina-02.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "El vaso que vuelve",
+          "paragraphs": [
+            "Rafa pensó que habría dos cometas iguales. Entonces el vaso de agua junto al telescopio cayó de la mesa, se rompió y dejó un charco con forma de estrella.",
+            "Luna buscó una toalla. Antes de alcanzarla, una luz barrió el aro.",
+            "El vaso reapareció entero sobre la mesa; la toalla seguía en la mano de Luna. Afuera, la cometa volvía a acercarse.",
+            "Pip conservó la grabación del golpe y añadió un segundo archivo. Inés regresó de la sala contigua con la cubierta.",
+            "También recordaba el vaso roto. Los cuatro habían estado cerca del aro cuando brilló.",
+            "No sabían si el barrio entero repetía los doce minutos o si solo ellos podían recordar. Inés les pidió no tocar ningún interruptor mientras entendían qué estaba pasando."
+          ],
+          "alt": "Escena de el vaso que vuelve.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué vuelve a estar entero?",
+              "options": [
+                "La cometa; todos los vecinos",
+                "El vaso; Luna, Rafa, Inés y Pip",
+                "La ventana; solo Luna"
+              ],
+              "correctIndex": 1,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            },
+            "lector": {
+              "question": "¿Quiénes conservan recuerdos cerca del aro?",
+              "options": [
+                "La ventana; solo Luna",
+                "La cometa; todos los vecinos",
+                "El vaso; Luna, Rafa, Inés y Pip"
+              ],
+              "correctIndex": 2,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            }
+          }
+        },
+        "en": {
+          "title": "The returning cup",
+          "paragraphs": [
+            "Rafa wondered if there were two identical kites. Then a cup fell from the telescope table, broke, and left a star-shaped puddle.",
+            "Luna reached for a towel. Before she could grab it, light swept around the ring.",
+            "The cup appeared whole again on the table; the towel was still in Luna’s hand. Outside, the kite approached once more.",
+            "Pip kept its recording of the crash and added a second file. Inés returned from the next room with the cover.",
+            "She remembered the broken cup too. All four had been close to the ring when it flashed.",
+            "They didn’t know whether the whole neighborhood was repeating twelve minutes or whether only they could remember. Inés asked everyone to leave the switches alone until they understood more."
+          ],
+          "alt": "Scene of the returning cup.",
+          "checkpoint": {
+            "explorador": {
+              "question": "What becomes whole again?",
+              "options": [
+                "The kite; every neighbor",
+                "The cup; Luna, Rafa, Inés, and Pip",
+                "The window; Luna alone"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again at the scene and the clue they tested."
+            },
+            "lector": {
+              "question": "Who keeps memories near the ring?",
+              "options": [
+                "The window; Luna alone",
+                "The kite; every neighbor",
+                "The cup; Luna, Rafa, Inés, and Pip"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again at the scene and the clue they tested."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_manana_de_los_doce_minutos-p03",
+      "number": 3,
+      "chapter": 1,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "El cuaderno no se borra",
+          "paragraphs": [
+            "Luna escribió tres cosas en un cuaderno: la cometa, la campana y el vaso. En el siguiente ciclo, Rafa sostuvo el vaso lejos del borde.",
+            "Esta vez no cayó, pero la cometa cruzó en el mismo momento y la luz volvió a barrer el aro. El cuaderno conservó las notas nuevas.",
+            "Inés observó que dentro de la habitación podían cambiar cosas pequeñas, mientras las escenas de la calle comenzaban otra vez. Al otro lado del cristal, una señora abrió un paraguas azul, tropezó con una baldosa y siguió andando.",
+            "En el ciclo siguiente repitió el movimiento. Luna quiso salir a avisarle.",
+            "Inés la detuvo: aún no sabían si salir del observatorio les haría olvidar las pistas. Primero debían encontrar la causa desde un lugar seguro."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué conserva las notas nuevas?",
+              "options": [
+                "El paraguas; hace frío",
+                "La campana; ya es tarde",
+                "El cuaderno; ignoran qué pasaría al salir"
+              ],
+              "correctIndex": 2,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            },
+            "lector": {
+              "question": "¿Por qué Inés pide quedarse dentro?",
+              "options": [
+                "El cuaderno; ignoran qué pasaría al salir",
+                "El paraguas; hace frío",
+                "La campana; ya es tarde"
+              ],
+              "correctIndex": 0,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            }
+          }
+        },
+        "en": {
+          "title": "The notebook stays",
+          "paragraphs": [
+            "Luna wrote three clues in a notebook: the kite, the bell, and the cup. In the next cycle Rafa held the cup away from the edge.",
+            "It didn’t fall this time, but the kite crossed at the same moment and light swept the ring again. The notebook kept its new notes.",
+            "Inés saw that they could change small things inside the room while scenes outside started over. Through the glass, a woman opened a blue umbrella, stepped over a loose paving stone, and walked on.",
+            "She did it again in the next cycle. Luna wanted to go out and warn her.",
+            "Inés stopped her. They didn’t know whether leaving the observatory would make them forget the clues.",
+            "First they needed to find the cause from somewhere safe."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "What keeps the new notes?",
+              "options": [
+                "The umbrella; it is cold",
+                "The bell; it is late",
+                "The notebook; they don't know what leaving might do"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again at the scene and the clue they tested."
+            },
+            "lector": {
+              "question": "Why does Inés ask them to stay inside?",
+              "options": [
+                "The notebook; they don't know what leaving might do",
+                "The umbrella; it is cold",
+                "The bell; it is late"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again at the scene and the clue they tested."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_manana_de_los_doce_minutos-p04",
+      "number": 4,
+      "chapter": 1,
+      "image": "imagenes/pagina-04.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "La sombra de la cometa",
+          "paragraphs": [
+            "Rafa colocó una hoja blanca detrás del receptor para ver mejor el haz de luz. Pip grabó el aro mientras Inés vigilaba sus medidores.",
+            "Cuando la cometa pasó delante del sol, su sombra cruzó la hoja. Un momento después apareció un punto brillante en el borde del receptor.",
+            "Luna creyó que la sombra activaba la máquina. Rafa negó con la cabeza: la cometa llegaba antes, pero eso no demostraba que fuera la causa.",
+            "En el siguiente ciclo, una nube tapó el sol y el punto apareció de todos modos. Compararon las imágenes de Pip.",
+            "El punto seguía una ruta circular por los espejos, más rápida en cada vuelta. La cometa solo les servía como reloj visible desde la ventana."
+          ],
+          "alt": "Escena de la sombra de la cometa.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué muestra Pip sobre la luz?",
+              "options": [
+                "El haz gira por espejos incluso bajo una nube",
+                "La cometa tiene un motor",
+                "Rafa no la vio"
+              ],
+              "correctIndex": 0,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            },
+            "lector": {
+              "question": "¿Por qué la cometa no es la causa del bucle?",
+              "options": [
+                "Rafa no la vio",
+                "El haz gira por espejos incluso bajo una nube",
+                "La cometa tiene un motor"
+              ],
+              "correctIndex": 1,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            }
+          }
+        },
+        "en": {
+          "title": "The kite’s shadow",
+          "paragraphs": [
+            "Rafa held a sheet of white paper behind the receiver to see the beam. Pip filmed the ring while Inés watched her gauges.",
+            "When the kite passed in front of the sun, its shadow crossed the sheet. A bright spot appeared at the receiver’s edge a moment later.",
+            "Luna thought the shadow was triggering the machine. Rafa shook his head: the kite came first, but that did not prove it was the cause.",
+            "On the next cycle a cloud hid the sun, and the spot appeared anyway. They compared Pip’s recordings.",
+            "The spot traveled in a circle through the mirrors, faster with every lap. The kite was only a clock they could see through the window."
+          ],
+          "alt": "Scene of the kite’s shadow.",
+          "checkpoint": {
+            "explorador": {
+              "question": "What does Pip reveal about the light?",
+              "options": [
+                "The beam circles mirrors even beneath a cloud",
+                "The kite has a motor",
+                "Rafa missed it"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again at the scene and the clue they tested."
+            },
+            "lector": {
+              "question": "Why is the kite not the cause of the loop?",
+              "options": [
+                "Rafa missed it",
+                "The beam circles mirrors even beneath a cloud",
+                "The kite has a motor"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again at the scene and the clue they tested."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_manana_de_los_doce_minutos-p05",
+      "number": 5,
+      "chapter": 2,
+      "image": "imagenes/pagina-05.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "El espejo distinto",
+          "paragraphs": [
+            "Inés extendió el plano del aro sobre la mesa. Un espejo debía devolver la luz al cielo; ahora la enviaba de nuevo al receptor.",
+            "Luna vio la pequeña marca que había dejado su dedo al moverlo. Se le cerró la garganta.",
+            "Si lo decía, Rafa sabría que había cambiado el experimento sin preguntarle. Pip proyectó dos imágenes sobre la pared: antes del giro, el destello salía por la ventana alta; después, quedaba atrapado dentro del aro.",
+            "Luna confesó que había movido el espejo para mejorar la demostración. Rafa apretó los labios.",
+            "No dijo que todo fuera culpa de ella; tampoco fingió que no importaba. Inés agradeció la información.",
+            "Ya podían trabajar sobre una causa posible, pero primero tenían que probarla."
+          ],
+          "alt": "Escena de el espejo distinto.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué reconoce Luna que movió?",
+              "options": [
+                "A Pip; puede borrar las notas",
+                "Un espejo; ahora pueden probar una causa",
+                "El telescopio; recibirán un premio"
+              ],
+              "correctIndex": 1,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            },
+            "lector": {
+              "question": "¿Por qué es útil que Luna lo cuente?",
+              "options": [
+                "El telescopio; recibirán un premio",
+                "A Pip; puede borrar las notas",
+                "Un espejo; ahora pueden probar una causa"
+              ],
+              "correctIndex": 2,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            }
+          }
+        },
+        "en": {
+          "title": "The mirror out of line",
+          "paragraphs": [
+            "Inés spread the ring’s diagram on the table. One mirror was meant to send light back toward the sky.",
+            "Now it returned the beam to the receiver. Luna saw the small fingerprint she had left when she moved it.",
+            "Her throat tightened. If she spoke, Rafa would know she had changed their experiment without asking him.",
+            "Pip projected two images on the wall: before the turn, the flash went out through the high window; afterward it stayed trapped in the ring. Luna admitted she had moved the mirror to make their demonstration better.",
+            "Rafa pressed his lips together. He didn’t say everything was her fault, but he didn’t pretend it didn’t matter.",
+            "Inés thanked her. They had a possible cause to test."
+          ],
+          "alt": "Scene of the mirror out of line.",
+          "checkpoint": {
+            "explorador": {
+              "question": "What does Luna admit moving?",
+              "options": [
+                "Pip; it can erase notes",
+                "A mirror; now they can test a possible cause",
+                "The telescope; they will win a prize"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again at the scene and the clue they tested."
+            },
+            "lector": {
+              "question": "Why does telling the truth help?",
+              "options": [
+                "The telescope; they will win a prize",
+                "Pip; it can erase notes",
+                "A mirror; now they can test a possible cause"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again at the scene and the clue they tested."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_manana_de_los_doce_minutos-p06",
+      "number": 6,
+      "chapter": 2,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "La prueba que falla",
+          "paragraphs": [
+            "Luna propuso colocar la cubierta sobre el receptor. Inés revisó el manual y la instaló ella misma.",
+            "El siguiente destello fue más tenue, pero el cuarto volvió a la misma mañana. Tapar una salida no rompía el círculo: la máquina tenía una batería de reserva.",
+            "Rafa señaló en el plano un cierre de seguridad para detenerla. Estaba detrás del aro y solo Inés podía accionarlo.",
+            "El cierre se bloqueaba mientras pasaba el haz; había unos segundos de sombra entre vueltas. Pip podía medir ese intervalo.",
+            "Luna había esperado que una idea rápida arreglara su error. Ahora aceptó hacer algo menos brillante: contar tiempos, comparar registros y escuchar a Rafa.",
+            "El cuaderno ya tenía varias páginas. Cada ciclo les enseñaba una pieza del mecanismo."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Quién instala la cubierta?",
+              "options": [
+                "Rafa; el aro está apagado",
+                "Luna; la batería se rompe",
+                "Inés; la cubierta no detiene el círculo"
+              ],
+              "correctIndex": 2,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            },
+            "lector": {
+              "question": "¿Qué demuestra la prueba que falla?",
+              "options": [
+                "Inés; la cubierta no detiene el círculo",
+                "Rafa; el aro está apagado",
+                "Luna; la batería se rompe"
+              ],
+              "correctIndex": 0,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            }
+          }
+        },
+        "en": {
+          "title": "A test that fails",
+          "paragraphs": [
+            "Luna suggested covering the receiver. Inés checked the manual and fitted the cover herself.",
+            "The next flash was dimmer, but the room still returned to the same morning. Blocking one exit didn’t break the circle: a backup battery kept the machine running.",
+            "Rafa pointed out a safety catch behind the ring. Only Inés could reach and operate it.",
+            "The catch locked while the beam passed, leaving a few seconds of darkness between laps. Pip could measure that gap.",
+            "Luna had hoped one quick idea would fix her mistake. Now she agreed to do something less dazzling: count intervals, compare recordings, and listen to Rafa.",
+            "Their notebook held several pages of clues. Each cycle taught them one part of the mechanism."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "Who fits the cover?",
+              "options": [
+                "Rafa; the ring is off",
+                "Luna; the battery breaks",
+                "Inés; the cover does not stop the loop"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again at the scene and the clue they tested."
+            },
+            "lector": {
+              "question": "What does the failed test show?",
+              "options": [
+                "Inés; the cover does not stop the loop",
+                "Rafa; the ring is off",
+                "Luna; the battery breaks"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again at the scene and the clue they tested."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_manana_de_los_doce_minutos-p07",
+      "number": 7,
+      "chapter": 2,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "Doce no son once",
+          "paragraphs": [
+            "Pip mostró que el intervalo oscuro duraba apenas unos segundos. Rafa dibujó una línea por cada vuelta del haz.",
+            "Luna utilizó el paso de la cometa para saber cuándo se acercaba el final del ciclo, pero algo no encajaba: en un intento habían contado once vueltas y en otro doce. Revisaron las grabaciones.",
+            "Un reflejo en el cristal de la ventana parecía una vuelta adicional. Rafa apagó la lámpara de la mesa; el reflejo falso desapareció.",
+            "Ya podían distinguir el haz real. Inés preparó el cierre sin tocar todavía el aro.",
+            "Ella haría el movimiento; los niños darían la señal desde detrás de la línea de seguridad. Luna respiró hondo.",
+            "Un plan comprobado era más valioso que fingir certeza."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué parecía una vuelta extra?",
+              "options": [
+                "Un reflejo de ventana; necesitan el intervalo real",
+                "Una cometa nueva; quieren volar",
+                "Un vaso; quieren medir agua"
+              ],
+              "correctIndex": 0,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            },
+            "lector": {
+              "question": "¿Por qué comparan registros antes del cierre?",
+              "options": [
+                "Un vaso; quieren medir agua",
+                "Un reflejo de ventana; necesitan el intervalo real",
+                "Una cometa nueva; quieren volar"
+              ],
+              "correctIndex": 1,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            }
+          }
+        },
+        "en": {
+          "title": "Twelve is not eleven",
+          "paragraphs": [
+            "Pip showed that the dark interval lasted only a few seconds. Rafa drew a mark for each lap of the beam.",
+            "Luna used the kite to tell when the end of the cycle was near, but their counts disagreed: one time they saw eleven laps, the next time twelve. They checked the recordings.",
+            "A reflection in the window looked like one extra lap. Rafa turned off the table lamp, and the false reflection vanished.",
+            "Now they could track the real beam. Inés readied the safety catch without touching the ring yet.",
+            "She would make the move; the children would call the timing from behind the safety line. Luna took a breath.",
+            "A tested plan mattered more than sounding certain."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "What looked like an extra lap?",
+              "options": [
+                "A window reflection; they need the real interval",
+                "A new kite; they want to fly",
+                "A cup; they want to measure water"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again at the scene and the clue they tested."
+            },
+            "lector": {
+              "question": "Why compare records before using the catch?",
+              "options": [
+                "A cup; they want to measure water",
+                "A window reflection; they need the real interval",
+                "A new kite; they want to fly"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again at the scene and the clue they tested."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_manana_de_los_doce_minutos-p08",
+      "number": 8,
+      "chapter": 2,
+      "image": "imagenes/pagina-08.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "La campana se adelanta",
+          "paragraphs": [
+            "En el siguiente intento, la campana sonó antes de lo esperado. Luna levantó la mano para dar la señal, pero Rafa vio que la cometa seguía lejos.",
+            "No era la campana del barrio: Pip había reproducido su propia grabación al quedarse sin espacio. Detuvieron la cuenta y borraron solo las copias innecesarias, sin perder los registros principales.",
+            "En la repetición siguiente, Luna miró la cometa; Rafa siguió el punto de luz verdadero; Inés observó el cierre. Ninguna pista bastaba por sí sola.",
+            "Cuando el borde rasgado de la cometa tocó el marco de la ventana, Pip mostró el intervalo oscuro. Rafa dijo «ahora».",
+            "Inés movió el cierre. El aro se quedó quieto, pero afuera todavía no sabían si el tiempo había seguido."
+          ],
+          "alt": "Escena de la campana se adelanta.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué sonido falso los confunde?",
+              "options": [
+                "El timbre de Rafa; pierden la llave",
+                "La campana grabada por Pip; necesitan una señal fiable",
+                "Un trueno; quieren dormir"
+              ],
+              "correctIndex": 1,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            },
+            "lector": {
+              "question": "¿Por qué esperan otra repetición?",
+              "options": [
+                "Un trueno; quieren dormir",
+                "El timbre de Rafa; pierden la llave",
+                "La campana grabada por Pip; necesitan una señal fiable"
+              ],
+              "correctIndex": 2,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            }
+          }
+        },
+        "en": {
+          "title": "The bell comes early",
+          "paragraphs": [
+            "On their next attempt the bell sounded earlier than expected. Luna lifted her hand to call the moment, but Rafa saw the kite was still far away.",
+            "It wasn’t the neighborhood bell: Pip had played its own recording when its memory filled up. They stopped counting and deleted only extra copies, keeping the important records.",
+            "In the following cycle Luna watched the kite; Rafa tracked the true spot of light; Inés watched the catch. No single clue was enough.",
+            "As the kite’s torn edge reached the window frame, Pip showed the dark gap. Rafa called, “Now!” Inés moved the catch.",
+            "The ring went still. They did not yet know whether time outside had moved forward."
+          ],
+          "alt": "Scene of the bell comes early.",
+          "checkpoint": {
+            "explorador": {
+              "question": "What false sound confuses them?",
+              "options": [
+                "Rafa's phone; they lost the key",
+                "Pip's recorded bell; they need a reliable cue",
+                "Thunder; they want to sleep"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again at the scene and the clue they tested."
+            },
+            "lector": {
+              "question": "Why wait for another cycle?",
+              "options": [
+                "Thunder; they want to sleep",
+                "Rafa's phone; they lost the key",
+                "Pip's recorded bell; they need a reliable cue"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again at the scene and the clue they tested."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_manana_de_los_doce_minutos-p09",
+      "number": 9,
+      "chapter": 3,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "Un minuto nuevo",
+          "paragraphs": [
+            "La cometa cruzó la ventana. Todos esperaron a que reapareciera.",
+            "En vez de volver, desapareció detrás del tejado y otra cometa, roja y más pequeña, entró en el cielo. La señora del paraguas dobló la esquina sin repetir su paseo.",
+            "Pip grabó un minuto que no se parecía a ninguno de los anteriores. Inés dejó el aro apagado y llamó al equipo del observatorio para revisarlo antes de otra demostración.",
+            "Rafa preguntó a Luna por qué no le había contado lo del espejo antes. Ella no buscó una excusa: había querido sorprenderlo y temía que se enfadara.",
+            "Él estaba enfadado, respondió, pero prefería saber la verdad y poder trabajar juntos. Luna le ofreció mostrarle todas sus notas."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué cometa aparece después de la amarilla?",
+              "options": [
+                "Otra amarilla; el vaso cae",
+                "Ninguna; se apaga el sol",
+                "Una roja; la escena exterior ya no se repite"
+              ],
+              "correctIndex": 2,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            },
+            "lector": {
+              "question": "¿Cómo saben que llegó un minuto nuevo?",
+              "options": [
+                "Una roja; la escena exterior ya no se repite",
+                "Otra amarilla; el vaso cae",
+                "Ninguna; se apaga el sol"
+              ],
+              "correctIndex": 0,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            }
+          }
+        },
+        "en": {
+          "title": "A new minute",
+          "paragraphs": [
+            "The kite crossed the window. They waited for it to appear again.",
+            "Instead it vanished behind a roof, and a smaller red kite entered the sky. The woman with the blue umbrella turned a corner without repeating her walk.",
+            "Pip recorded a minute unlike any they had seen before. Inés left the ring off and called the observatory team to check it before another demonstration.",
+            "Rafa asked Luna why she had waited so long to tell him about the mirror. She didn’t offer an excuse.",
+            "She had wanted to surprise him, and then she was afraid he would be angry. He was angry, he said, but he would rather know the truth and work with her.",
+            "Luna offered to show him every note she had made."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "Which kite follows the yellow one?",
+              "options": [
+                "Another yellow one; the cup falls",
+                "None; the sun goes out",
+                "A red one; the outside scene no longer repeats"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again at the scene and the clue they tested."
+            },
+            "lector": {
+              "question": "How do they know a new minute has arrived?",
+              "options": [
+                "A red one; the outside scene no longer repeats",
+                "Another yellow one; the cup falls",
+                "None; the sun goes out"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again at the scene and the clue they tested."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_manana_de_los_doce_minutos-p10",
+      "number": 10,
+      "chapter": 3,
+      "image": "imagenes/pagina-10.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "La feria no se repite",
+          "paragraphs": [
+            "La feria de ciencias llegó dos días después. Inés no permitió encender el aro mientras seguía bajo revisión.",
+            "Luna y Rafa prepararon otra demostración: una linterna, tres espejos inmóviles y una cartulina mostraban cómo un reflejo puede engañar al ojo. Pip enseñaba dibujos sencillos, sin mostrar datos del experimento peligroso.",
+            "Cuando un visitante preguntó si una cometa podía hacer retroceder el tiempo, Luna explicó la diferencia entre una pista para medir y una causa. Rafa contó cómo habían detectado el reflejo falso de la ventana.",
+            "No ganaron el premio a la máquina más impresionante. Recibieron muchas preguntas, algunas que no sabían responder.",
+            "Apuntaron las mejores para investigarlas con Inés. A Luna le gustó que esta vez no hubiera un botón para repetir su respuesta."
+          ],
+          "alt": "Escena de la feria no se repite.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué usan en la feria?",
+              "options": [
+                "Linterna y espejos fijos; pista y causa",
+                "El aro encendido; premio y castigo",
+                "Una cometa; miedo y valor"
+              ],
+              "correctIndex": 0,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            },
+            "lector": {
+              "question": "¿Qué distinguen en su explicación?",
+              "options": [
+                "Una cometa; miedo y valor",
+                "Linterna y espejos fijos; pista y causa",
+                "El aro encendido; premio y castigo"
+              ],
+              "correctIndex": 1,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            }
+          }
+        },
+        "en": {
+          "title": "The fair does not repeat",
+          "paragraphs": [
+            "The science fair arrived two days later. Inés would not switch on the ring while it was still being checked.",
+            "Luna and Rafa made a different demonstration with a flashlight, three fixed mirrors, and a sheet of card to show how a reflection can fool the eye. Pip displayed simple drawings, not data from the unsafe experiment.",
+            "When a visitor asked if a kite could send time backward, Luna explained the difference between a clue that helps you measure and a cause. Rafa told the story of the false window reflection.",
+            "They did not win a prize for the flashiest machine. They got plenty of questions, some they could not answer.",
+            "They wrote down the best ones to investigate with Inés. Luna liked knowing there was no button to repeat her answer."
+          ],
+          "alt": "Scene of the fair does not repeat.",
+          "checkpoint": {
+            "explorador": {
+              "question": "What do they use at the fair?",
+              "options": [
+                "A flashlight and fixed mirrors; clue versus cause",
+                "The live ring; prize versus punishment",
+                "A kite; fear versus courage"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again at the scene and the clue they tested."
+            },
+            "lector": {
+              "question": "What distinction do they explain?",
+              "options": [
+                "A kite; fear versus courage",
+                "A flashlight and fixed mirrors; clue versus cause",
+                "The live ring; prize versus punishment"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again at the scene and the clue they tested."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_manana_de_los_doce_minutos-p11",
+      "number": 11,
+      "chapter": 3,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "La nota que queda",
+          "paragraphs": [
+            "Al recoger el puesto, Luna encontró la primera hoja del cuaderno, con la cometa, la campana y el vaso. Conservó aquella página y añadió al reverso una pregunta nueva: ¿qué cambia cuando contamos las cosas entre varios?",
+            "Rafa respondió sin escribir: «Vemos los errores antes». Pip hizo girar su ojo azul, como si estuviera de acuerdo.",
+            "Inés les pidió ayuda para ordenar los espejos desmontados, uno a uno, sin prisas. Afuera pasó la cometa amarilla, ahora remendada.",
+            "Luna la siguió con la mirada hasta perderla de vista. No necesitó verla de nuevo para saber que el tiempo había continuado.",
+            "Tenían un día entero por delante, y esta vez pensaba compartir sus ideas antes de mover nada."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué guarda Luna del primer día?",
+              "options": [
+                "La cometa; atarla al aro",
+                "Una hoja de notas; compartir sus ideas",
+                "El vaso roto; esconderlo"
+              ],
+              "correctIndex": 1,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            },
+            "lector": {
+              "question": "¿Qué decide hacer antes de mover algo nuevo?",
+              "options": [
+                "El vaso roto; esconderlo",
+                "La cometa; atarla al aro",
+                "Una hoja de notas; compartir sus ideas"
+              ],
+              "correctIndex": 2,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            }
+          }
+        },
+        "en": {
+          "title": "The note that remains",
+          "paragraphs": [
+            "While packing up, Luna found the first notebook page with its three clues: kite, bell, cup. She kept it and wrote a new question on the back: what changes when we count things together?",
+            "Rafa answered without writing. “We spot mistakes sooner.” Pip swivelled its blue eye as if it agreed.",
+            "Inés asked them to help put away the dismantled mirrors, one at a time, without rushing. Outside, the yellow kite went by with its torn corner mended.",
+            "Luna watched it until it vanished. She did not need to see it again to know time was moving forward.",
+            "They had a whole day ahead, and this time she planned to share her ideas before moving anything."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "What does Luna keep from day one?",
+              "options": [
+                "The kite; tie it to the ring",
+                "A notebook page; share her ideas",
+                "The broken cup; hide it"
+              ],
+              "correctIndex": 1,
+              "hint": "Look again at the scene and the clue they tested."
+            },
+            "lector": {
+              "question": "What will she do before moving anything new?",
+              "options": [
+                "The broken cup; hide it",
+                "The kite; tie it to the ring",
+                "A notebook page; share her ideas"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again at the scene and the clue they tested."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "la_manana_de_los_doce_minutos-p12",
+      "number": 12,
+      "chapter": 3,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "Una hora para explorar",
+          "paragraphs": [
+            "Una semana más tarde, Inés invitó a la clase al observatorio. El aro seguía desmontado; en su lugar había una mesa con lupas, sombras y pequeñas superficies reflectantes.",
+            "Luna y Rafa guiaron a los demás en una investigación: cada grupo observó primero, propuso una explicación y buscó una forma de comprobarla. Un niño pensó que Pip tenía una luz dentro de la rueda.",
+            "Otro mostró que el brillo venía de la ventana. Nadie se rio de la primera idea.",
+            "Luna recordó lo fácil que era confundir el orden de dos sucesos con una causa. Al salir, la campana sonó una sola vez.",
+            "Rafa levantó dos dedos como broma; Luna negó con una sonrisa. Aquella hora había sido irrepetible, y eso la hacía mejor."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué investiga la clase?",
+              "options": [
+                "Carreras; dan una medalla",
+                "Barcos; la borran enseguida",
+                "Luces y reflejos; la comprueban sin burlas"
+              ],
+              "correctIndex": 2,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            },
+            "lector": {
+              "question": "¿Cómo tratan una explicación que falla?",
+              "options": [
+                "Luces y reflejos; la comprueban sin burlas",
+                "Carreras; dan una medalla",
+                "Barcos; la borran enseguida"
+              ],
+              "correctIndex": 0,
+              "hint": "Mira de nuevo la escena y piensa en la pista que comprobaron."
+            }
+          }
+        },
+        "en": {
+          "title": "An hour to explore",
+          "paragraphs": [
+            "A week later Inés invited their class to the observatory. The ring was still dismantled; in its place stood a table of magnifiers, shadows, and little reflective surfaces.",
+            "Luna and Rafa helped the others investigate. Each group observed first, suggested an explanation, and found a way to test it.",
+            "One child thought Pip had a light inside its wheel. Another showed that the glow came from the window.",
+            "No one laughed at the first idea. Luna remembered how easy it was to mistake the order of events for a cause.",
+            "As they left, the bell rang only once. Rafa held up two fingers as a joke; Luna shook her head and smiled.",
+            "That hour could not be repeated, and that made it better."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "What does the class investigate?",
+              "options": [
+                "Races; they award a medal",
+                "Boats; they erase it at once",
+                "Light and reflections; they test it without mockery"
+              ],
+              "correctIndex": 2,
+              "hint": "Look again at the scene and the clue they tested."
+            },
+            "lector": {
+              "question": "How do they treat a failed explanation?",
+              "options": [
+                "Light and reflections; they test it without mockery",
+                "Races; they award a medal",
+                "Boats; they erase it at once"
+              ],
+              "correctIndex": 0,
+              "hint": "Look again at the scene and the clue they tested."
+            }
+          }
+        }
+      }
+    }
+  ],
+  "vocabulary": {
+    "es": [
+      {
+        "word": "observatorio",
+        "syllables": "ob-ser-va-to-rio",
+        "definition": "lugar para estudiar el cielo"
+      },
+      {
+        "word": "receptor",
+        "syllables": "re-cep-tor",
+        "definition": "aparato que recibe una señal"
+      },
+      {
+        "word": "reflejo",
+        "syllables": "re-fle-jo",
+        "definition": "luz que rebota en una superficie"
+      },
+      {
+        "word": "intervalo",
+        "syllables": "in-ter-va-lo",
+        "definition": "tiempo entre dos sucesos"
+      },
+      {
+        "word": "hipótesis",
+        "syllables": "hi-pó-te-sis",
+        "definition": "explicación que aún debe probarse"
+      },
+      {
+        "word": "mecanismo",
+        "syllables": "me-ca-nis-mo",
+        "definition": "piezas que hacen funcionar algo"
+      }
+    ],
+    "en": [
+      {
+        "word": "observatory",
+        "syllables": "ob-ser-va-to-ry",
+        "definition": "a place for studying the sky"
+      },
+      {
+        "word": "receiver",
+        "syllables": "re-ceiv-er",
+        "definition": "a device that takes in a signal"
+      },
+      {
+        "word": "reflection",
+        "syllables": "re-flec-tion",
+        "definition": "light bouncing off a surface"
+      },
+      {
+        "word": "interval",
+        "syllables": "in-ter-val",
+        "definition": "time between two events"
+      },
+      {
+        "word": "hypothesis",
+        "syllables": "hy-poth-e-sis",
+        "definition": "an idea that still needs testing"
+      },
+      {
+        "word": "mechanism",
+        "syllables": "mech-a-nism",
+        "definition": "parts that make something work"
+      }
+    ]
+  }
+}

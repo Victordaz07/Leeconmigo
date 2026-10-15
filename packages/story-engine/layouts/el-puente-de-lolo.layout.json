@@ -1,0 +1,306 @@
+{
+  "familyId": "el-puente-de-lolo",
+  "version": 1,
+  "pages": {
+    "p01": {
+      "blocks": {
+        "b01": {
+          "balloon": {
+            "x": 22,
+            "y": 14,
+            "width": 719,
+            "height": 123
+          },
+          "text": {
+            "x": 43,
+            "y": 29,
+            "width": 677,
+            "height": 93
+          }
+        },
+        "b02": {
+          "balloon": {
+            "x": 795,
+            "y": 14,
+            "width": 718,
+            "height": 123
+          },
+          "text": {
+            "x": 816,
+            "y": 29,
+            "width": 676,
+            "height": 93
+          }
+        },
+        "b03": {
+          "balloon": {
+            "x": 22,
+            "y": 530,
+            "width": 719,
+            "height": 122
+          },
+          "text": {
+            "x": 43,
+            "y": 545,
+            "width": 677,
+            "height": 92
+          }
+        },
+        "b04": {
+          "balloon": {
+            "x": 795,
+            "y": 530,
+            "width": 718,
+            "height": 122
+          },
+          "text": {
+            "x": 816,
+            "y": 545,
+            "width": 676,
+            "height": 92
+          }
+        }
+      }
+    },
+    "p02": {
+      "blocks": {
+        "b05": {
+          "balloon": {
+            "x": 23,
+            "y": 14,
+            "width": 717,
+            "height": 111
+          },
+          "text": {
+            "x": 44,
+            "y": 29,
+            "width": 675,
+            "height": 81
+          }
+        },
+        "b06": {
+          "balloon": {
+            "x": 795,
+            "y": 14,
+            "width": 718,
+            "height": 111
+          },
+          "text": {
+            "x": 816,
+            "y": 29,
+            "width": 676,
+            "height": 81
+          }
+        },
+        "b07": {
+          "balloon": {
+            "x": 23,
+            "y": 531,
+            "width": 717,
+            "height": 107
+          },
+          "text": {
+            "x": 44,
+            "y": 546,
+            "width": 675,
+            "height": 77
+          }
+        },
+        "b08": {
+          "balloon": {
+            "x": 795,
+            "y": 531,
+            "width": 718,
+            "height": 107
+          },
+          "text": {
+            "x": 816,
+            "y": 546,
+            "width": 676,
+            "height": 77
+          }
+        }
+      }
+    },
+    "p03": {
+      "blocks": {
+        "b09": {
+          "balloon": {
+            "x": 22,
+            "y": 12,
+            "width": 718,
+            "height": 105
+          },
+          "text": {
+            "x": 43,
+            "y": 27,
+            "width": 676,
+            "height": 75
+          }
+        },
+        "b10": {
+          "balloon": {
+            "x": 795,
+            "y": 13,
+            "width": 718,
+            "height": 104
+          },
+          "text": {
+            "x": 816,
+            "y": 28,
+            "width": 676,
+            "height": 74
+          }
+        },
+        "b11": {
+          "balloon": {
+            "x": 22,
+            "y": 526,
+            "width": 718,
+            "height": 104
+          },
+          "text": {
+            "x": 43,
+            "y": 541,
+            "width": 676,
+            "height": 74
+          }
+        },
+        "b12": {
+          "balloon": {
+            "x": 795,
+            "y": 527,
+            "width": 718,
+            "height": 103
+          },
+          "text": {
+            "x": 816,
+            "y": 542,
+            "width": 676,
+            "height": 73
+          }
+        }
+      }
+    },
+    "p04": {
+      "blocks": {
+        "b13": {
+          "balloon": {
+            "x": 22,
+            "y": 14,
+            "width": 719,
+            "height": 124
+          },
+          "text": {
+            "x": 43,
+            "y": 29,
+            "width": 677,
+            "height": 94
+          }
+        },
+        "b14": {
+          "balloon": {
+            "x": 795,
+            "y": 14,
+            "width": 718,
+            "height": 124
+          },
+          "text": {
+            "x": 816,
+            "y": 29,
+            "width": 676,
+            "height": 94
+          }
+        },
+        "b15": {
+          "balloon": {
+            "x": 22,
+            "y": 529,
+            "width": 719,
+            "height": 117
+          },
+          "text": {
+            "x": 43,
+            "y": 544,
+            "width": 677,
+            "height": 87
+          }
+        },
+        "b16": {
+          "balloon": {
+            "x": 795,
+            "y": 529,
+            "width": 718,
+            "height": 117
+          },
+          "text": {
+            "x": 816,
+            "y": 544,
+            "width": 676,
+            "height": 87
+          }
+        }
+      }
+    },
+    "p05": {
+      "blocks": {
+        "b17": {
+          "balloon": {
+            "x": 22,
+            "y": 12,
+            "width": 720,
+            "height": 104
+          },
+          "text": {
+            "x": 43,
+            "y": 27,
+            "width": 678,
+            "height": 74
+          }
+        },
+        "b18": {
+          "balloon": {
+            "x": 794,
+            "y": 12,
+            "width": 720,
+            "height": 104
+          },
+          "text": {
+            "x": 815,
+            "y": 27,
+            "width": 678,
+            "height": 74
+          }
+        },
+        "b19": {
+          "balloon": {
+            "x": 22,
+            "y": 530,
+            "width": 720,
+            "height": 106
+          },
+          "text": {
+            "x": 43,
+            "y": 545,
+            "width": 678,
+            "height": 76
+          }
+        },
+        "b20": {
+          "balloon": {
+            "x": 794,
+            "y": 530,
+            "width": 720,
+            "height": 106
+          },
+          "text": {
+            "x": 815,
+            "y": 545,
+            "width": 678,
+            "height": 76
+          }
+        }
+      }
+    }
+  }
+}

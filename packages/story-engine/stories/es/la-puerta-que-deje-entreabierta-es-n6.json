@@ -1,0 +1,896 @@
+{
+  "id": "la-puerta-que-deje-entreabierta-es-n6",
+  "familyId": "la-puerta-que-deje-entreabierta",
+  "language": "es",
+  "title": "La puerta que dejé entreabierta",
+  "level": 6,
+  "category": "crecimiento",
+  "description": "Isa aprende a pedir privacidad sin dejar de querer a su mamá.",
+  "cover": {
+    "src": "stories/la-puerta-que-deje-entreabierta/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Isa se asoma desde su cuarto hacia la cocina donde está su mamá."
+  },
+  "heroFocus": {
+    "x": 27,
+    "y": 40
+  },
+  "reviewWords": [
+    "privacidad",
+    "vergüenza",
+    "rendija"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/la-puerta-que-deje-entreabierta/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Isa y su mamá doblando estrellas de papel en la mesa de la cocina."
+      },
+      "blocks": [
+        {
+          "id": "b01",
+          "voice": "narration",
+          "title": "Estrellas de papel",
+          "lines": [
+            "Cuando tenía siete años, mi mamá y yo fabricábamos estrellas de papel en la mesa de la cocina. Ella doblaba una punta y yo doblaba la otra. Si la estrella salía torcida, decíamos que estaba bailando.",
+            "Yo le contaba absolutamente todo: lo que había soñado, lo que me daba miedo y hasta la parte aburrida de las películas. Bella, mi mamá, decía que algún día echaría de menos tantas preguntas.",
+            "Yo no le creía. Pensaba que siempre seríamos nosotras dos y nuestra mesa llena de estrellas."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué hacían Isa y su mamá en la mesa de la cocina?",
+            "options": [
+              {
+                "text": "Doblar estrellas de papel"
+              },
+              {
+                "text": "Ver películas aburridas"
+              },
+              {
+                "text": "Escribir una lista de miedos"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Doblaban estrellas de papel.",
+            "retryFeedback": "Busca la actividad que se repite en esta página."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué Isa pensaba que siempre le contaría todo a su mamá?",
+            "options": [
+              {
+                "text": "Porque no sabía que las personas cambian con el tiempo"
+              },
+              {
+                "text": "Porque su mamá se lo exigía cada noche"
+              },
+              {
+                "text": "Porque no tenía otras amigas con quien hablar"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! A los siete años no imaginaba que algún día querría guardarse cosas para sí misma.",
+            "retryFeedback": "Piensa en cómo era la relación de Isa con su mamá a esa edad."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/la-puerta-que-deje-entreabierta/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Isa con audífonos puestos mientras su mamá le habla en la mesa."
+      },
+      "blocks": [
+        {
+          "id": "b02",
+          "voice": "narration",
+          "title": "Los audífonos",
+          "lines": [
+            "Cinco años después, la mesa seguía allí, pero yo ya no quería contar lo mismo. Había empezado un proyecto de fotografía con mi amiga Marisol. Las fotos no me salían como las imaginaba y tampoco sabía si quería enseñárselas a nadie.",
+            "Cuando mamá preguntó «¿Qué tal la escuela?», contesté «bien». Ella preguntó qué significaba «bien». Yo me puse los audífonos, aunque no estaba escuchando música.",
+            "Me sentí cruel en cuanto lo hice. También me molestó sentir que debía dar un informe de cada pensamiento que tenía."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué hizo Isa cuando su mamá le preguntó qué significaba «bien»?",
+            "options": [
+              {
+                "text": "Se puso los audífonos sin escuchar música"
+              },
+              {
+                "text": "Le mostró sus fotos nuevas"
+              },
+              {
+                "text": "Le contó todo sobre Marisol"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Se puso los audífonos, aunque no estaba escuchando música.",
+            "retryFeedback": "Busca lo que hizo Isa justo después de la pregunta de su mamá."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué Isa se siente cruel después de ponerse los audífonos?",
+            "options": [
+              {
+                "text": "Porque sabía que era una manera de cerrarle la puerta a su mamá sin decirlo"
+              },
+              {
+                "text": "Porque en realidad quería contarle todo sobre las fotos"
+              },
+              {
+                "text": "Porque su mamá se dio cuenta de que no había música"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Usar los audífonos como excusa era una manera de alejarse sin explicar por qué.",
+            "retryFeedback": "Piensa en lo que Isa sintió justo después de hacerlo."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "blocks": [
+        {
+          "id": "b03",
+          "voice": "narration",
+          "title": "El suéter",
+          "lines": [
+            "Mamá intentó acercarse de otras maneras. Dejó fruta cortada junto a mi cuaderno y me ofreció revisar las fotos. Le dije que no hacía falta.",
+            "Al rato asomó la cabeza por la puerta para recordarme que cenábamos en casa de la tía Nora. «Te conviene llevar el suéter», añadió. Yo respondí como si acabara de darme una orden terrible.",
+            "Después vi el suéter sobre mi cama y me dio rabia que hubiera acertado: afuera hacía frío. Una parte de mí quería que me cuidara. Otra quería decidir por mi cuenta cuándo necesitaba ayuda."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué le recordó mamá a Isa antes de la cena?",
+            "options": [
+              {
+                "text": "Que llevara el suéter"
+              },
+              {
+                "text": "Que llamara a Marisol"
+              },
+              {
+                "text": "Que guardara las fotos"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Le dijo que le convenía llevar el suéter.",
+            "retryFeedback": "Busca lo que mamá asomó la cabeza a decirle."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué le molesta a Isa que su mamá haya acertado con el suéter?",
+            "options": [
+              {
+                "text": "Porque sentía que el cuidado de su mamá y su deseo de decidir sola chocaban entre sí"
+              },
+              {
+                "text": "Porque prefería tener frío antes que obedecer"
+              },
+              {
+                "text": "Porque el suéter no le gustaba nada"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Quería que la cuidaran, pero también decidir sola cuándo necesitaba ayuda.",
+            "retryFeedback": "Piensa en los dos deseos opuestos que Isa reconoce sentir."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p04",
+      "illustration": {
+        "src": "stories/la-puerta-que-deje-entreabierta/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Isa incómoda mientras su mamá cuenta una anécdota frente a la familia."
+      },
+      "blocks": [
+        {
+          "id": "b04",
+          "voice": "narration",
+          "title": "La anécdota de la capa",
+          "lines": [
+            "En casa de Nora, alguien encontró una foto mía con dos coletas y una capa hecha con una toalla. Mamá contó cómo, a los siete, yo había anunciado que salvaría a todas las personas tristes con abrazos. Mis primos se rieron con cariño.",
+            "Yo había hecho cosas más vergonzosas esa misma semana, pero aquella historia me ardió en la cara. Era como si todos pudieran ver una versión de mí que ya no había elegido mostrar.",
+            "«Mamá, para», dije. Ella sonrió, pensando que yo bromeaba, y terminó la anécdota. Dejé el postre en la mesa y salí al pasillo."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué historia contó mamá frente a toda la familia?",
+            "options": [
+              {
+                "text": "La de la capa hecha con una toalla"
+              },
+              {
+                "text": "La de las estrellas de papel"
+              },
+              {
+                "text": "La del suéter olvidado"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Contó la historia de la capa hecha con una toalla.",
+            "retryFeedback": "Busca qué foto encontraron en casa de Nora."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué le arde la cara a Isa mientras escucha la anécdota?",
+            "options": [
+              {
+                "text": "Porque siente que muestran una versión suya que ella ya no eligió compartir"
+              },
+              {
+                "text": "Porque la historia no es cierta"
+              },
+              {
+                "text": "Porque sus primos se están burlando con crueldad"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Es como si otros mostraran una parte de ella que ya no quería enseñar.",
+            "retryFeedback": "Piensa en qué tiene de distinto esta vergüenza a hacer algo vergonzoso ella misma."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p05",
+      "illustration": {
+        "src": "stories/la-puerta-que-deje-entreabierta/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Isa sentada en el piso de su cuarto, con la puerta entreabierta y su mamá al otro lado."
+      },
+      "blocks": [
+        {
+          "id": "b05",
+          "voice": "narration",
+          "title": "La rendija de la puerta",
+          "lines": [
+            "De camino a casa, mamá dijo que nadie se estaba burlando. Yo dije que eso no cambiaba nada. «Tú solo conoces a la niña que yo era», solté. Vi cómo apretaba el volante.",
+            "No quise retirar las palabras, pero tampoco había querido herirla así. En mi cuarto cerré la puerta hasta dejar una rendija. Mamá se detuvo al otro lado.",
+            "«Debí preguntarte antes de contar esa historia», dijo. Yo miré la luz bajo la puerta y no respondí. Su disculpa era real. Mi vergüenza también. Las dos cosas podían existir a la vez."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué le dijo mamá a Isa desde el otro lado de la puerta?",
+            "options": [
+              {
+                "text": "Que debió preguntarle antes de contar esa historia"
+              },
+              {
+                "text": "Que no volvería a cenar en casa de Nora"
+              },
+              {
+                "text": "Que Isa exageraba demasiado"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Dijo: «Debí preguntarte antes de contar esa historia».",
+            "retryFeedback": "Busca lo que admite mamá junto a la puerta."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué la disculpa de mamá no hace desaparecer de inmediato la vergüenza de Isa?",
+            "options": [
+              {
+                "text": "Porque la disculpa sincera y la vergüenza pueden existir al mismo tiempo"
+              },
+              {
+                "text": "Porque la disculpa de mamá no era sincera"
+              },
+              {
+                "text": "Porque Isa no piensa perdonarla nunca"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Su disculpa era real, y también lo era la vergüenza de Isa. Las dos cosas convivían.",
+            "retryFeedback": "Vuelve a leer cómo describe Isa su disculpa y su propia vergüenza."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p06",
+      "illustration": {
+        "src": "stories/la-puerta-que-deje-entreabierta/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Isa y Marisol revisando fotos del proyecto en una mesa del patio escolar."
+      },
+      "blocks": [
+        {
+          "id": "b06",
+          "voice": "narration",
+          "title": "Las fotos del mural",
+          "lines": [
+            "El lunes llegué tarde a nuestra reunión del proyecto. Marisol había escogido tres fotos para la exposición y yo cambié dos sin consultarle. Estaba segura de que las mías mostraban mejor los murales del barrio.",
+            "Ella miró la pantalla y me preguntó si su trabajo no contaba. «Solo intentaba mejorarlo», dije. Reconocí la frase en cuanto salió de mi boca: sonaba demasiado a «solo quería ayudarte».",
+            "Marisol guardó su cámara. No gritó. Eso hizo más difícil fingir que el problema era suyo."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q06",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué hizo Isa con las fotos del proyecto sin preguntarle a Marisol?",
+            "options": [
+              {
+                "text": "Cambió dos por otras que ella prefería"
+              },
+              {
+                "text": "Las borró todas"
+              },
+              {
+                "text": "Las compartió con toda la escuela"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Cambió dos fotos sin consultarle.",
+            "retryFeedback": "Busca lo que hizo Isa antes de que llegara Marisol."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿En qué se parece la excusa de Isa a algo que su mamá podría haber dicho?",
+            "options": [
+              {
+                "text": "Las dos dijeron «solo quería ayudar» para justificar decidir sin preguntar"
+              },
+              {
+                "text": "Las dos hablaban del mismo mural"
+              },
+              {
+                "text": "Las dos discutieron por un suéter"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Isa reconoce la misma excusa que usaría alguien que decide por otra persona sin pedir permiso.",
+            "retryFeedback": "Piensa en qué frase reconoce Isa apenas la dice."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p07",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "blocks": [
+        {
+          "id": "b07",
+          "voice": "narration",
+          "title": "El mensaje borrado",
+          "lines": [
+            "Pasé la tarde componiendo un mensaje perfecto para Marisol. Lo borré once veces. Uno sonaba como una excusa; otro parecía una confesión ante un juez.",
+            "Quise contarle a mamá, pero imaginé una lista de consejos y una llamada a la madre de Marisol. Dejé el teléfono boca abajo.",
+            "Entonces vi una de nuestras fotos antiguas: en ella aparecían dos sombras sosteniendo la misma cámara. No se podía saber quién había tomado la decisión de disparar. Tal vez ese era precisamente el problema. Yo había tratado un proyecto compartido como si solo me perteneciera."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q07",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué descubre Isa al mirar la foto antigua de las dos sombras?",
+            "options": [
+              {
+                "text": "Que el proyecto siempre fue de las dos, no solo de ella"
+              },
+              {
+                "text": "Que Marisol ya no quería ser su amiga"
+              },
+              {
+                "text": "Que la cámara estaba rota"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! No se podía saber quién había tomado la foto: el proyecto era de ambas.",
+            "retryFeedback": "Busca qué muestra la foto de las dos sombras."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué le cuesta tanto a Isa escribirle a Marisol?",
+            "options": [
+              {
+                "text": "Porque no encuentra cómo disculparse sin que suene a excusa"
+              },
+              {
+                "text": "Porque no sabe usar el teléfono"
+              },
+              {
+                "text": "Porque prefiere hablar solo con su mamá"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Cada intento sonaba a excusa o a confesión ante un juez, no a una disculpa real.",
+            "retryFeedback": "Piensa en cómo describe Isa sus mensajes borrados."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p08",
+      "illustration": {
+        "src": "stories/la-puerta-que-deje-entreabierta/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Isa y su mamá conversando con tazas calientes en la cocina."
+      },
+      "blocks": [
+        {
+          "id": "b08",
+          "voice": "narration",
+          "title": "Escúchame primero",
+          "lines": [
+            "Encontré a mamá lavando dos tazas. «Necesito contarte algo», dije, «pero primero escúchame sin resolverlo por mí». Bella cerró el grifo. Se sentó y dejó el teléfono lejos.",
+            "Le hablé de las fotos y de la cara de Marisol. Mamá abrió la boca una vez y volvió a cerrarla. Cuando terminé, preguntó: «¿Qué crees que necesita escuchar tu amiga?».",
+            "No era la respuesta que había ensayado discutir. Le dije que Marisol necesitaba saber que su trabajo importaba y poder elegir conmigo. Mamá asintió. «Eso sí puedes decírselo tú»."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q08",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué le pide Isa a su mamá antes de contarle el problema?",
+            "options": [
+              {
+                "text": "Que la escuche sin resolverlo por ella"
+              },
+              {
+                "text": "Que llame a Marisol de inmediato"
+              },
+              {
+                "text": "Que le compre una cámara nueva"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Le pidió que la escuchara sin resolverlo por ella.",
+            "retryFeedback": "Busca lo que Isa dice justo antes de contarle todo."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué hace Bella para mostrar que de verdad está escuchando?",
+            "options": [
+              {
+                "text": "Deja el teléfono lejos y pregunta qué necesita escuchar Marisol, en vez de dar consejos"
+              },
+              {
+                "text": "Le dice a Isa exactamente qué mensaje debe escribir"
+              },
+              {
+                "text": "Llama ella misma a la madre de Marisol"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! En vez de resolverlo, le preguntó qué necesitaba escuchar su amiga.",
+            "retryFeedback": "Piensa en la pregunta que hace mamá, no en una solución."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p09",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "blocks": [
+        {
+          "id": "b09",
+          "voice": "narration",
+          "title": "Lo siento, Marisol",
+          "lines": [
+            "Al día siguiente pedí hablar con Marisol. No empecé explicando por qué mis fotos eran buenas. «Cambié las tuyas sin preguntar. Lo siento», dije. Ella tardó en responder.",
+            "Me contó que había elegido una imagen de la pared rota porque el mural no estaba terminado: mostraba a los vecinos trabajando juntos. Yo había preferido una pared bonita y completa.",
+            "Miramos las dos versiones. Decidimos incluir ambas y escribir juntas por qué las habíamos escogido. Marisol no dijo que todo estaba olvidado. Me pasó la cámara para que revisáramos el encuadre. Fue un comienzo."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q09",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Cómo empieza Isa su disculpa con Marisol?",
+            "options": [
+              {
+                "text": "Diciendo «Cambié las tuyas sin preguntar. Lo siento»"
+              },
+              {
+                "text": "Explicando por qué sus fotos eran mejores"
+              },
+              {
+                "text": "Pidiéndole que olvidara todo"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Empezó reconociendo lo que hizo, no defendiendo sus fotos.",
+            "retryFeedback": "Busca las primeras palabras de Isa al hablar con Marisol."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué la foto del mural significaba algo distinto para cada una?",
+            "options": [
+              {
+                "text": "Isa veía una pared bonita y Marisol veía a los vecinos trabajando juntos en algo inconcluso"
+              },
+              {
+                "text": "Porque una foto era en blanco y negro"
+              },
+              {
+                "text": "Porque Marisol no conocía ese mural"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Cada una había elegido la foto que mostraba algo distinto e importante para ella.",
+            "retryFeedback": "Piensa en qué mostraba cada versión de la foto."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p10",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "blocks": [
+        {
+          "id": "b10",
+          "voice": "narration",
+          "title": "Un acuerdo pequeño",
+          "lines": [
+            "Esa noche le pregunté a mamá por qué había contado lo de mi capa. «Porque me encanta esa niña», dijo. «Y a veces olvido preguntarme si a ti te gustaría que otros la conocieran así».",
+            "Le expliqué que no quería esconder todos nuestros recuerdos; solo quería poder escoger cuáles eran míos para contar. Ella me pidió que le avisara cuando quisiera espacio sin hacerla adivinar.",
+            "Acordamos algo pequeño: tocaría antes de entrar, preguntaría antes de compartir mis historias y yo intentaría decir «ahora no, después sí» en vez de desaparecer detrás de mis audífonos."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q10",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué acuerdo pequeño hacen Isa y su mamá?",
+            "options": [
+              {
+                "text": "Tocar antes de entrar y preguntar antes de compartir sus historias"
+              },
+              {
+                "text": "No volver a cenar en casa de la tía Nora"
+              },
+              {
+                "text": "Isa nunca volvería a usar audífonos"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Mamá tocaría antes de entrar y preguntaría antes de compartir sus historias.",
+            "retryFeedback": "Busca los dos compromisos concretos que hacen juntas."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué diferencia hay entre guardar un recuerdo y compartirlo con otros, según lo que aprende Isa?",
+            "options": [
+              {
+                "text": "Un recuerdo puede seguir siendo querido aunque no todos tengan permiso para conocerlo"
+              },
+              {
+                "text": "Los recuerdos compartidos ya no valen nada"
+              },
+              {
+                "text": "Solo los recuerdos vergonzosos deben guardarse"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Isa no quería esconder los recuerdos, solo decidir cuáles se contaban y a quién.",
+            "retryFeedback": "Piensa en lo que Isa dice que sí quiere, no solo en lo que rechaza."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p11",
+      "illustration": {
+        "src": "stories/la-puerta-que-deje-entreabierta/page-11.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Isa fotografiando un mural mientras su mamá la observa."
+      },
+      "blocks": [
+        {
+          "id": "b11",
+          "voice": "narration",
+          "title": "La foto que baila",
+          "lines": [
+            "El sábado salimos a fotografiar murales para el proyecto. Mamá llevó agua; yo escogí la ruta. Frente a una pared azul, me contó que a mi edad también decía «bien» cuando no sabía explicar un día complicado.",
+            "No lo dijo para ganar una discusión. Por primera vez se me ocurrió que Bella había sido una niña de doce años antes de ser mi mamá.",
+            "Le presté la cámara y tomó una foto inclinada. «Está bailando», dije. Nos reímos por la estrella de papel que ninguna de las dos había mencionado en años."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q11",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué descubre Isa sobre su mamá frente a la pared azul?",
+            "options": [
+              {
+                "text": "Que Bella también decía «bien» de niña cuando no sabía explicar algo"
+              },
+              {
+                "text": "Que a Bella no le gustan los murales"
+              },
+              {
+                "text": "Que Bella tomó fotografía en la universidad"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Bella también decía «bien» a los doce años, como Isa ahora.",
+            "retryFeedback": "Busca lo que cuenta mamá frente a la pared azul."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué cambia en Isa cuando imagina a Bella como una niña de doce años?",
+            "options": [
+              {
+                "text": "Empieza a ver a su mamá como una persona con su propia historia, no solo como «mamá»"
+              },
+              {
+                "text": "Deja de confiar en ella"
+              },
+              {
+                "text": "Decide contarle absolutamente todo otra vez, como cuando tenía siete años"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Por primera vez pensó en Bella como alguien que también fue niña antes de ser su mamá.",
+            "retryFeedback": "Piensa en qué se le ocurre a Isa por primera vez en esa escena."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p12",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "blocks": [
+        {
+          "id": "b12",
+          "voice": "narration",
+          "title": "La puerta entreabierta",
+          "lines": [
+            "En casa, subí a mi cuarto para elegir las fotos con Marisol. Mamá no entró cuando vio la puerta entreabierta: tocó con los nudillos y esperó. «¿Quieres ver una?», le pregunté.",
+            "Le mostré la foto torcida y luego otra que todavía no me gustaba. No le conté todos mis pensamientos; algunos seguían siendo solo míos. Ella tampoco necesitó conocerlos todos para sentarse a mi lado.",
+            "De pequeña pensaba que crecer significaba alejarme. Ahora empezaba a entender que también podía aprender una forma nueva de acercarme."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q12",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué hace Bella al ver la puerta entreabierta del cuarto de Isa?",
+            "options": [
+              {
+                "text": "Toca con los nudillos y espera"
+              },
+              {
+                "text": "Entra sin avisar como antes"
+              },
+              {
+                "text": "Le pide a Isa que cierre bien la puerta"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Tocó con los nudillos y esperó, sin entrar de golpe.",
+            "retryFeedback": "Busca lo que hace mamá antes de entrar al cuarto."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Cómo muestra el final que Isa conserva su privacidad y su cercanía con Bella al mismo tiempo?",
+            "options": [
+              {
+                "text": "Comparte algunas fotos pero no todos sus pensamientos, y aun así su mamá se sienta a su lado"
+              },
+              {
+                "text": "Le cuenta absolutamente todo, igual que a los siete años"
+              },
+              {
+                "text": "Le pide a su mamá que ya no entre nunca más a su cuarto"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! No necesitó contarlo todo para que su mamá quisiera estar cerca de ella.",
+            "retryFeedback": "Piensa en qué comparte Isa y qué decide guardar para sí misma."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "privacidad": {
+      "syllables": [
+        "pri",
+        "va",
+        "ci",
+        "dad"
+      ],
+      "definition": "Espacio propio que una persona puede guardar para sí misma.",
+      "synonym": "intimidad",
+      "example": "Tocó la puerta antes de entrar para respetar su privacidad."
+    },
+    "vergüenza": {
+      "syllables": [
+        "ver",
+        "güen",
+        "za"
+      ],
+      "definition": "Sensación incómoda de que otros vieron algo que preferías no mostrar.",
+      "synonym": "pena",
+      "example": "Sintió vergüenza cuando se tropezó frente a toda la clase."
+    },
+    "rendija": {
+      "syllables": [
+        "ren",
+        "di",
+        "ja"
+      ],
+      "definition": "Abertura muy angosta, como la de una puerta entreabierta.",
+      "synonym": "ranura",
+      "example": "Vio luz por la rendija de la puerta del cuarto."
+    },
+    "suposición": {
+      "syllables": [
+        "su",
+        "po",
+        "si",
+        "ción"
+      ],
+      "definition": "Idea que se da por cierta sin haberla comprobado.",
+      "synonym": "conjetura",
+      "example": "Hizo una suposición sobre el regalo sin haberlo visto."
+    },
+    "escuchar": {
+      "syllables": [
+        "es",
+        "cu",
+        "char"
+      ],
+      "definition": "Prestar atención de verdad a lo que otra persona dice.",
+      "synonym": "atender",
+      "example": "Trató de escuchar con atención las instrucciones del maestro."
+    },
+    "consentimiento": {
+      "syllables": [
+        "con",
+        "sen",
+        "ti",
+        "mien",
+        "to"
+      ],
+      "definition": "Permiso que alguien da antes de que se haga algo que le afecta.",
+      "synonym": "autorización",
+      "example": "Pidió consentimiento antes de compartir la foto de su amiga."
+    },
+    "mural": {
+      "syllables": [
+        "mu",
+        "ral"
+      ],
+      "definition": "Pintura grande hecha directamente sobre una pared.",
+      "example": "Los estudiantes pintaron un mural colorido en el patio de la escuela."
+    },
+    "encuadre": {
+      "syllables": [
+        "en",
+        "cua",
+        "dre"
+      ],
+      "definition": "La parte de una escena que queda dentro de una fotografía.",
+      "synonym": "composición",
+      "example": "El fotógrafo ajustó el encuadre antes de tomar la foto."
+    },
+    "disculpa": {
+      "syllables": [
+        "dis",
+        "cul",
+        "pa"
+      ],
+      "definition": "Palabras con las que alguien reconoce que se equivocó.",
+      "synonym": "perdón",
+      "example": "Le pidió una disculpa a su hermana por haber roto su juguete."
+    },
+    "acuerdo": {
+      "syllables": [
+        "a",
+        "cuer",
+        "do"
+      ],
+      "definition": "Decisión que dos personas toman juntas sobre cómo actuar.",
+      "synonym": "pacto",
+      "example": "Llegaron a un acuerdo sobre quién lavaría los platos cada día."
+    },
+    "compartir": {
+      "syllables": [
+        "com",
+        "par",
+        "tir"
+      ],
+      "definition": "Dar a otros algo que es tuyo, como una historia o una idea.",
+      "synonym": "repartir",
+      "example": "Decidió compartir su almuerzo con un compañero que lo había olvidado."
+    },
+    "autonomía": {
+      "syllables": [
+        "au",
+        "to",
+        "no",
+        "mí",
+        "a"
+      ],
+      "definition": "Capacidad de decidir por uno mismo.",
+      "synonym": "independencia",
+      "example": "Con doce años, ya tenía más autonomía para elegir su ropa."
+    }
+  }
+}

@@ -1,0 +1,903 @@
+{
+  "id": "luna-y-el-tren-de-los-objetos-perdidos-es-n1",
+  "familyId": "luna-y-el-tren-de-los-objetos-perdidos",
+  "language": "es",
+  "title": "Luna y el tren de los objetos perdidos",
+  "level": 1,
+  "category": "amistad",
+  "description": "Luna y Teo encuentran un bolso olvidado en el tren y ayudan a guardarlo a salvo.",
+  "cover": {
+    "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Luna camina hacia la estación con su cesta, al atardecer, con el tren esperando"
+  },
+  "heroFocus": {
+    "x": 22,
+    "y": 60
+  },
+  "reviewWords": [
+    "estación",
+    "revisora",
+    "olvidado"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Luna camina hacia la estación con una cesta, al atardecer, con el tren esperando"
+      },
+      "template": "book-1",
+      "blocks": [
+        {
+          "id": "b01",
+          "title": "Rumbo a la estación",
+          "voice": "narration",
+          "lines": [
+            "Luna sale con su cesta.",
+            "El tren ya espera."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Teo, en el jardín, muestra un guante zurcido, un barquito de papel y una bufanda naranja con una luna bordada"
+      },
+      "template": "three-up",
+      "blocks": [
+        {
+          "id": "b02",
+          "title": "El guante",
+          "voice": "narration",
+          "lines": [
+            "Teo tiene un guante."
+          ]
+        },
+        {
+          "id": "b03",
+          "title": "El barquito",
+          "voice": "narration",
+          "lines": [
+            "Y un barquito de papel."
+          ]
+        },
+        {
+          "id": "b04",
+          "title": "La bufanda",
+          "voice": "narration",
+          "lines": [
+            "Se pone su bufanda."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Teo camina hacia la estación: pisa una tabla floja, salpica un charco, ve el tren soltar vapor, se pone nervioso, Dora silba y se ve un vagón de carga con cajas"
+      },
+      "template": "six-up",
+      "blocks": [
+        {
+          "id": "b05",
+          "title": "¡Crac!",
+          "voice": "narration",
+          "lines": [
+            "¡Crac!"
+          ]
+        },
+        {
+          "id": "b06",
+          "title": "¡Splash!",
+          "voice": "narration",
+          "lines": [
+            "¡Splash!"
+          ]
+        },
+        {
+          "id": "b07",
+          "title": "El tren resopla",
+          "voice": "narration",
+          "lines": [
+            "El tren echa vapor."
+          ]
+        },
+        {
+          "id": "b08",
+          "title": "Teo se pone nervioso",
+          "voice": "narration",
+          "lines": [
+            "Teo está nervioso."
+          ]
+        },
+        {
+          "id": "b09",
+          "title": "Dora silba",
+          "voice": "narration",
+          "lines": [
+            "Dora silba fuerte."
+          ]
+        },
+        {
+          "id": "b10",
+          "title": "El vagón de carga",
+          "voice": "narration",
+          "lines": [
+            "Un vagón con cajas."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué pisó Teo en el camino?",
+            "options": [
+              {
+                "text": "Una tabla floja"
+              },
+              {
+                "text": "Una maleta"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Sí! Una tabla floja.",
+            "retryFeedback": "Mira otra vez el primer cuadro."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué Teo se puso nervioso?",
+            "options": [
+              {
+                "text": "Era su primer viaje solo"
+              },
+              {
+                "text": "No le gustaba el tren"
+              },
+              {
+                "text": "Se le hacía tarde"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Exacto: era su primer viaje solo.",
+            "retryFeedback": "Piensa por qué está nervioso Teo."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p04",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Una banca vacía junto al tren con un reloj; Luna llega preocupada con su cesta; Teo llora en el andén; Dora se acerca a ayudar"
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b11",
+          "title": "El andén vacío",
+          "voice": "narration",
+          "lines": [
+            "Teo espera solo."
+          ]
+        },
+        {
+          "id": "b12",
+          "title": "Luna llega",
+          "voice": "narration",
+          "lines": [
+            "Luna llega."
+          ]
+        },
+        {
+          "id": "b13",
+          "title": "Teo llora",
+          "voice": "dialogue",
+          "lines": [
+            "—Pensé que no venías."
+          ]
+        },
+        {
+          "id": "b14",
+          "title": "Dora ayuda",
+          "voice": "narration",
+          "lines": [
+            "Dora los ayuda."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p05",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Teo espera un poco más tranquilo en el andén; Luna señala el tren con una sonrisa, junto a Dora"
+      },
+      "template": "slant-2",
+      "blocks": [
+        {
+          "id": "b15",
+          "title": "Teo se calma",
+          "voice": "narration",
+          "lines": [
+            "Teo ya está mejor."
+          ]
+        },
+        {
+          "id": "b16",
+          "title": "Luna señala el tren",
+          "voice": "dialogue",
+          "lines": [
+            "—¡Ya casi sale!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p06",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Luna y Teo se agachan curiosos junto a las ruedas del tren; después suben los primeros escalones mientras Dora los observa"
+      },
+      "template": "two-up",
+      "blocks": [
+        {
+          "id": "b17",
+          "title": "Las ruedas del tren",
+          "voice": "narration",
+          "lines": [
+            "Miran las ruedas."
+          ]
+        },
+        {
+          "id": "b18",
+          "title": "Primeros pasos",
+          "voice": "narration",
+          "lines": [
+            "Suben al tren."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p07",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El tren espera con la puerta abierta; Luna sube los escalones; Teo conversa con Dora en el andén"
+      },
+      "template": "slant-3",
+      "blocks": [
+        {
+          "id": "b19",
+          "title": "El tren espera",
+          "voice": "narration",
+          "lines": [
+            "El tren espera."
+          ]
+        },
+        {
+          "id": "b20",
+          "title": "Luna sube primero",
+          "voice": "narration",
+          "lines": [
+            "Luna sube primero."
+          ]
+        },
+        {
+          "id": "b21",
+          "title": "Teo y Dora hablan",
+          "voice": "dialogue",
+          "lines": [
+            "—Mira mi boleto."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p08",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Teo y Luna suben al tren: muestran el boleto, señalan, Dora agita el ala, la manija de la puerta, Dora abre la puerta y ambos entran"
+      },
+      "template": "six-up",
+      "blocks": [
+        {
+          "id": "b22",
+          "title": "El boleto",
+          "voice": "dialogue",
+          "lines": [
+            "—Aquí está."
+          ]
+        },
+        {
+          "id": "b23",
+          "title": "Luna señala",
+          "voice": "narration",
+          "lines": [
+            "Luna señala el vagón."
+          ]
+        },
+        {
+          "id": "b24",
+          "title": "Dora saluda",
+          "voice": "narration",
+          "lines": [
+            "Dora los saluda."
+          ]
+        },
+        {
+          "id": "b25",
+          "title": "La manija",
+          "voice": "narration",
+          "lines": [
+            "La manija brilla."
+          ]
+        },
+        {
+          "id": "b26",
+          "title": "Dora abre la puerta",
+          "voice": "narration",
+          "lines": [
+            "Dora abre la puerta."
+          ]
+        },
+        {
+          "id": "b27",
+          "title": "Suben al tren",
+          "voice": "narration",
+          "lines": [
+            "Suben al tren."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué le mostró Teo a Dora?",
+            "options": [
+              {
+                "text": "Su boleto"
+              },
+              {
+                "text": "Un dibujo"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Correcto!",
+            "retryFeedback": "Mira otra vez el primer cuadro."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Cómo los recibe Dora?",
+            "options": [
+              {
+                "text": "Con cariño"
+              },
+              {
+                "text": "Con prisa"
+              },
+              {
+                "text": "En silencio"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Así es, con cariño.",
+            "retryFeedback": "Fíjate qué hace Dora."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p09",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Las puertas del tren se cierran de golpe con un gran estallido de sonido mientras el tren arranca; abajo, Luna y Teo se sobresaltan"
+      },
+      "template": "burst-2",
+      "blocks": [
+        {
+          "id": "b28",
+          "title": "¡Chuu!",
+          "voice": "narration",
+          "lines": [
+            "¡Chuu!"
+          ]
+        },
+        {
+          "id": "b29",
+          "title": "El tren arranca",
+          "voice": "narration",
+          "lines": [
+            "El tren arranca."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-10.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Se sientan y Dora se asoma a saludar; notan un bolso bajo el asiento; se agachan a mirarlo; lo abren juntos"
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b30",
+          "title": "Se sientan",
+          "voice": "narration",
+          "lines": [
+            "Se sientan juntos."
+          ]
+        },
+        {
+          "id": "b31",
+          "title": "Algo bajo el asiento",
+          "voice": "narration",
+          "lines": [
+            "Hay un bolso."
+          ]
+        },
+        {
+          "id": "b32",
+          "title": "Se agachan",
+          "voice": "dialogue",
+          "lines": [
+            "—¿De quién será?"
+          ]
+        },
+        {
+          "id": "b33",
+          "title": "Lo abren",
+          "voice": "narration",
+          "lines": [
+            "Lo abren despacio."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-11.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El bolso tiembla; avisan a Dora; caminan hacia ella; le muestran el bolso"
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b34",
+          "title": "El bolso tiembla",
+          "voice": "narration",
+          "lines": [
+            "El bolso tiembla."
+          ]
+        },
+        {
+          "id": "b35",
+          "title": "No es de ellos",
+          "voice": "dialogue",
+          "lines": [
+            "—No es nuestro."
+          ]
+        },
+        {
+          "id": "b36",
+          "title": "Van a buscarla",
+          "voice": "narration",
+          "lines": [
+            "Buscan a Dora."
+          ]
+        },
+        {
+          "id": "b37",
+          "title": "Le muestran el bolso",
+          "voice": "dialogue",
+          "lines": [
+            "—¡Mira lo que hallamos!"
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Por qué avisan a Dora?",
+            "options": [
+              {
+                "text": "El bolso no es suyo"
+              },
+              {
+                "text": "Quieren bajar"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es!",
+            "retryFeedback": "Relee esta página."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué nos dice esto de ellos?",
+            "options": [
+              {
+                "text": "Son honestos"
+              },
+              {
+                "text": "Tienen miedo"
+              },
+              {
+                "text": "Quieren el bolso"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Exacto, son honestos.",
+            "retryFeedback": "Piensa qué hicieron con el bolso."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p12",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-12.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Luna sentada, pensativa, junto a una bufanda naranja con una luna bordada"
+      },
+      "blocks": [
+        {
+          "id": "b38",
+          "title": "Luna piensa",
+          "voice": "narration",
+          "lines": [
+            "Luna piensa un poco.",
+            "Hay una bufanda con una luna.",
+            "¡Qué curioso!"
+          ]
+        }
+      ],
+      "template": "full"
+    },
+    {
+      "id": "p13",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-13.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Dora abre un cofre con más objetos guardados; conversan; Luna señala algo emocionada; celebran; encuentran otra bufanda parecida"
+      },
+      "template": "manga-6",
+      "blocks": [
+        {
+          "id": "b41",
+          "title": "Un cofre lleno",
+          "voice": "narration",
+          "lines": [
+            "Dora abre un cofre."
+          ]
+        },
+        {
+          "id": "b42",
+          "title": "Muchas historias",
+          "voice": "dialogue",
+          "lines": [
+            "—Cada cosa tiene su historia."
+          ]
+        },
+        {
+          "id": "b43",
+          "title": "Luna señala",
+          "voice": "narration",
+          "lines": [
+            "Luna señala algo."
+          ]
+        },
+        {
+          "id": "b44",
+          "title": "¡Encontró algo!",
+          "voice": "dialogue",
+          "lines": [
+            "—¡Miren esto!"
+          ]
+        },
+        {
+          "id": "b45",
+          "title": "Celebran",
+          "voice": "narration",
+          "lines": [
+            "Los dos celebran."
+          ]
+        },
+        {
+          "id": "b46",
+          "title": "No está sola",
+          "voice": "narration",
+          "lines": [
+            "Luna sonríe feliz."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p14",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-14.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Luna y Teo miran un estante con un sombrero, una caja y un paraguas; Dora guarda el bolso en el cofre de los objetos perdidos"
+      },
+      "template": "two-up",
+      "blocks": [
+        {
+          "id": "b47",
+          "title": "El estante",
+          "voice": "narration",
+          "lines": [
+            "Hay un sombrero.",
+            "Y una caja y un paraguas."
+          ]
+        },
+        {
+          "id": "b48",
+          "title": "El cofre",
+          "voice": "dialogue",
+          "lines": [
+            "Dora guarda el bolso.",
+            "—Nada se pierde del todo."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué guarda Dora?",
+            "options": [
+              {
+                "text": "Cosas olvidadas"
+              },
+              {
+                "text": "Los boletos"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Correcto!",
+            "retryFeedback": "Mira otra vez esta página."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué significa «nada se pierde del todo»?",
+            "options": [
+              {
+                "text": "Todo espera a que lo busquen"
+              },
+              {
+                "text": "El tren nunca se pierde"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Exacto.",
+            "retryFeedback": "Piensa para qué sirve el vagón."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p15",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-15.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "De vuelta al asiento, encuentran el barquito de papel olvidado; lo recuperan; caminan hacia la puerta del tren"
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b49",
+          "title": "De vuelta al asiento",
+          "voice": "narration",
+          "lines": [
+            "Vuelven a sentarse."
+          ]
+        },
+        {
+          "id": "b50",
+          "title": "¡Casi lo olvida!",
+          "voice": "dialogue",
+          "lines": [
+            "—¡Casi lo olvido!"
+          ]
+        },
+        {
+          "id": "b51",
+          "title": "Caminan juntos",
+          "voice": "narration",
+          "lines": [
+            "Van a la puerta."
+          ]
+        },
+        {
+          "id": "b52",
+          "title": "Se acercan a Dora",
+          "voice": "dialogue",
+          "lines": [
+            "—¡Gracias, Dora!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p16",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-16.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Luna y Teo bajan del tren y se despiden de Dora en el andén"
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b53",
+          "title": "Se despiden",
+          "voice": "narration",
+          "lines": [
+            "Bajan del tren felices.",
+            "Dora los saluda con el ala."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué hicieron con el bolso?",
+            "options": [
+              {
+                "text": "Se lo dieron a Dora"
+              },
+              {
+                "text": "Se lo quedaron"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Sí!",
+            "retryFeedback": "Piensa qué hicieron con el bolso."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Cuál es el mensaje de la historia?",
+            "options": [
+              {
+                "text": "Cuidar las cosas de los demás"
+              },
+              {
+                "text": "Guardar todo lo que uno halla"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Exacto.",
+            "retryFeedback": "Piensa qué aprendieron Luna y Teo."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "estación": {
+      "syllables": [
+        "es",
+        "ta",
+        "ción"
+      ],
+      "definition": "El lugar donde para el tren."
+    },
+    "revisora": {
+      "syllables": [
+        "re",
+        "vi",
+        "so",
+        "ra"
+      ],
+      "definition": "Quien cuida el tren.",
+      "synonym": "conductora"
+    },
+    "olvidado": {
+      "syllables": [
+        "ol",
+        "vi",
+        "da",
+        "do"
+      ],
+      "definition": "Algo que alguien dejó."
+    },
+    "vagón": {
+      "syllables": [
+        "va",
+        "gón"
+      ],
+      "definition": "Una parte del tren."
+    },
+    "andén": {
+      "syllables": [
+        "an",
+        "dén"
+      ],
+      "definition": "Donde se espera el tren."
+    },
+    "locomotora": {
+      "syllables": [
+        "lo",
+        "co",
+        "mo",
+        "to",
+        "ra"
+      ],
+      "definition": "La parte del tren con el motor.",
+      "synonym": "máquina"
+    },
+    "zurcido": {
+      "syllables": [
+        "zur",
+        "ci",
+        "do"
+      ],
+      "definition": "Cosido con cuidado."
+    },
+    "bordada": {
+      "syllables": [
+        "bor",
+        "da",
+        "da"
+      ],
+      "definition": "Con un dibujo de hilo."
+    },
+    "cofre": {
+      "syllables": [
+        "co",
+        "fre"
+      ],
+      "definition": "Una caja de madera.",
+      "synonym": "baúl"
+    },
+    "orgulloso": {
+      "syllables": [
+        "or",
+        "gu",
+        "llo",
+        "so"
+      ],
+      "definition": "Muy contento por algo."
+    }
+  }
+}

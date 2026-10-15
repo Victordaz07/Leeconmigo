@@ -1,0 +1,359 @@
+{
+  "id": "estrella-desaparecida-c2-en-n2",
+  "familyId": "estrella-desaparecida-c2",
+  "language": "en",
+  "title": "2. The Misleading Shadow",
+  "level": 2,
+  "category": "misterio",
+  "description": "Chapter 2 of 3 of “The Case of the Missing Star”. Read in order.",
+  "cover": {
+    "src": "stories/estrella-desaparecida-c2/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "The Case of the Missing Star"
+  },
+  "pages": [
+    {
+      "id": "p04",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c2/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "The shadow changes; they knock, and Pico opens with a lantern near a coat stand."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b13",
+          "voice": "narration",
+          "lines": [
+            "The children wait outside the workshop. The shadow looks huge, but they have not seen what makes it."
+          ],
+          "title": "At the workshop door"
+        },
+        {
+          "id": "b14",
+          "voice": "narration",
+          "lines": [
+            "As the light moves inside, the shape changes. Luna notices that the two things happen together."
+          ],
+          "title": "The shadow shifts"
+        },
+        {
+          "id": "b15",
+          "voice": "narration",
+          "lines": [
+            "Instead of running away, Nico knocks on the door. They want to check what is really there."
+          ],
+          "title": "Knocking"
+        },
+        {
+          "id": "b16",
+          "voice": "narration",
+          "lines": [
+            "Pico opens up with a lantern in his wing. A purple coat hangs on a stand behind him."
+          ],
+          "title": "Pico opens up"
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Who opens the door?",
+            "options": [
+              {
+                "text": "The cat"
+              },
+              {
+                "text": "Pico"
+              },
+              {
+                "text": "A monster"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! Pico.",
+            "retryFeedback": "Notice what Pico is carrying and what stands behind him."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Which question helps them check their first impression?",
+            "options": [
+              {
+                "text": "What object and light make the shadow"
+              },
+              {
+                "text": "Why every workshop is dangerous"
+              },
+              {
+                "text": "How to escape a creature they have not seen"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! What object and light make the shadow.",
+            "retryFeedback": "Notice what Pico is carrying and what stands behind him."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p05",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c2/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "They check the coat’s shadow and discover mud and ribbon on a cart wheel."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b17",
+          "voice": "narration",
+          "lines": [
+            "He moves the lantern beside the coat stand, changing the shadow again. Now the children can see its source."
+          ],
+          "title": "Moving the lantern"
+        },
+        {
+          "id": "b18",
+          "voice": "narration",
+          "lines": [
+            "Nico touches the purple sleeve and smiles. His first impression was not reliable evidence."
+          ],
+          "title": "Just clothes"
+        },
+        {
+          "id": "b19",
+          "voice": "narration",
+          "lines": [
+            "Luna notices an orange cart inside the workshop. Its purple wheels still carry mud from the path."
+          ],
+          "title": "The orange cart"
+        },
+        {
+          "id": "b20",
+          "voice": "narration",
+          "lines": [
+            "A blue, white-dotted ribbon hangs from one wheel. Luna holds her scrap beside it to compare."
+          ],
+          "title": "Ribbon on the wheel"
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What makes the shadow beside the lantern?",
+            "options": [
+              {
+                "text": "The star"
+              },
+              {
+                "text": "A giant tree"
+              },
+              {
+                "text": "A coat stand with a coat"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! A coat stand with a coat.",
+            "retryFeedback": "Look for two matches: the marks on the ground and the blue fabric."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What connects the cart to the trail?",
+            "options": [
+              {
+                "text": "Only its orange colour"
+              },
+              {
+                "text": "Its muddy wheels and the matching ribbon"
+              },
+              {
+                "text": "Pico’s hat"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! Its muddy wheels and the matching ribbon.",
+            "retryFeedback": "Look for two matches: the marks on the ground and the blue fabric."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p06",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c2/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "They connect the cart’s route to the hook and uncover a yellow point beneath cloth."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b21",
+          "voice": "narration",
+          "lines": [
+            "The muddy lines enter through the doorway and lead to the cart. Their clues are beginning to connect."
+          ],
+          "title": "The same path"
+        },
+        {
+          "id": "b22",
+          "voice": "narration",
+          "lines": [
+            "Pico points towards the station hook. He moved the cart underneath it before coming inside."
+          ],
+          "title": "Where it hung"
+        },
+        {
+          "id": "b23",
+          "voice": "narration",
+          "lines": [
+            "Luna lifts a corner of the striped cloth covering the load. Something yellow appears beneath it."
+          ],
+          "title": "Lifting the cloth"
+        },
+        {
+          "id": "b24",
+          "voice": "narration",
+          "lines": [
+            "Part of a purple ring shows too. Nico recognises it, but they must uncover the object to be sure."
+          ],
+          "title": "What's peeking out?"
+        }
+      ],
+      "checkpoint": {
+        "id": "q06",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What peeks out beneath the cloth?",
+            "options": [
+              {
+                "text": "A yellow point and a purple ring"
+              },
+              {
+                "text": "A cat’s paw"
+              },
+              {
+                "text": "A green stone"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! A yellow point and a purple ring.",
+            "retryFeedback": "Only part is visible. Think about how to check the rest."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What should they do before saying it is the star?",
+            "options": [
+              {
+                "text": "Accuse Pico"
+              },
+              {
+                "text": "Stop investigating"
+              },
+              {
+                "text": "Uncover and examine the whole object"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! Uncover and examine the whole object.",
+            "retryFeedback": "Only part is visible. Think about how to check the rest."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "ribbon": {
+      "syllables": [
+        "rib",
+        "bon"
+      ],
+      "definition": "A narrow strip of fabric used for tying or decorating."
+    },
+    "hook": {
+      "syllables": [
+        "hook"
+      ],
+      "definition": "A curved piece used to hang something."
+    },
+    "workshop": {
+      "syllables": [
+        "work",
+        "shop"
+      ],
+      "definition": "A place where things are made or repaired."
+    },
+    "shadow": {
+      "syllables": [
+        "shad",
+        "ow"
+      ],
+      "definition": "A dark shape made when something blocks light."
+    },
+    "evidence": {
+      "syllables": [
+        "ev",
+        "i",
+        "dence"
+      ],
+      "definition": "Information used to check an explanation."
+    },
+    "lantern": {
+      "syllables": [
+        "lan",
+        "tern"
+      ],
+      "definition": "A light protected by a case that can be carried."
+    },
+    "sleeve": {
+      "syllables": [
+        "sleeve"
+      ],
+      "definition": "The part of clothing that covers an arm."
+    },
+    "muddy": {
+      "syllables": [
+        "mud",
+        "dy"
+      ],
+      "definition": "Covered with wet earth."
+    },
+    "scrap": {
+      "syllables": [
+        "scrap"
+      ],
+      "definition": "A small piece left or torn from something."
+    },
+    "impression": {
+      "syllables": [
+        "im",
+        "pres",
+        "sion"
+      ],
+      "definition": "An early idea about what something seems like."
+    },
+    "compare": {
+      "syllables": [
+        "com",
+        "pare"
+      ],
+      "definition": "To look for similarities and differences."
+    }
+  },
+  "heroFocus": {
+    "x": 35,
+    "y": 62
+  },
+  "reviewWords": [
+    "ribbon",
+    "workshop",
+    "shadow"
+  ]
+}

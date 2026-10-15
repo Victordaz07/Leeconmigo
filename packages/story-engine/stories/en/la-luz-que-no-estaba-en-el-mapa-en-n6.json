@@ -1,0 +1,856 @@
+{
+  "id": "la-luz-que-no-estaba-en-el-mapa-en-n6",
+  "familyId": "la-luz-que-no-estaba-en-el-mapa",
+  "language": "en",
+  "title": "The Light That Was Not on the Map",
+  "level": 6,
+  "category": "oficios",
+  "description": "Samuel learns to investigate the sea.",
+  "cover": {
+    "src": "stories/la-luz-que-no-estaba-en-el-mapa/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Scene of a blue spark."
+  },
+  "heroFocus": {
+    "x": 30,
+    "y": 55
+  },
+  "reviewWords": [
+    "bioluminescence",
+    "observation",
+    "reflection"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/la-luz-que-no-estaba-en-el-mapa/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Scene of a blue spark."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b01",
+          "voice": "narration",
+          "title": "A Blue Spark",
+          "lines": [
+            "Samuel dreamed of studying the animals and plants of the sea. One evening he walked along the coastal path with his mother and marine biologist Lucía.",
+            "From behind the railing, he saw a blue spark in a wave. Then another appeared nearer the pier.",
+            "“The sea has stars!” he said. Lucía smiled, but she did not name the glow.",
+            "She asked him to describe exactly what he had seen. Samuel recorded two blue sparks that appeared and vanished.",
+            "He also wrote that the sky was already dark."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What did Samuel record first?",
+            "options": [
+              {
+                "text": "Two blue sparks that appeared and vanished"
+              },
+              {
+                "text": "He described their color, duration, and place"
+              },
+              {
+                "text": "A steady reflection and brief flashes"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! Two blue sparks that appeared and vanished.",
+            "retryFeedback": "Look for the action observed on this page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why did Lucía ask for a description?",
+            "options": [
+              {
+                "text": "To choose a pretty name"
+              },
+              {
+                "text": "To learn who arrived first"
+              },
+              {
+                "text": "To separate what was seen from an explanation"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! To separate what was seen from an explanation.",
+            "retryFeedback": "Think about what changed after observing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b02",
+          "voice": "narration",
+          "title": "A Bright Idea",
+          "lines": [
+            "At home, Samuel opened an oceanography book. He read that some sea creatures produce light.",
+            "This is called bioluminescence. He imagined tiny organisms glowing in each wave.",
+            "He wanted to race back to the beach and touch the water, but his mother reminded him of their agreement with Lucía: they would observe from the path and check local advisories before going near the shore. Samuel drew a star beside his idea.",
+            "Under it he wrote another possibility: perhaps a lamp was reflecting on the water."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What other explanation did Samuel write down?",
+            "options": [
+              {
+                "text": "The camera changed how the darkness looked"
+              },
+              {
+                "text": "He separated the switches for the two lights"
+              },
+              {
+                "text": "A lamp reflecting on the water"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! A lamp reflecting on the water.",
+            "retryFeedback": "Look for the action observed on this page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why did Samuel stay out of the water?",
+            "options": [
+              {
+                "text": "The light was in the sky"
+              },
+              {
+                "text": "The group had agreed to observe safely"
+              },
+              {
+                "text": "He disliked the sea"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! The group had agreed to observe safely.",
+            "retryFeedback": "Think about what changed after observing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/la-luz-que-no-estaba-en-el-mapa/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Scene of the pier railing."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b03",
+          "voice": "narration",
+          "title": "The Pier Railing",
+          "lines": [
+            "The next day, Lucía brought a notebook, a watch, and a small map of the path. They did not need to enter the water.",
+            "They stood behind the railing, away from slippery rocks. Samuel spotted a yellow lamp at the end of the pier.",
+            "Its reflection made a long line that trembled even when no wave broke. Lucía asked whether it matched the blue sparks from the night before.",
+            "Samuel shook his head: the line stayed in place, but the sparks had lasted only moments."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "How was the yellow reflection different?",
+            "options": [
+              {
+                "text": "That they did not know the source for certain"
+              },
+              {
+                "text": "It stayed visible as a line"
+              },
+              {
+                "text": "Only that they did not observe them on that visit"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! It stayed visible as a line.",
+            "retryFeedback": "Look for the action observed on this page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why compare the line and the sparks?",
+            "options": [
+              {
+                "text": "They might have different causes"
+              },
+              {
+                "text": "They were both drawings"
+              },
+              {
+                "text": "The railing was the same color"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! They might have different causes.",
+            "retryFeedback": "Think about what changed after observing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p04",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b04",
+          "voice": "narration",
+          "title": "A Map of Questions",
+          "lines": [
+            "Samuel made a chart with three columns: place, time, and appearance of the light. Lucía added a fourth: what they still did not know.",
+            "He marked the pier lamp and the place where he had seen the blue sparks. The places were close, but not identical.",
+            "“If two lights appear near each other, must they have the same cause?” he asked. Lucía said it was a good scientific question.",
+            "The chart did not solve the mystery; it kept different clues from being mixed together."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What was the chart for?",
+            "options": [
+              {
+                "text": "To separate clues from unknowns"
+              },
+              {
+                "text": "The exact source of the blue flashes"
+              },
+              {
+                "text": "Consider it and revise his explanation"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! To separate clues from unknowns.",
+            "retryFeedback": "Look for the action observed on this page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why include what they did not know?",
+            "options": [
+              {
+                "text": "To fill the notebook"
+              },
+              {
+                "text": "To avoid looking at the pier"
+              },
+              {
+                "text": "So an idea would not become a claimed fact"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! So an idea would not become a claimed fact.",
+            "retryFeedback": "Think about what changed after observing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p05",
+      "illustration": {
+        "src": "stories/la-luz-que-no-estaba-en-el-mapa/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Scene of the second night."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b05",
+          "voice": "narration",
+          "title": "The Second Night",
+          "lines": [
+            "They returned with Samuel’s mother at dusk. Lucía checked that the path was open and that no advisory changed their plan.",
+            "The yellow lamp cast its long line. Later, a wave showed three brief blue flashes, separate from that line.",
+            "Samuel almost shouted “Bioluminescence!” but remembered the fourth column. He described them first: blue, brief, near the foam.",
+            "Lucía wrote down the time. No one crossed the railing or collected water."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What did Samuel do before naming the flashes?",
+            "options": [
+              {
+                "text": "A steady reflection and brief flashes"
+              },
+              {
+                "text": "Two blue sparks that appeared and vanished"
+              },
+              {
+                "text": "He described their color, duration, and place"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! He described their color, duration, and place.",
+            "retryFeedback": "Look for the action observed on this page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why describe before naming the light?",
+            "options": [
+              {
+                "text": "He was waiting for sunrise"
+              },
+              {
+                "text": "To record the clue before reaching a conclusion"
+              },
+              {
+                "text": "He forgot the word lamp"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! To record the clue before reaching a conclusion.",
+            "retryFeedback": "Think about what changed after observing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p06",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b06",
+          "voice": "narration",
+          "title": "A Misleading Photo",
+          "lines": [
+            "On his mother’s phone, a photo showed a very bright blue band. Samuel thought he finally had proof.",
+            "Then they compared the screen with what they had seen with their own eyes. The phone had brightened the whole scene; even the clouds looked luminous.",
+            "Lucía explained that a photo helps memory, but a camera changes how darkness looks. They kept the picture with their notes without letting it replace the observation.",
+            "Samuel wrote, “The photo shows a light; it cannot tell us its cause by itself.”"
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q06",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Why was the photo not enough proof?",
+            "options": [
+              {
+                "text": "A lamp reflecting on the water"
+              },
+              {
+                "text": "The camera changed how the darkness looked"
+              },
+              {
+                "text": "He separated the switches for the two lights"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! The camera changed how the darkness looked.",
+            "retryFeedback": "Look for the action observed on this page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What did Samuel learn from the photo?",
+            "options": [
+              {
+                "text": "A picture can change how a scene looks"
+              },
+              {
+                "text": "Every photo proves a species"
+              },
+              {
+                "text": "Clouds make marine light"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! A picture can change how a scene looks.",
+            "retryFeedback": "Think about what changed after observing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p07",
+      "illustration": {
+        "src": "stories/la-luz-que-no-estaba-en-el-mapa/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Scene of the morning without a glow."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b07",
+          "voice": "narration",
+          "title": "The Morning Without a Glow",
+          "lines": [
+            "The next morning, the sea looked gray and green. Samuel thought the phenomenon was gone forever.",
+            "Lucía pointed out that not seeing light in daylight did not prove that no light-making creatures were there. It did not prove that they were there, either.",
+            "From the path they watched the waves and recorded the tide. A gull walked across wet sand.",
+            "Samuel understood that studying the sea sometimes means accepting that a visit leaves questions open."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q07",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What did seeing no flashes by day prove?",
+            "options": [
+              {
+                "text": "Only that they did not observe them on that visit"
+              },
+              {
+                "text": "That they did not know the source for certain"
+              },
+              {
+                "text": "It stayed visible as a line"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! Only that they did not observe them on that visit.",
+            "retryFeedback": "Look for the action observed on this page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What did the glowless visit mean?",
+            "options": [
+              {
+                "text": "Waves had vanished"
+              },
+              {
+                "text": "The lamp had moved"
+              },
+              {
+                "text": "One absence did not settle the whole mystery"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! One absence did not settle the whole mystery.",
+            "retryFeedback": "Think about what changed after observing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p08",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b08",
+          "voice": "narration",
+          "title": "Ask the People Who Know",
+          "lines": [
+            "Lucía showed Samuel how to check information from a research center and public coastal advisories. Some species can produce light, but some changes in the water also call for caution.",
+            "It would not be responsible to claim that every blue glow meant a safe beach. Identifying particular organisms would require methods and permission they did not have.",
+            "Samuel chose a sentence for his notebook: “We saw flashes consistent with biological light; we did not identify their source.” It sounded less exciting than a certain answer, but much more honest."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q08",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What could they not identify?",
+            "options": [
+              {
+                "text": "Consider it and revise his explanation"
+              },
+              {
+                "text": "To separate clues from unknowns"
+              },
+              {
+                "text": "The exact source of the blue flashes"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! The exact source of the blue flashes.",
+            "retryFeedback": "Look for the action observed on this page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why did Lucía not identify a species?",
+            "options": [
+              {
+                "text": "Lina turned off the model"
+              },
+              {
+                "text": "They lacked enough evidence and methods"
+              },
+              {
+                "text": "Samuel lost his map"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! They lacked enough evidence and methods.",
+            "retryFeedback": "Think about what changed after observing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p09",
+      "illustration": {
+        "src": "stories/la-luz-que-no-estaba-en-el-mapa/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Scene of two drawings."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b09",
+          "voice": "narration",
+          "title": "Two Drawings",
+          "lines": [
+            "For the school fair, Samuel made two large drawings. In one, the lamp cast a steady yellow line.",
+            "In the other, little blue marks appeared beside a wave and then went dark. He did not draw sea monsters or a species they had not found.",
+            "His friend Lina suggested a model with one steady light and three small lights that flashed in turn. Samuel agreed.",
+            "He wanted visitors to compare the clues just as he had done from behind the railing."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q09",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What did the two drawings show?",
+            "options": [
+              {
+                "text": "He described their color, duration, and place"
+              },
+              {
+                "text": "A steady reflection and brief flashes"
+              },
+              {
+                "text": "Two blue sparks that appeared and vanished"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! A steady reflection and brief flashes.",
+            "retryFeedback": "Look for the action observed on this page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why did Samuel avoid drawing a species?",
+            "options": [
+              {
+                "text": "They had not identified one"
+              },
+              {
+                "text": "He could not draw"
+              },
+              {
+                "text": "He had no blue pencil"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! They had not identified one.",
+            "retryFeedback": "Think about what changed after observing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p10",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b10",
+          "voice": "narration",
+          "title": "A Fair Test",
+          "lines": [
+            "Lina tested the model with Samuel. When they switched on all the lights at once, visitors could not tell them apart.",
+            "They separated the switches: first the yellow line glowed, then the blue points blinked. Now a younger child could say that one light lasted and the other did not.",
+            "Samuel had not recreated the real sea. He had built a model to show a comparison.",
+            "He left an empty place on the display for new observations because his question was still alive."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q10",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What did Samuel change in the model?",
+            "options": [
+              {
+                "text": "He separated the switches for the two lights"
+              },
+              {
+                "text": "A lamp reflecting on the water"
+              },
+              {
+                "text": "The camera changed how the darkness looked"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! He separated the switches for the two lights.",
+            "retryFeedback": "Look for the action observed on this page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What improved when switches were separated?",
+            "options": [
+              {
+                "text": "The lights grew dimmer"
+              },
+              {
+                "text": "The display became larger"
+              },
+              {
+                "text": "Visitors could compare two patterns"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! Visitors could compare two patterns.",
+            "retryFeedback": "Think about what changed after observing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p11",
+      "illustration": {
+        "src": "stories/la-luz-que-no-estaba-en-el-mapa/page-11.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Scene of the ocean table."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b11",
+          "voice": "narration",
+          "title": "The Ocean Table",
+          "lines": [
+            "At the fair, Samuel presented the model. Gael approached with a dessert cup and asked whether the blue sparks were animals.",
+            "“We do not know for certain,” Samuel replied. Imani studied the yellow line and said the model helped her notice the difference.",
+            "Samuel invited both friends to describe before guessing. His table did not promise to solve the mystery that afternoon.",
+            "It taught something a marine biologist does every day: care for observations and ask better questions."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q11",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What honest answer did Samuel give at the fair?",
+            "options": [
+              {
+                "text": "It stayed visible as a line"
+              },
+              {
+                "text": "Only that they did not observe them on that visit"
+              },
+              {
+                "text": "That they did not know the source for certain"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! That they did not know the source for certain.",
+            "retryFeedback": "Look for the action observed on this page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What did Samuel’s table teach?",
+            "options": [
+              {
+                "text": "How to touch sea animals"
+              },
+              {
+                "text": "Careful description and better questions"
+              },
+              {
+                "text": "That every glow means safe water"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! Careful description and better questions.",
+            "retryFeedback": "Think about what changed after observing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p12",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b12",
+          "voice": "narration",
+          "title": "A Question Still Glowing",
+          "lines": [
+            "When the fair ended, Samuel put away the map and his notes. He still wanted to learn what had glowed near the waves.",
+            "Lucía reminded him that studying the ocean takes many visits, instruments, and teamwork. Samuel looked at the empty place on his display.",
+            "It could hold a future observation, even one that challenged his first idea. He felt like a real scientist: curious, patient, and willing to revise his thinking.",
+            "The blue light was no longer just a spectacle; it was the start of a question."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q12",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What would Samuel do with an observation that challenged his idea?",
+            "options": [
+              {
+                "text": "The exact source of the blue flashes"
+              },
+              {
+                "text": "Consider it and revise his explanation"
+              },
+              {
+                "text": "To separate clues from unknowns"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! Consider it and revise his explanation.",
+            "retryFeedback": "Look for the action observed on this page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why leave room for more notes?",
+            "options": [
+              {
+                "text": "He could revise his idea with new evidence"
+              },
+              {
+                "text": "He ran out of paint"
+              },
+              {
+                "text": "He wanted to add a recipe"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! He could revise his idea with new evidence.",
+            "retryFeedback": "Think about what changed after observing."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "bioluminescence": {
+      "syllables": [
+        "bi",
+        "o",
+        "lu",
+        "mi",
+        "nes",
+        "cence"
+      ],
+      "definition": "Light made by some living things.",
+      "example": "The jellyfish's bioluminescence made the water glow at night."
+    },
+    "observation": {
+      "syllables": [
+        "ob",
+        "ser",
+        "va",
+        "tion"
+      ],
+      "definition": "A careful description of what is noticed.",
+      "synonym": "notes",
+      "example": "She wrote her observations about the ants in a notebook."
+    },
+    "reflection": {
+      "syllables": [
+        "re",
+        "flec",
+        "tion"
+      ],
+      "definition": "Light that bounces from a surface.",
+      "synonym": "glare",
+      "example": "He saw the reflection of the sun in the car's rearview mirror."
+    },
+    "tide": {
+      "syllables": [
+        "tide"
+      ],
+      "definition": "The regular rise and fall of sea level.",
+      "example": "We played on the beach until the tide started coming in."
+    },
+    "hypothesis": {
+      "syllables": [
+        "hy",
+        "poth",
+        "e",
+        "sis"
+      ],
+      "definition": "A possible explanation that still needs testing.",
+      "synonym": "guess",
+      "example": "Her hypothesis was that the mouse was hiding behind the fridge."
+    },
+    "model": {
+      "syllables": [
+        "mod",
+        "el"
+      ],
+      "definition": "A representation that helps explain something.",
+      "synonym": "diagram",
+      "example": "The teacher used a model of the solar system to explain the planets."
+    }
+  }
+}

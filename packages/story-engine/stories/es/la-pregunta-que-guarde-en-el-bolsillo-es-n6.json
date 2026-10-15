@@ -1,0 +1,901 @@
+{
+  "id": "la-pregunta-que-guarde-en-el-bolsillo-es-n6",
+  "familyId": "la-pregunta-que-guarde-en-el-bolsillo",
+  "language": "es",
+  "title": "La pregunta que guardé en el bolsillo",
+  "level": 6,
+  "category": "crecimiento",
+  "description": "Amara aprende a encontrar su voz cuando el silencio no responde.",
+  "cover": {
+    "src": "stories/la-pregunta-que-guarde-en-el-bolsillo/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Amara con su libreta, caminando a casa al atardecer."
+  },
+  "heroFocus": {
+    "x": 24,
+    "y": 45
+  },
+  "reviewWords": [
+    "oración",
+    "pregunta",
+    "silencio"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/la-pregunta-que-guarde-en-el-bolsillo/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Amara escribiendo en su libreta en su cuarto de noche."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b01",
+          "voice": "narration",
+          "title": "Una pregunta en voz baja",
+          "lines": [
+            "Mi abuela Celia dice que se puede hablar con Dios en cualquier lugar. Yo elegí mi cuarto porque allí no me interrumpe nadie, salvo el ventilador que suena como un helicóptero cansado.",
+            "Escribí una pregunta en mi libreta de bolsillo: «¿Me escuchas?». La hice en voz alta, muy bajito. Esperé. El ventilador siguió dando vueltas.",
+            "Yo no esperaba que el techo se abriera ni nada así, pero sí alguna forma de saber que mis palabras habían llegado. Guardé la libreta en el bolsillo de mi overol para llevar la pregunta conmigo."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué pregunta escribe Amara en su libreta?",
+            "options": [
+              {
+                "text": "«¿Me escuchas?»"
+              },
+              {
+                "text": "«¿Por qué el ventilador hace ruido?»"
+              },
+              {
+                "text": "«¿Cuándo llega la abuela?»"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Escribió: «¿Me escuchas?».",
+            "retryFeedback": "Busca la pregunta que Amara escribe en su libreta."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué tipo de respuesta espera Amara al principio?",
+            "options": [
+              {
+                "text": "Alguna señal de que sus palabras habían llegado a alguna parte"
+              },
+              {
+                "text": "Que el techo se abriera literalmente"
+              },
+              {
+                "text": "Una respuesta escrita en su libreta al día siguiente"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! No esperaba algo tan literal, solo alguna forma de saber que la habían escuchado.",
+            "retryFeedback": "Piensa en lo que Amara dice que NO esperaba, y lo que sí."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b02",
+          "voice": "narration",
+          "title": "Preguntas que no digo",
+          "lines": [
+            "En la escuela también llevaba preguntas que no decía. Por ejemplo, ¿por qué me sale tan fácil hablar en casa y tan difícil cuando todos me miran?",
+            "Mi maestra nos había pedido diseñar, en equipos, un mapa de lugares de la escuela donde un estudiante pudiera sentirse acompañado. A Gabriel, que acababa de llegar, se le ocurrió incluir la biblioteca y un rincón tranquilo del patio. Yo pensé que era una gran idea.",
+            "Cuando levantó la mano para explicarla, preparé una frase para apoyarlo. La frase se quedó pegada detrás de mis dientes."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué idea de Gabriel le gusta a Amara?",
+            "options": [
+              {
+                "text": "Incluir la biblioteca y un rincón tranquilo del patio"
+              },
+              {
+                "text": "Cambiar de escuela"
+              },
+              {
+                "text": "Hacer el mapa sin colores"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Le gustó incluir la biblioteca y el rincón tranquilo.",
+            "retryFeedback": "Busca lo que propone Gabriel para el mapa."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué le cuesta a Amara apoyar a Gabriel frente a la clase?",
+            "options": [
+              {
+                "text": "Le daba miedo hablar cuando todos la miraban, aunque en casa hablaba con facilidad"
+              },
+              {
+                "text": "No le importaba la idea de Gabriel"
+              },
+              {
+                "text": "Gabriel le había pedido que no dijera nada"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Le resultaba fácil hablar en casa, pero muy difícil cuando todos la miraban.",
+            "retryFeedback": "Piensa en la pregunta que Amara se hace al principio de la página."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/la-pregunta-que-guarde-en-el-bolsillo/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Gabriel muestra su mapa sobre la mesa mientras Amara se queda callada."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b03",
+          "voice": "narration",
+          "title": "El mapa de Gabriel",
+          "lines": [
+            "Gabriel extendió su mapa sobre una mesa. Había caminos de colores, un banco bajo un árbol y una puerta que conducía a un lugar para descansar del ruido.",
+            "Dos compañeros soltaron una risa. Uno dijo que parecía el plano de una base secreta. Gabriel respondió que nadie debería necesitar una base secreta para encontrar un lugar seguro.",
+            "Me miró un instante, tal vez esperando que yo dijera lo que había dicho durante el trabajo. Yo miré mis zapatos. Nadie me había prohibido hablar. Ese fue el detalle que más me dolió."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Cómo responde Gabriel cuando se burlan de su mapa?",
+            "options": [
+              {
+                "text": "Dice que nadie debería necesitar una base secreta para sentirse seguro"
+              },
+              {
+                "text": "Se ríe también"
+              },
+              {
+                "text": "Guarda el mapa y no dice nada"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Respondió que nadie debería necesitar una base secreta para sentirse seguro.",
+            "retryFeedback": "Busca lo que dice Gabriel justo después de la risa de sus compañeros."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué es lo que más le duele a Amara de haberse quedado callada?",
+            "options": [
+              {
+                "text": "Que nadie le había prohibido hablar: fue ella quien decidió no hacerlo"
+              },
+              {
+                "text": "Que Gabriel dejó de ser su amigo"
+              },
+              {
+                "text": "Que los compañeros se rieron de ella también"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Nadie se lo impidió; ese fue justamente el detalle que más le dolió.",
+            "retryFeedback": "Vuelve a leer la última frase de la página."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p04",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b04",
+          "voice": "narration",
+          "title": "Un vaso de agua",
+          "lines": [
+            "De regreso a casa, apreté la libreta dentro del bolsillo. Quise escribir «Haz que Gabriel no se enoje conmigo», pero esa pregunta no decía toda la verdad. Me daba miedo que también se rieran de mí.",
+            "Durante la merienda, la abuela preguntó cómo había ido la presentación. Dije «normal» con una voz tan poco normal que ella levantó una ceja. No insistió. Me dejó un vaso de agua al lado.",
+            "A veces los adultos preguntan demasiado; esa tarde agradecí que Celia pudiera esperar. Yo todavía no sabía cómo contar la parte en la que me había quedado callada."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué le dejó la abuela a Amara durante la merienda?",
+            "options": [
+              {
+                "text": "Un vaso de agua"
+              },
+              {
+                "text": "Una nota escrita"
+              },
+              {
+                "text": "Su propia libreta"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Le dejó un vaso de agua al lado, sin insistir con preguntas.",
+            "retryFeedback": "Busca lo que hace la abuela después de que Amara dice «normal»."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué Amara no quiere escribir solo «Haz que Gabriel no se enoje conmigo»?",
+            "options": [
+              {
+                "text": "Porque esa pregunta no decía toda la verdad de lo que había pasado"
+              },
+              {
+                "text": "Porque prefiere no escribir nada"
+              },
+              {
+                "text": "Porque Gabriel ya no estaba enojado"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Esa pregunta no contaba toda la verdad de lo que había pasado.",
+            "retryFeedback": "Piensa en qué parte de la historia se quedaría afuera con esa pregunta."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p05",
+      "illustration": {
+        "src": "stories/la-pregunta-que-guarde-en-el-bolsillo/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Amara sentada en la alfombra de su cuarto, pensativa."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b05",
+          "voice": "narration",
+          "title": "¿Me escuchas?",
+          "lines": [
+            "Esa noche me senté en la alfombra. «Dios», dije, «hoy vi que se rieron de Gabriel y tuve miedo. No me reí, pero tampoco lo acompañé. ¿Me escuchas incluso cuando no hice lo correcto?».",
+            "Esperé otra vez. No oí una voz. Afuera pasó un auto y el ventilador volvió a hacer su ruido de helicóptero. Escribí lo que había dicho, sin cambiarlo por una versión donde yo parecía más valiente.",
+            "En la página siguiente puse: «¿Cómo distingo una respuesta de una idea mía?». No pude contestarme. Dejé la libreta abierta."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué le pregunta Amara aquella noche?",
+            "options": [
+              {
+                "text": "Si la escuchan incluso cuando no hizo lo correcto"
+              },
+              {
+                "text": "Si puede faltar a la escuela"
+              },
+              {
+                "text": "Si Gabriel volverá a hablarle"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Preguntó si la escuchaban incluso cuando no había hecho lo correcto.",
+            "retryFeedback": "Busca las palabras exactas que dice Amara sentada en la alfombra."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué Amara escribe lo que dijo sin cambiarlo por una versión más valiente?",
+            "options": [
+              {
+                "text": "Porque quería ser honesta consigo misma, no quedar bien en su propia libreta"
+              },
+              {
+                "text": "Porque se le olvidó lo que había dicho"
+              },
+              {
+                "text": "Porque la abuela le pidió que fuera exacta"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Prefirió ser honesta, aunque no quedara como la versión más valiente de sí misma.",
+            "retryFeedback": "Piensa en qué tendría de distinto una versión donde ella «parecía más valiente»."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p06",
+      "illustration": {
+        "src": "stories/la-pregunta-que-guarde-en-el-bolsillo/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Amara y su abuela Celia conversan en la cocina."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b06",
+          "voice": "narration",
+          "title": "Lo que Celia no finge",
+          "lines": [
+            "Al día siguiente le conté a la abuela lo que había pasado, incluida mi pregunta sobre Dios. Celia dejó su taza sobre la mesa. «No voy a fingir que sé exactamente lo que Él te respondió», dijo.",
+            "Eso me sorprendió; yo creía que los adultos siempre tenían preparada una respuesta. Me preguntó qué sabía con seguridad. Le dije que Gabriel había hablado en serio, que yo había querido apoyarlo y que no lo había hecho.",
+            "«Entonces ya tienes algo honesto que decirle», respondió. No prometió que Gabriel me perdonaría. Me ofreció practicar la conversación con ella, si yo quería."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q06",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué se niega a fingir Celia?",
+            "options": [
+              {
+                "text": "Que sabe exactamente qué le respondió Dios a Amara"
+              },
+              {
+                "text": "Que quiere a Amara"
+              },
+              {
+                "text": "Que Gabriel tiene razón"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! No va a fingir que sabe exactamente lo que Dios le respondió.",
+            "retryFeedback": "Busca las palabras exactas de Celia junto a la taza."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué puede reconocer Amara con seguridad, según la conversación con Celia?",
+            "options": [
+              {
+                "text": "Que Gabriel habló en serio y que ella no lo apoyó cuando pudo"
+              },
+              {
+                "text": "Que Dios le respondió con una señal clara"
+              },
+              {
+                "text": "Que la culpa fue solo de los compañeros que se rieron"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Eso es lo único que podía afirmar con seguridad: lo que ella misma vivió e hizo.",
+            "retryFeedback": "Piensa en lo que Amara responde cuando Celia le pregunta qué sabe con seguridad."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p07",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b07",
+          "voice": "narration",
+          "title": "Tres intentos",
+          "lines": [
+            "Practicamos tres veces. La primera soné como si el problema hubiera sido la risa de los demás. La segunda dije que mi silencio no importaba porque Gabriel era fuerte.",
+            "En la tercera pude decir: «Te dejé solo cuando podía hablar». Me dio vergüenza escucharlo. La abuela no borró la frase. «Esa sí es tu parte», dijo.",
+            "Yo seguía sin saber si Dios había hablado conmigo. Sabía que una oración no podía sustituir una disculpa. Guardé la libreta y decidí buscar a Gabriel después de clase, cuando pudiera escuchar su respuesta sin espectadores."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q07",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué logra decir Amara en su tercer intento de practicar la disculpa?",
+            "options": [
+              {
+                "text": "«Te dejé solo cuando podía hablar»"
+              },
+              {
+                "text": "«No fue mi culpa»"
+              },
+              {
+                "text": "«Gabriel exagera»"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Por fin pudo decir: «Te dejé solo cuando podía hablar».",
+            "retryFeedback": "Busca lo que Amara logra decir en el tercer intento, no en el primero ni el segundo."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué una oración no puede reemplazar la disculpa a Gabriel?",
+            "options": [
+              {
+                "text": "Porque hablar con Dios no sustituye hablar de verdad con la persona a la que se lastimó"
+              },
+              {
+                "text": "Porque las oraciones no cuentan si se hacen en voz baja"
+              },
+              {
+                "text": "Porque Gabriel no cree en Dios"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Amara entiende que aún necesita hablar directamente con Gabriel.",
+            "retryFeedback": "Piensa en qué decide hacer Amara justo después de esa idea."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p08",
+      "illustration": {
+        "src": "stories/la-pregunta-que-guarde-en-el-bolsillo/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Amara habla con Gabriel junto a los casilleros de la escuela."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b08",
+          "voice": "narration",
+          "title": "No necesito que pelees por mí",
+          "lines": [
+            "Lo encontré cerrando su carpeta. Antes de que yo empezara, dijo: «No necesito que pelees por mí». Me quedé quieta.",
+            "Él añadió: «Pero estabas en nuestro equipo. Dijiste que el rincón del patio era buena idea y luego miraste al piso». Tenía razón. Le conté que me había dado miedo. No lo usé como excusa. «Lo siento», dije.",
+            "Gabriel se apoyó en la mesa. «No sé si quiero presentar otra vez con ustedes». Me dieron ganas de decirle que todo saldría bien. En lugar de eso, le pregunté qué quería hacer con su mapa."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q08",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué le pide Gabriel a Amara que entienda?",
+            "options": [
+              {
+                "text": "Que estaba en el equipo y debió apoyarlo, no solo no burlarse"
+              },
+              {
+                "text": "Que nunca vuelva a hablarle"
+              },
+              {
+                "text": "Que ella tenía razón sobre el mapa"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Le pidió que entendiera que estaba en el equipo y debió apoyarlo.",
+            "retryFeedback": "Busca lo que le dice Gabriel justo después de «No necesito que pelees por mí»."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué Amara le pregunta a Gabriel qué quiere hacer con el mapa, en vez de prometerle que todo saldrá bien?",
+            "options": [
+              {
+                "text": "Porque una promesa vacía no habría sido honesta"
+              },
+              {
+                "text": "Porque ya no le importaba el mapa"
+              },
+              {
+                "text": "Porque Gabriel se lo pidió expresamente"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Prefirió preguntar de verdad en vez de prometer algo que no podía garantizar.",
+            "retryFeedback": "Piensa en lo que Amara «tenía ganas» de decir y por qué no lo dijo."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p09",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b09",
+          "voice": "narration",
+          "title": "El rincón tranquilo",
+          "lines": [
+            "Gabriel quería conservar el rincón tranquilo. «No es para esconder a nadie», explicó. «Es para que alguien pueda decidir si necesita compañía o un minuto a solas».",
+            "Me mostró un camino que yo no había visto: desde la entrada hasta la biblioteca sin pasar por el pasillo más ruidoso. Le pregunté si podía ayudar a revisar las rutas, pero dejé claro que el mapa seguía siendo suyo.",
+            "Dijo que lo pensaría. Aquella respuesta no era un sí. También era mejor que una promesa hecha solo para que yo me sintiera menos culpable."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q09",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Para qué sirve el rincón tranquilo, según Gabriel?",
+            "options": [
+              {
+                "text": "Para que alguien decida si necesita compañía o un minuto a solas"
+              },
+              {
+                "text": "Para esconderse de la maestra"
+              },
+              {
+                "text": "Para guardar los mapas del salón"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Sirve para que alguien decida si necesita compañía o un momento a solas.",
+            "retryFeedback": "Busca la explicación de Gabriel entre comillas."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Cómo respeta Amara que el mapa siga siendo de Gabriel?",
+            "options": [
+              {
+                "text": "Le pregunta si puede ayudar, pero deja claro que la decisión final es de él"
+              },
+              {
+                "text": "Cambia el mapa sin avisarle"
+              },
+              {
+                "text": "Le pide a la maestra que se lo entregue a ella"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Preguntó primero y dejó claro que la decisión seguía siendo de Gabriel.",
+            "retryFeedback": "Piensa en la diferencia entre pedir permiso y decidir por otro."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p10",
+      "illustration": {
+        "src": "stories/la-pregunta-que-guarde-en-el-bolsillo/page-10.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Amara y Gabriel revisan juntos el mapa en clase."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b10",
+          "voice": "narration",
+          "title": "La sombra que se movía",
+          "lines": [
+            "Al otro día Gabriel puso el mapa entre los dos. Me pidió comprobar si el banco del patio quedaba a la sombra durante el recreo. Salimos a verlo y descubrimos que la sombra se movía; dibujamos otra opción bajo el árbol grande.",
+            "En la nueva presentación, Gabriel explicó la idea y yo añadí lo que habíamos observado. Nadie volvió a llamarlo base secreta. Si alguien lo hubiera hecho, yo ya tenía una frase preparada y estaba dispuesta a decirla.",
+            "Cuando terminamos, Gabriel recogió el mapa con una pequeña sonrisa. Nuestra amistad todavía estaba encontrando su camino."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q10",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué descubren Amara y Gabriel sobre el banco del patio?",
+            "options": [
+              {
+                "text": "Que la sombra se movía durante el recreo"
+              },
+              {
+                "text": "Que estaba roto"
+              },
+              {
+                "text": "Que nadie lo usaba"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Descubrieron que la sombra del banco se movía durante el recreo.",
+            "retryFeedback": "Busca lo que salen a comprobar sobre el banco."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué cambio muestra Amara en la segunda presentación?",
+            "options": [
+              {
+                "text": "Participa y añade lo que observó, en vez de quedarse callada"
+              },
+              {
+                "text": "Presenta sola, sin Gabriel"
+              },
+              {
+                "text": "Deja que Gabriel hable por los dos, igual que antes"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Esta vez participó y añadió lo que había observado.",
+            "retryFeedback": "Compara esta presentación con la primera, en la página 3."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p11",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b11",
+          "voice": "narration",
+          "title": "Esta parte es mía",
+          "lines": [
+            "Le enseñé la libreta a Celia, pero tapé una página con la mano. «Esta parte es mía», le dije. Ella sonrió y no intentó leerla.",
+            "Le conté que había pedido perdón y que Gabriel había decidido volver a trabajar conmigo. «¿Eso fue la respuesta de Dios?», pregunté. La abuela miró la ventana un momento.",
+            "«Yo no puedo ponerle nombre a todo lo que tú viviste», respondió. «Puedes seguir hablándole y prestar atención a lo que vas aprendiendo». Me gustó que no cerrara mi pregunta con un lazo bonito. Algunas preguntas necesitan más de un día."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q11",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué página de la libreta decide no mostrar Amara?",
+            "options": [
+              {
+                "text": "Una que tapa con la mano y dice que es solo suya"
+              },
+              {
+                "text": "La primera página"
+              },
+              {
+                "text": "Ninguna: le mostró todo el cuaderno"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Tapó una página con la mano y dijo: «Esta parte es mía».",
+            "retryFeedback": "Busca lo que hace Amara con la mano antes de enseñarle la libreta a Celia."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué Celia no le dice a Amara si lo que vivió fue una respuesta de Dios?",
+            "options": [
+              {
+                "text": "Porque prefiere no decidir por ella algo tan personal, y la anima a seguir prestando atención"
+              },
+              {
+                "text": "Porque no cree que Dios exista"
+              },
+              {
+                "text": "Porque no escuchó bien la historia de Amara"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Celia deja esa pregunta abierta para que Amara siga descubriéndola por sí misma.",
+            "retryFeedback": "Vuelve a leer exactamente lo que responde la abuela junto a la ventana."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p12",
+      "illustration": {
+        "src": "stories/la-pregunta-que-guarde-en-el-bolsillo/page-12.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Amara escribe en su libreta, acostada en la alfombra de noche."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b12",
+          "voice": "narration",
+          "title": "Aquí estoy otra vez",
+          "lines": [
+            "Esa noche volví a sentarme en la alfombra. El ventilador seguía pareciendo un helicóptero cansado. Abrí la libreta y escribí: «Todavía no sé reconocer todas tus respuestas.",
+            "Hoy dije la verdad, escuché a Gabriel e hice algo que ayer me daba miedo». No sabía si aquellas palabras eran una conclusión o el comienzo de otra conversación.",
+            "Entonces dije, bajito: «Aquí estoy otra vez». No esperé que el cielo cambiara de color. Dejé la libreta abierta, porque aún tenía espacio para más preguntas."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q12",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué dice Amara en voz baja al final?",
+            "options": [
+              {
+                "text": "«Aquí estoy otra vez»"
+              },
+              {
+                "text": "«Ya terminé»"
+              },
+              {
+                "text": "«No volveré a escribir»"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Dijo bajito: «Aquí estoy otra vez».",
+            "retryFeedback": "Busca las palabras que Amara dice al final, entre comillas."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué Amara deja la libreta abierta al final?",
+            "options": [
+              {
+                "text": "Porque todavía tiene espacio para más preguntas, no porque haya encontrado todas las respuestas"
+              },
+              {
+                "text": "Porque se quedó dormida"
+              },
+              {
+                "text": "Porque quiere que Celia la lea"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! La dejó abierta porque todavía había espacio para más preguntas.",
+            "retryFeedback": "Busca la última frase de la historia."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "oración": {
+      "syllables": [
+        "o",
+        "ra",
+        "ción"
+      ],
+      "definition": "Palabras que alguien dice para hablar con Dios.",
+      "synonym": "plegaria",
+      "example": "Antes de dormir, hacía una oración en silencio."
+    },
+    "pregunta": {
+      "syllables": [
+        "pre",
+        "gun",
+        "ta"
+      ],
+      "definition": "Lo que alguien dice cuando quiere saber algo.",
+      "synonym": "interrogante",
+      "example": "Levantó la mano para hacer una pregunta sobre la tarea."
+    },
+    "silencio": {
+      "syllables": [
+        "si",
+        "len",
+        "cio"
+      ],
+      "definition": "Ausencia de sonido o de palabras.",
+      "synonym": "quietud",
+      "example": "Hubo un silencio total cuando la maestra entró al salón."
+    },
+    "valiente": {
+      "syllables": [
+        "va",
+        "lien",
+        "te"
+      ],
+      "definition": "Que actúa a pesar del miedo.",
+      "example": "Fue valiente al defender a su amigo aunque tenía miedo."
+    },
+    "disculpa": {
+      "syllables": [
+        "dis",
+        "cul",
+        "pa"
+      ],
+      "definition": "Palabras con las que alguien reconoce que se equivocó.",
+      "synonym": "perdón",
+      "example": "Le pidió una disculpa a su hermana por haber roto su juguete."
+    },
+    "escuchar": {
+      "syllables": [
+        "es",
+        "cu",
+        "char"
+      ],
+      "definition": "Prestar atención de verdad a lo que otra persona dice.",
+      "synonym": "atender",
+      "example": "Es importante escuchar a un amigo cuando está triste."
+    },
+    "respeto": {
+      "syllables": [
+        "res",
+        "pe",
+        "to"
+      ],
+      "definition": "Trato considerado hacia los sentimientos o las decisiones de otra persona.",
+      "synonym": "consideración",
+      "example": "Mostró respeto al esperar su turno para hablar."
+    },
+    "compañía": {
+      "syllables": [
+        "com",
+        "pa",
+        "ñí",
+        "a"
+      ],
+      "definition": "Presencia de alguien que acompaña.",
+      "synonym": "acompañamiento",
+      "example": "Agradeció su compañía durante el largo viaje en autobús."
+    },
+    "perdón": {
+      "syllables": [
+        "per",
+        "dón"
+      ],
+      "definition": "Lo que se pide cuando alguien reconoce haber hecho daño.",
+      "synonym": "disculpa",
+      "example": "Pidió perdón por haber llegado tarde a la reunión."
+    },
+    "duda": {
+      "syllables": [
+        "du",
+        "da"
+      ],
+      "definition": "Falta de certeza sobre algo.",
+      "synonym": "incertidumbre",
+      "example": "Tenía una duda sobre cómo resolver el problema de matemáticas."
+    },
+    "mapa": {
+      "syllables": [
+        "ma",
+        "pa"
+      ],
+      "definition": "Dibujo que muestra cómo llegar de un lugar a otro.",
+      "synonym": "plano",
+      "example": "Usamos un mapa para encontrar el camino al campamento."
+    },
+    "respuesta": {
+      "syllables": [
+        "res",
+        "pues",
+        "ta"
+      ],
+      "definition": "Lo que se dice o se descubre después de una pregunta.",
+      "synonym": "contestación",
+      "example": "Dio la respuesta correcta antes que nadie más en la clase."
+    }
+  }
+}

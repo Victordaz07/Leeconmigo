@@ -1,0 +1,270 @@
+{
+  "familyId": "la-cupula-que-parpadeaba",
+  "version": 1,
+  "pages": {
+    "p01": {
+      "blocks": {
+        "b01": {
+          "balloon": {
+            "x": 0,
+            "y": 0,
+            "width": 564,
+            "height": 1024
+          },
+          "text": {
+            "x": 21,
+            "y": 15,
+            "width": 522,
+            "height": 994
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p02": {
+      "blocks": {
+        "b02": {
+          "balloon": {
+            "x": 338,
+            "y": 0,
+            "width": 1198,
+            "height": 356
+          },
+          "text": {
+            "x": 359,
+            "y": 15,
+            "width": 1156,
+            "height": 326
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p04": {
+      "blocks": {
+        "b04": {
+          "balloon": {
+            "x": 93,
+            "y": 0,
+            "width": 1422,
+            "height": 268
+          },
+          "text": {
+            "x": 114,
+            "y": 15,
+            "width": 1380,
+            "height": 238
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p05": {
+      "blocks": {
+        "b05": {
+          "balloon": {
+            "x": 0,
+            "y": 0,
+            "width": 684,
+            "height": 1024
+          },
+          "text": {
+            "x": 21,
+            "y": 15,
+            "width": 642,
+            "height": 994
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p06": {
+      "blocks": {
+        "b06": {
+          "balloon": {
+            "x": 892,
+            "y": 0,
+            "width": 644,
+            "height": 1024
+          },
+          "text": {
+            "x": 913,
+            "y": 15,
+            "width": 602,
+            "height": 994
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p08": {
+      "blocks": {
+        "b08": {
+          "balloon": {
+            "x": 0,
+            "y": 0,
+            "width": 1514,
+            "height": 236
+          },
+          "text": {
+            "x": 21,
+            "y": 15,
+            "width": 1472,
+            "height": 206
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p09": {
+      "blocks": {
+        "b09": {
+          "balloon": {
+            "x": 0,
+            "y": 0,
+            "width": 612,
+            "height": 1024
+          },
+          "text": {
+            "x": 21,
+            "y": 15,
+            "width": 570,
+            "height": 994
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p11": {
+      "blocks": {
+        "b11": {
+          "balloon": {
+            "x": 836,
+            "y": 0,
+            "width": 700,
+            "height": 1024
+          },
+          "text": {
+            "x": 857,
+            "y": 15,
+            "width": 658,
+            "height": 994
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p12": {
+      "blocks": {
+        "b12": {
+          "balloon": {
+            "x": 0,
+            "y": 0,
+            "width": 1536,
+            "height": 388
+          },
+          "text": {
+            "x": 21,
+            "y": 15,
+            "width": 1494,
+            "height": 358
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p13": {
+      "blocks": {
+        "b13": {
+          "balloon": {
+            "x": 0,
+            "y": 0,
+            "width": 644,
+            "height": 1024
+          },
+          "text": {
+            "x": 21,
+            "y": 15,
+            "width": 602,
+            "height": 994
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p15": {
+      "blocks": {
+        "b15": {
+          "balloon": {
+            "x": 0,
+            "y": 0,
+            "width": 1536,
+            "height": 277
+          },
+          "text": {
+            "x": 21,
+            "y": 15,
+            "width": 1494,
+            "height": 247
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p16": {
+      "blocks": {
+        "b16": {
+          "balloon": {
+            "x": 988,
+            "y": 4,
+            "width": 548,
+            "height": 1020
+          },
+          "text": {
+            "x": 1009,
+            "y": 19,
+            "width": 506,
+            "height": 990
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    }
+  }
+}

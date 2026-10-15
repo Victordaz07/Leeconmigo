@@ -1,0 +1,2047 @@
+{
+  "id": "la-cupula-que-parpadeaba",
+  "status": "libro-completo-editorial",
+  "title": {
+    "es": "La cúpula que parpadeaba",
+    "en": "The Dome That Blinked"
+  },
+  "targetReaderAge": 10,
+  "cover": "imagenes/portada.png",
+  "characterSheet": "imagenes/personajes.png",
+  "canvas": {
+    "width": 1536,
+    "height": 1024
+  },
+  "chapters": [
+    {
+      "number": 1,
+      "pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "title": {
+        "es": "Una luz imposible",
+        "en": "An impossible light"
+      }
+    },
+    {
+      "number": 2,
+      "pages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "title": {
+        "es": "Detrás del vidrio",
+        "en": "Behind the glass"
+      }
+    },
+    {
+      "number": 3,
+      "pages": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "title": {
+        "es": "La tormenta",
+        "en": "The dust storm"
+      }
+    },
+    {
+      "number": 4,
+      "pages": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "title": {
+        "es": "Una señal de verdad",
+        "en": "A signal at last"
+      }
+    }
+  ],
+  "pageCount": 16,
+  "wordCount": {
+    "es": 2673,
+    "en": 2597
+  },
+  "estimatedReadingMinutesAt140Wpm": {
+    "es": 19.1,
+    "en": 18.6
+  },
+  "pages": [
+    {
+      "id": "p01",
+      "chapter": 1,
+      "layout": "side-right",
+      "image": "imagenes/pagina-01.png",
+      "languages": {
+        "es": {
+          "title": "La cúpula vieja",
+          "paragraphs": [
+            "Vera e Ivo iban hacia el comedor cuando Pico, su pequeño robot de ruedas, se detuvo en mitad del pasillo de cristal. Su único ojo brilló de color azul.",
+            "Al otro lado del vidrio se extendía Marte: rocas rojas, una hilera de antenas y, mucho más lejos, una cúpula cubierta de polvo. Nadie vivía allí desde que los niños podían recordar.",
+            "De pronto, una luz turquesa apareció dentro. Se apagó. Volvió a encenderse.",
+            "—¿La viste? —preguntó Ivo.",
+            "Vera asintió. Detrás de ellos, la ingeniera Mara dejó su caja de herramientas junto a las macetas del corredor.",
+            "—Esa cúpula lleva años cerrada —dijo. Miró de nuevo y frunció el ceño—. No debería tener ninguna luz encendida.",
+            "Pico imitó el destello con su ojo. Los tres lo observaron. La luz lejana volvió a aparecer, pero esta vez Pico no había hecho nada."
+          ],
+          "alt": "Vera, Ivo, Mara y Pico ven un destello en la vieja cúpula a través del pasillo de cristal.",
+          "checkpoint": {
+            "id": "q01",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Dónde aparece la primera luz?",
+                "options": [
+                  {
+                    "text": "Debajo de Pico"
+                  },
+                  {
+                    "text": "En la cúpula vieja"
+                  },
+                  {
+                    "text": "En el comedor"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Mira al otro lado del pasillo de cristal."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Por qué sorprende a Mara?",
+                "options": [
+                  {
+                    "text": "El vidrio es verde"
+                  },
+                  {
+                    "text": "La cena aún no está lista"
+                  },
+                  {
+                    "text": "La cúpula lleva años cerrada"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Mira al otro lado del pasillo de cristal."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "The old dome",
+          "paragraphs": [
+            "Vera and Ivo were on their way to dinner when Pico, their little wheeled robot, stopped in the middle of the glass corridor. Its single eye glowed blue.",
+            "Beyond the glass lay Mars: red rocks, a line of aerials, and, farther away, a dome coated in dust. No one had lived there for as long as either child could remember.",
+            "Then a turquoise light appeared inside it. It went out. It came back on.",
+            "“Did you see that?” Ivo asked.",
+            "Vera nodded. Behind them, Mara the engineer set down her toolbox beside the corridor planters.",
+            "“That dome has been closed for years,” she said. She looked again and frowned. “There shouldn’t be any light in there.”",
+            "Pico copied the flash with its eye. The three of them watched. The distant light returned, and this time Pico had done nothing."
+          ],
+          "alt": "Vera, Ivo, Mara and Pico spot a light inside the old dome through a glass corridor.",
+          "checkpoint": {
+            "id": "q01",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "Where does the first light appear?",
+                "options": [
+                  {
+                    "text": "Under Pico"
+                  },
+                  {
+                    "text": "Inside the old dome"
+                  },
+                  {
+                    "text": "In the dining hall"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Look beyond the glass corridor."
+              },
+              {
+                "audience": "lector",
+                "prompt": "Why is Mara surprised?",
+                "options": [
+                  {
+                    "text": "The glass is green"
+                  },
+                  {
+                    "text": "Dinner is late"
+                  },
+                  {
+                    "text": "The dome has been closed for years"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Look beyond the glass corridor."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p02",
+      "chapter": 1,
+      "layout": "bottom",
+      "image": "imagenes/pagina-02.png",
+      "languages": {
+        "es": {
+          "title": "Tres luces y una pausa",
+          "paragraphs": [
+            "Vera apoyó las manos en el marco de la ventana. La cúpula parpadeó tres veces rápidas, descansó un instante y lanzó un brillo más largo.",
+            "—Tres y una —dijo Ivo, levantando los dedos—. Quizá alguien intenta hablar.",
+            "Pico hizo cuatro destellos tan veloces que Vera se echó a reír. Mara le pidió que apagara el ojo un momento para no confundirlos.",
+            "Ivo vio la luz también dentro de su vaso de agua. Por un instante pensó que el misterio estaba en la mesa. Vera movió el vaso; el reflejo se movió con él. La cúpula, en cambio, seguía brillando en el mismo sitio.",
+            "—Lo que hay en el vaso es una copia —dijo ella—. Hay que averiguar de dónde viene la luz verdadera.",
+            "Anotaron la hora y observaron otra ronda. Esta vez hubo dos destellos, una pausa y uno largo.",
+            "—Si fuera un mensaje, ¿por qué cambiaría? —preguntó Mara. Ivo bajó los dedos, pero no perdió la curiosidad."
+          ],
+          "alt": "Los niños cuentan destellos; Pico los imita y un vaso refleja la luz lejana.",
+          "checkpoint": {
+            "id": "q02",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Dónde ven un reflejo de la luz?",
+                "options": [
+                  {
+                    "text": "En una piedra"
+                  },
+                  {
+                    "text": "En la antena"
+                  },
+                  {
+                    "text": "En el vaso de agua"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Prueba a mover el vaso como hizo Vera."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Qué demuestra mover el vaso?",
+                "options": [
+                  {
+                    "text": "Que esa luz es un reflejo"
+                  },
+                  {
+                    "text": "Que el domo se mueve"
+                  },
+                  {
+                    "text": "Que Pico causó los destellos"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Prueba a mover el vaso como hizo Vera."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "Three flashes and a pause",
+          "paragraphs": [
+            "Vera gripped the window frame. The dome flashed three times, paused for a moment, then gave a longer glow.",
+            "“Three and one,” said Ivo, holding up his fingers. “Maybe somebody’s talking to us.”",
+            "Pico flashed four times so quickly that Vera laughed. Mara asked the robot to switch off its eye for a moment so they could see clearly.",
+            "Ivo spotted the light in his cup of water too. For a second he wondered whether the mystery was on the table. Vera moved the cup; its reflection moved with it. The distant dome stayed put.",
+            "“The one in the cup is a copy,” she said. “We need to find the real light.”",
+            "They noted the time and watched again. This time there were two flashes, a pause, and one long glow.",
+            "“If it’s a message, why does it change?” Mara asked. Ivo lowered his fingers, but he kept wondering."
+          ],
+          "alt": "The children count flashes, Pico copies them, and a cup reflects the distant light.",
+          "checkpoint": {
+            "id": "q02",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "Where do they see a reflection?",
+                "options": [
+                  {
+                    "text": "On a stone"
+                  },
+                  {
+                    "text": "On an aerial"
+                  },
+                  {
+                    "text": "In a cup of water"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Try moving the cup like Vera did."
+              },
+              {
+                "audience": "lector",
+                "prompt": "What does moving the cup show?",
+                "options": [
+                  {
+                    "text": "That the light there is a reflection"
+                  },
+                  {
+                    "text": "That the dome moves"
+                  },
+                  {
+                    "text": "That Pico made the flashes"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Try moving the cup like Vera did."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p03",
+      "chapter": 1,
+      "layout": "text-only",
+      "image": null,
+      "languages": {
+        "es": {
+          "title": "Lo que decía el archivo",
+          "paragraphs": [
+            "Mara abrió el archivo de mantenimiento en una pantalla. La cúpula antigua había sido un vivero donde las primeras familias de la colonia cultivaban flores y verduras.",
+            "Años atrás, una tormenta había averiado la bomba principal de agua. Cerraron el paso al público, guardaron allí las semillas que quedaban y trasladaron los cultivos a la cúpula nueva.",
+            "—¿Y nunca volvió nadie? —preguntó Vera.",
+            "—Unos técnicos la revisaron, pero no volvió a abrirse como jardín —respondió Mara.",
+            "En una fotografía antigua se veía un aparato pequeño entre los bancales. Se llamaba Nido: un jardinero automático de cobre que recogía gotas de agua y vigilaba las plantas. El archivo decía que ya no estaba en servicio.",
+            "Ivo señaló la fotografía. —¿Y si Nido sigue allí?",
+            "—Es posible. También es posible que solo estemos viendo una lámpara estropeada —dijo Mara—. Aún no sabemos cuál de las dos cosas es cierta.",
+            "Prometieron no tocar ninguna puerta sin ella. Podían investigar desde los lugares seguros de la estación."
+          ],
+          "alt": null,
+          "checkpoint": {
+            "id": "q03",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Qué se cultivaba en la vieja cúpula?",
+                "options": [
+                  {
+                    "text": "Flores y verduras"
+                  },
+                  {
+                    "text": "Rocas brillantes"
+                  },
+                  {
+                    "text": "Motores"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Busca lo que Mara encontró en el archivo."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Qué saben de Nido en este momento?",
+                "options": [
+                  {
+                    "text": "Está en el comedor"
+                  },
+                  {
+                    "text": "El archivo dice que dejó de funcionar"
+                  },
+                  {
+                    "text": "Ya lo vieron trabajando"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Busca lo que Mara encontró en el archivo."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "The old records",
+          "paragraphs": [
+            "Mara opened the maintenance records on a screen. The old dome had once been a nursery where the colony’s first families grew flowers and vegetables.",
+            "Years before, a dust storm had damaged its main water pump. The team closed it to visitors, stored the remaining seeds there, and moved their crops to a newer dome.",
+            "“Did nobody ever go back?” Vera asked.",
+            "“Technicians checked it, but it never reopened as a garden,” Mara said.",
+            "In an old photograph, a small machine stood among the planting beds. It was called Nido: a copper-coloured automatic gardener that collected drops of water and checked the plants. The records listed it as out of service.",
+            "Ivo pointed at the photograph. “What if Nido is still in there?”",
+            "“That’s possible. So is a broken lamp,” Mara said. “We don’t know which explanation is right yet.”",
+            "They promised not to touch any door without her. There was plenty they could investigate from the station’s safe rooms."
+          ],
+          "alt": null,
+          "checkpoint": {
+            "id": "q03",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "What once grew in the old dome?",
+                "options": [
+                  {
+                    "text": "Flowers and vegetables"
+                  },
+                  {
+                    "text": "Glowing rocks"
+                  },
+                  {
+                    "text": "Engines"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Check what Mara found in the records."
+              },
+              {
+                "audience": "lector",
+                "prompt": "What do they know about Nido so far?",
+                "options": [
+                  {
+                    "text": "It is in the dining hall"
+                  },
+                  {
+                    "text": "The record lists it as out of service"
+                  },
+                  {
+                    "text": "They have seen it working"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Check what Mara found in the records."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p04",
+      "chapter": 1,
+      "layout": "bottom",
+      "image": "imagenes/pagina-04.png",
+      "languages": {
+        "es": {
+          "title": "El cielo se vuelve rojo",
+          "paragraphs": [
+            "A la mañana siguiente, el horizonte ya no era una línea. Una nube de polvo rosado avanzaba por el desierto y tapaba las montañas una tras otra.",
+            "Mara se reunió con los niños en el corredor cerrado. Les explicó que la estación tenía puertas y filtros para proteger a sus habitantes. Nadie tendría que salir al exterior para mirar la cúpula.",
+            "—La tormenta llegará esta noche —dijo—. Si esa luz indica una avería, prefiero saberlo antes.",
+            "Vera abrió un cuaderno limpio. Ivo sostuvo el reloj. Cada vez que la luz aparecía, anotaban la hora y el lugar donde la veían. Pico se quedó quieto, cosa que le resultaba dificilísima.",
+            "Tras varias rondas, Vera descubrió algo extraño. A veces la cúpula parecía enviar tres destellos; otras veces, solo dos. La luz no se desplazaba, pero una sombra oscura pasaba delante de ella.",
+            "Ivo acercó la cara al cristal. —Entonces quizá no cambia la luz. Quizá cambia lo que hay delante.",
+            "Mara sonrió. —Esa sí es una pista que podemos comprobar."
+          ],
+          "alt": "Mara y los niños contemplan la tormenta roja que se acerca a la cúpula.",
+          "checkpoint": {
+            "id": "q04",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Qué se acerca a la colonia?",
+                "options": [
+                  {
+                    "text": "Una nave azul"
+                  },
+                  {
+                    "text": "Una tormenta de polvo"
+                  },
+                  {
+                    "text": "Un tren"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Observa el cielo y lo que cruza la luz."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Qué nueva pista ve Vera?",
+                "options": [
+                  {
+                    "text": "La cúpula cambia de lugar"
+                  },
+                  {
+                    "text": "El vaso vuela"
+                  },
+                  {
+                    "text": "Una sombra pasa delante de la luz"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Observa el cielo y lo que cruza la luz."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "A redder sky",
+          "paragraphs": [
+            "By the next morning, the horizon was no longer a line. A pink cloud of dust rolled across the desert, swallowing one mountain after another.",
+            "Mara met the children in the enclosed corridor. The station had doors and filters to keep everyone safe, she explained. No one needed to go outside to look at the old dome.",
+            "“The storm will reach us tonight,” she said. “If that light means something is broken, I’d like to know before then.”",
+            "Vera opened a clean notebook. Ivo held the clock. Whenever the light appeared, they marked its time and position. Pico stayed still, which was unusually hard for Pico.",
+            "After several rounds, Vera noticed something odd. Sometimes the dome seemed to send three flashes; sometimes only two. The light stayed in place, but a dark shadow passed across it.",
+            "Ivo leaned closer to the glass. “Maybe the light isn’t changing. Maybe something in front of it is.”",
+            "Mara smiled. “Now that is a clue we can check.”"
+          ],
+          "alt": "Mara and the children watch a red dust storm approach the dome.",
+          "checkpoint": {
+            "id": "q04",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "What is approaching the colony?",
+                "options": [
+                  {
+                    "text": "A blue ship"
+                  },
+                  {
+                    "text": "A dust storm"
+                  },
+                  {
+                    "text": "A train"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Watch the sky and what crosses the light."
+              },
+              {
+                "audience": "lector",
+                "prompt": "What new clue does Vera notice?",
+                "options": [
+                  {
+                    "text": "The dome moves away"
+                  },
+                  {
+                    "text": "The cup flies"
+                  },
+                  {
+                    "text": "A shadow crosses the light"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Watch the sky and what crosses the light."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p05",
+      "chapter": 2,
+      "layout": "side-right",
+      "image": "imagenes/pagina-05.png",
+      "languages": {
+        "es": {
+          "title": "Una sombra con aspas",
+          "paragraphs": [
+            "Desde la ventana de observación, Mara amplió la vista de la cúpula. Ivo encontró primero la lámpara, pequeña y amarilla. Vera vio luego las aspas de un ventilador que giraba despacio sobre ella.",
+            "Cada aspa tapaba la luz por un momento. Cuando dos pasaban casi juntas, desde lejos parecía que la lámpara enviaba una serie de destellos. El ventilador tropezaba, se detenía y volvía a girar.",
+            "—Mis tres luces eran una sombra —dijo Ivo.",
+            "—Por lo menos, parte de ellas —respondió Vera—. Falta saber por qué está encendida la lámpara.",
+            "Pico colocó una pinza delante de su ojo e intentó hacer una sombra igual. La pinza resbaló y le quedó como un bigote metálico. Incluso Mara se rio.",
+            "Al repetir la observación, vieron algo más: detrás del ventilador había zonas verdes. El cristal estaba tan sucio que no podían distinguir si eran hojas, manchas o simples reflejos.",
+            "Mara decidió revisar el túnel interior que comunicaba las dos cúpulas. La tormenta aún estaba lejos, pero ya no sobraba tiempo."
+          ],
+          "alt": "Desde la estación, miran por un telescopio la cúpula distante; un detalle muestra el ventilador ante la lámpara.",
+          "checkpoint": {
+            "id": "q05",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Qué proyecta la sombra?",
+                "options": [
+                  {
+                    "text": "Un árbol de fuera"
+                  },
+                  {
+                    "text": "La mochila de Ivo"
+                  },
+                  {
+                    "text": "Las aspas de un ventilador"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Piensa en algo que gira delante de una lámpara."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Por qué parecen cambiar los destellos?",
+                "options": [
+                  {
+                    "text": "Las aspas tapan la lámpara de modo irregular"
+                  },
+                  {
+                    "text": "La lámpara sabe hablar"
+                  },
+                  {
+                    "text": "Pico cambia el reloj"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Piensa en algo que gira delante de una lámpara."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "The shadow of a fan",
+          "paragraphs": [
+            "From the observation window, Mara magnified the old dome. Ivo found the small yellow lamp first. Then Vera spotted the blades of a fan turning slowly above it.",
+            "Each blade covered the light for an instant. When two passed close together, the lamp appeared to flash from far away. The fan hesitated, stopped, and started again.",
+            "“My three flashes were a shadow,” Ivo said.",
+            "“At least some of them were,” Vera replied. “We still don’t know why the lamp is on.”",
+            "Pico held a claw in front of its eye and tried to make a similar shadow. The claw slipped and looked like a metal moustache. Even Mara laughed.",
+            "On their next look, they noticed green patches behind the fan. The glass was so dusty that they couldn’t tell whether those shapes were leaves, stains, or reflections.",
+            "Mara decided to check the enclosed tunnel connecting the two domes. The storm was still far away, but they no longer had much time."
+          ],
+          "alt": "From the station they study the distant dome by telescope; a detail shows the fan in front of the lamp.",
+          "checkpoint": {
+            "id": "q05",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "What casts the shadow?",
+                "options": [
+                  {
+                    "text": "A tree outside"
+                  },
+                  {
+                    "text": "Ivo’s bag"
+                  },
+                  {
+                    "text": "The fan blades"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Think of something turning in front of a lamp."
+              },
+              {
+                "audience": "lector",
+                "prompt": "Why do the flashes seem to change?",
+                "options": [
+                  {
+                    "text": "The blades cover the lamp unevenly"
+                  },
+                  {
+                    "text": "The lamp can talk"
+                  },
+                  {
+                    "text": "Pico changes the clock"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Think of something turning in front of a lamp."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p06",
+      "chapter": 2,
+      "layout": "side-left",
+      "image": "imagenes/pagina-06.png",
+      "languages": {
+        "es": {
+          "title": "El túnel cerrado",
+          "paragraphs": [
+            "El túnel de servicio no cruzaba el desierto al aire libre. Era un pasillo protegido, con puertas gruesas y ventanas pequeñas. Mara comprobó la presión antes de abrir la primera puerta.",
+            "—Una puerta a la vez —les recordó—. Si un indicador cambia, regresamos.",
+            "Pico rodó delante de todos y chocó suavemente con una caja olvidada. Ivo la levantó para despejar el camino. Tras el segundo vidrio, la cúpula vieja ya parecía enorme.",
+            "El polvo cubría el suelo exterior. Dentro, en cambio, había algo que no encajaba: una fila de gotitas resbalaba por la cara interna de un panel transparente.",
+            "—Hay humedad —dijo Vera.",
+            "Mara miró los medidores. El aire del pasillo estaba en buen estado; podían quedarse allí mientras ella revisaba la siguiente compuerta. Nadie entró aún en la zona de cultivo.",
+            "Ivo señaló las gotas. —Si aquí no riega nadie, ¿de dónde sale el agua?",
+            "Pico giró su ojo hacia el fondo verde del vidrio. Vera pensó en la foto antigua de Nido."
+          ],
+          "alt": "Mara comprueba una puerta del túnel protegido mientras los niños esperan detrás.",
+          "checkpoint": {
+            "id": "q06",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Por dónde se acercan a la cúpula?",
+                "options": [
+                  {
+                    "text": "Por un túnel protegido"
+                  },
+                  {
+                    "text": "Por el desierto abierto"
+                  },
+                  {
+                    "text": "Por el techo"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Recuerda que nadie salió al desierto."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Por qué llaman la atención las gotas?",
+                "options": [
+                  {
+                    "text": "Las hizo Pico en su ojo"
+                  },
+                  {
+                    "text": "Sugieren humedad dentro de la cúpula"
+                  },
+                  {
+                    "text": "Demuestran que llovió en Marte"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Recuerda que nadie salió al desierto."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "The sealed tunnel",
+          "paragraphs": [
+            "The service tunnel did not cross the desert in the open. It was an enclosed passage with thick doors and small windows. Mara checked the pressure before opening the first door.",
+            "“One door at a time,” she reminded them. “If a gauge changes, we turn back.”",
+            "Pico rolled ahead and bumped gently into an abandoned crate. Ivo lifted it out of the way. Beyond the second window, the old dome looked enormous.",
+            "Outside, dust covered the ground. Inside, something did not fit: a row of droplets slid down the inner face of a clear panel.",
+            "“It’s damp in there,” Vera said.",
+            "Mara checked the gauges. The corridor air was safe; they could wait while she inspected the next hatch. Nobody entered the planting area yet.",
+            "Ivo pointed at the drops. “If no one waters this place, where is that water coming from?”",
+            "Pico turned its eye towards the green blur behind the glass. Vera remembered the old picture of Nido."
+          ],
+          "alt": "Mara checks a door in the enclosed tunnel while the children wait behind her.",
+          "checkpoint": {
+            "id": "q06",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "How do they approach the dome?",
+                "options": [
+                  {
+                    "text": "Through an enclosed tunnel"
+                  },
+                  {
+                    "text": "Across the open desert"
+                  },
+                  {
+                    "text": "Across the roof"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Remember that nobody crossed the open desert."
+              },
+              {
+                "audience": "lector",
+                "prompt": "Why are the droplets interesting?",
+                "options": [
+                  {
+                    "text": "Pico put them there"
+                  },
+                  {
+                    "text": "They suggest moisture inside the dome"
+                  },
+                  {
+                    "text": "They prove it rained on Mars"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Remember that nobody crossed the open desert."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p07",
+      "chapter": 2,
+      "layout": "text-only",
+      "image": null,
+      "languages": {
+        "es": {
+          "title": "Lo que escondía el polvo",
+          "paragraphs": [
+            "Vera limpió con un paño solo el vidrio del pasillo, donde Mara le permitió trabajar. Apareció una hoja pequeña al otro lado. Luego otra, mucho más alta.",
+            "Ivo dejó de pensar en manchas verdes. —Son plantas de verdad.",
+            "No parecían las filas ordenadas del vivero nuevo. Algunas trepaban por tubos viejos y otras se inclinaban hacia una lámpara. Había tierra en una mesa que nadie recordaba haber usado.",
+            "La luz amarilla se encendió de nuevo. Detrás de las hojas pasó una figura baja de color cobre. Pico emitió un pitido breve; la figura desapareció bajo un banco.",
+            "—Nido —susurró Vera.",
+            "Mara no lo confirmó enseguida. Revisó una imagen del archivo: ruedas pequeñas, dos brazos finos, depósito redondo. La silueta coincidía.",
+            "El viejo jardinero no estaba desconectado. Pero, si aún cuidaba las plantas, ¿por qué el ventilador giraba con tanta dificultad?",
+            "Una ráfaga de polvo golpeó el techo. Esta vez todos la oyeron. Mara cerró la puerta exterior del túnel y comprobó el sello."
+          ],
+          "alt": null,
+          "checkpoint": {
+            "id": "q07",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Qué había tras el vidrio sucio?",
+                "options": [
+                  {
+                    "text": "Una ciudad nueva"
+                  },
+                  {
+                    "text": "Plantas"
+                  },
+                  {
+                    "text": "Un lago"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Limpia mentalmente el vidrio y mira la fotografía."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Por qué Mara mira la fotografía antigua?",
+                "options": [
+                  {
+                    "text": "Para contar montañas"
+                  },
+                  {
+                    "text": "Para elegir la cena"
+                  },
+                  {
+                    "text": "Para comparar la silueta con Nido"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Limpia mentalmente el vidrio y mira la fotografía."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "What the dust hid",
+          "paragraphs": [
+            "Vera wiped only the corridor window, where Mara said it was safe to work. A small leaf appeared on the other side. Then another, much taller one.",
+            "Ivo stopped thinking about green stains. “They’re real plants.”",
+            "They did not stand in tidy rows like the new nursery’s crops. Some climbed old pipes; others leaned towards a lamp. There was soil on a table nobody remembered using.",
+            "The yellow light came on again. A low copper shape moved behind the leaves. Pico gave a little beep, and the shape vanished beneath a bench.",
+            "“Nido,” Vera whispered.",
+            "Mara checked the old photograph before agreeing. Small wheels, two narrow arms, a round tank. The outline matched.",
+            "The old gardener had not shut down. But if it was still tending the plants, why was the fan having such trouble turning?",
+            "A gust of dust struck the roof. They all heard it. Mara closed the tunnel’s outer hatch and checked its seal."
+          ],
+          "alt": null,
+          "checkpoint": {
+            "id": "q07",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "What was behind the dusty glass?",
+                "options": [
+                  {
+                    "text": "A new city"
+                  },
+                  {
+                    "text": "Plants"
+                  },
+                  {
+                    "text": "A lake"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Imagine cleaning the glass, then check the photograph."
+              },
+              {
+                "audience": "lector",
+                "prompt": "Why does Mara check the old photograph?",
+                "options": [
+                  {
+                    "text": "To count mountains"
+                  },
+                  {
+                    "text": "To choose dinner"
+                  },
+                  {
+                    "text": "To compare the shape with Nido"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Imagine cleaning the glass, then check the photograph."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p08",
+      "chapter": 2,
+      "layout": "bottom",
+      "image": "imagenes/pagina-08.png",
+      "languages": {
+        "es": {
+          "title": "El jardinero de cobre",
+          "paragraphs": [
+            "Nido salió de debajo del banco. No se parecía al brillante Pico: tenía la pintura gastada y una rueda que avanzaba con un ligero salto. En uno de sus brazos sostenía una gota de agua.",
+            "La dejó con cuidado al pie de una planta. Después dirigió su pequeña lámpara hacia unas hojas pálidas.",
+            "—No estaba llamándonos —dijo Ivo—. ¡Estaba trabajando!",
+            "Vera vio un brote del tamaño de su uña, protegido por una campana transparente. Tras él descansaban cápsulas de semillas. El vivero no estaba vacío; se había vuelto un jardín diferente.",
+            "De pronto, el ventilador dio un tirón. La lámpara parpadeó y Nido se quedó inmóvil con el brazo en alto.",
+            "Mara consultó el control desde el lado seguro de la puerta. La batería de la cúpula todavía funcionaba, pero recibía poca luz del sol a través del polvo. Cuando llegara la tormenta, recibiría aún menos.",
+            "—Primero debemos proteger a la gente de la colonia —dijo—. Luego veremos qué podemos hacer por este jardín."
+          ],
+          "alt": "Nido, un robot cobrizo, da una gota de agua a un brote bajo una campana.",
+          "checkpoint": {
+            "id": "q08",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Qué hace Nido con una gota?",
+                "options": [
+                  {
+                    "text": "La guarda en la antena"
+                  },
+                  {
+                    "text": "La lanza al desierto"
+                  },
+                  {
+                    "text": "La pone junto a una planta"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Sigue la gota que lleva el jardinero."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Qué preocupa a Mara antes de la tormenta?",
+                "options": [
+                  {
+                    "text": "La poca energía de la cúpula"
+                  },
+                  {
+                    "text": "El color de Pico"
+                  },
+                  {
+                    "text": "El nombre de la flor"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Sigue la gota que lleva el jardinero."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "The copper gardener",
+          "paragraphs": [
+            "Nido emerged from under the bench. It looked nothing like shiny Pico: its paint was worn, and one wheel made a little hop as it moved. A drop of water rested in one of its narrow arms.",
+            "It placed the drop carefully beside a plant. Then it aimed its little lamp at some pale leaves.",
+            "“It wasn’t calling to us,” Ivo said. “It was working!”",
+            "Vera spotted a shoot no bigger than her fingernail beneath a clear cover. Seed capsules rested behind it. The nursery was not empty; it had become a different kind of garden.",
+            "The fan suddenly jerked. The lamp flickered, and Nido froze with its arm in the air.",
+            "Mara checked the controls from the safe side of the door. The dome’s battery still worked, but dusty panels gathered little sunlight. When the storm arrived, they would gather even less.",
+            "“First we keep the colony safe,” Mara said. “Then we’ll see what we can do for this garden.”"
+          ],
+          "alt": "Nido, a copper gardener robot, waters a shoot under a clear cover.",
+          "checkpoint": {
+            "id": "q08",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "What does Nido do with a drop?",
+                "options": [
+                  {
+                    "text": "Stores it in an aerial"
+                  },
+                  {
+                    "text": "Throws it into the desert"
+                  },
+                  {
+                    "text": "Places it beside a plant"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Follow the drop carried by the gardener."
+              },
+              {
+                "audience": "lector",
+                "prompt": "What worries Mara before the storm?",
+                "options": [
+                  {
+                    "text": "The dome has little power"
+                  },
+                  {
+                    "text": "Pico’s colour"
+                  },
+                  {
+                    "text": "The flower’s name"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Follow the drop carried by the gardener."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p09",
+      "chapter": 3,
+      "layout": "side-right",
+      "image": "imagenes/pagina-09.png",
+      "languages": {
+        "es": {
+          "title": "Cuando se apaga el cielo",
+          "paragraphs": [
+            "La tormenta llegó antes de la cena. Desde el pasillo, el sol parecía una moneda vista a través de una tela roja. Los paneles solares fueron perdiendo luz y la estación encendió sus reservas.",
+            "Mara avisó al equipo de guardia. En las habitaciones había aire, calor y comida; sus sistemas estaban protegidos. La cúpula antigua, en cambio, no formaba parte del circuito principal.",
+            "Vera observó a Nido por el vidrio. El robot intentó acercar la campana del brote a la lámpara. La luz se apagó. Nido esperó, quieto, sin soltar la planta.",
+            "—¿No podemos prestarle energía? —preguntó Ivo.",
+            "—No la tomaremos de los hogares —respondió Mara—. Antes hay que comprobar si existe una ruta segura que no les quite nada.",
+            "Pico dibujó con su ojo un círculo brillante sobre el suelo, como si quisiera ofrecer su propia batería. Vera le dio un golpecito cariñoso.",
+            "En vez de correr hacia una puerta cerrada, los niños regresaron con Mara al mapa de las tuberías. Esta vez sabían exactamente qué estaban intentando salvar."
+          ],
+          "alt": "La tormenta oscurece el cielo mientras Nido protege el brote y los niños observan desde dentro.",
+          "checkpoint": {
+            "id": "q09",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Qué se apaga junto al brote?",
+                "options": [
+                  {
+                    "text": "La lámpara"
+                  },
+                  {
+                    "text": "El sol para siempre"
+                  },
+                  {
+                    "text": "El ojo de Vera"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Piensa primero en lo que necesitan las familias."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Qué decide Mara sobre la energía de las viviendas?",
+                "options": [
+                  {
+                    "text": "Regalarla toda a Pico"
+                  },
+                  {
+                    "text": "No quitársela para la cúpula"
+                  },
+                  {
+                    "text": "Apagar todos los hogares"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Piensa primero en lo que necesitan las familias."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "When the sky goes dark",
+          "paragraphs": [
+            "The storm arrived before dinner. From the corridor, the sun looked like a coin seen through red cloth. The solar panels gathered less light, and the station switched to its reserves.",
+            "Mara called the duty team. The living quarters still had air, heat, and food; their systems were protected. The old dome, however, was not part of the main circuit.",
+            "Through the window, Vera watched Nido pull the little shoot closer to its lamp. The light went out. Nido waited without letting go of the plant.",
+            "“Can we lend it some power?” Ivo asked.",
+            "“We won’t take it from people’s homes,” Mara said. “First we need to check whether there’s another safe route.”",
+            "Pico shone a bright circle on the floor, as if offering its own battery. Vera gave the robot a fond pat.",
+            "Instead of rushing towards a closed door, the children went with Mara to the pipe diagram. This time they knew exactly what they were trying to save."
+          ],
+          "alt": "The storm darkens the sky as Nido protects a shoot and the children watch from indoors.",
+          "checkpoint": {
+            "id": "q09",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "What goes dark near the shoot?",
+                "options": [
+                  {
+                    "text": "The lamp"
+                  },
+                  {
+                    "text": "The sun forever"
+                  },
+                  {
+                    "text": "Vera’s eye"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Think about what the families need first."
+              },
+              {
+                "audience": "lector",
+                "prompt": "What does Mara decide about power for homes?",
+                "options": [
+                  {
+                    "text": "To give it all to Pico"
+                  },
+                  {
+                    "text": "Not to take it for the dome"
+                  },
+                  {
+                    "text": "To switch off every home"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Think about what the families need first."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p10",
+      "chapter": 3,
+      "layout": "text-only",
+      "image": null,
+      "languages": {
+        "es": {
+          "title": "Un camino para el calor",
+          "paragraphs": [
+            "El mapa mostraba dos circuitos distintos. Uno llevaba aire y calor a las viviendas. El otro transportaba agua tibia desde la cocina común hasta un depósito de servicio.",
+            "—Ayer el depósito estaba templado —recordó Ivo—. Pico intentó abrazarlo porque parecía una barriga calentita.",
+            "Pico confirmó el recuerdo con un pitido orgulloso. Mara comprobó cuánta energía sobraba después de atender las necesidades de la colonia. Había suficiente para probar el circuito de servicio durante la tormenta, si las válvulas seguían en buen estado.",
+            "Vera siguió con el dedo una línea que llegaba hasta la cúpula vieja. La línea terminaba en una rueda dibujada sobre el plano.",
+            "—Esta válvula nunca volvió a abrirse —dijo Mara—. Iré con el equipo a revisarla desde el corredor protegido.",
+            "Los niños podían acompañarla hasta el punto de observación, pero no tocar el sistema. Su tarea era mirar los medidores y avisar de cualquier cambio.",
+            "Ivo guardó el cuaderno. No era un plan espectacular, pensó. Sin embargo, si funcionaba, el calor viajaría por un lugar donde nadie lo echaba de menos."
+          ],
+          "alt": null,
+          "checkpoint": {
+            "id": "q10",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Qué transporta el circuito de servicio?",
+                "options": [
+                  {
+                    "text": "Aire exterior"
+                  },
+                  {
+                    "text": "Agua tibia"
+                  },
+                  {
+                    "text": "Piedras rojas"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Hay dos rutas de calor; busca la que sobra."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Por qué prueban esa ruta?",
+                "options": [
+                  {
+                    "text": "Es el único camino al comedor"
+                  },
+                  {
+                    "text": "Pico quiere un baño"
+                  },
+                  {
+                    "text": "Podría sobrar calor sin afectar las viviendas"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Hay dos rutas de calor; busca la que sobra."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "A path for warmth",
+          "paragraphs": [
+            "The diagram showed two separate circuits. One brought air and heat to the living quarters. The other carried warm water from the shared kitchen to a service tank.",
+            "“That tank felt warm yesterday,” Ivo remembered. “Pico tried to hug it like a giant cosy belly.”",
+            "Pico beeped proudly. Mara checked how much energy remained after the colony’s needs were met. There was enough to test the service loop during the storm, if the old valves were sound.",
+            "Vera traced a line to the closed dome with her finger. It ended at a little wheel on the diagram.",
+            "“This valve hasn’t been opened in years,” Mara said. “I’ll check it with the team from the protected corridor.”",
+            "The children could come as far as the observation point, but they would not operate the equipment. Their job was to watch the gauges and report any change.",
+            "Ivo tucked away his notebook. It did not sound like a spectacular plan. But if it worked, warmth would travel along a route nobody else needed."
+          ],
+          "alt": null,
+          "checkpoint": {
+            "id": "q10",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "What runs through the service loop?",
+                "options": [
+                  {
+                    "text": "Outside air"
+                  },
+                  {
+                    "text": "Warm water"
+                  },
+                  {
+                    "text": "Red stones"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "There are two heat routes; find the spare one."
+              },
+              {
+                "audience": "lector",
+                "prompt": "Why test that route?",
+                "options": [
+                  {
+                    "text": "It is the only path to dinner"
+                  },
+                  {
+                    "text": "Pico wants a bath"
+                  },
+                  {
+                    "text": "It may have spare heat without affecting homes"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "There are two heat routes; find the spare one."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p11",
+      "chapter": 3,
+      "layout": "side-left",
+      "image": "imagenes/pagina-11.png",
+      "languages": {
+        "es": {
+          "title": "La rueda que no giraba",
+          "paragraphs": [
+            "En el corredor de servicio, Mara pidió a su compañera que comprobara el depósito mientras ella intentaba girar la válvula. La rueda se movió apenas un dedo y quedó atascada.",
+            "Pico pasó bajo una repisa con un sensor pequeño. Volvió mostrando que el tubo estaba tibio antes de la válvula y frío después. Ivo avisó a Mara, tal como habían acordado.",
+            "—La obstrucción está aquí —dijo ella. Desmontó con cuidado una cubierta y encontró polvo rojo acumulado alrededor del mecanismo, aislado del agua por un sello.",
+            "Vera sostuvo una luz para que Mara viera mejor. Pico intentó ayudar con sus dos pinzas a la vez y se quedó enganchado a su propia antena.",
+            "—Tu trabajo es iluminar —le recordó Vera entre risas.",
+            "Mara limpió el polvo, comprobó el sello y giró la rueda sin esfuerzo. Poco a poco, el tramo frío comenzó a calentarse. En la ventana de la cúpula apareció la lámpara amarilla.",
+            "—Tenemos calor de sobra para esta prueba —confirmó la compañera de Mara por el comunicador—. Las viviendas siguen bien."
+          ],
+          "alt": "Mara gira la válvula atascada; Vera ilumina, Ivo observa y Pico se enreda.",
+          "checkpoint": {
+            "id": "q11",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Qué estaba atascado?",
+                "options": [
+                  {
+                    "text": "La puerta del comedor"
+                  },
+                  {
+                    "text": "La rueda de Ivo"
+                  },
+                  {
+                    "text": "Una válvula"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Compara los dos lados de la rueda."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Qué dato ayuda a localizar el problema?",
+                "options": [
+                  {
+                    "text": "Tubo tibio antes y frío después"
+                  },
+                  {
+                    "text": "Pico tiene dos pinzas"
+                  },
+                  {
+                    "text": "El cielo es rojo"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Compara los dos lados de la rueda."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "The stuck wheel",
+          "paragraphs": [
+            "In the service corridor, Mara asked a teammate to check the tank while she tried to turn the valve. The wheel moved a finger’s width and stuck.",
+            "Pico slipped beneath a shelf carrying a small sensor. It came back with a reading: the pipe was warm before the valve and cold after it. Ivo told Mara, just as they had agreed.",
+            "“The blockage is here,” she said. She carefully removed a cover and found red dust packed around the mechanism, separated from the water by a seal.",
+            "Vera held a light so Mara could see. Pico tried to help with both claws and caught its own antenna instead.",
+            "“Your job is the lamp,” Vera told it, laughing.",
+            "Mara cleared the dust, checked the seal, and turned the wheel easily. Little by little, the cold pipe grew warm. A yellow light appeared in the dome window.",
+            "“We have enough spare heat for this test,” Mara’s teammate reported. “The homes are fine.”"
+          ],
+          "alt": "Mara turns a stuck valve; Vera holds a lamp, Ivo watches, and Pico tangles its own arm.",
+          "checkpoint": {
+            "id": "q11",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "What was stuck?",
+                "options": [
+                  {
+                    "text": "The dining-room door"
+                  },
+                  {
+                    "text": "Ivo’s wheel"
+                  },
+                  {
+                    "text": "A valve"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Compare both sides of the wheel."
+              },
+              {
+                "audience": "lector",
+                "prompt": "What reading helps locate the problem?",
+                "options": [
+                  {
+                    "text": "Warm pipe before and cold after"
+                  },
+                  {
+                    "text": "Pico has two claws"
+                  },
+                  {
+                    "text": "The sky is red"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Compare both sides of the wheel."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p12",
+      "chapter": 3,
+      "layout": "bottom",
+      "image": "imagenes/pagina-12.png",
+      "languages": {
+        "es": {
+          "title": "Una nube en una caja",
+          "paragraphs": [
+            "El calor había vuelto, pero el ventilador seguía dando tirones. Mara encontró el filtro obstruido en una caja de servicio cerrada. Se podía cambiar desde el corredor, sin abrir el aire del jardín al de las viviendas.",
+            "Ivo sujetó el filtro nuevo. Vera vigiló el medidor. Pico acercó su pequeña aspiradora a la caja transparente.",
+            "¡Puf! El polvo antiguo formó una nube rojiza dentro del compartimento sellado. Pico dio marcha atrás tan deprisa que chocó contra las botas de Ivo. Los niños soltaron una carcajada.",
+            "—El polvo se ha quedado dentro de la caja —señaló Mara—. Eso es justo lo que queremos.",
+            "Mara retiró el filtro viejo y colocó el nuevo. El ventilador giró sin tropiezos. A través del vidrio, la lámpara dejó de parpadear y mantuvo un brillo constante.",
+            "Nido volvió a moverse. Acercó la campana del brote a la luz y, por primera vez desde la tormenta, abrió sus pinzas.",
+            "Vera miró a Ivo. Habían arreglado la cúpula, pero todavía les faltaba resolver su primera pregunta."
+          ],
+          "alt": "El polvo queda atrapado en una caja transparente cuando Mara cambia el filtro; Pico retrocede.",
+          "checkpoint": {
+            "id": "q12",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Dónde queda atrapada la nube de polvo?",
+                "options": [
+                  {
+                    "text": "En una caja sellada"
+                  },
+                  {
+                    "text": "En el comedor"
+                  },
+                  {
+                    "text": "En los pulmones de Pico"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Mira qué contiene la nube y cómo queda la lámpara."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Qué cambia cuando reemplazan el filtro?",
+                "options": [
+                  {
+                    "text": "La tormenta vuelve más fuerte"
+                  },
+                  {
+                    "text": "El ventilador gira bien y la luz queda fija"
+                  },
+                  {
+                    "text": "La cúpula desaparece"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Mira qué contiene la nube y cómo queda la lámpara."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "A cloud in a box",
+          "paragraphs": [
+            "The warmth had returned, but the fan still stumbled. Mara found its clogged filter inside a sealed service box. She could replace it from the corridor without mixing the garden air with the air in the homes.",
+            "Ivo held the new filter. Vera watched the gauge. Pico aimed its little vacuum into the clear box.",
+            "Puff! Old dust bloomed into a red cloud inside the sealed compartment. Pico reversed so fast that it bumped into Ivo’s boots. Both children burst out laughing.",
+            "“The dust stayed inside the box,” Mara said. “That is exactly what we want.”",
+            "She removed the old filter and fitted the new one. The fan turned smoothly. Through the window, the lamp stopped blinking and shone without a break.",
+            "Nido moved again. It pushed the shoot’s clear cover towards the light and, for the first time since the storm began, opened its claws.",
+            "Vera glanced at Ivo. They had helped the dome. They still had to answer their first question."
+          ],
+          "alt": "Dust stays inside a clear service box as Mara changes the filter and Pico reverses.",
+          "checkpoint": {
+            "id": "q12",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "Where does the dust cloud stay?",
+                "options": [
+                  {
+                    "text": "Inside a sealed box"
+                  },
+                  {
+                    "text": "In the dining hall"
+                  },
+                  {
+                    "text": "Inside Pico’s lungs"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Where does the dust stay, and what happens to the lamp?"
+              },
+              {
+                "audience": "lector",
+                "prompt": "What changes after the new filter?",
+                "options": [
+                  {
+                    "text": "The storm grows stronger"
+                  },
+                  {
+                    "text": "The fan turns smoothly and the light stays on"
+                  },
+                  {
+                    "text": "The dome disappears"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Where does the dust stay, and what happens to the lamp?"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p13",
+      "chapter": 4,
+      "layout": "side-right",
+      "image": "imagenes/pagina-13.png",
+      "languages": {
+        "es": {
+          "title": "La respuesta inesperada",
+          "paragraphs": [
+            "Al día siguiente, el polvo empezó a asentarse. Vera e Ivo compararon sus apuntes con la lámpara que ahora brillaba sin interrupciones.",
+            "—Los destellos aparecían cuando el ventilador tapaba la luz —dijo Vera—. No eran palabras.",
+            "Ivo asintió, aunque le daba un poco de pena despedirse de la idea de un mensaje secreto.",
+            "—Y Nido no nos buscaba. Estaba cuidando el jardín mientras las máquinas se gastaban.",
+            "Mara les mostró dos datos que no habían visto: el ventilador tenía una pieza llena de polvo y la lámpara seguía encendida detrás. Juntas, esas observaciones explicaban las pausas cambiantes mucho mejor que un código.",
+            "Pico imitó otra vez tres destellos y uno largo. Esta vez nadie creyó que la cúpula le contestara. El robot insistió hasta que Ivo le tapó el ojo con la mano.",
+            "—Que no fuera un mensaje no significa que no importara —dijo Mara—. Gracias a esa luz vimos un problema antes de perder las plantas.",
+            "Vera dibujó el ventilador junto a la lámpara. Por fin su dibujo mostraba lo que habían descubierto, no solo lo que imaginaron al principio."
+          ],
+          "alt": "Vera dibuja el ventilador y la lámpara al comprender la causa de los destellos.",
+          "checkpoint": {
+            "id": "q13",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Era un mensaje la luz inicial?",
+                "options": [
+                  {
+                    "text": "Sí, Pico la escribió"
+                  },
+                  {
+                    "text": "No, era luz tapada por una sombra"
+                  },
+                  {
+                    "text": "Sí, una carta de la Tierra"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Compara la luz con la sombra del ventilador."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Por qué valió la pena investigarla?",
+                "options": [
+                  {
+                    "text": "Porque todos los parpadeos son palabras"
+                  },
+                  {
+                    "text": "Porque el polvo dejó de existir"
+                  },
+                  {
+                    "text": "Les permitió encontrar un problema del jardín"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Compara la luz con la sombra del ventilador."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "An unexpected answer",
+          "paragraphs": [
+            "The next day, the dust began to settle. Vera and Ivo compared their notes with the lamp, which now shone without stopping.",
+            "“We saw flashes when the fan covered the light,” Vera said. “They weren’t words.”",
+            "Ivo nodded, although he was a little sorry to say goodbye to his secret-message idea.",
+            "“And Nido wasn’t searching for us. It was caring for the garden while the machines wore out.”",
+            "Mara showed them two observations they had missed: one fan part was packed with dust, and the lamp stayed on behind it. Together, those facts explained the changing pauses much better than a code did.",
+            "Pico flashed three times and then once more. Nobody thought the dome was answering it now. The robot kept flashing until Ivo covered its eye with his hand.",
+            "“It mattered even if it wasn’t a message,” Mara said. “That light helped us spot the problem before we lost the plants.”",
+            "Vera drew the fan beside the lamp. At last her sketch showed what they had found, instead of only what they had first imagined."
+          ],
+          "alt": "Vera draws the fan and lamp after discovering why the light seemed to blink.",
+          "checkpoint": {
+            "id": "q13",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "Was the first light a message?",
+                "options": [
+                  {
+                    "text": "Yes, Pico wrote it"
+                  },
+                  {
+                    "text": "No, a shadow interrupted it"
+                  },
+                  {
+                    "text": "Yes, a letter from Earth"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Compare the light with the fan’s shadow."
+              },
+              {
+                "audience": "lector",
+                "prompt": "Why did the investigation matter?",
+                "options": [
+                  {
+                    "text": "Every flashing light is a word"
+                  },
+                  {
+                    "text": "The dust vanished forever"
+                  },
+                  {
+                    "text": "It helped them find the garden’s problem"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Compare the light with the fan’s shadow."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p14",
+      "chapter": 4,
+      "layout": "text-only",
+      "image": null,
+      "languages": {
+        "es": {
+          "title": "El trabajo de Nido",
+          "paragraphs": [
+            "Cuando los medidores marcaron condiciones seguras y terminó la tormenta, Mara entró primero al jardín con el equipo. Vera e Ivo esperaron hasta que ella autorizó la visita.",
+            "Había plantas que nadie recordaba haber sembrado en esos lugares. Nido había trasladado semillas caídas, recogido el agua condensada en el vidrio y usado un pequeño depósito de reciclaje que no dependía de la vieja bomba principal.",
+            "El robot no había inventado una nueva especie ni sobrevivido por magia. Había repetido su tarea durante años, adaptándose a un vivero casi vacío. Algunas semillas germinaron; otras seguían guardadas.",
+            "Mara fotografió las raíces y anotó cuánto agua usaba el depósito. Antes de mover una sola maceta, quería saber qué necesitaba aquel jardín para seguir vivo.",
+            "Ivo vio una yema anaranjada bajo la campana. —¿Será una flor?",
+            "—Todavía no lo sabemos —dijo Vera. Esa respuesta ya no le parecía decepcionante.",
+            "Pico ofreció una gota de agua a Nido. Los dos robots se quedaron frente a frente. Al final, Nido tomó la gota y la llevó a la planta más pequeña."
+          ],
+          "alt": null,
+          "checkpoint": {
+            "id": "q14",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿De dónde obtenía agua Nido?",
+                "options": [
+                  {
+                    "text": "De una lluvia diaria"
+                  },
+                  {
+                    "text": "De Pico cada noche"
+                  },
+                  {
+                    "text": "De gotas y un pequeño reciclador"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Recuerda cómo Nido recogía gotas."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Por qué esperan antes de mover las plantas?",
+                "options": [
+                  {
+                    "text": "Quieren medir qué necesitan para vivir"
+                  },
+                  {
+                    "text": "Olvidaron cómo abrir una maceta"
+                  },
+                  {
+                    "text": "Nido prohibió mirar"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Recuerda cómo Nido recogía gotas."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "Nido’s long job",
+          "paragraphs": [
+            "When the gauges showed safe conditions and the storm had passed, Mara and the crew entered the garden first. Vera and Ivo waited until she allowed visitors in.",
+            "Plants grew in places nobody remembered planting them. Nido had carried fallen seeds, collected water condensed on the glass, and used a small recycling tank that did not depend on the broken main pump.",
+            "The robot had not invented a new species or survived by magic. It had kept doing its job for years, adjusting to an almost empty nursery. Some seeds sprouted; others remained in storage.",
+            "Mara photographed the roots and measured how much water the tank used. Before moving one pot, she wanted to know what the garden needed in order to live.",
+            "Ivo spotted an orange bud beneath a clear cover. “Is that a flower?”",
+            "“We don’t know yet,” said Vera. That answer no longer disappointed her.",
+            "Pico offered Nido a drop of water. The two robots faced one another. At last Nido accepted it and carried it to the smallest plant."
+          ],
+          "alt": null,
+          "checkpoint": {
+            "id": "q14",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "Where did Nido get water?",
+                "options": [
+                  {
+                    "text": "From daily rain"
+                  },
+                  {
+                    "text": "From Pico every night"
+                  },
+                  {
+                    "text": "From droplets and a small recycler"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Remember how Nido collected drops."
+              },
+              {
+                "audience": "lector",
+                "prompt": "Why wait before moving plants?",
+                "options": [
+                  {
+                    "text": "They want to measure what the plants need"
+                  },
+                  {
+                    "text": "They forgot how pots work"
+                  },
+                  {
+                    "text": "Nido forbade them to look"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Remember how Nido collected drops."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p15",
+      "chapter": 4,
+      "layout": "bottom",
+      "image": "imagenes/pagina-15.png",
+      "languages": {
+        "es": {
+          "title": "Un jardín para todos",
+          "paragraphs": [
+            "Durante los días siguientes, la colonia reparó el vivero antiguo. Unos adultos revisaron sus sellos; otros limpiaron paneles o instalaron un medidor nuevo. Nadie abrió las puertas hasta que el aire estuvo comprobado.",
+            "Vera e Ivo ayudaron a colocar semillas en bandejas, siguiendo las instrucciones de Mara. Pico transportaba un recipiente por vez. Nido prefería llevar una sola gota, como siempre.",
+            "El primer día que entraron otras familias, Ivo enseñó el ventilador. Tapó una linterna con los dedos y dejó que los visitantes vieran cómo nacía una falsa señal.",
+            "—Yo pensé que alguien nos hablaba desde aquí —admitió—. Me equivoqué en eso. Aun así, mirar nos trajo al jardín.",
+            "Bajo el vidrio limpio apareció una flor pequeña y naranja. No llenaba la cúpula ni resolvía los problemas de Marte. Hizo que todos se acercaran para verla mejor.",
+            "Mara pidió que dejaran espacio a Nido. El robot llegó, regó la tierra y siguió su camino entre las botas de los visitantes, como si una fiesta fuese otro tipo de clima."
+          ],
+          "alt": "Las familias conocen el vivero reparado y una flor naranja; los dos robots cuidan los brotes.",
+          "checkpoint": {
+            "id": "q15",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Qué se abre en el jardín?",
+                "options": [
+                  {
+                    "text": "Una pequeña flor naranja"
+                  },
+                  {
+                    "text": "Una puerta al espacio"
+                  },
+                  {
+                    "text": "Un cofre dorado"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Vuelve a mirar la flor y la demostración de Ivo."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Qué explica Ivo a los visitantes?",
+                "options": [
+                  {
+                    "text": "Que una flor arregla todo Marte"
+                  },
+                  {
+                    "text": "Cómo una sombra parecía una señal"
+                  },
+                  {
+                    "text": "Cómo fabricar una tormenta"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Vuelve a mirar la flor y la demostración de Ivo."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "A garden for everyone",
+          "paragraphs": [
+            "Over the following days, the colony repaired the old nursery. Some adults checked its seals; others cleaned panels or installed a new gauge. Nobody opened it to visitors until the air had been tested.",
+            "Vera and Ivo helped set seeds in trays under Mara’s instructions. Pico carried one container at a time. Nido still preferred a single drop.",
+            "On the day other families visited, Ivo showed them the fan. He covered a torch with his fingers and let them watch a false signal appear.",
+            "“I thought someone was talking to us from here,” he admitted. “I was wrong about that. But looking brought us to the garden.”",
+            "A small orange flower opened beneath the clean glass. It did not fill the dome or solve every problem on Mars. It made everyone step closer to see it.",
+            "Mara asked them to leave room for Nido. The robot watered the soil and rolled between the visitors’ boots, as though a party were simply a new kind of weather."
+          ],
+          "alt": "Families visit the restored nursery and an orange flower while both robots tend the shoots.",
+          "checkpoint": {
+            "id": "q15",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "What opens in the garden?",
+                "options": [
+                  {
+                    "text": "A little orange flower"
+                  },
+                  {
+                    "text": "A door into space"
+                  },
+                  {
+                    "text": "A golden chest"
+                  }
+                ],
+                "correctIndex": 0,
+                "retryFeedback": "Look again at the flower and Ivo’s demonstration."
+              },
+              {
+                "audience": "lector",
+                "prompt": "What does Ivo show visitors?",
+                "options": [
+                  {
+                    "text": "That one flower fixes all of Mars"
+                  },
+                  {
+                    "text": "How a shadow looked like a signal"
+                  },
+                  {
+                    "text": "How to make a storm"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Look again at the flower and Ivo’s demonstration."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "p16",
+      "chapter": 4,
+      "layout": "side-left",
+      "image": "imagenes/pagina-16.png",
+      "languages": {
+        "es": {
+          "title": "Dos destellos de bienvenida",
+          "paragraphs": [
+            "Una semana después, Vera y Ivo instalaron con Mara una lucecita junto a la ventana del túnel. Esta vez sí habían acordado su significado: dos destellos tranquilos querían decir que el jardín estaba abierto a visitas.",
+            "Primero probaron la lámpara desde el corredor. Ivo hizo la señal. Vera, al otro lado del vidrio, levantó dos dedos. El mensaje había llegado sin duda.",
+            "Pico quiso ayudar. Encendió el ojo tres veces, giró sobre sus ruedas y añadió otra luz larguísima. Nido lo miró desde la sombra de las hojas y siguió regando.",
+            "—Tendremos que enseñarle la versión corta —dijo Ivo.",
+            "Fuera, Marte seguía siendo un mundo enorme de roca roja. Dentro de la cúpula, la flor naranja y muchas hojas nuevas recibían la luz del día.",
+            "Vera recordó aquella primera noche. Habían creído escuchar un mensaje secreto donde solo había una lámpara y una sombra. Al mirar mejor, encontraron un jardín que necesitaba ayuda.",
+            "Esta vez, cuando la luz parpadeó dos veces, sí era una invitación. Vera abrió la puerta segura para los siguientes visitantes."
+          ],
+          "alt": "Los niños prueban una luz de bienvenida junto al jardín; Pico la imita a su manera.",
+          "checkpoint": {
+            "id": "q16",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "¿Cuántos destellos tiene la nueva invitación?",
+                "options": [
+                  {
+                    "text": "Ninguno"
+                  },
+                  {
+                    "text": "Dos"
+                  },
+                  {
+                    "text": "Siete"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "Esta vez los niños decidieron qué significaba la luz."
+              },
+              {
+                "audience": "lector",
+                "prompt": "¿Qué diferencia la luz final de la primera?",
+                "options": [
+                  {
+                    "text": "La lámpara tiene alas"
+                  },
+                  {
+                    "text": "Es imposible verla por el vidrio"
+                  },
+                  {
+                    "text": "Su significado se acordó y comprobó"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "Esta vez los niños decidieron qué significaba la luz."
+              }
+            ]
+          }
+        },
+        "en": {
+          "title": "Two welcoming flashes",
+          "paragraphs": [
+            "A week later, Vera and Ivo helped Mara place a small light beside the tunnel window. This time they had agreed on its meaning: two gentle flashes meant the garden was open to visitors.",
+            "They tested it from the corridor first. Ivo flashed the lamp. On the other side of the glass, Vera held up two fingers. The message had arrived.",
+            "Pico wanted to help. It blinked three times, spun on its wheels, and added one very long glow. From the shade of the leaves, Nido glanced over and carried on watering.",
+            "“We’ll have to teach Pico the short version,” Ivo said.",
+            "Outside, Mars was still an immense world of red rock. Inside the dome, the orange flower and many new leaves caught the daylight.",
+            "Vera remembered that first evening. They had imagined a secret message where there was only a lamp and a shadow. By looking more closely, they found a garden that needed help.",
+            "This time the two flashes really were an invitation. Vera opened the safe door for the next visitors."
+          ],
+          "alt": "The children test a welcome light by the garden, and Pico copies it in its own way.",
+          "checkpoint": {
+            "id": "q16",
+            "variants": [
+              {
+                "audience": "explorador",
+                "prompt": "How many flashes make the new invitation?",
+                "options": [
+                  {
+                    "text": "None"
+                  },
+                  {
+                    "text": "Two"
+                  },
+                  {
+                    "text": "Seven"
+                  }
+                ],
+                "correctIndex": 1,
+                "retryFeedback": "This time the children decided what the light meant."
+              },
+              {
+                "audience": "lector",
+                "prompt": "How is the final light different?",
+                "options": [
+                  {
+                    "text": "The lamp has wings"
+                  },
+                  {
+                    "text": "Nobody can see it through glass"
+                  },
+                  {
+                    "text": "People agreed on and tested its meaning"
+                  }
+                ],
+                "correctIndex": 2,
+                "retryFeedback": "This time the children decided what the light meant."
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "vocabulary": {
+    "es": {
+      "cúpula": {
+        "syllables": [
+          "cú",
+          "pu",
+          "la"
+        ],
+        "definition": "Techo redondeado que cubre un espacio."
+      },
+      "destellos": {
+        "syllables": [
+          "des",
+          "te",
+          "llos"
+        ],
+        "definition": "Luces breves que aparecen y desaparecen."
+      },
+      "vivero": {
+        "syllables": [
+          "vi",
+          "ve",
+          "ro"
+        ],
+        "definition": "Lugar donde se cultivan plantas jóvenes."
+      },
+      "aspas": {
+        "syllables": [
+          "as",
+          "pas"
+        ],
+        "definition": "Piezas que giran en un ventilador."
+      },
+      "humedad": {
+        "syllables": [
+          "hu",
+          "me",
+          "dad"
+        ],
+        "definition": "Agua presente en el aire o una superficie."
+      },
+      "compuerta": {
+        "syllables": [
+          "com",
+          "puer",
+          "ta"
+        ],
+        "definition": "Puerta que separa dos zonas de una instalación."
+      },
+      "circuito": {
+        "syllables": [
+          "cir",
+          "cui",
+          "to"
+        ],
+        "definition": "Recorrido cerrado por el que fluye algo."
+      },
+      "válvula": {
+        "syllables": [
+          "vál",
+          "vu",
+          "la"
+        ],
+        "definition": "Pieza que abre o cierra el paso por un tubo."
+      },
+      "obstruido": {
+        "syllables": [
+          "obs",
+          "trui",
+          "do"
+        ],
+        "definition": "Tapado de modo que algo no puede pasar bien."
+      },
+      "germinaron": {
+        "syllables": [
+          "ger",
+          "mi",
+          "na",
+          "ron"
+        ],
+        "definition": "Empezaron a crecer desde una semilla."
+      },
+      "reciclaje": {
+        "syllables": [
+          "re",
+          "ci",
+          "cla",
+          "je"
+        ],
+        "definition": "Proceso de volver a usar un material."
+      },
+      "sellos": {
+        "syllables": [
+          "se",
+          "llos"
+        ],
+        "definition": "Cierres que impiden el paso de aire o agua."
+      }
+    },
+    "en": {
+      "dome": {
+        "syllables": [
+          "dome"
+        ],
+        "definition": "A rounded roof over a space."
+      },
+      "flashes": {
+        "syllables": [
+          "flash",
+          "es"
+        ],
+        "definition": "Short bursts of light."
+      },
+      "nursery": {
+        "syllables": [
+          "nurs",
+          "er",
+          "y"
+        ],
+        "definition": "A place where young plants are grown."
+      },
+      "blades": {
+        "syllables": [
+          "blades"
+        ],
+        "definition": "The turning parts of a fan."
+      },
+      "pressure": {
+        "syllables": [
+          "pres",
+          "sure"
+        ],
+        "definition": "The force of air pushing on a surface."
+      },
+      "droplets": {
+        "syllables": [
+          "drop",
+          "lets"
+        ],
+        "definition": "Very small drops of liquid."
+      },
+      "valve": {
+        "syllables": [
+          "valve"
+        ],
+        "definition": "A part that controls flow through a pipe."
+      },
+      "circuit": {
+        "syllables": [
+          "cir",
+          "cuit"
+        ],
+        "definition": "A closed route for heat, water or electricity."
+      },
+      "condensed": {
+        "syllables": [
+          "con",
+          "densed"
+        ],
+        "definition": "Turned from vapour into drops."
+      },
+      "gauge": {
+        "syllables": [
+          "gauge"
+        ],
+        "definition": "A tool that measures a condition."
+      }
+    }
+  }
+}

@@ -1,0 +1,270 @@
+{
+  "familyId": "la-isla-que-caminaba",
+  "version": 1,
+  "pages": {
+    "p01": {
+      "blocks": {
+        "b01": {
+          "balloon": {
+            "x": 1208,
+            "y": 0,
+            "width": 328,
+            "height": 1024
+          },
+          "text": {
+            "x": 1229,
+            "y": 15,
+            "width": 286,
+            "height": 994
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p02": {
+      "blocks": {
+        "b02": {
+          "balloon": {
+            "x": 90,
+            "y": 70,
+            "width": 1356,
+            "height": 884
+          },
+          "text": {
+            "x": 111,
+            "y": 85,
+            "width": 1314,
+            "height": 854
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p03": {
+      "blocks": {
+        "b03": {
+          "balloon": {
+            "x": 1084,
+            "y": 0,
+            "width": 452,
+            "height": 1024
+          },
+          "text": {
+            "x": 1105,
+            "y": 15,
+            "width": 410,
+            "height": 994
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p04": {
+      "blocks": {
+        "b04": {
+          "balloon": {
+            "x": 90,
+            "y": 70,
+            "width": 1356,
+            "height": 884
+          },
+          "text": {
+            "x": 111,
+            "y": 85,
+            "width": 1314,
+            "height": 854
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p05": {
+      "blocks": {
+        "b05": {
+          "balloon": {
+            "x": 1004,
+            "y": 0,
+            "width": 532,
+            "height": 1024
+          },
+          "text": {
+            "x": 1025,
+            "y": 15,
+            "width": 490,
+            "height": 994
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p06": {
+      "blocks": {
+        "b06": {
+          "balloon": {
+            "x": 90,
+            "y": 70,
+            "width": 1356,
+            "height": 884
+          },
+          "text": {
+            "x": 111,
+            "y": 85,
+            "width": 1314,
+            "height": 854
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p07": {
+      "blocks": {
+        "b07": {
+          "balloon": {
+            "x": 1312,
+            "y": 0,
+            "width": 224,
+            "height": 1024
+          },
+          "text": {
+            "x": 1333,
+            "y": 15,
+            "width": 182,
+            "height": 994
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p08": {
+      "blocks": {
+        "b08": {
+          "balloon": {
+            "x": 1148,
+            "y": 0,
+            "width": 388,
+            "height": 865
+          },
+          "text": {
+            "x": 1169,
+            "y": 15,
+            "width": 346,
+            "height": 835
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p09": {
+      "blocks": {
+        "b09": {
+          "balloon": {
+            "x": 90,
+            "y": 70,
+            "width": 1356,
+            "height": 884
+          },
+          "text": {
+            "x": 111,
+            "y": 85,
+            "width": 1314,
+            "height": 854
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p10": {
+      "blocks": {
+        "b10": {
+          "balloon": {
+            "x": 90,
+            "y": 70,
+            "width": 1356,
+            "height": 884
+          },
+          "text": {
+            "x": 111,
+            "y": 85,
+            "width": 1314,
+            "height": 854
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p11": {
+      "blocks": {
+        "b11": {
+          "balloon": {
+            "x": 1260,
+            "y": 0,
+            "width": 276,
+            "height": 1024
+          },
+          "text": {
+            "x": 1281,
+            "y": 15,
+            "width": 234,
+            "height": 994
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p12": {
+      "blocks": {
+        "b12": {
+          "balloon": {
+            "x": 90,
+            "y": 70,
+            "width": 1356,
+            "height": 884
+          },
+          "text": {
+            "x": 111,
+            "y": 85,
+            "width": 1314,
+            "height": 854
+          },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    }
+  }
+}

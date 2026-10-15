@@ -1,0 +1,399 @@
+{
+  "id": "estrella-desaparecida-c2-es-n3",
+  "familyId": "estrella-desaparecida-c2",
+  "language": "es",
+  "title": "2. La sombra que engañaba",
+  "level": 3,
+  "category": "misterio",
+  "description": "Capítulo 2 de 3 de «El caso de la estrella desaparecida». Leer en orden.",
+  "cover": {
+    "src": "stories/estrella-desaparecida-c2/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "El caso de la estrella desaparecida"
+  },
+  "pages": [
+    {
+      "id": "p04",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c2/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "La sombra cambia, llaman a la puerta y Pico abre con un farol junto a un perchero."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b13",
+          "voice": "narration",
+          "lines": [
+            "Luna y Nico siguen frente a la ventana del taller.",
+            "Una sombra puede parecer enorme sin que el objeto que la produce tenga ese mismo tamaño."
+          ],
+          "title": "Frente al taller"
+        },
+        {
+          "id": "b14",
+          "voice": "narration",
+          "lines": [
+            "La luz del interior se desplaza y la silueta cambia al mismo tiempo.",
+            "Luna observa esa relación: tal vez lo importante sea averiguar de dónde viene."
+          ],
+          "title": "La sombra cambia"
+        },
+        {
+          "id": "b15",
+          "voice": "narration",
+          "lines": [
+            "Nico toca la puerta mientras Luna espera a su lado.",
+            "Quieren conocer lo que hay dentro, en lugar de convertir una impresión inquietante en una conclusión."
+          ],
+          "title": "Tocan la puerta"
+        },
+        {
+          "id": "b16",
+          "voice": "narration",
+          "lines": [
+            "Pico abre llevando un farol.",
+            "Detrás de él hay un perchero con un abrigo morado, cuyos ganchos y mangas forman una silueta extraña sobre la ventana."
+          ],
+          "title": "Pico abre"
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Quién abre la puerta?",
+            "options": [
+              {
+                "text": "El gato"
+              },
+              {
+                "text": "Pico"
+              },
+              {
+                "text": "Un monstruo"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Pico.",
+            "retryFeedback": "Observa qué lleva Pico y qué hay detrás de él."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué pregunta sirve para comprobar la primera impresión?",
+            "options": [
+              {
+                "text": "Qué objeto y qué luz forman la sombra"
+              },
+              {
+                "text": "Por qué todos los talleres son peligrosos"
+              },
+              {
+                "text": "Cómo escapar de una criatura que aún no han visto"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Qué objeto y qué luz forman la sombra.",
+            "retryFeedback": "Observa qué lleva Pico y qué hay detrás de él."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p05",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c2/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Comprueban la sombra del abrigo y descubren barro y cinta en una rueda del carro."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b17",
+          "voice": "narration",
+          "lines": [
+            "Pico mueve el farol cerca del perchero y les muestra cómo cambia la sombra.",
+            "Los hermanos pueden observar juntos la luz, el objeto y su silueta."
+          ],
+          "title": "Se mueve el farol"
+        },
+        {
+          "id": "b18",
+          "voice": "narration",
+          "lines": [
+            "Nico toca la manga y se ríe, aliviado.",
+            "Lo que parecía una criatura era un abrigo; comprobar la idea les dio información que mirar desde fuera no ofrecía."
+          ],
+          "title": "Solo era ropa"
+        },
+        {
+          "id": "b19",
+          "voice": "narration",
+          "lines": [
+            "En un rincón, Luna descubre el carro naranja de Pico.",
+            "Las ruedas moradas tienen barro, igual que el camino que recorrieron desde el lugar de la estrella."
+          ],
+          "title": "El carro naranja"
+        },
+        {
+          "id": "b20",
+          "voice": "narration",
+          "lines": [
+            "Una cinta azul con puntos blancos cuelga de una rueda.",
+            "Luna compara ese extremo con el pedacito encontrado en la ramita: sus colores y dibujo coinciden."
+          ],
+          "title": "La cinta en la rueda"
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué produce la sombra junto al farol?",
+            "options": [
+              {
+                "text": "La estrella"
+              },
+              {
+                "text": "Un árbol gigante"
+              },
+              {
+                "text": "Un perchero con un abrigo"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Un perchero con un abrigo.",
+            "retryFeedback": "Busca dos coincidencias: las marcas del suelo y la tela azul."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué datos relacionan el carro con el rastro?",
+            "options": [
+              {
+                "text": "Solo que es de color naranja"
+              },
+              {
+                "text": "Sus ruedas embarradas y la cinta que coincide"
+              },
+              {
+                "text": "Que Pico lleva una gorra"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Sus ruedas embarradas y la cinta que coincide.",
+            "retryFeedback": "Busca dos coincidencias: las marcas del suelo y la tela azul."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p06",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c2/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Relacionan el recorrido del carro con el gancho y descubren una punta amarilla bajo la tela."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b21",
+          "voice": "narration",
+          "lines": [
+            "Siguen con la vista las dos líneas que entran por la puerta y terminan junto al carro.",
+            "Ahora tienen varias observaciones relacionadas, no solamente una coincidencia."
+          ],
+          "title": "El mismo camino"
+        },
+        {
+          "id": "b22",
+          "voice": "narration",
+          "lines": [
+            "Pico señala el gancho de la estación y recuerda que pasó por debajo con su carro.",
+            "Eso explica su recorrido, pero todavía no dónde está el adorno."
+          ],
+          "title": "Aquí colgaba"
+        },
+        {
+          "id": "b23",
+          "voice": "narration",
+          "lines": [
+            "Luna levanta una esquina de la tela de rayas que cubre la carga.",
+            "Una punta amarilla aparece debajo; Nico se inclina para observar sin adivinar demasiado pronto."
+          ],
+          "title": "Levantan la tela"
+        },
+        {
+          "id": "b24",
+          "voice": "narration",
+          "lines": [
+            "Junto a la punta asoma parte de un aro morado.",
+            "Los hermanos recuerdan la estrella, aunque aún falta descubrir el objeto completo y explicar cómo llegó allí."
+          ],
+          "title": "¿Qué asoma ahí?"
+        }
+      ],
+      "checkpoint": {
+        "id": "q06",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué asoma debajo de la tela?",
+            "options": [
+              {
+                "text": "Una punta amarilla y un aro morado"
+              },
+              {
+                "text": "Una pata de gato"
+              },
+              {
+                "text": "Una piedra verde"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Una punta amarilla y un aro morado.",
+            "retryFeedback": "Solo se ve una parte. Piensa cómo comprobar el resto."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué deben hacer antes de asegurar que es la estrella?",
+            "options": [
+              {
+                "text": "Acusar a Pico"
+              },
+              {
+                "text": "Dejar de investigar"
+              },
+              {
+                "text": "Destapar y observar el objeto completo"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Destapar y observar el objeto completo.",
+            "retryFeedback": "Solo se ve una parte. Piensa cómo comprobar el resto."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "gancho": {
+      "syllables": [
+        "gan",
+        "cho"
+      ],
+      "definition": "Pieza curva que sirve para colgar cosas.",
+      "example": "Colgamos las llaves en un gancho junto a la puerta."
+    },
+    "taller": {
+      "syllables": [
+        "ta",
+        "ller"
+      ],
+      "definition": "Lugar donde se hacen o arreglan cosas.",
+      "example": "Llevamos la bicicleta al taller porque la cadena se había salido."
+    },
+    "sombra": {
+      "syllables": [
+        "som",
+        "bra"
+      ],
+      "definition": "Zona oscura que aparece cuando un objeto tapa la luz.",
+      "example": "Nos sentamos bajo la sombra del árbol para descansar del sol."
+    },
+    "silueta": {
+      "syllables": [
+        "si",
+        "lue",
+        "ta"
+      ],
+      "definition": "Forma exterior de algo, sin sus detalles.",
+      "synonym": "contorno",
+      "example": "Reconocimos su silueta recortada contra la luz de la puerta."
+    },
+    "coincidencia": {
+      "syllables": [
+        "coin",
+        "ci",
+        "den",
+        "cia"
+      ],
+      "definition": "Parecido o encuentro entre cosas que conviene investigar.",
+      "synonym": "casualidad",
+      "example": "Fue una coincidencia que los dos lleváramos la misma mochila azul."
+    },
+    "farol": {
+      "syllables": [
+        "fa",
+        "rol"
+      ],
+      "definition": "Objeto que protege una luz y permite alumbrar.",
+      "synonym": "lámpara",
+      "example": "El farol de la calle se encendió apenas empezó a oscurecer."
+    },
+    "perchero": {
+      "syllables": [
+        "per",
+        "che",
+        "ro"
+      ],
+      "definition": "Mueble con ganchos para colgar ropa.",
+      "synonym": "colgador",
+      "example": "Dejó el abrigo en el perchero de la entrada."
+    },
+    "aro": {
+      "syllables": [
+        "a",
+        "ro"
+      ],
+      "definition": "Pieza con forma de círculo.",
+      "synonym": "anillo",
+      "example": "El payaso hizo girar un aro de colores en su brazo."
+    },
+    "conclusión": {
+      "syllables": [
+        "con",
+        "clu",
+        "sión"
+      ],
+      "definition": "Idea a la que llegas después de pensar en los datos.",
+      "synonym": "deducción",
+      "example": "Después de revisar las pistas, llegamos a la conclusión de quién había sido."
+    },
+    "extremo": {
+      "syllables": [
+        "ex",
+        "tre",
+        "mo"
+      ],
+      "definition": "Punta o parte final de algo.",
+      "synonym": "punta",
+      "example": "Ató una cuerda en cada extremo del columpio."
+    },
+    "recorrido": {
+      "syllables": [
+        "re",
+        "co",
+        "rri",
+        "do"
+      ],
+      "definition": "Camino que se sigue de un lugar a otro.",
+      "synonym": "trayecto",
+      "example": "El autobús hace el mismo recorrido todos los días por el centro."
+    }
+  },
+  "heroFocus": {
+    "x": 35,
+    "y": 62
+  },
+  "reviewWords": [
+    "gancho",
+    "taller",
+    "sombra"
+  ]
+}

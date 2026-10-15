@@ -1,0 +1,480 @@
+{
+  "id": "la-cometa-roja-en-n3",
+  "familyId": "la-cometa-roja",
+  "language": "en",
+  "title": "The Red Kite",
+  "level": 3,
+  "category": "amistad",
+  "description": "Nia and Teo learn that losing something doesn't always mean losing it forever.",
+  "cover": {
+    "src": "stories/la-cometa-roja/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Nia and Teo hold their red kite beneath a big oak tree."
+  },
+  "heroFocus": {
+    "x": 30,
+    "y": 48
+  },
+  "reviewWords": [
+    "caretaker",
+    "schoolyard",
+    "several"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/la-cometa-roja/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Nia and Teo in the schoolyard with their red kite after the rain."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b01",
+          "voice": "narration",
+          "title": "The Red Kite",
+          "lines": [
+            "The rain stopped just after lunch. Nia looked across the schoolyard. There was a patch of blue in the sky.",
+            "“Now we can try!” she told Teo.",
+            "They had waited all week to fly their red kite. Nia took the spool while Teo watched closely. A breeze lifted the kite a little. They both jumped with joy."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What had Nia and Teo been waiting all week to do?",
+            "options": [
+              {
+                "text": "Fly their red kite"
+              },
+              {
+                "text": "Go to school"
+              },
+              {
+                "text": "Watch the rain"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! They had waited to fly their red kite.",
+            "retryFeedback": "Look for what Nia and Teo had been waiting to do."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What sign told them they could finally fly the kite?",
+            "options": [
+              {
+                "text": "A patch of blue appeared in the sky after the rain"
+              },
+              {
+                "text": "Teo asked the teacher"
+              },
+              {
+                "text": "The spool came undone by itself"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! The sky cleared just after lunch.",
+            "retryFeedback": "Think about what Nia sees in the sky at the start."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/la-cometa-roja/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "The red kite gets caught on a high branch of an oak tree."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b02",
+          "voice": "narration",
+          "title": "Caught in the Oak",
+          "lines": [
+            "Then a strong gust came. The string slipped from Nia’s fingers. The kite rose, spun once, and landed in the big oak. Its blue tail caught on a high branch.",
+            "“It’s gone,” Teo whispered.",
+            "Nia looked up. They could still see red among the leaves, but the branch was much too high."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What made the kite land in the oak?",
+            "options": [
+              {
+                "text": "A strong gust of wind came"
+              },
+              {
+                "text": "Nia let go on purpose"
+              },
+              {
+                "text": "Teo threw it too high"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! A strong gust came and the string slipped from Nia's fingers.",
+            "retryFeedback": "Look for what happened right before the kite rose."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why could Nia and Teo still see the kite but not get it back?",
+            "options": [
+              {
+                "text": "The branch where it was caught was too high to reach"
+              },
+              {
+                "text": "The kite had completely broken apart"
+              },
+              {
+                "text": "They didn't know which tree it fell in"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! They could see red among the leaves, but the branch was out of reach.",
+            "retryFeedback": "Think about what Nia says about the branch at the end of the page."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/la-cometa-roja/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Nia and Teo ask the schoolyard caretaker for help getting the kite back."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b03",
+          "voice": "narration",
+          "title": "Asking for Help",
+          "lines": [
+            "Teo stepped toward the trunk.",
+            "“We aren’t going to climb,” Nia said. “That branch is too high.”",
+            "They sat under the tree for a moment. Teo’s eyes filled with tears. Nia felt sad too, but she saw the school caretaker passing by.",
+            "“Let’s ask him for help,” she said.",
+            "Nia explained where the blue tail was. He looked in the direction Nia pointed."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Why did Nia decide to ask for help instead of climbing the tree?",
+            "options": [
+              {
+                "text": "Because the branch was too high to climb safely"
+              },
+              {
+                "text": "Because she didn't care about the kite"
+              },
+              {
+                "text": "Because Teo forbade it"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She said they weren't going to climb because the branch was too high.",
+            "retryFeedback": "Look for Nia's exact words about the branch."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What helped Nia ask for help clearly?",
+            "options": [
+              {
+                "text": "Knowing exactly where the blue tail was so she could point it out"
+              },
+              {
+                "text": "Teo stopping his crying first"
+              },
+              {
+                "text": "The teacher calling them over"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! Nia explained where the blue tail was so the caretaker knew where to look.",
+            "retryFeedback": "Think about what Nia does right after asking for help."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p04",
+      "illustration": {
+        "src": "stories/la-cometa-roja/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "The caretaker uses a long pole to bring the kite down from the tree."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b04",
+          "voice": "narration",
+          "title": "The Long Pole",
+          "lines": [
+            "The caretaker brought a long pole. Nia and Teo waited several steps from the tree.",
+            "The tip touched the kite. The kite moved once. Then again. At last it came free and floated down to the ground.",
+            "“It’s back!” Teo cried.",
+            "Nia thanked the caretaker. When she picked up the kite, she noticed a small tear near the center."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What did the caretaker use to bring the kite down?",
+            "options": [
+              {
+                "text": "A long pole"
+              },
+              {
+                "text": "A ladder"
+              },
+              {
+                "text": "A new string"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! He brought a long pole.",
+            "retryFeedback": "Look for what the caretaker brings."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What did Nia discover right when she got the kite back?",
+            "options": [
+              {
+                "text": "A small tear near the center"
+              },
+              {
+                "text": "That the blue tail was gone"
+              },
+              {
+                "text": "That the spool was broken"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She noticed a small tear near the center when she picked it up.",
+            "retryFeedback": "Reread the last sentence of the page."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p05",
+      "illustration": {
+        "src": "stories/la-cometa-roja/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Nia and Teo patch the kite at a courtyard table."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b05",
+          "voice": "narration",
+          "title": "The Patch",
+          "lines": [
+            "“It can’t fly like that,” Teo said.",
+            "“Not yet,” Nia answered.",
+            "At a courtyard table, they laid the kite face up. The caretaker gave them a bit of strong paper and tape. Nia held the kite. Teo smoothed the patch with care.",
+            "The patch felt firm. Nia gave the blue tail a very gentle tug to check that it was still tied on."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What did Nia and Teo do before flying the kite again?",
+            "options": [
+              {
+                "text": "They patched the tear"
+              },
+              {
+                "text": "They bought a new kite"
+              },
+              {
+                "text": "They asked the teacher to fix it"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! They put a patch of strong paper over the tear.",
+            "retryFeedback": "Look for what Nia and Teo do at the courtyard table."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why did Nia gently tug the blue tail before trying to fly the kite?",
+            "options": [
+              {
+                "text": "To check it was still tied on well, not just that the patch was firm"
+              },
+              {
+                "text": "Because she wanted to remove the tail"
+              },
+              {
+                "text": "Because Teo asked her to, as a game"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She wanted to make sure everything — the patch and the tail — was ready.",
+            "retryFeedback": "Reread the last sentence of the page."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p06",
+      "illustration": {
+        "src": "stories/la-cometa-roja/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "The patched red kite flies high over the oak tree in the sunshine."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b06",
+          "voice": "narration",
+          "title": "Higher Than Before",
+          "lines": [
+            "Later, the breeze returned. Nia took the string, and Teo held the kite until the air lifted it. This time Nia held the spool firmly.",
+            "The red kite flew above the oak. Its little patch shone in the sun.",
+            "“It looks like a star,” Teo said.",
+            "Nia smiled. They had lost the kite for a while, but they found a way to bring it back. Now it flew higher than before."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q06",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What did Nia do differently with the spool this time?",
+            "options": [
+              {
+                "text": "She held it firmly"
+              },
+              {
+                "text": "She gave it to Teo"
+              },
+              {
+                "text": "She left it on the ground"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! This time Nia held the spool firmly.",
+            "retryFeedback": "Look for what Nia does with the spool at the start of the page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What did Nia and Teo learn by the end of the story?",
+            "options": [
+              {
+                "text": "That losing something doesn't always mean it's lost for good"
+              },
+              {
+                "text": "That you should never fly kites near trees"
+              },
+              {
+                "text": "That the caretaker doesn't like to help"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! They found a way to bring it back, and it flew higher than before.",
+            "retryFeedback": "Think about what Nia says at the end about losing the kite."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "gust": {
+      "syllables": [
+        "gust"
+      ],
+      "definition": "A sudden rush of wind.",
+      "synonym": "burst",
+      "example": "A gust of wind blew my grandfather's hat right off his head."
+    },
+    "caught": {
+      "syllables": [
+        "caught"
+      ],
+      "definition": "Stuck and not easy to free.",
+      "synonym": "stuck",
+      "example": "The ball got caught in the branches of the tree."
+    },
+    "tear": {
+      "syllables": [
+        "tear"
+      ],
+      "definition": "A torn or ripped part.",
+      "synonym": "rip",
+      "example": "He fixed the tear in his backpack with a little glue."
+    },
+    "patch": {
+      "syllables": [
+        "patch"
+      ],
+      "definition": "A small piece that covers a tear.",
+      "synonym": "mend",
+      "example": "She sewed a patch onto the knee of her jeans."
+    },
+    "spool": {
+      "syllables": [
+        "spool"
+      ],
+      "definition": "An object that string is wound around.",
+      "synonym": "reel",
+      "example": "He wound the fishing line onto a plastic spool."
+    },
+    "caretaker": {
+      "syllables": [
+        "care",
+        "tak",
+        "er"
+      ],
+      "definition": "A person who takes care of a place, like a school.",
+      "synonym": "custodian",
+      "example": "The caretaker unlocked the gym early for the morning game."
+    },
+    "schoolyard": {
+      "syllables": [
+        "school",
+        "yard"
+      ],
+      "definition": "The outdoor area of a school where children play.",
+      "synonym": "playground",
+      "example": "We play tag in the schoolyard every recess."
+    },
+    "several": {
+      "syllables": [
+        "sev",
+        "er",
+        "al"
+      ],
+      "definition": "More than two or three, but not a lot.",
+      "synonym": "a few",
+      "example": "She invited several friends to her birthday party."
+    }
+  }
+}

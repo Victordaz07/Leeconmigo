@@ -1,0 +1,739 @@
+{
+  "id": "nico-03-el-heroe-fuera-del-libro-es-n6",
+  "familyId": "nico-03-el-heroe-fuera-del-libro",
+  "language": "es",
+  "title": "3. El héroe fuera del libro",
+  "level": 6,
+  "category": "fantasia",
+  "description": "Libro 3 de 3 de la serie «Nico, héroe de los libros». Lo que sucede cuando termina la lectura. Leer en orden.",
+  "cover": {
+    "src": "stories/nico-03-el-heroe-fuera-del-libro/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Ilustración de el agua de verdad."
+  },
+  "heroFocus": {
+    "x": 30,
+    "y": 55
+  },
+  "reviewWords": [
+    "hinchada",
+    "reparación",
+    "bisagra"
+  ],
+  "pages": [
+    {
+      "id": "b3-p01",
+      "illustration": {
+        "src": "stories/nico-03-el-heroe-fuera-del-libro/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Ilustración de el agua de verdad."
+      },
+      "blocks": [
+        {
+          "id": "b01",
+          "voice": "narration",
+          "title": "El agua de verdad",
+          "lines": [
+            "Una lluvia fuerte entró por una ventana de la biblioteca del barrio. El estante que Teo había construido se mojó por abajo; las tarjetas y varios libros quedaron a salvo, pero la base de cartón se dobló.",
+            "Faltaban cuatro días para abrir el rincón de lectura. Nico quiso prometer que él solo lo arreglaría antes del desayuno.",
+            "Su abuela Lidia le mostró la madera hinchada y le pidió que mirara bien. Ningún faro iba a encenderse al pasar una página.",
+            "Era un problema de verdad, con herramientas, horarios y personas cansadas. Nico llamó a Alma y Teo.",
+            "Teo contestó seco: ya había dicho que la ventana goteaba. Nico se dio cuenta de que no lo había escuchado."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué se moja en la biblioteca?",
+            "options": [
+              {
+                "text": "Todos los libros"
+              },
+              {
+                "text": "El libro azul"
+              },
+              {
+                "text": "La base del estante"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! La base del estante.",
+            "retryFeedback": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué entiende Nico ante el daño?",
+            "options": [
+              {
+                "text": "Debe escuchar y trabajar con otros"
+              },
+              {
+                "text": "Puede arreglarlo todo de inmediato"
+              },
+              {
+                "text": "No hay solución posible"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Debe escuchar y trabajar con otros.",
+            "retryFeedback": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b3-p02",
+      "illustration": {
+        "src": "stories/nico-03-el-heroe-fuera-del-libro/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Ilustración de el puente que se cayó."
+      },
+      "blocks": [
+        {
+          "id": "b02",
+          "voice": "narration",
+          "title": "El puente que se cayó",
+          "lines": [
+            "En la escuela, Teo apenas hablaba con Nico. Durante el recreo, un grupo movió sin querer la maqueta y el puente se desprendió.",
+            "Nico lo sostuvo antes de que cayera al suelo. «Ya lo arreglo», dijo, tomando el pegamento.",
+            "Teo retiró la pieza: no quería que arreglaran algo suyo sin preguntarle. Nico sintió calor en la cara.",
+            "Iba a responder con enojo cuando recordó el espejo de la biblioteca de papel, aquel que enseñaba un futuro posible pero no obligatorio. Se apartó para respirar.",
+            "Luego dijo: «Me equivoqué con la ventana y con el puente. ¿Quieres contarme qué parte debe conservarse?».",
+            "Teo señaló una pequeña bisagra que Nico no había visto."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué señala Teo en el puente?",
+            "options": [
+              {
+                "text": "Una bisagra pequeña"
+              },
+              {
+                "text": "Una llave"
+              },
+              {
+                "text": "Una luz"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Una bisagra pequeña.",
+            "retryFeedback": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué hace Nico antes de responder enojado?",
+            "options": [
+              {
+                "text": "Se marcha para siempre"
+              },
+              {
+                "text": "Respira y pregunta"
+              },
+              {
+                "text": "Pega sin permiso"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Respira y pregunta.",
+            "retryFeedback": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b3-p03",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "blocks": [
+        {
+          "id": "b03",
+          "voice": "narration",
+          "title": "La abuela no da respuestas",
+          "lines": [
+            "Lidia llevó a Nico a revisar el rincón mojado. Hicieron una lista: avisar a la bibliotecaria, secar el suelo, mover los libros y preguntar a un adulto si la madera todavía era segura.",
+            "La bibliotecaria llamó al personal del edificio para reparar la ventana; los niños no tocarían el marco alto ni las herramientas eléctricas. Mientras esperaban, Lidia le contó a Nico que ella también se había equivocado muchas veces al preparar actividades para sus vecinos.",
+            "«Los libros no me dieron una solución para todo», dijo. «Me enseñaron a detenerme y a escuchar antes de actuar».",
+            "Nico anotó esa frase en el cuaderno, no como una regla mágica, sino como algo que podía intentar mañana."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Quién repara la ventana alta?",
+            "options": [
+              {
+                "text": "Dani"
+              },
+              {
+                "text": "El personal del edificio"
+              },
+              {
+                "text": "Nico solo"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! El personal del edificio.",
+            "retryFeedback": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué le enseña Lidia?",
+            "options": [
+              {
+                "text": "Que los libros solucionan todo"
+              },
+              {
+                "text": "Que debe ocultar el daño"
+              },
+              {
+                "text": "Detenerse y escuchar"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Detenerse y escuchar.",
+            "retryFeedback": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b3-p04",
+      "illustration": {
+        "src": "stories/nico-03-el-heroe-fuera-del-libro/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Ilustración de una voz muy pequeña."
+      },
+      "blocks": [
+        {
+          "id": "b04",
+          "voice": "narration",
+          "title": "Una voz muy pequeña",
+          "lines": [
+            "Alma trajo a su hermano menor, Dani, para probar los libros del rincón. Dani dijo que no le gustaba leer porque le costaba seguir las líneas y otros niños terminaban antes.",
+            "Nico estuvo a punto de decirle que bastaba con esforzarse. Recordó cómo había escondido la cabeza en clase.",
+            "En vez de aconsejarlo, le preguntó qué historia quería escuchar. Dani escogió un libro de criaturas marinas.",
+            "Alma leyó una página; Dani señaló un pulpo escondido en la ilustración y Nico inventó una voz graciosa para él. Después dejaron el libro abierto para que Dani continuara a su ritmo.",
+            "El rincón aún olía a pintura y a lluvia, pero ya había servido para algo."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué encuentra Dani en la ilustración?",
+            "options": [
+              {
+                "text": "Un dragón"
+              },
+              {
+                "text": "Un puente"
+              },
+              {
+                "text": "Un pulpo"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Un pulpo.",
+            "retryFeedback": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué Nico evita decirle que se esfuerce más?",
+            "options": [
+              {
+                "text": "Recuerda cómo se sentía al leer"
+              },
+              {
+                "text": "Quiere acabar pronto"
+              },
+              {
+                "text": "No le interesan los libros"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Recuerda cómo se sentía al leer.",
+            "retryFeedback": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b3-p05",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "blocks": [
+        {
+          "id": "b05",
+          "voice": "narration",
+          "title": "La última visita",
+          "lines": [
+            "Esa noche Nico abrió el volumen azul para contarle a Sira lo ocurrido. El puente de papel apareció, pero la ciudad de canales estaba tranquila.",
+            "Sira no le ofreció una misión. Lo acompañó a ver el taller de mapas: allí una niña borraba una curva y dibujaba otra mejor.",
+            "Nico explicó que el estante se había dañado y que Teo estaba molesto. Sira escuchó.",
+            "«No puedo cruzar a tu biblioteca para arreglarlo», dijo. «Y aunque pudiera, no sabría qué necesita Teo.",
+            "Eso tienes que preguntárselo tú». Nico entendió que entrar en un libro podía enseñarle a mirar, pero no decidir por sus amigos.",
+            "Volvió antes de que la página se cerrara."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Adónde vuelve Nico en el libro?",
+            "options": [
+              {
+                "text": "Al taller de mapas"
+              },
+              {
+                "text": "A una guerra"
+              },
+              {
+                "text": "Al patio escolar"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Al taller de mapas.",
+            "retryFeedback": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué Sira no resuelve el problema de Teo?",
+            "options": [
+              {
+                "text": "La ciudad desapareció"
+              },
+              {
+                "text": "Nico debe preguntarle qué necesita"
+              },
+              {
+                "text": "No sabe usar una cuerda"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Nico debe preguntarle qué necesita.",
+            "retryFeedback": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b3-p06",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "blocks": [
+        {
+          "id": "b06",
+          "voice": "narration",
+          "title": "Tres manos y una lista",
+          "lines": [
+            "A la mañana siguiente, Nico pidió a Teo que dirigiera la reparación de la parte que había construido. Teo aceptó, siempre que Nico dejara de adelantarse con el pegamento.",
+            "Alma repartió las tareas que sí podían hacer: limpiar las tarjetas, escoger libros secos y preguntar a los visitantes qué actividades querían. La bibliotecaria confirmó que el personal ya había arreglado la ventana y revisó el estante.",
+            "Teo propuso reemplazar la base de cartón por una bandeja elevada que pudiera retirarse si volvía a entrar agua. Nico dibujó tres versiones y Teo eligió una.",
+            "No terminaron aquel día. Al irse, Nico sintió la incomodidad de dejar algo a medias y también la tranquilidad de tener un plan compartido."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q06",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué propone Teo para el estante?",
+            "options": [
+              {
+                "text": "Una puerta mágica"
+              },
+              {
+                "text": "Una bandeja elevada"
+              },
+              {
+                "text": "Más cartón mojado"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Una bandeja elevada.",
+            "retryFeedback": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué cambia en el modo de trabajar?",
+            "options": [
+              {
+                "text": "Nico hace todo"
+              },
+              {
+                "text": "No terminan el proyecto"
+              },
+              {
+                "text": "Teo dirige su reparación y reparten tareas"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Teo dirige su reparación y reparten tareas.",
+            "retryFeedback": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b3-p07",
+      "illustration": {
+        "src": "stories/nico-03-el-heroe-fuera-del-libro/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Ilustración de el discurso sin capa."
+      },
+      "blocks": [
+        {
+          "id": "b07",
+          "voice": "narration",
+          "title": "El discurso sin capa",
+          "lines": [
+            "El día de la apertura, Nico debía explicar el rincón ante familias y compañeros. Había practicado un discurso perfecto, pero perdió la primera frase al ver tantas caras.",
+            "Sus manos temblaron. Alma le señaló la maqueta y Teo giró una de las tarjetas para que Nico recordara por dónde empezar.",
+            "Nico dijo que había querido ser un superhéroe capaz de solucionar todo. Una niña preguntó si el libro azul era mágico.",
+            "Nico sonrió y contestó que algunos libros parecían abrir puertas, pero que la magia más útil era volver con preguntas nuevas. Luego invitó a Dani a mostrar el pulpo escondido.",
+            "Dani habló bajito; todos se acercaron para escucharlo."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q07",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Quién muestra el pulpo al público?",
+            "options": [
+              {
+                "text": "Sira"
+              },
+              {
+                "text": "El Borrador"
+              },
+              {
+                "text": "Dani"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Dani.",
+            "retryFeedback": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué ayuda a Nico a empezar su discurso?",
+            "options": [
+              {
+                "text": "Sus amigos le dan señales y tiempo"
+              },
+              {
+                "text": "Una capa lo hace valiente"
+              },
+              {
+                "text": "El público se va"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Sus amigos le dan señales y tiempo.",
+            "retryFeedback": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b3-p08",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "blocks": [
+        {
+          "id": "b08",
+          "voice": "narration",
+          "title": "La decisión de Dani",
+          "lines": [
+            "Después de la presentación, Dani tomó una tarjeta y eligió un camino que cruzaba el puente de cartón hacia una casa sin dibujar. «¿Quién vive ahí?», preguntó Alma.",
+            "Dani no sabía. Inventó a un cuidador de estrellas que olvidaba dónde había guardado su escalera.",
+            "Teo añadió una escalera plegable a la maqueta y pidió permiso antes de pegarla. Nico quería darle al cuidador un poder espectacular.",
+            "Dani prefirió que llamara a sus vecinos para buscar juntos. Nico aceptó ese final y escuchó cómo el niño continuaba la aventura.",
+            "No todas las personas veían la misma puerta en un libro. Aquella tarde el rincón quedó lleno de caminos que sus creadores no habían previsto."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q08",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿A quién inventa Dani?",
+            "options": [
+              {
+                "text": "Un cuidador de estrellas"
+              },
+              {
+                "text": "Un pirata"
+              },
+              {
+                "text": "Un profesor de magia"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Un cuidador de estrellas.",
+            "retryFeedback": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué hace Nico con el final que propone Dani?",
+            "options": [
+              {
+                "text": "Dice que está mal"
+              },
+              {
+                "text": "Lo acepta y escucha más"
+              },
+              {
+                "text": "Lo borra"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Lo acepta y escucha más.",
+            "retryFeedback": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b3-p09",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "blocks": [
+        {
+          "id": "b09",
+          "voice": "narration",
+          "title": "Cuando el libro espera",
+          "lines": [
+            "Al cerrar, Nico encontró el volumen azul junto a una pila de préstamos. Sus páginas estaban secas.",
+            "Pensó en entrar una vez más, pero Alma le pidió ayuda para guardar las tarjetas y Teo quería enseñarle una bisagra nueva. Nico dejó el libro sobre la mesa, abierto donde podían verlo.",
+            "Ayudó a sus amigos y después anotó las preguntas que habían hecho los visitantes. El libro no desapareció ni se enfadó por esperar.",
+            "Al regresar a casa, Lidia le preguntó si seguía queriendo ser un héroe. «Sí», dijo Nico.",
+            "«Pero creo que hoy fui más útil escuchando que saltando». La abuela le pidió que le contara la historia completa, y él empezó por el charco."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q09",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Dónde deja Nico el libro mientras ayuda?",
+            "options": [
+              {
+                "text": "Bajo la lluvia"
+              },
+              {
+                "text": "Sobre la mesa"
+              },
+              {
+                "text": "En el canal"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Eso es! Sobre la mesa.",
+            "retryFeedback": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué descubre sobre ser útil?",
+            "options": [
+              {
+                "text": "Debe saltar siempre"
+              },
+              {
+                "text": "No puede seguir leyendo"
+              },
+              {
+                "text": "Escuchar también puede ser valiente"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Escuchar también puede ser valiente.",
+            "retryFeedback": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "b3-p10",
+      "illustration": {
+        "src": "stories/nico-03-el-heroe-fuera-del-libro/page-10.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Ilustración de una puerta que sigue abierta."
+      },
+      "blocks": [
+        {
+          "id": "b10",
+          "voice": "narration",
+          "title": "Una puerta que sigue abierta",
+          "lines": [
+            "La semana siguiente, el rincón abrió de nuevo sin carteles de «final correcto». Había un lugar para leer en silencio, otro para escuchar a un amigo y una mesa para dibujar.",
+            "Teo enseñó a cuidar la bisagra. Alma añadió tarjetas con preguntas nuevas.",
+            "Dani leyó dos líneas en voz alta y pidió que nadie contara cuántas tardaba. Nico respetó su ritmo.",
+            "En su mochila seguía el libro azul; podía visitarlo cuando quisiera y cerrarlo para volver. Aquello era lo más extraordinario: no tenía que elegir entre el mundo de las historias y el suyo.",
+            "Podía llevar de uno al otro curiosidad, valor para pedir ayuda y ganas de escuchar. Al abrir la siguiente página, nadie sabía qué camino aparecería.",
+            "Esa era una buena razón para seguir leyendo."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q10",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué hace Dani en el rincón?",
+            "options": [
+              {
+                "text": "Mide a todos"
+              },
+              {
+                "text": "Cierra todos los libros"
+              },
+              {
+                "text": "Lee a su propio ritmo"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Eso es! Lee a su propio ritmo.",
+            "retryFeedback": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué puede llevar Nico entre ambos mundos?",
+            "options": [
+              {
+                "text": "Curiosidad y ganas de escuchar"
+              },
+              {
+                "text": "Poderes para mandar"
+              },
+              {
+                "text": "Un final obligatorio"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Curiosidad y ganas de escuchar.",
+            "retryFeedback": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+          }
+        ]
+      },
+      "template": "full"
+    }
+  ],
+  "vocabulary": {
+    "hinchada": {
+      "syllables": [
+        "hin",
+        "cha",
+        "da"
+      ],
+      "definition": "más grande por absorber agua",
+      "synonym": "inflamada",
+      "example": "La esponja quedó hinchada después de absorber tanta agua."
+    },
+    "reparación": {
+      "syllables": [
+        "re",
+        "pa",
+        "ra",
+        "ción"
+      ],
+      "definition": "trabajo para arreglar algo",
+      "synonym": "arreglo",
+      "example": "La reparación de la bicicleta tomó toda la tarde."
+    },
+    "bisagra": {
+      "syllables": [
+        "bi",
+        "sa",
+        "gra"
+      ],
+      "definition": "pieza que permite girar una tapa o puerta",
+      "example": "La bisagra de la puerta chirriaba cada vez que la abrían."
+    },
+    "bandeja": {
+      "syllables": [
+        "ban",
+        "de",
+        "ja"
+      ],
+      "definition": "base que sostiene objetos",
+      "synonym": "charola",
+      "example": "Llevó los vasos a la mesa en una bandeja."
+    },
+    "ritmo": {
+      "syllables": [
+        "rit",
+        "mo"
+      ],
+      "definition": "velocidad con que se hace algo",
+      "synonym": "paso",
+      "example": "Corrió a buen ritmo durante toda la carrera."
+    },
+    "curiosidad": {
+      "syllables": [
+        "cu",
+        "rio",
+        "si",
+        "dad"
+      ],
+      "definition": "ganas de saber o descubrir",
+      "synonym": "interés",
+      "example": "La curiosidad la llevó a abrir el libro misterioso."
+    }
+  }
+}

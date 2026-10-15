@@ -1,0 +1,890 @@
+{
+  "id": "la-pregunta-que-guarde-en-el-bolsillo-en-n6",
+  "familyId": "la-pregunta-que-guarde-en-el-bolsillo",
+  "language": "en",
+  "title": "The Question I Kept in My Pocket",
+  "level": 6,
+  "category": "crecimiento",
+  "description": "Amara learns to find her voice when the silence doesn't answer.",
+  "cover": {
+    "src": "stories/la-pregunta-que-guarde-en-el-bolsillo/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Amara walking home at sunset with her notebook."
+  },
+  "heroFocus": {
+    "x": 24,
+    "y": 45
+  },
+  "reviewWords": [
+    "question",
+    "silence",
+    "courage"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/la-pregunta-que-guarde-en-el-bolsillo/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Amara writing in her notebook in her room at night."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b01",
+          "voice": "narration",
+          "title": "A Question, Softly Asked",
+          "lines": [
+            "Grandma Celia says you can talk to God anywhere. I chose my room because nobody interrupts me there, except the fan that sounds like a tired helicopter.",
+            "I wrote a question in my pocket notebook: “Can you hear me?” I asked it aloud, very softly. I waited. The fan kept spinning.",
+            "I wasn't expecting the ceiling to open or anything, but I did hope for some way to know my words had arrived. I slipped the notebook into the pocket of my overalls so I could carry the question with me."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What question does Amara write in her notebook?",
+            "options": [
+              {
+                "text": "“Can you hear me?”"
+              },
+              {
+                "text": "“Why is the fan so loud?”"
+              },
+              {
+                "text": "“When is Grandma coming home?”"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She wrote, “Can you hear me?”",
+            "retryFeedback": "Look for the question Amara writes in her notebook."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What kind of answer does Amara expect at first?",
+            "options": [
+              {
+                "text": "Some sign that her words had reached somewhere"
+              },
+              {
+                "text": "The ceiling literally opening up"
+              },
+              {
+                "text": "A written reply in her notebook the next day"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She wasn't expecting anything that literal, just some way to know she'd been heard.",
+            "retryFeedback": "Think about what Amara says she did NOT expect, and what she did hope for."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b02",
+          "voice": "narration",
+          "title": "Questions I Don't Say",
+          "lines": [
+            "At school I carried questions I never said aloud, too. For example, why is it so easy to talk at home and so hard when everybody is watching me?",
+            "Our teacher had asked us to design, in teams, a map of places at school where a student could feel welcome. Gabriel, who had just arrived, suggested adding the library and a quiet corner of the playground. I thought it was a great idea.",
+            "When he raised his hand to explain it, I prepared a sentence to support him. The sentence stuck behind my teeth."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Which of Gabriel's ideas does Amara like?",
+            "options": [
+              {
+                "text": "Adding the library and a quiet corner of the playground"
+              },
+              {
+                "text": "Changing schools"
+              },
+              {
+                "text": "Making the map without any colors"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She liked adding the library and the quiet corner.",
+            "retryFeedback": "Look for what Gabriel suggests for the map."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why is it hard for Amara to support Gabriel in front of the class?",
+            "options": [
+              {
+                "text": "She was afraid to speak up when everyone was watching, even though it's easy at home"
+              },
+              {
+                "text": "She didn't actually like Gabriel's idea"
+              },
+              {
+                "text": "Gabriel had asked her to stay quiet"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! It was easy to talk at home, but very hard when everyone was watching her.",
+            "retryFeedback": "Think about the question Amara asks herself at the start of the page."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/la-pregunta-que-guarde-en-el-bolsillo/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Gabriel shows his map on the table while Amara stays silent."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b03",
+          "voice": "narration",
+          "title": "Gabriel's Map",
+          "lines": [
+            "Gabriel spread his map across a table. There were colored paths, a bench beneath a tree, and a doorway leading to a place to rest from the noise.",
+            "Two classmates laughed. One said it looked like a map of a secret base. Gabriel answered that nobody should need a secret base to find a safe place.",
+            "He looked at me for a moment, perhaps hoping I would say what I'd said while we worked. I looked at my shoes. Nobody had forbidden me to speak. That was the part that hurt most."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "How does Gabriel answer the teasing about his map?",
+            "options": [
+              {
+                "text": "He says nobody should need a secret base to feel safe"
+              },
+              {
+                "text": "He laughs along with them"
+              },
+              {
+                "text": "He puts the map away and says nothing"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! He answered that nobody should need a secret base to feel safe.",
+            "retryFeedback": "Look for what Gabriel says right after his classmates laugh."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What hurts Amara most about staying silent?",
+            "options": [
+              {
+                "text": "That nobody had forbidden her to speak — it was her own choice not to"
+              },
+              {
+                "text": "That Gabriel stopped being her friend"
+              },
+              {
+                "text": "That her classmates laughed at her too"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! Nobody stopped her; that was exactly what hurt the most.",
+            "retryFeedback": "Reread the last sentence of the page."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p04",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b04",
+          "voice": "narration",
+          "title": "A Glass of Water",
+          "lines": [
+            "On my way home, I squeezed the notebook in my pocket. I wanted to write, “Make Gabriel stop being angry with me,” but that question didn't tell the whole truth. I had been afraid they would laugh at me, too.",
+            "During snack, Grandma asked how the presentation had gone. I said, “Normal,” in a voice so unlike normal that she raised an eyebrow. She didn't press me. She left a glass of water beside me.",
+            "Adults sometimes ask too much; that afternoon I was grateful Celia knew how to wait. I still didn't know how to tell the part where I'd stayed silent."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What did Grandma leave beside Amara during snack?",
+            "options": [
+              {
+                "text": "A glass of water"
+              },
+              {
+                "text": "A written note"
+              },
+              {
+                "text": "Her own notebook"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She left a glass of water beside her, without pressing for more.",
+            "retryFeedback": "Look for what Grandma does after Amara says “Normal.”"
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why doesn't Amara want to write only “Make Gabriel stop being angry with me”?",
+            "options": [
+              {
+                "text": "Because that question didn't tell the whole truth of what had happened"
+              },
+              {
+                "text": "Because she'd rather not write anything at all"
+              },
+              {
+                "text": "Because Gabriel wasn't angry anymore"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! That question didn't tell the whole truth of what had happened.",
+            "retryFeedback": "Think about what part of the story that question would leave out."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p05",
+      "illustration": {
+        "src": "stories/la-pregunta-que-guarde-en-el-bolsillo/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Amara sitting on her bedroom rug, deep in thought."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b05",
+          "voice": "narration",
+          "title": "Can You Hear Me?",
+          "lines": [
+            "That night I sat on the rug. “God,” I said, “today I saw them laugh at Gabriel, and I was afraid. I didn't laugh, but I didn't stand beside him either. Can you hear me even when I haven't done the right thing?”",
+            "I waited again. I didn't hear a voice. A car passed outside, and the fan made its helicopter noise once more. I wrote down what I'd said without changing it into a version where I sounded braver.",
+            "On the next page I wrote, “How do I tell an answer from an idea of my own?” I couldn't answer myself. I left the notebook open."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What does Amara ask that night?",
+            "options": [
+              {
+                "text": "Whether she's heard even when she hasn't done the right thing"
+              },
+              {
+                "text": "Whether she can skip school"
+              },
+              {
+                "text": "Whether Gabriel will ever talk to her again"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She asked if she was heard even when she hadn't done the right thing.",
+            "retryFeedback": "Look for Amara's exact words while sitting on the rug."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why does Amara write down what she said without making herself sound braver?",
+            "options": [
+              {
+                "text": "Because she wanted to be honest with herself, not just look good in her own notebook"
+              },
+              {
+                "text": "Because she forgot what she had said"
+              },
+              {
+                "text": "Because Grandma asked her to be exact"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She chose to be honest, even if it wasn't the braver version of herself.",
+            "retryFeedback": "Think about what a “braver” version would have sounded like, and why she skipped it."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p06",
+      "illustration": {
+        "src": "stories/la-pregunta-que-guarde-en-el-bolsillo/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Amara and her grandmother Celia talk in the kitchen."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b06",
+          "voice": "narration",
+          "title": "What Celia Won't Pretend",
+          "lines": [
+            "The next day I told Grandma what had happened, including my question about God. Celia set her cup on the table. “I won't pretend I know exactly what He answered you,” she said.",
+            "That surprised me. I'd thought grown-ups always had an answer ready. She asked what I knew for certain. I said Gabriel had meant what he said, I'd wanted to support him, and I hadn't done it.",
+            "“Then you have something honest to tell him,” she replied. She didn't promise Gabriel would forgive me. She offered to practice the conversation with me, if I wanted."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q06",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What does Celia refuse to pretend?",
+            "options": [
+              {
+                "text": "That she knows exactly what God answered Amara"
+              },
+              {
+                "text": "That she loves Amara"
+              },
+              {
+                "text": "That Gabriel is right"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She won't pretend she knows exactly what God answered.",
+            "retryFeedback": "Look for Celia's exact words beside her cup."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What can Amara recognize for certain, from her talk with Celia?",
+            "options": [
+              {
+                "text": "That Gabriel meant what he said and she didn't support him when she could have"
+              },
+              {
+                "text": "That God answered her with a clear sign"
+              },
+              {
+                "text": "That the blame belonged only to the classmates who laughed"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! That's the one thing she could say for certain: what she herself lived and did.",
+            "retryFeedback": "Think about what Amara answers when Celia asks what she knows for certain."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p07",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b07",
+          "voice": "narration",
+          "title": "Three Tries",
+          "lines": [
+            "We practiced three times. The first time I sounded as though the other children's laughter were the only problem. The second time I said my silence didn't matter because Gabriel was strong.",
+            "The third time I managed to say, “I left you alone when I could have spoken.” Hearing it embarrassed me. Grandma didn't erase the sentence. “That part is yours,” she said.",
+            "I still didn't know whether God had spoken to me. I knew a prayer couldn't take the place of an apology. I put away my notebook and decided to find Gabriel after class, when I could hear his answer without an audience."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q07",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What does Amara manage to say on her third try practicing the apology?",
+            "options": [
+              {
+                "text": "“I left you alone when I could have spoken”"
+              },
+              {
+                "text": "“It wasn't my fault”"
+              },
+              {
+                "text": "“Gabriel is overreacting”"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She finally managed to say, “I left you alone when I could have spoken.”",
+            "retryFeedback": "Look for what Amara manages to say on the THIRD try, not the first or second."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why can't a prayer replace the apology to Gabriel?",
+            "options": [
+              {
+                "text": "Because talking to God doesn't replace actually talking to the person you hurt"
+              },
+              {
+                "text": "Because prayers don't count if they're said quietly"
+              },
+              {
+                "text": "Because Gabriel doesn't believe in God"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! Amara realizes she still needs to talk directly with Gabriel.",
+            "retryFeedback": "Think about what Amara decides to do right after that thought."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p08",
+      "illustration": {
+        "src": "stories/la-pregunta-que-guarde-en-el-bolsillo/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Amara talks with Gabriel by the school lockers."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b08",
+          "voice": "narration",
+          "title": "I Don't Need You to Fight for Me",
+          "lines": [
+            "I found him closing his folder. Before I could begin, he said, “I don't need you to fight for me.” I stood still.",
+            "He added, “But you were on our team. You said the playground corner was a good idea, and then you looked at the floor.” He was right. I told him I'd been afraid. I didn't use it as an excuse. “I'm sorry,” I said.",
+            "Gabriel leaned against the table. “I don't know if I want to present with you all again.” I wanted to say everything would be fine. Instead I asked what he wanted to do with his map."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q08",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What does Gabriel want Amara to understand?",
+            "options": [
+              {
+                "text": "That she was on the team and should have supported him, not just avoided laughing"
+              },
+              {
+                "text": "That he never wants to speak to her again"
+              },
+              {
+                "text": "That she was right about the map"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! He wanted her to understand she was on the team and should have supported him.",
+            "retryFeedback": "Look for what Gabriel says right after “I don't need you to fight for me.”"
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why does Amara ask Gabriel what he wants to do with the map instead of promising everything will be fine?",
+            "options": [
+              {
+                "text": "Because an empty promise wouldn't have been honest"
+              },
+              {
+                "text": "Because she no longer cared about the map"
+              },
+              {
+                "text": "Because Gabriel told her to ask that"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She chose to ask something real instead of promising something she couldn't guarantee.",
+            "retryFeedback": "Think about what Amara “wanted” to say, and why she didn't."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p09",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b09",
+          "voice": "narration",
+          "title": "The Quiet Corner",
+          "lines": [
+            "Gabriel wanted to keep the quiet corner. “It's not for hiding anyone,” he explained. “It's so someone can decide whether they need company or a minute alone.”",
+            "He showed me a path I hadn't noticed: from the entrance to the library without going through the noisiest hall. I asked if I could help check the routes, but made it clear the map was still his.",
+            "He said he would think about it. That wasn't a yes. It was also better than a promise made just to help me feel less guilty."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q09",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What is the quiet corner for, according to Gabriel?",
+            "options": [
+              {
+                "text": "So someone can decide whether they need company or a minute alone"
+              },
+              {
+                "text": "To hide from the teacher"
+              },
+              {
+                "text": "To store the class's maps"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! It's so someone can decide whether they need company or a minute alone.",
+            "retryFeedback": "Look for Gabriel's explanation in quotes."
+          },
+          {
+            "audience": "lector",
+            "prompt": "How does Amara respect that the map is still Gabriel's?",
+            "options": [
+              {
+                "text": "She offers to help, but makes clear the final decision is his"
+              },
+              {
+                "text": "She changes the map without telling him"
+              },
+              {
+                "text": "She asks the teacher to give it to her instead"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She asked first and made clear the decision was still Gabriel's.",
+            "retryFeedback": "Think about the difference between asking permission and deciding for someone else."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p10",
+      "illustration": {
+        "src": "stories/la-pregunta-que-guarde-en-el-bolsillo/page-10.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Amara and Gabriel review the map together in class."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b10",
+          "voice": "narration",
+          "title": "The Shade That Moved",
+          "lines": [
+            "The next day Gabriel placed the map between us. He asked me to check whether the playground bench was shady at recess. We went to look and found that the shade moved; we drew another option beneath the big tree.",
+            "During the new presentation, Gabriel explained the idea and I added what we'd observed. Nobody called it a secret base again. If someone had, I had a sentence ready and was willing to say it.",
+            "When we finished, Gabriel picked up the map with a small smile. Our friendship was still finding its way."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q10",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What do Amara and Gabriel discover about the playground bench?",
+            "options": [
+              {
+                "text": "That its shade moved during recess"
+              },
+              {
+                "text": "That it was broken"
+              },
+              {
+                "text": "That nobody used it"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! They discovered the bench's shade moved during recess.",
+            "retryFeedback": "Look for what they go out to check about the bench."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What change does Amara show during the second presentation?",
+            "options": [
+              {
+                "text": "She participates and adds what she observed, instead of staying quiet"
+              },
+              {
+                "text": "She presents alone, without Gabriel"
+              },
+              {
+                "text": "She lets Gabriel speak for both of them, just like before"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! This time she participated and added what she had observed.",
+            "retryFeedback": "Compare this presentation with the first one, on page 3."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p11",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b11",
+          "voice": "narration",
+          "title": "This Part Is Mine",
+          "lines": [
+            "I showed Celia the notebook but covered one page with my hand. “This part is mine,” I told her. She smiled and didn't try to read it.",
+            "I told her I'd apologized and Gabriel had decided to work with me again. “Was that God's answer?” I asked. Grandma looked out the window for a moment.",
+            "“I can't name every part of what you experienced,” she replied. “You can keep talking to Him and pay attention to what you're learning.” I liked that she didn't tie my question shut with a pretty bow. Some questions need more than one day."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q11",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Which notebook page does Amara choose not to show?",
+            "options": [
+              {
+                "text": "One she covers with her hand and says is only hers"
+              },
+              {
+                "text": "The very first page"
+              },
+              {
+                "text": "None — she shows Celia the whole notebook"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She covered one page with her hand and said, “This part is mine.”",
+            "retryFeedback": "Look for what Amara does with her hand before showing Celia the notebook."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why doesn't Celia tell Amara whether what she experienced was an answer from God?",
+            "options": [
+              {
+                "text": "She'd rather not decide something so personal for Amara, and encourages her to keep paying attention"
+              },
+              {
+                "text": "She doesn't believe God exists"
+              },
+              {
+                "text": "She wasn't listening closely to Amara's story"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! Celia leaves that question open for Amara to keep discovering for herself.",
+            "retryFeedback": "Reread exactly what Grandma answers by the window."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p12",
+      "illustration": {
+        "src": "stories/la-pregunta-que-guarde-en-el-bolsillo/page-12.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Amara writing in her notebook, lying on the rug at night."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b12",
+          "voice": "narration",
+          "title": "I'm Here Again",
+          "lines": [
+            "That night I sat on the rug again. The fan still sounded like a tired helicopter. I opened my notebook and wrote, “I still don't know how to recognize all Your answers.",
+            "Today I told the truth, listened to Gabriel, and did something I was afraid to do yesterday.” I didn't know if those words were a conclusion or the beginning of another conversation.",
+            "Then I said softly, “I'm here again.” I didn't wait for the sky to change color. I left the notebook open, because there was room for more questions."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q12",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What does Amara say softly at the end?",
+            "options": [
+              {
+                "text": "“I'm here again”"
+              },
+              {
+                "text": "“I'm done now”"
+              },
+              {
+                "text": "“I won't write anymore”"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She said softly, “I'm here again.”",
+            "retryFeedback": "Look for the words Amara says at the very end, in quotes."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why does Amara leave the notebook open at the end?",
+            "options": [
+              {
+                "text": "Because there's still room for more questions, not because she found every answer"
+              },
+              {
+                "text": "Because she fell asleep"
+              },
+              {
+                "text": "Because she wants Celia to read it"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She left it open because there was still room for more questions.",
+            "retryFeedback": "Look for the very last sentence of the story."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "prayer": {
+      "syllables": [
+        "prayer"
+      ],
+      "definition": "Words someone says to talk with God.",
+      "example": "Before bed, she said a quiet prayer."
+    },
+    "question": {
+      "syllables": [
+        "ques",
+        "tion"
+      ],
+      "definition": "What someone says when they want to know something.",
+      "synonym": "query",
+      "example": "He raised his hand to ask a question about the homework."
+    },
+    "silence": {
+      "syllables": [
+        "si",
+        "lence"
+      ],
+      "definition": "The absence of sound or words.",
+      "synonym": "quiet",
+      "example": "There was complete silence when the teacher walked into the room."
+    },
+    "courage": {
+      "syllables": [
+        "cour",
+        "age"
+      ],
+      "definition": "Acting even when you're afraid.",
+      "synonym": "bravery",
+      "example": "It took courage for her to stand up for her friend."
+    },
+    "apology": {
+      "syllables": [
+        "a",
+        "pol",
+        "o",
+        "gy"
+      ],
+      "definition": "Words someone uses to admit they were wrong.",
+      "example": "He gave his sister an apology for breaking her toy."
+    },
+    "listen": {
+      "syllables": [
+        "lis",
+        "ten"
+      ],
+      "definition": "To pay real attention to what someone else is saying.",
+      "synonym": "pay attention",
+      "example": "It's important to listen to a friend when they're sad."
+    },
+    "respect": {
+      "syllables": [
+        "re",
+        "spect"
+      ],
+      "definition": "Considerate treatment of someone else's feelings or choices.",
+      "synonym": "consideration",
+      "example": "She showed respect by waiting for her turn to speak."
+    },
+    "company": {
+      "syllables": [
+        "com",
+        "pa",
+        "ny"
+      ],
+      "definition": "The presence of someone who is there with you.",
+      "synonym": "companionship",
+      "example": "He was grateful for her company on the long bus ride."
+    },
+    "forgive": {
+      "syllables": [
+        "for",
+        "give"
+      ],
+      "definition": "To stop being angry at someone who hurt you.",
+      "synonym": "pardon",
+      "example": "She decided to forgive her brother after he apologized."
+    },
+    "doubt": {
+      "syllables": [
+        "doubt"
+      ],
+      "definition": "Not being sure about something.",
+      "synonym": "uncertainty",
+      "example": "He had doubt about how to solve the math problem."
+    },
+    "map": {
+      "syllables": [
+        "map"
+      ],
+      "definition": "A drawing that shows how to get from one place to another.",
+      "synonym": "chart",
+      "example": "We used a map to find the way to the campsite."
+    },
+    "answer": {
+      "syllables": [
+        "an",
+        "swer"
+      ],
+      "definition": "What is said or discovered after a question.",
+      "synonym": "reply",
+      "example": "She gave the right answer before anyone else in class."
+    }
+  }
+}

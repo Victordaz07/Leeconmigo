@@ -1,0 +1,60 @@
+{
+  "method": "Herramienta integrada de generación y edición de imágenes con referencias visuales.",
+  "note": "Prompts de producción reutilizables. Los de personajes y páginas 1–3 se reconstruyen a partir de las especificaciones de la sesión; los de páginas 4–5 y portada conservan el texto de las llamadas finales.",
+  "shared": {
+    "canvas": "1536x1024, landscape 3:2",
+    "page_template": "two-up",
+    "left_empty_caption_rect": [
+      28,
+      16,
+      748,
+      168
+    ],
+    "right_empty_caption_rect": [
+      790,
+      16,
+      1510,
+      168
+    ],
+    "constraints": "NO text, letters, numbers, onomatopoeia, labels, titles or watermark. Caption boxes uniformly empty cream, thin dark outline, rounded corners, no tails. All faces and actions outside caption areas. Use the character sheet and previous page as references.",
+    "cast": "Mila: brown curly bob, yellow star clip, warm brown skin, brown eyes, teal shirt, mustard overalls and red sneakers. Pipo: small mint dragon with cream belly, lavender wings, gold horns and side ears. Hedgehog: tiny caramel face, chestnut quills, black nose.",
+    "style": "Polished dimensional animated storybook, rich tactile materials, warm dusk light, teal foliage, violet flowers, gentle shallow stream and glowing fireflies."
+  },
+  "assets": [
+    {
+      "asset": "characters",
+      "origin": "reconstructed",
+      "prompt": "Create a 1536x1024 character model sheet without any labels or writing. Use the previous Mila and Pipo sheet as exact identity reference. On warm ivory background, show Mila front, three-quarter, profile, walking, sitting or kneeling, and happy/surprised/concerned expressions. Show Pipo front, three-quarter, profile, walking and sitting, with happy and concerned expressions. Add a consistent tiny caramel-faced hedgehog with chestnut quills: front, three-quarter, profile, hesitant and walking. Include separate prop studies of a large green leaf, heavy branch, single flat wide piece of bark, two grey support stones, small test pebble and a glowing firefly. Keep characters and props clearly separated, anatomically coherent. No lettering."
+    },
+    {
+      "asset": "page01",
+      "origin": "reconstructed",
+      "prompt": "Fill the two-up template while preserving exact empty caption rectangles. Left panel: Mila and Pipo walking along a flower-lined garden path at sunset, admiring fireflies. Right panel: a tiny hedgehog waits on the left bank of a shallow stream, looking at the path on the right bank; Mila and Pipo kneel behind it. Wet twigs suggest the old bridge washed away. No intact bridge yet. Match character sheet and the shared style."
+    },
+    {
+      "asset": "page02",
+      "origin": "reconstructed",
+      "prompt": "Fill the same two-up template without changing blank captions. Left panel: Mila holds a single wide green leaf over the stream; it visibly sags into the water while Pipo and the hedgehog watch from the left bank. Right panel: Pipo strains to push a heavy fallen branch on dry land, bracing with back feet and pushing with front paws; Mila and the hedgehog watch. No completed bridge in either panel. Preserve setting and character identities."
+    },
+    {
+      "asset": "page03",
+      "origin": "reconstructed",
+      "prompt": "Fill the same two-up template without changing blank captions. Left panel: Mila finds and holds a single wide flat brown piece of bark near a mossy tree, with two smooth grey stones beside her knees; Pipo and the hedgehog watch. Right panel: she lays the same bark across the shallow stream, each end supported by one of the two grey stones. Water remains visible below. One continuous natural bark deck, no rails, nails, posts or extra planks. The hedgehog waits on the left bank and has not crossed yet."
+    },
+    {
+      "asset": "page04",
+      "origin": "original",
+      "prompt": "Use case: illustration-story. One finished 1536x1024 landscape comic page. INPUT 1 is the exact two-up layout template: preserve its two cream EMPTY caption boxes, positions and shape precisely, LEFT rectangle [28,16,748,168] and RIGHT [790,16,1510,168], thin dark navy outlines, rounded corners, NO tails, central vertical divider. Fill only the illustration areas around these boxes. NOTHING inside boxes, no text, numbers, symbols, lettering, title, signs, logos or watermark anywhere. INPUT 2 is the exact character identity sheet. INPUT 3 is the previous story page and is authoritative for the forest garden, mossy banks, sunset, purple flowers, and most importantly the same SINGLE wide flat irregular brown bark deck supported by TWO smooth grey rocks, one on each bank, crossing the very shallow narrow stream left to right. No rails, no manufactured bridge, no extra boards. Water flows underneath toward viewer.\nKeep Mila identical: warm brown skin, curly dark bob, one yellow star clip, brown eyes, teal short-sleeve shirt, mustard short overalls, red sneakers. Keep Pipo identical: small mint dragon, cream belly, lavender wing membranes, little gold horns and side ears, four limbs and one tail. Keep tiny hedgehog identical: caramel face, chestnut quills, black round nose. Polished dimensional animated storybook art, golden dusk rim light and rich teal foliage. Characters, hands and action entirely below y200. Exactly TWO vertical panels and two empty caption boxes. Page 4: test, then hesitation.\nLEFT PANEL: Mila kneels on the LEFT bank and gently places ONE SMALL smooth grey pebble at the CENTER of the bark bridge with one hand, testing whether the bark holds. The bark is straight and stable above the water. The small test pebble is separate from the TWO LARGE supporting rocks underneath the ends. Pipo and the small hedgehog watch from the LEFT bank behind her. Make the test pebble and her placing gesture clear and unobstructed. No one walks on the bridge yet.\nRIGHT PANEL: the small test pebble has been REMOVED from the bridge deck, leaving it clear. The hedgehog stands hesitantly on the LEFT bank at the bridge entrance, slightly tucked into its quills, not yet crossing. Mila and Pipo lean too close beside this entrance so they are crowding its space without touching or threatening it. Mila looks observant and concerned, Pipo curious. Keep the bridge clear and visible beyond the hedgehog extending to RIGHT bank. No pushing, no touching animal, no scaring expression. Show enough distance relationships to understand it needs more room."
+    },
+    {
+      "asset": "page05",
+      "origin": "original",
+      "prompt": "Use case: illustration-story. One finished 1536x1024 landscape comic page. INPUT 1 is the exact two-up layout template: preserve its two cream EMPTY caption boxes, positions and shape precisely, LEFT rectangle [28,16,748,168] and RIGHT [790,16,1510,168], thin dark navy outlines, rounded corners, NO tails, central vertical divider. Fill only the illustration areas around these boxes. NOTHING inside boxes, no text, numbers, symbols, lettering, title, signs, logos or watermark anywhere. INPUT 2 is the exact character identity sheet. INPUT 3 is the previous story page and is authoritative for the forest garden, mossy banks, sunset, purple flowers, and most importantly the same SINGLE wide flat irregular brown bark deck supported by TWO smooth grey rocks, one on each bank, crossing the very shallow narrow stream left to right. No rails, no manufactured bridge, no extra boards. Water flows underneath toward viewer.\nKeep Mila identical: warm brown skin, curly dark bob, one yellow star clip, brown eyes, teal short-sleeve shirt, mustard short overalls, red sneakers. Keep Pipo identical: small mint dragon, cream belly, lavender wing membranes, little gold horns and side ears, four limbs and one tail. Keep tiny hedgehog identical: caramel face, chestnut quills, black round nose. Polished dimensional animated storybook art, golden dusk rim light and rich teal foliage. Characters, hands and action entirely below y200. Exactly TWO vertical panels and two empty caption boxes. Page 5: give space, then successful crossing.\nLEFT PANEL: the bark bridge is finished and unchanged. Mila and Pipo have stepped BACK several paces along the LEFT bank and sit or stand quietly in the background away from its entrance, watching gently. The tiny hedgehog stands in the foreground at the LEFT entrance ready to move, with a visibly clear unblocked route across the bark toward the RIGHT bank. Warm glowing fireflies hover over the bridge and violet blossoms like little lights. No people or paws in its way. No pebble on deck.\nRIGHT PANEL: the hedgehog is now walking LEFT TO RIGHT in the middle of the SAME bark bridge toward the flower-lined path on the RIGHT bank. Show its four little paws naturally supported on the bark, quills and happy calm expression, no duplicated animal. Mila and Pipo remain a few paces BACK on the left bank, smaller in the background, smiling warmly and quietly watching; they do not approach. One continuous flat bark deck, exactly two support rocks underneath ends, no pebble on deck, no railings. Glowing fireflies above, gentle reflective stream below. Satisfying peaceful ending. Preserve exact empty caption rectangles."
+    },
+    {
+      "asset": "cover",
+      "origin": "original",
+      "prompt": "Use case: illustration-story. Create a single 1536x1024 landscape COVER image for the same story shown in the reference page and character sheet. The image is one uninterrupted illustration with NO panels, NO caption boxes, NO speech balloons and ABSOLUTELY NO text, title, lettering, digits, signage or watermark. Same polished dimensional animated storybook rendering with rich tactile materials, magical dusk garden, mossy banks, violet flowers, warm gold sunset against deep teal foliage and lovely glowing fireflies.\nCompose Mila and Pipo together on the left-center bank smiling quietly while the tiny caramel-faced chestnut-quilled hedgehog confidently crosses one wide flat natural brown bark slab left to right across a very shallow narrow stream. The slab rests on exactly two smooth grey stones, one beneath each end, like in the reference page. No rails or added bridge construction. Mila has same short curly dark bob with yellow star clip, teal shirt, mustard overalls, red sneakers; Pipo has mint skin, cream belly, lavender wings, gold horns. Hedgehog much smaller than dragon. Keep all three faces and the bridge action within central area roughly x450..1180 y330..760 for a panoramic app crop. A few luminous fireflies frame the scene. Upper-left can be quiet softly blurred leaves and dusk glow, but NO lettering. Calm, inviting, cinematic children's book cover."
+    }
+  ]
+}

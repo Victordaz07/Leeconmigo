@@ -1,0 +1,5 @@
+@import 'tailwindcss';
+@import '@lee-conmigo/ui/tokens.css';
+
+/* Tailwind debe leer también las clases de los componentes del paquete de UI. */
+@source '../../../packages/ui/src';

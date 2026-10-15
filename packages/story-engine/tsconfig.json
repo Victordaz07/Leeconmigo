@@ -1,0 +1,8 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    // Solo las pruebas de contenido (`tests/stories-content.test.ts`) leen archivos con Node.
+    "types": ["node"]
+  },
+  "include": ["src", "tests", "stories"]
+}

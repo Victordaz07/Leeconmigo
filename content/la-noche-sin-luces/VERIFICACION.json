@@ -1,0 +1,181 @@
+{
+  "status": "PASS_WITH_DOCUMENTED_SPEC_EXCEPTIONS",
+  "scope": "Local schema/content/dimensions checks. Not npm stories:check, stories:budget, app rendering or OCR.",
+  "errors": [],
+  "specExceptions": [
+    {
+      "variant": "la-noche-sin-luces-en-n1",
+      "page": "p08",
+      "type": "incompatible_sentence_count",
+      "requested": 2,
+      "actual": 3,
+      "reason": "Three mandatory blocks must each contain at least one complete sentence."
+    },
+    {
+      "variant": "la-noche-sin-luces-en-n3",
+      "block": "b01",
+      "type": "incompatible_minimum",
+      "requested_minimum": 408,
+      "maximum_possible": 407,
+      "actual": 407,
+      "reason": "Exact refrain plus at most three other lines of 120 characters and three joining spaces."
+    },
+    {
+      "variant": "la-noche-sin-luces-es-n1",
+      "page": "p08",
+      "type": "incompatible_sentence_count",
+      "requested": 2,
+      "actual": 3,
+      "reason": "Three mandatory blocks must each contain at least one complete sentence."
+    },
+    {
+      "variant": "la-noche-sin-luces-es-n3",
+      "block": "b01",
+      "type": "incompatible_minimum",
+      "requested_minimum": 408,
+      "maximum_possible": 406,
+      "actual": 406,
+      "reason": "Exact refrain plus at most three other lines of 120 characters and three joining spaces."
+    }
+  ],
+  "intentionalOverloadBlocks": [
+    "es-n3/b10",
+    "es-n3/b13",
+    "en-n3/b10",
+    "en-n3/b13"
+  ],
+  "variants": [
+    {
+      "id": "la-noche-sin-luces-en-n1",
+      "words": 394,
+      "pages": 14,
+      "blocks": 40,
+      "questions": 7,
+      "vocabulary": 12,
+      "maxSentenceCharacters": 45
+    },
+    {
+      "id": "la-noche-sin-luces-en-n2",
+      "words": 879,
+      "pages": 14,
+      "blocks": 40,
+      "questions": 7,
+      "vocabulary": 20,
+      "maxSentenceCharacters": 98
+    },
+    {
+      "id": "la-noche-sin-luces-en-n3",
+      "words": 1339,
+      "pages": 14,
+      "blocks": 40,
+      "questions": 7,
+      "vocabulary": 30,
+      "maxSentenceCharacters": 120
+    },
+    {
+      "id": "la-noche-sin-luces-es-n1",
+      "words": 373,
+      "pages": 14,
+      "blocks": 40,
+      "questions": 7,
+      "vocabulary": 12,
+      "maxSentenceCharacters": 43
+    },
+    {
+      "id": "la-noche-sin-luces-es-n2",
+      "words": 867,
+      "pages": 14,
+      "blocks": 40,
+      "questions": 7,
+      "vocabulary": 20,
+      "maxSentenceCharacters": 104
+    },
+    {
+      "id": "la-noche-sin-luces-es-n3",
+      "words": 1296,
+      "pages": 14,
+      "blocks": 40,
+      "questions": 7,
+      "vocabulary": 30,
+      "maxSentenceCharacters": 120
+    }
+  ],
+  "images": [
+    {
+      "file": "page-01.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "page-02.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "page-03.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "page-04.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "page-05.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "page-06.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "page-07.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "page-08.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "page-09.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "page-10.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "page-11.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "page-12.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "page-13.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "page-14.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "cover.png",
+      "width": 1536,
+      "height": 1024
+    }
+  ],
+  "webpConversion": "PNG deliverables supplied; JSON paths use .webp as explicitly requested. Convert PNG to WebP before app validation."
+}

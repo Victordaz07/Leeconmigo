@@ -1,0 +1,17 @@
+node_modules
+dist
+.vite
+*.tsbuildinfo
+# Capacitor / Android (más adelante)
+android/app/build
+android/.gradle
+# Nunca guardar audio de niños (ver docs/07-PRIVACY-AUDIO.md)
+*.wav
+*.m4a
+*.mp3
+*.webm
+# Capturas de la comparación visual con el prototipo (scripts/visual): se regeneran
+.visual
+# Whisper (WhisperSpeechEngine): copiados de node_modules por scripts/copy-speech-assets.mjs
+apps/reader/public/ort
+apps/reader/public/vad

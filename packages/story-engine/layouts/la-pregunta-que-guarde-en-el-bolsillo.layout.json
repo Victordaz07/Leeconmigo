@@ -1,0 +1,150 @@
+{
+  "familyId": "la-pregunta-que-guarde-en-el-bolsillo",
+  "version": 1,
+  "pages": {
+    "p01": {
+      "blocks": {
+        "b01": {
+          "balloon": { "x": 1098, "y": 20, "width": 420, "height": 983 },
+          "text": { "x": 1119, "y": 35, "width": 378, "height": 953 },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p02": {
+      "blocks": {
+        "b02": {
+          "balloon": { "x": 90, "y": 70, "width": 1356, "height": 884 },
+          "text": { "x": 111, "y": 85, "width": 1314, "height": 854 },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p03": {
+      "blocks": {
+        "b03": {
+          "balloon": { "x": 1135, "y": 20, "width": 385, "height": 983 },
+          "text": { "x": 1156, "y": 35, "width": 343, "height": 953 },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p04": {
+      "blocks": {
+        "b04": {
+          "balloon": { "x": 90, "y": 70, "width": 1356, "height": 884 },
+          "text": { "x": 111, "y": 85, "width": 1314, "height": 854 },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p05": {
+      "blocks": {
+        "b05": {
+          "balloon": { "x": 1031, "y": 20, "width": 490, "height": 983 },
+          "text": { "x": 1052, "y": 35, "width": 448, "height": 953 },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p06": {
+      "blocks": {
+        "b06": {
+          "balloon": { "x": 1131, "y": 20, "width": 280, "height": 983 },
+          "text": { "x": 1152, "y": 35, "width": 238, "height": 953 },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 26
+        }
+      }
+    },
+    "p07": {
+      "blocks": {
+        "b07": {
+          "balloon": { "x": 90, "y": 70, "width": 1356, "height": 884 },
+          "text": { "x": 111, "y": 85, "width": 1314, "height": 854 },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p08": {
+      "blocks": {
+        "b08": {
+          "balloon": { "x": 1186, "y": 20, "width": 320, "height": 860 },
+          "text": { "x": 1207, "y": 35, "width": 278, "height": 830 },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 26
+        }
+      }
+    },
+    "p09": {
+      "blocks": {
+        "b09": {
+          "balloon": { "x": 90, "y": 70, "width": 1356, "height": 884 },
+          "text": { "x": 111, "y": 85, "width": 1314, "height": 854 },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p10": {
+      "blocks": {
+        "b10": {
+          "balloon": { "x": 989, "y": 20, "width": 530, "height": 983 },
+          "text": { "x": 1010, "y": 35, "width": 488, "height": 953 },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p11": {
+      "blocks": {
+        "b11": {
+          "balloon": { "x": 90, "y": 70, "width": 1356, "height": 884 },
+          "text": { "x": 111, "y": 85, "width": 1314, "height": 854 },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    },
+    "p12": {
+      "blocks": {
+        "b12": {
+          "balloon": { "x": 1049, "y": 20, "width": 440, "height": 983 },
+          "text": { "x": 1070, "y": 35, "width": 398, "height": 953 },
+          "align": "left",
+          "valign": "top",
+          "textMode": "lines",
+          "maxFontPx": 30
+        }
+      }
+    }
+  }
+}

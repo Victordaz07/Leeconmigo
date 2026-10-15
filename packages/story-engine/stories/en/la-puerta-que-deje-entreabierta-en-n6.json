@@ -1,0 +1,883 @@
+{
+  "id": "la-puerta-que-deje-entreabierta-en-n6",
+  "familyId": "la-puerta-que-deje-entreabierta",
+  "language": "en",
+  "title": "The Door I Left Ajar",
+  "level": 6,
+  "category": "crecimiento",
+  "description": "Isa learns to ask for privacy without losing closeness with her mom.",
+  "cover": {
+    "src": "stories/la-puerta-que-deje-entreabierta/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Isa peeks from her room toward the kitchen where her mom is."
+  },
+  "heroFocus": {
+    "x": 27,
+    "y": 40
+  },
+  "reviewWords": [
+    "privacy",
+    "embarrassment",
+    "assumption"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/la-puerta-que-deje-entreabierta/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Isa and her mom folding paper stars at the kitchen table."
+      },
+      "blocks": [
+        {
+          "id": "b01",
+          "voice": "narration",
+          "title": "Paper Stars",
+          "lines": [
+            "When I was seven, Mom and I made paper stars at the kitchen table. She folded one point and I folded the other. If a star came out crooked, we said it was dancing.",
+            "I told her absolutely everything: what I had dreamed, what frightened me, even the boring parts of movies. Bella, my mom, said that someday she would miss all my questions.",
+            "I didn't believe her. I thought it would always be the two of us and our table covered with stars."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What were Isa and her mom doing at the kitchen table?",
+            "options": [
+              {
+                "text": "Folding paper stars"
+              },
+              {
+                "text": "Watching a boring movie"
+              },
+              {
+                "text": "Writing a list of fears"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! They were folding paper stars.",
+            "retryFeedback": "Look for the activity that repeats on this page."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why did Isa think she would always tell her mom everything?",
+            "options": [
+              {
+                "text": "She didn't yet know that people change over time"
+              },
+              {
+                "text": "Her mom made her do it every night"
+              },
+              {
+                "text": "She had no other friends to talk to"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! At seven, she couldn't imagine someday wanting to keep things to herself.",
+            "retryFeedback": "Think about what Isa and her mom's relationship was like back then."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/la-puerta-que-deje-entreabierta/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Isa wearing headphones while her mom talks to her at the table."
+      },
+      "blocks": [
+        {
+          "id": "b02",
+          "voice": "narration",
+          "title": "The Headphones",
+          "lines": [
+            "Five years later, the table was still there, but I didn't want to tell her the same things. I had started a photography project with my friend Marisol. My pictures weren't coming out the way I imagined, and I didn't even know if I wanted anyone to see them.",
+            "When Mom asked, “How was school?” I said, “Fine.” She asked what “fine” meant. I put on my headphones, though I wasn't listening to music.",
+            "I felt mean as soon as I did it. I also hated feeling as if I owed someone a report on every thought in my head."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What did Isa do when her mom asked what “fine” meant?",
+            "options": [
+              {
+                "text": "She put on her headphones without playing music"
+              },
+              {
+                "text": "She showed her mom the new pictures"
+              },
+              {
+                "text": "She told her everything about Marisol"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She put on her headphones, though she wasn't listening to music.",
+            "retryFeedback": "Look for what Isa did right after her mom's question."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why does Isa feel mean right after putting on her headphones?",
+            "options": [
+              {
+                "text": "Because she knew it was a way to shut her mom out without saying so"
+              },
+              {
+                "text": "Because she actually wanted to tell her about the pictures"
+              },
+              {
+                "text": "Because her mom noticed there was no music playing"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! Using the headphones as an excuse was a way to pull away without explaining why.",
+            "retryFeedback": "Think about how Isa felt right after doing it."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "blocks": [
+        {
+          "id": "b03",
+          "voice": "narration",
+          "title": "The Sweater",
+          "lines": [
+            "Mom tried other ways to get close. She left sliced fruit beside my notebook and offered to look over the pictures. I said I didn't need help.",
+            "Later she appeared at my door to remind me we were having dinner at Aunt Nora's. “You might want a sweater,” she added. I answered as if she had given me a terrible order.",
+            "Then I saw the sweater on my bed and was annoyed that she had been right: it was cold outside. Part of me wanted her to take care of me. Another part wanted to decide for myself when I needed help."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What did Mom remind Isa about before dinner?",
+            "options": [
+              {
+                "text": "To bring a sweater"
+              },
+              {
+                "text": "To call Marisol"
+              },
+              {
+                "text": "To put away the pictures"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She said Isa might want a sweater.",
+            "retryFeedback": "Look for what Mom appeared at the door to say."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why does it bother Isa that her mom was right about the sweater?",
+            "options": [
+              {
+                "text": "Because wanting to be cared for and wanting to decide alone pulled against each other"
+              },
+              {
+                "text": "Because she would rather be cold than obey"
+              },
+              {
+                "text": "Because she didn't like the sweater at all"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She wanted care, but also wanted to decide for herself when she needed help.",
+            "retryFeedback": "Think about the two opposite wishes Isa notices in herself."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p04",
+      "illustration": {
+        "src": "stories/la-puerta-que-deje-entreabierta/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Isa feeling uncomfortable as her mom tells a story in front of the family."
+      },
+      "blocks": [
+        {
+          "id": "b04",
+          "voice": "narration",
+          "title": "The Cape Story",
+          "lines": [
+            "At Nora's house, someone found a picture of me with two pigtails and a towel for a cape. Mom told everyone how, at seven, I had announced I would save every sad person with a hug. My cousins laughed kindly.",
+            "I had done more embarrassing things that very week, but this story made my face burn. It was as if everybody could see a version of me I hadn't chosen to show.",
+            "“Mom, stop,” I said. She smiled, thinking I was joking, and finished the story. I left my dessert on the table and went into the hall."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What story did Mom tell in front of the whole family?",
+            "options": [
+              {
+                "text": "The one about the towel cape"
+              },
+              {
+                "text": "The one about the paper stars"
+              },
+              {
+                "text": "The one about the forgotten sweater"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She told the story about the towel cape.",
+            "retryFeedback": "Look for which picture they found at Nora's house."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why does Isa's face burn while she listens to the story?",
+            "options": [
+              {
+                "text": "Because it felt like everyone was seeing a version of her she hadn't chosen to show"
+              },
+              {
+                "text": "Because the story wasn't true"
+              },
+              {
+                "text": "Because her cousins were mocking her cruelly"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! It felt like others were showing a part of her she hadn't chosen to share.",
+            "retryFeedback": "Think about what's different about this embarrassment compared to doing something embarrassing herself."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p05",
+      "illustration": {
+        "src": "stories/la-puerta-que-deje-entreabierta/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Isa sitting on her bedroom floor, the door left ajar with her mom on the other side."
+      },
+      "blocks": [
+        {
+          "id": "b05",
+          "voice": "narration",
+          "title": "The Crack in the Door",
+          "lines": [
+            "On the way home, Mom said nobody had been laughing at me. I said that didn't change anything. “You only know the kid I used to be,” I blurted out. I saw her grip the steering wheel.",
+            "I didn't want to take the words back, but I hadn't meant to hurt her like that. In my room, I closed the door until only a crack remained. Mom stopped on the other side.",
+            "“I should have asked before telling that story,” she said. I watched the light beneath the door and didn't answer. Her apology was real. So was my embarrassment. Both could exist at once."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What did Mom say to Isa from the other side of the door?",
+            "options": [
+              {
+                "text": "That she should have asked before telling that story"
+              },
+              {
+                "text": "That they wouldn't visit Nora's house again"
+              },
+              {
+                "text": "That Isa was overreacting"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She said, “I should have asked before telling that story.”",
+            "retryFeedback": "Look for what Mom admits outside the door."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why doesn't Mom's apology make Isa's embarrassment disappear right away?",
+            "options": [
+              {
+                "text": "Because a real apology and real embarrassment can both exist at the same time"
+              },
+              {
+                "text": "Because Mom's apology wasn't sincere"
+              },
+              {
+                "text": "Because Isa plans never to forgive her"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! Her apology was real, and so was Isa's embarrassment. Both were true at once.",
+            "retryFeedback": "Reread how Isa describes both the apology and her own embarrassment."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p06",
+      "illustration": {
+        "src": "stories/la-puerta-que-deje-entreabierta/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Isa and Marisol looking over project photos at a schoolyard table."
+      },
+      "blocks": [
+        {
+          "id": "b06",
+          "voice": "narration",
+          "title": "The Mural Photos",
+          "lines": [
+            "On Monday I arrived late to our project meeting. Marisol had chosen three photographs for the exhibition, and I replaced two without asking her. I was sure mine showed the neighborhood murals better.",
+            "She looked at the screen and asked if her work counted for anything. “I was only trying to make it better,” I said. I recognized the sentence the moment it left my mouth: it sounded far too much like “I only wanted to help.”",
+            "Marisol put away her camera. She didn't shout. That made it harder to pretend the problem was hers."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q06",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What did Isa do to the project photos without asking Marisol?",
+            "options": [
+              {
+                "text": "She swapped two of them for ones she preferred"
+              },
+              {
+                "text": "She deleted all of them"
+              },
+              {
+                "text": "She shared them with the whole school"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She swapped two photos without asking.",
+            "retryFeedback": "Look for what Isa did before Marisol arrived."
+          },
+          {
+            "audience": "lector",
+            "prompt": "How is Isa's excuse similar to something her mom might have said?",
+            "options": [
+              {
+                "text": "Both said “I was only trying to help” to justify deciding without asking"
+              },
+              {
+                "text": "Both were talking about the same mural"
+              },
+              {
+                "text": "Both argued about a sweater"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! Isa recognized the same kind of excuse someone uses when deciding for another person without asking.",
+            "retryFeedback": "Think about the sentence Isa recognizes as soon as she says it."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p07",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "blocks": [
+        {
+          "id": "b07",
+          "voice": "narration",
+          "title": "The Deleted Message",
+          "lines": [
+            "I spent the afternoon writing a perfect message to Marisol. I deleted it eleven times. One version sounded like an excuse; another sounded like a confession before a judge.",
+            "I wanted to tell Mom, but I pictured a list of advice and a phone call to Marisol's mother. I turned my phone face down.",
+            "Then I saw one of our old pictures: two shadows held the same camera. You couldn't tell who had decided to press the shutter. Maybe that was exactly the problem. I had treated a shared project as though it belonged only to me."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q07",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What does Isa realize when she looks at the old picture of their shadows?",
+            "options": [
+              {
+                "text": "That the project always belonged to both of them, not just her"
+              },
+              {
+                "text": "That Marisol no longer wanted to be her friend"
+              },
+              {
+                "text": "That the camera was broken"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! No one could tell who had taken the photo: the project was shared.",
+            "retryFeedback": "Look for what the picture of the two shadows shows."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why is it so hard for Isa to write to Marisol?",
+            "options": [
+              {
+                "text": "Because she can't find a way to apologize without it sounding like an excuse"
+              },
+              {
+                "text": "Because she doesn't know how to use her phone"
+              },
+              {
+                "text": "Because she'd rather talk only to her mom"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! Every version sounded like an excuse or a courtroom confession, not a real apology.",
+            "retryFeedback": "Think about how Isa describes her deleted messages."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p08",
+      "illustration": {
+        "src": "stories/la-puerta-que-deje-entreabierta/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Isa and her mom talking over warm mugs in the kitchen."
+      },
+      "blocks": [
+        {
+          "id": "b08",
+          "voice": "narration",
+          "title": "Listen First",
+          "lines": [
+            "I found Mom washing two mugs. “I need to tell you something,” I said, “but please listen before trying to solve it for me.” Bella turned off the tap. She sat down and put her phone away.",
+            "I told her about the pictures and Marisol's face. Mom opened her mouth once and closed it again. When I finished, she asked, “What do you think your friend needs to hear?”",
+            "It wasn't the answer I had rehearsed arguing against. I said Marisol needed to know her work mattered and that she could choose with me. Mom nodded. “You can tell her that yourself.”"
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q08",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What does Isa ask her mom before telling her the problem?",
+            "options": [
+              {
+                "text": "To listen without solving it for her"
+              },
+              {
+                "text": "To call Marisol right away"
+              },
+              {
+                "text": "To buy her a new camera"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She asked her mom to listen without solving it for her.",
+            "retryFeedback": "Look for what Isa says right before telling her everything."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What does Bella do to show she is really listening?",
+            "options": [
+              {
+                "text": "She puts her phone away and asks what Marisol needs to hear, instead of giving advice"
+              },
+              {
+                "text": "She tells Isa exactly what message to write"
+              },
+              {
+                "text": "She calls Marisol's mother herself"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! Instead of solving it, she asked what her friend needed to hear.",
+            "retryFeedback": "Think about the question Mom asks, not a solution she offers."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p09",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "blocks": [
+        {
+          "id": "b09",
+          "voice": "narration",
+          "title": "I'm Sorry, Marisol",
+          "lines": [
+            "The next day I asked to talk to Marisol. I didn't begin by explaining why my pictures were good. “I replaced yours without asking. I'm sorry,” I said. She took a while to answer.",
+            "She had chosen a picture of a damaged wall because the mural wasn't finished: it showed neighbors working together. I had preferred a pretty, completed wall.",
+            "We looked at both versions. We decided to include both and write together about why we had chosen them. Marisol didn't say everything was forgotten. She passed me the camera so we could check the frame. It was a beginning."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q09",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "How does Isa begin her apology to Marisol?",
+            "options": [
+              {
+                "text": "By saying, “I replaced yours without asking. I'm sorry.”"
+              },
+              {
+                "text": "By explaining why her pictures were better"
+              },
+              {
+                "text": "By asking Marisol to just forget it"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She began by admitting what she did, not defending her pictures.",
+            "retryFeedback": "Look for Isa's first words when she talks to Marisol."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why did the mural picture mean something different to each girl?",
+            "options": [
+              {
+                "text": "Isa saw a pretty wall, while Marisol saw neighbors working together on something unfinished"
+              },
+              {
+                "text": "One picture was black and white"
+              },
+              {
+                "text": "Marisol didn't know that mural"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! Each of them had chosen the picture that showed something important to her.",
+            "retryFeedback": "Think about what each version of the picture showed."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p10",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "blocks": [
+        {
+          "id": "b10",
+          "voice": "narration",
+          "title": "A Small Agreement",
+          "lines": [
+            "That night I asked Mom why she had told the story about my cape. “Because I love that little girl,” she said. “And sometimes I forget to ask if you want other people to meet her that way.”",
+            "I explained that I didn't want to hide all our memories; I just wanted a say in which of my stories were shared. She asked me to tell her when I needed space instead of making her guess.",
+            "We made a small agreement: she would knock before entering and ask before sharing my stories. I would try saying, “Not now, but later,” instead of vanishing behind my headphones."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q10",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What small agreement do Isa and her mom make?",
+            "options": [
+              {
+                "text": "To knock before entering and ask before sharing her stories"
+              },
+              {
+                "text": "To never have dinner at Aunt Nora's again"
+              },
+              {
+                "text": "That Isa would never wear headphones again"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! Mom would knock before entering and ask before sharing her stories.",
+            "retryFeedback": "Look for the two concrete promises they make together."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What difference does Isa learn between keeping a memory and sharing it with others?",
+            "options": [
+              {
+                "text": "A memory can still be loved even if not everyone has permission to know it"
+              },
+              {
+                "text": "Shared memories stop being worth anything"
+              },
+              {
+                "text": "Only embarrassing memories need to be kept private"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! Isa didn't want to hide the memories, just choose which ones were shared and with whom.",
+            "retryFeedback": "Think about what Isa says she does want, not only what she rejects."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p11",
+      "illustration": {
+        "src": "stories/la-puerta-que-deje-entreabierta/page-11.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Isa photographing a mural while her mom watches."
+      },
+      "blocks": [
+        {
+          "id": "b11",
+          "voice": "narration",
+          "title": "The Dancing Photo",
+          "lines": [
+            "On Saturday we went out to photograph murals for the project. Mom brought water; I chose the route. In front of a blue wall, she told me that at my age she had also said “fine” when she couldn't explain a difficult day.",
+            "She wasn't saying it to win an argument. For the first time, it occurred to me that Bella had been a twelve-year-old girl before she was my mom.",
+            "I handed her the camera, and she took a crooked picture. “It's dancing,” I said. We laughed about the paper star neither of us had mentioned in years."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q11",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What does Isa discover about her mom in front of the blue wall?",
+            "options": [
+              {
+                "text": "That Bella also used to say “fine” as a kid when she couldn't explain something"
+              },
+              {
+                "text": "That Bella doesn't like murals"
+              },
+              {
+                "text": "That Bella studied photography in college"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! Bella also said “fine” at twelve, just like Isa does now.",
+            "retryFeedback": "Look for what Mom shares in front of the blue wall."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What changes in Isa when she imagines Bella as a twelve-year-old girl?",
+            "options": [
+              {
+                "text": "She starts seeing her mom as a person with her own history, not just as “Mom”"
+              },
+              {
+                "text": "She stops trusting her"
+              },
+              {
+                "text": "She decides to tell her absolutely everything again, like at age seven"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! For the first time, she thought of Bella as someone who had also been a kid before becoming her mom.",
+            "retryFeedback": "Think about what occurs to Isa for the first time in that scene."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p12",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reading page, no illustration."
+      },
+      "blocks": [
+        {
+          "id": "b12",
+          "voice": "narration",
+          "title": "The Door Left Ajar",
+          "lines": [
+            "Back home, I went upstairs to choose the pictures with Marisol. Mom didn't come in when she saw my door ajar: she knocked and waited. “Want to see one?” I asked.",
+            "I showed her the crooked photo, then another I still didn't like. I didn't tell her every thought I had; some still belonged only to me. She didn't need to know them all to sit beside me.",
+            "When I was little, I thought growing up meant moving away. Now I was beginning to understand that I could also learn a new way to come close."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q12",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What does Bella do when she sees Isa's door left ajar?",
+            "options": [
+              {
+                "text": "She knocks and waits"
+              },
+              {
+                "text": "She walks in without asking, like before"
+              },
+              {
+                "text": "She asks Isa to keep the door fully closed"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She knocked and waited instead of walking straight in.",
+            "retryFeedback": "Look for what Mom does before entering the room."
+          },
+          {
+            "audience": "lector",
+            "prompt": "How does the ending show that Isa keeps both her privacy and her closeness with Bella?",
+            "options": [
+              {
+                "text": "Isa shares some photos but not every thought, and her mom still sits beside her"
+              },
+              {
+                "text": "Isa tells her absolutely everything again, just like at age seven"
+              },
+              {
+                "text": "Isa asks her mom to never come into her room again"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That's it! She didn't need to share everything for her mom to want to be close to her.",
+            "retryFeedback": "Think about what Isa shares and what she chooses to keep to herself."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "privacy": {
+      "syllables": [
+        "pri",
+        "va",
+        "cy"
+      ],
+      "definition": "Space of your own that you can choose to keep to yourself.",
+      "example": "He knocked before entering to respect her privacy."
+    },
+    "embarrassment": {
+      "syllables": [
+        "em",
+        "bar",
+        "rass",
+        "ment"
+      ],
+      "definition": "The uncomfortable feeling of being seen in a way you didn't choose.",
+      "synonym": "shame",
+      "example": "She felt embarrassment when she tripped in front of the whole class."
+    },
+    "crack": {
+      "syllables": [
+        "crack"
+      ],
+      "definition": "A narrow opening, like a door left barely open.",
+      "synonym": "gap",
+      "example": "He saw light coming through the crack in the door."
+    },
+    "assumption": {
+      "syllables": [
+        "as",
+        "sump",
+        "tion"
+      ],
+      "definition": "An idea taken as true without checking it first.",
+      "synonym": "guess",
+      "example": "He made an assumption about the gift without ever seeing it."
+    },
+    "listen": {
+      "syllables": [
+        "lis",
+        "ten"
+      ],
+      "definition": "To pay real attention to what someone else is saying.",
+      "synonym": "pay attention",
+      "example": "She tried to listen carefully to the teacher's instructions."
+    },
+    "consent": {
+      "syllables": [
+        "con",
+        "sent"
+      ],
+      "definition": "Permission someone gives before something that affects them happens.",
+      "synonym": "permission",
+      "example": "He asked for her consent before sharing the photo."
+    },
+    "mural": {
+      "syllables": [
+        "mur",
+        "al"
+      ],
+      "definition": "A large painting made directly on a wall.",
+      "example": "The students painted a colorful mural in the schoolyard."
+    },
+    "frame": {
+      "syllables": [
+        "frame"
+      ],
+      "definition": "The part of a scene that fits inside a photograph.",
+      "synonym": "shot",
+      "example": "The photographer adjusted the frame before taking the picture."
+    },
+    "apology": {
+      "syllables": [
+        "a",
+        "pol",
+        "o",
+        "gy"
+      ],
+      "definition": "Words someone uses to admit they were wrong.",
+      "example": "He gave his sister an apology for breaking her toy."
+    },
+    "agreement": {
+      "syllables": [
+        "a",
+        "gree",
+        "ment"
+      ],
+      "definition": "A decision two people make together about how to act.",
+      "synonym": "deal",
+      "example": "They reached an agreement about who would wash the dishes each day."
+    },
+    "share": {
+      "syllables": [
+        "share"
+      ],
+      "definition": "To give others something that is yours, like a story or an idea.",
+      "synonym": "give",
+      "example": "He decided to share his lunch with a classmate who forgot his."
+    },
+    "autonomy": {
+      "syllables": [
+        "au",
+        "ton",
+        "o",
+        "my"
+      ],
+      "definition": "The ability to decide things for yourself.",
+      "synonym": "independence",
+      "example": "At twelve, she had more autonomy to choose her own clothes."
+    }
+  }
+}

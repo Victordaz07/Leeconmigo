@@ -1,0 +1,92 @@
+{
+  "seriesId": "el-caso-de-la-estrella-desaparecida",
+  "title": {
+    "es": "El caso de la estrella desaparecida",
+    "en": "The Case of the Missing Star"
+  },
+  "readInOrder": true,
+  "chapters": [
+    {
+      "number": 1,
+      "familyId": "estrella-desaparecida-c1",
+      "title": {
+        "es": "La pista que no caminaba",
+        "en": "The Trail That Did Not Walk"
+      },
+      "previousChapter": null,
+      "nextChapter": 2,
+      "variants": {
+        "es": {
+          "1": "textos/c1-es-nivel-1.json",
+          "2": "textos/c1-es-nivel-2.json",
+          "3": "textos/c1-es-nivel-3.json"
+        },
+        "en": {
+          "1": "textos/c1-en-nivel-1.json",
+          "2": "textos/c1-en-nivel-2.json",
+          "3": "textos/c1-en-nivel-3.json"
+        }
+      },
+      "images": [
+        "imagenes/c1-p01.png",
+        "imagenes/c1-p02.png",
+        "imagenes/c1-p03.png"
+      ]
+    },
+    {
+      "number": 2,
+      "familyId": "estrella-desaparecida-c2",
+      "title": {
+        "es": "La sombra que engañaba",
+        "en": "The Misleading Shadow"
+      },
+      "previousChapter": 1,
+      "nextChapter": 3,
+      "variants": {
+        "es": {
+          "1": "textos/c2-es-nivel-1.json",
+          "2": "textos/c2-es-nivel-2.json",
+          "3": "textos/c2-es-nivel-3.json"
+        },
+        "en": {
+          "1": "textos/c2-en-nivel-1.json",
+          "2": "textos/c2-en-nivel-2.json",
+          "3": "textos/c2-en-nivel-3.json"
+        }
+      },
+      "images": [
+        "imagenes/c2-p01.png",
+        "imagenes/c2-p02.png",
+        "imagenes/c2-p03.png"
+      ]
+    },
+    {
+      "number": 3,
+      "familyId": "estrella-desaparecida-c3",
+      "title": {
+        "es": "Lo que ocurrió de verdad",
+        "en": "What Really Happened"
+      },
+      "previousChapter": 2,
+      "nextChapter": null,
+      "variants": {
+        "es": {
+          "1": "textos/c3-es-nivel-1.json",
+          "2": "textos/c3-es-nivel-2.json",
+          "3": "textos/c3-es-nivel-3.json"
+        },
+        "en": {
+          "1": "textos/c3-en-nivel-1.json",
+          "2": "textos/c3-en-nivel-2.json",
+          "3": "textos/c3-en-nivel-3.json"
+        }
+      },
+      "images": [
+        "imagenes/c3-p01.png",
+        "imagenes/c3-p02.png",
+        "imagenes/c3-p03.png"
+      ]
+    }
+  ],
+  "note": "Metadatos editoriales de orden y navegación; adaptar al contrato de la app."
+}

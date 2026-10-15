@@ -1,0 +1,200 @@
+{
+  "scope": "Comprobación de zonas interiores de texto con el margen de 20 px del contrato; no certifica igualdad píxel a píxel del borde generado.",
+  "pages": [
+    {
+      "file": "page-01.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "caption_regions": [
+        {
+          "expected_outer_rect": [
+            28,
+            16,
+            748,
+            168
+          ],
+          "tested_text_inset_px": 20,
+          "clear_cream_fraction": 1.0,
+          "min_rgb": [
+            253,
+            246,
+            230
+          ]
+        },
+        {
+          "expected_outer_rect": [
+            790,
+            16,
+            1510,
+            168
+          ],
+          "tested_text_inset_px": 20,
+          "clear_cream_fraction": 1.0,
+          "min_rgb": [
+            253,
+            246,
+            230
+          ]
+        }
+      ]
+    },
+    {
+      "file": "page-02.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "caption_regions": [
+        {
+          "expected_outer_rect": [
+            28,
+            16,
+            748,
+            168
+          ],
+          "tested_text_inset_px": 20,
+          "clear_cream_fraction": 1.0,
+          "min_rgb": [
+            252,
+            247,
+            232
+          ]
+        },
+        {
+          "expected_outer_rect": [
+            790,
+            16,
+            1510,
+            168
+          ],
+          "tested_text_inset_px": 20,
+          "clear_cream_fraction": 1.0,
+          "min_rgb": [
+            251,
+            248,
+            232
+          ]
+        }
+      ]
+    },
+    {
+      "file": "page-03.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "caption_regions": [
+        {
+          "expected_outer_rect": [
+            28,
+            16,
+            748,
+            168
+          ],
+          "tested_text_inset_px": 20,
+          "clear_cream_fraction": 1.0,
+          "min_rgb": [
+            253,
+            247,
+            232
+          ]
+        },
+        {
+          "expected_outer_rect": [
+            790,
+            16,
+            1510,
+            168
+          ],
+          "tested_text_inset_px": 20,
+          "clear_cream_fraction": 1.0,
+          "min_rgb": [
+            253,
+            247,
+            232
+          ]
+        }
+      ]
+    },
+    {
+      "file": "page-04.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "caption_regions": [
+        {
+          "expected_outer_rect": [
+            28,
+            16,
+            748,
+            168
+          ],
+          "tested_text_inset_px": 20,
+          "clear_cream_fraction": 1.0,
+          "min_rgb": [
+            252,
+            246,
+            232
+          ]
+        },
+        {
+          "expected_outer_rect": [
+            790,
+            16,
+            1510,
+            168
+          ],
+          "tested_text_inset_px": 20,
+          "clear_cream_fraction": 1.0,
+          "min_rgb": [
+            253,
+            247,
+            232
+          ]
+        }
+      ]
+    },
+    {
+      "file": "page-05.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "caption_regions": [
+        {
+          "expected_outer_rect": [
+            28,
+            16,
+            748,
+            168
+          ],
+          "tested_text_inset_px": 20,
+          "clear_cream_fraction": 1.0,
+          "min_rgb": [
+            253,
+            247,
+            233
+          ]
+        },
+        {
+          "expected_outer_rect": [
+            790,
+            16,
+            1510,
+            168
+          ],
+          "tested_text_inset_px": 20,
+          "clear_cream_fraction": 1.0,
+          "min_rgb": [
+            253,
+            247,
+            233
+          ]
+        }
+      ]
+    }
+  ]
+}

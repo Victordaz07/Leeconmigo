@@ -1,0 +1,1144 @@
+{
+  "id": "la-noche-sin-luces-en-n3",
+  "familyId": "la-noche-sin-luces",
+  "language": "en",
+  "title": "Mila, Pipo, and the Night the Fireflies Went Dark",
+  "level": 3,
+  "category": "amistad",
+  "description": "Mila, Pipo, and their friends search for the missing lights and discover how calm voices and company can help courage grow.",
+  "cover": {
+    "src": "stories/la-noche-sin-luces/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Mila and Pipo, at the lower left, look up at a night sky full of fireflies."
+  },
+  "heroFocus": {
+    "x": 25,
+    "y": 68
+  },
+  "reviewWords": [
+    "adventure",
+    "courageous",
+    "illuminate"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mila steps out of the house with an empty jar, and Pipo joins her in the garden at sunset."
+      },
+      "template": "book-1",
+      "blocks": [
+        {
+          "id": "b01",
+          "title": "Into the garden",
+          "voice": "narration",
+          "lines": [
+            "At six o'clock, Mila steps into the garden carrying an empty glass jar, excited to watch the evening lights beside Pipo.",
+            "Above the house, the evening sky is changing from orange to purple as the tree stretches long shadows across their path.",
+            "They have watched fireflies here on other evenings, but tonight the silent garden seems to be waiting for something new.",
+            "One light, two lights… where are the lights?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "The dark garden, Mila holding the jar, Pipo sniffing the ground, and Tito crying in four panels."
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b02",
+          "title": "No lights",
+          "voice": "narration",
+          "lines": [
+            "The garden looks unbelievably dark beneath the tree.",
+            "Leaves brush together softly, but no yellow lights appear.",
+            "Mila waits and listens to the breeze moving through them."
+          ]
+        },
+        {
+          "id": "b03",
+          "title": "The empty jar",
+          "voice": "narration",
+          "lines": [
+            "Mila's jar catches the last faint colors of the sunset.",
+            "She holds it toward the bush, but she can't see a firefly.",
+            "The familiar garden suddenly feels like a different place."
+          ]
+        },
+        {
+          "id": "b04",
+          "title": "A little trail",
+          "voice": "narration",
+          "lines": [
+            "Pipo lowers his nose until it almost touches the damp ground.",
+            "He finds a tiny trail winding between the roots.",
+            "Perhaps this is where their unexpected adventure will begin."
+          ]
+        },
+        {
+          "id": "b05",
+          "title": "Tito is crying",
+          "voice": "dialogue",
+          "lines": [
+            "Tito pushes through the leaves with tears on his cheeks.",
+            "—They’ve all gone dark! —he cries, pointing upward.",
+            "His friends move closer, ready to hear what has happened."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Who was crying?",
+            "options": [
+              {
+                "text": "Tito"
+              },
+              {
+                "text": "Mila"
+              },
+              {
+                "text": "Dora"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Yes, Tito came out with tears on his cheeks.",
+            "retryFeedback": "Look at the last picture on page two and find the tears."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Who needed comfort when they met in the garden?",
+            "options": [
+              {
+                "text": "Tito, who was upset about the missing lights."
+              },
+              {
+                "text": "Mila, who had lost her jar."
+              },
+              {
+                "text": "Dora, who could not find her book."
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Yes, Tito was worried, and his friends listened to him.",
+            "retryFeedback": "Return to page two and notice who comes out crying."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Tito points to a cloud covering the moon; Mila and Pipo get ready to help him."
+      },
+      "template": "slant-2",
+      "blocks": [
+        {
+          "id": "b06",
+          "title": "The cloud",
+          "voice": "dialogue",
+          "lines": [
+            "—A big cloud covered the moon —Tito explains shakily.",
+            "—The fireflies don't like the dark —he continues.",
+            "—They were frightened, so they hid their lights —he finishes."
+          ]
+        },
+        {
+          "id": "b07",
+          "title": "Together",
+          "voice": "dialogue",
+          "lines": [
+            "—I want to find them and help —Mila says firmly.",
+            "—I'll come too, even if I'm scared —Pipo replies.",
+            "Together, they turn toward the path beyond the garden."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p04",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "A snapped twig, Pipo in a puddle, an owl, frightened Tito, Pipo sneezing, and the stream."
+      },
+      "template": "six-up",
+      "blocks": [
+        {
+          "id": "b08",
+          "title": "The twig",
+          "voice": "narration",
+          "lines": [
+            "Crack!",
+            "A dry twig snaps beneath Mila's bright red shoe.",
+            "She checks the ground before stepping on."
+          ]
+        },
+        {
+          "id": "b09",
+          "title": "The puddle",
+          "voice": "narration",
+          "lines": [
+            "Splash!",
+            "Pipo lands in a puddle and splashes his own wings.",
+            "He shakes off the drops and keeps going."
+          ]
+        },
+        {
+          "id": "b10",
+          "title": "The owl",
+          "voice": "narration",
+          "lines": [
+            "Whoo!",
+            "An owl calls from a branch, making the three friends stand still.",
+            "It is only a forest neighbor saying hello to the night."
+          ]
+        },
+        {
+          "id": "b11",
+          "title": "Tito’s heartbeat",
+          "voice": "narration",
+          "lines": [
+            "Thump, thump!",
+            "Tito's heart beats like a little drum.",
+            "His paws tremble, but he stays with his friends."
+          ]
+        },
+        {
+          "id": "b12",
+          "title": "The sneeze",
+          "voice": "narration",
+          "lines": [
+            "Achoo!",
+            "Pipo sneezes loudly and rubs his nose with one paw.",
+            "Then he takes another step along the path."
+          ]
+        },
+        {
+          "id": "b13",
+          "title": "The stream",
+          "voice": "narration",
+          "lines": [
+            "At last they hear water flowing in the stream.",
+            "The bank is still dark beneath them.",
+            "One light, two lights… where are the lights?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p05",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "The bark bridge over the stream; Tito crosses while Pipo and Mila wait for their turns."
+      },
+      "template": "slant-3",
+      "blocks": [
+        {
+          "id": "b14",
+          "title": "The bark bridge",
+          "voice": "narration",
+          "lines": [
+            "Their old bark bridge is still resting on its two stones, with the stream rushing underneath.",
+            "Mila checks that both ends are supported and reminds her friends to cross one at a time.",
+            "Being courageous can mean taking one careful step, then giving someone else the space to take theirs.",
+            "They agree to wait on the firm bank."
+          ]
+        },
+        {
+          "id": "b15",
+          "title": "The first turn",
+          "voice": "narration",
+          "lines": [
+            "Tito goes first, placing one small paw ahead of the other.",
+            "He counts one when he reaches the bank and breathes out.",
+            "Then he turns to wait for his friends."
+          ]
+        },
+        {
+          "id": "b16",
+          "title": "The next turns",
+          "voice": "narration",
+          "lines": [
+            "Pipo is second, holding his tail up above the water.",
+            "Mila is third and counts three as she reaches solid ground.",
+            "Everyone has crossed safely by taking a separate turn."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Who crossed first?",
+            "options": [
+              {
+                "text": "Mila"
+              },
+              {
+                "text": "Pipo"
+              },
+              {
+                "text": "Tito"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "Yes, Tito took the first turn.",
+            "retryFeedback": "Look at the lower left picture on page five."
+          },
+          {
+            "audience": "lector",
+            "prompt": "In what order did they cross the bridge?",
+            "options": [
+              {
+                "text": "Mila, Tito, then Pipo."
+              },
+              {
+                "text": "Pipo, Mila, then Tito."
+              },
+              {
+                "text": "Tito, Pipo, then Mila."
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "Exactly: they waited and crossed one at a time.",
+            "retryFeedback": "Reread the two lower pictures on page five and follow their turns."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p06",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mila, Pipo, and Tito visit the hollow tree; Dora holds her blue book with a yellow star."
+      },
+      "template": "book-2",
+      "blocks": [
+        {
+          "id": "b17",
+          "title": "Dora and her book",
+          "voice": "narration",
+          "lines": [
+            "On top of the hill, they find a hollow tree with a round doorway tucked between its roots.",
+            "Dora the stork lives there, and she comes down to meet them with a large blue book.",
+            "A yellow star decorates the cover of the book of lights, the treasure she looks after.",
+            "She listens closely to Tito, then tells the friends that its pages can show them how to help."
+          ]
+        },
+        {
+          "id": "b18",
+          "title": "The riddle",
+          "voice": "dialogue",
+          "lines": [
+            "Before she opens the book, Dora offers a riddle and asks them to listen to both clues.",
+            "—What has leaves but isn't a tree, and tells stories without a mouth? —she asks gently.",
+            "Pipo looks up at the branches, though he suspects the answer is not growing there.",
+            "Mila repeats the clues to remember them, while Tito moves a little closer to his friends."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What does Dora keep?",
+            "options": [
+              {
+                "text": "A jar"
+              },
+              {
+                "text": "The book of lights"
+              },
+              {
+                "text": "A branch"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Yes, Dora looks after the book of lights.",
+            "retryFeedback": "Look at what Dora is holding on page six."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What does Dora keep in the hollow tree on the hill?",
+            "options": [
+              {
+                "text": "A clear glass jar that she uses to carry water from the stream up to her home."
+              },
+              {
+                "text": "The book of lights, whose pages show how to help someone who feels frightened."
+              },
+              {
+                "text": "A box of dry leaves that she puts across the bridge whenever it starts to rain."
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Yes, the book holds a way to help others feel less afraid.",
+            "retryFeedback": "Return to page six: find the star on the cover and reread what Dora brings."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p07",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Lightning crosses the sky; Tito hides behind Mila beneath an empty comic burst shape."
+      },
+      "template": "burst-2",
+      "blocks": [
+        {
+          "id": "b19",
+          "title": "Thunder",
+          "voice": "narration",
+          "lines": [
+            "Boom! Boom! Boom!"
+          ]
+        },
+        {
+          "id": "b20",
+          "title": "Staying close",
+          "voice": "narration",
+          "lines": [
+            "Thunder rolls over the hill, and Tito ducks behind Mila.",
+            "The sudden noise makes his little paws shake again.",
+            "She stays beside him, giving him time to feel steady."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p08",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mila sits thinking, with a yellow light bulb above her head and a book beside her."
+      },
+      "blocks": [
+        {
+          "id": "b21",
+          "title": "The song",
+          "voice": "narration",
+          "lines": [
+            "One light, two lights… where are the lights?",
+            "Mila hums the song while she sorts the clues in her mind."
+          ]
+        },
+        {
+          "id": "b22",
+          "title": "The clues",
+          "voice": "narration",
+          "lines": [
+            "Leaves can grow on branches, but the leaves inside a book are made of paper.",
+            "It's a book that can tell a story; a tree cannot do that, though both have leaves."
+          ]
+        },
+        {
+          "id": "b23",
+          "title": "The answer",
+          "voice": "dialogue",
+          "lines": [
+            "—A book! —Mila says, delighted that the two clues fit together.",
+            "Dora nods and opens it where everyone can see the pictures."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Which clue helped Mila?",
+            "options": [
+              {
+                "text": "Thunder"
+              },
+              {
+                "text": "Leaves"
+              },
+              {
+                "text": "A puddle"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Yes, she thought about the paper leaves in a book.",
+            "retryFeedback": "Reread page eight and look for the two kinds of leaves."
+          },
+          {
+            "audience": "lector",
+            "prompt": "How did Mila work out the answer to the riddle?",
+            "options": [
+              {
+                "text": "She heard thunder and thought it came from a book cover."
+              },
+              {
+                "text": "She connected paper leaves with the stories inside a book."
+              },
+              {
+                "text": "She found a hidden firefly shining inside her empty jar."
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Yes, she put the clues together to find an answer that fit.",
+            "retryFeedback": "Reread Mila’s thoughts on page eight: what has leaves and tells stories?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p09",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "An open book, Mila breathing, Dora counting one, two, and three on her fingers, and Mila singing."
+      },
+      "template": "manga-6",
+      "blocks": [
+        {
+          "id": "b24",
+          "title": "The open book",
+          "voice": "narration",
+          "lines": [
+            "Dora rests the open book across her wings for them to see.",
+            "Its pictures show three simple steps to follow.",
+            "Now the friends have a way to help."
+          ]
+        },
+        {
+          "id": "b25",
+          "title": "A deep breath",
+          "voice": "dialogue",
+          "lines": [
+            "—Take a slow breath —Dora says in a gentle voice.",
+            "They breathe in, pause briefly, and let the air flow out.",
+            "Tito notices his paws beginning to feel less tight against the ground."
+          ]
+        },
+        {
+          "id": "b26",
+          "title": "One",
+          "voice": "narration",
+          "lines": [
+            "Dora lifts one finger and says one.",
+            "Tito watches and copies her.",
+            "Everyone takes a quiet moment."
+          ]
+        },
+        {
+          "id": "b27",
+          "title": "Two",
+          "voice": "narration",
+          "lines": [
+            "Dora raises two fingers and counts two in a calm voice, leaving a little space after the word.",
+            "The friends keep their feet still on the grass.",
+            "There is no need to hurry when they can give each other time to breathe."
+          ]
+        },
+        {
+          "id": "b28",
+          "title": "Three",
+          "voice": "narration",
+          "lines": [
+            "Dora holds up three fingers and finishes the count with a smile.",
+            "Pipo lets his wings relax instead of squeezing them close.",
+            "Tito notices that his heart is no longer racing quite so fast."
+          ]
+        },
+        {
+          "id": "b29",
+          "title": "A quiet song",
+          "voice": "narration",
+          "lines": [
+            "Mila starts a tune as soft as the breeze in the leaves.",
+            "Pipo hums on and on and on, keeping his voice low.",
+            "Tito joins in at last."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-10.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Three fireflies in separate columns, each glowing more brightly than the last."
+      },
+      "template": "book-3",
+      "blocks": [
+        {
+          "id": "b30",
+          "title": "The first light",
+          "voice": "narration",
+          "lines": [
+            "A firefly blinks on beside a leaf at the edge of the path, casting a tiny circle of light.",
+            "It is the first to leave its hiding place, drawn by the soft voices of its new friends.",
+            "They keep singing where they are, leaving it plenty of room to explore without being chased."
+          ]
+        },
+        {
+          "id": "b31",
+          "title": "The second light",
+          "voice": "narration",
+          "lines": [
+            "The second firefly switches on near another leaf, helping illuminate a little more of the path.",
+            "Its glow seems to answer the first, as though the two lights are sharing a quiet secret.",
+            "Mila holds her open jar toward their reflections, happy to watch without catching them."
+          ]
+        },
+        {
+          "id": "b32",
+          "title": "The third light",
+          "voice": "narration",
+          "lines": [
+            "A third firefly shines with an extraordinary golden glow, circling above the dark grass.",
+            "Tito counts the three bright lights and feels a smile spreading all across his face.",
+            "Some fear is still there, but now he has room for joy beside it, and that feels wonderful."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "How did the first lights appear?",
+            "options": [
+              {
+                "text": "One, then two, then three"
+              },
+              {
+                "text": "Three, then one"
+              },
+              {
+                "text": "All at once"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Yes, they came on one after another.",
+            "retryFeedback": "Follow the three columns on page ten from left to right."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What best describes how the lights began to return?",
+            "options": [
+              {
+                "text": "One firefly came out, and then two more joined it."
+              },
+              {
+                "text": "All three went dark before the first appeared."
+              },
+              {
+                "text": "Every firefly in the garden lit up at the same instant."
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Exactly: the light returned a little at a time.",
+            "retryFeedback": "Reread the three columns on page ten and follow the first, second, and third lights."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p11",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-11.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Six lights in the dark sky; three more appear as the cloud drifts away and the friends watch."
+      },
+      "template": "bolt-2",
+      "blocks": [
+        {
+          "id": "b33",
+          "title": "Four, five, six",
+          "voice": "narration",
+          "lines": [
+            "Four, five, six: new lights join the first three fireflies.",
+            "The leaves along the path begin to shine softly.",
+            "One light, two lights… where are the lights?"
+          ]
+        },
+        {
+          "id": "b34",
+          "title": "Seven, eight, nine",
+          "voice": "narration",
+          "lines": [
+            "Seven, eight, nine: three more lights rise above the path.",
+            "The cloud starts drifting slowly away from the moon.",
+            "The friends keep singing as they look up together."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p12",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-12.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "The sky fills with fireflies as the cloud moves away; Tito laughs happily."
+      },
+      "template": "two-up",
+      "blocks": [
+        {
+          "id": "b35",
+          "title": "All the lights",
+          "voice": "dialogue",
+          "lines": [
+            "—The cloud is leaving, and they're all coming out —says Mila.",
+            "—Our quiet song helped them feel less alone —Pipo replies.",
+            "—Now I can smile again —Tito says, watching them rise."
+          ]
+        },
+        {
+          "id": "b36",
+          "title": "Tito’s laugh",
+          "voice": "dialogue",
+          "lines": [
+            "—And you helped me when I was frightened too —Tito adds.",
+            "He laughs, his cheeks dry and his eyes bright with delight.",
+            "Mila and Pipo share his happiness as the lights dance above them."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q06",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What helped the fireflies?",
+            "options": [
+              {
+                "text": "A shout"
+              },
+              {
+                "text": "A race"
+              },
+              {
+                "text": "A quiet song"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "Yes, the quiet song helped them feel less alone.",
+            "retryFeedback": "Remember the singing on page nine, then look at the lights on page twelve."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why did the fireflies feel ready to come out?",
+            "options": [
+              {
+                "text": "Tito banged on the tree to wake them up."
+              },
+              {
+                "text": "Mila shut them inside the jar."
+              },
+              {
+                "text": "Gentle voices and company helped them feel brave."
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "Yes, the friends helped by being calm and staying nearby.",
+            "retryFeedback": "Reread Pipo’s words on page twelve and remember the song."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p13",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-13.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Pipo carries the glowing jar, the friends cross the bridge, and Mila looks up at the sky."
+      },
+      "template": "three-up",
+      "blocks": [
+        {
+          "id": "b37",
+          "title": "A jar of light",
+          "voice": "narration",
+          "lines": [
+            "Pipo carries the open jar, full of yellow reflections.",
+            "The fireflies move freely through the air around them.",
+            "Their glow travels with the friends all the way home."
+          ]
+        },
+        {
+          "id": "b38",
+          "title": "Back across the bridge",
+          "voice": "narration",
+          "lines": [
+            "They cross the illuminated bark bridge, each at their own pace.",
+            "The lights reveal the stones and the water.",
+            "This time, everyone can see where to put their feet."
+          ]
+        },
+        {
+          "id": "b39",
+          "title": "Helping is brave",
+          "voice": "narration",
+          "lines": [
+            "Mila realizes that being brave does not mean never feeling frightened.",
+            "Sometimes it means listening, staying close, and helping a friend try one more step.",
+            "As she walks home, she decides that helping Tito has taught her something about herself too."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p14",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-14.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "The house and garden beneath a night sky full of tiny yellow lights."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b40",
+          "title": "The lights at home",
+          "voice": "narration",
+          "lines": [
+            "The house welcomes them back to a garden full of light, where small gold dots dance among the leaves beside the doorway.",
+            "Mila sets the open jar down by the door, happy that nobody needs to shut those little lights inside to enjoy their glow.",
+            "Before going in, she looks at the others and remembers that helping someone else find courage made her own grow tonight.",
+            "One light, two lights… there are the lights!"
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q07",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What did the friends do?",
+            "options": [
+              {
+                "text": "They left Tito alone"
+              },
+              {
+                "text": "They helped each other feel brave"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Yes, they stayed together and helped one another.",
+            "retryFeedback": "Think about how Tito felt at the start and how he feels at the end."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What does this adventure show us about bravery?",
+            "options": [
+              {
+                "text": "Being brave means never feeling afraid."
+              },
+              {
+                "text": "Helping someone else find courage is a kind of bravery too."
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Yes, we can feel afraid and still be there for a friend.",
+            "retryFeedback": "Reread Mila’s thought on page thirteen, then look at the ending on page fourteen."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "adventure": {
+      "syllables": [
+        "ad",
+        "ven",
+        "ture"
+      ],
+      "definition": "An exciting trip or experience.",
+      "synonym": "journey",
+      "example": "Climbing the old oak tree felt like a real adventure."
+    },
+    "courageous": {
+      "syllables": [
+        "cou",
+        "ra",
+        "geous"
+      ],
+      "definition": "Ready to try even when afraid.",
+      "synonym": "brave",
+      "example": "She was courageous when she spoke up for her friend."
+    },
+    "illuminate": {
+      "syllables": [
+        "il",
+        "lu",
+        "mi",
+        "nate"
+      ],
+      "definition": "To give light to something.",
+      "synonym": "light up",
+      "example": "The lamp was bright enough to illuminate the whole room."
+    },
+    "extraordinary": {
+      "syllables": [
+        "ex",
+        "traor",
+        "di",
+        "nar",
+        "y"
+      ],
+      "definition": "Very special or unusual.",
+      "synonym": "remarkable",
+      "example": "The cake tasted extraordinary, better than ever before."
+    },
+    "unbelievably": {
+      "syllables": [
+        "un",
+        "be",
+        "liev",
+        "a",
+        "bly"
+      ],
+      "definition": "So much that it is hard to believe.",
+      "synonym": "amazingly",
+      "example": "The tree lit up unbelievably bright with all its lights on."
+    },
+    "illuminated": {
+      "syllables": [
+        "il",
+        "lu",
+        "mi",
+        "na",
+        "ted"
+      ],
+      "definition": "Lit so that you can see it.",
+      "synonym": "brightened",
+      "example": "The hallway was illuminated by a single lamp."
+    },
+    "stork": {
+      "syllables": [
+        "stork"
+      ],
+      "definition": "A large bird with a long beak and legs.",
+      "example": "We saw a stork standing on one leg on the rooftop."
+    },
+    "firefly": {
+      "syllables": [
+        "fire",
+        "fly"
+      ],
+      "definition": "A small insect that makes light.",
+      "example": "On summer nights, fireflies glowed between the bushes in the yard."
+    },
+    "riddle": {
+      "syllables": [
+        "rid",
+        "dle"
+      ],
+      "definition": "A question with clues to work out.",
+      "synonym": "puzzle",
+      "example": "My grandma told us a different riddle every night before bed."
+    },
+    "light": {
+      "syllables": [
+        "light"
+      ],
+      "definition": "Brightness that helps us see.",
+      "synonym": "glow",
+      "example": "We turned on the hallway light because it was getting dark."
+    },
+    "empty": {
+      "syllables": [
+        "emp",
+        "ty"
+      ],
+      "definition": "With nothing inside.",
+      "synonym": "bare",
+      "example": "The fridge was almost empty before we went to the store."
+    },
+    "puddle": {
+      "syllables": [
+        "pud",
+        "dle"
+      ],
+      "definition": "A small pool of water on the ground.",
+      "synonym": "pool",
+      "example": "We jumped over the puddles on our way to school."
+    },
+    "softly": {
+      "syllables": [
+        "soft",
+        "ly"
+      ],
+      "definition": "In a quiet or gentle way.",
+      "synonym": "gently",
+      "example": "She closed the door softly so she wouldn't wake the baby."
+    },
+    "brave": {
+      "syllables": [
+        "brave"
+      ],
+      "definition": "Ready to try something that feels hard.",
+      "synonym": "bold",
+      "example": "He was brave enough to defend his friend even though he was scared."
+    },
+    "garden": {
+      "syllables": [
+        "gar",
+        "den"
+      ],
+      "definition": "A place where plants are grown.",
+      "example": "We planted tomatoes in the garden behind the house."
+    },
+    "paper": {
+      "syllables": [
+        "pa",
+        "per"
+      ],
+      "definition": "Thin material used for writing or books.",
+      "example": "He folded a sheet of paper to make an airplane."
+    },
+    "finger": {
+      "syllables": [
+        "fin",
+        "ger"
+      ],
+      "definition": "One of the long parts of a hand.",
+      "example": "She pointed with her finger at the shooting star."
+    },
+    "fingers": {
+      "syllables": [
+        "fin",
+        "gers"
+      ],
+      "definition": "The long parts of a hand.",
+      "example": "He counted on his fingers to solve the math problem."
+    },
+    "quiet": {
+      "syllables": [
+        "qui",
+        "et"
+      ],
+      "definition": "Making very little sound.",
+      "synonym": "silent",
+      "example": "The library stayed quiet while everyone was reading."
+    },
+    "gentle": {
+      "syllables": [
+        "gen",
+        "tle"
+      ],
+      "definition": "Soft and careful.",
+      "synonym": "tender",
+      "example": "She gave the puppy a gentle pat on the head."
+    },
+    "branch": {
+      "syllables": [
+        "branch"
+      ],
+      "definition": "A part of a tree that grows from its trunk.",
+      "example": "A bird built its nest on a high branch of the tree."
+    },
+    "bridge": {
+      "syllables": [
+        "bridge"
+      ],
+      "definition": "A way across water or a gap.",
+      "synonym": "crossing",
+      "example": "We crossed the bridge to reach the other side of the park faster."
+    },
+    "shadows": {
+      "syllables": [
+        "shad",
+        "ows"
+      ],
+      "definition": "Dark shapes where light is blocked.",
+      "example": "The shadows grew longer as the sun went down."
+    },
+    "hollow": {
+      "syllables": [
+        "hol",
+        "low"
+      ],
+      "definition": "Having an empty space inside.",
+      "example": "The tree had a hollow trunk where a squirrel lived."
+    },
+    "pictures": {
+      "syllables": [
+        "pic",
+        "tures"
+      ],
+      "definition": "Images that show us things.",
+      "example": "We looked at old pictures from our trip to the beach."
+    },
+    "together": {
+      "syllables": [
+        "to",
+        "geth",
+        "er"
+      ],
+      "definition": "With one another.",
+      "example": "The whole family cooked dinner together on Sunday."
+    },
+    "frightened": {
+      "syllables": [
+        "fright",
+        "ened"
+      ],
+      "definition": "Feeling scared.",
+      "synonym": "afraid",
+      "example": "The loud thunder frightened the little dog."
+    },
+    "reflections": {
+      "syllables": [
+        "re",
+        "flec",
+        "tions"
+      ],
+      "definition": "Light or pictures seen in a shiny surface.",
+      "synonym": "glare",
+      "example": "We saw our reflections in the still water of the lake."
+    },
+    "beneath": {
+      "syllables": [
+        "be",
+        "neath"
+      ],
+      "definition": "In a place under something.",
+      "synonym": "below",
+      "example": "The cat was hiding beneath the kitchen table."
+    },
+    "neighbor": {
+      "syllables": [
+        "neigh",
+        "bor"
+      ],
+      "definition": "Someone who lives nearby.",
+      "example": "Our neighbor waved to us from across the street."
+    }
+  }
+}

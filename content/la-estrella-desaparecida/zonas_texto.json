@@ -1,0 +1,310 @@
+{
+  "canvas": {
+    "width": 1536,
+    "height": 1024
+  },
+  "coordinateSystem": "pixels; scale with image",
+  "status": "Coordenadas por imagen comprobadas sobre los PNG finales; verificar fuente real en app",
+  "readingOrder": [
+    "top-left",
+    "top-right",
+    "bottom-left",
+    "bottom-right"
+  ],
+  "safeTextBoxes": [
+    {
+      "x": 48,
+      "y": 28,
+      "width": 660,
+      "height": 76
+    },
+    {
+      "x": 824,
+      "y": 28,
+      "width": 660,
+      "height": 76
+    },
+    {
+      "x": 48,
+      "y": 542,
+      "width": 660,
+      "height": 76
+    },
+    {
+      "x": 824,
+      "y": 542,
+      "width": 660,
+      "height": 76
+    }
+  ],
+  "testedFont": "DejaVu Sans",
+  "testedStyles": {
+    "1": {
+      "fontSize": 28,
+      "lineHeight": 31
+    },
+    "2": {
+      "fontSize": 22,
+      "lineHeight": 25
+    },
+    "3": {
+      "fontSize": 20,
+      "lineHeight": 24
+    }
+  },
+  "note": "Cada cadena de lines admite ajuste por palabras. No dibujar como línea rígida, no truncar. Máximo cuatro líneas visuales por cuadro.",
+  "pageOverrides": {
+    "imagenes/c1-p01.png": {
+      "safeTextBoxes": [
+        {
+          "x": 48,
+          "y": 32,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 824,
+          "y": 32,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 48,
+          "y": 545,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 824,
+          "y": 545,
+          "width": 660,
+          "height": 76
+        }
+      ]
+    },
+    "imagenes/c1-p02.png": {
+      "safeTextBoxes": [
+        {
+          "x": 48,
+          "y": 26,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 824,
+          "y": 26,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 48,
+          "y": 539,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 824,
+          "y": 540,
+          "width": 660,
+          "height": 76
+        }
+      ]
+    },
+    "imagenes/c1-p03.png": {
+      "safeTextBoxes": [
+        {
+          "x": 48,
+          "y": 38,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 824,
+          "y": 38,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 48,
+          "y": 540,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 824,
+          "y": 540,
+          "width": 660,
+          "height": 76
+        }
+      ]
+    },
+    "imagenes/c2-p01.png": {
+      "safeTextBoxes": [
+        {
+          "x": 48,
+          "y": 34,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 824,
+          "y": 34,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 48,
+          "y": 549,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 824,
+          "y": 549,
+          "width": 660,
+          "height": 76
+        }
+      ]
+    },
+    "imagenes/c2-p02.png": {
+      "safeTextBoxes": [
+        {
+          "x": 48,
+          "y": 34,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 824,
+          "y": 33,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 48,
+          "y": 515,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 824,
+          "y": 515,
+          "width": 660,
+          "height": 76
+        }
+      ]
+    },
+    "imagenes/c2-p03.png": {
+      "safeTextBoxes": [
+        {
+          "x": 48,
+          "y": 33,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 824,
+          "y": 33,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 48,
+          "y": 514,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 824,
+          "y": 514,
+          "width": 660,
+          "height": 76
+        }
+      ]
+    },
+    "imagenes/c3-p01.png": {
+      "safeTextBoxes": [
+        {
+          "x": 48,
+          "y": 33,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 824,
+          "y": 33,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 48,
+          "y": 514,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 824,
+          "y": 513,
+          "width": 660,
+          "height": 76
+        }
+      ]
+    },
+    "imagenes/c3-p02.png": {
+      "safeTextBoxes": [
+        {
+          "x": 48,
+          "y": 33,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 824,
+          "y": 33,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 48,
+          "y": 513,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 824,
+          "y": 513,
+          "width": 660,
+          "height": 76
+        }
+      ]
+    },
+    "imagenes/c3-p03.png": {
+      "safeTextBoxes": [
+        {
+          "x": 48,
+          "y": 32,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 824,
+          "y": 32,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 48,
+          "y": 513,
+          "width": 660,
+          "height": 76
+        },
+        {
+          "x": 824,
+          "y": 512,
+          "width": 660,
+          "height": 76
+        }
+      ]
+    }
+  }
+}

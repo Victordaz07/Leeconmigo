@@ -1,0 +1,1184 @@
+{
+  "id": "la-cupula-que-parpadeaba-en-n6",
+  "familyId": "la-cupula-que-parpadeaba",
+  "language": "en",
+  "title": "The Dome That Blinked",
+  "level": 6,
+  "category": "ciencia-ficcion",
+  "description": "Vera and Ivo investigate a strange light in an old dome on Mars and find out whether the flicker was an accident or a signal.",
+  "cover": {
+    "src": "stories/la-cupula-que-parpadeaba/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Vera, Ivo, Mara and Pico spot a light inside the old dome through a glass corridor."
+  },
+  "heroFocus": {
+    "x": 40,
+    "y": 55
+  },
+  "reviewWords": [
+    "flashes",
+    "nursery",
+    "pressure"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Vera, Ivo, Mara and Pico spot a light inside the old dome through a glass corridor."
+      },
+      "blocks": [
+        {
+          "id": "b01",
+          "voice": "narration",
+          "title": "The old dome",
+          "lines": [
+            "Vera and Ivo were on their way to dinner when Pico, their little wheeled robot, stopped in the middle of the glass corridor. Its single eye glowed blue.",
+            "Beyond the glass lay Mars: red rocks, a line of aerials, and, farther away, a dome coated in dust. No one had lived there for as long as either child could remember.",
+            "Then a turquoise light appeared inside it. It went out. It came back on.",
+            "“Did you see that?” Ivo asked.",
+            "Vera nodded. Behind them, Mara the engineer set down her toolbox beside the corridor planters.",
+            "“That dome has been closed for years,” she said. She looked again and frowned. “There shouldn’t be any light in there.”",
+            "Pico copied the flash with its eye. The three of them watched. The distant light returned, and this time Pico had done nothing."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Where does the first light appear?",
+            "options": [
+              {
+                "text": "Under Pico"
+              },
+              {
+                "text": "Inside the old dome"
+              },
+              {
+                "text": "In the dining hall"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! Inside the old dome.",
+            "retryFeedback": "Look beyond the glass corridor."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why is Mara surprised?",
+            "options": [
+              {
+                "text": "The glass is green"
+              },
+              {
+                "text": "Dinner is late"
+              },
+              {
+                "text": "The dome has been closed for years"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! The dome has been closed for years.",
+            "retryFeedback": "Look beyond the glass corridor."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "The children count flashes, Pico copies them, and a cup reflects the distant light."
+      },
+      "blocks": [
+        {
+          "id": "b02",
+          "voice": "narration",
+          "title": "Three flashes and a pause",
+          "lines": [
+            "Vera gripped the window frame. The dome flashed three times, paused for a moment, then gave a longer glow.",
+            "“Three and one,” said Ivo, holding up his fingers. “Maybe somebody’s talking to us.”",
+            "Pico flashed four times so quickly that Vera laughed. Mara asked the robot to switch off its eye for a moment so they could see clearly.",
+            "Ivo spotted the light in his cup of water too. For a second he wondered whether the mystery was on the table. Vera moved the cup; its reflection moved with it. The distant dome stayed put.",
+            "“The one in the cup is a copy,” she said. “We need to find the real light.”",
+            "They noted the time and watched again. This time there were two flashes, a pause, and one long glow.",
+            "“If it’s a message, why does it change?” Mara asked. Ivo lowered his fingers, but he kept wondering."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Where do they see a reflection?",
+            "options": [
+              {
+                "text": "On a stone"
+              },
+              {
+                "text": "On an aerial"
+              },
+              {
+                "text": "In a cup of water"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! In a cup of water.",
+            "retryFeedback": "Try moving the cup like Vera did."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What does moving the cup show?",
+            "options": [
+              {
+                "text": "That the light there is a reflection"
+              },
+              {
+                "text": "That the dome moves"
+              },
+              {
+                "text": "That Pico made the flashes"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! That the light there is a reflection.",
+            "retryFeedback": "Try moving the cup like Vera did."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": null
+      },
+      "blocks": [
+        {
+          "id": "b03",
+          "voice": "narration",
+          "title": "The old records",
+          "lines": [
+            "Mara opened the maintenance records on a screen. The old dome had once been a nursery where the colony’s first families grew flowers and vegetables.",
+            "Years before, a dust storm had damaged its main water pump. The team closed it to visitors, stored the remaining seeds there, and moved their crops to a newer dome.",
+            "“Did nobody ever go back?” Vera asked.",
+            "“Technicians checked it, but it never reopened as a garden,” Mara said.",
+            "In an old photograph, a small machine stood among the planting beds. It was called Nido: a copper-coloured automatic gardener that collected drops of water and checked the plants. The records listed it as out of service.",
+            "Ivo pointed at the photograph. “What if Nido is still in there?”",
+            "“That’s possible. So is a broken lamp,” Mara said. “We don’t know which explanation is right yet.”",
+            "They promised not to touch any door without her. There was plenty they could investigate from the station’s safe rooms."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What once grew in the old dome?",
+            "options": [
+              {
+                "text": "Flowers and vegetables"
+              },
+              {
+                "text": "Glowing rocks"
+              },
+              {
+                "text": "Engines"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! Flowers and vegetables.",
+            "retryFeedback": "Check what Mara found in the records."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What do they know about Nido so far?",
+            "options": [
+              {
+                "text": "It is in the dining hall"
+              },
+              {
+                "text": "The record lists it as out of service"
+              },
+              {
+                "text": "They have seen it working"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! The record lists it as out of service.",
+            "retryFeedback": "Check what Mara found in the records."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p04",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mara and the children watch a red dust storm approach the dome."
+      },
+      "blocks": [
+        {
+          "id": "b04",
+          "voice": "narration",
+          "title": "A redder sky",
+          "lines": [
+            "By the next morning, the horizon was no longer a line. A pink cloud of dust rolled across the desert, swallowing one mountain after another.",
+            "Mara met the children in the enclosed corridor. The station had doors and filters to keep everyone safe, she explained. No one needed to go outside to look at the old dome.",
+            "“The storm will reach us tonight,” she said. “If that light means something is broken, I’d like to know before then.”",
+            "Vera opened a clean notebook. Ivo held the clock. Whenever the light appeared, they marked its time and position. Pico stayed still, which was unusually hard for Pico.",
+            "After several rounds, Vera noticed something odd. Sometimes the dome seemed to send three flashes; sometimes only two. The light stayed in place, but a dark shadow passed across it.",
+            "Ivo leaned closer to the glass. “Maybe the light isn’t changing. Maybe something in front of it is.”",
+            "Mara smiled. “Now that is a clue we can check.”"
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What is approaching the colony?",
+            "options": [
+              {
+                "text": "A blue ship"
+              },
+              {
+                "text": "A dust storm"
+              },
+              {
+                "text": "A train"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! A dust storm.",
+            "retryFeedback": "Watch the sky and what crosses the light."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What new clue does Vera notice?",
+            "options": [
+              {
+                "text": "The dome moves away"
+              },
+              {
+                "text": "The cup flies"
+              },
+              {
+                "text": "A shadow crosses the light"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! A shadow crosses the light.",
+            "retryFeedback": "Watch the sky and what crosses the light."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "p05",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "From the station they study the distant dome by telescope; a detail shows the fan in front of the lamp."
+      },
+      "blocks": [
+        {
+          "id": "b05",
+          "voice": "narration",
+          "title": "The shadow of a fan",
+          "lines": [
+            "From the observation window, Mara magnified the old dome. Ivo found the small yellow lamp first. Then Vera spotted the blades of a fan turning slowly above it.",
+            "Each blade covered the light for an instant. When two passed close together, the lamp appeared to flash from far away. The fan hesitated, stopped, and started again.",
+            "“My three flashes were a shadow,” Ivo said.",
+            "“At least some of them were,” Vera replied. “We still don’t know why the lamp is on.”",
+            "Pico held a claw in front of its eye and tried to make a similar shadow. The claw slipped and looked like a metal moustache. Even Mara laughed.",
+            "On their next look, they noticed green patches behind the fan. The glass was so dusty that they couldn’t tell whether those shapes were leaves, stains, or reflections.",
+            "Mara decided to check the enclosed tunnel connecting the two domes. The storm was still far away, but they no longer had much time."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What casts the shadow?",
+            "options": [
+              {
+                "text": "A tree outside"
+              },
+              {
+                "text": "Ivo’s bag"
+              },
+              {
+                "text": "The fan blades"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! The fan blades.",
+            "retryFeedback": "Think of something turning in front of a lamp."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why do the flashes seem to change?",
+            "options": [
+              {
+                "text": "The blades cover the lamp unevenly"
+              },
+              {
+                "text": "The lamp can talk"
+              },
+              {
+                "text": "Pico changes the clock"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! The blades cover the lamp unevenly.",
+            "retryFeedback": "Think of something turning in front of a lamp."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "p06",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mara checks a door in the enclosed tunnel while the children wait behind her."
+      },
+      "blocks": [
+        {
+          "id": "b06",
+          "voice": "narration",
+          "title": "The sealed tunnel",
+          "lines": [
+            "The service tunnel did not cross the desert in the open. It was an enclosed passage with thick doors and small windows. Mara checked the pressure before opening the first door.",
+            "“One door at a time,” she reminded them. “If a gauge changes, we turn back.”",
+            "Pico rolled ahead and bumped gently into an abandoned crate. Ivo lifted it out of the way. Beyond the second window, the old dome looked enormous.",
+            "Outside, dust covered the ground. Inside, something did not fit: a row of droplets slid down the inner face of a clear panel.",
+            "“It’s damp in there,” Vera said.",
+            "Mara checked the gauges. The corridor air was safe; they could wait while she inspected the next hatch. Nobody entered the planting area yet.",
+            "Ivo pointed at the drops. “If no one waters this place, where is that water coming from?”",
+            "Pico turned its eye towards the green blur behind the glass. Vera remembered the old picture of Nido."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q06",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "How do they approach the dome?",
+            "options": [
+              {
+                "text": "Through an enclosed tunnel"
+              },
+              {
+                "text": "Across the open desert"
+              },
+              {
+                "text": "Across the roof"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! Through an enclosed tunnel.",
+            "retryFeedback": "Remember that nobody crossed the open desert."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why are the droplets interesting?",
+            "options": [
+              {
+                "text": "Pico put them there"
+              },
+              {
+                "text": "They suggest moisture inside the dome"
+              },
+              {
+                "text": "They prove it rained on Mars"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! They suggest moisture inside the dome.",
+            "retryFeedback": "Remember that nobody crossed the open desert."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "p07",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": null
+      },
+      "blocks": [
+        {
+          "id": "b07",
+          "voice": "narration",
+          "title": "What the dust hid",
+          "lines": [
+            "Vera wiped only the corridor window, where Mara said it was safe to work. A small leaf appeared on the other side. Then another, much taller one.",
+            "Ivo stopped thinking about green stains. “They’re real plants.”",
+            "They did not stand in tidy rows like the new nursery’s crops. Some climbed old pipes; others leaned towards a lamp. There was soil on a table nobody remembered using.",
+            "The yellow light came on again. A low copper shape moved behind the leaves. Pico gave a little beep, and the shape vanished beneath a bench.",
+            "“Nido,” Vera whispered.",
+            "Mara checked the old photograph before agreeing. Small wheels, two narrow arms, a round tank. The outline matched.",
+            "The old gardener had not shut down. But if it was still tending the plants, why was the fan having such trouble turning?",
+            "A gust of dust struck the roof. They all heard it. Mara closed the tunnel’s outer hatch and checked its seal."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q07",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What was behind the dusty glass?",
+            "options": [
+              {
+                "text": "A new city"
+              },
+              {
+                "text": "Plants"
+              },
+              {
+                "text": "A lake"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! Plants.",
+            "retryFeedback": "Imagine cleaning the glass, then check the photograph."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why does Mara check the old photograph?",
+            "options": [
+              {
+                "text": "To count mountains"
+              },
+              {
+                "text": "To choose dinner"
+              },
+              {
+                "text": "To compare the shape with Nido"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! To compare the shape with Nido.",
+            "retryFeedback": "Imagine cleaning the glass, then check the photograph."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p08",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Nido, a copper gardener robot, waters a shoot under a clear cover."
+      },
+      "blocks": [
+        {
+          "id": "b08",
+          "voice": "narration",
+          "title": "The copper gardener",
+          "lines": [
+            "Nido emerged from under the bench. It looked nothing like shiny Pico: its paint was worn, and one wheel made a little hop as it moved. A drop of water rested in one of its narrow arms.",
+            "It placed the drop carefully beside a plant. Then it aimed its little lamp at some pale leaves.",
+            "“It wasn’t calling to us,” Ivo said. “It was working!”",
+            "Vera spotted a shoot no bigger than her fingernail beneath a clear cover. Seed capsules rested behind it. The nursery was not empty; it had become a different kind of garden.",
+            "The fan suddenly jerked. The lamp flickered, and Nido froze with its arm in the air.",
+            "Mara checked the controls from the safe side of the door. The dome’s battery still worked, but dusty panels gathered little sunlight. When the storm arrived, they would gather even less.",
+            "“First we keep the colony safe,” Mara said. “Then we’ll see what we can do for this garden.”"
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q08",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What does Nido do with a drop?",
+            "options": [
+              {
+                "text": "Stores it in an aerial"
+              },
+              {
+                "text": "Throws it into the desert"
+              },
+              {
+                "text": "Places it beside a plant"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! Places it beside a plant.",
+            "retryFeedback": "Follow the drop carried by the gardener."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What worries Mara before the storm?",
+            "options": [
+              {
+                "text": "The dome has little power"
+              },
+              {
+                "text": "Pico’s colour"
+              },
+              {
+                "text": "The flower’s name"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! The dome has little power.",
+            "retryFeedback": "Follow the drop carried by the gardener."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "p09",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "The storm darkens the sky as Nido protects a shoot and the children watch from indoors."
+      },
+      "blocks": [
+        {
+          "id": "b09",
+          "voice": "narration",
+          "title": "When the sky goes dark",
+          "lines": [
+            "The storm arrived before dinner. From the corridor, the sun looked like a coin seen through red cloth. The solar panels gathered less light, and the station switched to its reserves.",
+            "Mara called the duty team. The living quarters still had air, heat, and food; their systems were protected. The old dome, however, was not part of the main circuit.",
+            "Through the window, Vera watched Nido pull the little shoot closer to its lamp. The light went out. Nido waited without letting go of the plant.",
+            "“Can we lend it some power?” Ivo asked.",
+            "“We won’t take it from people’s homes,” Mara said. “First we need to check whether there’s another safe route.”",
+            "Pico shone a bright circle on the floor, as if offering its own battery. Vera gave the robot a fond pat.",
+            "Instead of rushing towards a closed door, the children went with Mara to the pipe diagram. This time they knew exactly what they were trying to save."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q09",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What goes dark near the shoot?",
+            "options": [
+              {
+                "text": "The lamp"
+              },
+              {
+                "text": "The sun forever"
+              },
+              {
+                "text": "Vera’s eye"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! The lamp.",
+            "retryFeedback": "Think about what the families need first."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What does Mara decide about power for homes?",
+            "options": [
+              {
+                "text": "To give it all to Pico"
+              },
+              {
+                "text": "Not to take it for the dome"
+              },
+              {
+                "text": "To switch off every home"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! Not to take it for the dome.",
+            "retryFeedback": "Think about what the families need first."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "p10",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": null
+      },
+      "blocks": [
+        {
+          "id": "b10",
+          "voice": "narration",
+          "title": "A path for warmth",
+          "lines": [
+            "The diagram showed two separate circuits. One brought air and heat to the living quarters. The other carried warm water from the shared kitchen to a service tank.",
+            "“That tank felt warm yesterday,” Ivo remembered. “Pico tried to hug it like a giant cosy belly.”",
+            "Pico beeped proudly. Mara checked how much energy remained after the colony’s needs were met. There was enough to test the service loop during the storm, if the old valves were sound.",
+            "Vera traced a line to the closed dome with her finger. It ended at a little wheel on the diagram.",
+            "“This valve hasn’t been opened in years,” Mara said. “I’ll check it with the team from the protected corridor.”",
+            "The children could come as far as the observation point, but they would not operate the equipment. Their job was to watch the gauges and report any change.",
+            "Ivo tucked away his notebook. It did not sound like a spectacular plan. But if it worked, warmth would travel along a route nobody else needed."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q10",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What runs through the service loop?",
+            "options": [
+              {
+                "text": "Outside air"
+              },
+              {
+                "text": "Warm water"
+              },
+              {
+                "text": "Red stones"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! Warm water.",
+            "retryFeedback": "There are two heat routes; find the spare one."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why test that route?",
+            "options": [
+              {
+                "text": "It is the only path to dinner"
+              },
+              {
+                "text": "Pico wants a bath"
+              },
+              {
+                "text": "It may have spare heat without affecting homes"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! It may have spare heat without affecting homes.",
+            "retryFeedback": "There are two heat routes; find the spare one."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p11",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-11.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mara turns a stuck valve; Vera holds a lamp, Ivo watches, and Pico tangles its own arm."
+      },
+      "blocks": [
+        {
+          "id": "b11",
+          "voice": "narration",
+          "title": "The stuck wheel",
+          "lines": [
+            "In the service corridor, Mara asked a teammate to check the tank while she tried to turn the valve. The wheel moved a finger’s width and stuck.",
+            "Pico slipped beneath a shelf carrying a small sensor. It came back with a reading: the pipe was warm before the valve and cold after it. Ivo told Mara, just as they had agreed.",
+            "“The blockage is here,” she said. She carefully removed a cover and found red dust packed around the mechanism, separated from the water by a seal.",
+            "Vera held a light so Mara could see. Pico tried to help with both claws and caught its own antenna instead.",
+            "“Your job is the lamp,” Vera told it, laughing.",
+            "Mara cleared the dust, checked the seal, and turned the wheel easily. Little by little, the cold pipe grew warm. A yellow light appeared in the dome window.",
+            "“We have enough spare heat for this test,” Mara’s teammate reported. “The homes are fine.”"
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q11",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What was stuck?",
+            "options": [
+              {
+                "text": "The dining-room door"
+              },
+              {
+                "text": "Ivo’s wheel"
+              },
+              {
+                "text": "A valve"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! A valve.",
+            "retryFeedback": "Compare both sides of the wheel."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What reading helps locate the problem?",
+            "options": [
+              {
+                "text": "Warm pipe before and cold after"
+              },
+              {
+                "text": "Pico has two claws"
+              },
+              {
+                "text": "The sky is red"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! Warm pipe before and cold after.",
+            "retryFeedback": "Compare both sides of the wheel."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "p12",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-12.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Dust stays inside a clear service box as Mara changes the filter and Pico reverses."
+      },
+      "blocks": [
+        {
+          "id": "b12",
+          "voice": "narration",
+          "title": "A cloud in a box",
+          "lines": [
+            "The warmth had returned, but the fan still stumbled. Mara found its clogged filter inside a sealed service box. She could replace it from the corridor without mixing the garden air with the air in the homes.",
+            "Ivo held the new filter. Vera watched the gauge. Pico aimed its little vacuum into the clear box.",
+            "Puff! Old dust bloomed into a red cloud inside the sealed compartment. Pico reversed so fast that it bumped into Ivo’s boots. Both children burst out laughing.",
+            "“The dust stayed inside the box,” Mara said. “That is exactly what we want.”",
+            "She removed the old filter and fitted the new one. The fan turned smoothly. Through the window, the lamp stopped blinking and shone without a break.",
+            "Nido moved again. It pushed the shoot’s clear cover towards the light and, for the first time since the storm began, opened its claws.",
+            "Vera glanced at Ivo. They had helped the dome. They still had to answer their first question."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q12",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Where does the dust cloud stay?",
+            "options": [
+              {
+                "text": "Inside a sealed box"
+              },
+              {
+                "text": "In the dining hall"
+              },
+              {
+                "text": "Inside Pico’s lungs"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! Inside a sealed box.",
+            "retryFeedback": "Where does the dust stay, and what happens to the lamp?"
+          },
+          {
+            "audience": "lector",
+            "prompt": "What changes after the new filter?",
+            "options": [
+              {
+                "text": "The storm grows stronger"
+              },
+              {
+                "text": "The fan turns smoothly and the light stays on"
+              },
+              {
+                "text": "The dome disappears"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! The fan turns smoothly and the light stays on.",
+            "retryFeedback": "Where does the dust stay, and what happens to the lamp?"
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "p13",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-13.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Vera draws the fan and lamp after discovering why the light seemed to blink."
+      },
+      "blocks": [
+        {
+          "id": "b13",
+          "voice": "narration",
+          "title": "An unexpected answer",
+          "lines": [
+            "The next day, the dust began to settle. Vera and Ivo compared their notes with the lamp, which now shone without stopping.",
+            "“We saw flashes when the fan covered the light,” Vera said. “They weren’t words.”",
+            "Ivo nodded, although he was a little sorry to say goodbye to his secret-message idea.",
+            "“And Nido wasn’t searching for us. It was caring for the garden while the machines wore out.”",
+            "Mara showed them two observations they had missed: one fan part was packed with dust, and the lamp stayed on behind it. Together, those facts explained the changing pauses much better than a code did.",
+            "Pico flashed three times and then once more. Nobody thought the dome was answering it now. The robot kept flashing until Ivo covered its eye with his hand.",
+            "“It mattered even if it wasn’t a message,” Mara said. “That light helped us spot the problem before we lost the plants.”",
+            "Vera drew the fan beside the lamp. At last her sketch showed what they had found, instead of only what they had first imagined."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q13",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Was the first light a message?",
+            "options": [
+              {
+                "text": "Yes, Pico wrote it"
+              },
+              {
+                "text": "No, a shadow interrupted it"
+              },
+              {
+                "text": "Yes, a letter from Earth"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! No, a shadow interrupted it.",
+            "retryFeedback": "Compare the light with the fan’s shadow."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why did the investigation matter?",
+            "options": [
+              {
+                "text": "Every flashing light is a word"
+              },
+              {
+                "text": "The dust vanished forever"
+              },
+              {
+                "text": "It helped them find the garden’s problem"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! It helped them find the garden’s problem.",
+            "retryFeedback": "Compare the light with the fan’s shadow."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "p14",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-13.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": null
+      },
+      "blocks": [
+        {
+          "id": "b14",
+          "voice": "narration",
+          "title": "Nido’s long job",
+          "lines": [
+            "When the gauges showed safe conditions and the storm had passed, Mara and the crew entered the garden first. Vera and Ivo waited until she allowed visitors in.",
+            "Plants grew in places nobody remembered planting them. Nido had carried fallen seeds, collected water condensed on the glass, and used a small recycling tank that did not depend on the broken main pump.",
+            "The robot had not invented a new species or survived by magic. It had kept doing its job for years, adjusting to an almost empty nursery. Some seeds sprouted; others remained in storage.",
+            "Mara photographed the roots and measured how much water the tank used. Before moving one pot, she wanted to know what the garden needed in order to live.",
+            "Ivo spotted an orange bud beneath a clear cover. “Is that a flower?”",
+            "“We don’t know yet,” said Vera. That answer no longer disappointed her.",
+            "Pico offered Nido a drop of water. The two robots faced one another. At last Nido accepted it and carried it to the smallest plant."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q14",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "Where did Nido get water?",
+            "options": [
+              {
+                "text": "From daily rain"
+              },
+              {
+                "text": "From Pico every night"
+              },
+              {
+                "text": "From droplets and a small recycler"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! From droplets and a small recycler.",
+            "retryFeedback": "Remember how Nido collected drops."
+          },
+          {
+            "audience": "lector",
+            "prompt": "Why wait before moving plants?",
+            "options": [
+              {
+                "text": "They want to measure what the plants need"
+              },
+              {
+                "text": "They forgot how pots work"
+              },
+              {
+                "text": "Nido forbade them to look"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! They want to measure what the plants need.",
+            "retryFeedback": "Remember how Nido collected drops."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p15",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-15.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Families visit the restored nursery and an orange flower while both robots tend the shoots."
+      },
+      "blocks": [
+        {
+          "id": "b15",
+          "voice": "narration",
+          "title": "A garden for everyone",
+          "lines": [
+            "Over the following days, the colony repaired the old nursery. Some adults checked its seals; others cleaned panels or installed a new gauge. Nobody opened it to visitors until the air had been tested.",
+            "Vera and Ivo helped set seeds in trays under Mara’s instructions. Pico carried one container at a time. Nido still preferred a single drop.",
+            "On the day other families visited, Ivo showed them the fan. He covered a torch with his fingers and let them watch a false signal appear.",
+            "“I thought someone was talking to us from here,” he admitted. “I was wrong about that. But looking brought us to the garden.”",
+            "A small orange flower opened beneath the clean glass. It did not fill the dome or solve every problem on Mars. It made everyone step closer to see it.",
+            "Mara asked them to leave room for Nido. The robot watered the soil and rolled between the visitors’ boots, as though a party were simply a new kind of weather."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q15",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "What opens in the garden?",
+            "options": [
+              {
+                "text": "A little orange flower"
+              },
+              {
+                "text": "A door into space"
+              },
+              {
+                "text": "A golden chest"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "That’s it! A little orange flower.",
+            "retryFeedback": "Look again at the flower and Ivo’s demonstration."
+          },
+          {
+            "audience": "lector",
+            "prompt": "What does Ivo show visitors?",
+            "options": [
+              {
+                "text": "That one flower fixes all of Mars"
+              },
+              {
+                "text": "How a shadow looked like a signal"
+              },
+              {
+                "text": "How to make a storm"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! How a shadow looked like a signal.",
+            "retryFeedback": "Look again at the flower and Ivo’s demonstration."
+          }
+        ]
+      },
+      "template": "full"
+    },
+    {
+      "id": "p16",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-16.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "The children test a welcome light by the garden, and Pico copies it in its own way."
+      },
+      "blocks": [
+        {
+          "id": "b16",
+          "voice": "narration",
+          "title": "Two welcoming flashes",
+          "lines": [
+            "A week later, Vera and Ivo helped Mara place a small light beside the tunnel window. This time they had agreed on its meaning: two gentle flashes meant the garden was open to visitors.",
+            "They tested it from the corridor first. Ivo flashed the lamp. On the other side of the glass, Vera held up two fingers. The message had arrived.",
+            "Pico wanted to help. It blinked three times, spun on its wheels, and added one very long glow. From the shade of the leaves, Nido glanced over and carried on watering.",
+            "“We’ll have to teach Pico the short version,” Ivo said.",
+            "Outside, Mars was still an immense world of red rock. Inside the dome, the orange flower and many new leaves caught the daylight.",
+            "Vera remembered that first evening. They had imagined a secret message where there was only a lamp and a shadow. By looking more closely, they found a garden that needed help.",
+            "This time the two flashes really were an invitation. Vera opened the safe door for the next visitors."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q16",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "How many flashes make the new invitation?",
+            "options": [
+              {
+                "text": "None"
+              },
+              {
+                "text": "Two"
+              },
+              {
+                "text": "Seven"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "That’s it! Two.",
+            "retryFeedback": "This time the children decided what the light meant."
+          },
+          {
+            "audience": "lector",
+            "prompt": "How is the final light different?",
+            "options": [
+              {
+                "text": "The lamp has wings"
+              },
+              {
+                "text": "Nobody can see it through glass"
+              },
+              {
+                "text": "People agreed on and tested its meaning"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "That’s it! People agreed on and tested its meaning.",
+            "retryFeedback": "This time the children decided what the light meant."
+          }
+        ]
+      },
+      "template": "full"
+    }
+  ],
+  "vocabulary": {
+    "dome": {
+      "syllables": [
+        "dome"
+      ],
+      "definition": "A rounded roof over a space.",
+      "synonym": "cupola",
+      "example": "The planetarium has a huge dome where they project the stars."
+    },
+    "flashes": {
+      "syllables": [
+        "flash",
+        "es"
+      ],
+      "definition": "Short bursts of light.",
+      "synonym": "bursts",
+      "example": "We saw flashes of light in the distance during the storm."
+    },
+    "nursery": {
+      "syllables": [
+        "nurs",
+        "er",
+        "y"
+      ],
+      "definition": "A place where young plants are grown.",
+      "example": "We bought new tomato plants at the garden nursery."
+    },
+    "blades": {
+      "syllables": [
+        "blades"
+      ],
+      "definition": "The turning parts of a fan.",
+      "synonym": "vanes",
+      "example": "The fan's blades spun so fast you could barely see them."
+    },
+    "pressure": {
+      "syllables": [
+        "pres",
+        "sure"
+      ],
+      "definition": "The force of air pushing on a surface.",
+      "synonym": "force",
+      "example": "She checked the tire pressure before the long drive."
+    },
+    "droplets": {
+      "syllables": [
+        "drop",
+        "lets"
+      ],
+      "definition": "Very small drops of liquid.",
+      "synonym": "drops",
+      "example": "Tiny droplets of water formed on the cold glass of juice."
+    },
+    "valve": {
+      "syllables": [
+        "valve"
+      ],
+      "definition": "A part that controls flow through a pipe.",
+      "example": "He closed the valve under the sink before fixing the leak."
+    },
+    "circuit": {
+      "syllables": [
+        "cir",
+        "cuit"
+      ],
+      "definition": "A closed route for heat, water or electricity.",
+      "synonym": "loop",
+      "example": "The electrician checked the circuit because the lights would not turn on."
+    },
+    "condensed": {
+      "syllables": [
+        "con",
+        "densed"
+      ],
+      "definition": "Turned from vapour into drops.",
+      "synonym": "collected",
+      "example": "Water condensed on the cold glass of lemonade."
+    },
+    "gauge": {
+      "syllables": [
+        "gauge"
+      ],
+      "definition": "A tool that measures a condition.",
+      "synonym": "meter",
+      "example": "The gauge showed that the tank was almost empty."
+    }
+  }
+}

@@ -1,0 +1,251 @@
+/*
+ * Tokens de diseño de Lee Conmigo (docs/05-DESIGN-SYSTEM.md), promovidos desde los estilos en línea del
+ * prototipo aprobado a variables de Tailwind v4. Cada valor sale del prototipo; los nombres son semánticos.
+ *
+ * Uso en la app:   @import "tailwindcss";  @import "@lee-conmigo/ui/tokens.css";
+ *                  @source "../../../packages/ui/src";
+ */
+
+@theme static {
+  /* ---- Tipografía (docs/05: Andika para leer, Nunito para la interfaz, JetBrains Mono solo en el panel de desarrollo) ---- */
+  --font-sans: 'Nunito Variable', 'Nunito', system-ui, sans-serif;
+  --font-read: 'Andika', 'Nunito Variable', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* ---- Interlineado: el diseño aprobado usa "normal" con tamaños en px; los tamaños con nombre de Tailwind no deben imponer el suyo ---- */
+  --text-xs--line-height: normal;
+  --text-sm--line-height: normal;
+  --text-base--line-height: normal;
+  --text-lg--line-height: normal;
+  --text-xl--line-height: normal;
+  --text-2xl--line-height: normal;
+  --text-3xl--line-height: normal;
+  --text-4xl--line-height: normal;
+  --text-5xl--line-height: normal;
+  --text-6xl--line-height: normal;
+
+  /* ---- Neutros ---- */
+  --color-ink: #1e2340; /* texto principal (INK) */
+  --color-ink-soft: #3a4062;
+  --color-ink-mute: #4a5070;
+  --color-muted: #7c83a0;
+  --color-muted-2: #8c95b2;
+  --color-navy: #1b2a6b; /* titulares */
+  --color-app: #f6f8fe; /* fondo de la app */
+  --color-app-alt: #f6f7fb;
+  --color-cream: #fffdf8; /* tarjetas de lectura */
+  --color-cream-deep: #fff9ee; /* pantalla de pregunta */
+  --color-bubble: #fffdf6; /* globos de texto sobre el cómic */
+  --color-line: #e3e8f4;
+  --color-track: #e3e7f0;
+  --color-track-2: #e2e7f2;
+  --color-chip: #eef1f8;
+  --color-slate-300: #c3cadb;
+  --color-slate-400: #a7b0c8;
+  --color-slate-500: #98a1b8;
+  --color-outline: #dde1ec;
+  --color-stage: #14161c;
+
+  /* ---- Marca / acento primario (azul) ---- */
+  --color-brand: #1e6fe8;
+  --color-brand-light: #4b97ff;
+  --color-brand-dark: #1760e0;
+  --color-brand-deep: #1452b0; /* "borde" inferior de botones físicos */
+  --color-brand-ledge: #1249a8;
+  --color-brand-strong: #1e5bc6;
+  --color-brand-50: #eaf4ff;
+  --color-brand-100: #dcebff;
+  --color-brand-200: #cfe3ff;
+  --color-brand-ledge-soft: #b2d0fa;
+
+  /* ---- Éxito / lectura correcta (verde) ---- */
+  --color-ok: #22a95c;
+  --color-ok-mid: #2db36a;
+  --color-ok-light: #6be39e;
+  --color-ok-dark: #27a75e;
+  --color-ok-tint: #d6f3e1;
+
+  /* ---- Alerta suave, pausa larga, ayuda (ámbar / naranja) — nunca rojo de error ---- */
+  --color-warn: #f0a020;
+  --color-warn-2: #f5a623;
+  --color-warn-light: #ffc658;
+  --color-warn-tint: #fff1c2;
+  --color-orange: #e8662b;
+  --color-orange-deep: #c4531f;
+  --color-focus: #ffe45c; /* palabra en foco / ayuda abierta */
+  --color-focus-tint: #fff1b8;
+  --color-focus-ledge: #e8c630;
+  --color-gold: #f5b301;
+
+  /* ---- Violeta (biblioteca, repaso, eco) ---- */
+  --color-violet: #6a52d9;
+  --color-violet-deep: #5a45c8;
+  --color-violet-mid: #7b5ce6;
+  --color-violet-light: #b79bff;
+  --color-violet-50: #ede8ff;
+  --color-violet-100: #f2efff;
+  --color-violet-ledge: #c3b6f2;
+  --color-echo: #e6eeff;
+  --color-echo-line: #7faeff;
+
+  /* ---- Decorativos (avatar, racha, insignias) ---- */
+  --color-coral: #ff5e7e;
+  --color-coral-deep: #f0445a;
+  --color-sun: #ff9f43;
+
+  /* ---- Panel de desarrollo (nunca forma parte de la experiencia del niño) ---- */
+  --color-dev: #262d40;
+  --color-dev-2: #323a50;
+  --color-dev-3: #1c2233;
+  --color-dev-4: #171b27;
+  --color-dev-line: #3c4560;
+  --color-dev-ink: #e7eaf3;
+
+  /* ---- Radios (docs/05: tarjetas 16–30px, pastillas 999px) ---- */
+  --radius-card: 24px;
+  --radius-tile: 20px;
+  --radius-panel: 30px;
+
+  /* ---- Sombras multicapa suaves; botones "físicos" con borde inferior sólido ---- */
+  --shadow-card: 0 1px 0 #e3e8f4, 0 10px 26px rgb(30 35 64 / 0.08);
+  --shadow-chip: 0 4px 12px rgb(30 35 64 / 0.08);
+  --shadow-float: 0 18px 40px rgb(0 0 0 / 0.3);
+  --shadow-float-lg: 0 24px 60px rgb(0 0 0 / 0.3);
+  --shadow-modal: 0 30px 70px rgb(0 0 0 / 0.4);
+  --shadow-rail: 6px 0 24px rgb(0 0 0 / 0.28);
+  --shadow-rail-soft: 4px 0 18px rgb(30 35 64 / 0.08);
+  --shadow-thumb: 0 10px 24px rgb(30 35 64 / 0.2);
+  --shadow-hero: 0 16px 36px rgb(30 35 64 / 0.22);
+  --shadow-round: 0 4px 10px rgb(30 35 64 / 0.12), inset 0 -2px 0 #e3e8f4;
+  --shadow-round-sm: 0 3px 8px rgb(30 35 64 / 0.12), inset 0 -2px 0 #e3e8f4;
+  --shadow-soft: 0 2px 6px rgb(30 35 64 / 0.08);
+  --shadow-inset-well: inset 0 2px 8px rgb(30 35 64 / 0.06);
+  --shadow-inset-track: inset 0 1px 2px rgb(30 35 64 / 0.12);
+  --shadow-tile-color: inset 0 2px 0 rgb(255 255 255 / 0.4), inset 0 -5px 0 rgb(0 0 0 / 0.14), 0 10px 22px rgb(30 35 64 / 0.14);
+  --shadow-icon: inset 0 2px 0 rgb(255 255 255 / 0.4);
+  /* botones físicos (borde inferior sólido) */
+  --shadow-btn-brand: 0 6px 0 #1452b0;
+  --shadow-btn-brand-lg: inset 0 2px 0 rgb(255 255 255 / 0.35), 0 5px 0 #1249a8, 0 14px 26px rgb(30 111 232 / 0.35);
+  --shadow-btn-brand-pressed: inset 0 2px 0 rgb(255 255 255 / 0.35), 0 1px 0 #1249a8;
+  --shadow-btn-brand-flat-pressed: 0 2px 0 #1452b0;
+  --shadow-btn-cta: inset 0 2px 0 rgb(255 255 255 / 0.5), 0 5px 0 #d99a00;
+  --shadow-btn-sky: inset 0 2px 0 rgb(255 255 255 / 0.8), inset 0 -3px 0 #b2d0fa;
+  --shadow-btn-action-blue: inset 0 2px 0 rgb(255 255 255 / 0.8), inset 0 -4px 0 #b2d0fa, 0 6px 14px rgb(30 35 64 / 0.1);
+  --shadow-btn-action-peach: inset 0 2px 0 rgb(255 255 255 / 0.8), inset 0 -4px 0 #f7be9c, 0 6px 14px rgb(30 35 64 / 0.1);
+  --shadow-btn-action-lilac: inset 0 2px 0 rgb(255 255 255 / 0.8), inset 0 -4px 0 #c3b6f2, 0 6px 14px rgb(30 35 64 / 0.1);
+  --shadow-btn-lilac: inset 0 -3px 0 #c3b6f2;
+  --shadow-btn-focus: inset 0 -3px 0 #e8c630;
+  --shadow-btn-outline: 0 0 0 2px #dde1ec;
+  --shadow-lemon: inset 0 -2px 0 #f2cf4e;
+
+  /* ---- Gradientes ---- */
+  --grad-green: linear-gradient(180deg, #6be39e, #22a95c);
+  --grad-green-diag: linear-gradient(160deg, #6be39e, #22a95c);
+  --grad-green-chip: linear-gradient(180deg, #5fd68f, #27a75e);
+  --grad-violet: linear-gradient(180deg, #b79bff, #7b5ce6);
+  --grad-violet-diag: linear-gradient(160deg, #b79bff, #7b5ce6);
+  --grad-brand: linear-gradient(180deg, #4b97ff, #1e6fe8);
+  --grad-brand-cta: linear-gradient(180deg, #4b97ff 0%, #1e6fe8 55%, #1760e0 100%);
+  --grad-brand-dot: linear-gradient(180deg, #4b97ff, #1760e0);
+  --grad-blue-diag: linear-gradient(160deg, #6fc0ff, #1e80e8);
+  --grad-coral-diag: linear-gradient(160deg, #ff8a3d, #ff5e7e);
+  --grad-sun-diag: linear-gradient(160deg, #ffd66b, #ff9f43);
+  --grad-amber-diag: linear-gradient(160deg, #ffc658, #f08a10);
+  --grad-red-diag: linear-gradient(160deg, #ff8a8a, #f0445a);
+  --grad-gold-diag: linear-gradient(160deg, #ffd66b, #f5a623);
+  --grad-sky: linear-gradient(180deg, #eaf4ff, #d4e6ff);
+  --grad-sky-action: linear-gradient(180deg, #eaf4ff, #cfe3ff);
+  --grad-peach: linear-gradient(180deg, #fff1e6, #ffd9c2);
+  --grad-lilac: linear-gradient(180deg, #f1eeff, #dcd3fa);
+  --grad-lilac-btn: linear-gradient(180deg, #ede8ff, #d9cffb);
+  --grad-lemon: linear-gradient(180deg, #fff6cf, #ffe88a);
+  --grad-cta: linear-gradient(180deg, #ffe36b, #ffc21a);
+  --grad-tile-lilac: linear-gradient(180deg, #eae5ff, #d8cffb);
+  --grad-tile-blue: linear-gradient(180deg, #e1eeff, #c9deff);
+  --grad-tile-peach: linear-gradient(180deg, #ffebdd, #ffd6bd);
+  --grad-mic-ok: linear-gradient(180deg, #5edc95, #1fa85a);
+  --grad-mic-idle: linear-gradient(180deg, #c3cadb, #98a1b8);
+  --grad-mic-warn: linear-gradient(180deg, #ffc658, #f09a10);
+  --grad-bar-low: linear-gradient(180deg, #9cc8ff, #4b97ff);
+  --grad-nav: linear-gradient(180deg, #ffffff, #eef2fc);
+  --grad-rail: linear-gradient(180deg, #ffffff, #e9eefb);
+  --grad-panel: linear-gradient(180deg, #ffffff 0%, #f3f6ff 45%, #e9eefb 100%);
+  --grad-panel-select: linear-gradient(180deg, #ffffff 0%, #f2f6ff 55%, #e8effd 100%);
+  --grad-hero-shade: linear-gradient(90deg, rgb(16 24 64 / 0.88) 0%, rgb(16 24 64 / 0.55) 45%, rgb(16 24 64 / 0) 75%);
+  --grad-thumb-shade: linear-gradient(180deg, transparent 55%, rgb(18 22 40 / 0.55));
+  --grad-home-glow: radial-gradient(1200px 500px at 70% -10%, #e3eeff 0%, rgb(227 238 255 / 0) 60%);
+  --grad-progress-glow: radial-gradient(1000px 420px at 80% -10%, #fff1d6 0%, rgb(255 241 214 / 0) 60%);
+  --grad-review-glow: radial-gradient(900px 400px at 70% -10%, #ede8ff 0%, rgb(237 232 255 / 0) 60%);
+
+  /* ---- Animaciones (docs/05: 0.2–0.9 s, nunca parpadeos agresivos ni rojo de error) ---- */
+  --animate-ring: lcRing 1.6s ease-out infinite;
+  --animate-pulse-soft: lcPulse 1.6s ease-in-out infinite;
+  --animate-glow: lcGlow 1.4s ease-in-out infinite;
+  --animate-bob: lcBob 3s ease-in-out infinite;
+  --animate-in: lcIn 0.4s ease-out both;
+  --animate-in-fast: lcIn 0.3s ease-out both;
+  --animate-in-slow: lcIn 0.5s ease-out both;
+  --animate-fade: lcFade 0.3s ease-out both;
+  --animate-pop: lcPop 0.5s ease-out both;
+  --animate-pop-fast: lcPop 0.35s ease-out both;
+  --animate-arc: lcArc 1.4s ease-in-out infinite;
+  /** Entrada de una página nueva: fundido + un leve deslizamiento y zoom (como pasar la hoja), más notorio que un fundido plano. */
+  --animate-page-in: lcPageIn 0.55s cubic-bezier(.16,1,.3,1) both;
+
+  @keyframes lcPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgb(255 184 0 / 0); }
+    50% { box-shadow: 0 0 0 0.2em rgb(255 184 0 / 0.45); }
+  }
+  @keyframes lcRing {
+    0% { box-shadow: 0 0 0 0 rgb(45 179 106 / 0.45); }
+    100% { box-shadow: 0 0 0 22px rgb(45 179 106 / 0); }
+  }
+  @keyframes lcIn {
+    from { opacity: 0; transform: translateY(12px) scale(0.98); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes lcFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes lcPop {
+    0% { transform: scale(0.6); opacity: 0; }
+    60% { transform: scale(1.12); opacity: 1; }
+    100% { transform: scale(1); }
+  }
+  @keyframes lcBob {
+    0%, 100% { transform: translateY(0) rotate(-4deg); }
+    50% { transform: translateY(-5px) rotate(4deg); }
+  }
+  @keyframes lcArc {
+    0%, 100% { opacity: 0.25; }
+    50% { opacity: 1; }
+  }
+  @keyframes lcGlow {
+    0%, 100% { box-shadow: 0 0 0 0 rgb(255 138 61 / 0); }
+    50% { box-shadow: 0 0 0 6px rgb(255 138 61 / 0.35); }
+  }
+  @keyframes lcPageIn {
+    from { opacity: 0; transform: scale(1.035) translateY(10px); filter: brightness(1.18); }
+    to { opacity: 1; transform: none; filter: brightness(1); }
+  }
+}
+
+/* Accesibilidad (docs/06): movimiento reducido. Las animaciones decorativas se apagan. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Base del lienzo de la app */
+@layer base {
+  /* El diseño aprobado usa el interlineado por defecto del navegador ("normal"); Tailwind lo fija en 1.5. */
+  html { line-height: normal; }
+  html, body, #root { height: 100%; }
+  body { margin: 0; font-family: var(--font-sans); color: var(--color-ink); background: var(--color-stage); }
+  button { font-family: inherit; cursor: pointer; border: 0; }
+  button:disabled { cursor: default; }
+}

@@ -1,0 +1,446 @@
+{
+  "id": "el-puente-de-las-luciernagas-es-n1",
+  "familyId": "el-puente-de-las-luciernagas",
+  "language": "es",
+  "title": "El puente de las luciérnagas",
+  "level": 1,
+  "category": "amistad",
+  "description": "Mila y Pipo ayudan a un erizo a cruzar un arroyo y descubren el valor de esperar.",
+  "cover": {
+    "src": "stories/el-puente-de-las-luciernagas/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Mila, Pipo y un erizo junto al puente de corteza iluminado por luciérnagas."
+  },
+  "heroFocus": {
+    "x": 48,
+    "y": 40
+  },
+  "reviewWords": [
+    "dragón",
+    "luciérnagas",
+    "erizo"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/el-puente-de-las-luciernagas/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mila y Pipo pasean entre luciérnagas y encuentran un erizo ante un arroyo sin puente."
+      },
+      "template": "two-up",
+      "blocks": [
+        {
+          "id": "b01",
+          "title": "Luces en el sendero",
+          "voice": "narration",
+          "lines": [
+            "Mila y su dragón Pipo paseaban al atardecer.",
+            "Las luciérnagas brillaban entre las flores."
+          ]
+        },
+        {
+          "id": "b02",
+          "title": "Un puente perdido",
+          "voice": "narration",
+          "lines": [
+            "Un erizo esperaba junto al arroyo.",
+            "La lluvia se había llevado su puente."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué animal espera junto al arroyo?",
+            "options": [
+              {
+                "text": "Un conejo"
+              },
+              {
+                "text": "Un erizo"
+              },
+              {
+                "text": "Una tortuga"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Sí! Un erizo espera junto al agua.",
+            "retryFeedback": "Mira al animal pequeño que tiene púas en la espalda."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué el erizo no podía cruzar?",
+            "options": [
+              {
+                "text": "La lluvia se llevó el puente"
+              },
+              {
+                "text": "El erizo perdió una flor"
+              },
+              {
+                "text": "Pipo apagó las luces"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Así es: la lluvia arrastró el puente.",
+            "retryFeedback": "Relee lo que hizo la lluvia y mira las ramitas en el agua."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/el-puente-de-las-luciernagas/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Una hoja se dobla sobre el agua y Pipo no logra mover una rama pesada."
+      },
+      "template": "two-up",
+      "blocks": [
+        {
+          "id": "b03",
+          "title": "La hoja se dobla",
+          "voice": "narration",
+          "lines": [
+            "Mila puso una hoja grande sobre el agua.",
+            "La hoja se dobló."
+          ]
+        },
+        {
+          "id": "b04",
+          "title": "Una rama pesada",
+          "voice": "narration",
+          "lines": [
+            "Pipo intentó mover una rama.",
+            "Pesaba demasiado para él."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué intenta mover Pipo?",
+            "options": [
+              {
+                "text": "Una piedra pequeña"
+              },
+              {
+                "text": "Una hoja verde"
+              },
+              {
+                "text": "Una rama"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Sí! Pipo intenta mover una rama.",
+            "retryFeedback": "Mira lo que Pipo empuja con sus patas delanteras."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué no sirvieron la hoja y la rama?",
+            "options": [
+              {
+                "text": "Los dos materiales desaparecieron"
+              },
+              {
+                "text": "La hoja se dobló y la rama pesaba mucho"
+              },
+              {
+                "text": "El erizo se quedó dormido"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Exacto: necesitaban algo firme que pudieran mover.",
+            "retryFeedback": "Compara lo que le pasó a la hoja con lo que le costó a Pipo."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/el-puente-de-las-luciernagas/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mila elige corteza y piedras y construye un pequeño paso sobre el arroyo."
+      },
+      "template": "two-up",
+      "blocks": [
+        {
+          "id": "b05",
+          "title": "Dos piedras y corteza",
+          "voice": "narration",
+          "lines": [
+            "Mila encontró una corteza ancha y dos piedras.",
+            "Parecían resistentes."
+          ]
+        },
+        {
+          "id": "b06",
+          "title": "Un nuevo puente",
+          "voice": "narration",
+          "lines": [
+            "Apoyó la corteza sobre las dos piedras.",
+            "Ahora tenían un puente."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué sostiene la corteza?",
+            "options": [
+              {
+                "text": "Dos piedras"
+              },
+              {
+                "text": "Dos flores"
+              },
+              {
+                "text": "Dos alas"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Una piedra sostiene cada extremo.",
+            "retryFeedback": "Busca los objetos grises que están debajo de la corteza."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Para qué puso Mila las dos piedras?",
+            "options": [
+              {
+                "text": "Para esconder al erizo"
+              },
+              {
+                "text": "Para sostener la corteza sobre el agua"
+              },
+              {
+                "text": "Para tapar todas las flores"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "Sí: las piedras mantienen la corteza sobre el agua.",
+            "retryFeedback": "Mira dónde quedan los extremos de la corteza y por dónde pasa el agua."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p04",
+      "illustration": {
+        "src": "stories/el-puente-de-las-luciernagas/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mila prueba el puente con una piedrita y observa al erizo que duda ante la entrada."
+      },
+      "template": "two-up",
+      "blocks": [
+        {
+          "id": "b07",
+          "title": "La prueba del peso",
+          "voice": "narration",
+          "lines": [
+            "Mila probó el puente con una piedra pequeña.",
+            "La corteza no se hundió."
+          ]
+        },
+        {
+          "id": "b08",
+          "title": "El erizo espera",
+          "voice": "narration",
+          "lines": [
+            "El erizo seguía quieto.",
+            "Mila y Pipo estaban muy cerca de él."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué puso Mila en el puente para probarlo?",
+            "options": [
+              {
+                "text": "Una pluma"
+              },
+              {
+                "text": "Una manzana"
+              },
+              {
+                "text": "Una piedrita"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "¡Sí! Probó el puente con una piedrita.",
+            "retryFeedback": "Mira el objeto pequeño y gris que Mila coloca sobre la corteza."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué Mila probó el puente primero?",
+            "options": [
+              {
+                "text": "Que el puente se mantuviera firme"
+              },
+              {
+                "text": "Que Pipo aprendiera a nadar"
+              },
+              {
+                "text": "Que se apagaran las luciérnagas"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Así es: quería comprobar que la corteza aguantara.",
+            "retryFeedback": "Relee qué observó Mila cuando puso peso sobre el puente."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p05",
+      "illustration": {
+        "src": "stories/el-puente-de-las-luciernagas/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mila y Pipo se apartan mientras las luciérnagas brillan y el erizo cruza el puente."
+      },
+      "template": "two-up",
+      "blocks": [
+        {
+          "id": "b09",
+          "title": "Un poco de espacio",
+          "voice": "narration",
+          "lines": [
+            "Los amigos se apartaron para darle espacio.",
+            "Las luciérnagas brillaban sobre el camino."
+          ]
+        },
+        {
+          "id": "b10",
+          "title": "El erizo cruza",
+          "voice": "narration",
+          "lines": [
+            "El erizo cruzó despacio.",
+            "Mila sonrió: ayudar también era saber esperar."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué animal cruza el puente?",
+            "options": [
+              {
+                "text": "El erizo"
+              },
+              {
+                "text": "Un pájaro"
+              },
+              {
+                "text": "Un pez"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Sí! El erizo ya puede seguir su camino.",
+            "retryFeedback": "Mira al pequeño animal con púas que está sobre el puente."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué hicieron los amigos para dejarlo pasar?",
+            "options": [
+              {
+                "text": "Que lo empujaran"
+              },
+              {
+                "text": "Que añadieran otra rama"
+              },
+              {
+                "text": "Que se apartaran y esperaran"
+              }
+            ],
+            "correctIndex": 2,
+            "correctFeedback": "Exacto: darle espacio y tiempo también fue una forma de ayudar.",
+            "retryFeedback": "Compara dónde están Mila y Pipo antes y después de retroceder."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "dragón": {
+      "syllables": [
+        "dra",
+        "gón"
+      ],
+      "definition": "Animal de los cuentos que puede tener alas."
+    },
+    "luciérnagas": {
+      "syllables": [
+        "lu",
+        "ciér",
+        "na",
+        "gas"
+      ],
+      "definition": "Insectos que producen una pequeña luz."
+    },
+    "erizo": {
+      "syllables": [
+        "e",
+        "ri",
+        "zo"
+      ],
+      "definition": "Animal pequeño que tiene púas en la espalda."
+    },
+    "arroyo": {
+      "syllables": [
+        "a",
+        "rro",
+        "yo"
+      ],
+      "definition": "Corriente pequeña de agua."
+    },
+    "corteza": {
+      "syllables": [
+        "cor",
+        "te",
+        "za"
+      ],
+      "definition": "Capa dura que cubre el tronco de un árbol."
+    },
+    "piedras": {
+      "syllables": [
+        "pie",
+        "dras"
+      ],
+      "definition": "Trozos duros de roca."
+    },
+    "despacio": {
+      "syllables": [
+        "des",
+        "pa",
+        "cio"
+      ],
+      "definition": "Sin moverse rápido."
+    },
+    "esperar": {
+      "syllables": [
+        "es",
+        "pe",
+        "rar"
+      ],
+      "definition": "Dejar pasar un rato antes de hacer algo."
+    }
+  }
+}

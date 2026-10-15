@@ -1,0 +1,16 @@
+{
+  "name": "@lee-conmigo/speech-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Abstracción SpeechEngine, FakeSpeechEngine y WhisperSpeechEngine (Whisper 100% en el dispositivo, portado del Prototipo 00)",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": { ".": "./src/index.ts" },
+  "scripts": { "typecheck": "tsc -p tsconfig.json" },
+  "dependencies": {
+    "@huggingface/transformers": "4.3.0",
+    "@lee-conmigo/contracts": "*",
+    "@ricky0123/vad-web": "0.0.31"
+  }
+}

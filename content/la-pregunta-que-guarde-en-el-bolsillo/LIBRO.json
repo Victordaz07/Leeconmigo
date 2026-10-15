@@ -1,0 +1,352 @@
+{
+  "id": "amara-la-pregunta-que-guarde-en-el-bolsillo",
+  "title": {
+    "es": "La pregunta que guardé en el bolsillo",
+    "en": "The Question I Kept in My Pocket"
+  },
+  "age_range": [
+    10,
+    13
+  ],
+  "narrator": "Amara, first person",
+  "editorial_principle": "Amara reports her own spiritual experience. No event is declared a definitive answer from God; Gabriel and Celia retain their own agency.",
+  "chapters": [
+    {
+      "number": 1,
+      "start_page": 1,
+      "title": {
+        "es": "Esperar una voz",
+        "en": "Waiting for a Voice"
+      }
+    },
+    {
+      "number": 2,
+      "start_page": 5,
+      "title": {
+        "es": "El silencio también pregunta",
+        "en": "Silence Has Questions, Too"
+      }
+    },
+    {
+      "number": 3,
+      "start_page": 9,
+      "title": {
+        "es": "Una pregunta nueva",
+        "en": "A New Question"
+      }
+    }
+  ],
+  "images": {
+    "character_sheet": "imagenes/personajes.png",
+    "cover": "imagenes/portada.png"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "chapter": 1,
+      "text": {
+        "es": "Mi abuela Celia dice que se puede hablar con Dios en cualquier lugar. Yo elegí mi cuarto porque allí no me interrumpe nadie, salvo el ventilador que suena como un helicóptero cansado. Escribí una pregunta en mi libreta de bolsillo: «¿Me escuchas?». La hice en voz alta, muy bajito. Esperé. El ventilador siguió dando vueltas. Yo no esperaba que el techo se abriera ni nada así, pero sí alguna forma de saber que mis palabras habían llegado. Guardé la libreta en el bolsillo de mi overol para llevar la pregunta conmigo.",
+        "en": "Grandma Celia says you can talk to God anywhere. I chose my room because nobody interrupts me there, except the fan that sounds like a tired helicopter. I wrote a question in my pocket notebook: “Can you hear me?” I asked it aloud, very softly. I waited. The fan kept spinning. I wasn't expecting the ceiling to open or anything, but I did hope for some way to know my words had arrived. I slipped the notebook into the pocket of my overalls so I could carry the question with me."
+      },
+      "illustration": "imagenes/escena_01.png",
+      "questions": {
+        "es": [
+          "¿Qué pregunta lleva Amara en su libreta?",
+          "¿Qué tipo de respuesta espera al principio?"
+        ],
+        "en": [
+          "What question does Amara carry in her notebook?",
+          "What sort of answer does she expect at first?"
+        ]
+      }
+    },
+    {
+      "number": 2,
+      "chapter": 1,
+      "text": {
+        "es": "En la escuela también llevaba preguntas que no decía. Por ejemplo, ¿por qué me sale tan fácil hablar en casa y tan difícil cuando todos me miran? Mi maestra nos había pedido diseñar, en equipos, un mapa de lugares de la escuela donde un estudiante pudiera sentirse acompañado. A Gabriel, que acababa de llegar, se le ocurrió incluir la biblioteca y un rincón tranquilo del patio. Yo pensé que era una gran idea. Cuando levantó la mano para explicarla, preparé una frase para apoyarlo. La frase se quedó pegada detrás de mis dientes.",
+        "en": "At school I carried questions I never said aloud, too. For example, why is it so easy to talk at home and so hard when everybody is watching me? Our teacher had asked us to design, in teams, a map of places at school where a student could feel welcome. Gabriel, who had just arrived, suggested adding the library and a quiet corner of the playground. I thought it was a great idea. When he raised his hand to explain it, I prepared a sentence to support him. The sentence stuck behind my teeth."
+      },
+      "illustration": null,
+      "questions": {
+        "es": [
+          "¿Qué idea de Gabriel le gusta a Amara?",
+          "¿Por qué le cuesta decirlo delante de la clase?"
+        ],
+        "en": [
+          "Which of Gabriel’s ideas does Amara like?",
+          "Why is it hard for her to say so in class?"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "chapter": 1,
+      "text": {
+        "es": "Gabriel extendió su mapa sobre una mesa. Había caminos de colores, un banco bajo un árbol y una puerta que conducía a un lugar para descansar del ruido. Dos compañeros soltaron una risa. Uno dijo que parecía el plano de una base secreta. Gabriel respondió que nadie debería necesitar una base secreta para encontrar un lugar seguro. Me miró un instante, tal vez esperando que yo dijera lo que había dicho durante el trabajo. Yo miré mis zapatos. Nadie me había prohibido hablar. Ese fue el detalle que más me dolió.",
+        "en": "Gabriel spread his map across a table. There were colored paths, a bench beneath a tree, and a doorway leading to a place to rest from the noise. Two classmates laughed. One said it looked like a map of a secret base. Gabriel answered that nobody should need a secret base to find a safe place. He looked at me for a moment, perhaps hoping I would say what I'd said while we worked. I looked at my shoes. Nobody had forbidden me to speak. That was the part that hurt most."
+      },
+      "illustration": "imagenes/escena_03.png",
+      "questions": {
+        "es": [
+          "¿Cómo responde Gabriel a la burla?",
+          "¿Qué es lo que más le duele a Amara de su silencio?"
+        ],
+        "en": [
+          "How does Gabriel answer the teasing?",
+          "What hurts Amara most about her silence?"
+        ]
+      }
+    },
+    {
+      "number": 4,
+      "chapter": 1,
+      "text": {
+        "es": "De regreso a casa, apreté la libreta dentro del bolsillo. Quise escribir «Haz que Gabriel no se enoje conmigo», pero esa pregunta no decía toda la verdad. Me daba miedo que también se rieran de mí. Durante la merienda, la abuela preguntó cómo había ido la presentación. Dije «normal» con una voz tan poco normal que ella levantó una ceja. No insistió. Me dejó un vaso de agua al lado. A veces los adultos preguntan demasiado; esa tarde agradecí que Celia pudiera esperar. Yo todavía no sabía cómo contar la parte en la que me había quedado callada.",
+        "en": "On my way home, I squeezed the notebook in my pocket. I wanted to write, “Make Gabriel stop being angry with me,” but that question didn't tell the whole truth. I had been afraid they would laugh at me, too. During snack, Grandma asked how the presentation had gone. I said, “Normal,” in a voice so unlike normal that she raised an eyebrow. She didn't press me. She left a glass of water beside me. Adults sometimes ask too much; that afternoon I was grateful Celia knew how to wait. I still didn't know how to tell the part where I'd stayed silent."
+      },
+      "illustration": null,
+      "questions": {
+        "es": [
+          "¿Por qué Amara no quiere escribir solo «Haz que Gabriel no se enoje»?",
+          "¿Cómo le da espacio Celia para hablar?"
+        ],
+        "en": [
+          "Why won’t Amara write only “Make Gabriel stop being angry”?",
+          "How does Celia give her room to speak?"
+        ]
+      }
+    },
+    {
+      "number": 5,
+      "chapter": 2,
+      "text": {
+        "es": "Esa noche me senté en la alfombra. «Dios», dije, «hoy vi que se rieron de Gabriel y tuve miedo. No me reí, pero tampoco lo acompañé. ¿Me escuchas incluso cuando no hice lo correcto?». Esperé otra vez. No oí una voz. Afuera pasó un auto y el ventilador volvió a hacer su ruido de helicóptero. Escribí lo que había dicho, sin cambiarlo por una versión donde yo parecía más valiente. En la página siguiente puse: «¿Cómo distingo una respuesta de una idea mía?». No pude contestarme. Dejé la libreta abierta.",
+        "en": "That night I sat on the rug. “God,” I said, “today I saw them laugh at Gabriel, and I was afraid. I didn't laugh, but I didn't stand beside him either. Can you hear me even when I haven't done the right thing?” I waited again. I didn't hear a voice. A car passed outside, and the fan made its helicopter noise once more. I wrote down what I'd said without changing it into a version where I sounded braver. On the next page I wrote, “How do I tell an answer from an idea of my own?” I couldn't answer myself. I left the notebook open."
+      },
+      "illustration": "imagenes/escena_05.png",
+      "questions": {
+        "es": [
+          "¿Qué admite Amara en su oración?",
+          "¿Por qué escribe la pregunta sin hacerse parecer más valiente?"
+        ],
+        "en": [
+          "What does Amara admit in her prayer?",
+          "Why does she write the question without making herself sound braver?"
+        ]
+      }
+    },
+    {
+      "number": 6,
+      "chapter": 2,
+      "text": {
+        "es": "Al día siguiente le conté a la abuela lo que había pasado, incluida mi pregunta sobre Dios. Celia dejó su taza sobre la mesa. «No voy a fingir que sé exactamente lo que Él te respondió», dijo. Eso me sorprendió; yo creía que los adultos siempre tenían preparada una respuesta. Me preguntó qué sabía con seguridad. Le dije que Gabriel había hablado en serio, que yo había querido apoyarlo y que no lo había hecho. «Entonces ya tienes algo honesto que decirle», respondió. No prometió que Gabriel me perdonaría. Me ofreció practicar la conversación con ella, si yo quería.",
+        "en": "The next day I told Grandma what had happened, including my question about God. Celia set her cup on the table. “I won't pretend I know exactly what He answered you,” she said. That surprised me. I'd thought grown-ups always had an answer ready. She asked what I knew for certain. I said Gabriel had meant what he said, I'd wanted to support him, and I hadn't done it. “Then you have something honest to tell him,” she replied. She didn't promise Gabriel would forgive me. She offered to practice the conversation with me, if I wanted."
+      },
+      "illustration": "imagenes/escena_06.png",
+      "questions": {
+        "es": [
+          "¿Qué se niega a fingir Celia?",
+          "¿Qué hechos puede reconocer Amara con seguridad?"
+        ],
+        "en": [
+          "What does Celia refuse to pretend?",
+          "What facts can Amara recognize for certain?"
+        ]
+      }
+    },
+    {
+      "number": 7,
+      "chapter": 2,
+      "text": {
+        "es": "Practicamos tres veces. La primera soné como si el problema hubiera sido la risa de los demás. La segunda dije que mi silencio no importaba porque Gabriel era fuerte. En la tercera pude decir: «Te dejé solo cuando podía hablar». Me dio vergüenza escucharlo. La abuela no borró la frase. «Esa sí es tu parte», dijo. Yo seguía sin saber si Dios había hablado conmigo. Sabía que una oración no podía sustituir una disculpa. Guardé la libreta y decidí buscar a Gabriel después de clase, cuando pudiera escuchar su respuesta sin espectadores.",
+        "en": "We practiced three times. The first time I sounded as though the other children's laughter were the only problem. The second time I said my silence didn't matter because Gabriel was strong. The third time I managed to say, “I left you alone when I could have spoken.” Hearing it embarrassed me. Grandma didn't erase the sentence. “That part is yours,” she said. I still didn't know whether God had spoken to me. I knew a prayer couldn't take the place of an apology. I put away my notebook and decided to find Gabriel after class, when I could hear his answer without an audience."
+      },
+      "illustration": null,
+      "questions": {
+        "es": [
+          "¿Cómo cambian las tres versiones de la disculpa?",
+          "¿Por qué una oración no reemplaza hablar con Gabriel?"
+        ],
+        "en": [
+          "How do the three versions of the apology change?",
+          "Why can’t prayer replace talking to Gabriel?"
+        ]
+      }
+    },
+    {
+      "number": 8,
+      "chapter": 2,
+      "text": {
+        "es": "Lo encontré cerrando su carpeta. Antes de que yo empezara, dijo: «No necesito que pelees por mí». Me quedé quieta. Él añadió: «Pero estabas en nuestro equipo. Dijiste que el rincón del patio era buena idea y luego miraste al piso». Tenía razón. Le conté que me había dado miedo. No lo usé como excusa. «Lo siento», dije. Gabriel se apoyó en la mesa. «No sé si quiero presentar otra vez con ustedes». Me dieron ganas de decirle que todo saldría bien. En lugar de eso, le pregunté qué quería hacer con su mapa.",
+        "en": "I found him closing his folder. Before I could begin, he said, “I don't need you to fight for me.” I stood still. He added, “But you were on our team. You said the playground corner was a good idea, and then you looked at the floor.” He was right. I told him I'd been afraid. I didn't use it as an excuse. “I'm sorry,” I said. Gabriel leaned against the table. “I don't know if I want to present with you all again.” I wanted to say everything would be fine. Instead I asked what he wanted to do with his map."
+      },
+      "illustration": "imagenes/escena_08.png",
+      "questions": {
+        "es": [
+          "¿Qué le pide Gabriel que entienda?",
+          "¿Por qué Amara pregunta por el mapa en vez de prometer que todo saldrá bien?"
+        ],
+        "en": [
+          "What does Gabriel want Amara to understand?",
+          "Why does she ask about the map instead of promising everything will be fine?"
+        ]
+      }
+    },
+    {
+      "number": 9,
+      "chapter": 3,
+      "text": {
+        "es": "Gabriel quería conservar el rincón tranquilo. «No es para esconder a nadie», explicó. «Es para que alguien pueda decidir si necesita compañía o un minuto a solas». Me mostró un camino que yo no había visto: desde la entrada hasta la biblioteca sin pasar por el pasillo más ruidoso. Le pregunté si podía ayudar a revisar las rutas, pero dejé claro que el mapa seguía siendo suyo. Dijo que lo pensaría. Aquella respuesta no era un sí. También era mejor que una promesa hecha solo para que yo me sintiera menos culpable.",
+        "en": "Gabriel wanted to keep the quiet corner. “It's not for hiding anyone,” he explained. “It's so someone can decide whether they need company or a minute alone.” He showed me a path I hadn't noticed: from the entrance to the library without going through the noisiest hall. I asked if I could help check the routes, but made it clear the map was still his. He said he would think about it. That wasn't a yes. It was also better than a promise made just to help me feel less guilty."
+      },
+      "illustration": null,
+      "questions": {
+        "es": [
+          "¿Para qué sirve el rincón tranquilo según Gabriel?",
+          "¿Cómo respeta Amara que el mapa siga siendo de él?"
+        ],
+        "en": [
+          "What is the quiet corner for, according to Gabriel?",
+          "How does Amara respect that the map remains his?"
+        ]
+      }
+    },
+    {
+      "number": 10,
+      "chapter": 3,
+      "text": {
+        "es": "Al otro día Gabriel puso el mapa entre los dos. Me pidió comprobar si el banco del patio quedaba a la sombra durante el recreo. Salimos a verlo y descubrimos que la sombra se movía; dibujamos otra opción bajo el árbol grande. En la nueva presentación, Gabriel explicó la idea y yo añadí lo que habíamos observado. Nadie volvió a llamarlo base secreta. Si alguien lo hubiera hecho, yo ya tenía una frase preparada y estaba dispuesta a decirla. Cuando terminamos, Gabriel recogió el mapa con una pequeña sonrisa. Nuestra amistad todavía estaba encontrando su camino.",
+        "en": "The next day Gabriel placed the map between us. He asked me to check whether the playground bench was shady at recess. We went to look and found that the shade moved; we drew another option beneath the big tree. During the new presentation, Gabriel explained the idea and I added what we'd observed. Nobody called it a secret base again. If someone had, I had a sentence ready and was willing to say it. When we finished, Gabriel picked up the map with a small smile. Our friendship was still finding its way."
+      },
+      "illustration": "imagenes/escena_10.png",
+      "questions": {
+        "es": [
+          "¿Qué descubren sobre la sombra del banco?",
+          "¿Qué cambio muestra Amara durante la segunda presentación?"
+        ],
+        "en": [
+          "What do they discover about the bench’s shade?",
+          "What change does Amara show in the second presentation?"
+        ]
+      }
+    },
+    {
+      "number": 11,
+      "chapter": 3,
+      "text": {
+        "es": "Le enseñé la libreta a Celia, pero tapé una página con la mano. «Esta parte es mía», le dije. Ella sonrió y no intentó leerla. Le conté que había pedido perdón y que Gabriel había decidido volver a trabajar conmigo. «¿Eso fue la respuesta de Dios?», pregunté. La abuela miró la ventana un momento. «Yo no puedo ponerle nombre a todo lo que tú viviste», respondió. «Puedes seguir hablándole y prestar atención a lo que vas aprendiendo». Me gustó que no cerrara mi pregunta con un lazo bonito. Algunas preguntas necesitan más de un día.",
+        "en": "I showed Celia the notebook but covered one page with my hand. “This part is mine,” I told her. She smiled and didn't try to read it. I told her I'd apologized and Gabriel had decided to work with me again. “Was that God's answer?” I asked. Grandma looked out the window for a moment. “I can't name every part of what you experienced,” she replied. “You can keep talking to Him and pay attention to what you're learning.” I liked that she didn't tie my question shut with a pretty bow. Some questions need more than one day."
+      },
+      "illustration": null,
+      "questions": {
+        "es": [
+          "¿Qué página decide no mostrar Amara?",
+          "¿Por qué Celia evita decidir por ella si aquello fue una respuesta de Dios?"
+        ],
+        "en": [
+          "Which page does Amara choose not to show?",
+          "Why does Celia avoid deciding for her whether that was an answer from God?"
+        ]
+      }
+    },
+    {
+      "number": 12,
+      "chapter": 3,
+      "text": {
+        "es": "Esa noche volví a sentarme en la alfombra. El ventilador seguía pareciendo un helicóptero cansado. Abrí la libreta y escribí: «Todavía no sé reconocer todas tus respuestas. Hoy dije la verdad, escuché a Gabriel e hice algo que ayer me daba miedo». No sabía si aquellas palabras eran una conclusión o el comienzo de otra conversación. Entonces dije, bajito: «Aquí estoy otra vez». No esperé que el cielo cambiara de color. Dejé la libreta abierta, porque aún tenía espacio para más preguntas.",
+        "en": "That night I sat on the rug again. The fan still sounded like a tired helicopter. I opened my notebook and wrote, “I still don't know how to recognize all Your answers. Today I told the truth, listened to Gabriel, and did something I was afraid to do yesterday.” I didn't know if those words were a conclusion or the beginning of another conversation. Then I said softly, “I'm here again.” I didn't wait for the sky to change color. I left the notebook open, because there was room for more questions."
+      },
+      "illustration": "imagenes/escena_12.png",
+      "questions": {
+        "es": [
+          "¿Qué escribe Amara al final?",
+          "¿Por qué deja abierta la libreta?"
+        ],
+        "en": [
+          "What does Amara write at the end?",
+          "Why does she leave her notebook open?"
+        ]
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "es": "oración",
+      "en": "prayer"
+    },
+    {
+      "es": "pregunta",
+      "en": "question"
+    },
+    {
+      "es": "silencio",
+      "en": "silence"
+    },
+    {
+      "es": "valentía",
+      "en": "courage"
+    },
+    {
+      "es": "disculpa",
+      "en": "apology"
+    },
+    {
+      "es": "escuchar",
+      "en": "to listen"
+    },
+    {
+      "es": "respeto",
+      "en": "respect"
+    },
+    {
+      "es": "compañía",
+      "en": "company"
+    },
+    {
+      "es": "perdón",
+      "en": "forgiveness"
+    },
+    {
+      "es": "duda",
+      "en": "doubt"
+    },
+    {
+      "es": "mapa",
+      "en": "map"
+    },
+    {
+      "es": "respuesta",
+      "en": "answer"
+    }
+  ],
+  "page_backgrounds": {
+    "cover": "paginas_sin_texto/portada.png",
+    "pages": [
+      "paginas_sin_texto/pagina_01.png",
+      "paginas_sin_texto/pagina_02.png",
+      "paginas_sin_texto/pagina_03.png",
+      "paginas_sin_texto/pagina_04.png",
+      "paginas_sin_texto/pagina_05.png",
+      "paginas_sin_texto/pagina_06.png",
+      "paginas_sin_texto/pagina_07.png",
+      "paginas_sin_texto/pagina_08.png",
+      "paginas_sin_texto/pagina_09.png",
+      "paginas_sin_texto/pagina_10.png",
+      "paginas_sin_texto/pagina_11.png",
+      "paginas_sin_texto/pagina_12.png"
+    ],
+    "pixel_size": [
+      1536,
+      1024
+    ],
+    "text_box_pixels": {
+      "x": 1007,
+      "y": 135,
+      "width": 435,
+      "height": 782
+    },
+    "language_layers": "Place selectable ES/EN text above the blank panel; no narration is baked into PNG."
+  },
+  "integration_note": "Editorial JSON; map and validate against packages/contracts/src/story.ts before app import."
+}

@@ -1,0 +1,42 @@
+{
+  "name": "@lee-conmigo/reader",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "App Reader de Lee Conmigo (por ahora: arnés de desarrollo del motor de lectura con FakeReadingEngine)",
+  "scripts": {
+    "predev": "node scripts/copy-speech-assets.mjs",
+    "dev": "vite",
+    "prebuild": "node scripts/copy-speech-assets.mjs",
+    "build": "tsc -p tsconfig.json && vite build",
+    "prepreview": "node scripts/copy-speech-assets.mjs",
+    "preview": "vite preview",
+    "typecheck": "tsc -p tsconfig.json",
+    "build:tablet": "tsc -p tsconfig.json && vite build --mode tablet"
+  },
+  "dependencies": {
+    "@capacitor-community/text-to-speech": "^8.0.2",
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/core": "^8.5.2",
+    "@fontsource-variable/nunito": "^5.3.0",
+    "@fontsource/andika": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@lee-conmigo/contracts": "*",
+    "@lee-conmigo/reading-engine": "*",
+    "@lee-conmigo/session-engine": "*",
+    "@lee-conmigo/speech-engine": "*",
+    "@lee-conmigo/story-engine": "*",
+    "@lee-conmigo/ui": "*",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.5.2",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.1"
+  }
+}

@@ -1,0 +1,602 @@
+{
+  "id": "la-octava-linterna-es-n5",
+  "familyId": "la-octava-linterna",
+  "language": "es",
+  "title": "La octava linterna",
+  "level": 5,
+  "category": "misterio",
+  "description": "Luz descubre que escuchar importa más que resolver el misterio.",
+  "cover": {
+    "src": "stories/la-octava-linterna/cover.webp",
+    "width": 1536,
+    "height": 1024,
+    "alt": "Luz y Nico miran la fila de linternas de papel encendidas en la plaza al atardecer."
+  },
+  "heroFocus": {
+    "x": 20,
+    "y": 55
+  },
+  "reviewWords": [
+    "linterna",
+    "gancho",
+    "reclamar"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/la-octava-linterna/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Luz cuenta las linternas de papel y encuentra un gancho vacío."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b01",
+          "voice": "narration",
+          "title": "El gancho vacío",
+          "lines": [
+            "Cada otoño, el barrio encendía linternas de papel en la plaza. Luz conocía el orden de memoria: las primeras siete iluminaban los puestos de comida; la última tenía una estrella azul y brillaba junto al camino.",
+            "Aquella tarde, Luz contó una vez. Después volvió a contar. Había siete luces y un gancho vacío.",
+            "—Tal vez se rompió —dijo Nico.",
+            "Luz miró el gancho. Estaba limpio y firme. Nadie parecía haber intentado colgar nada allí. Alrededor, la música comenzaba y las personas seguían preparando las mesas."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué nota Luz al contar las linternas?",
+            "options": [
+              {
+                "text": "Que hay siete luces y un gancho vacío"
+              },
+              {
+                "text": "Que todas las linternas están encendidas"
+              },
+              {
+                "text": "Que falta la comida de los puestos"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Contó siete luces y un gancho vacío.",
+            "retryFeedback": "Busca lo que Luz descubre al contar dos veces."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué el gancho vacío le parece raro a Luz, más allá de faltar una linterna?",
+            "options": [
+              {
+                "text": "Porque estaba limpio y firme, como si nadie hubiera intentado colgar nada allí"
+              },
+              {
+                "text": "Porque tenía el nombre de otra persona escrito"
+              },
+              {
+                "text": "Porque era más grande que los demás ganchos"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! El gancho limpio y firme era una pista de que algo no encajaba.",
+            "retryFeedback": "Vuelve a leer cómo describe Luz el gancho."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/la-octava-linterna/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Luz y Nico preguntan a la organizadora de la fiesta por la linterna que falta."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b02",
+          "voice": "narration",
+          "title": "Antes de correr a buscar",
+          "lines": [
+            "Nico pensó que alguien habría llevado la linterna a otro lugar. Luz casi corrió a buscarla, pero se detuvo. Una linterna que falta no explica por sí sola qué pasó.",
+            "Preguntaron a la organizadora. Ella levantó la vista de una caja de velas eléctricas.",
+            "—La trae doña Sabina todos los años —dijo—. Hoy no la he visto.",
+            "Luz conocía a Sabina de saludarla en la calle, aunque nunca habían hablado mucho. Recordó que Sabina solía quedarse hasta el final para ver las luces desde el borde de la plaza."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Quién les dice que la linterna la trae doña Sabina todos los años?",
+            "options": [
+              {
+                "text": "La organizadora de la fiesta"
+              },
+              {
+                "text": "Nico"
+              },
+              {
+                "text": "Un vecino cualquiera"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Se lo dijo la organizadora.",
+            "retryFeedback": "Busca a quién le preguntan Luz y Nico."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué Luz se detiene en vez de correr a buscar la linterna de inmediato?",
+            "options": [
+              {
+                "text": "Porque una linterna que falta no explica por sí sola qué pasó"
+              },
+              {
+                "text": "Porque no le interesaba encontrarla"
+              },
+              {
+                "text": "Porque Nico le pidió que esperara"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Luz entendió que faltaba más información antes de actuar.",
+            "retryFeedback": "Piensa en lo que Luz piensa justo antes de detenerse."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/la-octava-linterna/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Luz encuentra una foto vieja de doña Sabina con la linterna de la estrella azul."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b03",
+          "voice": "narration",
+          "title": "La foto en el tablero",
+          "lines": [
+            "En el tablero del centro comunitario había fotos de fiestas pasadas. Luz encontró una donde Sabina sonreía al lado de una linterna color miel. La estrella azul destacaba incluso en la foto vieja.",
+            "—Es la misma —dijo Nico—. Vamos a preguntarle si la tiene.",
+            "A Luz le incomodó la frase. Sonaba como si fueran a reclamarle algo. Sabina no debía una explicación a dos niños curiosos.",
+            "—Podemos preguntar si está bien y si quiere venir —respondió.",
+            "Caminaron por la calle lateral, la que llevaba hasta la casa de Sabina sin pasar por las escaleras de la plaza."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué encuentra Luz en el tablero del centro comunitario?",
+            "options": [
+              {
+                "text": "Una foto de Sabina con la linterna de la estrella azul"
+              },
+              {
+                "text": "Un mapa de la plaza"
+              },
+              {
+                "text": "Una lista de nombres"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Encontró una foto vieja de Sabina con la linterna.",
+            "retryFeedback": "Busca lo que ve Luz en el tablero."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué le incomoda a Luz la forma en que Nico propone preguntarle a Sabina?",
+            "options": [
+              {
+                "text": "Porque sonaba como un reclamo, y Sabina no les debía ninguna explicación"
+              },
+              {
+                "text": "Porque Nico hablaba demasiado fuerte"
+              },
+              {
+                "text": "Porque prefería no hablar con adultos"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! A Luz le pareció que la frase de Nico sonaba a reclamo, no a pregunta amable.",
+            "retryFeedback": "Vuelve a leer lo que piensa Luz sobre las palabras de Nico."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p04",
+      "illustration": {
+        "src": "stories/la-octava-linterna/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Luz y Nico ven a doña Sabina junto a la linterna a través de la ventana."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b04",
+          "voice": "narration",
+          "title": "Primero llamemos",
+          "lines": [
+            "La ventana de Sabina daba a la calle. Sobre una mesa, detrás del cristal, estaba la linterna. La estrella azul miraba hacia fuera. No estaba rota ni perdida.",
+            "Luz sintió que acababa de resolver el misterio. Sin embargo, cuando vio a Sabina sentada junto a la mesa, la pregunta cambió. Si la linterna estaba allí, ¿por qué Sabina no estaba en la fiesta?",
+            "Nico señaló el objeto. Luz bajó su mano con suavidad.",
+            "—Primero llamemos —dijo—. Y escuchemos.",
+            "Sabina abrió la puerta después de oír el timbre."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué creyó Luz al ver el gancho vacío, y cómo cambió su pregunta al mirar por la ventana?",
+            "options": [
+              {
+                "text": "Creyó que buscaba un objeto; al verlo a salvo, la pregunta pasó a ser por qué Sabina no estaba en la fiesta"
+              },
+              {
+                "text": "Creyó que la linterna estaba rota; al verla entera, dejó de importarle"
+              },
+              {
+                "text": "Creyó que se la habían robado; al verla, se enojó"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Primero buscaba la linterna; al verla a salvo, la pregunta cambió a por qué Sabina no había ido a la fiesta.",
+            "retryFeedback": "Piensa en qué pregunta se hace Luz justo después de ver la linterna por la ventana."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué decide hacer Luz antes de sacar conclusiones, al ver a Sabina por la ventana?",
+            "options": [
+              {
+                "text": "Tocar la puerta y escuchar, en vez de señalar la linterna de inmediato"
+              },
+              {
+                "text": "Llevarse la linterna sin avisar"
+              },
+              {
+                "text": "Irse sin decir nada"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Dijo «Primero llamemos, y escuchemos» antes de actuar.",
+            "retryFeedback": "Busca las palabras exactas de Luz antes de que Sabina abra la puerta."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p05",
+      "illustration": {
+        "src": "stories/la-octava-linterna/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Doña Sabina les explica desde la entrada por qué se quedó en casa."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b05",
+          "voice": "narration",
+          "title": "Lo que faltaba de verdad",
+          "lines": [
+            "Sabina los invitó a hablar desde la entrada. Contó que la caminata hasta la plaza la cansaba mucho últimamente. Había pensado pedir ayuda, pero no quería que todos interrumpieran los preparativos por ella. Así que dejó la linterna en la mesa.",
+            "—Desde aquí alcanzo a ver un pedacito de la música —dijo, sonriendo—. Las luces, no.",
+            "Luz miró el bastón junto a la silla y luego la linterna. Había llegado buscando un objeto. Ahora entendía que faltaba alguien.",
+            "—Podríamos llevar la linterna por usted —ofreció Nico. Sabina agradeció la idea, pero no respondió enseguida."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Por qué dejó Sabina la linterna en la mesa este año?",
+            "options": [
+              {
+                "text": "Porque la caminata hasta la plaza la cansaba mucho últimamente"
+              },
+              {
+                "text": "Porque ya no le gustaba la fiesta"
+              },
+              {
+                "text": "Porque se le olvidó por completo"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! La caminata hasta la plaza la cansaba mucho últimamente.",
+            "retryFeedback": "Busca lo que explica Sabina desde la entrada."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué Luz decidió escuchar antes de llevarse la linterna?",
+            "options": [
+              {
+                "text": "Porque descubrió que en realidad faltaba una persona, no un objeto"
+              },
+              {
+                "text": "Porque Nico se lo pidió"
+              },
+              {
+                "text": "Porque la linterna ya no funcionaba"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Entendió que el problema no era la linterna, sino que faltaba Sabina.",
+            "retryFeedback": "Piensa en lo que Luz entiende al mirar el bastón y la linterna juntos."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p06",
+      "illustration": {
+        "src": "stories/la-octava-linterna/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Doña Sabina conversa con Luz y Nico sobre cambiar el recorrido de la fiesta."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b06",
+          "voice": "narration",
+          "title": "Una calle plana",
+          "lines": [
+            "—Me gusta verla encenderse entre la gente —dijo Sabina al fin—. Pero no quiero obligar a nadie a cambiar la fiesta.",
+            "Luz se apoyó en el marco de la puerta, dejando libre el paso. No podía prometer nada sin hablar con quienes organizaban la celebración.",
+            "—¿Y si les preguntamos si pueden empezar por esta calle? Es plana y la plaza está al final. Usted podría mirar desde aquí o acompañarnos un tramo, como prefiera.",
+            "Sabina pensó un momento.",
+            "—Pregunten —dijo—. Si funciona para todos, me gustaría intentarlo."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q06",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Qué le preocupa a Sabina sobre llevar la linterna a la fiesta?",
+            "options": [
+              {
+                "text": "No quiere obligar a nadie a cambiar la celebración por ella"
+              },
+              {
+                "text": "No quiere que nadie vea su linterna"
+              },
+              {
+                "text": "Prefiere que la fiesta se cancele"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! No quería obligar a nadie a cambiar la fiesta por ella.",
+            "retryFeedback": "Busca lo que dice Sabina al principio de la página."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué propone Luz que respeta tanto los deseos de Sabina como los de la fiesta?",
+            "options": [
+              {
+                "text": "Empezar el recorrido por la calle de Sabina, dejándola elegir cuánto participar"
+              },
+              {
+                "text": "Cancelar la fiesta de este año"
+              },
+              {
+                "text": "Pedirle a Sabina que camine más rápido"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Propuso empezar por su calle, dejando que Sabina eligiera cuánto participar.",
+            "retryFeedback": "Vuelve a leer la propuesta de Luz sobre la calle plana."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p07",
+      "illustration": {
+        "src": "stories/la-octava-linterna/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Los vecinos revisan la calle lateral para el nuevo recorrido de las linternas."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b07",
+          "voice": "narration",
+          "title": "El nuevo recorrido",
+          "lines": [
+            "La organizadora escuchó la propuesta. No bastaba con cambiar de sitio: tenían que comprobar el paso, la forma segura de sujetar las linternas. Los adultos revisaron la calle. Las luces funcionaban con baterías y podían colgarse de soportes firmes junto a la calle.",
+            "Nico dibujó el nuevo recorrido sin tapar la salida de ninguna casa. Luz volvió a contarle el plan a Sabina y le preguntó si aún le parecía bien. Sabina eligió sentarse en su puerta.",
+            "Al caer la noche, el barrio empezó a reunirse en la calle lateral."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q07",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Quiénes tomaron las decisiones sobre el nuevo recorrido?",
+            "options": [
+              {
+                "text": "La organizadora y los adultos del barrio, revisando la calle juntos"
+              },
+              {
+                "text": "Solo Luz y Nico, sin avisar a nadie"
+              },
+              {
+                "text": "Solo Sabina, sin hablar con nadie más"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Los adultos revisaron la calle y decidieron juntos cómo hacerlo con seguridad.",
+            "retryFeedback": "Busca quién revisa la calle antes de cambiar el recorrido."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Por qué Luz vuelve a contarle el plan a Sabina antes de seguir adelante?",
+            "options": [
+              {
+                "text": "Para confirmar que el cambio todavía le parecía bien a ella"
+              },
+              {
+                "text": "Porque se le había olvidado avisarle antes"
+              },
+              {
+                "text": "Porque Sabina se lo exigió"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Quería asegurarse de que el plan le siguiera pareciendo bien a Sabina.",
+            "retryFeedback": "Piensa en por qué Luz regresa a hablar con Sabina."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p08",
+      "illustration": {
+        "src": "stories/la-octava-linterna/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "La octava linterna brilla junto a la puerta de doña Sabina mientras el barrio se reúne."
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b08",
+          "voice": "narration",
+          "title": "La octava luz",
+          "lines": [
+            "Se encendieron siete linternas, una tras otra. La octava, con su estrella azul, brilló junto a la puerta de Sabina. Ella pudo ver cómo el papel se volvía dorado desde dentro. Nico dejó de contar y se quedó mirando.",
+            "—Creí que faltaba una luz —dijo Luz en voz baja.",
+            "—Y preguntaste por mí —respondió Sabina.",
+            "Luego la gente caminó hacia la plaza, mientras otros se quedaron un rato a conversar en la calle. Luz miró la fila completa. El gancho vacío había sido una pista, pero solo escuchar a Sabina les había mostrado qué hacer con ella."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q08",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Dónde brilló la octava linterna esa noche?",
+            "options": [
+              {
+                "text": "Junto a la puerta de Sabina"
+              },
+              {
+                "text": "En el centro de la plaza"
+              },
+              {
+                "text": "Dentro de la casa de Sabina"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Brilló junto a la puerta de Sabina.",
+            "retryFeedback": "Busca dónde se colgó la octava linterna al final."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿Qué quiere decir Luz cuando dice que el gancho vacío fue una pista, pero escuchar a Sabina les mostró qué hacer con ella?",
+            "options": [
+              {
+                "text": "Que notar que algo faltaba no bastaba: hacía falta escuchar para saber cómo ayudar de verdad"
+              },
+              {
+                "text": "Que el gancho vacío no tenía ninguna importancia"
+              },
+              {
+                "text": "Que debieron haber llevado la linterna sin preguntar"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Eso es! Una pista solo ayuda de verdad cuando se combina con escuchar a la persona.",
+            "retryFeedback": "Vuelve a leer la última frase de la historia."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "linterna": {
+      "syllables": [
+        "lin",
+        "ter",
+        "na"
+      ],
+      "definition": "Farol portátil que da luz.",
+      "synonym": "lámpara",
+      "example": "Usamos una linterna para buscar algo debajo de la cama durante el apagón."
+    },
+    "gancho": {
+      "syllables": [
+        "gan",
+        "cho"
+      ],
+      "definition": "Pieza curva que sirve para colgar algo.",
+      "example": "Colgamos las llaves en un gancho junto a la puerta."
+    },
+    "reclamar": {
+      "syllables": [
+        "re",
+        "cla",
+        "mar"
+      ],
+      "definition": "Pedir algo como si fuera obligatorio recibirlo.",
+      "synonym": "exigir",
+      "example": "Fue a la tienda a reclamar que le devolvieran su dinero."
+    },
+    "recorrido": {
+      "syllables": [
+        "re",
+        "co",
+        "rri",
+        "do"
+      ],
+      "definition": "Camino que se sigue para llegar a un lugar.",
+      "synonym": "trayecto",
+      "example": "El autobús hace el mismo recorrido todos los días por el centro."
+    },
+    "preparativos": {
+      "syllables": [
+        "pre",
+        "pa",
+        "ra",
+        "ti",
+        "vos"
+      ],
+      "definition": "Acciones que se hacen antes de un evento.",
+      "synonym": "preparación",
+      "example": "Empezaron los preparativos de la fiesta desde muy temprano."
+    },
+    "pista": {
+      "syllables": [
+        "pis",
+        "ta"
+      ],
+      "definition": "Detalle que ayuda a comprender algo.",
+      "synonym": "indicio",
+      "example": "La primera pista del juego estaba escondida debajo de la alfombra."
+    }
+  }
+}

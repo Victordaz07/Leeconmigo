@@ -1,0 +1,1029 @@
+{
+  "id": "dev-plantillas",
+  "language": "es",
+  "title": "Prueba: todas las plantillas",
+  "level": 1,
+  "description": "Historia de PRUEBA para desarrollo: una página de cada plantilla (1 a 6 cuadros: cómic, libro y dinámicas), con las imágenes guía. NO es una historia final.",
+  "dev": true,
+  "reviewWords": [
+    "luciérnagas",
+    "puente",
+    "despacio"
+  ],
+  "pages": [
+    {
+      "id": "p01",
+      "illustration": {
+        "src": "stories/dev-plantillas/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Guía de la plantilla full"
+      },
+      "template": "full",
+      "blocks": [
+        {
+          "id": "b01",
+          "title": "full · 1",
+          "voice": "narration",
+          "lines": [
+            "Pipo asomó la cabeza por la ventana.",
+            "Nadie dijo nada durante un momento."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q01",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Cuántos cuadros tiene la plantilla full?",
+            "options": [
+              {
+                "text": "Uno"
+              },
+              {
+                "text": "Dos"
+              },
+              {
+                "text": "Diez"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Exacto!",
+            "retryFeedback": "Cuenta los cuadros de la página otra vez."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿En qué se parece esta página a una de libro?",
+            "options": [
+              {
+                "text": "Tiene texto y dibujo"
+              },
+              {
+                "text": "No tiene texto"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Así es.",
+            "retryFeedback": "Mira la página otra vez."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "illustration": {
+        "src": "stories/dev-plantillas/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Guía de la plantilla two-up"
+      },
+      "template": "two-up",
+      "blocks": [
+        {
+          "id": "b02",
+          "title": "two-up · 1",
+          "voice": "narration",
+          "lines": [
+            "¡Pum! Algo cayó al suelo.",
+            "El erizo sonrió y cruzó el puente."
+          ]
+        },
+        {
+          "id": "b03",
+          "title": "two-up · 2",
+          "voice": "narration",
+          "lines": [
+            "Las luciérnagas encendieron sus luces.",
+            "Mila abrió la puerta despacio."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q02",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Cuántos cuadros tiene la plantilla two-up?",
+            "options": [
+              {
+                "text": "Uno"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "Diez"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Exacto!",
+            "retryFeedback": "Cuenta los cuadros de la página otra vez."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿En qué se parece esta página a una de libro?",
+            "options": [
+              {
+                "text": "Tiene texto y dibujo"
+              },
+              {
+                "text": "No tiene texto"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Así es.",
+            "retryFeedback": "Mira la página otra vez."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "illustration": {
+        "src": "stories/dev-plantillas/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Guía de la plantilla three-up"
+      },
+      "template": "three-up",
+      "blocks": [
+        {
+          "id": "b04",
+          "title": "three-up · 1",
+          "voice": "narration",
+          "lines": [
+            "Nadie dijo nada durante un momento.",
+            "Pipo asomó la cabeza por la ventana."
+          ]
+        },
+        {
+          "id": "b05",
+          "title": "three-up · 2",
+          "voice": "narration",
+          "lines": [
+            "El erizo sonrió y cruzó el puente.",
+            "¡Pum! Algo cayó al suelo."
+          ]
+        },
+        {
+          "id": "b06",
+          "title": "three-up · 3",
+          "voice": "narration",
+          "lines": [
+            "Mila abrió la puerta despacio.",
+            "Las luciérnagas encendieron sus luces."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q03",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Cuántos cuadros tiene la plantilla three-up?",
+            "options": [
+              {
+                "text": "Uno"
+              },
+              {
+                "text": "3"
+              },
+              {
+                "text": "Diez"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Exacto!",
+            "retryFeedback": "Cuenta los cuadros de la página otra vez."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿En qué se parece esta página a una de libro?",
+            "options": [
+              {
+                "text": "Tiene texto y dibujo"
+              },
+              {
+                "text": "No tiene texto"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Así es.",
+            "retryFeedback": "Mira la página otra vez."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p04",
+      "illustration": {
+        "src": "stories/dev-plantillas/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Guía de la plantilla four-up"
+      },
+      "template": "four-up",
+      "blocks": [
+        {
+          "id": "b07",
+          "title": "four-up · 1",
+          "voice": "narration",
+          "lines": [
+            "Pipo asomó la cabeza por la ventana.",
+            "Nadie dijo nada durante un momento."
+          ]
+        },
+        {
+          "id": "b08",
+          "title": "four-up · 2",
+          "voice": "narration",
+          "lines": [
+            "¡Pum! Algo cayó al suelo.",
+            "El erizo sonrió y cruzó el puente."
+          ]
+        },
+        {
+          "id": "b09",
+          "title": "four-up · 3",
+          "voice": "narration",
+          "lines": [
+            "Las luciérnagas encendieron sus luces.",
+            "Mila abrió la puerta despacio."
+          ]
+        },
+        {
+          "id": "b10",
+          "title": "four-up · 4",
+          "voice": "narration",
+          "lines": [
+            "Nadie dijo nada durante un momento.",
+            "Pipo asomó la cabeza por la ventana."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q04",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Cuántos cuadros tiene la plantilla four-up?",
+            "options": [
+              {
+                "text": "Uno"
+              },
+              {
+                "text": "4"
+              },
+              {
+                "text": "Diez"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Exacto!",
+            "retryFeedback": "Cuenta los cuadros de la página otra vez."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿En qué se parece esta página a una de libro?",
+            "options": [
+              {
+                "text": "Tiene texto y dibujo"
+              },
+              {
+                "text": "No tiene texto"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Así es.",
+            "retryFeedback": "Mira la página otra vez."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p05",
+      "illustration": {
+        "src": "stories/dev-plantillas/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Guía de la plantilla six-up"
+      },
+      "template": "six-up",
+      "blocks": [
+        {
+          "id": "b11",
+          "title": "six-up · 1",
+          "voice": "narration",
+          "lines": [
+            "El erizo sonrió y cruzó el puente.",
+            "¡Pum! Algo cayó al suelo."
+          ]
+        },
+        {
+          "id": "b12",
+          "title": "six-up · 2",
+          "voice": "narration",
+          "lines": [
+            "Mila abrió la puerta despacio.",
+            "Las luciérnagas encendieron sus luces."
+          ]
+        },
+        {
+          "id": "b13",
+          "title": "six-up · 3",
+          "voice": "narration",
+          "lines": [
+            "Pipo asomó la cabeza por la ventana.",
+            "Nadie dijo nada durante un momento."
+          ]
+        },
+        {
+          "id": "b14",
+          "title": "six-up · 4",
+          "voice": "narration",
+          "lines": [
+            "¡Pum! Algo cayó al suelo.",
+            "El erizo sonrió y cruzó el puente."
+          ]
+        },
+        {
+          "id": "b15",
+          "title": "six-up · 5",
+          "voice": "narration",
+          "lines": [
+            "Las luciérnagas encendieron sus luces.",
+            "Mila abrió la puerta despacio."
+          ]
+        },
+        {
+          "id": "b16",
+          "title": "six-up · 6",
+          "voice": "narration",
+          "lines": [
+            "Nadie dijo nada durante un momento.",
+            "Pipo asomó la cabeza por la ventana."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q05",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Cuántos cuadros tiene la plantilla six-up?",
+            "options": [
+              {
+                "text": "Uno"
+              },
+              {
+                "text": "6"
+              },
+              {
+                "text": "Diez"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Exacto!",
+            "retryFeedback": "Cuenta los cuadros de la página otra vez."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿En qué se parece esta página a una de libro?",
+            "options": [
+              {
+                "text": "Tiene texto y dibujo"
+              },
+              {
+                "text": "No tiene texto"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Así es.",
+            "retryFeedback": "Mira la página otra vez."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p06",
+      "illustration": {
+        "src": "stories/dev-plantillas/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Guía de la plantilla book-1"
+      },
+      "template": "book-1",
+      "blocks": [
+        {
+          "id": "b17",
+          "title": "book-1 · 1",
+          "voice": "narration",
+          "lines": [
+            "El erizo sonrió y cruzó el puente.",
+            "Mila abrió la puerta despacio.",
+            "Pipo asomó la cabeza por la ventana."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q06",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Cuántos cuadros tiene la plantilla book-1?",
+            "options": [
+              {
+                "text": "Uno"
+              },
+              {
+                "text": "Dos"
+              },
+              {
+                "text": "Diez"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "¡Exacto!",
+            "retryFeedback": "Cuenta los cuadros de la página otra vez."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿En qué se parece esta página a una de libro?",
+            "options": [
+              {
+                "text": "Tiene texto y dibujo"
+              },
+              {
+                "text": "No tiene texto"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Así es.",
+            "retryFeedback": "Mira la página otra vez."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p07",
+      "illustration": {
+        "src": "stories/dev-plantillas/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Guía de la plantilla book-2"
+      },
+      "template": "book-2",
+      "blocks": [
+        {
+          "id": "b18",
+          "title": "book-2 · 1",
+          "voice": "narration",
+          "lines": [
+            "Mila abrió la puerta despacio.",
+            "Pipo asomó la cabeza por la ventana.",
+            "¡Pum! Algo cayó al suelo."
+          ]
+        },
+        {
+          "id": "b19",
+          "title": "book-2 · 2",
+          "voice": "narration",
+          "lines": [
+            "Pipo asomó la cabeza por la ventana.",
+            "¡Pum! Algo cayó al suelo.",
+            "Las luciérnagas encendieron sus luces."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q07",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Cuántos cuadros tiene la plantilla book-2?",
+            "options": [
+              {
+                "text": "Uno"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "Diez"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Exacto!",
+            "retryFeedback": "Cuenta los cuadros de la página otra vez."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿En qué se parece esta página a una de libro?",
+            "options": [
+              {
+                "text": "Tiene texto y dibujo"
+              },
+              {
+                "text": "No tiene texto"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Así es.",
+            "retryFeedback": "Mira la página otra vez."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p08",
+      "illustration": {
+        "src": "stories/dev-plantillas/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Guía de la plantilla book-3"
+      },
+      "template": "book-3",
+      "blocks": [
+        {
+          "id": "b20",
+          "title": "book-3 · 1",
+          "voice": "narration",
+          "lines": [
+            "¡Pum! Algo cayó al suelo.",
+            "Las luciérnagas encendieron sus luces.",
+            "Nadie dijo nada durante un momento."
+          ]
+        },
+        {
+          "id": "b21",
+          "title": "book-3 · 2",
+          "voice": "narration",
+          "lines": [
+            "Las luciérnagas encendieron sus luces.",
+            "Nadie dijo nada durante un momento.",
+            "El erizo sonrió y cruzó el puente."
+          ]
+        },
+        {
+          "id": "b22",
+          "title": "book-3 · 3",
+          "voice": "narration",
+          "lines": [
+            "Nadie dijo nada durante un momento.",
+            "El erizo sonrió y cruzó el puente.",
+            "Mila abrió la puerta despacio."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q08",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Cuántos cuadros tiene la plantilla book-3?",
+            "options": [
+              {
+                "text": "Uno"
+              },
+              {
+                "text": "3"
+              },
+              {
+                "text": "Diez"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Exacto!",
+            "retryFeedback": "Cuenta los cuadros de la página otra vez."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿En qué se parece esta página a una de libro?",
+            "options": [
+              {
+                "text": "Tiene texto y dibujo"
+              },
+              {
+                "text": "No tiene texto"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Así es.",
+            "retryFeedback": "Mira la página otra vez."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p09",
+      "illustration": {
+        "src": "stories/dev-plantillas/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Guía de la plantilla slant-2"
+      },
+      "template": "slant-2",
+      "blocks": [
+        {
+          "id": "b23",
+          "title": "slant-2 · 1",
+          "voice": "narration",
+          "lines": [
+            "El erizo sonrió y cruzó el puente.",
+            "¡Pum! Algo cayó al suelo."
+          ]
+        },
+        {
+          "id": "b24",
+          "title": "slant-2 · 2",
+          "voice": "narration",
+          "lines": [
+            "Mila abrió la puerta despacio.",
+            "Las luciérnagas encendieron sus luces."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q09",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Cuántos cuadros tiene la plantilla slant-2?",
+            "options": [
+              {
+                "text": "Uno"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "Diez"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Exacto!",
+            "retryFeedback": "Cuenta los cuadros de la página otra vez."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿En qué se parece esta página a una de libro?",
+            "options": [
+              {
+                "text": "Tiene texto y dibujo"
+              },
+              {
+                "text": "No tiene texto"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Así es.",
+            "retryFeedback": "Mira la página otra vez."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p10",
+      "illustration": {
+        "src": "stories/dev-plantillas/page-10.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Guía de la plantilla slant-3"
+      },
+      "template": "slant-3",
+      "blocks": [
+        {
+          "id": "b25",
+          "title": "slant-3 · 1",
+          "voice": "narration",
+          "lines": [
+            "Pipo asomó la cabeza por la ventana.",
+            "Nadie dijo nada durante un momento."
+          ]
+        },
+        {
+          "id": "b26",
+          "title": "slant-3 · 2",
+          "voice": "narration",
+          "lines": [
+            "¡Pum! Algo cayó al suelo.",
+            "El erizo sonrió y cruzó el puente."
+          ]
+        },
+        {
+          "id": "b27",
+          "title": "slant-3 · 3",
+          "voice": "narration",
+          "lines": [
+            "Las luciérnagas encendieron sus luces.",
+            "Mila abrió la puerta despacio."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q10",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Cuántos cuadros tiene la plantilla slant-3?",
+            "options": [
+              {
+                "text": "Uno"
+              },
+              {
+                "text": "3"
+              },
+              {
+                "text": "Diez"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Exacto!",
+            "retryFeedback": "Cuenta los cuadros de la página otra vez."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿En qué se parece esta página a una de libro?",
+            "options": [
+              {
+                "text": "Tiene texto y dibujo"
+              },
+              {
+                "text": "No tiene texto"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Así es.",
+            "retryFeedback": "Mira la página otra vez."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p11",
+      "illustration": {
+        "src": "stories/dev-plantillas/page-11.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Guía de la plantilla bolt-2"
+      },
+      "template": "bolt-2",
+      "blocks": [
+        {
+          "id": "b28",
+          "title": "bolt-2 · 1",
+          "voice": "narration",
+          "lines": [
+            "Nadie dijo nada durante un momento.",
+            "Pipo asomó la cabeza por la ventana."
+          ]
+        },
+        {
+          "id": "b29",
+          "title": "bolt-2 · 2",
+          "voice": "narration",
+          "lines": [
+            "El erizo sonrió y cruzó el puente.",
+            "¡Pum! Algo cayó al suelo."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q11",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Cuántos cuadros tiene la plantilla bolt-2?",
+            "options": [
+              {
+                "text": "Uno"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "Diez"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Exacto!",
+            "retryFeedback": "Cuenta los cuadros de la página otra vez."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿En qué se parece esta página a una de libro?",
+            "options": [
+              {
+                "text": "Tiene texto y dibujo"
+              },
+              {
+                "text": "No tiene texto"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Así es.",
+            "retryFeedback": "Mira la página otra vez."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p12",
+      "illustration": {
+        "src": "stories/dev-plantillas/page-12.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Guía de la plantilla manga-6"
+      },
+      "template": "manga-6",
+      "blocks": [
+        {
+          "id": "b30",
+          "title": "manga-6 · 1",
+          "voice": "narration",
+          "lines": [
+            "Mila abrió la puerta despacio.",
+            "Las luciérnagas encendieron sus luces."
+          ]
+        },
+        {
+          "id": "b31",
+          "title": "manga-6 · 2",
+          "voice": "narration",
+          "lines": [
+            "Pipo asomó la cabeza por la ventana.",
+            "Nadie dijo nada durante un momento."
+          ]
+        },
+        {
+          "id": "b32",
+          "title": "manga-6 · 3",
+          "voice": "narration",
+          "lines": [
+            "¡Pum! Algo cayó al suelo.",
+            "El erizo sonrió y cruzó el puente."
+          ]
+        },
+        {
+          "id": "b33",
+          "title": "manga-6 · 4",
+          "voice": "narration",
+          "lines": [
+            "Las luciérnagas encendieron sus luces.",
+            "Mila abrió la puerta despacio."
+          ]
+        },
+        {
+          "id": "b34",
+          "title": "manga-6 · 5",
+          "voice": "narration",
+          "lines": [
+            "Nadie dijo nada durante un momento.",
+            "Pipo asomó la cabeza por la ventana."
+          ]
+        },
+        {
+          "id": "b35",
+          "title": "manga-6 · 6",
+          "voice": "narration",
+          "lines": [
+            "El erizo sonrió y cruzó el puente.",
+            "¡Pum! Algo cayó al suelo."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q12",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Cuántos cuadros tiene la plantilla manga-6?",
+            "options": [
+              {
+                "text": "Uno"
+              },
+              {
+                "text": "6"
+              },
+              {
+                "text": "Diez"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Exacto!",
+            "retryFeedback": "Cuenta los cuadros de la página otra vez."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿En qué se parece esta página a una de libro?",
+            "options": [
+              {
+                "text": "Tiene texto y dibujo"
+              },
+              {
+                "text": "No tiene texto"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Así es.",
+            "retryFeedback": "Mira la página otra vez."
+          }
+        ]
+      }
+    },
+    {
+      "id": "p13",
+      "illustration": {
+        "src": "stories/dev-plantillas/page-13.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Guía de la plantilla burst-2"
+      },
+      "template": "burst-2",
+      "blocks": [
+        {
+          "id": "b36",
+          "title": "burst-2 · 1",
+          "voice": "narration",
+          "lines": [
+            "¡Pum!"
+          ]
+        },
+        {
+          "id": "b37",
+          "title": "burst-2 · 2",
+          "voice": "narration",
+          "lines": [
+            "Pipo asomó la cabeza por la ventana.",
+            "Nadie dijo nada durante un momento."
+          ]
+        }
+      ],
+      "checkpoint": {
+        "id": "q13",
+        "variants": [
+          {
+            "audience": "explorador",
+            "prompt": "¿Cuántos cuadros tiene la plantilla burst-2?",
+            "options": [
+              {
+                "text": "Uno"
+              },
+              {
+                "text": "2"
+              },
+              {
+                "text": "Diez"
+              }
+            ],
+            "correctIndex": 1,
+            "correctFeedback": "¡Exacto!",
+            "retryFeedback": "Cuenta los cuadros de la página otra vez."
+          },
+          {
+            "audience": "lector",
+            "prompt": "¿En qué se parece esta página a una de libro?",
+            "options": [
+              {
+                "text": "Tiene texto y dibujo"
+              },
+              {
+                "text": "No tiene texto"
+              }
+            ],
+            "correctIndex": 0,
+            "correctFeedback": "Así es.",
+            "retryFeedback": "Mira la página otra vez."
+          }
+        ]
+      }
+    }
+  ],
+  "vocabulary": {
+    "luciérnagas": {
+      "syllables": [
+        "lu",
+        "ciér",
+        "na",
+        "gas"
+      ],
+      "definition": "Insectos que brillan en la noche."
+    },
+    "puente": {
+      "syllables": [
+        "puen",
+        "te"
+      ],
+      "definition": "Algo para cruzar un río."
+    },
+    "despacio": {
+      "syllables": [
+        "des",
+        "pa",
+        "cio"
+      ],
+      "definition": "Sin prisa."
+    }
+  }
+}

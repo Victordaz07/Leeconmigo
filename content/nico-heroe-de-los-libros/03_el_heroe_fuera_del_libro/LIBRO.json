@@ -1,0 +1,827 @@
+{
+  "series": {
+    "es": "Nico, héroe de los libros",
+    "en": "Nico, Hero of the Books"
+  },
+  "series_index": 3,
+  "slug": "03_el_heroe_fuera_del_libro",
+  "title": {
+    "es": "El héroe fuera del libro",
+    "en": "The Hero Outside the Book"
+  },
+  "subtitle": {
+    "es": "Lo que sucede cuando termina la lectura",
+    "en": "What happens after reading ends"
+  },
+  "cover": "imagenes/portada.png",
+  "character_sheet": "../PERSONAJES_SERIE.png",
+  "pages": [
+    {
+      "id": "b3-p01",
+      "number": 1,
+      "image": "imagenes/pagina-01.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "El agua de verdad",
+          "paragraphs": [
+            "Una lluvia fuerte entró por una ventana de la biblioteca del barrio. El estante que Teo había construido se mojó por abajo; las tarjetas y varios libros quedaron a salvo, pero la base de cartón se dobló.",
+            "Faltaban cuatro días para abrir el rincón de lectura. Nico quiso prometer que él solo lo arreglaría antes del desayuno.",
+            "Su abuela Lidia le mostró la madera hinchada y le pidió que mirara bien. Ningún faro iba a encenderse al pasar una página.",
+            "Era un problema de verdad, con herramientas, horarios y personas cansadas. Nico llamó a Alma y Teo.",
+            "Teo contestó seco: ya había dicho que la ventana goteaba. Nico se dio cuenta de que no lo había escuchado."
+          ],
+          "alt": "Ilustración de el agua de verdad.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué se moja en la biblioteca?",
+              "options": [
+                "Todos los libros",
+                "El libro azul",
+                "La base del estante"
+              ],
+              "correctIndex": 2,
+              "hint": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+            },
+            "lector": {
+              "question": "¿Qué entiende Nico ante el daño?",
+              "options": [
+                "Debe escuchar y trabajar con otros",
+                "Puede arreglarlo todo de inmediato",
+                "No hay solución posible"
+              ],
+              "correctIndex": 0,
+              "hint": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+            }
+          }
+        },
+        "en": {
+          "title": "Real water",
+          "paragraphs": [
+            "Heavy rain came through a window at the neighborhood library. The bottom of the shelf Teo had built got wet.",
+            "The question cards and most books stayed dry, but the cardboard base buckled. Their reading corner was due to open in four days.",
+            "Nico nearly promised to fix it alone by breakfast. Grandma Lidia showed him the swollen wood and asked him to look carefully.",
+            "No lighthouse would switch on when he turned a page. This was a real problem with tools, schedules, and tired people.",
+            "Nico called Alma and Teo. Teo sounded sharp: he had warned them that the window leaked.",
+            "Nico realized he hadn't listened."
+          ],
+          "alt": "Illustration of real water.",
+          "checkpoint": {
+            "explorador": {
+              "question": "What gets wet in the library?",
+              "options": [
+                "Every book",
+                "The blue book",
+                "The shelf base"
+              ],
+              "correctIndex": 2,
+              "hint": "Take another look at that scene and notice what each person did."
+            },
+            "lector": {
+              "question": "What does Nico realize about the damage?",
+              "options": [
+                "He must listen and work with others",
+                "He can fix it instantly",
+                "Nothing can be done"
+              ],
+              "correctIndex": 0,
+              "hint": "Take another look at that scene and notice what each person did."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b3-p02",
+      "number": 2,
+      "image": "imagenes/pagina-02.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "El puente que se cayó",
+          "paragraphs": [
+            "En la escuela, Teo apenas hablaba con Nico. Durante el recreo, un grupo movió sin querer la maqueta y el puente se desprendió.",
+            "Nico lo sostuvo antes de que cayera al suelo. «Ya lo arreglo», dijo, tomando el pegamento.",
+            "Teo retiró la pieza: no quería que arreglaran algo suyo sin preguntarle. Nico sintió calor en la cara.",
+            "Iba a responder con enojo cuando recordó el espejo de la biblioteca de papel, aquel que enseñaba un futuro posible pero no obligatorio. Se apartó para respirar.",
+            "Luego dijo: «Me equivoqué con la ventana y con el puente. ¿Quieres contarme qué parte debe conservarse?».",
+            "Teo señaló una pequeña bisagra que Nico no había visto."
+          ],
+          "alt": "Ilustración de el puente que se cayó.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué señala Teo en el puente?",
+              "options": [
+                "Una bisagra pequeña",
+                "Una llave",
+                "Una luz"
+              ],
+              "correctIndex": 0,
+              "hint": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+            },
+            "lector": {
+              "question": "¿Qué hace Nico antes de responder enojado?",
+              "options": [
+                "Se marcha para siempre",
+                "Respira y pregunta",
+                "Pega sin permiso"
+              ],
+              "correctIndex": 1,
+              "hint": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+            }
+          }
+        },
+        "en": {
+          "title": "The bridge that fell",
+          "paragraphs": [
+            "At school Teo barely spoke to Nico. At recess, someone bumped the model and a bridge came loose.",
+            "Nico caught it before it hit the floor. 'I'll fix it,' he said, reaching for the glue. Teo took the piece back.",
+            "He didn't want Nico changing his work without asking. Nico felt his face grow hot.",
+            "He almost snapped back, then remembered the mirror in the paper library: a possible future wasn't one he had to choose. He stepped aside to breathe.",
+            "Then he said, 'I was wrong about the window and the bridge. Can you show me what part needs to stay?' Teo pointed to a tiny hinge Nico hadn't noticed."
+          ],
+          "alt": "Illustration of the bridge that fell.",
+          "checkpoint": {
+            "explorador": {
+              "question": "What does Teo point to?",
+              "options": [
+                "A tiny hinge",
+                "A key",
+                "A light"
+              ],
+              "correctIndex": 0,
+              "hint": "Take another look at that scene and notice what each person did."
+            },
+            "lector": {
+              "question": "What does Nico do before replying in anger?",
+              "options": [
+                "Leaves forever",
+                "Breathes and asks",
+                "Glues it without permission"
+              ],
+              "correctIndex": 1,
+              "hint": "Take another look at that scene and notice what each person did."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b3-p03",
+      "number": 3,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "La abuela no da respuestas",
+          "paragraphs": [
+            "Lidia llevó a Nico a revisar el rincón mojado. Hicieron una lista: avisar a la bibliotecaria, secar el suelo, mover los libros y preguntar a un adulto si la madera todavía era segura.",
+            "La bibliotecaria llamó al personal del edificio para reparar la ventana; los niños no tocarían el marco alto ni las herramientas eléctricas. Mientras esperaban, Lidia le contó a Nico que ella también se había equivocado muchas veces al preparar actividades para sus vecinos.",
+            "«Los libros no me dieron una solución para todo», dijo. «Me enseñaron a detenerme y a escuchar antes de actuar».",
+            "Nico anotó esa frase en el cuaderno, no como una regla mágica, sino como algo que podía intentar mañana."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Quién repara la ventana alta?",
+              "options": [
+                "Dani",
+                "El personal del edificio",
+                "Nico solo"
+              ],
+              "correctIndex": 1,
+              "hint": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+            },
+            "lector": {
+              "question": "¿Qué le enseña Lidia?",
+              "options": [
+                "Que los libros solucionan todo",
+                "Que debe ocultar el daño",
+                "Detenerse y escuchar"
+              ],
+              "correctIndex": 2,
+              "hint": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+            }
+          }
+        },
+        "en": {
+          "title": "Grandma doesn't hand out answers",
+          "paragraphs": [
+            "Lidia took Nico to look at the damp corner. Together they listed what they knew: tell the librarian, dry the floor, move the books, and ask an adult whether the wood was still safe.",
+            "The librarian called the building staff to fix the window; the children would leave the high frame and power tools alone. While they waited, Lidia told Nico she had made plenty of mistakes when organizing events for her neighbors. 'Books never gave me one answer for everything,' she said. 'They helped me pause and listen before acting.' Nico wrote that down in his notebook, not as a magic rule, but as something he could try tomorrow."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "Who repairs the high window?",
+              "options": [
+                "Dani",
+                "Building staff",
+                "Nico alone"
+              ],
+              "correctIndex": 1,
+              "hint": "Take another look at that scene and notice what each person did."
+            },
+            "lector": {
+              "question": "What does Lidia encourage?",
+              "options": [
+                "Expect books to fix everything",
+                "Hide the damage",
+                "Pause and listen"
+              ],
+              "correctIndex": 2,
+              "hint": "Take another look at that scene and notice what each person did."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b3-p04",
+      "number": 4,
+      "image": "imagenes/pagina-04.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "Una voz muy pequeña",
+          "paragraphs": [
+            "Alma trajo a su hermano menor, Dani, para probar los libros del rincón. Dani dijo que no le gustaba leer porque le costaba seguir las líneas y otros niños terminaban antes.",
+            "Nico estuvo a punto de decirle que bastaba con esforzarse. Recordó cómo había escondido la cabeza en clase.",
+            "En vez de aconsejarlo, le preguntó qué historia quería escuchar. Dani escogió un libro de criaturas marinas.",
+            "Alma leyó una página; Dani señaló un pulpo escondido en la ilustración y Nico inventó una voz graciosa para él. Después dejaron el libro abierto para que Dani continuara a su ritmo.",
+            "El rincón aún olía a pintura y a lluvia, pero ya había servido para algo."
+          ],
+          "alt": "Ilustración de una voz muy pequeña.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué encuentra Dani en la ilustración?",
+              "options": [
+                "Un dragón",
+                "Un puente",
+                "Un pulpo"
+              ],
+              "correctIndex": 2,
+              "hint": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+            },
+            "lector": {
+              "question": "¿Por qué Nico evita decirle que se esfuerce más?",
+              "options": [
+                "Recuerda cómo se sentía al leer",
+                "Quiere acabar pronto",
+                "No le interesan los libros"
+              ],
+              "correctIndex": 0,
+              "hint": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+            }
+          }
+        },
+        "en": {
+          "title": "A very quiet voice",
+          "paragraphs": [
+            "Alma brought her little brother, Dani, to try the reading corner. Dani said he didn't like books because he lost his place and other children finished before he did.",
+            "Nico nearly told him to try harder. He remembered hiding behind a book in class.",
+            "Instead he asked what story Dani wanted to hear. Dani chose one about sea creatures.",
+            "Alma read a page; Dani spotted an octopus tucked into the picture, and Nico gave it a silly voice. Then they left the book open so Dani could continue at his own pace.",
+            "The corner still smelled of paint and rain, but it had already done something good."
+          ],
+          "alt": "Illustration of a very quiet voice.",
+          "checkpoint": {
+            "explorador": {
+              "question": "What does Dani spot in the picture?",
+              "options": [
+                "A dragon",
+                "A bridge",
+                "An octopus"
+              ],
+              "correctIndex": 2,
+              "hint": "Take another look at that scene and notice what each person did."
+            },
+            "lector": {
+              "question": "Why doesn't Nico tell Dani to try harder?",
+              "options": [
+                "He remembers his own reading fear",
+                "He wants to finish quickly",
+                "He dislikes books"
+              ],
+              "correctIndex": 0,
+              "hint": "Take another look at that scene and notice what each person did."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b3-p05",
+      "number": 5,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "La última visita",
+          "paragraphs": [
+            "Esa noche Nico abrió el volumen azul para contarle a Sira lo ocurrido. El puente de papel apareció, pero la ciudad de canales estaba tranquila.",
+            "Sira no le ofreció una misión. Lo acompañó a ver el taller de mapas: allí una niña borraba una curva y dibujaba otra mejor.",
+            "Nico explicó que el estante se había dañado y que Teo estaba molesto. Sira escuchó.",
+            "«No puedo cruzar a tu biblioteca para arreglarlo», dijo. «Y aunque pudiera, no sabría qué necesita Teo.",
+            "Eso tienes que preguntárselo tú». Nico entendió que entrar en un libro podía enseñarle a mirar, pero no decidir por sus amigos.",
+            "Volvió antes de que la página se cerrara."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Adónde vuelve Nico en el libro?",
+              "options": [
+                "Al taller de mapas",
+                "A una guerra",
+                "Al patio escolar"
+              ],
+              "correctIndex": 0,
+              "hint": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+            },
+            "lector": {
+              "question": "¿Por qué Sira no resuelve el problema de Teo?",
+              "options": [
+                "La ciudad desapareció",
+                "Nico debe preguntarle qué necesita",
+                "No sabe usar una cuerda"
+              ],
+              "correctIndex": 1,
+              "hint": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+            }
+          }
+        },
+        "en": {
+          "title": "One last visit",
+          "paragraphs": [
+            "That evening Nico opened the blue volume to tell Sira what had happened. The paper bridge appeared, but the canal city was peaceful.",
+            "Sira had no mission for him. She walked with him to the mapmakers' workshop, where a girl erased a crooked line and drew a better one.",
+            "Nico explained that the shelf was damaged and Teo was upset. Sira listened. 'I can't step into your library and repair it,' she said. 'And even if I could, I wouldn't know what Teo needs.",
+            "You'll have to ask him.' Nico realized that a book could teach him where to look but couldn't make choices for his friends. He returned before the page closed."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "Where does Nico return in the book?",
+              "options": [
+                "The mapmakers' workshop",
+                "A war",
+                "The schoolyard"
+              ],
+              "correctIndex": 0,
+              "hint": "Take another look at that scene and notice what each person did."
+            },
+            "lector": {
+              "question": "Why can't Sira solve Teo's problem?",
+              "options": [
+                "The city vanished",
+                "Nico needs to ask Teo what he needs",
+                "She cannot use rope"
+              ],
+              "correctIndex": 1,
+              "hint": "Take another look at that scene and notice what each person did."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b3-p06",
+      "number": 6,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "Tres manos y una lista",
+          "paragraphs": [
+            "A la mañana siguiente, Nico pidió a Teo que dirigiera la reparación de la parte que había construido. Teo aceptó, siempre que Nico dejara de adelantarse con el pegamento.",
+            "Alma repartió las tareas que sí podían hacer: limpiar las tarjetas, escoger libros secos y preguntar a los visitantes qué actividades querían. La bibliotecaria confirmó que el personal ya había arreglado la ventana y revisó el estante.",
+            "Teo propuso reemplazar la base de cartón por una bandeja elevada que pudiera retirarse si volvía a entrar agua. Nico dibujó tres versiones y Teo eligió una.",
+            "No terminaron aquel día. Al irse, Nico sintió la incomodidad de dejar algo a medias y también la tranquilidad de tener un plan compartido."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué propone Teo para el estante?",
+              "options": [
+                "Una puerta mágica",
+                "Una bandeja elevada",
+                "Más cartón mojado"
+              ],
+              "correctIndex": 1,
+              "hint": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+            },
+            "lector": {
+              "question": "¿Qué cambia en el modo de trabajar?",
+              "options": [
+                "Nico hace todo",
+                "No terminan el proyecto",
+                "Teo dirige su reparación y reparten tareas"
+              ],
+              "correctIndex": 2,
+              "hint": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+            }
+          }
+        },
+        "en": {
+          "title": "Three hands and a list",
+          "paragraphs": [
+            "The next morning Nico asked Teo to lead the repairs to the part he had built. Teo agreed, as long as Nico stopped rushing in with the glue.",
+            "Alma split up what the children could do: wipe the cards, choose dry books, and ask visitors what activities they wanted. The librarian confirmed that the building staff had fixed the window and inspected the shelf.",
+            "Teo proposed replacing the cardboard base with a raised tray they could remove if water got in again. Nico drew three versions; Teo chose one.",
+            "They didn't finish that day. On the way home Nico felt uneasy about leaving work half done, and calmer because they had a plan together."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "What does Teo suggest for the shelf?",
+              "options": [
+                "A magic door",
+                "A raised tray",
+                "More wet cardboard"
+              ],
+              "correctIndex": 1,
+              "hint": "Take another look at that scene and notice what each person did."
+            },
+            "lector": {
+              "question": "How has their teamwork changed?",
+              "options": [
+                "Nico does everything",
+                "They abandon the project",
+                "Teo leads his repair and they divide tasks"
+              ],
+              "correctIndex": 2,
+              "hint": "Take another look at that scene and notice what each person did."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b3-p07",
+      "number": 7,
+      "image": "imagenes/pagina-07.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "El discurso sin capa",
+          "paragraphs": [
+            "El día de la apertura, Nico debía explicar el rincón ante familias y compañeros. Había practicado un discurso perfecto, pero perdió la primera frase al ver tantas caras.",
+            "Sus manos temblaron. Alma le señaló la maqueta y Teo giró una de las tarjetas para que Nico recordara por dónde empezar.",
+            "Nico dijo que había querido ser un superhéroe capaz de solucionar todo. Una niña preguntó si el libro azul era mágico.",
+            "Nico sonrió y contestó que algunos libros parecían abrir puertas, pero que la magia más útil era volver con preguntas nuevas. Luego invitó a Dani a mostrar el pulpo escondido.",
+            "Dani habló bajito; todos se acercaron para escucharlo."
+          ],
+          "alt": "Ilustración de el discurso sin capa.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Quién muestra el pulpo al público?",
+              "options": [
+                "Sira",
+                "El Borrador",
+                "Dani"
+              ],
+              "correctIndex": 2,
+              "hint": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+            },
+            "lector": {
+              "question": "¿Qué ayuda a Nico a empezar su discurso?",
+              "options": [
+                "Sus amigos le dan señales y tiempo",
+                "Una capa lo hace valiente",
+                "El público se va"
+              ],
+              "correctIndex": 0,
+              "hint": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+            }
+          }
+        },
+        "en": {
+          "title": "The speech without a cape",
+          "paragraphs": [
+            "On opening day Nico was meant to introduce the reading corner to families and classmates. He had practiced a perfect speech, but his first line disappeared when he saw all those faces.",
+            "His hands shook. Alma pointed to the model, and Teo turned a question card so Nico could find a starting place.",
+            "Nico said he had once wanted to be a superhero who solved everything. A girl asked whether the blue book was magical.",
+            "Nico smiled and said some books felt like doors, but their most useful gift was the new questions you carried home. Then he invited Dani to show everyone the hidden octopus.",
+            "Dani spoke softly. The audience leaned closer to hear."
+          ],
+          "alt": "Illustration of the speech without a cape.",
+          "checkpoint": {
+            "explorador": {
+              "question": "Who shows the octopus to visitors?",
+              "options": [
+                "Sira",
+                "The Eraser",
+                "Dani"
+              ],
+              "correctIndex": 2,
+              "hint": "Take another look at that scene and notice what each person did."
+            },
+            "lector": {
+              "question": "What helps Nico begin his speech?",
+              "options": [
+                "Friends give him cues and time",
+                "A cape makes him brave",
+                "The crowd leaves"
+              ],
+              "correctIndex": 0,
+              "hint": "Take another look at that scene and notice what each person did."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b3-p08",
+      "number": 8,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "La decisión de Dani",
+          "paragraphs": [
+            "Después de la presentación, Dani tomó una tarjeta y eligió un camino que cruzaba el puente de cartón hacia una casa sin dibujar. «¿Quién vive ahí?», preguntó Alma.",
+            "Dani no sabía. Inventó a un cuidador de estrellas que olvidaba dónde había guardado su escalera.",
+            "Teo añadió una escalera plegable a la maqueta y pidió permiso antes de pegarla. Nico quería darle al cuidador un poder espectacular.",
+            "Dani prefirió que llamara a sus vecinos para buscar juntos. Nico aceptó ese final y escuchó cómo el niño continuaba la aventura.",
+            "No todas las personas veían la misma puerta en un libro. Aquella tarde el rincón quedó lleno de caminos que sus creadores no habían previsto."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿A quién inventa Dani?",
+              "options": [
+                "Un cuidador de estrellas",
+                "Un pirata",
+                "Un profesor de magia"
+              ],
+              "correctIndex": 0,
+              "hint": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+            },
+            "lector": {
+              "question": "¿Qué hace Nico con el final que propone Dani?",
+              "options": [
+                "Dice que está mal",
+                "Lo acepta y escucha más",
+                "Lo borra"
+              ],
+              "correctIndex": 1,
+              "hint": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+            }
+          }
+        },
+        "en": {
+          "title": "Dani's choice",
+          "paragraphs": [
+            "After the talk Dani picked a card and chose a route across the cardboard bridge to a house no one had drawn. 'Who lives there?' Alma asked. Dani didn't know yet.",
+            "He invented a keeper of stars who had forgotten where he'd left his ladder. Teo added a folding ladder to the model, asking before he glued it down.",
+            "Nico wanted to give the keeper a spectacular power. Dani preferred to have him ask his neighbors to help search.",
+            "Nico liked that ending and listened while Dani continued. Not everyone found the same doorway inside a book.",
+            "By evening the reading corner held paths its makers had never planned."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "Whom does Dani invent?",
+              "options": [
+                "A keeper of stars",
+                "A pirate",
+                "A magic teacher"
+              ],
+              "correctIndex": 0,
+              "hint": "Take another look at that scene and notice what each person did."
+            },
+            "lector": {
+              "question": "What does Nico do with Dani's ending?",
+              "options": [
+                "Calls it wrong",
+                "Accepts it and listens",
+                "Erases it"
+              ],
+              "correctIndex": 1,
+              "hint": "Take another look at that scene and notice what each person did."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b3-p09",
+      "number": 9,
+      "image": null,
+      "layout": "two-column",
+      "languages": {
+        "es": {
+          "title": "Cuando el libro espera",
+          "paragraphs": [
+            "Al cerrar, Nico encontró el volumen azul junto a una pila de préstamos. Sus páginas estaban secas.",
+            "Pensó en entrar una vez más, pero Alma le pidió ayuda para guardar las tarjetas y Teo quería enseñarle una bisagra nueva. Nico dejó el libro sobre la mesa, abierto donde podían verlo.",
+            "Ayudó a sus amigos y después anotó las preguntas que habían hecho los visitantes. El libro no desapareció ni se enfadó por esperar.",
+            "Al regresar a casa, Lidia le preguntó si seguía queriendo ser un héroe. «Sí», dijo Nico.",
+            "«Pero creo que hoy fui más útil escuchando que saltando». La abuela le pidió que le contara la historia completa, y él empezó por el charco."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Dónde deja Nico el libro mientras ayuda?",
+              "options": [
+                "Bajo la lluvia",
+                "Sobre la mesa",
+                "En el canal"
+              ],
+              "correctIndex": 1,
+              "hint": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+            },
+            "lector": {
+              "question": "¿Qué descubre sobre ser útil?",
+              "options": [
+                "Debe saltar siempre",
+                "No puede seguir leyendo",
+                "Escuchar también puede ser valiente"
+              ],
+              "correctIndex": 2,
+              "hint": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+            }
+          }
+        },
+        "en": {
+          "title": "When the book waits",
+          "paragraphs": [
+            "As they closed, Nico found the blue volume beside a stack of borrowed books. Its pages were dry.",
+            "He thought about going in once more, but Alma needed help putting away the cards, and Teo wanted to show him a new hinge. Nico left the book on the table where they could all see it.",
+            "He helped his friends, then wrote down the visitors' questions. The book didn't vanish or become angry because it had to wait.",
+            "On the walk home Lidia asked if he still wanted to be a hero. 'Yes,' Nico said. 'But today listening helped more than leaping.' Grandma asked for the whole story, and he began with the puddle."
+          ],
+          "alt": "",
+          "checkpoint": {
+            "explorador": {
+              "question": "Where does Nico leave the book while helping?",
+              "options": [
+                "In the rain",
+                "On the table",
+                "In the canal"
+              ],
+              "correctIndex": 1,
+              "hint": "Take another look at that scene and notice what each person did."
+            },
+            "lector": {
+              "question": "What does he learn about being useful?",
+              "options": [
+                "He must always leap",
+                "He must stop reading",
+                "Listening can take courage too"
+              ],
+              "correctIndex": 2,
+              "hint": "Take another look at that scene and notice what each person did."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b3-p10",
+      "number": 10,
+      "image": "imagenes/pagina-10.png",
+      "layout": "illustration-left",
+      "languages": {
+        "es": {
+          "title": "Una puerta que sigue abierta",
+          "paragraphs": [
+            "La semana siguiente, el rincón abrió de nuevo sin carteles de «final correcto». Había un lugar para leer en silencio, otro para escuchar a un amigo y una mesa para dibujar.",
+            "Teo enseñó a cuidar la bisagra. Alma añadió tarjetas con preguntas nuevas.",
+            "Dani leyó dos líneas en voz alta y pidió que nadie contara cuántas tardaba. Nico respetó su ritmo.",
+            "En su mochila seguía el libro azul; podía visitarlo cuando quisiera y cerrarlo para volver. Aquello era lo más extraordinario: no tenía que elegir entre el mundo de las historias y el suyo.",
+            "Podía llevar de uno al otro curiosidad, valor para pedir ayuda y ganas de escuchar. Al abrir la siguiente página, nadie sabía qué camino aparecería.",
+            "Esa era una buena razón para seguir leyendo."
+          ],
+          "alt": "Ilustración de una puerta que sigue abierta.",
+          "checkpoint": {
+            "explorador": {
+              "question": "¿Qué hace Dani en el rincón?",
+              "options": [
+                "Mide a todos",
+                "Cierra todos los libros",
+                "Lee a su propio ritmo"
+              ],
+              "correctIndex": 2,
+              "hint": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+            },
+            "lector": {
+              "question": "¿Qué puede llevar Nico entre ambos mundos?",
+              "options": [
+                "Curiosidad y ganas de escuchar",
+                "Poderes para mandar",
+                "Un final obligatorio"
+              ],
+              "correctIndex": 0,
+              "hint": "Vuelve a esa escena y fíjate en lo que hizo cada personaje."
+            }
+          }
+        },
+        "en": {
+          "title": "A door that stays open",
+          "paragraphs": [
+            "The next week the corner opened again, with no signs announcing a 'correct ending.' There was a place to read quietly, another to listen with a friend, and a table for drawing. Teo showed visitors how to care for the hinge.",
+            "Alma added fresh question cards. Dani read two lines aloud and asked everyone not to time him.",
+            "Nico let him set the pace. The blue book was still in Nico's bag.",
+            "He could visit it whenever he wanted and close it to return. The most extraordinary thing was that he didn't have to choose between the world of stories and his own.",
+            "He could carry curiosity, courage to ask for help, and the habit of listening between them. No one knew what path the next page would reveal.",
+            "That was a good reason to keep reading."
+          ],
+          "alt": "Illustration of a door that stays open.",
+          "checkpoint": {
+            "explorador": {
+              "question": "What does Dani do in the corner?",
+              "options": [
+                "Times everybody",
+                "Closes all books",
+                "Reads at his own pace"
+              ],
+              "correctIndex": 2,
+              "hint": "Take another look at that scene and notice what each person did."
+            },
+            "lector": {
+              "question": "What can Nico carry between worlds?",
+              "options": [
+                "Curiosity and a habit of listening",
+                "Powers to command",
+                "One forced ending"
+              ],
+              "correctIndex": 0,
+              "hint": "Take another look at that scene and notice what each person did."
+            }
+          }
+        }
+      }
+    }
+  ],
+  "vocabulary": {
+    "es": [
+      {
+        "word": "hinchada",
+        "syllables": "hin-cha-da",
+        "definition": "más grande por absorber agua"
+      },
+      {
+        "word": "reparación",
+        "syllables": "re-pa-ra-ción",
+        "definition": "trabajo para arreglar algo"
+      },
+      {
+        "word": "bisagra",
+        "syllables": "bi-sa-gra",
+        "definition": "pieza que permite girar una tapa o puerta"
+      },
+      {
+        "word": "bandeja",
+        "syllables": "ban-de-ja",
+        "definition": "base que sostiene objetos"
+      },
+      {
+        "word": "ritmo",
+        "syllables": "rit-mo",
+        "definition": "velocidad con que se hace algo"
+      },
+      {
+        "word": "curiosidad",
+        "syllables": "cu-rio-si-dad",
+        "definition": "ganas de saber o descubrir"
+      }
+    ],
+    "en": [
+      {
+        "word": "swollen",
+        "syllables": "swol-len",
+        "definition": "made larger by soaking up water"
+      },
+      {
+        "word": "repair",
+        "syllables": "re-pair",
+        "definition": "work done to fix something"
+      },
+      {
+        "word": "hinge",
+        "syllables": "hinge",
+        "definition": "the joint that lets a door turn"
+      },
+      {
+        "word": "tray",
+        "syllables": "tray",
+        "definition": "a flat base that holds things"
+      },
+      {
+        "word": "pace",
+        "syllables": "pace",
+        "definition": "the speed at which someone goes"
+      },
+      {
+        "word": "curiosity",
+        "syllables": "cu-ri-os-i-ty",
+        "definition": "a wish to learn or explore"
+      }
+    ]
+  },
+  "continuity": {
+    "magic": "Nico crosses while actively reading the open blue book; closing returns him; there are no real-world powers.",
+    "real_life": "The books teach habits, not automatic solutions. Nico must ask, listen, and act with others."
+  }
+}
