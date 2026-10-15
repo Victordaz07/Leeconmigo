@@ -7,6 +7,7 @@ import { Button, Card, ClosingCard, CoachBubble, colors, ComicPage, DialogCard, 
 import type { Energy } from '@lee-conmigo/ui-core';
 import { progressStoreFor, type ChildProfile } from '../app-state';
 import { useReadingSession, type ReadingSession } from '../session/use-reading-session';
+import { SHOW_DEV_TOOLS } from '../dev-tools';
 import { storyImage } from '../story-assets';
 
 const lectura = subjectById('lectura');
@@ -65,7 +66,7 @@ export function ReadingScreen({ story, profile, energy, goalMinutes, onExit }: R
           </View>
         )}
 
-        {__DEV__ && <DevPanel session={session} />}
+        {SHOW_DEV_TOOLS && <DevPanel session={session} />}
 
         {flow.screen === 'prep' && <PrepOverlay session={session} />}
         {flow.screen === 'pageDone' && (

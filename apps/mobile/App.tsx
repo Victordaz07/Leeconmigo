@@ -6,6 +6,7 @@ import { Button, Card, colors, fontFamily, GearIcon, HomeIcon, NavRail, TrophyIc
 import { energyOption, type Energy } from '@lee-conmigo/ui-core';
 import { PROFILES, progressStoreFor, type ChildProfile } from './src/app-state';
 import { createBundledRepository } from './src/bundled-stories';
+import { SHOW_DEV_TOOLS } from './src/dev-tools';
 import { useAppFonts } from './src/fonts';
 import { buildLibraryModel } from './src/library-model';
 import { EnergyScreen } from './src/screens/energy-screen';
@@ -23,7 +24,7 @@ const RAIL: NavRailItem[] = [
 ];
 const RAIL_BOTTOM: NavRailItem[] = [
   { key: 'padres', label: 'Padres', icon: () => <GearIcon /> },
-  ...(__DEV__ ? [{ key: 'dev', label: 'DEV', icon: () => <Text style={{ fontSize: 20 }}>⚙</Text> }] : []),
+  ...(SHOW_DEV_TOOLS ? [{ key: 'dev', label: 'DEV', icon: () => <Text style={{ fontSize: 20 }}>⚙</Text> }] : []),
 ];
 
 /**
