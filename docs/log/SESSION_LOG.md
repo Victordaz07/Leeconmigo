@@ -152,3 +152,16 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
   typecheck ✅, build web ✅, export android ✅.
 - Nota para Victor: con esta regla, un lector fluido que no pide ayuda saca 2 estrellas, no 3 (es a propósito: premia
   esfuerzo, no precisión). Si se quiere otra cosa, se cambia en `effort.ts`.
+
+## 2026-10-15 · Cuenta A · APK demo
+- Hecho: primer APK instalable (`com.kitewise.app` 0.1.0, ~100 MB, arm64-v8a + armeabi-v7a, firmado con la llave de
+  depuración — solo para probar, no para la tienda). `EXPO_PUBLIC_DEMO=1` muestra el panel de simulación (DEV ⚙) en un
+  build de release (`apps/mobile/src/dev-tools.ts`), porque sin voz real (RN-07) la lectura se maneja con él. Pasos en
+  `apps/mobile/README.md`. Sin permiso de micrófono todavía (llega con RN-07).
+- Cómo se compiló en la nube: SDK de Android bajado a `~/android-sdk` (commandline-tools + platform 36 + build-tools
+  36); Java 21 y Gradle ya venían. Maven Central (`repo.maven.apache.org`) respondía **429** desde la nube → script
+  `~/.gradle/init.d/maven-mirror.gradle` que pone primero el espejo de Google
+  (`maven-central.storage-download.googleapis.com/maven2`) en todas las listas de repositorios (el portal de plugins
+  también redirige a Maven Central). El script vive fuera del repo: si hace falta, recrearlo igual.
+- Pendiente: probarlo en la tablet/teléfono de Victor (no hay emulador aquí). Tamaño: se puede bajar mucho con un AAB
+  para la tienda (Play entrega solo la arquitectura del equipo).
