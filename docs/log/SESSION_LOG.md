@@ -102,3 +102,8 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
 - Pendiente: resto de K1 — componentes `NavRail`, `NotebookCover`, `SubjectTab`, `SessionPhases` y pantallas B3/B4.
 - Notas: el handoff pide `packages/ui` (web); por D7 se hace en `ui-native`/`apps/mobile` (ver tabla en `docs/13`).
   Capturas de las pantallas se sacaron del HTML con Playwright (artboards etiquetados "B3 · …").
+
+## 2026-10-15 · Cuenta A · D10 nombre
+- Hecho: Victor decidió "Kitewise el nombre oficial" (D10, resuelve C12). App nativa: nombre "Kitewise", slug
+  `kitewise`, identificador `com.kitewise.app`. CLAUDE.md, docs/12 (búsqueda de marca de "Kitewise"), docs/13 y
+  README de apps/mobile actualizados. Repo, paquetes `@lee-conmigo/*` y la app Capacitor de Noah conservan el nombre.

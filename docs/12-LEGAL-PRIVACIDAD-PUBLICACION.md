@@ -74,7 +74,7 @@ lista antes de agregarse.
 - [ ] **Ilustraciones generadas con IA**: revisar los términos de cada herramienta usada (uso comercial
       permitido, quién es dueño de las imágenes).
 - [ ] Historias originales: confirmar que ninguna copia personajes o textos con derechos de terceros.
-- [ ] Nombre **"Lee Conmigo"**: buscar si ya existe una marca o app con ese nombre (USPTO, tiendas).
+- [ ] Nombre **"Kitewise"** (D10): buscar si ya existe una marca o app con ese nombre (USPTO, Play Store, App Store) y el dominio.
 - [ ] Fuentes (Andika, Nunito): licencia OFL, permite uso en apps — incluir el aviso de licencia.
 - [ ] Revisión humana de todo el contenido para niños (ya es regla en F7).
 

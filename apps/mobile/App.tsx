@@ -48,7 +48,7 @@ function Root() {
         contentContainerStyle={[styles.list, { paddingTop: insets.top + 24, paddingBottom: insets.bottom + 32 }]}
         ListHeaderComponent={
           <View style={styles.header}>
-            <Text style={styles.title}>Lee Conmigo</Text>
+            <Text style={styles.title}>Kitewise</Text>
             <Text style={styles.subtitle}>{stories.length} historias listas para leer</Text>
             {__DEV__ && <Button label="Ver componentes" variant="secondary" onPress={() => setRoute({ name: 'showcase' })} />}
           </View>

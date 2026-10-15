@@ -41,8 +41,7 @@ Lo que **no cambia**: el motor de lectura y de voz, las reglas de `docs/06` (nun
 
 ## Lo que sigue abierto (ver `docs/DECISIONS.md`)
 
-- **C12 nombre:** ¿la app pasa a llamarse **Kitewise** o sigue "Lee Conmigo"? Afecta tienda, marca (búsqueda de marca,
-  `docs/12` §5) e identificador de la app.
+- ~~**C12 nombre**~~ → resuelto: **Kitewise es el nombre oficial** (D10).
 - **C13 foto de la tarea (P3):** usar la cámara y leer la foto en el dispositivo es una capacidad nueva. Antes de
   construirla: revisión de privacidad (`docs/12`). Se deja para el final.
 - **Contenido:** Matemáticas, Ciencia, Sociedad y Arte no tienen lecciones todavía (solo el piloto de 4.º del diseño).

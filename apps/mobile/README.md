@@ -1,4 +1,4 @@
-# apps/mobile — Lee Conmigo nativa (React Native + Expo)
+# apps/mobile — Kitewise (React Native + Expo)
 
 La app nueva (`docs/11-MIGRACION-REACT-NATIVE.md`). Convive con la app actual (`apps/reader`, Capacitor) hasta
 que la iguale. Usa los mismos paquetes de lógica del monorepo (`contracts`, `reading-engine`, `story-engine`,
@@ -44,8 +44,9 @@ rápido; **no reemplaza probar en Android** (la voz y algunos detalles nativos s
   `app.json`, nunca editando esas carpetas a mano.
 - React tiene que ser **una sola versión en todo el monorepo** (React Native lo exige): está fijada con
   `overrides` en el `package.json` de la raíz. Al subir de SDK de Expo, actualizar ahí también.
-- Identificador: `com.leeconmigo.mobile` (distinto de la app Capacitor, `com.leeconmigo.app`, para poder tener
-  las dos instaladas mientras dura la migración). Antes de publicar se decide el definitivo.
+- Nombre oficial **Kitewise** (D10). Identificador: `com.kitewise.app` (distinto de la app Capacitor de Noah,
+  `com.leeconmigo.app`, así se pueden tener las dos instaladas mientras dura la migración). Los paquetes internos
+  conservan el prefijo `@lee-conmigo/` (solo código, el usuario nunca lo ve).
 - Componentes y tokens nativos: `packages/ui-native` (tokens generados desde `packages/ui/src/styles/tokens.css`;
   `packages/ui-native/tests/tokens.test.ts` falla si se desincronizan). En desarrollo, "Ver componentes" abre la muestra.
 - Las historias se cargan con `require.context` de Metro (`src/bundled-stories.ts`): agregar un JSON en

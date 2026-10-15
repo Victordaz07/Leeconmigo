@@ -36,5 +36,5 @@
     "web": "expo start --web"
   },
   "private": true,
-  "description": "App nativa de Lee Conmigo (React Native + Expo) — ver docs/11-MIGRACION-REACT-NATIVE.md"
+  "description": "Kitewise — app nativa (React Native + Expo). Ver docs/11 y docs/13."
 }

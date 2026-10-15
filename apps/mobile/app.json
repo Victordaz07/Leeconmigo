@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "Lee Conmigo",
-    "slug": "lee-conmigo",
+    "name": "Kitewise",
+    "slug": "kitewise",
     "version": "0.1.0",
     "orientation": "default",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.leeconmigo.mobile"
+      "bundleIdentifier": "com.kitewise.app"
     },
     "android": {
       "adaptiveIcon": {
@@ -18,7 +18,7 @@
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
-      "package": "com.leeconmigo.mobile"
+      "package": "com.kitewise.app"
     },
     "web": {
       "favicon": "./assets/favicon.png"

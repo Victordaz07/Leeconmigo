@@ -1,4 +1,7 @@
-# Lee Conmigo
+# Kitewise (formerly Lee Conmigo)
+
+Official product name: **Kitewise** (DECISIÓN D10). The repo, the internal `@lee-conmigo/*`
+packages and Noah's Capacitor app keep the old name.
 
 Lee Conmigo is a bilingual (English/Spanish) read-aloud reading tutor app for
 children in grades 1–6, built primarily for Android tablets (iPad later).
