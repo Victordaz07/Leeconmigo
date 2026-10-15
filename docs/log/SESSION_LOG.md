@@ -35,3 +35,15 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
 - Pendiente: RN-01 (crear `apps/mobile`).
 - Notas: verificado que `contracts`, `reading-engine`, `session-engine` y `story-engine` no dependen del
   navegador (sin DOM; `progress-store.ts` ya abstrae el almacenamiento) → se reutilizan en React Native.
+
+## 2026-10-15 · Cuenta A · RN-01
+- Hecho: `apps/mobile` con Expo SDK 57 (React Native 0.86, TypeScript), dentro del monorepo. Pantalla inicial
+  con la lista de historias reales leídas de `@lee-conmigo/story-engine` vía `require.context`
+  (`src/bundled-stories.ts`). React unificado en 19.2.3 con `overrides` en la raíz (RN exige una sola copia;
+  antes había 19.3.0 en la app web).
+- Archivos: apps/mobile/*, package.json (overrides), package-lock.json
+- Verificado: `tsc` del paquete nuevo ✅, `expo export --platform android` empaqueta (713 módulos; títulos de
+  historias presentes en el bundle) ✅, `expo-doctor` 21/21 ✅, `npm test` 1068/1068 ✅, `npm run build` web ✅.
+- Pendiente: verlo en un Android real (no hay SDK de Android en el contenedor de la nube).
+- Notas: RN 0.86 pide Node ≥ 22.22.2 (aviso EBADENGINE con 22.22.0). Plantilla de Expo trae `AGENTS.md` y
+  `.claude/settings.json` (plugin oficial de Expo) — se conservan.

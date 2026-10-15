@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "Lee Conmigo",
+    "slug": "lee-conmigo",
+    "version": "0.1.0",
+    "orientation": "default",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.leeconmigo.mobile"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#F6F8FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "com.leeconmigo.mobile"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}

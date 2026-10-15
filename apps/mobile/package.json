@@ -1,0 +1,28 @@
+{
+  "name": "@lee-conmigo/mobile",
+  "version": "0.1.0",
+  "main": "index.ts",
+  "dependencies": {
+    "expo": "~57.0.29",
+    "expo-status-bar": "~57.0.1",
+    "react": "19.2.3",
+    "react-native": "0.86.3",
+    "@lee-conmigo/contracts": "*",
+    "@lee-conmigo/reading-engine": "*",
+    "@lee-conmigo/story-engine": "*",
+    "@lee-conmigo/session-engine": "*"
+  },
+  "devDependencies": {
+    "@types/react": "~19.2.2",
+    "typescript": "~6.0.3"
+  },
+  "scripts": {
+    "start": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "typecheck": "tsc --noEmit",
+    "export:android": "expo export --platform android --output-dir dist"
+  },
+  "private": true,
+  "description": "App nativa de Lee Conmigo (React Native + Expo) — ver docs/11-MIGRACION-REACT-NATIVE.md"
+}
