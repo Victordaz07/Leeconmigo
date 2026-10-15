@@ -210,7 +210,7 @@ Cuáles quedan confirmadas y cuáles necesitan una respuesta: `docs/DECISIONS.md
 ### Choques con decisiones escritas (requieren respuesta de Victor)
 | # | Plan v2 dice | Repo / docs dicen | Pregunta |
 |---|---|---|---|
-| C1 | "PWA, no app nativa" | App Capacitor ya empaquetada y probada en la tablet; la voz NO usa Kotlin (Whisper corre en el WebView) | ¿Se mantiene Capacitor como envoltorio (la lógica sigue siendo web) o se migra a PWA pura? |
+| C1 | "PWA, no app nativa" | App Capacitor ya empaquetada y probada en la tablet; la voz NO usa Kotlin (Whisper corre en el WebView) | ✅ Resuelto (D7): ni PWA ni Capacitor → React Native + Expo (`docs/11`) |
 | C2 | Tipografía Atkinson Hyperlegible / Lexend | `docs/05`: Andika (lectura) + Nunito (UI) del prototipo aprobado | ¿Cambiar fuente de lectura? |
 | C3 | Fondo crema, modo oscuro | `docs/05`: `#F6F7FB` (gris azulado claro) | ¿Cambiar paleta? |
 | C4 | Módulo de matemáticas (F5) | `docs/00`: producto de lectura; regla "¿mantiene la lectura como protagonista?" | ¿Matemáticas entra en el alcance de v1? |

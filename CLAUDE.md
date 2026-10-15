@@ -13,10 +13,19 @@ do not invent an answer — implement behind an abstraction/flag and ask.
 
 ## Core architecture
 
-Frontend: React + Vite + TypeScript
-Mobile runtime: Capacitor
-Android native layer: Kotlin
-State: local-first, no cloud in v1
+**Migrating (DECISIÓN D7, 2026-10-15):** React Native + Expo, Android first,
+iOS later — plan in `docs/11-MIGRACION-REACT-NATIVE.md`. Pure-logic packages
+(`contracts`, `reading-engine`, `session-engine`, `story-engine`) are shared;
+UI is rebuilt in `apps/mobile` + `packages/ui-native`.
+
+Current app (stays in use for Noah until parity): React + Vite + TypeScript
+in Capacitor (`apps/reader`, `packages/ui`). Whisper runs locally in the WebView.
+
+State: local-first, no cloud in v1.
+
+The app will be published to other families (D8): no third-party SDKs that
+collect data, and everything in `docs/12-LEGAL-PRIVACIDAD-PUBLICACION.md`
+before release.
 
 ## Architectural rule (non-negotiable)
 
@@ -58,6 +67,8 @@ device. See `docs/07-PRIVACY-AUDIO.md`.
 @docs/08-ROADMAP.md
 @docs/09-OPEN-DECISIONS.md
 @docs/DECISIONS.md
+@docs/11-MIGRACION-REACT-NATIVE.md
+@docs/12-LEGAL-PRIVACIDAD-PUBLICACION.md
 
 Plan Maestro v2 (propuesta de lectura + matemáticas + Modo Enfoque, con su
 reconciliación contra lo ya construido): `docs/10-PLAN-MAESTRO-V2.md`. Las
@@ -69,9 +80,9 @@ partes que chocan con una `DECISIÓN` están en `docs/DECISIONS.md` →
 - Reading Session UI/UX prototype (Claude Design canvas, Spanish, single
   story "La luna y la puerta azul") exists and is approved as a starting
   visual/interaction reference — see `04-READING-SESSION.md`.
-- Prototipo 00 (real speech recognition test on Noah's tablet) has not run
-  yet. **Do not build the real SpeechEngine/Android audio layer before that
-  test produces a decision** — build everything else against
+- Real voice already works in the Capacitor app (Whisper local, see
+  `docs/DEVLOG.md`). In the React Native app, voice starts with a technical
+  test (RN-03, `whisper.rn`) before building on it — build screens against
   `FakeSpeechEngine` first.
 
 ## PROTOCOLO DE RELEVO (obligatorio)

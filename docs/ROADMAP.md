@@ -4,11 +4,31 @@ Visión y fases de producto: `docs/08-ROADMAP.md`. Plan que origina estos IDs: `
 Estados: ✅ hecho · 🟡 en curso · ⬜ por hacer · ⏸️ bloqueado (esperando decisión, ver `docs/DECISIONS.md`).
 Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`…).
 
+> Desde D7, las tareas de UI de F2–F6 se construyen en la app nueva (`apps/mobile`), no en `apps/reader`.
+> Las de lógica pura (p. ej. F2-04a) sirven para las dos.
+
 | ID | Tarea | Estado | Cuenta | Rama / nota |
 |---|---|---|---|---|
 | **F0** | **Diseño (Claude Design)** | | | |
 | F0-01 | Variante "Modo Enfoque" de las pantallas existentes + pantallas nuevas (ver plan §3) | ⬜ | – | Victor en Claude Design; exportar a `docs/design/` |
 | F0-02 | Decidir tipografía/paleta (C2, C3) | ⏸️ | – | espera respuesta de Victor |
+| **RN** | **Migración a React Native + Expo** (D7, `docs/11`) | | | |
+| RN-00 | Registrar decisión, plan de migración y lista legal | ✅ | A | `claude/gracious-shannon-a0238d` |
+| RN-01 | Crear `apps/mobile` (Expo + TS) usando `contracts`/`reading-engine`/`story-engine` | ⬜ | – | siguiente |
+| RN-02 | Tokens en TS + fuentes + componentes base en `packages/ui-native` | ⬜ | – | |
+| RN-03 | Prueba técnica de voz con `whisper.rn` en la tablet de Noah | ⬜ | – | decide el motor de voz nativo |
+| RN-04 | Pantalla de lectura con `FakeReadingEngine` | ⬜ | – | |
+| RN-05 | Cómic: globos + acomodo de texto (24 historias) | ⬜ | – | lo más delicado |
+| RN-06 | Resto del flujo + Modo padres con PIN → **RN-CP1** paridad con simulador | ⬜ | – | |
+| RN-07 | `WhisperNativeSpeechEngine` + `RealReadingEngine` | ⬜ | – | depende de RN-03 |
+| RN-08 | Almacenamiento local + migración de progreso → **RN-CP2** Noah usa la nueva | ⬜ | – | |
+| RN-09 | Build iOS | ⬜ | – | necesita cuenta Apple / EAS |
+| **P** | **Publicación** (D8, `docs/12`) | | | |
+| P-01 | Revisión con abogado (COPPA / California) | ⬜ | Victor | |
+| P-02 | Política de privacidad, términos, avisos y descargos (borradores para el abogado) | ⬜ | – | |
+| P-03 | Botón "Borrar todos los datos" + candado de padres para enlaces externos | ⬜ | – | en la app nueva |
+| P-04 | Cuenta Google Play + prueba cerrada con familias | ⬜ | Victor | depende de C11 |
+| P-05 | Búsqueda de marca "Lee Conmigo" + términos de las herramientas de ilustración | ⬜ | Victor | |
 | **F1** | **Repo y relevo** | | | |
 | F1-01 | Monorepo Vite + React + TS | ✅ | – | ya existía |
 | F1-02 | `HANDOFF.md`, `docs/ROADMAP.md`, `docs/log/SESSION_LOG.md`, `docs/DECISIONS.md`, `/retomar`, `/relevo`, protocolo en `CLAUDE.md` | ✅ | A | `claude/gracious-shannon-a0238d` |
