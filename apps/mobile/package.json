@@ -3,14 +3,22 @@
   "version": "0.1.0",
   "main": "index.ts",
   "dependencies": {
+    "@expo-google-fonts/andika": "^0.4.1",
+    "@expo-google-fonts/nunito": "^0.4.2",
+    "@expo/metro-runtime": "~57.0.17",
+    "@lee-conmigo/contracts": "*",
+    "@lee-conmigo/reading-engine": "*",
+    "@lee-conmigo/session-engine": "*",
+    "@lee-conmigo/story-engine": "*",
+    "@lee-conmigo/ui-native": "*",
     "expo": "~57.0.29",
+    "expo-font": "~57.0.4",
+    "expo-linear-gradient": "~57.0.2",
     "expo-status-bar": "~57.0.1",
     "react": "19.2.3",
     "react-native": "0.86.3",
-    "@lee-conmigo/contracts": "*",
-    "@lee-conmigo/reading-engine": "*",
-    "@lee-conmigo/story-engine": "*",
-    "@lee-conmigo/session-engine": "*"
+    "react-native-svg": "15.15.4",
+    "react-native-web": "^0.21.2"
   },
   "devDependencies": {
     "@types/react": "~19.2.2",
@@ -21,7 +29,8 @@
     "android": "expo run:android",
     "ios": "expo run:ios",
     "typecheck": "tsc --noEmit",
-    "export:android": "expo export --platform android --output-dir dist"
+    "export:android": "expo export --platform android --output-dir dist",
+    "web": "expo start --web"
   },
   "private": true,
   "description": "App nativa de Lee Conmigo (React Native + Expo) — ver docs/11-MIGRACION-REACT-NATIVE.md"
