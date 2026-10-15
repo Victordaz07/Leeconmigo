@@ -15,7 +15,7 @@ import type { ReadingSessionState, ReadingTimerSnapshot, Story } from '@lee-conm
 import { FakeReadingEngine, vocabularyKey } from '@lee-conmigo/reading-engine';
 import { buildSessionSummary, formatDuration, initialFlow, reduceFlow, type FlowAction, type ProgressStore } from '@lee-conmigo/session-engine';
 import { tokenizePage, type StoryWord } from '@lee-conmigo/story-engine';
-import { cleanWord, defaultPrefs, deriveReadingView, type ReaderPrefs } from '@lee-conmigo/ui-core';
+import { cleanWord, defaultPrefs, deriveReadingView, effortReason, effortStars, kiteMeters, type Energy, type FocusSelfReport, type ReaderPrefs } from '@lee-conmigo/ui-core';
 import { speak, stopSpeaking } from '../tts';
 
 /** Cuánto se ve el aviso de "página completa" antes de seguir sola (igual que en la app web). */
@@ -34,9 +34,13 @@ export interface ReadingSessionOptions {
   prefs?: ReaderPrefs;
   /** Reloj inyectable (pruebas). */
   now?: () => Date;
+  /** Energía con la que llegó hoy (B2); se guarda en el resumen. */
+  energy?: Energy;
+  /** Meta diaria del padre (min): para el "sello del día" del cierre. */
+  dailyGoalMinutes?: number;
 }
 
-export function useReadingSession(story: Story, { store, prefs = defaultPrefs, now = () => new Date() }: ReadingSessionOptions) {
+export function useReadingSession(story: Story, { store, prefs = defaultPrefs, now = () => new Date(), energy, dailyGoalMinutes = 15 }: ReadingSessionOptions) {
   const [engine] = useState(() => new FakeReadingEngine());
   // Se retoma donde se quedó (a nivel de página), como en la app web.
   const [flow, dispatch] = useReducer(reduceFlow, null, () => {
@@ -68,24 +72,30 @@ export function useReadingSession(story: Story, { store, prefs = defaultPrefs, n
   flowRef.current = flow;
   /** Ya se guardó el resumen de esta sesión (para no guardarlo dos veces). */
   const summarySaved = useRef(false);
+  /** Esfuerzo de la sesión para las estrellas del cierre (D11): ¿pidió ayuda o reintentó? ¿cuántas pausas largas? */
+  const effort = useRef({ helpedOrRetried: false, longPauses: 0 });
 
   const saveResume = (pageIndex: number) => store.setResumePoint({ storyId: story.id, pageIndex, updatedAt: now().toISOString() });
 
-  /** Guarda el resumen de la sesión en curso (una sola vez; sin páginas leídas no hay nada que guardar). */
-  const persistSession = () => {
+  /**
+   * Guarda el resumen de la sesión en curso (una sola vez; sin páginas leídas no hay nada que guardar). Las estrellas son
+   * las de ESFUERZO (D11), no las de precisión que calcula `buildSessionSummary` para la app web.
+   */
+  const persistSession = (focusSelfReport?: FocusSelfReport) => {
     const f = flowRef.current;
     if (summarySaved.current || f.totals.pagesRead === 0) return;
     summarySaved.current = true;
     const t = engine.getTimerSnapshot();
-    store.saveSummary(
-      buildSessionSummary({
-        story: { id: story.id, language: story.language, level: story.level, pageCount: story.pages.length, category: story.category },
-        flow: f,
-        validReadingSeconds: t.validSeconds,
-        sessionSeconds: t.sessionSeconds,
-        now: now(),
-      }),
-    );
+    const base = buildSessionSummary({
+      story: { id: story.id, language: story.language, level: story.level, pageCount: story.pages.length, category: story.category },
+      flow: f,
+      validReadingSeconds: t.validSeconds,
+      sessionSeconds: t.sessionSeconds,
+      now: now(),
+    });
+    const stars = effortStars({ completed: base.completion >= 1, ...effort.current });
+    const { stars: _accuracyStars, ...rest } = base;
+    store.saveSummary({ ...rest, ...(stars ? { stars } : {}), ...(focusSelfReport ? { focusSelfReport } : {}), ...(energy ? { energy } : {}) });
   };
   const screenRef = useRef(flow.screen);
   screenRef.current = flow.screen;
@@ -94,6 +104,8 @@ export function useReadingSession(story: Story, { store, prefs = defaultPrefs, n
   useEffect(() => {
     const off = engine.subscribe((event, state) => {
       setReading(state);
+      if (event?.type === 'help.requested' || event?.type === 'word.repeated' || state.recovered) effort.current.helpedOrRetried = true;
+      if (event?.type === 'pause.detected' && state.pause === 'long') effort.current.longPauses += 1;
       if (event?.type === 'page.completed') {
         const w = wordsRef.current;
         dispatch({ type: 'reading.pageCompleted', stats: { errorCount: state.errorCount, wordCount: w.length, practicedKeys: practicedKeysOf(state.practicedWordIndices, w) } });
@@ -141,11 +153,11 @@ export function useReadingSession(story: Story, { store, prefs = defaultPrefs, n
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [flow.screen]);
 
-  // Al terminar la historia: se cierra el temporizador, se guarda el resumen y ya no hay nada que retomar.
+  // Al terminar la historia: se cierra el temporizador y ya no hay nada que retomar. El resumen se guarda al cerrar el
+  // cierre (B13), con la carita de enfoque que elija el niño (o sin ella si sale con Volver).
   useEffect(() => {
     if (flow.screen !== 'end') return;
     engine.simulate.completeStory();
-    persistSession();
     store.clearResumePoint(story.id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [flow.screen, engine]);
@@ -157,6 +169,7 @@ export function useReadingSession(story: Story, { store, prefs = defaultPrefs, n
 
   const begin = () => {
     summarySaved.current = false;
+    effort.current = { helpedOrRetried: false, longPauses: 0 };
     pageStartedAt.current = now().getTime();
     engine.startSession(words);
     saveResume(flow.pageIndex);
@@ -165,6 +178,7 @@ export function useReadingSession(story: Story, { store, prefs = defaultPrefs, n
 
   const restart = () => {
     summarySaved.current = false;
+    effort.current = { helpedOrRetried: false, longPauses: 0 };
     engine.simulate.autoRead(false);
     engine.startSession(tokenizePage(story.pages[0]));
     saveResume(0);
@@ -195,6 +209,24 @@ export function useReadingSession(story: Story, { store, prefs = defaultPrefs, n
     setVoiceProblem(null);
     engine.simulate.autoRead(false);
   };
+
+  /** Datos del cierre (B13), derivados de lo que realmente pasó en la sesión. */
+  const closing = (() => {
+    if (flow.screen !== 'end') return null;
+    const valid = timer.validSeconds;
+    const today = now().toISOString().slice(0, 10);
+    const todaySeconds = store.summaries().filter((x) => x.completedAt.slice(0, 10) === today).reduce((n, x) => n + x.validReadingSeconds, 0) + (summarySaved.current ? 0 : valid);
+    return {
+      stars: effortStars({ completed: true, ...effort.current }),
+      reason: effortReason(effort.current),
+      minutes: Math.max(1, Math.round(valid / 60)),
+      kiteMeters: kiteMeters(valid),
+      /** Sello del día: la lectura de hoy ya llegó a la meta del padre. */
+      dailyStamp: todaySeconds >= dailyGoalMinutes * 60,
+      /** Palabras que costaron: vuelven en el repaso. */
+      returning: flow.totals.practicedKeys.length,
+    };
+  })();
 
   const current = reading.hasHeardVoice ? words[Math.min(reading.currentWordIndex, words.length - 1)] : undefined;
 
@@ -243,6 +275,7 @@ export function useReadingSession(story: Story, { store, prefs = defaultPrefs, n
     currentParagraph: current ? { block: current.blockIndex, line: current.lineIndex } : null,
     voiceProblem,
     freeReading,
+    closing,
     /** Tarjeta "Te espero…" de la pausa larga (B11). Nunca en modo libre: nadie le habla al micrófono. */
     showPauseCard: flow.screen === 'reading' && reading.pause === 'long' && !pauseDismissed && !freeReading && reading.helpWordIndex === null,
     actions: {
@@ -255,6 +288,8 @@ export function useReadingSession(story: Story, { store, prefs = defaultPrefs, n
       askHelp: () => engine.requestHelp(),
       readStart: () => engine.requestReadStart(),
       dismissPause: () => setPauseDismissed(true),
+      /** "Listo" en el cierre: guarda el resumen con la carita de enfoque elegida. */
+      finish: (focus?: FocusSelfReport) => persistSession(focus),
       freeAdvance,
       startFreeReading,
       /** "Pedir permiso": con el motor real abrirá el permiso del sistema (RN-07). Con el simulador solo cierra el aviso. */

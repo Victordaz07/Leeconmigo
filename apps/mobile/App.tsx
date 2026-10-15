@@ -3,12 +3,15 @@ import { useMemo, useState } from 'react';
 import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Button, Card, colors, fontFamily, GearIcon, HomeIcon, NavRail, TrophyIcon, type NavRailItem } from '@lee-conmigo/ui-native';
-import { DEFAULT_CHILD, progressStore } from './src/app-state';
+import { energyOption, type Energy } from '@lee-conmigo/ui-core';
+import { PROFILES, progressStoreFor, type ChildProfile } from './src/app-state';
 import { createBundledRepository } from './src/bundled-stories';
 import { useAppFonts } from './src/fonts';
 import { buildLibraryModel } from './src/library-model';
+import { EnergyScreen } from './src/screens/energy-screen';
 import { HomeScreen } from './src/screens/home-screen';
 import { NotebookScreen } from './src/screens/notebook-screen';
+import { ProfilesScreen } from './src/screens/profiles-screen';
 import { ReadingScreen } from './src/screens/reading-screen';
 import { Showcase } from './src/screens/showcase';
 
@@ -24,7 +27,7 @@ const RAIL_BOTTOM: NavRailItem[] = [
 ];
 
 /**
- * Kitewise (D9/D10, docs/13): Inicio con la estantería de cuadernos (B3) → cuaderno de Lectura (B4) → lectura. Logros y
+ * Kitewise (D9/D10, docs/13): ¿Quién aprende hoy? (B1) → ¿Cómo llegas hoy? (B2, si el padre lo dejó activo) → Inicio con la estantería de cuadernos (B3) → cuaderno de Lectura (B4) → lectura. Logros y
  * Padres llegan en K4/K8. En desarrollo, "DEV" abre la lista completa de historias y la muestra de componentes.
  */
 export default function App() {
@@ -39,12 +42,35 @@ export default function App() {
 function Root() {
   const fontsLoaded = useAppFonts();
   const repository = useMemo(() => createBundledRepository(), []);
+  const [profile, setProfile] = useState<ChildProfile | null>(null);
+  // `undefined` = todavía no respondió "¿Cómo llegas hoy?"; `null` = no se pregunta (ajuste de padres).
+  const [energy, setEnergy] = useState<Energy | null | undefined>(undefined);
   const [route, setRoute] = useState<Route>({ name: 'home' });
   // Sube cada vez que se sale de una lectura: el progreso cambió y hay que recalcular Inicio y el cuaderno.
   const [progressVersion, setProgressVersion] = useState(0);
-  const model = useMemo(() => buildLibraryModel(repository, progressStore, DEFAULT_CHILD), [repository, progressVersion]);
+  const model = useMemo(() => (profile ? buildLibraryModel(repository, progressStoreFor(profile.id), profile) : null), [repository, profile, progressVersion]);
 
   if (!fontsLoaded) return <View style={styles.screen} />;
+
+  if (!profile || !model) {
+    return (
+      <ProfilesScreen
+        profiles={PROFILES}
+        onPick={(p) => {
+          setProfile(p);
+          setEnergy(p.askEnergy ? undefined : null);
+          setRoute({ name: 'home' });
+        }}
+      />
+    );
+  }
+  if (energy === undefined) return <EnergyScreen name={profile.name} onStart={setEnergy} />;
+
+  const minutes = energy ? energyOption(energy).minutes : profile.dailyGoalMinutes;
+  const switchProfile = () => {
+    setProfile(null);
+    setEnergy(undefined);
+  };
 
   if (route.name === 'reading') {
     const story = repository.get(route.storyId);
@@ -54,6 +80,9 @@ function Root() {
         <ReadingScreen
           key={story.id}
           story={story}
+          profile={profile}
+          energy={energy}
+          goalMinutes={minutes}
           onExit={() => {
             setProgressVersion((v) => v + 1);
             setRoute(back === 'home' ? { name: 'home' } : { name: 'notebook' });
@@ -63,7 +92,7 @@ function Root() {
     }
   }
   if (route.name === 'notebook') {
-    return <NotebookScreen profile={DEFAULT_CHILD} model={model} repository={repository} onBack={() => setRoute({ name: 'home' })} onRead={(storyId) => setRoute({ name: 'reading', storyId, from: 'notebook' })} />;
+    return <NotebookScreen profile={profile} model={model} repository={repository} onBack={() => setRoute({ name: 'home' })} onRead={(storyId) => setRoute({ name: 'reading', storyId, from: 'notebook' })} />;
   }
   if (route.name === 'showcase') return <Showcase onBack={() => setRoute({ name: 'dev' })} />;
   if (route.name === 'dev') return <DevList repository={repository} onOpen={(storyId) => setRoute({ name: 'reading', storyId, from: 'home' })} onShowcase={() => setRoute({ name: 'showcase' })} onBack={() => setRoute({ name: 'home' })} />;
@@ -73,10 +102,12 @@ function Root() {
       <NavRail items={RAIL} bottomItems={RAIL_BOTTOM} active="home" onSelect={(key) => key === 'dev' && setRoute({ name: 'dev' })} />
       <View style={styles.screen}>
         <HomeScreen
-          profile={DEFAULT_CHILD}
+          profile={profile}
+          minutes={minutes}
           model={model}
           onContinue={() => setRoute({ name: 'reading', storyId: model.featured.entry.id, from: 'home' })}
           onOpenReading={() => setRoute({ name: 'notebook' })}
+          onSwitchProfile={switchProfile}
         />
       </View>
     </View>

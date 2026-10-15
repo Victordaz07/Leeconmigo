@@ -1,5 +1,5 @@
 import { LinearGradient } from 'expo-linear-gradient';
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { SUBJECTS } from '@lee-conmigo/ui-core';
 import { Button, colors, fontFamily, gradients, GradientView, NotebookCover, radius, SessionPhases, StatChip } from '@lee-conmigo/ui-native';
@@ -11,16 +11,20 @@ const LANGUAGE_NAME = { es: 'Español', en: 'English' } as const;
 
 interface HomeScreenProps {
   profile: ChildProfile;
+  /** Minutos de la misión de hoy (según "¿Cómo llegas hoy?" o la meta del padre). */
+  minutes: number;
   model: LibraryModel;
   onContinue: () => void;
   onOpenReading: () => void;
+  /** Tocar el avatar vuelve a "¿Quién aprende hoy?" (B1). */
+  onSwitchProfile: () => void;
 }
 
 /**
  * Inicio (Kitewise B3, `docs/design/kitewise/screens/B3.webp`): saludo, racha y estrellas reales, la misión de hoy y la
  * estantería de cuadernos. Hoy solo Lectura tiene contenido; las demás materias se ven como "Pronto" (no se inventan).
  */
-export function HomeScreen({ profile, model, onContinue, onOpenReading }: HomeScreenProps) {
+export function HomeScreen({ profile, minutes, model, onContinue, onOpenReading, onSwitchProfile }: HomeScreenProps) {
   const insets = useSafeAreaInsets();
   const { featured, featuredStory, stats } = model;
   const cover = featuredStory.cover ? storyImage(featuredStory.cover.src) : storyImage(featuredStory.pages[0].illustration.src);
@@ -31,20 +35,22 @@ export function HomeScreen({ profile, model, onContinue, onOpenReading }: HomeSc
       <View style={styles.header}>
         <View style={styles.greeting}>
           <Text style={styles.hello}>¡Hola, {profile.name}!</Text>
-          <Text style={styles.sub}>Hoy son {profile.dailyGoalMinutes} minutos. Yo te guío.</Text>
+          <Text style={styles.sub}>Hoy son {minutes} minutos. Yo te guío.</Text>
         </View>
         <StatChip icon={<Text style={styles.flame}>🔥</Text>} label={`${stats.streakDays} ${stats.streakDays === 1 ? 'día' : 'días'}`} accessibilityLabel={`Racha de ${stats.streakDays} días`} />
         <StatChip icon={<Text style={styles.star}>★</Text>} label={String(stats.starsTotal)} accessibilityLabel={`${stats.starsTotal} estrellas`} />
-        <GradientView gradient={gradients.sunDiag} style={styles.avatar}>
-          <Text style={styles.avatarText}>{profile.name.slice(0, 1).toUpperCase()}</Text>
-        </GradientView>
+        <Pressable onPress={onSwitchProfile} accessibilityRole="button" accessibilityLabel="Cambiar de niño">
+          <GradientView gradient={gradients[profile.avatar]} style={styles.avatar}>
+            <Text style={styles.avatarText}>{profile.name.slice(0, 1).toUpperCase()}</Text>
+          </GradientView>
+        </Pressable>
       </View>
 
       <View style={styles.mission}>
         {cover && <Image source={cover} style={FILL} resizeMode="cover" />}
         <LinearGradient colors={['rgba(16,24,64,0.9)', 'rgba(16,24,64,0.55)', 'rgba(16,24,64,0)']} locations={[0, 0.45, 0.8]} start={{ x: 0, y: 0.5 }} end={{ x: 1, y: 0.5 }} style={StyleSheet.absoluteFill} />
         <View style={styles.missionText}>
-          <Text style={styles.missionKicker}>MISIÓN DE HOY · {profile.dailyGoalMinutes} MIN</Text>
+          <Text style={styles.missionKicker}>MISIÓN DE HOY · {minutes} MIN</Text>
           <Text style={styles.missionTitle} numberOfLines={2}>
             {featuredStory.title}
           </Text>

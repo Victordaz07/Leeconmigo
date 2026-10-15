@@ -137,3 +137,18 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
 - Pendiente: G12 (sin conexión) — se pospone hasta que existan paquetes de contenido descargables; el texto del diseño
   ("se sincroniza cuando vuelva el internet") contradice "sin nube en v1" y habrá que ajustarlo. "Guardar en mi
   cuaderno" (G13) llega con Mi cuaderno (K8). "Pedir permiso" abrirá el permiso del sistema con el motor real (RN-07).
+
+## 2026-10-15 · Cuenta A · K3
+- Hecho: regla de estrellas por esfuerzo aprobada por Victor (D11: terminar = 1, +1 si pidió ayuda o reintentó, +1 si
+  leyó sin pausas largas) en `ui-core/src/effort.ts` con pruebas; también metros del papalote, opciones de energía y
+  caritas de enfoque. `SessionSummary` gana `focusSelfReport?` y `energy?` (opcionales). B13: `ClosingCard` en
+  `ui-native` reemplaza `EndOverlay` (Tiempo, Papalote, Sello del día, Vuelven; "¿Cómo estuvo tu enfoque?"; "Leer de
+  nuevo" / "Listo"); el resumen se guarda al cerrar, con la carita elegida. B1 `ProfilesScreen` ("Agregar niño" inactivo
+  hasta K4). B2 `EnergyScreen` (20/15/8 min) → los minutos de Inicio y la meta del "Sello del día" salen de ahí.
+  `app-state`: `PROFILES` + `progressStoreFor(id)` (progreso aparte por niño). Tocar el avatar en Inicio vuelve a B1.
+  El micrófono del riel queda gris fuera de la lectura (antes se veía verde en el cierre).
+- Verificado: recorrido Playwright B1 → B2 (Cansado) → Inicio "8 MIN" → lectura completa → B13 (2 ★ "por leer sin
+  parar") → carita + Listo → Inicio con racha 1 día, 2 ★ y la misión pasa a la siguiente historia. `npm test` 1093 ✅,
+  typecheck ✅, build web ✅, export android ✅.
+- Nota para Victor: con esta regla, un lector fluido que no pide ayuda saca 2 estrellas, no 3 (es a propósito: premia
+  esfuerzo, no precisión). Si se quiere otra cosa, se cambia en `effort.ts`.

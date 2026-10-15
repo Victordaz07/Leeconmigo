@@ -1,9 +1,9 @@
 # HANDOFF — estado actual
 Actualizado: 2026-10-15 · Cuenta: A · Rama: claude/gracious-shannon-a0238d
-Último commit: ver `git log -1` ("K2: lectura …")
+Último commit: ver `git log -1` ("K3: …")
 
 ## Tarea en curso
-Ninguna a medias. K2 ✅ (lectura B9 + estados B11, G11, G13). Siguiente: K3.
+Ninguna a medias. K3 ✅ (cierre B13, perfiles B1, ¿Cómo llegas? B2). Siguiente: K4.
 
 ## Hecho en RN-01
 - [x] `apps/mobile` (Expo SDK 57, RN 0.86, TS) dentro del monorepo
@@ -19,19 +19,18 @@ Ninguna a medias. K2 ✅ (lectura B9 + estados B11, G11, G13). Siguiente: K3.
 - [x] K1: componentes + Inicio (B3) + Cuaderno (B4)
 - [x] D10: nombre oficial Kitewise (`com.kitewise.app`)
 - [x] K2: lectura en el cuaderno (riel, hoja de papel, coach estrella) + pausa, sin micrófono, ayuda
+- [x] K3: cierre por esfuerzo (D11), elegir perfil, energía del día; progreso aparte por niño
 
 ## Siguiente paso exacto
-**K3 — Cierre (B13), perfiles (B1) y "¿Cómo llegas?" (B2).** Referencias: `docs/design/kitewise/screens/B13.webp`, `B1.webp`,
-`B2.webp`.
-1. B13 en `reading-screen.tsx` (reemplaza `EndOverlay`, hay un TODO): "¡Buen trabajo, {nombre}!", 3 estrellas POR
-   ESFUERZO (no por precisión: decidir cómo con `starsFor`/esfuerzo — p. ej. terminar = 1, ayuda pedida o reintento = +1,
-   lectura sin pausas largas = +1; documentarlo y probarlo en ui-core), tarjetas Tiempo / Papalote (+m) / Sello del día /
-   Vuelven (palabras practicadas), "¿Cómo estuvo tu enfoque?" con 3 caritas (se guarda en el resumen como autoevaluación;
-   agregar el campo al contrato `SessionSummary` como opcional), botones "Guardar en mi cuaderno" (solo si K8 existe; si no,
-   no mostrarlo) y "Listo".
-2. B1 Elegir perfil: avatares + "Agregar niño" (pide PIN → K4). Perfiles en `app-state.ts` (todavía en memoria).
-3. B2 ¿Cómo llegas?: 3 opciones 20/15/8 min → guarda `energy` en la sesión (`SPEC.md` §7 `Session`).
-Pregunta abierta para Victor si hace falta: cómo se calculan las estrellas "por esfuerzo".
+**K4 — Padres: bienvenida + PIN (P1), panel de hoy (P2), ajustes (P4).** Referencias: `docs/design/kitewise/screens/P1.webp`,
+`P2.webp`, `P4.webp`, `SPEC.md`.
+1. PIN de padres en la app nativa (la lógica de la web está en `apps/reader/src/parent-settings.ts`: reutilizar o pasar
+   a `session-engine`/`ui-core` lo que sea puro). El ícono "Padres" del `NavRail` abre el candado.
+2. P2 panel de hoy con datos REALES del `progressStoreFor(id)` (minutos válidos, historias, palabras practicadas,
+   caritas de enfoque `focusSelfReport`, energía). Nunca grabaciones; "La voz de tu hijo nunca se graba ni se almacena."
+3. P4 ajustes: meta diaria, nivel, idioma, preguntar energía (`askEnergy`), Modo Enfoque (solo guardar el ajuste; aplicarlo
+   es K7), "Borrar todos los datos" (P-03). Con PIN: activar "Agregar niño" en B1 (`profiles-screen.tsx`).
+Todo sigue en memoria hasta RN-08.
 
 ## Cuidado con
 - **No borrar `apps/reader` ni `packages/ui`**: Noah sigue usando la app Capacitor hasta RN-CP2.
@@ -44,4 +43,4 @@ Pregunta abierta para Victor si hace falta: cómo se calculan las estrellas "por
 - `npm ci` en la nube: usar `--ignore-scripts` (postinstall de `onnxruntime-node`).
 
 ## Estado de pruebas
-`npm test`: 1088/1088 ✅ · `npm run typecheck`: ✅ (incluye mobile, ui-native y ui-core)
+`npm test`: 1093/1093 ✅ · `npm run typecheck`: ✅ (incluye mobile, ui-native y ui-core)

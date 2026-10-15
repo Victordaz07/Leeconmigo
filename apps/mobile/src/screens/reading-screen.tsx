@@ -3,8 +3,9 @@ import { Image, Pressable, ScrollView, StyleSheet, Text, View, type LayoutChange
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { Story } from '@lee-conmigo/contracts';
 import { copy, isBalloonPage, subjectById, wordMark, type WordMark } from '@lee-conmigo/ui-core';
-import { Button, Card, CoachBubble, colors, ComicPage, DialogCard, fontFamily, gradients, GradientView, HelpSheet, MicBadge, MicOffIcon, radius, readSize, ReadingRail, ReadingText, SubjectTab } from '@lee-conmigo/ui-native';
-import { progressStore } from '../app-state';
+import { Button, Card, ClosingCard, CoachBubble, colors, ComicPage, DialogCard, fontFamily, gradients, GradientView, HelpSheet, MicBadge, MicOffIcon, radius, readSize, ReadingRail, ReadingText, SubjectTab } from '@lee-conmigo/ui-native';
+import type { Energy } from '@lee-conmigo/ui-core';
+import { progressStoreFor, type ChildProfile } from '../app-state';
 import { useReadingSession, type ReadingSession } from '../session/use-reading-session';
 import { storyImage } from '../story-assets';
 
@@ -19,8 +20,18 @@ const readFontFor = (level: number) => (level <= 2 ? readSize.g12 : level <= 4 ?
  * como estrella con globo. Estados: pausa ámbar (B11), sin micrófono (G11), ayuda de palabra (G13).
  * Con `FakeReadingEngine` la lectura se simula con el panel DEV (solo en desarrollo) hasta la voz real (RN-07).
  */
-export function ReadingScreen({ story, onExit }: { story: Story; onExit: () => void }) {
-  const session = useReadingSession(story, { store: progressStore });
+interface ReadingScreenProps {
+  story: Story;
+  profile: ChildProfile;
+  /** Lo que eligió en "¿Cómo llegas hoy?" (B2), si se preguntó. */
+  energy: Energy | null;
+  /** Minutos de la misión de hoy (los de la energía elegida, o la meta del padre). */
+  goalMinutes: number;
+  onExit: () => void;
+}
+
+export function ReadingScreen({ story, profile, energy, goalMinutes, onExit }: ReadingScreenProps) {
+  const session = useReadingSession(story, { store: progressStoreFor(profile.id), energy: energy ?? undefined, dailyGoalMinutes: goalMinutes });
   const { flow, reading, view, actions, prefs } = session;
   const insets = useSafeAreaInsets();
 
@@ -31,7 +42,7 @@ export function ReadingScreen({ story, onExit }: { story: Story; onExit: () => v
   };
 
   // El indicador del micrófono nunca miente (docs/06): antes de empezar no escucha; sin permiso o en modo libre no hay micrófono.
-  const mic = session.freeReading || session.voiceProblem ? null : { tone: flow.screen === 'prep' ? ('idle' as const) : view.micTone, listening: flow.screen === 'reading' && view.listening };
+  const mic = session.freeReading || session.voiceProblem ? null : { tone: flow.screen === 'reading' ? view.micTone : ('idle' as const), listening: flow.screen === 'reading' && view.listening };
   const inReading = flow.screen === 'reading';
 
   return (
@@ -62,7 +73,27 @@ export function ReadingScreen({ story, onExit }: { story: Story; onExit: () => v
             <Text style={styles.toastText}>{copy.pageDone.title}</Text>
           </View>
         )}
-        {flow.screen === 'end' && <EndOverlay session={session} onExit={exit} />}
+        {session.closing && (
+          <ClosingCard
+            name={profile.name}
+            stars={session.closing.stars}
+            reason={session.closing.reason}
+            stats={[
+              { label: 'Tiempo', value: `${session.closing.minutes} min` },
+              { label: 'Papalote', value: `+${session.closing.kiteMeters} m ↑` },
+              { label: 'Sello del día', value: session.closing.dailyStamp ? '★' : '–' },
+              { label: 'Vuelven', value: `${session.closing.returning} ${session.closing.returning === 1 ? 'palabra' : 'palabras'}` },
+            ]}
+            onAgain={() => {
+              actions.finish();
+              actions.restart();
+            }}
+            onDone={(focus) => {
+              actions.finish(focus);
+              onExit();
+            }}
+          />
+        )}
 
         {session.showPauseCard && (
           <DialogCard icon={<MicBadge tone="warn" size={96} />} title={copy.states.pauseTitle} message={copy.states.pauseMessage}>
@@ -174,24 +205,6 @@ function PrepOverlay({ session }: { session: ReadingSession }) {
   );
 }
 
-/** Fin de la historia. TODO(K3): pantalla de cierre de Kitewise (B13: estrellas por esfuerzo, papalote, carita de enfoque). */
-function EndOverlay({ session, onExit }: { session: ReadingSession; onExit: () => void }) {
-  return (
-    <View style={styles.overlay}>
-      <Card style={styles.overlayCard}>
-        <Text style={styles.overlayTitle}>{copy.end.title}</Text>
-        <Text style={styles.endStat}>
-          {copy.end.time}: {session.elapsed}
-        </Text>
-        <View style={styles.row}>
-          <Button label={copy.end.again} onPress={session.actions.restart} />
-          <Button label={copy.nav.home} variant="secondary" onPress={onExit} />
-        </View>
-      </Card>
-    </View>
-  );
-}
-
 /** Panel de simulación (docs/04): dispara los mismos eventos que el motor real. Nunca llega a la app de los niños. */
 function DevPanel({ session }: { session: ReadingSession }) {
   const [open, setOpen] = useState(false);
@@ -245,8 +258,6 @@ const styles = StyleSheet.create({
   tipIcon: { width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' },
   tipIconText: { fontFamily: fontFamily.ui.black, fontSize: 18, color: colors.navy },
   tipText: { flex: 1, fontFamily: fontFamily.ui.bold, fontSize: 18, color: colors.inkSoft },
-  endStat: { fontFamily: fontFamily.ui.extrabold, fontSize: 22, color: colors.inkSoft, textAlign: 'center' },
-  row: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 14 },
   toast: { position: 'absolute', alignSelf: 'center', top: '40%', backgroundColor: colors.ok, borderRadius: radius.pill, paddingHorizontal: 28, paddingVertical: 14, boxShadow: '0px 12px 28px rgba(34, 169, 92, 0.35)' },
   toastText: { fontFamily: fontFamily.ui.black, fontSize: 24, color: '#ffffff' },
   dev: { position: 'absolute', top: 12, left: 12, maxWidth: 560, backgroundColor: colors.dev, borderRadius: 16, padding: 10, gap: 8, opacity: 0.95 },

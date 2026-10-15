@@ -22,6 +22,13 @@ export interface SessionSummary {
   completion: number;
   /** Estrellas de celebración del final (1–3). Nunca se muestra como calificación. */
   stars?: 1 | 2 | 3;
+  /**
+   * Kitewise (B13): cómo sintió el niño su enfoque, con 3 caritas (1 = me costó, 3 = muy concentrado). Autoevaluación:
+   * nunca se usa como nota. Opcional (la app web no lo pide).
+   */
+  focusSelfReport?: 1 | 2 | 3;
+  /** Kitewise (B2): la energía con la que llegó ese día. Opcional. */
+  energy?: 'alta' | 'normal' | 'baja';
   /** ISO 8601. */
   completedAt: string;
 }
