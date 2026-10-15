@@ -37,6 +37,13 @@ through the `SpeechEngine` abstraction. The UI communicates with
 Text is never permanently baked into an illustration. Art (visual layer) and
 text (narration/dialogue/UI) are always separate.
 
+## Design reference (DECISIÓN D9)
+
+The Kitewise design (`docs/design/kitewise/`, adapted in `docs/13-KITEWISE.md`) is the product
+and UX/UI reference: subject notebooks, 4-moment sessions, Focus Mode, parents. Build it in
+React Native (`apps/mobile`, `packages/ui-native`, `packages/ui-core`), not in the web app.
+Screenshots of every screen are in `docs/design/kitewise/screens/`.
+
 ## Primary systems
 
 StoryEngine · ReadingEngine · SpeechEngine · SessionEngine · ProgressEngine
@@ -69,6 +76,7 @@ device. See `docs/07-PRIVACY-AUDIO.md`.
 @docs/DECISIONS.md
 @docs/11-MIGRACION-REACT-NATIVE.md
 @docs/12-LEGAL-PRIVACIDAD-PUBLICACION.md
+@docs/13-KITEWISE.md
 
 Plan Maestro v2 (propuesta de lectura + matemáticas + Modo Enfoque, con su
 reconciliación contra lo ya construido): `docs/10-PLAN-MAESTRO-V2.md`. Las

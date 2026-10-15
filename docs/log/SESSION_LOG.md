@@ -91,3 +91,14 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
   (61 MB por las imágenes), expo-doctor 21/21 ✅.
 - Notas: en React Native Web `Image` necesita ancho/alto explícitos (si no, sale a tamaño original, recortada).
   Las páginas "tipo libro" (texto en panel dibujado) usan `maxFontPx` del editor: texto chico es el diseño actual.
+
+## 2026-10-15 · Cuenta A · K0 + K1 (tokens)
+- Hecho: Victor entregó el diseño **Kitewise** (Claude Design, 35 pantallas) y decidió basar el proyecto en él (D9).
+  Guardado en `docs/design/kitewise/` (SPEC, ART-BRIEF, STANDARDS-REVIEW, tokens.css, HTML original, mascota y una
+  captura .webp por pantalla). Adaptación al repo nativo y orden K1–K8 en `docs/13-KITEWISE.md`. D9 resuelve C2, C3,
+  C4, C6, C9; nuevas pendientes C12 (¿nombre Kitewise?) y C13 (foto de la tarea). Tokens de Kitewise agregados a
+  `packages/ui-native/src/tokens.ts` (colores, degradados, `darkColors`, `sizes`, `readSize`; `minTouch` 56 → 64) con
+  prueba de paridad contra `docs/design/kitewise/tokens.css`.
+- Pendiente: resto de K1 — componentes `NavRail`, `NotebookCover`, `SubjectTab`, `SessionPhases` y pantallas B3/B4.
+- Notas: el handoff pide `packages/ui` (web); por D7 se hace en `ui-native`/`apps/mobile` (ver tabla en `docs/13`).
+  Capturas de las pantallas se sacaron del HTML con Playwright (artboards etiquetados "B3 · …").

@@ -1,9 +1,9 @@
 # HANDOFF — estado actual
 Actualizado: 2026-10-15 · Cuenta: A · Rama: claude/gracious-shannon-a0238d
-Último commit: ver `git log -1` ("RN-05: …")
+Último commit: ver `git log -1` ("K1: …")
 
 ## Tarea en curso
-Ninguna a medias. RN-01 ✅ en código (falta verla en Android real) · RN-02 ✅ · RN-04 ✅ · RN-05 ✅.
+**K1** (Kitewise, `docs/13-KITEWISE.md`): tokens ✅; faltan componentes y pantallas B3/B4.
 
 ## Hecho en RN-01
 - [x] `apps/mobile` (Expo SDK 57, RN 0.86, TS) dentro del monorepo
@@ -14,18 +14,25 @@ Ninguna a medias. RN-01 ✅ en código (falta verla en Android real) · RN-02 �
 - [x] RN-02: `packages/ui-native` (tokens, Button, Card, MicBadge) + fuentes
 - [x] RN-04: pantalla de lectura con simulador (`apps/mobile/src/screens/reading-screen.tsx`) + `packages/ui-core`
 - [x] RN-05: cómic con globos (`fitText` en ui-core, `ComicPage` en ui-native) + ilustraciones
+- [x] K0: diseño Kitewise en `docs/design/kitewise/` + D9 + plan K1–K8
+- [x] K1 (parte): tokens de Kitewise en `ui-native/src/tokens.ts` con prueba de paridad
+- [ ] K1: componentes + Inicio (B3) + Cuaderno (B4)  ← AQUÍ ME QUEDÉ
 
 ## Siguiente paso exacto
-1. Victor prueba en su Android (`apps/mobile/README.md`): lista → tocar una historia → "Comenzar lectura" → panel
-   DEV (abajo) → "Lectura automática".
-2. **RN-05** — cómic e ilustraciones en `apps/mobile`:
-   - Las imágenes viven en `apps/reader/public/stories/<id>/*.webp` y las historias las citan con `src` relativo.
-     Metro necesita `require()` estáticos: generar un mapa `src → require(...)` con un script
-     (`scripts/gen-native-assets.mjs` → `apps/mobile/src/generated/story-assets.ts`) o usar `require.context` sobre
-     esa carpeta. NO copiar las imágenes (duplicaría ~MB en el repo).
-   - Ilustración de la página junto al texto (illustrated reader) y, para páginas con globos, portar `fit-layout.ts`
-     + `comic-fit.tsx` (`packages/ui`): los cálculos puros a `ui-core`, el pintado a `ui-native`.
-3. Luego RN-06: pregunta de comprensión + repaso + fin con estrellas + Inicio/Biblioteca/Ficha + Modo padres.
+**K1 — Inicio (B3) y Cuaderno de Lectura (B4)** en la app nativa. Referencia visual:
+`docs/design/kitewise/screens/B3.webp` y `B4.webp` (y `A2.webp` para el sistema).
+1. `packages/ui-native`: `NavRail` (Inicio, Logros, Padres; ícono + texto; 96 px), `NotebookCover` (arte arriba con
+   espiral a la izquierda, ícono de materia arriba a la derecha, título, subtítulo, barra de progreso de 3 segmentos
+   en el color de la materia), `SubjectTab` (pestaña vertical en el borde derecho, 48/64 px), `SessionPhases`
+   (píldoras Calentar/Aprender/Practicar/Juego con los colores `phase*`).
+2. `apps/mobile/src/screens/home-screen.tsx` (B3): saludo con nombre, racha y estrellas arriba a la derecha, banner
+   "Misión de hoy" con portada de la historia en curso y botón amarillo "Seguir", estantería "Tus cuadernos" (6). Hoy
+   solo Lectura tiene contenido: las demás materias se muestran con portadas de referencia y "Pronto" (no inventar
+   contenido; arte pendiente en `ART-BRIEF.md`).
+3. `notebook-screen.tsx` (B4) para Lectura: izquierda índice (historias del nivel del perfil con su estado),
+   derecha la historia actual con portada y "Seguir" → `ReadingScreen`. Pestañas de materia a la derecha.
+4. Reemplazar la lista de RN-01 en `App.tsx` por estas pantallas (lista queda solo en `__DEV__`).
+Portadas: `storyImage(story.cover.src)` (`apps/mobile/src/story-assets.ts`). Mascota: `docs/design/kitewise/mascot.png`.
 
 ## Cuidado con
 - **No borrar `apps/reader` ni `packages/ui`**: Noah sigue usando la app Capacitor hasta RN-CP2.

@@ -10,8 +10,18 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | ID | Tarea | Estado | Cuenta | Rama / nota |
 |---|---|---|---|---|
 | **F0** | **Diseño (Claude Design)** | | | |
-| F0-01 | Variante "Modo Enfoque" de las pantallas existentes + pantallas nuevas (ver plan §3) | ⬜ | – | Victor en Claude Design; exportar a `docs/design/` |
-| F0-02 | Decidir tipografía/paleta (C2, C3) | ⏸️ | – | espera respuesta de Victor |
+| F0-01 | Variante "Modo Enfoque" de las pantallas existentes + pantallas nuevas (ver plan §3) | ✅ | – | entregado: `docs/design/kitewise/` |
+| F0-02 | Decidir tipografía/paleta (C2, C3) | ✅ | – | resuelto por el diseño Kitewise (D9) |
+| **K** | **Kitewise** (D9, `docs/13`) — construido sobre la app nativa | | | |
+| K0 | Guardar el diseño en el repo, registrar decisiones y plan | ✅ | A | `docs/design/kitewise/`, `docs/13` |
+| K1 | Tokens Kitewise + NotebookCover/SubjectTab/NavRail/SessionPhases; Inicio (B3) y Cuaderno de Lectura (B4) | 🟡 | A | siguiente |
+| K2 | Lectura en el cuaderno (B9) + estados (B11, G11–G13) | ⬜ | – | |
+| K3 | Cierre (B13), perfiles (B1), ¿Cómo llegas? (B2) | ⬜ | – | |
+| K4 | Padres: P1, P2, P4 | ⬜ | – | |
+| K5 | Practicar (B8, G9, G10) + repaso 1-3-7 | ⬜ | – | |
+| K6 | Unidades/lecciones + Aprender/Explorar + camino (B5–B7); 1.ª unidad de Matemáticas | ⬜ | – | necesita contenido |
+| K7 | Modo Enfoque (B10, B12), oscuro (G1–G3), vertical (G4–G6) | ⬜ | – | |
+| K8 | Mi cuaderno, Logros, informe PDF, foto de tarea | ⬜ | – | foto espera C13 |
 | **RN** | **Migración a React Native + Expo** (D7, `docs/11`) | | | |
 | RN-00 | Registrar decisión, plan de migración y lista legal | ✅ | A | `claude/gracious-shannon-a0238d` |
 | RN-01 | Crear `apps/mobile` (Expo + TS) usando `contracts`/`reading-engine`/`story-engine` | 🟡 | A | código listo y empaquetando; falta verlo en el Android de Victor (`npx expo run:android`) |
@@ -19,7 +29,7 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | RN-03 | Prueba técnica de voz con `whisper.rn` en la tablet de Noah | ⬜ | – | decide el motor de voz nativo |
 | RN-04 | Pantalla de lectura con `FakeReadingEngine` | ✅ | A | texto + palabra actual + coach/mic + ayuda (sílabas, `expo-speech`) + panel DEV; lógica de vista compartida en `packages/ui-core` |
 | RN-05 | Cómic: globos + acomodo de texto (24 historias) | ✅ | A | `fitText` (ui-core) con medidas de Andika, paridad con la web ±3 %; ilustraciones vía `require.context` (sin copiar) |
-| RN-06 | Resto del flujo + Modo padres con PIN → **RN-CP1** paridad con simulador | ⬜ | – | |
+| RN-06 | Resto del flujo + Modo padres con PIN → **RN-CP1** paridad con simulador | ⬜ | – | se hace con las pantallas de Kitewise (K1–K4) |
 | RN-07 | `WhisperNativeSpeechEngine` + `RealReadingEngine` | ⬜ | – | depende de RN-03 |
 | RN-08 | Almacenamiento local + migración de progreso → **RN-CP2** Noah usa la nueva | ⬜ | – | |
 | RN-09 | Build iOS | ⬜ | – | necesita cuenta Apple / EAS |

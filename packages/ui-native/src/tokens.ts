@@ -70,6 +70,34 @@ export const colors = {
   dev4: '#171b27',
   devLine: '#3c4560',
   devInk: '#e7eaf3', // ---- Radios (docs/05: tarjetas 16–30px, pastillas 999px) ----
+  // ---- Kitewise (docs/design/kitewise/tokens.css, D9): cuaderno, materias, momentos, dominio, pausa, papalote ----
+  paper: '#fffdf8', // hoja
+  paperLine: '#eef3fb', // renglón suave
+  paperGutter: '#efe9db', // lomo / espiral
+  desk: '#e9e4d8', // ---- Materias (color + degradado de pestaña / ícono) ----
+  subjLectura: '#7b5ce6',
+  subjMate: '#1e80e8',
+  subjCiencia: '#22a95c',
+  subjSociedad: '#f08a10',
+  subjArte: '#ff5e7e',
+  phaseAprender: '#ffe45c',
+  phaseAprenderLedge: '#e8c630',
+  phaseExplorar: '#9cc8ff',
+  phaseExplorarLedge: '#6fa7f0',
+  phasePracticar: '#6be39e',
+  phasePracticarLedge: '#3dbf77',
+  phaseJuego: '#ffc658',
+  phaseJuegoLedge: '#f0a020', // ---- Dominio (nunca porcentaje al niño) ----
+  masteryExplorando: '#1e6fe8',
+  masteryExplorandoBg: '#dcebff',
+  masteryPracticando: '#5a45c8',
+  masteryPracticandoBg: '#ede8ff',
+  masteryDominado: '#168a47',
+  masteryDominadoBg: '#d6f3e1', // ---- Pausa (ámbar, nunca rojo) ----
+  pause: '#f0a020',
+  pauseBg: '#fff1c2',
+  kite: '#e8453c',
+  sky: '#9cc8ff', // ---- Cuaderno: espiral y pestañas ----
 } as const;
 
 export type ColorName = keyof typeof colors;
@@ -115,9 +143,36 @@ export const gradients = {
   rail: { angle: 180, colors: ['#ffffff', '#e9eefb'] },
   panel: { angle: 180, colors: ['#ffffff', '#f3f6ff', '#e9eefb'], locations: [0, 0.45, 1] },
   panelSelect: { angle: 180, colors: ['#ffffff', '#f2f6ff', '#e8effd'], locations: [0, 0.55, 1] },
+  // Kitewise
+  subjLectura: { angle: 160, colors: ['#b79bff', '#7b5ce6'] },
+  subjMate: { angle: 160, colors: ['#6fc0ff', '#1e80e8'] },
+  subjCiencia: { angle: 160, colors: ['#6be39e', '#22a95c'] },
+  subjSociedad: { angle: 160, colors: ['#ffc658', '#f08a10'] },
+  subjArte: { angle: 160, colors: ['#ff8a3d', '#ff5e7e'] },
+  pause: { angle: 180, colors: ['#fff1c2', '#ffe08a'] },
 } as const satisfies Record<string, Gradient>;
 
 export type GradientName = keyof typeof gradients;
+
+/**
+ * Modo oscuro de Kitewise (`:root[data-theme='dark']`): cálido, sin azul puro de fondo. Solo los colores que cambian;
+ * el resto se toma de `colors`. Lo aplica el tema de la app (K7).
+ */
+export const darkColors = {
+  app: '#17161d',
+  paper: '#201e27',
+  cream: '#201e27',
+  creamDeep: '#1b1a22',
+  ink: '#f2eee6',
+  inkSoft: '#d9d4e0',
+  inkMute: '#a8a3b5',
+  muted: '#a8a3b5',
+  navy: '#f2eee6',
+  line: '#38354a',
+  chip: '#2d2b38',
+  cardDark: '#24222c',
+  pauseBg: '#3a2e14',
+} as const satisfies Partial<Record<string, string>>;
 
 /** Radios (docs/05: tarjetas 16–30 px, pastillas 999). */
 export const radius = {
@@ -164,5 +219,19 @@ export const durations = {
   ring: 1600,
 } as const;
 
-/** Altura mínima de cualquier cosa que se toca (docs/06: controles grandes). */
-export const minTouch = 56;
+/** Altura mínima de cualquier cosa que se toca (docs/06: controles grandes; Kitewise: ≥ 64 px). */
+export const minTouch = 64;
+
+/** Tamaños de Kitewise (`--size-*`): botón principal, teclado numérico, pestañas de materia y espiral del cuaderno. */
+export const sizes = {
+  btnMin: 64,
+  btnPrimary: 68,
+  keypad: 72,
+  tab: 48,
+  tabActive: 64,
+  spiral: 44,
+} as const;
+
+/** Letra de lectura por banda de grado (`--read-size-*`) e interlineado (docs/01: 3 familias visuales). */
+export const readSize = { g12: 30, g34: 25, g56: 21 } as const;
+export const readLeading = 1.6;
