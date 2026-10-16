@@ -14,8 +14,23 @@ export const PHASES: readonly Phase[] = ['observa', 'explora', 'explica', 'usa']
 
 export type StepKind = 'ver' | 'tocarZonas' | 'elegir' | 'predecir' | 'probar' | 'registrar' | 'graficar' | 'afirmacion' | 'mapa' | 'arreglar' | 'reflexion' | 'texto';
 
-export type SceneId = 'ladera' | 'laboratorio' | 'humedal';
-export const SCENES: readonly SceneId[] = ['ladera', 'laboratorio', 'humedal'];
+/** Una escena es un id que la app traduce a su imagen (`subjects/ciencia/art.ts`); un paso sin imagen propia no lleva escena. */
+export type SceneId = string;
+
+/** Zona tocable de una escena: el niño dice lo que ve tocándola. `part` = la parte de la tarea que llena; `id` = id de opción. */
+export interface SceneZone {
+  id: string;
+  /** Rectángulo en porcentaje de la imagen (0–100). */
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+  label: Localized;
+}
+export interface StepZones {
+  part: string;
+  items: SceneZone[];
+}
 
 /** Dos bandejas del laboratorio de erosión tal como las ve el niño en un paso. */
 export interface LabSetup {
@@ -63,6 +78,7 @@ export interface UnitStep {
   /** Lo único que se guarda de este paso (datos derivados). */
   saves?: string;
   scene?: SceneId;
+  zones?: StepZones;
   lab?: LabSetup;
   /** Pasos de «arreglar la prueba»: el laboratorio resultante según el arreglo que elija el niño (id de la opción). */
   labFixed?: Record<string, LabSetup>;
@@ -285,7 +301,16 @@ export function unitProblems(u: ScienceUnit): string[] {
     }
   };
   for (const st of allSteps) {
-    if (st.scene && !SCENES.includes(st.scene)) p.push(`${st.id}: escena desconocida`);
+    if (st.scene !== undefined && !st.scene.trim()) p.push(`${st.id}: escena vacía`);
+    if (st.zones) {
+      const part = u.tasks.find((t) => t.id === st.taskId)?.parts.find((x) => x.id === st.zones!.part);
+      if (!part) p.push(`${st.id}: las zonas llenan una parte («${st.zones.part}») que la tarea del paso no tiene`);
+      for (const z of st.zones.items) {
+        loc(`${st.id} zona ${z.id}`, z.label);
+        if (part && !part.options.some((o) => o.id === z.id)) p.push(`${st.id}: la zona «${z.id}» no es una opción de la parte`);
+        if (z.x < 0 || z.y < 0 || z.w <= 0 || z.h <= 0 || z.x + z.w > 100 || z.y + z.h > 100) p.push(`${st.id}: la zona «${z.id}» se sale de la imagen`);
+      }
+    }
     labProblems(`${st.id} lab`, st.lab);
     for (const [k, lab] of Object.entries(st.labFixed ?? {})) labProblems(`${st.id} labFixed.${k}`, lab);
     choiceProblems(`${st.id} pregunta`, st.choice);

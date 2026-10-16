@@ -1,15 +1,10 @@
-import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { Image, ScrollView, StyleSheet, Text, View, type ImageSourcePropType } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { FocusSupports } from '@lee-conmigo/contracts';
 import {
-  bandCount,
   comparisonAdequate,
   evaluateTask,
-  LADERA_DATASETS,
-  PRACTICE_MAPS,
-  quakesByZone,
-  type LabSetup,
   type ScienceUnit,
   type StepChoice,
   type TaskDone,
@@ -18,45 +13,16 @@ import {
   type UnitStep,
   type UnitTask,
 } from '@lee-conmigo/science-content';
-import { CIENCIA_COPY, LADERA_ZONES, chartDescription, scienceStars, scienceStarsReason, type CienciaLang } from '@lee-conmigo/ui-core';
-import {
-  BarChart,
-  Button,
-  ChevronLeftIcon,
-  ClosingCard,
-  colors,
-  DataTable,
-  FILL_IMAGE,
-  fontFamily,
-  gradients,
-  GradientView,
-  LabBoard,
-  LayerToggle,
-  MayaSays,
-  OptionList,
-  PracticeMap,
-  radius,
-  RoundButton,
-  Scale,
-  SceneZones,
-  shadows,
-  SpeakerIcon,
-  useLayout,
-  type Bar,
-  type MapCell,
-  type MapLayers,
-} from '@lee-conmigo/ui-native';
+import { CIENCIA_COPY, scienceStars, scienceStarsReason, type CienciaLang } from '@lee-conmigo/ui-core';
+import { Button, ChevronLeftIcon, ClosingCard, colors, FILL_IMAGE, fontFamily, gradients, GradientView, MayaSays, OptionList, radius, RoundButton, shadows, SpeakerIcon, useLayout } from '@lee-conmigo/ui-native';
 import type { ChildProfile } from '../../app-state';
 import { MovementBreakScreen } from '../../screens/movement-break-screen';
 import { useMovementBreak } from '../../movement';
 import { speak, stopSpeaking } from '../../tts';
 import { today } from '../../today';
-import { CIENCIA_BACKGROUNDS, CIENCIA_PROPS, CIENCIA_SCENES, MAYA, type MayaPose } from './art';
-import { gramsFor, LADERA_ZONES_LAYOUT, mapView, MAX_GRAMS, trayViews, trialsFor, type Side } from './lab-model';
+import { CIENCIA_BACKGROUNDS, MAYA, type MayaPose } from './art';
+import { familyOf, type Local, type StepCtx } from './families';
 import { TaskPanel, type Picks } from './task-panel';
-
-const SIDES: Side[] = ['a', 'b'];
-const BAR_COLOR: Record<Side, string> = { a: '#c9824f', b: '#5aa66b' };
 
 interface SessionPlayerProps {
   profile: ChildProfile;
@@ -80,30 +46,19 @@ interface SessionPlayerProps {
   onDone: () => void;
 }
 
-interface Local {
-  trial: number;
-  watering: boolean;
-  weighing?: { side: Side; col: number };
-  layers: MapLayers;
-  marks: MapCell[];
-  /** Pulsó «Comprobar» en una pregunta suelta. */
-  checked: boolean;
-  skipped: boolean;
-}
-
-/** Al entrar a un paso: las capas del mapa (en «observa» empiezan apagadas para que el niño las encienda) y todo en cero. */
+/** Estado de partida de un paso: lo común y, encima, lo que pida su familia. */
 function freshLocal(step: UnitStep | undefined): Local {
-  const observing = step?.taskId === 't2';
-  const m = step?.map;
-  return { trial: 0, watering: false, layers: { relief: !!m && !observing, volcanoes: !!m && !observing, quakes: !!m && !observing && !m.hideQuakes }, marks: [], checked: false, skipped: false };
+  const base: Local = { trial: 0, watering: false, layers: { relief: false, volcanoes: false, quakes: false }, marks: [], checked: false, skipped: false, bag: {} };
+  const family = step ? familyOf(step) : undefined;
+  return step && family?.initial ? { ...base, ...family.initial(step) } : base;
 }
 
 const POSE: Record<UnitStep['phase'], MayaPose> = { observa: 'investiga', explora: 'apunta', explica: 'piensa', usa: 'apunta' };
 
 /**
- * Una sesión de la unidad (≈ 15 min): observa → explora → explica → usa. Cada paso es una escena + algo que HACER (tocar,
- * predecir, regar, pesar, graficar, contar, explicar). Los modelos y los números vienen del paquete de contenido; aquí solo se
- * dibujan y se guarda lo derivado. Nunca bloquea (siempre hay «Lo veo luego») y nunca dice «incorrecto» (docs/06).
+ * Una sesión de la unidad (≈ 15 min): observa → explora → explica → usa. Cada paso es una escena + algo que HACER. Lo que se
+ * dibuja y se hace lo pone la FAMILIA del paso (`./families`); aquí vive lo común: Maya, tareas, preguntas, pistas, cierre,
+ * Modo Enfoque y pausa de movimiento. Nunca bloquea (siempre hay «Lo veo luego») y nunca dice «incorrecto» (docs/06).
  */
 export function SessionPlayer({ profile, lang, focus, unit, session, startStep, savedChoices, onTaskDone, onChoice, onStep, onLeave, onFinish, onDone }: SessionPlayerProps) {
   const insets = useSafeAreaInsets();
@@ -113,6 +68,7 @@ export function SessionPlayer({ profile, lang, focus, unit, session, startStep, 
   const calm = focus.reducedMotion;
   const [index, setIndex] = useState(Math.min(Math.max(0, startStep), steps.length - 1));
   const step = steps[index];
+  const family = familyOf(step);
   const [local, setLocal] = useState<Local>(() => freshLocal(step));
   const patch = (p: Partial<Local>) => setLocal((l) => ({ ...l, ...p }));
 
@@ -122,8 +78,8 @@ export function SessionPlayer({ profile, lang, focus, unit, session, startStep, 
   const [results, setResults] = useState<Record<string, TaskResult | undefined>>({});
   const [done, setDone] = useState<Record<string, 'ok' | 'skipped'>>({});
   const [choices, setChoices] = useState<Record<string, string[]>>(savedChoices);
-  const [table, setTable] = useState<Record<Side, (number | null)[]>>({ a: [null, null, null], b: [null, null, null] });
-  const [bars, setBars] = useState<Record<string, number | null>>({});
+  const [shared, setSharedState] = useState<Record<string, unknown>>({});
+  const setShared = (key: string, value: unknown) => setSharedState((s) => ({ ...s, [key]: value }));
   const [triedAgain, setTriedAgain] = useState(false);
   const [listened, setListened] = useState(false);
   const [closing, setClosing] = useState<{ stars: 0 | 1 | 2 | 3; reason: string } | undefined>();
@@ -132,35 +88,17 @@ export function SessionPlayer({ profile, lang, focus, unit, session, startStep, 
   const scroll = useRef<ScrollView>(null);
   useEffect(() => scroll.current?.scrollTo({ y: 0, animated: false }), [index]);
   useEffect(() => () => stopSpeaking(), []);
-  const wateringTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
-  useEffect(() => () => clearTimeout(wateringTimer.current), []);
+  const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
+  useEffect(() => () => clearTimeout(timer.current), []);
 
   const task = step.taskId ? unit.tasks.find((t) => t.id === step.taskId) : undefined;
-  const allSteps = useMemo(() => unit.sessions.flatMap((s) => s.steps), [unit]);
-  const fix = picks.t7?.arreglo?.[0];
-  const fixedLabs = allSteps.find((s) => s.labFixed)?.labFixed;
-  const fixedLab: LabSetup | undefined = fixedLabs ? fixedLabs[fix ?? 'pendiente'] ?? fixedLabs.pendiente : undefined;
+  // El arreglo que eligió el niño en la tarea de transferencia decide qué evidencia final se le muestra.
+  const transfer = unit.tasks.find((t) => t.kind === 'transferir');
+  const fix = transfer ? picks[transfer.id]?.arreglo?.[0] : undefined;
   const choice: StepChoice | undefined = step.choiceByFix?.[fix ?? ''] ?? step.choice;
-
-  // ---- lo que se ve en cada bandeja y en cada tabla
-  const lab: LabSetup | undefined = step.kind === 'arreglar' ? (task && done[task.id] === 'ok' && fixedLab ? fixedLab : step.lab) : step.id === 's6.3' && fixedLab ? fixedLab : step.lab;
-  const trials = lab?.trials ?? 1;
-  const staticLab = !!lab?.static;
-  const shown = lab ? (staticLab || step.kind === 'registrar' || step.kind === 'graficar' ? 3 : local.trial) : 0;
-  const effTable = (side: Side, col: number): number | null => table[side][col] ?? (lab && (staticLab || step.kind === 'graficar') ? gramsFor(lab, side, col) : null);
-  const rowsFor = (l: LabSetup, own: boolean) =>
-    SIDES.map((side) => ({
-      id: side,
-      label: `${c.tray[side === 'a' ? 'A' : 'B'][lang]}: ${c.cover[l[side].cover][lang]}, ${c.slope[l[side].slope][lang].toLowerCase()}`,
-      cells: [0, 1, 2].map((col) => (own ? table[side][col] : trialsFor(l, side)[col])),
-    }));
 
   // ---- ¿ya puede seguir?
   const taskDone = task ? done[task.id] !== undefined : true;
-  const allWeighed = SIDES.every((s) => table[s].every((v) => v !== null));
-  const barKeys = SIDES.flatMap((s) => [0, 1, 2].map((i) => `${s}${i}`));
-  const barsSet = barKeys.every((k) => bars[k] != null);
-  const flaggedBars = lab && step.kind === 'graficar' ? barKeys.filter((k) => bars[k] != null && Math.abs((bars[k] as number) - (effTable(k[0] as Side, Number(k[1])) ?? 0)) > 1) : [];
   const picked = choice ? choices[choice.id] ?? [] : [];
   const expected = choice?.options.filter((o) => o.expected).map((o) => o.id) ?? [];
   const compare = choice?.compareWith;
@@ -176,10 +114,19 @@ export function SessionPlayer({ profile, lang, focus, unit, session, startStep, 
   const needsCheck = !!choice && (expected.length > 0 || !!compare);
   const choiceReady = !choice || local.skipped || (needsCheck ? local.checked && choiceGood : picked.length > 0);
 
-  let ready = taskDone && choiceReady;
-  if (step.kind === 'probar') ready = ready && (local.trial >= trials || local.skipped);
-  if (step.kind === 'registrar') ready = ready && (allWeighed || local.skipped);
-  if (step.kind === 'graficar') ready = ready && ((barsSet && flaggedBars.length === 0) || local.skipped);
+  // ---- distribución
+  const contentWidth = Math.min(layout.width - layout.gutter * 2, 1000);
+  const split = !layout.narrow;
+  const visualWidth = split ? Math.floor(contentWidth * 0.55) : contentWidth;
+  const small = layout.phone;
+
+  const ctx: StepCtx = { unit, step, task, lang, calm, small, visualWidth, picks, setPicks, done, choice, choiceGood, fix, local, patch, shared, setShared, markTriedAgain: () => setTriedAgain(true), timer };
+  const ready = taskDone && choiceReady && (family?.ready?.(ctx) ?? true);
+  const visual: ReactNode = family?.visual(ctx) ?? null;
+  const lastStep = index + 1 >= steps.length;
+  const bg = calm || !step.scene ? undefined : (CIENCIA_BACKGROUNDS as Record<string, { horizontal: ImageSourcePropType; vertical: ImageSourcePropType } | undefined>)[step.scene];
+  const bgSource = bg ? (layout.portrait ? bg.vertical : bg.horizontal) : undefined;
+  const pose: MayaPose = task && done[task.id] === 'ok' ? 'celebra' : POSE[step.phase];
 
   // ---- acciones
   const complete = (t: UnitTask, outcome: TaskDone['outcome']) => {
@@ -191,22 +138,6 @@ export function SessionPlayer({ profile, lang, focus, unit, session, startStep, 
     setResults((x) => ({ ...x, [t.id]: r }));
     if (r.outcome === 'ok') complete(t, 'ok');
     else setTriedAgain(true);
-  };
-  const water = () => {
-    if (local.watering) return;
-    const again = local.trial >= trials;
-    if (again) setTriedAgain(true);
-    const next = again ? 1 : local.trial + 1;
-    if (calm) return patch({ trial: next });
-    patch({ watering: true });
-    wateringTimer.current = setTimeout(() => patch({ watering: false, trial: next }), 1200);
-  };
-  const weigh = (side: string, col: number) => patch({ weighing: { side: side as Side, col } });
-  const writeDown = () => {
-    const w = local.weighing;
-    if (!w || !lab) return;
-    setTable((t) => ({ ...t, [w.side]: t[w.side].map((v, i) => (i === w.col ? gramsFor(lab, w.side, w.col) : v)) }));
-    patch({ weighing: undefined });
   };
   const setChoice = (ids: string[]) => {
     if (!choice) return;
@@ -225,7 +156,9 @@ export function SessionPlayer({ profile, lang, focus, unit, session, startStep, 
       if (movement.due) setResting(true); // límite natural: entre un paso y otro
       return;
     }
-    const usedHintOrRevised = Object.values(hints).some((h) => h > 0) || picks.t8?.idea?.[0] === 'cambio';
+    const reflection = unit.tasks.find((t) => t.kind === 'reflexionar');
+    const revised = reflection ? picks[reflection.id]?.idea?.[0] === 'cambio' : false;
+    const usedHintOrRevised = Object.values(hints).some((h) => h > 0) || revised;
     const stars = scienceStars({ finished: true, usedHintOrRevised, triedAgain });
     onFinish(stars);
     setClosing({ stars, reason: scienceStarsReason({ usedHintOrRevised, triedAgain })[lang] });
@@ -242,162 +175,13 @@ export function SessionPlayer({ profile, lang, focus, unit, session, startStep, 
     setHints({});
     setResults({});
     setDone({});
-    setTable({ a: [null, null, null], b: [null, null, null] });
-    setBars({});
+    setSharedState({});
   };
-
-  // ---- distribución
-  const contentWidth = Math.min(layout.width - layout.gutter * 2, 1000);
-  const split = !layout.narrow;
-  const visualWidth = split ? Math.floor(contentWidth * 0.55) : contentWidth;
-  const small = layout.phone;
-  const lastStep = index + 1 >= steps.length;
-  const art = { bandeja: CIENCIA_PROPS.bandeja, tierra: CIENCIA_PROPS.tierra, cobertura: CIENCIA_PROPS.cobertura, regadera: CIENCIA_PROPS.regadera };
-  const bg = calm ? undefined : step.scene === 'humedal' ? CIENCIA_BACKGROUNDS.humedal : step.scene === 'laboratorio' ? CIENCIA_BACKGROUNDS.laboratorio : undefined;
-  const bgSource = bg ? (layout.portrait ? bg.vertical : bg.horizontal) : undefined;
-  const pose: MayaPose = task && done[task.id] === 'ok' ? 'celebra' : POSE[step.phase];
-
-  // ---- piezas visuales
-  const badge = (text: string) => (
-    <View style={styles.badge}>
-      <Text style={styles.badgeText}>{text}</Text>
-    </View>
-  );
-  const labPiece = (l: LabSetup, shownTrials: number, own = false) => (
-    <View style={styles.stack}>
-      <LabBoard trays={trayViews(l, shownTrials, lang)} art={art} width={visualWidth} watering={local.watering} calm={calm} />
-      {l.static || step.kind === 'registrar' || step.kind === 'graficar' ? (
-        <>
-          <DataTable title={c.table.title[lang]} headers={[1, 2, 3].map((n) => c.trial(n)[lang])} rows={rowsFor(l, own)} unit={LADERA_DATASETS.base.unit[lang]} emptyLabel={c.table.empty[lang]} onCellPress={step.kind === 'registrar' ? weigh : undefined} active={local.weighing ? { rowId: local.weighing.side, col: local.weighing.col } : undefined} />
-          {badge(c.badge.practiceData[lang])}
-        </>
-      ) : null}
-    </View>
-  );
-
-  const visual: ReactNode = (() => {
-    if (step.map) {
-      const map = PRACTICE_MAPS[step.map.id];
-      const { inside, total } = bandCount(map);
-      const view = mapView(map, step.map.tool === 'band');
-      const mapWidth = visualWidth - 24;
-      const toggle = (k: keyof MapLayers) => patch({ layers: { ...local.layers, [k]: !local.layers[k] } });
-      const hidden = step.map.hideQuakes && !(task && done[task.id]);
-      const layers = hidden ? { ...local.layers, quakes: false } : step.map.hideQuakes ? { ...local.layers, quakes: true } : local.layers;
-      const zone = quakesByZone(map);
-      return (
-        <View style={styles.stack}>
-          <PracticeMap
-            map={step.map.hideQuakes && !hidden ? { ...view, band: mapView(map, true).band } : view}
-            layers={layers}
-            width={mapWidth}
-            marks={local.marks}
-            description={c.screen.mapDescription[lang]}
-            disclaimer={map.disclaimer[lang]}
-            onCell={
-              step.kind === 'mapa' && step.map.tool === 'band' && choice
-                ? (cell) => {
-                    if (!map.earthquakes.some((q) => q.col === cell.col && q.row === cell.row)) return;
-                    patch({ marks: local.marks.some((m) => m.col === cell.col && m.row === cell.row) ? local.marks.filter((m) => !(m.col === cell.col && m.row === cell.row)) : [...local.marks, cell] });
-                  }
-                : undefined
-            }
-          />
-          {step.taskId === 't2' ? (
-            <View style={styles.toggles}>
-              <LayerToggle label={c.map.relief[lang]} glyph="relief" on={local.layers.relief} onPress={() => toggle('relief')} />
-              <LayerToggle label={c.map.volcanoes[lang]} glyph="volcano" on={local.layers.volcanoes} onPress={() => toggle('volcanoes')} />
-              <LayerToggle label={c.map.quakes[lang]} glyph="quake" on={local.layers.quakes} onPress={() => toggle('quakes')} />
-            </View>
-          ) : null}
-          {step.map.tool === 'band' && choice ? <Text style={styles.helper}>{`${c.map.bandHint[lang]} ${c.screen.countPrompt[lang]} ${c.screen.counted(local.marks.length)[lang]}`}</Text> : null}
-          {step.map.hideQuakes && !hidden ? (
-            <View style={styles.reveal}>
-              <Text style={styles.revealText}>{`${c.screen.revealNow[lang]} ${c.map.revealed(zone.cerca, zone.llanura + zone.mar)[lang]}`}</Text>
-            </View>
-          ) : null}
-          {step.kind === 'mapa' && choice && local.checked && choiceGood ? <Text style={styles.helper}>{c.map.quakesIn(inside, total)[lang]}</Text> : null}
-        </View>
-      );
-    }
-    if (lab && step.kind === 'probar') {
-      return (
-        <View style={styles.stack}>
-          {labPiece(lab, local.trial)}
-          <View style={styles.buttonsRow}>
-            <Button label={(local.trial === 0 ? c.button.water : c.button.waterAgain)[lang]} onPress={water} disabled={local.watering} />
-            <Text style={styles.helper}>{local.trial === 0 ? c.screen.rainPrompt[lang] : local.trial >= trials ? c.screen.trialsDone[lang] : c.trialOf(local.trial, trials)[lang]}</Text>
-          </View>
-        </View>
-      );
-    }
-    if (lab && step.kind === 'registrar') {
-      const w = local.weighing;
-      return (
-        <View style={styles.stack}>
-          <LabBoard trays={trayViews(lab, 3, lang)} art={art} width={visualWidth} calm={calm} />
-          <View style={styles.weighRow}>
-            <Scale title={c.scale.title[lang]} grams={w ? gramsFor(lab, w.side, w.col) : null} unit="g" />
-            <View style={styles.flex}>
-              <Text style={styles.helper}>{w ? c.screen.weighing(c.tray[w.side === 'a' ? 'A' : 'B'][lang], w.col + 1)[lang] : allWeighed ? c.screen.tableDone[lang] : c.screen.weighPrompt[lang]}</Text>
-              {w ? <View style={styles.alignStart}>
-                  <Button label={c.button.writeDown[lang]} onPress={writeDown} />
-                </View> : null}
-            </View>
-          </View>
-          <DataTable title={c.table.title[lang]} headers={[1, 2, 3].map((n) => c.trial(n)[lang])} rows={rowsFor(lab, true)} unit={LADERA_DATASETS.base.unit[lang]} emptyLabel={c.table.empty[lang]} onCellPress={weigh} active={w ? { rowId: w.side, col: w.col } : undefined} />
-          {badge(c.badge.practiceData[lang])}
-        </View>
-      );
-    }
-    if (lab && step.kind === 'graficar') {
-      const barList: Bar[] = barKeys.map((k) => ({ id: k, label: `${k[0].toUpperCase()}${Number(k[1]) + 1}`, color: BAR_COLOR[k[0] as Side], value: bars[k] ?? null }));
-      const rows = rowsFor(lab, false).map((r) => ({ label: r.label, values: r.cells.map((v, i) => v ?? effTable(r.id as Side, i) ?? 0) }));
-      return (
-        <View style={styles.stack}>
-          <DataTable title={c.table.title[lang]} headers={[1, 2, 3].map((n) => c.trial(n)[lang])} rows={rowsFor(lab, false).map((r) => ({ ...r, cells: r.cells.map((v, i) => effTable(r.id as Side, i) ?? v) }))} unit="g" emptyLabel={c.table.empty[lang]} />
-          <BarChart title={c.chart.title[lang]} axisLabel={c.chart.axis[lang]} bars={barList} max={MAX_GRAMS} width={visualWidth} onSet={(id, g) => setBars((b) => ({ ...b, [id]: g }))} description={chartDescription(rows, lang)} flagged={flaggedBars} />
-          <Text style={styles.helper}>{barsSet ? (flaggedBars.length ? c.chart.differs[lang] : c.chart.matches[lang]) : `${c.screen.chartPrompt[lang]} ${c.screen.chartHelp[lang]}`}</Text>
-          {badge(c.badge.practiceData[lang])}
-        </View>
-      );
-    }
-    if (lab) {
-      return (
-        <View style={styles.stack}>
-          {step.kind === 'arreglar' && task && done[task.id] === 'ok' ? <Text style={styles.helper}>{c.screen.fixedPrompt[lang]}</Text> : null}
-          {labPiece(lab, shown)}
-        </View>
-      );
-    }
-    if (step.scene === 'ladera') {
-      const interactive = step.taskId === 't1';
-      const zones = interactive ? LADERA_ZONES_LAYOUT.map((z) => ({ ...z, label: LADERA_ZONES[z.id][lang] })) : [];
-      const sel = picks.t1?.observaciones ?? [];
-      return (
-        <SceneZones
-          source={CIENCIA_SCENES.ladera}
-          aspect={1536 / 1024}
-          width={visualWidth}
-          zones={zones}
-          selected={sel}
-          imageLabel={step.text[lang]}
-          onToggle={(id) => {
-            if (!task || done[task.id]) return;
-            const cur = picks.t1?.observaciones ?? [];
-            setPicks((p) => ({ ...p, t1: { ...p.t1, observaciones: cur.includes(id) ? cur.filter((x) => x !== id) : [...cur, id] } }));
-          }}
-        />
-      );
-    }
-    if (step.scene === 'humedal') return <Image source={CIENCIA_BACKGROUNDS.humedal.horizontal} style={{ width: visualWidth, height: visualWidth * 0.62, borderRadius: radius.card }} resizeMode="cover" accessible={false} />;
-    return null;
-  })();
 
   // ---- lo que el niño hace en este paso
   const interact: ReactNode = (
     <View style={styles.stack}>
-      {step.id === 's6.4' ? <IdeaRecap lang={lang} unit={unit} chosen={choices.ideaInicial?.[0]} /> : null}
+      {step.kind === 'reflexion' ? <IdeaRecap lang={lang} unit={unit} chosen={choices.ideaInicial?.[0]} /> : null}
       {step.glossary ? (
         <View style={styles.glossary}>
           {step.glossary.map((g) => {
@@ -443,9 +227,7 @@ export function SessionPlayer({ profile, lang, focus, unit, session, startStep, 
           ) : null}
         </View>
       ) : null}
-      {(step.kind === 'probar' || step.kind === 'registrar' || step.kind === 'graficar') && !(choice && needsCheck) && !local.skipped && !ready ? (
-        <Button label={c.button.later[lang]} variant="secondary" onPress={() => patch({ skipped: true })} />
-      ) : null}
+      {family?.skippable?.(step) && !(choice && needsCheck) && !local.skipped && !ready ? <Button label={c.button.later[lang]} variant="secondary" onPress={() => patch({ skipped: true })} /> : null}
     </View>
   );
 

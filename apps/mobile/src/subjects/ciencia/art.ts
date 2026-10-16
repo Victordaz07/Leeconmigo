@@ -16,6 +16,12 @@ export const CIENCIA_SCENES = {
   ladera: require('../../../assets/ciencia/bg/scene_ciencia_ladera.webp'),
 } satisfies Record<string, ImageSourcePropType>;
 
+/** Las escenas por id (lo que el contenido llama `scene`): imagen y proporción. Una unidad nueva agrega las suyas aquí. */
+export const SCENE_ART: Record<string, { source: ImageSourcePropType; aspect: number }> = {
+  ladera: { source: CIENCIA_SCENES.ladera, aspect: 1536 / 1024 },
+  humedal: { source: CIENCIA_BACKGROUNDS.humedal.horizontal, aspect: 1536 / 1024 },
+};
+
 /** Portadas: el cuaderno en Inicio y la unidad C4-U06. */
 export const CIENCIA_COVERS = {
   notebook: require('../../../assets/ciencia/covers/cover_ciencia_cuaderno.webp'),

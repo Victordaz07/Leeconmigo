@@ -41,15 +41,6 @@ export function trayViews(lab: LabSetup, shown: number, lang: CienciaLang): [Tra
   return [view('a'), view('b')];
 }
 
-/** Las zonas tocables de la escena de la ladera (S1), en % de la imagen. `id` = id de la opción de la tarea t1. */
-export const LADERA_ZONES_LAYOUT = [
-  { id: 'pasto', x: 4, y: 28, w: 42, h: 28 },
-  { id: 'tierra', x: 60, y: 12, w: 38, h: 22 },
-  { id: 'surco', x: 66, y: 36, w: 20, h: 28 },
-  { id: 'pie', x: 56, y: 70, w: 42, h: 20 },
-  { id: 'arroyo', x: 2, y: 68, w: 46, h: 22 },
-] as const;
-
 /** El mapa de práctica tal como lo dibuja la pantalla; con `withBand`, la franja de ±1 casilla alrededor de la cordillera. */
 export function mapView(map: PracticeMap, withBand: boolean): MapView2D {
   const band: MapCell[] = [];
