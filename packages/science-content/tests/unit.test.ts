@@ -9,7 +9,7 @@ const valids = (t: UnitTask) => Object.fromEntries(t.parts.map((p) => [p.id, p.o
 describe('unidad C4-U06 como datos validados', () => {
   it('es válida: 6 sesiones, 8 tareas (2·2·2·1·1), 3 pistas cada una, textos en ES y EN, sin «incorrecto»', () => {
     expect(unitProblems(unit)).toEqual([]);
-    expect(SCIENCE_UNITS.map((u) => u.id)).toEqual(['C4-U06']);
+    expect(SCIENCE_UNITS.map((u) => u.id)).toEqual(['C1-U02', 'C4-U06']);
     expect(unit.sessions).toHaveLength(6);
     expect(unit.tasks.map((t) => t.kind)).toEqual(['observar', 'observar', 'predecir', 'predecir', 'evidencia', 'modelo', 'transferir', 'reflexionar']);
   });

@@ -96,6 +96,13 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | CI-06 | Pantallas del cuaderno de Ciencia (con Modo Enfoque) | ✅ | A | Unidad C4-U06 jugable: cuaderno de la unidad + reproductor de sesión (6 sesiones / 24 pasos), laboratorio de bandejas, báscula, tabla, gráfica, mapas de práctica, retomar, cierre con estrellas por esfuerzo, progreso guardado por niño |
 | CI-07 | Verificar en 4 tamaños y `available: true` | ✅ | A | Recorrido completo de las 6 sesiones en tableta (horizontal/vertical) y teléfono (vertical/horizontal), Modo Enfoque (sin Maya ni fondo) y «guardar y seguir después». `available: true` |
 | CI-08 | Revisión de un maestro (estándares: borrador) | ⬜ | – | |
+| CI-09 | Pedido de imágenes de la Tanda 2 (5 unidades piloto, 41 imágenes en 5 lotes A–E) | ✅ | A | `docs/design/ciencia/PEDIDO-IMAGENES.md`; espera que Victor las genere |
+| CI-10 | Reproductor de sesión por «familias» de laboratorio (erosión, mapa, escena, luz) y catálogo de las 48 unidades | ✅ | A | `subjects/ciencia/families/`, `catalog-screen.tsx`; una unidad nueva solo agrega su familia |
+| CI-11 | C1-U02 «Ver en la oscuridad»: modelo de la luz, unidad en JSON validado, caja de luz y tabla de observaciones | ✅ contenido y pantallas · ⏳ arte | A | `UNIT_ART_READY['C1-U02']=false` hasta el Lote A (hoy arte provisional, solo en build de demo) |
+| CI-12 | C2-U02 «Un techo para el muñeco» (probador de materiales) | ⬜ | A | espera Lote B |
+| CI-13 | C6-U04 «Energía térmica» (probador + constructor de modelos + mesa de datos) | ⬜ | A | espera Lote C |
+| CI-14 | C3-U06 «Interacciones sin tocar» (fuerzas e imanes) | ⬜ | A | espera Lote D |
+| CI-15 | C5-U02 «Cantidad y propiedades» (materia en sistemas) | ⬜ | A | espera Lote E |
 
 ---
 

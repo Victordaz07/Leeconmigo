@@ -5,3 +5,5 @@ export { LabBoard, type LabArt, type TrayView } from './lab-board.tsx';
 export { DataTable, Scale, type TableRow } from './data-table.tsx';
 export { BarChart, type Bar } from './bar-chart.tsx';
 export { LayerToggle, PracticeMap, type MapCell, type MapLayers, type MapView2D } from './practice-map.tsx';
+export { LightBox, type LightArt } from './light-box.tsx';
+export { ResultTable, type ResultCell, type ResultRow } from './result-table.tsx';

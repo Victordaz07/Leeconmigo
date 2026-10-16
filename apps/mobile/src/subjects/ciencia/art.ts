@@ -20,12 +20,14 @@ export const CIENCIA_SCENES = {
 export const SCENE_ART: Record<string, { source: ImageSourcePropType; aspect: number }> = {
   ladera: { source: CIENCIA_SCENES.ladera, aspect: 1536 / 1024 },
   humedal: { source: CIENCIA_BACKGROUNDS.humedal.horizontal, aspect: 1536 / 1024 },
+  cuarto: { source: require('../../../assets/ciencia/bg/scene_c1_u02.webp'), aspect: 1536 / 1024 },
 };
 
 /** Portadas: el cuaderno en Inicio y la unidad C4-U06. */
 export const CIENCIA_COVERS = {
   notebook: require('../../../assets/ciencia/covers/cover_ciencia_cuaderno.webp'),
   c4u06: require('../../../assets/ciencia/covers/cover_c4_u06.webp'),
+  c1u02: require('../../../assets/ciencia/covers/cover_c1_u02.webp'),
 } satisfies Record<string, ImageSourcePropType>;
 
 /** Objetos sueltos del laboratorio de Paisaje y erosión (una pieza cada uno, transparentes, cuadrados). */
@@ -38,6 +40,17 @@ export const CIENCIA_PROPS = {
   piedritas: require('../../../assets/ciencia/props/prop_piedritas.webp'),
 } satisfies Record<string, ImageSourcePropType>;
 
+/** Arte de la unidad C1-U02 (Lote A del pedido; hoy PROVISIONAL hasta que lleguen las imágenes de Victor). */
+export const CIENCIA_LUZ = {
+  caja: require('../../../assets/ciencia/props/prop_caja_observacion.webp'),
+  linterna: require('../../../assets/ciencia/props/prop_linterna.webp'),
+  objetos: {
+    osito: require('../../../assets/ciencia/props/prop_objeto_osito.webp'),
+    pelota: require('../../../assets/ciencia/props/prop_objeto_pelota.webp'),
+    taza: require('../../../assets/ciencia/props/prop_objeto_taza.webp'),
+  },
+} satisfies { caja: ImageSourcePropType; linterna: ImageSourcePropType; objetos: Record<string, ImageSourcePropType> };
+
 /** Maya, la guía de Ciencia (DC-4, a confirmar por Victor). Misma niña de la historia `la-isla-que-caminaba`. */
 export type MayaPose = 'saluda' | 'piensa' | 'investiga' | 'apunta' | 'celebra';
 export const MAYA: Record<MayaPose, { source: ImageSourcePropType; aspect: number }> = {
@@ -47,3 +60,15 @@ export const MAYA: Record<MayaPose, { source: ImageSourcePropType; aspect: numbe
   apunta: { source: require('../../../assets/ciencia/chars/char_maya_apunta.webp'), aspect: 415 / 576 },
   celebra: { source: require('../../../assets/ciencia/chars/char_maya_celebra.webp'), aspect: 382 / 576 },
 };
+
+/**
+ * ¿Ya llegó el arte de cada unidad? Hasta que Victor entregue sus imágenes (docs/design/ciencia/PEDIDO-IMAGENES.md) una unidad
+ * con contenido NO se abre en la app: se ve como «Pronto». Cuando llegan, se corre `scripts/ciencia-arte.py` y se pone `true`.
+ */
+export const UNIT_ART_READY: Record<string, boolean> = {
+  'C4-U06': true,
+  'C1-U02': false, // arte provisional: espera el Lote A
+};
+
+/** Un build de demo (`EXPO_PUBLIC_DEMO=1`) deja abrir las unidades con arte provisional, para probarlas antes de que llegue. */
+export const SHOW_UNITS_WITHOUT_ART = process.env.EXPO_PUBLIC_DEMO === '1';

@@ -4,9 +4,11 @@
  * lo dibuja.
  */
 import type { Localized } from '@lee-conmigo/contracts';
+import c1u02 from '../content/c1-u02.json';
 import c4u06 from '../content/c4-u06.json';
 import { practiceMapProblems, PRACTICE_MAPS, bandCount, LADERA_DATASETS, type Dataset } from './datasets.ts';
 import { COVERS, SLOPES, type Cover, type Slope } from './labs/erosion.ts';
+import { LIGHT_OBJECTS, LIGHT_STATES, type LightObject, type LightState } from './labs/luz.ts';
 import type { ScienceArea } from './map.ts';
 
 export type Phase = 'observa' | 'explora' | 'explica' | 'usa';
@@ -41,6 +43,19 @@ export interface LabSetup {
   /** Solo se ve «poca/algo/mucha tierra», sin gramos (primera exploración). */
   qualitative?: boolean;
   /** Los resultados ya están hechos (no se riega): se muestran para analizarlos. */
+  static?: boolean;
+}
+
+/** La caja de observación con un objeto y una luz (C1-U02). */
+export interface LightSetup {
+  object: LightObject;
+  /** Cómo empieza la luz. */
+  light: LightState;
+  /** Cuántas veces cambia la luz el niño en este paso (para «probar»). */
+  trials?: number;
+  /** Repeticiones por condición en la tabla de observaciones (3). */
+  repeats?: number;
+  /** Se muestra la tabla ya hecha (para analizarla) en vez de pedir que se anote. */
   static?: boolean;
 }
 
@@ -80,6 +95,7 @@ export interface UnitStep {
   scene?: SceneId;
   zones?: StepZones;
   lab?: LabSetup;
+  light?: LightSetup;
   /** Pasos de «arreglar la prueba»: el laboratorio resultante según el arreglo que elija el niño (id de la opción). */
   labFixed?: Record<string, LabSetup>;
   choice?: StepChoice;
@@ -179,7 +195,8 @@ export interface ScienceUnit {
   review: { status: 'draftPendingTeacherReview' | 'teacherValidated'; notes: string };
 }
 
-export const SCIENCE_UNITS: readonly ScienceUnit[] = [c4u06 as unknown as ScienceUnit];
+/** Las unidades con contenido, por grado. Una unidad con contenido todavía puede esperar su arte (`UNIT_ART_READY` en la app). */
+export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit];
 export const scienceUnitContent = (id: string): ScienceUnit | undefined => SCIENCE_UNITS.find((u) => u.id === id);
 
 // ------------------------------------------------------------------ evaluar una tarea
@@ -318,6 +335,11 @@ export function unitProblems(u: ScienceUnit): string[] {
       choiceProblems(`${st.id} pregunta (${k})`, c);
       if (c.id !== st.choice?.id) p.push(`${st.id}: la variante «${k}» debe tener el mismo id que la pregunta`);
     }
+    if (st.light) {
+      if (!LIGHT_OBJECTS.includes(st.light.object)) p.push(`${st.id}: objeto desconocido (${st.light.object})`);
+      if (!LIGHT_STATES.includes(st.light.light)) p.push(`${st.id}: estado de luz desconocido`);
+      if (st.light.trials !== undefined && (st.light.trials < 1 || st.light.trials > 6)) p.push(`${st.id}: los cambios de luz van de 1 a 6`);
+    }
     if (st.map && !(st.map.id === 'A' || st.map.id === 'B')) p.push(`${st.id}: mapa desconocido`);
     for (const g of st.glossary ?? []) if (!u.glossary.some((e) => e.es === g)) p.push(`${st.id}: «${g}» no está en el glosario`);
     if (st.kind === 'arreglar') {
@@ -392,6 +414,7 @@ export function unitProblems(u: ScienceUnit): string[] {
 /** Los textos de la unidad que citan datos (números) deben coincidir con los datos que genera el modelo y los mapas. */
 export function dataTextProblems(u: ScienceUnit): string[] {
   const p: string[] = [];
+  if (u.id === 'C1-U02') return lightTextProblems(u);
   if (u.id !== 'C4-U06') return p;
   const t5 = u.tasks.find((t) => t.id === 't5');
   const base = LADERA_DATASETS.base.rows;
@@ -428,5 +451,26 @@ export function dataTextProblems(u: ScienceUnit): string[] {
     }
   }
   for (const m of Object.values(PRACTICE_MAPS)) p.push(...practiceMapProblems(m));
+  return p;
+}
+
+/** C1-U02: las repeticiones de la tabla y lo que dicen los textos («las 3 veces») coinciden con el modelo de la luz. */
+function lightTextProblems(u: ScienceUnit): string[] {
+  const p: string[] = [];
+  const steps = u.sessions.flatMap((s) => s.steps);
+  const table = steps.find((st) => st.kind === 'registrar')?.light;
+  if (table?.repeats !== 3) p.push('s3.2: la tabla debe tener 3 repeticiones por condición');
+  const n = table?.repeats ?? 3;
+  const evidence = u.tasks.find((t) => t.id === 't5')?.parts.find((x) => x.id === 'evidencia');
+  for (const id of ['on', 'off']) {
+    const o = evidence?.options.find((x) => x.id === id);
+    if (!o?.text.es.includes(`las ${n} veces`)) p.push(`t5.evidencia.${id}: el texto ES no dice «las ${n} veces»`);
+    if (!o?.text.en.includes(`all ${n} times`)) p.push(`t5.evidencia.${id}: el texto EN no dice «all ${n} times»`);
+  }
+  // Las predicciones acaban en «lo distingo» solo con la luz encendida (el modelo).
+  for (const id of ['t3', 't4']) {
+    const t = u.tasks.find((x) => x.id === id)?.parts.find((x) => x.id === 'resultado');
+    if (t?.observedOptionId !== 'distingo') p.push(`${id}.resultado: lo observado al encender la luz debe ser «distingo»`);
+  }
   return p;
 }

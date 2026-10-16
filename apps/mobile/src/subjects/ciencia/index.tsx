@@ -6,25 +6,30 @@ import { useMemo, useRef, useState } from 'react';
 import {
   EMPTY_SCIENCE,
   finishSession,
-  homeSegments,
   isScienceProgress,
+  overallSegments,
   recordChoice,
   recordTask,
   saveResume,
   SCIENCE_UNITS,
+  scienceUnitById,
   unitProgress,
   type ScienceProgress,
+  type ScienceUnit,
 } from '@lee-conmigo/science-content';
 import { subjectStorageFor, type ChildProfile } from '../../app-state';
 import type { SubjectModule, SubjectScreenProps } from '../types';
-import { CIENCIA_COVERS } from './art';
+import { CIENCIA_COVERS, SHOW_UNITS_WITHOUT_ART, UNIT_ART_READY } from './art';
+import { CatalogScreen } from './catalog-screen';
 import { SessionPlayer } from './session-player';
 import { UnitHome } from './unit-home';
 
-const UNIT = SCIENCE_UNITS[0];
+/** Unidades que ya se pueden jugar: tienen contenido Y su arte llegó. */
+const PLAYABLE: readonly ScienceUnit[] = SCIENCE_UNITS.filter((u) => UNIT_ART_READY[u.id] || SHOW_UNITS_WITHOUT_ART);
+const playableSessions = Object.fromEntries(PLAYABLE.map((u) => [u.id, u.sessions.length]));
 const storage = (profileId: string) => subjectStorageFor('ciencia', profileId, EMPTY_SCIENCE, isScienceProgress);
 
-type View = { name: 'unit' } | { name: 'session'; id: string; startStep: number };
+type View = { name: 'catalog' } | { name: 'unit'; unitId: string } | { name: 'session'; unitId: string; id: string; startStep: number };
 
 function CienciaScreen({ profile, lang, minutes, focus, onExit }: SubjectScreenProps) {
   const store = useMemo(() => storage(profile.id), [profile.id]);
@@ -36,15 +41,23 @@ function CienciaScreen({ profile, lang, minutes, focus, onExit }: SubjectScreenP
     setProgress(next);
     store.save(next);
   };
-  const [view, setView] = useState<View>({ name: 'unit' });
-  const unitState = unitProgress(progress, UNIT.id);
+  const [view, setView] = useState<View>({ name: 'catalog' });
   const language = lang === 'en' ? 'en' : 'es';
+  // El grado con el que abre el catálogo: el de la unidad que va empezada, o el de la primera jugable.
+  const started = PLAYABLE.find((u) => unitProgress(progress, u.id).sessionsDone.length > 0 || unitProgress(progress, u.id).resume);
+  const initialGrade = (started ?? PLAYABLE[0])?.grade ?? 4;
+
+  if (view.name === 'catalog') {
+    return <CatalogScreen lang={language} progress={progress} playable={playableSessions} initialGrade={initialGrade} onBack={onExit} onOpen={(unitId) => setView({ name: 'unit', unitId })} />;
+  }
+  const UNIT = PLAYABLE.find((u) => u.id === view.unitId) ?? PLAYABLE[0];
+  const unitState = unitProgress(progress, UNIT.id);
 
   if (view.name === 'session') {
     const session = UNIT.sessions.find((s) => s.id === view.id) ?? UNIT.sessions[0];
     return (
       <SessionPlayer
-        key={session.id}
+        key={`${UNIT.id}:${session.id}`}
         profile={profile}
         lang={language}
         focus={focus}
@@ -57,10 +70,10 @@ function CienciaScreen({ profile, lang, minutes, focus, onExit }: SubjectScreenP
         onStep={(i) => commit(saveResume(latest.current, UNIT.id, session.id, i))}
         onLeave={(i) => {
           commit(saveResume(latest.current, UNIT.id, session.id, i));
-          setView({ name: 'unit' });
+          setView({ name: 'unit', unitId: UNIT.id });
         }}
         onFinish={(stars) => commit(finishSession(latest.current, UNIT.id, session.id, stars))}
-        onDone={() => setView({ name: 'unit' })}
+        onDone={() => setView({ name: 'unit', unitId: UNIT.id })}
       />
     );
   }
@@ -71,8 +84,8 @@ function CienciaScreen({ profile, lang, minutes, focus, onExit }: SubjectScreenP
       progress={unitState}
       attempts={progress.attempts}
       minutes={minutes}
-      onBack={onExit}
-      onOpenSession={(id) => setView({ name: 'session', id, startStep: unitState.resume?.sessionId === id ? unitState.resume.step : 0 })}
+      onBack={() => setView({ name: 'catalog' })}
+      onOpenSession={(id) => setView({ name: 'session', unitId: UNIT.id, id, startStep: unitState.resume?.sessionId === id ? unitState.resume.step : 0 })}
     />
   );
 }
@@ -80,10 +93,11 @@ function CienciaScreen({ profile, lang, minutes, focus, onExit }: SubjectScreenP
 export const cienciaModule: SubjectModule = {
   id: 'ciencia',
   available: true,
-  homeCard: (profile: ChildProfile, lang) => ({
-    subtitle: UNIT.title[lang],
-    segments: homeSegments(UNIT, unitProgress(storage(profile.id).load(), UNIT.id)),
-    image: CIENCIA_COVERS.notebook,
-  }),
+  homeCard: (profile: ChildProfile, lang) => {
+    const progress = storage(profile.id).load();
+    // La unidad en curso, o la primera: «Superficies y mapas», no el nombre de la materia.
+    const current = PLAYABLE.find((u) => unitProgress(progress, u.id).resume) ?? PLAYABLE.find((u) => unitProgress(progress, u.id).sessionsDone.length > 0) ?? PLAYABLE[0];
+    return { subtitle: current ? current.title[lang] : '', segments: overallSegments(PLAYABLE, progress), image: CIENCIA_COVERS.notebook };
+  },
   Screen: CienciaScreen,
 };

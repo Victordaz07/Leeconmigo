@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { EMPTY_SCIENCE, finishSession, homeSegments, isScienceProgress, nextSession, recordChoice, recordTask, saveResume, statusByIdea, unitProgress, scienceUnitContent, type ScienceUnit } from '../src/index.ts';
+import { EMPTY_SCIENCE, overallSegments, finishSession, homeSegments, isScienceProgress, nextSession, recordChoice, recordTask, saveResume, statusByIdea, unitProgress, scienceUnitContent, type ScienceUnit } from '../src/index.ts';
 
 const unit = scienceUnitContent('C4-U06') as ScienceUnit;
 const task = (id: string) => unit.tasks.find((t) => t.id === id)!;
@@ -71,5 +71,17 @@ describe('progreso de Ciencia (solo datos derivados)', () => {
     }
     expect(seen).toEqual([1, 1, 2, 2, 3, 3]);
     expect(nextSession(unit, unitProgress(p, 'C4-U06'))).toBeUndefined();
+  });
+
+  it('la portada de Inicio cuenta las sesiones de todas las unidades jugables', () => {
+    const two = [unit, { ...unit, id: 'X-U01', sessions: unit.sessions.slice(0, 3) }] as ScienceUnit[];
+    expect(overallSegments(two, EMPTY_SCIENCE)).toBe(0);
+    let p = finishSession(EMPTY_SCIENCE, 'C4-U06', 's1', 1);
+    expect(overallSegments(two, p)).toBe(1);
+    for (const s of unit.sessions) p = finishSession(p, 'C4-U06', s.id, 1);
+    expect(overallSegments(two, p)).toBe(2);
+    for (const s of two[1].sessions) p = finishSession(p, 'X-U01', s.id, 1);
+    expect(overallSegments(two, p)).toBe(3);
+    expect(overallSegments([], p)).toBe(0);
   });
 });

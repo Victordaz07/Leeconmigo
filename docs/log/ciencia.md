@@ -60,3 +60,11 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
   evidencia final con los datos que corresponden (`choiceByFix`), comprobados contra el modelo.
 - Hallazgo técnico: en la versión web `locationX/Y` no existe en un toque → `tapPosition` calcula la posición con la página.
 - Verificado en el navegador en 4 tamaños + Modo Enfoque; `available: true`. Sin APK (Victor lo pide cuando quiera).
+
+## 2026-10-16 · CI-09/10/11: Tanda 2, reproductor por familias, C1-U02
+- Victor pidió empezar las 5 unidades piloto restantes y el prompt de imágenes. Se escribió el pedido (41 imágenes, 5 lotes).
+- El reproductor de sesión se reorganizó en familias de laboratorio (sin cambiar el comportamiento de C4-U06: el recorrido
+  completo y las pruebas de comportamiento volvieron a pasar). Catálogo de las 48 unidades con «Pronto».
+- C1-U02 completa en contenido y pantallas; el arte es provisional hasta el Lote A. 12 pruebas nuevas de la unidad + 3 del catálogo.
+- Decisión de diseño: dos ideas (`luz.ver`, `objeto.sigue`) en tres casos (osito, pelota, «armario» = taza) en vez de la idea de
+  «cambiar una sola cosa», que no es de 1.º (1-PS4-2 pide ver que un objeto solo se ve con luz).

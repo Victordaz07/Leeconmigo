@@ -123,3 +123,11 @@ export function homeSegments(unit: ScienceUnit, u: UnitProgress): 0 | 1 | 2 | 3 
   if (done === 0) return 0;
   return Math.min(3, Math.max(1, Math.ceil((done / unit.sessions.length) * 3))) as 1 | 2 | 3;
 }
+
+/** Los segmentos de la portada de Ciencia en Inicio: avance sobre las sesiones de TODAS las unidades jugables. */
+export function overallSegments(units: readonly ScienceUnit[], p: ScienceProgress): 0 | 1 | 2 | 3 {
+  const total = units.reduce((n, u) => n + u.sessions.length, 0);
+  const done = units.reduce((n, u) => n + u.sessions.filter((s) => unitProgress(p, u.id).sessionsDone.includes(s.id)).length, 0);
+  if (total === 0 || done === 0) return 0;
+  return Math.min(3, Math.max(1, Math.ceil((done / total) * 3))) as 1 | 2 | 3;
+}

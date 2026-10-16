@@ -118,3 +118,30 @@ seguir, que contar sismos en el mapa funciona y que «Guardar y seguir después�
 - Tanda 2 de imágenes y las otras 5 unidades piloto; luego las 48 del mapa.
 - Probar con un niño de verdad y ajustar textos/tiempos (la sesión debe sentirse de ≈ 15 min).
 - Revisar en un teléfono/tablet real (el navegador no prueba toques con el dedo ni el audio de «Escuchar»).
+
+
+## Actualización CI-09/10/11 (2026-10-16): Tanda 2 pedida, reproductor por familias, C1-U02 hecha
+**Orden pedido por Victor:** «Empieza con las 5 unidades piloto restantes y el prompt para las imágenes». Orden de construcción:
+C1 → C2 → C6 → C3 → C5 (de menos a más trabajo nuevo; spec §6).
+
+- **Imágenes:** `docs/design/ciencia/PEDIDO-IMAGENES.md` → «Tanda 2», 41 imágenes en 5 lotes (A C1 · B C2 · C C6 · D C3 · E C5), con un
+  estilo común que es el que de verdad salió en la Tanda 1 (acuarela de cuento). Victor las genera y las manda; se procesan con
+  `python3 -I scripts/ciencia-arte.py <carpeta> tanda-2` y se pone `UNIT_ART_READY[<id>] = true` en `subjects/ciencia/art.ts`.
+- **Arte provisional:** `scripts/ciencia-arte-provisional.py A` dibuja formas sencillas con los MISMOS nombres de archivo para poder
+  probar. Una unidad con arte provisional NO se abre para el niño (se ve «Pronto»); solo en un build con `EXPO_PUBLIC_DEMO=1`.
+- **Reproductor por familias:** `subjects/ciencia/session-player.tsx` ahora es genérico; lo que se dibuja y se hace lo pone la
+  familia del paso (`families/erosion.tsx`, `map.tsx`, `light.tsx`, `scene.tsx`). Una unidad con un laboratorio nuevo agrega UNA
+  familia y la registra en `families/index.ts`; no toca el reproductor. Las zonas tocables de una escena ya son datos del JSON
+  (`step.zones`). El arreglo de la prueba (`choiceByFix`) se busca por la tarea de tipo `transferir`.
+- **Catálogo:** `catalog-screen.tsx` muestra las 48 unidades por grado; las que no tienen contenido (o arte) dicen «Pronto».
+  `homeCard` de Inicio cuenta las sesiones de todas las unidades jugables (`overallSegments`).
+- **C1-U02 (1.º, «Ver en la oscuridad»):** `labs/luz.ts` (modelo: un objeto se distingue SOLO con luz; `LIGHT_MODEL` dice qué NO
+  representa), `content/c1-u02.json` (6 sesiones / 23 pasos, 8 tareas, 2 ideas en 3 casos cada una, glosario, ficha de seguridad),
+  `LightBox` y `ResultTable` en `ui-native/ciencia`, `families/light.tsx`. Ficha legible generada: `unidades/C1-U02.md`
+  (`python3 scripts/ciencia-unidad-md.py C1-U02`). Pruebas: `tests/unit-c1u02.test.ts`.
+- **Cuando llegue el Lote A:** correr el script de arte, **ajustar `interior` de `LightBox`** (dónde está el interior de la caja
+  dentro de su imagen; hoy `{x:.13,y:.22,w:.74,h:.58}`), mirar la caja y el osito en los 4 tamaños y poner `UNIT_ART_READY['C1-U02']=true`.
+
+**Siguiente:** CI-12 C2-U02 (probador de materiales: 4 materiales cuadrados iguales, «no pasó / pasó un poco / pasó mucha»,
+tabla de resultados con `ResultTable`). Decisiones de diseño ya tomadas para que el arte case: 4 materiales (papel absorbente,
+tela, plástico, cartón), vaso de agua compartido con C5 y C6, bandeja con pico.
