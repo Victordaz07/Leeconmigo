@@ -19,23 +19,19 @@ que pediría SO-02. Sigue sin haber contenido en la app, ni arte, ni código. En
    *seis* unidades piloto, una por grado — más grande que el piloto único de Matemáticas, g3u1).
 
 ## Siguiente paso exacto
-**SO-02 — Especificación visual/interactiva, pero primero acotar el alcance con Victor.** La investigación propone
-seis unidades piloto (una por grado); Matemáticas empezó con **una sola** unidad piloto y funcionó mejor así. Antes de
-escribir la especificación en `docs/design/sociedad/`, confirmar con Victor:
-- Con cuál unidad/grado empezar (candidatas de la propia Etapa A del documento: S1-U01, S2-U01, S3-U03, S4-U03,
-  S5-U04 o S6-U02) — igual que en Matemáticas, el nivel de la app no es el grado escolar (docs/01).
-- Qué tan literal seguir las "12 familias de interacción" del documento para la primera unidad (probablemente no las
-  12 de una vez — Matemáticas empezó con solo 3 representaciones, no las 12/37 completas).
-- Las unidades que usan fuentes reales (documentos, mapas históricos, recursos de Smithsonian/National Archives/LOC)
-  necesitan verificar permisos de reuso antes de publicar (§16 "Permisos y recursos") — más trabajo de curaduría que
-  Matemáticas, que usaba manipulables inventados.
-
-Una vez acotado: escribir la especificación de **esa única unidad** en `docs/design/sociedad/` (qué se manipula, qué
-error se nombra, cómo se evalúa, qué fuentes concretas se usan y con qué atribución) — no las 48 de un golpe.
+**SO-02 — hecho como propuesta; falta que Victor confirme DS-3 antes de seguir a SO-03.** Se escribió la
+especificación de **una sola** unidad piloto (igual que Matemáticas con g3u1, no las 6 de "Etapa A"):
+`docs/design/sociedad/UNIDAD-PILOTO-S3-U03.md` — **S3-U03, "Un barrio cambia, pero el mapa no lo explica todo"**
+(3.º, CA HSS 3.3). Se eligió esta de las 6 candidatas porque es la única con escenario 100% ficticio (sin fuentes
+reales que requieran verificar permisos todavía) y porque la propia investigación la conecta con la Bahía de San
+Francisco (§4). Usa solo 2 de las 12 familias de interacción (mapa por capas, mesa de fuentes) — como Matemáticas,
+que empezó con 3 de 12 representaciones, no las 12 de una vez.
+**No avanzar a SO-03 (pedir imágenes) sin que Victor confirme DS-3** (puede pedir otra unidad; ver "Decisiones
+propuestas" abajo).
 
 ## Checklist
 - [x] SO-01 Prompt de investigación de Sociedad → Victor lo corrió (resultado: `docs/research/sociedad-investigacion.md`)
-- [ ] SO-02 Especificación visual/interactiva de la unidad piloto (una sola) en `docs/design/sociedad/`
+- [x] SO-02 Especificación visual/interactiva de la unidad piloto (una sola): `docs/design/sociedad/UNIDAD-PILOTO-S3-U03.md` — propuesta, falta confirmación de Victor (DS-3)
 - [ ] SO-03 Lista de imágenes por tandas + manifiesto (Victor las genera)
 - [ ] SO-04 Dominio puro en `packages/social-content` (unidades JSON, validador, generador con semilla, dominio, pruebas)
 - [ ] SO-05 Textos ES/EN en `packages/ui-core/src/sociedad/`
@@ -56,8 +52,9 @@ error se nombra, cómo se evalúa, qué fuentes concretas se usan y con qué atr
   Science + enfoque de investigación C3 Framework (NCSS) — complementario, no currículo nacional obligatorio.
 - **DS-2**: color de identidad de Sociedad: ciruela `#7B4B6A` (propuesto en la investigación, a verificar contraste
   contra el papel crema `#F7EFE1` de Kitewise antes de usarlo en texto).
-- **DS-3** (pendiente de Victor): cuál de las 6 unidades candidatas de "Etapa A" usar como piloto único — ver
-  "Siguiente paso exacto" arriba. No se avanza a SO-02 sin esto.
+- **DS-3** (propuesta, pendiente de que Victor confirme): usar **S3-U03** ("Un barrio cambia...", 3.º, CA HSS 3.3)
+  como unidad piloto única — ver razones y alternativas descartadas en
+  `docs/design/sociedad/UNIDAD-PILOTO-S3-U03.md`. No se avanza a SO-03 sin esto.
 
 ## Pedidos a lo compartido
 _(ninguno todavía)_
