@@ -4,17 +4,22 @@
  * pegando pedazos). Tono de acompañamiento: nunca "incorrecto", nunca rojo (docs/06); se dice QUÉ revisar.
  */
 import type { MathLang } from './math-copy.ts';
+import { FEEDBACK_2, visualEquation2, visualFieldLabel2, visualHint2, visualHowTo2, visualPrompt2, type VisualCopyModel2 } from './math-visual-copy-2.ts';
 
 /** Lo que estos textos necesitan del modelo (copia estructural, sin depender del paquete de contenido). */
 export type VisualCopyModel =
+  | VisualCopyModel2
   | { kind: 'tenFrame'; capacity: number; start: number; target: number; task: 'show' | 'complete' | 'reach' }
   | { kind: 'equalGroups'; groups: number; perGroup: number; task: 'build' | 'read' }
   | { kind: 'sharing'; mode: 'partitive' | 'quotative'; total: number; groups: number; perGroup: number; remainder: number };
 
 type P = Record<string, number>;
+type Phase1 = Exclude<VisualCopyModel, VisualCopyModel2>;
+const isPhase1 = (m: VisualCopyModel): m is Phase1 => m.kind === 'tenFrame' || m.kind === 'equalGroups' || m.kind === 'sharing';
 const plural = (n: number, one: string, many: string) => (n === 1 ? one : many);
 
 export function visualPrompt(m: VisualCopyModel, lang: MathLang): string {
+  if (!isPhase1(m)) return visualPrompt2(m, lang);
   const es = lang === 'es';
   if (m.kind === 'tenFrame') {
     if (m.task === 'show') return es ? `Pon ${m.target} semillas en la bandeja.` : `Put ${m.target} seeds in the tray.`;
@@ -48,6 +53,7 @@ export function visualPrompt(m: VisualCopyModel, lang: MathLang): string {
 
 /** Instrucción corta de cómo se manipula (debajo del dibujo). */
 export function visualHowTo(m: VisualCopyModel, lang: MathLang): string {
+  if (!isPhase1(m)) return visualHowTo2(m, lang);
   const es = lang === 'es';
   if (m.kind === 'tenFrame') return es ? 'Toca una casilla vacía para poner una semilla; tócala otra vez para quitarla.' : 'Tap an empty square to add a seed; tap it again to take it out.';
   if (m.kind === 'equalGroups')
@@ -58,6 +64,7 @@ export function visualHowTo(m: VisualCopyModel, lang: MathLang): string {
 }
 
 export function visualFieldLabel(field: string, m: VisualCopyModel, lang: MathLang): string {
+  if (!isPhase1(m)) return visualFieldLabel2(field, m, lang);
   const es = lang === 'es';
   if (field === 'groups') return es ? 'Parcelas' : 'Plots';
   if (field === 'perGroup') return es ? 'En cada una' : 'In each';
@@ -69,6 +76,7 @@ export function visualFieldLabel(field: string, m: VisualCopyModel, lang: MathLa
 
 /** La operación que se ve debajo del modelo, con □ donde falta. */
 export function visualEquation(m: VisualCopyModel, solved: boolean): string {
+  if (!isPhase1(m)) return visualEquation2(m, solved);
   if (m.kind === 'tenFrame') return m.task === 'show' ? '' : `${m.start} + ${solved ? m.target - m.start : '□'} = ${m.target}`;
   if (m.kind === 'equalGroups') return m.task === 'read' && !solved ? '□ × □ = □' : `${m.groups} × ${m.perGroup} = ${solved ? m.groups * m.perGroup : '□'}`;
   if (m.mode === 'partitive') return `${m.total} ÷ ${m.groups} = ${solved ? m.perGroup : '□'}${m.remainder > 0 ? (solved ? ` R ${m.remainder}` : ' R □') : ''}`;
@@ -110,13 +118,17 @@ const FEEDBACK: Record<string, { es: (p: P) => string; en: (p: P) => string }> =
   },
 };
 
-export function visualFeedback(key: string, params: P, lang: MathLang): string {
+/** El modelo es opcional: algunos mensajes nombran a la fruta o a la persona del problema. */
+export function visualFeedback(key: string, params: P, lang: MathLang, m?: VisualCopyModel): string {
   const f = FEEDBACK[key];
-  return f ? f[lang](params) : '';
+  if (f) return f[lang](params);
+  const g = FEEDBACK_2[key];
+  return g ? g[lang](params, m && !isPhase1(m) ? m : undefined) : '';
 }
 
 /** Escalera de 3 ayudas: dónde mirar → una estrategia → un ejemplo con OTROS números (`example` = parallelExample). */
 export function visualHint(m: VisualCopyModel, level: 1 | 2 | 3, example: P, lang: MathLang): string {
+  if (!isPhase1(m)) return visualHint2(m, level, example, lang);
   const es = lang === 'es';
   const e = example;
   if (m.kind === 'tenFrame') {

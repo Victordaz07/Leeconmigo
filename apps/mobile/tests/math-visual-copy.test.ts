@@ -21,7 +21,7 @@ describe('textos de las matemáticas visuales (dominio ↔ ES/EN)', () => {
           const ev = evaluateVisual(model, w);
           keys.add(ev.feedbackKey);
           for (const lang of LANGS) {
-            const text = visualFeedback(ev.feedbackKey, ev.feedbackParams, lang);
+            const text = visualFeedback(ev.feedbackKey, ev.feedbackParams, lang, model);
             expect(text, `${ev.feedbackKey} ${lang}`).not.toBe('');
             expect(text).not.toMatch(bad);
           }
@@ -42,5 +42,24 @@ describe('textos de las matemáticas visuales (dominio ↔ ES/EN)', () => {
     if (m.kind !== 'sharing') throw new Error();
     expect(visualEquation(m, true)).toBe(`${m.total} ÷ ${m.groups} = ${m.perGroup} R ${m.remainder}`);
     expect(visualEquation(m, false)).toBe(`${m.total} ÷ ${m.groups} = □ R □`);
+  });
+});
+
+describe('cada clave de mensaje del dominio tiene texto', () => {
+  it('las claves literales de evaluate.ts y families/*.ts, y las armadas con plantilla, existen en ES y EN', async () => {
+    const { readFileSync, readdirSync } = await import('node:fs');
+    const dir = new URL('../../../packages/math-content/src/visual/', import.meta.url);
+    const files = ['evaluate.ts', ...readdirSync(new URL('families/', dir)).map((f) => `families/${f}`)];
+    const keys = new Set<string>();
+    for (const f of files) for (const m of readFileSync(new URL(f, dir), 'utf8').matchAll(/result\(\s*[^,]+,\s*'([\w.]+)'/g)) keys.add(m[1]);
+    for (const k of ['partWhole.part', 'partWhole.whole', 'compare.smaller', 'compare.larger', 'compare.difference', 'times.larger', 'times.smaller']) keys.add(`bar.explain.${k}`);
+    for (const k of ['partWhole', 'compare', 'times']) keys.add(`bar.check.${k}`);
+    for (const k of ['read', 'difference', 'total']) {
+      keys.add(`data.explain.${k}`);
+      keys.add(`data.check.${k}`);
+    }
+    expect(keys.size).toBeGreaterThan(80);
+    const params = new Proxy({}, { get: () => 3 }) as Record<string, number>;
+    for (const k of keys) for (const lang of LANGS) expect(visualFeedback(k, params, lang), `${k} ${lang}`).not.toBe('');
   });
 });

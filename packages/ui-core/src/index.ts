@@ -18,3 +18,5 @@ export { MATH_COPY } from './math-copy.ts';
 export type { MathLang } from './math-copy.ts';
 export { VISUAL_COPY, visualEquation, visualFeedback, visualFieldLabel, visualHint, visualHowTo, visualPrompt } from './math-visual-copy.ts';
 export type { VisualCopyModel } from './math-visual-copy.ts';
+export { fruitName, timeText, TOPIC_COPY } from './math-visual-copy-2.ts';
+export type { BarItem, FruitName, VisualCopyModel2 } from './math-visual-copy-2.ts';
