@@ -18,6 +18,12 @@ export interface MathArt {
   plate?: ImageSourcePropType;
   bag?: ImageSourcePropType;
   plot?: ImageSourcePropType;
+  frog?: ImageSourcePropType;
+  pizza?: ImageSourcePropType;
+  cake?: ImageSourcePropType;
+  clockFace?: ImageSourcePropType;
+  treasure?: ImageSourcePropType;
+  fruits?: Partial<Record<'mango' | 'pera' | 'uva' | 'manzana', ImageSourcePropType>>;
 }
 
 const MathArtContext = createContext<MathArt>({});
@@ -29,7 +35,7 @@ export function MathArtProvider({ art, children }: { art: MathArt; children: Rea
 export const useMathArt = () => useContext(MathArtContext);
 
 /** Una pieza de arte decorativa: el lector de pantalla la ignora (el nombre lo lleva el control que la contiene). */
-function ArtImage({ source, size }: { source: ImageSourcePropType; size: number }) {
+export function ArtImage({ source, size }: { source: ImageSourcePropType; size: number }) {
   return <Image source={source} style={{ width: size, height: size }} resizeMode="contain" accessible={false} />;
 }
 

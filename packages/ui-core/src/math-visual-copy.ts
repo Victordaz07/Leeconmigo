@@ -153,6 +153,8 @@ export function visualHint(m: VisualCopyModel, level: 1 | 2 | 3, example: P, lan
 
 export const VISUAL_COPY = {
   workshop: { es: 'Taller', en: 'Workshop' },
+  /** Escalera de ayuda de los ejercicios visuales: dónde mirar → estrategia → ejemplo con otros números. */
+  hintTitles: { es: ['Pista', 'Estrategia', 'Ejemplo con otros números'], en: ['Hint', 'Strategy', 'Example with other numbers'] },
   workshopTitle: { es: 'Taller: aprende haciendo', en: 'Workshop: learn by doing' },
   workshopSubtitle: { es: 'Construye, reparte y cuenta con objetos.', en: 'Build, share, and count with objects.' },
   exerciseOf: { es: (n: number, t: number) => `Ejercicio ${n} de ${t}`, en: (n: number, t: number) => `Exercise ${n} of ${t}` },

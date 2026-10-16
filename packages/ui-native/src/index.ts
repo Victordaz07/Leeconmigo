@@ -34,3 +34,5 @@ export { GardenPlots, SharingBoard, TenFrameBoard } from './components/math-visu
 export type { SharingToken } from './components/math-visual/scenes.tsx';
 export { AnswerBoxes, DigitPad } from './components/math-visual/answers.tsx';
 export type { AnswerBox } from './components/math-visual/answers.tsx';
+export { AreaBoard, BarChartBoard, BarModelBoard, ClockBoard, CoordBoard, FractionBoard, NumberLineBoard, PlaceValueBoard, RatioBoard } from './components/math-visual/scenes-2.tsx';
+export type { BarRow, PlaceValueLabels } from './components/math-visual/scenes-2.tsx';

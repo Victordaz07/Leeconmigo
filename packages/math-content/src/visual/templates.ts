@@ -145,9 +145,37 @@ export function generateVisual(t: VisualTemplate, seed: number): VisualInstance 
   return { schemaVersion: 1, instanceId: `${t.id}@v${t.version}#${seed}`, templateId: t.id, templateVersion: t.version, generatorVersion: GENERATOR_VERSION, skillId: t.skillId, seed, model };
 }
 
-/** Una tanda de práctica para un grado: las plantillas de ese grado, alternando familias (no el mismo tipo seguido). */
-export function buildVisualSession(grade: number, seed: number, count: number): VisualInstance[] {
-  const fits = VISUAL_TEMPLATES.filter((t) => t.grades[0] <= grade && grade <= t.grades[1]);
-  const pool = fits.length ? fits : VISUAL_TEMPLATES;
+/** Plantillas de un grado (y, si se pide, de una sola familia). Si no hay del grado exacto, las del grado más cercano. */
+export function templatesFor(grade: number, family?: VisualFamily): VisualTemplate[] {
+  const pool = family ? VISUAL_TEMPLATES.filter((t) => t.family === family) : VISUAL_TEMPLATES;
+  const fits = pool.filter((t) => t.grades[0] <= grade && grade <= t.grades[1]);
+  if (fits.length) return fits;
+  const distance = (t: VisualTemplate) => Math.min(Math.abs(t.grades[0] - grade), Math.abs(t.grades[1] - grade));
+  const best = Math.min(...pool.map(distance));
+  return pool.filter((t) => distance(t) === best);
+}
+
+/** Familias que tienen algo para ese grado (los temas del Taller). */
+export const familiesFor = (grade: number): VisualFamily[] => [...new Set(VISUAL_TEMPLATES.filter((t) => t.grades[0] <= grade && grade <= t.grades[1]).map((t) => t.family))];
+
+/**
+ * Una tanda de práctica: las plantillas del grado (de un tema o de todos), alternando para no repetir la misma seguida.
+ * En la mezcla se intercalan familias distintas.
+ */
+export function buildVisualSession(grade: number, seed: number, count: number, family?: VisualFamily): VisualInstance[] {
+  let pool = templatesFor(grade, family);
+  if (!family) {
+    // Mezcla: una plantilla por familia por vuelta, con el orden de las familias barajado por la semilla.
+    const byFamily = new Map<VisualFamily, VisualTemplate[]>();
+    for (const t of pool) byFamily.set(t.family, [...(byFamily.get(t.family) ?? []), t]);
+    const r = intRng(seed);
+    const fams = [...byFamily.keys()].sort((x, y) => (x < y ? -1 : 1));
+    for (let i = fams.length - 1; i > 0; i--) {
+      const j = r.int(0, i);
+      [fams[i], fams[j]] = [fams[j], fams[i]];
+    }
+    pool = [];
+    for (let round = 0; pool.length < count * 2 && round < 6; round++) for (const f of fams) pool.push(byFamily.get(f)![round % byFamily.get(f)!.length]);
+  }
   return Array.from({ length: count }, (_, i) => generateVisual(pool[i % pool.length], seed * 31 + i + 1));
 }

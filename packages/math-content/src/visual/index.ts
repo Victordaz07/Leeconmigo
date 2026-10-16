@@ -1,5 +1,5 @@
 export * from './model.ts';
-export { buildVisualSession, generateVisual, GENERATOR_VERSION, modelProblems, VISUAL_TEMPLATES, visualTemplateById } from './templates.ts';
+export { buildVisualSession, familiesFor, generateVisual, templatesFor, GENERATOR_VERSION, modelProblems, VISUAL_TEMPLATES, visualTemplateById } from './templates.ts';
 export type { VisualTemplate } from './templates.ts';
 export { intRng } from './rng.ts';
 export type { IntRng } from './rng.ts';

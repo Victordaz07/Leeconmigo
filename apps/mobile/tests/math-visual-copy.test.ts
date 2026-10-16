@@ -47,9 +47,10 @@ describe('textos de las matemáticas visuales (dominio ↔ ES/EN)', () => {
 
 describe('cada clave de mensaje del dominio tiene texto', () => {
   it('las claves literales de evaluate.ts y families/*.ts, y las armadas con plantilla, existen en ES y EN', async () => {
-    const { readFileSync, readdirSync } = await import('node:fs');
+    // @ts-expect-error -- la app no carga los tipos de Node; esta prueba corre en Node (vitest).
+    const { readFileSync, readdirSync } = (await import('node:fs')) as { readFileSync: (u: URL, e: string) => string; readdirSync: (u: URL) => string[] };
     const dir = new URL('../../../packages/math-content/src/visual/', import.meta.url);
-    const files = ['evaluate.ts', ...readdirSync(new URL('families/', dir)).map((f) => `families/${f}`)];
+    const files = ['evaluate.ts', ...readdirSync(new URL('families/', dir)).map((f: string) => `families/${f}`)];
     const keys = new Set<string>();
     for (const f of files) for (const m of readFileSync(new URL(f, dir), 'utf8').matchAll(/result\(\s*[^,]+,\s*'([\w.]+)'/g)) keys.add(m[1]);
     for (const k of ['partWhole.part', 'partWhole.whole', 'compare.smaller', 'compare.larger', 'compare.difference', 'times.larger', 'times.smaller']) keys.add(`bar.explain.${k}`);

@@ -221,7 +221,7 @@ function Root() {
     return (
       <WorkshopScreen
         lang={lang}
-        grade={mathUnit.grade}
+        grade={Math.min(6, Math.max(1, profile.level))}
         progress={mathProgress}
         onExit={() => {
           setProgressVersion((v) => v + 1);

@@ -14,6 +14,7 @@ import { MATH_COPY, VISUAL_COPY, visualEquation, visualFeedback, visualFieldLabe
 import { AnswerBoxes, Button, colors, DigitPad, fontFamily, GardenPlots, manip, radius, shadows, SharingBoard, TenFrameBoard, useLayout } from '@lee-conmigo/ui-native';
 import { MATH_BACKGROUNDS } from '../../math-art';
 import { guidePose, Mila } from './mila';
+import { canManipulate, scene2 } from './scene-2';
 import { speak } from '../../tts';
 
 interface VisualExerciseProps {
@@ -98,10 +99,12 @@ export function VisualExercise({ instance, lang, width, onNext, nextLabel, decor
         onTarget={(to) => s.selected && dispatch({ type: 'work', action: { type: 'place', token: s.selected, to } })}
       />
     );
+  } else {
+    scene = scene2({ m, s, dispatch, lang, width: inner, done, focusAnswer: () => setActive('answer') });
   }
 
   const ev = s.evaluation;
-  const message = s.phase === 'revealed' ? `${t.revealed[lang]} ${ev ? visualFeedback(ev.feedbackKey, ev.feedbackParams, lang) : ''}` : ev ? visualFeedback(ev.feedbackKey, ev.feedbackParams, lang) : '';
+  const message = s.phase === 'revealed' ? `${t.revealed[lang]} ${ev ? visualFeedback(ev.feedbackKey, ev.feedbackParams, lang, m) : ''}` : ev ? visualFeedback(ev.feedbackKey, ev.feedbackParams, lang, m) : '';
   const example = parallelExample(m);
   const equation = visualEquation(m, done);
 
@@ -137,7 +140,7 @@ export function VisualExercise({ instance, lang, width, onNext, nextLabel, decor
             .filter((l) => l <= s.hintLevel)
             .map((l) => (
               <View key={l} style={styles.hint}>
-                <Text style={styles.hintTitle}>{MATH_COPY.hintTitles[lang][l - 1]}</Text>
+                <Text style={styles.hintTitle}>{VISUAL_COPY.hintTitles[lang][l - 1]}</Text>
                 <Text style={styles.hintText}>{visualHint(m, l, example, lang)}</Text>
               </View>
             ))}
@@ -166,8 +169,8 @@ export function VisualExercise({ instance, lang, width, onNext, nextLabel, decor
         ) : (
           <>
             {s.hintLevel < 3 && <Button label={s.hintLevel === 0 ? MATH_COPY.hint[lang] : MATH_COPY.moreHelp[lang]} variant="secondary" onPress={() => dispatch({ type: 'hint' })} />}
-            {m.kind !== 'equalGroups' || m.task === 'build' ? <Button label={t.undo[lang]} variant="secondary" onPress={() => dispatch({ type: 'undo' })} disabled={!s.history.length} /> : null}
-            {m.kind !== 'equalGroups' || m.task === 'build' ? <Button label={t.reset[lang]} variant="secondary" onPress={() => dispatch({ type: 'reset' })} /> : null}
+            {canManipulate(m) ? <Button label={t.undo[lang]} variant="secondary" onPress={() => dispatch({ type: 'undo' })} disabled={!s.history.length} /> : null}
+            {canManipulate(m) ? <Button label={t.reset[lang]} variant="secondary" onPress={() => dispatch({ type: 'reset' })} /> : null}
             {canReveal(s) && <Button label={t.reveal[lang]} variant="secondary" onPress={() => dispatch({ type: 'reveal' })} />}
             <Button label={MATH_COPY.check[lang]} onPress={() => dispatch({ type: 'submit' })} />
           </>
