@@ -5,13 +5,53 @@
  */
 import type { Localized } from '@lee-conmigo/contracts';
 import c4u06 from '../content/c4-u06.json';
-import { practiceMapProblems, PRACTICE_MAPS, bandCount, LADERA_DATASETS } from './datasets.ts';
+import { practiceMapProblems, PRACTICE_MAPS, bandCount, LADERA_DATASETS, type Dataset } from './datasets.ts';
+import { COVERS, SLOPES, type Cover, type Slope } from './labs/erosion.ts';
 import type { ScienceArea } from './map.ts';
 
 export type Phase = 'observa' | 'explora' | 'explica' | 'usa';
 export const PHASES: readonly Phase[] = ['observa', 'explora', 'explica', 'usa'];
 
 export type StepKind = 'ver' | 'tocarZonas' | 'elegir' | 'predecir' | 'probar' | 'registrar' | 'graficar' | 'afirmacion' | 'mapa' | 'arreglar' | 'reflexion' | 'texto';
+
+export type SceneId = 'ladera' | 'laboratorio' | 'humedal';
+export const SCENES: readonly SceneId[] = ['ladera', 'laboratorio', 'humedal'];
+
+/** Dos bandejas del laboratorio de erosión tal como las ve el niño en un paso. */
+export interface LabSetup {
+  a: { cover: Cover; slope: Slope };
+  b: { cover: Cover; slope: Slope };
+  /** Cuántas pruebas se pueden hacer en este paso (1–3). */
+  trials?: number;
+  /** Solo se ve «poca/algo/mucha tierra», sin gramos (primera exploración). */
+  qualitative?: boolean;
+  /** Los resultados ya están hechos (no se riega): se muestran para analizarlos. */
+  static?: boolean;
+}
+
+export interface ChoiceOption {
+  id: string;
+  text: Localized;
+  /** La opción que el dato respalda; sin ninguna `expected` la pregunta es abierta (una idea propia). */
+  expected?: boolean;
+}
+
+/** Una pregunta de elegir dentro de un paso (no es una tarea evaluada: la acompaña, nunca bloquea). */
+export interface StepChoice {
+  id: string;
+  multi: boolean;
+  options: ChoiceOption[];
+  /** Compara con lo que predijo el niño en otra tarea (¿coincidió?). */
+  compareWith?: { taskId: string; partId: string };
+}
+
+export interface MapSetup {
+  id: 'A' | 'B';
+  /** `band` = herramienta de franja. */
+  tool: 'band' | null;
+  /** Los sismos están ocultos hasta que el niño predice. */
+  hideQuakes: boolean;
+}
 
 export interface UnitStep {
   id: string;
@@ -22,6 +62,16 @@ export interface UnitStep {
   taskId?: string;
   /** Lo único que se guarda de este paso (datos derivados). */
   saves?: string;
+  scene?: SceneId;
+  lab?: LabSetup;
+  /** Pasos de «arreglar la prueba»: el laboratorio resultante según el arreglo que elija el niño (id de la opción). */
+  labFixed?: Record<string, LabSetup>;
+  choice?: StepChoice;
+  /** Variante de la pregunta según el arreglo que eligió el niño en la tarea anterior (misma `id`). */
+  choiceByFix?: Record<string, StepChoice>;
+  map?: MapSetup;
+  /** Palabras del glosario (en español) que se muestran en este paso. */
+  glossary?: string[];
 }
 
 export interface UnitSession {
@@ -167,6 +217,9 @@ export function comparisonAdequate(task: UnitTask, partId: string, predicted: st
 
 // ------------------------------------------------------------------ validar la unidad
 
+/** Cuántas cosas distintas hay entre la bandeja A y la B (cobertura, inclinación). Prueba justa = 1. */
+export const fairnessChanged = (lab: LabSetup): number => (lab.a.cover !== lab.b.cover ? 1 : 0) + (lab.a.slope !== lab.b.slope ? 1 : 0);
+
 const BAD = /incorrect/i;
 
 /** Comprueba una unidad (lista vacía = válida). */
@@ -208,6 +261,46 @@ export function unitProblems(u: ScienceUnit): string[] {
       else if (at < last) p.push(`${st.id}: las píldoras deben ir en orden (observa → explora → explica → usa)`);
       last = Math.max(last, at);
       if (st.taskId) stepTaskCount[st.taskId] = (stepTaskCount[st.taskId] ?? 0) + 1;
+    }
+  }
+
+  // Detalle de cada paso (escena, laboratorio, mapa, preguntas)
+  const allSteps = u.sessions.flatMap((x) => x.steps);
+  const labProblems = (where: string, lab: LabSetup | undefined) => {
+    if (!lab) return;
+    for (const side of ['a', 'b'] as const) {
+      if (!COVERS.includes(lab[side].cover)) p.push(`${where}: cobertura desconocida (${lab[side].cover})`);
+      if (!SLOPES.includes(lab[side].slope)) p.push(`${where}: inclinación desconocida (${lab[side].slope})`);
+    }
+    if (lab.trials !== undefined && (lab.trials < 1 || lab.trials > 3)) p.push(`${where}: las pruebas van de 1 a 3`);
+  };
+  const choiceProblems = (where: string, c: StepChoice | undefined) => {
+    if (!c) return;
+    if (c.options.length < 2) p.push(`${where}: la pregunta necesita al menos 2 opciones`);
+    if (new Set(c.options.map((o) => o.id)).size !== c.options.length) p.push(`${where}: opciones repetidas`);
+    for (const o of c.options) loc(`${where}.${o.id}`, o.text);
+    if (c.compareWith) {
+      const part = u.tasks.find((t) => t.id === c.compareWith!.taskId)?.parts.find((x) => x.id === c.compareWith!.partId);
+      if (part?.observedOptionId === undefined) p.push(`${where}: compara con una predicción que no existe`);
+    }
+  };
+  for (const st of allSteps) {
+    if (st.scene && !SCENES.includes(st.scene)) p.push(`${st.id}: escena desconocida`);
+    labProblems(`${st.id} lab`, st.lab);
+    for (const [k, lab] of Object.entries(st.labFixed ?? {})) labProblems(`${st.id} labFixed.${k}`, lab);
+    choiceProblems(`${st.id} pregunta`, st.choice);
+    for (const [k, c] of Object.entries(st.choiceByFix ?? {})) {
+      choiceProblems(`${st.id} pregunta (${k})`, c);
+      if (c.id !== st.choice?.id) p.push(`${st.id}: la variante «${k}» debe tener el mismo id que la pregunta`);
+    }
+    if (st.map && !(st.map.id === 'A' || st.map.id === 'B')) p.push(`${st.id}: mapa desconocido`);
+    for (const g of st.glossary ?? []) if (!u.glossary.some((e) => e.es === g)) p.push(`${st.id}: «${g}» no está en el glosario`);
+    if (st.kind === 'arreglar') {
+      const fixes = u.tasks.find((t) => t.id === st.taskId)?.parts.find((x) => x.id === 'arreglo')?.options.filter((o) => o.valid).map((o) => o.id) ?? [];
+      for (const f of fixes) {
+        if (!st.labFixed?.[f]) p.push(`${st.id}: falta el laboratorio para el arreglo «${f}»`);
+        if (st.labFixed?.[f] && st.lab && fairnessChanged(st.labFixed[f]) !== 1) p.push(`${st.id}: el arreglo «${f}» debe dejar UNA sola diferencia`);
+      }
     }
   }
 
@@ -293,6 +386,22 @@ export function dataTextProblems(u: ScienceUnit): string[] {
   if (!lim?.text.es.includes(`${lejos} sismos lejos`)) p.push(`t6.limite.lejos: el texto ES no dice «${lejos} sismos lejos»`);
   const vol = u.tasks.find((t) => t.id === 't6')?.parts.find((x) => x.id === 'evidencia')?.options.find((x) => x.id === 'volcanes');
   if (!vol?.text.es.includes(`${PRACTICE_MAPS.A.volcanoes.length} volcanes`)) p.push('t6.evidencia.volcanes: el texto ES no coincide con el mapa');
+  // S5.2: la respuesta esperada del recuento es la que calcula la app.
+  const conteo = u.sessions.flatMap((x) => x.steps).find((st) => st.id === 's5.2')?.choice?.options.find((o) => o.expected);
+  if (conteo?.id !== String(inside)) p.push(`s5.2: la opción esperada (${conteo?.id}) no coincide con el recuento del mapa (${inside})`);
+  // S6.3: cada variante cita los datos de la prueba justa que corresponde.
+  const s63 = u.sessions.flatMap((x) => x.steps).find((st) => st.id === 's6.3');
+  const grams = (rows: { values: number[] }[], i: number, lang: 'es' | 'en') => (lang === 'es' ? `${rows[i].values[0]}, ${rows[i].values[1]} y ${rows[i].values[2]} g` : `${rows[i].values[0]}, ${rows[i].values[1]} and ${rows[i].values[2]} g`);
+  const pairs: [StepChoice | undefined, string, string, Dataset][] = [
+    [s63?.choice, 'sin', 'con', LADERA_DATASETS.justaCobertura],
+    [s63?.choiceByFix?.cobertura, 'media', 'fuerte', LADERA_DATASETS.justaPendiente],
+  ];
+  for (const [c, a, b, ds] of pairs) {
+    for (const [oid, idx] of [[a, 0], [b, 1]] as const) {
+      const o = c?.options.find((x) => x.id === oid);
+      for (const lang of ['es', 'en'] as const) if (!o?.text[lang].includes(grams(ds.rows, idx, lang))) p.push(`s6.3.${oid}: el texto ${lang.toUpperCase()} no coincide con los datos (${ds.rows[idx].values.join('/')})`);
+    }
+  }
   for (const m of Object.values(PRACTICE_MAPS)) p.push(...practiceMapProblems(m));
   return p;
 }

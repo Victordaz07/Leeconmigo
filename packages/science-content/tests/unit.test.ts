@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { scienceUnitById, comparisonAdequate, dataTextProblems, evaluatePart, evaluateTask, predictionMatched, SCIENCE_UNITS, scienceUnitContent, unitProblems, type ScienceUnit, type UnitTask } from '../src/index.ts';
+import { fairnessChanged, scienceUnitById, comparisonAdequate, dataTextProblems, evaluatePart, evaluateTask, predictionMatched, SCIENCE_UNITS, scienceUnitContent, unitProblems, type ScienceUnit, type UnitTask } from '../src/index.ts';
 
 const unit = scienceUnitContent('C4-U06') as ScienceUnit;
 const task = (id: string) => unit.tasks.find((t) => t.id === id) as UnitTask;
@@ -53,6 +53,35 @@ describe('unidad C4-U06 como datos validados', () => {
     expect(p).toMatch(/dice «incorrecto»/);
     expect(p).toMatch(/tiene 5 sesiones/);
     expect(p).toMatch(/al menos 2 contextos/);
+  });
+});
+
+describe('detalle de los pasos (lo que dibuja la pantalla)', () => {
+  const steps = unit.sessions.flatMap((x) => x.steps);
+  const step = (id: string) => steps.find((x) => x.id === id)!;
+
+  it('cada arreglo válido de la prueba deja UNA sola diferencia, y la prueba de partida tiene dos', () => {
+    const s62 = step('s6.2');
+    expect(fairnessChanged(s62.lab!)).toBe(2);
+    expect(Object.keys(s62.labFixed!).sort()).toEqual(['cobertura', 'pendiente']);
+    for (const lab of Object.values(s62.labFixed!)) expect(fairnessChanged(lab)).toBe(1);
+    // «Igualar la inclinación» deja diferir la cobertura; «igualar el pasto» deja diferir la inclinación.
+    expect(s62.labFixed!.pendiente.a.slope).toBe(s62.labFixed!.pendiente.b.slope);
+    expect(s62.labFixed!.cobertura.a.cover).toBe(s62.labFixed!.cobertura.b.cover);
+  });
+
+  it('las dos variantes de la evidencia final citan los datos de su prueba justa', () => {
+    expect(step('s6.3').choiceByFix?.cobertura.options.filter((o) => o.expected).map((o) => o.id)).toEqual(['media', 'fuerte']);
+    expect(dataTextProblems(unit)).toEqual([]);
+  });
+
+  it('el validador detecta un recuento esperado equivocado y un arreglo con dos diferencias', () => {
+    const bad = JSON.parse(JSON.stringify(unit)) as ScienceUnit;
+    const all = bad.sessions.flatMap((x) => x.steps);
+    all.find((x) => x.id === 's5.2')!.choice!.options.forEach((o) => (o.expected = o.id === '9'));
+    all.find((x) => x.id === 's6.2')!.labFixed!.pendiente.b.slope = 'suave';
+    expect(dataTextProblems(bad).join(' | ')).toMatch(/recuento del mapa/);
+    expect(unitProblems(bad).join(' | ')).toMatch(/UNA sola diferencia/);
   });
 });
 

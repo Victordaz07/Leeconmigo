@@ -1,2 +1,3 @@
-// Textos y lógica de vista de Ciencia (cuenta de Ciencia). Vacío hasta que haga falta.
-export {};
+// Textos y lógica de vista de Ciencia (cuenta de Ciencia; docs/14).
+export * from './copy.ts';
+export * from './effort.ts';

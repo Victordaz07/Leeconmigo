@@ -92,9 +92,9 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | CI-02 | Analizar y adaptar el informe: mapa de 48 unidades como datos validados, especificación, pedido de imágenes, estándares | ✅ | A | `docs/design/ciencia/`, `packages/science-content` (mapa.json + 8 pruebas, cubre las 62 expectativas NGSS 1.º–5.º); **espera DC-1…DC-8 de Victor** |
 | CI-03 | Especificación detallada de la unidad piloto (6 sesiones, 8 tareas, glosario, supuestos del modelo, ficha de seguridad) | ✅ | A | `docs/design/ciencia/unidades/C4-U06.md`; DC-1…DC-8 confirmadas (D13). | recomendada C4-U06; **imágenes de la Tanda 1 ✅ recibidas y en la app** (18 de 18, `assets/ciencia/`, `subjects/ciencia/art.ts`); espera DC-1…DC-8 |
 | CI-04 | Dominio puro de C4-U06 en `packages/science-content`: modelo de erosión, datos y mapas de práctica, `scienceEvidence.v1`, unidad en JSON validado, evaluador de tareas + pruebas | ✅ | A | 56 archivos / 1250 pruebas; los datos salen del modelo y los textos que citan números se comprueban contra ellos |
-| CI-05 | Textos ES/EN en `ui-core/src/ciencia/` | ⬜ | A | |
-| CI-06 | Pantallas del cuaderno de Ciencia (con Modo Enfoque) | ⬜ | A | |
-| CI-07 | Verificar en 4 tamaños y `available: true` | ⬜ | A | |
+| CI-05 | Textos ES/EN en `ui-core/src/ciencia/` | ✅ | A | `copy.ts` (rótulos, píldoras, distintivos, marcos de frase, pantallas) + `effort.ts` (estrellas por esfuerzo, D13) |
+| CI-06 | Pantallas del cuaderno de Ciencia (con Modo Enfoque) | ✅ | A | Unidad C4-U06 jugable: cuaderno de la unidad + reproductor de sesión (6 sesiones / 24 pasos), laboratorio de bandejas, báscula, tabla, gráfica, mapas de práctica, retomar, cierre con estrellas por esfuerzo, progreso guardado por niño |
+| CI-07 | Verificar en 4 tamaños y `available: true` | ✅ | A | Recorrido completo de las 6 sesiones en tableta (horizontal/vertical) y teléfono (vertical/horizontal), Modo Enfoque (sin Maya ni fondo) y «guardar y seguir después». `available: true` |
 | CI-08 | Revisión de un maestro (estándares: borrador) | ⬜ | – | |
 
 ---

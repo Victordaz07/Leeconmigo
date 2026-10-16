@@ -16,7 +16,7 @@ Tu materia es **Ciencia**; la otra cuenta trabaja **Sociedad** en paralelo. Edit
   `scripts/ciencia-arte.py`. Conectadas en `apps/mobile/src/subjects/ciencia/art.ts` (fondos laboratorio/humedal ×
   horizontal/vertical, escena de la ladera, portadas, 6 props, 5 poses de Maya) con prueba de que cada archivo existe.
   La portada del cuaderno ya está en `homeCard` (verificada en Inicio, tablet y teléfono).
-- La materia sigue "Pronto" en Inicio (`available: false`): no hay unidad jugable.
+- **La materia ya NO está "Pronto": `available: true`** con la unidad C4-U06 jugable (ver «Actualización CI-05/06/07»).
 
 ## Decisiones: CONFIRMADAS (D13, 2026-10-16)
 Victor: «déjalas así, está bien». DC-1…DC-8 ya están en `docs/DECISIONS.md` (D13). No se re-discuten.
@@ -89,3 +89,32 @@ JSON): rótulos de píldoras (Observa · Explora · Explica · Usa), distintivos
 I observed…», «Mi evidencia es…», «Cambié mi idea porque…»), botones (Regar, Anotar, Arreglar la prueba, Listo), etiquetas
 de estado (`STAGE_LABEL` ya existe), accesibilidad (descripción de la gráfica) y mensajes de pausa/reanudar. Después
 **CI-06** (pantallas). Antes de construir la gráfica, escribir en «Pedidos a lo compartido» el uso de `BarChartBoard`.
+
+
+## Actualización CI-05/06/07 (2026-10-16): C4-U06 jugable en la app
+**Qué hay (todo en lo propio de Ciencia, sin tocar archivos compartidos):**
+- `packages/ui-core/src/ciencia/` — `copy.ts` (todos los textos de la interfaz ES/EN) y `effort.ts` (`scienceStars`: 1 por
+  terminar + 1 por pedir ayuda o revisar la idea + 1 por volver a probar; nunca por precisión).
+- `packages/science-content` — `unit.ts` ahora describe cada paso (`scene`, `lab`, `labFixed`, `choice`, `choiceByFix`, `map`,
+  `glossary`) y el validador comprueba que cada arreglo deje UNA sola diferencia y que los números de `s5.2`/`s6.3` coincidan con
+  los datos; `progress.ts` (progreso por niño: sesiones, estrellas, «seguir después», elecciones, cuaderno, intentos de
+  evidencia — solo datos derivados, `isScienceProgress` rechaza lo que no tenga la forma).
+- `packages/ui-native/src/components/ciencia/` — `LabBoard` (dos bandejas + vasos), `DataTable` y `Scale`, `BarChart` (la
+  construye el niño tocando), `PracticeMap` + `LayerToggle`, `SceneZones`, `OptionList`, `MayaSays`, `tapPosition`.
+- `apps/mobile/src/subjects/ciencia/` — `index.tsx` (módulo + progreso), `unit-home.tsx` (cuaderno de la unidad),
+  `session-player.tsx` (los 24 pasos), `task-panel.tsx` (tareas con pista en 3 escalones y «Lo veo luego»), `lab-model.ts`
+  (modelo → dibujo, probado: los gramos SIEMPRE salen del modelo).
+- Modo Enfoque: sin Maya, sin fondo, sin gotas; pausa de movimiento en el límite entre pasos.
+
+**Cómo se probó:** `npm test` (1271+ pruebas) y `npm run typecheck`; en el navegador (export web + Playwright) se jugaron las
+6 sesiones completas en 4 tamaños, se comprobó que una respuesta equivocada nunca dice «incorrecto», que «Lo veo luego» deja
+seguir, que contar sismos en el mapa funciona y que «Guardar y seguir después» retoma en el mismo paso.
+
+**Pendiente (CI-08 y otros):**
+- Revisión de un maestro (estándares: borrador; solo se ven en padres, y esa vista aún no existe para Ciencia).
+- Interruptor del padre para la actividad con bandejas de verdad (hoy solo hay una tarjeta «Con un adulto» informativa): toca
+  archivos compartidos (Modo padres) → pedirlo a Victor (docs/14).
+- Repaso 1-3-7 con caso nuevo (`reviewsDue` ya existe; falta la pantalla de repaso).
+- Tanda 2 de imágenes y las otras 5 unidades piloto; luego las 48 del mapa.
+- Probar con un niño de verdad y ajustar textos/tiempos (la sesión debe sentirse de ≈ 15 min).
+- Revisar en un teléfono/tablet real (el navegador no prueba toques con el dedo ni el audio de «Escuchar»).

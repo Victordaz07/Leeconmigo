@@ -1,2 +1,7 @@
-// Componentes de Ciencia (cuenta de Ciencia). Vacío hasta que haga falta uno compartido.
-export {};
+export { OptionList, type OptionItem } from './option-list.tsx';
+export { MayaSays } from './maya-says.tsx';
+export { SceneZones, type SceneZone } from './scene-zones.tsx';
+export { LabBoard, type LabArt, type TrayView } from './lab-board.tsx';
+export { DataTable, Scale, type TableRow } from './data-table.tsx';
+export { BarChart, type Bar } from './bar-chart.tsx';
+export { LayerToggle, PracticeMap, type MapCell, type MapLayers, type MapView2D } from './practice-map.tsx';

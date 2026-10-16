@@ -50,3 +50,13 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
   explicaciones válidas de T5 y los dos arreglos de T7 se aceptan; «todos» en T6 se rechaza pidiendo contar los puntos fuera;
   los números que citan los textos (18/20/19, «13 de 15»…) coinciden con los datos; ningún texto dice «incorrecto».
 - 1250 pruebas en todo el repo, typecheck limpio.
+
+## 2026-10-16 · CI-05/06/07: C4-U06 jugable
+- Pedido de Victor: «termina el módulo completo para que ya se pueda visualizar y probar».
+- Hecho: textos de la interfaz ES/EN, tipos y validador de los pasos de la unidad, progreso guardado por niño, siete
+  componentes nuevos (bandejas, báscula, tabla, gráfica, mapa, escena tocable, opciones), cuaderno de la unidad y reproductor
+  de sesión (24 pasos), con Modo Enfoque y «guardar y seguir después».
+- Decisión de contenido: los dos arreglos válidos de la prueba (igualar inclinación o igualar pasto) llevan cada uno a su
+  evidencia final con los datos que corresponden (`choiceByFix`), comprobados contra el modelo.
+- Hallazgo técnico: en la versión web `locationX/Y` no existe en un toque → `tapPosition` calcula la posición con la página.
+- Verificado en el navegador en 4 tamaños + Modo Enfoque; `available: true`. Sin APK (Victor lo pide cuando quiera).
