@@ -29,3 +29,13 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
   cada archivo existe y pesa < 350 KB, portada del cuaderno en `homeCard`.
 - Observación: el estilo es de cuento (acuarela), no plano como Matemáticas; coincide con el brief y con Lectura. En Inicio la
   portada de Ciencia se ve bien junto a las otras dos (tablet y teléfono, sin errores).
+
+## 2026-10-16 · CI-03: especificación de la unidad C4-U06
+- Victor confirmó DC-1…DC-8 («déjalas así») → D13 en `docs/DECISIONS.md`.
+- Hecho: `docs/design/ciencia/unidades/C4-U06.md`: ideas con sus errores, glosario ES/EN, modelo determinista de erosión
+  (fórmula, desvíos por bandeja, casos límite, qué NO representa), datos didácticos, 6 sesiones con texto ES/EN por paso,
+  banco de 8 tareas (cada expectativa tiene tareas que exigen su práctica) con rúbrica y pistas en 3 escalones,
+  `scienceEvidence.v1` aplicado, ficha de seguridad de la actividad con adulto, accesibilidad, tono (sismos), criterios de
+  publicación y preguntas para el docente.
+- Hallazgo: 4-ESS2-2 (mapas) pide analizar mapas, no solo erosión → S5 con dos mapas de práctica dibujados por la app (sin
+  imágenes nuevas). El orden de los desvíos de la bandeja A/B se corrigió al comprobar los números contra el modelo.

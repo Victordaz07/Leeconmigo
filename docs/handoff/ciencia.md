@@ -18,7 +18,17 @@ Tu materia es **Ciencia**; la otra cuenta trabaja **Sociedad** en paralelo. Edit
   La portada del cuaderno ya está en `homeCard` (verificada en Inicio, tablet y teléfono).
 - La materia sigue "Pronto" en Inicio (`available: false`): no hay unidad jugable.
 
+## Decisiones: CONFIRMADAS (D13, 2026-10-16)
+Victor: «déjalas así, está bien». DC-1…DC-8 ya están en `docs/DECISIONS.md` (D13). No se re-discuten.
+
 ## Siguiente paso exacto
+**CI-03 ✅ hecho:** `docs/design/ciencia/unidades/C4-U06.md` (ideas, 6 sesiones con texto ES/EN, modelo de erosión,
+datos didácticos, 8 tareas con rúbrica y pistas, ficha de seguridad, criterios de publicación).
+**Ahora CI-04** (dominio puro de C4-U06, sin pantallas): `labs/erosion.ts` (modelo determinista, §3), `datasets.ts` (§4,
+con validador de mapas), `evidence.ts` (`scienceEvidence.v1`), unidad en JSON validado y pruebas. Los números de §3/§4 ya
+están calculados a mano: las pruebas deben dar EXACTAMENTE esos valores (18/20/19 · 6/7/5 · 28/30/29 · 4/5/3 …).
+
+(Antes de CI-03 decía:)
 **Esperar a Victor:** que confirme (o cambie) **DC-1…DC-8** (`ESPECIFICACION.md` §13). Las imágenes de la Tanda 1 ya llegaron.
 Con eso, **CI-03**: especificación detallada de la unidad piloto recomendada **C4-U06**
 (6 sesiones, 8 tareas del banco —2 observación, 2 predicción, 2 evidencia/modelo, 1 transferencia, 1 reflexión—,

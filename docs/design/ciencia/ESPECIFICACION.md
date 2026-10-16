@@ -1,8 +1,8 @@
 # Ciencia — especificación adaptada a Kitewise (CI-02)
 
 **Fuente:** `docs/research/ciencia-investigacion.md` (informe de Victor, 15-oct-2026, copia sin cambios).
-**Estado:** propuesta lista para que Victor confirme las decisiones `DC-n` del §13. Nada de lo que está aquí es oficial ni
-está validado por un docente. Mapa de las 48 unidades: `MAPA-UNIDADES.md` (generado del JSON con pruebas).
+**Estado:** las decisiones `DC-1…DC-8` del §13 las **confirmó Victor el 2026-10-16** (D13 en `docs/DECISIONS.md`). Nada de
+lo que está aquí es oficial ni está validado por un docente. Mapa de las 48 unidades: `MAPA-UNIDADES.md` (generado del JSON con pruebas).
 
 ## 0. Veredicto en una página
 
@@ -260,14 +260,14 @@ datos didácticos. Segunda: C1-U02 (la más simple, para probar 1.º).
 
 Criterios para publicar una unidad: los 10 del informe (§14), tal cual.
 
-## 13. Decisiones propuestas (Victor confirma; luego pasan a `docs/DECISIONS.md`)
+## 13. Decisiones (confirmadas por Victor el 2026-10-16 → D13)
 
 | # | Propuesta | Alternativa | Mientras tanto |
 |---|---|---|---|
 | **DC-1** | Nivel ≠ grado: `C{n}` se ofrece al niño de nivel *n* (sugerido ⭐), pero **todo abre** | Atar la unidad al grado escolar | Como Matemáticas (docs/01, D9) |
 | **DC-2** | 6.º usa la selección del modelo integrado de California (banda 6–8), como dice el informe | Otra secuencia distrital | Se guardan marco y versión aparte (`framework`) |
 | **DC-3** | Sesión ≈ 15 min; con energía baja se **guarda y se retoma**; las cuatro píldoras Observa · Explora · Explica · Usa | Recortar la sesión a 8 min | Diseño del §4 |
-| **DC-4** | Guía de Ciencia: **Maya** (ya existe con arte en `la-isla-que-caminaba`). Leo solo si hace falta | Pipo, o sin guía | Sin guía hasta decidir; en Enfoque no aparece |
+| **DC-4** | Guía de Ciencia: **Maya** (ya existe con arte en `la-isla-que-caminaba`; sus 5 poses llegaron). Leo solo si hace falta | Pipo, o sin guía | En Enfoque no aparece |
 | **DC-5** | Primera unidad: **C4-U06**; segunda C1-U02 | Otra de las seis | C4-U06 |
 | **DC-6** | Interfaz con tokens Kitewise y arte plano como Matemáticas; **no** se adopta la paleta salvia/crema/marrón | Adoptarla (hay que pasar la guía al repo) | Tokens Kitewise |
 | **DC-7** | «Revisó su idea» cuenta como esfuerzo en las estrellas (D11): 1 por terminar, +1 si pidió ayuda o **revisó su idea**, +1 sin pausas largas | Solo las reglas de Lectura | Propuesta |
