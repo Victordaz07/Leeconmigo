@@ -37,3 +37,17 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
 - Queda como **DS-3 propuesta**, no confirmada — no se avanza a SO-03 (pedir imágenes) hasta que Victor la
   confirme o pida otra unidad.
 - Sin cambios de código. `npm test`: 1202/1202 ✅.
+
+## 2026-10-16 · SO-03: pedido de imágenes de la unidad piloto
+
+- Victor pidió el prompt de imágenes directamente (sin objetar S3-U03) → DS-3 se trata como confirmada.
+- Pedido completo en `docs/design/sociedad/PEDIDO-IMAGENES-S3-U03.md`: 7 piezas (portada, 2 mapas del barrio
+  antes/después con la misma composición, 2 tarjetas de fuente ficticias sin texto, 4 poses de guía).
+- Decisión propuesta DS-4: reutilizar a **Teo** (y a **Nia** como coprotagonista de esta unidad) de la historia
+  de lectura "La cometa roja" (nivel 3, mismo grado) en vez de diseñar personajes nuevos — ya tienen arte
+  aprobado y consistente (`apps/reader/public/stories/la-cometa-roja/`), ahorra una ronda completa de diseño de
+  personaje nuevo (hoja de referencia, poses, Character Bible) que sí haría falta con un personaje inédito.
+- Historia inventada para encuadrar las imágenes: "El Barrio de los Almendros" — Teo encuentra un mapa viejo de
+  su barrio, lo compara con Nia contra cómo se ve hoy (puente y estación nuevos), investigan con dos documentos
+  ficticios (acta municipal, anuncio comercial). Barrio explícitamente ficticio, no basado en ningún lugar real.
+- Sin cambios de código. `npm test`: 1202/1202 ✅.
