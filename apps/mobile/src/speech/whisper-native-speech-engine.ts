@@ -15,7 +15,9 @@ import { PermissionsAndroid, Platform } from 'react-native';
 import { initWhisper, initWhisperVad, type WhisperContext, type WhisperVadContext } from 'whisper.rn/index'; // el paquete solo exporta subrutas
 import type { SpeechError, SpeechResult, Unsubscribe } from '@lee-conmigo/contracts';
 import { cleanTranscript, EnergyVad, pcm16Base64ToFloat32, SAMPLE_RATE, UtteranceSegmenter } from '@lee-conmigo/speech-engine/core';
-import type { NativeVoiceEngine, NativeVoiceOptions, VoiceModel, VoiceStatus, VoiceUtterance } from './voice-types';
+import type { NativeVoiceEngine, NativeVoiceOptions, VoiceDiagnostics, VoiceModel, VoiceStatus, VoiceUtterance } from './voice-types';
+
+const emptyDiagnostics = (): VoiceDiagnostics => ({ audioSeconds: 0, level: 0, detected: 0, skipped: 0, dropped: 0, transcribed: 0, transcribing: false, queued: 0, errors: 0 });
 
 /* eslint-disable @typescript-eslint/no-require-imports -- Metro empaqueta los modelos como recursos de la app. */
 const MODEL_ASSET: Record<VoiceModel, number> = {
@@ -71,6 +73,9 @@ export class WhisperNativeSpeechEngine implements NativeVoiceEngine {
   private errorCbs: ((e: SpeechError) => void)[] = [];
   private statusCbs: ((s: VoiceStatus) => void)[] = [];
   private utteranceCbs: ((u: VoiceUtterance) => void)[] = [];
+  private diagCbs: ((d: VoiceDiagnostics) => void)[] = [];
+  private diag = emptyDiagnostics();
+  private lastDiagAt = 0;
 
   constructor(opts: NativeVoiceOptions = {}) {
     this.model = opts.model ?? 'tiny';
@@ -89,6 +94,8 @@ export class WhisperNativeSpeechEngine implements NativeVoiceEngine {
     this.segmenter.reset();
     this.energy.reset();
     this.queue = [];
+    this.diag = emptyDiagnostics();
+    this.emitDiag(true);
     try {
       AudioRecord.init({ sampleRate: SAMPLE_RATE, channels: 1, bitsPerSample: 16, audioSource: 6, bufferSize: 4096 });
       this.dataSub = AudioRecord.on('data', (b64) => this.onData(b64));
@@ -149,6 +156,9 @@ export class WhisperNativeSpeechEngine implements NativeVoiceEngine {
   onUtterance(cb: (u: VoiceUtterance) => void): Unsubscribe {
     return sub(this.utteranceCbs, cb);
   }
+  onDiagnostics(cb: (d: VoiceDiagnostics) => void): Unsubscribe {
+    return sub(this.diagCbs, cb);
+  }
   getStatus(): VoiceStatus {
     return this.status;
   }
@@ -174,14 +184,36 @@ export class WhisperNativeSpeechEngine implements NativeVoiceEngine {
   private onData(b64: string): void {
     if (!this.running) return;
     const samples = pcm16Base64ToFloat32(b64);
+    this.diag.audioSeconds += samples.length / SAMPLE_RATE;
+    let peak = 0;
+    for (let i = 0; i < samples.length; i++) peak = Math.max(peak, Math.abs(samples[i]));
+    this.diag.level = Math.min(1, peak * 2);
     for (const e of this.segmenter.push(samples, (f) => this.energy.probability(f))) {
       if (e.type === 'voice') this.voiceCbs.forEach((cb) => cb(e.active));
-      else if (this.whisper) {
+      else {
+        this.diag.detected++;
+        if (!this.whisper) {
+          this.diag.dropped++; // el modelo todavía carga
+          continue;
+        }
         this.queue.push({ audio: e.audio, atMs: Date.now() - this.startedAt });
-        if (this.queue.length > MAX_QUEUE) this.queue.shift();
+        if (this.queue.length > MAX_QUEUE) {
+          this.queue.shift();
+          this.diag.dropped++;
+        }
         void this.drain();
       }
     }
+    this.emitDiag();
+  }
+
+  /** Como mucho ~6 veces por segundo (el medidor no necesita más), salvo cuando cambia algo importante. */
+  private emitDiag(force = false): void {
+    const now = Date.now();
+    if (!force && now - this.lastDiagAt < 160) return;
+    this.lastDiagAt = now;
+    const d = { ...this.diag, queued: this.queue.length, transcribing: this.busy };
+    this.diagCbs.forEach((cb) => cb(d));
   }
 
   private async drain(): Promise<void> {
@@ -194,6 +226,7 @@ export class WhisperNativeSpeechEngine implements NativeVoiceEngine {
       }
     } finally {
       this.busy = false;
+      this.emitDiag(true);
     }
   }
 
@@ -208,16 +241,23 @@ export class WhisperNativeSpeechEngine implements NativeVoiceEngine {
       if (this.vad) {
         const segments = await this.vad.detectSpeechData(buf, { threshold: 0.5, minSpeechDurationMs: 200, minSilenceDurationMs: 100, speechPadMs: 30 });
         if (!segments.length) {
+          this.diag.skipped++;
+          this.emitDiag(true);
           this.utteranceCbs.forEach((cb) => cb({ audioMs, transcribeMs: Date.now() - t0, text: '', skipped: true }));
           return;
         }
       }
+      this.emitDiag(true);
       const { promise } = whisper.transcribeData(buf, { language: this.language, maxThreads: 4, translate: false });
       const r = await promise;
       const text = cleanTranscript(r.result);
+      this.diag.transcribed++;
+      this.emitDiag(true);
       this.utteranceCbs.forEach((cb) => cb({ audioMs, transcribeMs: Date.now() - t0, text, skipped: false }));
       if (text && this.running) this.finalCbs.forEach((cb) => cb({ text, isFinal: true, atMs }));
     } catch (err) {
+      this.diag.errors++;
+      this.emitDiag(true);
       this.emitError({ code: 'unknown', message: `Error al reconocer: ${String(err)}` });
     }
   }

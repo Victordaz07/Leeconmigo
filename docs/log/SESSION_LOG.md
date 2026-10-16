@@ -225,3 +225,13 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
   typecheck ✅. NO probado en un equipo real (aquí no hay emulador).
 - Pendiente: Victor prueba en la tablet de Noah y en su teléfono (latencia, precisión, ¿tiny o base?). Con eso, RN-07:
   usar este motor con `RealReadingEngine` en la lectura (aviso a padres antes de pedir el micrófono, docs/12).
+
+## 2026-10-16 · Cuenta A · Prueba de voz: "¿sabe lo que estoy leyendo?"
+- Victor: "está escuchando mi voz pero no sé si sabe lo que estoy leyendo… que escriba lo que estoy leyendo".
+- Hecho: la Prueba de voz ahora (1) pinta de VERDE en la frase las palabras que el reconocimiento entendió, con el mismo
+  comparador de la lectura (`ReadingProgressTracker`; `apps/mobile/src/speech/read-along.ts`, con pruebas), con barra "%
+  de la frase reconocida", "Otra frase" y "Volver a empezar"; (2) escribe todo lo que entendió en un recuadro y, por frase,
+  "coinciden X de Y palabras con el texto"; (3) muestra diagnóstico del motor (`onDiagnostics`): medidor del micrófono y
+  segundos de audio recibidos, frases detectadas / escritas / "no eran voz" / perdidas (p. ej. mientras carga el modelo) /
+  en espera / errores — para saber en qué paso se queda si no aparece texto.
+- Pendiente: que Victor la use y mande captura con lo que aparece (sobre todo los contadores si no sale texto).

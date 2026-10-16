@@ -3,7 +3,7 @@
  * Mismo API que la versión nativa; `start` avisa que no está disponible (falla cerrado, D1) y nunca usa la nube.
  */
 import type { SpeechError, SpeechResult, Unsubscribe } from '@lee-conmigo/contracts';
-import type { NativeVoiceEngine, NativeVoiceOptions, VoiceStatus, VoiceUtterance } from './voice-types';
+import type { NativeVoiceEngine, NativeVoiceOptions, VoiceDiagnostics, VoiceStatus, VoiceUtterance } from './voice-types';
 
 export function isNativeVoiceSupported(): boolean {
   return false;
@@ -40,6 +40,9 @@ export class WhisperNativeSpeechEngine implements NativeVoiceEngine {
     return () => (this.statusCbs = this.statusCbs.filter((c) => c !== cb));
   }
   onUtterance(_cb: (u: VoiceUtterance) => void): Unsubscribe {
+    return () => {};
+  }
+  onDiagnostics(_cb: (d: VoiceDiagnostics) => void): Unsubscribe {
     return () => {};
   }
   getStatus(): VoiceStatus {
