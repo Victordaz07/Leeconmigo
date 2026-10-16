@@ -124,6 +124,45 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
 - Pendiente real: SO-08 (revisión de un maestro) y que Victor la pruebe en un equipo real cuando pida el próximo
   APK. Detalle completo de lo que falta: `docs/handoff/sociedad.md`.
 
+## 2026-10-16 · Expansión a las 6 unidades piloto (una por grado, 1.º–6.º)
+
+- Victor preguntó si solo se había construido 3.º — confirmado que sí, y pidió más unidades piloto, una por
+  grado restante, usando las candidatas que ya propone §17 ("Etapa A") de la investigación.
+- **Generalización del motor (necesaria primero):** el tipo de paso que construí para S3 asumía "comparar dos
+  capas de mapa" como forma casi universal; no le servía a 1.º (decidir una regla, sin mapa) ni a 6.º
+  (simulación con razonamiento abierto). Se agregó un paso genérico `'elegir'` (elección razonada sin una
+  fuente concreta) a `contracts/src/social.ts`, y `'pregunta'` pasó a aceptar una sola imagen o ninguna, no
+  solo 2 capas obligatorias. `validateSocialUnit` y `evaluateSession`/`investigationStars` también se
+  generalizaron: solo las unidades CON fuentes exigen los pasos "explicar"/"revisar"; en las unidades SIN
+  fuentes, las estrellas 2.ª/3.ª dependen de `choiceQuality` (qué tan seguido se eligió una opción preferida).
+- **Las 5 unidades nuevas**, con el mismo elenco (Inés, Teo) y el mismo principio de "nunca incorrecto":
+  - **S1-U01** (1.º, CA HSS 1.1) "Una regla para compartir" — deliberación sobre compartir bloques entre 4
+    niños, sin fuentes. 0 imágenes nuevas.
+  - **S2-U01** (2.º, CA HSS 2.1) "Un cuaderno tiene historia" — un cuaderno viejo + una tarjeta, enseña
+    observación vs. inferencia (§8 de la investigación, Library of Congress). 1 imagen nueva.
+  - **S4-U03** (4.º, CA HSS 4.2) "Un edificio y las voces que le faltan" — **tema sensible** (misiones): se
+    escribió con texto 100% original (nunca se reclama una fuente real tipo Smithsonian NMAI), centrado en la
+    persistencia cultural indígena, nunca en escenas de coerción ni en darle al niño un papel de misionero o de
+    persona sometida a trabajo forzado — siguiendo las precauciones explícitas de la investigación (§10). 1
+    imagen nueva (reconstrucción arquitectónica, sin personas).
+  - **S5-U04** (5.º, CA HSS 5.5-5.7) "Un ideal escrito y una realidad histórica" — **tema sensible**
+    (esclavitud): las dos citas (la idea de igualdad del documento fundacional, la evidencia de esclavitud y
+    falta de voto) son **paráfrasis propias**, no transcripciones oficiales — evita cualquier problema de
+    precisión o derechos y mantiene el tono cuidadoso que pide la investigación. 0 imágenes (a propósito: ambas
+    fuentes son de texto, sin ninguna imagen sensible que pedir).
+  - **S6-U02** (6.º, CA HSS 6.2) "Un asentamiento junto al río" — simulación **expresamente ficticia** (no
+    Uruk ni ningún lugar real) con 3 opciones igualmente válidas; enseña a reconocer los límites de una
+    simulación simple. 1 imagen nueva.
+- **Pantallas:** el cuaderno de Sociedad pasó de mostrar 1 unidad a un camino de 6 paradas (mismo patrón que el
+  camino de lecciones de Matemáticas), sin bloqueos (docs/13). `SociedadProgress` ahora es un registro por
+  unidad, no un solo progreso.
+- Pedido de las 3 imágenes que faltan: `docs/design/sociedad/PEDIDO-IMAGENES-GRADOS-1-2-4-6.md`. Especificación
+  de las 5 unidades: `docs/design/sociedad/UNIDADES-PILOTO-OTROS-GRADOS.md`.
+- `npm run typecheck` en todo el monorepo: limpio. `npm test`: **1222/1222 ✅** (1218 + 4 pruebas nuevas:
+  6 unidades por grado, unidad sin fuentes válida, flujo "elegir" completo con y sin opciones preferidas).
+- Pendiente real: SO-08 (revisión de maestro, con atención extra a 4.º/5.º por ser temas sensibles) y las 3
+  imágenes. Detalle completo en `docs/handoff/sociedad.md`.
+
 ## 2026-10-16 · SO-03: pedido de imágenes de la unidad piloto (v1, reemplazado por SO-02 v2 arriba)
 
 - Victor pidió el prompt de imágenes directamente (sin objetar S3-U03) → DS-3 se trata como confirmada.

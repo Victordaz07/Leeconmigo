@@ -65,6 +65,7 @@ export function canAdvance(step: SocialStep, s: SessionState): boolean {
       return step.statements.every((st) => s.statementAnswers[st.id] !== undefined);
     case 'fuente':
     case 'testimonio':
+    case 'elegir':
       return s.choiceAnswers[step.id] !== undefined;
     case 'explicar':
       return s.sourcesSelected.length >= step.minSources;
@@ -76,7 +77,7 @@ export function canAdvance(step: SocialStep, s: SessionState): boolean {
 export type FeedbackKind = 'affirm' | 'gentle';
 
 /** Clave de retroalimentación para un paso de opción (nunca "incorrecto"; solo afirma o invita a mirar otra vez). */
-export function feedbackFor(step: Extract<SocialStep, { kind: 'fuente' | 'testimonio' }>, s: SessionState): FeedbackKind | undefined {
+export function feedbackFor(step: Extract<SocialStep, { kind: 'fuente' | 'testimonio' | 'elegir' }>, s: SessionState): FeedbackKind | undefined {
   const chosen = s.choiceAnswers[step.id];
   if (chosen === undefined) return undefined;
   return step.preferredChoiceIds.includes(chosen) ? 'affirm' : 'gentle';
@@ -90,12 +91,25 @@ export interface SessionEvaluation {
   completed: boolean;
 }
 
+/** Qué tan seguido, entre los pasos de elección (fuente/testimonio/elegir), el niño quedó con una opción
+ * preferida (no "correcta": las no preferidas solo dieron una pista y se pudieron cambiar). Sirve como segunda
+ * medida de esfuerzo en unidades SIN fuentes (p. ej. S1-U01, puro razonamiento cívico), donde no hay "explicar"
+ * ni "revisar" que medir. */
+function choiceQuality(unit: SocialUnit, s: SessionState): number {
+  const choiceSteps = unit.steps.filter((st): st is Extract<SocialStep, { kind: 'fuente' | 'testimonio' | 'elegir' }> => st.kind === 'fuente' || st.kind === 'testimonio' || st.kind === 'elegir');
+  if (choiceSteps.length === 0) return 1;
+  const preferred = choiceSteps.filter((st) => st.preferredChoiceIds.includes(s.choiceAnswers[st.id] ?? '')).length;
+  return preferred / choiceSteps.length;
+}
+
 export function evaluateSession(unit: SocialUnit, s: SessionState): SessionEvaluation {
   const explicar = unit.steps.find((st): st is Extract<SocialStep, { kind: 'explicar' }> => st.kind === 'explicar');
   const revisar = unit.steps.find((st): st is Extract<SocialStep, { kind: 'revisar' }> => st.kind === 'revisar');
+  const hasSources = unit.sources.length > 0;
+  const quality = choiceQuality(unit, s);
   return {
-    sourcesUsedEnough: !!explicar && s.sourcesSelected.length >= explicar.minSources,
-    gapIdentified: !!revisar && s.gapChoice === revisar.gapChoiceId,
+    sourcesUsedEnough: hasSources ? !!explicar && s.sourcesSelected.length >= explicar.minSources : quality >= 0.5,
+    gapIdentified: hasSources ? !!revisar && s.gapChoice === revisar.gapChoiceId : quality === 1,
     completed: unit.steps.every((st) => s.stepsDone.includes(st.id)),
   };
 }

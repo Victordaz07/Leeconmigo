@@ -37,8 +37,14 @@ export function validateSocialUnit(unit: SocialUnit): string[] {
     validateStep(step, sourceIds, (m) => err(step.id, m));
   }
 
-  if (!unit.steps.some((s) => s.kind === 'explicar')) err(unit.id, 'ninguna unidad puede faltar el paso "explicar" (usar ≥2 fuentes)');
-  if (!unit.steps.some((s) => s.kind === 'revisar')) err(unit.id, 'ninguna unidad puede faltar el paso "revisar" (nombrar lo que no se sabe)');
+  // Solo las unidades que SÍ trabajan con fuentes (mapa, foto, testimonio) tienen que enseñar a usarlas y a
+  // reconocer huecos (docs/research/sociedad-investigacion.md §12). Una unidad de puro razonamiento cívico
+  // (p. ej. S1-U01, sin fuentes históricas) no necesita estos dos pasos.
+  if (unit.sources.length > 0) {
+    if (!unit.steps.some((s) => s.kind === 'explicar')) err(unit.id, 'tiene fuentes, así que no puede faltar el paso "explicar" (usar ≥2 fuentes)');
+    if (!unit.steps.some((s) => s.kind === 'revisar')) err(unit.id, 'tiene fuentes, así que no puede faltar el paso "revisar" (nombrar lo que no se sabe)');
+  }
+  if (unit.steps.length < 4) err(unit.id, 'muy pocos pasos para una investigación/deliberación completa');
 
   return errs;
 }
@@ -46,8 +52,10 @@ export function validateSocialUnit(unit: SocialUnit): string[] {
 function validateStep(step: SocialStep, sourceIds: Set<string>, err: (m: string) => void): void {
   switch (step.kind) {
     case 'pregunta':
-      if (step.layers.length < 2) err('necesita al menos 2 capas para comparar');
-      for (const l of step.layers) if (!hasBoth(l.label)) err(`la capa "${l.id}" no tiene los dos idiomas`);
+      if (step.layers) {
+        if (step.layers.length < 2) err('si trae capas, necesita al menos 2 para comparar');
+        for (const l of step.layers) if (!hasBoth(l.label)) err(`la capa "${l.id}" no tiene los dos idiomas`);
+      }
       break;
     case 'comparar':
       if (step.layers.length < 2) err('necesita al menos 2 capas para comparar');
@@ -61,11 +69,13 @@ function validateStep(step: SocialStep, sourceIds: Set<string>, err: (m: string)
     case 'fuente':
     case 'testimonio':
       if (!sourceIds.has(step.sourceId)) err(`la fuente "${step.sourceId}" no existe`);
+      if (step.kind === 'testimonio' && !hasBoth(step.quote)) err('falta la cita en algún idioma');
+    // eslint-disable-next-line no-fallthrough -- valida lo que 'fuente'/'testimonio'/'elegir' comparten (opciones).
+    case 'elegir':
       if (step.choices.length < 2) err('necesita al menos 2 opciones');
       for (const c of step.choices) if (!hasBoth(c.text)) err(`la opción "${c.id}" no tiene los dos idiomas`);
       if (step.preferredChoiceIds.length === 0) err('no tiene ninguna opción preferida');
       for (const id of step.preferredChoiceIds) if (!step.choices.some((c) => c.id === id)) err(`la opción preferida "${id}" no existe entre las opciones`);
-      if (step.kind === 'testimonio' && !hasBoth(step.quote)) err('falta la cita en algún idioma');
       break;
     case 'explicar':
       if (step.minSources < 2) err('debe pedir al menos 2 fuentes (docs/research/sociedad-investigacion.md §12: usar ≥2 fuentes)');

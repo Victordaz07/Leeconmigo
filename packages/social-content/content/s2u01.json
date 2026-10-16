@@ -1,0 +1,104 @@
+{
+  "id": "s2u01",
+  "grade": 2,
+  "standard": "CA HSS 2.1",
+  "standardsReview": {
+    "status": "draftPendingTeacherReview",
+    "confidence": "highAtUnitLevel",
+    "displayAudience": "parentsOnly",
+    "isCertified": false
+  },
+  "title": { "es": "Un cuaderno tiene historia", "en": "A notebook has a history" },
+  "cast": ["ines", "teo"],
+  "sources": [
+    {
+      "id": "cuaderno_viejo",
+      "kind": "foto",
+      "title": { "es": "El cuaderno viejo", "en": "The old notebook" },
+      "caption": {
+        "es": "Un cuaderno gastado que Inés encontró, con el número 2005 escrito en la tapa.",
+        "en": "A worn notebook Inés found, with the number 2005 written on the cover."
+      },
+      "art": "cuadernoViejo"
+    },
+    {
+      "id": "tarjeta_relato",
+      "kind": "testimonio",
+      "title": { "es": "Una tarjeta encontrada junto al cuaderno", "en": "A card found with the notebook" },
+      "caption": {
+        "es": "Una tarjeta escrita a mano que estaba guardada dentro del cuaderno.",
+        "en": "A handwritten card that was kept inside the notebook."
+      },
+      "art": null
+    }
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "kind": "pregunta",
+      "art": "cuadernoViejo",
+      "prompt": {
+        "es": "Inés encontró este cuaderno viejo en una caja. ¿Qué podemos saber con él?",
+        "en": "Inés found this old notebook in a box. What can we learn from it?"
+      }
+    },
+    {
+      "id": "s2",
+      "kind": "fuente",
+      "prompt": {
+        "es": "Mira el cuaderno con atención. ¿Qué podemos observar de verdad?",
+        "en": "Look closely at the notebook. What can we really observe?"
+      },
+      "sourceId": "cuaderno_viejo",
+      "choices": [
+        { "id": "a", "text": { "es": "Tiene escrito el número 2005 en la tapa.", "en": "It has the number 2005 written on the cover." } },
+        { "id": "b", "text": { "es": "Sabemos que todos los niños de esa escuela usaban este mismo cuaderno.", "en": "We know every student at that school used this exact notebook." } },
+        { "id": "c", "text": { "es": "Tiene manchas y las esquinas gastadas.", "en": "It has stains and worn-out corners." } }
+      ],
+      "preferredChoiceIds": ["a", "c"]
+    },
+    {
+      "id": "s3",
+      "kind": "testimonio",
+      "prompt": {
+        "es": "Dentro del cuaderno había una tarjeta escrita a mano. ¿Qué nos cuenta que el cuaderno solo no decía?",
+        "en": "Inside the notebook there was a handwritten card. What does it tell us that the notebook alone didn't?"
+      },
+      "sourceId": "tarjeta_relato",
+      "quote": {
+        "es": "«Este cuaderno se usó en una escuela del barrio.»",
+        "en": "“This notebook was used at a school in the neighborhood.”"
+      },
+      "choices": [
+        { "id": "a", "text": { "es": "Dónde se usó el cuaderno.", "en": "Where the notebook was used." } },
+        { "id": "b", "text": { "es": "El nombre exacto del niño o niña que lo usó.", "en": "The exact name of the child who used it." } },
+        { "id": "c", "text": { "es": "El color que tenían las páginas por dentro.", "en": "What color the pages were inside." } }
+      ],
+      "preferredChoiceIds": ["a"]
+    },
+    {
+      "id": "s4",
+      "kind": "explicar",
+      "prompt": {
+        "es": "Usa el cuaderno y la tarjeta para explicar qué sabemos de su historia.",
+        "en": "Use the notebook and the card to explain what we know about its history."
+      },
+      "sourceIds": ["cuaderno_viejo", "tarjeta_relato"],
+      "minSources": 2
+    },
+    {
+      "id": "s5",
+      "kind": "revisar",
+      "prompt": {
+        "es": "Con el cuaderno y la tarjeta, ¿qué NO sabemos todavía?",
+        "en": "With the notebook and the card, what DON'T we know yet?"
+      },
+      "choices": [
+        { "id": "a", "text": { "es": "Quién fue exactamente el niño o niña que lo usó.", "en": "Who exactly the child who used it was." } },
+        { "id": "b", "text": { "es": "Que tiene escrito 2005.", "en": "That it has 2005 written on it." } },
+        { "id": "c", "text": { "es": "Que tiene las esquinas gastadas.", "en": "That it has worn-out corners." } }
+      ],
+      "gapChoiceId": "a"
+    }
+  ]
+}

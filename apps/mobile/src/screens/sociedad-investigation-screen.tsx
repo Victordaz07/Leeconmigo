@@ -1,5 +1,5 @@
 import { useReducer, useState } from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { FocusSupports, SocialSource, SocialStep, SocialUnit } from '@lee-conmigo/contracts';
 import {
@@ -34,7 +34,7 @@ import {
 import { resolveSocialArt, TEO } from '../sociedad-art';
 import { useMovementBreak } from '../movement';
 import { MovementBreakScreen } from './movement-break-screen';
-import type { SociedadNotebookProgress } from './sociedad-notebook-screen';
+import type { UnitProgress } from './sociedad-notebook-screen';
 
 interface SociedadInvestigationScreenProps {
   lang: SocialLang;
@@ -43,7 +43,7 @@ interface SociedadInvestigationScreenProps {
   profileName: string;
   focus: FocusSupports;
   onExit: () => void;
-  onFinish: (progress: SociedadNotebookProgress, selfReport?: FocusSelfReport) => void;
+  onFinish: (progress: UnitProgress, selfReport?: FocusSelfReport) => void;
 }
 
 function sourceCardData(source: SocialSource, lang: SocialLang): SourceCardData {
@@ -128,7 +128,7 @@ export function SociedadInvestigationScreen({ lang, unit, profileId, profileName
 function stepMoment(kind: SocialStep['kind']): 'intro' | 'thinking' | 'pointing' | 'done' {
   if (kind === 'pregunta') return 'intro';
   if (kind === 'comparar' || kind === 'explicar') return 'pointing';
-  if (kind === 'revisar') return 'thinking';
+  if (kind === 'revisar' || kind === 'elegir') return 'thinking';
   return 'intro';
 }
 
@@ -147,36 +147,47 @@ function StepBody({ step, unit, lang, session, dispatch, activeLayer, setActiveL
   const sourceById = (id: string) => unit.sources.find((s) => s.id === id)!;
 
   switch (step.kind) {
-    case 'pregunta':
-    case 'comparar': {
+    case 'pregunta': {
+      if (!step.layers) {
+        const art = resolveSocialArt(step.art);
+        return art ? (
+          <View style={styles.body}>
+            <View style={styles.singleFrame}>
+              <Image source={art} style={styles.singleImage} resizeMode="cover" accessible={false} />
+            </View>
+          </View>
+        ) : null;
+      }
       const layers = step.layers.map((l) => ({ id: l.id, label: l.label[lang], source: resolveSocialArt(l.art)! }));
       return (
         <View style={styles.body}>
           <MapCompare layers={layers} active={activeLayer} onChange={setActiveLayer} />
-          {step.kind === 'comparar' && (
-            <View style={styles.statements}>
-              {step.statements.map((st) => (
-                <StatementRow
-                  key={st.id}
-                  text={st.text[lang]}
-                  status={session.statementAnswers[st.id]}
-                  onClassify={(status) => dispatch({ type: 'classify', statementId: st.id, status })}
-                  labels={{ igual: t.classify.igual[lang], nuevo: t.classify.nuevo[lang] }}
-                />
-              ))}
-            </View>
-          )}
+        </View>
+      );
+    }
+    case 'comparar': {
+      const layers = step.layers.map((l) => ({ id: l.id, label: l.label[lang], source: resolveSocialArt(l.art)! }));
+      const labels = step.statusLabels ? { igual: step.statusLabels.a[lang], nuevo: step.statusLabels.b[lang] } : { igual: t.classify.igual[lang], nuevo: t.classify.nuevo[lang] };
+      return (
+        <View style={styles.body}>
+          <MapCompare layers={layers} active={activeLayer} onChange={setActiveLayer} />
+          <View style={styles.statements}>
+            {step.statements.map((st) => (
+              <StatementRow key={st.id} text={st.text[lang]} status={session.statementAnswers[st.id]} onClassify={(status) => dispatch({ type: 'classify', statementId: st.id, status })} labels={labels} />
+            ))}
+          </View>
         </View>
       );
     }
     case 'fuente':
-    case 'testimonio': {
-      const source = sourceById(step.sourceId);
+    case 'testimonio':
+    case 'elegir': {
+      const source = step.kind === 'elegir' ? undefined : sourceById(step.sourceId);
       const chosen = session.choiceAnswers[step.id];
-      const fb = step.kind === 'fuente' || step.kind === 'testimonio' ? feedbackFor(step, session) : undefined;
+      const fb = feedbackFor(step, session);
       return (
         <View style={styles.body}>
-          <SourceCard data={sourceCardData(source, lang)} />
+          {source && <SourceCard data={sourceCardData(source, lang)} />}
           {step.kind === 'testimonio' && <Text style={styles.quote}>{step.quote[lang]}</Text>}
           <ChoiceList choices={step.choices.map((c) => ({ id: c.id, text: c.text[lang] }))} selectedId={chosen} onSelect={(id) => dispatch({ type: 'choose', stepId: step.id, choiceId: id })} />
           {fb && <Text style={[styles.feedback, fb === 'affirm' ? styles.feedbackAffirm : styles.feedbackGentle]}>{t.feedback[fb][lang]}</Text>}
@@ -215,6 +226,8 @@ const styles = StyleSheet.create({
   bubble: { flex: 1, backgroundColor: '#ffffff', borderRadius: radius.tile, paddingHorizontal: 16, paddingVertical: 12, boxShadow: shadows.chip },
   prompt: { fontFamily: fontFamily.ui.extrabold, fontSize: 18, color: colors.ink },
   body: { gap: 14 },
+  singleFrame: { borderRadius: radius.card, overflow: 'hidden', backgroundColor: colors.paper, boxShadow: shadows.card, aspectRatio: 1536 / 1024 },
+  singleImage: { width: '100%', height: '100%' },
   statements: { gap: 10 },
   quote: { fontFamily: fontFamily.read.regular, fontSize: 18, lineHeight: 26, color: colors.inkSoft, fontStyle: 'italic' },
   instructions: { fontFamily: fontFamily.ui.bold, fontSize: 16, color: colors.ink },

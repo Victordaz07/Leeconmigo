@@ -47,10 +47,13 @@ export interface SocialStatement {
 }
 
 export type SocialStep =
-  | { id: string; kind: 'pregunta'; prompt: Localized; layers: SocialMapLayer[] }
-  | { id: string; kind: 'comparar'; prompt: Localized; layers: SocialMapLayer[]; statements: SocialStatement[] }
+  | { id: string; kind: 'pregunta'; prompt: Localized; layers?: SocialMapLayer[]; art?: string }
+  | { id: string; kind: 'comparar'; prompt: Localized; layers: SocialMapLayer[]; statements: SocialStatement[]; statusLabels?: { a: Localized; b: Localized } }
   | { id: string; kind: 'fuente'; prompt: Localized; sourceId: string; choices: SocialChoice[]; preferredChoiceIds: string[] }
   | { id: string; kind: 'testimonio'; prompt: Localized; sourceId: string; quote: Localized; choices: SocialChoice[]; preferredChoiceIds: string[] }
+  /** Elección razonada SIN una fuente concreta de por medio (p. ej. elegir una regla y justificarla). Mismo
+   * principio de nunca "incorrecto": una opción no preferida da una pista, no bloquea. */
+  | { id: string; kind: 'elegir'; prompt: Localized; choices: SocialChoice[]; preferredChoiceIds: string[] }
   | { id: string; kind: 'explicar'; prompt: Localized; sourceIds: string[]; minSources: number }
   | { id: string; kind: 'revisar'; prompt: Localized; choices: SocialChoice[]; gapChoiceId: string };
 

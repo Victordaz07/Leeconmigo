@@ -107,9 +107,10 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | SO-01 | Prompt de investigación de Sociedad → Victor lo corre | ✅ | B | resultado: `docs/research/sociedad-investigacion.md` |
 | SO-02 | Especificación visual/interactiva en `docs/design/sociedad/` | ✅ (v2) | B | `UNIDAD-PILOTO-S3-U03.md`; elenco cambiado a Inés/Teo/Elena (DS-4), caso "El paso del arroyo" |
 | SO-03 | Lista de imágenes por tandas + manifiesto | ✅ | B | las 8 piezas llegaron (7 + `cover_sociedad` del adendo), convertidas y conectadas |
-| SO-04 | Dominio puro en `packages/social-content` + pruebas | ✅ | B | `contracts/src/social.ts`, `content/s3u03.json`, `session.ts`/`validate.ts`, 15 pruebas |
+| SO-04 | Dominio puro en `packages/social-content` + pruebas | ✅ | B | `contracts/src/social.ts` (motor generalizado: +paso `'elegir'`), 6 unidades (1.º–6.º) en `content/`, 19 pruebas |
 | SO-05 | Textos ES/EN en `ui-core/src/sociedad/` | ✅ | B | `SOCIAL_COPY`; el dominio devuelve claves, no texto |
-| SO-06 | Pantallas del cuaderno de Sociedad (con Modo Enfoque) | ✅ | B | cuaderno + investigación de 6 pasos; `available: true` |
-| SO-07 | Verificar en 4 tamaños y `available: true` | ✅ (parcial) | B | typecheck + test ✅ (1218/1218); sin verificación visual en equipo real (ver handoff) |
-| SO-08 | Revisión de un maestro (estándares: borrador) | ⬜ | – | pendiente real |
+| SO-06 | Pantallas del cuaderno de Sociedad (con Modo Enfoque) | ✅ | B | cuaderno = camino de 6 unidades (como Matemáticas); `available: true` |
+| SO-07 | Verificar en 4 tamaños y `available: true` | ✅ (parcial) | B | typecheck + test ✅ (1222/1222); sin verificación visual en equipo real (ver handoff) |
+| SO-08 | Revisión de un maestro (estándares: borrador) | ⬜ | – | pendiente real; atención extra a 4.º/5.º (temas sensibles) |
+| SO-09 | 3 imágenes que faltan (2.º, 4.º, 6.º) | ⬜ | B | pedido: `docs/design/sociedad/PEDIDO-IMAGENES-GRADOS-1-2-4-6.md` |
 

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { socialUnitById } from '@lee-conmigo/social-content';
+import { SOCIAL_UNITS } from '@lee-conmigo/social-content';
 import { SOCIAL_COPY } from '@lee-conmigo/ui-core';
 
 const LANGS = ['es', 'en'] as const;
@@ -31,24 +31,25 @@ describe('textos de Sociedad (interfaz ↔ ES/EN)', () => {
     walk(SOCIAL_COPY, 'SOCIAL_COPY');
   });
 
-  it('la unidad piloto s3u03 tiene los dos idiomas en cada pregunta, fuente y opción', () => {
-    const unit = socialUnitById('s3u03')!;
-    for (const s of unit.sources) {
-      for (const lang of LANGS) {
-        expect(s.title[lang], `${s.id}.title.${lang}`).toBeTruthy();
-        expect(s.caption[lang], `${s.id}.caption.${lang}`).toBeTruthy();
+  it('cada unidad piloto (1.º–6.º) tiene los dos idiomas en cada pregunta, fuente y opción', () => {
+    for (const unit of SOCIAL_UNITS) {
+      for (const s of unit.sources) {
+        for (const lang of LANGS) {
+          expect(s.title[lang], `${unit.id}.${s.id}.title.${lang}`).toBeTruthy();
+          expect(s.caption[lang], `${unit.id}.${s.id}.caption.${lang}`).toBeTruthy();
+        }
       }
-    }
-    for (const step of unit.steps) {
-      for (const lang of LANGS) expect(step.prompt[lang], `${step.id}.prompt.${lang}`).toBeTruthy();
-      if (step.kind === 'fuente' || step.kind === 'testimonio') {
-        for (const c of step.choices) for (const lang of LANGS) expect(c.text[lang], `${step.id}.${c.id}.${lang}`).toBeTruthy();
-      }
-      if (step.kind === 'revisar') {
-        for (const c of step.choices) for (const lang of LANGS) expect(c.text[lang], `${step.id}.${c.id}.${lang}`).toBeTruthy();
-      }
-      if (step.kind === 'comparar') {
-        for (const st of step.statements) for (const lang of LANGS) expect(st.text[lang], `${step.id}.${st.id}.${lang}`).toBeTruthy();
+      for (const step of unit.steps) {
+        for (const lang of LANGS) expect(step.prompt[lang], `${unit.id}.${step.id}.prompt.${lang}`).toBeTruthy();
+        if (step.kind === 'fuente' || step.kind === 'testimonio' || step.kind === 'elegir' || step.kind === 'revisar') {
+          for (const c of step.choices) for (const lang of LANGS) expect(c.text[lang], `${unit.id}.${step.id}.${c.id}.${lang}`).toBeTruthy();
+        }
+        if (step.kind === 'testimonio') {
+          for (const lang of LANGS) expect(step.quote[lang], `${unit.id}.${step.id}.quote.${lang}`).toBeTruthy();
+        }
+        if (step.kind === 'comparar') {
+          for (const st of step.statements) for (const lang of LANGS) expect(st.text[lang], `${unit.id}.${step.id}.${st.id}.${lang}`).toBeTruthy();
+        }
       }
     }
   });

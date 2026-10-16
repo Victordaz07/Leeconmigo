@@ -106,3 +106,34 @@ describe('sesión de Sociedad (s3u03)', () => {
     expect(investigationStars(ev)).toBe(0);
   });
 });
+
+describe('unidad sin fuentes (s1u01, puro razonamiento) — pasos "elegir"', () => {
+  const s1 = socialUnitById('s1u01')!;
+
+  it('se completa de principio a fin solo con pasos "elegir"', () => {
+    let s = initialSession;
+    for (const step of s1.steps) {
+      if (step.kind === 'elegir') s = sessionReducer(s, { type: 'choose', stepId: step.id, choiceId: step.preferredChoiceIds[0] });
+      expect(canAdvance(step, s), step.id).toBe(true);
+      s = sessionReducer(s, { type: 'next', unit: s1 });
+    }
+    const ev = evaluateSession(s1, s);
+    expect(ev.completed).toBe(true);
+    // Sin fuentes: elegir siempre la opción preferida da la mejor calificación posible (quality === 1).
+    expect(investigationStars(ev)).toBe(3);
+  });
+
+  it('elegir opciones no preferidas en una unidad sin fuentes no bloquea terminar, pero da menos estrellas', () => {
+    let s = initialSession;
+    for (const step of s1.steps) {
+      if (step.kind === 'elegir') {
+        const notPreferred = step.choices.find((c) => !step.preferredChoiceIds.includes(c.id))!;
+        s = sessionReducer(s, { type: 'choose', stepId: step.id, choiceId: notPreferred.id });
+      }
+      s = sessionReducer(s, { type: 'next', unit: s1 });
+    }
+    const ev = evaluateSession(s1, s);
+    expect(ev.completed).toBe(true);
+    expect(investigationStars(ev)).toBe(1);
+  });
+});

@@ -1,24 +1,27 @@
 /**
- * Módulo de Sociedad. Lo edita SOLO la cuenta de Sociedad (docs/14-MATERIAS-EN-PARALELO.md). Primera unidad
- * piloto: S3-U03 "El paso del arroyo" (docs/design/sociedad/UNIDAD-PILOTO-S3-U03.md). `Screen` maneja su propia
- * navegación interna (cuaderno ↔ investigación), como pide `docs/14`.
+ * Módulo de Sociedad. Lo edita SOLO la cuenta de Sociedad (docs/14-MATERIAS-EN-PARALELO.md). Seis unidades
+ * piloto, una por grado 1.º–6.º (docs/design/sociedad/). `Screen` maneja su propia navegación interna (cuaderno
+ * ↔ investigación), como pide `docs/14`.
  */
 import { useState } from 'react';
-import { socialUnitById } from '@lee-conmigo/social-content';
+import { SOCIAL_UNITS } from '@lee-conmigo/social-content';
 import { progressSegments } from '@lee-conmigo/ui-core';
 import { subjectStorageFor } from '../../app-state';
 import { SociedadInvestigationScreen } from '../../screens/sociedad-investigation-screen';
-import { SociedadNotebookScreen, type SociedadNotebookProgress } from '../../screens/sociedad-notebook-screen';
+import { SociedadNotebookScreen, type SociedadProgress } from '../../screens/sociedad-notebook-screen';
 import type { SubjectModule } from '../types';
 
-const UNIT = socialUnitById('s3u03')!;
+const EMPTY_PROGRESS: SociedadProgress = {};
 
-const EMPTY_PROGRESS: SociedadNotebookProgress = { stepsDone: [], stars: 0 };
-
-function isSociedadProgress(v: unknown): v is SociedadNotebookProgress {
+function isUnitProgress(v: unknown): v is { stepsDone: string[]; stars: 0 | 1 | 2 | 3 } {
   if (typeof v !== 'object' || v === null) return false;
   const p = v as Record<string, unknown>;
   return Array.isArray(p.stepsDone) && p.stepsDone.every((x) => typeof x === 'string') && [0, 1, 2, 3].includes(p.stars as number);
+}
+
+function isSociedadProgress(v: unknown): v is SociedadProgress {
+  if (typeof v !== 'object' || v === null) return false;
+  return Object.values(v as Record<string, unknown>).every(isUnitProgress);
 }
 
 export const sociedadModule: SubjectModule = {
@@ -26,31 +29,33 @@ export const sociedadModule: SubjectModule = {
   available: true,
   homeCard: (profile, lang) => {
     const progress = subjectStorageFor('sociedad', profile.id, EMPTY_PROGRESS, isSociedadProgress).load();
-    return { subtitle: UNIT.title[lang], segments: progressSegments(progress.stars, 3) };
+    const done = SOCIAL_UNITS.filter((u) => (progress[u.id]?.stars ?? 0) > 0).length;
+    return { subtitle: `${done}/${SOCIAL_UNITS.length} ${lang === 'es' ? 'investigaciones' : 'investigations'}`, segments: progressSegments(done, SOCIAL_UNITS.length) };
   },
   Screen: ({ profile, lang, focus, onExit }) => {
     const storage = subjectStorageFor('sociedad', profile.id, EMPTY_PROGRESS, isSociedadProgress);
-    const [progress, setProgress] = useState<SociedadNotebookProgress>(() => storage.load());
-    const [open, setOpen] = useState(false);
+    const [progress, setProgress] = useState<SociedadProgress>(() => storage.load());
+    const [openUnitId, setOpenUnitId] = useState<string | null>(null);
 
-    if (open) {
+    if (openUnitId) {
+      const unit = SOCIAL_UNITS.find((u) => u.id === openUnitId)!;
       return (
         <SociedadInvestigationScreen
           lang={lang}
-          unit={UNIT}
+          unit={unit}
           profileId={profile.id}
           profileName={profile.name}
           focus={focus}
-          onExit={() => setOpen(false)}
+          onExit={() => setOpenUnitId(null)}
           onFinish={(next) => {
-            const merged: SociedadNotebookProgress = { stepsDone: next.stepsDone, stars: next.stars as 0 | 1 | 2 | 3 };
+            const merged: SociedadProgress = { ...progress, [unit.id]: { stepsDone: next.stepsDone, stars: next.stars as 0 | 1 | 2 | 3 } };
             storage.save(merged);
             setProgress(merged);
-            setOpen(false);
+            setOpenUnitId(null);
           }}
         />
       );
     }
-    return <SociedadNotebookScreen lang={lang} unit={UNIT} progress={progress} onBack={onExit} onOpen={() => setOpen(true)} />;
+    return <SociedadNotebookScreen lang={lang} units={SOCIAL_UNITS} progress={progress} onBack={onExit} onOpenUnit={setOpenUnitId} />;
   },
 };

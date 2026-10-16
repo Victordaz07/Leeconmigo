@@ -7,6 +7,11 @@ describe('contenido de Sociedad', () => {
     expect(socialUnitById('no-existe')).toBeUndefined();
   });
 
+  it('hay una unidad piloto por grado, 1.º a 6.º', () => {
+    expect(SOCIAL_UNITS.map((u) => u.grade)).toEqual([1, 2, 3, 4, 5, 6]);
+    expect(new Set(SOCIAL_UNITS.map((u) => u.id)).size).toBe(6);
+  });
+
   it('todas las unidades pasan la validación automática', () => {
     for (const unit of SOCIAL_UNITS) {
       expect(validateSocialUnit(unit), `${unit.id}: ${validateSocialUnit(unit).join('; ')}`).toEqual([]);
@@ -33,6 +38,13 @@ describe('contenido de Sociedad', () => {
     const unit = socialUnitById('s3u03')!;
     const broken = { ...unit, title: { es: unit.title.es, en: '' } };
     expect(validateSocialUnit(broken)).toContain(`${unit.id}: falta el título en algún idioma`);
+  });
+
+  it('una unidad sin fuentes (razonamiento cívico puro) no necesita "explicar" ni "revisar"', () => {
+    const s1u01 = socialUnitById('s1u01')!;
+    expect(s1u01.sources).toEqual([]);
+    expect(s1u01.steps.some((s) => s.kind === 'explicar')).toBe(false);
+    expect(validateSocialUnit(s1u01)).toEqual([]);
   });
 
   it('detecta un paso "explicar" que pide menos de 2 fuentes', () => {

@@ -1,0 +1,67 @@
+{
+  "id": "s6u02",
+  "grade": 6,
+  "standard": "CA HSS 6.2",
+  "standardsReview": {
+    "status": "draftPendingTeacherReview",
+    "confidence": "highAtUnitLevel",
+    "displayAudience": "parentsOnly",
+    "isCertified": false
+  },
+  "title": { "es": "Un asentamiento junto al río", "en": "A settlement by the river" },
+  "cast": ["ines", "teo"],
+  "sources": [],
+  "steps": [
+    {
+      "id": "s1",
+      "kind": "pregunta",
+      "art": "asentamientoMapa",
+      "prompt": {
+        "es": "Hace miles de años, un grupo buscaba dónde asentarse junto a un río. Aquí hay 3 lugares posibles (esto es una simulación, no un lugar real).",
+        "en": "Thousands of years ago, a group was looking for a place to settle by a river. Here are 3 possible spots (this is a simulation, not a real place)."
+      }
+    },
+    {
+      "id": "s2",
+      "kind": "elegir",
+      "prompt": {
+        "es": "¿Cuál lugar elegirías para empezar el asentamiento? No hay una única respuesta correcta — lo importante es tu razón.",
+        "en": "Which spot would you choose to start the settlement? There's no single right answer — what matters is your reason."
+      },
+      "choices": [
+        { "id": "a", "text": { "es": "Cerca del río, en tierra plana.", "en": "Close to the river, on flat land." } },
+        { "id": "b", "text": { "es": "Lejos del río, en la colina.", "en": "Far from the river, on the hill." } },
+        { "id": "c", "text": { "es": "Entre el río y el bosque.", "en": "Between the river and the forest." } }
+      ],
+      "preferredChoiceIds": ["a", "b", "c"]
+    },
+    {
+      "id": "s3",
+      "kind": "elegir",
+      "prompt": {
+        "es": "Avancemos en el tiempo: ¿qué más ayudaría a esta comunidad a crecer, además de estar cerca del agua?",
+        "en": "Let's move forward in time: besides being near water, what else would help this community grow?"
+      },
+      "choices": [
+        { "id": "a", "text": { "es": "Organizarse para compartir el trabajo.", "en": "Organizing to share the work." } },
+        { "id": "b", "text": { "es": "Que una sola persona decida todo.", "en": "Having just one person decide everything." } },
+        { "id": "c", "text": { "es": "No organizarse para nada.", "en": "Not organizing at all." } }
+      ],
+      "preferredChoiceIds": ["a"]
+    },
+    {
+      "id": "s4",
+      "kind": "revisar",
+      "prompt": {
+        "es": "Con esta simulación, ¿qué NO podemos saber todavía sobre un asentamiento real?",
+        "en": "With this simulation, what CAN'T we know yet about a real settlement?"
+      },
+      "choices": [
+        { "id": "a", "text": { "es": "Qué tan buena era el agua de ese río para beber.", "en": "How good that river's water was for drinking." } },
+        { "id": "b", "text": { "es": "Que estar cerca del agua es importante para vivir.", "en": "That being near water matters for living." } },
+        { "id": "c", "text": { "es": "Que organizarse ayuda a una comunidad a crecer.", "en": "That organizing helps a community grow." } }
+      ],
+      "gapChoiceId": "a"
+    }
+  ]
+}

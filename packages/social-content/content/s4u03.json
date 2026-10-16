@@ -1,0 +1,104 @@
+{
+  "id": "s4u03",
+  "grade": 4,
+  "standard": "CA HSS 4.2",
+  "standardsReview": {
+    "status": "draftPendingTeacherReview",
+    "confidence": "lowSensitiveTopic",
+    "displayAudience": "parentsOnly",
+    "isCertified": false
+  },
+  "title": { "es": "Un edificio y las voces que le faltan", "en": "A building and the voices it's missing" },
+  "cast": ["ines", "teo"],
+  "sources": [
+    {
+      "id": "edificio",
+      "kind": "foto",
+      "title": { "es": "Una misión reconstruida", "en": "A reconstructed mission" },
+      "caption": {
+        "es": "Una reconstrucción ilustrada de cómo pudo verse una misión de California. No es una fotografía real.",
+        "en": "An illustrated reconstruction of what a California mission may have looked like. Not a real photograph."
+      },
+      "art": "edificioMision"
+    },
+    {
+      "id": "relato",
+      "kind": "testimonio",
+      "title": { "es": "Lo que cuenta la historia", "en": "What history tells us" },
+      "caption": {
+        "es": "Un resumen, con cuidado, de lo que sabemos sobre las familias indígenas de ese período.",
+        "en": "A careful summary of what we know about Indigenous families from that period."
+      },
+      "art": null
+    }
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "kind": "pregunta",
+      "art": "edificioMision",
+      "prompt": {
+        "es": "Este es un edificio de una misión de California, reconstruido para mostrar cómo se veía. Pero un edificio no cuenta toda la historia.",
+        "en": "This is a building from a California mission, reconstructed to show how it looked. But a building doesn't tell the whole story."
+      }
+    },
+    {
+      "id": "s2",
+      "kind": "fuente",
+      "prompt": {
+        "es": "Mira el edificio. ¿Qué nos puede decir por sí solo?",
+        "en": "Look at the building. What can it tell us by itself?"
+      },
+      "sourceId": "edificio",
+      "choices": [
+        { "id": "a", "text": { "es": "Cómo estaba construido y organizado el espacio.", "en": "How the space was built and organized." } },
+        { "id": "b", "text": { "es": "Exactamente cómo se sentían las personas que vivían y trabajaban ahí.", "en": "Exactly how the people who lived and worked there felt." } },
+        { "id": "c", "text": { "es": "El tamaño aproximado de los cuartos.", "en": "The approximate size of the rooms." } }
+      ],
+      "preferredChoiceIds": ["a", "c"]
+    },
+    {
+      "id": "s3",
+      "kind": "testimonio",
+      "prompt": {
+        "es": "Esto es lo que sabemos, con cuidado, sobre las familias indígenas de ese período. ¿Qué agrega que el edificio no mostraba?",
+        "en": "This is what we carefully know about Indigenous families from that period. What does it add that the building didn't show?"
+      },
+      "sourceId": "relato",
+      "quote": {
+        "es": "«Las familias indígenas que vivían y trabajaban en las misiones mantuvieron su idioma y sus costumbres, aun en condiciones muy difíciles. Sus descendientes siguen presentes en California hoy.»",
+        "en": "“The Indigenous families who lived and worked at the missions kept their language and customs, even under very difficult conditions. Their descendants are still present in California today.”"
+      },
+      "choices": [
+        { "id": "a", "text": { "es": "Que las personas indígenas mantuvieron su cultura, a pesar de condiciones difíciles.", "en": "That Indigenous people kept their culture, despite difficult conditions." } },
+        { "id": "b", "text": { "es": "Que a todos les gustaba vivir ahí.", "en": "That everyone enjoyed living there." } },
+        { "id": "c", "text": { "es": "El tamaño exacto del edificio.", "en": "The exact size of the building." } }
+      ],
+      "preferredChoiceIds": ["a"]
+    },
+    {
+      "id": "s4",
+      "kind": "explicar",
+      "prompt": {
+        "es": "Usa el edificio y el relato para explicar qué cambió para las personas en ese período.",
+        "en": "Use the building and the account to explain what changed for people during that period."
+      },
+      "sourceIds": ["edificio", "relato"],
+      "minSources": 2
+    },
+    {
+      "id": "s5",
+      "kind": "revisar",
+      "prompt": {
+        "es": "Con el edificio y el relato, ¿qué NO sabemos todavía?",
+        "en": "With the building and the account, what DON'T we know yet?"
+      },
+      "choices": [
+        { "id": "a", "text": { "es": "Cómo era, día a día, la vida de una familia indígena específica ahí.", "en": "What daily life was like for one specific Indigenous family there." } },
+        { "id": "b", "text": { "es": "Que el edificio se puede reconstruir con lo que sabemos.", "en": "That the building can be reconstructed from what we know." } },
+        { "id": "c", "text": { "es": "Que las familias mantuvieron su cultura.", "en": "That families kept their culture." } }
+      ],
+      "gapChoiceId": "a"
+    }
+  ]
+}

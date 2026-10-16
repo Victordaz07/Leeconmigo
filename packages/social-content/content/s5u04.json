@@ -1,0 +1,131 @@
+{
+  "id": "s5u04",
+  "grade": 5,
+  "standard": "CA HSS 5.5-5.7",
+  "standardsReview": {
+    "status": "draftPendingTeacherReview",
+    "confidence": "lowSensitiveTopic",
+    "displayAudience": "parentsOnly",
+    "isCertified": false
+  },
+  "title": { "es": "Un ideal escrito y una realidad histórica", "en": "A written ideal and a historical reality" },
+  "cast": ["ines", "teo"],
+  "sources": [
+    {
+      "id": "ideal_documento",
+      "kind": "testimonio",
+      "title": { "es": "Una idea de un documento fundacional", "en": "An idea from a founding document" },
+      "caption": {
+        "es": "La idea central de un documento de 1776, en palabras sencillas (no es la transcripción oficial).",
+        "en": "The central idea of a document from 1776, in simple words (not the official transcript)."
+      },
+      "art": null
+    },
+    {
+      "id": "evidencia_historica",
+      "kind": "testimonio",
+      "title": { "es": "Lo que muestra la evidencia histórica", "en": "What the historical evidence shows" },
+      "caption": {
+        "es": "Un resumen, con cuidado, de cómo era la vida en esa misma época para muchas personas.",
+        "en": "A careful summary of what life was like at that same time for many people."
+      },
+      "art": null
+    }
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "kind": "pregunta",
+      "prompt": {
+        "es": "Un documento fundacional dice que todas las personas nacen iguales. Pero no todas vivían con los mismos derechos en esa época. ¿Cómo lo explicamos?",
+        "en": "A founding document says all people are born equal. But not everyone lived with the same rights at that time. How do we explain that?"
+      }
+    },
+    {
+      "id": "s2",
+      "kind": "testimonio",
+      "prompt": {
+        "es": "Esta es la idea central del documento. ¿Qué promete?",
+        "en": "This is the document's central idea. What does it promise?"
+      },
+      "sourceId": "ideal_documento",
+      "quote": {
+        "es": "«Creemos que todas las personas nacen iguales, con derechos que nadie les puede quitar.»",
+        "en": "“We believe all people are born equal, with rights no one can take away.”"
+      },
+      "choices": [
+        { "id": "a", "text": { "es": "Que todas las personas tienen los mismos derechos.", "en": "That all people have the same rights." } },
+        { "id": "b", "text": { "es": "Que solo algunas personas tienen derechos.", "en": "That only some people have rights." } }
+      ],
+      "preferredChoiceIds": ["a"]
+    },
+    {
+      "id": "s3",
+      "kind": "testimonio",
+      "prompt": {
+        "es": "Esto es lo que muestra la evidencia histórica de esa misma época. ¿Qué nos dice?",
+        "en": "This is what the historical evidence from that same time shows. What does it tell us?"
+      },
+      "sourceId": "evidencia_historica",
+      "quote": {
+        "es": "«En esa misma época, millones de personas estaban esclavizadas y no tenían esos derechos. Tampoco podían votar las mujeres ni muchos hombres sin propiedades.»",
+        "en": "“At that same time, millions of people were enslaved and did not have those rights. Women and many men without property could not vote either.”"
+      },
+      "choices": [
+        { "id": "a", "text": { "es": "Que el ideal escrito no se cumplía para todas las personas.", "en": "That the written ideal didn't hold true for everyone." } },
+        { "id": "b", "text": { "es": "Que a nadie le importaba ese ideal.", "en": "That no one cared about that ideal." } }
+      ],
+      "preferredChoiceIds": ["a"]
+    },
+    {
+      "id": "s4",
+      "kind": "elegir",
+      "prompt": {
+        "es": "«Todas las personas tienen derechos que nadie les puede quitar.» ¿Es el ideal escrito, o es la realidad de esa época?",
+        "en": "“All people have rights no one can take away.” Is that the written ideal, or the reality of that time?"
+      },
+      "choices": [
+        { "id": "ideal", "text": { "es": "Es el ideal escrito.", "en": "It's the written ideal." } },
+        { "id": "realidad", "text": { "es": "Es la realidad histórica.", "en": "It's the historical reality." } }
+      ],
+      "preferredChoiceIds": ["ideal"]
+    },
+    {
+      "id": "s5",
+      "kind": "elegir",
+      "prompt": {
+        "es": "«Millones de personas estaban esclavizadas y no tenían esos derechos.» ¿Es el ideal escrito, o es la realidad de esa época?",
+        "en": "“Millions of people were enslaved and did not have those rights.” Is that the written ideal, or the reality of that time?"
+      },
+      "choices": [
+        { "id": "ideal", "text": { "es": "Es el ideal escrito.", "en": "It's the written ideal." } },
+        { "id": "realidad", "text": { "es": "Es la realidad histórica.", "en": "It's the historical reality." } }
+      ],
+      "preferredChoiceIds": ["realidad"]
+    },
+    {
+      "id": "s6",
+      "kind": "explicar",
+      "prompt": {
+        "es": "Usa el ideal y la evidencia para explicar por qué un documento no describe automáticamente cómo vivía todo el mundo.",
+        "en": "Use the ideal and the evidence to explain why a document doesn't automatically describe how everyone lived."
+      },
+      "sourceIds": ["ideal_documento", "evidencia_historica"],
+      "minSources": 2
+    },
+    {
+      "id": "s7",
+      "kind": "revisar",
+      "prompt": {
+        "es": "Con el ideal y la evidencia, ¿qué NO sabemos todavía?",
+        "en": "With the ideal and the evidence, what DON'T we know yet?"
+      },
+      "choices": [
+        { "id": "a", "text": { "es": "Cuánto tiempo pasó hasta que más personas lograran esos derechos.", "en": "How long it took for more people to gain those rights." } },
+        { "id": "b", "text": { "es": "Que el documento habla de igualdad.", "en": "That the document talks about equality." } },
+        { "id": "c", "text": { "es": "Que no todas las personas tenían esos derechos en esa época.", "en": "That not everyone had those rights at that time." } }
+      ],
+      "gapChoiceId": "a"
+    }
+  ]
+}
