@@ -117,6 +117,7 @@ export function VisualExercise({ instance, lang, width, onNext, nextLabel, decor
         tokenLabel={(n, where) => tokenName(m, n, where, lang)}
         onToken={(id) => dispatch({ type: 'select', token: id })}
         onTarget={(to) => s.selected && dispatch({ type: 'work', action: { type: 'place', token: s.selected, to } })}
+        onDrop={(token, to) => dispatch({ type: 'work', action: { type: 'place', token, to } })}
       />
     );
   } else {

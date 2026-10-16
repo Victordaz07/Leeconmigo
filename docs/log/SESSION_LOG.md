@@ -360,3 +360,11 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
 - Verificado: 1196 pruebas, typecheck, navegador con reloj simulado (Taller y Lectura: aparece, avanza el temporizador,
   la página espera y luego sigue). La lección usa el mismo patrón; no se recorrió en navegador.
 
+## 2026-10-16 · Cuenta A · Matemáticas: arrastrar en el reparto
+- Hecho: en el reparto las fichas se arrastran a un recipiente o de vuelta a la bandeja (`DragToken`: `PanResponder`,
+  zonas medidas con `measureInWindow`); un toque sigue siendo un toque. Instrucción actualizada ("Arrastra… o tócala…").
+- Error encontrado al probar: el segundo arrastre no arrancaba en la web porque la ficha se volvía a montar dentro del
+  gesto → soltar se aplica después del gesto.
+- Verificado: navegador con ratón (1280×800) y toque (390×844): 3 arrastres seguidos, devolver a la bandeja, tocar;
+  6 repartos resueltos tocando. NO probado en el equipo.
+

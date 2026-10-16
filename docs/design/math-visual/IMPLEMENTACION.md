@@ -9,7 +9,7 @@ Fuente: `KiteWise_Documentacion_Implementacion_Interactiva.md`, `KiteWise_Prompt
 | Tema de la especificación | Decisión en Kitewise | Por qué |
 |---|---|---|
 | React + SVG en el navegador | **React Native** (D7). Los objetos que se cuentan son `react-native-svg`; recipientes, celdas y botones son `View`/`Pressable` | Los controles nativos dan foco, nombre accesible y toque de 44 px sin reimplementarlos; las cantidades siguen saliendo del modelo |
-| Pointer Events, `getScreenCTM`, `touch-action` | **No aplica todavía**: fase 1 se resuelve tocando (galleta → plato). Arrastrar queda pendiente | WCAG 2.5.7 pide alternativa sin arrastre; se hizo primero la alternativa completa |
+| Pointer Events, `getScreenCTM`, `touch-action` | Todo se resuelve tocando; el **reparto además se arrastra** (`PanResponder` + `measureInWindow` de cada recipiente; suelta donde está el dedo, fuera de todo vuelve) | WCAG 2.5.7: arrastrar nunca es la única forma |
 | Módulos `math/domain`, `math/templates` | `packages/math-content/src/visual/` (`model.ts`, `templates.ts`, `evaluate.ts`, `exercise.ts`) | El contenido de Matemáticas ya vive en ese paquete, puro y probado |
 | `math/i18n` | `packages/ui-core/src/math-visual-copy.ts` | Textos compartidos y separados del algoritmo (el dominio devuelve claves) |
 | Escenas | `packages/ui-native/src/components/math-visual/` (`TenFrameBoard`, `GardenPlots`, `SharingBoard`, `AnswerBoxes`, `DigitPad`) | ui-native no conoce las reglas: solo dibuja y avisa qué se tocó |
@@ -84,7 +84,7 @@ Dominio en `packages/math-content/src/visual/` (fase 1 en `evaluate.ts`; el rest
 
 ## Pendiente (no declarar hecho)
 
-- Arrastrar (además de tocar) y teclado físico.
+- Arrastrar en las demás familias (hoy solo el reparto) y teclado físico.
 - Modo Enfoque: hecho lo de Matemáticas (K7a): fondo desenfocado y tenue, sin Mila, rondas cortas en el Taller.
 - Unidades de otros grados con lecciones propias (hoy solo g3u1 tiene lecciones; los demás grados practican en el Taller).
 - Revisión docente de rangos, textos y estándares; pilotaje con Noah. Probar en un equipo real.

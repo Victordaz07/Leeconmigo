@@ -93,9 +93,10 @@ export function visualHowTo(m: VisualCopyModel, lang: MathLang): string {
         : es ? 'Toca + para poner y − para quitar.' : 'Tap + to put one in and − to take one out.'
       : es ? 'Cuenta con cuidado: no toques nada, solo mira.' : 'Count carefully: just look, no need to tap.';
   const { item: I, box: B } = nounsOf(m);
+  const el = o(B) === 'a' ? 'la' : 'el';
   return es
-    ? `Toca ${un(I)} ${I.es[0]} y después ${o(B) === 'a' ? 'la' : 'el'} ${B.es[0]} donde va. Toca la bandeja para devolver${o(I) === 'a' ? 'la' : 'lo'}.`
-    : `Tap ${a(I.en[0])}, then the ${B.en[0]} it goes in. Tap the tray to put it back.`;
+    ? `Arrastra ${un(I)} ${I.es[0]} hasta ${el} ${B.es[0]} donde va, o tócal${o(I)} y después toca ${el} ${B.es[0]}. Para devolver${o(I) === 'a' ? 'la' : 'lo'}, lléval${o(I)} a la bandeja.`
+    : `Drag ${a(I.en[0])} to the ${B.en[0]} it goes in, or tap it and then tap the ${B.en[0]}. To put it back, bring it to the tray.`;
 }
 
 export function visualFieldLabel(field: string, m: VisualCopyModel, lang: MathLang): string {

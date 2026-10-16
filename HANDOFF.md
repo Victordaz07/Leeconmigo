@@ -36,13 +36,16 @@ y las lecciones de g3u1 ya traen ejercicios manipulables. Estado real y pendient
 `docs/design/math-visual/IMPLEMENTACION.md`.
 1. Victor prueba (cuando pida APK; no generar sin que lo pida).
 2. Modo Enfoque: K7a ✅ (ajuste del padre + horario, Matemáticas lo respeta), K7b ✅ (Lectura B10), K7c ✅ (pausa de
-   movimiento B12). Siguiente: K7d (adaptativo). Pendientes de Matemáticas: arrastrar, lecciones de otros grados, revisión docente.
+   movimiento B12). Siguiente: K7d (adaptativo). Pendientes de Matemáticas: arrastrar en otras familias (el reparto ya se arrastra), lecciones de otros
+   grados, revisión docente.
    (Guardar en el equipo ✅: `apps/mobile/src/persist/`. Contextos ✅: grupos y reparto ya varían — galletas,
    lápices/cajas, canicas/frascos, manzanas/canastas; palabras con género en `ui-core/math-visual-nouns.ts`.)
 3. Después: siguiente cuaderno (Ciencia/Sociedad/Arte) o lo que Victor decida.
 
 ## Cuidado con
 - Lo guardado en el equipo usa claves `kitewise.v1.*` (`persist/store.ts`). Si cambia el formato, subir la versión y migrar.
+- Arrastrar (`DragToken` en `scenes.tsx`): soltar se hace con `setTimeout(0)`; si se cambia la ficha de lugar dentro
+  del gesto, en la web el siguiente arrastre no arranca.
 - Modo Enfoque: las pantallas reciben APOYOS (`resolveFocus(profile.focus)` → `reducedMotion`, `roundSize`), nunca el
   modo ni un diagnóstico (D4). Apoyo nuevo = campo en `FocusSupports` + presets + interruptor en Personalizado (P4).
 - Contexto nuevo de grupos/reparto: palabras en `math-visual-nouns.ts`, dibujo en `GROUP_SCENE`/`SHARE_SCENE`

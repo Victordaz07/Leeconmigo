@@ -1,9 +1,10 @@
 /**
  * Escenas manipulables de la fase 1 (docs/design/math-visual §10): bandeja de 10/20, huerto de grupos iguales y reparto.
  * Solo dibujan y avisan lo que el niño tocó; la regla matemática está en `@lee-conmigo/math-content` (estas piezas no la
- * conocen). Todo se hace TOCANDO (sin arrastrar): toca la galleta y luego el plato (WCAG 2.5.7). Zonas de 44 px o más.
+ * conocen). Todo se puede hacer TOCANDO (toca la galleta y luego el plato, WCAG 2.5.7); el reparto además se puede arrastrar. Zonas de 44 px o más.
  */
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { useCallback, useMemo, useRef, useState, type ReactNode } from 'react';
+import { Animated, PanResponder, Pressable, StyleSheet, Text, View, type PanResponderGestureState } from 'react-native';
 import { fontFamily, radius } from '../../tokens.ts';
 import { ContainerArt, ItemIcon, manip, SeedIcon, useContainerArt, type CountContainer, type CountItem } from './objects.tsx';
 
@@ -153,10 +154,79 @@ interface SharingBoardProps {
   /** Destino tocado (null = bandeja). Solo se llama si hay una galleta elegida (los recipientes no se desactivan: dentro
    * tienen galletas que se pueden volver a tocar). */
   onTarget: (to: string | null) => void;
+  /** Arrastrar y soltar (además de tocar, WCAG 2.5.7): ficha soltada en un recipiente o en la bandeja (null). */
+  onDrop?: (token: string, to: string | null) => void;
 }
 
-export function SharingBoard({ tokens, containers, kind, item = 'cookie', selected, width, disabled, trayLabel, tokenLabel, onToken, onTarget }: SharingBoardProps) {
+/** Rectángulo de un lugar donde se puede soltar, en coordenadas de la ventana. */
+interface Zone {
+  key: string | null;
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+}
+
+/**
+ * Ficha que se puede arrastrar. Un toque sigue siendo un toque (la elige); solo si el dedo se mueve más de unos píxeles
+ * empieza a arrastrarse. Al soltar, cae en el lugar que esté debajo del dedo; fuera de todo, vuelve a su sitio.
+ */
+function DragToken({ id, from, disabled, measure, onDrop, onDragging, children }: { id: string; from: string | null; disabled?: boolean; measure: () => Promise<Zone[]>; onDrop?: (token: string, to: string | null) => void; onDragging: (from: string | null | undefined) => void; children: ReactNode }) {
+  const pos = useRef(new Animated.ValueXY()).current;
+  const zones = useRef<Zone[]>([]);
+  const latest = useRef({ disabled, onDrop, from });
+  latest.current = { disabled, onDrop, from };
+  const responder = useMemo(() => {
+    const moved = (_: unknown, g: PanResponderGestureState) => !latest.current.disabled && !!latest.current.onDrop && Math.abs(g.dx) + Math.abs(g.dy) > 8;
+    const reset = () => {
+      pos.setValue({ x: 0, y: 0 });
+      onDragging(undefined);
+    };
+    return PanResponder.create({
+      onMoveShouldSetPanResponder: moved,
+      onMoveShouldSetPanResponderCapture: moved,
+      onPanResponderTerminationRequest: () => false,
+      onPanResponderGrant: () => {
+        onDragging(latest.current.from);
+        void measure().then((z) => (zones.current = z));
+      },
+      onPanResponderMove: Animated.event([null, { dx: pos.x, dy: pos.y }], { useNativeDriver: false }),
+      onPanResponderRelease: (_, g) => {
+        const hit = zones.current.find((z) => g.moveX >= z.x && g.moveX <= z.x + z.w && g.moveY >= z.y && g.moveY <= z.y + z.h);
+        reset();
+        // La ficha cambia de lugar (se vuelve a montar en otro recipiente): se hace DESPUÉS de que el sistema de toques
+        // termine con este gesto; si no, en la web el siguiente arrastre no arranca.
+        if (hit && hit.key !== latest.current.from) {
+          const drop = latest.current.onDrop;
+          setTimeout(() => drop?.(id, hit.key), 0);
+        }
+      },
+      onPanResponderTerminate: reset,
+    });
+  }, [id, measure, onDragging, pos]);
+  return (
+    <Animated.View {...responder.panHandlers} style={{ transform: pos.getTranslateTransform() }}>
+      {children}
+    </Animated.View>
+  );
+}
+
+export function SharingBoard({ tokens, containers, kind, item = 'cookie', selected, width, disabled, trayLabel, tokenLabel, onToken, onTarget, onDrop }: SharingBoardProps) {
   const containerArt = useContainerArt(kind);
+  // Lugares donde soltar (bandeja = 'tray'); se miden al empezar a arrastrar.
+  const zoneRefs = useRef(new Map<string, View | null>()).current;
+  const measure = useCallback(
+    () =>
+      Promise.all(
+        [...zoneRefs.entries()].map(
+          ([key, v]) =>
+            new Promise<Zone | null>((resolve) => (v ? v.measureInWindow((x, y, w, h) => resolve({ key: key === 'tray' ? null : key, x, y, w, h })) : resolve(null))),
+        ),
+      ).then((z) => z.filter((r): r is Zone => r !== null)),
+    [zoneRefs],
+  );
+  // De dónde sale la ficha que se arrastra: ese lugar se dibuja encima de los demás para que la ficha no pase por debajo.
+  const [dragFrom, setDragFrom] = useState<string | null | undefined>(undefined);
   const gap = 12;
   const perRow = Math.min(containers.length, width < 420 ? 2 : width < 700 ? 3 : 5);
   const box = Math.max(120, Math.min(180, Math.floor((width - gap * (perRow - 1)) / perRow)));
@@ -167,24 +237,25 @@ export function SharingBoard({ tokens, containers, kind, item = 'cookie', select
     const i = tokens.indexOf(t);
     const on = t.id === selected;
     return (
-      <Pressable
-        key={t.id}
-        disabled={disabled}
-        onPress={() => {
-          // Con una galleta elegida, tocar otra que está en OTRO lugar es soltarla ahí (el plato está lleno de galletas
-          // y es fácil tocar una); en el mismo lugar, cambia la elección.
-          const from = tokens.find((x) => x.id === selected);
-          if (armed && from && t.id !== selected && from.where !== t.where) onTarget(t.where);
-          else onToken(t.id);
-        }}
-        accessibilityRole="button"
-        accessibilityLabel={tokenLabel(i + 1, labelOf(t.where))}
-        accessibilityState={{ selected: on }}
-        style={({ pressed }) => [styles.token, on && styles.tokenOn, pressed && styles.pressed]}
-      >
-        {/* El lápiz es largo y delgado: se dibuja más grande para que se vea igual que los demás. */}
-        <ItemIcon item={item} size={item === 'pencil' ? 40 : 30} />
-      </Pressable>
+      <DragToken key={t.id} id={t.id} from={t.where} disabled={disabled} measure={measure} onDrop={onDrop} onDragging={setDragFrom}>
+        <Pressable
+          disabled={disabled}
+          onPress={() => {
+            // Con una galleta elegida, tocar otra que está en OTRO lugar es soltarla ahí (el plato está lleno de galletas
+            // y es fácil tocar una); en el mismo lugar, cambia la elección.
+            const from = tokens.find((x) => x.id === selected);
+            if (armed && from && t.id !== selected && from.where !== t.where) onTarget(t.where);
+            else onToken(t.id);
+          }}
+          accessibilityRole="button"
+          accessibilityLabel={tokenLabel(i + 1, labelOf(t.where))}
+          accessibilityState={{ selected: on }}
+          style={({ pressed }) => [styles.token, on && styles.tokenOn, pressed && styles.pressed]}
+        >
+          {/* El lápiz es largo y delgado: se dibuja más grande para que se vea igual que los demás. */}
+          <ItemIcon item={item} size={item === 'pencil' ? 40 : 30} />
+        </Pressable>
+      </DragToken>
     );
   };
 
@@ -192,26 +263,28 @@ export function SharingBoard({ tokens, containers, kind, item = 'cookie', select
   return (
     <View style={{ gap: 14, alignItems: 'center', width: '100%' }}>
       <Pressable
+        ref={(v) => void zoneRefs.set('tray', v as View | null)}
         onPress={() => armed && onTarget(null)}
         accessibilityRole="button"
         accessibilityLabel={trayLabel}
-        style={[styles.tray, armed && styles.target, { width: Math.min(width, 640) }]}
+        style={[styles.tray, armed && styles.target, { width: Math.min(width, 640) }, dragFrom === null && styles.lifted]}
       >
         <Text style={styles.trayTitle}>
           {trayLabel} · {inTray.length}
         </Text>
         <View style={styles.tokenWrap}>{inTray.map(token)}</View>
       </Pressable>
-      <View style={[styles.wrapRow, { gap, maxWidth: perRow * box + gap * (perRow - 1) }]}>
+      <View style={[styles.wrapRow, { gap, maxWidth: perRow * box + gap * (perRow - 1) }, typeof dragFrom === 'string' && styles.lifted]}>
         {containers.map((c) => {
           const inside = tokens.filter((t) => t.where === c.id);
           return (
             <Pressable
               key={c.id}
+              ref={(v) => void zoneRefs.set(c.id, v as View | null)}
               onPress={() => armed && onTarget(c.id)}
               accessibilityRole="button"
               accessibilityLabel={`${c.label} · ${inside.length}`}
-              style={[kind === 'plate' ? styles.plate : styles.bag, containerArt ? [styles.containerArt, kind !== 'plate' && kind !== 'bag' && styles.containerDeep] : null, { width: box, minHeight: kind === 'plate' ? box : box * 0.9 }, armed && styles.target]}
+              style={[kind === 'plate' ? styles.plate : styles.bag, containerArt ? [styles.containerArt, kind !== 'plate' && kind !== 'bag' && styles.containerDeep] : null, { width: box, minHeight: kind === 'plate' ? box : box * 0.9 }, armed && styles.target, dragFrom === c.id && styles.lifted]}
             >
               {containerArt ? <ContainerArt source={containerArt} /> : null}
               <View style={styles.tokenWrap}>{inside.map(token)}</View>
@@ -226,6 +299,7 @@ export function SharingBoard({ tokens, containers, kind, item = 'cookie', select
 
 const styles = StyleSheet.create({
   pressed: { transform: [{ scale: 0.96 }] },
+  lifted: { zIndex: 10 },
   row: { flexDirection: 'row', gap: 8, justifyContent: 'center' },
   wrapRow: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignSelf: 'center' },
   frames: { gap: 14, alignItems: 'center' },
