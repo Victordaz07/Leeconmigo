@@ -17,6 +17,8 @@ interface ParentSettingsScreenProps {
   /** Solo si hay más de un niño (nunca se queda la app sin perfiles). */
   onRemove?: () => void;
   onChangePin?: () => void;
+  /** Abre la prueba de voz (RN-03). */
+  onVoiceTest?: () => void;
 }
 
 const LEVELS = [1, 2, 3, 4, 5, 6];
@@ -30,7 +32,7 @@ const LANGUAGES: { id: LanguageCode; label: string }[] = [
  * lectura libre y privacidad. El nivel es de la app, NO el grado escolar (docs/01). Modo Enfoque se muestra como "pronto"
  * (se construye en K7; no se pone un interruptor que no haga nada). Todo en memoria hasta RN-08.
  */
-export function ParentSettingsScreen({ initial, isNew, onSave, onCancel, onResetProgress, onRemove, onChangePin }: ParentSettingsScreenProps) {
+export function ParentSettingsScreen({ initial, isNew, onSave, onCancel, onResetProgress, onRemove, onChangePin, onVoiceTest }: ParentSettingsScreenProps) {
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const one = layout.narrow || layout.portrait;
@@ -70,6 +72,7 @@ export function ParentSettingsScreen({ initial, isNew, onSave, onCancel, onReset
           <Section title="Lectura">
             <Toggle label="Lectura libre" value={p.freeReading} onChange={(v) => set('freeReading', v)} />
             <Text style={styles.note}>Un adulto lee en voz alta (o el niño lee solo) y la página se pasa con un botón, sin micrófono. Las preguntas siguen apareciendo.</Text>
+            {onVoiceTest && <Button label="Probar el micrófono" variant="secondary" onPress={onVoiceTest} />}
           </Section>
 
           <Section title="Modo Enfoque" soon>

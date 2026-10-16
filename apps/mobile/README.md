@@ -28,10 +28,11 @@ Usamos **development build**, no Expo Go: la voz (RN-03) necesita código nativo
 ## APK de prueba (instalar sin cable ni servidor)
 
 Para que la familia pruebe la app sin Android Studio: un APK que se instala directo. Lleva el **panel de
-simulación** (DEV ⚙) porque la voz real todavía no existe (RN-07); con él se maneja la lectura.
+simulación** (DEV ⚙) porque la lectura todavía no usa la voz real (eso es RN-07); con él se maneja la lectura.
 
 ```bash
 cd apps/mobile
+npm run models                         # una vez: baja los modelos de voz (~100 MB) y verifica su SHA-256
 npx expo prebuild --platform android --no-install
 cd android
 echo "sdk.dir=$ANDROID_HOME" > local.properties
@@ -42,8 +43,17 @@ EXPO_PUBLIC_DEMO=1 NODE_ENV=production ./gradlew assembleRelease
 - Necesita el SDK de Android (`ANDROID_HOME`) y Java 17+. En la nube de Claude funciona bajando las
   `commandline-tools` de Google (ver `docs/log/SESSION_LOG.md`, entrada "APK demo").
 - Va firmado con la llave de depuración de Expo: sirve para probar, **no para la tienda** (eso es P-04).
+- Lleva la voz real (whisper.rn, en el equipo, sin red) y la **Prueba de voz** en Ajustes de padres. Los modelos
+  (`assets/models/*.bin`) no van en git: sin `npm run models`, el empaquetado falla.
 - `EXPO_PUBLIC_DEMO=1` solo muestra las herramientas de desarrollo (`src/dev-tools.ts`). Un build de tienda nunca
   la lleva.
+
+## Voz (RN-03)
+
+`src/speech/whisper-native-speech-engine.ts`: micrófono (`@fugood/react-native-audio-pcm-stream`, solo memoria) →
+frases (`UtteranceSegmenter` de `@lee-conmigo/speech-engine/core`) → Silero VAD confirma voz → Whisper (whisper.rn) en el
+equipo → texto. Implementa el contrato `SpeechEngine`. En la web hay una versión `.web.ts` que dice "no disponible".
+`packages/speech-engine/tests/privacy.test.ts` falla si el código de voz usa red, archivos o `audioOutputPath` (D1).
 
 ## Comandos
 

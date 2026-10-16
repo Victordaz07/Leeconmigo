@@ -3,7 +3,7 @@ Actualizado: 2026-10-15 · Cuenta: A · Rama: claude/gracious-shannon-a0238d
 Último commit: ver `git log -1`
 
 ## Tarea en curso
-Ninguna a medias. K4 ✅ y app adaptable a teléfonos ✅. Siguiente: lo que Victor reporte al probar en su teléfono; luego K5.
+Ninguna a medias. RN-03: el APK con voz está listo; esperando la medición de Victor en la tablet.
 
 ## Hecho en RN-01
 - [x] `apps/mobile` (Expo SDK 57, RN 0.86, TS) dentro del monorepo
@@ -23,17 +23,17 @@ Ninguna a medias. K4 ✅ y app adaptable a teléfonos ✅. Siguiente: lo que Vic
 - [x] APK demo instalado por Victor ("la app funciona… vamos por buen camino"); pasos en `apps/mobile/README.md`
 - [x] K4: Modo padres — PIN (P1), Hoy con el niño (P2), Ajustes + Agregar niño + lectura libre (P4)
 - [x] Pantallas adaptables a teléfono y vertical (`ui-core/layout.ts`, `useLayout`) — pedido de Victor
+- [x] RN-03 (parte código): whisper.rn + `WhisperNativeSpeechEngine` + "Prueba de voz" (Ajustes de padres)
 
 ## Siguiente paso exacto
-**K5 — Practicar (B8) + pistas (G9, G10) + repaso 1-3-7.** Referencias: `docs/design/kitewise/screens/B8.webp`, `G9.webp`,
-`G10.webp`, `SPEC.md` §6.
-1. Mirar cómo funcionan hoy las preguntas de comprensión en la app nativa (`reading-screen.tsx`, `flow.ts` de
-   session-engine) antes de tocar nada.
-2. `ConfidencePicker` (Seguro / Más o menos / Adivino) antes de «Comprobar»; `HintLadder` de 3 escalones (pista →
-   ejemplo → ver respuesta), "Lo veo luego" manda la pregunta al repaso. Nunca «incorrecto» ni rojo.
-3. Tipos V/F y ordenar (F4-03b) si el esquema de historia los permite; si no, proponer el cambio de esquema.
-4. Repaso espaciado 1-3-7 días (F4-04): lógica pura con pruebas; lo que vuelve aparece al empezar ("retos que regresan").
-Victor dijo que la app tiene "muchos detalles que corregir": si manda la lista, atenderla ANTES de seguir con K5.
+**Esperar el resultado de la "Prueba de voz" de Victor** (tablet de Noah y su teléfono): ¿entiende bien? ¿cuánto tarda por
+frase? ¿Rápido (tiny) o Preciso (base)? Anotarlo en `docs/log/` y decidir el modelo (luego quitar el otro del APK).
+Después, **RN-07**: en `use-reading-session.ts`, usar `RealReadingEngine` (packages/reading-engine) con
+`WhisperNativeSpeechEngine` en lugar de `FakeReadingEngine` cuando NO es lectura libre; antes de pedir el micrófono, un
+aviso para padres (docs/12 §2, "La voz de tu hijo nunca se graba ni se almacena"); si no hay permiso → estado "sin
+micrófono" (G11) que ya existe (`voiceProblem`). El panel DEV sigue para simular. Apagar el micrófono al salir de la
+lectura o pasar a segundo plano (docs/06).
+Luego K5.
 
 ## Cuidado con
 - **No borrar `apps/reader` ni `packages/ui`**: Noah sigue usando la app Capacitor hasta RN-CP2.
@@ -43,6 +43,8 @@ Victor dijo que la app tiene "muchos detalles que corregir": si manda la lista, 
 - Lógica de vista compartida va en `packages/ui-core` (sin React); `packages/ui` la re-exporta — no duplicarla.
 - Cero SDKs de analítica/anuncios/reporte de errores (D8).
 - Toda pantalla nueva usa `useLayout()` (teléfono vertical/acostado y tablet): probar en 390×844, 844×390, 800×1280 y 1280×800.
+- Modelos de voz: `npm run models -w @lee-conmigo/mobile` antes de compilar (no van en git).
+- En la nube, Maven Central da 429: usar `~/.gradle/init.d/maven-mirror.gradle` (ver SESSION_LOG "APK demo").
 - Expo está en 57.0.29 (hay 57.0.30): no usar `npm dedupe`; actualizar regenerando el lockfile en tarea aparte.
 - `npm ci` en la nube: usar `--ignore-scripts` (postinstall de `onnxruntime-node`).
 

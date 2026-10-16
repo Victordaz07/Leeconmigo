@@ -8,7 +8,10 @@
     "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.kitewise.app"
+      "bundleIdentifier": "com.kitewise.app",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "Kitewise escucha mientras el niño lee en voz alta para seguir la lectura. La voz se procesa en el dispositivo y nunca se graba ni se envía."
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -18,7 +21,10 @@
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
-      "package": "com.kitewise.app"
+      "package": "com.kitewise.app",
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"

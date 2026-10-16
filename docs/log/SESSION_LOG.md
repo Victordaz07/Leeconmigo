@@ -203,3 +203,25 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
   `height: undefined` no anula una altura: usar `'auto'`. `adjustsFontSizeToFit` no funciona en web.
 - Verificado: capturas en 390×844, 844×390, 800×1280 y 1280×800 de todas las pantallas sin errores; `npm test` 1105 ✅,
   typecheck ✅, build web ✅, export android ✅. Falta que Victor lo pruebe en su teléfono.
+
+## 2026-10-16 · Cuenta A · RN-03 voz real en la app nativa (prueba técnica)
+- Pedido de Victor: "el app no me pide permisos para el micrófono, así que aún no me escucha".
+- Hecho:
+  - `whisper.rn` 0.7.4 (whisper.cpp nativo) + `@fugood/react-native-audio-pcm-stream` 1.1.4 (captura PCM solo en
+    memoria; revisado: no escribe archivos) + `buffer` (lo pide `safe-buffer` de whisper.rn). Permiso `RECORD_AUDIO`
+    y `NSMicrophoneUsageDescription` en `app.json`. Metro empaqueta `*.bin`.
+  - Modelos ggml en `apps/mobile/assets/models/` (NO en git): `npm run models -w @lee-conmigo/mobile` los baja de
+    Hugging Face y verifica SHA-256: `ggml-tiny-q8_0` (44 MB), `ggml-base-q5_1` (60 MB), `ggml-silero-v6.2.0` (VAD, 0,9 MB).
+  - `@lee-conmigo/speech-engine/core` (nuevo punto de entrada, puro): `UtteranceSegmenter` (frases con histéresis,
+    con pruebas), PCM base64→float, `EnergyVad` (movido a su archivo), `cleanTranscript`. La app web no cambia.
+  - `apps/mobile/src/speech/whisper-native-speech-engine.ts` (contrato `SpeechEngine`): permiso → micrófono → VAD por
+    energía corta frases → Silero confirma que hubo voz → Whisper transcribe en el equipo → `onFinalResult`. Cola de 2
+    frases (se quedan las más recientes). Versión `.web.ts` = "no disponible" (falla cerrado).
+  - Pantalla **Prueba de voz** (Ajustes de padres → "Probar el micrófono"): modelo Rápido/Preciso, idioma, lo que
+    entendió y cuánto tardó por frase, promedio y si va más rápido que la voz. Se apaga al salir o al pasar a segundo plano.
+  - `packages/speech-engine/tests/privacy.test.ts`: falla si el código de voz usa red, archivos, almacenamiento o
+    `audioOutputPath` (docs/12 §6). Excepción documentada: la web carga los pesos de sus modelos desde la propia app.
+- Verificado: compila en Gradle (NDK + CMake se instalan solos), export android ✅ con los 3 modelos, `npm test` ✅,
+  typecheck ✅. NO probado en un equipo real (aquí no hay emulador).
+- Pendiente: Victor prueba en la tablet de Noah y en su teléfono (latencia, precisión, ¿tiny o base?). Con eso, RN-07:
+  usar este motor con `RealReadingEngine` en la lectura (aviso a padres antes de pedir el micrófono, docs/12).

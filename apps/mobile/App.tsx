@@ -17,6 +17,7 @@ import { ParentGateScreen } from './src/screens/parent-gate-screen';
 import { ParentHomeScreen } from './src/screens/parent-home-screen';
 import { ParentSettingsScreen } from './src/screens/parent-settings-screen';
 import { ProfilesScreen } from './src/screens/profiles-screen';
+import { VoiceTestScreen } from './src/screens/voice-test-screen';
 import { ReadingScreen } from './src/screens/reading-screen';
 import { Showcase } from './src/screens/showcase';
 
@@ -25,6 +26,7 @@ type Route =
   | { name: 'parentGate'; next: 'parents' | 'addChild' }
   | { name: 'parents' }
   | { name: 'settings'; isNew: boolean }
+  | { name: 'voiceTest' }
   | { name: 'notebook' } | { name: 'reading'; storyId: string; from: 'home' | 'notebook' } | { name: 'dev' } | { name: 'showcase' };
 
 const RAIL: NavRailItem[] = [
@@ -143,6 +145,7 @@ function Root() {
       />
     );
   }
+  if (route.name === 'voiceTest') return <VoiceTestScreen language={profile.language === 'en' ? 'en' : 'es'} onBack={() => setRoute({ name: 'settings', isNew: false })} />;
   if (route.name === 'settings') {
     const toPanel = () => setRoute({ name: 'parents' });
     return (
@@ -173,6 +176,7 @@ function Root() {
           setParentPin(null);
           setRoute({ name: 'parentGate', next: 'parents' });
         }}
+        onVoiceTest={() => setRoute({ name: 'voiceTest' })}
       />
     );
   }

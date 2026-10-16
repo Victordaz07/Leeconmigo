@@ -39,3 +39,7 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# Modelos de voz (ggml): se bajan con `npm run models` (scripts/fetch-speech-models.mjs), no van en git.
+/assets/models/*.bin
+/assets/models/*.part
