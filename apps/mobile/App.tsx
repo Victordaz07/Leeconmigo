@@ -2,13 +2,14 @@ import { StatusBar } from 'expo-status-bar';
 import { useCallback, useMemo, useState } from 'react';
 import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Button, Card, colors, fontFamily, GearIcon, HomeIcon, NavRail, TrophyIcon, useLayout, type NavRailItem } from '@lee-conmigo/ui-native';
+import { Button, Card, colors, fontFamily, GearIcon, HomeIcon, MathArtProvider, NavRail, TrophyIcon, useLayout, type NavRailItem } from '@lee-conmigo/ui-native';
 import { todayReport } from '@lee-conmigo/session-engine';
 import { energyOption, progressSegments, type Energy } from '@lee-conmigo/ui-core';
 import { MATH_UNITS } from '@lee-conmigo/math-content';
 import { mathProgressFor, newChildProfile, PROFILES, progressStoreFor, resetProgressFor, type ChildProfile } from './src/app-state';
 import { createBundledRepository } from './src/bundled-stories';
 import { SHOW_DEV_TOOLS } from './src/dev-tools';
+import { MATH_ART } from './src/math-art';
 import { useAppFonts } from './src/fonts';
 import { buildLibraryModel } from './src/library-model';
 import { EnergyScreen } from './src/screens/energy-screen';
@@ -54,7 +55,9 @@ const RAIL_BOTTOM: NavRailItem[] = [
 export default function App() {
   return (
     <SafeAreaProvider>
-      <Root />
+      <MathArtProvider art={MATH_ART}>
+        <Root />
+      </MathArtProvider>
       <StatusBar style="dark" />
     </SafeAreaProvider>
   );

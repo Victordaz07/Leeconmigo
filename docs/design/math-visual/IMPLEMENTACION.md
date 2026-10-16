@@ -18,7 +18,7 @@ Fuente: `KiteWise_Documentacion_Implementacion_Interactiva.md`, `KiteWise_Prompt
 | Persistencia | En memoria (`mathProgressFor`), igual que el resto del progreso, hasta RN-08 | No hay almacenamiento local todavía en la app nueva |
 | Backend / API / eventos de analítica | **No se construye** | v1 sin nube (CLAUDE.md, D8, docs/12: sin SDKs ni envío de datos) |
 | Paleta de objetos | `manip` en `objects.tsx` (crema, tinta, azul, coral, verde, amarillo, violeta de la lámina) | Solo para objetos; el texto y los controles siguen con los tokens de Kitewise |
-| Imágenes | Pedido en `PEDIDO-IMAGENES.md`; mientras, formas dibujadas con código | Las cantidades nunca dependen de una imagen |
+| Imágenes | Arte aprobado en `apps/mobile/assets/math/` (WebP). La app lo entrega con `MathArtProvider` (`src/math-art.ts`); ui-native no empaqueta imágenes y, si falta una pieza, usa la forma dibujada con código | Las cantidades nunca dependen de una imagen |
 
 ## Fase 1 — implementado
 
@@ -38,6 +38,9 @@ ejercicio terminado se guarda como intento para dominio y repaso.
 
 ## Comprobado
 
+- Con el arte puesto: semillas, brotes, galletas, platos, bolsas y parcelas son las imágenes de Victor; fondos semillero
+  / huerto / merienda detrás de cada familia (vertical en teléfono vertical). Recorrido completo en 4 tamaños sin errores.
+
 - `packages/math-content/tests/visual.test.ts`: misma semilla = mismo problema; 300 semillas por plantilla sin modelos
   imposibles; la solución de cada instancia es correcta y el trabajo inicial no; casos de aceptación del reparto (4,4,4 ·
   5,4,3 · 3,3,3 con 3 en la bandeja · galleta de más / ausente / plato inexistente); residuo; bolsa de más; fichas fijas;
@@ -52,7 +55,9 @@ ejercicio terminado se guarda como intento para dominio y repaso.
   coordenadas, razones (fases 2–3).
 - Arrastrar (además de tocar) y manejo por teclado físico.
 - Modo Enfoque y movimiento reducido en estas escenas (hoy no hay animaciones; falta ocultar decoración cuando llegue).
-- Imágenes aprobadas (`PEDIDO-IMAGENES.md`) en lugar de las formas de código.
+- Las 4 poses de Mila (no llegaron: falta su referencia). Los fondos de prioridad B (camino, mosaico, jardín, mapa, feria,
+  laboratorio) y frutas/reloj ya están en el repo para las fases 2–3, sin usar todavía.
+- Modo Enfoque: `VisualExercise` tiene `decor` (fondo ilustrado) listo para que K7 lo apague.
 - Guardar en el equipo (RN-08) y recuperar un ejercicio a medias.
 - Problemas verbales de varios pasos y contexto real: la investigación pendiente
   (`docs/research/PROMPT-INVESTIGACION-PROBLEMAS-MATEMATICAS.md`) decide cuáles; estas escenas son la base para dibujarlos.

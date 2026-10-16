@@ -1,5 +1,11 @@
 # Pedido de imágenes — Matemáticas visuales (para generar con GPT)
 
+> **Estado (2026-10-16):** llegaron 22 de 26 (Prioridad A y B), revisadas: sin texto ni números, centro despejado. Están
+> en `apps/mobile/assets/math/` como WebP (fondos 1536×1024 / 1024×1536, 22–53 KB; objetos recortados a su silueta,
+> 256×256 con transparencia, 10–17 KB). Lista original con SHA-256: `arte/manifest-original.json`.
+> **Faltan las 4 poses de Mila** (`char_mila_*`): GPT necesita una imagen de referencia de Mila. Ver las ilustraciones de
+> "Mila, Pipo y la noche en que se apagaron las luciérnagas" en `apps/reader/public/stories/`.
+
 **Para quién:** Victor genera las imágenes y las sube al chat; Claude las convierte a WebP, las nombra y las conecta.
 **Regla de oro:** las imágenes son **decorado**. Los números, las cantidades y las fichas que se cuentan los dibuja la app
 con código (`docs/design/math-visual`, §2: "la IA no decide cuántos objetos hay"). Por eso:

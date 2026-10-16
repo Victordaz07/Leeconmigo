@@ -1,4 +1,4 @@
-import { useMemo, useReducer, useState } from 'react';
+import { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { ExplorePayload, LearnBlock, MathLesson, MathRepresentation, MathUnit } from '@lee-conmigo/contracts';
@@ -55,6 +55,9 @@ export function MathLessonScreen({ lang, unit, lesson, minutes, progress, onExit
     [unit, lesson],
   );
   const [index, setIndex] = useState(0);
+  // Cada paso nuevo empieza arriba.
+  const scroll = useRef<ScrollView>(null);
+  useEffect(() => scroll.current?.scrollTo({ y: 0, animated: false }), [index]);
   const item = plan[index];
   const lessonNo = unit.lessons.findIndex((l) => l.id === lesson.id) + 1;
   const next = () => {
@@ -85,7 +88,7 @@ export function MathLessonScreen({ lang, unit, lesson, minutes, progress, onExit
           <View style={[styles.barFill, { width: `${Math.round(((index + 1) / plan.length) * 100)}%` }]} />
         </View>
       </View>
-      <ScrollView contentContainerStyle={[styles.content, { paddingHorizontal: layout.gutter, paddingBottom: insets.bottom + 24 }]}>
+      <ScrollView ref={scroll} contentContainerStyle={[styles.content, { paddingHorizontal: layout.gutter, paddingBottom: insets.bottom + 24 }]}>
         <View style={{ width: contentWidth, alignSelf: 'center', gap: 16 }}>
           <Step key={index} item={item} lang={lang} split={split} modelWidth={modelWidth} day={day} progress={progress} onNext={next} onAgain={() => setIndex(Math.max(0, index - 1))} />
         </View>

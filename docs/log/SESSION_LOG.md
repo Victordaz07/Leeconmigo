@@ -285,3 +285,12 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
 - Verificado: pruebas de invariantes y casos de aceptación; textos de todas las claves en ES/EN; Taller completo con
   Playwright en 4 tamaños.
 - Pendiente: 9 familias, arrastrar, imágenes, guardar en el equipo; detalle en `IMPLEMENTACION.md`.
+
+## 2026-10-16 · Cuenta A · Arte de Matemáticas integrado
+- Victor mandó 22 imágenes generadas con GPT (12 fondos, 10 objetos); faltan las 4 de Mila (sin referencia).
+- Hecho: SHA-256 verificados; revisión visual (sin texto ni números, centro despejado); WebP (fondos 22–53 KB, objetos
+  recortados a 256 px con transparencia, 10–17 KB) en `apps/mobile/assets/math/`; `MathArtProvider` en ui-native (si
+  falta una pieza, forma de código); fondos por familia detrás del modelo (`decor`, para que Modo Enfoque lo apague).
+- Arreglos al probar: las imágenes de plato/bolsa/parcela salían a su tamaño natural en la web (ancho/alto explícitos);
+  al pasar de ejercicio (Taller y lecciones) la pantalla no volvía arriba.
+- Verificado: Taller completo con Playwright en 4 tamaños, sin errores.

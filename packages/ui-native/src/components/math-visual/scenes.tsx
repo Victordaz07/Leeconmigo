@@ -5,7 +5,7 @@
  */
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { fontFamily, radius } from '../../tokens.ts';
-import { CookieIcon, manip, SeedIcon, SproutIcon } from './objects.tsx';
+import { ContainerArt, CookieIcon, manip, SeedIcon, SproutIcon, useMathArt } from './objects.tsx';
 
 const TOUCH = 44;
 
@@ -75,6 +75,7 @@ interface GardenPlotsProps {
 }
 
 export function GardenPlots({ counts, capacity, width, editable, disabled, onAdd, onRemove, plotLabel, addLabel, removeLabel }: GardenPlotsProps) {
+  const art = useMathArt();
   const gap = 12;
   const perRow = Math.min(counts.length, width < 420 ? 2 : width < 700 ? 3 : counts.length);
   const plot = Math.max(110, Math.min(170, Math.floor((width - gap * (perRow - 1)) / perRow)));
@@ -85,7 +86,8 @@ export function GardenPlots({ counts, capacity, width, editable, disabled, onAdd
     <View style={[styles.wrapRow, { gap, maxWidth: perRow * plot + gap * (perRow - 1) }]}>
       {counts.map((n, g) => (
         <View key={g} style={{ width: plot, gap: 6, alignItems: 'center' }}>
-          <View style={[styles.plot, { width: plot, minHeight: plot * 0.8 }]} accessibilityLabel={plotLabel(g, n)}>
+          <View style={[styles.plot, art.plot ? [styles.plotArt, { height: plot, padding: plot * 0.11 }] : { minHeight: plot * 0.8 }, { width: plot }]} accessibilityLabel={plotLabel(g, n)}>
+            {art.plot ? <ContainerArt source={art.plot} mode="stretch" /> : null}
             <View style={[styles.plantGrid, { width: cols * (icon + 6) }]}>
               {Array.from({ length: n }, (_, i) => (
                 <View key={i} style={{ width: icon + 6, alignItems: 'center' }}>
@@ -134,6 +136,8 @@ interface SharingBoardProps {
 }
 
 export function SharingBoard({ tokens, containers, kind, selected, width, disabled, trayLabel, tokenLabel, onToken, onTarget }: SharingBoardProps) {
+  const art = useMathArt();
+  const containerArt = kind === 'plate' ? art.plate : art.bag;
   const gap = 12;
   const perRow = Math.min(containers.length, width < 420 ? 2 : width < 700 ? 3 : 5);
   const box = Math.max(120, Math.min(180, Math.floor((width - gap * (perRow - 1)) / perRow)));
@@ -187,8 +191,9 @@ export function SharingBoard({ tokens, containers, kind, selected, width, disabl
               onPress={() => armed && onTarget(c.id)}
               accessibilityRole="button"
               accessibilityLabel={`${c.label} · ${inside.length}`}
-              style={[kind === 'plate' ? styles.plate : styles.bag, { width: box, minHeight: kind === 'plate' ? box : box * 0.9 }, armed && styles.target]}
+              style={[kind === 'plate' ? styles.plate : styles.bag, containerArt ? styles.containerArt : null, { width: box, minHeight: kind === 'plate' ? box : box * 0.9 }, armed && styles.target]}
             >
+              {containerArt ? <ContainerArt source={containerArt} /> : null}
               <View style={styles.tokenWrap}>{inside.map(token)}</View>
               <Text style={styles.containerLabel}>{c.label}</Text>
             </Pressable>
@@ -208,6 +213,8 @@ const styles = StyleSheet.create({
   cell: { backgroundColor: manip.cream, borderRadius: 12, alignItems: 'center', justifyContent: 'center', borderWidth: 2, borderColor: '#e9dfc9' },
   addedRing: { borderRadius: 999, borderWidth: 3, borderColor: manip.blue, padding: 1 },
   plot: { backgroundColor: manip.soilSoft, borderRadius: 18, borderWidth: 4, borderColor: manip.soil, padding: 10, alignItems: 'center', justifyContent: 'center' },
+  plotArt: { backgroundColor: 'transparent', borderWidth: 0, borderRadius: 0 },
+  containerArt: { backgroundColor: 'transparent', borderColor: 'transparent', paddingTop: 28 },
   plantGrid: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', rowGap: 4 },
   step: { width: 52, height: TOUCH + 4, borderRadius: radius.pill, backgroundColor: '#ffffff', borderWidth: 2, borderColor: manip.blueSoft, alignItems: 'center', justifyContent: 'center' },
   stepAdd: { backgroundColor: manip.blue, borderColor: manip.blue },

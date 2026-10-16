@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { buildVisualSession, exerciseAttempt, updateReviews } from '@lee-conmigo/math-content';
@@ -22,6 +22,9 @@ export function WorkshopScreen({ lang, grade, progress, onExit }: { lang: MathLa
   const day = useMemo(today, []);
   const width = Math.min(layout.width - layout.gutter * 2, 1100);
   const finished = index >= session.length;
+  // Cada ejercicio nuevo empieza arriba, con la consigna a la vista (si no, se quedaba donde terminó el anterior).
+  const scroll = useRef<ScrollView>(null);
+  useEffect(() => scroll.current?.scrollTo({ y: 0, animated: false }), [index]);
 
   return (
     <View style={styles.screen}>
@@ -41,7 +44,7 @@ export function WorkshopScreen({ lang, grade, progress, onExit }: { lang: MathLa
           <View style={[styles.barFill, { width: `${Math.round((Math.min(index, session.length) / session.length) * 100)}%` }]} />
         </View>
       </View>
-      <ScrollView contentContainerStyle={[styles.content, { paddingHorizontal: layout.gutter, paddingBottom: insets.bottom + 24 }]}>
+      <ScrollView ref={scroll} contentContainerStyle={[styles.content, { paddingHorizontal: layout.gutter, paddingBottom: insets.bottom + 24 }]}>
         <View style={{ width, alignSelf: 'center' }}>
           {finished ? (
             <View style={styles.doneCard}>

@@ -33,9 +33,8 @@ Ninguna a medias. Voz (RN-03) PAUSADA por Victor. K6: la primera unidad de Matem
 ## Siguiente paso exacto
 Matemáticas visuales (spec de Victor en `docs/design/math-visual/`): **fase 1 hecha** — bandejas 10/20, grupos iguales y
 reparto (7 plantillas), Taller en el cuaderno, galería DEV. Estado real en `docs/design/math-visual/IMPLEMENTACION.md`.
-1. Victor prueba el APK (Matemáticas → Taller) y genera las imágenes de `docs/design/math-visual/PEDIDO-IMAGENES.md`
-   (Prioridad A). Al llegar: convertir a WebP, nombrar, reemplazar las formas de `ui-native/.../math-visual/objects.tsx`
-   y poner fondos detrás de las escenas (ocultos en Modo Enfoque).
+1. Arte de Victor ya integrado (22 imágenes, `apps/mobile/assets/math/`, `src/math-art.ts`). Faltan las 4 poses de Mila
+   (necesitan referencia). Victor prueba el APK 0.4.1 (Matemáticas → Taller).
 2. Fase 2 de la spec: valor posicional, recta numérica, fracciones y modelo de barras, con el mismo contrato
    (plantilla → instancia → trabajo → evaluación) y pruebas de invariantes.
 3. Sigue pendiente la investigación de problemas reales (`docs/research/PROMPT-INVESTIGACION-PROBLEMAS-MATEMATICAS.md`)

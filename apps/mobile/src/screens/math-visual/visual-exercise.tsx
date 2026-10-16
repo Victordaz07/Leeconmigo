@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useReducer, useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 import {
   answerFields,
   canReveal,
@@ -12,6 +12,7 @@ import {
 } from '@lee-conmigo/math-content';
 import { MATH_COPY, VISUAL_COPY, visualEquation, visualFeedback, visualFieldLabel, visualHint, visualHowTo, visualPrompt, type MathLang } from '@lee-conmigo/ui-core';
 import { AnswerBoxes, Button, colors, DigitPad, fontFamily, GardenPlots, manip, radius, shadows, SharingBoard, TenFrameBoard, useLayout } from '@lee-conmigo/ui-native';
+import { MATH_BACKGROUNDS } from '../../math-art';
 import { speak } from '../../tts';
 
 interface VisualExerciseProps {
@@ -22,13 +23,15 @@ interface VisualExerciseProps {
   /** Termina (resuelto o con la solución vista) y el niño toca "Siguiente". */
   onNext: (final: ExerciseState) => void;
   nextLabel?: string;
+  /** Fondo ilustrado detrás del modelo. Modo Enfoque (K7) lo apagará; el modelo y sus números no cambian. */
+  decor?: boolean;
 }
 
 /**
  * Un ejercicio visual completo (docs/design/math-visual §1): consigna → manipular → responder → comprobar → ayuda →
  * explicación. El estado no tiene texto: cambiar ES/EN no reinicia nada (§13).
  */
-export function VisualExercise({ instance, lang, width, onNext, nextLabel }: VisualExerciseProps) {
+export function VisualExercise({ instance, lang, width, onNext, nextLabel, decor = true }: VisualExerciseProps) {
   const layout = useLayout();
   const [s, dispatch] = useReducer(exerciseReducer, instance, startExercise);
   const m = instance.model;
@@ -119,6 +122,7 @@ export function VisualExercise({ instance, lang, width, onNext, nextLabel }: Vis
 
       <View style={[styles.body, side && styles.bodySide]}>
         <View style={[styles.sceneCard, side && { width: sceneWidth }]}>
+          {decor ? <Image source={MATH_BACKGROUNDS[m.kind][layout.portrait && !side ? 'vertical' : 'horizontal']} style={styles.sceneBg} resizeMode="cover" accessible={false} /> : null}
           {scene}
           {equation ? <Text style={styles.equation}>{equation}</Text> : null}
           {!done && <Text style={styles.howTo}>{visualHowTo(m, lang)}</Text>}
@@ -170,7 +174,8 @@ const styles = StyleSheet.create({
   promptSmall: { fontSize: 19, lineHeight: 28 },
   body: { gap: 14 },
   bodySide: { flexDirection: 'row', alignItems: 'flex-start' },
-  sceneCard: { backgroundColor: '#ffffff', borderRadius: radius.card, padding: 16, gap: 12, alignItems: 'center', boxShadow: shadows.card },
+  sceneCard: { backgroundColor: '#ffffff', borderRadius: radius.card, padding: 16, gap: 12, alignItems: 'center', boxShadow: shadows.card, overflow: 'hidden' },
+  sceneBg: { position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' },
   equation: { fontFamily: fontFamily.ui.black, fontSize: 28, color: manip.ink },
   howTo: { fontFamily: fontFamily.ui.semibold, fontSize: 15, color: manip.blue, textAlign: 'center' },
   answers: { backgroundColor: '#ffffff', borderRadius: radius.card, padding: 16, gap: 14, alignItems: 'center', boxShadow: shadows.card },

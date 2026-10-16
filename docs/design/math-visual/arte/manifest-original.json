@@ -1,0 +1,237 @@
+{
+  "project": "KiteWise",
+  "packageVersion": 1,
+  "created": "2026-10-16",
+  "assetCount": 22,
+  "backgroundCount": 12,
+  "propCount": 10,
+  "format": "PNG original, sin recortar, sin redimensionar y sin recomprimir",
+  "missing": [
+    "char_mila_saluda",
+    "char_mila_piensa",
+    "char_mila_apunta",
+    "char_mila_celebra"
+  ],
+  "assets": [
+    {
+      "name": "bg_mate_huerto_horizontal",
+      "file": "assets/backgrounds/bg_mate_huerto_horizontal.png",
+      "category": "background",
+      "priority": "A",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1347555,
+      "sha256": "f9537978e1b4783ba7b1db1d974b3209def5523455bd6345843a89af3fe4950a"
+    },
+    {
+      "name": "bg_mate_merienda_horizontal",
+      "file": "assets/backgrounds/bg_mate_merienda_horizontal.png",
+      "category": "background",
+      "priority": "A",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1532465,
+      "sha256": "88b0915fbcd0ab61b173bf9e1b16e74965e0d1ae8e4d975f316a4eabbd038847"
+    },
+    {
+      "name": "bg_mate_semillero_horizontal",
+      "file": "assets/backgrounds/bg_mate_semillero_horizontal.png",
+      "category": "background",
+      "priority": "A",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1672287,
+      "sha256": "ceb47b7a38098f6a2c70dc7a8220935a06694020821b7962f771611bc6f7f86c"
+    },
+    {
+      "name": "bg_mate_huerto_vertical",
+      "file": "assets/backgrounds/bg_mate_huerto_vertical.png",
+      "category": "background",
+      "priority": "A",
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1492274,
+      "sha256": "0389a61e4196cba4db68b73f0e7d59557bd507e1035cbb74e717c2f175599160"
+    },
+    {
+      "name": "bg_mate_merienda_vertical",
+      "file": "assets/backgrounds/bg_mate_merienda_vertical.png",
+      "category": "background",
+      "priority": "A",
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1667713,
+      "sha256": "d92b1c929bf0405e560c8af326a50a10166443fd0da40e160805427477c3c3c3"
+    },
+    {
+      "name": "bg_mate_semillero_vertical",
+      "file": "assets/backgrounds/bg_mate_semillero_vertical.png",
+      "category": "background",
+      "priority": "A",
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1532681,
+      "sha256": "03d5257420e6af657b25a64240991c4a6724904b85c55e781eec1d2a4a722501"
+    },
+    {
+      "name": "prop_semilla",
+      "file": "assets/props/prop_semilla.png",
+      "category": "prop",
+      "priority": "A",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 754028,
+      "sha256": "3b13ef26f887be4b954f685ed89fb65579cb9079ffe6adf73f862393729d34a8"
+    },
+    {
+      "name": "prop_brote",
+      "file": "assets/props/prop_brote.png",
+      "category": "prop",
+      "priority": "A",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 589683,
+      "sha256": "3ca7750760ee3524868e194dca194e278fbd08070ef5bfa80a2d95f658d0465c"
+    },
+    {
+      "name": "prop_galleta",
+      "file": "assets/props/prop_galleta.png",
+      "category": "prop",
+      "priority": "A",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1112806,
+      "sha256": "bf46b624c9aa686a4a6f8f452f4bd0f5ee8bae2bca7f6c1fd3badda3daee0f64"
+    },
+    {
+      "name": "prop_plato",
+      "file": "assets/props/prop_plato.png",
+      "category": "prop",
+      "priority": "A",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1089769,
+      "sha256": "b609dbd6a4346461b992eedcebd370186ea4acef057c68349d58efe43e780bd2"
+    },
+    {
+      "name": "prop_bolsa",
+      "file": "assets/props/prop_bolsa.png",
+      "category": "prop",
+      "priority": "A",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1132489,
+      "sha256": "5393d373acee2e5aa174b38e51dde3b26c2b6a53f856789e8bd6b2c353c3ea10"
+    },
+    {
+      "name": "prop_parcela",
+      "file": "assets/props/prop_parcela.png",
+      "category": "prop",
+      "priority": "A",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1069045,
+      "sha256": "82cb397b474a8fdaa9458ab6afd0003d28b2fed3ed0617b45063322a214eabd0"
+    },
+    {
+      "name": "bg_mate_camino",
+      "file": "assets/backgrounds/bg_mate_camino.png",
+      "category": "background",
+      "priority": "B",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1539209,
+      "sha256": "cb0499857fd39a0e00976ec7991bff999b7744648cb174bc25c1033a9b273e0f"
+    },
+    {
+      "name": "bg_mate_mosaico",
+      "file": "assets/backgrounds/bg_mate_mosaico.png",
+      "category": "background",
+      "priority": "B",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1508643,
+      "sha256": "a5928530a71398e1d97d97cfc138c8c38a413d715e5c21fa3ba33da4eaea5e27"
+    },
+    {
+      "name": "bg_mate_jardin_plano",
+      "file": "assets/backgrounds/bg_mate_jardin_plano.png",
+      "category": "background",
+      "priority": "B",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1667701,
+      "sha256": "b54faca3688fd0678bf74e1976db8c316378898f6e26370ed942af8f7aa01d3c"
+    },
+    {
+      "name": "bg_mate_mapa",
+      "file": "assets/backgrounds/bg_mate_mapa.png",
+      "category": "background",
+      "priority": "B",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1306708,
+      "sha256": "037e7a4daa98475f7786d52f5ae5d4b09b103e47c7a1e819ce0b84d6796511dc"
+    },
+    {
+      "name": "bg_mate_feria",
+      "file": "assets/backgrounds/bg_mate_feria.png",
+      "category": "background",
+      "priority": "B",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1622829,
+      "sha256": "44c585d82f24927767bc20ba664681e0fcff44c424ee3b4637cf3fb95a8c3216"
+    },
+    {
+      "name": "bg_mate_laboratorio",
+      "file": "assets/backgrounds/bg_mate_laboratorio.png",
+      "category": "background",
+      "priority": "B",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1574236,
+      "sha256": "181ada9311cac371653beb62c1a310cbd1481367ee082a47268af924223c46f9"
+    },
+    {
+      "name": "prop_fruta_mango",
+      "file": "assets/props/prop_fruta_mango.png",
+      "category": "prop",
+      "priority": "B",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 784621,
+      "sha256": "a290b5afaba14e1ba16e6577a1f2d98bdc8a038f86c7a8acafba3947ff5dfb99"
+    },
+    {
+      "name": "prop_fruta_pera",
+      "file": "assets/props/prop_fruta_pera.png",
+      "category": "prop",
+      "priority": "B",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 613666,
+      "sha256": "96bd4824c826a78c696ec5894e76bfdb67a0a1cba2364b8915bb7a84c8f656c8"
+    },
+    {
+      "name": "prop_fruta_uva",
+      "file": "assets/props/prop_fruta_uva.png",
+      "category": "prop",
+      "priority": "B",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 711935,
+      "sha256": "d770ffb4696dbfdfd89c5a9b1b5c8bf9e96901e90e1252246eb76ca2ee887422"
+    },
+    {
+      "name": "prop_reloj_vacio",
+      "file": "assets/props/prop_reloj_vacio.png",
+      "category": "prop",
+      "priority": "B",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1006014,
+      "sha256": "e9694f6041a7fa2fcda45c60f570b22ad7ee8ed649d7b1848e280127e2557112"
+    }
+  ]
+}
