@@ -6,6 +6,7 @@ import { MATH_COPY, VISUAL_COPY, type MathLang } from '@lee-conmigo/ui-core';
 import { Button, ChevronLeftIcon, colors, fontFamily, gradients, GradientView, radius, RoundButton, shadows, useLayout } from '@lee-conmigo/ui-native';
 import type { MathProgress } from '../../app-state';
 import { today } from '../../today';
+import { Mila } from './mila';
 import { VisualExercise } from './visual-exercise';
 
 const EXERCISES = 6;
@@ -48,7 +49,7 @@ export function WorkshopScreen({ lang, grade, progress, onExit }: { lang: MathLa
         <View style={{ width, alignSelf: 'center' }}>
           {finished ? (
             <View style={styles.doneCard}>
-              <Text style={styles.star}>⭐</Text>
+              <Mila pose="celebra" height={layout.phone ? 150 : 200} />
               <Text style={styles.doneTitle}>{VISUAL_COPY.done[lang]}</Text>
               <Text style={styles.doneDetail}>{VISUAL_COPY.doneDetail[lang](session.length)}</Text>
               <Button label={MATH_COPY.closure.done[lang]} large onPress={onExit} />
@@ -88,7 +89,6 @@ const styles = StyleSheet.create({
   barFill: { height: 8, borderRadius: 4, backgroundColor: colors.subjMate },
   content: { paddingTop: 8 },
   doneCard: { backgroundColor: '#ffffff', borderRadius: radius.card, padding: 28, gap: 14, alignItems: 'center', boxShadow: shadows.card },
-  star: { fontSize: 52 },
   doneTitle: { fontFamily: fontFamily.ui.black, fontSize: 26, color: colors.navy, textAlign: 'center' },
   doneDetail: { fontFamily: fontFamily.ui.semibold, fontSize: 17, color: colors.inkSoft },
 });

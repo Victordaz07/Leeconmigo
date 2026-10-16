@@ -1,10 +1,11 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { MathUnit } from '@lee-conmigo/contracts';
 import { skillStatus } from '@lee-conmigo/math-content';
 import { MATH_COPY, VISUAL_COPY, type MathLang } from '@lee-conmigo/ui-core';
 import { Button, ChevronLeftIcon, colors, fontFamily, gradients, GradientView, radius, RoundButton, shadows, useLayout } from '@lee-conmigo/ui-native';
 import type { MathProgress } from '../app-state';
+import { KITE, MATH_COVERS } from '../math-art';
 
 interface MathNotebookScreenProps {
   lang: MathLang;
@@ -41,6 +42,9 @@ export function MathNotebookScreen({ lang, unit, progress, onBack, onOpenLesson,
         <View style={styles.flex} />
         <Text style={styles.meta}>Nivel {unit.practiceLevel}</Text>
       </View>
+      <View style={[styles.banner, { height: layout.phone ? 150 : 220 }]}>
+        <Image source={MATH_COVERS.g3u1} style={styles.bannerImage} resizeMode="cover" accessible={false} />
+      </View>
       <Text style={styles.kicker}>{t.notebook.unit[lang].toUpperCase()} 1</Text>
       <Text style={[styles.title, layout.phone && styles.titleSmall]}>{unit.title[lang]}</Text>
 
@@ -52,12 +56,12 @@ export function MathNotebookScreen({ lang, unit, progress, onBack, onOpenLesson,
             <View key={l.id} style={[styles.stop, vertical && styles.stopVertical, { zIndex: lessons.length - i }]}>
               {i > 0 && <View style={[vertical ? styles.connectorV : styles.connectorH, progress.lessonsDone.has(lessons[i - 1].id) && styles.connectorDone]} />}
               <View style={[styles.nodeWrap, vertical && styles.nodeWrapVertical]}>
-                {here && !vertical && <Text style={styles.here}>⭐ {t.notebook.youAreHere[lang]}</Text>}
+                {here && !vertical && <Here label={t.notebook.youAreHere[lang]} />}
                 <Button label={done ? '✓' : String(i + 1)} variant={here ? 'primary' : 'secondary'} onPress={() => onOpenLesson(l.id)} />
                 <Text style={[styles.stopTitle, vertical && styles.stopTitleVertical]} numberOfLines={2}>
                   {l.title[lang]}
                 </Text>
-                {here && vertical && <Text style={[styles.here, styles.hereVertical]}>⭐ {t.notebook.youAreHere[lang]}</Text>}
+                {here && vertical && <Here label={t.notebook.youAreHere[lang]} vertical />}
               </View>
             </View>
           );
@@ -91,6 +95,16 @@ export function MathNotebookScreen({ lang, unit, progress, onBack, onOpenLesson,
   );
 }
 
+/** "¡Estás aquí!" con el papalote de Kitewise. */
+function Here({ label, vertical }: { label: string; vertical?: boolean }) {
+  return (
+    <View style={[styles.hereRow, vertical ? styles.hereVertical : styles.here]}>
+      <Image source={KITE} style={styles.kite} resizeMode="contain" accessible={false} />
+      <Text style={styles.hereText}>{label}</Text>
+    </View>
+  );
+}
+
 const styles = StyleSheet.create({
   flex: { flex: 1 },
   screen: { flex: 1, backgroundColor: colors.paper },
@@ -111,7 +125,12 @@ const styles = StyleSheet.create({
   connectorH: { position: 'absolute', zIndex: 0, left: '-50%', right: '50%', top: 50, height: 8, borderRadius: 4, backgroundColor: colors.brand100 },
   connectorV: { width: 8, height: 22, marginLeft: 26, borderRadius: 4, backgroundColor: colors.brand100 },
   connectorDone: { backgroundColor: colors.ok },
-  here: { position: 'absolute', top: 0, fontFamily: fontFamily.ui.black, fontSize: 13, color: colors.navy },
+  here: { position: 'absolute', top: -6 },
+  hereRow: { flexDirection: 'row', alignItems: 'center', gap: 4 },
+  hereText: { fontFamily: fontFamily.ui.black, fontSize: 13, color: colors.navy },
+  kite: { width: 26, height: 26 },
+  banner: { borderRadius: radius.card, overflow: 'hidden', backgroundColor: colors.brand50 },
+  bannerImage: { width: '100%', height: '100%' },
   hereVertical: { position: 'relative' },
   stopTitle: { fontFamily: fontFamily.ui.extrabold, fontSize: 15, color: colors.ink, textAlign: 'center', maxWidth: 170 },
   stopTitleVertical: { textAlign: 'left', flex: 1, maxWidth: undefined },

@@ -1,0 +1,132 @@
+{
+  "package": "KiteWise - Pedido de imagenes 2",
+  "image_count": 18,
+  "files": [
+    {
+      "file": "assets/characters/char_mila_animo.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 665201,
+      "sha256": "cec837794bc569626dce79f9ba64c7dd0da5d09b758c005f62cefbe3bd45ec0a"
+    },
+    {
+      "file": "assets/characters/char_mila_apunta.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 705990,
+      "sha256": "92d4415b1a321d7f6f12565d4442f06dc32637b88322fb792252af603bea8deb"
+    },
+    {
+      "file": "assets/characters/char_mila_celebra.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 649107,
+      "sha256": "f2243120150ac824e87ad4937c0055016671611e7f402e34eb1ef94f1001fe43"
+    },
+    {
+      "file": "assets/characters/char_mila_piensa.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 625103,
+      "sha256": "0c16dafba638d593265908c870f0daeb1a4a38248ca8c793666ff8fb7e1b6061"
+    },
+    {
+      "file": "assets/characters/char_mila_saluda.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 643759,
+      "sha256": "3f7e4c5b595bdb586bbddd2db98233203112f852d7d6fcca557f80cd23180078"
+    },
+    {
+      "file": "assets/covers/cover_g3u1.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2566922,
+      "sha256": "b1a01fa08c109add9cd46935b73275c6f9e0fb87bc580bcb72f1653a8cf3a6bb"
+    },
+    {
+      "file": "assets/covers/cover_mate.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2313700,
+      "sha256": "386095100748b64db6ffc80ec15255fc4aca736f541d0e8294eeb10b53c8252d"
+    },
+    {
+      "file": "assets/props/prop_caja.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 605165,
+      "sha256": "94b19446acad1bb4b13f597a00e70564ecf146f83a72b5e48b5a259c6612204c"
+    },
+    {
+      "file": "assets/props/prop_canasta.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 950262,
+      "sha256": "a80b1da01b9f18a75983ef69239dac56e0730ab4489fbcabf2b3486169afa9bf"
+    },
+    {
+      "file": "assets/props/prop_canica.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 473438,
+      "sha256": "a305b78dc04b0919a61d40fa2cf7aba4041a64585e44daa347920dca3333a44c"
+    },
+    {
+      "file": "assets/props/prop_estampa.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 628996,
+      "sha256": "f508264245aff96fd6f74c09b47b7256c91b4011c09d2eadc03b128cfed32f2b"
+    },
+    {
+      "file": "assets/props/prop_frasco.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 698900,
+      "sha256": "c403e885c59b86e86877b15ac62f34708156d194edf93bb9d8fa57ff0de90d92"
+    },
+    {
+      "file": "assets/props/prop_lapiz.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 226728,
+      "sha256": "04baeeecc2eb1fd6d492832668a10bbfe4a5ec2b2fb0fa27c2d9ac57f42c5daf"
+    },
+    {
+      "file": "assets/props/prop_manzana.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 536092,
+      "sha256": "25bedf0b0504aa317eac460b03c7c4a14f979bb30933249711f5924ca5750473"
+    },
+    {
+      "file": "assets/props/prop_papalote.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 318272,
+      "sha256": "128760d1ac659580ba257d86c670a80373c7cf5f42409c31cc4c829da3e00395"
+    },
+    {
+      "file": "assets/props/prop_pastel.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 954091,
+      "sha256": "b1793aa3e7daa597782eafc9bcc02776f064be89853ea2089706ce5f33ae95bc"
+    },
+    {
+      "file": "assets/props/prop_pizza.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 1133756,
+      "sha256": "cbe188f573f3b16d99f1ad77db35203a9188afac3d3cd986a582d2779e30b674"
+    },
+    {
+      "file": "assets/props/prop_saltarin.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 575033,
+      "sha256": "bcdc36eb3ed53612c66e6239758120bbcd5a12e1afdcc4a380c88a8fd17637d7"
+    }
+  ]
+}

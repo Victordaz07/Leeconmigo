@@ -294,3 +294,12 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
 - Arreglos al probar: las imágenes de plato/bolsa/parcela salían a su tamaño natural en la web (ancho/alto explícitos);
   al pasar de ejercicio (Taller y lecciones) la pantalla no volvía arriba.
 - Verificado: Taller completo con Playwright en 4 tamaños, sin errores.
+
+## 2026-10-16 · Cuenta A · Arte, pedido 2 (Mila, portadas, papalote)
+- Victor mandó 18 imágenes (pedido 2 completo, A y B). Verificadas (SHA-256, sin texto); Mila coincide con la de las
+  historias (rizos, pasador de estrella, camiseta turquesa, overol amarillo, tenis rojos), en el estilo plano de Mate.
+- Hecho: WebP (Mila 37–42 KB, portadas 61–80 KB, objetos 4–24 KB); `prop_pastel` venía con una mancha gris en el centro
+  → rellenada. En uso: portada del cuaderno en Inicio, encabezado de la unidad, papalote en "¡Estás aquí!", Mila guía con
+  globo de mensaje en el Taller (saluda / piensa / ánimo / apunta / celebra según el momento, nunca triste), y Mila
+  celebra al terminar el Taller y las lecciones. Todo decorativo: se apaga con `decor` (Modo Enfoque, K7).
+- Verificado: Taller en 4 tamaños + lección 1 completa, sin errores.

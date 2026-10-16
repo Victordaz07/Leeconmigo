@@ -13,6 +13,7 @@ import {
 import { MATH_COPY, VISUAL_COPY, visualEquation, visualFeedback, visualFieldLabel, visualHint, visualHowTo, visualPrompt, type MathLang } from '@lee-conmigo/ui-core';
 import { AnswerBoxes, Button, colors, DigitPad, fontFamily, GardenPlots, manip, radius, shadows, SharingBoard, TenFrameBoard, useLayout } from '@lee-conmigo/ui-native';
 import { MATH_BACKGROUNDS } from '../../math-art';
+import { guidePose, Mila } from './mila';
 import { speak } from '../../tts';
 
 interface VisualExerciseProps {
@@ -125,7 +126,7 @@ export function VisualExercise({ instance, lang, width, onNext, nextLabel, decor
           {decor ? <Image source={MATH_BACKGROUNDS[m.kind][layout.portrait && !side ? 'vertical' : 'horizontal']} style={styles.sceneBg} resizeMode="cover" accessible={false} /> : null}
           {scene}
           {equation ? <Text style={styles.equation}>{equation}</Text> : null}
-          {!done && <Text style={styles.howTo}>{visualHowTo(m, lang)}</Text>}
+          {!done && !decor && <Text style={styles.howTo}>{visualHowTo(m, lang)}</Text>}
         </View>
         {answers}
       </View>
@@ -143,7 +144,17 @@ export function VisualExercise({ instance, lang, width, onNext, nextLabel, decor
         </View>
       )}
 
-      {message ? (
+      {decor ? (
+        // Mila acompaña con el mensaje del momento (o cómo se juega, si todavía no hay mensaje).
+        <View style={styles.guide}>
+          <Mila pose={guidePose(s.phase, s.hintLevel, !!s.firstCheck)} height={layout.phone ? 92 : 120} />
+          <View style={[styles.bubble, done && styles.bubbleDone]}>
+            <Text style={[styles.bubbleText, done && styles.messageDone]} accessibilityLiveRegion="polite">
+              {message || (done ? '' : visualHowTo(m, lang))}
+            </Text>
+          </View>
+        </View>
+      ) : message ? (
         <Text style={[styles.message, done && styles.messageDone]} accessibilityLiveRegion="polite">
           {message}
         </Text>
@@ -186,5 +197,9 @@ const styles = StyleSheet.create({
   hintText: { fontFamily: fontFamily.read.regular, fontSize: 18, lineHeight: 26, color: colors.ink },
   message: { fontFamily: fontFamily.ui.extrabold, fontSize: 18, color: colors.inkSoft, textAlign: 'center' },
   messageDone: { color: colors.ok },
+  guide: { flexDirection: 'row', alignItems: 'flex-end', gap: 10 },
+  bubble: { flex: 1, backgroundColor: '#ffffff', borderRadius: 20, borderBottomLeftRadius: 6, padding: 14, boxShadow: shadows.card, marginBottom: 12 },
+  bubbleDone: { backgroundColor: colors.okTint },
+  bubbleText: { fontFamily: fontFamily.ui.extrabold, fontSize: 17, lineHeight: 24, color: colors.inkSoft },
   actions: { flexDirection: 'row', flexWrap: 'wrap', gap: 10, justifyContent: 'center' },
 });

@@ -27,6 +27,7 @@ import {
 import type { MathProgress } from '../app-state';
 import { speak } from '../tts';
 import { today } from '../today';
+import { Mila } from './math-visual/mila';
 
 interface MathLessonScreenProps {
   lang: MathLang;
@@ -340,7 +341,7 @@ function Closure({ prompt, choices, lang, onDone }: { prompt: string; choices: s
   const [picked, setPicked] = useState<number | null>(null);
   return (
     <View style={[styles.card, styles.gap, styles.center]}>
-      <Text style={styles.closureStar}>⭐</Text>
+      <Mila pose="celebra" height={160} />
       <Text style={[styles.prompt, styles.centerText]}>{prompt}</Text>
       <View style={styles.actions}>
         {choices.map((c, i) => (
@@ -383,5 +384,4 @@ const styles = StyleSheet.create({
   statusDone: { color: colors.ok },
   label: { fontFamily: fontFamily.ui.extrabold, fontSize: 15, color: colors.muted },
   warmup: { fontFamily: fontFamily.ui.extrabold, fontSize: 15, color: colors.subjMate },
-  closureStar: { fontSize: 48 },
 });

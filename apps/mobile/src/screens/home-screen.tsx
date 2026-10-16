@@ -6,6 +6,7 @@ import { Button, colors, fontFamily, gradients, GradientView, navRailWidth, Note
 import type { ChildProfile } from '../app-state';
 import type { LibraryModel } from '../library-model';
 import { storyImage } from '../story-assets';
+import { MATH_COVERS } from '../math-art';
 
 const LANGUAGE_NAME = { es: 'Español', en: 'English' } as const;
 
@@ -92,7 +93,7 @@ export function HomeScreen({ profile, minutes, model, onContinue, onOpenReading,
               key={s.id}
               title={s.name}
               subtitle={isReading ? resumeLabel : isMath ? math.subtitle : ''}
-              image={isReading ? cover : undefined}
+              image={isReading ? cover : isMath ? MATH_COVERS.notebook : undefined}
               glyph={s.glyph}
               color={colors[s.colorToken]}
               gradient={gradients[s.gradientToken]}

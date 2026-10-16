@@ -55,7 +55,7 @@ ejercicio terminado se guarda como intento para dominio y repaso.
   coordenadas, razones (fases 2–3).
 - Arrastrar (además de tocar) y manejo por teclado físico.
 - Modo Enfoque y movimiento reducido en estas escenas (hoy no hay animaciones; falta ocultar decoración cuando llegue).
-- Las 4 poses de Mila (no llegaron: falta su referencia). Los fondos de prioridad B (camino, mosaico, jardín, mapa, feria,
+- Mila, portadas y papalote ya están en uso (pedido 2). Los fondos de prioridad B (camino, mosaico, jardín, mapa, feria,
   laboratorio) y frutas/reloj ya están en el repo para las fases 2–3, sin usar todavía.
 - Modo Enfoque: `VisualExercise` tiene `decor` (fondo ilustrado) listo para que K7 lo apague.
 - Guardar en el equipo (RN-08) y recuperar un ejercicio a medias.

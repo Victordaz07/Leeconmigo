@@ -1,5 +1,12 @@
 # Pedido de imágenes 2 — para que Matemáticas se vea terminada
 
+> **Estado (2026-10-16):** llegaron las 18 (A y B), SHA-256 verificados (`arte/manifest-original-2.json`), sin texto ni
+> números. En la app: Mila (5 poses, `assets/math/chars`, 512 px de alto), portadas (`assets/math/covers`) y objetos
+> (`assets/math/props`, 256 px). Arreglo: `prop_pastel` traía una mancha gris en el centro; se rellenó con el color del
+> glaseado al convertirlo. En uso: portada en Inicio, encabezado de la unidad, papalote en "¡Estás aquí!", Mila guía en
+> el Taller y celebra al terminar Taller y lecciones. Guardados para la fase 2: ranita, lápiz, canica, manzana,
+> estampa, caja, frasco, canasta, pizza y pastel.
+
 **Contexto:** el primer pedido (`PEDIDO-IMAGENES.md`) ya está en la app. Esto es lo que todavía hace falta para que la
 estética quede pareja, ordenado por impacto. Mismas reglas: **sin texto, letras ni números**; los objetos sueltos van en
 fondo transparente; nada que el niño pueda confundir con algo que hay que contar.
