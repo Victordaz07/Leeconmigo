@@ -41,6 +41,7 @@ reparto (7 plantillas), Taller en el cuaderno, galería DEV. Estado real en `doc
    para rehacer las lecciones de g3u1 con problemas de nivel escolar; nivel de Noah en matemáticas; RN-08.
 
 ## Cuidado con
+- **No generar ni enviar APK hasta que Victor lo pida** (Victor, 2026-10-16: "no me des apk hasta que yo te diga").
 - **No borrar `apps/reader` ni `packages/ui`**: Noah sigue usando la app Capacitor hasta RN-CP2.
 - React debe ser una sola versión en todo el repo (overrides). Al cambiar de SDK de Expo, actualizar overrides.
 - `require.context` debe quedar literal en el código (Metro lo analiza al empaquetar).
