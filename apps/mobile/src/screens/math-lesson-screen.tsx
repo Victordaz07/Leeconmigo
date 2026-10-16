@@ -26,6 +26,7 @@ import {
 } from '@lee-conmigo/ui-native';
 import type { MathProgress } from '../app-state';
 import { speak } from '../tts';
+import { today } from '../today';
 
 interface MathLessonScreenProps {
   lang: MathLang;
@@ -36,11 +37,6 @@ interface MathLessonScreenProps {
   onExit: () => void;
 }
 
-/** Día local `AAAA-MM-DD` (el repaso 1-3-7 cuenta días del niño, no de UTC). */
-function today(): string {
-  const d = new Date();
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-}
 
 /**
  * Una lección del cuaderno de Matemáticas (Kitewise B5–B8, docs/research §6–7): calentamiento con lo que vuelve hoy →

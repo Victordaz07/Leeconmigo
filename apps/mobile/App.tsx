@@ -15,6 +15,8 @@ import { EnergyScreen } from './src/screens/energy-screen';
 import { HomeScreen } from './src/screens/home-screen';
 import { MathLessonScreen } from './src/screens/math-lesson-screen';
 import { MathNotebookScreen } from './src/screens/math-notebook-screen';
+import { VisualReviewScreen } from './src/screens/math-visual/review-screen';
+import { WorkshopScreen } from './src/screens/math-visual/workshop-screen';
 import { NotebookScreen } from './src/screens/notebook-screen';
 import { ParentGateScreen } from './src/screens/parent-gate-screen';
 import { ParentHomeScreen } from './src/screens/parent-home-screen';
@@ -32,6 +34,8 @@ type Route =
   | { name: 'voiceTest' }
   | { name: 'mathNotebook' }
   | { name: 'mathLesson'; lessonId: string }
+  | { name: 'mathWorkshop' }
+  | { name: 'mathReview' }
   | { name: 'notebook' } | { name: 'reading'; storyId: string; from: 'home' | 'notebook' } | { name: 'dev' } | { name: 'showcase' };
 
 const RAIL: NavRailItem[] = [
@@ -210,11 +214,34 @@ function Root() {
       );
     }
   }
+  if (route.name === 'mathWorkshop') {
+    return (
+      <WorkshopScreen
+        lang={lang}
+        grade={mathUnit.grade}
+        progress={mathProgress}
+        onExit={() => {
+          setProgressVersion((v) => v + 1);
+          setRoute({ name: 'mathNotebook' });
+        }}
+      />
+    );
+  }
+  if (route.name === 'mathReview') return <VisualReviewScreen onBack={() => setRoute({ name: 'dev' })} />;
   if (route.name === 'mathNotebook') {
-    return <MathNotebookScreen lang={lang} unit={mathUnit} progress={mathProgress} onBack={home} onOpenLesson={(lessonId) => setRoute({ name: 'mathLesson', lessonId })} />;
+    return (
+      <MathNotebookScreen
+        lang={lang}
+        unit={mathUnit}
+        progress={mathProgress}
+        onBack={home}
+        onOpenLesson={(lessonId) => setRoute({ name: 'mathLesson', lessonId })}
+        onOpenWorkshop={() => setRoute({ name: 'mathWorkshop' })}
+      />
+    );
   }
   if (route.name === 'showcase') return <Showcase onBack={() => setRoute({ name: 'dev' })} />;
-  if (route.name === 'dev') return <DevList repository={repository} onOpen={(storyId) => setRoute({ name: 'reading', storyId, from: 'home' })} onShowcase={() => setRoute({ name: 'showcase' })} onBack={home} />;
+  if (route.name === 'dev') return <DevList repository={repository} onOpen={(storyId) => setRoute({ name: 'reading', storyId, from: 'home' })} onShowcase={() => setRoute({ name: 'showcase' })} onMathReview={() => setRoute({ name: 'mathReview' })} onBack={home} />;
 
   const onNav = (key: string) => (key === 'dev' ? setRoute({ name: 'dev' }) : key === 'padres' ? setRoute({ name: 'parentGate', next: 'parents' }) : undefined);
   const nav = <NavRail items={RAIL} bottomItems={RAIL_BOTTOM} active="home" onSelect={onNav} variant={layout.nav} bottomInset={insets.bottom} />;
@@ -241,7 +268,7 @@ function Root() {
 const LANGUAGE_NAME: Record<string, string> = { es: 'Español', en: 'English' };
 
 /** Solo desarrollo: todas las historias (todos los idiomas y niveles) y la muestra de componentes. */
-function DevList({ repository, onOpen, onShowcase, onBack }: { repository: ReturnType<typeof createBundledRepository>; onOpen: (id: string) => void; onShowcase: () => void; onBack: () => void }) {
+function DevList({ repository, onOpen, onShowcase, onMathReview, onBack }: { repository: ReturnType<typeof createBundledRepository>; onOpen: (id: string) => void; onShowcase: () => void; onMathReview: () => void; onBack: () => void }) {
   const insets = useSafeAreaInsets();
   const stories = repository.list();
   return (
@@ -256,6 +283,7 @@ function DevList({ repository, onOpen, onShowcase, onBack }: { repository: Retur
           <View style={styles.headerButtons}>
             <Button label="‹ Inicio" variant="secondary" onPress={onBack} />
             <Button label="Ver componentes" variant="secondary" onPress={onShowcase} />
+            <Button label="Matemáticas visuales" variant="secondary" onPress={onMathReview} />
           </View>
         </View>
       }
@@ -279,7 +307,7 @@ const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: colors.app },
   list: { paddingHorizontal: 24, gap: 12 },
   header: { gap: 12, marginBottom: 12 },
-  headerButtons: { flexDirection: 'row', gap: 12 },
+  headerButtons: { flexDirection: 'row', flexWrap: 'wrap', gap: 12 },
   title: { fontFamily: fontFamily.ui.black, fontSize: 28, color: colors.navy },
   cardTitle: { fontFamily: fontFamily.ui.extrabold, fontSize: 20, color: colors.ink },
   cardMeta: { fontFamily: fontFamily.ui.semibold, fontSize: 14, color: colors.muted, marginTop: 4 },

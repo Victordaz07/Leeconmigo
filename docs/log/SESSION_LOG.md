@@ -270,3 +270,18 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
   formatos de respuesta, modelos, errores comunes, tipos de problema verbal (tablas 1 y 2 de CCSS), progresión de una
   unidad (caso 3.OA), fluidez, diagnóstico de g3u1 y componentes/plantillas para la app; con fuentes y licencias.
 - Siguiente: Victor corre el prompt; luego rehacer g3u1 con esa base.
+
+## 2026-10-16 · Cuenta A · Matemáticas visuales, fase 1
+- Victor trajo una lámina de 12 representaciones y dos documentos (prompt de gráficos y especificación de implementación):
+  "creo que tenemos todo". Guardados en `docs/design/math-visual/`.
+- Hecho (fase 1 de la spec, de punta a punta):
+  - Dominio `math-content/src/visual`: plantilla → instancia con semilla → trabajo → evaluación con claves; 7 plantillas
+    (bandeja 10, bandeja 20, construir grupos, leer grupos, repartir, hacer bolsas, repartir con residuo).
+  - Textos ES/EN en `ui-core/math-visual-copy.ts`; escenas en `ui-native/components/math-visual`; pantalla Taller y
+    galería DEV en `apps/mobile/src/screens/math-visual`.
+  - Arreglo de UX encontrado al probar: con una galleta elegida, tocar una galleta que está en otro plato la suelta ahí
+    (antes la elegía, y los platos llenos eran difíciles de tocar).
+  - `PEDIDO-IMAGENES.md`: lista de imágenes para GPT (Victor ofreció generarlas).
+- Verificado: pruebas de invariantes y casos de aceptación; textos de todas las claves en ES/EN; Taller completo con
+  Playwright en 4 tamaños.
+- Pendiente: 9 familias, arrastrar, imágenes, guardar en el equipo; detalle en `IMPLEMENTACION.md`.

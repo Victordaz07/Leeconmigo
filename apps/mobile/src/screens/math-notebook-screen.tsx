@@ -2,7 +2,7 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { MathUnit } from '@lee-conmigo/contracts';
 import { skillStatus } from '@lee-conmigo/math-content';
-import { MATH_COPY, type MathLang } from '@lee-conmigo/ui-core';
+import { MATH_COPY, VISUAL_COPY, type MathLang } from '@lee-conmigo/ui-core';
 import { Button, ChevronLeftIcon, colors, fontFamily, gradients, GradientView, radius, RoundButton, shadows, useLayout } from '@lee-conmigo/ui-native';
 import type { MathProgress } from '../app-state';
 
@@ -12,6 +12,7 @@ interface MathNotebookScreenProps {
   progress: MathProgress;
   onBack: () => void;
   onOpenLesson: (lessonId: string) => void;
+  onOpenWorkshop: () => void;
 }
 
 /**
@@ -19,7 +20,7 @@ interface MathNotebookScreenProps {
  * estrella "¡Estás aquí!") y cómo va cada habilidad (explorando / practicando / dominado, nunca porcentajes). Sin bloqueos:
  * todo abre; lo sugerido se destaca (docs/13). Los estándares NO se muestran al niño (solo a padres, en borrador).
  */
-export function MathNotebookScreen({ lang, unit, progress, onBack, onOpenLesson }: MathNotebookScreenProps) {
+export function MathNotebookScreen({ lang, unit, progress, onBack, onOpenLesson, onOpenWorkshop }: MathNotebookScreenProps) {
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const t = MATH_COPY;
@@ -67,6 +68,14 @@ export function MathNotebookScreen({ lang, unit, progress, onBack, onOpenLesson 
         <Button label={(allDone ? t.notebook.again : t.notebook.start)[lang](next.title[lang])} large onPress={() => onOpenLesson(next.id)} />
       </View>
 
+      <View style={[styles.workshop, layout.phone && styles.workshopStack]}>
+        <View style={styles.flex}>
+          <Text style={styles.workshopTitle}>🧺 {VISUAL_COPY.workshopTitle[lang]}</Text>
+          <Text style={styles.workshopText}>{VISUAL_COPY.workshopSubtitle[lang]}</Text>
+        </View>
+        <Button label={`${VISUAL_COPY.workshop[lang]} ›`} variant="secondary" onPress={onOpenWorkshop} />
+      </View>
+
       <View style={styles.card}>
         {unit.skills.map((s) => {
           const st = skillStatus(progress.attempts.filter((a) => a.skillId === s.id)).mastery;
@@ -107,6 +116,10 @@ const styles = StyleSheet.create({
   stopTitle: { fontFamily: fontFamily.ui.extrabold, fontSize: 15, color: colors.ink, textAlign: 'center', maxWidth: 170 },
   stopTitleVertical: { textAlign: 'left', flex: 1, maxWidth: undefined },
   cta: { alignItems: 'center' },
+  workshop: { flexDirection: 'row', alignItems: 'center', gap: 14, backgroundColor: colors.brand50, borderRadius: radius.card, padding: 18 },
+  workshopStack: { flexDirection: 'column', alignItems: 'stretch' },
+  workshopTitle: { fontFamily: fontFamily.ui.black, fontSize: 19, color: colors.navy },
+  workshopText: { fontFamily: fontFamily.ui.semibold, fontSize: 15, color: colors.inkSoft, marginTop: 2 },
   card: { backgroundColor: '#ffffff', borderRadius: radius.card, padding: 18, gap: 10, boxShadow: shadows.card },
   skill: { flexDirection: 'row', alignItems: 'center', gap: 12 },
   skillTitle: { flex: 1, fontFamily: fontFamily.ui.bold, fontSize: 15, color: colors.inkSoft },

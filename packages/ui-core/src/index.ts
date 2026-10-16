@@ -16,3 +16,5 @@ export { columnsFor, itemWidth, layoutFor, PHONE_MAX_SHORT_SIDE } from './layout
 export type { Layout, NavStyle } from './layout.ts';
 export { MATH_COPY } from './math-copy.ts';
 export type { MathLang } from './math-copy.ts';
+export { VISUAL_COPY, visualEquation, visualFeedback, visualFieldLabel, visualHint, visualHowTo, visualPrompt } from './math-visual-copy.ts';
+export type { VisualCopyModel } from './math-visual-copy.ts';

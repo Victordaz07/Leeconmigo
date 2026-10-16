@@ -28,3 +28,8 @@ export { useLayout } from './components/use-layout.ts';
 export { ArrayGrid, EqualGroups, TapeDiagram } from './components/math/models.tsx';
 export { ConfidencePicker, HintLadder, NumericKeypad, PhaseTabs } from './components/math/practice.tsx';
 export { PairsGame } from './components/math/pairs-game.tsx';
+export { CookieIcon, manip, SeedIcon, SproutIcon } from './components/math-visual/objects.tsx';
+export { GardenPlots, SharingBoard, TenFrameBoard } from './components/math-visual/scenes.tsx';
+export type { SharingToken } from './components/math-visual/scenes.tsx';
+export { AnswerBoxes, DigitPad } from './components/math-visual/answers.tsx';
+export type { AnswerBox } from './components/math-visual/answers.tsx';

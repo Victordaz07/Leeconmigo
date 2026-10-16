@@ -31,16 +31,15 @@ Ninguna a medias. Voz (RN-03) PAUSADA por Victor. K6: la primera unidad de Matem
       Practicar, Juego, Cierre); los intentos alimentan dominio y repaso
 
 ## Siguiente paso exacto
-Victor probó el APK 0.3.0 de Matemáticas: "está demasiado simple, no hay problemas reales según como lo usan en la
-escuela, se siente como de preescolar". **No agregar más unidades con el patrón actual.**
-1. Victor corre `docs/research/PROMPT-INVESTIGACION-PROBLEMAS-MATEMATICAS.md` (catálogo de ejercicios reales por grado:
-   CAASPP/Smarter Balanced, Illustrative Math, Eureka, enVision, SEP en español) y trae el resultado → guardarlo como
-   `docs/research/matematicas-problemas-reales.md`.
-2. Con eso: rehacer g3u1 con problemas de nivel real de 3.º (dos pasos, elegir la operación, incógnita en distintos
-   lugares, datos de sobra, explicar/"¿quién tiene razón?"), ampliar `MathChallenge` (formatos de respuesta además del
-   teclado) y los componentes de interacción que la investigación priorice.
-3. Sigue pendiente: en qué nivel de matemáticas está Noah; etiquetas concepto/procedimiento/transferencia; guardar en el
-   equipo (RN-08); V/F y ordenar (K5).
+Matemáticas visuales (spec de Victor en `docs/design/math-visual/`): **fase 1 hecha** — bandejas 10/20, grupos iguales y
+reparto (7 plantillas), Taller en el cuaderno, galería DEV. Estado real en `docs/design/math-visual/IMPLEMENTACION.md`.
+1. Victor prueba el APK (Matemáticas → Taller) y genera las imágenes de `docs/design/math-visual/PEDIDO-IMAGENES.md`
+   (Prioridad A). Al llegar: convertir a WebP, nombrar, reemplazar las formas de `ui-native/.../math-visual/objects.tsx`
+   y poner fondos detrás de las escenas (ocultos en Modo Enfoque).
+2. Fase 2 de la spec: valor posicional, recta numérica, fracciones y modelo de barras, con el mismo contrato
+   (plantilla → instancia → trabajo → evaluación) y pruebas de invariantes.
+3. Sigue pendiente la investigación de problemas reales (`docs/research/PROMPT-INVESTIGACION-PROBLEMAS-MATEMATICAS.md`)
+   para rehacer las lecciones de g3u1 con problemas de nivel escolar; nivel de Noah en matemáticas; RN-08.
 
 ## Cuidado con
 - **No borrar `apps/reader` ni `packages/ui`**: Noah sigue usando la app Capacitor hasta RN-CP2.
@@ -56,4 +55,4 @@ escuela, se siente como de preescolar". **No agregar más unidades con el patró
 - `npm ci` en la nube: usar `--ignore-scripts` (postinstall de `onnxruntime-node`).
 
 ## Estado de pruebas
-`npm test`: 1152/1152 ✅ · `npm run typecheck`: ✅ (incluye mobile, ui-native y ui-core)
+`npm test`: 1167/1167 ✅ · `npm run typecheck`: ✅ (incluye mobile, ui-native y ui-core)
