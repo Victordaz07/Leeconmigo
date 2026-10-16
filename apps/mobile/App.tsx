@@ -1,12 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Button, Card, colors, fontFamily, GearIcon, HomeIcon, MathArtProvider, NavRail, TrophyIcon, useLayout, type NavRailItem } from '@lee-conmigo/ui-native';
 import { todayReport } from '@lee-conmigo/session-engine';
 import { energyOption, progressSegments, type Energy } from '@lee-conmigo/ui-core';
 import { MATH_UNITS } from '@lee-conmigo/math-content';
-import { mathProgressFor, newChildProfile, PROFILES, progressStoreFor, resetProgressFor, type ChildProfile } from './src/app-state';
+import { loadPin, loadProfiles, mathProgressFor, newChildProfile, savePin, saveProfiles, progressStoreFor, resetProgressFor, type ChildProfile } from './src/app-state';
 import { createBundledRepository } from './src/bundled-stories';
 import { SHOW_DEV_TOOLS } from './src/dev-tools';
 import { MATH_ART } from './src/math-art';
@@ -68,14 +68,16 @@ function Root() {
   const layout = useLayout();
   const insets = useSafeAreaInsets();
   const repository = useMemo(() => createBundledRepository(), []);
-  // TEMPORAL: perfiles y PIN en memoria hasta RN-08 (docs/11). Al reiniciar la app vuelven a los de partida.
-  const [profiles, setProfiles] = useState<ChildProfile[]>(PROFILES);
+  // Perfiles y PIN se guardan en el equipo (RN-08) en cuanto cambian.
+  const [profiles, setProfiles] = useState<ChildProfile[]>(loadProfiles);
+  useEffect(() => saveProfiles(profiles), [profiles]);
   const [profileId, setProfileId] = useState<string | null>(null);
   const profile = profiles.find((p) => p.id === profileId) ?? null;
   // `undefined` = todavía no respondió "¿Cómo llegas hoy?"; `null` = no se pregunta (ajuste de padres).
   const [energy, setEnergy] = useState<Energy | null | undefined>(undefined);
   const [route, setRoute] = useState<Route>({ name: 'home' });
-  const [parentPin, setParentPin] = useState<string | null>(null);
+  const [parentPin, setParentPin] = useState<string | null>(loadPin);
+  useEffect(() => savePin(parentPin), [parentPin]);
   const gateNext = route.name === 'parentGate' ? route.next : 'parents';
   const openGated = useCallback(
     (created: string | null) => {

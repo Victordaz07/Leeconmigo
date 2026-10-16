@@ -115,6 +115,7 @@ export function WorkshopScreen({ lang, grade: suggested, progress, onExit }: { l
                 if (a) {
                   progress.attempts.push(a);
                   progress.reviews = updateReviews(progress.reviews, a);
+                  progress.save();
                 }
                 setIndex(index + 1);
               }}

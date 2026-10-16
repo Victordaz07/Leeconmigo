@@ -1,14 +1,15 @@
 /**
- * Estado de la app nativa que comparten las pantallas: perfiles de los niños y su progreso.
+ * Estado de la app nativa que comparten las pantallas: perfiles de los niños, PIN de padres y progreso.
  *
- * TEMPORAL: todo vive en memoria y se pierde al cerrar la app; guardarlo en el dispositivo es RN-08 (docs/11). Agregar o
- * editar niños se hace en Modo padres con PIN (K4); hasta entonces hay un solo perfil. Solo datos derivados, nunca audio
- * (docs/07). El nivel es de la app, NO el grado escolar (docs/01).
+ * Se guarda en el equipo (RN-08, `persist/`): SQLite local, sin red. Solo datos derivados, nunca audio (docs/07). Agregar
+ * o editar niños se hace en Modo padres con PIN (K4). El nivel es de la app, NO el grado escolar (docs/01).
  */
 import type { ReadingProfile } from '@lee-conmigo/contracts';
-import { MemoryProgressStore, type ProgressStore } from '@lee-conmigo/session-engine';
+import type { ProgressStore } from '@lee-conmigo/session-engine';
 import type { MathAttempt, ReviewEntry } from '@lee-conmigo/math-content';
 import { DEFAULT_DAILY_GOAL_MINUTES } from '@lee-conmigo/ui-core';
+import { deviceKV } from './persist/kv';
+import { eraseChild, KEYS, loadMath, PersistentProgressStore, readJSON, saveMath, writeJSON, type KV } from './persist/store';
 
 export interface ChildProfile extends ReadingProfile {
   id: string;
@@ -34,22 +35,44 @@ export function newChildProfile(existing: ChildProfile[]): ChildProfile {
   return { id: `child-${Date.now().toString(36)}`, name: '', language: 'es', level: 1, dailyGoalMinutes: DEFAULT_DAILY_GOAL_MINUTES, avatar: AVATARS[n % AVATARS.length], askEnergy: true, freeReading: false };
 }
 
+/** Almacén del equipo (las pruebas usan uno en memoria). */
+let kv: KV = deviceKV;
+export const useKVForTests = (k: KV) => {
+  kv = k;
+  stores.clear();
+  mathStores.clear();
+};
+
+/** Perfiles guardados; la primera vez, el de partida. */
+export function loadProfiles(): ChildProfile[] {
+  const saved = readJSON<ChildProfile[]>(kv, KEYS.profiles, []);
+  return Array.isArray(saved) && saved.length ? saved : PROFILES;
+}
+export const saveProfiles = (list: ChildProfile[]) => writeJSON(kv, KEYS.profiles, list);
+
+/** PIN de padres. Es un candado para que el niño no entre solo, no una contraseña: vive en el equipo. */
+export const loadPin = (): string | null => kv.get(KEYS.pin);
+export const savePin = (pin: string | null) => (pin ? kv.set(KEYS.pin, pin) : kv.remove(KEYS.pin));
+
 const stores = new Map<string, ProgressStore>();
 
 /** Borra el progreso guardado de un niño ("Borrar el progreso", P4; docs/12 P-03). */
 export function resetProgressFor(profileId: string): void {
   stores.delete(profileId);
   mathStores.delete(profileId);
+  eraseChild(kv, profileId);
 }
 
 /**
  * Progreso de Matemáticas de un niño (K6): respuestas (solo datos derivados: habilidad, día, si acertó, ayuda usada,
- * confianza), agenda de repaso y lecciones terminadas. TEMPORAL en memoria, como el resto, hasta RN-08.
+ * confianza), agenda de repaso y lecciones terminadas. Se guarda en el equipo.
  */
 export interface MathProgress {
   attempts: MathAttempt[];
   reviews: ReviewEntry[];
   lessonsDone: Set<string>;
+  /** Escribe en el equipo lo que cambió (las pantallas lo llaman después de cada respuesta o lección). */
+  save(): void;
 }
 
 const mathStores = new Map<string, MathProgress>();
@@ -57,7 +80,9 @@ const mathStores = new Map<string, MathProgress>();
 export function mathProgressFor(profileId: string): MathProgress {
   let s = mathStores.get(profileId);
   if (!s) {
-    s = { attempts: [], reviews: [], lessonsDone: new Set() };
+    const saved = loadMath(kv, profileId);
+    const progress: MathProgress = { attempts: saved.attempts, reviews: saved.reviews, lessonsDone: new Set(saved.lessonsDone), save: () => saveMath(kv, profileId, progress) };
+    s = progress;
     mathStores.set(profileId, s);
   }
   return s;
@@ -67,7 +92,7 @@ export function mathProgressFor(profileId: string): MathProgress {
 export function progressStoreFor(profileId: string): ProgressStore {
   let s = stores.get(profileId);
   if (!s) {
-    s = new MemoryProgressStore();
+    s = new PersistentProgressStore(kv, KEYS.reading(profileId));
     stores.set(profileId, s);
   }
   return s;

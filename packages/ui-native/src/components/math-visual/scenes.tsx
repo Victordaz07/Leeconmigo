@@ -79,18 +79,22 @@ export function GardenPlots({ counts, capacity, width, editable, disabled, onAdd
   const gap = 12;
   const perRow = Math.min(counts.length, width < 420 ? 2 : width < 700 ? 3 : counts.length);
   const plot = Math.max(110, Math.min(170, Math.floor((width - gap * (perRow - 1)) / perRow)));
+  // Las plantas caben DENTRO de la parcela: se mide el espacio interior (sin marco ni relleno) y se reparte en 3 columnas.
   const cols = 3;
-  const icon = Math.min(36, Math.floor((plot - 24) / cols) - 4);
+  const pad = art.plot ? Math.round(plot * 0.11) : 10;
+  const inner = plot - 2 * (pad + (art.plot ? 0 : 4));
+  const cell = Math.floor(inner / cols);
+  const icon = Math.min(36, cell - 4);
   void capacity;
   return (
     <View style={[styles.wrapRow, { gap, maxWidth: perRow * plot + gap * (perRow - 1) }]}>
       {counts.map((n, g) => (
         <View key={g} style={{ width: plot, gap: 6, alignItems: 'center' }}>
-          <View style={[styles.plot, art.plot ? [styles.plotArt, { height: plot, padding: plot * 0.11 }] : { minHeight: plot * 0.8 }, { width: plot }]} accessibilityLabel={plotLabel(g, n)}>
+          <View style={[styles.plot, art.plot ? [styles.plotArt, { height: plot, padding: pad }] : { minHeight: plot * 0.8 }, { width: plot }]} accessibilityLabel={plotLabel(g, n)}>
             {art.plot ? <ContainerArt source={art.plot} mode="stretch" /> : null}
-            <View style={[styles.plantGrid, { width: cols * (icon + 6) }]}>
+            <View style={[styles.plantGrid, { width: cols * cell }]}>
               {Array.from({ length: n }, (_, i) => (
-                <View key={i} style={{ width: icon + 6, alignItems: 'center' }}>
+                <View key={i} style={{ width: cell, alignItems: 'center' }}>
                   <SproutIcon size={icon} />
                 </View>
               ))}
@@ -212,7 +216,7 @@ const styles = StyleSheet.create({
   frame: { backgroundColor: manip.creamDeep, borderRadius: 18 },
   cell: { backgroundColor: manip.cream, borderRadius: 12, alignItems: 'center', justifyContent: 'center', borderWidth: 2, borderColor: '#e9dfc9' },
   addedRing: { borderRadius: 999, borderWidth: 3, borderColor: manip.blue, padding: 1 },
-  plot: { backgroundColor: manip.soilSoft, borderRadius: 18, borderWidth: 4, borderColor: manip.soil, padding: 10, alignItems: 'center', justifyContent: 'center' },
+  plot: { overflow: 'hidden', backgroundColor: manip.soilSoft, borderRadius: 18, borderWidth: 4, borderColor: manip.soil, padding: 10, alignItems: 'center', justifyContent: 'center' },
   plotArt: { backgroundColor: 'transparent', borderWidth: 0, borderRadius: 0 },
   containerArt: { backgroundColor: 'transparent', borderColor: 'transparent', paddingTop: 28 },
   plantGrid: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', rowGap: 4 },

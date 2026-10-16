@@ -65,6 +65,7 @@ export function MathLessonScreen({ lang, unit, lesson, minutes, progress, onExit
   const next = () => {
     if (index + 1 < plan.length) return setIndex(index + 1);
     progress.lessonsDone.add(lesson.id);
+    progress.save();
     onExit();
   };
   const contentWidth = Math.min(layout.width - layout.gutter * 2, 980);
@@ -132,6 +133,7 @@ function Step({ item, lang, split, modelWidth, contentWidth, day, progress, onNe
             if (a) {
               progress.attempts.push(a);
               progress.reviews = updateReviews(progress.reviews, a);
+              progress.save();
             }
             onNext();
           }}
@@ -315,6 +317,7 @@ function Practice({ challenge: c, warmup, lang, split, modelWidth, day, progress
     if (a) {
       progress.attempts.push(a);
       progress.reviews = updateReviews(progress.reviews, a);
+      progress.save();
     }
     onNext();
   };

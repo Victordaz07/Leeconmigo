@@ -4,7 +4,7 @@
  * lámina). Nunca deciden cuántos hay: eso lo dice el modelo.
  */
 import { createContext, useContext, type ReactNode } from 'react';
-import { Image, type ImageSourcePropType, type ImageStyle } from 'react-native';
+import { Image, Platform, type ImageSourcePropType, type ImageStyle } from 'react-native';
 import Svg, { Circle, Ellipse, Path } from 'react-native-svg';
 
 /**
@@ -39,8 +39,13 @@ export function ArtImage({ source, size }: { source: ImageSourcePropType; size: 
   return <Image source={source} style={{ width: size, height: size }} resizeMode="contain" accessible={false} />;
 }
 
-/** `absoluteFill` no basta en la web: la imagen tomaba su tamaño natural. Ancho y alto explícitos. */
-const fill: ImageStyle = { position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' };
+/**
+ * Imagen que llena a su contenedor. En Android/iOS, los cuatro bordes en 0 (con ancho al 100 % el porcentaje se mide sin
+ * el relleno del padre y queda una franja vacía). En la web, ancho y alto explícitos (si no, toma su tamaño natural).
+ */
+export const FILL_IMAGE: ImageStyle =
+  Platform.OS === 'web' ? { position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' } : { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 };
+const fill = FILL_IMAGE;
 
 /** Fondo de un recipiente (plato, bolsa, parcela): ocupa todo el recipiente, detrás de lo que contiene. */
 export function ContainerArt({ source, mode = 'contain' }: { source: ImageSourcePropType; mode?: 'contain' | 'stretch' }) {

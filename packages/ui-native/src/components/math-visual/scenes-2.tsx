@@ -13,10 +13,10 @@ import { ArtImage, manip, useMathArt } from './objects.tsx';
 const TOUCH = 44;
 const OVER = { position: 'absolute', top: 0, left: 0 } as const;
 
-function Step({ label, onPress, disabled, primary, a11y }: { label: string; onPress: () => void; disabled?: boolean; primary?: boolean; a11y?: string }) {
+function Step({ label, onPress, disabled, primary, a11y, small }: { label: string; onPress: () => void; disabled?: boolean; primary?: boolean; a11y?: string; small?: boolean }) {
   return (
-    <Pressable disabled={disabled} onPress={onPress} accessibilityRole="button" accessibilityLabel={a11y ?? label} style={({ pressed }) => [styles.step, primary && styles.stepPrimary, disabled && styles.off, pressed && styles.pressed]}>
-      <Text style={[styles.stepText, primary && styles.stepTextPrimary]}>{label}</Text>
+    <Pressable disabled={disabled} onPress={onPress} accessibilityRole="button" accessibilityLabel={a11y ?? label} style={({ pressed }) => [styles.step, small && styles.stepSmall, primary && styles.stepPrimary, disabled && styles.off, pressed && styles.pressed]}>
+      <Text style={[styles.stepText, small && styles.stepTextSmall, primary && styles.stepTextPrimary]}>{label}</Text>
     </Pressable>
   );
 }
@@ -100,8 +100,8 @@ export function PlaceValueBoard({ pieces, showHundreds, editable, disabled, widt
               <Step label="+" a11y={`${labels.add} · ${labels[p]}`} onPress={() => onAdd(p)} disabled={disabled} primary />
             </View>
           )}
-          {editable && p !== 'h' && <Step label={labels.bundle} onPress={() => onBundle(p as 'o' | 't')} disabled={disabled || pieces[p] < 10} />}
-          {editable && p !== 'o' && <Step label={labels.unbundle} onPress={() => onUnbundle(p as 't' | 'h')} disabled={disabled || pieces[p] < 1} />}
+          {editable && p !== 'h' && <Step small={colW < 130} label={labels.bundle} onPress={() => onBundle(p as 'o' | 't')} disabled={disabled || pieces[p] < 10} />}
+          {editable && p !== 'o' && <Step small={colW < 130} label={labels.unbundle} onPress={() => onUnbundle(p as 't' | 'h')} disabled={disabled || pieces[p] < 1} />}
         </Panel>
       ))}
     </View>
@@ -132,7 +132,8 @@ interface NumberLineBoardProps {
 export function NumberLineBoard({ min, max, denominator, labelEvery, pos, path, width, disabled, jumps, onJump, onTap, frogLabel, tickLabel }: NumberLineBoardProps) {
   const art = useMathArt();
   const pad = 24;
-  const w = Math.max(280, width);
+  // El panel tiene 12 de relleno por lado: la recta mide lo que queda dentro.
+  const w = Math.max(240, width - 24);
   const h = 150;
   const y = 112;
   const step = (w - pad * 2) / (max - min);
@@ -541,7 +542,7 @@ interface CoordBoardProps {
 export function CoordBoard({ max, point, width, disabled, onTap, a11y }: CoordBoardProps) {
   const art = useMathArt();
   const pad = 30;
-  const S = Math.min(380, Math.max(260, width));
+  const S = Math.min(380, Math.max(220, width - 24));
   const g = (S - pad * 2) / max;
   const X = (x: number) => pad + x * g;
   const Y = (y: number) => S - pad - y * g;
@@ -638,6 +639,8 @@ const styles = StyleSheet.create({
   controls: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, justifyContent: 'center' },
   controlsTight: { flexDirection: 'row', gap: 4 },
   step: { minWidth: TOUCH + 4, height: TOUCH + 4, paddingHorizontal: 12, borderRadius: radius.pill, backgroundColor: '#ffffff', borderWidth: 2, borderColor: manip.blueSoft, alignItems: 'center', justifyContent: 'center' },
+  stepSmall: { paddingHorizontal: 6, alignSelf: 'stretch' },
+  stepTextSmall: { fontSize: 13, textAlign: 'center' },
   stepPrimary: { backgroundColor: manip.blue, borderColor: manip.blue },
   stepText: { fontFamily: fontFamily.ui.black, fontSize: 17, color: manip.ink },
   stepTextPrimary: { color: '#ffffff' },

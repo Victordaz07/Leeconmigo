@@ -32,7 +32,7 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | RN-05 | Cómic: globos + acomodo de texto (24 historias) | ✅ | A | `fitText` (ui-core) con medidas de Andika, paridad con la web ±3 %; ilustraciones vía `require.context` (sin copiar) |
 | RN-06 | Resto del flujo + Modo padres con PIN → **RN-CP1** paridad con simulador | ⬜ | – | se hace con las pantallas de Kitewise (K1–K4) |
 | RN-07 | `WhisperNativeSpeechEngine` + `RealReadingEngine` | ⬜ | – | depende de RN-03 |
-| RN-08 | Almacenamiento local + migración de progreso → **RN-CP2** Noah usa la nueva | ⬜ | – | |
+| RN-08 | Almacenamiento local + migración del progreso de Noah | 🟡 | A | guardado en el equipo ✅ (`apps/mobile/src/persist/`, expo-sqlite kv; perfiles, PIN, Lectura y Matemáticas); la migración desde la app Capacitor no se hace: empieza limpio |
 | RN-09 | Build iOS | ⬜ | – | necesita cuenta Apple / EAS |
 | **P** | **Publicación** (D8, `docs/12`) | | | |
 | P-01 | Revisión con abogado (COPPA / California) | ⬜ | Victor | |

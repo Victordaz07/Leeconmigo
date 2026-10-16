@@ -11,7 +11,7 @@ import {
   type VisualInstance,
 } from '@lee-conmigo/math-content';
 import { MATH_COPY, VISUAL_COPY, visualEquation, visualFeedback, visualFieldLabel, visualHint, visualHowTo, visualPrompt, type MathLang } from '@lee-conmigo/ui-core';
-import { AnswerBoxes, Button, colors, DigitPad, fontFamily, GardenPlots, manip, radius, shadows, SharingBoard, TenFrameBoard, useLayout } from '@lee-conmigo/ui-native';
+import { AnswerBoxes, Button, colors, DigitPad, FILL_IMAGE, fontFamily, GardenPlots, manip, radius, shadows, SharingBoard, TenFrameBoard, useLayout } from '@lee-conmigo/ui-native';
 import { MATH_BACKGROUNDS } from '../../math-art';
 import { guidePose, Mila } from './mila';
 import { canManipulate, scene2 } from './scene-2';
@@ -126,7 +126,7 @@ export function VisualExercise({ instance, lang, width, onNext, nextLabel, decor
 
       <View style={[styles.body, side && styles.bodySide]}>
         <View style={[styles.sceneCard, side && { width: sceneWidth }]}>
-          {decor ? <Image source={MATH_BACKGROUNDS[m.kind][layout.portrait && !side ? 'vertical' : 'horizontal']} style={styles.sceneBg} resizeMode="cover" accessible={false} /> : null}
+          {decor ? <Image source={MATH_BACKGROUNDS[m.kind][layout.portrait && !side ? 'vertical' : 'horizontal']} style={FILL_IMAGE} resizeMode="cover" accessible={false} /> : null}
           {scene}
           {equation ? <Text style={styles.equation}>{equation}</Text> : null}
           {!done && !decor && <Text style={styles.howTo}>{visualHowTo(m, lang)}</Text>}
@@ -189,7 +189,6 @@ const styles = StyleSheet.create({
   body: { gap: 14 },
   bodySide: { flexDirection: 'row', alignItems: 'flex-start' },
   sceneCard: { backgroundColor: '#ffffff', borderRadius: radius.card, padding: 16, gap: 12, alignItems: 'center', boxShadow: shadows.card, overflow: 'hidden' },
-  sceneBg: { position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' },
   equation: { fontFamily: fontFamily.ui.black, fontSize: 28, color: manip.ink },
   howTo: { fontFamily: fontFamily.ui.semibold, fontSize: 15, color: manip.blue, textAlign: 'center' },
   answers: { backgroundColor: '#ffffff', borderRadius: radius.card, padding: 16, gap: 14, alignItems: 'center', boxShadow: shadows.card },

@@ -313,3 +313,14 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
 - Arreglos al probar: imagen tapaba marcas/agujas/rebanadas en la web (SVG encima); tocar el plano/recta medía mal en
   la web → una zona tocable por cruce/marca; 3×6 tenía área = perímetro → el generador lo evita; títulos de pistas.
 - Verificado: 94+ pruebas de matemáticas, typecheck, recorridos en navegador en 4 tamaños. NO probado en equipo real.
+
+## 2026-10-16 · Cuenta A · Guardar en el equipo + arreglos en teléfono
+- Victor pidió el APK (0.5.0, enviado) y "continúa con lo faltante". Luego, con captura del teléfono: "Hay cosas que
+  quedan fuera".
+- Hecho: RN-08 guardado local con expo-sqlite (kv síncrono; `localStorage` en web): perfiles, PIN, Lectura
+  (`PersistentProgressStore`) y Matemáticas (respuestas, repaso, lecciones). Pruebas (incluye datos corruptos → empieza
+  limpio, que encontró un error real con `null`) y recorrido en navegador: termina la lección 1, recarga, sigue marcada.
+- Arreglos de lo que "quedaba fuera" en Android: fondo de la escena no llenaba la tarjeta (100 % sin el relleno del
+  padre → `FILL_IMAGE` con los 4 bordes en 0); plantas fuera de la parcela (tamaño desde el interior del marco); plano y
+  recta medidos sin el relleno de su panel; botones "Juntar 10 / Desarmar 1" en columnas angostas.
+- No hecho: migrar el progreso de la app Capacitor de Noah (se empieza limpio). Probar en el equipo.

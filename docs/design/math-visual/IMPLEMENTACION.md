@@ -81,7 +81,6 @@ Dominio en `packages/math-content/src/visual/` (fase 1 en `evaluate.ts`; el rest
 
 - Arrastrar (además de tocar) y teclado físico.
 - Modo Enfoque (K7): `VisualExercise` ya tiene `decor` para apagar fondo y a Mila.
-- Guardar en el equipo (RN-08).
 - Más contextos por plantilla (lápices, canicas, cajas, frascos ya están en el repo): hoy cada familia usa un objeto fijo.
 - Unidades de otros grados con lecciones propias (hoy solo g3u1 tiene lecciones; los demás grados practican en el Taller).
 - Revisión docente de rangos, textos y estándares; pilotaje con Noah. Probar en un equipo real.

@@ -28,7 +28,7 @@ export { useLayout } from './components/use-layout.ts';
 export { ArrayGrid, EqualGroups, TapeDiagram } from './components/math/models.tsx';
 export { ConfidencePicker, HintLadder, NumericKeypad, PhaseTabs } from './components/math/practice.tsx';
 export { PairsGame } from './components/math/pairs-game.tsx';
-export { ContainerArt, CookieIcon, manip, MathArtProvider, SeedIcon, SproutIcon, useMathArt } from './components/math-visual/objects.tsx';
+export { ContainerArt, CookieIcon, FILL_IMAGE, manip, MathArtProvider, SeedIcon, SproutIcon, useMathArt } from './components/math-visual/objects.tsx';
 export type { MathArt } from './components/math-visual/objects.tsx';
 export { GardenPlots, SharingBoard, TenFrameBoard } from './components/math-visual/scenes.tsx';
 export type { SharingToken } from './components/math-visual/scenes.tsx';

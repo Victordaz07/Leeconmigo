@@ -35,11 +35,13 @@ Matemáticas: las 12 representaciones de la lámina están hechas (37 plantillas
 y las lecciones de g3u1 ya traen ejercicios manipulables. Estado real y pendientes:
 `docs/design/math-visual/IMPLEMENTACION.md`.
 1. Victor prueba (cuando pida APK; no generar sin que lo pida).
-2. Pendientes de Matemáticas: Modo Enfoque (K7), guardar en el equipo (RN-08), arrastrar, más contextos por plantilla,
-   lecciones de otros grados, revisión docente.
+2. Pendientes de Matemáticas: Modo Enfoque (K7), arrastrar, más contextos por plantilla, lecciones de otros grados,
+   revisión docente. (Guardar en el equipo ✅: `apps/mobile/src/persist/`.)
 3. Después: siguiente cuaderno (Ciencia/Sociedad/Arte) o lo que Victor decida.
 
 ## Cuidado con
+- Lo guardado en el equipo usa claves `kitewise.v1.*` (`persist/store.ts`). Si cambia el formato, subir la versión y migrar.
+- Imágenes que llenan un contenedor: usar `FILL_IMAGE` de ui-native (en Android el 100 % no cuenta el relleno del padre).
 - **No generar ni enviar APK hasta que Victor lo pida** (Victor, 2026-10-16: "no me des apk hasta que yo te diga").
 - **No borrar `apps/reader` ni `packages/ui`**: Noah sigue usando la app Capacitor hasta RN-CP2.
 - React debe ser una sola versión en todo el repo (overrides). Al cambiar de SDK de Expo, actualizar overrides.
@@ -54,4 +56,4 @@ y las lecciones de g3u1 ya traen ejercicios manipulables. Estado real y pendient
 - `npm ci` en la nube: usar `--ignore-scripts` (postinstall de `onnxruntime-node`).
 
 ## Estado de pruebas
-`npm test`: 1183/1183 ✅ · `npm run typecheck`: ✅ (incluye mobile, ui-native y ui-core)
+`npm test`: 1187/1187 ✅ · `npm run typecheck`: ✅ (incluye mobile, ui-native y ui-core)
