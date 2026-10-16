@@ -25,3 +25,6 @@ export { ReadingRail } from './components/reading-rail.tsx';
 export { ClosingCard, type ClosingStat } from './components/closing-card.tsx';
 export { PinPad } from './components/pin-pad.tsx';
 export { useLayout } from './components/use-layout.ts';
+export { ArrayGrid, EqualGroups, TapeDiagram } from './components/math/models.tsx';
+export { ConfidencePicker, HintLadder, NumericKeypad, PhaseTabs } from './components/math/practice.tsx';
+export { PairsGame } from './components/math/pairs-game.tsx';

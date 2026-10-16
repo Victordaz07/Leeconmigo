@@ -4,14 +4,17 @@ import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Button, Card, colors, fontFamily, GearIcon, HomeIcon, NavRail, TrophyIcon, useLayout, type NavRailItem } from '@lee-conmigo/ui-native';
 import { todayReport } from '@lee-conmigo/session-engine';
-import { energyOption, type Energy } from '@lee-conmigo/ui-core';
-import { newChildProfile, PROFILES, progressStoreFor, resetProgressFor, type ChildProfile } from './src/app-state';
+import { energyOption, progressSegments, type Energy } from '@lee-conmigo/ui-core';
+import { MATH_UNITS } from '@lee-conmigo/math-content';
+import { mathProgressFor, newChildProfile, PROFILES, progressStoreFor, resetProgressFor, type ChildProfile } from './src/app-state';
 import { createBundledRepository } from './src/bundled-stories';
 import { SHOW_DEV_TOOLS } from './src/dev-tools';
 import { useAppFonts } from './src/fonts';
 import { buildLibraryModel } from './src/library-model';
 import { EnergyScreen } from './src/screens/energy-screen';
 import { HomeScreen } from './src/screens/home-screen';
+import { MathLessonScreen } from './src/screens/math-lesson-screen';
+import { MathNotebookScreen } from './src/screens/math-notebook-screen';
 import { NotebookScreen } from './src/screens/notebook-screen';
 import { ParentGateScreen } from './src/screens/parent-gate-screen';
 import { ParentHomeScreen } from './src/screens/parent-home-screen';
@@ -27,6 +30,8 @@ type Route =
   | { name: 'parents' }
   | { name: 'settings'; isNew: boolean }
   | { name: 'voiceTest' }
+  | { name: 'mathNotebook' }
+  | { name: 'mathLesson'; lessonId: string }
   | { name: 'notebook' } | { name: 'reading'; storyId: string; from: 'home' | 'notebook' } | { name: 'dev' } | { name: 'showcase' };
 
 const RAIL: NavRailItem[] = [
@@ -183,6 +188,31 @@ function Root() {
   if (route.name === 'notebook') {
     return <NotebookScreen profile={profile} model={model} repository={repository} onBack={home} onRead={(storyId) => setRoute({ name: 'reading', storyId, from: 'notebook' })} />;
   }
+  const mathUnit = MATH_UNITS[0];
+  const mathProgress = mathProgressFor(profile.id);
+  const lang = profile.language === 'en' ? 'en' : 'es';
+  if (route.name === 'mathLesson') {
+    const lesson = mathUnit.lessons.find((l) => l.id === route.lessonId);
+    if (lesson) {
+      return (
+        <MathLessonScreen
+          key={lesson.id}
+          lang={lang}
+          unit={mathUnit}
+          lesson={lesson}
+          minutes={minutes}
+          progress={mathProgress}
+          onExit={() => {
+            setProgressVersion((v) => v + 1);
+            setRoute({ name: 'mathNotebook' });
+          }}
+        />
+      );
+    }
+  }
+  if (route.name === 'mathNotebook') {
+    return <MathNotebookScreen lang={lang} unit={mathUnit} progress={mathProgress} onBack={home} onOpenLesson={(lessonId) => setRoute({ name: 'mathLesson', lessonId })} />;
+  }
   if (route.name === 'showcase') return <Showcase onBack={() => setRoute({ name: 'dev' })} />;
   if (route.name === 'dev') return <DevList repository={repository} onOpen={(storyId) => setRoute({ name: 'reading', storyId, from: 'home' })} onShowcase={() => setRoute({ name: 'showcase' })} onBack={home} />;
 
@@ -198,6 +228,8 @@ function Root() {
           model={model}
           onContinue={() => setRoute({ name: 'reading', storyId: model.featured.entry.id, from: 'home' })}
           onOpenReading={() => setRoute({ name: 'notebook' })}
+          math={{ subtitle: mathUnit.title[lang], segments: progressSegments(mathUnit.lessons.filter((l) => mathProgress.lessonsDone.has(l.id)).length, mathUnit.lessons.length) }}
+          onOpenMath={() => setRoute({ name: 'mathNotebook' })}
           onSwitchProfile={switchProfile}
         />
       </View>

@@ -1,9 +1,9 @@
 # HANDOFF — estado actual
-Actualizado: 2026-10-15 · Cuenta: A · Rama: claude/gracious-shannon-a0238d
+Actualizado: 2026-10-16 · Cuenta: A · Rama: claude/gracious-shannon-a0238d
 Último commit: ver `git log -1`
 
 ## Tarea en curso
-Ninguna a medias. Voz (RN-03) PAUSADA por Victor. Siguiente: Matemáticas (K6), empezando por la investigación.
+Ninguna a medias. Voz (RN-03) PAUSADA por Victor. K6: la primera unidad de Matemáticas (g3u1) ya se juega completa.
 
 ## Hecho en RN-01
 - [x] `apps/mobile` (Expo SDK 57, RN 0.86, TS) dentro del monorepo
@@ -24,18 +24,21 @@ Ninguna a medias. Voz (RN-03) PAUSADA por Victor. Siguiente: Matemáticas (K6), 
 - [x] K4: Modo padres — PIN (P1), Hoy con el niño (P2), Ajustes + Agregar niño + lectura libre (P4)
 - [x] Pantallas adaptables a teléfono y vertical (`ui-core/layout.ts`, `useLayout`) — pedido de Victor
 - [x] RN-03 (parte código): whisper.rn + `WhisperNativeSpeechEngine` + "Prueba de voz" (Ajustes de padres)
+- [x] K6a–d: investigación en `docs/research/matematicas-investigacion.md`; contratos `contracts/src/math.ts`; paquete
+      `packages/math-content` (unidad g3u1, validador, generador con semilla, dominio y repaso 1-3-7, plan de lección,
+      estado de un reto); componentes `ui-native/src/components/math/`
+- [x] K6e: Inicio → cuaderno de Matemáticas (camino de 4 lecciones) → lección (calentamiento, Aprender, Explorar,
+      Practicar, Juego, Cierre); los intentos alimentan dominio y repaso
 
 ## Siguiente paso exacto
-**K6 — Cuaderno de Matemáticas.** Victor pausó la voz ("el asunto de las voces es muy complicado"; el motor y la Prueba
-de voz quedan en el código y en el APK, sin conectar a la lectura) y pidió pasar a los demás cuadernos, empezando por
-Matemáticas, con una investigación profunda para los 6 niveles en inglés y español.
-1. Victor corre `docs/research/PROMPT-INVESTIGACION-MATEMATICAS.md` en una herramienta de investigación profunda y trae
-   el resultado → guardarlo como `docs/research/matematicas-investigacion.md`.
-2. Con eso: modelo de unidades/lecciones en `packages/contracts` (SPEC §7, aditivo), validación en `story-engine` o un
-   paquete nuevo de contenido, y la primera unidad (propuesta: 3.º o el nivel de Noah) con Aprender / Explorar
-   (`NumberLine` o `PaintGrid`) / Practicar con escalera de pistas. Estándares solo para padres y como borrador.
-3. Pantallas B5 (camino de unidad), B6 (Aprender), B7 (Explorar), B8 (Practicar) — usar `useLayout()` desde el inicio.
-No inventar contenido de matemáticas antes de tener la investigación (CLAUDE.md: no inventar; docs/09).
+1. Victor prueba el APK de Matemáticas (Inicio → Matemáticas) y manda detalles a corregir.
+2. Preguntar a Victor en qué nivel de Matemáticas está Noah: la unidad g3u1 es de 3.º; si necesita otro grado, la
+   siguiente unidad es la de ese grado (seguir `docs/research/matematicas-investigacion.md`, ruta de unidades).
+3. Pendientes de K6: etiquetar cada reto como concepto/procedimiento/transferencia (la política de dominio de la
+   investigación pide variedad; hoy no se exige porque el contenido no trae esa etiqueta); más unidades; revisión de
+   un docente de los textos y estándares (siguen en borrador, solo padres). El progreso de Matemáticas vive en memoria
+   (`mathProgressFor`) hasta RN-08, igual que el de Lectura.
+4. K5 restante: V/F y ordenar (G9, G10).
 
 ## Cuidado con
 - **No borrar `apps/reader` ni `packages/ui`**: Noah sigue usando la app Capacitor hasta RN-CP2.
@@ -51,4 +54,4 @@ No inventar contenido de matemáticas antes de tener la investigación (CLAUDE.m
 - `npm ci` en la nube: usar `--ignore-scripts` (postinstall de `onnxruntime-node`).
 
 ## Estado de pruebas
-`npm test`: 1105/1105 ✅ · `npm run typecheck`: ✅ (incluye mobile, ui-native y ui-core)
+`npm test`: 1152/1152 ✅ · `npm run typecheck`: ✅ (incluye mobile, ui-native y ui-core)

@@ -2,8 +2,8 @@
  * Materias de Kitewise (D9, `docs/design/kitewise/SPEC.md` §1): cada una es un cuaderno con su color e ícono. Datos puros
  * (sin React): la app web y la nativa leen lo mismo.
  *
- * `available`: hoy solo Lectura tiene contenido (las historias). Las demás se muestran como "Pronto" — no se inventa
- * contenido ni arte (`docs/design/kitewise/ART-BRIEF.md`).
+ * `available`: Lectura (las historias) y Matemáticas (la primera unidad, K6) tienen contenido. Las demás se muestran como
+ * "Pronto" — no se inventa contenido ni arte (`docs/design/kitewise/ART-BRIEF.md`).
  */
 export type SubjectId = 'lectura' | 'mate' | 'ciencia' | 'sociedad' | 'arte' | 'mi-cuaderno';
 
@@ -23,7 +23,7 @@ export interface Subject {
 
 export const SUBJECTS: readonly Subject[] = [
   { id: 'lectura', name: 'Lectura', tab: 'Lectura', glyph: 'Aa', colorToken: 'subjLectura', gradientToken: 'subjLectura', available: true },
-  { id: 'mate', name: 'Matemáticas', tab: 'Matemáticas', glyph: '½', colorToken: 'subjMate', gradientToken: 'subjMate', available: false },
+  { id: 'mate', name: 'Matemáticas', tab: 'Matemáticas', glyph: '½', colorToken: 'subjMate', gradientToken: 'subjMate', available: true },
   { id: 'ciencia', name: 'Ciencia', tab: 'Ciencia', glyph: '✳', colorToken: 'subjCiencia', gradientToken: 'subjCiencia', available: false },
   { id: 'sociedad', name: 'Sociedad', tab: 'Sociedad', glyph: '⚑', colorToken: 'subjSociedad', gradientToken: 'subjSociedad', available: false },
   { id: 'arte', name: 'Arte y música', tab: 'Arte y música', glyph: '♪', colorToken: 'subjArte', gradientToken: 'subjArte', available: false },

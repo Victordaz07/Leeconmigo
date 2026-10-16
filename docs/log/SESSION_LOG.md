@@ -245,3 +245,19 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
   leer números en voz alta; diseño para la app: interacciones, plantillas, dominio, competencia) con entregables en formato
   fijo, incluido un JSON de una unidad según SPEC §7, y un prompt de seguimiento por grado.
 - RN-03 queda ⏸️ (el motor, la Prueba de voz y el APK siguen en el repo; no se conectaron a la lectura).
+
+## 2026-10-16 · Cuenta A · K6: cuaderno de Matemáticas (unidad g3u1)
+- Victor trajo la investigación ("listo, tengo la investigación del módulo de matemáticas") → copiada a
+  `docs/research/matematicas-investigacion.md`. Se siguió su ruta: 3.º, "grupos → producto → arreglo → problema".
+- Hecho:
+  - `packages/contracts/src/math.ts`: unidad, habilidades, lecciones, retos con plantilla, pistas de 3 escalones.
+  - `packages/math-content`: `content/g3u1.json` (4 lecciones), `validateUnit` (revisión automática del contenido),
+    `generateChallenge` (determinista con semilla; el ejemplo resuelto usa otros números), dominio por evidencia
+    independiente + repaso a +1/+3/+7 (luego +14/+30), plan de lección según los minutos del día (8/15/20), estado de un
+    reto (confianza ANTES de comprobar, "Lo veo luego", nunca "incorrecto").
+  - Corrección de contenido: el reto `l3.c1` decía "fichas/grupos" en un arreglo de filas → "puntos/filas".
+  - `ui-native`: `EqualGroups`, `ArrayGrid`, `TapeDiagram`, `NumericKeypad`, `ConfidencePicker`, `HintLadder`,
+    `PhaseTabs`, `PairsGame`. `ui-core`: `MATH_COPY` (textos ES/EN), Matemáticas disponible en la estantería.
+  - `apps/mobile`: cuaderno (`math-notebook-screen.tsx`) y lección (`math-lesson-screen.tsx`).
+- Verificado: typecheck ✅, `npm test` 1152 ✅, lección 1 completa en navegador (Playwright) y capturas en 4 tamaños.
+- No hecho: etiquetas concepto/procedimiento/transferencia (el dominio no exige variedad todavía); guardar en el equipo.

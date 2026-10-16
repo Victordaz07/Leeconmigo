@@ -2,9 +2,9 @@ import { describe, expect, it } from 'vitest';
 import { NOTEBOOK_TABS, progressSegments, SUBJECTS } from '../src/index.ts';
 
 describe('materias de Kitewise', () => {
-  it('seis cuadernos; hoy solo Lectura tiene contenido (no se inventan los demás)', () => {
+  it('seis cuadernos; Lectura y Matemáticas tienen contenido (no se inventan los demás)', () => {
     expect(SUBJECTS.map((s) => s.name)).toEqual(['Lectura', 'Matemáticas', 'Ciencia', 'Sociedad', 'Arte y música', 'Mi cuaderno']);
-    expect(SUBJECTS.filter((s) => s.available).map((s) => s.id)).toEqual(['lectura']);
+    expect(SUBJECTS.filter((s) => s.available).map((s) => s.id)).toEqual(['lectura', 'mate']);
     expect(NOTEBOOK_TABS.some((s) => s.id === 'mi-cuaderno')).toBe(false);
   });
 

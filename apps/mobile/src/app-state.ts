@@ -7,6 +7,7 @@
  */
 import type { ReadingProfile } from '@lee-conmigo/contracts';
 import { MemoryProgressStore, type ProgressStore } from '@lee-conmigo/session-engine';
+import type { MathAttempt, ReviewEntry } from '@lee-conmigo/math-content';
 import { DEFAULT_DAILY_GOAL_MINUTES } from '@lee-conmigo/ui-core';
 
 export interface ChildProfile extends ReadingProfile {
@@ -38,6 +39,28 @@ const stores = new Map<string, ProgressStore>();
 /** Borra el progreso guardado de un niño ("Borrar el progreso", P4; docs/12 P-03). */
 export function resetProgressFor(profileId: string): void {
   stores.delete(profileId);
+  mathStores.delete(profileId);
+}
+
+/**
+ * Progreso de Matemáticas de un niño (K6): respuestas (solo datos derivados: habilidad, día, si acertó, ayuda usada,
+ * confianza), agenda de repaso y lecciones terminadas. TEMPORAL en memoria, como el resto, hasta RN-08.
+ */
+export interface MathProgress {
+  attempts: MathAttempt[];
+  reviews: ReviewEntry[];
+  lessonsDone: Set<string>;
+}
+
+const mathStores = new Map<string, MathProgress>();
+
+export function mathProgressFor(profileId: string): MathProgress {
+  let s = mathStores.get(profileId);
+  if (!s) {
+    s = { attempts: [], reviews: [], lessonsDone: new Set() };
+    mathStores.set(profileId, s);
+  }
+  return s;
 }
 
 /** El progreso de cada niño va aparte (racha, estrellas, dónde retomar). */

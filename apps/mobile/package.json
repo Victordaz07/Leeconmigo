@@ -8,6 +8,7 @@
     "@expo/metro-runtime": "~57.0.17",
     "@fugood/react-native-audio-pcm-stream": "~1.1.4",
     "@lee-conmigo/contracts": "*",
+    "@lee-conmigo/math-content": "*",
     "@lee-conmigo/reading-engine": "*",
     "@lee-conmigo/session-engine": "*",
     "@lee-conmigo/speech-engine": "*",

@@ -16,6 +16,9 @@ interface HomeScreenProps {
   model: LibraryModel;
   onContinue: () => void;
   onOpenReading: () => void;
+  /** Cuaderno de Matemáticas (K6): subtítulo y progreso de su portada. */
+  math: { subtitle: string; segments: 0 | 1 | 2 | 3 };
+  onOpenMath: () => void;
   /** Tocar el avatar vuelve a "¿Quién aprende hoy?" (B1). */
   onSwitchProfile: () => void;
 }
@@ -24,7 +27,7 @@ interface HomeScreenProps {
  * Inicio (Kitewise B3, `docs/design/kitewise/screens/B3.webp`): saludo, racha y estrellas reales, la misión de hoy y la
  * estantería de cuadernos. Hoy solo Lectura tiene contenido; las demás materias se ven como "Pronto" (no se inventan).
  */
-export function HomeScreen({ profile, minutes, model, onContinue, onOpenReading, onSwitchProfile }: HomeScreenProps) {
+export function HomeScreen({ profile, minutes, model, onContinue, onOpenReading, math, onOpenMath, onSwitchProfile }: HomeScreenProps) {
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const { narrow, gutter } = layout;
@@ -83,18 +86,19 @@ export function HomeScreen({ profile, minutes, model, onContinue, onOpenReading,
       <View style={[styles.shelf, { gap }]}>
         {SUBJECTS.map((s) => {
           const isReading = s.id === 'lectura';
+          const isMath = s.id === 'mate';
           return (
             <NotebookCover
               key={s.id}
               title={s.name}
-              subtitle={isReading ? resumeLabel : ''}
+              subtitle={isReading ? resumeLabel : isMath ? math.subtitle : ''}
               image={isReading ? cover : undefined}
               glyph={s.glyph}
               color={colors[s.colorToken]}
               gradient={gradients[s.gradientToken]}
-              segments={isReading ? model.readingSegments : 0}
+              segments={isReading ? model.readingSegments : isMath ? math.segments : 0}
               soon={!s.available}
-              onPress={isReading ? onOpenReading : undefined}
+              onPress={isReading ? onOpenReading : isMath ? onOpenMath : undefined}
               width={coverWidth}
             />
           );

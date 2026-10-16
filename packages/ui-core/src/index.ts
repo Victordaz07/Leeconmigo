@@ -14,3 +14,5 @@ export { GATE_COPY, gateKey, gateMessage, gateSubmit, isCompletePin, isLocked, M
 export type { GateMessage, GatePhase, GateState, PinKey } from './pin.ts';
 export { columnsFor, itemWidth, layoutFor, PHONE_MAX_SHORT_SIDE } from './layout.ts';
 export type { Layout, NavStyle } from './layout.ts';
+export { MATH_COPY } from './math-copy.ts';
+export type { MathLang } from './math-copy.ts';
