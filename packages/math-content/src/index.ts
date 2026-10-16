@@ -7,3 +7,4 @@ export { addDays, daysBetween, dueSkills, isIndependent, MAINTENANCE_OFFSETS, MA
 export type { Mastery, MathAttempt, ReviewEntry, SkillStatus } from './mastery.ts';
 export { buildLessonPlan, challengeReducer, extraPerPractice, initialChallenge, MAX_DIGITS, phaseOf, toAttempt } from './session.ts';
 export type { ChallengeAction, ChallengeState, PlanItem, PlanOptions } from './session.ts';
+export * from './visual/index.ts';
