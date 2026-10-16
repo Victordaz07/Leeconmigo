@@ -122,6 +122,8 @@ function Root() {
     );
   }
   if (energy === undefined) return <EnergyScreen name={profile.name} onStart={setEnergy} />;
+  // Apoyos del Modo Enfoque que rigen ahora (posición del padre + horario).
+  const focus = resolveFocus(profile.focus);
 
   const minutes = energy ? energyOption(energy).minutes : profile.dailyGoalMinutes;
   const switchProfile = () => {
@@ -140,6 +142,7 @@ function Root() {
           profile={profile}
           energy={energy}
           goalMinutes={minutes}
+          focusReading={focus.focusReading}
           onExit={() => {
             setProgressVersion((v) => v + 1);
             setRoute(back === 'home' ? { name: 'home' } : { name: 'notebook' });
@@ -200,8 +203,6 @@ function Root() {
   const mathUnit = MATH_UNITS[0];
   const mathProgress = mathProgressFor(profile.id);
   const lang = profile.language === 'en' ? 'en' : 'es';
-  // Apoyos del Modo Enfoque que rigen ahora (posición del padre + horario).
-  const focus = resolveFocus(profile.focus);
   if (route.name === 'mathLesson') {
     const lesson = mathUnit.lessons.find((l) => l.id === route.lessonId);
     if (lesson) {

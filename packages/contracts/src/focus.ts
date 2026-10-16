@@ -11,6 +11,9 @@ export interface FocusSupports {
   reducedMotion: boolean;
   /** Ejercicios por ronda en el Taller de Matemáticas (Apagado: 6 · Encendido: 4). */
   roundSize: number;
+  /** Lectura de una línea a la vez (Kitewise B10): ilustración desenfocada de fondo, solo la línea actual resaltada y
+   * tres botones. */
+  focusReading: boolean;
 }
 
 /** Horario en que se enciende solo (p. ej. lunes a viernes de 15:00 a 19:00). Fuera de él, apagado. */

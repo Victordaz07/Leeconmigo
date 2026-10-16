@@ -342,3 +342,11 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
 - Verificado: 1194 pruebas, typecheck, navegador (PIN → Ajustes → Encendido → Taller con 4 ejercicios y fondo tenue;
   recarga y sigue igual) en 1280×800 y 390×844.
 
+## 2026-10-16 · Cuenta A · K7b: Lectura en Modo Enfoque (B10)
+- Hecho: apoyo `focusReading` («Lectura de una línea a la vez», encendido en Encendido y elegible en Personalizado).
+  En la lectura: ilustración desenfocada y tenue de fondo, una sola columna centrada, solo la línea actual oscura (las
+  demás tenues, `dimRead`), sin globo del coach, y abajo 3 botones: ayuda · micrófono (o «Siguiente» en lectura libre) ·
+  escuchar. La hoja se desplaza sola para que la línea actual quede a la vista.
+- Verificado: 1194 pruebas, typecheck, navegador en 1280×800, 390×844 y 844×390 (leer con el panel DEV, ayuda abierta,
+  avance largo con desplazamiento). NO probado en el equipo.
+

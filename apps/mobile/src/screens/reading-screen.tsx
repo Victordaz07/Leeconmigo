@@ -1,9 +1,9 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import { Image, Pressable, ScrollView, StyleSheet, Text, View, type LayoutChangeEvent } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { Story } from '@lee-conmigo/contracts';
 import { copy, isBalloonPage, subjectById, wordMark, type WordMark } from '@lee-conmigo/ui-core';
-import { Button, Card, ClosingCard, CoachBubble, colors, ComicPage, DialogCard, fontFamily, gradients, GradientView, HelpSheet, MicBadge, MicOffIcon, radius, readSize, ReadingRail, ReadingText, SubjectTab, useLayout } from '@lee-conmigo/ui-native';
+import { Button, Card, ChevronLeftIcon, ClosingCard, CoachBubble, colors, ComicPage, DialogCard, FocusReadingBar, fontFamily, gradients, GradientView, HelpSheet, MicBadge, MicOffIcon, radius, readSize, ReadingRail, ReadingText, RoundButton, SubjectTab, useLayout } from '@lee-conmigo/ui-native';
 import type { Energy } from '@lee-conmigo/ui-core';
 import { progressStoreFor, type ChildProfile } from '../app-state';
 import { useReadingSession, type ReadingSession } from '../session/use-reading-session';
@@ -41,10 +41,12 @@ interface ReadingScreenProps {
   energy: Energy | null;
   /** Minutos de la misión de hoy (los de la energía elegida, o la meta del padre). */
   goalMinutes: number;
+  /** Modo Enfoque (B10): una línea a la vez, ilustración desenfocada de fondo y tres botones. */
+  focusReading?: boolean;
   onExit: () => void;
 }
 
-export function ReadingScreen({ story, profile, energy, goalMinutes, onExit }: ReadingScreenProps) {
+export function ReadingScreen({ story, profile, energy, goalMinutes, focusReading = false, onExit }: ReadingScreenProps) {
   const session = useReadingSession(story, { store: progressStoreFor(profile.id), energy: energy ?? undefined, dailyGoalMinutes: goalMinutes, freeReading: profile.freeReading });
   const { flow, reading, view, actions, prefs } = session;
   const insets = useSafeAreaInsets();
@@ -77,13 +79,28 @@ export function ReadingScreen({ story, profile, energy, goalMinutes, onExit }: R
     />
   );
 
-  return (
-    <View style={[styles.screen, horizontalBar && styles.screenColumn, { paddingTop: insets.top, paddingBottom: horizontalBar ? 0 : insets.bottom, paddingLeft: insets.left }]}>
-      {!horizontalBar && rail}
-      <View style={[styles.main, { paddingRight: insets.right }]}>
-        <PageView session={session} markOf={markOf} mode={pageMode} phone={layout.phone} />
+  const focusBar = (
+    <FocusReadingBar
+      mic={mic}
+      onHelp={inReading && !session.freeReading ? actions.askHelp : undefined}
+      onListen={inReading && !session.freeReading ? actions.readStart : undefined}
+      onNextPage={inReading && session.freeReading ? actions.freeAdvance : undefined}
+      compact={layout.phone}
+    />
+  );
 
-        {inReading && !session.showPauseCard && (
+  return (
+    <View style={[styles.screen, horizontalBar && styles.screenColumn, { paddingTop: insets.top, paddingBottom: horizontalBar || focusReading ? 0 : insets.bottom, paddingLeft: insets.left }]}>
+      {!horizontalBar && !focusReading && rail}
+      <View style={[styles.main, { paddingRight: insets.right }]}>
+        {focusReading ? (
+          <FocusPage session={session} markOf={markOf} phone={layout.phone} onBack={exit} bar={focusBar} bottomInset={insets.bottom} />
+        ) : (
+          <PageView session={session} markOf={markOf} mode={pageMode} phone={layout.phone} />
+        )}
+
+        {/* En Modo Enfoque no hay globo del coach: la línea resaltada y el micrófono bastan (menos cosas en pantalla). */}
+        {inReading && !session.showPauseCard && !focusReading && (
           <View style={[styles.coach, layout.phone && styles.coachSmall]} pointerEvents="none">
             <CoachBubble message={session.freeReading ? copy.states.freeHint : view.feedback} compact={layout.phone} />
           </View>
@@ -141,7 +158,7 @@ export function ReadingScreen({ story, profile, energy, goalMinutes, onExit }: R
           </DialogCard>
         )}
       </View>
-      {horizontalBar && rail}
+      {horizontalBar && !focusReading && rail}
 
       <HelpSheet word={session.help?.word ?? null} entry={session.help?.entry} audience={prefs.audience} onListen={actions.pronounce} onClose={actions.closeHelp} />
     </View>
@@ -224,6 +241,59 @@ function PageView({ session, markOf, mode, phone }: { session: ReadingSession; m
   );
 }
 
+/**
+ * Lectura en Modo Enfoque (Kitewise B10): la ilustración queda desenfocada y tenue de fondo (no se quita, SPEC §1), el
+ * texto en una sola columna con solo la línea actual oscura, y abajo tres botones. Sirve para páginas de texto y de cómic
+ * (arte y texto son capas separadas, docs/05).
+ */
+function FocusPage({ session, markOf, phone, onBack, bar, bottomInset }: { session: ReadingSession; markOf: (i: number) => WordMark; phone: boolean; onBack: () => void; bar: ReactNode; bottomInset: number }) {
+  const { story, page, words, actions, reading } = session;
+  const image = storyImage(page.illustration.src);
+  const progress = words.length ? Math.min(1, (reading.hasHeardVoice ? reading.currentWordIndex : 0) / words.length) : 0;
+  // La hoja sigue a la línea que se lee: queda en el primer tercio de la vista, con la anterior todavía visible.
+  const scroll = useRef<ScrollView>(null);
+  const lineY = useRef(new Map<string, number>()).current;
+  const [viewH, setViewH] = useState(0);
+  const cur = session.currentParagraph;
+  const at = (k: string) => lineY.get(k) ?? 0;
+  const curY = cur && lineY.has(`${cur.block}:${cur.line}`) ? at('top') + at(`${cur.block}:-1`) + at(`${cur.block}:${cur.line}`) : undefined;
+  useEffect(() => {
+    if (curY !== undefined) scroll.current?.scrollTo({ y: Math.max(0, curY - viewH / 3), animated: true });
+  }, [curY, viewH]);
+  useEffect(() => lineY.clear(), [page, lineY]);
+  return (
+    <View style={[styles.textArea, styles.focusArea]}>
+      {image && <Image source={image} style={[FILL, styles.focusArt]} blurRadius={14} resizeMode="cover" accessibilityLabel={page.illustration.alt ?? ''} />}
+      <View style={[styles.focusTop, phone && styles.focusTopSmall]}>
+        <RoundButton onPress={onBack} label="Volver">
+          <ChevronLeftIcon />
+        </RoundButton>
+        <View style={styles.track}>
+          <View style={[styles.fill, { width: `${Math.round(progress * 100)}%` }]} />
+        </View>
+        <Text style={styles.focusCount} accessibilityLabel={`Página ${session.pageIndex + 1} de ${story.pages.length}`}>
+          {session.pageIndex + 1} / {story.pages.length}
+        </Text>
+      </View>
+      <ScrollView ref={scroll} style={styles.flex} onLayout={(e) => setViewH(e.nativeEvent.layout.height)} contentContainerStyle={[styles.focusBody, phone && styles.focusBodySmall]}>
+        <View style={styles.focusColumn} onLayout={(e) => lineY.set('top', e.nativeEvent.layout.y)}>
+          <ReadingText
+            page={page}
+            words={words}
+            markOf={markOf}
+            onWordPress={actions.tapWord}
+            fontSize={readFontFor(story.level, phone) + 2}
+            currentParagraph={session.currentParagraph}
+            dimRead
+            onParagraphLayout={(b, l, y) => lineY.set(`${b}:${l}`, y)}
+          />
+        </View>
+      </ScrollView>
+      <View style={[styles.focusBottom, phone && styles.focusTopSmall, { paddingBottom: (phone ? 12 : 24) + bottomInset }]}>{bar}</View>
+    </View>
+  );
+}
+
 function PrepOverlay({ session }: { session: ReadingSession }) {
   const audience = session.prefs.audience;
   const { narrow, short } = useLayout();
@@ -299,6 +369,15 @@ const styles = StyleSheet.create({
   sheetBody: { paddingHorizontal: 28, paddingTop: 30, paddingBottom: 40 },
   tab: { position: 'absolute', right: 0, top: 90 },
   coach: { position: 'absolute', left: 24, bottom: 24 },
+  focusArea: { backgroundColor: colors.paper },
+  focusArt: { opacity: 0.22 },
+  focusTop: { flexDirection: 'row', alignItems: 'center', gap: 16, paddingHorizontal: 36, paddingTop: 24 },
+  focusTopSmall: { paddingHorizontal: 16, paddingTop: 12 },
+  focusCount: { fontFamily: fontFamily.ui.black, fontSize: 15, color: colors.navy },
+  focusBody: { flexGrow: 1, justifyContent: 'center', alignItems: 'center', paddingHorizontal: 40, paddingVertical: 24 },
+  focusBodySmall: { paddingHorizontal: 20, paddingVertical: 16 },
+  focusColumn: { width: '100%', maxWidth: 720 },
+  focusBottom: { paddingHorizontal: 36 },
   micOff: { width: 96, height: 96, borderRadius: 48, alignItems: 'center', justifyContent: 'center', borderWidth: 8, borderColor: '#e6e9f1' },
   overlay: { ...StyleSheet.absoluteFill, backgroundColor: 'rgba(20, 22, 28, 0.45)' },
   overlayCenter: { flexGrow: 1, alignItems: 'center', justifyContent: 'center', padding: 24 },

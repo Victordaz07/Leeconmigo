@@ -35,8 +35,8 @@ Matemáticas: las 12 representaciones de la lámina están hechas (37 plantillas
 y las lecciones de g3u1 ya traen ejercicios manipulables. Estado real y pendientes:
 `docs/design/math-visual/IMPLEMENTACION.md`.
 1. Victor prueba (cuando pida APK; no generar sin que lo pida).
-2. Modo Enfoque: K7a ✅ (ajuste del padre + horario, Matemáticas lo respeta). Siguiente: K7b (Lectura B10), K7c (pausa de
-   movimiento B12), K7d (adaptativo). Pendientes de Matemáticas: arrastrar, lecciones de otros grados, revisión docente.
+2. Modo Enfoque: K7a ✅ (ajuste del padre + horario, Matemáticas lo respeta), K7b ✅ (Lectura B10). Siguiente: K7c
+   (pausa de movimiento B12), K7d (adaptativo). Pendientes de Matemáticas: arrastrar, lecciones de otros grados, revisión docente.
    (Guardar en el equipo ✅: `apps/mobile/src/persist/`. Contextos ✅: grupos y reparto ya varían — galletas,
    lápices/cajas, canicas/frascos, manzanas/canastas; palabras con género en `ui-core/math-visual-nouns.ts`.)
 3. Después: siguiente cuaderno (Ciencia/Sociedad/Arte) o lo que Victor decida.

@@ -20,23 +20,34 @@ interface ReadingTextProps {
    * leídos y el actual se ven normales. `null` = todo normal (antes de empezar a leer).
    */
   currentParagraph?: { block: number; line: number } | null;
+  /** Modo Enfoque (B10): también se atenúan los ya leídos; solo la línea actual se ve oscura. */
+  dimRead?: boolean;
+  /**
+   * Posiciones verticales para que la pantalla siga a la línea actual: cada cuadro avisa su `y` dentro del texto
+   * (`line` = -1) y cada párrafo la suya dentro de su cuadro. Se suman al usarlas (no importa en qué orden lleguen).
+   */
+  onParagraphLayout?: (block: number, line: number, y: number) => void;
 }
 
 const isAfter = (b: number, l: number, cur: { block: number; line: number }) => b > cur.block || (b === cur.block && l > cur.line);
+const isCurrent = (b: number, l: number, cur: { block: number; line: number }) => b === cur.block && l === cur.line;
 
 /**
  * Texto de una página en modo "illustrated reader": cada cuadro (bloque) con su título opcional y sus párrafos. Las
  * palabras son texto real de la app (docs/05: nunca imagen) y cada una se puede tocar.
  */
-export function ReadingText({ page, words, markOf, onWordPress, fontSize = 27, currentParagraph = null }: ReadingTextProps) {
+export function ReadingText({ page, words, markOf, onWordPress, fontSize = 27, currentParagraph = null, dimRead = false, onParagraphLayout }: ReadingTextProps) {
   const lineHeight = Math.round(fontSize * 1.6);
   return (
     <View style={styles.page}>
       {page.blocks.map((block, b) => (
-        <View key={block.id} style={styles.block}>
+        <View key={block.id} style={styles.block} onLayout={onParagraphLayout ? (e) => onParagraphLayout(b, -1, e.nativeEvent.layout.y) : undefined}>
           {block.title ? <Text style={[styles.title, { fontSize: fontSize * 0.9 }]}>{block.title}</Text> : null}
           {block.lines.map((_, l) => (
-            <Text key={l} style={[styles.paragraph, { fontSize, lineHeight }, currentParagraph && isAfter(b, l, currentParagraph) && styles.upcoming]}>
+            <Text
+              key={l}
+              onLayout={onParagraphLayout ? (e) => onParagraphLayout(b, l, e.nativeEvent.layout.y) : undefined}
+              style={[styles.paragraph, { fontSize, lineHeight }, currentParagraph && (dimRead ? !isCurrent(b, l, currentParagraph) : isAfter(b, l, currentParagraph)) && styles.upcoming]}>
               {words
                 .filter((w) => w.blockIndex === b && w.lineIndex === l)
                 .map((w) => (

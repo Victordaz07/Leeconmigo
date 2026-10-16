@@ -75,6 +75,28 @@ export function ReadingRail({ page, pageCount, onBack, mic, onHelp, onListen, on
   );
 }
 
+/**
+ * Barra de la lectura en Modo Enfoque (Kitewise B10): solo tres botones, grandes y separados — ayuda a la izquierda,
+ * el micrófono (o "Siguiente" en lectura libre) al centro y escuchar a la derecha.
+ */
+export function FocusReadingBar({ mic, onHelp, onListen, onNextPage, compact }: Pick<ReadingRailProps, 'mic' | 'onHelp' | 'onListen' | 'onNextPage' | 'compact'>) {
+  const size = compact ? 56 : 64;
+  const btn = { width: size, height: size };
+  return (
+    <View style={styles.focusBar}>
+      <View style={styles.focusSide}>{onHelp && <RailButton style={btn} label="Ayuda" onPress={onHelp} tint={colors.brand50} ledge={colors.brandLedgeSoft}><HelpIcon /></RailButton>}</View>
+      {onNextPage ? (
+        <Pressable onPress={onNextPage} accessibilityRole="button" accessibilityLabel="Siguiente página" style={({ pressed }) => [styles.focusNext, pressed && styles.pressed]}>
+          <Text style={styles.focusNextText}>Siguiente ›</Text>
+        </Pressable>
+      ) : mic ? (
+        <MicBadge tone={mic.tone} pulsing={mic.listening} size={compact ? 56 : 68} />
+      ) : null}
+      <View style={[styles.focusSide, styles.focusRight]}>{onListen && <RailButton style={btn} label="Léeme el comienzo" onPress={onListen} tint="#fff1e6" ledge="#f7be9c"><SpeakerIcon /></RailButton>}</View>
+    </View>
+  );
+}
+
 function RailButton({ label, onPress, tint, ledge, style, children }: { label: string; onPress: () => void; tint: string; ledge: string; style?: { width: number; height: number }; children: ReactNode }) {
   return (
     <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={label} style={({ pressed }) => [styles.btn, style, { backgroundColor: tint, boxShadow: pressed ? undefined : `inset 0px -4px 0px ${ledge}, ${shadows.soft}` }, pressed && styles.pressed]}>
@@ -101,4 +123,9 @@ const styles = StyleSheet.create({
   btn: { width: 64, height: 64, borderRadius: radius.tile, alignItems: 'center', justifyContent: 'center' },
   pressed: { transform: [{ translateY: 2 }] },
   next: { fontFamily: fontFamily.ui.black, fontSize: 34, color: colors.brand, marginTop: -4 },
+  focusBar: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 16 },
+  focusSide: { width: 72 },
+  focusRight: { alignItems: 'flex-end' },
+  focusNext: { minWidth: 220, height: 64, borderRadius: radius.pill, backgroundColor: colors.brand, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 32, boxShadow: `inset 0px -5px 0px ${colors.brandLedge}, ${shadows.soft}` },
+  focusNextText: { fontFamily: fontFamily.ui.black, fontSize: 20, color: '#ffffff' },
 });
