@@ -19,8 +19,19 @@ que pediría SO-02. Sigue sin haber contenido en la app, ni arte, ni código. En
    *seis* unidades piloto, una por grado — más grande que el piloto único de Matemáticas, g3u1).
 
 ## Siguiente paso exacto
-**SO-03 v2 — esperando que Victor genere y mande 7 imágenes nuevas** (de las 5 que ya mandó, 2 se reusan como
-portada/escena; no hace falta regenerarlas). **La historia cambió de elenco (v2, 2026-10-16):** Victor vio las
+**SO-03 — las 7 imágenes llegaron y están bien.** Revisadas: los 2 planos son exactamente comparables (mismas
+casas, mismo trazo a lápiz, solo cambia piedras→puente), la foto es claramente "antigua" (sepia, borde de foto,
+sin texto), las 4 poses de Teo coinciden con `personajes-oficial.png`. Archivadas en
+`docs/design/sociedad/arte-entregada/` (PNG originales; conversión a WebP e integración al código quedan para
+SO-04/06, cuando exista el dominio y las pantallas que las consuman).
+Victor preguntó si hacía falta más, comparando contra el pedido 2 de Matemáticas (44 piezas en total, dos
+pedidos). Respuesta en `docs/design/sociedad/PEDIDO-IMAGENES-S3-U03-ADENDO.md`: la comparación justa es contra
+el pedido 1 de Matemáticas (16 piezas, antes de construir pantallas) — ahí 7+2 reusadas está en línea. Se pidió
+**una sola pieza más, justificada** (`cover_sociedad`, portada de materia para Inicio, reutilizable para
+siempre) y se dejó explícitamente para después todo lo que depende de pantallas que aún no existen (fondo de
+las pantallas de interacción, 5.ª pose, marcador de progreso).
+**Esperando que Victor genere `cover_sociedad`.** Después de eso: SO-04 (dominio puro en
+`packages/social-content`). **La historia cambió de elenco (v2, 2026-10-16):** Victor vio las
 imágenes que pedí con Teo+Nia (de "La cometa roja") y prefirió anclar la unidad al mundo de **"El mapa de la
 puerta desaparecida"** (Inés, Teo, la abuela Elena — historia de Lectura nivel 6) en vez de inventar un barrio
 nuevo. Se acordó reusar esos personajes y ese jardín, pero con un **caso nuevo** ("El paso del arroyo": un plano

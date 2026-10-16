@@ -63,6 +63,31 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
   foto, 4 poses de Teo referenciando la hoja oficial en vez de "La cometa roja").
 - Sin cambios de código todavía. `npm test`: 1202/1202 ✅.
 
+## 2026-10-16 · SO-03: llegaron las 7 imágenes + adendo de 1 pieza más
+
+- Victor mandó las 7 piezas del pedido v2 (2 planos, 1 tarjeta de foto, 4 poses de Teo) en
+  `KiteWise_Sociedad_S3_U03_7_Imagenes.zip`. Revisadas: cumplen el pedido — planos exactamente comparables (misma
+  composición, solo piedras→puente), foto claramente antigua (sepia, sin texto), Teo coincide con la hoja
+  oficial. Archivadas en `docs/design/sociedad/arte-entregada/` (PNG sin convertir todavía; WebP + integración
+  quedan para SO-04/06).
+- Victor también mandó, para comparar, el pedido 2 de Matemáticas (`KiteWise_Imagenes_Pedido_2_Para_Claude.zip`,
+  18 piezas: 5.ª pose de Mila, 2 portadas, 11 props genéricos) y preguntó si Sociedad necesitaba más para quedar
+  visualmente consistente.
+- Análisis en `docs/design/sociedad/PEDIDO-IMAGENES-S3-U03-ADENDO.md`: el conteo total de Matemáticas (44) viene
+  de **dos** pedidos — el segundo salió después de construir pantallas reales y notar gaps concretos (una pose
+  para un momento de UI específico, una portada porque Inicio se veía genérico, props porque los ejercicios se
+  repetían). Sociedad no tiene pantallas construidas todavía (SO-04/05/06 sin empezar), así que la comparación
+  justa es contra el pedido 1 de Matemáticas (16 piezas) — ahí el pedido de Sociedad (7+2 reusadas) está en
+  línea, misma disciplina de "empezar chico" (Matemáticas: 3 de 12 representaciones; Sociedad: 2 de 12 familias).
+  También hay una diferencia real de materia: los props de Matemáticas son genéricos a propósito (reutilizables
+  en cualquier ejercicio de conteo); el contenido de Sociedad (mapas, fotos) es específico de cada unidad por
+  diseño — no tiene sentido pedir "props genéricos" todavía.
+- Se identificó **una pieza real y no especulativa que faltaba**: `cover_sociedad`, portada de la materia (no de
+  esta unidad) para la estantería de Inicio — Matemáticas tampoco la tenía en su pedido 1, pero al menos tenía
+  un placeholder genérico; Sociedad no tiene ninguno. Pedida en el adendo. Todo lo demás (fondo de pantallas de
+  interacción, 5.ª pose, marcador de progreso) se deja para un pedido 2 real, después de construir SO-06.
+- `npm test`: 1202/1202 ✅ (sin cambios de código).
+
 ## 2026-10-16 · SO-03: pedido de imágenes de la unidad piloto (v1, reemplazado por SO-02 v2 arriba)
 
 - Victor pidió el prompt de imágenes directamente (sin objetar S3-U03) → DS-3 se trata como confirmada.

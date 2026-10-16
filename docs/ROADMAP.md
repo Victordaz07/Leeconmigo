@@ -106,7 +106,7 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | PREP-1 | Preparación: módulo, registro, paquete vacío, guardado por materia, protocolo | ✅ | A | enchufado como "Pronto" |
 | SO-01 | Prompt de investigación de Sociedad → Victor lo corre | ✅ | B | resultado: `docs/research/sociedad-investigacion.md` |
 | SO-02 | Especificación visual/interactiva en `docs/design/sociedad/` | ✅ (v2) | B | `UNIDAD-PILOTO-S3-U03.md`; elenco cambiado a Inés/Teo/Elena (DS-4), caso "El paso del arroyo" |
-| SO-03 | Lista de imágenes por tandas + manifiesto | ✅ (pedido v2 enviado) | B | `PEDIDO-IMAGENES-S3-U03.md`; 2 de 9 piezas ya llegaron (reusadas), esperando 7 nuevas |
+| SO-03 | Lista de imágenes por tandas + manifiesto | ✅ | B | 7 de 9 piezas llegaron y están bien (`arte-entregada/`); +1 pieza en adendo (`cover_sociedad`), resto deliberadamente pospuesto a un pedido 2 tras SO-06 |
 | SO-04 | Dominio puro en `packages/social-content` + pruebas | ⬜ | B | |
 | SO-05 | Textos ES/EN en `ui-core/src/sociedad/` | ⬜ | B | |
 | SO-06 | Pantallas del cuaderno de Sociedad (con Modo Enfoque) | ⬜ | B | |
