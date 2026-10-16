@@ -3,91 +3,85 @@ Actualizado: 2026-10-16 · Cuenta: B · Rama: `claude/sociedad-victor` · Protoc
 Tu materia es **Sociedad**; la otra cuenta trabaja **Ciencia** en paralelo. Edita solo lo tuyo (ver docs/14).
 
 ## Dónde estamos
-Preparación hecha (PREP-1). **SO-01 hecho**: Victor ya corrió la investigación y entregó el resultado completo —
-`docs/research/sociedad-investigacion.md` (48 unidades propuestas, 1.º–6.º, base California HSS + C3 Framework, 12
-familias de interacción reutilizable, 6 lecciones de referencia ya diseñadas, rúbrica, bilingüismo, accesibilidad,
-19 fuentes citadas con procedencia). Es más completo que el prompt original de Matemáticas: ya trae buena parte de lo
-que pediría SO-02. Sigue sin haber contenido en la app, ni arte, ni código. En Inicio Sociedad se ve como "Pronto"
-(`available: false`).
+**La unidad piloto está completa y jugable de principio a fin.** S3-U03, "El paso del arroyo" (3.º, CA HSS 3.3,
+borrador): Inés, Teo y la abuela Elena (de "El mapa de la puerta desaparecida", DS-4) investigan por qué la
+calle de la abuela tiene hoy un puente donde un plano viejo solo mostraba piedras para cruzar. `available: true`
+en el módulo y en `SUBJECTS` — ya no se ve "Pronto" en Inicio.
+
+Hecho: SO-01 a SO-07 (ver checklist). Pendiente real: SO-08 (revisión de un maestro) y algunos ajustes menores
+que quedaron anotados abajo en "Lo que falta / siguiente paso".
 
 ## Antes de empezar
-1. Lee `docs/14-MATERIAS-EN-PARALELO.md` y `docs/design/subjects/PATRON-MATEMATICAS.md` (el patrón y los errores ya cometidos).
-2. Lee `CLAUDE.md` (reglas de privacidad, arte y texto separados, DECISIÓN/PENDIENTE) y `docs/DECISIONS.md`.
+1. Lee `docs/14-MATERIAS-EN-PARALELO.md` y `docs/design/subjects/PATRON-MATEMATICAS.md`.
+2. Lee `docs/design/sociedad/UNIDAD-PILOTO-S3-U03.md` (la especificación) y `docs/research/sociedad-investigacion.md`
+   (la investigación completa de Victor — 48 unidades futuras posibles, base del diseño).
 3. `git fetch origin master && git merge origin/master`, `npm ci --ignore-scripts` si hace falta, `npm test`.
-4. Lee `docs/research/sociedad-investigacion.md` completo antes de tocar código — en especial §4 (mapa de 48 unidades),
-   §7 (12 familias de interacción), §9 (6 lecciones de referencia) y §17 (plan de producción: propone "Etapa A" de
-   *seis* unidades piloto, una por grado — más grande que el piloto único de Matemáticas, g3u1).
 
-## Siguiente paso exacto
-**SO-03 — las 7 imágenes llegaron y están bien.** Revisadas: los 2 planos son exactamente comparables (mismas
-casas, mismo trazo a lápiz, solo cambia piedras→puente), la foto es claramente "antigua" (sepia, borde de foto,
-sin texto), las 4 poses de Teo coinciden con `personajes-oficial.png`. Archivadas en
-`docs/design/sociedad/arte-entregada/` (PNG originales; conversión a WebP e integración al código quedan para
-SO-04/06, cuando exista el dominio y las pantallas que las consuman).
-Victor preguntó si hacía falta más, comparando contra el pedido 2 de Matemáticas (44 piezas en total, dos
-pedidos). Respuesta en `docs/design/sociedad/PEDIDO-IMAGENES-S3-U03-ADENDO.md`: la comparación justa es contra
-el pedido 1 de Matemáticas (16 piezas, antes de construir pantallas) — ahí 7+2 reusadas está en línea. Se pidió
-**una sola pieza más, justificada** (`cover_sociedad`, portada de materia para Inicio, reutilizable para
-siempre) y se dejó explícitamente para después todo lo que depende de pantallas que aún no existen (fondo de
-las pantallas de interacción, 5.ª pose, marcador de progreso).
-**Esperando que Victor genere `cover_sociedad`.** Después de eso: SO-04 (dominio puro en
-`packages/social-content`). **La historia cambió de elenco (v2, 2026-10-16):** Victor vio las
-imágenes que pedí con Teo+Nia (de "La cometa roja") y prefirió anclar la unidad al mundo de **"El mapa de la
-puerta desaparecida"** (Inés, Teo, la abuela Elena — historia de Lectura nivel 6) en vez de inventar un barrio
-nuevo. Se acordó reusar esos personajes y ese jardín, pero con un **caso nuevo** ("El paso del arroyo": un plano
-viejo muestra piedras para cruzar un arroyo donde hoy hay un puente), no el mismo misterio del libro — para no
-arruinar la sorpresa del libro ni mezclar un texto de nivel 6 en una unidad de 3.º.
-Especificación actualizada: `docs/design/sociedad/UNIDAD-PILOTO-S3-U03.md`. Pedido de imágenes actualizado:
-`docs/design/sociedad/PEDIDO-IMAGENES-S3-U03.md` (2 planos antes/después, 1 tarjeta de foto, 4 poses de Teo).
-Las 5 imágenes que mandó Victor y la hoja oficial de personajes quedaron guardadas en
-`docs/design/sociedad/arte-referencia/`.
-Cuando lleguen las 7 nuevas: convertir a WebP, revisar contra "Cómo las reviso al llegar" del pedido, y seguir
-con SO-04 (dominio puro en `packages/social-content`).
+## Qué se construyó (SO-04 a SO-07)
 
-**SO-02 v2 — hecho** (unidad re-especificada con el nuevo elenco). Se escribió la
-especificación de **una sola** unidad piloto (igual que Matemáticas con g3u1, no las 6 de "Etapa A"):
-`docs/design/sociedad/UNIDAD-PILOTO-S3-U03.md` — **S3-U03, "Un barrio cambia, pero el mapa no lo explica todo"**
-(3.º, CA HSS 3.3). Se eligió esta de las 6 candidatas porque es la única con escenario 100% ficticio (sin fuentes
-reales que requieran verificar permisos todavía) y porque la propia investigación la conecta con la Bahía de San
-Francisco (§4). Usa solo 2 de las 12 familias de interacción (mapa por capas, mesa de fuentes) — como Matemáticas,
-que empezó con 3 de 12 representaciones, no las 12 de una vez.
-**No avanzar a SO-03 (pedir imágenes) sin que Victor confirme DS-3** (puede pedir otra unidad; ver "Decisiones
-propuestas" abajo).
+| Pieza | Dónde |
+|---|---|
+| Contrato (`SocialUnit`, `SocialStep`, `SocialSource`…) | `packages/contracts/src/social.ts` |
+| Contenido de la unidad (JSON, ES/EN) | `packages/social-content/content/s3u03.json` |
+| Dominio puro: sesión (reducer), validador, evaluación, estrellas | `packages/social-content/src/{session,validate,units}.ts` |
+| Textos de interfaz ES/EN (no específicos de una unidad) | `packages/ui-core/src/sociedad/copy.ts` (`SOCIAL_COPY`) |
+| Componentes de pantalla: Teo (guía), mapa por capas, tarjeta de fuente, lista de opciones, afirmación clasificable | `packages/ui-native/src/components/sociedad/` |
+| Arte convertido a WebP y dentro del presupuesto (<350 KB escenas, <40 KB poses) | `apps/mobile/assets/sociedad/{covers,scenes,chars}/`, mapeado en `apps/mobile/src/sociedad-art.ts` |
+| Pantallas: cuaderno (portada + botón empezar/de nuevo) e investigación (6 pasos + cierre) | `apps/mobile/src/screens/sociedad-notebook-screen.tsx`, `sociedad-investigation-screen.tsx` |
+| Módulo enchufado, `available: true`, guardado por niño | `apps/mobile/src/subjects/sociedad/index.tsx` (usa `subjectStorageFor`, ya compartido) |
 
-## Checklist
-- [x] SO-01 Prompt de investigación de Sociedad → Victor lo corrió (resultado: `docs/research/sociedad-investigacion.md`)
-- [x] SO-02 Especificación visual/interactiva de la unidad piloto (una sola): `docs/design/sociedad/UNIDAD-PILOTO-S3-U03.md` — propuesta, falta confirmación de Victor (DS-3)
-- [ ] SO-03 Lista de imágenes por tandas + manifiesto (Victor las genera)
-- [ ] SO-04 Dominio puro en `packages/social-content` (unidades JSON, validador, generador con semilla, dominio, pruebas)
-- [ ] SO-05 Textos ES/EN en `packages/ui-core/src/sociedad/`
-- [ ] SO-06 Pantallas del cuaderno en `subjects/sociedad/` (con Modo Enfoque: `focus`)
-- [ ] SO-07 Verificar en 4 tamaños, documentar, `available: true`
-- [ ] SO-08 Revisión de un maestro (estándares: solo padres, borrador)
+Las 6 sesiones (pregunta → comparar → fuente → testimonio → explicar → revisar) siguen exactamente
+`docs/design/sociedad/UNIDAD-PILOTO-S3-U03.md`. Nunca "incorrecto": una opción no preferida da una pista suave
+(`feedbackFor` → `'gentle'`) y siempre se puede seguir. Las estrellas del cierre (D11, por esfuerzo) usan
+`investigationStars`: 1 por terminar, +1 por usar ≥2 fuentes, +1 por identificar el hueco real en "revisar" — no
+por adivinar.
+
+## Lo que falta / siguiente paso exacto
+
+1. **SO-08 — revisión de un maestro.** El estándar CA HSS 3.3 sigue como borrador (`standardsReview`), solo
+   visible a padres. No se ha validado con un docente.
+2. **Verificación visual en 4 tamaños**: solo se verificó `npm run typecheck` (monorepo completo, limpio) y
+   `npm test` (1218/1218 ✅). **No se corrió la app real** — `expo export --platform android` llegó hasta 1302
+   módulos y falló en un punto **no relacionado** (los modelos de voz `.bin` no están en git, como ya documenta
+   `HANDOFF.md`; no hay red en esta sesión para bajarlos). Los archivos de arte de Sociedad se verificaron a mano
+   (existen en las rutas exactas que usa `require()`). Falta que Victor la abra en su Android/tablet cuando pida
+   el próximo APK.
+3. **Sin reanudar a medias**: cerrar la investigación y volver a abrirla empieza de cero (no retoma el paso
+   3 si saliste ahí). Aceptable para una investigación corta de 6 pasos; si se siente mal en uso real, hay que
+   guardar `stepIndex` y las respuestas parciales, no solo el resultado final.
+4. **"Otra vez" del cierre** (`ClosingCard.onAgain`) hoy vuelve al cuaderno, no reinicia en el lugar. Simple y
+   seguro, pero no es "otra vez" en el sentido literal de Lectura (quedarse leyendo). Ajustar si Victor lo nota raro.
+5. **Pausa de movimiento** (Modo Enfoque) reusa `MovementBreakScreen`, que hoy trae su propio fondo de
+   Matemáticas (no acepta un fondo por `prop`) — ver "Pedidos a lo compartido" abajo.
+6. Todo lo que ya se dejó fuera a propósito en el pedido de imágenes (fondo de pantallas, 5.ª pose de Teo,
+   marcador de progreso tipo "papalote") sigue para un pedido 2 real, ahora que sí hay pantallas construidas que
+   pueden decir qué hace falta de verdad.
+
+## Decisiones propuestas (Victor confirma; luego pasan a `docs/DECISIONS.md`)
+- **DS-1**: nombre en la interfaz **Sociedad**; nombre completo **Estudios Sociales / Social Studies**. Base
+  curricular: California History–Social Science + C3 Framework (NCSS).
+- **DS-2 (parqueada, NO aplicada)**: la investigación proponía ciruela `#7B4B6A` para `subjSociedad`. **No se
+  aplicó**: el token vive en `packages/ui-native/src/tokens.ts`, que una prueba (`tests/tokens.test.ts`) exige
+  que coincida EXACTO con `docs/design/kitewise/tokens.css` (la referencia de diseño original de Victor, D9).
+  Cambiarlo ahí también es una decisión aparte, más grande que un ajuste de Sociedad — se dejó el naranja
+  `#f08a10` ya aprobado en el diseño. Si Victor quiere el ciruela, hay que actualizar los dos archivos juntos.
+- **DS-3 (confirmada)**: unidad piloto **S3-U03**, "El paso del arroyo".
+- **DS-4 (confirmada)**: elenco **Inés, Teo y la abuela Elena** (de "El mapa de la puerta desaparecida"), con un
+  caso nuevo cada vez — nunca el mismo misterio del libro.
+
+## Pedidos a lo compartido
+- `MovementBreakScreen` (`apps/mobile/src/screens/movement-break-screen.tsx`) no recibe el fondo por prop: usa
+  `MATH_BACKGROUNDS` de Matemáticas siempre. Si se quiere un fondo propio de Sociedad en la pausa de movimiento,
+  hay que agregarle un prop `background` opcional (cambio chico, pero toca un archivo compartido) — anotado,
+  no hecho todavía.
 
 ## Cuidado con
-- No edites lo compartido (docs/14). Si lo necesitas, anótalo abajo en "Pedidos a lo compartido".
-- Guardado: `subjectStorageFor('sociedad', profile.id, vacío, esValido)`; la forma de lo guardado la decides tú, pero la
-  validación debe rechazar lo viejo si la cambias.
+- Guardado: `subjectStorageFor('sociedad', profile.id, …)`, validado por `isSociedadProgress` en
+  `subjects/sociedad/index.tsx` — si cambia la forma, subir la validación para que rechace lo viejo.
 - No hay APK hasta que Victor lo pida.
 - Nada de audio ni texto reconocido guardado; sin SDKs de terceros.
 
-## Decisiones propuestas (Victor confirma; luego pasan a `docs/DECISIONS.md`)
-- **DS-1**: nombre en la interfaz **Sociedad**; nombre completo en documentos/vista de padres **Estudios Sociales /
-  Social Studies** (ya usado así en docs/14, esto solo lo deja explícito). Base curricular: California History–Social
-  Science + enfoque de investigación C3 Framework (NCSS) — complementario, no currículo nacional obligatorio.
-- **DS-2**: color de identidad de Sociedad: ciruela `#7B4B6A` (propuesto en la investigación, a verificar contraste
-  contra el papel crema `#F7EFE1` de Kitewise antes de usarlo en texto).
-- **DS-3** (confirmada en la práctica, 2026-10-16): usar **S3-U03** ("Un barrio cambia...", 3.º, CA HSS 3.3) como
-  unidad piloto única — Victor pidió el pedido de imágenes directamente, sin objetar la elección. Razones y
-  alternativas descartadas en `docs/design/sociedad/UNIDAD-PILOTO-S3-U03.md`.
-- **DS-4** (confirmada en la práctica, 2026-10-16, reemplaza la v1): el elenco de Sociedad es **Inés, Teo y la
-  abuela Elena**, de "El mapa de la puerta desaparecida" — no Teo+Nia de "La cometa roja" como se propuso
-  primero. Teo es el guía recurrente (poses en miniatura); Inés y Elena aparecen en las escenas de cada unidad
-  según haga falta. El caso de cada unidad de Sociedad es **siempre nuevo**, nunca el mismo misterio del libro.
-
-## Pedidos a lo compartido
-_(ninguno todavía)_
-
 ## Estado de pruebas
-Al dejar la preparación: `npm test` todo en verde (1202/1202) y `npm run typecheck` limpio (verificado de nuevo al
-traer `master` el 2026-10-16, sesión de Sociedad).
+`npm test`: **1218/1218 ✅** (1202 + 16 nuevas: dominio, validación, textos ES/EN). `npm run typecheck` en todo
+el monorepo: limpio. `expo export --platform android`: llega a 1302 módulos, falla por modelos de voz ausentes
+(no relacionado con Sociedad, ver punto 2 arriba).

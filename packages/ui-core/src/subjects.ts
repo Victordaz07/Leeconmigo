@@ -25,7 +25,7 @@ export const SUBJECTS: readonly Subject[] = [
   { id: 'lectura', name: 'Lectura', tab: 'Lectura', glyph: 'Aa', colorToken: 'subjLectura', gradientToken: 'subjLectura', available: true },
   { id: 'mate', name: 'Matemáticas', tab: 'Matemáticas', glyph: '½', colorToken: 'subjMate', gradientToken: 'subjMate', available: true },
   { id: 'ciencia', name: 'Ciencia', tab: 'Ciencia', glyph: '✳', colorToken: 'subjCiencia', gradientToken: 'subjCiencia', available: false },
-  { id: 'sociedad', name: 'Sociedad', tab: 'Sociedad', glyph: '⚑', colorToken: 'subjSociedad', gradientToken: 'subjSociedad', available: false },
+  { id: 'sociedad', name: 'Sociedad', tab: 'Sociedad', glyph: '⚑', colorToken: 'subjSociedad', gradientToken: 'subjSociedad', available: true },
   { id: 'arte', name: 'Arte y música', tab: 'Arte y música', glyph: '♪', colorToken: 'subjArte', gradientToken: 'subjArte', available: false },
   { id: 'mi-cuaderno', name: 'Mi cuaderno', tab: 'Mi cuaderno', glyph: '✎', colorToken: 'subjLectura', gradientToken: 'subjLectura', available: false },
 ];

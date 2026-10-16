@@ -88,6 +88,42 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
   interacción, 5.ª pose, marcador de progreso) se deja para un pedido 2 real, después de construir SO-06.
 - `npm test`: 1202/1202 ✅ (sin cambios de código).
 
+## 2026-10-16 · SO-04 a SO-07: la unidad piloto queda completa y jugable
+
+- Victor mandó las 7 imágenes nuevas + `cover_sociedad` (el adendo) en dos ZIP y pidió completar todo el módulo
+  de un tirón, fase por fase, sin parar a preguntar.
+- Convertidas a WebP con `sharp` (recortadas a su silueta las 4 poses de Teo) y guardadas en
+  `apps/mobile/assets/sociedad/{covers,scenes,chars}/`: 1536×1024 los planos/foto/portada (150–190 KB, bajo el
+  presupuesto de 350 KB), 229–335×512 las poses de Teo (34–38 KB, bajo el presupuesto de 40 KB).
+- **SO-04 (dominio):** `packages/contracts/src/social.ts` (tipos: `SocialUnit`, `SocialStep`, `SocialSource`…,
+  aditivo, no toca `math.ts` ni `focus.ts`). `packages/social-content`: `content/s3u03.json` con las 6 sesiones
+  completas en ES/EN; `validate.ts` (mismo patrón que `math-content`, con una regla propia: nunca "incorrecto" en
+  ningún texto); `session.ts` (reducer puro: clasificar afirmaciones, elegir fuente, marcar fuentes usadas en
+  "explicar", elegir el hueco en "revisar"; `investigationStars`/`investigationReasonKey` — mismo principio D11
+  que `effortStars` de Lectura, pero propio: estrella por terminar, por usar ≥2 fuentes, por identificar el hueco
+  real, nunca por adivinar). 15 pruebas nuevas, todas en verde.
+- **SO-05 (textos):** `packages/ui-core/src/sociedad/copy.ts` (`SOCIAL_COPY`) — textos de interfaz reutilizables
+  entre unidades futuras (no específicos de "El paso del arroyo", que vive en el JSON). El dominio devuelve
+  claves (`investigationReasonKey`), nunca texto — mismo principio que Matemáticas
+  (`docs/design/subjects/PATRON-MATEMATICAS.md` §2 paso 5).
+- **SO-06 (pantallas):** componentes nuevos en `packages/ui-native/src/components/sociedad/` (`Teo`, `MapCompare`,
+  `SourceCard`, `ChoiceList`, `StatementRow`) y dos pantallas en `apps/mobile/src/screens/`
+  (`sociedad-notebook-screen.tsx`, `sociedad-investigation-screen.tsx`). Reusa `ClosingCard` y `useMovementBreak`
+  de lo compartido, sin tocarlos. `subjects/sociedad/index.tsx`: `available: true`, `homeCard` real (lee el
+  progreso guardado), `Screen` maneja cuaderno ↔ investigación como estado local (no toca `App.tsx`).
+- **SO-07 (verificar):** `npm run typecheck` en todo el monorepo, limpio. `npm test`: **1218/1218 ✅**.
+  `subjects.ts` (`SUBJECTS`) también pasa a `available: true` para Sociedad — se actualizó la prueba
+  `packages/ui-core/tests/subjects.test.ts` que afirmaba lo contrario (es la prueba del propio cambio, no algo
+  ajeno). `expo export --platform android` llegó a 1302 módulos y falló por los modelos de voz (`.bin`, no están
+  en git, sin red en esta sesión para bajarlos) — **no relacionado con Sociedad**; se verificaron a mano las 8
+  rutas de `require()` de arte y existen todas.
+- **DS-2 (color ciruela) NO se aplicó**: `tests/tokens.test.ts` exige que `subjSociedad` en `tokens.ts` coincida
+  exacto con `docs/design/kitewise/tokens.css` (la referencia de diseño original de Victor). Cambiar el color
+  significa editar el archivo de diseño también — una decisión aparte de este módulo. Se dejó el naranja
+  `#f08a10` ya aprobado.
+- Pendiente real: SO-08 (revisión de un maestro) y que Victor la pruebe en un equipo real cuando pida el próximo
+  APK. Detalle completo de lo que falta: `docs/handoff/sociedad.md`.
+
 ## 2026-10-16 · SO-03: pedido de imágenes de la unidad piloto (v1, reemplazado por SO-02 v2 arriba)
 
 - Victor pidió el prompt de imágenes directamente (sin objetar S3-U03) → DS-3 se trata como confirmada.
