@@ -3,7 +3,7 @@ Actualizado: 2026-10-15 · Cuenta: A · Rama: claude/gracious-shannon-a0238d
 Último commit: ver `git log -1`
 
 ## Tarea en curso
-Ninguna a medias. RN-03: el APK con voz está listo; esperando la medición de Victor en la tablet.
+Ninguna a medias. Voz (RN-03) PAUSADA por Victor. Siguiente: Matemáticas (K6), empezando por la investigación.
 
 ## Hecho en RN-01
 - [x] `apps/mobile` (Expo SDK 57, RN 0.86, TS) dentro del monorepo
@@ -26,14 +26,16 @@ Ninguna a medias. RN-03: el APK con voz está listo; esperando la medición de V
 - [x] RN-03 (parte código): whisper.rn + `WhisperNativeSpeechEngine` + "Prueba de voz" (Ajustes de padres)
 
 ## Siguiente paso exacto
-**Esperar el resultado de la "Prueba de voz" de Victor** (tablet de Noah y su teléfono): ¿entiende bien? ¿cuánto tarda por
-frase? ¿Rápido (tiny) o Preciso (base)? Anotarlo en `docs/log/` y decidir el modelo (luego quitar el otro del APK).
-Después, **RN-07**: en `use-reading-session.ts`, usar `RealReadingEngine` (packages/reading-engine) con
-`WhisperNativeSpeechEngine` en lugar de `FakeReadingEngine` cuando NO es lectura libre; antes de pedir el micrófono, un
-aviso para padres (docs/12 §2, "La voz de tu hijo nunca se graba ni se almacena"); si no hay permiso → estado "sin
-micrófono" (G11) que ya existe (`voiceProblem`). El panel DEV sigue para simular. Apagar el micrófono al salir de la
-lectura o pasar a segundo plano (docs/06).
-Luego K5.
+**K6 — Cuaderno de Matemáticas.** Victor pausó la voz ("el asunto de las voces es muy complicado"; el motor y la Prueba
+de voz quedan en el código y en el APK, sin conectar a la lectura) y pidió pasar a los demás cuadernos, empezando por
+Matemáticas, con una investigación profunda para los 6 niveles en inglés y español.
+1. Victor corre `docs/research/PROMPT-INVESTIGACION-MATEMATICAS.md` en una herramienta de investigación profunda y trae
+   el resultado → guardarlo como `docs/research/matematicas-investigacion.md`.
+2. Con eso: modelo de unidades/lecciones en `packages/contracts` (SPEC §7, aditivo), validación en `story-engine` o un
+   paquete nuevo de contenido, y la primera unidad (propuesta: 3.º o el nivel de Noah) con Aprender / Explorar
+   (`NumberLine` o `PaintGrid`) / Practicar con escalera de pistas. Estándares solo para padres y como borrador.
+3. Pantallas B5 (camino de unidad), B6 (Aprender), B7 (Explorar), B8 (Practicar) — usar `useLayout()` desde el inicio.
+No inventar contenido de matemáticas antes de tener la investigación (CLAUDE.md: no inventar; docs/09).
 
 ## Cuidado con
 - **No borrar `apps/reader` ni `packages/ui`**: Noah sigue usando la app Capacitor hasta RN-CP2.

@@ -235,3 +235,13 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
   segundos de audio recibidos, frases detectadas / escritas / "no eran voz" / perdidas (p. ej. mientras carga el modelo) /
   en espera / errores — para saber en qué paso se queda si no aparece texto.
 - Pendiente: que Victor la use y mande captura con lo que aparece (sobre todo los contadores si no sale texto).
+
+## 2026-10-16 · Cuenta A · Voz en pausa → Matemáticas
+- Victor: "el asunto de las voces es muy complicado… pasemos a otra etapa, vamos con los demás cuadernos, comencemos por
+  matemáticas… necesito un poderoso prompt para hacer una investigación profunda… para los 6 niveles… inglés y español".
+- Hecho: `docs/research/PROMPT-INVESTIGACION-MATEMATICAS.md` — prompt de investigación (CA CCSSM + CA Math Framework
+  2023, alcance y secuencia 1.º–6.º, pedagogía con evidencia: CRA, esquemas, ejemplos resueltos, fluidez sin ansiedad,
+  WWC/NCTM; bilingüe: vocabulario, notación, diferencias EE. UU./México, problemas verbales para English Learners, cómo
+  leer números en voz alta; diseño para la app: interacciones, plantillas, dominio, competencia) con entregables en formato
+  fijo, incluido un JSON de una unidad según SPEC §7, y un prompt de seguimiento por grado.
+- RN-03 queda ⏸️ (el motor, la Prueba de voz y el APK siguen en el repo; no se conectaron a la lectura).
