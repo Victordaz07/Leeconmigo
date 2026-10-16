@@ -2,6 +2,11 @@
 
 ## Decisión de plataforma
 
+> **Actualizado 2026-10-15 (D7, `docs/DECISIONS.md`):** la plataforma pasa a **React Native + Expo**
+> (Android primero, iOS después). Lo de abajo describe la arquitectura original (Capacitor) que sigue en uso
+> en `apps/reader` hasta completar la migración — ver `docs/11-MIGRACION-REACT-NATIVE.md`. La regla de
+> desacoplamiento y los contratos de este documento NO cambian.
+
 **No** PWA pura. **No** Android 100% nativo. Arquitectura híbrida:
 
 ```

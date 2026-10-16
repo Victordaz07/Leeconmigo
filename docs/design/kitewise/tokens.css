@@ -1,0 +1,113 @@
+/*
+ * Kitewise — tokens (extiende packages/ui/src/styles/tokens.css de Lee Conmigo).
+ * Todo lo existente se conserva. Aquí SOLO se añaden: marca, materias, cuaderno y modo Enfoque.
+ * Pegar dentro del mismo @theme static, o importar después del archivo original.
+ */
+@theme static {
+  /* ---- Fuentes ---- */
+  --font-sans: 'Nunito Variable', 'Nunito', system-ui, sans-serif;   /* interfaz y títulos */
+  --font-read: 'Andika', 'Nunito Variable', system-ui, sans-serif;   /* lectura y retos */
+  --font-read-alt: 'Lexend', 'Andika', system-ui, sans-serif;        /* alternativa para dislexia (Ajustes) */
+
+  /* ---- Superficies del cuaderno ---- */
+  --color-paper: #fffdf8;        /* hoja */
+  --color-paper-line: #eef3fb;   /* renglón suave */
+  --color-paper-gutter: #efe9db; /* lomo / espiral */
+  --color-desk: #e9e4d8;
+
+  /* ---- Materias (color + degradado de pestaña / ícono) ---- */
+  --color-subj-lectura: #7b5ce6;
+  --color-subj-mate: #1e80e8;
+  --color-subj-ciencia: #22a95c;
+  --color-subj-sociedad: #f08a10;
+  --color-subj-arte: #ff5e7e;
+  --grad-subj-lectura: linear-gradient(160deg, #b79bff, #7b5ce6);
+  --grad-subj-mate: linear-gradient(160deg, #6fc0ff, #1e80e8);
+  --grad-subj-ciencia: linear-gradient(160deg, #6be39e, #22a95c);
+  --grad-subj-sociedad: linear-gradient(160deg, #ffc658, #f08a10);
+  --grad-subj-arte: linear-gradient(160deg, #ff8a3d, #ff5e7e);
+
+  /* ---- Momentos de la sesión ---- */
+  --color-phase-aprender: #ffe45c;   --color-phase-aprender-ledge: #e8c630;
+  --color-phase-explorar: #9cc8ff;   --color-phase-explorar-ledge: #6fa7f0;
+  --color-phase-practicar: #6be39e;  --color-phase-practicar-ledge: #3dbf77;
+  --color-phase-juego: #ffc658;      --color-phase-juego-ledge: #f0a020;
+
+  /* ---- Dominio (nunca porcentaje al niño) ---- */
+  --color-mastery-explorando: #1e6fe8;  --color-mastery-explorando-bg: #dcebff;
+  --color-mastery-practicando: #5a45c8; --color-mastery-practicando-bg: #ede8ff;
+  --color-mastery-dominado: #168a47;    --color-mastery-dominado-bg: #d6f3e1;
+
+  /* ---- Pausa (ámbar, nunca rojo) ---- */
+  --color-pause: #f0a020;
+  --color-pause-bg: #fff1c2;
+  --grad-pause: linear-gradient(180deg, #fff1c2, #ffe08a);
+  --shadow-btn-pause: inset 0 -4px 0 #f0a020;
+  --shadow-btn-hint: inset 0 -4px 0 #b2d0fa;
+
+  /* ---- Papalote (progreso) ---- */
+  --color-kite: #e8453c;
+  --color-sky: #9cc8ff;
+
+  /* ---- Cuaderno: espiral y pestañas ---- */
+  --shadow-tab: -4px 4px 12px rgb(30 35 64 / 0.18), inset 2px 0 0 rgb(255 255 255 / 0.4);
+  --radius-tab: 18px 0 0 18px;
+  --size-tab-w: 48px;
+  --size-tab-w-active: 64px;
+  --size-spiral: 44px;
+
+  /* ---- Tamaños táctiles ---- */
+  --size-btn-min: 64px;
+  --size-btn-primary: 68px;
+  --size-keypad: 72px;
+
+  /* ---- Lectura por grado (px) ---- */
+  --read-size-g12: 30px;
+  --read-size-g34: 25px;
+  --read-size-g56: 21px;
+  --read-leading: 1.6;
+  --read-measure: 60ch;
+
+  /* ---- Movimiento ---- */
+  --dur-fast: 0.2s;
+  --dur-base: 0.35s;
+  --dur-slow: 0.5s;
+}
+
+/* Modo oscuro: data-theme="dark" en <html>. Cálido, sin azul puro de fondo. */
+:root[data-theme='dark'] {
+  --color-app: #17161d;
+  --color-paper: #201e27;
+  --color-cream: #201e27;
+  --color-cream-deep: #1b1a22;
+  --color-ink: #f2eee6;
+  --color-ink-soft: #d9d4e0;
+  --color-ink-mute: #a8a3b5;
+  --color-muted: #a8a3b5;
+  --color-navy: #f2eee6;
+  --color-line: #38354a;
+  --color-chip: #2d2b38;
+  --color-card-dark: #24222c;
+  --color-pause-bg: #3a2e14;
+  color-scheme: dark;
+}
+
+/* Vertical: el rail se vuelve barra inferior (96 px) y el arte pasa arriba. */
+@media (orientation: portrait) {
+  :root { --nav-rail-w: 0px; --nav-bottom-h: 96px; }
+}
+
+/* Modo Enfoque: se activa con data-focus="on" en <html>. Quita decoración; nunca muestra etiquetas. */
+:root[data-focus='on'] {
+  --enfoque-decor: 0;      /* 1 = mostrar mascota, adornos, miniaturas */
+  --dur-fast: 0.001s;
+  --dur-base: 0.001s;
+  --dur-slow: 0.001s;
+}
+:root[data-focus='on'] [data-decor] { display: none; }
+:root[data-focus='on'] [data-art-bg] { filter: blur(8px) saturate(0.7); opacity: 0.16; }
+
+/* Accesibilidad (Ajustes de padres) */
+:root[data-font='lexend'] { --font-read: var(--font-read-alt); }
+:root[data-pattern='on'] [data-meter] { background-image: var(--pattern-stripe, none); }
+:root[data-ruler='on'] [data-reading-line="active"] { background: rgb(255 228 92 / 0.55); border-radius: 10px; }

@@ -1,0 +1,23 @@
+{
+  "name": "@lee-conmigo/ui-core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Lógica de presentación SIN React ni plataforma, compartida por la app web (@lee-conmigo/ui) y la nativa (@lee-conmigo/ui-native): textos de la interfaz, preferencias de lectura y el modelo de vista (qué color tiene el micrófono, qué dice el coach, cómo se marca cada palabra).",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@lee-conmigo/contracts": "*",
+    "@lee-conmigo/session-engine": "*",
+    "@lee-conmigo/story-engine": "*"
+  },
+  "devDependencies": {
+    "@lee-conmigo/reading-engine": "*"
+  }
+}

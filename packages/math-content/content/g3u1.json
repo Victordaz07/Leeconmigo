@@ -1,0 +1,1448 @@
+{
+  "id": "g3u1",
+  "subject": "mate",
+  "grade": 3,
+  "practiceLevel": 3,
+  "schemaVersion": "1.0",
+  "contentVersion": "1.0.0",
+  "title": {
+    "es": "Multiplicar con grupos y arreglos",
+    "en": "Multiply with equal groups and arrays"
+  },
+  "standards": [
+    "3.OA.1",
+    "3.OA.3"
+  ],
+  "standardsReview": {
+    "status": "draftPendingTeacherReview",
+    "confidence": "highAtUnitLevel",
+    "displayAudience": "parentsOnly",
+    "isCertified": false
+  },
+  "prerequisites": [
+    "g2u3.s5"
+  ],
+  "skills": [
+    {
+      "id": "g3u1.s1",
+      "title": {
+        "es": "Identificar número de grupos y cantidad por grupo",
+        "en": "Identify the number of groups and the amount in each group"
+      },
+      "prerequisites": [
+        "g2u3.s5"
+      ]
+    },
+    {
+      "id": "g3u1.s2",
+      "title": {
+        "es": "Relacionar grupos con producto",
+        "en": "Connect equal groups to a product"
+      },
+      "prerequisites": [
+        "g3u1.s1"
+      ]
+    },
+    {
+      "id": "g3u1.s3",
+      "title": {
+        "es": "Construir y leer arreglos rectangulares",
+        "en": "Build and read rectangular arrays"
+      },
+      "prerequisites": [
+        "g3u1.s2"
+      ]
+    },
+    {
+      "id": "g3u1.s4",
+      "title": {
+        "es": "Resolver un problema de producto desconocido",
+        "en": "Solve a word problem with an unknown product"
+      },
+      "prerequisites": [
+        "g3u1.s2",
+        "g3u1.s3"
+      ]
+    }
+  ],
+  "cover": {
+    "artBrief": "Mesas de taller comunitario; fichas y cantidades creadas por la app.",
+    "containsEmbeddedTextOrNumbers": false
+  },
+  "warmupPolicy": {
+    "source": "localDueSkills",
+    "maximumItems": {
+      "minutes8": 2,
+      "minutes15": 3,
+      "minutes20": 4
+    }
+  },
+  "masteryPolicyRef": "independentEvidence10.v1",
+  "representationPolicy": {
+    "mathIsRenderedByApp": true,
+    "artIsDecorative": true,
+    "dragAlternative": "tapThenTap"
+  },
+  "provenance": {
+    "authorship": "originalKitewiseDesign",
+    "evidenceReferences": [
+      "S01",
+      "S05",
+      "S08"
+    ],
+    "thirdPartyExerciseCopied": false
+  },
+  "lessons": [
+    {
+      "id": "g3u1.l1",
+      "unitId": "g3u1",
+      "title": {
+        "es": "Los grupos y lo que hay dentro",
+        "en": "Groups and the amount in each group"
+      },
+      "skillIds": [
+        "g3u1.s1"
+      ],
+      "steps": [
+        {
+          "kind": "aprender",
+          "blocks": [
+            {
+              "type": "text",
+              "text": {
+                "es": "En grupos iguales hay la misma cantidad en cada grupo. Primero mira cuántos grupos hay; después mira cuántos objetos tiene uno.",
+                "en": "Equal groups have the same number in each group. First count the groups. Then count the objects in one group."
+              },
+              "audio": {
+                "es": "En grupos iguales hay la misma cantidad en cada grupo. Primero mira cuántos grupos hay; después mira cuántos objetos tiene uno.",
+                "en": "Equal groups have the same number in each group. First count the groups. Then count the objects in one group."
+              }
+            },
+            {
+              "type": "keyIdea",
+              "text": {
+                "es": "Grupos iguales: la misma cantidad en cada grupo.",
+                "en": "Equal groups: the same number in each group."
+              }
+            },
+            {
+              "type": "vocabulary",
+              "items": [
+                {
+                  "term": {
+                    "es": "grupo",
+                    "en": "group"
+                  },
+                  "definition": {
+                    "es": "Un conjunto que contamos como una unidad.",
+                    "en": "A collection we count as one unit."
+                  }
+                },
+                {
+                  "term": {
+                    "es": "en cada grupo",
+                    "en": "in each group"
+                  },
+                  "definition": {
+                    "es": "La cantidad que tiene un solo grupo.",
+                    "en": "The number in one group."
+                  }
+                },
+                {
+                  "term": {
+                    "es": "producto",
+                    "en": "product"
+                  },
+                  "definition": {
+                    "es": "El resultado de multiplicar.",
+                    "en": "The result of multiplication."
+                  }
+                }
+              ]
+            },
+            {
+              "type": "annotatedIllustration",
+              "artBrief": "Mesa de taller sin palabras ni números.",
+              "overlay": {
+                "component": "EqualGroups",
+                "groups": 3,
+                "perGroup": 4,
+                "labelsAreLiveText": true
+              }
+            }
+          ]
+        },
+        {
+          "kind": "explorar",
+          "interaction": "drag",
+          "payload": {
+            "component": "DragZone",
+            "groups": 3,
+            "perGroup": 4,
+            "task": "buildEqualGroups",
+            "tapAlternative": true
+          }
+        },
+        {
+          "kind": "practicar",
+          "challenge": {
+            "id": "g3u1.l1.c1",
+            "skillId": "g3u1.s1",
+            "mathVariantId": "g3u1.l1.c1.v1",
+            "prompt": {
+              "es": "Observa 3 bolsas de 4 fichas. ¿Cuántas bolsas hay?",
+              "en": "Look at 3 bags with 4 counters in each bag. How many bags are there?"
+            },
+            "audio": {
+              "es": "Observa 3 bolsas de 4 fichas. ¿Cuántas bolsas hay?",
+              "en": "Look at 3 bags with 4 counters in each bag. How many bags are there?"
+            },
+            "answer": {
+              "kind": "numeric",
+              "value": 3
+            },
+            "hints": [
+              {
+                "level": 1,
+                "type": "hint",
+                "text": {
+                  "es": "Cuenta las bolsas, no las fichas de dentro.",
+                  "en": "Count the bags, not the counters inside."
+                },
+                "audio": {
+                  "es": "Cuenta las bolsas, no las fichas de dentro.",
+                  "en": "Count the bags, not the counters inside."
+                }
+              },
+              {
+                "level": 2,
+                "type": "workedExample",
+                "text": {
+                  "es": "En 2 bolsas de 5 fichas hay 2 bolsas.",
+                  "en": "With 2 bags of 5 counters each, there are 2 bags."
+                },
+                "audio": {
+                  "es": "En 2 bolsas de 5 fichas hay 2 bolsas.",
+                  "en": "With 2 bags of 5 counters each, there are 2 bags."
+                }
+              },
+              {
+                "level": 3,
+                "type": "explainedAnswer",
+                "text": {
+                  "es": "Hay 3 bolsas: ese es el número de grupos. Cada grupo tiene 4 fichas.",
+                  "en": "There are 3 bags, so there are 3 groups. Each group has 4 counters."
+                },
+                "audio": {
+                  "es": "Hay 3 bolsas: ese es el número de grupos. Cada grupo tiene 4 fichas.",
+                  "en": "There are 3 bags, so there are 3 groups. Each group has 4 counters."
+                }
+              }
+            ],
+            "responseMode": "numericKeypad",
+            "confidenceChoices": [
+              "seguro",
+              "masOMenos",
+              "adivino"
+            ],
+            "attemptPolicy": {
+              "requireConfidenceBeforeCheck": true,
+              "countOnlyFirstIndependentResponse": true,
+              "accessibilitySupportCountsAsMathHint": false,
+              "maxHintLevel": 3,
+              "allowSkipToReview": true
+            },
+            "feedback": {
+              "tryAgain": {
+                "es": "Revisemos el modelo y lo que cuenta cada grupo.",
+                "en": "Let’s check the model and what each group counts."
+              },
+              "success": {
+                "es": "La respuesta coincide. Mira cómo la muestra el modelo.",
+                "en": "That matches. See how the model shows the answer."
+              }
+            },
+            "generator": {
+              "templateId": "identifyGroups.v1",
+              "parameters": {
+                "groups": {
+                  "integerMin": 1,
+                  "integerMax": 5
+                },
+                "perGroup": {
+                  "integerMin": 1,
+                  "integerMax": 6
+                }
+              },
+              "answerExpression": "groups",
+              "workedExampleMustDiffer": true,
+              "sampleParameters": {
+                "groups": 3,
+                "perGroup": 4
+              },
+              "templateVersion": "1.0.0",
+              "derived": {
+                "total": "groups * perGroup"
+              },
+              "evaluationPolicy": "whitelist named integer fields and multiplication; never eval arbitrary text",
+              "workedExamplePolicy": {
+                "chooseFirstDifferentPair": [
+                  [
+                    2,
+                    5
+                  ],
+                  [
+                    3,
+                    4
+                  ]
+                ],
+                "deriveAnswerFromChosenPair": true
+              },
+              "renderingPolicy": {
+                "pluralForms": "locale-aware",
+                "numbersAreLiveText": true,
+                "audioFromLocalizedTemplate": true,
+                "sameSeedWhenSwitchingLanguage": true
+              },
+              "localizedTemplates": {
+                "prompt": {
+                  "es": "Hay {groups} bolsas con {perGroup} fichas en cada una. ¿Cuántas bolsas hay?",
+                  "en": "There are {groups} bags with {perGroup} counters in each bag. How many bags are there?"
+                },
+                "hint": {
+                  "es": "Cuenta los grupos, no lo que hay dentro.",
+                  "en": "Count the groups, not the objects inside."
+                },
+                "workedExample": {
+                  "es": "En {exampleGroups} bolsas de {examplePerGroup} fichas hay {exampleGroups} bolsas.",
+                  "en": "With {exampleGroups} bags of {examplePerGroup} counters each, there are {exampleGroups} bags."
+                },
+                "explainedAnswer": {
+                  "es": "Hay {groups} bolsas. Ese es el número de grupos.",
+                  "en": "There are {groups} bags. That is the number of groups."
+                }
+              }
+            },
+            "representation": {
+              "component": "EqualGroups",
+              "groups": 3,
+              "perGroup": 4
+            }
+          }
+        },
+        {
+          "kind": "practicar",
+          "challenge": {
+            "id": "g3u1.l1.c2",
+            "skillId": "g3u1.s1",
+            "mathVariantId": "g3u1.l1.c2.v1",
+            "prompt": {
+              "es": "Observa 3 bolsas de 4 fichas. ¿Cuántas fichas hay en cada bolsa?",
+              "en": "Look at 3 bags with 4 counters in each bag. How many counters are in each bag?"
+            },
+            "audio": {
+              "es": "Observa 3 bolsas de 4 fichas. ¿Cuántas fichas hay en cada bolsa?",
+              "en": "Look at 3 bags with 4 counters in each bag. How many counters are in each bag?"
+            },
+            "answer": {
+              "kind": "numeric",
+              "value": 4
+            },
+            "hints": [
+              {
+                "level": 1,
+                "type": "hint",
+                "text": {
+                  "es": "Mira una sola bolsa.",
+                  "en": "Look inside just one bag."
+                },
+                "audio": {
+                  "es": "Mira una sola bolsa.",
+                  "en": "Look inside just one bag."
+                }
+              },
+              {
+                "level": 2,
+                "type": "workedExample",
+                "text": {
+                  "es": "En 2 bolsas de 5 fichas, hay 5 fichas por bolsa.",
+                  "en": "In 2 bags of 5, there are 5 counters in each bag."
+                },
+                "audio": {
+                  "es": "En 2 bolsas de 5 fichas, hay 5 fichas por bolsa.",
+                  "en": "In 2 bags of 5, there are 5 counters in each bag."
+                }
+              },
+              {
+                "level": 3,
+                "type": "explainedAnswer",
+                "text": {
+                  "es": "Cada bolsa contiene 4 fichas. Esa es la cantidad por grupo.",
+                  "en": "Each bag contains 4 counters. That is the number in each group."
+                },
+                "audio": {
+                  "es": "Cada bolsa contiene 4 fichas. Esa es la cantidad por grupo.",
+                  "en": "Each bag contains 4 counters. That is the number in each group."
+                }
+              }
+            ],
+            "responseMode": "numericKeypad",
+            "confidenceChoices": [
+              "seguro",
+              "masOMenos",
+              "adivino"
+            ],
+            "attemptPolicy": {
+              "requireConfidenceBeforeCheck": true,
+              "countOnlyFirstIndependentResponse": true,
+              "accessibilitySupportCountsAsMathHint": false,
+              "maxHintLevel": 3,
+              "allowSkipToReview": true
+            },
+            "feedback": {
+              "tryAgain": {
+                "es": "Revisemos el modelo y lo que cuenta cada grupo.",
+                "en": "Let’s check the model and what each group counts."
+              },
+              "success": {
+                "es": "La respuesta coincide. Mira cómo la muestra el modelo.",
+                "en": "That matches. See how the model shows the answer."
+              }
+            },
+            "generator": {
+              "templateId": "identifyPerGroup.v1",
+              "parameters": {
+                "groups": {
+                  "integerMin": 1,
+                  "integerMax": 5
+                },
+                "perGroup": {
+                  "integerMin": 1,
+                  "integerMax": 6
+                }
+              },
+              "answerExpression": "perGroup",
+              "workedExampleMustDiffer": true,
+              "sampleParameters": {
+                "groups": 3,
+                "perGroup": 4
+              },
+              "templateVersion": "1.0.0",
+              "derived": {
+                "total": "groups * perGroup"
+              },
+              "evaluationPolicy": "whitelist named integer fields and multiplication; never eval arbitrary text",
+              "workedExamplePolicy": {
+                "chooseFirstDifferentPair": [
+                  [
+                    2,
+                    5
+                  ],
+                  [
+                    3,
+                    4
+                  ]
+                ],
+                "deriveAnswerFromChosenPair": true
+              },
+              "renderingPolicy": {
+                "pluralForms": "locale-aware",
+                "numbersAreLiveText": true,
+                "audioFromLocalizedTemplate": true,
+                "sameSeedWhenSwitchingLanguage": true
+              },
+              "localizedTemplates": {
+                "prompt": {
+                  "es": "Hay {groups} bolsas con {perGroup} fichas en cada una. ¿Cuántas fichas tiene cada bolsa?",
+                  "en": "There are {groups} bags with {perGroup} counters in each bag. How many counters are in each bag?"
+                },
+                "hint": {
+                  "es": "Mira un solo grupo.",
+                  "en": "Look at just one group."
+                },
+                "workedExample": {
+                  "es": "En {exampleGroups} bolsas de {examplePerGroup} fichas, cada bolsa contiene {examplePerGroup} fichas.",
+                  "en": "In {exampleGroups} bags of {examplePerGroup} counters, each bag holds {examplePerGroup} counters."
+                },
+                "explainedAnswer": {
+                  "es": "Cada bolsa tiene {perGroup} fichas.",
+                  "en": "Each bag has {perGroup} counters."
+                }
+              }
+            },
+            "representation": {
+              "component": "EqualGroups",
+              "groups": 3,
+              "perGroup": 4
+            }
+          }
+        },
+        {
+          "kind": "juego",
+          "game": "parejas",
+          "payload": {
+            "pairs": [
+              {
+                "left": {
+                  "es": "2 bolsas con 3 fichas: número de bolsas",
+                  "en": "2 bags with 3 counters each: number of bags"
+                },
+                "right": 2
+              },
+              {
+                "left": {
+                  "es": "2 bolsas con 3 fichas: fichas por bolsa",
+                  "en": "2 bags with 3 counters each: counters per bag"
+                },
+                "right": 3
+              }
+            ],
+            "timer": false,
+            "randomRewards": false,
+            "allowExit": true
+          }
+        }
+      ],
+      "closure": {
+        "prompt": {
+          "es": "¿Qué te ayudó a resolver?",
+          "en": "What helped you solve it?"
+        },
+        "choices": [
+          {
+            "es": "Ver los grupos",
+            "en": "Seeing the groups"
+          },
+          {
+            "es": "Usar la suma",
+            "en": "Using addition"
+          },
+          {
+            "es": "Usar la multiplicación",
+            "en": "Using multiplication"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g3u1.l2",
+      "unitId": "g3u1",
+      "title": {
+        "es": "De los grupos al producto",
+        "en": "From equal groups to a product"
+      },
+      "skillIds": [
+        "g3u1.s2"
+      ],
+      "steps": [
+        {
+          "kind": "aprender",
+          "blocks": [
+            {
+              "type": "text",
+              "text": {
+                "es": "Tres grupos de cuatro son cuatro más cuatro más cuatro. Escribimos 3×4 = 12.",
+                "en": "Three groups of four mean four plus four plus four. We can write 3×4 = 12."
+              },
+              "audio": {
+                "es": "Tres grupos de cuatro son cuatro más cuatro más cuatro. Escribimos 3×4 = 12.",
+                "en": "Three groups of four mean four plus four plus four. We can write 3×4 = 12."
+              }
+            },
+            {
+              "type": "keyIdea",
+              "text": {
+                "es": "Grupos iguales: la misma cantidad en cada grupo.",
+                "en": "Equal groups: the same number in each group."
+              }
+            },
+            {
+              "type": "vocabulary",
+              "items": [
+                {
+                  "term": {
+                    "es": "grupo",
+                    "en": "group"
+                  },
+                  "definition": {
+                    "es": "Un conjunto que contamos como una unidad.",
+                    "en": "A collection we count as one unit."
+                  }
+                },
+                {
+                  "term": {
+                    "es": "en cada grupo",
+                    "en": "in each group"
+                  },
+                  "definition": {
+                    "es": "La cantidad que tiene un solo grupo.",
+                    "en": "The number in one group."
+                  }
+                },
+                {
+                  "term": {
+                    "es": "producto",
+                    "en": "product"
+                  },
+                  "definition": {
+                    "es": "El resultado de multiplicar.",
+                    "en": "The result of multiplication."
+                  }
+                }
+              ]
+            },
+            {
+              "type": "annotatedIllustration",
+              "artBrief": "Mesa de taller sin palabras ni números.",
+              "overlay": {
+                "component": "EqualGroups",
+                "groups": 3,
+                "perGroup": 4,
+                "labelsAreLiveText": true
+              }
+            }
+          ]
+        },
+        {
+          "kind": "explorar",
+          "interaction": "drag",
+          "payload": {
+            "component": "EqualGroups",
+            "groups": 3,
+            "perGroup": 4,
+            "task": "connectModelToEquation",
+            "renderEquationAsLiveText": true
+          }
+        },
+        {
+          "kind": "practicar",
+          "challenge": {
+            "id": "g3u1.l2.c1",
+            "skillId": "g3u1.s2",
+            "mathVariantId": "g3u1.l2.c1.v1",
+            "prompt": {
+              "es": "Hay 3 bolsas con 4 fichas en cada una. ¿Cuántas fichas hay?",
+              "en": "There are 3 bags with 4 counters in each bag. How many counters are there?"
+            },
+            "audio": {
+              "es": "Hay 3 bolsas con 4 fichas en cada una. ¿Cuántas fichas hay?",
+              "en": "There are 3 bags with 4 counters in each bag. How many counters are there?"
+            },
+            "answer": {
+              "kind": "numeric",
+              "value": 12
+            },
+            "hints": [
+              {
+                "level": 1,
+                "type": "hint",
+                "text": {
+                  "es": "Cuenta cuatro por cada bolsa.",
+                  "en": "Count four for each bag."
+                },
+                "audio": {
+                  "es": "Cuenta cuatro por cada bolsa.",
+                  "en": "Count four for each bag."
+                }
+              },
+              {
+                "level": 2,
+                "type": "workedExample",
+                "text": {
+                  "es": "2 bolsas de 5: 5 + 5 = 10.",
+                  "en": "2 bags of 5 make 5 + 5 = 10."
+                },
+                "audio": {
+                  "es": "2 bolsas de 5: 5 + 5 = 10.",
+                  "en": "2 bags of 5 make 5 + 5 = 10."
+                }
+              },
+              {
+                "level": 3,
+                "type": "explainedAnswer",
+                "text": {
+                  "es": "4 + 4 + 4 = 12; 3×4 = 12 fichas.",
+                  "en": "4 + 4 + 4 = 12, so 3×4 = 12 counters."
+                },
+                "audio": {
+                  "es": "4 + 4 + 4 = 12; 3×4 = 12 fichas.",
+                  "en": "4 + 4 + 4 = 12, so 3×4 = 12 counters."
+                }
+              }
+            ],
+            "responseMode": "numericKeypad",
+            "confidenceChoices": [
+              "seguro",
+              "masOMenos",
+              "adivino"
+            ],
+            "attemptPolicy": {
+              "requireConfidenceBeforeCheck": true,
+              "countOnlyFirstIndependentResponse": true,
+              "accessibilitySupportCountsAsMathHint": false,
+              "maxHintLevel": 3,
+              "allowSkipToReview": true
+            },
+            "feedback": {
+              "tryAgain": {
+                "es": "Revisemos el modelo y lo que cuenta cada grupo.",
+                "en": "Let’s check the model and what each group counts."
+              },
+              "success": {
+                "es": "La respuesta coincide. Mira cómo la muestra el modelo.",
+                "en": "That matches. See how the model shows the answer."
+              }
+            },
+            "generator": {
+              "templateId": "equalGroups.v1",
+              "parameters": {
+                "groups": {
+                  "integerMin": 1,
+                  "integerMax": 9
+                },
+                "perGroup": {
+                  "integerMin": 1,
+                  "integerMax": 9
+                }
+              },
+              "derived": {
+                "total": "groups * perGroup"
+              },
+              "constraints": [
+                "total <= 81",
+                "groups > 0",
+                "perGroup > 0"
+              ],
+              "answerExpression": "groups * perGroup",
+              "seedPolicy": "storeLocalSeedAndTemplateVersion",
+              "localizationPolicy": "renderPluralFormsAndNarrationForEachLocale",
+              "hintPolicy": "regenerateAllThreeHintsFromTheSameParameters; workedExampleMustDiffer",
+              "sampleParameters": {
+                "groups": 3,
+                "perGroup": 4
+              },
+              "templateVersion": "1.0.0",
+              "evaluationPolicy": "whitelist named integer fields and multiplication; never eval arbitrary text",
+              "workedExamplePolicy": {
+                "chooseFirstDifferentPair": [
+                  [
+                    2,
+                    5
+                  ],
+                  [
+                    3,
+                    4
+                  ]
+                ],
+                "deriveAnswerFromChosenPair": true
+              },
+              "renderingPolicy": {
+                "pluralForms": "locale-aware",
+                "numbersAreLiveText": true,
+                "audioFromLocalizedTemplate": true,
+                "sameSeedWhenSwitchingLanguage": true
+              },
+              "semanticBindings": {
+                "groupCount": "groups",
+                "groupSize": "perGroup",
+                "answer": "total"
+              },
+              "localizedTemplates": {
+                "prompt": {
+                  "es": "Hay {groupCount} grupos de {groupSize} fichas. ¿Cuántas fichas hay en total?",
+                  "en": "There are {groupCount} equal groups of {groupSize} counters. How many counters are there altogether?"
+                },
+                "hint": {
+                  "es": "Suma la misma cantidad por cada grupo o usa una multiplicación.",
+                  "en": "Add the same amount for each group, or use multiplication."
+                },
+                "workedExample": {
+                  "es": "{exampleGroups} grupos de {examplePerGroup}: {exampleGroups}×{examplePerGroup} = {exampleTotal}.",
+                  "en": "{exampleGroups} groups of {examplePerGroup}: {exampleGroups}×{examplePerGroup} = {exampleTotal}."
+                },
+                "explainedAnswer": {
+                  "es": "{groupCount}×{groupSize} = {total}; hay {total} fichas.",
+                  "en": "{groupCount}×{groupSize} = {total}, so there are {total} counters."
+                }
+              }
+            },
+            "representation": {
+              "component": "EqualGroups",
+              "groups": 3,
+              "perGroup": 4
+            },
+            "standards": [
+              "3.OA.1"
+            ]
+          }
+        },
+        {
+          "kind": "juego",
+          "game": "parejas",
+          "payload": {
+            "pairs": [
+              {
+                "left": {
+                  "es": "2 grupos de 3",
+                  "en": "2 groups of 3"
+                },
+                "right": 6
+              },
+              {
+                "left": {
+                  "es": "3 grupos de 4",
+                  "en": "3 groups of 4"
+                },
+                "right": 12
+              },
+              {
+                "left": {
+                  "es": "4 grupos de 5",
+                  "en": "4 groups of 5"
+                },
+                "right": 20
+              }
+            ],
+            "timer": false,
+            "randomRewards": false,
+            "allowExit": true
+          }
+        }
+      ],
+      "closure": {
+        "prompt": {
+          "es": "¿Qué te ayudó a resolver?",
+          "en": "What helped you solve it?"
+        },
+        "choices": [
+          {
+            "es": "Ver los grupos",
+            "en": "Seeing the groups"
+          },
+          {
+            "es": "Usar la suma",
+            "en": "Using addition"
+          },
+          {
+            "es": "Usar la multiplicación",
+            "en": "Using multiplication"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g3u1.l3",
+      "unitId": "g3u1",
+      "title": {
+        "es": "Filas y columnas",
+        "en": "Rows and columns"
+      },
+      "skillIds": [
+        "g3u1.s3"
+      ],
+      "steps": [
+        {
+          "kind": "aprender",
+          "blocks": [
+            {
+              "type": "text",
+              "text": {
+                "es": "Un arreglo organiza grupos iguales en filas y columnas. Cuatro filas de seis tienen veinticuatro puntos.",
+                "en": "An array organizes equal groups in rows and columns. Four rows of six contain twenty-four dots."
+              },
+              "audio": {
+                "es": "Un arreglo organiza grupos iguales en filas y columnas. Cuatro filas de seis tienen veinticuatro puntos.",
+                "en": "An array organizes equal groups in rows and columns. Four rows of six contain twenty-four dots."
+              }
+            },
+            {
+              "type": "keyIdea",
+              "text": {
+                "es": "Grupos iguales: la misma cantidad en cada grupo.",
+                "en": "Equal groups: the same number in each group."
+              }
+            },
+            {
+              "type": "vocabulary",
+              "items": [
+                {
+                  "term": {
+                    "es": "grupo",
+                    "en": "group"
+                  },
+                  "definition": {
+                    "es": "Un conjunto que contamos como una unidad.",
+                    "en": "A collection we count as one unit."
+                  }
+                },
+                {
+                  "term": {
+                    "es": "en cada grupo",
+                    "en": "in each group"
+                  },
+                  "definition": {
+                    "es": "La cantidad que tiene un solo grupo.",
+                    "en": "The number in one group."
+                  }
+                },
+                {
+                  "term": {
+                    "es": "producto",
+                    "en": "product"
+                  },
+                  "definition": {
+                    "es": "El resultado de multiplicar.",
+                    "en": "The result of multiplication."
+                  }
+                }
+              ]
+            },
+            {
+              "type": "annotatedIllustration",
+              "artBrief": "Mesa de taller sin palabras ni números.",
+              "overlay": {
+                "component": "EqualGroups",
+                "groups": 3,
+                "perGroup": 4,
+                "labelsAreLiveText": true
+              }
+            }
+          ]
+        },
+        {
+          "kind": "explorar",
+          "interaction": "paint",
+          "payload": {
+            "component": "PaintGrid",
+            "rows": 4,
+            "columns": 6,
+            "task": "buildArray",
+            "showRowColumnLabelsAsLiveText": true
+          }
+        },
+        {
+          "kind": "practicar",
+          "challenge": {
+            "id": "g3u1.l3.c1",
+            "skillId": "g3u1.s3",
+            "mathVariantId": "g3u1.l3.c1.v1",
+            "prompt": {
+              "es": "Un arreglo tiene 4 filas de 6 puntos. ¿Cuántos puntos hay?",
+              "en": "An array has 4 rows of 6 dots. How many dots are there?"
+            },
+            "audio": {
+              "es": "Un arreglo tiene 4 filas de 6 puntos. ¿Cuántos puntos hay?",
+              "en": "An array has 4 rows of 6 dots. How many dots are there?"
+            },
+            "answer": {
+              "kind": "numeric",
+              "value": 24
+            },
+            "hints": [
+              {
+                "level": 1,
+                "type": "hint",
+                "text": {
+                  "es": "Cada fila aporta seis puntos.",
+                  "en": "Each row has six dots."
+                },
+                "audio": {
+                  "es": "Cada fila aporta seis puntos.",
+                  "en": "Each row has six dots."
+                }
+              },
+              {
+                "level": 2,
+                "type": "workedExample",
+                "text": {
+                  "es": "3 filas de 5: 3×5 = 15.",
+                  "en": "3 rows of 5 make 3×5 = 15."
+                },
+                "audio": {
+                  "es": "3 filas de 5: 3×5 = 15.",
+                  "en": "3 rows of 5 make 3×5 = 15."
+                }
+              },
+              {
+                "level": 3,
+                "type": "explainedAnswer",
+                "text": {
+                  "es": "6 + 6 + 6 + 6 = 24; 4×6 = 24.",
+                  "en": "Four rows of six make 24, so 4×6 = 24."
+                },
+                "audio": {
+                  "es": "6 + 6 + 6 + 6 = 24; 4×6 = 24.",
+                  "en": "Four groups of six make 24, so 4×6 = 24."
+                }
+              }
+            ],
+            "responseMode": "numericKeypad",
+            "confidenceChoices": [
+              "seguro",
+              "masOMenos",
+              "adivino"
+            ],
+            "attemptPolicy": {
+              "requireConfidenceBeforeCheck": true,
+              "countOnlyFirstIndependentResponse": true,
+              "accessibilitySupportCountsAsMathHint": false,
+              "maxHintLevel": 3,
+              "allowSkipToReview": true
+            },
+            "feedback": {
+              "tryAgain": {
+                "es": "Revisemos el modelo y lo que cuenta cada grupo.",
+                "en": "Let’s check the model and what each group counts."
+              },
+              "success": {
+                "es": "La respuesta coincide. Mira cómo la muestra el modelo.",
+                "en": "That matches. See how the model shows the answer."
+              }
+            },
+            "generator": {
+              "templateId": "arrayTotal.v1",
+              "parameters": {
+                "rows": {
+                  "integerMin": 1,
+                  "integerMax": 9
+                },
+                "columns": {
+                  "integerMin": 1,
+                  "integerMax": 9
+                }
+              },
+              "constraints": [
+                "rows * columns <= 81"
+              ],
+              "answerExpression": "rows * columns",
+              "workedExampleMustDiffer": true,
+              "sampleParameters": {
+                "rows": 4,
+                "columns": 6
+              },
+              "templateVersion": "1.0.0",
+              "derived": {
+                "total": "rows * columns"
+              },
+              "evaluationPolicy": "whitelist named integer fields and multiplication; never eval arbitrary text",
+              "workedExamplePolicy": {
+                "chooseFirstDifferentPair": [
+                  [
+                    2,
+                    5
+                  ],
+                  [
+                    3,
+                    4
+                  ]
+                ],
+                "deriveAnswerFromChosenPair": true
+              },
+              "renderingPolicy": {
+                "pluralForms": "locale-aware",
+                "numbersAreLiveText": true,
+                "audioFromLocalizedTemplate": true,
+                "sameSeedWhenSwitchingLanguage": true
+              },
+              "semanticBindings": {
+                "groupCount": "rows",
+                "groupSize": "columns",
+                "answer": "total"
+              },
+              "localizedTemplates": {
+                "prompt": {
+                  "es": "Un arreglo tiene {rows} filas de {columns} puntos. ¿Cuántos puntos hay?",
+                  "en": "An array has {rows} rows of {columns} dots. How many dots are there?"
+                },
+                "hint": {
+                  "es": "Suma los puntos de cada fila o usa una multiplicación.",
+                  "en": "Add the dots in each row, or use multiplication."
+                },
+                "workedExample": {
+                  "es": "{exampleRows} filas de {exampleColumns}: {exampleRows}×{exampleColumns} = {exampleTotal}.",
+                  "en": "{exampleRows} rows of {exampleColumns}: {exampleRows}×{exampleColumns} = {exampleTotal}."
+                },
+                "explainedAnswer": {
+                  "es": "{rows}×{columns} = {total}; hay {total} puntos.",
+                  "en": "{rows}×{columns} = {total}, so there are {total} dots."
+                }
+              }
+            },
+            "representation": {
+              "component": "PaintGrid",
+              "rows": 4,
+              "columns": 6
+            },
+            "standards": [
+              "3.OA.1"
+            ]
+          }
+        },
+        {
+          "kind": "juego",
+          "game": "parejas",
+          "payload": {
+            "pairs": [
+              {
+                "left": {
+                  "es": "2 grupos de 3",
+                  "en": "2 groups of 3"
+                },
+                "right": 6
+              },
+              {
+                "left": {
+                  "es": "3 grupos de 4",
+                  "en": "3 groups of 4"
+                },
+                "right": 12
+              },
+              {
+                "left": {
+                  "es": "4 grupos de 5",
+                  "en": "4 groups of 5"
+                },
+                "right": 20
+              }
+            ],
+            "timer": false,
+            "randomRewards": false,
+            "allowExit": true
+          }
+        }
+      ],
+      "closure": {
+        "prompt": {
+          "es": "¿Qué te ayudó a resolver?",
+          "en": "What helped you solve it?"
+        },
+        "choices": [
+          {
+            "es": "Ver los grupos",
+            "en": "Seeing the groups"
+          },
+          {
+            "es": "Usar la suma",
+            "en": "Using addition"
+          },
+          {
+            "es": "Usar la multiplicación",
+            "en": "Using multiplication"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g3u1.l4",
+      "unitId": "g3u1",
+      "title": {
+        "es": "Resolver una situación",
+        "en": "Solve a story problem"
+      },
+      "skillIds": [
+        "g3u1.s4"
+      ],
+      "steps": [
+        {
+          "kind": "aprender",
+          "blocks": [
+            {
+              "type": "text",
+              "text": {
+                "es": "Busca cuántos grupos hay y cuánto necesita cada grupo. Multiplica para encontrar el total y comprueba qué cuenta la respuesta.",
+                "en": "Find the number of groups and the amount in each group. Multiply to get the total, then check what your answer counts."
+              },
+              "audio": {
+                "es": "Busca cuántos grupos hay y cuánto necesita cada grupo. Multiplica para encontrar el total y comprueba qué cuenta la respuesta.",
+                "en": "Find the number of groups and the amount in each group. Multiply to get the total, then check what your answer counts."
+              }
+            },
+            {
+              "type": "keyIdea",
+              "text": {
+                "es": "Grupos iguales: la misma cantidad en cada grupo.",
+                "en": "Equal groups: the same number in each group."
+              }
+            },
+            {
+              "type": "vocabulary",
+              "items": [
+                {
+                  "term": {
+                    "es": "grupo",
+                    "en": "group"
+                  },
+                  "definition": {
+                    "es": "Un conjunto que contamos como una unidad.",
+                    "en": "A collection we count as one unit."
+                  }
+                },
+                {
+                  "term": {
+                    "es": "en cada grupo",
+                    "en": "in each group"
+                  },
+                  "definition": {
+                    "es": "La cantidad que tiene un solo grupo.",
+                    "en": "The number in one group."
+                  }
+                },
+                {
+                  "term": {
+                    "es": "producto",
+                    "en": "product"
+                  },
+                  "definition": {
+                    "es": "El resultado de multiplicar.",
+                    "en": "The result of multiplication."
+                  }
+                }
+              ]
+            },
+            {
+              "type": "annotatedIllustration",
+              "artBrief": "Mesa de taller sin palabras ni números.",
+              "overlay": {
+                "component": "EqualGroups",
+                "groups": 3,
+                "perGroup": 4,
+                "labelsAreLiveText": true
+              }
+            }
+          ]
+        },
+        {
+          "kind": "explorar",
+          "interaction": "drag",
+          "payload": {
+            "component": "TapeDiagram",
+            "groups": 7,
+            "perGroup": 5,
+            "task": "modelStory",
+            "prompt": {
+              "es": "Cada mesa necesita 5 hojas. Hay 7 mesas. ¿Cuántas hojas se necesitan?",
+              "en": "Each table needs 5 sheets of paper. There are 7 tables. How many sheets are needed?"
+            }
+          }
+        },
+        {
+          "kind": "practicar",
+          "challenge": {
+            "id": "g3u1.l4.c1",
+            "skillId": "g3u1.s4",
+            "mathVariantId": "g3u1.l4.c1.v1",
+            "prompt": {
+              "es": "Cada mesa necesita 5 hojas. Hay 7 mesas. ¿Cuántas hojas se necesitan?",
+              "en": "Each table needs 5 sheets of paper. There are 7 tables. How many sheets are needed?"
+            },
+            "audio": {
+              "es": "Cada mesa necesita 5 hojas. Hay 7 mesas. ¿Cuántas hojas se necesitan?",
+              "en": "Each table needs 5 sheets of paper. There are 7 tables. How many sheets are needed?"
+            },
+            "answer": {
+              "kind": "numeric",
+              "value": 35
+            },
+            "hints": [
+              {
+                "level": 1,
+                "type": "hint",
+                "text": {
+                  "es": "Hay siete grupos de cinco.",
+                  "en": "There are seven groups of five."
+                },
+                "audio": {
+                  "es": "Hay siete grupos de cinco.",
+                  "en": "There are seven groups of five."
+                }
+              },
+              {
+                "level": 2,
+                "type": "workedExample",
+                "text": {
+                  "es": "6 mesas con 5 hojas necesitan 6×5 = 30 hojas.",
+                  "en": "6 tables with 5 sheets each need 6×5 = 30 sheets."
+                },
+                "audio": {
+                  "es": "6 mesas con 5 hojas necesitan 6×5 = 30 hojas.",
+                  "en": "6 tables with 5 sheets each need 6×5 = 30 sheets."
+                }
+              },
+              {
+                "level": 3,
+                "type": "explainedAnswer",
+                "text": {
+                  "es": "7×5 = 35; se necesitan 35 hojas.",
+                  "en": "7×5 = 35, so 35 sheets are needed."
+                },
+                "audio": {
+                  "es": "7×5 = 35; se necesitan 35 hojas.",
+                  "en": "7×5 = 35, so 35 sheets are needed."
+                }
+              }
+            ],
+            "responseMode": "numericKeypad",
+            "confidenceChoices": [
+              "seguro",
+              "masOMenos",
+              "adivino"
+            ],
+            "attemptPolicy": {
+              "requireConfidenceBeforeCheck": true,
+              "countOnlyFirstIndependentResponse": true,
+              "accessibilitySupportCountsAsMathHint": false,
+              "maxHintLevel": 3,
+              "allowSkipToReview": true
+            },
+            "feedback": {
+              "tryAgain": {
+                "es": "Revisemos el modelo y lo que cuenta cada grupo.",
+                "en": "Let’s check the model and what each group counts."
+              },
+              "success": {
+                "es": "La respuesta coincide. Mira cómo la muestra el modelo.",
+                "en": "That matches. See how the model shows the answer."
+              }
+            },
+            "generator": {
+              "templateId": "equalGroups.v1",
+              "parameters": {
+                "groups": {
+                  "integerMin": 1,
+                  "integerMax": 9
+                },
+                "perGroup": {
+                  "integerMin": 1,
+                  "integerMax": 9
+                }
+              },
+              "derived": {
+                "total": "groups * perGroup"
+              },
+              "constraints": [
+                "total <= 81",
+                "groups > 0",
+                "perGroup > 0"
+              ],
+              "answerExpression": "groups * perGroup",
+              "seedPolicy": "storeLocalSeedAndTemplateVersion",
+              "localizationPolicy": "renderPluralFormsAndNarrationForEachLocale",
+              "hintPolicy": "regenerateAllThreeHintsFromTheSameParameters; workedExampleMustDiffer",
+              "sampleParameters": {
+                "groups": 7,
+                "perGroup": 5
+              },
+              "templateVersion": "1.0.0",
+              "evaluationPolicy": "whitelist named integer fields and multiplication; never eval arbitrary text",
+              "workedExamplePolicy": {
+                "chooseFirstDifferentPair": [
+                  [
+                    2,
+                    5
+                  ],
+                  [
+                    3,
+                    4
+                  ]
+                ],
+                "deriveAnswerFromChosenPair": true
+              },
+              "renderingPolicy": {
+                "pluralForms": "locale-aware",
+                "numbersAreLiveText": true,
+                "audioFromLocalizedTemplate": true,
+                "sameSeedWhenSwitchingLanguage": true
+              },
+              "semanticBindings": {
+                "groupCount": "groups",
+                "groupSize": "perGroup",
+                "answer": "total"
+              },
+              "localizedTemplates": {
+                "prompt": {
+                  "es": "Cada mesa necesita {perGroup} hojas. Hay {groups} mesas. ¿Cuántas hojas se necesitan?",
+                  "en": "Each table needs {perGroup} sheets. There are {groups} tables. How many sheets are needed?"
+                },
+                "hint": {
+                  "es": "Suma la misma cantidad por cada grupo o usa una multiplicación.",
+                  "en": "Add the same amount for each group, or use multiplication."
+                },
+                "workedExample": {
+                  "es": "{exampleGroups} grupos de {examplePerGroup}: {exampleGroups}×{examplePerGroup} = {exampleTotal}.",
+                  "en": "{exampleGroups} groups of {examplePerGroup}: {exampleGroups}×{examplePerGroup} = {exampleTotal}."
+                },
+                "explainedAnswer": {
+                  "es": "{groups}×{perGroup} = {total}; se necesitan {total} hojas.",
+                  "en": "{groups}×{perGroup} = {total}, so {total} sheets are needed."
+                }
+              }
+            },
+            "representation": {
+              "component": "OptionalWorkspace",
+              "initialModel": null
+            },
+            "standards": [
+              "3.OA.3"
+            ],
+            "answerUnit": {
+              "es": "hojas",
+              "en": "sheets"
+            }
+          }
+        },
+        {
+          "kind": "juego",
+          "game": "parejas",
+          "payload": {
+            "pairs": [
+              {
+                "left": {
+                  "es": "2 grupos de 3",
+                  "en": "2 groups of 3"
+                },
+                "right": 6
+              },
+              {
+                "left": {
+                  "es": "3 grupos de 4",
+                  "en": "3 groups of 4"
+                },
+                "right": 12
+              },
+              {
+                "left": {
+                  "es": "4 grupos de 5",
+                  "en": "4 groups of 5"
+                },
+                "right": 20
+              }
+            ],
+            "timer": false,
+            "randomRewards": false,
+            "allowExit": true
+          }
+        }
+      ],
+      "closure": {
+        "prompt": {
+          "es": "¿Qué te ayudó a resolver?",
+          "en": "What helped you solve it?"
+        },
+        "choices": [
+          {
+            "es": "Ver los grupos",
+            "en": "Seeing the groups"
+          },
+          {
+            "es": "Usar la suma",
+            "en": "Using addition"
+          },
+          {
+            "es": "Usar la multiplicación",
+            "en": "Using multiplication"
+          }
+        ]
+      }
+    }
+  ]
+}

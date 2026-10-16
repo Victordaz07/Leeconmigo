@@ -39,7 +39,8 @@ comportamiento actual del prototipo marcado como temporal en el código.
 
 ## Bloquean arquitectura
 
-6. **PWA pura vs. Capacitor+Kotlin.** Existe una preferencia registrada
+6. ✅ **Resuelto 2026-10-15 (D7): React Native + Expo** — ver `docs/11`. Texto original:
+   **PWA pura vs. Capacitor+Kotlin.** Existe una preferencia registrada
    por evitar apps nativas y construir esto como web app/PWA. Los
    documentos de arquitectura (`Idea Principal...`, `LEE_CONMIGO_MASTER_
    CONTEXT_v1.md`) deciden explícitamente por Capacitor + capa nativa
@@ -72,7 +73,8 @@ comportamiento actual del prototipo marcado como temporal en el código.
     verificar que la herramienta elegida acepte imágenes de referencia
     (DALL·E 3 solo no las admite); esto condiciona todo el pipeline de
     `05-DESIGN-SYSTEM.md`.
-13. **Solo uso familiar vs. publicación futura para otras familias** —
+13. ✅ **Resuelto 2026-10-15 (D8): se publica** — ver `docs/12`. Texto original:
+    **Solo uso familiar vs. publicación futura para otras familias** —
     condiciona si hace falta revisión legal de privacidad infantil
     (COPPA/California) antes de cualquier lanzamiento más amplio.
 
