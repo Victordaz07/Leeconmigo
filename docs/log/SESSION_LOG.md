@@ -303,3 +303,13 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
   globo de mensaje en el Taller (saluda / piensa / ánimo / apunta / celebra según el momento, nunca triste), y Mila
   celebra al terminar el Taller y las lecciones. Todo decorativo: se apaga con `decor` (Modo Enfoque, K7).
 - Verificado: Taller en 4 tamaños + lección 1 completa, sin errores.
+
+## 2026-10-16 · Cuenta A · Matemáticas: las 12 representaciones
+- Victor: "adelante, vamos a intentar terminar las matemáticas hoy". Y "no me des apk hasta que yo te diga" (anotado en
+  HANDOFF). Sobre imágenes: con lo que hay alcanza por ahora.
+- Hecho: las 9 familias que faltaban (valor posicional, recta, fracciones, barras, área/perímetro, reloj, gráficas,
+  plano, razones) con dominio, textos ES/EN, dibujos y pruebas; Taller con grado (sugerido = nivel) y temas o mezcla;
+  ejercicios visuales dentro de las 4 lecciones de g3u1.
+- Arreglos al probar: imagen tapaba marcas/agujas/rebanadas en la web (SVG encima); tocar el plano/recta medía mal en
+  la web → una zona tocable por cruce/marca; 3×6 tenía área = perímetro → el generador lo evita; títulos de pistas.
+- Verificado: 94+ pruebas de matemáticas, typecheck, recorridos en navegador en 4 tamaños. NO probado en equipo real.

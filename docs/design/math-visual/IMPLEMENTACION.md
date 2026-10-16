@@ -20,23 +20,51 @@ Fuente: `KiteWise_Documentacion_Implementacion_Interactiva.md`, `KiteWise_Prompt
 | Paleta de objetos | `manip` en `objects.tsx` (crema, tinta, azul, coral, verde, amarillo, violeta de la lámina) | Solo para objetos; el texto y los controles siguen con los tokens de Kitewise |
 | Imágenes | Arte aprobado en `apps/mobile/assets/math/` (WebP). La app lo entrega con `MathArtProvider` (`src/math-art.ts`); ui-native no empaqueta imágenes y, si falta una pieza, usa la forma dibujada con código | Las cantidades nunca dependen de una imagen |
 
-## Fase 1 — implementado
+## Familias implementadas (las 12 de la lámina)
 
-| Familia | Plantillas (grado orientativo) | Acción del niño | Evaluación |
+Dominio en `packages/math-content/src/visual/` (fase 1 en `evaluate.ts`; el resto, un archivo por familia en
+`families/` con el contrato `FamilyDef`). Textos en `ui-core/math-visual-copy.ts` y `math-visual-copy-2.ts`. Dibujos en
+`ui-native/components/math-visual/scenes.tsx` y `scenes-2.tsx`. Pantalla en `apps/mobile/src/screens/math-visual/`.
+
+| Familia | Plantillas (grado orientativo) | Acción del niño | Errores típicos que se nombran |
 |---|---|---|---|
-| Bandejas de 10/20 | `tenFrame.complete10` (1–2), `tenFrame.reach20` (1–2, cruza la decena) | Tocar casillas; las semillas del enunciado están fijas; escribir cuántas agregó | Cantidad final y cantidad agregada |
-| Grupos iguales | `groups.build` (2–3), `groups.read` (3) | Plantar con + / −; o leer el huerto y escribir parcelas, cada una y total | Cada grupo igual al pedido, y el total; en "leer", grupos y tamaño por separado |
-| Reparto | `sharing.partitive` (3–4), `sharing.quotative` (3–4), `sharing.remainder` (4) | Tocar galleta → plato/bolsa (o la bandeja para devolverla); escribir el resultado y lo que sobra | Inventario (cada galleta en un solo lugar), igualdad, "aún alcanza para una más", bolsas exactas, residuo |
+| A. Bandejas 10/20 | complete10, reach20 (1–2) | tocar casillas; escribir cuántas agregó | contar también las del principio |
+| D. Grupos iguales | groups.build (2–3), groups.read (3) | plantar con + / −; leer grupos, cada uno y total | grupos desiguales; contar plantas en vez de parcelas |
+| E. Reparto | partitive, quotative (3–4), remainder (4) | galleta → plato/bolsa | platos desiguales; "aún alcanza para una más"; bolsas incompletas |
+| B. Valor posicional | build2 (1–2), standard3 (2–3), readRegroup (2–3) | poner/quitar piezas, juntar 10, desarmar 1 | forma no usual cuando se pide la usual; leer sin reagrupar |
+| C. Recta numérica | add20 (1–2), add100, subtract100 (2–3), fraction (3–4) | saltos ±1/±10 (quedan dibujados); tocar una marca | pasarse / quedarse corto; contar marcas en vez de espacios |
+| F. Fracciones | color (3), name (3–4), equivalent (3–4) | colorear partes (tira, pizza o pastel) | cuál número va arriba/abajo; "no cubre lo mismo" |
+| G. Barras | partWhole20/100/1000, compare20/100 (1–3), times (3–4) | escribir en la parte "?" | usar la operación contraria |
+| H. Área y perímetro | cover (3), perimeter (3–4), missingSide (4) | poner losetas; escribir | dar el área como perímetro; sumar solo 2 lados |
+| I. Reloj | setHalf (1), setFive, readFive (2–3), elapsed (3–4) | ±1 h, ±5/30 min; escribir hora y minutos | aguja de la hora tras la media |
+| J. Gráficas | build, difference (2–3), scaled, total (3–4) | subir/bajar barras; leer | contar rayitas con escala de 2 |
+| K. Plano | plot, read (5–6) | tocar un cruce; escribir (x, y) | par al revés |
+| L. Razones | scale (5–6) | lotes completos | sumar lo mismo a las dos partes |
 
-Comportamiento común (`exercise.ts`): fases trabajando / revisando / resuelto / solución vista; deshacer y empezar de
-nuevo no borran ayudas; cualquier cambio retira el veredicto anterior; "Ver solución" aparece tras la 3.ª ayuda o dos
-intentos por revisar y manda la habilidad al repaso (no cuenta como fallo); 3 ayudas: dónde mirar → estrategia → ejemplo
-con OTROS números. Un estado imposible es `invalid` y nunca se cuenta como error del niño.
+37 plantillas; hay ejercicios para cada grado de 1.º a 6.º.
 
-Dónde lo ve el niño: Cuaderno de Matemáticas → **Taller** (6 ejercicios del grado de la unidad, alternando tipos). Cada
-ejercicio terminado se guarda como intento para dominio y repaso.
+### Dónde lo ve el niño
+- **Taller** (Cuaderno de Matemáticas → Taller): elige grado (el sugerido es su nivel, con ⭐; todo abre, docs/13) y un
+  tema, o la "Mezcla del día" (6 ejercicios de temas distintos).
+- **Lecciones de g3u1**: cada lección agrega sus ejercicios manipulables al final de Practicar (`LESSON_VISUALS` en
+  `session.ts`): grupos y reparto, leer grupos, área como arreglo, comparación "veces" con barras y bolsas.
+
+### Decisiones al implementar
+- Tocar en vez de medir: cada cruce del plano y cada marca de la recta es una zona tocable con su nombre ("(3, 2)",
+  "3/4"). Medir la posición del toque fallaba en la web y no es accesible.
+- El arte va detrás de lo que se mide: las rebanadas de la pizza, los cortes del pastel, las marcas y agujas del reloj
+  las dibuja el código encima de la imagen.
+- Las ayudas visuales se titulan "Pista / Estrategia / Ejemplo con otros números".
 
 ## Comprobado
+
+- Dominio: invariantes de las 37 plantillas (300 semillas), la solución de cada una es correcta y el trabajo inicial no;
+  casos: intercambio de decenas, 6/8 = 3/4, reloj 2:30 (180° y 75°), tiempo que cruza la hora, perímetro ≠ área, par
+  al revés, razón aditiva, operación contraria en barras, escala de 2.
+- Textos: toda clave de mensaje del dominio tiene texto en ES y EN.
+- Navegador (Playwright), en 1280×800, 800×1280, 390×844 y 844×390: las 37 plantillas con 3 pistas y "Ver solución"
+  (3 variantes cada una); resolver tocando reloj, plano, recta (saltos y tocar), pizza, pastel y decenas; Taller por
+  tema; lección 1 completa con sus ejercicios visuales. Sin errores.
 
 - Con el arte puesto: semillas, brotes, galletas, platos, bolsas y parcelas son las imágenes de Victor; fondos semillero
   / huerto / merienda detrás de cada familia (vertical en teléfono vertical). Recorrido completo en 4 tamaños sin errores.
@@ -51,14 +79,9 @@ ejercicio terminado se guarda como intento para dominio y repaso.
 
 ## Pendiente (no declarar hecho)
 
-- Las otras 9 familias: valor posicional, recta numérica, fracciones, modelo de barras, área/perímetro, reloj, datos,
-  coordenadas, razones (fases 2–3).
-- Arrastrar (además de tocar) y manejo por teclado físico.
-- Modo Enfoque y movimiento reducido en estas escenas (hoy no hay animaciones; falta ocultar decoración cuando llegue).
-- Mila, portadas y papalote ya están en uso (pedido 2). Los fondos de prioridad B (camino, mosaico, jardín, mapa, feria,
-  laboratorio) y frutas/reloj ya están en el repo para las fases 2–3, sin usar todavía.
-- Modo Enfoque: `VisualExercise` tiene `decor` (fondo ilustrado) listo para que K7 lo apague.
-- Guardar en el equipo (RN-08) y recuperar un ejercicio a medias.
-- Problemas verbales de varios pasos y contexto real: la investigación pendiente
-  (`docs/research/PROMPT-INVESTIGACION-PROBLEMAS-MATEMATICAS.md`) decide cuáles; estas escenas son la base para dibujarlos.
-- Revisión docente de rangos y textos; pilotaje con Noah.
+- Arrastrar (además de tocar) y teclado físico.
+- Modo Enfoque (K7): `VisualExercise` ya tiene `decor` para apagar fondo y a Mila.
+- Guardar en el equipo (RN-08).
+- Más contextos por plantilla (lápices, canicas, cajas, frascos ya están en el repo): hoy cada familia usa un objeto fijo.
+- Unidades de otros grados con lecciones propias (hoy solo g3u1 tiene lecciones; los demás grados practican en el Taller).
+- Revisión docente de rangos, textos y estándares; pilotaje con Noah. Probar en un equipo real.

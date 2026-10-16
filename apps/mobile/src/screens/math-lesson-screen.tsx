@@ -2,7 +2,7 @@ import { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { ExplorePayload, LearnBlock, MathLesson, MathRepresentation, MathUnit } from '@lee-conmigo/contracts';
-import { buildLessonPlan, challengeReducer, dueSkills, initialChallenge, phaseOf, toAttempt, updateReviews, warmupSize, type GeneratedChallenge, type PlanItem } from '@lee-conmigo/math-content';
+import { buildLessonPlan, challengeReducer, dueSkills, exerciseAttempt, initialChallenge, phaseOf, toAttempt, updateReviews, warmupSize, type GeneratedChallenge, type PlanItem } from '@lee-conmigo/math-content';
 import { MATH_COPY, type MathLang } from '@lee-conmigo/ui-core';
 import {
   ArrayGrid,
@@ -28,6 +28,7 @@ import type { MathProgress } from '../app-state';
 import { speak } from '../tts';
 import { today } from '../today';
 import { Mila } from './math-visual/mila';
+import { VisualExercise } from './math-visual/visual-exercise';
 
 interface MathLessonScreenProps {
   lang: MathLang;
@@ -91,7 +92,7 @@ export function MathLessonScreen({ lang, unit, lesson, minutes, progress, onExit
       </View>
       <ScrollView ref={scroll} contentContainerStyle={[styles.content, { paddingHorizontal: layout.gutter, paddingBottom: insets.bottom + 24 }]}>
         <View style={{ width: contentWidth, alignSelf: 'center', gap: 16 }}>
-          <Step key={index} item={item} lang={lang} split={split} modelWidth={modelWidth} day={day} progress={progress} onNext={next} onAgain={() => setIndex(Math.max(0, index - 1))} />
+          <Step key={index} item={item} lang={lang} split={split} modelWidth={modelWidth} contentWidth={contentWidth} day={day} progress={progress} onNext={next} onAgain={() => setIndex(Math.max(0, index - 1))} />
         </View>
       </ScrollView>
     </View>
@@ -103,13 +104,14 @@ interface StepProps {
   lang: MathLang;
   split: boolean;
   modelWidth: number;
+  contentWidth: number;
   day: string;
   progress: MathProgress;
   onNext: () => void;
   onAgain: () => void;
 }
 
-function Step({ item, lang, split, modelWidth, day, progress, onNext, onAgain }: StepProps) {
+function Step({ item, lang, split, modelWidth, contentWidth, day, progress, onNext, onAgain }: StepProps) {
   switch (item.kind) {
     case 'aprender':
       return <Learn blocks={item.blocks} lang={lang} split={split} modelWidth={modelWidth} onNext={onNext} onAgain={onAgain} />;
@@ -118,6 +120,23 @@ function Step({ item, lang, split, modelWidth, day, progress, onNext, onAgain }:
     case 'calentar':
     case 'practicar':
       return <Practice challenge={item.challenge} warmup={item.kind === 'calentar'} lang={lang} split={split} modelWidth={modelWidth} day={day} progress={progress} onNext={onNext} />;
+    case 'visual':
+      // Ejercicio manipulable (docs/design/math-visual): se guarda igual que un reto, para dominio y repaso.
+      return (
+        <VisualExercise
+          instance={item.instance}
+          lang={lang}
+          width={contentWidth}
+          onNext={(final) => {
+            const a = exerciseAttempt(final, day);
+            if (a) {
+              progress.attempts.push(a);
+              progress.reviews = updateReviews(progress.reviews, a);
+            }
+            onNext();
+          }}
+        />
+      );
     case 'juego':
       return <PairsGame data={item.payload} lang={lang} narrow={!split} onDone={onNext} />;
     case 'cierre':

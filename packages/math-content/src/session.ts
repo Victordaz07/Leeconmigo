@@ -10,12 +10,15 @@
 import type { ConfidenceChoice, ExplorePayload, LearnBlock, Localized, MathLesson, MathUnit, PairsGame } from '@lee-conmigo/contracts';
 import { generateChallenge, type GeneratedChallenge } from './generate.ts';
 import { warmupSize, type MathAttempt } from './mastery.ts';
+import type { VisualInstance } from './visual/model.ts';
+import { generateVisual, visualTemplateById } from './visual/templates.ts';
 
 export type PlanItem =
   | { kind: 'calentar'; challenge: GeneratedChallenge }
   | { kind: 'aprender'; blocks: LearnBlock[] }
   | { kind: 'explorar'; interaction: string; payload: ExplorePayload }
   | { kind: 'practicar'; challenge: GeneratedChallenge }
+  | { kind: 'visual'; instance: VisualInstance }
   | { kind: 'juego'; payload: PairsGame }
   | { kind: 'cierre'; closure: { prompt: Localized; choices: Localized[] } };
 
@@ -29,6 +32,17 @@ export interface PlanOptions {
 }
 
 /** Retos EXTRA por cada reto del autor: 8 min = ninguno, 15 = uno, 20 = dos. */
+/**
+ * Ejercicios manipulables (docs/design/math-visual) que cada lección agrega a su práctica, con el nivel real de 3.º:
+ * construir y leer grupos, el arreglo como área, comparación multiplicativa con barras y repartir.
+ */
+export const LESSON_VISUALS: Record<string, string[]> = {
+  'g3u1.l1': ['groups.build', 'sharing.partitive'],
+  'g3u1.l2': ['groups.read', 'groups.build'],
+  'g3u1.l3': ['area.cover', 'groups.read'],
+  'g3u1.l4': ['bar.times', 'sharing.quotative', 'area.cover'],
+};
+
 export const extraPerPractice = (minutes: number) => (minutes <= 8 ? 0 : minutes <= 15 ? 1 : 2);
 
 export function buildLessonPlan(unit: MathUnit, lesson: MathLesson, o: PlanOptions): PlanItem[] {
@@ -41,22 +55,31 @@ export function buildLessonPlan(unit: MathUnit, lesson: MathLesson, o: PlanOptio
     const c = allChallenges.find((x) => x.skillId === skillId);
     if (c) plan.push({ kind: 'calentar', challenge: generateChallenge(c, nextSeed()) });
   }
+  const visuals = (LESSON_VISUALS[lesson.id] ?? []).flatMap((id) => {
+    const t = visualTemplateById(id);
+    return t ? [generateVisual(t, nextSeed())] : [];
+  });
   for (const step of lesson.steps) {
     if (step.kind === 'aprender') plan.push({ kind: 'aprender', blocks: step.blocks });
     else if (step.kind === 'explorar') plan.push({ kind: 'explorar', interaction: step.interaction, payload: step.payload });
-    else if (step.kind === 'juego') plan.push({ kind: 'juego', payload: step.payload });
+    else if (step.kind === 'juego') {
+      // Los ejercicios manipulables van al final de Practicar, justo antes del juego.
+      for (const instance of visuals.splice(0)) plan.push({ kind: 'visual', instance });
+      plan.push({ kind: 'juego', payload: step.payload });
+    }
     else {
       plan.push({ kind: 'practicar', challenge: generateChallenge(step.challenge, 0) });
       for (let i = 0; i < extraPerPractice(o.minutes); i++) plan.push({ kind: 'practicar', challenge: generateChallenge(step.challenge, nextSeed()) });
     }
   }
+  for (const instance of visuals) plan.push({ kind: 'visual', instance });
   plan.push({ kind: 'cierre', closure: lesson.closure });
   return plan;
 }
 
 /** Momento de Kitewise al que pertenece cada paso (para las píldoras Aprender / Explorar / Practicar / Juego). */
 export function phaseOf(item: PlanItem): 'aprender' | 'explorar' | 'practicar' | 'juego' | 'cierre' {
-  return item.kind === 'calentar' ? 'practicar' : item.kind;
+  return item.kind === 'calentar' || item.kind === 'visual' ? 'practicar' : item.kind;
 }
 
 // ------------------------------------------------------------------ un reto

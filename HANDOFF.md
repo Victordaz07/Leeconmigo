@@ -31,14 +31,13 @@ Ninguna a medias. Voz (RN-03) PAUSADA por Victor. K6: la primera unidad de Matem
       Practicar, Juego, Cierre); los intentos alimentan dominio y repaso
 
 ## Siguiente paso exacto
-Matemáticas visuales (spec de Victor en `docs/design/math-visual/`): **fase 1 hecha** — bandejas 10/20, grupos iguales y
-reparto (7 plantillas), Taller en el cuaderno, galería DEV. Estado real en `docs/design/math-visual/IMPLEMENTACION.md`.
-1. Arte de Victor integrado (pedidos 1 y 2: 40 imágenes en `apps/mobile/assets/math/`, registro en `src/math-art.ts`):
-   portada en Inicio, encabezado de unidad, papalote, Mila guía. Victor prueba el APK 0.4.2.
-2. Fase 2 de la spec: valor posicional, recta numérica, fracciones y modelo de barras, con el mismo contrato
-   (plantilla → instancia → trabajo → evaluación) y pruebas de invariantes.
-3. Sigue pendiente la investigación de problemas reales (`docs/research/PROMPT-INVESTIGACION-PROBLEMAS-MATEMATICAS.md`)
-   para rehacer las lecciones de g3u1 con problemas de nivel escolar; nivel de Noah en matemáticas; RN-08.
+Matemáticas: las 12 representaciones de la lámina están hechas (37 plantillas, 1.º–6.º), con Taller por grado y tema,
+y las lecciones de g3u1 ya traen ejercicios manipulables. Estado real y pendientes:
+`docs/design/math-visual/IMPLEMENTACION.md`.
+1. Victor prueba (cuando pida APK; no generar sin que lo pida).
+2. Pendientes de Matemáticas: Modo Enfoque (K7), guardar en el equipo (RN-08), arrastrar, más contextos por plantilla,
+   lecciones de otros grados, revisión docente.
+3. Después: siguiente cuaderno (Ciencia/Sociedad/Arte) o lo que Victor decida.
 
 ## Cuidado con
 - **No generar ni enviar APK hasta que Victor lo pida** (Victor, 2026-10-16: "no me des apk hasta que yo te diga").
@@ -55,4 +54,4 @@ reparto (7 plantillas), Taller en el cuaderno, galería DEV. Estado real en `doc
 - `npm ci` en la nube: usar `--ignore-scripts` (postinstall de `onnxruntime-node`).
 
 ## Estado de pruebas
-`npm test`: 1167/1167 ✅ · `npm run typecheck`: ✅ (incluye mobile, ui-native y ui-core)
+`npm test`: 1183/1183 ✅ · `npm run typecheck`: ✅ (incluye mobile, ui-native y ui-core)

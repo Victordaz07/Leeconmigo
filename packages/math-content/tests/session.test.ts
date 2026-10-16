@@ -74,3 +74,18 @@ describe('un reto', () => {
     expect(toAttempt(s, c, '2026-10-16')).toBeNull();
   });
 });
+
+describe('ejercicios manipulables dentro de las lecciones', () => {
+  it('cada lección de g3u1 trae sus ejercicios visuales, en Practicar y antes del juego', async () => {
+    const { LESSON_VISUALS } = await import('../src/session.ts');
+    for (const l of unit.lessons) {
+      const plan = buildLessonPlan(unit, l, { minutes: 15, seed: 3 });
+      const visual = plan.filter((p) => p.kind === 'visual');
+      expect(visual.length).toBe(LESSON_VISUALS[l.id].length);
+      const phases = plan.map(phaseOf);
+      const juego = phases.indexOf('juego');
+      const lastVisual = plan.map((p) => p.kind).lastIndexOf('visual');
+      if (juego >= 0) expect(lastVisual).toBeLessThan(juego);
+    }
+  });
+});
