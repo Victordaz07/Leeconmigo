@@ -104,8 +104,8 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | ID | Tarea | Estado | Cuenta | Rama / nota |
 |---|---|---|---|---|
 | PREP-1 | Preparación: módulo, registro, paquete vacío, guardado por materia, protocolo | ✅ | A | enchufado como "Pronto" |
-| SO-01 | Prompt de investigación de Sociedad → Victor lo corre | ⬜ | B | **no programar antes** (lección de Matemáticas) |
-| SO-02 | Especificación visual/interactiva en `docs/design/sociedad/` | ⬜ | B | el mapa va por capas tocables |
+| SO-01 | Prompt de investigación de Sociedad → Victor lo corre | ✅ | B | resultado: `docs/research/sociedad-investigacion.md` |
+| SO-02 | Especificación visual/interactiva en `docs/design/sociedad/` | ⬜ | B | acotar a 1 unidad piloto (no las 6 de "Etapa A"); esperando DS-3 de Victor |
 | SO-03 | Lista de imágenes por tandas + manifiesto | ⬜ | B | base: `ART-BRIEF.md` |
 | SO-04 | Dominio puro en `packages/social-content` + pruebas | ⬜ | B | |
 | SO-05 | Textos ES/EN en `ui-core/src/sociedad/` | ⬜ | B | |
