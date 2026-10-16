@@ -9,6 +9,8 @@ import { TOPIC_ICONS } from '../../math-art';
 import { today } from '../../today';
 import { Mila } from './mila';
 import { VisualExercise } from './visual-exercise';
+import { MovementBreakScreen } from '../movement-break-screen';
+import { useMovementBreak } from '../../movement';
 
 const GRADES = [1, 2, 3, 4, 5, 6] as const;
 
@@ -25,16 +27,21 @@ interface WorkshopScreenProps {
   roundSize?: number;
   /** Modo Enfoque: sin fondos, sin Mila y sin animaciones alrededor del ejercicio. */
   calm?: boolean;
+  /** Modo Enfoque: pausa de movimiento entre ejercicios, si ya toca (B12). */
+  movementBreaks?: boolean;
+  profileId: string;
   onExit: () => void;
 }
 
-export function WorkshopScreen({ lang, grade: suggested, progress, roundSize = 6, calm = false, onExit }: WorkshopScreenProps) {
+export function WorkshopScreen({ lang, grade: suggested, progress, roundSize = 6, calm = false, movementBreaks = false, profileId, onExit }: WorkshopScreenProps) {
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const [grade, setGrade] = useState(suggested);
   const [session, setSession] = useState<VisualInstance[] | null>(null);
   const [index, setIndex] = useState(0);
   const day = useMemo(today, []);
+  const movement = useMovementBreak(movementBreaks, profileId, !!session);
+  const [resting, setResting] = useState(false);
   const width = Math.min(layout.width - layout.gutter * 2, 1100);
   const finished = !!session && index >= session.length;
   const start = (family?: VisualFamily) => {
@@ -127,12 +134,24 @@ export function WorkshopScreen({ lang, grade: suggested, progress, roundSize = 6
                   progress.reviews = updateReviews(progress.reviews, a);
                   progress.save();
                 }
+                // Límite natural: entre un ejercicio y otro (no al terminar la ronda).
+                if (movement.due && index + 1 < session!.length) setResting(true);
                 setIndex(index + 1);
               }}
             />
           )}
         </View>
       </ScrollView>
+      {resting && (
+        <MovementBreakScreen
+          n={movement.count}
+          lang={lang}
+          onDone={() => {
+            movement.taken();
+            setResting(false);
+          }}
+        />
+      )}
     </View>
   );
 }

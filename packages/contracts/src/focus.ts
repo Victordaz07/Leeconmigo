@@ -14,6 +14,8 @@ export interface FocusSupports {
   /** Lectura de una línea a la vez (Kitewise B10): ilustración desenfocada de fondo, solo la línea actual resaltada y
    * tres botones. */
   focusReading: boolean;
+  /** Pausa de movimiento (Kitewise B12): 60 s cada ~10 min de actividad, al terminar una página o un ejercicio. */
+  movementBreaks: boolean;
 }
 
 /** Horario en que se enciende solo (p. ej. lunes a viernes de 15:00 a 19:00). Fuera de él, apagado. */

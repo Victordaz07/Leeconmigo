@@ -8,6 +8,8 @@ import type { Energy } from '@lee-conmigo/ui-core';
 import { progressStoreFor, type ChildProfile } from '../app-state';
 import { useReadingSession, type ReadingSession } from '../session/use-reading-session';
 import { SHOW_DEV_TOOLS } from '../dev-tools';
+import { useMovementBreak } from '../movement';
+import { MovementBreakScreen } from './movement-break-screen';
 import { storyImage } from '../story-assets';
 
 const lectura = subjectById('lectura');
@@ -43,11 +45,21 @@ interface ReadingScreenProps {
   goalMinutes: number;
   /** Modo Enfoque (B10): una línea a la vez, ilustración desenfocada de fondo y tres botones. */
   focusReading?: boolean;
+  /** Modo Enfoque: pausa de movimiento al terminar una página, si ya toca (B12). */
+  movementBreaks?: boolean;
   onExit: () => void;
 }
 
-export function ReadingScreen({ story, profile, energy, goalMinutes, focusReading = false, onExit }: ReadingScreenProps) {
-  const session = useReadingSession(story, { store: progressStoreFor(profile.id), energy: energy ?? undefined, dailyGoalMinutes: goalMinutes, freeReading: profile.freeReading });
+export function ReadingScreen({ story, profile, energy, goalMinutes, focusReading = false, movementBreaks = false, onExit }: ReadingScreenProps) {
+  const [resting, setResting] = useState(false);
+  const session = useReadingSession(story, { store: progressStoreFor(profile.id), energy: energy ?? undefined, dailyGoalMinutes: goalMinutes, freeReading: profile.freeReading, holdAtPageEnd: resting });
+  // Pausa de movimiento (B12): el reloj cuenta mientras lee; si ya toca, se ofrece al terminar una página (no la última,
+  // que lleva al cierre) y la página siguiente espera.
+  const movement = useMovementBreak(movementBreaks, profile.id, session.flow.screen === 'reading');
+  const lastPage = session.pageIndex === story.pages.length - 1;
+  useEffect(() => {
+    if (movement.due && session.flow.screen === 'pageDone' && !lastPage) setResting(true);
+  }, [movement.due, session.flow.screen, lastPage]);
   const { flow, reading, view, actions, prefs } = session;
   const insets = useSafeAreaInsets();
   const layout = useLayout();
@@ -160,6 +172,16 @@ export function ReadingScreen({ story, profile, energy, goalMinutes, focusReadin
       </View>
       {horizontalBar && !focusReading && rail}
 
+      {resting && (
+        <MovementBreakScreen
+          n={movement.count}
+          lang={profile.language === 'en' ? 'en' : 'es'}
+          onDone={() => {
+            movement.taken();
+            setResting(false);
+          }}
+        />
+      )}
       <HelpSheet word={session.help?.word ?? null} entry={session.help?.entry} audience={prefs.audience} onListen={actions.pronounce} onClose={actions.closeHelp} />
     </View>
   );

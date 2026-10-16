@@ -350,3 +350,13 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
 - Verificado: 1194 pruebas, typecheck, navegador en 1280×800, 390×844 y 844×390 (leer con el panel DEV, ayuda abierta,
   avance largo con desplazamiento). NO probado en el equipo.
 
+## 2026-10-16 · Cuenta A · K7c: pausa de movimiento (B12)
+- Hecho: apoyo `movementBreaks` (Encendido; elegible en Personalizado). Cada ~10 min de actividad (lectura, lección o
+  Taller, solo con la app al frente; el reloj se comparte entre pantallas) se ofrece una pausa de 60 s con 3
+  movimientos, SOLO en un límite natural: al terminar una página (la siguiente espera), un paso de la lección o un
+  ejercicio del Taller. "Listo, volvamos" siempre disponible. 3 rutinas ES/EN que se turnan.
+- Error encontrado al probar: en Lectura, al terminar la página el reloj dejaba de contar y eso ocultaba que ya tocaba
+  la pausa → se separó "contar" de "activo".
+- Verificado: 1196 pruebas, typecheck, navegador con reloj simulado (Taller y Lectura: aparece, avanza el temporizador,
+  la página espera y luego sigue). La lección usa el mismo patrón; no se recorrió en navegador.
+

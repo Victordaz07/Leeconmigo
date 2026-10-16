@@ -143,6 +143,7 @@ function Root() {
           energy={energy}
           goalMinutes={minutes}
           focusReading={focus.focusReading}
+          movementBreaks={focus.movementBreaks}
           onExit={() => {
             setProgressVersion((v) => v + 1);
             setRoute(back === 'home' ? { name: 'home' } : { name: 'notebook' });
@@ -215,6 +216,8 @@ function Root() {
           minutes={minutes}
           progress={mathProgress}
           calm={focus.reducedMotion}
+          movementBreaks={focus.movementBreaks}
+          profileId={profile.id}
           onExit={() => {
             setProgressVersion((v) => v + 1);
             setRoute({ name: 'mathNotebook' });
@@ -231,6 +234,8 @@ function Root() {
         progress={mathProgress}
         roundSize={focus.roundSize}
         calm={focus.reducedMotion}
+        movementBreaks={focus.movementBreaks}
+        profileId={profile.id}
         onExit={() => {
           setProgressVersion((v) => v + 1);
           setRoute({ name: 'mathNotebook' });

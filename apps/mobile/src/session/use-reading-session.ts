@@ -40,6 +40,8 @@ export interface ReadingSessionOptions {
   dailyGoalMinutes?: number;
   /** Empezar en lectura libre (ajuste de padres, P4): sin micrófono, la página se pasa con un botón. */
   freeReading?: boolean;
+  /** Quedarse en "página completa" sin pasar a la siguiente (mientras dura una pausa de movimiento, B12). */
+  holdAtPageEnd?: boolean;
 }
 
 export function useReadingSession(story: Story, options: ReadingSessionOptions) {
@@ -150,11 +152,11 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
 
   // Al terminar una página, seguir sola tras el aviso. TODO(RN-06): pregunta de comprensión y repaso por sílabas.
   useEffect(() => {
-    if (flow.screen !== 'pageDone') return;
+    if (flow.screen !== 'pageDone' || options.holdAtPageEnd) return;
     const id = setTimeout(() => advance({ type: 'page.next', words: [], isLastPage }), PAGE_DONE_MS);
     return () => clearTimeout(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [flow.screen]);
+  }, [flow.screen, options.holdAtPageEnd]);
 
   // Al terminar la historia: se cierra el temporizador y ya no hay nada que retomar. El resumen se guarda al cerrar el
   // cierre (B13), con la carita de enfoque que elija el niño (o sin ella si sale con Volver).

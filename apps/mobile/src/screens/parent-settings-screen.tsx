@@ -131,13 +131,14 @@ function FocusSection({ value, onChange }: { value: FocusSettings; onChange: (v:
         {value.mode === 'off'
           ? 'Todo como siempre.'
           : value.mode === 'on'
-            ? 'Lectura de una línea a la vez, menos dibujos y animaciones alrededor de los ejercicios y rondas de 4 en el Taller de Matemáticas.'
+            ? 'Lectura de una línea a la vez, menos dibujos y animaciones, pausa de movimiento de 1 minuto cada 10 y rondas de 4 en el Taller de Matemáticas.'
             : 'Elige cada apoyo.'}
       </Text>
       {value.mode === 'custom' && (
         <>
           <Toggle label="Lectura de una línea a la vez" value={value.custom.focusReading} onChange={(v) => set({ custom: { ...value.custom, focusReading: v } })} />
           <Toggle label="Menos dibujos y animaciones" value={value.custom.reducedMotion} onChange={(v) => set({ custom: { ...value.custom, reducedMotion: v } })} />
+          <Toggle label="Pausa de movimiento cada 10 minutos" value={value.custom.movementBreaks} onChange={(v) => set({ custom: { ...value.custom, movementBreaks: v } })} />
           <Text style={styles.label}>Ejercicios por ronda en el Taller</Text>
           <Segmented options={[3, 4, 5, 6].map((n) => ({ id: n, label: String(n) }))} value={value.custom.roundSize} onChange={(roundSize) => set({ custom: { ...value.custom, roundSize } })} />
         </>

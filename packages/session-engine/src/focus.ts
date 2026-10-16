@@ -4,8 +4,8 @@
  */
 import type { FocusSchedule, FocusSettings, FocusSupports } from '@lee-conmigo/contracts';
 
-export const FOCUS_OFF: FocusSupports = { reducedMotion: false, roundSize: 6, focusReading: false };
-export const FOCUS_ON: FocusSupports = { reducedMotion: true, roundSize: 4, focusReading: true };
+export const FOCUS_OFF: FocusSupports = { reducedMotion: false, roundSize: 6, focusReading: false, movementBreaks: false };
+export const FOCUS_ON: FocusSupports = { reducedMotion: true, roundSize: 4, focusReading: true, movementBreaks: true };
 
 /** Lo que tiene un perfil nuevo (o uno guardado antes de que existiera el Modo Enfoque). */
 export const DEFAULT_FOCUS: FocusSettings = { mode: 'off', custom: { ...FOCUS_ON } };
@@ -33,8 +33,8 @@ export function normalizeFocus(saved: Partial<FocusSettings> | null | undefined)
   const mode = saved?.mode === 'on' || saved?.mode === 'custom' ? saved.mode : 'off';
   const c: Partial<FocusSupports> = saved?.custom ?? {};
   const roundSize = Number.isInteger(c.roundSize) && c.roundSize! >= 3 && c.roundSize! <= 10 ? c.roundSize! : FOCUS_ON.roundSize;
-  const flag = (k: 'reducedMotion' | 'focusReading') => (typeof c[k] === 'boolean' ? c[k]! : FOCUS_ON[k]);
-  return { mode, custom: { reducedMotion: flag('reducedMotion'), roundSize, focusReading: flag('focusReading') }, ...(saved?.schedule ? { schedule: saved.schedule } : {}) };
+  const flag = (k: 'reducedMotion' | 'focusReading' | 'movementBreaks') => (typeof c[k] === 'boolean' ? c[k]! : FOCUS_ON[k]);
+  return { mode, custom: { reducedMotion: flag('reducedMotion'), roundSize, focusReading: flag('focusReading'), movementBreaks: flag('movementBreaks') }, ...(saved?.schedule ? { schedule: saved.schedule } : {}) };
 }
 
 /** Apoyos que rigen ahora. Con horario, fuera de él el modo queda apagado. */

@@ -24,7 +24,7 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | K7 | Modo Enfoque (B10, B12), oscuro (G1–G3), vertical (G4–G6) | 🟡 | A | vertical + teléfono ✅ (`layoutFor`); faltan el resto de Enfoque (K7b–d) y modo oscuro |
 | K7a | Enfoque: ajuste del padre (Apagado/Encendido/Personalizado + horario) guardado por perfil; Matemáticas lo respeta | ✅ | A | `contracts/focus.ts`, `session-engine/focus.ts` (`resolveFocus`, con pruebas), P4; Taller y lecciones: fondo desenfocado, sin Mila, rondas de 4 |
 | K7b | Enfoque en Lectura (B10): arte desenfocado de fondo, 1 frase resaltada, 3 botones | ✅ | A | apoyo `focusReading` («Lectura de una línea a la vez»); `FocusPage` en `reading-screen.tsx`, `FocusReadingBar`; la hoja sigue a la línea actual |
-| K7c | Pausa de movimiento (B12): 60–90 s cada ~10 min | ⬜ | | |
+| K7c | Pausa de movimiento (B12): 60–90 s cada ~10 min | ✅ | A | apoyo `movementBreaks`; 60 s, 3 rutinas ES/EN (`ui-core/movement.ts`), `MovementBreak` (ui-native); reloj de actividad compartido (`apps/mobile/src/movement.ts`); sale al terminar página / paso / ejercicio |
 | K7d | Enfoque adaptativo (toques erráticos, pausas largas; sin cámara ni audio) | ⬜ | | el niño no ve avisos |
 | K8 | Mi cuaderno, Logros, informe PDF, foto de tarea | ⬜ | – | foto espera C13 |
 | **RN** | **Migración a React Native + Expo** (D7, `docs/11`) | | | |

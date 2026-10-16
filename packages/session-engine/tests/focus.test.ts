@@ -7,8 +7,8 @@ const at = (day: string, time: string) => new Date(`2026-10-${day}T${time}:00`);
 describe('Modo Enfoque', () => {
   it('Apagado, Encendido y Personalizado dan sus apoyos', () => {
     expect(resolveFocus({ mode: 'off', custom: FOCUS_ON })).toEqual(FOCUS_OFF);
-    expect(resolveFocus({ mode: 'on', custom: { reducedMotion: false, roundSize: 9, focusReading: false } })).toEqual(FOCUS_ON);
-    expect(resolveFocus({ mode: 'custom', custom: { reducedMotion: false, roundSize: 3, focusReading: true } })).toEqual({ reducedMotion: false, roundSize: 3, focusReading: true });
+    expect(resolveFocus({ mode: 'on', custom: { reducedMotion: false, roundSize: 9, focusReading: false, movementBreaks: false } })).toEqual(FOCUS_ON);
+    expect(resolveFocus({ mode: 'custom', custom: { reducedMotion: false, roundSize: 3, focusReading: true, movementBreaks: false } })).toEqual({ reducedMotion: false, roundSize: 3, focusReading: true, movementBreaks: false });
     // Un perfil personalizado guardado antes de que existiera un apoyo lo recibe encendido (como en Encendido).
     expect(resolveFocus({ mode: 'custom', custom: { reducedMotion: false, roundSize: 3 } as never }).focusReading).toBe(true);
   });
@@ -16,7 +16,7 @@ describe('Modo Enfoque', () => {
   it('un perfil sin Modo Enfoque (guardado antes) queda apagado; datos a medias se completan', () => {
     expect(resolveFocus(undefined)).toEqual(FOCUS_OFF);
     expect(normalizeFocus(null)).toEqual(DEFAULT_FOCUS);
-    expect(normalizeFocus({ mode: 'custom', custom: { roundSize: 99 } as never })).toEqual({ mode: 'custom', custom: { reducedMotion: true, roundSize: 4, focusReading: true } });
+    expect(normalizeFocus({ mode: 'custom', custom: { roundSize: 99 } as never })).toEqual({ mode: 'custom', custom: { reducedMotion: true, roundSize: 4, focusReading: true, movementBreaks: true } });
     expect(normalizeFocus({ mode: 'raro' as never }).mode).toBe('off');
   });
 

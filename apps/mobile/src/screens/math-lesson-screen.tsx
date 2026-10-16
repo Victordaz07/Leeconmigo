@@ -29,6 +29,8 @@ import { speak } from '../tts';
 import { today } from '../today';
 import { Mila } from './math-visual/mila';
 import { VisualExercise } from './math-visual/visual-exercise';
+import { MovementBreakScreen } from './movement-break-screen';
+import { useMovementBreak } from '../movement';
 
 interface MathLessonScreenProps {
   lang: MathLang;
@@ -38,6 +40,9 @@ interface MathLessonScreenProps {
   progress: MathProgress;
   /** Modo Enfoque: sin fondos, sin Mila y sin animaciones alrededor de los ejercicios. */
   calm?: boolean;
+  /** Modo Enfoque: pausa de movimiento al terminar un paso, si ya toca (B12). */
+  movementBreaks?: boolean;
+  profileId: string;
   onExit: () => void;
 }
 
@@ -47,7 +52,7 @@ interface MathLessonScreenProps {
  * Aprender → Explorar → Practicar → Juego → Cierre. La lógica vive en `@lee-conmigo/math-content` (plan, reto, dominio);
  * aquí solo se dibuja. Cada reto terminado se guarda como intento (para dominio y repaso), nunca como calificación.
  */
-export function MathLessonScreen({ lang, unit, lesson, minutes, progress, calm = false, onExit }: MathLessonScreenProps) {
+export function MathLessonScreen({ lang, unit, lesson, minutes, progress, calm = false, movementBreaks = false, profileId, onExit }: MathLessonScreenProps) {
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const t = MATH_COPY;
@@ -64,8 +69,14 @@ export function MathLessonScreen({ lang, unit, lesson, minutes, progress, calm =
   useEffect(() => scroll.current?.scrollTo({ y: 0, animated: false }), [index]);
   const item = plan[index];
   const lessonNo = unit.lessons.findIndex((l) => l.id === lesson.id) + 1;
+  const movement = useMovementBreak(movementBreaks, profileId);
+  const [resting, setResting] = useState(false);
   const next = () => {
-    if (index + 1 < plan.length) return setIndex(index + 1);
+    if (index + 1 < plan.length) {
+      // Límite natural: entre un paso y otro. La pausa se pone encima y el paso siguiente espera detrás.
+      if (movement.due) setResting(true);
+      return setIndex(index + 1);
+    }
     progress.lessonsDone.add(lesson.id);
     progress.save();
     onExit();
@@ -98,6 +109,16 @@ export function MathLessonScreen({ lang, unit, lesson, minutes, progress, calm =
           <Step key={index} item={item} lang={lang} split={split} modelWidth={modelWidth} contentWidth={contentWidth} day={day} progress={progress} calm={calm} onNext={next} onAgain={() => setIndex(Math.max(0, index - 1))} />
         </View>
       </ScrollView>
+      {resting && (
+        <MovementBreakScreen
+          n={movement.count}
+          lang={lang}
+          onDone={() => {
+            movement.taken();
+            setResting(false);
+          }}
+        />
+      )}
     </View>
   );
 }

@@ -22,6 +22,7 @@ export { SubjectTab } from './components/subject-tab.tsx';
 export { CoachBubble } from './components/coach-bubble.tsx';
 export { DialogCard } from './components/dialog-card.tsx';
 export { FocusReadingBar, ReadingRail } from './components/reading-rail.tsx';
+export { MovementBreak } from './components/movement-break.tsx';
 export { ClosingCard, type ClosingStat } from './components/closing-card.tsx';
 export { PinPad } from './components/pin-pad.tsx';
 export { useLayout } from './components/use-layout.ts';
