@@ -21,7 +21,8 @@ interface LightBoxProps {
   interior?: { x: number; y: number; w: number; h: number };
 }
 
-const INTERIOR = { x: 0.13, y: 0.22, w: 0.74, h: 0.58 };
+/** Interior de `prop_caja_observacion` (la caja es ancha: ocupa todo el ancho y el 66 % del alto del cuadrado). */
+const INTERIOR = { x: 0.045, y: 0.275, w: 0.91, h: 0.56 };
 
 /**
  * La caja de observación de C1-U02: un objeto adentro y una linterna al lado. Con la luz apagada el interior se oscurece y el

@@ -145,3 +145,14 @@ C1 → C2 → C6 → C3 → C5 (de menos a más trabajo nuevo; spec §6).
 **Siguiente:** CI-12 C2-U02 (probador de materiales: 4 materiales cuadrados iguales, «no pasó / pasó un poco / pasó mucha»,
 tabla de resultados con `ResultTable`). Decisiones de diseño ya tomadas para que el arte case: 4 materiales (papel absorbente,
 tela, plástico, cartón), vaso de agua compartido con C5 y C6, bandeja con pico.
+
+
+## Actualización CI-11b (2026-10-16): Lote A recibido, C1-U02 abierta
+- Victor mandó el Lote A (7 imágenes: portada, escena, caja, linterna, osito, pelota, taza; sin texto, objetos con fondo
+  transparente limpio, caja con interior beige liso). Convertidas con `python3 -I scripts/ciencia-arte.py <carpeta> tanda-2a`
+  (manifiesto `docs/design/ciencia/arte/manifest-tanda-2a.json`, 240 KB en total) y conectadas en `art.ts`.
+- `LightBox`: el interior de la caja es `{x:.045,y:.275,w:.91,h:.56}` (la caja es ancha y ocupa 66 % del alto del cuadrado).
+- `UNIT_ART_READY['C1-U02'] = true`: C1-U02 ya se abre sin build de demo. Verificada en el navegador (tableta horizontal y vertical,
+  teléfono vertical). Un lote nuevo = un manifiesto nuevo (`tanda-2b`, `2c`…) que se suma a `MANIFESTS` en `tests/ciencia-art.test.ts`.
+- Los lotes B–E siguen en preparación (Victor los está generando). El arte provisional (`scripts/ciencia-arte-provisional.py`) solo se
+  usa para probar una unidad mientras llega su lote; nunca se deja conectado con la unidad abierta.

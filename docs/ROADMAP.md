@@ -98,7 +98,7 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | CI-08 | Revisión de un maestro (estándares: borrador) | ⬜ | – | |
 | CI-09 | Pedido de imágenes de la Tanda 2 (5 unidades piloto, 41 imágenes en 5 lotes A–E) | ✅ | A | `docs/design/ciencia/PEDIDO-IMAGENES.md`; espera que Victor las genere |
 | CI-10 | Reproductor de sesión por «familias» de laboratorio (erosión, mapa, escena, luz) y catálogo de las 48 unidades | ✅ | A | `subjects/ciencia/families/`, `catalog-screen.tsx`; una unidad nueva solo agrega su familia |
-| CI-11 | C1-U02 «Ver en la oscuridad»: modelo de la luz, unidad en JSON validado, caja de luz y tabla de observaciones | ✅ contenido y pantallas · ⏳ arte | A | `UNIT_ART_READY['C1-U02']=false` hasta el Lote A (hoy arte provisional, solo en build de demo) |
+| CI-11 | C1-U02 «Ver en la oscuridad»: modelo de la luz, unidad en JSON validado, caja de luz y tabla de observaciones | ✅ | A | Lote A recibido (7 imágenes, `manifest-tanda-2a.json`); `UNIT_ART_READY['C1-U02']=true`; verificada en tableta y teléfono |
 | CI-12 | C2-U02 «Un techo para el muñeco» (probador de materiales) | ⬜ | A | espera Lote B |
 | CI-13 | C6-U04 «Energía térmica» (probador + constructor de modelos + mesa de datos) | ⬜ | A | espera Lote C |
 | CI-14 | C3-U06 «Interacciones sin tocar» (fuerzas e imanes) | ⬜ | A | espera Lote D |

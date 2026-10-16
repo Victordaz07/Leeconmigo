@@ -40,7 +40,7 @@ export const CIENCIA_PROPS = {
   piedritas: require('../../../assets/ciencia/props/prop_piedritas.webp'),
 } satisfies Record<string, ImageSourcePropType>;
 
-/** Arte de la unidad C1-U02 (Lote A del pedido; hoy PROVISIONAL hasta que lleguen las imágenes de Victor). */
+/** Arte de la unidad C1-U02 (Lote A del pedido, recibido: `docs/design/ciencia/arte/manifest-tanda-2a.json`). */
 export const CIENCIA_LUZ = {
   caja: require('../../../assets/ciencia/props/prop_caja_observacion.webp'),
   linterna: require('../../../assets/ciencia/props/prop_linterna.webp'),
@@ -67,7 +67,7 @@ export const MAYA: Record<MayaPose, { source: ImageSourcePropType; aspect: numbe
  */
 export const UNIT_ART_READY: Record<string, boolean> = {
   'C4-U06': true,
-  'C1-U02': false, // arte provisional: espera el Lote A
+  'C1-U02': true, // Lote A recibido (manifest-tanda-2a)
 };
 
 /** Un build de demo (`EXPO_PUBLIC_DEMO=1`) deja abrir las unidades con arte provisional, para probarlas antes de que llegue. */

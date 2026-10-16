@@ -68,3 +68,7 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
 - C1-U02 completa en contenido y pantallas; el arte es provisional hasta el Lote A. 12 pruebas nuevas de la unidad + 3 del catálogo.
 - Decisión de diseño: dos ideas (`luz.ver`, `objeto.sigue`) en tres casos (osito, pelota, «armario» = taza) en vez de la idea de
   «cambiar una sola cosa», que no es de 1.º (1-PS4-2 pide ver que un objeto solo se ve con luz).
+
+## 2026-10-16 · CI-11b: Lote A recibido
+- Se revisaron las 7 imágenes (sin texto, alfa limpio, caja ancha con interior liso), se convirtieron y se conectaron; se ajustó el
+  interior de la caja y C1-U02 quedó abierta (`UNIT_ART_READY=true`). Prueba de arte: un manifiesto por lote.
