@@ -19,17 +19,21 @@ que pediría SO-02. Sigue sin haber contenido en la app, ni arte, ni código. En
    *seis* unidades piloto, una por grado — más grande que el piloto único de Matemáticas, g3u1).
 
 ## Siguiente paso exacto
-**SO-03 — esperando que Victor genere y mande las 7 imágenes.** Pedido completo en
-`docs/design/sociedad/PEDIDO-IMAGENES-S3-U03.md`: historia del "Barrio de los Almendros" (ficticio), reutiliza a
-**Teo y Nia** (de la historia de lectura "La cometa roja", mismo grado) en vez de personajes nuevos, con
-referencia a `apps/reader/public/stories/la-cometa-roja/page-01.webp`. 7 piezas: portada, 2 mapas del barrio
-(antes/después, misma composición), 2 tarjetas de fuente ficticias (acta municipal, anuncio comercial, sin
-texto) y 4 poses de Teo como guía (igual patrón que `char_mila_*` en Matemáticas).
-DS-3 (unidad S3-U03) se trata como confirmada — Victor pidió avanzar directo a las imágenes.
-Cuando lleguen: convertir a WebP, revisar contra la lista de "Cómo las reviso al llegar" del pedido, y seguir
+**SO-03 v2 — esperando que Victor genere y mande 7 imágenes nuevas** (de las 5 que ya mandó, 2 se reusan como
+portada/escena; no hace falta regenerarlas). **La historia cambió de elenco (v2, 2026-10-16):** Victor vio las
+imágenes que pedí con Teo+Nia (de "La cometa roja") y prefirió anclar la unidad al mundo de **"El mapa de la
+puerta desaparecida"** (Inés, Teo, la abuela Elena — historia de Lectura nivel 6) en vez de inventar un barrio
+nuevo. Se acordó reusar esos personajes y ese jardín, pero con un **caso nuevo** ("El paso del arroyo": un plano
+viejo muestra piedras para cruzar un arroyo donde hoy hay un puente), no el mismo misterio del libro — para no
+arruinar la sorpresa del libro ni mezclar un texto de nivel 6 en una unidad de 3.º.
+Especificación actualizada: `docs/design/sociedad/UNIDAD-PILOTO-S3-U03.md`. Pedido de imágenes actualizado:
+`docs/design/sociedad/PEDIDO-IMAGENES-S3-U03.md` (2 planos antes/después, 1 tarjeta de foto, 4 poses de Teo).
+Las 5 imágenes que mandó Victor y la hoja oficial de personajes quedaron guardadas en
+`docs/design/sociedad/arte-referencia/`.
+Cuando lleguen las 7 nuevas: convertir a WebP, revisar contra "Cómo las reviso al llegar" del pedido, y seguir
 con SO-04 (dominio puro en `packages/social-content`).
 
-**SO-02 — hecho.** Se escribió la
+**SO-02 v2 — hecho** (unidad re-especificada con el nuevo elenco). Se escribió la
 especificación de **una sola** unidad piloto (igual que Matemáticas con g3u1, no las 6 de "Etapa A"):
 `docs/design/sociedad/UNIDAD-PILOTO-S3-U03.md` — **S3-U03, "Un barrio cambia, pero el mapa no lo explica todo"**
 (3.º, CA HSS 3.3). Se eligió esta de las 6 candidatas porque es la única con escenario 100% ficticio (sin fuentes
@@ -65,9 +69,10 @@ propuestas" abajo).
 - **DS-3** (confirmada en la práctica, 2026-10-16): usar **S3-U03** ("Un barrio cambia...", 3.º, CA HSS 3.3) como
   unidad piloto única — Victor pidió el pedido de imágenes directamente, sin objetar la elección. Razones y
   alternativas descartadas en `docs/design/sociedad/UNIDAD-PILOTO-S3-U03.md`.
-- **DS-4** (propuesta): reutilizar a **Teo** (de "La cometa roja") como guía recurrente de Sociedad, en vez de
-  diseñar un personaje nuevo — mismo grado (3.º), ya tiene arte de referencia aprobado. Nia aparece en esta
-  unidad como coprotagonista de la historia, sin poses de guía propias.
+- **DS-4** (confirmada en la práctica, 2026-10-16, reemplaza la v1): el elenco de Sociedad es **Inés, Teo y la
+  abuela Elena**, de "El mapa de la puerta desaparecida" — no Teo+Nia de "La cometa roja" como se propuso
+  primero. Teo es el guía recurrente (poses en miniatura); Inés y Elena aparecen en las escenas de cada unidad
+  según haga falta. El caso de cada unidad de Sociedad es **siempre nuevo**, nunca el mismo misterio del libro.
 
 ## Pedidos a lo compartido
 _(ninguno todavía)_

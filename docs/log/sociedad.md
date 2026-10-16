@@ -38,7 +38,32 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
   confirme o pida otra unidad.
 - Sin cambios de código. `npm test`: 1202/1202 ✅.
 
-## 2026-10-16 · SO-03: pedido de imágenes de la unidad piloto
+## 2026-10-16 · SO-02 v2: cambio de elenco — Inés, Teo y la abuela Elena
+
+- Victor generó 5 imágenes a partir del pedido anterior (Teo+Nia de "La cometa roja") y, al verlas, reconoció
+  que en realidad quería anclar la unidad al mundo de **"El mapa de la puerta desaparecida"** (historia de
+  Lectura, nivel 6): sus personajes (Inés, Teo, la abuela Elena) y su jardín ya "juegan con geografía,
+  relaciones interpersonales y mapas" — exactamente lo que necesita Sociedad.
+- Se evaluaron dos caminos: (a) reusar literalmente el misterio del libro (el círculo rojo, el arco tapiado por
+  la tormenta) dentro de Sociedad, o (b) reusar el elenco y el jardín, pero con un caso nuevo. Se recomendó (b)
+  y Victor confirmó ("adelante"): (a) le arruinaría la sorpresa del libro a un niño que después lo lea, metería
+  texto de nivel 6 en una unidad de 3.º, y dejaría dos sistemas (Lectura y Sociedad) contando la misma trama por
+  separado.
+- Nueva historia para esta unidad: **"El paso del arroyo"** — Inés y Teo encuentran, en la misma caja de mapas
+  de la abuela, un plano viejo de su calle que muestra piedras para cruzar un arroyo (sin puente); hoy hay un
+  puente. La abuela Elena aporta una fotografía (ella de niña saltando las piedras) y cuenta por qué se pidió el
+  puente (más bebés y abuelos en el barrio que ya no podían cruzar saltando). Tres fuentes (plano, foto,
+  testimonio), no una.
+- Se encontró y reutilizó `content/mapa-de-la-puerta-desaparecida/personajes.png` — la hoja de referencia
+  oficial de Inés/Teo/Elena/Nora (frente, 3/4, perfil, expresiones) que ya existía en el paquete de esa
+  historia. Se copió, junto con las 5 imágenes de Victor, a `docs/design/sociedad/arte-referencia/`.
+- Especificación reescrita: `docs/design/sociedad/UNIDAD-PILOTO-S3-U03.md`. Pedido de imágenes reducido:
+  `docs/design/sociedad/PEDIDO-IMAGENES-S3-U03.md` — de las 7 piezas originales, 2 se reusan tal cual (portada y
+  escena de la abuela) de lo que Victor ya mandó; solo faltan 7 nuevas (2 planos antes/después, 1 tarjeta de
+  foto, 4 poses de Teo referenciando la hoja oficial en vez de "La cometa roja").
+- Sin cambios de código todavía. `npm test`: 1202/1202 ✅.
+
+## 2026-10-16 · SO-03: pedido de imágenes de la unidad piloto (v1, reemplazado por SO-02 v2 arriba)
 
 - Victor pidió el prompt de imágenes directamente (sin objetar S3-U03) → DS-3 se trata como confirmada.
 - Pedido completo en `docs/design/sociedad/PEDIDO-IMAGENES-S3-U03.md`: 7 piezas (portada, 2 mapas del barrio
