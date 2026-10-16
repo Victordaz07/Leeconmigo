@@ -24,7 +24,7 @@ Victor: «déjalas así, está bien». DC-1…DC-8 ya están en `docs/DECISIONS.
 ## Siguiente paso exacto
 **CI-03 ✅ hecho:** `docs/design/ciencia/unidades/C4-U06.md` (ideas, 6 sesiones con texto ES/EN, modelo de erosión,
 datos didácticos, 8 tareas con rúbrica y pistas, ficha de seguridad, criterios de publicación).
-**Ahora CI-04** (dominio puro de C4-U06, sin pantallas): `labs/erosion.ts` (modelo determinista, §3), `datasets.ts` (§4,
+**CI-04 ✅ hecho** (dominio puro de C4-U06, sin pantallas): `labs/erosion.ts` (modelo determinista, §3), `datasets.ts` (§4,
 con validador de mapas), `evidence.ts` (`scienceEvidence.v1`), unidad en JSON validado y pruebas. Los números de §3/§4 ya
 están calculados a mano: las pruebas deben dar EXACTAMENTE esos valores (18/20/19 · 6/7/5 · 28/30/29 · 4/5/3 …).
 
@@ -72,3 +72,20 @@ Resumen (detalle y alternativas en `ESPECIFICACION.md` §13):
 
 ## Estado de pruebas
 `npm test` y `npm run typecheck` en verde al cerrar CI-02 (incluye las 8 pruebas del mapa de Ciencia).
+
+## Actualización CI-04 (2026-10-16): dominio de C4-U06 hecho
+Todo en `packages/science-content` (56 archivos / 1250 pruebas en verde en todo el repo):
+- `labs/erosion.ts` — modelo determinista (`sedimentGrams`, `runTrials`, `turbidity`, `fairTest`, `EROSION_MODEL`). Reproduce
+  EXACTAMENTE los datos de la especificación (18/20/19 · 6/7/5 · 28/30/29 · 4/5/3 · 9/10/8 · 29/30/28).
+- `datasets.ts` — `LADERA_DATASETS` (salen del modelo, nunca a mano), `PRACTICE_MAPS` A y B, `provenanceLabel`, `bandCount`,
+  `zoneOf`, `quakesByZone`, `practiceMapProblems`. Todo dato es `didactic` y lleva su rótulo.
+- `evidence.ts` — `scienceEvidence.v1`: `ideaStatus`, `reviewsDue` (1-3-7 con caso nuevo), `statusByIdea`, `STAGE_LABEL`.
+- `unit.ts` + `content/c4-u06.json` — la unidad (6 sesiones / 24 pasos con ES/EN, 4 ideas, glosario, ficha de seguridad, 8
+  tareas con opciones, `whyNot` por distractor y 3 pistas), `evaluateTask`, `evaluatePart`, `predictionMatched`,
+  `comparisonAdequate`, `unitProblems`, `dataTextProblems`.
+
+**Siguiente: CI-05** — textos de la INTERFAZ en `packages/ui-core/src/ciencia/` (no los de la unidad, que ya están en el
+JSON): rótulos de píldoras (Observa · Explora · Explica · Usa), distintivos de procedencia, marcos de frase («Observé… /
+I observed…», «Mi evidencia es…», «Cambié mi idea porque…»), botones (Regar, Anotar, Arreglar la prueba, Listo), etiquetas
+de estado (`STAGE_LABEL` ya existe), accesibilidad (descripción de la gráfica) y mensajes de pausa/reanudar. Después
+**CI-06** (pantallas). Antes de construir la gráfica, escribir en «Pedidos a lo compartido» el uso de `BarChartBoard`.

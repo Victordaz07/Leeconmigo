@@ -5,3 +5,7 @@
  */
 export const SUBJECT_ID = 'ciencia' as const;
 export * from './map.ts';
+export * from './labs/erosion.ts';
+export * from './datasets.ts';
+export * from './evidence.ts';
+export * from './unit.ts';

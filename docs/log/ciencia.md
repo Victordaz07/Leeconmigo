@@ -39,3 +39,14 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
   publicación y preguntas para el docente.
 - Hallazgo: 4-ESS2-2 (mapas) pide analizar mapas, no solo erosión → S5 con dos mapas de práctica dibujados por la app (sin
   imágenes nuevas). El orden de los desvíos de la bandeja A/B se corrigió al comprobar los números contra el modelo.
+
+## 2026-10-16 · CI-04: dominio puro de C4-U06
+- Hecho (todo con pruebas, sin pantallas): modelo de erosión que reproduce al gramo los datos de la especificación;
+  conjuntos de datos generados por el modelo y dos mapas de práctica con validador (≥ 80 % de sismos en la franja y al menos
+  uno fuera); `scienceEvidence.v1` (dos contextos + una sin pista explicativa; repaso 1-3-7 solo con caso nuevo; las ayudas de
+  acceso no restan; «lo veo luego» no cuenta); la unidad como JSON validado (6 sesiones, 8 tareas, 4 ideas, glosario, ficha de
+  seguridad) y un evaluador genérico de tareas por partes.
+- Garantías que prueban las pruebas: cada respuesta válida pasa; cada distractor se rechaza con su motivo en ES/EN; las dos
+  explicaciones válidas de T5 y los dos arreglos de T7 se aceptan; «todos» en T6 se rechaza pidiendo contar los puntos fuera;
+  los números que citan los textos (18/20/19, «13 de 15»…) coinciden con los datos; ningún texto dice «incorrecto».
+- 1250 pruebas en todo el repo, typecheck limpio.
