@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Button, Card, colors, fontFamily, GearIcon, HomeIcon, MathArtProvider, NavRail, TrophyIcon, useLayout, type NavRailItem } from '@lee-conmigo/ui-native';
-import { todayReport } from '@lee-conmigo/session-engine';
+import { resolveFocus, todayReport } from '@lee-conmigo/session-engine';
 import { energyOption, progressSegments, type Energy } from '@lee-conmigo/ui-core';
 import { MATH_UNITS } from '@lee-conmigo/math-content';
 import { loadPin, loadProfiles, mathProgressFor, newChildProfile, savePin, saveProfiles, progressStoreFor, resetProgressFor, type ChildProfile } from './src/app-state';
@@ -200,6 +200,8 @@ function Root() {
   const mathUnit = MATH_UNITS[0];
   const mathProgress = mathProgressFor(profile.id);
   const lang = profile.language === 'en' ? 'en' : 'es';
+  // Apoyos del Modo Enfoque que rigen ahora (posición del padre + horario).
+  const focus = resolveFocus(profile.focus);
   if (route.name === 'mathLesson') {
     const lesson = mathUnit.lessons.find((l) => l.id === route.lessonId);
     if (lesson) {
@@ -211,6 +213,7 @@ function Root() {
           lesson={lesson}
           minutes={minutes}
           progress={mathProgress}
+          calm={focus.reducedMotion}
           onExit={() => {
             setProgressVersion((v) => v + 1);
             setRoute({ name: 'mathNotebook' });
@@ -225,6 +228,8 @@ function Root() {
         lang={lang}
         grade={Math.min(6, Math.max(1, profile.level))}
         progress={mathProgress}
+        roundSize={focus.roundSize}
+        calm={focus.reducedMotion}
         onExit={() => {
           setProgressVersion((v) => v + 1);
           setRoute({ name: 'mathNotebook' });

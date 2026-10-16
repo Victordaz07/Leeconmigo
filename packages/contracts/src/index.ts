@@ -7,3 +7,4 @@ export * from './story.ts';
 export * from './reading-engine.ts';
 export * from './session.ts';
 export * from './math.ts';
+export * from './focus.ts';

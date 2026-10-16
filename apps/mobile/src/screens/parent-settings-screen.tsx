@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from 'react';
 import { Pressable, ScrollView, StyleSheet, Switch, Text, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import type { LanguageCode } from '@lee-conmigo/contracts';
+import type { FocusMode, FocusSettings, LanguageCode } from '@lee-conmigo/contracts';
 import { DAILY_GOAL_PRESETS } from '@lee-conmigo/ui-core';
 import { Button, ChevronLeftIcon, colors, fontFamily, radius, RoundButton, shadows, useLayout } from '@lee-conmigo/ui-native';
 import type { ChildProfile } from '../app-state';
@@ -29,8 +29,8 @@ const LANGUAGES: { id: LanguageCode; label: string }[] = [
 
 /**
  * Ajustes de un niño (Kitewise P4), detrás del PIN. Solo lo que ya funciona: perfil, tiempo diario, "¿Cómo llegas?",
- * lectura libre y privacidad. El nivel es de la app, NO el grado escolar (docs/01). Modo Enfoque se muestra como "pronto"
- * (se construye en K7; no se pone un interruptor que no haga nada). Todo en memoria hasta RN-08.
+ * lectura libre, Modo Enfoque y privacidad. El nivel es de la app, NO el grado escolar (docs/01). En Modo Enfoque solo
+ * aparecen los apoyos que ya cambian algo (no se pone un interruptor que no haga nada).
  */
 export function ParentSettingsScreen({ initial, isNew, onSave, onCancel, onResetProgress, onRemove, onChangePin, onVoiceTest }: ParentSettingsScreenProps) {
   const insets = useSafeAreaInsets();
@@ -48,7 +48,7 @@ export function ParentSettingsScreen({ initial, isNew, onSave, onCancel, onReset
           <ChevronLeftIcon />
         </RoundButton>
         <Text style={[styles.title, layout.phone && styles.titleSmall]} numberOfLines={2}>{isNew ? 'Agregar niño' : `Ajustes de ${initial.name}`}</Text>
-        <Button label={isNew ? 'Agregar' : 'Guardar'} onPress={() => onSave({ ...p, name })} disabled={!name} />
+        <Button label={isNew ? 'Agregar' : 'Guardar'} onPress={() => onSave({ ...p, name })} disabled={!name || !scheduleOk(p.focus)} />
       </View>
       <ScrollView contentContainerStyle={[styles.content, one && styles.contentOne, { paddingHorizontal: layout.gutter, paddingBottom: insets.bottom + 32 }]}>
         <View style={styles.column}>
@@ -75,9 +75,7 @@ export function ParentSettingsScreen({ initial, isNew, onSave, onCancel, onReset
             {onVoiceTest && <Button label="Probar el micrófono" variant="secondary" onPress={onVoiceTest} />}
           </Section>
 
-          <Section title="Modo Enfoque" soon>
-            <Text style={styles.note}>Menos distracciones, bloques cortos y pausas de movimiento. Llega pronto.</Text>
-          </Section>
+          <FocusSection value={p.focus} onChange={(v) => set('focus', v)} />
 
           <Section title="Privacidad">
             <View style={styles.toggleRow}>
@@ -105,6 +103,78 @@ export function ParentSettingsScreen({ initial, isNew, onSave, onCancel, onReset
         </View>
       </ScrollView>
     </View>
+  );
+}
+
+const FOCUS_MODES: { id: FocusMode; label: string }[] = [
+  { id: 'off', label: 'Apagado' },
+  { id: 'on', label: 'Encendido' },
+  { id: 'custom', label: 'Personalizado' },
+];
+const DAYS = ['D', 'L', 'M', 'M', 'J', 'V', 'S'];
+const DAY_NAMES = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+const TIME = /^([01]?\d|2[0-3]):[0-5]\d$/;
+/** El horario, si lo hay, debe tener días y horas válidas y distintas (si no, no se deja guardar). */
+const scheduleOk = (f: FocusSettings) => !f.schedule || (f.schedule.days.length > 0 && TIME.test(f.schedule.from) && TIME.test(f.schedule.to) && f.schedule.from !== f.schedule.to);
+
+/**
+ * Modo Enfoque (docs/10 §1, D4): Apagado / Encendido / Personalizado, y si se quiere, solo en un horario. Para el niño
+ * no hay ningún aviso ni etiqueta: solo ve menos cosas alrededor del ejercicio y rondas más cortas.
+ */
+function FocusSection({ value, onChange }: { value: FocusSettings; onChange: (v: FocusSettings) => void }) {
+  const set = (patch: Partial<FocusSettings>) => onChange({ ...value, ...patch });
+  const s = value.schedule;
+  return (
+    <Section title="Modo Enfoque">
+      <Segmented options={FOCUS_MODES} value={value.mode} onChange={(mode) => set({ mode })} />
+      <Text style={styles.note}>
+        {value.mode === 'off'
+          ? 'Todo como siempre.'
+          : value.mode === 'on'
+            ? 'Menos dibujos y animaciones alrededor de los ejercicios y rondas de 4 en el Taller de Matemáticas.'
+            : 'Elige cada apoyo.'}
+      </Text>
+      {value.mode === 'custom' && (
+        <>
+          <Toggle label="Menos dibujos y animaciones" value={value.custom.reducedMotion} onChange={(v) => set({ custom: { ...value.custom, reducedMotion: v } })} />
+          <Text style={styles.label}>Ejercicios por ronda en el Taller</Text>
+          <Segmented options={[3, 4, 5, 6].map((n) => ({ id: n, label: String(n) }))} value={value.custom.roundSize} onChange={(roundSize) => set({ custom: { ...value.custom, roundSize } })} />
+        </>
+      )}
+      {value.mode !== 'off' && (
+        <>
+          <Toggle label="Solo en un horario" value={!!s} onChange={(v) => set({ schedule: v ? { days: [1, 2, 3, 4, 5], from: '15:00', to: '19:00' } : undefined })} />
+          {s && (
+            <>
+              <View style={styles.days}>
+                {DAYS.map((d, i) => {
+                  const on = s.days.includes(i);
+                  return (
+                    <Pressable
+                      key={i}
+                      onPress={() => set({ schedule: { ...s, days: on ? s.days.filter((x) => x !== i) : [...s.days, i].sort() } })}
+                      accessibilityRole="checkbox"
+                      accessibilityState={{ checked: on }}
+                      accessibilityLabel={DAY_NAMES[i]}
+                      style={[styles.day, on && styles.segmentOn]}
+                    >
+                      <Text style={[styles.segmentText, on && styles.segmentTextOn]}>{d}</Text>
+                    </Pressable>
+                  );
+                })}
+              </View>
+              <View style={styles.timeRow}>
+                <Text style={styles.label}>De</Text>
+                <TextInput value={s.from} onChangeText={(from) => set({ schedule: { ...s, from } })} style={[styles.input, styles.time]} maxLength={5} keyboardType="numbers-and-punctuation" accessibilityLabel="Hora de inicio" />
+                <Text style={styles.label}>a</Text>
+                <TextInput value={s.to} onChangeText={(to) => set({ schedule: { ...s, to } })} style={[styles.input, styles.time]} maxLength={5} keyboardType="numbers-and-punctuation" accessibilityLabel="Hora de fin" />
+              </View>
+              <Text style={styles.note}>{scheduleOk(value) ? 'Fuera de ese horario, todo como siempre.' : 'Elige al menos un día y escribe las horas como 15:00.'}</Text>
+            </>
+          )}
+        </>
+      )}
+    </Section>
   );
 }
 
@@ -180,6 +250,10 @@ const styles = StyleSheet.create({
   toggleRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 12, minHeight: 44 },
   toggleLabel: { flex: 1, fontFamily: fontFamily.ui.extrabold, fontSize: 16, color: colors.ink },
   never: { fontFamily: fontFamily.ui.black, fontSize: 15, color: colors.okDark },
+  days: { flexDirection: 'row', flexWrap: 'wrap', gap: 6 },
+  day: { width: 44, height: 44, borderRadius: 12, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.chip },
+  timeRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
+  time: { width: 96, textAlign: 'center' },
   confirm: { gap: 10, backgroundColor: colors.warnTint, borderRadius: radius.tile, padding: 14 },
   confirmText: { fontFamily: fontFamily.ui.bold, fontSize: 15, color: colors.ink },
   confirmRow: { flexDirection: 'row', gap: 10, justifyContent: 'flex-end' },

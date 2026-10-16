@@ -21,7 +21,11 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | K5 | Practicar (B8, G9, G10) + repaso 1-3-7 | 🟡 | A | hecho para Matemáticas (teclado, confianza, 3 pistas, "Lo veo luego", repaso 1-3-7 en el calentamiento); falta V/F y ordenar (G9, G10) |
 | K6 | Unidades/lecciones + Aprender/Explorar + camino (B5–B7); 1.ª unidad de Matemáticas | 🟡 | A | unidad g3u1 jugable de punta a punta (`packages/math-content`, `math-notebook-screen`, `math-lesson-screen`); **Victor: "demasiado simple, de preescolar"** → investigación de problemas reales (`docs/research/PROMPT-INVESTIGACION-PROBLEMAS-MATEMATICAS.md`) y rehacer g3u1; falta también: guardar en el teléfono (RN-08), etiquetas concepto/procedimiento/transferencia, revisión docente, más unidades |
 | K6v | Matemáticas visuales (spec `docs/design/math-visual/`): las 12 familias + Taller por grado/tema + en lecciones | ✅ | A | 37 plantillas 1.º–6.º; pendientes en `IMPLEMENTACION.md` (arrastre, Enfoque, guardar, revisión docente) |
-| K7 | Modo Enfoque (B10, B12), oscuro (G1–G3), vertical (G4–G6) | 🟡 | A | vertical + teléfono ✅ (`layoutFor`); faltan Enfoque y modo oscuro |
+| K7 | Modo Enfoque (B10, B12), oscuro (G1–G3), vertical (G4–G6) | 🟡 | A | vertical + teléfono ✅ (`layoutFor`); faltan el resto de Enfoque (K7b–d) y modo oscuro |
+| K7a | Enfoque: ajuste del padre (Apagado/Encendido/Personalizado + horario) guardado por perfil; Matemáticas lo respeta | ✅ | A | `contracts/focus.ts`, `session-engine/focus.ts` (`resolveFocus`, con pruebas), P4; Taller y lecciones: fondo desenfocado, sin Mila, rondas de 4 |
+| K7b | Enfoque en Lectura (B10): arte desenfocado de fondo, 1 frase resaltada, 3 botones | ⬜ | | apoyo nuevo en `FocusSupports` + interruptor en Personalizado |
+| K7c | Pausa de movimiento (B12): 60–90 s cada ~10 min | ⬜ | | |
+| K7d | Enfoque adaptativo (toques erráticos, pausas largas; sin cámara ni audio) | ⬜ | | el niño no ve avisos |
 | K8 | Mi cuaderno, Logros, informe PDF, foto de tarea | ⬜ | – | foto espera C13 |
 | **RN** | **Migración a React Native + Expo** (D7, `docs/11`) | | | |
 | RN-00 | Registrar decisión, plan de migración y lista legal | ✅ | A | `claude/gracious-shannon-a0238d` |

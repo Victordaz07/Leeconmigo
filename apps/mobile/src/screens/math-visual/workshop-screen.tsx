@@ -10,8 +10,6 @@ import { today } from '../../today';
 import { Mila } from './mila';
 import { VisualExercise } from './visual-exercise';
 
-const EXERCISES = 6;
-
 const GRADES = [1, 2, 3, 4, 5, 6] as const;
 
 /**
@@ -19,7 +17,18 @@ const GRADES = [1, 2, 3, 4, 5, 6] as const;
  * Cada tema es una de las 12 representaciones (docs/design/math-visual). Cada ejercicio terminado se guarda como intento
  * para dominio y repaso, igual que los retos de las lecciones.
  */
-export function WorkshopScreen({ lang, grade: suggested, progress, onExit }: { lang: MathLang; grade: number; progress: MathProgress; onExit: () => void }) {
+interface WorkshopScreenProps {
+  lang: MathLang;
+  grade: number;
+  progress: MathProgress;
+  /** Ejercicios por ronda (Modo Enfoque: rondas más cortas). */
+  roundSize?: number;
+  /** Modo Enfoque: sin fondos, sin Mila y sin animaciones alrededor del ejercicio. */
+  calm?: boolean;
+  onExit: () => void;
+}
+
+export function WorkshopScreen({ lang, grade: suggested, progress, roundSize = 6, calm = false, onExit }: WorkshopScreenProps) {
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const [grade, setGrade] = useState(suggested);
@@ -29,7 +38,7 @@ export function WorkshopScreen({ lang, grade: suggested, progress, onExit }: { l
   const width = Math.min(layout.width - layout.gutter * 2, 1100);
   const finished = !!session && index >= session.length;
   const start = (family?: VisualFamily) => {
-    setSession(buildVisualSession(grade, Date.now() % 1_000_000, EXERCISES, family));
+    setSession(buildVisualSession(grade, Date.now() % 1_000_000, roundSize, family));
     setIndex(0);
   };
   const topics = familiesFor(grade);
@@ -65,7 +74,7 @@ export function WorkshopScreen({ lang, grade: suggested, progress, onExit }: { l
           {!session ? (
             <View style={{ gap: 18 }}>
               <View style={styles.menuHead}>
-                <Mila pose="saluda" height={layout.phone ? 100 : 130} />
+                {!calm && <Mila pose="saluda" height={layout.phone ? 100 : 130} />}
                 <View style={{ flex: 1, gap: 4 }}>
                   <Text style={styles.menuTitle}>{VISUAL_COPY.workshopTitle[lang]}</Text>
                   <Text style={styles.menuText}>{es ? '¿Qué quieres practicar hoy?' : 'What do you want to practice today?'}</Text>
@@ -83,7 +92,7 @@ export function WorkshopScreen({ lang, grade: suggested, progress, onExit }: { l
               </View>
               <Pressable onPress={() => start()} accessibilityRole="button" style={({ pressed }) => [styles.mix, pressed && styles.pressed]}>
                 <Text style={styles.mixTitle}>🎲 {es ? 'Mezcla del día' : 'Today’s mix'}</Text>
-                <Text style={styles.mixText}>{es ? `${EXERCISES} ejercicios de varios temas de ${grade}.º` : `${EXERCISES} exercises from different grade ${grade} topics`}</Text>
+                <Text style={styles.mixText}>{es ? `${roundSize} ejercicios de varios temas de ${grade}.º` : `${roundSize} exercises from different grade ${grade} topics`}</Text>
               </Pressable>
               <View style={[styles.topics, { gap: 12 }]}>
                 {topics.map((f) => (
@@ -98,7 +107,7 @@ export function WorkshopScreen({ lang, grade: suggested, progress, onExit }: { l
             </View>
           ) : finished ? (
             <View style={styles.doneCard}>
-              <Mila pose="celebra" height={layout.phone ? 150 : 200} />
+              {!calm && <Mila pose="celebra" height={layout.phone ? 150 : 200} />}
               <Text style={styles.doneTitle}>{VISUAL_COPY.done[lang]}</Text>
               <Text style={styles.doneDetail}>{VISUAL_COPY.doneDetail[lang](session.length)}</Text>
               <Button label={es ? 'Elegir otro tema' : 'Pick another topic'} variant="secondary" onPress={() => setSession(null)} />
@@ -110,6 +119,7 @@ export function WorkshopScreen({ lang, grade: suggested, progress, onExit }: { l
               instance={session![index]}
               lang={lang}
               width={width}
+              decor={!calm}
               onNext={(final) => {
                 const a = exerciseAttempt(final, day);
                 if (a) {

@@ -36,6 +36,8 @@ interface MathLessonScreenProps {
   lesson: MathLesson;
   minutes: number;
   progress: MathProgress;
+  /** Modo Enfoque: sin fondos, sin Mila y sin animaciones alrededor de los ejercicios. */
+  calm?: boolean;
   onExit: () => void;
 }
 
@@ -45,7 +47,7 @@ interface MathLessonScreenProps {
  * Aprender → Explorar → Practicar → Juego → Cierre. La lógica vive en `@lee-conmigo/math-content` (plan, reto, dominio);
  * aquí solo se dibuja. Cada reto terminado se guarda como intento (para dominio y repaso), nunca como calificación.
  */
-export function MathLessonScreen({ lang, unit, lesson, minutes, progress, onExit }: MathLessonScreenProps) {
+export function MathLessonScreen({ lang, unit, lesson, minutes, progress, calm = false, onExit }: MathLessonScreenProps) {
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const t = MATH_COPY;
@@ -93,7 +95,7 @@ export function MathLessonScreen({ lang, unit, lesson, minutes, progress, onExit
       </View>
       <ScrollView ref={scroll} contentContainerStyle={[styles.content, { paddingHorizontal: layout.gutter, paddingBottom: insets.bottom + 24 }]}>
         <View style={{ width: contentWidth, alignSelf: 'center', gap: 16 }}>
-          <Step key={index} item={item} lang={lang} split={split} modelWidth={modelWidth} contentWidth={contentWidth} day={day} progress={progress} onNext={next} onAgain={() => setIndex(Math.max(0, index - 1))} />
+          <Step key={index} item={item} lang={lang} split={split} modelWidth={modelWidth} contentWidth={contentWidth} day={day} progress={progress} calm={calm} onNext={next} onAgain={() => setIndex(Math.max(0, index - 1))} />
         </View>
       </ScrollView>
     </View>
@@ -108,11 +110,12 @@ interface StepProps {
   contentWidth: number;
   day: string;
   progress: MathProgress;
+  calm: boolean;
   onNext: () => void;
   onAgain: () => void;
 }
 
-function Step({ item, lang, split, modelWidth, contentWidth, day, progress, onNext, onAgain }: StepProps) {
+function Step({ item, lang, split, modelWidth, contentWidth, day, progress, calm, onNext, onAgain }: StepProps) {
   switch (item.kind) {
     case 'aprender':
       return <Learn blocks={item.blocks} lang={lang} split={split} modelWidth={modelWidth} onNext={onNext} onAgain={onAgain} />;
@@ -128,6 +131,7 @@ function Step({ item, lang, split, modelWidth, contentWidth, day, progress, onNe
           instance={item.instance}
           lang={lang}
           width={contentWidth}
+          decor={!calm}
           onNext={(final) => {
             const a = exerciseAttempt(final, day);
             if (a) {
@@ -142,7 +146,7 @@ function Step({ item, lang, split, modelWidth, contentWidth, day, progress, onNe
     case 'juego':
       return <PairsGame data={item.payload} lang={lang} narrow={!split} onDone={onNext} />;
     case 'cierre':
-      return <Closure prompt={item.closure.prompt[lang]} choices={item.closure.choices.map((c) => c[lang])} lang={lang} onDone={onNext} />;
+      return <Closure prompt={item.closure.prompt[lang]} choices={item.closure.choices.map((c) => c[lang])} lang={lang} calm={calm} onDone={onNext} />;
   }
 }
 
@@ -359,11 +363,11 @@ function Practice({ challenge: c, warmup, lang, split, modelWidth, day, progress
 
 // ------------------------------------------------------------------ Cierre
 
-function Closure({ prompt, choices, lang, onDone }: { prompt: string; choices: string[]; lang: MathLang; onDone: () => void }) {
+function Closure({ prompt, choices, lang, calm, onDone }: { prompt: string; choices: string[]; lang: MathLang; calm: boolean; onDone: () => void }) {
   const [picked, setPicked] = useState<number | null>(null);
   return (
     <View style={[styles.card, styles.gap, styles.center]}>
-      <Mila pose="celebra" height={160} />
+      {!calm && <Mila pose="celebra" height={160} />}
       <Text style={[styles.prompt, styles.centerText]}>{prompt}</Text>
       <View style={styles.actions}>
         {choices.map((c, i) => (

@@ -4,8 +4,8 @@
  * Se guarda en el equipo (RN-08, `persist/`): SQLite local, sin red. Solo datos derivados, nunca audio (docs/07). Agregar
  * o editar niños se hace en Modo padres con PIN (K4). El nivel es de la app, NO el grado escolar (docs/01).
  */
-import type { ReadingProfile } from '@lee-conmigo/contracts';
-import type { ProgressStore } from '@lee-conmigo/session-engine';
+import type { FocusSettings, ReadingProfile } from '@lee-conmigo/contracts';
+import { DEFAULT_FOCUS, normalizeFocus, type ProgressStore } from '@lee-conmigo/session-engine';
 import type { MathAttempt, ReviewEntry } from '@lee-conmigo/math-content';
 import { DEFAULT_DAILY_GOAL_MINUTES } from '@lee-conmigo/ui-core';
 import { deviceKV } from './persist/kv';
@@ -21,10 +21,12 @@ export interface ChildProfile extends ReadingProfile {
   askEnergy: boolean;
   /** Lectura libre: un adulto lee (o el niño lee sin micrófono) y la página se pasa con un botón. */
   freeReading: boolean;
+  /** Modo Enfoque (D4): lo pone el padre tras el PIN; las pantallas leen los apoyos con `resolveFocus`. */
+  focus: FocusSettings;
 }
 
 export const PROFILES: ChildProfile[] = [
-  { id: 'noah', name: 'Noah', language: 'es', level: 3, dailyGoalMinutes: DEFAULT_DAILY_GOAL_MINUTES, avatar: 'sunDiag', askEnergy: true, freeReading: false },
+  { id: 'noah', name: 'Noah', language: 'es', level: 3, dailyGoalMinutes: DEFAULT_DAILY_GOAL_MINUTES, avatar: 'sunDiag', askEnergy: true, freeReading: false, focus: DEFAULT_FOCUS },
 ];
 
 const AVATARS: ChildProfile['avatar'][] = ['sunDiag', 'blueDiag', 'violetDiag', 'greenDiag', 'coralDiag'];
@@ -32,7 +34,7 @@ const AVATARS: ChildProfile['avatar'][] = ['sunDiag', 'blueDiag', 'violetDiag', 
 /** Perfil nuevo ("Agregar niño", tras el PIN): valores de partida que el padre ajusta antes de guardar. */
 export function newChildProfile(existing: ChildProfile[]): ChildProfile {
   const n = existing.length;
-  return { id: `child-${Date.now().toString(36)}`, name: '', language: 'es', level: 1, dailyGoalMinutes: DEFAULT_DAILY_GOAL_MINUTES, avatar: AVATARS[n % AVATARS.length], askEnergy: true, freeReading: false };
+  return { id: `child-${Date.now().toString(36)}`, name: '', language: 'es', level: 1, dailyGoalMinutes: DEFAULT_DAILY_GOAL_MINUTES, avatar: AVATARS[n % AVATARS.length], askEnergy: true, freeReading: false, focus: DEFAULT_FOCUS };
 }
 
 /** Almacén del equipo (las pruebas usan uno en memoria). */
@@ -46,7 +48,8 @@ export const useKVForTests = (k: KV) => {
 /** Perfiles guardados; la primera vez, el de partida. */
 export function loadProfiles(): ChildProfile[] {
   const saved = readJSON<ChildProfile[]>(kv, KEYS.profiles, []);
-  return Array.isArray(saved) && saved.length ? saved : PROFILES;
+  // Perfiles guardados antes del Modo Enfoque (o a medias): se completan, sin perder lo demás.
+  return Array.isArray(saved) && saved.length ? saved.map((p) => ({ ...p, focus: normalizeFocus(p.focus) })) : PROFILES;
 }
 export const saveProfiles = (list: ChildProfile[]) => writeJSON(kv, KEYS.profiles, list);
 

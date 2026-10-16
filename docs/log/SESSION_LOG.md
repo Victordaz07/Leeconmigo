@@ -333,3 +333,12 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
 - Verificado: 1190 pruebas (frases exactas por contexto, ninguna palabra de otro contexto, números = v1), typecheck,
   capturas en 1280×800, 390×844 y 844×390, y 12 ejercicios resueltos tocando en el Taller. NO probado en el equipo.
 
+## 2026-10-16 · Cuenta A · K7a: Modo Enfoque (ajuste del padre) + Matemáticas
+- Hecho: tipos en `contracts/focus.ts`; presets y `resolveFocus` (posición + horario, incluso cruzando la medianoche)
+  en `session-engine/focus.ts` con pruebas; `focus` en el perfil (perfiles viejos quedan en Apagado); sección real en
+  Ajustes (P4): Apagado / Encendido / Personalizado (menos dibujos, ejercicios por ronda) y "Solo en un horario".
+  Matemáticas lo respeta: fondo desenfocado y tenue (no se quita, SPEC §1), sin Mila, rondas de 4 en el Taller.
+- Para el niño no hay etiqueta ni aviso (D4): solo ve menos cosas alrededor.
+- Verificado: 1194 pruebas, typecheck, navegador (PIN → Ajustes → Encendido → Taller con 4 ejercicios y fondo tenue;
+  recarga y sigue igual) en 1280×800 y 390×844.
+

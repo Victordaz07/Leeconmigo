@@ -41,7 +41,8 @@ interface VisualExerciseProps {
   /** Termina (resuelto o con la solución vista) y el niño toca "Siguiente". */
   onNext: (final: ExerciseState) => void;
   nextLabel?: string;
-  /** Fondo ilustrado detrás del modelo. Modo Enfoque (K7) lo apagará; el modelo y sus números no cambian. */
+  /** Fondo ilustrado y Mila. En Modo Enfoque (false) el fondo queda desenfocado y tenue y Mila no aparece; el modelo y
+   * sus números no cambian. */
   decor?: boolean;
 }
 
@@ -145,7 +146,14 @@ export function VisualExercise({ instance, lang, width, onNext, nextLabel, decor
 
       <View style={[styles.body, side && styles.bodySide]}>
         <View style={[styles.sceneCard, side && { width: sceneWidth }]}>
-          {decor ? <Image source={MATH_BACKGROUNDS[m.kind][layout.portrait && !side ? 'vertical' : 'horizontal']} style={FILL_IMAGE} resizeMode="cover" accessible={false} /> : null}
+          {/* Modo Enfoque: la ilustración no se quita, queda desenfocada y tenue (Kitewise SPEC §1). */}
+          <Image
+            source={MATH_BACKGROUNDS[m.kind][layout.portrait && !side ? 'vertical' : 'horizontal']}
+            style={decor ? FILL_IMAGE : [FILL_IMAGE, styles.backdrop]}
+            blurRadius={decor ? 0 : 12}
+            resizeMode="cover"
+            accessible={false}
+          />
           {scene}
           {equation ? <Text style={styles.equation}>{equation}</Text> : null}
           {!done && !decor && <Text style={styles.howTo}>{visualHowTo(m, lang)}</Text>}
@@ -208,6 +216,7 @@ const styles = StyleSheet.create({
   body: { gap: 14 },
   bodySide: { flexDirection: 'row', alignItems: 'flex-start' },
   sceneCard: { backgroundColor: '#ffffff', borderRadius: radius.card, padding: 16, gap: 12, alignItems: 'center', boxShadow: shadows.card, overflow: 'hidden' },
+  backdrop: { opacity: 0.25 },
   equation: { fontFamily: fontFamily.ui.black, fontSize: 28, color: manip.ink },
   howTo: { fontFamily: fontFamily.ui.semibold, fontSize: 15, color: manip.blue, textAlign: 'center' },
   answers: { backgroundColor: '#ffffff', borderRadius: radius.card, padding: 16, gap: 14, alignItems: 'center', boxShadow: shadows.card },

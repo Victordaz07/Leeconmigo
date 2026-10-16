@@ -85,6 +85,6 @@ Dominio en `packages/math-content/src/visual/` (fase 1 en `evaluate.ts`; el rest
 ## Pendiente (no declarar hecho)
 
 - Arrastrar (además de tocar) y teclado físico.
-- Modo Enfoque (K7): `VisualExercise` ya tiene `decor` para apagar fondo y a Mila.
+- Modo Enfoque: hecho lo de Matemáticas (K7a): fondo desenfocado y tenue, sin Mila, rondas cortas en el Taller.
 - Unidades de otros grados con lecciones propias (hoy solo g3u1 tiene lecciones; los demás grados practican en el Taller).
 - Revisión docente de rangos, textos y estándares; pilotaje con Noah. Probar en un equipo real.
