@@ -324,3 +324,12 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
   padre → `FILL_IMAGE` con los 4 bordes en 0); plantas fuera de la parcela (tamaño desde el interior del marco); plano y
   recta medidos sin el relleno de su panel; botones "Juntar 10 / Desarmar 1" en columnas angostas.
 - No hecho: migrar el progreso de la app Capacitor de Noah (se empieza limpio). Probar en el equipo.
+
+## 2026-10-16 · Cuenta A · Matemáticas: más contextos en grupos y reparto
+- Siguiendo "continúa con lo faltante": los ejercicios de reparto y grupos ya no son siempre galletas y plantas.
+- Hecho: `theme` en los modelos (versión 2 de 5 plantillas; mismos números por semilla), palabras ES/EN con género
+  (`ui-core/math-visual-nouns.ts`), dibujos con el arte que ya estaba (lápiz, canica, manzana, caja, frasco, canasta) y
+  objetos acomodados dentro del hueco de cada recipiente. Etiquetas de recipiente legibles sobre el dibujo.
+- Verificado: 1190 pruebas (frases exactas por contexto, ninguna palabra de otro contexto, números = v1), typecheck,
+  capturas en 1280×800, 390×844 y 844×390, y 12 ejercicios resueltos tocando en el Taller. NO probado en el equipo.
+

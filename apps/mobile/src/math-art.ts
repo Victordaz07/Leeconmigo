@@ -18,6 +18,12 @@ export const MATH_ART: MathArt = {
   cake: require('../assets/math/props/prop_pastel.webp'),
   clockFace: require('../assets/math/props/prop_reloj_vacio.webp'),
   treasure: require('../assets/math/props/prop_estampa.webp'),
+  pencil: require('../assets/math/props/prop_lapiz.webp'),
+  marble: require('../assets/math/props/prop_canica.webp'),
+  apple: require('../assets/math/props/prop_manzana.webp'),
+  box: require('../assets/math/props/prop_caja.webp'),
+  jar: require('../assets/math/props/prop_frasco.webp'),
+  basket: require('../assets/math/props/prop_canasta.webp'),
   fruits: {
     mango: require('../assets/math/props/prop_fruta_mango.webp'),
     pera: require('../assets/math/props/prop_fruta_pera.webp'),

@@ -5,7 +5,7 @@
  */
 import { createContext, useContext, type ReactNode } from 'react';
 import { Image, Platform, type ImageSourcePropType, type ImageStyle } from 'react-native';
-import Svg, { Circle, Ellipse, Path } from 'react-native-svg';
+import Svg, { Circle, Ellipse, Path, Rect } from 'react-native-svg';
 
 /**
  * Arte aprobado para los objetos y recipientes (docs/design/math-visual/PEDIDO-IMAGENES.md). La app lo entrega con
@@ -23,6 +23,13 @@ export interface MathArt {
   cake?: ImageSourcePropType;
   clockFace?: ImageSourcePropType;
   treasure?: ImageSourcePropType;
+  /** Otros contextos de grupos y reparto (lápices en cajas, canicas en frascos, manzanas en canastas). */
+  pencil?: ImageSourcePropType;
+  marble?: ImageSourcePropType;
+  apple?: ImageSourcePropType;
+  box?: ImageSourcePropType;
+  jar?: ImageSourcePropType;
+  basket?: ImageSourcePropType;
   fruits?: Partial<Record<'mango' | 'pera' | 'uva' | 'manzana', ImageSourcePropType>>;
 }
 
@@ -102,4 +109,44 @@ export function CookieIcon({ size = 36 }: { size?: number }) {
       <Circle cx={25} cy={13} r={1.8} fill={manip.ink} />
     </Svg>
   );
+}
+
+/** Lo que se cuenta en grupos y reparto. */
+export type CountItem = 'cookie' | 'plant' | 'pencil' | 'marble' | 'apple';
+/** Dónde va: plato, bolsa, parcela, caja, frasco o canasta. */
+export type CountContainer = 'plate' | 'bag' | 'plot' | 'box' | 'jar' | 'basket';
+
+/** Un objeto que se cuenta, con el arte aprobado o, si falta, una forma dibujada. */
+export function ItemIcon({ item, size = 36 }: { item: CountItem; size?: number }) {
+  const art = useMathArt();
+  if (item === 'cookie') return <CookieIcon size={size} />;
+  if (item === 'plant') return <SproutIcon size={size} />;
+  const source = art[item];
+  if (source) return <ArtImage source={source} size={size} />;
+  return (
+    <Svg width={size} height={size} viewBox="0 0 40 40">
+      {item === 'pencil' ? (
+        <>
+          <Rect x={4} y={16} width={26} height={8} rx={2} fill={manip.yellow} />
+          <Path d="M30 16 L37 20 L30 24 Z" fill={manip.ink} />
+        </>
+      ) : item === 'marble' ? (
+        <>
+          <Circle cx={20} cy={20} r={15} fill={manip.blue} />
+          <Ellipse cx={15} cy={14} rx={4} ry={3} fill="#ffffff" opacity={0.45} />
+        </>
+      ) : (
+        <>
+          <Circle cx={20} cy={23} r={14} fill={manip.coral} />
+          <Path d="M20 10 V4" stroke={manip.ink} strokeWidth={3} strokeLinecap="round" />
+          <Ellipse cx={26} cy={6} rx={5} ry={2.5} fill={manip.green} />
+        </>
+      )}
+    </Svg>
+  );
+}
+
+/** Arte del recipiente, si la app lo entregó. */
+export function useContainerArt(container: CountContainer): ImageSourcePropType | undefined {
+  return useMathArt()[container];
 }

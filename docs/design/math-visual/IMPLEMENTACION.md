@@ -15,7 +15,7 @@ Fuente: `KiteWise_Documentacion_Implementacion_Interactiva.md`, `KiteWise_Prompt
 | Escenas | `packages/ui-native/src/components/math-visual/` (`TenFrameBoard`, `GardenPlots`, `SharingBoard`, `AnswerBoxes`, `DigitPad`) | ui-native no conoce las reglas: solo dibuja y avisa qué se tocó |
 | `ExerciseShell` | `apps/mobile/src/screens/math-visual/visual-exercise.tsx` | |
 | Galería de revisión | DEV → "Matemáticas visuales" (`review-screen.tsx`), con otra variante y ES/EN | Nunca se muestra al niño (ids y semillas) |
-| Persistencia | En memoria (`mathProgressFor`), igual que el resto del progreso, hasta RN-08 | No hay almacenamiento local todavía en la app nueva |
+| Persistencia | En el equipo (RN-08, `apps/mobile/src/persist/`) | Sin nube (v1) |
 | Backend / API / eventos de analítica | **No se construye** | v1 sin nube (CLAUDE.md, D8, docs/12: sin SDKs ni envío de datos) |
 | Paleta de objetos | `manip` en `objects.tsx` (crema, tinta, azul, coral, verde, amarillo, violeta de la lámina) | Solo para objetos; el texto y los controles siguen con los tokens de Kitewise |
 | Imágenes | Arte aprobado en `apps/mobile/assets/math/` (WebP). La app lo entrega con `MathArtProvider` (`src/math-art.ts`); ui-native no empaqueta imágenes y, si falta una pieza, usa la forma dibujada con código | Las cantidades nunca dependen de una imagen |
@@ -55,6 +55,11 @@ Dominio en `packages/math-content/src/visual/` (fase 1 en `evaluate.ts`; el rest
 - El arte va detrás de lo que se mide: las rebanadas de la pizza, los cortes del pastel, las marcas y agujas del reloj
   las dibuja el código encima de la imagen.
 - Las ayudas visuales se titulan "Pista / Estrategia / Ejemplo con otros números".
+- **Contextos** (versión 2 de `groups.*` y `sharing.*`): el reparto puede ser galletas (platos o bolsas), lápices en
+  cajas, canicas en frascos o manzanas en canastas; los grupos iguales, plantas en parcelas, manzanas en canastas o
+  canicas en frascos. El modelo guarda solo la clave (`theme`); las palabras, con su género («cada caja» / «cada
+  frasco», «cuántos lápices»), están en `ui-core/math-visual-nouns.ts`. El contexto sale de la última tirada: los
+  números de cada semilla son los mismos que en la versión 1 (hay prueba). Las demás familias conservan su objeto.
 
 ## Comprobado
 
@@ -81,6 +86,5 @@ Dominio en `packages/math-content/src/visual/` (fase 1 en `evaluate.ts`; el rest
 
 - Arrastrar (además de tocar) y teclado físico.
 - Modo Enfoque (K7): `VisualExercise` ya tiene `decor` para apagar fondo y a Mila.
-- Más contextos por plantilla (lápices, canicas, cajas, frascos ya están en el repo): hoy cada familia usa un objeto fijo.
 - Unidades de otros grados con lecciones propias (hoy solo g3u1 tiene lecciones; los demás grados practican en el Taller).
 - Revisión docente de rangos, textos y estándares; pilotaje con Noah. Probar en un equipo real.

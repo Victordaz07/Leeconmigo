@@ -31,7 +31,14 @@ export interface EqualGroupsModel {
   perGroup: number;
   /** build: el niño planta cada parcela y da el total · read: el huerto ya está; escribe grupos, cada uno y total. */
   task: 'build' | 'read';
+  /** Qué se cuenta y dónde (solo cambia el dibujo y las palabras; sin él, plantas en parcelas). */
+  theme?: GroupsTheme;
 }
+
+/** Contextos de los grupos iguales: plantas en parcelas, manzanas en canastas, canicas en frascos. */
+export type GroupsTheme = 'garden' | 'apples' | 'marbles';
+/** Contextos del reparto: galletas (platos o bolsas), lápices en cajas, canicas en frascos, manzanas en canastas. */
+export type SharingTheme = 'cookies' | 'pencils' | 'marbles' | 'apples';
 
 export interface SharingModel {
   kind: 'sharing';
@@ -47,6 +54,8 @@ export interface SharingModel {
   tokenIds: string[];
   /** Recipientes visibles. En quotative hay uno de más para no regalar la respuesta. */
   containerIds: string[];
+  /** Qué se reparte y en qué (sin él, galletas). */
+  theme?: SharingTheme;
 }
 
 /** B. Valor posicional: centenas, decenas y unidades que se juntan y se desarman. */

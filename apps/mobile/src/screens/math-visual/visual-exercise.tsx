@@ -8,14 +8,30 @@ import {
   parallelExample,
   startExercise,
   type ExerciseState,
+  type GroupsTheme,
+  type SharingTheme,
   type VisualInstance,
 } from '@lee-conmigo/math-content';
-import { MATH_COPY, VISUAL_COPY, visualEquation, visualFeedback, visualFieldLabel, visualHint, visualHowTo, visualPrompt, type MathLang } from '@lee-conmigo/ui-core';
-import { AnswerBoxes, Button, colors, DigitPad, FILL_IMAGE, fontFamily, GardenPlots, manip, radius, shadows, SharingBoard, TenFrameBoard, useLayout } from '@lee-conmigo/ui-native';
+import { containerName, MATH_COPY, tokenName, VISUAL_COPY, visualEquation, visualFeedback, visualFieldLabel, visualHint, visualHowTo, visualPrompt, type MathLang } from '@lee-conmigo/ui-core';
+import { AnswerBoxes, Button, colors, type CountItem, DigitPad, FILL_IMAGE, fontFamily, GardenPlots, manip, radius, shadows, SharingBoard, TenFrameBoard, useLayout } from '@lee-conmigo/ui-native';
 import { MATH_BACKGROUNDS } from '../../math-art';
 import { guidePose, Mila } from './mila';
 import { canManipulate, scene2 } from './scene-2';
 import { speak } from '../../tts';
+
+/** Dibujo de cada contexto (las palabras están en ui-core: `nounsOf`). */
+const GROUP_SCENE: Record<GroupsTheme, { item: CountItem; container: 'plot' | 'basket' | 'jar' }> = {
+  garden: { item: 'plant', container: 'plot' },
+  apples: { item: 'apple', container: 'basket' },
+  marbles: { item: 'marble', container: 'jar' },
+};
+/** Sin recipiente fijo, las galletas van en platos (repartir) o bolsas (hacer grupos). */
+const SHARE_SCENE: Record<SharingTheme, { item: CountItem; container?: 'box' | 'jar' | 'basket' }> = {
+  cookies: { item: 'cookie' },
+  pencils: { item: 'pencil', container: 'box' },
+  marbles: { item: 'marble', container: 'jar' },
+  apples: { item: 'apple', container: 'basket' },
+};
 
 interface VisualExerciseProps {
   instance: VisualInstance;
@@ -75,26 +91,29 @@ export function VisualExercise({ instance, lang, width, onNext, nextLabel, decor
         width={inner}
         editable={m.task === 'build'}
         disabled={done}
+        item={GROUP_SCENE[m.theme ?? 'garden'].item}
+        container={GROUP_SCENE[m.theme ?? 'garden'].container}
         onAdd={(group) => dispatch({ type: 'work', action: { type: 'addToGroup', group } })}
         onRemove={(group) => dispatch({ type: 'work', action: { type: 'removeFromGroup', group } })}
-        plotLabel={(g, n) => `${t.plot[lang](g + 1)}: ${n}`}
-        addLabel={lang === 'es' ? 'Plantar' : 'Plant'}
+        plotLabel={(g, n) => `${containerName(m, g + 1, lang)}: ${n}`}
+        addLabel={(m.theme ?? 'garden') === 'garden' ? (lang === 'es' ? 'Plantar' : 'Plant') : lang === 'es' ? 'Poner' : 'Add'}
         removeLabel={lang === 'es' ? 'Quitar' : 'Remove'}
       />
     );
   } else if (m.kind === 'sharing' && s.work.kind === 'sharing') {
     const placement = s.work.placement;
-    const containerName = m.mode === 'partitive' ? t.plate[lang] : t.bag[lang];
+    const look = SHARE_SCENE[m.theme ?? 'cookies'];
     scene = (
       <SharingBoard
         tokens={m.tokenIds.map((id) => ({ id, where: placement[id] ?? null }))}
-        containers={m.containerIds.map((id, i) => ({ id, label: containerName(i + 1) }))}
-        kind={m.mode === 'partitive' ? 'plate' : 'bag'}
+        containers={m.containerIds.map((id, i) => ({ id, label: containerName(m, i + 1, lang) }))}
+        kind={look.container ?? (m.mode === 'partitive' ? 'plate' : 'bag')}
+        item={look.item}
         selected={s.selected}
         width={inner}
         disabled={done}
         trayLabel={t.tray[lang]}
-        tokenLabel={(n, where) => t.cookie[lang](n, where)}
+        tokenLabel={(n, where) => tokenName(m, n, where, lang)}
         onToken={(id) => dispatch({ type: 'select', token: id })}
         onTarget={(to) => s.selected && dispatch({ type: 'work', action: { type: 'place', token: s.selected, to } })}
       />

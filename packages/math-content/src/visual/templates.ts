@@ -8,7 +8,7 @@
  */
 import { FAMILIES } from './families/index.ts';
 import { intRng, type IntRng } from './rng.ts';
-import type { EqualGroupsModel, SharingModel, TenFrameModel, VisualFamily, VisualInstance, VisualModel } from './model.ts';
+import type { EqualGroupsModel, GroupsTheme, SharingModel, SharingTheme, TenFrameModel, VisualFamily, VisualInstance, VisualModel } from './model.ts';
 
 export const GENERATOR_VERSION = 1;
 
@@ -24,11 +24,16 @@ export interface VisualTemplate {
 
 const ids = (prefix: string, n: number) => Array.from({ length: n }, (_, i) => `${prefix}-${i}`);
 
-function sharing(mode: SharingModel['mode'], groups: number, perGroup: number, remainder: number): SharingModel {
+const SHARING_THEMES: SharingTheme[] = ['cookies', 'pencils', 'marbles', 'apples'];
+const GROUPS_THEMES: GroupsTheme[] = ['garden', 'apples', 'marbles'];
+/** El contexto se elige AL FINAL, con la última tirada: los números de cada semilla son los mismos que en la versión 1. */
+const pick = <T,>(r: IntRng, list: T[]) => list[r.int(0, list.length - 1)]!;
+
+function sharing(r: IntRng, mode: SharingModel['mode'], groups: number, perGroup: number, remainder: number): SharingModel {
   const total = groups * perGroup + remainder;
   // En "hacer bolsas" se muestra una bolsa de más: contar las bolsas no puede ser la respuesta.
   const containers = mode === 'partitive' ? groups : groups + 1;
-  return { kind: 'sharing', mode, total, groups, perGroup, remainder, tokenIds: ids('token', total), containerIds: ids(mode === 'partitive' ? 'plate' : 'bag', containers) };
+  return { kind: 'sharing', mode, total, groups, perGroup, remainder, tokenIds: ids('token', total), containerIds: ids('box', containers), theme: pick(r, SHARING_THEMES) };
 }
 
 export const VISUAL_TEMPLATES: VisualTemplate[] = [
@@ -54,7 +59,7 @@ export const VISUAL_TEMPLATES: VisualTemplate[] = [
   },
   {
     id: 'groups.build',
-    version: 1,
+    version: 2,
     family: 'equalGroups',
     skillId: 'g3u1.s2',
     grades: [2, 3],
@@ -63,12 +68,12 @@ export const VISUAL_TEMPLATES: VisualTemplate[] = [
       // Nunca cuadrados (3 grupos de 3): así se nota qué número es cuál.
       let perGroup = r.int(3, 6);
       if (perGroup === groups) perGroup = groups + 1;
-      return { kind: 'equalGroups', groups, perGroup, task: 'build' };
+      return { kind: 'equalGroups', groups, perGroup, task: 'build', theme: pick(r, GROUPS_THEMES) };
     },
   },
   {
     id: 'groups.read',
-    version: 1,
+    version: 2,
     family: 'equalGroups',
     skillId: 'g3u1.s2',
     grades: [3, 3],
@@ -76,34 +81,41 @@ export const VISUAL_TEMPLATES: VisualTemplate[] = [
       const groups = r.int(3, 6);
       let perGroup = r.int(4, 9);
       if (perGroup === groups) perGroup = groups + 2;
-      return { kind: 'equalGroups', groups, perGroup, task: 'read' };
+      return { kind: 'equalGroups', groups, perGroup, task: 'read', theme: pick(r, GROUPS_THEMES) };
     },
   },
   {
     id: 'sharing.partitive',
-    version: 1,
+    version: 2,
     family: 'sharing',
     skillId: 'g3.oa.divideShare',
     grades: [3, 4],
-    generate: (r) => sharing('partitive', r.int(2, 4), r.int(3, 6), 0),
+    generate: (r) => {
+      const groups = r.int(2, 4);
+      return sharing(r, 'partitive', groups, r.int(3, 6), 0);
+    },
   },
   {
     id: 'sharing.quotative',
-    version: 1,
+    version: 2,
     family: 'sharing',
     skillId: 'g3.oa.divideGroups',
     grades: [3, 4],
-    generate: (r) => sharing('quotative', r.int(3, 5), r.int(2, 5), 0),
+    generate: (r) => {
+      const groups = r.int(3, 5);
+      return sharing(r, 'quotative', groups, r.int(2, 5), 0);
+    },
   },
   {
     id: 'sharing.remainder',
-    version: 1,
+    version: 2,
     family: 'sharing',
     skillId: 'g4.oa.remainder',
     grades: [4, 4],
     generate: (r) => {
       const groups = r.int(3, 4);
-      return sharing('partitive', groups, r.int(2, 5), r.int(1, groups - 1));
+      const perGroup = r.int(2, 5);
+      return sharing(r, 'partitive', groups, perGroup, r.int(1, groups - 1));
     },
   },
 ];
