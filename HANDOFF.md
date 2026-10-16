@@ -2,6 +2,11 @@
 Actualizado: 2026-10-16 · Cuenta: A · Rama: claude/gracious-shannon-a0238d
 Último commit: ver `git log -1`
 
+## Materias en paralelo (D12, 2026-10-16)
+Ciencia (cuenta A) y Sociedad (cuenta B) se trabajan a la vez. Su estado vive en `docs/handoff/ciencia.md` y
+`docs/handoff/sociedad.md` (usa `/retomar ciencia` o `/retomar sociedad`). Este archivo queda para lo general. Reglas:
+`docs/14-MATERIAS-EN-PARALELO.md`. Preparación (PREP-1) hecha: módulos enchufados como "Pronto".
+
 ## Tarea en curso
 Ninguna a medias. Voz (RN-03) PAUSADA por Victor. K6: la primera unidad de Matemáticas (g3u1) ya se juega completa.
 

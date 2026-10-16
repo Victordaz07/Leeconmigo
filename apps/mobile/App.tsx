@@ -4,7 +4,7 @@ import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Button, Card, colors, fontFamily, GearIcon, HomeIcon, MathArtProvider, NavRail, TrophyIcon, useLayout, type NavRailItem } from '@lee-conmigo/ui-native';
 import { resolveFocus, todayReport } from '@lee-conmigo/session-engine';
-import { energyOption, progressSegments, type Energy } from '@lee-conmigo/ui-core';
+import { energyOption, progressSegments, type Energy, type SubjectId } from '@lee-conmigo/ui-core';
 import { MATH_UNITS } from '@lee-conmigo/math-content';
 import { loadPin, loadProfiles, mathProgressFor, newChildProfile, savePin, saveProfiles, progressStoreFor, resetProgressFor, type ChildProfile } from './src/app-state';
 import { createBundledRepository } from './src/bundled-stories';
@@ -16,6 +16,7 @@ import { EnergyScreen } from './src/screens/energy-screen';
 import { HomeScreen } from './src/screens/home-screen';
 import { MathLessonScreen } from './src/screens/math-lesson-screen';
 import { MathNotebookScreen } from './src/screens/math-notebook-screen';
+import { availableModule } from './src/subjects/registry';
 import { VisualReviewScreen } from './src/screens/math-visual/review-screen';
 import { WorkshopScreen } from './src/screens/math-visual/workshop-screen';
 import { NotebookScreen } from './src/screens/notebook-screen';
@@ -37,6 +38,7 @@ type Route =
   | { name: 'mathLesson'; lessonId: string }
   | { name: 'mathWorkshop' }
   | { name: 'mathReview' }
+  | { name: 'subject'; id: SubjectId }
   | { name: 'notebook' } | { name: 'reading'; storyId: string; from: 'home' | 'notebook' } | { name: 'dev' } | { name: 'showcase' };
 
 const RAIL: NavRailItem[] = [
@@ -256,6 +258,11 @@ function Root() {
       />
     );
   }
+  if (route.name === 'subject') {
+    // Materias por módulo (Ciencia, Sociedad…): cada una maneja su navegación interna.
+    const mod = availableModule(route.id);
+    if (mod) return <mod.Screen key={route.id} profile={profile} lang={lang} minutes={minutes} focus={focus} onExit={home} />;
+  }
   if (route.name === 'showcase') return <Showcase onBack={() => setRoute({ name: 'dev' })} />;
   if (route.name === 'dev') return <DevList repository={repository} onOpen={(storyId) => setRoute({ name: 'reading', storyId, from: 'home' })} onShowcase={() => setRoute({ name: 'showcase' })} onMathReview={() => setRoute({ name: 'mathReview' })} onBack={home} />;
 
@@ -273,6 +280,7 @@ function Root() {
           onOpenReading={() => setRoute({ name: 'notebook' })}
           math={{ subtitle: mathUnit.title[lang], segments: progressSegments(mathUnit.lessons.filter((l) => mathProgress.lessonsDone.has(l.id)).length, mathUnit.lessons.length) }}
           onOpenMath={() => setRoute({ name: 'mathNotebook' })}
+          onOpenSubject={(id) => setRoute({ name: 'subject', id })}
           onSwitchProfile={switchProfile}
         />
       </View>

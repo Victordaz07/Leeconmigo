@@ -9,7 +9,7 @@ import { DEFAULT_FOCUS, normalizeFocus, type ProgressStore } from '@lee-conmigo/
 import type { MathAttempt, ReviewEntry } from '@lee-conmigo/math-content';
 import { DEFAULT_DAILY_GOAL_MINUTES } from '@lee-conmigo/ui-core';
 import { deviceKV } from './persist/kv';
-import { eraseChild, KEYS, loadMath, PersistentProgressStore, readJSON, saveMath, writeJSON, type KV } from './persist/store';
+import { eraseChild, KEYS, loadMath, loadSubject, PersistentProgressStore, readJSON, saveMath, saveSubject, writeJSON, type KV, type SubjectKey } from './persist/store';
 
 export interface ChildProfile extends ReadingProfile {
   id: string;
@@ -89,6 +89,18 @@ export function mathProgressFor(profileId: string): MathProgress {
     mathStores.set(profileId, s);
   }
   return s;
+}
+
+/**
+ * Guardado de una materia nueva (Ciencia, Sociedad…): una sola pieza de datos por niño y materia, con la forma que cada
+ * materia decida (`valid` rechaza lo guardado que no la tenga). Va aparte de Lectura y Matemáticas y entra en "Borrar el
+ * progreso". Nunca audio ni texto reconocido (docs/07).
+ */
+export function subjectStorageFor<T>(subject: SubjectKey, profileId: string, fallback: T, valid: (v: unknown) => v is T) {
+  return {
+    load: (): T => loadSubject(kv, subject, profileId, fallback, valid),
+    save: (value: T) => saveSubject(kv, subject, profileId, value),
+  };
 }
 
 /** El progreso de cada niño va aparte (racha, estrellas, dónde retomar). */

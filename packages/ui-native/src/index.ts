@@ -37,3 +37,9 @@ export { AnswerBoxes, DigitPad } from './components/math-visual/answers.tsx';
 export type { AnswerBox } from './components/math-visual/answers.tsx';
 export { AreaBoard, BarChartBoard, BarModelBoard, ClockBoard, CoordBoard, FractionBoard, NumberLineBoard, PlaceValueBoard, RatioBoard } from './components/math-visual/scenes-2.tsx';
 export type { BarRow, PlaceValueLabels } from './components/math-visual/scenes-2.tsx';
+
+// ---- Ciencia: lo edita solo la cuenta de Ciencia (docs/14) ----
+export * from './components/ciencia/index.ts';
+
+// ---- Sociedad: lo edita solo la cuenta de Sociedad (docs/14) ----
+export * from './components/sociedad/index.ts';

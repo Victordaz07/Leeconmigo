@@ -9,6 +9,8 @@
     "@fugood/react-native-audio-pcm-stream": "~1.1.4",
     "@lee-conmigo/contracts": "*",
     "@lee-conmigo/math-content": "*",
+    "@lee-conmigo/science-content": "*",
+    "@lee-conmigo/social-content": "*",
     "@lee-conmigo/reading-engine": "*",
     "@lee-conmigo/session-engine": "*",
     "@lee-conmigo/speech-engine": "*",

@@ -80,3 +80,36 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | F6-03 | Resumen para compartir con la maestra (opcional) | ⬜ | – | |
 | **F7** | **Contenido Unidad 1** (grado de Noah, EN/ES, revisión humana) | ⬜ | – | espera grado/temas (plan §6) |
 | **F8** | **Prueba con Noah** (2 semanas, notas en `docs/log/`) | ⬜ | – | |
+
+---
+
+## Ciencia — solo la cuenta de Ciencia edita estas filas (`docs/14`, `docs/handoff/ciencia.md`)
+
+| ID | Tarea | Estado | Cuenta | Rama / nota |
+|---|---|---|---|---|
+| PREP-1 | Preparación: módulo, registro, paquete vacío, guardado por materia, protocolo | ✅ | A | enchufado como "Pronto" |
+| CI-01 | Prompt de investigación de Ciencia → Victor lo corre | ⬜ | A | **no programar antes** (lección de Matemáticas) |
+| CI-02 | Especificación visual/interactiva en `docs/design/ciencia/` | ⬜ | A | |
+| CI-03 | Lista de imágenes por tandas + manifiesto | ⬜ | A | base: `ART-BRIEF.md` |
+| CI-04 | Dominio puro en `packages/science-content` + pruebas | ⬜ | A | |
+| CI-05 | Textos ES/EN en `ui-core/src/ciencia/` | ⬜ | A | |
+| CI-06 | Pantallas del cuaderno de Ciencia (con Modo Enfoque) | ⬜ | A | |
+| CI-07 | Verificar en 4 tamaños y `available: true` | ⬜ | A | |
+| CI-08 | Revisión de un maestro (estándares: borrador) | ⬜ | – | |
+
+---
+
+## Sociedad — solo la cuenta de Sociedad edita estas filas (`docs/14`, `docs/handoff/sociedad.md`)
+
+| ID | Tarea | Estado | Cuenta | Rama / nota |
+|---|---|---|---|---|
+| PREP-1 | Preparación: módulo, registro, paquete vacío, guardado por materia, protocolo | ✅ | A | enchufado como "Pronto" |
+| SO-01 | Prompt de investigación de Sociedad → Victor lo corre | ⬜ | B | **no programar antes** (lección de Matemáticas) |
+| SO-02 | Especificación visual/interactiva en `docs/design/sociedad/` | ⬜ | B | el mapa va por capas tocables |
+| SO-03 | Lista de imágenes por tandas + manifiesto | ⬜ | B | base: `ART-BRIEF.md` |
+| SO-04 | Dominio puro en `packages/social-content` + pruebas | ⬜ | B | |
+| SO-05 | Textos ES/EN en `ui-core/src/sociedad/` | ⬜ | B | |
+| SO-06 | Pantallas del cuaderno de Sociedad (con Modo Enfoque) | ⬜ | B | |
+| SO-07 | Verificar en 4 tamaños y `available: true` | ⬜ | B | |
+| SO-08 | Revisión de un maestro (estándares: borrador) | ⬜ | – | |
+

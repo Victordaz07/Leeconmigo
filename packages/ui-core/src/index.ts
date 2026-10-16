@@ -23,3 +23,9 @@ export { fruitName, timeText, TOPIC_COPY } from './math-visual-copy-2.ts';
 export type { BarItem, FruitName, VisualCopyModel2 } from './math-visual-copy-2.ts';
 export { MOVEMENT_COPY, MOVEMENT_EVERY_MS, MOVEMENT_ROUTINES, MOVEMENT_SECONDS, movementStep, routineFor } from './movement.ts';
 export type { MovementRoutine } from './movement.ts';
+
+// ---- Ciencia: lo edita solo la cuenta de Ciencia (docs/14) ----
+export * from './ciencia/index.ts';
+
+// ---- Sociedad: lo edita solo la cuenta de Sociedad (docs/14) ----
+export * from './sociedad/index.ts';
