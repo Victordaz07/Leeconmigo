@@ -1,0 +1,171 @@
+{
+ "project": "Kitewise",
+ "subject": "ciencia",
+ "batch": "tanda-1",
+ "count": 18,
+ "format": "PNG original de GPT, sin recortar; se convierte a WebP (props y poses recortados a su silueta)",
+ "assets": [
+  {
+   "source": "landscape/bg_ciencia_humedal.png",
+   "sha256": "cd38500ed82f1af7f43f87b2fa6524e9ff564f62f7f0cb96f1288bff1c5dca38",
+   "bytes": 2330685,
+   "output": "apps/mobile/assets/ciencia/bg/bg_ciencia_humedal_horizontal.webp",
+   "outputBytes": 144848,
+   "width": 1536,
+   "height": 1024
+  },
+  {
+   "source": "landscape/bg_ciencia_laboratorio.png",
+   "sha256": "75b5b225a2155df65f4162678a8a015bd9e47685180f842a43ef8f72d9ac71a8",
+   "bytes": 2149737,
+   "output": "apps/mobile/assets/ciencia/bg/bg_ciencia_laboratorio_horizontal.webp",
+   "outputBytes": 120394,
+   "width": 1536,
+   "height": 1024
+  },
+  {
+   "source": "portrait/bg_ciencia_humedal.png",
+   "sha256": "d6234a8bdda7e523bd9fb32912905462eb004a8dca9c3f04068ac5b0f37cacab",
+   "bytes": 2319097,
+   "output": "apps/mobile/assets/ciencia/bg/bg_ciencia_humedal_vertical.webp",
+   "outputBytes": 138790,
+   "width": 1024,
+   "height": 1536
+  },
+  {
+   "source": "portrait/bg_ciencia_laboratorio.png",
+   "sha256": "8c761d68a3f0ba5afb119462c51320ded2858194dee22406637b0639d97cb9ac",
+   "bytes": 2245333,
+   "output": "apps/mobile/assets/ciencia/bg/bg_ciencia_laboratorio_vertical.webp",
+   "outputBytes": 112168,
+   "width": 1024,
+   "height": 1536
+  },
+  {
+   "source": "char_maya_apunta.png",
+   "sha256": "22568cdc548ea09e17e11a19ec50f6966bd342b27565bfc753fa21d52291ad55",
+   "bytes": 924266,
+   "output": "apps/mobile/assets/ciencia/chars/char_maya_apunta.webp",
+   "outputBytes": 61920,
+   "width": 415,
+   "height": 576
+  },
+  {
+   "source": "char_maya_celebra.png",
+   "sha256": "d348d3a7bfb13506b15a867c5fd7b1ecd63b169d7d59b5c109f1393d44c1473d",
+   "bytes": 902081,
+   "output": "apps/mobile/assets/ciencia/chars/char_maya_celebra.webp",
+   "outputBytes": 58054,
+   "width": 382,
+   "height": 576
+  },
+  {
+   "source": "char_maya_investiga.png",
+   "sha256": "62bfe956b1d6aafac4f6b6eb508c0696a1e7488f478d9999ffb84ffd1aa6847c",
+   "bytes": 1127354,
+   "output": "apps/mobile/assets/ciencia/chars/char_maya_investiga.webp",
+   "outputBytes": 66618,
+   "width": 414,
+   "height": 576
+  },
+  {
+   "source": "char_maya_piensa.png",
+   "sha256": "de6cc2f589887a84a6be5808fdbbf1f3a7ea31008bb100bf452fd086f420aeef",
+   "bytes": 867725,
+   "output": "apps/mobile/assets/ciencia/chars/char_maya_piensa.webp",
+   "outputBytes": 54186,
+   "width": 281,
+   "height": 576
+  },
+  {
+   "source": "char_maya_saluda.png",
+   "sha256": "c39f4b13ac69f6955878e575766f6e0c563426016616e5e5175ee7bd59470bc9",
+   "bytes": 894990,
+   "output": "apps/mobile/assets/ciencia/chars/char_maya_saluda.webp",
+   "outputBytes": 57568,
+   "width": 327,
+   "height": 576
+  },
+  {
+   "source": "cover_c4_u06.png",
+   "sha256": "12d8fb7b765995cae29d1452c08c997eeb333b7e6df33053753277b32b8347c0",
+   "bytes": 2206675,
+   "output": "apps/mobile/assets/ciencia/covers/cover_c4_u06.webp",
+   "outputBytes": 82292,
+   "width": 1152,
+   "height": 768
+  },
+  {
+   "source": "cover_ciencia_cuaderno.png",
+   "sha256": "9ec1ed00abf1ea4e7e9c118b9452fabfea2d741313b6335ae4431ea747b9aa20",
+   "bytes": 2368233,
+   "output": "apps/mobile/assets/ciencia/covers/cover_ciencia_cuaderno.webp",
+   "outputBytes": 112738,
+   "width": 1152,
+   "height": 768
+  },
+  {
+   "source": "prop_bandeja.png",
+   "sha256": "26c2f94d3ad0904aa8b593c537a77e10a79cf6d326bc2faeb74470ca0aca50ae",
+   "bytes": 694943,
+   "output": "apps/mobile/assets/ciencia/props/prop_bandeja.webp",
+   "outputBytes": 15002,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_cobertura.png",
+   "sha256": "d4eb528071a45d67df0d90fbf568244f123e26583aa14aabdc6b4c08d60d8abe",
+   "bytes": 1270070,
+   "output": "apps/mobile/assets/ciencia/props/prop_cobertura.webp",
+   "outputBytes": 31374,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_piedritas.png",
+   "sha256": "25b9573991e4d5cebbdff127ed5c99567bf218f178dbfb0a1b1ec007edf2d4d9",
+   "bytes": 745647,
+   "output": "apps/mobile/assets/ciencia/props/prop_piedritas.webp",
+   "outputBytes": 22372,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_regadera.png",
+   "sha256": "2d77bd3ea2d68e7efa80a1d889ea0884dbcbae830c7ce5abb0e9a8445dec5a6c",
+   "bytes": 1083720,
+   "output": "apps/mobile/assets/ciencia/props/prop_regadera.webp",
+   "outputBytes": 24050,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_tierra.png",
+   "sha256": "4b28798069359f48b13b72954ce73dd33aa03047defc5403d47a26db5f4e9f34",
+   "bytes": 793197,
+   "output": "apps/mobile/assets/ciencia/props/prop_tierra.webp",
+   "outputBytes": 20842,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_vaso_sedimento.png",
+   "sha256": "0e9c3feeeae62a165562d761feae350eed65f3f2d03fec394a6a2b96f3193ba0",
+   "bytes": 790373,
+   "output": "apps/mobile/assets/ciencia/props/prop_vaso_sedimento.webp",
+   "outputBytes": 22308,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "scene_ciencia_ladera.png",
+   "sha256": "c645d013e726feb86ad0ad02c0f4ac13ada5ba489ec5539c9e7b4c1a9943cff3",
+   "bytes": 3175567,
+   "output": "apps/mobile/assets/ciencia/bg/scene_ciencia_ladera.webp",
+   "outputBytes": 313396,
+   "width": 1536,
+   "height": 1024
+  }
+ ]
+}

@@ -1,5 +1,18 @@
 # Pedido de imágenes — Ciencia (prompts listos para pegar en GPT)
 
+> **Estado (2026-10-16): la Tanda 1 llegó completa (18 de 18) y está en la app.** Revisadas: sin texto ni números, instrumentos
+> sin marcas, centro despejado en los fondos, objetos y poses con fondo transparente limpio, Maya igual en las 5 poses.
+> Convertidas a WebP en `apps/mobile/assets/ciencia/` (1,4 MB en total; la más pesada, la escena de la ladera, 306 KB) con
+> `scripts/ciencia-arte.py`; conectadas en `apps/mobile/src/subjects/ciencia/art.ts`; manifiesto con el SHA-256 de los
+> originales en `arte/manifest-tanda-1.json` (los PNG no se guardan en el repo).
+> **Maya (referencia aprobada de la historia):** piel oscura, cabello trenzado con cuentas de colores y coleta con
+> scrunchie lila, camisa de rayas crema y lila, overol de mezclilla azul y tenis morados. Esa es la descripción de
+> referencia; la de «rizos y overol salvia» queda descartada.
+> **Estilo:** salió como ilustración de cuento (acuarela digital, más detalle y sombreado), no «plana» como Matemáticas. Es
+> lo que pedía el brief de arte (`ART-BRIEF.md`: «storybook cálido, acuarela digital») y combina con las portadas de
+> Lectura; en Inicio se ve bien junto a las de Lectura y Matemáticas. Los cajones en verde salvia vienen de la guía.
+> Falta: Tanda 2 (las otras cinco unidades piloto).
+
 **Para quién:** Victor genera las imágenes y las sube al chat; Claude las convierte a WebP, las nombra y las conecta
 (igual que en Matemáticas). **No hace falta pedir todo:** la **Tanda 1** alcanza para construir la primera unidad
 (C4-U06). Las demás tandas se piden cuando esa unidad esté probada.

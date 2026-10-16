@@ -19,3 +19,13 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
   `scienceEvidence.v1`; «avanzar» nunca bloquea (D9); sin sincronización, PhET, voz ni dibujo libre en v1; actividades
   fuera de pantalla las enciende el padre; Maya como guía (ya tiene arte).
 - Siguiente: Victor confirma DC-1…DC-8 y genera las imágenes de la Tanda 1; luego CI-03 (unidad piloto C4-U06).
+
+## 2026-10-16 · Arte de la Tanda 1 (unidad C4-U06)
+- Victor mandó `KiteWise_Ciencias_Unidad_1_18_Imagenes.zip` (18 PNG). Revisadas una por una: sin texto ni números;
+  instrumentos sin marcas (el vaso sin rayitas); centro despejado en los fondos; objetos y poses con transparencia limpia
+  (el «opaco» de GPT venía como alfa 253 y se normaliza); Maya idéntica en las 5 poses y fiel a la referencia aprobada.
+- Hecho: `scripts/ciencia-arte.py` (reproducible: sirve para la Tanda 2), WebP en `apps/mobile/assets/ciencia/` (1,4 MB),
+  manifiesto con SHA-256 en `docs/design/ciencia/arte/manifest-tanda-1.json`, `subjects/ciencia/art.ts`, prueba de que
+  cada archivo existe y pesa < 350 KB, portada del cuaderno en `homeCard`.
+- Observación: el estilo es de cuento (acuarela), no plano como Matemáticas; coincide con el brief y con Lectura. En Inicio la
+  portada de Ciencia se ve bien junto a las otras dos (tablet y teléfono, sin errores).

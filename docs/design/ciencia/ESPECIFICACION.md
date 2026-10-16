@@ -225,6 +225,9 @@ Las 18 del informe son **candidatas**, no un catálogo. Reglas:
 - Por edad: 1.º–2.º escenas grandes y pocos elementos; 3.º–4.º escena + panel de pruebas; 5.º–6.º laboratorio y cuaderno
   con ilustraciones puntuales. Por dispositivo: en pantalla grande conviven experimento y registro; en teléfono se
   alternan **conservando el estado**; nunca un laboratorio encogido con controles diminutos.
+- **Estado del arte (Tanda 1 recibida):** ilustración de cuento (acuarela digital), no plana; coherente con Lectura y con el
+  brief de arte, y se ve bien junto a la portada de Matemáticas en Inicio. Maya tiene sus 5 poses con la referencia aprobada.
+  La interfaz sigue con los tokens de Kitewise (DC-6 solo se refiere a la UI, no al arte).
 - **Inventario:** 48 portadas y 12 familias interactivas; escenas internas solo cuando expliquen algo nuevo. Primera
   tanda = 6 unidades piloto → `PEDIDO-IMAGENES.md` (prompts listos para pegar).
 

@@ -4,10 +4,11 @@
  */
 import type { SubjectModule } from '../types';
 import { ComingSoon } from '../coming-soon';
+import { CIENCIA_COVERS } from './art';
 
 export const cienciaModule: SubjectModule = {
   id: 'ciencia',
   available: false,
-  homeCard: () => ({ subtitle: '', segments: 0 }),
+  homeCard: () => ({ subtitle: '', segments: 0, image: CIENCIA_COVERS.notebook }),
   Screen: ({ onExit }) => <ComingSoon title="Ciencia" onExit={onExit} />,
 };
