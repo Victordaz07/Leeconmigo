@@ -176,3 +176,20 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
   su barrio, lo compara con Nia contra cómo se ve hoy (puente y estación nuevos), investigan con dos documentos
   ficticios (acta municipal, anuncio comercial). Barrio explícitamente ficticio, no basado en ningún lugar real.
 - Sin cambios de código. `npm test`: 1202/1202 ✅.
+
+## 2026-10-16 · SO-09: llegaron las 3 imágenes finales — las 6 unidades quedan completas
+
+- Victor mandó `cuaderno_viejo` (2.º), `edificio_mision` (4.º) y `asentamiento_mapa` (6.º) — las 3 piezas que
+  faltaban del pedido en `docs/design/sociedad/PEDIDO-IMAGENES-GRADOS-1-2-4-6.md`.
+- Revisadas: el cuaderno tiene solo "2005" escrito (lo único permitido), sin más texto; el edificio de la misión
+  no tiene personas ni símbolos religiosos específicos; el mapa del asentamiento muestra los 3 terrenos
+  (llanura, colina, bosque) sin ninguna etiqueta. Las 3 cumplen el pedido.
+- Convertidas a WebP (`sharp`, 1536×1024): 172–328 KB, todas bajo el presupuesto de 350 KB (hubo que bajar la
+  calidad del mapa del asentamiento de 78 a 65 para que entrara). Conectadas en
+  `apps/mobile/src/sociedad-art.ts` (`SOCIAL_SCENES.cuadernoViejo/edificioMision/asentamientoMapa`) — las claves
+  ya estaban escritas en el contenido JSON desde que se crearon las unidades, así que solo hizo falta registrar
+  el `require()`.
+- `npm run typecheck` en todo el monorepo: limpio. `npm test`: **1222/1222 ✅** (sin cambios de lógica, solo
+  arte nuevo).
+- **Las 6 unidades piloto de Sociedad quedan con todo su arte.** Pendiente real: solo SO-08 (revisión de un
+  maestro) y verificación visual en equipo real.

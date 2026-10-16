@@ -3,22 +3,22 @@ Actualizado: 2026-10-16 · Cuenta: B · Rama: `claude/sociedad-victor` · Protoc
 Tu materia es **Sociedad**; la otra cuenta trabaja **Ciencia** en paralelo. Edita solo lo tuyo (ver docs/14).
 
 ## Dónde estamos
-**6 unidades piloto, una por grado (1.º–6.º), todas completas y jugables.** Mismo elenco en las 6: Inés y Teo
-(de "El mapa de la puerta desaparecida", DS-4), guiados por Teo. El cuaderno de Sociedad ahora es un camino de 6
-paradas (como Matemáticas), no una sola unidad. `available: true` en el módulo y en `SUBJECTS` — ya no se ve
-"Pronto" en Inicio.
+**6 unidades piloto, una por grado (1.º–6.º), todas completas y jugables, con TODO su arte ya conectado.** Mismo
+elenco en las 6: Inés y Teo (de "El mapa de la puerta desaparecida", DS-4), guiados por Teo. El cuaderno de
+Sociedad es un camino de 6 paradas (como Matemáticas), no una sola unidad. `available: true` en el módulo y en
+`SUBJECTS` — ya no se ve "Pronto" en Inicio.
 
-| Grado | Unidad | Fuentes/motor | Arte que falta |
+| Grado | Unidad | Fuentes/motor | Arte |
 |---|---|---|---|
-| 1.º | S1-U01 "Una regla para compartir" | puro razonamiento (`elegir`) | ninguna |
-| 2.º | S2-U01 "Un cuaderno tiene historia" | mapa+testimonio, observación vs. inferencia | 1 imagen |
+| 1.º | S1-U01 "Una regla para compartir" | puro razonamiento (`elegir`) | no necesita (solo Teo) |
+| 2.º | S2-U01 "Un cuaderno tiene historia" | mapa+testimonio, observación vs. inferencia | ✅ `cuaderno_viejo` |
 | 3.º | S3-U03 "El paso del arroyo" | mapa por capas + mesa de fuentes | ✅ completa |
-| 4.º | S4-U03 "Un edificio y las voces que le faltan" | fuente+testimonio, tema sensible | 1 imagen |
-| 5.º | S5-U04 "Un ideal escrito y una realidad histórica" | 2 testimonios + clasificar, tema sensible | ninguna (a propósito) |
-| 6.º | S6-U02 "Un asentamiento junto al río" | simulación ficticia, puro razonamiento | 1 imagen |
+| 4.º | S4-U03 "Un edificio y las voces que le faltan" | fuente+testimonio, tema sensible | ✅ `edificio_mision` |
+| 5.º | S5-U04 "Un ideal escrito y una realidad histórica" | 2 testimonios + clasificar, tema sensible | no necesita (a propósito) |
+| 6.º | S6-U02 "Un asentamiento junto al río" | simulación ficticia, puro razonamiento | ✅ `asentamiento_mapa` |
 
-Hecho: SO-01 a SO-07 para las 6. Pendiente real: SO-08 (revisión de un maestro, con atención extra a 4.º y 5.º)
-y 3 imágenes nuevas (ver abajo).
+Hecho: SO-01 a SO-09 para las 6 (ver checklist). Pendiente real: **solo SO-08** (revisión de un maestro, con
+atención extra a 4.º y 5.º por temas sensibles) y la verificación visual en equipo real.
 
 ## Antes de empezar
 1. Lee `docs/14-MATERIAS-EN-PARALELO.md` y `docs/design/subjects/PATRON-MATEMATICAS.md`.
@@ -51,25 +51,21 @@ pasos de elección — nunca de "adivinar".
 
 ## Lo que falta / siguiente paso exacto
 
-1. **3 imágenes nuevas** — pedido completo en `docs/design/sociedad/PEDIDO-IMAGENES-GRADOS-1-2-4-6.md`:
-   `cuaderno_viejo` (2.º), `edificio_mision` (4.º), `asentamiento_mapa` (6.º). 1.º y 5.º no necesitan ninguna, a
-   propósito (ver el documento de las 5 unidades para el porqué). Mientras no lleguen, esos pasos se ven sin
-   imagen (solo texto y Teo) — no rompe nada, pero se ve incompleto.
-2. **SO-08 — revisión de un maestro**, las 6, con **atención extra a 4.º y 5.º** (temas sensibles: misiones,
+1. **SO-08 — revisión de un maestro**, las 6, con **atención extra a 4.º y 5.º** (temas sensibles: misiones,
    esclavitud): se escribió con mucho cuidado (texto propio, no fuentes reales reclamadas, sin escenas gráficas
    ni juegos de dominación, siguiendo las precauciones explícitas de `docs/research/sociedad-investigacion.md`
    §10), pero un maestro de verdad tiene que confirmar que el tono y el contenido están bien antes de que
    cualquier niño las use. `standardsReview.confidence: "lowSensitiveTopic"` en esas dos, para que se note la
    diferencia con las demás.
-3. **Verificación visual en 4 tamaños**: solo se verificó `npm run typecheck` (monorepo completo, limpio) y
+2. **Verificación visual en 4 tamaños**: solo se verificó `npm run typecheck` (monorepo completo, limpio) y
    `npm test` (**1222/1222** ✅). **No se corrió la app real** — `expo export --platform android` llegó hasta
    1302 módulos y falló en un punto **no relacionado** (modelos de voz `.bin` ausentes, sin red en esta sesión
    para bajarlos). Falta que Victor la abra en su Android/tablet cuando pida el próximo APK.
-4. **Sin reanudar a medias**: cerrar una investigación y volver a abrirla empieza de cero. Aceptable por ahora;
+3. **Sin reanudar a medias**: cerrar una investigación y volver a abrirla empieza de cero. Aceptable por ahora;
    si se siente mal en uso real, guardar `stepIndex` y las respuestas parciales.
-5. **"Otra vez" del cierre** vuelve al cuaderno, no reinicia en el lugar. Simple y seguro, pero no es "otra vez"
+4. **"Otra vez" del cierre** vuelve al cuaderno, no reinicia en el lugar. Simple y seguro, pero no es "otra vez"
    literal como en Lectura.
-6. Lo que ya se dejó fuera a propósito del pedido de imágenes original (fondo de pantallas, 5.ª pose de Teo,
+5. Lo que ya se dejó fuera a propósito del pedido de imágenes original (fondo de pantallas, 5.ª pose de Teo,
    marcador de progreso tipo "papalote") sigue para un pedido futuro, una vez que haya más pantallas construidas
    que digan qué hace falta de verdad.
 

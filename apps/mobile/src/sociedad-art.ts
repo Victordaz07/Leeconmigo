@@ -12,11 +12,14 @@ export const SOCIAL_COVERS = {
   notebook: require('../assets/sociedad/covers/cover_sociedad.webp'),
 } satisfies Record<string, ImageSourcePropType>;
 
-/** Claves de arte que puede traer un paso/fuente de `s3u03.json`, resueltas a la imagen real. */
+/** Claves de arte que puede traer un paso/fuente de cualquier unidad, resueltas a la imagen real. */
 export const SOCIAL_SCENES = {
   planoAntes: require('../assets/sociedad/scenes/plano_calle_antes.webp'),
   planoDespues: require('../assets/sociedad/scenes/plano_calle_despues.webp'),
   tarjetaFoto: require('../assets/sociedad/scenes/tarjeta_foto_arroyo.webp'),
+  cuadernoViejo: require('../assets/sociedad/scenes/cuaderno_viejo.webp'),
+  edificioMision: require('../assets/sociedad/scenes/edificio_mision.webp'),
+  asentamientoMapa: require('../assets/sociedad/scenes/asentamiento_mapa.webp'),
 } satisfies Record<string, ImageSourcePropType>;
 
 export function resolveSocialArt(key: string | null | undefined): ImageSourcePropType | undefined {
