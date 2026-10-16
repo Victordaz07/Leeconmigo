@@ -5,10 +5,12 @@
  */
 import type { Localized } from '@lee-conmigo/contracts';
 import c1u02 from '../content/c1-u02.json';
+import c2u02 from '../content/c2-u02.json';
 import c4u06 from '../content/c4-u06.json';
 import { practiceMapProblems, PRACTICE_MAPS, bandCount, LADERA_DATASETS, type Dataset } from './datasets.ts';
 import { COVERS, SLOPES, type Cover, type Slope } from './labs/erosion.ts';
 import { LIGHT_OBJECTS, LIGHT_STATES, type LightObject, type LightState } from './labs/luz.ts';
+import { bestMaterial, LEVEL_TEXT, MATERIAL_NAME, MATERIAL_TESTS, materialResult, MATERIALS, type MaterialTest } from './labs/materiales.ts';
 import type { ScienceArea } from './map.ts';
 
 export type Phase = 'observa' | 'explora' | 'explica' | 'usa';
@@ -59,6 +61,15 @@ export interface LightSetup {
   static?: boolean;
 }
 
+/** El probador de materiales con las cuatro piezas iguales (C2-U02). */
+export interface MaterialSetup {
+  test: MaterialTest;
+  /** Cuántos materiales prueba el niño en este paso (1–4). */
+  trials?: number;
+  /** Se muestran los resultados ya hechos (para analizarlos) en vez de pedir que se hagan. */
+  static?: boolean;
+}
+
 export interface ChoiceOption {
   id: string;
   text: Localized;
@@ -96,6 +107,7 @@ export interface UnitStep {
   zones?: StepZones;
   lab?: LabSetup;
   light?: LightSetup;
+  material?: MaterialSetup;
   /** Pasos de «arreglar la prueba»: el laboratorio resultante según el arreglo que elija el niño (id de la opción). */
   labFixed?: Record<string, LabSetup>;
   choice?: StepChoice;
@@ -196,7 +208,7 @@ export interface ScienceUnit {
 }
 
 /** Las unidades con contenido, por grado. Una unidad con contenido todavía puede esperar su arte (`UNIT_ART_READY` en la app). */
-export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit];
+export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit];
 export const scienceUnitContent = (id: string): ScienceUnit | undefined => SCIENCE_UNITS.find((u) => u.id === id);
 
 // ------------------------------------------------------------------ evaluar una tarea
@@ -340,6 +352,10 @@ export function unitProblems(u: ScienceUnit): string[] {
       if (!LIGHT_STATES.includes(st.light.light)) p.push(`${st.id}: estado de luz desconocido`);
       if (st.light.trials !== undefined && (st.light.trials < 1 || st.light.trials > 6)) p.push(`${st.id}: los cambios de luz van de 1 a 6`);
     }
+    if (st.material) {
+      if (!MATERIAL_TESTS.includes(st.material.test)) p.push(`${st.id}: prueba de materiales desconocida`);
+      if (st.material.trials !== undefined && (st.material.trials < 1 || st.material.trials > MATERIALS.length)) p.push(`${st.id}: los materiales a probar van de 1 a ${MATERIALS.length}`);
+    }
     if (st.map && !(st.map.id === 'A' || st.map.id === 'B')) p.push(`${st.id}: mapa desconocido`);
     for (const g of st.glossary ?? []) if (!u.glossary.some((e) => e.es === g)) p.push(`${st.id}: «${g}» no está en el glosario`);
     if (st.kind === 'arreglar') {
@@ -415,6 +431,7 @@ export function unitProblems(u: ScienceUnit): string[] {
 export function dataTextProblems(u: ScienceUnit): string[] {
   const p: string[] = [];
   if (u.id === 'C1-U02') return lightTextProblems(u);
+  if (u.id === 'C2-U02') return materialTextProblems(u);
   if (u.id !== 'C4-U06') return p;
   const t5 = u.tasks.find((t) => t.id === 't5');
   const base = LADERA_DATASETS.base.rows;
@@ -472,5 +489,33 @@ function lightTextProblems(u: ScienceUnit): string[] {
     const t = u.tasks.find((x) => x.id === id)?.parts.find((x) => x.id === 'resultado');
     if (t?.observedOptionId !== 'distingo') p.push(`${id}.resultado: lo observado al encender la luz debe ser «distingo»`);
   }
+  return p;
+}
+
+/** C2-U02: lo que dicen los textos de resultados y las respuestas esperadas coincide con el modelo de los materiales. */
+function materialTextProblems(u: ScienceUnit): string[] {
+  const p: string[] = [];
+  const steps = u.sessions.flatMap((s) => s.steps);
+  const part = (taskId: string, partId: string) => u.tasks.find((t) => t.id === taskId)?.parts.find((x) => x.id === partId);
+  // Las predicciones apuntan al material que el modelo da como mejor para cada propósito.
+  if (part('t3', 'material')?.observedOptionId !== bestMaterial('techo')) p.push('t3.material: lo observado debe ser el mejor material para el techo');
+  if (part('t4', 'material')?.observedOptionId !== bestMaterial('secar')) p.push('t4.material: lo observado debe ser el mejor material para secar');
+  // Cada evidencia cita el resultado que el modelo da para ese material (en palabras, en los dos idiomas).
+  const cites: [string, MaterialTest, string[]][] = [['t5', 'techo', ['plastico', 'tela']], ['t6', 'secar', ['papel', 'plastico']]];
+  for (const [taskId, test, ms] of cites) {
+    for (const m of ms) {
+      const o = part(taskId, 'evidencia')?.options.find((x) => x.id === m);
+      const level = LEVEL_TEXT[test][materialResult(m as (typeof MATERIALS)[number], test)];
+      for (const lang of ['es', 'en'] as const) {
+        const said = o?.text[lang].toLowerCase() ?? '';
+        if (!said.includes(level[lang].toLowerCase())) p.push(`${taskId}.evidencia.${m}: el texto ${lang.toUpperCase()} no dice «${level[lang]}» (modelo)`);
+        if (!said.includes(MATERIAL_NAME[m as (typeof MATERIALS)[number]][lang].split(' ')[0].toLowerCase())) p.push(`${taskId}.evidencia.${m}: el texto ${lang.toUpperCase()} no nombra el material`);
+      }
+    }
+  }
+  // Las preguntas del paso con respuesta esperada coinciden con los resultados.
+  const expected = (id: string) => steps.find((st) => st.id === id)?.choice?.options.find((o) => o.expected)?.id;
+  if (expected('s3.3') !== MATERIALS.find((m) => materialResult(m, 'techo') === 'nada')) p.push('s3.3: el material sin paso de agua no coincide con el modelo');
+  if (materialResult('tela', 'techo') === materialResult('carton', 'techo') || expected('s3.4') !== 'tela') p.push('s3.4: la tela debe dejar pasar más agua que el cartón');
   return p;
 }

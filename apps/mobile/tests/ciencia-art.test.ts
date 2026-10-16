@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 /** Arte PROVISIONAL (dibujado con código) todavía conectado: vacío cuando llegaron todos los lotes de las unidades abiertas. */
-const PROVISIONAL: string[] = [];
+const PROVISIONAL: string[] = ['bg/scene_c2_u02.webp', 'covers/cover_c2_u02.webp', 'props/prop_muneco.webp', 'props/prop_bandeja_agua.webp', 'props/prop_papel_absorbente.webp', 'props/prop_tela.webp', 'props/prop_plastico.webp', 'props/prop_carton.webp'];
 /** Un manifiesto por tanda/lote recibido. */
 const MANIFESTS = ['manifest-tanda-1.json', 'manifest-tanda-2a.json'];
 
@@ -33,6 +33,8 @@ describe('arte de Ciencia', () => {
     const art = readFileSync(new URL('../src/subjects/ciencia/art.ts', import.meta.url), 'utf8');
     for (const f of PROVISIONAL) expect(art).toContain(f.replace(/^[a-z]+\//, ''));
     expect(art).toMatch(/'C1-U02': true/);
+    // Mientras su arte sea provisional, la unidad no se abre al niño.
+    expect(art).toMatch(/'C2-U02': false/);
     expect(art).toMatch(/'C4-U06': true/);
   });
 });

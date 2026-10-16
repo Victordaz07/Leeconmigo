@@ -72,3 +72,9 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
 ## 2026-10-16 · CI-11b: Lote A recibido
 - Se revisaron las 7 imágenes (sin texto, alfa limpio, caja ancha con interior liso), se convirtieron y se conectaron; se ajustó el
   interior de la caja y C1-U02 quedó abierta (`UNIT_ART_READY=true`). Prueba de arte: un manifiesto por lote.
+
+## 2026-10-16 · CI-12: C2-U02 en contenido y pantallas
+- Mientras Victor genera los lotes B–E, se construyó C2-U02 con arte provisional. Decisión de diseño: dos pruebas con el MISMO
+  material (techo y secar) para que el niño vea que el mejor material depende del propósito (idea central de 2-PS1-2).
+- Recorrido completo en el navegador (6 sesiones) sin errores. La comparación predicción/observado ahora se prueba con la respuesta
+  honesta (si no coincide, se dice «no coincidió»).

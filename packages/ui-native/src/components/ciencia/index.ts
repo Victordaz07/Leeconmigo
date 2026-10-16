@@ -7,3 +7,4 @@ export { BarChart, type Bar } from './bar-chart.tsx';
 export { LayerToggle, PracticeMap, type MapCell, type MapLayers, type MapView2D } from './practice-map.tsx';
 export { LightBox, type LightArt } from './light-box.tsx';
 export { ResultTable, type ResultCell, type ResultRow } from './result-table.tsx';
+export { MaterialTester, type MaterialArt, type MaterialTile } from './material-tester.tsx';

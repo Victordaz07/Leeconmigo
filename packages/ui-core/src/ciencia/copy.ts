@@ -140,6 +140,26 @@ export const CIENCIA_COPY = {
       L('Investigo mecanismos y evalúo modelos', 'I investigate mechanisms and evaluate models'),
     ],
   },
+  /** Probador de materiales (C2-U02). */
+  materials: {
+    stationRoof: (name: string) => L(`Techo de ${name} sobre el muñeco`, `${name} roof over the doll`),
+    stationSpill: (name: string) => L(`${name} sobre el derrame`, `${name} over the spill`),
+    stationNone: L('Todavía no elegiste un material.', 'You haven’t picked a material yet.'),
+    pick: L('Elige un material y toca la regadera.', 'Pick a material and tap the watering can.'),
+    pour: L('Regar', 'Pour water'),
+    pourAgain: L('Regar otra vez', 'Pour again'),
+    tried: (n: number, t: number) => L(`Probaste ${n} de ${t} materiales`, `You tried ${n} of ${t} materials`),
+    triedAll: L('Ya probaste los que hacía falta. Puedes probar otro.', 'You tried enough. You can try another one.'),
+    gaugeRoof: L('Agua que pasó bajo el techo', 'Water that came under the roof'),
+    gaugeSpill: L('Agua que se empapó en la pieza', 'Water the piece soaked up'),
+    tableTitle: L('Mis resultados', 'My results'),
+    columnRoof: L('¿Pasó agua?', 'Did water come through?'),
+    columnSpill: L('¿Se empapó?', 'Did it soak up water?'),
+    askAbout: (name: string) => L(`Mira lo que pasó con ${name}. ¿Qué anotas?`, `Look at what happened with ${name}. What do you write down?`),
+    pickCell: L('Toca un material de la tabla y mira qué pasó.', 'Tap a material in the table and look at what happened.'),
+    lookAgain: L('Mira otra vez el medidor de agua y elige de nuevo.', 'Look at the water gauge again and choose again.'),
+    tableComplete: L('Tu tabla está completa.', 'Your table is complete.'),
+  },
   /** Caja de luz (C1-U02). */
   light: {
     boxLabel: (object: string, on: boolean) => L(`Caja con ${object}. La luz está ${on ? 'encendida' : 'apagada'}.`, `Box with ${object}. The light is ${on ? 'on' : 'off'}.`),

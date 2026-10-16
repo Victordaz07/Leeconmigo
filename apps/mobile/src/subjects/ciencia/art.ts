@@ -21,6 +21,7 @@ export const SCENE_ART: Record<string, { source: ImageSourcePropType; aspect: nu
   ladera: { source: CIENCIA_SCENES.ladera, aspect: 1536 / 1024 },
   humedal: { source: CIENCIA_BACKGROUNDS.humedal.horizontal, aspect: 1536 / 1024 },
   cuarto: { source: require('../../../assets/ciencia/bg/scene_c1_u02.webp'), aspect: 1536 / 1024 },
+  porche: { source: require('../../../assets/ciencia/bg/scene_c2_u02.webp'), aspect: 1536 / 1024 },
 };
 
 /** Portadas: el cuaderno en Inicio y la unidad C4-U06. */
@@ -28,6 +29,7 @@ export const CIENCIA_COVERS = {
   notebook: require('../../../assets/ciencia/covers/cover_ciencia_cuaderno.webp'),
   c4u06: require('../../../assets/ciencia/covers/cover_c4_u06.webp'),
   c1u02: require('../../../assets/ciencia/covers/cover_c1_u02.webp'),
+  c2u02: require('../../../assets/ciencia/covers/cover_c2_u02.webp'),
 } satisfies Record<string, ImageSourcePropType>;
 
 /** Objetos sueltos del laboratorio de Paisaje y erosión (una pieza cada uno, transparentes, cuadrados). */
@@ -51,6 +53,18 @@ export const CIENCIA_LUZ = {
   },
 } satisfies { caja: ImageSourcePropType; linterna: ImageSourcePropType; objetos: Record<string, ImageSourcePropType> };
 
+/** Arte de la unidad C2-U02 (Lote B del pedido; hoy PROVISIONAL hasta que lleguen las imágenes de Victor). */
+export const CIENCIA_MATERIALES = {
+  muneco: require('../../../assets/ciencia/props/prop_muneco.webp'),
+  bandeja: require('../../../assets/ciencia/props/prop_bandeja_agua.webp'),
+  materiales: {
+    papel: require('../../../assets/ciencia/props/prop_papel_absorbente.webp'),
+    tela: require('../../../assets/ciencia/props/prop_tela.webp'),
+    plastico: require('../../../assets/ciencia/props/prop_plastico.webp'),
+    carton: require('../../../assets/ciencia/props/prop_carton.webp'),
+  },
+} satisfies { muneco: ImageSourcePropType; bandeja: ImageSourcePropType; materiales: Record<string, ImageSourcePropType> };
+
 /** Maya, la guía de Ciencia (DC-4, a confirmar por Victor). Misma niña de la historia `la-isla-que-caminaba`. */
 export type MayaPose = 'saluda' | 'piensa' | 'investiga' | 'apunta' | 'celebra';
 export const MAYA: Record<MayaPose, { source: ImageSourcePropType; aspect: number }> = {
@@ -68,6 +82,7 @@ export const MAYA: Record<MayaPose, { source: ImageSourcePropType; aspect: numbe
 export const UNIT_ART_READY: Record<string, boolean> = {
   'C4-U06': true,
   'C1-U02': true, // Lote A recibido (manifest-tanda-2a)
+  'C2-U02': false, // arte provisional: espera el Lote B
 };
 
 /** Un build de demo (`EXPO_PUBLIC_DEMO=1`) deja abrir las unidades con arte provisional, para probarlas antes de que llegue. */

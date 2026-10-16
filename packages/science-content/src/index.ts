@@ -11,3 +11,4 @@ export * from './evidence.ts';
 export * from './unit.ts';
 export * from './progress.ts';
 export * from './labs/luz.ts';
+export * from './labs/materiales.ts';

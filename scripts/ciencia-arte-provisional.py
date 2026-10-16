@@ -85,6 +85,63 @@ def lote_a():
         else:
             rgb.save(f'{OUT}/bg/{name}.webp', 'WEBP', quality=80, method=6)
 
-LOTES = {'A': lote_a}
+def square_piece(name, base, accent, pattern):
+    im, d = canvas()
+    d.rounded_rectangle((170, 170, 854, 854), 18, fill=base, outline=accent, width=10)
+    if pattern == 'grid':
+        for i in range(230, 840, 70):
+            d.line((i, 180, i, 844), fill=accent, width=3)
+            d.line((180, i, 844, i), fill=accent, width=3)
+    elif pattern == 'weave':
+        for i in range(200, 840, 36):
+            d.line((i, 180, i, 844), fill=accent, width=6)
+            d.line((180, i, 844, i), fill=accent, width=6)
+    elif pattern == 'ridges':
+        for i in range(210, 840, 56):
+            d.line((180, i, 844, i), fill=accent, width=10)
+    elif pattern == 'shine':
+        d.polygon([(220, 700), (520, 200), (600, 200), (300, 700)], fill=(255, 255, 255, 150))
+    save_prop(im, name)
+
+def lote_b():
+    square_piece('prop_papel_absorbente', (252, 252, 248, 255), (200, 200, 190, 255), 'grid')
+    square_piece('prop_tela', (120, 170, 220, 255), (70, 110, 170, 255), 'weave')
+    square_piece('prop_plastico', (205, 232, 245, 200), (120, 170, 200, 255), 'shine')
+    square_piece('prop_carton', (196, 152, 98, 255), (140, 100, 58, 255), 'ridges')
+    # muñeco de madera
+    im, d = canvas()
+    wood, dark = (214, 170, 110), (120, 80, 40)
+    d.ellipse((372, 100, 652, 380), fill=wood, outline=dark, width=10)
+    d.rounded_rectangle((332, 380, 692, 800), 60, fill=(196, 150, 96), outline=dark, width=10)
+    d.rectangle((372, 780, 480, 940), fill=wood, outline=dark, width=8)
+    d.rectangle((544, 780, 652, 940), fill=wood, outline=dark, width=8)
+    d.ellipse((440, 210, 480, 250), fill=dark)
+    d.ellipse((544, 210, 584, 250), fill=dark)
+    d.arc((440, 250, 584, 340), 20, 160, fill=dark, width=8)
+    save_prop(im, 'prop_muneco')
+    # bandeja con agua
+    im, d = canvas()
+    d.rounded_rectangle((100, 360, 924, 760), 40, fill=(190, 196, 206), outline=(110, 116, 130), width=10)
+    d.rounded_rectangle((160, 420, 864, 700), 30, fill=(150, 200, 235), outline=(100, 150, 190), width=6)
+    d.rectangle((420, 330, 604, 380), fill=(190, 196, 206), outline=(110, 116, 130), width=8)
+    save_prop(im, 'prop_bandeja_agua')
+    # vaso con agua
+    im, d = canvas()
+    d.polygon([(300, 180), (724, 180), (670, 880), (354, 880)], fill=(225, 240, 250, 160), outline=(120, 150, 180, 255))
+    d.polygon([(318, 480), (706, 480), (670, 880), (354, 880)], fill=(130, 190, 235, 230))
+    save_prop(im, 'prop_vaso_agua')
+    for name, folder in (('cover_c2_u02', 'covers'), ('scene_c2_u02', 'bg')):
+        size = (1152, 768) if folder == 'covers' else (1536, 1024)
+        bg = gradient(size[0], size[1], (150, 160, 170), (110, 120, 112)).convert('RGBA')
+        d = ImageDraw.Draw(bg)
+        w, h = size
+        d.rectangle((0, int(h * 0.72), w, h), fill=(130, 98, 66))
+        d.ellipse((int(w * 0.3), int(h * 0.46), int(w * 0.4), int(h * 0.74)), fill=(214, 170, 110), outline=(120, 80, 40), width=5)
+        d.polygon([(int(w * 0.24), int(h * 0.42)), (int(w * 0.46), int(h * 0.34)), (int(w * 0.46), int(h * 0.4)), (int(w * 0.24), int(h * 0.48))], fill=(252, 252, 248))
+        for i in range(30):
+            x = int(w * (0.05 + 0.03 * i)); d.line((x, 30, x - 20, 120), fill=(190, 210, 230), width=3)
+        bg.convert('RGB').save(f'{OUT}/{folder}/{name}.webp', 'WEBP', quality=80, method=6)
+
+LOTES = {'A': lote_a, 'B': lote_b}
 LOTES[sys.argv[1] if len(sys.argv) > 1 else 'A']()
 print('arte provisional listo (reemplaza con las imágenes reales y scripts/ciencia-arte.py)')

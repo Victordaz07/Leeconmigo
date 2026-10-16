@@ -156,3 +156,19 @@ tela, plástico, cartón), vaso de agua compartido con C5 y C6, bandeja con pico
   teléfono vertical). Un lote nuevo = un manifiesto nuevo (`tanda-2b`, `2c`…) que se suma a `MANIFESTS` en `tests/ciencia-art.test.ts`.
 - Los lotes B–E siguen en preparación (Victor los está generando). El arte provisional (`scripts/ciencia-arte-provisional.py`) solo se
   usa para probar una unidad mientras llega su lote; nunca se deja conectado con la unidad abierta.
+
+
+## Actualización CI-12 (2026-10-16): C2-U02 hecha en contenido y pantallas
+- **Mientras llega el Lote B** (Victor lo está generando) se construyó la unidad con arte provisional
+  (`python3 scripts/ciencia-arte-provisional.py B`, mismos nombres que el pedido). `UNIT_ART_READY['C2-U02']=false`: no se abre al niño.
+- `labs/materiales.ts`: 4 materiales × 2 pruebas (techo: cuánta agua PASA · secar: cuánta se EMPAPA), cualitativo (nada/poco/mucho),
+  datos didácticos. Cada propósito tiene UN mejor material y NO es el mismo (plástico para techo, papel para secar): el propósito decide.
+  `MATERIALS_MODEL` dice qué NO representa (un material real, un techo de verdad, cantidades en gramos).
+- `content/c2-u02.json` (6 sesiones / 23 pasos, 8 tareas, 2 ideas: `material.sirve` en 3 casos y `prueba.justa` en 2). Ficha:
+  `unidades/C2-U02.md`. Pruebas: `unit-c2u02.test.ts`, `materiales.test.ts`; `dataTextProblems` ata los textos de evidencia al modelo.
+- `MaterialTester` (ui-native) + `families/materials.tsx`: elegir una pieza, regar, medidor de agua sin números, tabla `ResultTable`
+  que el niño llena mirando el medidor.
+- **Cuando llegue el Lote B:** `python3 -I scripts/ciencia-arte.py <carpeta> tanda-2b`, sumar `manifest-tanda-2b.json` a `MANIFESTS` y quitar
+  los 8 nombres de `PROVISIONAL` en `tests/ciencia-art.test.ts`, mirar el techo (la pieza rotada −12° sobre el muñeco) y el derrame
+  en los 4 tamaños y poner `UNIT_ART_READY['C2-U02']=true`.
+- **Siguiente:** CI-13 C6-U04 (energía térmica: probador + constructor de modelos + mesa de datos) con arte provisional del Lote C.
