@@ -1,51 +1,57 @@
 # HANDOFF — Ciencia
-Actualizado: 2026-10-16 · Cuenta: A · Rama: (la de tu sesión) · Protocolo: `docs/14-MATERIAS-EN-PARALELO.md`
+Actualizado: 2026-10-16 · Cuenta: A · Rama: la de tu sesión (reiníciala desde `master` si su PR ya se fusionó) · Protocolo: `docs/14-MATERIAS-EN-PARALELO.md`
 Tu materia es **Ciencia**; la otra cuenta trabaja **Sociedad** en paralelo. Edita solo lo tuyo (ver docs/14).
 
 ## Dónde estamos
-Preparación hecha (PREP-1): el módulo `apps/mobile/src/subjects/ciencia/` está registrado y enchufado a la app, el paquete
-`packages/science-content` existe vacío y el guardado por materia funciona. **No hay contenido, ni arte, ni investigación.**
-En Inicio Ciencia se ve como "Pronto" (`available: false`).
-
-## Antes de empezar
-1. Lee `docs/14-MATERIAS-EN-PARALELO.md` y `docs/design/subjects/PATRON-MATEMATICAS.md` (el patrón y los errores ya cometidos).
-2. Lee `CLAUDE.md` (reglas de privacidad, arte y texto separados, DECISIÓN/PENDIENTE) y `docs/DECISIONS.md`.
-3. `git fetch origin master && git merge origin/master`, `npm ci --ignore-scripts` si hace falta, `npm test`.
-4. Unidad piloto propuesta en el diseño: **Erosión y agua (4.º)** (`NGSS 4-ESS2-1`, borrador sin validar). Ojo: el nivel de la app NO es el
-   grado escolar (docs/01); pregunta a Victor en qué nivel debe empezar.
+- CI-01 ✅ Victor entregó la investigación (`docs/research/ciencia-investigacion.md`, copia sin cambios).
+- CI-02 ✅ Se analizó y adaptó al repo (`docs/design/ciencia/`):
+  - `ESPECIFICACION.md`: veredicto, lectura crítica (qué se verificó y qué no), arquitectura, experiencia, datos,
+    laboratorios, evaluación, seguridad, visual, plan y **decisiones DC-1…DC-8 para Victor**.
+  - `MAPA-UNIDADES.md` y `ESTANDARES.md`: **generados** por `python3 scripts/ciencia-mapa-md.py` desde el JSON.
+  - `PEDIDO-IMAGENES.md`: prompts listos para pegar (Tanda 1 = C4-U06; Tanda 2 = otras cinco pilotos).
+  - Código: `packages/science-content/content/mapa.json` (48 unidades, ES/EN, códigos, laboratorios) + `src/map.ts`
+    (tipos, consultas, validador) + 8 pruebas, entre ellas **cobertura de las 62 expectativas NGSS de 1.º–5.º**.
+- La materia sigue "Pronto" en Inicio (`available: false`): no hay unidad jugable.
 
 ## Siguiente paso exacto
-**CI-01 — NO programar todavía.** Escribe el prompt de investigación para Victor (como el de Matemáticas:
-`docs/research/PROMPT-INVESTIGACION-PROBLEMAS-MATEMATICAS.md`): cómo se enseña y se practica Ciencia en una escuela
-real por grado (qué actividades, qué manipulan, qué errores comunes, qué vocabulario), cómo se ve en pantalla, y qué NO
-debe parecer "de preescolar". Guárdalo en `docs/research/PROMPT-INVESTIGACION-CIENCIA.md`, avísale a Victor para que
-lo corra y espera el resultado en `docs/research/`. Mientras tanto, puedes avanzar en paralelo sin riesgo con:
-- la lista de imágenes a pedir (partiendo de `docs/design/kitewise/ART-BRIEF.md`; portada + escenas por lección + diagramas sin etiquetas; ambiente de costa/humedal), sin pedirlas hasta tener la
-  especificación;
-- el esquema de la unidad en JSON (sin contenido final).
+**Esperar a Victor:** que confirme (o cambie) **DC-1…DC-8** (`ESPECIFICACION.md` §13) y genere las imágenes de la Tanda 1
+(`PEDIDO-IMAGENES.md`). Con eso, **CI-03**: especificación detallada de la unidad piloto recomendada **C4-U06**
+(6 sesiones, 8 tareas del banco —2 observación, 2 predicción, 2 evidencia/modelo, 1 transferencia, 1 reflexión—,
+glosario ES/EN, supuestos y casos límite del modelo de erosión, ficha de seguridad, datos didácticos con `provenance`).
+Se puede adelantar sin riesgo: el esquema TS de unidad/sesión/tarea/`LabModel`/`Dataset` (boceto en §5) detrás de
+pruebas, sin contenido final.
+Cómo probar lo hecho: `npx vitest run packages/science-content`.
 
 ## Checklist
-- [ ] CI-01 Prompt de investigación de Ciencia → Victor lo corre
-- [ ] CI-02 Especificación visual/interactiva en `docs/design/ciencia/` (qué se manipula, qué error se nombra, cómo se evalúa)
-- [ ] CI-03 Lista de imágenes por tandas + manifiesto (Victor las genera)
-- [ ] CI-04 Dominio puro en `packages/science-content` (unidades JSON, validador, generador con semilla, dominio, pruebas)
+- [x] CI-01 Investigación
+- [x] CI-02 Análisis y adaptación (spec, mapa, estándares, pedido de imágenes)
+- [ ] CI-03 Especificación de la unidad piloto + imágenes Tanda 1 ← AQUÍ ME QUEDÉ (esperando a Victor)
+- [ ] CI-04 Dominio puro: unidades, tareas, `LabModel` de Paisaje y erosión, `scienceEvidence.v1`, pruebas
 - [ ] CI-05 Textos ES/EN en `packages/ui-core/src/ciencia/`
 - [ ] CI-06 Pantallas del cuaderno en `subjects/ciencia/` (con Modo Enfoque: `focus`)
-- [ ] CI-07 Verificar en 4 tamaños, documentar, `available: true`
-- [ ] CI-08 Revisión de un maestro (estándares: solo padres, borrador)
+- [ ] CI-07 Verificar en 4 tamaños, `available: true`
+- [ ] CI-08 Revisión de un maestro (estándares: borrador)
 
 ## Cuidado con
-- No edites lo compartido (docs/14). Si lo necesitas, anótalo abajo en "Pedidos a lo compartido".
-- Guardado: `subjectStorageFor('ciencia', profile.id, vacío, esValido)`; la forma de lo guardado la decides tú, pero la
-  validación debe rechazar lo viejo si la cambias.
-- No hay APK hasta que Victor lo pida.
-- Nada de audio ni texto reconocido guardado; sin SDKs de terceros.
+- **No se programa una unidad antes de CI-03** (lección de Matemáticas).
+- Los códigos NGSS son BORRADOR y solo para padres. Citar un código no acredita cumplimiento.
+- Nunca datos reales inventados ni atribuidos a NASA/NOAA/USGS: todo dato es `didactic` y se dice. Sin PhET ni terceros.
+- Sin voz, foto, dibujo libre ni escritura libre en v1 (DC-8). Nunca "incorrecto" ni rojo.
+- El mapa es la fuente de verdad: si lo cambias, regenera los `.md` y corre las pruebas.
+- Lo compartido no se edita a la carrera (docs/14). No hay APK hasta que Victor lo pida.
 
 ## Decisiones propuestas (Victor confirma; luego pasan a `docs/DECISIONS.md`)
-_(ninguna todavía — usa `DC-1`, `DC-2`…)_
+Resumen (detalle y alternativas en `ESPECIFICACION.md` §13):
+- **DC-1** nivel ≠ grado, todo abre · **DC-2** 6.º = modelo integrado de California · **DC-3** sesión ≈ 15 min, con energía
+  baja se guarda y retoma · **DC-4** guía = Maya · **DC-5** primera unidad = C4-U06 · **DC-6** tokens Kitewise, no la paleta
+  salvia · **DC-7** «revisó su idea» cuenta como esfuerzo · **DC-8** v1 estructurada, sin voz ni respuesta libre.
 
 ## Pedidos a lo compartido
-_(ninguno todavía)_
+- Reutilizar de Matemáticas (hoy en `ui-native/components/math`): `BarChartBoard`, `HintLadder`, `ConfidencePicker`,
+  `AnswerBoxes`, `exerciseReducer` y el repaso 1-3-7 de `math-content`. Hace falta que alguien los exponga sin copiarlos
+  (candidato: pasarlos a un paquete común). **Decide Victor quién** (docs/14).
+- Un tipo común `Mastery` por materia (hoy vive en `math-content`).
+- `Localized` ya está en `contracts` y se usa tal cual.
 
 ## Estado de pruebas
-Al dejar la preparación: `npm test` todo en verde (1201+ pruebas) y `npm run typecheck` limpio.
+`npm test` y `npm run typecheck` en verde al cerrar CI-02 (incluye las 8 pruebas del mapa de Ciencia).

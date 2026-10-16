@@ -4,3 +4,4 @@
  * por evidencia y repaso. Lo edita SOLO la cuenta de Ciencia (docs/14-MATERIAS-EN-PARALELO.md).
  */
 export const SUBJECT_ID = 'ciencia' as const;
+export * from './map.ts';

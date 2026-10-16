@@ -1,0 +1,1066 @@
+{
+ "version": 1,
+ "status": "draftPendingTeacherReview",
+ "framework": {
+  "name": "California NGSS",
+  "note": "1.º–5.º por grado; 6.º = selección del modelo integrado preferido de California (banda 6–8)"
+ },
+ "engineeringBands": {
+  "1": [
+   "K-2-ETS1-1",
+   "K-2-ETS1-2",
+   "K-2-ETS1-3"
+  ],
+  "2": [
+   "K-2-ETS1-1",
+   "K-2-ETS1-2",
+   "K-2-ETS1-3"
+  ],
+  "3": [
+   "3-5-ETS1-1",
+   "3-5-ETS1-2",
+   "3-5-ETS1-3"
+  ],
+  "4": [
+   "3-5-ETS1-1",
+   "3-5-ETS1-2",
+   "3-5-ETS1-3"
+  ],
+  "5": [
+   "3-5-ETS1-1",
+   "3-5-ETS1-2",
+   "3-5-ETS1-3"
+  ],
+  "6": [
+   "MS-ETS1-1",
+   "MS-ETS1-2",
+   "MS-ETS1-3",
+   "MS-ETS1-4"
+  ]
+ },
+ "units": [
+  {
+   "id": "C1-U01",
+   "grade": 1,
+   "area": "materia",
+   "title": {
+    "es": "Vibraciones",
+    "en": "Vibrations"
+   },
+   "question": {
+    "es": "¿Qué cambia cuando algo suena?",
+    "en": "What changes when something makes a sound?"
+   },
+   "standards": [
+    "1-PS4-1"
+   ],
+   "activity": "Comparar una regla plástica quieta y vibrando; registrar sonido y movimiento.",
+   "labs": [
+    "vibracion-ondas"
+   ],
+   "pilot": false
+  },
+  {
+   "id": "C1-U02",
+   "grade": 1,
+   "area": "materia",
+   "title": {
+    "es": "Ver en la oscuridad",
+    "en": "Seeing in the dark"
+   },
+   "question": {
+    "es": "¿Qué necesitamos para ver un objeto?",
+    "en": "What do we need to see an object?"
+   },
+   "standards": [
+    "1-PS4-2"
+   ],
+   "activity": "Encender una linterna virtual y justificar cuándo se distingue un objeto.",
+   "labs": [
+    "luz-materiales"
+   ],
+   "pilot": true
+  },
+  {
+   "id": "C1-U03",
+   "grade": 1,
+   "area": "materia",
+   "title": {
+    "es": "Caminos de luz",
+    "en": "Paths of light"
+   },
+   "question": {
+    "es": "¿Qué deja pasar la luz?",
+    "en": "What lets light through?"
+   },
+   "standards": [
+    "1-PS4-3"
+   ],
+   "activity": "Probar materiales transparentes, translúcidos y opacos.",
+   "labs": [
+    "luz-materiales"
+   ],
+   "pilot": false
+  },
+  {
+   "id": "C1-U04",
+   "grade": 1,
+   "area": "ingenieria",
+   "title": {
+    "es": "Mensajes a distancia",
+    "en": "Messages from far away"
+   },
+   "question": {
+    "es": "¿Cómo aviso a alguien que está lejos?",
+    "en": "How do I send a message to someone far away?"
+   },
+   "standards": [
+    "1-PS4-4"
+   ],
+   "activity": "Diseñar una señal sencilla de luz o sonido y probar si se entiende.",
+   "labs": [
+    "taller-ingenieria"
+   ],
+   "pilot": false,
+   "caution": "No asumir que todos los animales reciben el mismo tipo de cuidado (ver C1-U06)."
+  },
+  {
+   "id": "C1-U05",
+   "grade": 1,
+   "area": "vida",
+   "title": {
+    "es": "Soluciones de la naturaleza",
+    "en": "Nature’s solutions"
+   },
+   "question": {
+    "es": "¿Qué hace cada parte de una planta o un animal?",
+    "en": "What does each part of a plant or an animal do?"
+   },
+   "standards": [
+    "1-LS1-1"
+   ],
+   "activity": "Elegir una estructura protectora inspirada en plantas o animales.",
+   "labs": [],
+   "pilot": false
+  },
+  {
+   "id": "C1-U06",
+   "grade": 1,
+   "area": "vida",
+   "title": {
+    "es": "Crías y cuidados",
+    "en": "Young and their care"
+   },
+   "question": {
+    "es": "¿Qué patrones encontramos entre crías y adultos?",
+    "en": "What patterns do we find between young and adults?"
+   },
+   "standards": [
+    "1-LS1-2"
+   ],
+   "activity": "Comparar escenas documentadas de señales y respuestas de cuidado.",
+   "labs": [],
+   "pilot": false,
+   "caution": "No asumir que todos los animales reciben el mismo tipo de cuidado."
+  },
+  {
+   "id": "C1-U07",
+   "grade": 1,
+   "area": "vida",
+   "title": {
+    "es": "Parecidos, con diferencias",
+    "en": "Alike, but different"
+   },
+   "question": {
+    "es": "¿Son idénticos los hijos y sus padres?",
+    "en": "Are offspring identical to their parents?"
+   },
+   "standards": [
+    "1-LS3-1"
+   ],
+   "activity": "Construir parejas plausibles de plantas o animales usando rasgos observados.",
+   "labs": [
+    "mesa-observacion"
+   ],
+   "pilot": false
+  },
+  {
+   "id": "C1-U08",
+   "grade": 1,
+   "area": "tierra",
+   "title": {
+    "es": "El cielo cambia",
+    "en": "The changing sky"
+   },
+   "question": {
+    "es": "¿Qué vuelve a pasar en el cielo?",
+    "en": "What happens again and again in the sky?"
+   },
+   "standards": [
+    "1-ESS1-1",
+    "1-ESS1-2"
+   ],
+   "activity": "Registrar observaciones del cielo y comparar luz diurna en distintas épocas.",
+   "labs": [],
+   "pilot": false
+  },
+  {
+   "id": "C2-U01",
+   "grade": 2,
+   "area": "materia",
+   "title": {
+    "es": "Detectives de materiales",
+    "en": "Material detectives"
+   },
+   "question": {
+    "es": "¿Cómo los agrupamos?",
+    "en": "How do we group them?"
+   },
+   "standards": [
+    "2-PS1-1"
+   ],
+   "activity": "Clasificar muestras por una propiedad y explicar el criterio.",
+   "labs": [
+    "mesa-observacion"
+   ],
+   "pilot": false
+  },
+  {
+   "id": "C2-U02",
+   "grade": 2,
+   "area": "materia",
+   "title": {
+    "es": "Un techo para el muñeco",
+    "en": "A roof for the doll"
+   },
+   "question": {
+    "es": "¿Qué material sirve para un techo?",
+    "en": "Which material works for a roof?"
+   },
+   "standards": [
+    "2-PS1-2"
+   ],
+   "activity": "Comparar pruebas de absorción con piezas del mismo tamaño.",
+   "labs": [
+    "probador-materiales"
+   ],
+   "pilot": true
+  },
+  {
+   "id": "C2-U03",
+   "grade": 2,
+   "area": "materia",
+   "title": {
+    "es": "Transformar y reconstruir",
+    "en": "Change and rebuild"
+   },
+   "question": {
+    "es": "¿Qué cambia y qué queda igual?",
+    "en": "What changes and what stays the same?"
+   },
+   "standards": [
+    "2-PS1-3",
+    "2-PS1-4"
+   ],
+   "activity": "Reconstruir con las mismas piezas; comparar por separado cambios reversibles e irreversibles.",
+   "labs": [],
+   "pilot": false,
+   "caution": "Reconstruir bloques y cambiar por temperatura son investigaciones distintas: no enseñar que desarmar y calentar son el mismo proceso."
+  },
+  {
+   "id": "C2-U04",
+   "grade": 2,
+   "area": "vida",
+   "title": {
+    "es": "Plantas en observación",
+    "en": "Plants under observation"
+   },
+   "question": {
+    "es": "¿Qué necesitan las plantas para crecer?",
+    "en": "What do plants need to grow?"
+   },
+   "standards": [
+    "2-LS2-1"
+   ],
+   "activity": "Investigar agua o luz manteniendo las demás condiciones comparables.",
+   "labs": [
+    "jardin-investigacion"
+   ],
+   "pilot": false
+  },
+  {
+   "id": "C2-U05",
+   "grade": 2,
+   "area": "vida",
+   "title": {
+    "es": "Viajes de semillas y polen",
+    "en": "Journeys of seeds and pollen"
+   },
+   "question": {
+    "es": "¿Quién ayuda a las plantas a moverse?",
+    "en": "Who helps plants move?"
+   },
+   "standards": [
+    "2-LS2-2"
+   ],
+   "activity": "Diseñar un modelo de dispersión o transferencia de polen.",
+   "labs": [],
+   "pilot": false
+  },
+  {
+   "id": "C2-U06",
+   "grade": 2,
+   "area": "vida",
+   "title": {
+    "es": "Vida en distintos lugares",
+    "en": "Life in different places"
+   },
+   "question": {
+    "es": "¿Dónde hay más tipos de seres vivos?",
+    "en": "Where are there more kinds of living things?"
+   },
+   "standards": [
+    "2-LS4-1"
+   ],
+   "activity": "Registrar y comparar variedad de organismos en dos hábitats.",
+   "labs": [],
+   "pilot": false
+  },
+  {
+   "id": "C2-U07",
+   "grade": 2,
+   "area": "tierra",
+   "title": {
+    "es": "Mapas de tierra y agua",
+    "en": "Maps of land and water"
+   },
+   "question": {
+    "es": "¿Qué representa un mapa?",
+    "en": "What does a map show?"
+   },
+   "standards": [
+    "2-ESS2-2",
+    "2-ESS2-3"
+   ],
+   "activity": "Crear un mapa sencillo y localizar agua líquida o sólida.",
+   "labs": [],
+   "pilot": false
+  },
+  {
+   "id": "C2-U08",
+   "grade": 2,
+   "area": "tierra",
+   "title": {
+    "es": "Una Tierra que cambia",
+    "en": "A changing Earth"
+   },
+   "question": {
+    "es": "¿Cambia rápido o lento?",
+    "en": "Does it change fast or slowly?"
+   },
+   "standards": [
+    "2-ESS1-1",
+    "2-ESS2-1"
+   ],
+   "activity": "Comparar evidencias temporales y probar dos barreras frente al agua.",
+   "labs": [
+    "paisaje-erosion"
+   ],
+   "pilot": false
+  },
+  {
+   "id": "C3-U01",
+   "grade": 3,
+   "area": "vida",
+   "title": {
+    "es": "Ciclos de vida",
+    "en": "Life cycles"
+   },
+   "question": {
+    "es": "¿Qué comparten los ciclos de vida?",
+    "en": "What do life cycles have in common?"
+   },
+   "standards": [
+    "3-LS1-1"
+   ],
+   "activity": "Construir y comparar modelos de una planta con flores y un animal.",
+   "labs": [],
+   "pilot": false
+  },
+  {
+   "id": "C3-U02",
+   "grade": 3,
+   "area": "vida",
+   "title": {
+    "es": "Rasgos y ambiente",
+    "en": "Traits and environment"
+   },
+   "question": {
+    "es": "¿Qué muestran los datos?",
+    "en": "What does the data show?"
+   },
+   "standards": [
+    "3-LS3-1",
+    "3-LS3-2"
+   ],
+   "activity": "Comparar registros de plantas emparentadas en distintas condiciones.",
+   "labs": [
+    "jardin-investigacion"
+   ],
+   "pilot": false
+  },
+  {
+   "id": "C3-U03",
+   "grade": 3,
+   "area": "vida",
+   "title": {
+    "es": "Vivir en un lugar",
+    "en": "Living in a place"
+   },
+   "question": {
+    "es": "¿Qué ayuda a sobrevivir?",
+    "en": "What helps living things survive?"
+   },
+   "standards": [
+    "3-LS2-1",
+    "3-LS4-3"
+   ],
+   "activity": "Justificar ventajas de ciertos rasgos y del comportamiento grupal.",
+   "labs": [],
+   "pilot": false
+  },
+  {
+   "id": "C3-U04",
+   "grade": 3,
+   "area": "vida",
+   "title": {
+    "es": "Fósiles y cambios",
+    "en": "Fossils and change"
+   },
+   "question": {
+    "es": "¿Cómo sabemos del pasado?",
+    "en": "How do we know about the past?"
+   },
+   "standards": [
+    "3-LS4-1",
+    "3-LS4-2",
+    "3-LS4-4"
+   ],
+   "activity": "Investigar ambientes antiguos; analizar ventajas de variaciones; comparar soluciones ante cambios actuales.",
+   "labs": [],
+   "pilot": false,
+   "caution": "Distinguir evidencia fósil, variación entre individuos y respuesta a un cambio ambiental; cada aspecto necesita su propia tarea."
+  },
+  {
+   "id": "C3-U05",
+   "grade": 3,
+   "area": "materia",
+   "title": {
+    "es": "Fuerzas y movimiento",
+    "en": "Forces and motion"
+   },
+   "question": {
+    "es": "¿Qué hace que algo cambie su movimiento?",
+    "en": "What makes something change how it moves?"
+   },
+   "standards": [
+    "3-PS2-1",
+    "3-PS2-2"
+   ],
+   "activity": "Investigar equilibrio y patrones de movimiento con una variable cada vez.",
+   "labs": [
+    "fuerzas-imanes"
+   ],
+   "pilot": false
+  },
+  {
+   "id": "C3-U06",
+   "grade": 3,
+   "area": "materia",
+   "title": {
+    "es": "Interacciones sin tocar",
+    "en": "Interactions without touching"
+   },
+   "question": {
+    "es": "¿Funciona siempre a distancia?",
+    "en": "Does it always work from a distance?"
+   },
+   "standards": [
+    "3-PS2-3",
+    "3-PS2-4"
+   ],
+   "activity": "Explorar imanes y electricidad estática; diseñar una solución magnética.",
+   "labs": [
+    "fuerzas-imanes"
+   ],
+   "pilot": true
+  },
+  {
+   "id": "C3-U07",
+   "grade": 3,
+   "area": "tierra",
+   "title": {
+    "es": "Tiempo y clima",
+    "en": "Weather and climate"
+   },
+   "question": {
+    "es": "¿Qué dice el registro?",
+    "en": "What does the record say?"
+   },
+   "standards": [
+    "3-ESS2-1",
+    "3-ESS2-2"
+   ],
+   "activity": "Construir barras y comparar patrones de varias regiones.",
+   "labs": [
+    "mesa-datos"
+   ],
+   "pilot": false
+  },
+  {
+   "id": "C3-U08",
+   "grade": 3,
+   "area": "ingenieria",
+   "title": {
+    "es": "Diseñar para proteger",
+    "en": "Design to protect"
+   },
+   "question": {
+    "es": "¿Qué solución funciona mejor?",
+    "en": "Which solution works best?"
+   },
+   "standards": [
+    "3-ESS3-1"
+   ],
+   "activity": "Evaluar dos diseños frente a un riesgo meteorológico simulado.",
+   "labs": [
+    "taller-ingenieria"
+   ],
+   "pilot": false
+  },
+  {
+   "id": "C4-U01",
+   "grade": 4,
+   "area": "vida",
+   "title": {
+    "es": "Estructuras y sentidos",
+    "en": "Structures and senses"
+   },
+   "question": {
+    "es": "¿Cómo responde un organismo?",
+    "en": "How does an organism respond?"
+   },
+   "standards": [
+    "4-LS1-1",
+    "4-LS1-2"
+   ],
+   "activity": "Modelar el recorrido estímulo–recepción–procesamiento–respuesta.",
+   "labs": [],
+   "pilot": false
+  },
+  {
+   "id": "C4-U02",
+   "grade": 4,
+   "area": "materia",
+   "title": {
+    "es": "Energía en movimiento",
+    "en": "Energy in motion"
+   },
+   "question": {
+    "es": "¿Qué muestran los choques?",
+    "en": "What do collisions show?"
+   },
+   "standards": [
+    "4-PS3-1",
+    "4-PS3-3"
+   ],
+   "activity": "Comparar resultados de impactos con el mismo objeto y distinta rapidez.",
+   "labs": [
+    "energia-choques"
+   ],
+   "pilot": false,
+   "caution": "Mantener iguales masa y material para estudiar el efecto de la rapidez."
+  },
+  {
+   "id": "C4-U03",
+   "grade": 4,
+   "area": "materia",
+   "title": {
+    "es": "Transferir y transformar",
+    "en": "Transfer and transform"
+   },
+   "question": {
+    "es": "¿Cómo funciona un dispositivo?",
+    "en": "How does a device work?"
+   },
+   "standards": [
+    "4-PS3-2",
+    "4-PS3-4"
+   ],
+   "activity": "Probar un dispositivo virtual y representar sus transferencias.",
+   "labs": [
+    "energia-choques"
+   ],
+   "pilot": false
+  },
+  {
+   "id": "C4-U04",
+   "grade": 4,
+   "area": "materia",
+   "title": {
+    "es": "Ondas, luz y mensajes",
+    "en": "Waves, light and messages"
+   },
+   "question": {
+    "es": "¿Cómo llega la información?",
+    "en": "How does information travel?"
+   },
+   "standards": [
+    "4-PS4-1",
+    "4-PS4-2",
+    "4-PS4-3"
+   ],
+   "activity": "Crear modelos de ondas, caminos de luz y señales codificadas sencillas.",
+   "labs": [
+    "vibracion-ondas",
+    "luz-materiales"
+   ],
+   "pilot": false
+  },
+  {
+   "id": "C4-U05",
+   "grade": 4,
+   "area": "tierra",
+   "title": {
+    "es": "Historias en las capas",
+    "en": "Stories in the layers"
+   },
+   "question": {
+    "es": "¿Qué cambió primero?",
+    "en": "What changed first?"
+   },
+   "standards": [
+    "4-ESS1-1"
+   ],
+   "activity": "Ordenar cambios del paisaje a partir de capas y fósiles.",
+   "labs": [],
+   "pilot": false
+  },
+  {
+   "id": "C4-U06",
+   "grade": 4,
+   "area": "tierra",
+   "title": {
+    "es": "Superficies y mapas",
+    "en": "Surfaces and maps"
+   },
+   "question": {
+    "es": "¿Cómo se transforma el terreno?",
+    "en": "How does the land change?"
+   },
+   "standards": [
+    "4-ESS2-1",
+    "4-ESS2-2"
+   ],
+   "activity": "Investigar erosión y buscar patrones en mapas.",
+   "labs": [
+    "paisaje-erosion",
+    "mesa-datos"
+   ],
+   "pilot": true
+  },
+  {
+   "id": "C4-U07",
+   "grade": 4,
+   "area": "ingenieria",
+   "title": {
+    "es": "Reducir impactos",
+    "en": "Reduce the impact"
+   },
+   "question": {
+    "es": "¿Qué diseño resiste mejor?",
+    "en": "Which design holds up best?"
+   },
+   "standards": [
+    "4-ESS3-2"
+   ],
+   "activity": "Comparar soluciones para terremotos o inundaciones simulados.",
+   "labs": [
+    "taller-ingenieria"
+   ],
+   "pilot": false
+  },
+  {
+   "id": "C4-U08",
+   "grade": 4,
+   "area": "tierra",
+   "title": {
+    "es": "Energía y recursos",
+    "en": "Energy and resources"
+   },
+   "question": {
+    "es": "¿De dónde viene y qué implica?",
+    "en": "Where does it come from, and what does it mean?"
+   },
+   "standards": [
+    "4-ESS3-1"
+   ],
+   "activity": "Comparar fuentes mediante evidencias y efectos ambientales.",
+   "labs": [],
+   "pilot": false
+  },
+  {
+   "id": "C5-U01",
+   "grade": 5,
+   "area": "materia",
+   "title": {
+    "es": "Materia invisible",
+    "en": "Invisible matter"
+   },
+   "question": {
+    "es": "¿Cómo sabemos que sigue ahí?",
+    "en": "How do we know it is still there?"
+   },
+   "standards": [
+    "5-PS1-1"
+   ],
+   "activity": "Crear modelos para aire y sustancias disueltas.",
+   "labs": [
+    "materia-sistemas"
+   ],
+   "pilot": false,
+   "caution": "No exigir mecanismos atómicos formales."
+  },
+  {
+   "id": "C5-U02",
+   "grade": 5,
+   "area": "materia",
+   "title": {
+    "es": "Cantidad y propiedades",
+    "en": "Amount and properties"
+   },
+   "question": {
+    "es": "¿Qué conservamos y qué identificamos?",
+    "en": "What do we keep, and what do we identify?"
+   },
+   "standards": [
+    "5-PS1-2",
+    "5-PS1-3"
+   ],
+   "activity": "Pesar un sistema cerrado y comparar materiales por varias propiedades.",
+   "labs": [
+    "materia-sistemas"
+   ],
+   "pilot": true,
+   "caution": "No introducir densidad como requisito de 5-PS1-3. Apoyar la conservación con la expectativa 5-PS1-2."
+  },
+  {
+   "id": "C5-U03",
+   "grade": 5,
+   "area": "materia",
+   "title": {
+    "es": "Mezclas bajo investigación",
+    "en": "Mixtures under investigation"
+   },
+   "question": {
+    "es": "¿Apareció algo nuevo?",
+    "en": "Did something new appear?"
+   },
+   "standards": [
+    "5-PS1-4"
+   ],
+   "activity": "Comparar resultados de mezclas con observaciones antes y después.",
+   "labs": [
+    "materia-sistemas"
+   ],
+   "pilot": false
+  },
+  {
+   "id": "C5-U04",
+   "grade": 5,
+   "area": "vida",
+   "title": {
+    "es": "Plantas y alimento",
+    "en": "Plants and food"
+   },
+   "question": {
+    "es": "¿De dónde viene lo que crece?",
+    "en": "Where does what grows come from?"
+   },
+   "standards": [
+    "5-LS1-1",
+    "5-PS3-1"
+   ],
+   "activity": "Construir modelos separados de materiales y energía.",
+   "labs": [
+    "constructor-modelos"
+   ],
+   "pilot": false
+  },
+  {
+   "id": "C5-U05",
+   "grade": 5,
+   "area": "vida",
+   "title": {
+    "es": "Redes de vida",
+    "en": "Webs of life"
+   },
+   "question": {
+    "es": "¿Qué circula y qué se transfiere?",
+    "en": "What cycles, and what is transferred?"
+   },
+   "standards": [
+    "5-LS2-1"
+   ],
+   "activity": "Conectar productores, consumidores, descomponedores y ambiente.",
+   "labs": [
+    "constructor-modelos"
+   ],
+   "pilot": false
+  },
+  {
+   "id": "C5-U06",
+   "grade": 5,
+   "area": "materia",
+   "title": {
+    "es": "Gravedad en un planeta",
+    "en": "Gravity on a planet"
+   },
+   "question": {
+    "es": "¿Hacia dónde es abajo?",
+    "en": "Which way is down?"
+   },
+   "standards": [
+    "5-PS2-1"
+   ],
+   "activity": "Dibujar fuerzas hacia el centro desde distintos lugares de la Tierra.",
+   "labs": [],
+   "pilot": false
+  },
+  {
+   "id": "C5-U07",
+   "grade": 5,
+   "area": "tierra",
+   "title": {
+    "es": "Sombras y estrellas",
+    "en": "Shadows and stars"
+   },
+   "question": {
+    "es": "¿Qué patrones podemos explicar?",
+    "en": "What patterns can we explain?"
+   },
+   "standards": [
+    "5-ESS1-1",
+    "5-ESS1-2"
+   ],
+   "activity": "Graficar sombras y usar modelos para comparar brillo aparente y distancia.",
+   "labs": [],
+   "pilot": false
+  },
+  {
+   "id": "C5-U08",
+   "grade": 5,
+   "area": "tierra",
+   "title": {
+    "es": "Sistemas de la Tierra",
+    "en": "Earth’s systems"
+   },
+   "question": {
+    "es": "¿Cómo cuidamos sus recursos?",
+    "en": "How do we take care of its resources?"
+   },
+   "standards": [
+    "5-ESS2-1",
+    "5-ESS2-2",
+    "5-ESS3-1"
+   ],
+   "activity": "Relacionar dos sistemas, representar distribución del agua y evaluar prácticas comunitarias.",
+   "labs": [
+    "mesa-datos"
+   ],
+   "pilot": false,
+   "caution": "Unidad amplia: dividir la evaluación en sistemas, distribución del agua y protección ambiental; ampliar sesiones si el piloto muestra sobrecarga."
+  },
+  {
+   "id": "C6-U01",
+   "grade": 6,
+   "area": "vida",
+   "title": {
+    "es": "Vida a otra escala",
+    "en": "Life at another scale"
+   },
+   "question": {
+    "es": "¿Qué evidencias muestran células?",
+    "en": "What evidence shows cells?"
+   },
+   "standards": [
+    "MS-LS1-1",
+    "MS-LS1-2"
+   ],
+   "activity": "Comparar micrografías y construir un modelo funcional.",
+   "labs": [
+    "mesa-observacion"
+   ],
+   "pilot": false
+  },
+  {
+   "id": "C6-U02",
+   "grade": 6,
+   "area": "vida",
+   "title": {
+    "es": "Sistemas que cooperan",
+    "en": "Systems that cooperate"
+   },
+   "question": {
+    "es": "¿Cómo responde el cuerpo?",
+    "en": "How does the body respond?"
+   },
+   "standards": [
+    "MS-LS1-3",
+    "MS-LS1-8"
+   ],
+   "activity": "Relacionar sistemas y contrastar información sobre estímulos y respuestas.",
+   "labs": [
+    "constructor-modelos"
+   ],
+   "pilot": false
+  },
+  {
+   "id": "C6-U03",
+   "grade": 6,
+   "area": "vida",
+   "title": {
+    "es": "Reproducción, crecimiento y variación",
+    "en": "Reproduction, growth and variation"
+   },
+   "question": {
+    "es": "¿Qué explica las diferencias?",
+    "en": "What explains the differences?"
+   },
+   "standards": [
+    "MS-LS1-4",
+    "MS-LS1-5",
+    "MS-LS3-2"
+   ],
+   "activity": "Modelar reproducción sexual y asexual, analizar crecimiento y estrategias reproductivas.",
+   "labs": [
+    "constructor-modelos"
+   ],
+   "pilot": false,
+   "caution": "No usar el aspecto físico de familias humanas para inferir parentesco o genética."
+  },
+  {
+   "id": "C6-U04",
+   "grade": 6,
+   "area": "materia",
+   "title": {
+    "es": "Energía térmica",
+    "en": "Thermal energy"
+   },
+   "question": {
+    "es": "¿Qué cambia una temperatura?",
+    "en": "What changes a temperature?"
+   },
+   "standards": [
+    "MS-PS3-3",
+    "MS-PS3-4",
+    "MS-PS3-5"
+   ],
+   "activity": "Investigar transferencias y comparar diseños de aislamiento.",
+   "labs": [
+    "probador-materiales",
+    "constructor-modelos"
+   ],
+   "pilot": true
+  },
+  {
+   "id": "C6-U05",
+   "grade": 6,
+   "area": "tierra",
+   "title": {
+    "es": "Agua en movimiento",
+    "en": "Water on the move"
+   },
+   "question": {
+    "es": "¿Qué impulsa sus recorridos?",
+    "en": "What drives its journeys?"
+   },
+   "standards": [
+    "MS-ESS2-4"
+   ],
+   "activity": "Crear rutas alternativas entre reservorios y justificar Sol y gravedad.",
+   "labs": [
+    "constructor-modelos"
+   ],
+   "pilot": false
+  },
+  {
+   "id": "C6-U06",
+   "grade": 6,
+   "area": "tierra",
+   "title": {
+    "es": "Atmósfera y océanos",
+    "en": "Atmosphere and oceans"
+   },
+   "question": {
+    "es": "¿Por qué cambia el tiempo?",
+    "en": "Why does the weather change?"
+   },
+   "standards": [
+    "MS-ESS2-5",
+    "MS-ESS2-6"
+   ],
+   "activity": "Analizar masas de aire y modelar circulación y calentamiento desigual.",
+   "labs": [],
+   "pilot": false,
+   "caution": "No presentar pronósticos como certezas."
+  },
+  {
+   "id": "C6-U07",
+   "grade": 6,
+   "area": "tierra",
+   "title": {
+    "es": "Evidencias de cambio",
+    "en": "Evidence of change"
+   },
+   "question": {
+    "es": "¿Qué ocurre con el clima?",
+    "en": "What is happening to the climate?"
+   },
+   "standards": [
+    "MS-ESS3-5"
+   ],
+   "activity": "Comparar series y preguntar por factores y mecanismos.",
+   "labs": [
+    "mesa-datos"
+   ],
+   "pilot": false,
+   "caution": "Explicar el papel principal de actividades humanas en el calentamiento actual con datos y mecanismos; un día caluroso no es prueba climática."
+  },
+  {
+   "id": "C6-U08",
+   "grade": 6,
+   "area": "ingenieria",
+   "title": {
+    "es": "Ingeniería ambiental",
+    "en": "Environmental engineering"
+   },
+   "question": {
+    "es": "¿Qué propuesta podemos mejorar?",
+    "en": "Which proposal can we improve?"
+   },
+   "standards": [
+    "MS-ESS3-3",
+    "MS-ETS1-1",
+    "MS-ETS1-2",
+    "MS-ETS1-3",
+    "MS-ETS1-4"
+   ],
+   "activity": "Definir criterios, comparar datos y optimizar una solución.",
+   "labs": [
+    "taller-ingenieria"
+   ],
+   "pilot": false
+  }
+ ]
+}
