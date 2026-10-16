@@ -261,3 +261,12 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
   - `apps/mobile`: cuaderno (`math-notebook-screen.tsx`) y lección (`math-lesson-screen.tsx`).
 - Verificado: typecheck ✅, `npm test` 1152 ✅, lección 1 completa en navegador (Playwright) y capturas en 4 tamaños.
 - No hecho: etiquetas concepto/procedimiento/transferencia (el dominio no exige variedad todavía); guardar en el equipo.
+
+## 2026-10-16 · Cuenta A · Matemáticas "se siente de preescolar" → nueva investigación
+- Victor (APK 0.3.0): "esta bien el app… pero siento que no hace sentido… está demasiado simple, no hay problemas reales
+  según como lo usan en la escuela, se siente como de prescolar… dame un prompt".
+- Hecho: `docs/research/PROMPT-INVESTIGACION-PROBLEMAS-MATEMATICAS.md` — pide, por grado 1.º–6.º, cómo se ve una semana
+  real (clase, tarea, examen), ≥12 arquetipos de ejercicio con ejemplos originales EN/ES, rangos de números, pasos,
+  formatos de respuesta, modelos, errores comunes, tipos de problema verbal (tablas 1 y 2 de CCSS), progresión de una
+  unidad (caso 3.OA), fluidez, diagnóstico de g3u1 y componentes/plantillas para la app; con fuentes y licencias.
+- Siguiente: Victor corre el prompt; luego rehacer g3u1 con esa base.

@@ -19,7 +19,7 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | K3 | Cierre (B13), perfiles (B1), ¿Cómo llegas? (B2) | ✅ | A | estrellas por esfuerzo (D11); "Agregar niño" espera el PIN (K4) |
 | K4 | Padres: P1, P2, P4 | ✅ | A | PIN, panel de hoy con datos reales, ajustes + agregar niño + lectura libre; Enfoque = K7 |
 | K5 | Practicar (B8, G9, G10) + repaso 1-3-7 | 🟡 | A | hecho para Matemáticas (teclado, confianza, 3 pistas, "Lo veo luego", repaso 1-3-7 en el calentamiento); falta V/F y ordenar (G9, G10) |
-| K6 | Unidades/lecciones + Aprender/Explorar + camino (B5–B7); 1.ª unidad de Matemáticas | 🟡 | A | unidad g3u1 jugable de punta a punta (`packages/math-content`, `math-notebook-screen`, `math-lesson-screen`); falta: guardar en el teléfono (RN-08), etiquetas concepto/procedimiento/transferencia, revisión docente, más unidades |
+| K6 | Unidades/lecciones + Aprender/Explorar + camino (B5–B7); 1.ª unidad de Matemáticas | 🟡 | A | unidad g3u1 jugable de punta a punta (`packages/math-content`, `math-notebook-screen`, `math-lesson-screen`); **Victor: "demasiado simple, de preescolar"** → investigación de problemas reales (`docs/research/PROMPT-INVESTIGACION-PROBLEMAS-MATEMATICAS.md`) y rehacer g3u1; falta también: guardar en el teléfono (RN-08), etiquetas concepto/procedimiento/transferencia, revisión docente, más unidades |
 | K7 | Modo Enfoque (B10, B12), oscuro (G1–G3), vertical (G4–G6) | 🟡 | A | vertical + teléfono ✅ (`layoutFor`); faltan Enfoque y modo oscuro |
 | K8 | Mi cuaderno, Logros, informe PDF, foto de tarea | ⬜ | – | foto espera C13 |
 | **RN** | **Migración a React Native + Expo** (D7, `docs/11`) | | | |

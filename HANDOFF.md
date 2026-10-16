@@ -31,14 +31,16 @@ Ninguna a medias. Voz (RN-03) PAUSADA por Victor. K6: la primera unidad de Matem
       Practicar, Juego, Cierre); los intentos alimentan dominio y repaso
 
 ## Siguiente paso exacto
-1. Victor prueba el APK de Matemáticas (Inicio → Matemáticas) y manda detalles a corregir.
-2. Preguntar a Victor en qué nivel de Matemáticas está Noah: la unidad g3u1 es de 3.º; si necesita otro grado, la
-   siguiente unidad es la de ese grado (seguir `docs/research/matematicas-investigacion.md`, ruta de unidades).
-3. Pendientes de K6: etiquetar cada reto como concepto/procedimiento/transferencia (la política de dominio de la
-   investigación pide variedad; hoy no se exige porque el contenido no trae esa etiqueta); más unidades; revisión de
-   un docente de los textos y estándares (siguen en borrador, solo padres). El progreso de Matemáticas vive en memoria
-   (`mathProgressFor`) hasta RN-08, igual que el de Lectura.
-4. K5 restante: V/F y ordenar (G9, G10).
+Victor probó el APK 0.3.0 de Matemáticas: "está demasiado simple, no hay problemas reales según como lo usan en la
+escuela, se siente como de preescolar". **No agregar más unidades con el patrón actual.**
+1. Victor corre `docs/research/PROMPT-INVESTIGACION-PROBLEMAS-MATEMATICAS.md` (catálogo de ejercicios reales por grado:
+   CAASPP/Smarter Balanced, Illustrative Math, Eureka, enVision, SEP en español) y trae el resultado → guardarlo como
+   `docs/research/matematicas-problemas-reales.md`.
+2. Con eso: rehacer g3u1 con problemas de nivel real de 3.º (dos pasos, elegir la operación, incógnita en distintos
+   lugares, datos de sobra, explicar/"¿quién tiene razón?"), ampliar `MathChallenge` (formatos de respuesta además del
+   teclado) y los componentes de interacción que la investigación priorice.
+3. Sigue pendiente: en qué nivel de matemáticas está Noah; etiquetas concepto/procedimiento/transferencia; guardar en el
+   equipo (RN-08); V/F y ordenar (K5).
 
 ## Cuidado con
 - **No borrar `apps/reader` ni `packages/ui`**: Noah sigue usando la app Capacitor hasta RN-CP2.
