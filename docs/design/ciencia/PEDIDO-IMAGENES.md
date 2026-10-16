@@ -11,7 +11,7 @@
 > **Estilo:** salió como ilustración de cuento (acuarela digital, más detalle y sombreado), no «plana» como Matemáticas. Es
 > lo que pedía el brief de arte (`ART-BRIEF.md`: «storybook cálido, acuarela digital») y combina con las portadas de
 > Lectura; en Inicio se ve bien junto a las de Lectura y Matemáticas. Los cajones en verde salvia vienen de la guía.
-> Falta: Tanda 2 (las otras cinco unidades piloto).
+> **Tanda 2 pedida (2026-10-16):** las otras cinco unidades piloto, 41 imágenes en 5 lotes (A–E, abajo).
 
 **Para quién:** Victor genera las imágenes y las sube al chat; Claude las convierte a WebP, las nombra y las conecta
 (igual que en Matemáticas). **No hace falta pedir todo:** la **Tanda 1** alcanza para construir la primera unidad
@@ -86,22 +86,100 @@ Se usan chicas, en una esquina; en Modo Enfoque no aparecen.
 
 ---
 
-## Tanda 2 — las otras cinco unidades piloto (pedir después)
+## Tanda 2 — las otras cinco unidades piloto (41 imágenes, 5 lotes)
 
-Las portadas (`cover_c1_u02`, `cover_c2_u02`, `cover_c3_u06`, `cover_c5_u02`, `cover_c6_u04`) son 1536×1024, un solo
-motivo simple, **sin texto**, legibles a 200×140. Objetos (1024×1024 transparente, una pieza). Los instrumentos van **sin
-números ni marcas**.
+**Cómo pedirla (igual que la Tanda 1):** un chat por lote. **Adjunta en cada chat 3 imágenes ya aprobadas** como referencia de
+estilo: `prop_bandeja`, `prop_regadera` y `scene_ciencia_ladera` (y, para escenas con Maya, `char_maya_saluda`). Pega primero el
+**estilo común de la Tanda 2** y luego un prompt por imagen. Si una imagen sale con texto, números o marcas de escala, repítela.
+Envíame cada lote en un `.zip` con los **nombres exactos** de la primera columna (PNG). Yo los convierto con
+`python3 -I scripts/ciencia-arte.py <carpeta> tanda-2` (props y poses se recortan a su silueta; los PNG no se guardan).
 
-| Unidad | Portada (motivo) | Objetos |
-|---|---|---|
-| C1-U02 Ver en la oscuridad | Una linterna encendida iluminando una silueta pequeña en la oscuridad | `prop_caja_observacion` (caja de cartón abierta por un lado, vista de frente) · `prop_linterna` (linterna LED, apagada) · `prop_objeto_silueta` (un objeto simple y reconocible, p. ej. un osito) |
-| C2-U02 Un techo para el muñeco | Un muñeco de madera bajo un techo de papel con gotas de lluvia | `prop_muneco` · `prop_papel_absorbente` · `prop_tela` · `prop_plastico` (cuatro piezas **cuadradas iguales**, una por archivo) · `prop_bandeja_agua` |
-| C3-U06 Interacciones sin tocar | Un imán grande en herradura acercándose a un clavo, sin tocarlo | `prop_iman_grande` (en herradura, **grande**, nunca pequeño ni de neodimio) · `prop_clavo` · `prop_bloque_plastico` · `prop_regla_lisa` (regla **sin marcas ni números**) |
-| C5-U02 Cantidad y propiedades | Un frasco cerrado con sal disolviéndose en agua, sobre una balanza | `prop_frasco_cerrado` · `prop_sal` (montoncito en un platito) · `prop_vaso_agua` (sin marcas) · `prop_balanza` (con la pantalla **en blanco**) |
-| C6-U04 Energía térmica | Un vaso con agua fría dentro de una funda aislante, con un sol suave detrás | `prop_funda_aislante` · `prop_vaso_frio` (con gotitas de condensación) · `prop_termometro` (**sin escala ni números**) |
+**Estilo común de la Tanda 2 (pégalo al inicio de CADA prompt).** Es el que de verdad salió en la Tanda 1: cuento ilustrado, no plano.
 
-Fondos de Tanda 2: se reutilizan `bg_ciencia_laboratorio` y `bg_ciencia_humedal`. Si una unidad pide otro ambiente, se
-pide aparte.
+> Ilustración de libro de cuentos en acuarela digital, cálida y clara, para una app educativa infantil (6–12 años). Formas
+> redondeadas, contornos finos y suaves, sombreado suave, detalle moderado, colores naturales y amables. Misma mano, paleta y
+> acabado que las imágenes de referencia adjuntas. **Sin texto, sin letras, sin números, sin marcas de escala, sin marcas de
+> agua, sin logotipos.**
+
+**Medidas:** portadas y escenas **1536×1024** (horizontal). Objetos **1024×1024, fondo transparente**, UNA sola pieza centrada,
+legible a 32 px. Una escena lleva una **zona tranquila a la derecha (35 % del ancho)** sin detalles (ahí va el texto de la app).
+Las portadas se leen en miniatura de 200×140: un solo motivo simple, con margen alrededor.
+
+**Reglas que valen para todo (la imagen es ESCENA, no ciencia):** los números, escalas, flechas, haces de luz, gráficas y
+etiquetas los dibuja la app. Los instrumentos van con la pantalla o el cuerpo **en blanco** (sin rayitas ni dígitos). Nada de
+personas reales ni caras de niños en las escenas (Maya solo aparece en sus poses). Nada que invite a una práctica insegura.
+
+### Lote A — C1-U02 «Ver en la oscuridad» (1.º) · 7 imágenes
+| Archivo | Prompt (después del estilo común) |
+|---|---|
+| `cover_c1_u02` | Una linterna LED encendida iluminando, en la penumbra, la silueta de un osito de peluche; composición centrada y simple con mucho margen. Reconocible en miniatura. |
+| `scene_c1_u02` | Un cuarto infantil al atardecer, con poca luz suave que entra por la ventana: sobre una mesa baja hay una caja de cartón abierta por el frente y una linterna a su lado. Sin personas, sin carteles. **Zona tranquila a la derecha.** |
+| `prop_caja_observacion` | Una caja de cartón mediana abierta por el frente, vista de frente, con el **interior liso, vacío y de un beige medio uniforme** (no negro: la app lo oscurece). Una sola pieza. |
+| `prop_linterna` | Una linterna LED de plástico amarillo, apagada, vista de lado, con el cristal frontal limpio. Sin rayo de luz. |
+| `prop_objeto_osito` | Un osito de peluche marrón, sentado, mirando al frente, con contorno claro y forma muy reconocible. |
+| `prop_objeto_pelota` | Una pelota de goma de rayas rojas y blancas, vista de frente, con contorno claro. |
+| `prop_objeto_taza` | Una taza de cerámica azul con asa, vista de lado, vacía, con contorno claro. |
+
+### Lote B — C2-U02 «Un techo para el muñeco» (2.º) · 9 imágenes
+Las **cuatro piezas de material** (`papel`, `tela`, `plástico`, `cartón`) son **cuadradas e IGUALES en tamaño**, una por archivo: la prueba
+justa depende de que midan lo mismo.
+| Archivo | Prompt |
+|---|---|
+| `cover_c2_u02` | Un muñeco de madera pequeño bajo un techo de papel con gotas de lluvia cayendo alrededor; composición centrada, mucho margen. |
+| `scene_c2_u02` | Un porche de madera con un muñeco de madera sentado bajo la lluvia suave, gotas y charquitos, luz gris cálida. Sin personas. **Zona tranquila a la derecha.** |
+| `prop_muneco` | Un muñeco de madera pequeño, de pie, con cara sencilla y sonriente, de frente. |
+| `prop_papel_absorbente` | Una hoja cuadrada de papel absorbente blanco con textura de relieve suave, vista desde arriba, esquinas rectas. |
+| `prop_tela` | Un cuadrado de tela de algodón azul claro con trama visible, mismo tamaño y forma que un cuadrado perfecto, visto desde arriba. |
+| `prop_plastico` | Un cuadrado de plástico transparente tipo bolsa, con brillo suave, mismo tamaño y forma que un cuadrado perfecto, visto desde arriba. |
+| `prop_carton` | Un cuadrado de cartón corrugado marrón claro, mismo tamaño y forma que un cuadrado perfecto, visto desde arriba. |
+| `prop_bandeja_agua` | Una bandeja rectangular de plástico, poco profunda, con un lado inclinado y un poco de agua clara en el fondo, sin rayitas. |
+| `prop_vaso_agua` | Un vaso transparente de plástico con agua clara a la mitad, **sin rayitas ni números** (se usa también en C5 y C6). |
+
+### Lote C — C6-U04 «Energía térmica» (6.º) · 8 imágenes
+Para 6.º el tono es un poco más sobrio (menos «de cuento infantil»), pero la misma mano y paleta.
+| Archivo | Prompt |
+|---|---|
+| `cover_c6_u04` | Un vaso con agua fría dentro de una funda aislante, con un sol suave detrás; composición centrada, mucho margen. |
+| `scene_c6_u04` | Un alféizar soleado con un vaso de agua fría sobre un platito, luz cálida de la tarde, cortina clara. Sin personas. **Zona tranquila a la derecha.** |
+| `prop_vaso_frio` | Un vaso transparente con agua fría y **gotitas de condensación por fuera**, sin rayitas ni números. |
+| `prop_funda_aislante` | Una funda aislante cilíndrica de neopreno gris azulado para un vaso, abierta por arriba, vista de lado. |
+| `prop_termometro` | Un termómetro digital de sonda con la **pantalla en blanco** (sin dígitos) y la punta metálica, de lado. |
+| `prop_capa_fieltro` | Un cuadrado de fieltro de lana gris claro, de grosor visible, visto de un poco arriba. Una pieza. |
+| `prop_capa_espuma` | Un cuadrado de espuma blanda amarilla con poros visibles, de grosor visible, visto de un poco arriba. Una pieza. |
+| `prop_capa_aluminio` | Un cuadrado de lámina de aluminio arrugada y brillante, visto de un poco arriba. Una pieza. |
+
+### Lote D — C3-U06 «Interacciones sin tocar» (3.º) · 9 imágenes
+**Seguridad:** un imán **GRANDE** en herradura (nunca pequeño ni de neodimio, nunca una bola ni piezas pequeñas sueltas).
+| Archivo | Prompt |
+|---|---|
+| `cover_c3_u06` | Un imán grande en herradura, rojo con puntas plateadas, acercándose a un clavo grande sin tocarlo; composición centrada, mucho margen. |
+| `scene_c3_u06` | Una mesa de taller infantil de madera con un imán grande en herradura a un lado y varios objetos pequeños dispersos; luz de ventana. Sin personas. **Zona tranquila a la derecha.** |
+| `prop_iman_grande` | Un imán grande en herradura, rojo con las puntas plateadas, de frente, **sin letras ni marcas de polos**. |
+| `prop_clavo` | Un clavo grande de acero, de lado, con cabeza visible. |
+| `prop_llave` | Una llave de acero plateada de casa, de frente. |
+| `prop_bloque_plastico` | Un bloque de construcción de plástico verde, de frente. |
+| `prop_bola_aluminio` | Una bolita grande de papel de aluminio arrugado, de frente. |
+| `prop_globo` | Un globo inflado de color lila, con su nudo, de frente. |
+| `prop_papelitos` | Un montoncito de papelitos de colores recortados, ligeros, vistos desde arriba. |
+
+### Lote E — C5-U02 «Cantidad y propiedades» (5.º) · 8 imágenes
+**Seguridad:** nada que parezca comida para probar; los polvos son MUESTRAS en platitos, no golosinas.
+| Archivo | Prompt |
+|---|---|
+| `cover_c5_u02` | Un frasco con tapa cerrado sobre una balanza, con sal disolviéndose en el agua del frasco; composición centrada, mucho margen. |
+| `scene_c5_u02` | Una mesa de laboratorio escolar clara con una balanza, un frasco cerrado y cuatro platitos con muestras; luz de ventana. Sin personas. **Zona tranquila a la derecha.** |
+| `prop_frasco_cerrado` | Un frasco de vidrio transparente con tapa de rosca cerrado, con agua clara dentro, **sin rayitas ni números**. |
+| `prop_balanza` | Una balanza digital de cocina cuadrada con la **pantalla en blanco** (sin dígitos) y el plato vacío, vista de un poco arriba. |
+| `prop_muestra_sal` | Un platito blanco con un montoncito de sal gruesa de cristales blancos pequeños. |
+| `prop_muestra_azucar` | Un platito blanco con un montoncito de azúcar de cristales finos y brillantes. |
+| `prop_muestra_arena` | Un platito blanco con un montoncito de arena fina color beige. |
+| `prop_muestra_harina` | Un platito blanco con un montoncito de harina blanca, polvo muy fino y suave. |
+
+**Compartido:** `prop_vaso_agua` (Lote B) lo usan también C5 y C6: se pide una sola vez.
+
+**Orden de uso en la app (lo que decide cuándo hace falta cada lote):** A → B → C → D → E (de menos a más trabajo nuevo, §6
+de la especificación). Mientras llegan las imágenes yo sigo con el contenido y las pantallas; con **solo el Lote A** ya puedo
+dejar jugable C1-U02.
 
 ## Aceptación (la reviso yo al recibirlas)
 
