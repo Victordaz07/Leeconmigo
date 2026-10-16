@@ -368,3 +368,13 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
 - Verificado: navegador con ratón (1280×800) y toque (390×844): 3 arrastres seguidos, devolver a la bandeja, tocar;
   6 repartos resueltos tocando. NO probado en el equipo.
 
+## 2026-10-16 · Cuenta A · PREP-1: preparación para Ciencia y Sociedad en paralelo
+- Victor: "ciencia aquí y sociedad en la otra cuenta". Antes de empezar se dejó el repo listo para no pisarse (D12).
+- Hecho: módulos `apps/mobile/src/subjects/{ciencia,sociedad}` con registro (`SubjectModule`: `available`, `homeCard`,
+  `Screen` con navegación propia) y ruta genérica en `App.tsx` + Inicio (no se vuelve a tocar); guardado por materia y por
+  niño (`subjectStorageFor`, entra en "Borrar el progreso"); paquetes vacíos `science-content` y `social-content`;
+  índices reservados en ui-core/ui-native; protocolo `docs/14`, informe `docs/design/subjects/PATRON-MATEMATICAS.md`,
+  relevo por materia (`docs/handoff/`, `docs/log/<materia>.md`), secciones `CI-xx`/`SO-xx` en el ROADMAP, `/retomar` y
+  `/relevo` con materia.
+- Verificado: typecheck, pruebas, y navegador (Ciencia activada de prueba abre y vuelve; Sociedad sigue "Pronto").
+

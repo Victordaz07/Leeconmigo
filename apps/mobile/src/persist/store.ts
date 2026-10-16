@@ -19,7 +19,13 @@ export const KEYS = {
   pin: `${PREFIX}pin`,
   reading: (id: string) => `${PREFIX}reading.${id}`,
   math: (id: string) => `${PREFIX}math.${id}`,
+  /** Datos de una materia nueva (Ciencia, Sociedad…) de un niño: `kitewise.v1.<materia>.<niño>`. */
+  subject: (subject: SubjectKey, id: string) => `${PREFIX}${subject}.${id}`,
 };
+
+/** Materias con guardado genérico. Agregar una aquí también la incluye en "Borrar el progreso". */
+export const SUBJECT_KEYS = ['ciencia', 'sociedad'] as const;
+export type SubjectKey = (typeof SUBJECT_KEYS)[number];
 
 export function readJSON<T>(kv: KV, key: string, fallback: T): T {
   const raw = kv.get(key);
@@ -99,8 +105,19 @@ export function saveMath(kv: KV, id: string, m: { attempts: MathAttempt[]; revie
   writeJSON(kv, KEYS.math(id), { attempts: m.attempts.slice(-MAX_MATH_ATTEMPTS), reviews: m.reviews, lessonsDone: [...m.lessonsDone] });
 }
 
-/** "Borrar el progreso" de un niño (docs/12 §6): Lectura y Matemáticas. */
+/**
+ * Datos de una materia (versión 1 del formato). Cada materia decide la forma de lo que guarda; aquí solo se lee con
+ * tolerancia (si lo guardado no tiene la forma esperada, `valid` lo rechaza y se empieza limpio) y se escribe.
+ */
+export function loadSubject<T>(kv: KV, subject: SubjectKey, id: string, fallback: T, valid: (v: unknown) => v is T): T {
+  const v = readJSON<unknown>(kv, KEYS.subject(subject, id), fallback);
+  return valid(v) ? v : fallback;
+}
+export const saveSubject = (kv: KV, subject: SubjectKey, id: string, value: unknown) => writeJSON(kv, KEYS.subject(subject, id), value);
+
+/** "Borrar el progreso" de un niño (docs/12 §6): Lectura, Matemáticas y las demás materias. */
 export function eraseChild(kv: KV, id: string) {
   kv.remove(KEYS.reading(id));
   kv.remove(KEYS.math(id));
+  for (const s of SUBJECT_KEYS) kv.remove(KEYS.subject(s, id));
 }

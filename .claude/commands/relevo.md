@@ -2,7 +2,15 @@
 description: Dejar todo listo para que la otra cuenta siga (actualiza HANDOFF, log y roadmap; commit + push)
 ---
 
-Se pueden acabar los créditos en cualquier momento. Deja el repo listo para el relevo AHORA, sin empezar trabajo nuevo:
+Se pueden acabar los créditos en cualquier momento. Deja el repo listo para el relevo AHORA, sin empezar trabajo nuevo.
+
+**Si el argumento es una materia (`ciencia` o `sociedad`):** en vez de `HANDOFF.md`, `docs/log/SESSION_LOG.md` y las filas
+generales del ROADMAP, actualiza SOLO `docs/handoff/<materia>.md` (misma plantilla: estado, siguiente paso exacto,
+cuidado con, pedidos a lo compartido, pruebas reales), agrega al final de `docs/log/<materia>.md` y marca tus filas
+`CI-xx`/`SO-xx`. Antes del push: `git fetch origin master && git merge origin/master` y `npm test`. No toques lo
+compartido.
+
+**Si no hay materia:**
 
 1. Si hay cambios sin commit: si funcionan, commit normal (`<ID>: …`); si están a medias, commit con prefijo `WIP: <ID>: …`.
 2. Sobrescribe `HANDOFF.md` con la plantilla de ese archivo: fecha/hora, cuenta (A o B — pregúntame si no lo sé),

@@ -80,6 +80,7 @@ device. See `docs/07-PRIVACY-AUDIO.md`.
 @docs/11-MIGRACION-REACT-NATIVE.md
 @docs/12-LEGAL-PRIVACIDAD-PUBLICACION.md
 @docs/13-KITEWISE.md
+@docs/14-MATERIAS-EN-PARALELO.md
 
 Plan Maestro v2 (propuesta de lectura + matemáticas + Modo Enfoque, con su
 reconciliación contra lo ya construido): `docs/10-PLAN-MAESTRO-V2.md`. Las
@@ -95,6 +96,15 @@ partes que chocan con una `DECISIÓN` están en `docs/DECISIONS.md` →
   `docs/DEVLOG.md`). In the React Native app, voice starts with a technical
   test (RN-03, `whisper.rn`) before building on it — build screens against
   `FakeSpeechEngine` first.
+
+## MATERIAS EN PARALELO (D12)
+
+Ciencia (cuenta A) y Sociedad (cuenta B) se trabajan a la vez. Antes de tocar nada lee
+`docs/14-MATERIAS-EN-PARALELO.md`: cada materia edita solo lo suyo (módulo `apps/mobile/src/subjects/<materia>/`,
+paquete `packages/<materia>-content`, su relevo en `docs/handoff/<materia>.md` y `docs/log/<materia>.md`, sus filas
+`CI-xx`/`SO-xx`). Lo compartido (`App.tsx`, `contracts`, `HANDOFF.md`, `DECISIONS.md`…) no se edita a la carrera. Si eres una
+de esas dos cuentas, tu "Al iniciar" es `/retomar ciencia` o `/retomar sociedad`. No se programa una materia antes de
+investigarla (`docs/design/subjects/PATRON-MATEMATICAS.md`).
 
 ## PROTOCOLO DE RELEVO (obligatorio)
 

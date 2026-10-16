@@ -1,12 +1,13 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { columnsFor, itemWidth, SUBJECTS } from '@lee-conmigo/ui-core';
+import { columnsFor, itemWidth, SUBJECTS, type SubjectId } from '@lee-conmigo/ui-core';
 import { Button, colors, fontFamily, gradients, GradientView, navRailWidth, NotebookCover, radius, SessionPhases, StatChip, useLayout } from '@lee-conmigo/ui-native';
 import type { ChildProfile } from '../app-state';
 import type { LibraryModel } from '../library-model';
 import { storyImage } from '../story-assets';
 import { MATH_COVERS } from '../math-art';
+import { availableModule } from '../subjects/registry';
 
 const LANGUAGE_NAME = { es: 'Español', en: 'English' } as const;
 
@@ -20,6 +21,8 @@ interface HomeScreenProps {
   /** Cuaderno de Matemáticas (K6): subtítulo y progreso de su portada. */
   math: { subtitle: string; segments: 0 | 1 | 2 | 3 };
   onOpenMath: () => void;
+  /** Materias por módulo (Ciencia, Sociedad…): su portada sale del módulo y abre su pantalla. */
+  onOpenSubject: (id: SubjectId) => void;
   /** Tocar el avatar vuelve a "¿Quién aprende hoy?" (B1). */
   onSwitchProfile: () => void;
 }
@@ -28,7 +31,7 @@ interface HomeScreenProps {
  * Inicio (Kitewise B3, `docs/design/kitewise/screens/B3.webp`): saludo, racha y estrellas reales, la misión de hoy y la
  * estantería de cuadernos. Hoy solo Lectura tiene contenido; las demás materias se ven como "Pronto" (no se inventan).
  */
-export function HomeScreen({ profile, minutes, model, onContinue, onOpenReading, math, onOpenMath, onSwitchProfile }: HomeScreenProps) {
+export function HomeScreen({ profile, minutes, model, onContinue, onOpenReading, math, onOpenMath, onOpenSubject, onSwitchProfile }: HomeScreenProps) {
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const { narrow, gutter } = layout;
@@ -88,18 +91,20 @@ export function HomeScreen({ profile, minutes, model, onContinue, onOpenReading,
         {SUBJECTS.map((s) => {
           const isReading = s.id === 'lectura';
           const isMath = s.id === 'mate';
+          const mod = availableModule(s.id);
+          const card = mod?.homeCard(profile, profile.language === 'en' ? 'en' : 'es');
           return (
             <NotebookCover
               key={s.id}
               title={s.name}
-              subtitle={isReading ? resumeLabel : isMath ? math.subtitle : ''}
-              image={isReading ? cover : isMath ? MATH_COVERS.notebook : undefined}
+              subtitle={isReading ? resumeLabel : isMath ? math.subtitle : (card?.subtitle ?? '')}
+              image={isReading ? cover : isMath ? MATH_COVERS.notebook : card?.image}
               glyph={s.glyph}
               color={colors[s.colorToken]}
               gradient={gradients[s.gradientToken]}
-              segments={isReading ? model.readingSegments : isMath ? math.segments : 0}
-              soon={!s.available}
-              onPress={isReading ? onOpenReading : isMath ? onOpenMath : undefined}
+              segments={isReading ? model.readingSegments : isMath ? math.segments : (card?.segments ?? 0)}
+              soon={!s.available && !mod}
+              onPress={isReading ? onOpenReading : isMath ? onOpenMath : mod ? () => onOpenSubject(s.id) : undefined}
               width={coverWidth}
             />
           );
