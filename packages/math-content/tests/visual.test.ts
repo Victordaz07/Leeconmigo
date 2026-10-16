@@ -149,7 +149,7 @@ describe('bandejas y grupos', () => {
         const m = generateVisual(t, seed).model;
         const ex = parallelExample(m);
         if (m.kind === 'tenFrame') expect([ex.start, ex.added]).not.toEqual([m.start, m.target - m.start]);
-        else expect([ex.groups, ex.perGroup]).not.toEqual([m.groups, m.perGroup]);
+        else if (m.kind === 'equalGroups' || m.kind === 'sharing') expect([ex.groups, ex.perGroup]).not.toEqual([m.groups, m.perGroup]);
       }
     }
   });

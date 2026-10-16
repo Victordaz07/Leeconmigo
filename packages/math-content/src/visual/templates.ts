@@ -6,20 +6,11 @@
  * Los rangos por grado son orientativos (CA CCSSM: 1.OA.6 sumar hasta 20 cruzando la decena; 2.OA.4 y 3.OA.1 grupos
  * iguales; 3.OA.2 los dos sentidos de dividir; 4.OA.3 residuo que hay que interpretar). Revisión docente pendiente.
  */
-import { rng } from '../generate.ts';
+import { FAMILIES } from './families/index.ts';
+import { intRng, type IntRng } from './rng.ts';
 import type { EqualGroupsModel, SharingModel, TenFrameModel, VisualFamily, VisualInstance, VisualModel } from './model.ts';
 
 export const GENERATOR_VERSION = 1;
-
-export interface IntRng {
-  /** Entero en [min, max], ambos incluidos. */
-  int(min: number, max: number): number;
-}
-
-export function intRng(seed: number): IntRng {
-  const next = rng(seed);
-  return { int: (min, max) => min + Math.floor(next() * (max - min + 1)) };
-}
 
 export interface VisualTemplate {
   id: string;
@@ -117,10 +108,16 @@ export const VISUAL_TEMPLATES: VisualTemplate[] = [
   },
 ];
 
+/** Plantillas de las familias de `families/` (mismo formato). */
+for (const f of Object.values(FAMILIES)) {
+  for (const t of f!.templates) VISUAL_TEMPLATES.push({ ...t, family: f!.kind as VisualFamily });
+}
+
 export const visualTemplateById = (id: string) => VISUAL_TEMPLATES.find((t) => t.id === id);
 
 /** Comprueba las invariantes de un modelo antes de mostrarlo (lista vacía = válido). */
 export function modelProblems(m: VisualModel): string[] {
+  if (m.kind !== 'tenFrame' && m.kind !== 'equalGroups' && m.kind !== 'sharing') return FAMILIES[m.kind]!.problems(m);
   const p: string[] = [];
   const int = (n: number) => Number.isInteger(n) && n >= 0;
   if (m.kind === 'tenFrame') {

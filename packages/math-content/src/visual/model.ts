@@ -11,8 +11,8 @@
  * todos de la misma instancia: no hay contadores duplicados que puedan contradecirse.
  */
 
-/** Fase 1: bandejas de 10/20, grupos iguales y reparto. Las otras 9 familias se agregan con el mismo contrato. */
-export type VisualFamily = 'tenFrame' | 'equalGroups' | 'sharing';
+/** Las 12 familias de la lámina (docs/design/math-visual). Todas con el mismo contrato. */
+export type VisualFamily = 'tenFrame' | 'equalGroups' | 'sharing' | 'placeValue' | 'numberLine' | 'fraction' | 'barModel' | 'area' | 'clock' | 'data' | 'coord' | 'ratio';
 
 export interface TenFrameModel {
   kind: 'tenFrame';
@@ -49,7 +49,116 @@ export interface SharingModel {
   containerIds: string[];
 }
 
-export type VisualModel = TenFrameModel | EqualGroupsModel | SharingModel;
+/** B. Valor posicional: centenas, decenas y unidades que se juntan y se desarman. */
+export interface PlaceValueModel {
+  kind: 'placeValue';
+  target: number;
+  /** build: cualquier forma que valga el número · standard: forma usual (cada lugar < 10) · read: las piezas ya están; escribe el número. */
+  task: 'build' | 'standard' | 'read';
+  /** Piezas de partida (en `read`, a veces más de 10 unidades: hay que reagrupar al leer). */
+  given: Pieces;
+}
+
+export interface Pieces {
+  h: number;
+  t: number;
+  o: number;
+}
+
+/**
+ * C. Recta numérica. Las posiciones son NUMERADORES sobre `denominator` (1 = enteros; 4 = cuartos), así la misma recta
+ * sirve para sumar, restar y ubicar fracciones sin decimales.
+ */
+export interface NumberLineModel {
+  kind: 'numberLine';
+  denominator: number;
+  min: number;
+  max: number;
+  /** Cada cuántas marcas se escribe el número (las demás marcas van sin número). */
+  labelEvery: number;
+  start: number;
+  target: number;
+  /** Saltos que ofrece la app (con signo). */
+  jumps: number[];
+  task: 'add' | 'subtract' | 'locate';
+}
+
+/** F. Fracciones: un entero partido en partes IGUALES (las partes las dibuja la app). */
+export interface FractionModel {
+  kind: 'fraction';
+  shape: 'bar' | 'pizza' | 'cake';
+  denominator: number;
+  numerator: number;
+  /** color: colorea n/d · name: ya está coloreado; escribe la fracción · equivalent: colorea lo mismo que ref en otras partes. */
+  task: 'color' | 'name' | 'equivalent';
+  ref?: { numerator: number; denominator: number };
+}
+
+/** G. Modelo de barras: problemas verbales de juntar, comparar y "veces tanto". */
+export interface BarModelModel {
+  kind: 'barModel';
+  structure: 'partWhole' | 'compare' | 'times';
+  /** partWhole: a + b = total · compare: mayor a, menor b, diferencia a − b · times: b × factor = a. */
+  a: number;
+  b: number;
+  factor?: number;
+  unknown: 'part' | 'whole' | 'smaller' | 'larger' | 'difference';
+  names: [string, string];
+  item: 'marbles' | 'stickers' | 'pencils' | 'apples';
+}
+
+/** H. Área y perímetro en un jardín de cuadritos (cada uno, 1 m²). */
+export interface AreaModel {
+  kind: 'area';
+  rows: number;
+  cols: number;
+  task: 'cover' | 'perimeter' | 'missingSide';
+}
+
+/** I. Reloj: minutos desde las 12:00 (0–719). Las dos agujas salen del mismo número. */
+export interface ClockModel {
+  kind: 'clock';
+  task: 'set' | 'read' | 'elapsed';
+  /** set/read: la hora pedida · elapsed: la hora de inicio. */
+  time: number;
+  duration: number;
+  /** Cuánto mueve el botón chico (30, 5 o 1 minutos). */
+  step: number;
+}
+
+export type FruitId = 'mango' | 'pera' | 'uva' | 'manzana';
+
+/** J. Datos: gráfica de barras con escala. */
+export interface DataModel {
+  kind: 'data';
+  categories: FruitId[];
+  values: number[];
+  /** Cuánto vale cada rayita de la escala (1, 2 o 5). */
+  scale: number;
+  task: 'build' | 'read' | 'difference' | 'total';
+  /** read: [i] · difference: [mayor, menor]. */
+  ask: number[];
+}
+
+/** K. Plano cartesiano (primer cuadrante). */
+export interface CoordModel {
+  kind: 'coord';
+  max: number;
+  x: number;
+  y: number;
+  task: 'plot' | 'read';
+}
+
+/** L. Razones: "a de azul por cada b de naranja", hecha por lotes completos. */
+export interface RatioModel {
+  kind: 'ratio';
+  a: number;
+  b: number;
+  lots: number;
+  task: 'scale';
+}
+
+export type VisualModel = TenFrameModel | EqualGroupsModel | SharingModel | PlaceValueModel | NumberLineModel | FractionModel | BarModelModel | AreaModel | ClockModel | DataModel | CoordModel | RatioModel;
 
 export interface VisualInstance {
   schemaVersion: 1;
@@ -64,12 +173,21 @@ export interface VisualInstance {
 }
 
 /** Casillas para escribir números (con el teclado de la app). */
-export type AnswerField = 'answer' | 'remainder' | 'groups' | 'perGroup';
+export type AnswerField = 'answer' | 'remainder' | 'groups' | 'perGroup' | 'numerator' | 'denominator' | 'hour' | 'minute' | 'x' | 'y';
 
 export type VisualWork =
   | { kind: 'tenFrame'; cells: boolean[]; values: Partial<Record<AnswerField, string>> }
   | { kind: 'equalGroups'; counts: number[]; values: Partial<Record<AnswerField, string>> }
-  | { kind: 'sharing'; placement: Record<string, string | null>; values: Partial<Record<AnswerField, string>> };
+  | { kind: 'sharing'; placement: Record<string, string | null>; values: Partial<Record<AnswerField, string>> }
+  | { kind: 'placeValue'; pieces: Pieces; values: Partial<Record<AnswerField, string>> }
+  | { kind: 'numberLine'; pos: number; path: number[]; values: Partial<Record<AnswerField, string>> }
+  | { kind: 'fraction'; shaded: boolean[]; values: Partial<Record<AnswerField, string>> }
+  | { kind: 'barModel'; values: Partial<Record<AnswerField, string>> }
+  | { kind: 'area'; tiles: boolean[]; values: Partial<Record<AnswerField, string>> }
+  | { kind: 'clock'; minutes: number; values: Partial<Record<AnswerField, string>> }
+  | { kind: 'data'; bars: number[]; values: Partial<Record<AnswerField, string>> }
+  | { kind: 'coord'; point: [number, number] | null; values: Partial<Record<AnswerField, string>> }
+  | { kind: 'ratio'; lots: number; values: Partial<Record<AnswerField, string>> };
 
 /** Acciones con significado matemático: tocar, arrastrar o teclado terminan en la misma. */
 export type WorkAction =
@@ -77,7 +195,21 @@ export type WorkAction =
   | { type: 'addToGroup'; group: number }
   | { type: 'removeFromGroup'; group: number }
   | { type: 'place'; token: string; to: string | null }
-  | { type: 'setValue'; field: AnswerField; value: string };
+  | { type: 'setValue'; field: AnswerField; value: string }
+  | { type: 'addPiece'; place: keyof Pieces }
+  | { type: 'removePiece'; place: keyof Pieces }
+  /** Junta 10 piezas de un lugar en 1 del siguiente (o: 10 unidades → 1 decena; t: 10 decenas → 1 centena). */
+  | { type: 'bundle'; place: 'o' | 't' }
+  /** Desarma 1 pieza en 10 del lugar anterior (t: 1 decena → 10 unidades; h: 1 centena → 10 decenas). */
+  | { type: 'unbundle'; place: 't' | 'h' }
+  | { type: 'jump'; size: number }
+  | { type: 'setPos'; pos: number }
+  | { type: 'togglePart'; index: number }
+  | { type: 'shiftTime'; minutes: number }
+  | { type: 'setBar'; index: number; delta: number }
+  | { type: 'placePoint'; x: number; y: number }
+  | { type: 'addLot' }
+  | { type: 'removeLot' };
 
 export interface Evaluation {
   /** invalid = estado técnico imposible (nunca se cuenta como error del niño). */
