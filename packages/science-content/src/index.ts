@@ -23,3 +23,4 @@ export * from './labs/clasificar.ts';
 export * from './labs/ciclo.ts';
 export * from './labs/particulas.ts';
 export * from './labs/clima.ts';
+export * from './labs/cambios.ts';

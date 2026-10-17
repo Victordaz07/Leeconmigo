@@ -111,7 +111,7 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | CI-21 | C6-U05 «Agua en movimiento» (6.º): modelo del ciclo del agua, contenido y constructor de flechas | ✅ | A | Lote J recibido (9 imágenes); verificada en tableta; abierta al niño. Con esto la **Tanda 3 está completa** |
 | CI-22 | C5-U01 «Materia invisible» (5.º) — lote O | ✅ | A | Lote O recibido; modelo de puntitos (colorante, sal, aire en jeringa), familia `particles`, 13.ª unidad abierta; sin mecanismos atómicos formales |
 | CI-23 | C3-U07 «Tiempo y clima» (3.º) — lote M | ✅ | A | Lote M recibido; registro de tres pueblos (tabla, barras de lluvia, comparación), familia `climate`, 14.ª unidad abierta; datos de práctica |
-| CI-24 | C2-U08 «Una Tierra que cambia» (2.º) — lote L | ⬜ | A | pedido de imágenes hecho (5); reutiliza el laboratorio de erosión |
+| CI-24 | C2-U08 «Una Tierra que cambia» (2.º) — lote L | ✅ | A | Lote L recibido; sucesos rápidos y lentos con dos pistas, bandejas con plantas (sin gramos); familia `earth`; 15.ª unidad abierta |
 | CI-25 | C1-U01 «Vibraciones» (1.º) — lote K | ⬜ | A | pedido de imágenes hecho (5) |
 | CI-26 | C4-U03 «Transferir y transformar» (4.º) — lote N | ⬜ | A | pedido de imágenes hecho (6) |
 | CI-27 | C6-U07 «Evidencias de cambio» (6.º) — lote P | ⬜ | A | pedido de imágenes hecho (3); no presentar un día caluroso como prueba climática |

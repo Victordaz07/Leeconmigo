@@ -294,3 +294,9 @@ tela, plástico, cartón), vaso de agua compartido con C5 y C6, bandeja con pico
 - **Victor pidió quitar «Pronto» y que las unidades sean utilizables.** Decisión (confirmada con él): el catálogo de Ciencia **solo muestra las unidades jugables** (12 hoy); el mapa de 48 sigue en `docs/design/ciencia/MAPA-UNIDADES.md`.
   Cada unidad nueva aparece sola cuando tiene contenido y `UNIT_ART_READY` en true. Se construye **por tandas**, una por grado.
 - **Tanda 4 pedida** (27 imágenes, lotes K–P en `PEDIDO-IMAGENES.md`): C1-U01, C2-U08, C3-U07, C4-U03, C5-U01, C6-U07; filas CI-22…CI-27 del ROADMAP. Orden: O → M → L → K → N → P.
+
+
+## 2026-10-17 · Tanda 4 en marcha (actualización)
+- Hechas: **C5-U01** (CI-22, familia `particles`), **C3-U07** (CI-23, familia `climate`), **C2-U08** (CI-24, familia `earth`). Quedan **C1-U01** (CI-25), **C4-U03** (CI-26), **C6-U07** (CI-27); el arte de las tres ya está convertido y conectado (`CIENCIA_VIBRACION`, `CIENCIA_ENERGIA`, `CIENCIA_CLIMA` en `art.ts`) y solo falta poner `UNIT_ART_READY[...] = true` al terminarlas.
+- Cada unidad nueva = modelo en `science-content/src/labs/`, JSON de contenido (generador en el scratchpad de la sesión), setup en `unit.ts` + validador + `*TextProblems`, copy en `ui-core/src/ciencia/copy.ts`, familia en `apps/mobile/src/subjects/ciencia/families/`, fila del ROADMAP y bitácora.
+- Antes de fusionar PR #3: `git fetch origin master && git merge origin/master`, `npm run typecheck`, `npx vitest run`; fusionar solo cuando Victor lo diga.

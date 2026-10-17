@@ -61,7 +61,7 @@ export const erosionFamily: Family = {
     const labPiece = (l: LabSetup, shown: number) => (
       <View style={fstyles.stack}>
         <LabBoard trays={trayViews(l, shown, lang)} art={ART} width={visualWidth} watering={local.watering} calm={calm} />
-        {l.static ? (
+        {l.static && !l.qualitative ? (
           <>
             <DataTable title={c.table.title[lang]} headers={headers} rows={rowsFor(l, false)} unit={unitLabel} emptyLabel={c.table.empty[lang]} />
             <Badge text={c.badge.practiceData[lang]} />

@@ -236,6 +236,7 @@ export const UNIT_ART_READY: Record<string, boolean> = {
   'C2-U02': true, // Lote B recibido (manifest-tanda-2b)
   // Arte recibido (lotes C, D y E); estas unidades aún no tienen contenido, así que no se abren.
   'C3-U06': true,
+  'C2-U08': true, // Lote L recibido (manifest-tanda-4l)
   'C3-U07': true, // Lote M recibido (manifest-tanda-4m)
   'C5-U01': true, // Lote K recibido (manifest-tanda-4k)
   'C5-U02': true,

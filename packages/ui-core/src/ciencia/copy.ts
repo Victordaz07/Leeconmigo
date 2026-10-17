@@ -272,6 +272,21 @@ export const CIENCIA_COPY = {
     chartDescription: (town: string, parts: string) => L(`${town}: ${parts}.`, `${town}: ${parts}.`),
     unit: L('Datos de práctica: ningún pueblo es real.', 'Practice data: no town is real.'),
   },
+  /** Los cambios de la Tierra: tres fotos, sucesos rápidos y lentos con dos pistas (C2-U08). */
+  earth: {
+    photoVolcan: L('Un volcán', 'A volcano'),
+    photoCanon: L('Un cañón', 'A canyon'),
+    photoDuna: L('Una duna', 'A dune'),
+    pickEvent: L('Toca un suceso para leer sus pistas.', 'Tap an event to read its clues.'),
+    cluesTitle: L('Pistas de dos fuentes', 'Clues from two sources'),
+    binsTitle: L('¿Rápido o lento?', 'Fast or slow?'),
+    pickBin: L('Ahora toca el grupo donde va.', 'Now tap the group where it goes.'),
+    placed: (n: number, t: number) => L(`Colocaste ${String(n)} de ${String(t)}`, `You placed ${String(n)} of ${String(t)}`),
+    placedAll: L('¡Colocaste todos! Puedes cambiar uno si quieres.', 'You placed them all! You can change one if you like.'),
+    lookAgain: L('Lee otra vez las dos pistas y prueba con el otro grupo.', 'Read the two clues again and try the other group.'),
+    source: (n: number) => L(`Fuente ${String(n)}`, `Source ${String(n)}`),
+    twoSources: L('Dos fuentes dicen más que una.', 'Two sources tell more than one.'),
+  },
   /** Detectives de materiales: mirar con la lupa y agrupar por una propiedad (C2-U01). */
   sort: {
     lens: (name: string) => L(`Con la lupa: ${name}`, `With the lens: ${name}`),

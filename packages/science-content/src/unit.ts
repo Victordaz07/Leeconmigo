@@ -8,6 +8,7 @@ import c1u02 from '../content/c1-u02.json';
 import c1u03 from '../content/c1-u03.json';
 import c2u01 from '../content/c2-u01.json';
 import c2u02 from '../content/c2-u02.json';
+import c2u08 from '../content/c2-u08.json';
 import c3u05 from '../content/c3-u05.json';
 import c3u06 from '../content/c3-u06.json';
 import c3u07 from '../content/c3-u07.json';
@@ -19,8 +20,9 @@ import c5u03 from '../content/c5-u03.json';
 import c6u04 from '../content/c6-u04.json';
 import c6u05 from '../content/c6-u05.json';
 import { practiceMapProblems, PRACTICE_MAPS, bandCount, LADERA_DATASETS, type Dataset } from './datasets.ts';
-import { COVERS, SLOPES, type Cover, type Slope } from './labs/erosion.ts';
+import { COVERS, SLOPES, runTrials, turbidity, type Cover, type Slope } from './labs/erosion.ts';
 import { LIGHT_OBJECTS, LIGHT_STATES, type LightObject, type LightState } from './labs/luz.ts';
+import { EARTH_EVENTS, EVENT_SPEED, SPEEDS, speedOf, type EarthEvent } from './labs/cambios.ts';
 import { AFTERNOON_C, MEASURES, RAIN_DAYS, SEASONS, TOWNS, alwaysDrier, peakSeason, peakTown, type Measure, type Town } from './labs/clima.ts';
 import { AIR_COUNT, DYE_COUNT, DYE_STEPS, SYRINGE_POSITIONS, airDots, meanNearest, meanPairDistance, soluteDots, type DyeStep, type SyringePos } from './labs/particulas.ts';
 import { FLOWS, checkModel, flowById, type Flow } from './labs/ciclo.ts';
@@ -235,6 +237,15 @@ export interface ClimateSetup {
   static?: boolean;
 }
 
+/** Los cambios de la Tierra de C2-U08: las tres fotos, clasificar sucesos en «rápido» y «lento» con dos pistas cada uno, o las dos pistas de un suceso. */
+export interface EarthSetup {
+  view: 'photos' | 'sort' | 'clues';
+  /** clues: el suceso cuyas dos pistas se muestran. */
+  event?: EarthEvent;
+  /** sort: la clasificación ya está hecha (para analizarla). */
+  static?: boolean;
+}
+
 export interface ChoiceOption {
   id: string;
   text: Localized;
@@ -283,6 +294,7 @@ export interface UnitStep {
   cycle?: CycleSetup;
   particle?: ParticleSetup;
   climate?: ClimateSetup;
+  earth?: EarthSetup;
   /** Pasos de «arreglar la prueba»: el laboratorio resultante según el arreglo que elija el niño (id de la opción). */
   labFixed?: Record<string, LabSetup>;
   choice?: StepChoice;
@@ -383,7 +395,7 @@ export interface ScienceUnit {
 }
 
 /** Las unidades con contenido, por grado. Una unidad con contenido todavía puede esperar su arte (`UNIT_ART_READY` en la app). */
-export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c1u03 as unknown as ScienceUnit, c2u01 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c3u05 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c3u07 as unknown as ScienceUnit, c4u02 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c5u01 as unknown as ScienceUnit, c5u02 as unknown as ScienceUnit, c5u03 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit, c6u05 as unknown as ScienceUnit];
+export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c1u03 as unknown as ScienceUnit, c2u01 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c2u08 as unknown as ScienceUnit, c3u05 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c3u07 as unknown as ScienceUnit, c4u02 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c5u01 as unknown as ScienceUnit, c5u02 as unknown as ScienceUnit, c5u03 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit, c6u05 as unknown as ScienceUnit];
 export const scienceUnitContent = (id: string): ScienceUnit | undefined => SCIENCE_UNITS.find((u) => u.id === id);
 
 // ------------------------------------------------------------------ evaluar una tarea
@@ -545,6 +557,11 @@ export function unitProblems(u: ScienceUnit): string[] {
       if (!MATERIAL_TESTS.includes(st.material.test)) p.push(`${st.id}: prueba de materiales desconocida`);
       if (st.material.trials !== undefined && (st.material.trials < 1 || st.material.trials > MATERIALS.length)) p.push(`${st.id}: los materiales a probar van de 1 a ${MATERIALS.length}`);
     }
+    if (st.earth) {
+      if (!['photos', 'sort', 'clues'].includes(st.earth.view)) p.push(`${st.id}: vista de los cambios de la Tierra desconocida`);
+      if (st.earth.event !== undefined && !EARTH_EVENTS.includes(st.earth.event)) p.push(`${st.id}: suceso desconocido (${st.earth.event})`);
+      if (st.earth.view === 'clues' && !st.earth.event) p.push(`${st.id}: las pistas necesitan un suceso`);
+    }
     if (st.climate) {
       const k = st.climate;
       if (k.town !== undefined && !TOWNS.includes(k.town)) p.push(`${st.id}: pueblo desconocido (${k.town})`);
@@ -689,6 +706,7 @@ export function dataTextProblems(u: ScienceUnit): string[] {
   if (u.id === 'C6-U05') return cycleTextProblems(u);
   if (u.id === 'C5-U01') return particleTextProblems(u);
   if (u.id === 'C3-U07') return climateTextProblems(u);
+  if (u.id === 'C2-U08') return earthTextProblems(u);
   if (u.id !== 'C4-U06') return p;
   const t5 = u.tasks.find((t) => t.id === 't5');
   const base = LADERA_DATASETS.base.rows;
@@ -1068,6 +1086,37 @@ function sortTextProblems(u: ScienceUnit): string[] {
   if (expected('s3.3') !== 'distinto') p.push('s3.3: el mismo objeto cae en grupos distintos');
   if (expected('s3.4') !== propertyOf('pelota', 'brillo')) p.push('s3.4: la pelota va con los que no brillan (mate)');
   if (expected('s2.1') !== 'propiedad') p.push('s2.1: se agrupa por una propiedad');
+  return p;
+}
+
+/** C2-U08: lo que dicen los textos sobre lo rápido y lo lento y sobre las bandejas coincide con los modelos. */
+function earthTextProblems(u: ScienceUnit): string[] {
+  const p: string[] = [];
+  const steps = u.sessions.flatMap((s) => s.steps);
+  const part = (taskId: string, partId: string) => u.tasks.find((t) => t.id === taskId)?.parts.find((x) => x.id === partId);
+  const opt = (taskId: string, partId: string, id: string) => part(taskId, partId)?.options.find((o) => o.id === id);
+  const expected = (id: string) => steps.find((st) => st.id === id)?.choice?.options.find((o) => o.expected)?.id;
+  const grams = (cover: 'ninguna' | 'parcial' | 'completa') => runTrials({ cover, slope: 'media' }, 'A', 0);
+  // t3 y t5: lo rápido y lo lento.
+  if (part('t3', 'resultado')?.observedOptionId !== speedOf('duna')) p.push('t3.resultado: la duna cambia lento («lento»)');
+  if (speedOf('canon') !== 'lento' || opt('t5', 'afirmacion', 'lento')?.valid !== true || opt('t5', 'afirmacion', 'rapido')?.valid !== false) p.push('t5.afirmacion: el cañón cambia lento');
+  if (!(['volcan', 'deslizamiento', 'crecida'] as const).every((e) => EVENT_SPEED[e] === 'rapido')) p.push('el volcán, el deslizamiento y la crecida son rápidos');
+  if (!(['canon', 'duna', 'montana'] as const).every((e) => EVENT_SPEED[e] === 'lento')) p.push('el cañón, la duna y la montaña son lentos');
+  if (EARTH_EVENTS.some((e) => !SPEEDS.includes(EVENT_SPEED[e]))) p.push('cada suceso es rápido o lento');
+  // t2, t4, s4.2 y s5.2: las bandejas (siempre con la misma lluvia y pendiente).
+  const none = grams('ninguna');
+  const part_ = grams('parcial');
+  const full = grams('completa');
+  if (!none.every((g, i) => g > part_[i] && part_[i] > full[i])) p.push('las bandejas: sin plantas > plantas en parte > plantas por todas partes en cada prueba');
+  if (!full.every((g) => turbidity(g) === 'poca') || !none.every((g) => turbidity(g) === 'mucha')) p.push('t2/t4: sin plantas llega mucha tierra y con plantas por todas partes llega poca');
+  if (part('t4', 'resultado')?.observedOptionId !== 'poca') p.push('t4.resultado: con plantas por todas partes llega poca tierra («poca»)');
+  if (opt('t2', 'observaciones', 'sinmas')?.valid !== true || opt('t2', 'observaciones', 'conmenos')?.valid !== true || opt('t2', 'observaciones', 'igual')?.valid !== false) p.push('t2: la bandeja sin plantas deja pasar más tierra');
+  if (expected('s4.2') !== 'masPlantas') p.push('s4.2: con más plantas llega menos tierra');
+  if (expected('s5.2') !== 'completa') p.push('s5.2: las plantas por todas partes dejan pasar menos tierra');
+  for (const st of steps) {
+    if (st.lab && !st.lab.qualitative) p.push(`${st.id}: las bandejas de 2.º se ven sin gramos («qualitative»)`);
+    if (st.lab && (st.lab.a.slope !== st.lab.b.slope)) p.push(`${st.id}: las dos bandejas deben tener la misma pendiente (prueba justa)`);
+  }
   return p;
 }
 
