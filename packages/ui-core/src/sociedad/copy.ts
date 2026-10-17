@@ -10,7 +10,7 @@ export type { SocialLang };
 
 /** Mismas claves que `InvestigationReasonKey` de `@lee-conmigo/social-content` (sin depender del paquete de
  * contenido desde ui-core, igual dirección que `MathLang`). */
-export type SocialReasonKey = 'sourcesAndGap' | 'sources' | 'gap' | 'completed';
+export type SocialReasonKey = 'sourcesAndGap' | 'sources' | 'gap' | 'reasoningAndCare' | 'reasoning' | 'completed';
 
 const L = <T>(es: T, en: T) => ({ es, en });
 
@@ -54,6 +54,8 @@ export const SOCIAL_COPY = {
     sourcesAndGap: L('por usar varias fuentes y notar qué falta por saber', 'for using several sources and noticing what we still need to find out'),
     sources: L('por usar varias fuentes para explicar el cambio', 'for using several sources to explain the change'),
     gap: L('por notar qué falta por saber', 'for noticing what we still need to find out'),
+    reasoningAndCare: L('por pensar cada paso con cuidado, de principio a fin', 'for thinking each step through carefully, from start to finish'),
+    reasoning: L('por pensar con cuidado en esta investigación', 'for thinking carefully through this investigation'),
     completed: L('por terminar la investigación', 'for finishing the investigation'),
   } satisfies Record<SocialReasonKey, { es: string; en: string }>,
   sourceKind: {

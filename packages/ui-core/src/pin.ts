@@ -4,6 +4,9 @@
  * querer — sin cuentas ni correo (no hay nube en v1). Tras varios intentos fallidos espera un poco, para que adivinar a
  * toques no sea un juego. Sin rojo ni "incorrecto" (docs/06): los mensajes son neutros.
  */
+import type { MathLang as GateLang } from './math-copy.ts';
+
+export type { GateLang };
 
 export const PIN_LENGTH = 4;
 export const MAX_PIN_ATTEMPTS = 5;
@@ -64,18 +67,27 @@ export function gateSubmit(s: GateState, savedPin: string | null, nowMs: number)
   }
 }
 
+const L = <T>(es: T, en: T) => ({ es, en });
+
+/** Textos ES/EN del candado de padres. El dominio de arriba solo devuelve claves (`GatePhase`/`GateMessage`); este
+ * objeto es la única parte con texto, para que `parent-gate-screen.tsx` nunca tenga que traducir a mano. */
 export const GATE_COPY = {
-  createTitle: 'Crea tu PIN',
-  createHint: 'Con él entras a los reportes y ajustes. Tu hijo no lo verá.',
-  confirmTitle: 'Escríbelo otra vez',
-  confirmHint: 'Para asegurarnos de que lo recuerdas.',
-  enterTitle: 'Solo para padres',
-  enterHint: 'Escribe tu PIN.',
-  mismatch: 'No coincidieron. Empecemos de nuevo.',
-  wrong: 'Ese no es el PIN. Prueba otra vez.',
-  locked: `Espera ${PIN_LOCK_SECONDS} segundos y vuelve a intentarlo.`,
+  createTitle: L('Crea tu PIN', 'Create your PIN'),
+  createHint: L('Con él entras a los reportes y ajustes. Tu hijo no lo verá.', "You'll use it to open reports and settings. Your child won't see it."),
+  confirmTitle: L('Escríbelo otra vez', 'Enter it again'),
+  confirmHint: L('Para asegurarnos de que lo recuerdas.', 'Just to make sure you remember it.'),
+  enterTitle: L('Solo para padres', 'Parents only'),
+  enterHint: L('Escribe tu PIN.', 'Enter your PIN.'),
+  mismatch: L('No coincidieron. Empecemos de nuevo.', "Those didn't match. Let's start again."),
+  wrong: L('Ese no es el PIN. Prueba otra vez.', "That's not the PIN. Try again."),
+  locked: L(`Espera ${PIN_LOCK_SECONDS} segundos y vuelve a intentarlo.`, `Wait ${PIN_LOCK_SECONDS} seconds and try again.`),
+  kickerCreating: L((step: 1 | 2) => `PASO ${step} DE 2 · SOLO PARA PADRES`, (step: 1 | 2) => `STEP ${step} OF 2 · PARENTS ONLY`),
+  kickerEnter: L('MODO PADRES', 'PARENTS MODE'),
+  back: L('Volver', 'Back'),
+  tagline: L('Aprender en casa, a su ritmo.', 'Learning at home, at their pace.'),
+  privacy: L('La voz de tu hijo nunca se graba ni se almacena.', "Your child's voice is never recorded or stored."),
 } as const;
 
-export function gateMessage(m: GateMessage): string | null {
-  return m === 'none' ? null : GATE_COPY[m];
+export function gateMessage(m: GateMessage, lang: GateLang = 'es'): string | null {
+  return m === 'none' ? null : GATE_COPY[m][lang];
 }

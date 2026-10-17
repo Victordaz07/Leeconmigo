@@ -222,3 +222,27 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
   verdad) — el propio veredicto de la investigación aclara que no cubre pantallas completas ni ilustraciones.
 - `npm run typecheck` en todo el monorepo: limpio. `npm test`: **1222/1222 ✅** (ninguna prueba dependía del
   texto exacto de las citas que cambiaron).
+
+## 2026-10-17 — master trae Ciencia (PR #3); SO-11 (bug de fuentes) y SO-07 (verificación visual real)
+
+- Fusioné `origin/master` en `claude/sociedad-victor`: Ciencia (cuenta A) acaba de fusionar su PR #3 con 18
+  unidades jugables (tres por grado, 1.º–6.º). Fast-forward limpio, sin tocar nada de Sociedad. Incluye el
+  arreglo de `line-chart.tsx` de Ciencia (las líneas ahora van en `<G>` dentro del `<Svg>`, no en un `<View>`) —
+  anotado por si algún día Sociedad usa gráficas de líneas. `npm install --ignore-scripts`, typecheck limpio,
+  `npx vitest run`: **1530/1530 ✅** (incluye lo nuevo de Ciencia).
+- **SO-11 — bug reportado por Ciencia**: la tarjeta de cierre mostraba «Fuentes usadas 0/3» y un motivo basado
+  en fuentes en las unidades de 1.º y 6.º (puro razonamiento/simulación, sin ninguna fuente). El "/3" también
+  estaba mal para las unidades que sí tienen fuentes (2.º/4.º/5.º tienen 2, no 3). Arreglado: `SessionEvaluation`
+  ahora lleva `hasSources`; dos claves de razón nuevas (`reasoningAndCare`/`reasoning`) para unidades sin
+  fuentes, sin mencionar "fuentes" ni "hueco"; `closingStatsFor` (nuevo, función pura en
+  `apps/mobile/src/sociedad-closing.ts`) solo agrega el contador cuando `unit.sources.length > 0`, con el
+  denominador real. 8 pruebas nuevas. `npm test`: **1538/1538 ✅**. Commiteado y pusheado.
+- **SO-07 — verificación visual real**: `npx expo export --platform web` (limpio) + Playwright (Chromium) contra
+  las 6 unidades en los 4 tamaños pedidos (1280×800, 800×1280, 390×844, 360×640). Flujo automático completo
+  hasta la tarjeta de cierre en las 24 combinaciones (6 unidades × 4 tamaños); revisión de overflow horizontal y
+  de botones/opciones fuera del viewport en cada paso: **0 problemas**. Revisión manual de una muestra de
+  capturas (notebook, mesa de fuentes, mapa por capas, cierre con y sin fuentes) en teléfono pequeño y tableta
+  vertical: sin texto cortado, sin botones fuera de pantalla. Confirmado visualmente que el bug de SO-11 ya no
+  aparece (unidad 1 y 6 sin contador de fuentes; unidad 3 con "2/3", denominador correcto).
+- **Único pendiente real que queda: SO-08** (revisión de un maestro, con atención extra a 4.º y 5.º). Abro el
+  siguiente paso del ROADMAP cuando Victor confirme o pida otra cosa.

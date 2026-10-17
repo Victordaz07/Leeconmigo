@@ -129,6 +129,7 @@ export function ReadingScreen({ story, profile, energy, goalMinutes, focusReadin
         {session.closing && (
           <ClosingCard
             name={profile.name}
+            lang={profile.language === 'en' ? 'en' : 'es'}
             stars={session.closing.stars}
             reason={session.closing.reason}
             stats={[

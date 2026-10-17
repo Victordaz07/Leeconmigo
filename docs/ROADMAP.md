@@ -129,8 +129,9 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | SO-04 | Dominio puro en `packages/social-content` + pruebas | ✅ | B | `contracts/src/social.ts` (motor generalizado: +paso `'elegir'`), 6 unidades (1.º–6.º) en `content/`, 19 pruebas |
 | SO-05 | Textos ES/EN en `ui-core/src/sociedad/` | ✅ | B | `SOCIAL_COPY`; el dominio devuelve claves, no texto |
 | SO-06 | Pantallas del cuaderno de Sociedad (con Modo Enfoque) | ✅ | B | cuaderno = camino de 6 unidades (como Matemáticas); `available: true` |
-| SO-07 | Verificar en 4 tamaños y `available: true` | ✅ (parcial) | B | typecheck + test ✅ (1222/1222); sin verificación visual en equipo real (ver handoff) |
+| SO-07 | Verificar en 4 tamaños y `available: true` | ✅ | B | typecheck + test ✅; verificado en navegador (export web + Playwright), 4 tamaños × 6 unidades, 0 recortes/overflow — detalle en handoff |
 | SO-08 | Revisión de un maestro (estándares: borrador) | ⬜ | – | pendiente real; atención extra a 4.º/5.º (temas sensibles) |
 | SO-09 | 3 imágenes que faltan (2.º, 4.º, 6.º) | ✅ | B | llegaron, convertidas y conectadas — las 6 unidades tienen todo su arte |
 | SO-10 | Investigación de validación histórica (prompt propio) → correcciones aplicadas | ✅ | B | 4.º y 5.º revisión profunda (cita/opciones corregidas), 1.º/2.º/6.º cambios menores (estándar, enfoque); no sustituye SO-08 |
+| SO-11 | Bug: "Fuentes usadas 0/3" y motivo de fuentes en unidades sin fuentes (1.º, 6.º) | ✅ | B | reportado por la cuenta de Ciencia; `closingStatsFor` + claves de razón nuevas (`reasoning`/`reasoningAndCare`), con pruebas |
 
