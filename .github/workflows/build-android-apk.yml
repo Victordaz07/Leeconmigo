@@ -6,6 +6,9 @@ name: Build Android APK (demo)
 # bajar el SDK de Android y los modelos de voz; los runners de GitHub Actions sí tienen internet completo.
 on:
   workflow_dispatch: {}
+  push:
+    branches: [claude/sociedad-victor]
+    paths: ['.github/workflows/build-android-apk.yml']
 
 jobs:
   build:
