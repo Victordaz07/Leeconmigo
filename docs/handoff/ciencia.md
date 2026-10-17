@@ -279,3 +279,13 @@ tela, plástico, cartón), vaso de agua compartido con C5 y C6, bandeja con pico
 - Retoques con el arte real: `RampBench` (pendiente medida en `prop_rampa`: baja de (0.2, 0.28) a (0.78, 0.58), base en y = 0.776), `CartBench` (ruedas sobre la mesa) y `PendulumBench`
   (la imagen trae su barra de soporte: se recorta el 13 % de arriba y la barra la dibuja la app, para girar solo hilo y bola).
 - Unidades de Ciencia abiertas: **11** (C1-U02, C1-U03, C2-U01, C2-U02, C3-U05, C3-U06, C4-U02, C4-U06, C5-U02, C5-U03, C6-U04). Falta C6-U05 (agua en movimiento, constructor del modelo).
+
+## Actualización CI-21 (2026-10-17): C6-U05 «Agua en movimiento» hecha y abierta — **Tanda 3 completa**
+- `labs/ciclo.ts`: seis piezas (mar, nube, montaña, río, árbol, suelo) y **ocho flechas posibles**, cada una con su motor: el **Sol** sube el agua (evaporación, transpiración) y la **gravedad** la baja (precipitación ×2, escorrentía, el río al mar,
+  infiltración, agua subterránea). `checkModel`: un modelo vale con el ciclo cerrado (se puede volver al mar) y los dos motores. `whyNotFlow` explica con acompañamiento por qué una flecha imposible no existe. `CYCLE_MODEL` dice qué NO representa.
+- `content/c6-u05.json` (6 sesiones / 23 pasos, 8 tareas, 2 ideas: `agua.circula` y `agua.motores`; MS-ESS2-4 con 7 tareas). `cycleTextProblems` ata al modelo qué impulsa cada flecha, que sin evaporación el ciclo no se cierra y que el río solo recibe agua de la
+  escorrentía y del agua subterránea. La tarea t6 es de **evaluar el modelo** (qué muestra, qué no, cómo mejorarlo). Ficha: `unidades/C6-U05.md`. Es un modelo: deja fuera cantidades, tiempos, hielo y lagos.
+- UI: `CycleBoard` (piezas con su dibujo y flechas doradas = Sol / azules = gravedad que dibuja la app) y `families/cycle.tsx` (tocar origen y destino para agregar una flecha; quitar flechas; chips «ciclo cerrado · Sol · gravedad»).
+- Arte del lote J conectado (`CIENCIA_AGUA`, escena `costa`, portada `c6u05`).
+- **Resultado:** 12 unidades de Ciencia abiertas (C1-U02, C1-U03, C2-U01, C2-U02, C3-U05, C3-U06, C4-U02, C4-U06, C5-U02, C5-U03, C6-U04, C6-U05). Quedan 36 «Pronto».
+- **Siguiente (decidir con Victor):** otra tanda de unidades (conviene elegir las que reutilizan familias: `matter`, `ramp`, `forces`, `path`, `sort`, `cycle`…), la revisión de un docente (CI-08), la vista de padres (estándares y actividad fuera de pantalla), el repaso 1-3-7 y el APK cuando lo pida.

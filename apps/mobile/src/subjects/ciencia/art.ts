@@ -203,7 +203,7 @@ export const UNIT_ART_READY: Record<string, boolean> = {
   'C1-U03': true, // Lote F recibido (manifest-tanda-3f)
   'C3-U05': true, // Lote H recibido (manifest-tanda-3h)
   'C4-U02': true, // Lote I recibido (manifest-tanda-3i)
-  'C6-U05': false, // Lote J recibido (manifest-tanda-3j); sin contenido todavía
+  'C6-U05': true, // Lote J recibido (manifest-tanda-3j)
   'C6-U04': true, // Lote C recibido (manifest-tanda-2c)
 };
 

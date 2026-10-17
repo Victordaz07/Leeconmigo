@@ -16,3 +16,4 @@ export { RampBench, type RampArt } from './ramp-bench.tsx';
 export { CartBench, PendulumBench, type ForceArt } from './force-bench.tsx';
 export { LightPathBench, type PathArt, type PathTile } from './light-path-bench.tsx';
 export { SortBench, type SortArt, type SortBin, type SortTile } from './sort-bench.tsx';
+export { CycleBoard, CYCLE_POSITIONS, type CycleArrow, type CycleArt, type CyclePiece } from './cycle-board.tsx';

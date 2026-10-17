@@ -35,8 +35,7 @@ describe('arte de Ciencia', () => {
     expect(art).toMatch(/'C1-U02': true/);
     expect(art).toMatch(/'C2-U02': true/);
     expect(art).toMatch(/'C4-U06': true/);
-    // Tanda 3: los lotes F–I llegaron y sus unidades están abiertas; el lote J (C6-U05) llegó pero la unidad aún no tiene contenido.
-    for (const id of ['C1-U03', 'C2-U01', 'C3-U05', 'C4-U02']) expect(art).toMatch(new RegExp(`'${id}': true`));
-    expect(art).toMatch(/'C6-U05': false/);
+    // Tanda 3: llegaron los cinco lotes (F–J) y sus unidades están abiertas.
+    for (const id of ['C1-U03', 'C2-U01', 'C3-U05', 'C4-U02', 'C6-U05']) expect(art).toMatch(new RegExp(`'${id}': true`));
   });
 });

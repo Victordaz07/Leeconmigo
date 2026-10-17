@@ -108,7 +108,7 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | CI-18 | C3-U05 «Fuerzas y movimiento» (3.º): carrito con empujones, péndulo y contenido | ✅ | A | Lote H recibido (4 imágenes); verificada en tableta; abierta al niño |
 | CI-19 | C1-U03 «Caminos de luz» (1.º): materiales y luz, contenido y banco de la linterna | ✅ | A | Lote F recibido (6 imágenes); verificada en tableta; abierta al niño |
 | CI-20 | C2-U01 «Detectives de materiales» (2.º): clasificar por propiedades, contenido y mesa del detective | ✅ | A | Lote G recibido (6 imágenes); verificada en tableta; abierta al niño |
-| CI-21 | C6-U05 «Agua en movimiento» (6.º) — lote J | ⬜ | A | arte recibido (9 imágenes, `manifest-tanda-3j`); falta constructor del ciclo del agua, contenido y pantallas |
+| CI-21 | C6-U05 «Agua en movimiento» (6.º): modelo del ciclo del agua, contenido y constructor de flechas | ✅ | A | Lote J recibido (9 imágenes); verificada en tableta; abierta al niño. Con esto la **Tanda 3 está completa** |
 
 ---
 

@@ -12,7 +12,7 @@
 > lo que pedía el brief de arte (`ART-BRIEF.md`: «storybook cálido, acuarela digital») y combina con las portadas de
 > Lectura; en Inicio se ve bien junto a las de Lectura y Matemáticas. Los cajones en verde salvia vienen de la guía.
 > **Tanda 2 pedida (2026-10-16):** las otras cinco unidades piloto, 41 imágenes en 5 lotes (A–E, abajo) — **recibida completa**.
-> **Tanda 3 pedida (2026-10-17):** cinco unidades más, una por grado (C1-U03, C2-U01, C3-U05, C4-U02, C6-U05), 28 imágenes en 5 lotes (F–J, abajo).
+> **Tanda 3 pedida y recibida completa (2026-10-17):** cinco unidades más, una por grado (C1-U03, C2-U01, C3-U05, C4-U02, C6-U05), 28 imágenes en 5 lotes (F–J, abajo), convertidas y conectadas (`manifest-tanda-3f…3j.json`).
 
 **Para quién:** Victor genera las imágenes y las sube al chat; Claude las convierte a WebP, las nombra y las conecta
 (igual que en Matemáticas). **No hace falta pedir todo:** la **Tanda 1** alcanza para construir la primera unidad

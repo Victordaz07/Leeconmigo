@@ -15,9 +15,11 @@ import c4u06 from '../content/c4-u06.json';
 import c5u02 from '../content/c5-u02.json';
 import c5u03 from '../content/c5-u03.json';
 import c6u04 from '../content/c6-u04.json';
+import c6u05 from '../content/c6-u05.json';
 import { practiceMapProblems, PRACTICE_MAPS, bandCount, LADERA_DATASETS, type Dataset } from './datasets.ts';
 import { COVERS, SLOPES, type Cover, type Slope } from './labs/erosion.ts';
 import { LIGHT_OBJECTS, LIGHT_STATES, type LightObject, type LightState } from './labs/luz.ts';
+import { FLOWS, checkModel, flowById, type Flow } from './labs/ciclo.ts';
 import { MATERIAL_OF, SORT_OBJECTS, SORT_PROPS, matching, propertyOf, withValue, type SortObject, type SortProp } from './labs/clasificar.ts';
 import { PATH_MATERIALS, lightReachesWall, makesShadow, outcomeOf } from './labs/caminos.ts';
 import { MAX_PUSHES, TABLE_PAIRS, balanced, cartMove, swingSide, travelCm } from './labs/fuerzas.ts';
@@ -186,6 +188,20 @@ export interface SortSetup {
   hidden?: boolean;
 }
 
+/** El modelo del ciclo del agua de C6-U05: flechas entre piezas, que el estudiante arma o analiza. */
+export interface CycleSetup {
+  /** `show` = modelo hecho (para analizarlo) · `build` = el estudiante agrega o quita flechas · `table` = tabla de las ocho flechas. */
+  view: 'show' | 'build' | 'table';
+  /** Flechas con las que empieza el modelo (ids de `FLOWS`). */
+  flows?: string[];
+  /** build: cuántas flechas distintas debe agregar (o quitar, con `removable`) para seguir. */
+  trials?: number;
+  /** build: también se pueden quitar flechas. */
+  removable?: boolean;
+  /** build: se sigue cuando el modelo cumple este criterio: `closed` = el ciclo se cierra y tiene los dos motores · `sun` = tiene todas las flechas del Sol. */
+  goal?: 'closed' | 'sun';
+}
+
 export interface ChoiceOption {
   id: string;
   text: Localized;
@@ -231,6 +247,7 @@ export interface UnitStep {
   forces?: ForceSetup;
   path?: PathSetup;
   sort?: SortSetup;
+  cycle?: CycleSetup;
   /** Pasos de «arreglar la prueba»: el laboratorio resultante según el arreglo que elija el niño (id de la opción). */
   labFixed?: Record<string, LabSetup>;
   choice?: StepChoice;
@@ -331,7 +348,7 @@ export interface ScienceUnit {
 }
 
 /** Las unidades con contenido, por grado. Una unidad con contenido todavía puede esperar su arte (`UNIT_ART_READY` en la app). */
-export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c1u03 as unknown as ScienceUnit, c2u01 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c3u05 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c4u02 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c5u02 as unknown as ScienceUnit, c5u03 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit];
+export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c1u03 as unknown as ScienceUnit, c2u01 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c3u05 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c4u02 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c5u02 as unknown as ScienceUnit, c5u03 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit, c6u05 as unknown as ScienceUnit];
 export const scienceUnitContent = (id: string): ScienceUnit | undefined => SCIENCE_UNITS.find((u) => u.id === id);
 
 // ------------------------------------------------------------------ evaluar una tarea
@@ -493,6 +510,12 @@ export function unitProblems(u: ScienceUnit): string[] {
       if (!MATERIAL_TESTS.includes(st.material.test)) p.push(`${st.id}: prueba de materiales desconocida`);
       if (st.material.trials !== undefined && (st.material.trials < 1 || st.material.trials > MATERIALS.length)) p.push(`${st.id}: los materiales a probar van de 1 a ${MATERIALS.length}`);
     }
+    if (st.cycle) {
+      const c = st.cycle;
+      for (const id of c.flows ?? []) if (!flowById(id)) p.push(`${st.id}: flecha desconocida (${id})`);
+      if (c.trials !== undefined && (c.trials < 1 || c.trials > FLOWS.length)) p.push(`${st.id}: las flechas van de 1 a ${FLOWS.length}`);
+      if (c.view === 'build' && !c.trials && !c.goal) p.push(`${st.id}: armar el modelo necesita un criterio para seguir (trials o goal)`);
+    }
     if (st.sort) {
       const k = st.sort;
       if (k.object !== undefined && !SORT_OBJECTS.includes(k.object)) p.push(`${st.id}: objeto desconocido (${k.object})`);
@@ -613,6 +636,7 @@ export function dataTextProblems(u: ScienceUnit): string[] {
   if (u.id === 'C3-U05') return forceTextProblems(u);
   if (u.id === 'C1-U03') return pathTextProblems(u);
   if (u.id === 'C2-U01') return sortTextProblems(u);
+  if (u.id === 'C6-U05') return cycleTextProblems(u);
   if (u.id !== 'C4-U06') return p;
   const t5 = u.tasks.find((t) => t.id === 't5');
   const base = LADERA_DATASETS.base.rows;
@@ -992,5 +1016,43 @@ function sortTextProblems(u: ScienceUnit): string[] {
   if (expected('s3.3') !== 'distinto') p.push('s3.3: el mismo objeto cae en grupos distintos');
   if (expected('s3.4') !== propertyOf('pelota', 'brillo')) p.push('s3.4: la pelota va con los que no brillan (mate)');
   if (expected('s2.1') !== 'propiedad') p.push('s2.1: se agrupa por una propiedad');
+  return p;
+}
+
+/** C6-U05: lo que dicen los textos sobre las flechas, los motores y el ciclo coincide con el modelo del ciclo del agua. */
+function cycleTextProblems(u: ScienceUnit): string[] {
+  const p: string[] = [];
+  const steps = u.sessions.flatMap((s) => s.steps);
+  const part = (taskId: string, partId: string) => u.tasks.find((t) => t.id === taskId)?.parts.find((x) => x.id === partId);
+  const opt = (taskId: string, partId: string, id: string) => part(taskId, partId)?.options.find((o) => o.id === id);
+  const need = (where: string, text: string | undefined, needle: string) => {
+    if (!text?.toLowerCase().includes(needle.toLowerCase())) p.push(`${where}: el texto no dice «${needle}» (modelo)`);
+  };
+  const driver = (id: string): Flow['driver'] | undefined => flowById(id)?.driver;
+  // t2: qué impulsa cada flecha.
+  if (driver('evaporacion') !== 'sol' || driver('transpiracion') !== 'sol') p.push('t2.sol: la evaporación y la transpiración las impulsa el Sol');
+  if (!['lluviaMontana', 'lluviaMar', 'escorrentia', 'infiltracion'].every((id) => driver(id) === 'gravedad')) p.push('t2.grav: la precipitación, la escorrentía y la infiltración las impulsa la gravedad');
+  for (const [id, expect] of [['sol', true], ['grav', true], ['evapgrav', false], ['escsol', false]] as const) if (opt('t2', 'observaciones', id)?.valid !== expect) p.push(`t2.${id}: validez no coincide con el modelo`);
+  // t3: sin evaporación el ciclo no se cierra (menos nubes, menos lluvia).
+  if (part('t3', 'resultado')?.observedOptionId !== 'menos' || checkModel(FLOWS.map((f) => f.id).filter((id) => id !== 'evaporacion' && id !== 'transpiracion')).closed) p.push('t3.resultado: sin las flechas del Sol el ciclo no se cierra («menos»)');
+  // t4: el río recibe agua solo de la escorrentía y del agua subterránea.
+  const intoRiver = FLOWS.filter((f) => f.to === 'rio').map((f) => f.id).sort().join();
+  if (intoRiver !== 'escorrentia,subterranea' || part('t4', 'resultado')?.observedOptionId !== 'baja') p.push('t4: el río debe recibir agua de la escorrentía y del agua subterránea («baja»)');
+  need('t4.flechas (es)', opt('t4', 'porque', 'flechas')?.text.es, 'escorrentía');
+  need('t4.flechas (es)', opt('t4', 'porque', 'flechas')?.text.es, 'subterránea');
+  // t5: la evidencia nombra el motor correcto de cada flecha.
+  need('t5.sube (es)', opt('t5', 'evidencia', 'sube')?.text.es, 'evaporación');
+  need('t5.sube (es)', opt('t5', 'evidencia', 'sube')?.text.es, 'Sol');
+  need('t5.baja (es)', opt('t5', 'evidencia', 'baja')?.text.es, 'gravedad');
+  if (!['lluviaMar', 'escorrentia', 'desembocadura'].every((id) => driver(id) === 'gravedad')) p.push('t5.baja: precipitación, escorrentía y río los impulsa la gravedad');
+  if (!checkModel(FLOWS.map((f) => f.id)).ok) p.push('t5: el modelo completo debe cerrar el ciclo con los dos motores');
+  // t7: el charco se evapora por el Sol.
+  if (driver('evaporacion') !== 'sol' || opt('t7', 'donde', 'aire')?.valid !== true || opt('t7', 'motor', 'sol')?.valid !== true || opt('t7', 'motor', 'gravedad')?.valid !== false) p.push('t7: el charco se evapora y lo mueve el Sol');
+  // Preguntas del paso con respuesta esperada y modelos que muestra cada paso.
+  const expected = (id: string) => steps.find((st) => st.id === id)?.choice?.options.find((o) => o.expected)?.id;
+  if (expected('s2.1') !== 'solSube') p.push('s2.1: el Sol sube el agua y la gravedad la baja');
+  if (expected('s3.3') !== 'ciclo') p.push('s3.3: el patrón esperado es el ciclo');
+  const s34 = steps.find((st) => st.id === 's3.4')?.cycle?.flows ?? [];
+  if (s34.includes('evaporacion') || expected('s3.4') !== 'noCierra' || checkModel(s34).closed) p.push('s3.4: sin la evaporación el ciclo no se cierra');
   return p;
 }

@@ -113,3 +113,6 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
 
 ## 2026-10-17 · Tanda 3 recibida (lotes F–J)
 - 28 imágenes revisadas, convertidas y conectadas; abiertas C1-U03, C2-U01, C3-U05 y C4-U02. Retocados los bancos de la rampa, el carrito y el péndulo con el arte real.
+
+## 2026-10-17 · CI-21: C6-U05 «Agua en movimiento»
+- Constructor del ciclo del agua: el estudiante arma flechas entre piezas, con el Sol y la gravedad como motores, y evalúa su modelo (qué muestra y qué deja fuera). 12 unidades de Ciencia abiertas.
