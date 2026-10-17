@@ -25,3 +25,4 @@ export * from './labs/particulas.ts';
 export * from './labs/clima.ts';
 export * from './labs/cambios.ts';
 export * from './labs/vibracion.ts';
+export * from './labs/transferencias.ts';

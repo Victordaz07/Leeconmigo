@@ -2,6 +2,7 @@ import type { UnitStep } from '@lee-conmigo/science-content';
 import { climateFamily } from './climate';
 import { cycleFamily } from './cycle';
 import { earthFamily } from './earth';
+import { energyFamily } from './energy';
 import { erosionFamily } from './erosion';
 import { forcesFamily } from './forces';
 import { lightFamily } from './light';
@@ -19,7 +20,7 @@ import { vibrationFamily } from './vibration';
 import type { Family } from './types';
 
 /** Las familias, de la más específica a la más general: una escena sola es lo último. */
-export const FAMILIES: Family[] = [mapFamily, erosionFamily, lightFamily, materialsFamily, thermalFamily, magnetsFamily, matterFamily, rampFamily, forcesFamily, pathFamily, sortFamily, cycleFamily, particlesFamily, climateFamily, earthFamily, vibrationFamily, sceneFamily];
+export const FAMILIES: Family[] = [mapFamily, erosionFamily, lightFamily, materialsFamily, thermalFamily, magnetsFamily, matterFamily, rampFamily, forcesFamily, pathFamily, sortFamily, cycleFamily, particlesFamily, climateFamily, earthFamily, vibrationFamily, energyFamily, sceneFamily];
 
 export const familyOf = (step: UnitStep): Family | undefined => FAMILIES.find((f) => f.owns(step));
 export type { Family, Local, StepCtx } from './types';

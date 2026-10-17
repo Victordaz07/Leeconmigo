@@ -298,6 +298,27 @@ export const CIENCIA_COPY = {
     voiceLabel: L('Mi voz', 'My voice'),
     safe: L('Sin riesgos: es una prueba en pantalla.', 'No risks: it is an on-screen test.'),
   },
+  /** Los dispositivos de energía: qué entra y qué sale (C4-U03). */
+  energy: {
+    benchLabel: (what: string) => L(`Dispositivo de energía: ${what}.`, `Energy device: ${what}.`),
+    nothingYet: L('Todavía no lo usas: no se nota nada.', 'You haven’t used it yet: nothing is noticeable.'),
+    used: L('Ya lo usaste. Mira lo que notas.', 'You used it. Look at what you notice.'),
+    enters: L('Entra', 'Goes in'),
+    exits: L('Sale', 'Comes out'),
+    pickEnters: L('Elige lo que entra (una sola cosa).', 'Pick what goes in (just one thing).'),
+    pickExits: L('Elige lo que sale (puede ser más de una).', 'Pick what comes out (it can be more than one).'),
+    diagramOk: L('Tu diagrama coincide con lo que notaste.', 'Your diagram matches what you noticed.'),
+    hintEnters: L('Piensa en qué hace funcionar al dispositivo: eso es lo que entra.', 'Think about what makes the device work: that is what goes in.'),
+    hintMissing: L('Falta algo que notaste que sale.', 'Something you noticed coming out is missing.'),
+    hintExtra: L('Mira lo que notaste: ¿de verdad sale todo lo que elegiste?', 'Look at what you noticed: does everything you picked really come out?'),
+    tableTitle: L('Tres dispositivos', 'Three devices'),
+    colEnters: L('Entra', 'Goes in'),
+    colExits: L('Sale', 'Comes out'),
+    colKind: L('Qué pasa', 'What happens'),
+    transforms: L('Se transforma', 'Is transformed'),
+    transfers: L('Se transfiere', 'Is transferred'),
+    safe: L('Sin riesgos: es una prueba en pantalla.', 'No risks: it is an on-screen test.'),
+  },
   /** Detectives de materiales: mirar con la lupa y agrupar por una propiedad (C2-U01). */
   sort: {
     lens: (name: string) => L(`Con la lupa: ${name}`, `With the lens: ${name}`),

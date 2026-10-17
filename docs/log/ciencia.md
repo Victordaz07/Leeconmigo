@@ -135,3 +135,7 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
 ## 2026-10-17 · CI-25: C1-U01 «Vibraciones»
 - Mesa de vibraciones cualitativa (`labs/vibracion.ts`): tres objetos y cuatro acciones; lo que suena se mueve, al sujetarlo se calla y la voz hace saltar el arroz del tambor. Lo que se ve no depende del movimiento: copias del objeto y ondas dibujadas (con Modo Enfoque quedan quietas).
 - Dos ideas (`sonido.vibracion`, `sonido.mueve`); 1-PS4-1 con 7 tareas; textos cortos para 1.º. Nueva familia `vibration` y `VibrationBench`. Verificada en tableta. 16 unidades abiertas.
+
+## 2026-10-17 · CI-26: C4-U03 «Transferir y transformar»
+- Modelo cualitativo de tres dispositivos (`labs/transferencias.ts`): qué forma de energía entra y cuáles salen (lámpara: electricidad → luz y calor; campana: movimiento → sonido; molinete: movimiento → movimiento). El niño usa el dispositivo y dibuja el diagrama; la comprobación dice qué falta o sobra sin decir «incorrecto».
+- Dos ideas (`energia.transfiere`, `energia.transforma`); 4-PS3-2 y 4-PS3-4 con 7 tareas cada uno; nueva familia `energy` y `DeviceBench`. Verificada en tableta. 17 unidades abiertas.

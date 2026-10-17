@@ -20,3 +20,4 @@ export { CycleBoard, CYCLE_POSITIONS, type CycleArrow, type CycleArt, type Cycle
 export { ParticleBench, type ParticleDot, type ParticleGroup } from './particle-bench.tsx';
 export { EventBoard, type EventBin, type EventTile } from './event-board.tsx';
 export { VibrationBench } from './vibration-bench.tsx';
+export { DeviceBench } from './device-bench.tsx';

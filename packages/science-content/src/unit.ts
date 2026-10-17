@@ -14,6 +14,7 @@ import c3u05 from '../content/c3-u05.json';
 import c3u06 from '../content/c3-u06.json';
 import c3u07 from '../content/c3-u07.json';
 import c4u02 from '../content/c4-u02.json';
+import c4u03 from '../content/c4-u03.json';
 import c4u06 from '../content/c4-u06.json';
 import c5u01 from '../content/c5-u01.json';
 import c5u02 from '../content/c5-u02.json';
@@ -23,6 +24,7 @@ import c6u05 from '../content/c6-u05.json';
 import { practiceMapProblems, PRACTICE_MAPS, bandCount, LADERA_DATASETS, type Dataset } from './datasets.ts';
 import { COVERS, SLOPES, runTrials, turbidity, type Cover, type Slope } from './labs/erosion.ts';
 import { LIGHT_OBJECTS, LIGHT_STATES, type LightObject, type LightState } from './labs/luz.ts';
+import { DEVICES, DEVICE_MODEL, EXTRA_DEVICES, FORMS, kindOf, type Device } from './labs/transferencias.ts';
 import { VIB_ACTIONS, VIB_OBJECTS, stateOf, type VibAction, type VibObject } from './labs/vibracion.ts';
 import { EARTH_EVENTS, EVENT_SPEED, SPEEDS, speedOf, type EarthEvent } from './labs/cambios.ts';
 import { AFTERNOON_C, MEASURES, RAIN_DAYS, SEASONS, TOWNS, alwaysDrier, peakSeason, peakTown, type Measure, type Town } from './labs/clima.ts';
@@ -262,6 +264,15 @@ export interface VibrationSetup {
   static?: boolean;
 }
 
+/** Los dispositivos de energía de C4-U03: usar un dispositivo, dibujar lo que entra y lo que sale, o la tabla de los tres. */
+export interface EnergySetup {
+  view: 'device' | 'diagram' | 'table';
+  /** device/diagram: el dispositivo. */
+  device?: Device;
+  /** device: ya se usó (para analizarlo) · diagram: el diagrama ya está hecho y correcto. */
+  static?: boolean;
+}
+
 export interface ChoiceOption {
   id: string;
   text: Localized;
@@ -312,6 +323,7 @@ export interface UnitStep {
   climate?: ClimateSetup;
   earth?: EarthSetup;
   vibration?: VibrationSetup;
+  energy?: EnergySetup;
   /** Pasos de «arreglar la prueba»: el laboratorio resultante según el arreglo que elija el niño (id de la opción). */
   labFixed?: Record<string, LabSetup>;
   choice?: StepChoice;
@@ -412,7 +424,7 @@ export interface ScienceUnit {
 }
 
 /** Las unidades con contenido, por grado. Una unidad con contenido todavía puede esperar su arte (`UNIT_ART_READY` en la app). */
-export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u01 as unknown as ScienceUnit, c1u02 as unknown as ScienceUnit, c1u03 as unknown as ScienceUnit, c2u01 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c2u08 as unknown as ScienceUnit, c3u05 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c3u07 as unknown as ScienceUnit, c4u02 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c5u01 as unknown as ScienceUnit, c5u02 as unknown as ScienceUnit, c5u03 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit, c6u05 as unknown as ScienceUnit];
+export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u01 as unknown as ScienceUnit, c1u02 as unknown as ScienceUnit, c1u03 as unknown as ScienceUnit, c2u01 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c2u08 as unknown as ScienceUnit, c3u05 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c3u07 as unknown as ScienceUnit, c4u02 as unknown as ScienceUnit, c4u03 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c5u01 as unknown as ScienceUnit, c5u02 as unknown as ScienceUnit, c5u03 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit, c6u05 as unknown as ScienceUnit];
 export const scienceUnitContent = (id: string): ScienceUnit | undefined => SCIENCE_UNITS.find((u) => u.id === id);
 
 // ------------------------------------------------------------------ evaluar una tarea
@@ -574,6 +586,12 @@ export function unitProblems(u: ScienceUnit): string[] {
       if (!MATERIAL_TESTS.includes(st.material.test)) p.push(`${st.id}: prueba de materiales desconocida`);
       if (st.material.trials !== undefined && (st.material.trials < 1 || st.material.trials > MATERIALS.length)) p.push(`${st.id}: los materiales a probar van de 1 a ${MATERIALS.length}`);
     }
+    if (st.energy) {
+      const k = st.energy;
+      if (!['device', 'diagram', 'table'].includes(k.view)) p.push(`${st.id}: vista de energía desconocida`);
+      if (k.device !== undefined && !DEVICES.includes(k.device)) p.push(`${st.id}: dispositivo desconocido (${k.device})`);
+      if ((k.view === 'device' || k.view === 'diagram') && !k.device) p.push(`${st.id}: el dispositivo o el diagrama necesitan un dispositivo`);
+    }
     if (st.vibration) {
       const k = st.vibration;
       for (const o of [...(k.object ? [k.object] : []), ...(k.objects ?? [])]) if (!VIB_OBJECTS.includes(o)) p.push(`${st.id}: objeto desconocido (${o})`);
@@ -733,6 +751,7 @@ export function dataTextProblems(u: ScienceUnit): string[] {
   if (u.id === 'C3-U07') return climateTextProblems(u);
   if (u.id === 'C2-U08') return earthTextProblems(u);
   if (u.id === 'C1-U01') return vibrationTextProblems(u);
+  if (u.id === 'C4-U03') return energyTextProblems(u);
   if (u.id !== 'C4-U06') return p;
   const t5 = u.tasks.find((t) => t.id === 't5');
   const base = LADERA_DATASETS.base.rows;
@@ -1112,6 +1131,34 @@ function sortTextProblems(u: ScienceUnit): string[] {
   if (expected('s3.3') !== 'distinto') p.push('s3.3: el mismo objeto cae en grupos distintos');
   if (expected('s3.4') !== propertyOf('pelota', 'brillo')) p.push('s3.4: la pelota va con los que no brillan (mate)');
   if (expected('s2.1') !== 'propiedad') p.push('s2.1: se agrupa por una propiedad');
+  return p;
+}
+
+/** C4-U03: lo que dicen los textos sobre qué entra y qué sale de cada dispositivo coincide con el modelo de energía. */
+function energyTextProblems(u: ScienceUnit): string[] {
+  const p: string[] = [];
+  const steps = u.sessions.flatMap((s) => s.steps);
+  const part = (taskId: string, partId: string) => u.tasks.find((t) => t.id === taskId)?.parts.find((x) => x.id === partId);
+  const opt = (taskId: string, partId: string, id: string) => part(taskId, partId)?.options.find((o) => o.id === id);
+  const expected = (id: string) => steps.find((st) => st.id === id)?.choice?.options.find((o) => o.expected)?.id;
+  const lamp = DEVICE_MODEL.bombilla;
+  // t1 y t5: la lámpara.
+  if (lamp.entra !== 'electricidad' || !lamp.sale.includes('luz') || !lamp.sale.includes('calor') || lamp.sale.includes('sonido')) p.push('t1/t5: la lámpara transforma electricidad en luz y calor');
+  if (opt('t1', 'observaciones', 'luz')?.valid !== true || opt('t1', 'observaciones', 'tibia')?.valid !== true || opt('t1', 'observaciones', 'sonido')?.valid !== false) p.push('t1.observaciones: la bombilla da luz y se siente tibia, no suena');
+  if (opt('t5', 'afirmacion', 'transforma')?.valid !== true || opt('t5', 'afirmacion', 'crea')?.valid !== false || opt('t5', 'afirmacion', 'desaparece')?.valid !== false) p.push('t5.afirmacion: la energía se transforma (no se crea ni desaparece)');
+  // t3 y t4: las predicciones.
+  if (part('t3', 'resultado')?.observedOptionId !== DEVICE_MODEL.campana.sale[0]) p.push('t3.resultado: de la campana sale sonido («sonido»)');
+  if (part('t4', 'resultado')?.observedOptionId !== 'gira' || DEVICE_MODEL.molinete.sale[0] !== 'movimiento') p.push('t4.resultado: el molinete gira («gira»), sale movimiento');
+  // t2: la tabla.
+  if (kindOf('bombilla') !== 'transforma' || kindOf('campana') !== 'transforma' || kindOf('molinete') !== 'transfiere') p.push('t2: la lámpara y la campana transforman y el molinete transfiere');
+  if (opt('t2', 'observaciones', 'crea')?.valid !== false || opt('t2', 'observaciones', 'molinete')?.valid !== false) p.push('t2.observaciones: la lámpara no crea energía y del molinete no sale electricidad');
+  // t7: el tostador.
+  const toaster = EXTRA_DEVICES.tostador;
+  if (toaster.entra !== 'electricidad' || !toaster.sale.some((f) => f === 'calor') || !toaster.sale.some((f) => f === 'luz')) p.push('t7: el tostador transforma electricidad en calor y luz');
+  if (opt('t7', 'entra', 'electricidad')?.valid !== true || opt('t7', 'sale', 'calor')?.valid !== true || opt('t7', 'sale', 'luz')?.valid !== true || opt('t7', 'sale', 'sonido')?.valid !== false) p.push('t7: entra electricidad; salen calor y luz, no sonido');
+  if (!FORMS.includes('sonido')) p.push('las formas de energía incluyen el sonido');
+  if (DEVICES.some((d) => DEVICE_MODEL[d].sale.length === 0)) p.push('de cada dispositivo sale algo');
+  if (expected('s4.2') !== 'siempre') p.push('s4.2: la energía que entra sale en otra forma o pasa a otro lugar');
   return p;
 }
 

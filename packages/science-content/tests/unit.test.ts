@@ -9,7 +9,7 @@ const valids = (t: UnitTask) => Object.fromEntries(t.parts.map((p) => [p.id, p.o
 describe('unidad C4-U06 como datos validados', () => {
   it('es válida: 6 sesiones, 8 tareas (2·2·2·1·1), 3 pistas cada una, textos en ES y EN, sin «incorrecto»', () => {
     expect(unitProblems(unit)).toEqual([]);
-    expect(SCIENCE_UNITS.map((u) => u.id)).toEqual(['C1-U01', 'C1-U02', 'C1-U03', 'C2-U01', 'C2-U02', 'C2-U08', 'C3-U05', 'C3-U06', 'C3-U07', 'C4-U02', 'C4-U06', 'C5-U01', 'C5-U02', 'C5-U03', 'C6-U04', 'C6-U05']);
+    expect(SCIENCE_UNITS.map((u) => u.id)).toEqual(['C1-U01', 'C1-U02', 'C1-U03', 'C2-U01', 'C2-U02', 'C2-U08', 'C3-U05', 'C3-U06', 'C3-U07', 'C4-U02', 'C4-U03', 'C4-U06', 'C5-U01', 'C5-U02', 'C5-U03', 'C6-U04', 'C6-U05']);
     expect(unit.sessions).toHaveLength(6);
     expect(unit.tasks.map((t) => t.kind)).toEqual(['observar', 'observar', 'predecir', 'predecir', 'evidencia', 'modelo', 'transferir', 'reflexionar']);
   });
