@@ -100,7 +100,7 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | CI-10 | Reproductor de sesión por «familias» de laboratorio (erosión, mapa, escena, luz) y catálogo de las 48 unidades | ✅ | A | `subjects/ciencia/families/`, `catalog-screen.tsx`; una unidad nueva solo agrega su familia |
 | CI-11 | C1-U02 «Ver en la oscuridad»: modelo de la luz, unidad en JSON validado, caja de luz y tabla de observaciones | ✅ | A | Lote A recibido (7 imágenes, `manifest-tanda-2a.json`); `UNIT_ART_READY['C1-U02']=true`; verificada en tableta y teléfono |
 | CI-12 | C2-U02 «Un techo para el muñeco» (probador de materiales): modelo, unidad en JSON validado, familia `materials` | ✅ | A | Lote B recibido (9 imágenes, `manifest-tanda-2b.json`); `UNIT_ART_READY['C2-U02']=true`; verificada en tableta y teléfono |
-| CI-13 | C6-U04 «Energía térmica» (probador + constructor de modelos + mesa de datos) | ⬜ | A | arte recibido (Lote C, 8 imágenes); falta modelo, contenido y pantallas |
+| CI-13 | C6-U04 «Energía térmica»: modelo térmico, unidad en JSON validado, banco de la funda y gráfica de líneas | ✅ | A | Lote C recibido (8 imágenes); verificada en tableta y teléfono; 3 expectativas MS-PS3 con ≥ 3 tareas cada una |
 | CI-14 | C3-U06 «Interacciones sin tocar» (fuerzas e imanes) | ⬜ | A | arte recibido (Lote D, 9 imágenes); falta modelo, contenido y pantallas |
 | CI-15 | C5-U02 «Cantidad y propiedades» (materia en sistemas) | ⬜ | A | arte recibido (Lote E, 8 imágenes); falta modelo, contenido y pantallas |
 

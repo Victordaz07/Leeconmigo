@@ -7,9 +7,11 @@ import type { Localized } from '@lee-conmigo/contracts';
 import c1u02 from '../content/c1-u02.json';
 import c2u02 from '../content/c2-u02.json';
 import c4u06 from '../content/c4-u06.json';
+import c6u04 from '../content/c6-u04.json';
 import { practiceMapProblems, PRACTICE_MAPS, bandCount, LADERA_DATASETS, type Dataset } from './datasets.ts';
 import { COVERS, SLOPES, type Cover, type Slope } from './labs/erosion.ts';
 import { LIGHT_OBJECTS, LIGHT_STATES, type LightObject, type LightState } from './labs/luz.ts';
+import { CRITERION_MAX_RISE, LAYER_IDS, MAX_LAYERS, designLabel, meetsCriterion, riseAt10, temperatures, type Layer } from './labs/termico.ts';
 import { bestMaterial, LEVEL_TEXT, MATERIAL_NAME, MATERIAL_TESTS, materialResult, MATERIALS, type MaterialTest } from './labs/materiales.ts';
 import type { ScienceArea } from './map.ts';
 
@@ -70,6 +72,16 @@ export interface MaterialSetup {
   static?: boolean;
 }
 
+/** La funda aislante de C6-U04: diseños que se muestran y/o que el niño arma y prueba. */
+export interface ThermalSetup {
+  /** Diseños (capas) cuyas temperaturas se muestran en la gráfica; el vaso sin funda es `[]`. */
+  show?: Layer[][];
+  /** El niño arma una funda (hasta 3 capas) y la prueba. */
+  build?: { trials?: number; criterion?: boolean };
+  /** El niño traza él mismo la curva del vaso sin funda. */
+  plot?: boolean;
+}
+
 export interface ChoiceOption {
   id: string;
   text: Localized;
@@ -108,6 +120,7 @@ export interface UnitStep {
   lab?: LabSetup;
   light?: LightSetup;
   material?: MaterialSetup;
+  thermal?: ThermalSetup;
   /** Pasos de «arreglar la prueba»: el laboratorio resultante según el arreglo que elija el niño (id de la opción). */
   labFixed?: Record<string, LabSetup>;
   choice?: StepChoice;
@@ -208,7 +221,7 @@ export interface ScienceUnit {
 }
 
 /** Las unidades con contenido, por grado. Una unidad con contenido todavía puede esperar su arte (`UNIT_ART_READY` en la app). */
-export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit];
+export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit];
 export const scienceUnitContent = (id: string): ScienceUnit | undefined => SCIENCE_UNITS.find((u) => u.id === id);
 
 // ------------------------------------------------------------------ evaluar una tarea
@@ -352,6 +365,14 @@ export function unitProblems(u: ScienceUnit): string[] {
       if (!LIGHT_STATES.includes(st.light.light)) p.push(`${st.id}: estado de luz desconocido`);
       if (st.light.trials !== undefined && (st.light.trials < 1 || st.light.trials > 6)) p.push(`${st.id}: los cambios de luz van de 1 a 6`);
     }
+    if (st.thermal) {
+      for (const d of st.thermal.show ?? []) {
+        if (d.length > MAX_LAYERS) p.push(`${st.id}: un diseño tiene más de ${MAX_LAYERS} capas`);
+        for (const l of d) if (!LAYER_IDS.includes(l)) p.push(`${st.id}: capa desconocida (${l})`);
+      }
+      const trials = st.thermal.build?.trials;
+      if (trials !== undefined && (trials < 1 || trials > 6)) p.push(`${st.id}: los diseños a probar van de 1 a 6`);
+    }
     if (st.material) {
       if (!MATERIAL_TESTS.includes(st.material.test)) p.push(`${st.id}: prueba de materiales desconocida`);
       if (st.material.trials !== undefined && (st.material.trials < 1 || st.material.trials > MATERIALS.length)) p.push(`${st.id}: los materiales a probar van de 1 a ${MATERIALS.length}`);
@@ -432,6 +453,7 @@ export function dataTextProblems(u: ScienceUnit): string[] {
   const p: string[] = [];
   if (u.id === 'C1-U02') return lightTextProblems(u);
   if (u.id === 'C2-U02') return materialTextProblems(u);
+  if (u.id === 'C6-U04') return thermalTextProblems(u);
   if (u.id !== 'C4-U06') return p;
   const t5 = u.tasks.find((t) => t.id === 't5');
   const base = LADERA_DATASETS.base.rows;
@@ -517,5 +539,50 @@ function materialTextProblems(u: ScienceUnit): string[] {
   const expected = (id: string) => steps.find((st) => st.id === id)?.choice?.options.find((o) => o.expected)?.id;
   if (expected('s3.3') !== MATERIALS.find((m) => materialResult(m, 'techo') === 'nada')) p.push('s3.3: el material sin paso de agua no coincide con el modelo');
   if (materialResult('tela', 'techo') === materialResult('carton', 'techo') || expected('s3.4') !== 'tela') p.push('s3.4: la tela debe dejar pasar más agua que el cartón');
+  return p;
+}
+
+const joinTemps = (t: number[], lang: 'es' | 'en') => (lang === 'es' ? `${t[0]}, ${t[1]} y ${t[2]}` : `${t[0]}, ${t[1]} and ${t[2]}`);
+
+/** C6-U04: los números que citan los textos coinciden con el modelo térmico (y las respuestas esperadas con sus resultados). */
+function thermalTextProblems(u: ScienceUnit): string[] {
+  const p: string[] = [];
+  const steps = u.sessions.flatMap((s) => s.steps);
+  const opt = (taskId: string, partId: string, id: string) => u.tasks.find((t) => t.id === taskId)?.parts.find((x) => x.id === partId)?.options.find((o) => o.id === id);
+  const need = (where: string, text: string | undefined, needle: string) => {
+    if (!text?.includes(needle)) p.push(`${where}: el texto no dice «${needle}» (modelo)`);
+  };
+  const control = temperatures([]);
+  need('t1.inicio', opt('t1', 'observaciones', 'inicio')?.text.es, `${control[0]} °C`);
+  need('t1.final', opt('t1', 'observaciones', 'final')?.text.es, `${control[2]} °C`);
+  const E1: Layer[] = ['espuma'];
+  const E2: Layer[] = ['espuma', 'espuma'];
+  const A3: Layer[] = ['aluminio', 'aluminio', 'aluminio'];
+  for (const lang of ['es', 'en'] as const) {
+    need(`t5.sin (${lang})`, opt('t5', 'evidencia', 'sin')?.text[lang], joinTemps(control, lang));
+    need(`t5.dos (${lang})`, opt('t5', 'evidencia', 'dos')?.text[lang], joinTemps(temperatures(E2), lang));
+    need(`t6.e2 (${lang})`, opt('t6', 'evidencia', 'e2')?.text[lang], `${joinTemps(temperatures(E2), lang)} °C`);
+    need(`t6.e2 sube (${lang})`, opt('t6', 'evidencia', 'e2')?.text[lang], `${riseAt10(E2)} °C`);
+    need(`t6.a3 (${lang})`, opt('t6', 'evidencia', 'a3')?.text[lang], `${joinTemps(temperatures(A3), lang)} °C`);
+    need(`t6.a3 sube (${lang})`, opt('t6', 'evidencia', 'a3')?.text[lang], `${riseAt10(A3)} °C`);
+    need(`t6.aluminio3 motivo (${lang})`, opt('t6', 'afirmacion', 'aluminio3')?.whyNot?.[lang], `${riseAt10(A3)} °C`);
+    need(`t6.aluminio3 criterio (${lang})`, opt('t6', 'afirmacion', 'aluminio3')?.whyNot?.[lang], `${CRITERION_MAX_RISE} °C`);
+    need(`t6.una motivo (${lang})`, opt('t6', 'afirmacion', 'una')?.whyNot?.[lang], `${riseAt10(E1)} °C`);
+  }
+  need('t2.capas', opt('t2', 'reglas', 'capas')?.text.es, `${MAX_LAYERS} capas`);
+  need('t2.subida', opt('t2', 'reglas', 'subida')?.text.es, `${CRITERION_MAX_RISE} °C`);
+  // Lo «observado» de las predicciones es lo que da el modelo.
+  if (!(riseAt10(E1) < riseAt10([])) || opt('t3', 'resultado', 'menos') === undefined) p.push('t3: una capa de espuma debe subir menos que sin funda');
+  const t3 = u.tasks.find((t) => t.id === 't3')?.parts.find((x) => x.id === 'resultado');
+  if (t3?.observedOptionId !== 'menos') p.push('t3.resultado: lo observado debe ser «menos»');
+  const designs: [string, Layer[]][] = [['espuma2', E2], ['fieltro_espuma', ['fieltro', 'espuma']], ['aluminio3', A3]];
+  const best = [...designs].sort((a, b) => riseAt10(a[1]) - riseAt10(b[1]))[0][0];
+  const t4 = u.tasks.find((t) => t.id === 't4')?.parts.find((x) => x.id === 'diseno');
+  if (t4?.observedOptionId !== best) p.push(`t4.diseno: lo observado debe ser «${best}» (el que sube menos)`);
+  if (!meetsCriterion(E2) || meetsCriterion(E1) || meetsCriterion(A3)) p.push('t6: espuma ×2 debe cumplir el criterio y espuma ×1 y aluminio ×3 no');
+  // Etiquetas de los diseños citadas en las opciones.
+  need('t4.espuma2', opt('t4', 'diseno', 'espuma2')?.text.es?.toLowerCase(), designLabel(E2, 'es').toLowerCase());
+  const pattern = steps.find((st) => st.id === 's3.3')?.choice?.options.find((o) => o.expected)?.id;
+  if (pattern !== 'mas' || !(riseAt10(E2) < riseAt10(E1) && riseAt10(E1) < riseAt10([]))) p.push('s3.3: con más capas debe subir menos');
   return p;
 }

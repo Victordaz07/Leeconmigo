@@ -134,7 +134,7 @@ export const UNIT_ART_READY: Record<string, boolean> = {
   // Arte recibido (lotes C, D y E); estas unidades aún no tienen contenido, así que no se abren.
   'C3-U06': true,
   'C5-U02': true,
-  'C6-U04': true,
+  'C6-U04': true, // Lote C recibido (manifest-tanda-2c)
 };
 
 /** Un build de demo (`EXPO_PUBLIC_DEMO=1`) deja abrir las unidades con arte provisional, para probarlas antes de que llegue. */

@@ -185,3 +185,16 @@ tela, plástico, cartón), vaso de agua compartido con C5 y C6, bandeja con pico
   mismo estilo). Si molesta, pedir `cover_c2_u02` otra vez con el muñeco de `prop_muneco`.
 - **Siguiente (en este orden):** CI-13 C6-U04 → CI-14 C3-U06 → CI-15 C5-U02. Ya hay arte de las tres, así que cada una se verifica con
   arte real desde el primer día.
+
+
+## Actualización CI-13 (2026-10-17): C6-U04 «Energía térmica» hecha y abierta
+- `labs/termico.ts`: temperatura = 10 + redondeo(subida sin funda × factor de las capas); sin funda 10/14/17, 1 capa de espuma
+  10/12/14, 2 capas 10/11/12 (los datos del informe). El aislante **NO enfría**: la temperatura siempre sube, más despacio
+  (probado). Criterio del reto: subir ≤ 3 °C con ≤ 3 capas (lo cumplen espuma ×2, fieltro + espuma…). `THERMAL_MODEL` dice qué NO representa.
+- `content/c6-u04.json` (6 sesiones / 23 pasos, 8 tareas, 3 ideas: `energia.transfiere`, `aislante.frena`, `diseno.evidencia`).
+  Las 3 expectativas MS-PS3-3/4/5 tienen ≥ 3 tareas. `dataTextProblems` ata cada número de los textos (10/14/17, «subió 5 °C»…) al modelo.
+  Ficha: `unidades/C6-U04.md`. Pruebas: `unit-c6u04.test.ts`, `termico.test.ts`.
+- `LineChart` (el niño traza la curva del vaso sin funda tocando; las otras curvas aparecen al acertar) y `ThermalBench` (vaso, funda de
+  hasta 3 capas, termómetro con la lectura como TEXTO de la app) en `ui-native/ciencia`; `families/thermal.tsx`.
+- Errores del tema que la unidad corrige sin decir «incorrecto»: «la funda produce frío», «entra el frío», «la funda produce calor».
+- **Siguiente:** CI-14 C3-U06 (imanes) → CI-15 C5-U02 (sistema cerrado y propiedades). El arte de ambas ya está en `art.ts`.

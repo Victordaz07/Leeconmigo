@@ -8,3 +8,5 @@ export { LayerToggle, PracticeMap, type MapCell, type MapLayers, type MapView2D 
 export { LightBox, type LightArt } from './light-box.tsx';
 export { ResultTable, type ResultCell, type ResultRow } from './result-table.tsx';
 export { MaterialTester, type MaterialArt, type MaterialTile } from './material-tester.tsx';
+export { LineChart, type LineSeries } from './line-chart.tsx';
+export { ThermalBench, type LayerOption, type ThermalArt } from './thermal-bench.tsx';

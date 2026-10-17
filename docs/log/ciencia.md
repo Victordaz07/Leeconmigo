@@ -82,3 +82,7 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
 ## 2026-10-17 · CI-12b: Tanda 2 completa
 - Llegaron los lotes B–E (34 imágenes). Revisadas, convertidas (240 + ~1,3 MB) y conectadas; C2-U02 abierta con arte real. El arte de
   C6, C3 y C5 queda listo para cuando se construyan esas unidades.
+
+## 2026-10-17 · CI-13: C6-U04 «Energía térmica»
+- Modelo térmico determinista que reproduce los datos del informe; unidad con 3 ideas y 3 estándares MS-PS3 (≥ 3 tareas cada uno).
+- Nuevos componentes: gráfica de líneas trazable y banco de la funda; recorrido completo en tableta y teléfono sin errores.
