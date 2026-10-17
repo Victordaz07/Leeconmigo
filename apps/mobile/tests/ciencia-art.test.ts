@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 /** Arte PROVISIONAL (dibujado con código) todavía conectado: vacío cuando llegaron todos los lotes de las unidades abiertas. */
 const PROVISIONAL: string[] = [];
 /** Un manifiesto por tanda/lote recibido. */
-const MANIFESTS = ['manifest-tanda-1.json', 'manifest-tanda-2a.json', 'manifest-tanda-2b.json', 'manifest-tanda-2c.json', 'manifest-tanda-2d.json', 'manifest-tanda-2e.json', 'manifest-tanda-3f.json', 'manifest-tanda-3g.json', 'manifest-tanda-3h.json', 'manifest-tanda-3i.json', 'manifest-tanda-3j.json'];
+const MANIFESTS = ['manifest-tanda-1.json', 'manifest-tanda-2a.json', 'manifest-tanda-2b.json', 'manifest-tanda-2c.json', 'manifest-tanda-2d.json', 'manifest-tanda-2e.json', 'manifest-tanda-3f.json', 'manifest-tanda-3g.json', 'manifest-tanda-3h.json', 'manifest-tanda-3i.json', 'manifest-tanda-3j.json', 'manifest-tanda-4k.json', 'manifest-tanda-4l.json', 'manifest-tanda-4m.json', 'manifest-tanda-4n.json', 'manifest-tanda-4o.json', 'manifest-tanda-4p.json'];
 
 describe('arte de Ciencia', () => {
   it('cada archivo que art.ts referencia existe, y el manifiesto lo describe', async () => {
@@ -12,8 +12,8 @@ describe('arte de Ciencia', () => {
     const dir = new URL('../src/subjects/ciencia/', import.meta.url);
     const art = readFileSync(new URL('art.ts', dir), 'utf8');
     const files = [...art.matchAll(/require\('([^']+)'\)/g)].map((m) => m[1]);
-    // 18 de la Tanda 1 (la escena de la ladera es solo horizontal) + las 41 de la Tanda 2 (lotes A–E) + las 28 de la Tanda 3 (lotes F–J).
-    expect(files.length).toBeGreaterThanOrEqual(87);
+    // 18 de la Tanda 1 (la escena de la ladera es solo horizontal) + las 41 de la Tanda 2 (lotes A–E) + las 28 de la Tanda 3 (lotes F–J) + las 27 de la Tanda 4 (lotes K–P).
+    expect(files.length).toBeGreaterThanOrEqual(114);
     for (const f of files) expect(existsSync(new URL(f, dir)), f).toBe(true);
     let total = 0;
     for (const name of MANIFESTS) {

@@ -1,0 +1,54 @@
+{
+ "project": "Kitewise",
+ "subject": "ciencia",
+ "batch": "tanda-4k",
+ "count": 5,
+ "format": "PNG original de GPT, sin recortar; se convierte a WebP (props y poses recortados a su silueta)",
+ "assets": [
+  {
+   "source": "cover_c1_u01.png",
+   "sha256": "ed6d9acd2c1fc876ed777c9bfabf62342ed85f96682035ceaa62edb4de0acba0",
+   "bytes": 1529749,
+   "output": "apps/mobile/assets/ciencia/covers/cover_c1_u01.webp",
+   "outputBytes": 36800,
+   "width": 1152,
+   "height": 768
+  },
+  {
+   "source": "prop_caja_ligas.png",
+   "sha256": "d8af23442ea7149e5fa7b78a9b68acec71ed3b9073c66cb74e2cfe274cfcb34e",
+   "bytes": 1029876,
+   "output": "apps/mobile/assets/ciencia/props/prop_caja_ligas.webp",
+   "outputBytes": 26090,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_regla_borde.png",
+   "sha256": "e8281b30cc4b5d39fedb29c11bd2ddc5737fbf723ab4a9a041460c6ca1122eb1",
+   "bytes": 382345,
+   "output": "apps/mobile/assets/ciencia/props/prop_regla_borde.webp",
+   "outputBytes": 15436,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_tambor.png",
+   "sha256": "1bc61a984f4e6659a2ec934dab16d7ad5d63ae62c97dfe5b68b35714002899a0",
+   "bytes": 952524,
+   "output": "apps/mobile/assets/ciencia/props/prop_tambor.webp",
+   "outputBytes": 31530,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "scene_c1_u01.png",
+   "sha256": "5f7d5a76403a2f2f7c9b3fb105ceb44786c35a02514092bba943c7ed85d52463",
+   "bytes": 2329510,
+   "output": "apps/mobile/assets/ciencia/bg/scene_c1_u01.webp",
+   "outputBytes": 101542,
+   "width": 1536,
+   "height": 1024
+  }
+ ]
+}

@@ -25,6 +25,11 @@ export const SCENE_ART: Record<string, { source: ImageSourcePropType; aspect: nu
   alfeizar: { source: require('../../../assets/ciencia/bg/scene_c6_u04.webp'), aspect: 1536 / 1024 },
   taller: { source: require('../../../assets/ciencia/bg/scene_c3_u06.webp'), aspect: 1536 / 1024 },
   mesaLab: { source: require('../../../assets/ciencia/bg/scene_c5_u02.webp'), aspect: 1536 / 1024 },
+  musica: { source: require('../../../assets/ciencia/bg/scene_c1_u01.webp'), aspect: 1536 / 1024 },
+  arroyo: { source: require('../../../assets/ciencia/bg/scene_c2_u08.webp'), aspect: 1536 / 1024 },
+  pueblo: { source: require('../../../assets/ciencia/bg/scene_c3_u07.webp'), aspect: 1536 / 1024 },
+  taller2: { source: require('../../../assets/ciencia/bg/scene_c4_u03.webp'), aspect: 1536 / 1024 },
+  valle: { source: require('../../../assets/ciencia/bg/scene_c6_u07.webp'), aspect: 1536 / 1024 },
   costa: { source: require('../../../assets/ciencia/bg/scene_c6_u05.webp'), aspect: 1536 / 1024 },
   aula: { source: require('../../../assets/ciencia/bg/scene_c2_u01.webp'), aspect: 1536 / 1024 },
   sala: { source: require('../../../assets/ciencia/bg/scene_c1_u03.webp'), aspect: 1536 / 1024 },
@@ -37,6 +42,12 @@ const COVER_C5_U02 = require('../../../assets/ciencia/covers/cover_c5_u02.webp')
 /** Portadas: el cuaderno en Inicio y la unidad C4-U06. */
 export const CIENCIA_COVERS = {
   notebook: require('../../../assets/ciencia/covers/cover_ciencia_cuaderno.webp'),
+  c1u01: require('../../../assets/ciencia/covers/cover_c1_u01.webp'),
+  c2u08: require('../../../assets/ciencia/covers/cover_c2_u08.webp'),
+  c3u07: require('../../../assets/ciencia/covers/cover_c3_u07.webp'),
+  c4u03: require('../../../assets/ciencia/covers/cover_c4_u03.webp'),
+  c5u01: require('../../../assets/ciencia/covers/cover_c5_u01.webp'),
+  c6u07: require('../../../assets/ciencia/covers/cover_c6_u07.webp'),
   c6u05: require('../../../assets/ciencia/covers/cover_c6_u05.webp'),
   c2u01: require('../../../assets/ciencia/covers/cover_c2_u01.webp'),
   c1u03: require('../../../assets/ciencia/covers/cover_c1_u03.webp'),
@@ -175,6 +186,34 @@ export const CIENCIA_AGUA = {
   rio: require('../../../assets/ciencia/props/prop_rio.webp'),
   arbol: require('../../../assets/ciencia/props/prop_arbol.webp'),
   suelo: require('../../../assets/ciencia/props/prop_suelo_corte.webp'),
+} satisfies Record<string, ImageSourcePropType>;
+
+/** Arte de la Tanda 4 (lotes K–P, recibidos: `manifest-tanda-4k…4p.json`). Cada unidad usa el suyo cuando se construye. */
+export const CIENCIA_VIBRACION = {
+  regla: require('../../../assets/ciencia/props/prop_regla_borde.webp'),
+  tambor: require('../../../assets/ciencia/props/prop_tambor.webp'),
+  ligas: require('../../../assets/ciencia/props/prop_caja_ligas.webp'),
+} satisfies Record<string, ImageSourcePropType>;
+export const CIENCIA_TIERRA = {
+  volcan: require('../../../assets/ciencia/props/prop_volcan.webp'),
+  canon: require('../../../assets/ciencia/props/prop_canon.webp'),
+  duna: require('../../../assets/ciencia/props/prop_duna.webp'),
+} satisfies Record<string, ImageSourcePropType>;
+export const CIENCIA_CLIMA = {
+  copo: require('../../../assets/ciencia/props/prop_copo_nieve.webp'),
+  manga: require('../../../assets/ciencia/props/prop_manga_viento.webp'),
+  glaciar: require('../../../assets/ciencia/props/prop_glaciar.webp'),
+} satisfies Record<string, ImageSourcePropType>;
+export const CIENCIA_ENERGIA = {
+  molinete: require('../../../assets/ciencia/props/prop_molinete.webp'),
+  campana: require('../../../assets/ciencia/props/prop_campana.webp'),
+  pila: require('../../../assets/ciencia/props/prop_pila.webp'),
+  bombilla: require('../../../assets/ciencia/props/prop_bombilla.webp'),
+} satisfies Record<string, ImageSourcePropType>;
+export const CIENCIA_INVISIBLE = {
+  jeringa: require('../../../assets/ciencia/props/prop_jeringa.webp'),
+  bolsa: require('../../../assets/ciencia/props/prop_bolsa_aire.webp'),
+  vasoColorante: require('../../../assets/ciencia/props/prop_vaso_colorante.webp'),
 } satisfies Record<string, ImageSourcePropType>;
 
 /** Maya, la guía de Ciencia (DC-4, a confirmar por Victor). Misma niña de la historia `la-isla-que-caminaba`. */

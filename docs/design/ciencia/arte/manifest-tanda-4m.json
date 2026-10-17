@@ -1,0 +1,45 @@
+{
+ "project": "Kitewise",
+ "subject": "ciencia",
+ "batch": "tanda-4m",
+ "count": 4,
+ "format": "PNG original de GPT, sin recortar; se convierte a WebP (props y poses recortados a su silueta)",
+ "assets": [
+  {
+   "source": "cover_c3_u07.png",
+   "sha256": "538827eadcfe4b290b566c13c2c61f1a17d99d75bf3d9ddcc38bc49acc4b09fd",
+   "bytes": 2026630,
+   "output": "apps/mobile/assets/ciencia/covers/cover_c3_u07.webp",
+   "outputBytes": 103168,
+   "width": 1152,
+   "height": 768
+  },
+  {
+   "source": "prop_copo_nieve.png",
+   "sha256": "0636ee086ca0b2f5c8878c878885f104bc6f9ef01c1f4793713cdd0e159b3053",
+   "bytes": 912958,
+   "output": "apps/mobile/assets/ciencia/props/prop_copo_nieve.webp",
+   "outputBytes": 45380,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_manga_viento.png",
+   "sha256": "9cac4292fc9a257f1eca63a9206eba7abf22a17baba399086fe5e92500a5d1f0",
+   "bytes": 502068,
+   "output": "apps/mobile/assets/ciencia/props/prop_manga_viento.webp",
+   "outputBytes": 19402,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "scene_c3_u07.png",
+   "sha256": "67951f71daf7eaf0f3f3d30cce41ec997f7bc0c66cc40e776dee299b9e6d699d",
+   "bytes": 2518749,
+   "output": "apps/mobile/assets/ciencia/bg/scene_c3_u07.webp",
+   "outputBytes": 177918,
+   "width": 1536,
+   "height": 1024
+  }
+ ]
+}
