@@ -101,7 +101,7 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | CI-11 | C1-U02 «Ver en la oscuridad»: modelo de la luz, unidad en JSON validado, caja de luz y tabla de observaciones | ✅ | A | Lote A recibido (7 imágenes, `manifest-tanda-2a.json`); `UNIT_ART_READY['C1-U02']=true`; verificada en tableta y teléfono |
 | CI-12 | C2-U02 «Un techo para el muñeco» (probador de materiales): modelo, unidad en JSON validado, familia `materials` | ✅ | A | Lote B recibido (9 imágenes, `manifest-tanda-2b.json`); `UNIT_ART_READY['C2-U02']=true`; verificada en tableta y teléfono |
 | CI-13 | C6-U04 «Energía térmica»: modelo térmico, unidad en JSON validado, banco de la funda y gráfica de líneas | ✅ | A | Lote C recibido (8 imágenes); verificada en tableta y teléfono; 3 expectativas MS-PS3 con ≥ 3 tareas cada una |
-| CI-14 | C3-U06 «Interacciones sin tocar» (fuerzas e imanes) | ⬜ | A | arte recibido (Lote D, 9 imágenes); falta modelo, contenido y pantallas |
+| CI-14 | C3-U06 «Interacciones sin tocar»: modelo del imán, unidad en JSON validado y mesa del imán | ✅ | A | Lote D recibido (9 imágenes); verificada en tableta y teléfono; la electricidad estática del mapa queda pendiente (globo y papelitos ya tienen arte) |
 | CI-15 | C5-U02 «Cantidad y propiedades» (materia en sistemas) | ⬜ | A | arte recibido (Lote E, 8 imágenes); falta modelo, contenido y pantallas |
 
 ---

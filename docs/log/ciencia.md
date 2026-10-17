@@ -86,3 +86,7 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
 ## 2026-10-17 · CI-13: C6-U04 «Energía térmica»
 - Modelo térmico determinista que reproduce los datos del informe; unidad con 3 ideas y 3 estándares MS-PS3 (≥ 3 tareas cada uno).
 - Nuevos componentes: gráfica de líneas trazable y banco de la funda; recorrido completo en tableta y teléfono sin errores.
+
+## 2026-10-17 · CI-14: C3-U06 «Interacciones sin tocar»
+- Modelo del imán (alcances didácticos), unidad con 3 ideas y los dos estándares 3-PS2 (≥ 3 tareas cada uno), mesa del imán con 5 marcas.
+- Decisión: la electricidad estática queda fuera de esta versión (se documenta como pendiente) para no mezclar dos fuerzas en una unidad de 3.º.

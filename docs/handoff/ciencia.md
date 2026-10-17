@@ -198,3 +198,15 @@ tela, plástico, cartón), vaso de agua compartido con C5 y C6, bandeja con pico
   hasta 3 capas, termómetro con la lectura como TEXTO de la app) en `ui-native/ciencia`; `families/thermal.tsx`.
 - Errores del tema que la unidad corrige sin decir «incorrecto»: «la funda produce frío», «entra el frío», «la funda produce calor».
 - **Siguiente:** CI-14 C3-U06 (imanes) → CI-15 C5-U02 (sistema cerrado y propiedades). El arte de ambas ya está en `art.ts`.
+
+
+## Actualización CI-14 (2026-10-17): C3-U06 «Interacciones sin tocar» hecha y abierta
+- `labs/imanes.ts`: un imán GRANDE en herradura, 5 marcas (1 = más cerca), objetos clavo (alcance 3), llave (alcance 2), bloque de plástico y
+  bola de aluminio (nunca se mueven: **un imán no atrae todo, ni todos los metales**). Alcances didácticos. `MAGNET_MODEL` dice qué NO representa.
+- `content/c3-u06.json` (6 sesiones / 23 pasos, 8 tareas, 3 ideas: `iman.sin.tocar`, `fuerza.distancia`, `iman.material`; 3-PS2-3 y 3-PS2-4 con
+  ≥ 3 tareas cada una). 3-PS2-4 (definir un problema de diseño con un imán) se practica en t2/t4/t6/t7 (recoger clips de acero). `dataTextProblems`
+  ata las marcas citadas («1, 2 y 3», «4 y 5») al modelo. Ficha: `unidades/C3-U06.md`.
+- `MagnetBench` (ui-native) y `families/magnets.tsx`: el niño elige marca u objeto y acerca el imán; el objeto se corre hacia el imán SIN tocarlo.
+- **Pendiente de C3-U06:** la parte de **electricidad estática** que el mapa menciona (globo frotado y papelitos). El arte ya está
+  (`CIENCIA_IMANES.globo` y `papelitos`) pero no se usa: es una sesión extra o una unidad aparte; decidir con Victor.
+- **Siguiente:** CI-15 C5-U02 «Cantidad y propiedades» (sistema cerrado, conservación y propiedades; sin densidad: caución del mapa).

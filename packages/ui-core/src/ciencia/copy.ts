@@ -140,6 +140,24 @@ export const CIENCIA_COPY = {
       L('Investigo mecanismos y evalúo modelos', 'I investigate mechanisms and evaluate models'),
     ],
   },
+  /** Imán grande (C3-U06). */
+  magnet: {
+    benchLabel: (object: string, mark: number | null) => L(mark === null ? `Imán grande y ${object}.` : `Imán grande en la marca ${mark}, frente a ${object}.`, mark === null ? `Big magnet and ${object}.` : `Big magnet on mark ${mark}, in front of ${object}.`),
+    mark: (n: number) => L(`Marca ${n}`, `Mark ${n}`),
+    pickMark: L('Toca una marca para poner el imán y acércalo.', 'Tap a mark to put the magnet there and bring it close.'),
+    pickObject: L('Toca un objeto y acerca el imán.', 'Tap an object and bring the magnet close.'),
+    bring: L('Acercar el imán', 'Bring the magnet close'),
+    bringAgain: L('Acercar otra vez', 'Bring it close again'),
+    tested: (n: number, t: number) => L(`Probaste ${n} de ${t}`, `You tested ${n} of ${t}`),
+    testedAll: L('Ya probaste lo que hacía falta. Puedes seguir probando.', 'You tested enough. You can keep testing.'),
+    nearHint: L('La marca 1 es la más cerca del objeto; la 5, la más lejos.', 'Mark 1 is closest to the object; mark 5 is the farthest.'),
+    tableTitle: L('Mis resultados', 'My results'),
+    column: L('¿Se movió?', 'Did it move?'),
+    askAbout: (label: string) => L(`Mira qué pasó con ${label}. ¿Qué anotas?`, `Look at what happened with ${label}. What do you write down?`),
+    pickCell: L('Toca una fila de la tabla y mira qué pasó.', 'Tap a row of the table and look at what happened.'),
+    lookAgain: L('Mira otra vez el objeto y elige de nuevo.', 'Look at the object again and choose again.'),
+    tableComplete: L('Tu tabla está completa.', 'Your table is complete.'),
+  },
   /** Funda aislante (C6-U04). */
   thermal: {
     benchLabel: (design: string) => L(`Vaso con agua fría. Funda: ${design}.`, `Cup of cold water. Sleeve: ${design}.`),

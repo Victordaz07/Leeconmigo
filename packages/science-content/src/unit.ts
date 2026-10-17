@@ -6,11 +6,13 @@
 import type { Localized } from '@lee-conmigo/contracts';
 import c1u02 from '../content/c1-u02.json';
 import c2u02 from '../content/c2-u02.json';
+import c3u06 from '../content/c3-u06.json';
 import c4u06 from '../content/c4-u06.json';
 import c6u04 from '../content/c6-u04.json';
 import { practiceMapProblems, PRACTICE_MAPS, bandCount, LADERA_DATASETS, type Dataset } from './datasets.ts';
 import { COVERS, SLOPES, type Cover, type Slope } from './labs/erosion.ts';
 import { LIGHT_OBJECTS, LIGHT_STATES, type LightObject, type LightState } from './labs/luz.ts';
+import { MAGNET_MARKS, MAGNET_OBJECTS, magnetMoves, type MagnetObject } from './labs/imanes.ts';
 import { CRITERION_MAX_RISE, LAYER_IDS, MAX_LAYERS, designLabel, meetsCriterion, riseAt10, temperatures, type Layer } from './labs/termico.ts';
 import { bestMaterial, LEVEL_TEXT, MATERIAL_NAME, MATERIAL_TESTS, materialResult, MATERIALS, type MaterialTest } from './labs/materiales.ts';
 import type { ScienceArea } from './map.ts';
@@ -82,6 +84,20 @@ export interface ThermalSetup {
   plot?: boolean;
 }
 
+/** El imán grande y los objetos de C3-U06. */
+export interface MagnetSetup {
+  /** Un solo objeto y se cambia la marca del imán. */
+  object?: MagnetObject;
+  /** Varios objetos entre los que el niño elige (con el imán en `position`). */
+  objects?: MagnetObject[];
+  /** Marca fija del imán (1 = más cerca). Sin ella el niño elige la marca. */
+  position?: number;
+  /** Cuántas pruebas (marcas u objetos distintos) hace el niño en este paso. */
+  trials?: number;
+  /** Se muestran los resultados ya hechos (para analizarlos). */
+  static?: boolean;
+}
+
 export interface ChoiceOption {
   id: string;
   text: Localized;
@@ -121,6 +137,7 @@ export interface UnitStep {
   light?: LightSetup;
   material?: MaterialSetup;
   thermal?: ThermalSetup;
+  magnet?: MagnetSetup;
   /** Pasos de «arreglar la prueba»: el laboratorio resultante según el arreglo que elija el niño (id de la opción). */
   labFixed?: Record<string, LabSetup>;
   choice?: StepChoice;
@@ -221,7 +238,7 @@ export interface ScienceUnit {
 }
 
 /** Las unidades con contenido, por grado. Una unidad con contenido todavía puede esperar su arte (`UNIT_ART_READY` en la app). */
-export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit];
+export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit];
 export const scienceUnitContent = (id: string): ScienceUnit | undefined => SCIENCE_UNITS.find((u) => u.id === id);
 
 // ------------------------------------------------------------------ evaluar una tarea
@@ -365,6 +382,12 @@ export function unitProblems(u: ScienceUnit): string[] {
       if (!LIGHT_STATES.includes(st.light.light)) p.push(`${st.id}: estado de luz desconocido`);
       if (st.light.trials !== undefined && (st.light.trials < 1 || st.light.trials > 6)) p.push(`${st.id}: los cambios de luz van de 1 a 6`);
     }
+    if (st.magnet) {
+      for (const o of [...(st.magnet.object ? [st.magnet.object] : []), ...(st.magnet.objects ?? [])]) if (!MAGNET_OBJECTS.includes(o)) p.push(`${st.id}: objeto desconocido (${o})`);
+      if (st.magnet.position !== undefined && !(MAGNET_MARKS as readonly number[]).includes(st.magnet.position)) p.push(`${st.id}: marca del imán fuera del recorrido`);
+      if (st.magnet.trials !== undefined && (st.magnet.trials < 1 || st.magnet.trials > 5)) p.push(`${st.id}: las pruebas van de 1 a 5`);
+      if (!st.magnet.object && !st.magnet.objects?.length) p.push(`${st.id}: el imán necesita un objeto`);
+    }
     if (st.thermal) {
       for (const d of st.thermal.show ?? []) {
         if (d.length > MAX_LAYERS) p.push(`${st.id}: un diseño tiene más de ${MAX_LAYERS} capas`);
@@ -454,6 +477,7 @@ export function dataTextProblems(u: ScienceUnit): string[] {
   if (u.id === 'C1-U02') return lightTextProblems(u);
   if (u.id === 'C2-U02') return materialTextProblems(u);
   if (u.id === 'C6-U04') return thermalTextProblems(u);
+  if (u.id === 'C3-U06') return magnetTextProblems(u);
   if (u.id !== 'C4-U06') return p;
   const t5 = u.tasks.find((t) => t.id === 't5');
   const base = LADERA_DATASETS.base.rows;
@@ -584,5 +608,37 @@ function thermalTextProblems(u: ScienceUnit): string[] {
   need('t4.espuma2', opt('t4', 'diseno', 'espuma2')?.text.es?.toLowerCase(), designLabel(E2, 'es').toLowerCase());
   const pattern = steps.find((st) => st.id === 's3.3')?.choice?.options.find((o) => o.expected)?.id;
   if (pattern !== 'mas' || !(riseAt10(E2) < riseAt10(E1) && riseAt10(E1) < riseAt10([]))) p.push('s3.3: con más capas debe subir menos');
+  return p;
+}
+
+const joinMarks = (marks: number[], lang: 'es' | 'en') => (marks.length === 1 ? `${marks[0]}` : lang === 'es' ? `${marks.slice(0, -1).join(', ')} y ${marks[marks.length - 1]}` : `${marks.slice(0, -1).join(', ')} and ${marks[marks.length - 1]}`);
+
+/** C3-U06: lo que dicen los textos sobre marcas y objetos coincide con el modelo del imán. */
+function magnetTextProblems(u: ScienceUnit): string[] {
+  const p: string[] = [];
+  const steps = u.sessions.flatMap((s) => s.steps);
+  const part = (taskId: string, partId: string) => u.tasks.find((t) => t.id === taskId)?.parts.find((x) => x.id === partId);
+  // Lo que el niño verá en la marca 5 y con el aluminio es lo que dice el modelo.
+  if (magnetMoves('clavo', 5)) p.push('t3: con el imán en la marca 5 el clavo no debe moverse');
+  if (part('t3', 'resultado')?.observedOptionId !== 'nada') p.push('t3.resultado: lo observado debe ser «nada»');
+  if (magnetMoves('aluminio', 1)) p.push('t4: la bola de aluminio no debe moverse');
+  if (part('t4', 'resultado')?.observedOptionId !== 'nada') p.push('t4.resultado: lo observado debe ser «nada»');
+  // t5: las marcas citadas son las del modelo.
+  const near = MAGNET_MARKS.filter((m) => magnetMoves('clavo', m));
+  const far = MAGNET_MARKS.filter((m) => !magnetMoves('clavo', m));
+  const ev = part('t5', 'evidencia');
+  for (const lang of ['es', 'en'] as const) {
+    const lead = lang === 'es' ? 'En las marcas' : 'On marks';
+    if (!ev?.options.find((o) => o.id === 'cerca')?.text[lang].includes(`${lead} ${joinMarks(near, lang)}`)) p.push(`t5.evidencia.cerca (${lang}): debe decir «${lead} ${joinMarks(near, lang)}» (modelo)`);
+    if (!ev?.options.find((o) => o.id === 'lejos')?.text[lang].includes(`${lead} ${joinMarks(far, lang)}`)) p.push(`t5.evidencia.lejos (${lang}): debe decir «${lead} ${joinMarks(far, lang)}» (modelo)`);
+    const why = part('t5', 'afirmacion')?.options.find((o) => o.id === 'siempre')?.whyNot?.[lang] ?? '';
+    if (!why.includes(joinMarks(far, lang))) p.push(`t5.afirmacion.siempre (${lang}): debe citar las marcas ${joinMarks(far, lang)}`);
+  }
+  // Las respuestas esperadas de las preguntas del paso coinciden con el modelo.
+  const expected = (id: string) => steps.find((st) => st.id === id)?.choice?.options.find((o) => o.expected)?.id;
+  if (expected('s3.3') !== 'cerca' || !near.every((m) => m < Math.min(...far))) p.push('s3.3: el patrón «cerca sí, lejos no» no coincide con el modelo');
+  if (expected('s3.4') !== 'no') p.push('s3.4: un imán no mueve desde cualquier distancia');
+  // El plástico y el aluminio nunca se mueven: las observaciones válidas de t2 solo dicen eso.
+  if (MAGNET_OBJECTS.some((o) => (o === 'bloque' || o === 'aluminio') && MAGNET_MARKS.some((m) => magnetMoves(o, m)))) p.push('t2: el bloque y el aluminio no deben moverse nunca');
   return p;
 }
