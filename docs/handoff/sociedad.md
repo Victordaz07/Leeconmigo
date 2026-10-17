@@ -17,8 +17,44 @@ Sociedad es un camino de 6 paradas (como Matemáticas), no una sola unidad. `ava
 | 5.º | S5-U04 "Un ideal escrito y una realidad histórica" | 2 testimonios + clasificar, tema sensible | no necesita (a propósito) |
 | 6.º | S6-U02 "Un asentamiento junto al río" | simulación ficticia, puro razonamiento | ✅ `asentamiento_mapa` |
 
-Hecho: SO-01 a SO-09 para las 6 (ver checklist). Pendiente real: **solo SO-08** (revisión de un maestro, con
+Hecho: SO-01 a SO-10 para las 6 (ver checklist). Pendiente real: **solo SO-08** (revisión de un maestro, con
 atención extra a 4.º y 5.º por temas sensibles) y la verificación visual en equipo real.
+
+**SO-10 (nuevo, 2026-10-17):** le pedí a Victor un prompt de investigación (`docs/research/PROMPT-INVESTIGACION-
+VALIDACION-SOCIEDAD.md`) para verificar con fuentes reales cada afirmación histórica concreta de las 6 unidades
+antes de que un niño las use. Victor corrió esa investigación y trajo el resultado completo. Veredicto: 1.º/2.º/
+6.º "lista con cambios menores"; 4.º/5.º "necesita revisión más profunda"; 3.º no estaba en el alcance de esa
+ronda (no es un hueco nuevo, solo no se volvió a revisar). Ya aplicado:
+
+- **4.º (`s4u03.json`)**: el relato de la fuente `relato` decía, sin matizarlo, que las familias "mantuvieron su
+  idioma y costumbres, aun en condiciones muy difíciles" — ahora nombra explícitamente que fueron obligadas por
+  misioneros y soldados a quedarse y trabajar, que su libertad fue limitada, que las enfermedades causaron
+  muchas muertes, Y que resistieron y conservaron/adaptaron parte de su cultura, con comunidades vivas hoy que
+  trabajan por recuperar lengua y tradición (ni solo sufrimiento ni solo "mantuvieron su cultura intacta"). Las
+  opciones de los pasos `s3`/`s5` se actualizaron para que sigan correspondiendo a la cita. Caption de la fuente
+  aclara "con fuentes verificadas".
+- **5.º (`s5u04.json`)**: "millones de personas estaban esclavizadas" (impreciso para 1776; el estimado real es
+  del orden de cientos de miles) → "cientos de miles"; se agregó el matiz de que algunas mujeres con propiedad
+  en Nueva Jersey sí pudieron votar por un tiempo, y que la exclusión de muchos hombres fue por falta de
+  suficiente propiedad; "derechos que nadie les puede quitar" → "derechos que nadie tenía autoridad para
+  arrebatarles" (más fiel a la idea de derecho, no solo de que nadie *pueda* físicamente); la fuente del ideal
+  se etiqueta explícitamente como "paráfrasis para estudiantes". Los dos pasos `elegir` (`s4`/`s5`) se
+  actualizaron para que las frases que clasifican sigan siendo las mismas que las fuentes corregidas. `standard`
+  se precisó a "CA HSS 5.5.3, 5.6.7".
+- **1.º (`s1u01.json`)**: `standard` → "CA HSS 1.1.1-1.1.2"; el paso `s2` ahora deja claro que la regla la
+  proponen los propios niños entre todos (participación directa), no "alguien" sin nombre.
+- **2.º (`s2u01.json`)**: el paso `s1` agrega la comparación temporal explícita (el cuaderno es de "hace mucho
+  más tiempo" que el de Inés hoy); el caption de `cuaderno_viejo` ahora aclara "ilustración para practicar (no
+  un documento histórico real)".
+- **6.º (`s6u02.json`)**: `standard` → "CA HSS 6.2.1"; el paso `revisar` ahora nombra explícitamente que la
+  simulación "usa solo imaginación, sin evidencia arqueológica real", para no confundir el razonamiento de la
+  simulación con evidencia real.
+- **3.º (`s3u03.json`)**: sin cambios — quedó fuera del alcance de esta ronda de investigación.
+
+Esto es una corrección de precisión histórica sobre el TEXTO que ya existía, no una aprobación nueva: el propio
+veredicto de la investigación aclara que no cubre pantallas completas, ilustraciones, ni retroalimentación — eso
+sigue dependiendo de SO-08 (un maestro de verdad). `npm run typecheck` limpio y `npm test` **1222/1222 ✅**
+después de aplicar todo (ninguna prueba dependía del texto exacto de las citas que cambiaron).
 
 ## Antes de empezar
 1. Lee `docs/14-MATERIAS-EN-PARALELO.md` y `docs/design/subjects/PATRON-MATEMATICAS.md`.

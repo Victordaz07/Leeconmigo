@@ -26,8 +26,8 @@
       "kind": "testimonio",
       "title": { "es": "Lo que cuenta la historia", "en": "What history tells us" },
       "caption": {
-        "es": "Un resumen, con cuidado, de lo que sabemos sobre las familias indígenas de ese período.",
-        "en": "A careful summary of what we know about Indigenous families from that period."
+        "es": "Un resumen, con fuentes verificadas, de lo que sabemos sobre las familias indígenas de ese período.",
+        "en": "A summary, checked against real sources, of what we know about Indigenous families from that period."
       },
       "art": null
     }
@@ -66,12 +66,12 @@
       },
       "sourceId": "relato",
       "quote": {
-        "es": "«Las familias indígenas que vivían y trabajaban en las misiones mantuvieron su idioma y sus costumbres, aun en condiciones muy difíciles. Sus descendientes siguen presentes en California hoy.»",
-        "en": "“The Indigenous families who lived and worked at the missions kept their language and customs, even under very difficult conditions. Their descendants are still present in California today.”"
+        "es": "«Muchos indígenas fueron obligados por los misioneros y los soldados a permanecer y trabajar en las misiones. Su libertad y sus formas de vida fueron limitadas, y las enfermedades causaron muchas muertes. Las personas indígenas resistieron de distintas maneras y conservaron o adaptaron partes de sus culturas. Sus comunidades siguen vivas hoy y trabajan para mantener y recuperar sus lenguas y tradiciones.»",
+        "en": "“Missionaries and soldiers forced many Indigenous people to stay and work at the missions. Their freedom and ways of life were restricted, and disease caused many deaths. Indigenous people resisted in different ways and kept or adapted parts of their cultures. Their communities are still here today, working to keep and recover their languages and traditions.”"
       },
       "choices": [
-        { "id": "a", "text": { "es": "Que las personas indígenas mantuvieron su cultura, a pesar de condiciones difíciles.", "en": "That Indigenous people kept their culture, despite difficult conditions." } },
-        { "id": "b", "text": { "es": "Que a todos les gustaba vivir ahí.", "en": "That everyone enjoyed living there." } },
+        { "id": "a", "text": { "es": "Que fueron obligadas a quedarse y trabajar, y que después resistieron y conservaron parte de su cultura.", "en": "That they were forced to stay and work, and that they later resisted and kept part of their culture." } },
+        { "id": "b", "text": { "es": "Que todas las personas vivían ahí por su propia voluntad.", "en": "That everyone living there did so by their own choice." } },
         { "id": "c", "text": { "es": "El tamaño exacto del edificio.", "en": "The exact size of the building." } }
       ],
       "preferredChoiceIds": ["a"]

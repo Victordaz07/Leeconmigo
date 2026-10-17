@@ -16,8 +16,8 @@
       "kind": "foto",
       "title": { "es": "El cuaderno viejo", "en": "The old notebook" },
       "caption": {
-        "es": "Un cuaderno gastado que Inés encontró, con el número 2005 escrito en la tapa.",
-        "en": "A worn notebook Inés found, with the number 2005 written on the cover."
+        "es": "Una ilustración para practicar (no un documento histórico real): un cuaderno gastado que Inés encontró, con el número 2005 escrito en la tapa.",
+        "en": "A practice illustration (not a real historical document): a worn notebook Inés found, with the number 2005 written on the cover."
       },
       "art": "cuadernoViejo"
     },
@@ -38,8 +38,8 @@
       "kind": "pregunta",
       "art": "cuadernoViejo",
       "prompt": {
-        "es": "Inés encontró este cuaderno viejo en una caja. ¿Qué podemos saber con él?",
-        "en": "Inés found this old notebook in a box. What can we learn from it?"
+        "es": "Inés encontró este cuaderno viejo en una caja. Es de hace mucho más tiempo que su cuaderno de ahora. ¿Qué podemos saber con él?",
+        "en": "Inés found this old notebook in a box. It's from a much longer time ago than her notebook today. What can we learn from it?"
       }
     },
     {

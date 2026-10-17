@@ -193,3 +193,32 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
   arte nuevo).
 - **Las 6 unidades piloto de Sociedad quedan con todo su arte.** Pendiente real: solo SO-08 (revisión de un
   maestro) y verificación visual en equipo real.
+
+## 2026-10-17 — SO-10: correcciones de precisión histórica (prompt de validación)
+
+- Le pedí a Victor un prompt de investigación para validar con fuentes reales las afirmaciones históricas
+  concretas de las 6 unidades antes de que un niño las use: `docs/research/PROMPT-INVESTIGACION-VALIDACION-
+  SOCIEDAD.md`. Victor lo corrió y trajo el resultado completo (tablas por grado con fuentes citadas: CDE HSS
+  framework, NCSS C3 Framework, Library of Congress Primary Source Analysis Tool, Smithsonian NMAI, National
+  Archives, Census Bureau, Avalon Project, Penn Museum, y sitios de las propias naciones Muwekma Ohlone /
+  Graton Rancheria / Santa Ynez Band Chumash).
+- Veredicto: 1.º/2.º/6.º "lista con cambios menores"; 4.º/5.º "necesita revisión más profunda"; 3.º fuera del
+  alcance de esta ronda (no es un hueco nuevo).
+- Aplicado en el contenido (detalle completo en `docs/handoff/sociedad.md`):
+  - `s4u03.json` (4.º): la cita de `relato` ahora nombra el trabajo forzado, la libertad limitada y las
+    enfermedades, Y la resistencia/persistencia cultural con comunidades vivas hoy — ya no solo "mantuvieron su
+    idioma, aun en condiciones difíciles" sin matizar la coerción. Opciones de `s3`/`s5` actualizadas a juego.
+  - `s5u04.json` (5.º): "millones de esclavizados" → "cientos de miles" (cifra real para 1776); se agregó el
+    matiz de mujeres propietarias en Nueva Jersey y de la exclusión de hombres por falta de propiedad; "nadie
+    les puede quitar" → "nadie tenía autoridad para arrebatarles"; la fuente se etiqueta "paráfrasis para
+    estudiantes"; `standard` precisado a "CA HSS 5.5.3, 5.6.7".
+  - `s1u01.json` (1.º): `standard` → "CA HSS 1.1.1-1.1.2"; `s2` ahora deja explícito que la regla la proponen
+    los propios niños (participación directa).
+  - `s2u01.json` (2.º): `s1` agrega la comparación temporal explícita; caption de `cuaderno_viejo` aclara
+    "ilustración para practicar (no un documento histórico real)".
+  - `s6u02.json` (6.º): `standard` → "CA HSS 6.2.1"; el paso `revisar` nombra que la simulación "usa solo
+    imaginación, sin evidencia arqueológica real".
+- Esto corrige precisión histórica del texto ya existente; **no sustituye SO-08** (revisión de un maestro de
+  verdad) — el propio veredicto de la investigación aclara que no cubre pantallas completas ni ilustraciones.
+- `npm run typecheck` en todo el monorepo: limpio. `npm test`: **1222/1222 ✅** (ninguna prueba dependía del
+  texto exacto de las citas que cambiaron).

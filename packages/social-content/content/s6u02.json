@@ -1,7 +1,7 @@
 {
   "id": "s6u02",
   "grade": 6,
-  "standard": "CA HSS 6.2",
+  "standard": "CA HSS 6.2.1",
   "standardsReview": {
     "status": "draftPendingTeacherReview",
     "confidence": "highAtUnitLevel",
@@ -53,8 +53,8 @@
       "id": "s4",
       "kind": "revisar",
       "prompt": {
-        "es": "Con esta simulación, ¿qué NO podemos saber todavía sobre un asentamiento real?",
-        "en": "With this simulation, what CAN'T we know yet about a real settlement?"
+        "es": "Esta simulación usa solo imaginación, sin evidencia arqueológica real. ¿Qué NO podemos saber todavía sobre un asentamiento real?",
+        "en": "This simulation uses imagination only, with no real archaeological evidence. What CAN'T we know yet about a real settlement?"
       },
       "choices": [
         { "id": "a", "text": { "es": "Qué tan buena era el agua de ese río para beber.", "en": "How good that river's water was for drinking." } },

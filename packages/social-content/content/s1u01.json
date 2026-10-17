@@ -1,7 +1,7 @@
 {
   "id": "s1u01",
   "grade": 1,
-  "standard": "CA HSS 1.1",
+  "standard": "CA HSS 1.1.1-1.1.2",
   "standardsReview": {
     "status": "draftPendingTeacherReview",
     "confidence": "highAtUnitLevel",
@@ -24,8 +24,8 @@
       "id": "s2",
       "kind": "elegir",
       "prompt": {
-        "es": "Alguien propone tres ideas. ¿Cuál te parece mejor?",
-        "en": "Someone suggests three ideas. Which one seems best to you?"
+        "es": "Los cuatro niños proponen tres ideas entre todos. ¿Cuál te parece mejor?",
+        "en": "The four kids come up with three ideas together. Which one seems best to you?"
       },
       "choices": [
         { "id": "turnos", "text": { "es": "Usar turnos: cada quien juega un rato.", "en": "Take turns: everyone plays for a while." } },

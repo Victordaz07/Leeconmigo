@@ -113,4 +113,5 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | SO-07 | Verificar en 4 tamaños y `available: true` | ✅ (parcial) | B | typecheck + test ✅ (1222/1222); sin verificación visual en equipo real (ver handoff) |
 | SO-08 | Revisión de un maestro (estándares: borrador) | ⬜ | – | pendiente real; atención extra a 4.º/5.º (temas sensibles) |
 | SO-09 | 3 imágenes que faltan (2.º, 4.º, 6.º) | ✅ | B | llegaron, convertidas y conectadas — las 6 unidades tienen todo su arte |
+| SO-10 | Investigación de validación histórica (prompt propio) → correcciones aplicadas | ✅ | B | 4.º y 5.º revisión profunda (cita/opciones corregidas), 1.º/2.º/6.º cambios menores (estándar, enfoque); no sustituye SO-08 |
 
