@@ -1,0 +1,1845 @@
+{
+ "id": "C5-U03",
+ "grade": 5,
+ "area": "materia",
+ "title": {
+  "es": "Mezclas bajo investigación",
+  "en": "Mixtures under investigation"
+ },
+ "question": {
+  "es": "¿Apareció algo nuevo?",
+  "en": "Did something new appear?"
+ },
+ "standards": [
+  "5-PS1-4"
+ ],
+ "standardTasks": {
+  "5-PS1-4": [
+   "t1",
+   "t2",
+   "t3",
+   "t4",
+   "t5",
+   "t6",
+   "t7"
+  ]
+ },
+ "ideas": [
+  {
+   "id": "mezcla.sigue",
+   "text": {
+    "es": "En una mezcla (como sal o arena con agua) cada cosa sigue siendo la misma y se puede recuperar; que ya no se vea no quiere decir que se hizo algo nuevo.",
+    "en": "In a mixture (like salt or sand with water) each thing stays the same and can be recovered; not being visible doesn’t mean something new was made."
+   },
+   "misconception": {
+    "es": "Si algo ya no se ve al mezclarlo, se convirtió en algo nuevo.",
+    "en": "If something can’t be seen after mixing, it turned into something new."
+   },
+   "contexts": [
+    "agua",
+    "arena",
+    "comparacion",
+    "limonada"
+   ]
+  },
+  {
+   "id": "sustancia.nueva",
+   "text": {
+    "es": "Una sustancia nueva se reconoce con evidencias (como burbujas de gas) y porque lo de antes ya no se puede recuperar; una sola prueba no basta.",
+    "en": "A new substance is recognized by evidence (like bubbles of gas) and because what you had before can’t be recovered; one test is not enough."
+   },
+   "misconception": {
+    "es": "Siempre que se mezclan dos cosas sale una sustancia nueva, o nunca sale.",
+    "en": "When two things are mixed a new substance always appears, or never does."
+   },
+   "contexts": [
+    "tabla",
+    "vinagre",
+    "comparacion",
+    "limonada"
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "es": "mezcla",
+   "en": "mixture",
+   "note": {
+    "es": "Dos o más cosas juntas en las que cada una sigue siendo la misma y se pueden volver a separar.",
+    "en": "Two or more things together where each one stays the same and they can be separated again."
+   }
+  },
+  {
+   "es": "sustancia",
+   "en": "substance",
+   "note": {
+    "es": "Un tipo de materia, como la sal, el azúcar o el agua; una sustancia nueva es una distinta de las que había.",
+    "en": "A kind of matter, like salt, sugar or water; a new substance is one different from the ones you had."
+   }
+  },
+  {
+   "es": "recuperar",
+   "en": "to recover",
+   "note": {
+    "es": "Volver a obtener lo que se había mezclado, por ejemplo evaporando el agua o separando con un colador.",
+    "en": "To get back what was mixed, for example by evaporating the water or separating with a strainer."
+   }
+  }
+ ],
+ "sessions": [
+  {
+   "id": "s1",
+   "title": {
+    "es": "¿Qué pasa al mezclar?",
+    "en": "What happens when we mix?"
+   },
+   "objective": {
+    "es": "Mirar sin interpretar y decir una primera idea.",
+    "en": "Look without interpreting and share a first idea."
+   },
+   "steps": [
+    {
+     "id": "s1.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Mezclamos sal con agua en un vasito. Mira lo que se ve y lo que no.",
+      "en": "We mix salt with water in a small cup. Look at what you can see and what you can’t."
+     },
+     "scene": "mesaLab",
+     "matter": {
+      "view": "mix",
+      "mixTests": [
+       "burbujas",
+       "recuperar"
+      ],
+      "mixes": [
+       "sal_agua"
+      ],
+      "static": true
+     }
+    },
+    {
+     "id": "s1.2",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "Elige dos cosas que viste.",
+      "en": "Pick two things you saw."
+     },
+     "taskId": "t1",
+     "saves": "observación",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "mix",
+      "mixTests": [
+       "burbujas",
+       "recuperar"
+      ],
+      "mixes": [
+       "sal_agua"
+      ],
+      "static": true
+     }
+    },
+    {
+     "id": "s1.3",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Creo que cuando mezclo dos cosas…",
+      "en": "I think that when I mix two things…"
+     },
+     "saves": "idea inicial",
+     "scene": "mesaLab",
+     "choice": {
+      "id": "ideaInicial",
+      "multi": false,
+      "options": [
+       {
+        "id": "siempre",
+        "text": {
+         "es": "siempre sale algo nuevo.",
+         "en": "something new always appears."
+        }
+       },
+       {
+        "id": "aveces",
+        "text": {
+         "es": "a veces sale algo nuevo y a veces no.",
+         "en": "sometimes something new appears and sometimes not."
+        }
+       },
+       {
+        "id": "nunca",
+        "text": {
+         "es": "nunca sale algo nuevo.",
+         "en": "something new never appears."
+        }
+       },
+       {
+        "id": "nose",
+        "text": {
+         "es": "todavía no sé.",
+         "en": "I don’t know yet."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s1.4",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "¿Cómo sabemos si apareció algo nuevo? Hace falta hacer pruebas: buscar señales y ver si se puede recuperar lo de antes.",
+      "en": "How do we know if something new appeared? We need tests: look for signs and see whether you can get back what you had."
+     },
+     "scene": "mesaLab"
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "title": {
+    "es": "Pruebas para decidir",
+    "en": "Tests to decide"
+   },
+   "objective": {
+    "es": "Hacer pruebas iguales a cada mezcla y compararlas con lo que predije.",
+    "en": "Run the same tests on each mixture and compare with what I predicted."
+   },
+   "steps": [
+    {
+     "id": "s2.1",
+     "phase": "observa",
+     "kind": "elegir",
+     "text": {
+      "es": "Vamos a comparar mezclas. ¿Qué hacemos igual en todas?",
+      "en": "We are going to compare mixtures. What do we do the same in all of them?"
+     },
+     "saves": "qué se cuida",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "mix",
+      "mixTests": [
+       "burbujas",
+       "recuperar"
+      ],
+      "mixes": [
+       "sal_agua"
+      ],
+      "static": true
+     },
+     "choice": {
+      "id": "queCuida",
+      "multi": false,
+      "options": [
+       {
+        "id": "igual",
+        "text": {
+         "es": "Poca cantidad, el mismo tipo de vasito abierto y las mismas dos pruebas.",
+         "en": "A small amount, the same kind of open cup and the same two tests."
+        },
+        "expected": true
+       },
+       {
+        "id": "distinto",
+        "text": {
+         "es": "Una prueba distinta para cada mezcla.",
+         "en": "A different test for each mixture."
+        }
+       },
+       {
+        "id": "cerrar",
+        "text": {
+         "es": "Cerrar el vasito para que no se escape nada.",
+         "en": "Close the cup so nothing escapes."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s2.2",
+     "phase": "explora",
+     "kind": "predecir",
+     "text": {
+      "es": "Voy a mezclar bicarbonato con vinagre en un vasito abierto. ¿Habrá burbujas? Porque…",
+      "en": "I’m going to mix baking soda with vinegar in an open cup. Will there be bubbles? Because…"
+     },
+     "taskId": "t3",
+     "saves": "predicción",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "mix",
+      "mixTests": [
+       "burbujas",
+       "recuperar"
+      ],
+      "mixes": [
+       "bicarbonato_vinagre"
+      ],
+      "static": true,
+      "hidden": true
+     }
+    },
+    {
+     "id": "s2.3",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Haz las dos pruebas con el bicarbonato y el vinagre: toca cada casilla.",
+      "en": "Run both tests on the baking soda and vinegar: tap each box."
+     },
+     "saves": "observación",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "mix",
+      "mixTests": [
+       "burbujas",
+       "recuperar"
+      ],
+      "mixes": [
+       "bicarbonato_vinagre"
+      ],
+      "trials": 2
+     }
+    },
+    {
+     "id": "s2.4",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Compara lo que predijiste con lo que viste.",
+      "en": "Compare what you predicted with what you saw."
+     },
+     "saves": "comparación",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "mix",
+      "mixTests": [
+       "burbujas",
+       "recuperar"
+      ],
+      "mixes": [
+       "bicarbonato_vinagre"
+      ],
+      "static": true
+     },
+     "choice": {
+      "id": "comparacion",
+      "multi": false,
+      "options": [
+       {
+        "id": "coincidio",
+        "text": {
+         "es": "Mi predicción coincidió.",
+         "en": "My prediction matched."
+        }
+       },
+       {
+        "id": "nocoincidio",
+        "text": {
+         "es": "Mi predicción no coincidió.",
+         "en": "My prediction didn’t match."
+        }
+       }
+      ],
+      "compareWith": {
+       "taskId": "t3",
+       "partId": "resultado"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "s3",
+   "title": {
+    "es": "Comparar mezclas",
+    "en": "Comparing mixtures"
+   },
+   "objective": {
+    "es": "Probar varias mezclas, buscar el patrón y no quedarme con una sola prueba.",
+    "en": "Test several mixtures, look for the pattern and not rely on a single test."
+   },
+   "steps": [
+    {
+     "id": "s3.1",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Prueba tres mezclas más: toca las casillas de sal con agua, azúcar con agua y arena con agua.",
+      "en": "Test three more mixtures: tap the boxes for salt and water, sugar and water, and sand and water."
+     },
+     "saves": "repetición",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "mix",
+      "mixTests": [
+       "burbujas",
+       "recuperar"
+      ],
+      "mixes": [
+       "sal_agua",
+       "azucar_agua",
+       "arena_agua"
+      ],
+      "trials": 4
+     }
+    },
+    {
+     "id": "s3.2",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "Mira las cinco mezclas. ¿En cuáles hubo burbujas?",
+      "en": "Look at the five mixtures. In which ones were there bubbles?"
+     },
+     "saves": "tabla",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "mix",
+      "mixTests": [
+       "burbujas",
+       "recuperar"
+      ],
+      "mixes": [
+       "sal_agua",
+       "azucar_agua",
+       "arena_agua",
+       "harina_agua",
+       "bicarbonato_vinagre"
+      ],
+      "static": true
+     },
+     "choice": {
+      "id": "burbujas",
+      "multi": false,
+      "options": [
+       {
+        "id": "bicarb",
+        "text": {
+         "es": "Solo en el bicarbonato con vinagre.",
+         "en": "Only in baking soda with vinegar."
+        },
+        "expected": true
+       },
+       {
+        "id": "todas",
+        "text": {
+         "es": "En todas.",
+         "en": "In all of them."
+        }
+       },
+       {
+        "id": "ninguna",
+        "text": {
+         "es": "En ninguna.",
+         "en": "In none."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s3.3",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Mira tu tabla. ¿Qué patrón ves?",
+      "en": "Look at your table. What pattern do you see?"
+     },
+     "saves": "patrón",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "mix",
+      "mixTests": [
+       "burbujas",
+       "recuperar"
+      ],
+      "mixes": [
+       "sal_agua",
+       "azucar_agua",
+       "arena_agua",
+       "harina_agua",
+       "bicarbonato_vinagre"
+      ],
+      "static": true
+     },
+     "choice": {
+      "id": "patron",
+      "multi": false,
+      "options": [
+       {
+        "id": "patron",
+        "text": {
+         "es": "Solo donde hubo burbujas no se pudo recuperar lo de antes; en las otras, sí.",
+         "en": "Only where there were bubbles couldn’t you get back what you had; in the others, you could."
+        },
+        "expected": true
+       },
+       {
+        "id": "todas",
+        "text": {
+         "es": "Se pudo recuperar lo de antes en todas.",
+         "en": "You could get back what you had in all of them."
+        }
+       },
+       {
+        "id": "ninguna",
+        "text": {
+         "es": "No se pudo recuperar lo de antes en ninguna.",
+         "en": "You couldn’t get back what you had in any of them."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s3.4",
+     "phase": "usa",
+     "kind": "elegir",
+     "text": {
+      "es": "Cuando la sal se disuelve en el agua y ya no se ve, ¿apareció una sustancia nueva?",
+      "en": "When the salt dissolves in the water and can’t be seen, did a new substance appear?"
+     },
+     "saves": "disolver",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "mix",
+      "mixTests": [
+       "burbujas",
+       "recuperar"
+      ],
+      "mixes": [
+       "sal_agua"
+      ],
+      "static": true
+     },
+     "choice": {
+      "id": "disolver",
+      "multi": false,
+      "options": [
+       {
+        "id": "no",
+        "text": {
+         "es": "No: la sal sigue ahí y se puede recuperar al evaporar.",
+         "en": "No: the salt is still there and can be recovered by evaporating."
+        },
+        "expected": true
+       },
+       {
+        "id": "si",
+        "text": {
+         "es": "Sí, porque ya no se ve.",
+         "en": "Yes, because it can’t be seen."
+        }
+       },
+       {
+        "id": "nose",
+        "text": {
+         "es": "No sé.",
+         "en": "I don’t know."
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "s4",
+   "title": {
+    "es": "Explicar lo que vi",
+    "en": "Explaining what I saw"
+   },
+   "objective": {
+    "es": "Armar una explicación con mis pruebas y decir con qué la probé.",
+    "en": "Build an explanation from my tests and say what I tested it with."
+   },
+   "steps": [
+    {
+     "id": "s4.1",
+     "phase": "explica",
+     "kind": "texto",
+     "text": {
+      "es": "Palabras nuevas para explicar.",
+      "en": "New words to explain with."
+     },
+     "scene": "mesaLab",
+     "glossary": [
+      "mezcla",
+      "sustancia",
+      "recuperar"
+     ]
+    },
+    {
+     "id": "s4.2",
+     "phase": "explica",
+     "kind": "afirmacion",
+     "text": {
+      "es": "Arma tu explicación: qué dices, qué lo prueba y con qué lo probaste.",
+      "en": "Build your explanation: what you say, what shows it and what you tested it with."
+     },
+     "taskId": "t5",
+     "saves": "explicación",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "mix",
+      "mixTests": [
+       "burbujas",
+       "recuperar"
+      ],
+      "mixes": [
+       "sal_agua",
+       "azucar_agua",
+       "arena_agua",
+       "harina_agua",
+       "bicarbonato_vinagre"
+      ],
+      "static": true
+     }
+    },
+    {
+     "id": "s4.3",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "Tu explicación queda como una página de tu cuaderno.",
+      "en": "Your explanation becomes a page in your notebook."
+     },
+     "saves": "entrada del cuaderno",
+     "scene": "mesaLab"
+    }
+   ]
+  },
+  {
+   "id": "s5",
+   "title": {
+    "es": "Otras mezclas",
+    "en": "Other mixtures"
+   },
+   "objective": {
+    "es": "Probar la arena y la harina y decidir con las dos pruebas.",
+    "en": "Test the sand and the flour and decide with both tests."
+   },
+   "steps": [
+    {
+     "id": "s5.1",
+     "phase": "observa",
+     "kind": "elegir",
+     "text": {
+      "es": "Probamos cinco mezclas con dos pruebas. Mira la tabla y elige dos cosas.",
+      "en": "We tested five mixtures with two tests. Look at the table and pick two things."
+     },
+     "taskId": "t2",
+     "saves": "observación",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "mix",
+      "mixTests": [
+       "burbujas",
+       "recuperar"
+      ],
+      "mixes": [
+       "sal_agua",
+       "azucar_agua",
+       "arena_agua",
+       "harina_agua",
+       "bicarbonato_vinagre"
+      ],
+      "static": true
+     }
+    },
+    {
+     "id": "s5.2",
+     "phase": "explora",
+     "kind": "predecir",
+     "text": {
+      "es": "Si mezclo arena con agua, ¿podré recuperar la arena? Porque…",
+      "en": "If I mix sand with water, will I be able to get the sand back? Because…"
+     },
+     "taskId": "t4",
+     "saves": "predicción",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "mix",
+      "mixTests": [
+       "burbujas",
+       "recuperar"
+      ],
+      "mixes": [
+       "arena_agua"
+      ],
+      "static": true,
+      "hidden": true
+     }
+    },
+    {
+     "id": "s5.3",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Haz las pruebas con la arena y con la harina: toca las casillas de sus filas.",
+      "en": "Run the tests on the sand and on the flour: tap the boxes in their rows."
+     },
+     "saves": "observación",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "mix",
+      "mixTests": [
+       "burbujas",
+       "recuperar"
+      ],
+      "mixes": [
+       "arena_agua",
+       "harina_agua"
+      ],
+      "trials": 4
+     }
+    },
+    {
+     "id": "s5.4",
+     "phase": "explica",
+     "kind": "afirmacion",
+     "text": {
+      "es": "¿Apareció una sustancia nueva en la harina con agua? Decide con las dos pruebas.",
+      "en": "Did a new substance appear in flour with water? Decide with both tests."
+     },
+     "taskId": "t6",
+     "saves": "explicación",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "mix",
+      "mixTests": [
+       "burbujas",
+       "recuperar"
+      ],
+      "mixes": [
+       "arena_agua",
+       "harina_agua"
+      ],
+      "static": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "s6",
+   "title": {
+    "es": "Un problema para Maya",
+    "en": "A problem for Maya"
+   },
+   "objective": {
+    "es": "Usar lo aprendido en un caso nuevo y revisar mi primera idea.",
+    "en": "Use what I learned in a new case and revisit my first idea."
+   },
+   "steps": [
+    {
+     "id": "s6.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Maya disuelve azúcar en una jarra de limonada y el azúcar ya no se ve.",
+      "en": "Maya dissolves sugar in a pitcher of lemonade and the sugar can’t be seen anymore."
+     },
+     "scene": "mesaLab"
+    },
+    {
+     "id": "s6.2",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "¿Apareció una sustancia nueva? ¿Qué pruebas haría Maya?",
+      "en": "Did a new substance appear? Which tests would Maya run?"
+     },
+     "taskId": "t7",
+     "saves": "problema nuevo",
+     "scene": "mesaLab"
+    },
+    {
+     "id": "s6.3",
+     "phase": "explica",
+     "kind": "reflexion",
+     "text": {
+      "es": "Vuelve a mirar tu primera idea. ¿Cambió?",
+      "en": "Look at your first idea again. Did it change?"
+     },
+     "taskId": "t8",
+     "saves": "reflexión",
+     "scene": "mesaLab"
+    },
+    {
+     "id": "s6.4",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "Hoy descubriste que mezclar no siempre hace una sustancia nueva: se decide con pruebas (señales y si se puede recuperar lo de antes), no por cómo se ve.",
+      "en": "Today you found out that mixing doesn’t always make a new substance: you decide with tests (signs and whether you can get back what you had), not by how it looks."
+     },
+     "saves": "resumen",
+     "scene": "mesaLab"
+    }
+   ]
+  }
+ ],
+ "tasks": [
+  {
+   "id": "t1",
+   "kind": "observar",
+   "ideaIds": [
+    "mezcla.sigue"
+   ],
+   "contextId": "agua",
+   "sessionId": "s1",
+   "standards": [
+    "5-PS1-4"
+   ],
+   "criterion": {
+    "es": "Dice lo que ve al mezclar sal con agua sin inventar: la sal ya no se ve y no hay burbujas.",
+    "en": "Says what they see when salt is mixed with water without inventing: the salt can’t be seen anymore and there are no bubbles."
+   },
+   "parts": [
+    {
+     "id": "observaciones",
+     "prompt": {
+      "es": "Elige dos cosas que viste.",
+      "en": "Pick two things you saw."
+     },
+     "options": [
+      {
+       "id": "nosev",
+       "text": {
+        "es": "La sal ya no se ve en el agua.",
+        "en": "The salt can’t be seen in the water anymore."
+       },
+       "valid": true
+      },
+      {
+       "id": "sinburbujas",
+       "text": {
+        "es": "No hubo burbujas.",
+        "en": "There were no bubbles."
+       },
+       "valid": true
+      },
+      {
+       "id": "nueva",
+       "text": {
+        "es": "Apareció una sustancia nueva.",
+        "en": "A new substance appeared."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Eso es una conclusión, no algo que viste. Primero se observa y después se decide con pruebas.",
+        "en": "That is a conclusion, not something you saw. First you observe, then you decide with tests."
+       }
+      },
+      {
+       "id": "calor",
+       "text": {
+        "es": "Salió humo del vaso.",
+        "en": "Smoke came out of the cup."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "No salió humo. Mira de nuevo.",
+        "en": "No smoke came out. Look again."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira el vaso antes y después de mezclar.",
+     "en": "Look at the cup before and after mixing."
+    },
+    {
+     "es": "¿Qué ves en el agua? ¿Hay burbujas?",
+     "en": "What do you see in the water? Are there bubbles?"
+    },
+    {
+     "es": "Ejemplo: cuando revuelves chocolate en polvo en leche, el polvo deja de verse, pero sigue ahí.",
+     "en": "Example: when you stir cocoa powder into milk, the powder stops showing, but it is still there."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige dos cosas.",
+     "en": "Pick two things."
+    },
+    "wrong": {
+     "es": "Alguna de las cosas que elegiste no pasó. Mira de nuevo.",
+     "en": "Something you picked didn’t happen. Look again."
+    },
+    "ok": {
+     "es": "Observaste con cuidado: primero lo que se ve, después lo que crees.",
+     "en": "You looked carefully: first what you see, then what you think."
+    }
+   }
+  },
+  {
+   "id": "t2",
+   "kind": "observar",
+   "ideaIds": [
+    "sustancia.nueva"
+   ],
+   "contextId": "tabla",
+   "sessionId": "s5",
+   "standards": [
+    "5-PS1-4"
+   ],
+   "criterion": {
+    "es": "Dice lo que muestra la tabla de las cinco mezclas: solo una hizo burbujas y en esa no se pudo recuperar lo de antes.",
+    "en": "Says what the table of the five mixtures shows: only one made bubbles and in that one you couldn’t get back what you had."
+   },
+   "parts": [
+    {
+     "id": "observaciones",
+     "prompt": {
+      "es": "Elige dos cosas que ves en la tabla.",
+      "en": "Pick two things you see in the table."
+     },
+     "options": [
+      {
+       "id": "burbujas",
+       "text": {
+        "es": "Solo el bicarbonato con vinagre hizo burbujas.",
+        "en": "Only baking soda with vinegar made bubbles."
+       },
+       "valid": true
+      },
+      {
+       "id": "recuperan",
+       "text": {
+        "es": "En las otras cuatro mezclas se pudo recuperar lo de antes.",
+        "en": "In the other four mixtures you could get back what you had."
+       },
+       "valid": true
+      },
+      {
+       "id": "todas",
+       "text": {
+        "es": "Todas las mezclas hicieron burbujas.",
+        "en": "All the mixtures made bubbles."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira la columna «¿Burbujas?»: solo una hizo burbujas.",
+        "en": "Look at the “Bubbles?” column: only one made bubbles."
+       }
+      },
+      {
+       "id": "sal",
+       "text": {
+        "es": "Con la sal no se pudo recuperar nada.",
+        "en": "With salt you couldn’t get anything back."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira la columna de recuperar: con la sal queda sal al evaporar.",
+        "en": "Look at the “get back” column: with salt, salt is left when it evaporates."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Lee la tabla fila por fila.",
+     "en": "Read the table row by row."
+    },
+    {
+     "es": "Mira las dos columnas: ¿qué mezcla es distinta de las otras?",
+     "en": "Look at the two columns: which mixture is different from the others?"
+    },
+    {
+     "es": "Ejemplo: de cinco juguetes, solo uno hace ruido: eso lo notas mirando todos.",
+     "en": "Example: of five toys, only one makes noise: you notice it by looking at all of them."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige dos cosas.",
+     "en": "Pick two things."
+    },
+    "wrong": {
+     "es": "Alguna de las cosas que elegiste no está en la tabla. Mírala de nuevo.",
+     "en": "Something you picked isn’t in the table. Look at it again."
+    },
+    "ok": {
+     "es": "Muy bien: miraste lo que muestra cada columna.",
+     "en": "Very good: you looked at what each column shows."
+    }
+   }
+  },
+  {
+   "id": "t3",
+   "kind": "predecir",
+   "ideaIds": [
+    "sustancia.nueva"
+   ],
+   "contextId": "vinagre",
+   "sessionId": "s2",
+   "standards": [
+    "5-PS1-4"
+   ],
+   "criterion": {
+    "es": "Predice, antes de mezclar, si el bicarbonato con vinagre hará burbujas. Cualquier predicción es válida.",
+    "en": "Predicts, before mixing, whether baking soda with vinegar will make bubbles. Any prediction is valid."
+   },
+   "parts": [
+    {
+     "id": "resultado",
+     "prompt": {
+      "es": "Voy a mezclar bicarbonato con vinagre en un vasito abierto. ¿Habrá burbujas?",
+      "en": "I’m going to mix baking soda with vinegar in an open cup. Will there be bubbles?"
+     },
+     "options": [
+      {
+       "id": "si",
+       "text": {
+        "es": "Sí, habrá burbujas.",
+        "en": "Yes, there will be bubbles."
+       },
+       "valid": true
+      },
+      {
+       "id": "no",
+       "text": {
+        "es": "No, no habrá burbujas.",
+        "en": "No, there won’t be bubbles."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "No sé.",
+        "en": "I don’t know."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false,
+     "observedOptionId": "si"
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "Porque…",
+      "en": "Because…"
+     },
+     "options": [
+      {
+       "id": "gas",
+       "text": {
+        "es": "a veces al mezclar se forma un gas nuevo.",
+        "en": "sometimes mixing makes a new gas."
+       },
+       "valid": true
+      },
+      {
+       "id": "igual",
+       "text": {
+        "es": "mezclar nunca cambia nada, como con la sal en agua.",
+        "en": "mixing never changes anything, like salt in water."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "todavía no estoy seguro.",
+        "en": "I’m not sure yet."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    }
+   ],
+   "hints": [
+    {
+     "es": "Piensa en una bebida con gas al abrirla: ¿de dónde salen las burbujas?",
+     "en": "Think of a fizzy drink when you open it: where do the bubbles come from?"
+    },
+    {
+     "es": "¿Pasó lo mismo con la sal y el agua?",
+     "en": "Did the same happen with salt and water?"
+    },
+    {
+     "es": "Ejemplo: una pastilla efervescente en un vaso de agua hace burbujas.",
+     "en": "Example: a fizzy tablet in a glass of water makes bubbles."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige una predicción y un «porque».",
+     "en": "Pick a prediction and a “because”."
+    },
+    "wrong": {
+     "es": "Elige una de las opciones.",
+     "en": "Pick one of the options."
+    },
+    "ok": {
+     "es": "Anotaste tu predicción. Ahora vamos a probar.",
+     "en": "You wrote down your prediction. Now let’s test."
+    }
+   }
+  },
+  {
+   "id": "t4",
+   "kind": "predecir",
+   "ideaIds": [
+    "mezcla.sigue"
+   ],
+   "contextId": "arena",
+   "sessionId": "s5",
+   "standards": [
+    "5-PS1-4"
+   ],
+   "criterion": {
+    "es": "Predice si se podrá recuperar la arena de la mezcla de arena con agua. Cualquier predicción es válida.",
+    "en": "Predicts whether the sand can be recovered from the sand and water mixture. Any prediction is valid."
+   },
+   "parts": [
+    {
+     "id": "resultado",
+     "prompt": {
+      "es": "Si mezclo arena con agua, ¿podré recuperar la arena?",
+      "en": "If I mix sand with water, will I be able to get the sand back?"
+     },
+     "options": [
+      {
+       "id": "si",
+       "text": {
+        "es": "Sí, la arena se podrá separar.",
+        "en": "Yes, the sand can be separated."
+       },
+       "valid": true
+      },
+      {
+       "id": "no",
+       "text": {
+        "es": "No, la arena ya no estará.",
+        "en": "No, the sand will be gone."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "No sé.",
+        "en": "I don’t know."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false,
+     "observedOptionId": "si"
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "Porque…",
+      "en": "Because…"
+     },
+     "options": [
+      {
+       "id": "sigue",
+       "text": {
+        "es": "la arena sigue siendo arena, solo está revuelta con el agua.",
+        "en": "the sand is still sand, it is just mixed with the water."
+       },
+       "valid": true
+      },
+      {
+       "id": "nueva",
+       "text": {
+        "es": "al mezclar se hace algo nuevo.",
+        "en": "mixing makes something new."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "todavía no estoy seguro.",
+        "en": "I’m not sure yet."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    }
+   ],
+   "hints": [
+    {
+     "es": "Piensa en la sal: ¿qué quedó al evaporar el agua?",
+     "en": "Think of the salt: what was left when the water evaporated?"
+    },
+    {
+     "es": "¿Hubo burbujas con la arena?",
+     "en": "Were there bubbles with the sand?"
+    },
+    {
+     "es": "Ejemplo: si mezclas lentejas con arroz, puedes volver a separarlas.",
+     "en": "Example: if you mix lentils with rice, you can separate them again."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige una predicción y un «porque».",
+     "en": "Pick a prediction and a “because”."
+    },
+    "wrong": {
+     "es": "Elige una de las opciones.",
+     "en": "Pick one of the options."
+    },
+    "ok": {
+     "es": "Anotaste tu predicción. Ahora veamos qué pasa.",
+     "en": "You wrote down your prediction. Now let’s see what happens."
+    }
+   }
+  },
+  {
+   "id": "t5",
+   "kind": "evidencia",
+   "ideaIds": [
+    "mezcla.sigue",
+    "sustancia.nueva"
+   ],
+   "contextId": "comparacion",
+   "sessionId": "s4",
+   "standards": [
+    "5-PS1-4"
+   ],
+   "criterion": {
+    "es": "Afirma que mezclar no siempre produce una sustancia nueva, apoya con las pruebas de las mezclas y limita la conclusión a lo probado.",
+    "en": "Claims that mixing doesn’t always produce a new substance, supports it with the mixture tests and limits the conclusion to what was tested."
+   },
+   "parts": [
+    {
+     "id": "afirmacion",
+     "prompt": {
+      "es": "Mi afirmación es…",
+      "en": "My claim is…"
+     },
+     "options": [
+      {
+       "id": "aveces",
+       "text": {
+        "es": "Mezclar a veces produce una sustancia nueva y a veces no.",
+        "en": "Mixing sometimes makes a new substance and sometimes doesn’t."
+       },
+       "valid": true
+      },
+      {
+       "id": "siempre",
+       "text": {
+        "es": "Mezclar siempre produce una sustancia nueva.",
+        "en": "Mixing always makes a new substance."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira tu tabla: con la sal, el azúcar, la arena y la harina se pudo recuperar lo de antes.",
+        "en": "Look at your table: with salt, sugar, sand and flour you could get back what you had."
+       }
+      },
+      {
+       "id": "nunca",
+       "text": {
+        "es": "Mezclar nunca produce una sustancia nueva.",
+        "en": "Mixing never makes a new substance."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira tu tabla: con el bicarbonato y el vinagre hubo muchas burbujas y no se pudo recuperar lo de antes.",
+        "en": "Look at your table: with baking soda and vinegar there were lots of bubbles and you couldn’t get back what you had."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "evidencia",
+     "prompt": {
+      "es": "Mi evidencia es… (elige dos)",
+      "en": "My evidence is… (pick two)"
+     },
+     "options": [
+      {
+       "id": "gas",
+       "text": {
+        "es": "Con bicarbonato y vinagre hubo muchas burbujas y no se pudo recuperar lo de antes.",
+        "en": "With baking soda and vinegar there were lots of bubbles and you couldn’t get back what you had."
+       },
+       "valid": true
+      },
+      {
+       "id": "sal",
+       "text": {
+        "es": "Con sal y agua no hubo burbujas y al evaporar quedó sal.",
+        "en": "With salt and water there were no bubbles and salt was left when it evaporated."
+       },
+       "valid": true
+      },
+      {
+       "id": "ver",
+       "text": {
+        "es": "La sal ya no se veía en el agua.",
+        "en": "The salt couldn’t be seen in the water anymore."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Que algo ya no se vea no prueba que sea nuevo: la sal sigue ahí y vuelve al evaporar.",
+        "en": "That something can’t be seen doesn’t prove it is new: the salt is still there and comes back when it evaporates."
+       }
+      },
+      {
+       "id": "vaso",
+       "text": {
+        "es": "Usé el mismo vaso.",
+        "en": "I used the same cup."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Usar el mismo vaso cuida la prueba, pero no dice si hay una sustancia nueva.",
+        "en": "Using the same cup keeps the test fair, but doesn’t say whether there is a new substance."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    },
+    {
+     "id": "limite",
+     "prompt": {
+      "es": "Esto lo probé con… (elige una)",
+      "en": "I tested this with… (pick one)"
+     },
+     "options": [
+      {
+       "id": "cinco",
+       "text": {
+        "es": "cinco mezclas, con dos pruebas cada una.",
+        "en": "five mixtures, with two tests each."
+       },
+       "valid": true
+      },
+      {
+       "id": "todas",
+       "text": {
+        "es": "todas las mezclas que existen.",
+        "en": "every mixture that exists."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Solo probaste cinco mezclas: no puedes asegurar lo de todas.",
+        "en": "You only tested five mixtures: you can’t be sure about every one."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira tu tabla: ¿en cuántas mezclas hubo burbujas?",
+     "en": "Look at your table: in how many mixtures were there bubbles?"
+    },
+    {
+     "es": "Tu evidencia nombra una mezcla que cambió y otra que no.",
+     "en": "Your evidence names one mixture that changed and one that didn’t."
+    },
+    {
+     "es": "Ejemplo: si pruebas cinco tipos de tela, no sabes cómo son todas las telas.",
+     "en": "Example: if you test five kinds of fabric, you don’t know what every fabric is like."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Revisa tu explicación: mira qué parte se apoya en tu tabla.",
+     "en": "Check your explanation: see which part rests on your table."
+    },
+    "ok": {
+     "es": "Tu afirmación, tu evidencia y su límite dicen lo mismo: así se sostiene una explicación.",
+     "en": "Your claim, your evidence and its limit say the same thing: that is how an explanation stands."
+    }
+   }
+  },
+  {
+   "id": "t6",
+   "kind": "modelo",
+   "ideaIds": [
+    "mezcla.sigue",
+    "sustancia.nueva"
+   ],
+   "contextId": "comparacion",
+   "sessionId": "s5",
+   "standards": [
+    "5-PS1-4"
+   ],
+   "criterion": {
+    "es": "Decide, con las dos pruebas, si en la mezcla de harina con agua apareció una sustancia nueva, y no se queda con una sola prueba.",
+    "en": "Decides, with both tests, whether a new substance appeared in the flour and water mixture, and doesn’t rely on a single test."
+   },
+   "parts": [
+    {
+     "id": "afirmacion",
+     "prompt": {
+      "es": "En harina con agua…",
+      "en": "In flour with water…"
+     },
+     "options": [
+      {
+       "id": "nonueva",
+       "text": {
+        "es": "no apareció una sustancia nueva: es una mezcla.",
+        "en": "no new substance appeared: it is a mixture."
+       },
+       "valid": true
+      },
+      {
+       "id": "nueva",
+       "text": {
+        "es": "apareció una sustancia nueva.",
+        "en": "a new substance appeared."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "No hubo burbujas y la harina se pudo separar con un filtro: la harina sigue siendo harina.",
+        "en": "There were no bubbles and the flour could be separated with a filter: the flour is still flour."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "evidencia",
+     "prompt": {
+      "es": "Mi evidencia es… (elige dos)",
+      "en": "My evidence is… (pick two)"
+     },
+     "options": [
+      {
+       "id": "burbujas",
+       "text": {
+        "es": "No hubo burbujas.",
+        "en": "There were no bubbles."
+       },
+       "valid": true
+      },
+      {
+       "id": "filtro",
+       "text": {
+        "es": "La harina se pudo separar con un filtro.",
+        "en": "The flour could be separated with a filter."
+       },
+       "valid": true
+      },
+      {
+       "id": "espesa",
+       "text": {
+        "es": "El agua se puso turbia.",
+        "en": "The water turned cloudy."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Que el agua se vea turbia no basta: la harina se pudo separar, así que sigue ahí.",
+        "en": "Cloudy water isn’t enough: the flour could be separated, so it is still there."
+       }
+      },
+      {
+       "id": "blanca",
+       "text": {
+        "es": "La harina es blanca.",
+        "en": "Flour is white."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El color de la harina no dice si hubo una sustancia nueva.",
+        "en": "The color of the flour doesn’t say whether a new substance appeared."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    },
+    {
+     "id": "limite",
+     "prompt": {
+      "es": "Decidí con… (elige una)",
+      "en": "I decided with… (pick one)"
+     },
+     "options": [
+      {
+       "id": "dos",
+       "text": {
+        "es": "dos pruebas: burbujas y recuperar lo de antes.",
+        "en": "two tests: bubbles and getting back what I had."
+       },
+       "valid": true
+      },
+      {
+       "id": "una",
+       "text": {
+        "es": "una sola prueba: cómo se ve.",
+        "en": "one test only: how it looks."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Una sola prueba no decide: se combinan las señales con la pregunta de si se puede recuperar lo de antes.",
+        "en": "One test doesn’t decide: you combine the signs with the question of whether you can get back what you had."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira la fila de la harina en la tabla.",
+     "en": "Look at the flour row in the table."
+    },
+    {
+     "es": "¿Qué dicen las dos pruebas juntas?",
+     "en": "What do the two tests say together?"
+    },
+    {
+     "es": "Ejemplo: para saber si hay fiebre no basta que alguien se vea cansado: hay que medir.",
+     "en": "Example: to know if someone has a fever, looking tired isn’t enough: you have to measure."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Mira tu tabla: ¿hubo burbujas? ¿Se pudo separar la harina?",
+     "en": "Look at your table: were there bubbles? Could the flour be separated?"
+    },
+    "ok": {
+     "es": "Usaste las dos pruebas para decidir: así se concluye con cuidado.",
+     "en": "You used both tests to decide: that is how to conclude carefully."
+    }
+   }
+  },
+  {
+   "id": "t7",
+   "kind": "transferir",
+   "ideaIds": [
+    "mezcla.sigue",
+    "sustancia.nueva"
+   ],
+   "contextId": "limonada",
+   "sessionId": "s6",
+   "standards": [
+    "5-PS1-4"
+   ],
+   "criterion": {
+    "es": "Usa lo aprendido en un caso nuevo: azúcar disuelta en limonada; decide si apareció una sustancia nueva y con qué pruebas lo sabría.",
+    "en": "Uses what was learned in a new case: sugar dissolved in lemonade; decides whether a new substance appeared and with which tests it would know."
+   },
+   "parts": [
+    {
+     "id": "decision",
+     "prompt": {
+      "es": "Maya disuelve azúcar en la limonada y el azúcar ya no se ve. ¿Apareció una sustancia nueva?",
+      "en": "Maya dissolves sugar in lemonade and the sugar can’t be seen anymore. Did a new substance appear?"
+     },
+     "options": [
+      {
+       "id": "no",
+       "text": {
+        "es": "No: el azúcar sigue ahí y se podría recuperar al evaporar.",
+        "en": "No: the sugar is still there and could be recovered by evaporating."
+       },
+       "valid": true
+      },
+      {
+       "id": "si",
+       "text": {
+        "es": "Sí, porque el azúcar ya no se ve.",
+        "en": "Yes, because the sugar can’t be seen anymore."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Que ya no se vea no basta: no hubo burbujas y el azúcar se puede recuperar al evaporar.",
+        "en": "Not being visible isn’t enough: there were no bubbles and the sugar can be recovered by evaporating."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "pruebas",
+     "prompt": {
+      "es": "¿Qué pruebas haría? (elige una)",
+      "en": "Which tests would you do? (pick one)"
+     },
+     "options": [
+      {
+       "id": "dos",
+       "text": {
+        "es": "Buscar señales (burbujas) y ver si se puede recuperar el azúcar.",
+        "en": "Look for signs (bubbles) and see whether the sugar can be recovered."
+       },
+       "valid": true
+      },
+      {
+       "id": "mirar",
+       "text": {
+        "es": "Solo mirar si el azúcar se ve.",
+        "en": "Only look to see if the sugar shows."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mirar no alcanza: hay que hacer pruebas, como buscar burbujas y recuperar lo de antes.",
+        "en": "Looking isn’t enough: you have to run tests, like looking for bubbles and getting back what you had."
+       }
+      },
+      {
+       "id": "probar",
+       "text": {
+        "es": "Probar la limonada con la boca para ver si cambió.",
+        "en": "Taste the lemonade to see if it changed."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Nunca se prueba una muestra de ciencia con la boca: se usan pruebas seguras.",
+        "en": "A science sample is never tasted: safe tests are used."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Piensa en la sal que se disolvió: ¿se pudo recuperar?",
+     "en": "Think of the salt that dissolved: could it be recovered?"
+    },
+    {
+     "es": "¿Hay burbujas u otra señal en la limonada?",
+     "en": "Are there bubbles or another sign in the lemonade?"
+    },
+    {
+     "es": "Ejemplo: el chocolate en polvo en la leche deja de verse y no es una sustancia nueva.",
+     "en": "Example: cocoa powder in milk stops showing and is not a new substance."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Piensa en las dos pruebas que usaste con las mezclas.",
+     "en": "Think of the two tests you used with the mixtures."
+    },
+    "ok": {
+     "es": "Usaste lo que aprendiste en un caso nuevo: eso es transferir una idea.",
+     "en": "You used what you learned in a new case: that is transferring an idea."
+    }
+   }
+  },
+  {
+   "id": "t8",
+   "kind": "reflexionar",
+   "ideaIds": [],
+   "contextId": "reflexion",
+   "sessionId": "s6",
+   "standards": [],
+   "criterion": {
+    "es": "Revisa su primera idea sobre qué pasa al mezclar con lo que probó y dice si cambió. Cualquier respuesta honesta es válida.",
+    "en": "Revisits the first idea about what happens when things are mixed using what they tested and says whether it changed. Any honest answer is valid."
+   },
+   "parts": [
+    {
+     "id": "idea",
+     "prompt": {
+      "es": "Mi idea sobre qué pasa al mezclar…",
+      "en": "My idea about what happens when you mix…"
+     },
+     "options": [
+      {
+       "id": "cambio",
+       "text": {
+        "es": "cambió.",
+        "en": "changed."
+       },
+       "valid": true
+      },
+      {
+       "id": "igual",
+       "text": {
+        "es": "sigue igual.",
+        "en": "stayed the same."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "porque…",
+      "en": "because…"
+     },
+     "options": [
+      {
+       "id": "probe",
+       "text": {
+        "es": "probé cinco mezclas con dos pruebas.",
+        "en": "I tested five mixtures with two tests."
+       },
+       "valid": true
+      },
+      {
+       "id": "tabla",
+       "text": {
+        "es": "lo vi en mi tabla.",
+        "en": "I saw it in my table."
+       },
+       "valid": true
+      },
+      {
+       "id": "dijeron",
+       "text": {
+        "es": "alguien me lo dijo.",
+        "en": "someone told me."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Tú lo probaste: usa lo que viste.",
+        "en": "You tested it yourself: use what you saw."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira tu idea del principio.",
+     "en": "Look at your first idea."
+    },
+    {
+     "es": "¿Qué probaste que te hizo pensar así?",
+     "en": "What did you test that made you think that?"
+    },
+    {
+     "es": "Ejemplo: si pensabas que siempre sale algo nuevo, ¿qué viste con la sal?",
+     "en": "Example: if you thought something new always appears, what did you see with the salt?"
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Piensa en algo que probaste tú.",
+     "en": "Think of something you tested yourself."
+    },
+    "ok": {
+     "es": "Revisar una idea con lo que probaste es hacer ciencia.",
+     "en": "Revisiting an idea with what you tested is doing science."
+    }
+   }
+  }
+ ],
+ "safety": {
+  "title": {
+   "es": "Mezclas con bicarbonato y vinagre (con un adulto)",
+   "en": "Mixtures with baking soda and vinegar (with an adult)"
+  },
+  "enabledByParent": true,
+  "supervision": {
+   "es": "Un adulto cerca durante toda la actividad (5.º, ≈ 10–11 años).",
+   "en": "An adult nearby during the whole activity (grade 5, about 10–11 years old)."
+  },
+  "materials": {
+   "es": "Vasitos transparentes abiertos, cucharitas, agua, sal, azúcar, arena fina limpia, harina, bicarbonato de sodio y vinagre blanco; un colador. Poca cantidad de cada cosa.",
+   "en": "Clear open cups, teaspoons, water, salt, sugar, clean fine sand, flour, baking soda and white vinegar; a strainer. A small amount of each thing."
+  },
+  "place": {
+   "es": "Una mesa lisa, con una bandeja para atrapar lo que se derrame, lejos del borde.",
+   "en": "A smooth table, with a tray to catch spills, away from the edge."
+  },
+  "hygiene": {
+   "es": "Gafas o lentes de seguridad con el vinagre y el bicarbonato (si salpica, enjuagar con agua). Lavarse las manos antes y después. Nunca probar ni oler de cerca una mezcla.",
+   "en": "Safety glasses with the vinegar and baking soda (if it splashes, rinse with water). Wash hands before and after. Never taste or sniff a mixture up close."
+  },
+  "closing": {
+   "es": "Tirar las mezclas al fregadero con agua (la arena, a la basura), lavar los vasitos y secar la mesa.",
+   "en": "Pour the mixtures down the sink with water (the sand goes in the trash), wash the cups and dry the table."
+  },
+  "stopIf": [
+   {
+    "es": "Alguien cierra o tapa un recipiente con la mezcla que hace burbujas (puede reventar).",
+    "en": "Someone closes or covers a container with the bubbling mixture (it can burst)."
+   },
+   {
+    "es": "Alguien se lleva una muestra a la boca.",
+    "en": "Someone puts a sample in their mouth."
+   },
+   {
+    "es": "Vinagre o bicarbonato en los ojos que no se enjuagan de inmediato con agua.",
+    "en": "Vinegar or baking soda in the eyes that isn’t rinsed right away with water."
+   },
+   {
+    "es": "Alguien tiene alergia al trigo (la harina) o a otro de los polvos.",
+    "en": "Someone is allergic to wheat (flour) or to another of the powders."
+   },
+   {
+    "es": "El adulto no puede quedarse cerca.",
+    "en": "The adult can’t stay nearby."
+   }
+  ],
+  "excluded": {
+   "es": "Probar o oler las mezclas, cerrar recipientes con la mezcla que hace burbujas, usar productos de limpieza u otras sustancias, calentar nada, y dejar solo a un niño pequeño con los polvos.",
+   "en": "Tasting or sniffing mixtures, closing containers with the bubbling mixture, using cleaning products or other substances, heating anything, and leaving a small child alone with the powders."
+  },
+  "data": {
+   "es": "No requiere cámara, micrófono, fotos ni ubicación.",
+   "en": "Needs no camera, microphone, photos or location."
+  },
+  "digitalAlternative": {
+   "es": "Las sesiones S2, S3 y S5 en pantalla reemplazan la actividad completa.",
+   "en": "Sessions S2, S3 and S5 on screen replace the whole activity."
+  },
+  "review": "pendienteDocente"
+ },
+ "review": {
+  "status": "draftPendingTeacherReview",
+  "notes": "Ningún docente ha validado esta unidad. El código es candidato; solo lo ven los padres. Mezclas en recipientes abiertos y con poca cantidad."
+ }
+}

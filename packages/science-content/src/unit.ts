@@ -9,10 +9,12 @@ import c2u02 from '../content/c2-u02.json';
 import c3u06 from '../content/c3-u06.json';
 import c4u06 from '../content/c4-u06.json';
 import c5u02 from '../content/c5-u02.json';
+import c5u03 from '../content/c5-u03.json';
 import c6u04 from '../content/c6-u04.json';
 import { practiceMapProblems, PRACTICE_MAPS, bandCount, LADERA_DATASETS, type Dataset } from './datasets.ts';
 import { COVERS, SLOPES, type Cover, type Slope } from './labs/erosion.ts';
 import { LIGHT_OBJECTS, LIGHT_STATES, type LightObject, type LightState } from './labs/luz.ts';
+import { MIXES, MIX_TESTS, hasBubbles, mixObserved, newSubstance, recoverable, type Mix, type MixTest } from './labs/mezclas.ts';
 import { JAR_WITH_WATER_G, KNOWN_SAMPLES, MYSTERY_IS, PROPS, SAMPLES, SUBSTANCES, SUBSTANCE_G, confusableWith, dissolves, observed, remainingAfter, totalAfter, totalBefore, type Prop, type Sample, type Substance } from './labs/materia.ts';
 import { MAGNET_MARKS, MAGNET_OBJECTS, magnetMoves, type MagnetObject } from './labs/imanes.ts';
 import { CRITERION_MAX_RISE, LAYER_IDS, MAX_LAYERS, designLabel, meetsCriterion, riseAt10, temperatures, type Layer } from './labs/termico.ts';
@@ -100,9 +102,9 @@ export interface MagnetSetup {
   static?: boolean;
 }
 
-/** La materia de C5-U02: el frasco cerrado en la balanza (`jar`) o la tabla de propiedades de las muestras (`props`). */
+/** La materia de C5: el frasco cerrado en la balanza (`jar`), la tabla de propiedades de las muestras (`props`) o la tabla de mezclas (`mix`). */
 export interface MatterSetup {
-  view: 'jar' | 'props';
+  view: 'jar' | 'props' | 'mix';
   /** jar: la sustancia que se echa (o entre cuáles elige el niño con `substances`). */
   substance?: Substance;
   substances?: Substance[];
@@ -119,6 +121,11 @@ export interface MatterSetup {
   tests?: Prop[];
   /** props: la fila de la X se muestra completa aunque no se haya probado. */
   revealX?: boolean;
+  /** mix: las mezclas (filas) y las pruebas (columnas) de la tabla. */
+  mixes?: Mix[];
+  mixTests?: MixTest[];
+  /** mix: con `static`, los resultados quedan ocultos (para predecir antes de probar). */
+  hidden?: boolean;
 }
 
 export interface ChoiceOption {
@@ -262,7 +269,7 @@ export interface ScienceUnit {
 }
 
 /** Las unidades con contenido, por grado. Una unidad con contenido todavía puede esperar su arte (`UNIT_ART_READY` en la app). */
-export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c5u02 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit];
+export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c5u02 as unknown as ScienceUnit, c5u03 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit];
 export const scienceUnitContent = (id: string): ScienceUnit | undefined => SCIENCE_UNITS.find((u) => u.id === id);
 
 // ------------------------------------------------------------------ evaluar una tarea
@@ -429,9 +436,12 @@ export function unitProblems(u: ScienceUnit): string[] {
       for (const sub of [...(m.substance ? [m.substance] : []), ...(m.substances ?? [])]) if (!SUBSTANCES.includes(sub)) p.push(`${st.id}: sustancia desconocida (${sub})`);
       if (m.view === 'jar' && !m.substance && !m.substances?.length) p.push(`${st.id}: el frasco necesita una sustancia`);
       if (m.done !== undefined && (m.done < 0 || m.done > 4)) p.push(`${st.id}: las acciones de la pesada van de 0 a 4`);
-      if (m.trials !== undefined && (m.trials < 1 || m.trials > 3)) p.push(`${st.id}: las pruebas van de 1 a 3`);
+      if (m.trials !== undefined && (m.trials < 1 || m.trials > (m.view === 'mix' ? 10 : 3))) p.push(`${st.id}: las pruebas van de 1 a ${m.view === 'mix' ? 10 : 3}`);
       for (const x of m.samples ?? []) if (!SAMPLES.includes(x)) p.push(`${st.id}: muestra desconocida (${x})`);
       for (const x of m.tests ?? []) if (!PROPS.includes(x)) p.push(`${st.id}: prueba desconocida (${x})`);
+      for (const x of m.mixes ?? []) if (!MIXES.includes(x)) p.push(`${st.id}: mezcla desconocida (${x})`);
+      for (const x of m.mixTests ?? []) if (!MIX_TESTS.includes(x)) p.push(`${st.id}: prueba de mezclas desconocida (${x})`);
+      if (m.view === 'mix' && (!m.mixes?.length || !m.mixTests?.length)) p.push(`${st.id}: la tabla de mezclas necesita mezclas y pruebas`);
       if (m.view === 'props' && (!m.samples?.length || !m.tests?.length)) p.push(`${st.id}: la tabla de propiedades necesita muestras y pruebas`);
     }
     if (st.map && !(st.map.id === 'A' || st.map.id === 'B')) p.push(`${st.id}: mapa desconocido`);
@@ -513,6 +523,7 @@ export function dataTextProblems(u: ScienceUnit): string[] {
   if (u.id === 'C6-U04') return thermalTextProblems(u);
   if (u.id === 'C3-U06') return magnetTextProblems(u);
   if (u.id === 'C5-U02') return matterTextProblems(u);
+  if (u.id === 'C5-U03') return mixTextProblems(u);
   if (u.id !== 'C4-U06') return p;
   const t5 = u.tasks.find((t) => t.id === 't5');
   const base = LADERA_DATASETS.base.rows;
@@ -726,5 +737,35 @@ function matterTextProblems(u: ScienceUnit): string[] {
   if (expected('s3.4') !== 'cerrado') p.push('s3.4: se cierra el frasco para que nada salga ni entre');
   // Cada paso con tabla antes/después usa una sustancia que el niño echa en el laboratorio (no el hielo).
   for (const st of steps) if (st.matter?.view === 'jar' && st.kind !== 'ver' && st.matter.substances?.includes('hielo')) p.push(`${st.id}: el hielo solo se usa en la transferencia`);
+  return p;
+}
+
+/** C5-U03: lo que dicen los textos sobre las mezclas coincide con el modelo (burbujas y recuperar lo de antes). */
+function mixTextProblems(u: ScienceUnit): string[] {
+  const p: string[] = [];
+  const steps = u.sessions.flatMap((s) => s.steps);
+  const part = (taskId: string, partId: string) => u.tasks.find((t) => t.id === taskId)?.parts.find((x) => x.id === partId);
+  // Las predicciones apuntan a lo que da el modelo.
+  if (part('t3', 'resultado')?.observedOptionId !== (hasBubbles('bicarbonato_vinagre') ? 'si' : 'no')) p.push('t3.resultado: lo observado debe coincidir con las burbujas del bicarbonato con vinagre');
+  if (part('t4', 'resultado')?.observedOptionId !== (recoverable('arena_agua') ? 'si' : 'no')) p.push('t4.resultado: lo observado debe coincidir con lo recuperable de la arena');
+  // Solo el bicarbonato con vinagre crea una sustancia nueva; las demás son mezclas (las tareas lo dicen así).
+  if (MIXES.filter(newSubstance).join() !== 'bicarbonato_vinagre') p.push('el modelo debe tener una sola mezcla con sustancia nueva: bicarbonato con vinagre');
+  const validClaim = part('t6', 'afirmacion')?.options.filter((o) => o.valid).map((o) => o.id);
+  if (validClaim?.join() !== (newSubstance('harina_agua') ? 'nueva' : 'nonueva')) p.push('t6.afirmacion: la respuesta válida debe coincidir con el modelo de la harina con agua');
+  const decision = part('t7', 'decision')?.options.filter((o) => o.valid).map((o) => o.id);
+  if (decision?.join() !== 'no') p.push('t7.decision: disolver azúcar en limonada no crea una sustancia nueva');
+  // Cada observación citada en las evidencias coincide con la tabla del modelo.
+  const need = (where: string, text: string | undefined, needle: string) => {
+    if (!text?.toLowerCase().includes(needle.toLowerCase())) p.push(`${where}: el texto no dice «${needle}» (modelo)`);
+  };
+  for (const lang of ['es', 'en'] as const) {
+    need(`t2.burbujas (${lang})`, part('t2', 'observaciones')?.options.find((o) => o.id === 'burbujas')?.text[lang], lang === 'es' ? 'bicarbonato con vinagre' : 'baking soda with vinegar');
+    need(`t5.sal (${lang})`, part('t5', 'evidencia')?.options.find((o) => o.id === 'sal')?.text[lang], lang === 'es' ? 'quedó sal' : 'salt was left');
+    need(`t6.filtro (${lang})`, part('t6', 'evidencia')?.options.find((o) => o.id === 'filtro')?.text[lang], mixObserved('harina_agua', 'recuperar')[lang].split(': ')[1].split(' ').slice(-2).join(' '));
+  }
+  const expected = (id: string) => steps.find((st) => st.id === id)?.choice?.options.find((o) => o.expected)?.id;
+  if (expected('s3.2') !== 'bicarb') p.push('s3.2: solo el bicarbonato con vinagre hace burbujas');
+  if (expected('s3.4') !== 'no' || newSubstance('sal_agua')) p.push('s3.4: disolver sal no crea una sustancia nueva');
+  if (!MIX_TESTS.every((t) => MIXES.every((m) => mixObserved(m, t).es.length > 0))) p.push('falta una observación del modelo');
   return p;
 }

@@ -15,3 +15,4 @@ export * from './labs/materiales.ts';
 export * from './labs/termico.ts';
 export * from './labs/imanes.ts';
 export * from './labs/materia.ts';
+export * from './labs/mezclas.ts';

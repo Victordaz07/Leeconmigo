@@ -197,6 +197,12 @@ export const CIENCIA_COPY = {
     propsTestedAll: L('Ya hiciste las pruebas que hacían falta. Puedes seguir.', 'You ran enough tests. You can keep going.'),
     propsRowX: L('Muestra X', 'Sample X'),
     propsNever: L('Las muestras nunca se prueban con la boca.', 'Samples are never tasted.'),
+    mixTitle: L('Mis pruebas de mezclas', 'My mixture tests'),
+    mixPick: L('Toca una casilla vacía para hacer esa prueba.', 'Tap an empty box to run that test.'),
+    mixTested: (n: number, t: number) => L(`Hiciste ${n} de ${t} pruebas`, `You ran ${n} of ${t} tests`),
+    mixTestedAll: L('Ya hiciste las pruebas que hacían falta. Puedes seguir.', 'You ran enough tests. You can keep going.'),
+    mixHidden: L('Todavía no probamos esta mezcla: ¡predice!', 'We haven’t tested this mixture yet: make a prediction!'),
+    mixSafe: L('Todo en vasitos abiertos y con poca cantidad. Nunca se prueba con la boca.', 'Everything in open cups with a small amount. Never tasted.'),
   },
   /** Funda aislante (C6-U04). */
   thermal: {

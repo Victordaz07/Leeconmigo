@@ -226,3 +226,13 @@ tela, plástico, cartón), vaso de agua compartido con C5 y C6, bandeja con pico
   del niño; no se recorrió en pantalla).
 - **Siguiente (decidir con Victor):** ampliar el catálogo (quedan 42 unidades «Pronto»: cada una exige investigación → pedido de imágenes → modelo → contenido → pantallas),
   la revisión de un docente (CI-08), la vista de padres (estándares, actividad fuera de pantalla), el repaso 1-3-7 y el APK cuando lo pida.
+
+## Actualización CI-16 (2026-10-17): C5-U03 «Mezclas bajo investigación» hecha y abierta (primera unidad fuera de las 6 piloto)
+- `labs/mezclas.ts`: cinco mezclas en vasitos ABIERTOS (sal, azúcar, arena y harina con agua; bicarbonato con vinagre) y dos pruebas: ¿burbujas? y ¿recupero lo de antes?
+  Regla didáctica: «sustancia nueva» ⇔ señal (burbujas) **Y** no se puede recuperar lo de antes; una sola prueba no decide, y que algo ya no se vea (disolver) no es sustancia nueva.
+  `MIX_MODEL` dice qué NO representa (átomos, todas las señales, recipientes cerrados).
+- `content/c5-u03.json` (6 sesiones / 23 pasos, 8 tareas, 2 ideas: `mezcla.sigue` y `sustancia.nueva`; 5-PS1-4 con 7 tareas). `mixTextProblems` ata las respuestas
+  esperadas al modelo. Seguridad: gafas, nunca cerrar el recipiente que hace burbujas, nunca probar, alergia al trigo. Ficha: `unidades/C5-U03.md`.
+- UI: nueva vista `mix` en `families/matter.tsx` (tabla de casillas que el niño prueba una por una) y `SampleStrip` con platitos dibujados por la app (agua, bicarbonato, vinagre).
+- **Portada provisional:** `CIENCIA_COVERS.c5u03` reutiliza la de C5-U02. Si Victor quiere una propia: «un vasito transparente con burbujas subiendo, junto a un platito de polvo blanco y una botellita de vinagre; composición centrada, mucho margen».
+- Sin APK ni merge del PR #3.

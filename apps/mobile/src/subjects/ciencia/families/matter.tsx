@@ -6,7 +6,14 @@ import {
   SUBSTANCE_CHANGE,
   SUBSTANCE_G,
   SUBSTANCE_NAME,
+  INGREDIENT_NAME,
   JAR_WITH_WATER_G,
+  MIX_INGREDIENTS,
+  MIX_NAME,
+  MIX_TEST_NAME,
+  mixObserved,
+  type Mix,
+  type MixTest,
   WEIGH_STEPS,
   observed,
   scaleReading,
@@ -31,6 +38,8 @@ interface Bag {
   pick?: string;
   missed?: boolean;
   testedX?: Prop[];
+  /** Casillas de mezclas ya probadas (`mezcla:prueba`). */
+  testedMix?: string[];
 }
 const bagOf = (ctx: StepCtx): Bag => ctx.local.bag as Bag;
 const cap = (t: string) => t.charAt(0).toUpperCase() + t.slice(1);
@@ -43,7 +52,7 @@ export const matterFamily: Family = {
   initial: (step) => {
     const m = step.matter;
     const substance = m?.substance ?? m?.substances?.[0] ?? 'sal';
-    return { bag: { substance, done: m?.done ?? 0, finished: [], cells: {}, testedX: [] } satisfies Bag };
+    return { bag: { substance, done: m?.done ?? 0, finished: [], cells: {}, testedX: [], testedMix: [] } satisfies Bag };
   },
   skippable: (step) => step.kind === 'probar' || step.kind === 'registrar',
   ready: (ctx) => {
@@ -52,7 +61,7 @@ export const matterFamily: Family = {
     const bag = bagOf(ctx);
     if (!m) return true;
     if (step.kind === 'probar') {
-      const n = m.view === 'jar' ? (bag.finished ?? []).length : (bag.testedX ?? []).length;
+      const n = m.view === 'jar' ? (bag.finished ?? []).length : m.view === 'mix' ? (bag.testedMix ?? []).length : (bag.testedX ?? []).length;
       return n >= (m.trials ?? 1) || local.skipped;
     }
     if (step.kind === 'registrar') {
@@ -70,6 +79,36 @@ export const matterFamily: Family = {
     const set = (next: Partial<Bag>) => patch({ bag: { ...bag, ...next } });
     const subs = m.substances ?? (m.substance ? [m.substance] : []);
     const name = (s: Substance) => SUBSTANCE_NAME[s][lang];
+
+    if (m.view === 'mix') {
+      const mixes: Mix[] = m.mixes ?? [];
+      const tests: MixTest[] = m.mixTests ?? ['burbujas', 'recuperar'];
+      const tested = bag.testedMix ?? [];
+      const ingredients = [...new Set(mixes.flatMap((x) => MIX_INGREDIENTS[x]))];
+      const cell = (x: Mix, t: MixTest): string | null => (m.static ? (m.hidden ? null : mixObserved(x, t)[lang]) : tested.includes(`${x}:${t}`) ? mixObserved(x, t)[lang] : null);
+      const test = (rowId: string, col: number) => {
+        if (m.static) return;
+        const key = `${rowId}:${tests[col]}`;
+        if (!tested.includes(key)) set({ testedMix: [...tested, key] });
+      };
+      const trials = m.trials ?? 1;
+      return (
+        <View style={fstyles.stack}>
+          <SampleStrip art={CIENCIA_SISTEMAS} samples={ingredients.map((i) => ({ id: i, label: cap(INGREDIENT_NAME[i][lang]) }))} drawn={{ agua: '#cfe8f7', bicarbonato: '#f8f8f4', vinagre: '#f3e6b5' }} />
+          <ResultTable
+            title={c.mixTitle[lang]}
+            headers={tests.map((t) => MIX_TEST_NAME[t][lang])}
+            emptyLabel={CIENCIA_COPY.table.empty[lang]}
+            rows={mixes.map((x) => ({ id: x, label: MIX_NAME[x][lang], cells: tests.map((t) => ({ text: cell(x, t) })) }))}
+            onCellPress={m.static ? undefined : test}
+          />
+          {step.kind === 'probar' ? <Text style={fstyles.helper}>{(tested.length === 0 ? c.mixPick : tested.length >= trials ? c.mixTestedAll : c.mixTested(tested.length, trials))[lang]}</Text> : null}
+          {m.static && m.hidden ? <Text style={fstyles.helper}>{c.mixHidden[lang]}</Text> : null}
+          <Text style={fstyles.helper}>{c.mixSafe[lang]}</Text>
+          <Badge text={CIENCIA_COPY.badge.practiceData[lang]} />
+        </View>
+      );
+    }
 
     if (m.view === 'props') {
       const samples: Sample[] = m.samples ?? [...KNOWN_SAMPLES];

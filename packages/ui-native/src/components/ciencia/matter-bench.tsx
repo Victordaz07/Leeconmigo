@@ -95,10 +95,12 @@ interface SampleStripProps {
   active?: string;
   /** La que no tiene imagen (la muestra X): se dibuja un platito con «?». */
   mysteryId?: string;
+  /** Materiales sin foto (agua, bicarbonato, vinagre): un platito de color dibujado por la app. */
+  drawn?: Record<string, string>;
 }
 
 /** Los platitos de muestra con su nombre (la misteriosa, sin foto, con un «?»). */
-export function SampleStrip({ art, samples, active, mysteryId }: SampleStripProps) {
+export function SampleStrip({ art, samples, active, mysteryId, drawn }: SampleStripProps) {
   return (
     <View style={styles.strip}>
       {samples.map((s) => (
@@ -107,6 +109,8 @@ export function SampleStrip({ art, samples, active, mysteryId }: SampleStripProp
             <View style={styles.mystery}>
               <Text style={styles.question}>?</Text>
             </View>
+          ) : !art.muestras[s.id] && drawn?.[s.id] ? (
+            <View style={[styles.mystery, { borderStyle: 'solid', borderColor: colors.slate400, backgroundColor: drawn[s.id] }]} />
           ) : (
             <Image source={art.muestras[s.id]} style={{ width: 56, height: 56 }} resizeMode="contain" accessible={false} />
           )}

@@ -27,6 +27,8 @@ export const SCENE_ART: Record<string, { source: ImageSourcePropType; aspect: nu
   mesaLab: { source: require('../../../assets/ciencia/bg/scene_c5_u02.webp'), aspect: 1536 / 1024 },
 };
 
+const COVER_C5_U02 = require('../../../assets/ciencia/covers/cover_c5_u02.webp');
+
 /** Portadas: el cuaderno en Inicio y la unidad C4-U06. */
 export const CIENCIA_COVERS = {
   notebook: require('../../../assets/ciencia/covers/cover_ciencia_cuaderno.webp'),
@@ -34,7 +36,9 @@ export const CIENCIA_COVERS = {
   c1u02: require('../../../assets/ciencia/covers/cover_c1_u02.webp'),
   c2u02: require('../../../assets/ciencia/covers/cover_c2_u02.webp'),
   c3u06: require('../../../assets/ciencia/covers/cover_c3_u06.webp'),
-  c5u02: require('../../../assets/ciencia/covers/cover_c5_u02.webp'),
+  c5u02: COVER_C5_U02,
+  // Provisional: C5-U03 usa la portada de C5-U02 hasta que llegue la suya (no pedida: no hace falta para jugar).
+  c5u03: COVER_C5_U02,
   c6u04: require('../../../assets/ciencia/covers/cover_c6_u04.webp'),
 } satisfies Record<string, ImageSourcePropType>;
 
@@ -134,6 +138,7 @@ export const UNIT_ART_READY: Record<string, boolean> = {
   // Arte recibido (lotes C, D y E); estas unidades aún no tienen contenido, así que no se abren.
   'C3-U06': true,
   'C5-U02': true,
+  'C5-U03': true, // usa el arte de Lote E (frasco, muestras) y dibuja bicarbonato/vinagre; portada provisional
   'C6-U04': true, // Lote C recibido (manifest-tanda-2c)
 };
 

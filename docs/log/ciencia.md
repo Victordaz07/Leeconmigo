@@ -95,3 +95,7 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
 - Modelo de masa en frasco cerrado + propiedades de cuatro polvos y una muestra misteriosa; dos ideas, dos estándares 5-PS1 con ≥ 3 tareas cada uno.
 - Decisión: sin densidad ni volumen; el color solo no identifica la muestra X (se combinan «en agua» y «con la lupa»). El hielo derretido es la transferencia de 5-PS1-2.
 - Arte de Lote E conectado (frasco, balanza con pantalla en blanco, 4 muestras). Resultado: C1, C2, C3, C4, C5 y C6 jugables.
+
+## 2026-10-17 · CI-16: C5-U03 «Mezclas bajo investigación»
+- Primera unidad del catálogo fuera de los pilotos, elegida porque reutiliza la familia `matter` y el arte del Lote E (cero imágenes nuevas).
+- Decisión: la sustancia nueva se decide con dos pruebas juntas (burbujas + no recuperar); mezclas siempre abiertas y en poca cantidad.
