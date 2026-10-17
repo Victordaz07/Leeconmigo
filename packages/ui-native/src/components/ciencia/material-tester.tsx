@@ -69,7 +69,7 @@ export function MaterialTester({ art, width, test, tiles, selected, onSelect, po
           return (
             <Pressable key={t.id} disabled={!onSelect} onPress={() => onSelect?.(t.id)} accessibilityRole="button" accessibilityState={{ selected: on }} accessibilityLabel={t.label} style={[styles.tile, { width: tile }, on && styles.tileOn]}>
               <Image source={art.materiales[t.id]} style={{ width: tile - 16, height: tile - 16 }} resizeMode="contain" accessible={false} />
-              <Text style={styles.tileText} numberOfLines={2}>
+              <Text style={[styles.tileText, tile < 90 && { fontSize: 11 }]} numberOfLines={2}>
                 {t.tried ? '✓ ' : ''}
                 {t.label}
               </Text>
@@ -82,12 +82,12 @@ export function MaterialTester({ art, width, test, tiles, selected, onSelect, po
         {test === 'techo' ? (
           <>
             <Image source={art.muneco} style={[styles.doll, { width: doll, height: doll, left: stage * 0.3 }]} resizeMode="contain" accessible={false} />
-            {source ? <Image source={source} style={[styles.roof, { width: piece * 1.5, height: piece * 1.5, left: stage * 0.2, transform: [{ rotate: '-12deg' }] }]} resizeMode="contain" accessible={false} /> : null}
+            {source ? <Image source={source} style={[styles.roof, { width: piece * 1.1, height: piece * 1.1, left: stage * 0.3 + doll / 2 - (piece * 1.1) / 2, transform: [{ rotate: '-12deg' }] }]} resizeMode="contain" accessible={false} /> : null}
           </>
         ) : (
           <>
             <Image source={art.bandeja} style={[styles.tray, { width: stage * 0.56, height: stage * 0.56, left: stage * 0.1 }]} resizeMode="contain" accessible={false} />
-            {source ? <Image source={source} style={[styles.flat, { width: piece, height: piece, left: stage * 0.23 }]} resizeMode="contain" accessible={false} /> : null}
+            {source ? <Image source={source} style={[styles.flat, { width: piece * 0.8, height: piece * 0.8, left: stage * 0.1 + (stage * 0.56 - piece * 0.8) / 2 }]} resizeMode="contain" accessible={false} /> : null}
           </>
         )}
         {!calm ? <Image source={art.regadera} style={[styles.can, { width: stage * 0.28, height: stage * 0.28 }]} resizeMode="contain" accessible={false} /> : null}
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
   tileText: { fontFamily: fontFamily.ui.extrabold, fontSize: 13, color: colors.ink, textAlign: 'center' },
   stage: { position: 'relative', alignSelf: 'stretch', backgroundColor: colors.chip, borderRadius: radius.tile, overflow: 'hidden' },
   doll: { position: 'absolute', bottom: 6 },
-  roof: { position: 'absolute', top: 6 },
+  roof: { position: 'absolute', top: 18 },
   tray: { position: 'absolute', bottom: 0 },
   flat: { position: 'absolute', bottom: '14%' },
   can: { position: 'absolute', top: 4, right: 36 },

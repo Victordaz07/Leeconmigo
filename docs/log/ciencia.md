@@ -78,3 +78,7 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
   material (techo y secar) para que el niño vea que el mejor material depende del propósito (idea central de 2-PS1-2).
 - Recorrido completo en el navegador (6 sesiones) sin errores. La comparación predicción/observado ahora se prueba con la respuesta
   honesta (si no coincide, se dice «no coincidió»).
+
+## 2026-10-17 · CI-12b: Tanda 2 completa
+- Llegaron los lotes B–E (34 imágenes). Revisadas, convertidas (240 + ~1,3 MB) y conectadas; C2-U02 abierta con arte real. El arte de
+  C6, C3 y C5 queda listo para cuando se construyan esas unidades.

@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest';
 
 /** Arte PROVISIONAL (dibujado con código) todavía conectado: vacío cuando llegaron todos los lotes de las unidades abiertas. */
-const PROVISIONAL: string[] = ['bg/scene_c2_u02.webp', 'covers/cover_c2_u02.webp', 'props/prop_muneco.webp', 'props/prop_bandeja_agua.webp', 'props/prop_papel_absorbente.webp', 'props/prop_tela.webp', 'props/prop_plastico.webp', 'props/prop_carton.webp'];
+const PROVISIONAL: string[] = [];
 /** Un manifiesto por tanda/lote recibido. */
-const MANIFESTS = ['manifest-tanda-1.json', 'manifest-tanda-2a.json'];
+const MANIFESTS = ['manifest-tanda-1.json', 'manifest-tanda-2a.json', 'manifest-tanda-2b.json', 'manifest-tanda-2c.json', 'manifest-tanda-2d.json', 'manifest-tanda-2e.json'];
 
 describe('arte de Ciencia', () => {
   it('cada archivo que art.ts referencia existe, y el manifiesto lo describe', async () => {
@@ -12,8 +12,8 @@ describe('arte de Ciencia', () => {
     const dir = new URL('../src/subjects/ciencia/', import.meta.url);
     const art = readFileSync(new URL('art.ts', dir), 'utf8');
     const files = [...art.matchAll(/require\('([^']+)'\)/g)].map((m) => m[1]);
-    // 18 de la Tanda 1 (la escena de la ladera es solo horizontal) + 7 del Lote A de la Tanda 2.
-    expect(files.length).toBeGreaterThanOrEqual(25);
+    // 18 de la Tanda 1 (la escena de la ladera es solo horizontal) + las 41 de la Tanda 2 (lotes A–E).
+    expect(files.length).toBeGreaterThanOrEqual(59);
     for (const f of files) expect(existsSync(new URL(f, dir)), f).toBe(true);
     let total = 0;
     for (const name of MANIFESTS) {
@@ -33,8 +33,7 @@ describe('arte de Ciencia', () => {
     const art = readFileSync(new URL('../src/subjects/ciencia/art.ts', import.meta.url), 'utf8');
     for (const f of PROVISIONAL) expect(art).toContain(f.replace(/^[a-z]+\//, ''));
     expect(art).toMatch(/'C1-U02': true/);
-    // Mientras su arte sea provisional, la unidad no se abre al niño.
-    expect(art).toMatch(/'C2-U02': false/);
+    expect(art).toMatch(/'C2-U02': true/);
     expect(art).toMatch(/'C4-U06': true/);
   });
 });

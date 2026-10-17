@@ -99,10 +99,10 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | CI-09 | Pedido de imágenes de la Tanda 2 (5 unidades piloto, 41 imágenes en 5 lotes A–E) | ✅ | A | `docs/design/ciencia/PEDIDO-IMAGENES.md`; espera que Victor las genere |
 | CI-10 | Reproductor de sesión por «familias» de laboratorio (erosión, mapa, escena, luz) y catálogo de las 48 unidades | ✅ | A | `subjects/ciencia/families/`, `catalog-screen.tsx`; una unidad nueva solo agrega su familia |
 | CI-11 | C1-U02 «Ver en la oscuridad»: modelo de la luz, unidad en JSON validado, caja de luz y tabla de observaciones | ✅ | A | Lote A recibido (7 imágenes, `manifest-tanda-2a.json`); `UNIT_ART_READY['C1-U02']=true`; verificada en tableta y teléfono |
-| CI-12 | C2-U02 «Un techo para el muñeco» (probador de materiales): modelo, unidad en JSON validado, familia `materials` | ✅ contenido y pantallas · ⏳ arte | A | arte provisional del Lote B; `UNIT_ART_READY['C2-U02']=false` hasta recibirlo |
-| CI-13 | C6-U04 «Energía térmica» (probador + constructor de modelos + mesa de datos) | ⬜ | A | espera Lote C |
-| CI-14 | C3-U06 «Interacciones sin tocar» (fuerzas e imanes) | ⬜ | A | espera Lote D |
-| CI-15 | C5-U02 «Cantidad y propiedades» (materia en sistemas) | ⬜ | A | espera Lote E |
+| CI-12 | C2-U02 «Un techo para el muñeco» (probador de materiales): modelo, unidad en JSON validado, familia `materials` | ✅ | A | Lote B recibido (9 imágenes, `manifest-tanda-2b.json`); `UNIT_ART_READY['C2-U02']=true`; verificada en tableta y teléfono |
+| CI-13 | C6-U04 «Energía térmica» (probador + constructor de modelos + mesa de datos) | ⬜ | A | arte recibido (Lote C, 8 imágenes); falta modelo, contenido y pantallas |
+| CI-14 | C3-U06 «Interacciones sin tocar» (fuerzas e imanes) | ⬜ | A | arte recibido (Lote D, 9 imágenes); falta modelo, contenido y pantallas |
+| CI-15 | C5-U02 «Cantidad y propiedades» (materia en sistemas) | ⬜ | A | arte recibido (Lote E, 8 imágenes); falta modelo, contenido y pantallas |
 
 ---
 

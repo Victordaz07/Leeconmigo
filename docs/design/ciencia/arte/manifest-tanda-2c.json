@@ -1,0 +1,81 @@
+{
+ "project": "Kitewise",
+ "subject": "ciencia",
+ "batch": "tanda-2c",
+ "count": 8,
+ "format": "PNG original de GPT, sin recortar; se convierte a WebP (props y poses recortados a su silueta)",
+ "assets": [
+  {
+   "source": "cover_c6_u04.png",
+   "sha256": "b2cbada6a8e6e9f65f5cd10fffd5727f960fb36baa89941011b532fed339f686",
+   "bytes": 2369209,
+   "output": "apps/mobile/assets/ciencia/covers/cover_c6_u04.webp",
+   "outputBytes": 79560,
+   "width": 1152,
+   "height": 768
+  },
+  {
+   "source": "prop_capa_aluminio.png",
+   "sha256": "5f886e6f71cb5718130dd05f726577337fa37008b52009d6050d016ba760929e",
+   "bytes": 940207,
+   "output": "apps/mobile/assets/ciencia/props/prop_capa_aluminio.webp",
+   "outputBytes": 22540,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_capa_espuma.png",
+   "sha256": "9071421d1eecf90490a02ce3320ca73d11147b114c98d4097cc52341c13987a7",
+   "bytes": 1124411,
+   "output": "apps/mobile/assets/ciencia/props/prop_capa_espuma.webp",
+   "outputBytes": 23908,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_capa_fieltro.png",
+   "sha256": "23fb59ecc4a842bc754d609006a49ab0592abfee8be71d5c6d34ecf08dedd09a",
+   "bytes": 801751,
+   "output": "apps/mobile/assets/ciencia/props/prop_capa_fieltro.webp",
+   "outputBytes": 21012,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_funda_aislante.png",
+   "sha256": "b0ba6050345037e90192a5a10aadc5ecd235664de15596cfa60c65a5539cd0c6",
+   "bytes": 1134734,
+   "output": "apps/mobile/assets/ciencia/props/prop_funda_aislante.webp",
+   "outputBytes": 26234,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_termometro.png",
+   "sha256": "fd1152fe7379565b79c19827118c5ade077cf626020f03d47d70b8bc55a86acd",
+   "bytes": 479640,
+   "output": "apps/mobile/assets/ciencia/props/prop_termometro.webp",
+   "outputBytes": 15628,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_vaso_frio.png",
+   "sha256": "ed12b15cb7cc3cc9ef7a17ff830ae329758bcf96569b9e249ce00b8f8a156d1f",
+   "bytes": 1142996,
+   "output": "apps/mobile/assets/ciencia/props/prop_vaso_frio.webp",
+   "outputBytes": 30846,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "scene_c6_u04.png",
+   "sha256": "64374e56e281063dd51415279a5a81e007ea5569d7a7367f191708820cab04ee",
+   "bytes": 2369840,
+   "output": "apps/mobile/assets/ciencia/bg/scene_c6_u04.webp",
+   "outputBytes": 102660,
+   "width": 1536,
+   "height": 1024
+  }
+ ]
+}

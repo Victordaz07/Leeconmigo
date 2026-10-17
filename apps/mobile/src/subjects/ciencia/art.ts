@@ -22,6 +22,9 @@ export const SCENE_ART: Record<string, { source: ImageSourcePropType; aspect: nu
   humedal: { source: CIENCIA_BACKGROUNDS.humedal.horizontal, aspect: 1536 / 1024 },
   cuarto: { source: require('../../../assets/ciencia/bg/scene_c1_u02.webp'), aspect: 1536 / 1024 },
   porche: { source: require('../../../assets/ciencia/bg/scene_c2_u02.webp'), aspect: 1536 / 1024 },
+  alfeizar: { source: require('../../../assets/ciencia/bg/scene_c6_u04.webp'), aspect: 1536 / 1024 },
+  taller: { source: require('../../../assets/ciencia/bg/scene_c3_u06.webp'), aspect: 1536 / 1024 },
+  mesaLab: { source: require('../../../assets/ciencia/bg/scene_c5_u02.webp'), aspect: 1536 / 1024 },
 };
 
 /** Portadas: el cuaderno en Inicio y la unidad C4-U06. */
@@ -30,6 +33,9 @@ export const CIENCIA_COVERS = {
   c4u06: require('../../../assets/ciencia/covers/cover_c4_u06.webp'),
   c1u02: require('../../../assets/ciencia/covers/cover_c1_u02.webp'),
   c2u02: require('../../../assets/ciencia/covers/cover_c2_u02.webp'),
+  c3u06: require('../../../assets/ciencia/covers/cover_c3_u06.webp'),
+  c5u02: require('../../../assets/ciencia/covers/cover_c5_u02.webp'),
+  c6u04: require('../../../assets/ciencia/covers/cover_c6_u04.webp'),
 } satisfies Record<string, ImageSourcePropType>;
 
 /** Objetos sueltos del laboratorio de Paisaje y erosión (una pieza cada uno, transparentes, cuadrados). */
@@ -53,7 +59,7 @@ export const CIENCIA_LUZ = {
   },
 } satisfies { caja: ImageSourcePropType; linterna: ImageSourcePropType; objetos: Record<string, ImageSourcePropType> };
 
-/** Arte de la unidad C2-U02 (Lote B del pedido; hoy PROVISIONAL hasta que lleguen las imágenes de Victor). */
+/** Arte de la unidad C2-U02 (Lote B del pedido, recibido: `manifest-tanda-2b.json`). */
 export const CIENCIA_MATERIALES = {
   muneco: require('../../../assets/ciencia/props/prop_muneco.webp'),
   bandeja: require('../../../assets/ciencia/props/prop_bandeja_agua.webp'),
@@ -64,6 +70,48 @@ export const CIENCIA_MATERIALES = {
     carton: require('../../../assets/ciencia/props/prop_carton.webp'),
   },
 } satisfies { muneco: ImageSourcePropType; bandeja: ImageSourcePropType; materiales: Record<string, ImageSourcePropType> };
+
+/** Objeto compartido por C2, C5 y C6 (Lote B): un vaso de agua sin rayitas ni números. */
+export const CIENCIA_COMUN = {
+  vasoAgua: require('../../../assets/ciencia/props/prop_vaso_agua.webp'),
+} satisfies Record<string, ImageSourcePropType>;
+
+/** Arte de C6-U04 «Energía térmica» (Lote C, recibido: `manifest-tanda-2c.json`). */
+export const CIENCIA_TERMICO = {
+  vasoFrio: require('../../../assets/ciencia/props/prop_vaso_frio.webp'),
+  funda: require('../../../assets/ciencia/props/prop_funda_aislante.webp'),
+  termometro: require('../../../assets/ciencia/props/prop_termometro.webp'),
+  capas: {
+    fieltro: require('../../../assets/ciencia/props/prop_capa_fieltro.webp'),
+    espuma: require('../../../assets/ciencia/props/prop_capa_espuma.webp'),
+    aluminio: require('../../../assets/ciencia/props/prop_capa_aluminio.webp'),
+  },
+} satisfies { vasoFrio: ImageSourcePropType; funda: ImageSourcePropType; termometro: ImageSourcePropType; capas: Record<string, ImageSourcePropType> };
+
+/** Arte de C3-U06 «Interacciones sin tocar» (Lote D, recibido: `manifest-tanda-2d.json`). El imán es GRANDE, nunca pequeño ni de neodimio. */
+export const CIENCIA_IMANES = {
+  iman: require('../../../assets/ciencia/props/prop_iman_grande.webp'),
+  objetos: {
+    clavo: require('../../../assets/ciencia/props/prop_clavo.webp'),
+    llave: require('../../../assets/ciencia/props/prop_llave.webp'),
+    bloque: require('../../../assets/ciencia/props/prop_bloque_plastico.webp'),
+    aluminio: require('../../../assets/ciencia/props/prop_bola_aluminio.webp'),
+  },
+  globo: require('../../../assets/ciencia/props/prop_globo.webp'),
+  papelitos: require('../../../assets/ciencia/props/prop_papelitos.webp'),
+} satisfies { iman: ImageSourcePropType; objetos: Record<string, ImageSourcePropType>; globo: ImageSourcePropType; papelitos: ImageSourcePropType };
+
+/** Arte de C5-U02 «Cantidad y propiedades» (Lote E, recibido: `manifest-tanda-2e.json`). Las muestras son polvos en platitos, no golosinas. */
+export const CIENCIA_SISTEMAS = {
+  frasco: require('../../../assets/ciencia/props/prop_frasco_cerrado.webp'),
+  balanza: require('../../../assets/ciencia/props/prop_balanza.webp'),
+  muestras: {
+    sal: require('../../../assets/ciencia/props/prop_muestra_sal.webp'),
+    azucar: require('../../../assets/ciencia/props/prop_muestra_azucar.webp'),
+    arena: require('../../../assets/ciencia/props/prop_muestra_arena.webp'),
+    harina: require('../../../assets/ciencia/props/prop_muestra_harina.webp'),
+  },
+} satisfies { frasco: ImageSourcePropType; balanza: ImageSourcePropType; muestras: Record<string, ImageSourcePropType> };
 
 /** Maya, la guía de Ciencia (DC-4, a confirmar por Victor). Misma niña de la historia `la-isla-que-caminaba`. */
 export type MayaPose = 'saluda' | 'piensa' | 'investiga' | 'apunta' | 'celebra';
@@ -82,7 +130,11 @@ export const MAYA: Record<MayaPose, { source: ImageSourcePropType; aspect: numbe
 export const UNIT_ART_READY: Record<string, boolean> = {
   'C4-U06': true,
   'C1-U02': true, // Lote A recibido (manifest-tanda-2a)
-  'C2-U02': false, // arte provisional: espera el Lote B
+  'C2-U02': true, // Lote B recibido (manifest-tanda-2b)
+  // Arte recibido (lotes C, D y E); estas unidades aún no tienen contenido, así que no se abren.
+  'C3-U06': true,
+  'C5-U02': true,
+  'C6-U04': true,
 };
 
 /** Un build de demo (`EXPO_PUBLIC_DEMO=1`) deja abrir las unidades con arte provisional, para probarlas antes de que llegue. */

@@ -172,3 +172,16 @@ tela, plástico, cartón), vaso de agua compartido con C5 y C6, bandeja con pico
   los 8 nombres de `PROVISIONAL` en `tests/ciencia-art.test.ts`, mirar el techo (la pieza rotada −12° sobre el muñeco) y el derrame
   en los 4 tamaños y poner `UNIT_ART_READY['C2-U02']=true`.
 - **Siguiente:** CI-13 C6-U04 (energía térmica: probador + constructor de modelos + mesa de datos) con arte provisional del Lote C.
+
+
+## Actualización CI-12b (2026-10-17): lotes B, C, D y E recibidos (34 imágenes) — toda la Tanda 2 está
+- Victor mandó los 4 lotes; se revisaron (sin texto, instrumentos y pantallas en blanco, objetos con alfa limpio, imán GRANDE) y se
+  convirtieron con `scripts/ciencia-arte.py <carpeta> tanda-2b … 2e` (manifiestos `manifest-tanda-2b.json` … `2e`). Todo está
+  conectado en `art.ts`: `CIENCIA_MATERIALES` (+ `CIENCIA_COMUN.vasoAgua`), `CIENCIA_TERMICO`, `CIENCIA_IMANES`, `CIENCIA_SISTEMAS`,
+  las escenas `porche`, `alfeizar`, `taller`, `mesaLab` y las portadas. `PROVISIONAL` quedó vacío y se borró el arte provisional.
+- **C2-U02 se abre** (`UNIT_ART_READY=true`), verificada en tableta (horizontal) y teléfono (vertical). Se ajustó `MaterialTester`: techo
+  más chico, a un palmo sobre el muñeco; la pieza del derrame cabe dentro de la bandeja.
+- Nota de arte: en la portada de C2 el muñeco es una figura de clavija azul y en `prop_muneco` es de madera clara (distintos pero del
+  mismo estilo). Si molesta, pedir `cover_c2_u02` otra vez con el muñeco de `prop_muneco`.
+- **Siguiente (en este orden):** CI-13 C6-U04 → CI-14 C3-U06 → CI-15 C5-U02. Ya hay arte de las tres, así que cada una se verifica con
+  arte real desde el primer día.
