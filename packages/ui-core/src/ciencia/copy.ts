@@ -114,17 +114,17 @@ export const CIENCIA_COPY = {
     think: L('Piensa con calma. No hay prisa.', 'Think it over. There’s no rush.'),
     wellDone: L('¡Muy bien!', 'Nicely done!'),
   },
-  /** Catálogo de las unidades de Ciencia (las 48 del mapa; las que aún no existen dicen «Pronto»). */
+  /** Catálogo de las unidades de Ciencia: solo las que ya se pueden jugar (las demás del mapa de 48 no se muestran hasta estar hechas). */
   catalog: {
     title: L('Unidades de Ciencia', 'Science units'),
-    intro: L('Todo se puede abrir. Las que dicen «Pronto» todavía se están preparando.', 'Everything opens. The ones that say “Soon” are still being prepared.'),
+    intro: L('Elige una unidad y empieza a investigar.', 'Pick a unit and start investigating.'),
+    emptyGrade: L('Este grado todavía no tiene unidades para jugar.', 'This grade doesn’t have units to play yet.'),
     chooseGrade: L('Elige un grado', 'Pick a grade'),
     gradeChip: (g: number) => L(`${g}.º`, `Grade ${g}`),
-    soon: L('Pronto', 'Soon'),
     play: L('Jugar', 'Play'),
     open: L('Abrir', 'Open'),
     sessionsDone: (n: number, t: number) => L(`${n} de ${t} sesiones`, `${n} of ${t} sessions`),
-    unitsReady: (n: number, t: number) => L(`${n} de ${t} unidades listas`, `${n} of ${t} units ready`),
+    unitsReady: (n: number) => L(`${n} unidades listas`, `${n} units ready`),
     area: {
       vida: L('Vida', 'Life'),
       materia: L('Materia y energía', 'Matter and energy'),

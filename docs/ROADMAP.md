@@ -109,6 +109,12 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | CI-19 | C1-U03 «Caminos de luz» (1.º): materiales y luz, contenido y banco de la linterna | ✅ | A | Lote F recibido (6 imágenes); verificada en tableta; abierta al niño |
 | CI-20 | C2-U01 «Detectives de materiales» (2.º): clasificar por propiedades, contenido y mesa del detective | ✅ | A | Lote G recibido (6 imágenes); verificada en tableta; abierta al niño |
 | CI-21 | C6-U05 «Agua en movimiento» (6.º): modelo del ciclo del agua, contenido y constructor de flechas | ✅ | A | Lote J recibido (9 imágenes); verificada en tableta; abierta al niño. Con esto la **Tanda 3 está completa** |
+| CI-22 | C5-U01 «Materia invisible» (5.º) — lote O | ⬜ | A | pedido de imágenes hecho (4); reutiliza la familia `matter`; sin mecanismos atómicos formales |
+| CI-23 | C3-U07 «Tiempo y clima» (3.º) — lote M | ⬜ | A | pedido de imágenes hecho (4); tablas y barras de datos |
+| CI-24 | C2-U08 «Una Tierra que cambia» (2.º) — lote L | ⬜ | A | pedido de imágenes hecho (5); reutiliza el laboratorio de erosión |
+| CI-25 | C1-U01 «Vibraciones» (1.º) — lote K | ⬜ | A | pedido de imágenes hecho (5) |
+| CI-26 | C4-U03 «Transferir y transformar» (4.º) — lote N | ⬜ | A | pedido de imágenes hecho (6) |
+| CI-27 | C6-U07 «Evidencias de cambio» (6.º) — lote P | ⬜ | A | pedido de imágenes hecho (3); no presentar un día caluroso como prueba climática |
 
 ---
 

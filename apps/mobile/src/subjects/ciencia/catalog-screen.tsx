@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { SCIENCE_MAP, unitProgress, unitsForGrade, type ScienceProgress, type ScienceUnitEntry } from '@lee-conmigo/science-content';
+import { unitProgress, unitsForGrade, type ScienceProgress, type ScienceUnitEntry } from '@lee-conmigo/science-content';
 import { CIENCIA_COPY, type CienciaLang } from '@lee-conmigo/ui-core';
 import { Button, ChevronLeftIcon, colors, fontFamily, gradients, GradientView, radius, RoundButton, shadows, useLayout } from '@lee-conmigo/ui-native';
 
@@ -19,16 +19,16 @@ const AREA_COLOR: Record<ScienceUnitEntry['area'], string> = { vida: colors.ok, 
 const GRADES = [1, 2, 3, 4, 5, 6] as const;
 
 /**
- * Las unidades de Ciencia por grado (Kitewise: «todo abre, lo sugerido se destaca»). Se ven las 48 del mapa: las que ya
- * tienen contenido y arte se juegan; las demás dicen «Pronto» (no se inventa contenido, docs/CLAUDE.md). Los estándares NO
- * se muestran aquí (solo a padres, y como borrador).
+ * Las unidades de Ciencia por grado (Kitewise: «todo abre, lo sugerido se destaca»). Solo se ven las que ya se pueden jugar
+ * (contenido y arte listos): las demás del mapa de 48 no aparecen hasta que estén hechas (no se inventa contenido,
+ * docs/CLAUDE.md). Los estándares NO se muestran aquí (solo a padres, y como borrador).
  */
 export function CatalogScreen({ lang, progress, playable, initialGrade, onBack, onOpen }: CatalogScreenProps) {
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const c = CIENCIA_COPY;
   const [grade, setGrade] = useState(initialGrade);
-  const units = unitsForGrade(grade);
+  const units = unitsForGrade(grade).filter((u) => playable[u.id] !== undefined);
   const ready = Object.keys(playable).length;
   const wide = !layout.narrow;
   return (
@@ -41,7 +41,7 @@ export function CatalogScreen({ lang, progress, playable, initialGrade, onBack, 
           <Text style={styles.pillText}>🔬 {c.subject[lang]}</Text>
         </GradientView>
         <View style={styles.flex} />
-        <Text style={styles.meta}>{c.catalog.unitsReady(ready, SCIENCE_MAP.units.length)[lang]}</Text>
+        <Text style={styles.meta}>{c.catalog.unitsReady(ready)[lang]}</Text>
       </View>
       <Text style={[styles.title, layout.phone && styles.titleSmall]}>{c.catalog.title[lang]}</Text>
       <Text style={styles.meta}>{c.catalog.intro[lang]}</Text>
@@ -59,10 +59,9 @@ export function CatalogScreen({ lang, progress, playable, initialGrade, onBack, 
       <View style={[styles.grid, wide && styles.gridWide]}>
         {units.map((u) => {
           const sessions = playable[u.id];
-          const isPlayable = sessions !== undefined;
-          const done = isPlayable ? unitProgress(progress, u.id).sessionsDone.length : 0;
+          const done = unitProgress(progress, u.id).sessionsDone.length;
           return (
-            <View key={u.id} style={[styles.card, wide && styles.cardWide, !isPlayable && styles.cardSoon]}>
+            <View key={u.id} style={[styles.card, wide && styles.cardWide]}>
               <View style={styles.cardTop}>
                 <View style={[styles.area, { backgroundColor: AREA_COLOR[u.area] }]}>
                   <Text style={styles.areaText}>{c.catalog.area[u.area][lang]}</Text>
@@ -72,21 +71,14 @@ export function CatalogScreen({ lang, progress, playable, initialGrade, onBack, 
               <Text style={styles.unitTitle}>{u.title[lang]}</Text>
               <Text style={styles.question}>{u.question[lang]}</Text>
               <View style={styles.cardBottom}>
-                {isPlayable ? (
-                  <>
-                    <Text style={styles.meta}>{done ? c.catalog.sessionsDone(done, sessions)[lang] : ''}</Text>
-                    <Button label={(done ? c.catalog.open : c.catalog.play)[lang]} variant={done ? 'secondary' : 'primary'} onPress={() => onOpen(u.id)} />
-                  </>
-                ) : (
-                  <View style={styles.soon}>
-                    <Text style={styles.soonText}>{c.catalog.soon[lang]}</Text>
-                  </View>
-                )}
+                <Text style={styles.meta}>{done ? c.catalog.sessionsDone(done, sessions)[lang] : ''}</Text>
+                <Button label={(done ? c.catalog.open : c.catalog.play)[lang]} variant={done ? 'secondary' : 'primary'} onPress={() => onOpen(u.id)} />
               </View>
             </View>
           );
         })}
       </View>
+      {units.length === 0 ? <Text style={styles.meta}>{c.catalog.emptyGrade[lang]}</Text> : null}
     </ScrollView>
   );
 }
@@ -112,7 +104,6 @@ const styles = StyleSheet.create({
   gridWide: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' },
   card: { backgroundColor: '#ffffff', borderRadius: radius.card, padding: 16, gap: 6, boxShadow: shadows.card, borderWidth: 2, borderColor: colors.line },
   cardWide: { width: '49%' },
-  cardSoon: { opacity: 0.72, backgroundColor: colors.paperLine },
   cardTop: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   area: { borderRadius: radius.pill, paddingHorizontal: 12, paddingVertical: 4 },
   areaText: { fontFamily: fontFamily.ui.extrabold, fontSize: 13, color: '#ffffff' },
@@ -120,6 +111,4 @@ const styles = StyleSheet.create({
   unitTitle: { fontFamily: fontFamily.ui.black, fontSize: 21, color: colors.ink },
   question: { fontFamily: fontFamily.ui.bold, fontSize: 16, lineHeight: 22, color: colors.inkSoft },
   cardBottom: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 10, marginTop: 8, minHeight: 56 },
-  soon: { backgroundColor: colors.chip, borderRadius: radius.pill, paddingHorizontal: 16, paddingVertical: 8 },
-  soonText: { fontFamily: fontFamily.ui.extrabold, fontSize: 15, color: colors.muted },
 });

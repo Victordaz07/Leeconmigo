@@ -289,3 +289,8 @@ tela, plástico, cartón), vaso de agua compartido con C5 y C6, bandeja con pico
 - Arte del lote J conectado (`CIENCIA_AGUA`, escena `costa`, portada `c6u05`).
 - **Resultado:** 12 unidades de Ciencia abiertas (C1-U02, C1-U03, C2-U01, C2-U02, C3-U05, C3-U06, C4-U02, C4-U06, C5-U02, C5-U03, C6-U04, C6-U05). Quedan 36 «Pronto».
 - **Siguiente (decidir con Victor):** otra tanda de unidades (conviene elegir las que reutilizan familias: `matter`, `ramp`, `forces`, `path`, `sort`, `cycle`…), la revisión de un docente (CI-08), la vista de padres (estándares y actividad fuera de pantalla), el repaso 1-3-7 y el APK cuando lo pida.
+
+## Actualización (2026-10-17): «Pronto» fuera del catálogo + Tanda 4 pedida
+- **Victor pidió quitar «Pronto» y que las unidades sean utilizables.** Decisión (confirmada con él): el catálogo de Ciencia **solo muestra las unidades jugables** (12 hoy); el mapa de 48 sigue en `docs/design/ciencia/MAPA-UNIDADES.md`.
+  Cada unidad nueva aparece sola cuando tiene contenido y `UNIT_ART_READY` en true. Se construye **por tandas**, una por grado.
+- **Tanda 4 pedida** (27 imágenes, lotes K–P en `PEDIDO-IMAGENES.md`): C1-U01, C2-U08, C3-U07, C4-U03, C5-U01, C6-U07; filas CI-22…CI-27 del ROADMAP. Orden: O → M → L → K → N → P.

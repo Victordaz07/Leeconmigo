@@ -254,6 +254,66 @@ conectándolas con flechas que dibuja la app; después revisa qué impulsa cada 
 | `prop_arbol` | Un árbol frondoso de hojas verdes, con tronco marrón, de frente. |
 | `prop_suelo_corte` | Un corte de suelo visto de lado: pasto arriba, capas de tierra y arena debajo y una zona más oscura y húmeda abajo; **sin etiquetas ni flechas**. |
 
+## Tanda 4 — seis unidades más, una por grado (27 imágenes, 6 lotes: K–P)
+
+**Por qué estas (reutilizan lo ya construido y piden poco arte nuevo):** C1-U01 (sonido y vibración: banco nuevo y sencillo), C2-U08 (reutiliza el laboratorio de erosión y sus piezas), C3-U07
+(reutiliza la tabla y las barras de datos; usa `prop_sol`, `prop_nube` y `prop_termometro`), C4-U03 (reutiliza la rampa y el carrito para «transferir energía»), C5-U01 (reutiliza el frasco, la balanza y el globo de
+`prop_globo`; la escena es `scene_c5_u02`) y C6-U07 (reutiliza la gráfica de líneas; datos que dibuja la app). Mismas reglas, medidas y estilo común de la Tanda 2; en cada chat adjunta las 3 imágenes de referencia de siempre
+(`prop_bandeja`, `prop_regadera`, `scene_ciencia_ladera`). Cada lote en un `.zip` con los nombres exactos; se convierten con `python3 -I scripts/ciencia-arte.py <carpeta> tanda-4<letra>`.
+
+**Orden sugerido:** O → M → L → K → N → P.
+
+### Lote K — C1-U01 «Vibraciones» (1.º) · 5 imágenes
+| Archivo | Prompt (después del estilo común) |
+|---|---|
+| `cover_c1_u01` | Un tambor pequeño con unos granitos de arroz encima y dos palillos al lado; composición centrada y simple con mucho margen. Reconocible en miniatura. |
+| `scene_c1_u01` | Un rincón de música de un cuarto infantil con una mesa baja de madera y una ventana con luz suave; la mesa queda despejada. Sin personas, sin carteles. **Zona tranquila a la derecha.** |
+| `prop_regla_borde` | Una regla de plástico transparente **sin números ni rayas**, sujeta con un bloque de madera pequeño sobre el borde de una mesa, con la mitad de la regla afuera del borde; vista de lado. Una sola pieza. |
+| `prop_tambor` | Un tambor pequeño de colores con su parche liso, visto en tres cuartos, **sin letras ni dibujos**. |
+| `prop_caja_ligas` | Una caja de cartón abierta por arriba con tres ligas de goma de distinto grosor estiradas sobre la abertura, vista en tres cuartos. |
+
+### Lote L — C2-U08 «Una Tierra que cambia» (2.º) · 5 imágenes
+| Archivo | Prompt |
+|---|---|
+| `cover_c2_u08` | Un cañón con un río pequeño en el fondo y un volcán lejano al fondo; paisaje simple y centrado con mucho margen. |
+| `scene_c2_u08` | Un paisaje de colinas de tierra y pasto con un arroyo; luz de la mañana; sin personas ni carteles. **Zona tranquila a la derecha.** |
+| `prop_volcan` | Un volcán con la cima humeante muy suave (un hilito de humo) y laderas de roca oscura, visto de frente. |
+| `prop_canon` | Un cañón de paredes de roca en capas rojizas con un río delgado al fondo, visto de frente. |
+| `prop_duna` | Una duna de arena con rizos suaves formados por el viento, vista de lado. |
+
+### Lote M — C3-U07 «Tiempo y clima» (3.º) · 4 imágenes
+| Archivo | Prompt |
+|---|---|
+| `cover_c3_u07` | Una casita con cuatro cielos distintos detrás, uno por estación, dentro de un círculo dividido en cuatro; composición centrada y simple. **Sin letras.** |
+| `scene_c3_u07` | Un pueblo pequeño visto de lejos, con una plaza y un árbol, bajo un cielo con nubes ligeras; luz suave. Sin personas ni carteles. **Zona tranquila a la derecha.** |
+| `prop_copo_nieve` | Un copo de nieve grande y simple, de seis puntas, azul claro y blanco, de frente. |
+| `prop_manga_viento` | Una manga de viento naranja y blanca en un mástil corto, inflada por el viento, vista de lado. |
+
+### Lote N — C4-U03 «Transferir y transformar» (4.º) · 6 imágenes
+| Archivo | Prompt |
+|---|---|
+| `cover_c4_u03` | Un molinete de colores girando frente a una linterna encendida (sin rayo dibujado) sobre una mesa; composición centrada y simple. |
+| `scene_c4_u03` | Una mesa de taller escolar clara con una ventana grande; el centro queda libre. Sin personas, sin carteles. **Zona tranquila a la derecha.** |
+| `prop_molinete` | Un molinete de papel de cuatro aspas de colores en un palito, de frente. |
+| `prop_campana` | Una campana de mano de metal dorado con mango de madera, de lado. |
+| `prop_pila` | Una pila cilíndrica de juguete, de colores lisos, **sin letras, signos ni marcas**, de lado. |
+| `prop_bombilla` | Una bombilla de vidrio apagada, de frente, con el filamento visible. |
+
+### Lote O — C5-U01 «Materia invisible» (5.º) · 4 imágenes
+| Archivo | Prompt |
+|---|---|
+| `cover_c5_u01` | Un vaso con agua clara al que cae una gota de colorante azul que se va extendiendo; composición centrada y simple con mucho margen. |
+| `prop_jeringa` | Una jeringa de plástico transparente grande **sin marcas ni números**, sin aguja, con el émbolo a la mitad, de lado. |
+| `prop_bolsa_aire` | Una bolsa transparente cerrada e inflada con aire, de frente. |
+| `prop_vaso_colorante` | Un vaso transparente con agua en el que una gota de colorante azul se está extendiendo (una nube azul suave), **sin rayas ni números**, de frente. |
+
+### Lote P — C6-U07 «Evidencias de cambio» (6.º) · 3 imágenes
+| Archivo | Prompt |
+|---|---|
+| `cover_c6_u07` | Un glaciar que llega a un mar tranquilo, con una pequeña estación de observación en primer plano; composición centrada y simple con mucho margen. |
+| `scene_c6_u07` | Un paisaje de valle con una ciudad pequeña a lo lejos, campos y un río; cielo despejado; sin personas ni carteles. **Zona tranquila a la derecha.** |
+| `prop_glaciar` | Un trozo de glaciar de hielo azul y blanco con una pequeña cueva, visto de frente. |
+
 ## Aceptación (la reviso yo al recibirlas)
 
 Sin texto ni números en ninguna imagen · instrumentos sin marcas · centro despejado en los fondos · objetos de una sola

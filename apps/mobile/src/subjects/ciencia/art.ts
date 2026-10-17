@@ -189,7 +189,7 @@ export const MAYA: Record<MayaPose, { source: ImageSourcePropType; aspect: numbe
 
 /**
  * ¿Ya llegó el arte de cada unidad? Hasta que Victor entregue sus imágenes (docs/design/ciencia/PEDIDO-IMAGENES.md) una unidad
- * con contenido NO se abre en la app: se ve como «Pronto». Cuando llegan, se corre `scripts/ciencia-arte.py` y se pone `true`.
+ * con contenido NO se abre en la app: no aparece en el catálogo. Cuando llegan, se corre `scripts/ciencia-arte.py` y se pone `true`.
  */
 export const UNIT_ART_READY: Record<string, boolean> = {
   'C4-U06': true,

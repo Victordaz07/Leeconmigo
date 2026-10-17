@@ -116,3 +116,6 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
 
 ## 2026-10-17 · CI-21: C6-U05 «Agua en movimiento»
 - Constructor del ciclo del agua: el estudiante arma flechas entre piezas, con el Sol y la gravedad como motores, y evalúa su modelo (qué muestra y qué deja fuera). 12 unidades de Ciencia abiertas.
+
+## 2026-10-17 · «Pronto» fuera del catálogo; Tanda 4 pedida
+- El catálogo solo muestra las 12 unidades jugables. Pedido de imágenes de la Tanda 4 (27 en 6 lotes).
