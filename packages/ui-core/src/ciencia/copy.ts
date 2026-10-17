@@ -204,6 +204,26 @@ export const CIENCIA_COPY = {
     mixHidden: L('Todavía no probamos esta mezcla: ¡predice!', 'We haven’t tested this mixture yet: make a prediction!'),
     mixSafe: L('Todo en vasitos abiertos y con poca cantidad. Nunca se prueba con la boca.', 'Everything in open cups with a small amount. Never tasted.'),
   },
+  /** Rampa y bloque (C4-U02). */
+  ramp: {
+    benchLabel: (mark: number | null, released: boolean, cm: number | null) =>
+      L(mark === null ? 'Rampa, bola y bloque de madera.' : released ? `Bola soltada desde la marca ${mark}: el bloque se deslizó ${cm} centímetros.` : `Bola en la marca ${mark} de la rampa, lista para soltar.`, mark === null ? 'Ramp, ball and wooden block.' : released ? `Ball released from mark ${mark}: the block slid ${cm} centimeters.` : `Ball on mark ${mark} of the ramp, ready to let go.`),
+    mark: (n: number) => L(`Marca ${n}`, `Mark ${n}`),
+    pickMark: L('Toca una marca de la rampa para poner la bola y suéltala.', 'Tap a mark on the ramp to put the ball there and let it go.'),
+    release: L('Soltar la bola', 'Let the ball go'),
+    releaseAgain: L('Soltar otra vez', 'Let it go again'),
+    tested: (n: number, t: number) => L(`Probaste ${n} de ${t} marcas`, `You tested ${n} of ${t} marks`),
+    testedAll: L('Ya probaste lo que hacía falta. Puedes seguir probando.', 'You tested enough. You can keep testing.'),
+    slid: (cm: number) => L(`El bloque se deslizó ${cm} cm`, `The block slid ${cm} cm`),
+    tableTitle: L('Mis resultados', 'My results'),
+    distance: L('Bloque (cm)', 'Block (cm)'),
+    sound: L('Golpe', 'Knock'),
+    pickCell: L('Toca una casilla vacía y mira la regla: ¿cuánto se deslizó el bloque?', 'Tap an empty box and look at the ruler: how far did the block slide?'),
+    askAbout: (label: string) => L(`Mira la regla: ¿cuánto se deslizó el bloque desde la ${label}?`, `Look at the ruler: how far did the block slide from ${label}?`),
+    lookAgain: L('Mira otra vez la regla y elige de nuevo.', 'Look at the ruler again and choose again.'),
+    tableComplete: L('Tu tabla está completa.', 'Your table is complete.'),
+    cm: (n: number) => L(`${n} cm`, `${n} cm`),
+  },
   /** Funda aislante (C6-U04). */
   thermal: {
     benchLabel: (design: string) => L(`Vaso con agua fría. Funda: ${design}.`, `Cup of cold water. Sleeve: ${design}.`),

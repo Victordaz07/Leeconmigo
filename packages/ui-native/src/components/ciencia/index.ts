@@ -12,3 +12,4 @@ export { LineChart, type LineSeries } from './line-chart.tsx';
 export { ThermalBench, type LayerOption, type ThermalArt } from './thermal-bench.tsx';
 export { MagnetBench, type MagnetArt, type MagnetTile } from './magnet-bench.tsx';
 export { BalanceBench, SampleStrip, type MatterArt, type SampleChip } from './matter-bench.tsx';
+export { RampBench, type RampArt } from './ramp-bench.tsx';

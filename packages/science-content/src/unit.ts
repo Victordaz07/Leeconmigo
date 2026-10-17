@@ -7,6 +7,7 @@ import type { Localized } from '@lee-conmigo/contracts';
 import c1u02 from '../content/c1-u02.json';
 import c2u02 from '../content/c2-u02.json';
 import c3u06 from '../content/c3-u06.json';
+import c4u02 from '../content/c4-u02.json';
 import c4u06 from '../content/c4-u06.json';
 import c5u02 from '../content/c5-u02.json';
 import c5u03 from '../content/c5-u03.json';
@@ -14,6 +15,7 @@ import c6u04 from '../content/c6-u04.json';
 import { practiceMapProblems, PRACTICE_MAPS, bandCount, LADERA_DATASETS, type Dataset } from './datasets.ts';
 import { COVERS, SLOPES, type Cover, type Slope } from './labs/erosion.ts';
 import { LIGHT_OBJECTS, LIGHT_STATES, type LightObject, type LightState } from './labs/luz.ts';
+import { BLOCK_SLIDE_CM, RELEASE_MARKS, isMark, pushesFarther, slideCm } from './labs/choques.ts';
 import { MIXES, MIX_TESTS, hasBubbles, mixObserved, newSubstance, recoverable, type Mix, type MixTest } from './labs/mezclas.ts';
 import { JAR_WITH_WATER_G, KNOWN_SAMPLES, MYSTERY_IS, PROPS, SAMPLES, SUBSTANCES, SUBSTANCE_G, confusableWith, dissolves, observed, remainingAfter, totalAfter, totalBefore, type Prop, type Sample, type Substance } from './labs/materia.ts';
 import { MAGNET_MARKS, MAGNET_OBJECTS, magnetMoves, type MagnetObject } from './labs/imanes.ts';
@@ -128,6 +130,16 @@ export interface MatterSetup {
   hidden?: boolean;
 }
 
+/** La rampa y el bloque de C4-U02: una bola que se suelta desde una marca (1 = la más baja, 4 = la más alta). */
+export interface RampSetup {
+  /** Marca fija desde la que se suelta (con `static`, el resultado ya está hecho). Sin ella el niño elige la marca. */
+  mark?: number;
+  /** Cuántas marcas distintas prueba el niño en este paso. */
+  trials?: number;
+  /** Se muestran los resultados ya hechos (para analizarlos). */
+  static?: boolean;
+}
+
 export interface ChoiceOption {
   id: string;
   text: Localized;
@@ -169,6 +181,7 @@ export interface UnitStep {
   thermal?: ThermalSetup;
   magnet?: MagnetSetup;
   matter?: MatterSetup;
+  ramp?: RampSetup;
   /** Pasos de «arreglar la prueba»: el laboratorio resultante según el arreglo que elija el niño (id de la opción). */
   labFixed?: Record<string, LabSetup>;
   choice?: StepChoice;
@@ -269,7 +282,7 @@ export interface ScienceUnit {
 }
 
 /** Las unidades con contenido, por grado. Una unidad con contenido todavía puede esperar su arte (`UNIT_ART_READY` en la app). */
-export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c5u02 as unknown as ScienceUnit, c5u03 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit];
+export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c4u02 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c5u02 as unknown as ScienceUnit, c5u03 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit];
 export const scienceUnitContent = (id: string): ScienceUnit | undefined => SCIENCE_UNITS.find((u) => u.id === id);
 
 // ------------------------------------------------------------------ evaluar una tarea
@@ -431,6 +444,10 @@ export function unitProblems(u: ScienceUnit): string[] {
       if (!MATERIAL_TESTS.includes(st.material.test)) p.push(`${st.id}: prueba de materiales desconocida`);
       if (st.material.trials !== undefined && (st.material.trials < 1 || st.material.trials > MATERIALS.length)) p.push(`${st.id}: los materiales a probar van de 1 a ${MATERIALS.length}`);
     }
+    if (st.ramp) {
+      if (st.ramp.mark !== undefined && !isMark(st.ramp.mark)) p.push(`${st.id}: marca de la rampa fuera del recorrido`);
+      if (st.ramp.trials !== undefined && (st.ramp.trials < 1 || st.ramp.trials > RELEASE_MARKS.length)) p.push(`${st.id}: las pruebas van de 1 a ${RELEASE_MARKS.length}`);
+    }
     if (st.matter) {
       const m = st.matter;
       for (const sub of [...(m.substance ? [m.substance] : []), ...(m.substances ?? [])]) if (!SUBSTANCES.includes(sub)) p.push(`${st.id}: sustancia desconocida (${sub})`);
@@ -524,6 +541,7 @@ export function dataTextProblems(u: ScienceUnit): string[] {
   if (u.id === 'C3-U06') return magnetTextProblems(u);
   if (u.id === 'C5-U02') return matterTextProblems(u);
   if (u.id === 'C5-U03') return mixTextProblems(u);
+  if (u.id === 'C4-U02') return rampTextProblems(u);
   if (u.id !== 'C4-U06') return p;
   const t5 = u.tasks.find((t) => t.id === 't5');
   const base = LADERA_DATASETS.base.rows;
@@ -767,5 +785,40 @@ function mixTextProblems(u: ScienceUnit): string[] {
   if (expected('s3.2') !== 'bicarb') p.push('s3.2: solo el bicarbonato con vinagre hace burbujas');
   if (expected('s3.4') !== 'no' || newSubstance('sal_agua')) p.push('s3.4: disolver sal no crea una sustancia nueva');
   if (!MIX_TESTS.every((t) => MIXES.every((m) => mixObserved(m, t).es.length > 0))) p.push('falta una observación del modelo');
+  return p;
+}
+
+/** C4-U02: las distancias y las respuestas esperadas de los textos coinciden con el modelo de la rampa. */
+function rampTextProblems(u: ScienceUnit): string[] {
+  const p: string[] = [];
+  const steps = u.sessions.flatMap((s) => s.steps);
+  const part = (taskId: string, partId: string) => u.tasks.find((t) => t.id === taskId)?.parts.find((x) => x.id === partId);
+  const opt = (taskId: string, partId: string, id: string) => part(taskId, partId)?.options.find((o) => o.id === id);
+  const need = (where: string, text: string | undefined, needle: string) => {
+    if (!text?.includes(needle)) p.push(`${where}: el texto no dice «${needle}» (modelo)`);
+  };
+  const lo = `${slideCm(1)} cm`;
+  const hi = `${slideCm(4)} cm`;
+  for (const lang of ['es', 'en'] as const) {
+    need(`t2.lejos (${lang})`, opt('t2', 'observaciones', 'lejos')?.text[lang], hi);
+    need(`t2.cerca (${lang})`, opt('t2', 'observaciones', 'cerca')?.text[lang], lo);
+    need(`t5.cuatro (${lang})`, opt('t5', 'evidencia', 'cuatro')?.text[lang], hi);
+    need(`t5.uno (${lang})`, opt('t5', 'evidencia', 'uno')?.text[lang], lo);
+    need(`t5.igual motivo (${lang})`, opt('t5', 'afirmacion', 'igual')?.whyNot?.[lang], lo);
+    need(`t5.igual motivo (${lang})`, opt('t5', 'afirmacion', 'igual')?.whyNot?.[lang], hi);
+    need(`t5.menos motivo (${lang})`, opt('t5', 'afirmacion', 'menos')?.whyNot?.[lang], hi);
+    need(`t6.bloque (${lang})`, opt('t6', 'evidencia', 'bloque')?.text[lang], hi);
+    need(`t6.bloque (${lang})`, opt('t6', 'evidencia', 'bloque')?.text[lang], lo);
+  }
+  // Las predicciones apuntan a lo que da el modelo.
+  if (!pushesFarther(4, 2) || part('t3', 'resultado')?.observedOptionId !== 'mas') p.push('t3.resultado: desde la marca 4 el bloque debe deslizarse más que desde la 2');
+  if (part('t4', 'resultado')?.observedOptionId !== 'suave') p.push('t4.resultado: desde la marca 1 el golpe debe sonar más suave');
+  const validT7 = part('t7', 'resultado')?.options.filter((o) => o.valid).map((o) => o.id);
+  if (validT7?.join() !== 'alta') p.push('t7.resultado: lo que baja más rápido empuja más lejos');
+  const expected = (id: string) => steps.find((st) => st.id === id)?.choice?.options.find((o) => o.expected)?.id;
+  if (expected('s3.3') !== 'mas' || !RELEASE_MARKS.every((m, i) => i === 0 || pushesFarther(m, RELEASE_MARKS[i - 1]))) p.push('s3.3: cada marca más alta debe empujar el bloque más lejos');
+  if (expected('s3.4') !== 'rapida') p.push('s3.4: la explicación esperada es la rapidez (energía de movimiento)');
+  if (expected('s2.1') !== 'altura') p.push('s2.1: lo que cambia es la altura');
+  if (Object.keys(BLOCK_SLIDE_CM).length !== RELEASE_MARKS.length) p.push('el modelo debe dar una distancia por marca');
   return p;
 }
