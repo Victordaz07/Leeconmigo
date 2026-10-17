@@ -14,6 +14,7 @@ on:
     paths: ['.github/workflows/build-android-apk.yml']
 
 # build 4: Modo Padres bilingüe (c949ad8)
+# build 5: Modo Padres completo EN/ES + pantalla completa en Android (356d75d)
 
 permissions:
   contents: write
