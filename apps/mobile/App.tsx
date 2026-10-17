@@ -1,6 +1,7 @@
+import * as NavigationBar from 'expo-navigation-bar';
 import { StatusBar } from 'expo-status-bar';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Button, Card, colors, fontFamily, GearIcon, HomeIcon, MathArtProvider, NavRail, TrophyIcon, useLayout, type NavRailItem } from '@lee-conmigo/ui-native';
 import { resolveFocus, todayReport } from '@lee-conmigo/session-engine';
@@ -54,7 +55,20 @@ const RAIL_BOTTOM: NavRailItem[] = [
  * Kitewise (D9/D10, docs/13): ¿Quién aprende hoy? (B1) → ¿Cómo llegas hoy? (B2, si el padre lo dejó activo) → Inicio con la estantería de cuadernos (B3) → cuaderno de Lectura (B4) → lectura. Logros y
  * Padres llegan en K4/K8. En desarrollo, "DEV" abre la lista completa de historias y la muestra de componentes.
  */
+/**
+ * Pantalla completa en Android por defecto (pedido de Victor: "necesitamos el espacio total de la pantalla" — la
+ * app no debe depender de que el padre vaya a buscar un ajuste del sistema). Android sigue dejando que un deslizar
+ * desde el borde muestre la barra del sistema un momento (así se puede salir de la app); no bloquea nada.
+ */
+function useFullScreenAndroid() {
+  useEffect(() => {
+    if (Platform.OS !== 'android') return;
+    NavigationBar.setVisibilityAsync('hidden').catch(() => {});
+  }, []);
+}
+
 export default function App() {
+  useFullScreenAndroid();
   return (
     <SafeAreaProvider>
       <MathArtProvider art={MATH_ART}>
@@ -104,6 +118,7 @@ function Root() {
       <ParentSettingsScreen
         initial={newChildProfile(profiles)}
         isNew
+        lang={gateLang}
         onSave={(p) => {
           setProfiles((list) => [...list, p]);
           home();
@@ -126,7 +141,7 @@ function Root() {
       />
     );
   }
-  if (energy === undefined) return <EnergyScreen name={profile.name} onStart={setEnergy} />;
+  if (energy === undefined) return <EnergyScreen name={profile.name} lang={profile.language === 'en' ? 'en' : 'es'} onStart={setEnergy} />;
   // Apoyos del Modo Enfoque que rigen ahora (posición del padre + horario).
   const focus = resolveFocus(profile.focus);
 
@@ -163,6 +178,7 @@ function Root() {
         profile={profile}
         report={todayReport(progressStoreFor(profile.id).summaries(), minutes)}
         repository={repository}
+        lang={profile.language === 'en' ? 'en' : 'es'}
         onBack={home}
         onSettings={() => setRoute({ name: 'settings', isNew: false })}
       />
@@ -175,6 +191,7 @@ function Root() {
       <ParentSettingsScreen
         initial={profile}
         isNew={false}
+        lang={profile.language === 'en' ? 'en' : 'es'}
         onSave={(p) => {
           setProfiles((list) => list.map((x) => (x.id === p.id ? p : x)));
           toPanel();

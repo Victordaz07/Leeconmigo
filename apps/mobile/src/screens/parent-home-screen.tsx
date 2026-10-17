@@ -2,7 +2,7 @@ import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { TodayReport } from '@lee-conmigo/session-engine';
 import type { StoryRepository } from '@lee-conmigo/story-engine';
-import { energyOption } from '@lee-conmigo/ui-core';
+import { energyOption, PARENT_HOME_COPY as t, WEEKDAY_NAMES, type ParentLang } from '@lee-conmigo/ui-core';
 import { Button, ChevronLeftIcon, colors, fontFamily, gradients, GradientView, radius, RoundButton, shadows, useLayout } from '@lee-conmigo/ui-native';
 import type { ChildProfile } from '../app-state';
 import { storyImage } from '../story-assets';
@@ -11,12 +11,11 @@ interface ParentHomeScreenProps {
   profile: ChildProfile;
   report: TodayReport;
   repository: StoryRepository;
+  lang: ParentLang;
   onBack: () => void;
   onSettings: () => void;
 }
 
-const WEEKDAY = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
-const FOCUS_LABEL = { 1: 'Le costó', 2: 'Más o menos', 3: 'Bien' } as const;
 const BAR_MAX = 120;
 
 /**
@@ -24,7 +23,7 @@ const BAR_MAX = 120;
  * dice ("Hoy todavía no ha leído"), nunca se rellena. Sin grabaciones porque no existen (docs/01, docs/07). Las partes del
  * diseño que dependen de funciones que aún no existen (Aula/foto de tarea, Enfoque adaptativo) no se muestran.
  */
-export function ParentHomeScreen({ profile, report, repository, onBack, onSettings }: ParentHomeScreenProps) {
+export function ParentHomeScreen({ profile, report, repository, lang, onBack, onSettings }: ParentHomeScreenProps) {
   const insets = useSafeAreaInsets();
   const r = report;
   const layout = useLayout();
@@ -33,14 +32,14 @@ export function ParentHomeScreen({ profile, report, repository, onBack, onSettin
   return (
     <ScrollView style={styles.screen} contentContainerStyle={[styles.content, { paddingHorizontal: layout.gutter, paddingTop: insets.top + (layout.phone ? 12 : 24), paddingBottom: insets.bottom + 24 }]}>
       <View style={[styles.header, layout.narrow && styles.headerNarrow]}>
-        <RoundButton onPress={onBack} label="Salir de Modo padres">
+        <RoundButton onPress={onBack} label={t.back[lang]}>
           <ChevronLeftIcon />
         </RoundButton>
         <View style={styles.flex}>
-          <Text style={styles.kicker}>Modo padres · {WEEKDAY[new Date().getDay()]}</Text>
-          <Text style={[styles.title, layout.phone && styles.titleSmall]}>Hoy con {profile.name}</Text>
+          <Text style={styles.kicker}>{t.kicker[lang](WEEKDAY_NAMES[lang][new Date().getDay()])}</Text>
+          <Text style={[styles.title, layout.phone && styles.titleSmall]}>{t.title[lang](profile.name)}</Text>
         </View>
-        <Button label="Ajustes" variant="secondary" onPress={onSettings} />
+        <Button label={t.settings[lang]} variant="secondary" onPress={onSettings} />
         <View style={[styles.childChip, layout.narrow && styles.hidden]}>
           <GradientView gradient={gradients[profile.avatar]} style={styles.childAvatar}>
             <Text style={styles.childInitial}>{profile.name.slice(0, 1).toUpperCase()}</Text>
@@ -50,21 +49,21 @@ export function ParentHomeScreen({ profile, report, repository, onBack, onSettin
       </View>
 
       <View style={[styles.statsRow, layout.narrow && styles.wrap]}>
-        <Stat glyph="⏱" gradient="brand" label="Minutos de lectura" value={`${r.validMinutes} de ${r.goalMinutes}`} />
-        <Stat glyph="◎" gradient="green" label="Preguntas" value={r.comprehensionTotal ? `${r.comprehensionCorrect} de ${r.comprehensionTotal}` : 'Ninguna hoy'} />
-        <Stat glyph="☺" gradient="goldDiag" label={`Enfoque (según ${profile.name})`} value={r.focusSelfReport ? FOCUS_LABEL[r.focusSelfReport] : 'No lo dijo hoy'} />
+        <Stat glyph="⏱" gradient="brand" label={t.statReadingMinutes[lang]} value={t.of[lang](r.validMinutes, r.goalMinutes)} />
+        <Stat glyph="◎" gradient="green" label={t.statQuestions[lang]} value={r.comprehensionTotal ? t.of[lang](r.comprehensionCorrect, r.comprehensionTotal) : t.noneToday[lang]} />
+        <Stat glyph="☺" gradient="goldDiag" label={t.statFocus[lang](profile.name)} value={r.focusSelfReport ? t.focusLabel[r.focusSelfReport][lang] : t.didNotSayToday[lang]} />
       </View>
 
       <View style={[styles.columns, one && styles.columnsOne]}>
         <View style={[styles.card, styles.left, one && styles.leftOne]}>
-          <Text style={styles.h3}>Lo que hizo hoy</Text>
+          <Text style={styles.h3}>{t.whatTheyDidToday[lang]}</Text>
           {r.activities.length === 0 ? (
-            <Text style={styles.empty}>Hoy todavía no ha leído.</Text>
+            <Text style={styles.empty}>{t.notReadYetToday[lang]}</Text>
           ) : (
             r.activities.map((a) => {
               const story = repository.get(a.storyId);
               const img = story ? storyImage(story.cover?.src ?? story.pages[0].illustration.src) : undefined;
-              const state = a.completed ? 'La terminó' : `Va en ${Math.round(a.completion * 100)} %`;
+              const state = a.completed ? t.finishedIt[lang] : t.percentThrough[lang](Math.round(a.completion * 100));
               return (
                 <View key={a.storyId} style={styles.activity}>
                   {img ? <Image source={img} style={styles.thumb} resizeMode="cover" /> : <View style={styles.thumb} />}
@@ -73,7 +72,7 @@ export function ParentHomeScreen({ profile, report, repository, onBack, onSettin
                       {story?.title ?? a.storyId}
                     </Text>
                     <Text style={styles.activityMeta}>
-                      {a.minutes < 1 ? 'Menos de 1 min' : `${a.minutes} min`} · {state}
+                      {a.minutes < 1 ? t.lessThanOneMin[lang] : t.minutes[lang](a.minutes)} · {state}
                     </Text>
                   </View>
                   <GradientView gradient={gradients.subjLectura} style={styles.subjectBadge}>
@@ -84,8 +83,8 @@ export function ParentHomeScreen({ profile, report, repository, onBack, onSettin
             })
           )}
           <View style={styles.flex} />
-          <Text style={styles.h3}>Esta semana</Text>
-          <View style={styles.week} accessibilityLabel={`Minutos esta semana: ${r.week.map((d) => `${d.day} ${d.minutes}`).join(', ')}`}>
+          <Text style={styles.h3}>{t.thisWeek[lang]}</Text>
+          <View style={styles.week} accessibilityLabel={t.minutesThisWeekA11y[lang](r.week.map((d) => `${d.day} ${d.minutes}`).join(', '))}>
             {r.week.map((d) => {
               const h = d.minutes > 0 ? Math.max(10, (d.minutes / maxWeek) * BAR_MAX) : 4;
               return (
@@ -98,15 +97,15 @@ export function ParentHomeScreen({ profile, report, repository, onBack, onSettin
               );
             })}
           </View>
-          <Text style={styles.weekNote}>Verde: llegó a la meta de {r.goalMinutes} min.</Text>
+          <Text style={styles.weekNote}>{t.greenGoalNote[lang](r.goalMinutes)}</Text>
         </View>
 
         <View style={[styles.right, one && styles.rightOne]}>
           <View style={styles.card}>
-            <Text style={styles.h3}>Para practicar juntos</Text>
+            <Text style={styles.h3}>{t.practiceTogether[lang]}</Text>
             {r.wordsToday.length ? (
               <>
-                <Text style={styles.body}>Pídele que lea estas palabras contigo. Dos minutos bastan.</Text>
+                <Text style={styles.body}>{t.practiceInstructions[lang]}</Text>
                 <View style={styles.words}>
                   {r.wordsToday.slice(0, 8).map((w) => (
                     <Text key={w} style={styles.word}>
@@ -116,20 +115,18 @@ export function ParentHomeScreen({ profile, report, repository, onBack, onSettin
                 </View>
               </>
             ) : (
-              <Text style={styles.body}>Hoy no pidió ayuda con ninguna palabra.</Text>
+              <Text style={styles.body}>{t.noWordsToday[lang]}</Text>
             )}
           </View>
           {r.energy && (
             <View style={styles.card}>
-              <Text style={styles.h3}>Cómo llegó hoy</Text>
-              <Text style={styles.body}>
-                {energyOption(r.energy).title} · {energyOption(r.energy).minutes} min de misión
-              </Text>
+              <Text style={styles.h3}>{t.howTheyArrived[lang]}</Text>
+              <Text style={styles.body}>{t.missionLine[lang](energyOption(r.energy).title[lang], energyOption(r.energy).minutes)}</Text>
             </View>
           )}
           <View style={[styles.card, styles.privacy]}>
-            <Text style={styles.h3}>Privacidad</Text>
-            <Text style={styles.body}>La voz de {profile.name} nunca se graba ni se almacena. Aquí solo ves tiempos, preguntas y palabras.</Text>
+            <Text style={styles.h3}>{t.privacy[lang]}</Text>
+            <Text style={styles.body}>{t.privacyNote[lang](profile.name)}</Text>
           </View>
         </View>
       </View>

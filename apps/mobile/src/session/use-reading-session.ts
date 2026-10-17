@@ -223,7 +223,7 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
     const todaySeconds = store.summaries().filter((x) => x.completedAt.slice(0, 10) === today).reduce((n, x) => n + x.validReadingSeconds, 0) + (summarySaved.current ? 0 : valid);
     return {
       stars: effortStars({ completed: true, ...effort.current }),
-      reason: effortReason(effort.current),
+      reason: effortReason(effort.current, story.language === 'en' ? 'en' : 'es'),
       minutes: Math.max(1, Math.round(valid / 60)),
       kiteMeters: kiteMeters(valid),
       /** Sello del día: la lectura de hoy ya llegó a la meta del padre. */

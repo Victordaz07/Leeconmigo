@@ -89,6 +89,7 @@ export function SociedadInvestigationScreen({ lang, unit, profileId, profileName
     return (
       <ClosingCard
         name={profileName}
+        lang={lang}
         stars={stars}
         reason={t.closingReason[reasonKey][lang]}
         stats={closingStatsFor(unit, session, lang)}
