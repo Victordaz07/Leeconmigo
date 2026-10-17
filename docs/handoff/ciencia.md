@@ -236,3 +236,10 @@ tela, plástico, cartón), vaso de agua compartido con C5 y C6, bandeja con pico
 - UI: nueva vista `mix` en `families/matter.tsx` (tabla de casillas que el niño prueba una por una) y `SampleStrip` con platitos dibujados por la app (agua, bicarbonato, vinagre).
 - **Portada provisional:** `CIENCIA_COVERS.c5u03` reutiliza la de C5-U02. Si Victor quiere una propia: «un vasito transparente con burbujas subiendo, junto a un platito de polvo blanco y una botellita de vinagre; composición centrada, mucho margen».
 - Sin APK ni merge del PR #3.
+
+## Actualización Tanda 3 (2026-10-17): pedido de imágenes hecho (28 en 5 lotes, F–J)
+- Unidades elegidas (una por grado, por reutilizar lo ya construido): C1-U03, C2-U01, C3-U05, C4-U02, C6-U05. Pedido: `PEDIDO-IMAGENES.md` → «Tanda 3».
+- Orden de trabajo (menos a más trabajo nuevo): **I (C4-U02) → H (C3-U05) → F (C1-U03) → G (C2-U01) → J (C6-U05)**. C3-U05 y C4-U02 comparten una familia de «movimiento»
+  (carrito/rampa, distancias que dibuja la app); `prop_bloque_madera` (lote G) lo usa también C4-U02.
+- Hasta que lleguen las imágenes: modelo, contenido y pruebas pueden avanzar; las unidades quedan con `UNIT_ART_READY` en false (solo se ven con `EXPO_PUBLIC_DEMO=1`).
+- Las filas CI-17…CI-21 del ROADMAP están en ⬜.

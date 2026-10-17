@@ -11,7 +11,8 @@
 > **Estilo:** salió como ilustración de cuento (acuarela digital, más detalle y sombreado), no «plana» como Matemáticas. Es
 > lo que pedía el brief de arte (`ART-BRIEF.md`: «storybook cálido, acuarela digital») y combina con las portadas de
 > Lectura; en Inicio se ve bien junto a las de Lectura y Matemáticas. Los cajones en verde salvia vienen de la guía.
-> **Tanda 2 pedida (2026-10-16):** las otras cinco unidades piloto, 41 imágenes en 5 lotes (A–E, abajo).
+> **Tanda 2 pedida (2026-10-16):** las otras cinco unidades piloto, 41 imágenes en 5 lotes (A–E, abajo) — **recibida completa**.
+> **Tanda 3 pedida (2026-10-17):** cinco unidades más, una por grado (C1-U03, C2-U01, C3-U05, C4-U02, C6-U05), 28 imágenes en 5 lotes (F–J, abajo).
 
 **Para quién:** Victor genera las imágenes y las sube al chat; Claude las convierte a WebP, las nombra y las conecta
 (igual que en Matemáticas). **No hace falta pedir todo:** la **Tanda 1** alcanza para construir la primera unidad
@@ -180,6 +181,78 @@ Para 6.º el tono es un poco más sobrio (menos «de cuento infantil»), pero la
 **Orden de uso en la app (lo que decide cuándo hace falta cada lote):** A → B → C → D → E (de menos a más trabajo nuevo, §6
 de la especificación). Mientras llegan las imágenes yo sigo con el contenido y las pantallas; con **solo el Lote A** ya puedo
 dejar jugable C1-U02.
+
+## Tanda 3 — cinco unidades más, una por grado (28 imágenes, 5 lotes: F–J)
+
+**Cómo pedirla:** igual que la Tanda 2 — un chat por lote, el **estilo común de la Tanda 2** al inicio de cada prompt, y adjuntas como
+referencia de estilo **3 imágenes ya aprobadas** (`prop_bandeja`, `prop_regadera`, `scene_ciencia_ladera`; para el lote J agrega
+`scene_c6_u04`). Mismas medidas y reglas (cero texto ni números; instrumentos y pantallas en blanco; escenas con zona tranquila
+a la derecha; objetos sueltos de UNA pieza con fondo transparente). Cada lote en un `.zip` con los **nombres exactos** (PNG); yo los
+convierto con `python3 -I scripts/ciencia-arte.py <carpeta> tanda-3<letra>` (ej.: `tanda-3f`).
+
+**Ahorro:** estas cinco unidades reutilizan casi todo lo que ya existe (linterna, osito, pelota, taza, tela, cartón, plástico,
+papel absorbente, vaso de agua, Maya…). Solo se piden piezas nuevas. `prop_bloque_madera` (lote G) lo comparte el lote I.
+
+**Orden sugerido (de menos a más trabajo nuevo):** I (3) → H (4) → F (6) → G (6) → J (9). Con solo el lote I o H ya puedo abrir
+una unidad; los demás no bloquean a los anteriores.
+
+### Lote F — C1-U03 «Caminos de luz» (1.º) · 6 imágenes
+*Qué hace el niño:* apunta una linterna a una pared lisa, pone delante un marco con distintos materiales y mira cuánta luz pasa
+(la luz y la sombra las dibuja la app). Materiales: lámina transparente, papel de calco, cartulina, papel de aluminio.
+| Archivo | Prompt (después del estilo común) |
+|---|---|
+| `cover_c1_u03` | Una linterna apuntando a un marco cuadrado de cartón con una lámina transparente, delante de una pared lisa clara; sin rayo de luz dibujado. Composición centrada y simple con mucho margen. Reconocible en miniatura. |
+| `scene_c1_u03` | Un cuarto de juegos tranquilo, con una mesa baja y una pared lisa y clara al fondo; sobre la mesa, una linterna y cuatro marcos de cartón de pie, de distinto material. Luz suave de ventana. Sin personas, sin carteles. **Zona tranquila a la derecha.** |
+| `prop_marco_transparente` | Un marco cuadrado de cartón verde salvia, de pie sobre una base pequeña, con una lámina de plástico **completamente transparente** y limpia (se nota solo por sus bordes y un leve reflejo). De frente. |
+| `prop_marco_calco` | El mismo marco cuadrado de cartón verde salvia, de pie, con una hoja de **papel de calco lechoso y translúcido** (blanco apagado, sin dibujos). De frente. |
+| `prop_marco_cartulina` | El mismo marco de cartón verde salvia, de pie, con una **cartulina opaca de color naranja** lisa. De frente. |
+| `prop_marco_aluminio` | El mismo marco de cartón verde salvia, de pie, con una hoja de **papel de aluminio liso y brillante**, de frente. |
+
+### Lote G — C2-U01 «Detectives de materiales» (2.º) · 6 imágenes
+*Qué hace el niño:* observa objetos con una lupa y los agrupa en bandejas según lo que se ve y se siente (duro/blando, liso/rugoso,
+de qué está hecho). Objetos: cuchara de metal, bloque de madera, esponja (nuevos) + pelota de goma, taza de cerámica, tela, plástico (ya hechos).
+| Archivo | Prompt (después del estilo común) |
+|---|---|
+| `cover_c2_u01` | Una lupa grande sobre una mesa mirando un grupito de objetos distintos: una cuchara de metal, un bloque de madera y una esponja; composición centrada y simple con mucho margen. |
+| `scene_c2_u01` | Una mesa de observación de un salón de clase, de madera clara, con tres bandejas lisas **vacías** y unas cajitas abiertas a los lados; luz suave de ventana. Sin personas, sin carteles. **Zona tranquila a la derecha.** |
+| `prop_lupa` | Una lupa grande con mango de madera y aro plateado, con el **cristal transparente y limpio**, de frente. |
+| `prop_bloque_madera` | Un bloque rectangular de madera clara con veta suave, visto en tres cuartos, sin marcas ni letras. (Lo comparte el lote I.) |
+| `prop_esponja` | Una esponja de cocina amarilla rectangular con poros visibles, vista en tres cuartos, sin capa verde ni marcas. |
+| `prop_cuchara_metal` | Una cuchara grande de metal plateado brillante, de lado, sin grabados. |
+
+### Lote H — C3-U05 «Fuerzas y movimiento» (3.º) · 4 imágenes
+*Qué hace el niño:* empuja un carrito con empujones más fuertes o más suaves, de frente o de lado, y mira cómo cambia su movimiento;
+luego observa el patrón de un péndulo para predecir dónde estará. (Flechas de fuerza, marcas y trayectos los dibuja la app.)
+| Archivo | Prompt (después del estilo común) |
+|---|---|
+| `cover_c3_u05` | Un carrito de juguete rojo rodando hacia la derecha sobre un piso liso, con una pelota quieta atrás; sin personas, sin flechas. Composición centrada y simple con mucho margen. |
+| `scene_c3_u05` | Un patio de juegos tranquilo: piso liso de cemento claro en primer plano y, al fondo a un lado, un columpio de madera vacío; luz de la mañana. Sin personas, sin carteles. **Zona tranquila a la derecha.** |
+| `prop_carrito` | Un carrito de juguete rojo de cuatro ruedas, tipo vagoneta, **vacío**, visto de lado, con contorno claro. |
+| `prop_pendulo` | Una bola de madera azul colgada de un hilo fino desde una barra pequeña de soporte arriba, **quieta** (colgando recta), vista de frente, una sola pieza. |
+
+### Lote I — C4-U02 «Energía en movimiento» (4.º) · 3 imágenes
+*Qué hace el niño:* suelta una bola desde distintas alturas de una rampa y mide cuánto empuja un bloque (la bola es la misma: se
+reutiliza `prop_objeto_pelota`; el bloque es `prop_bloque_madera` del lote G; alturas y distancias las dibuja la app).
+| Archivo | Prompt (después del estilo común) |
+|---|---|
+| `cover_c4_u02` | Una bola que baja rodando por una rampa de madera y empuja un bloque de madera al final; composición centrada y simple con mucho margen. Reconocible en miniatura. |
+| `scene_c4_u02` | Una mesa larga y despejada de un laboratorio escolar, de madera clara, con una ventana grande de luz suave; **el centro de la mesa queda libre**. Sin personas, sin carteles. **Zona tranquila a la derecha.** |
+| `prop_rampa` | Una rampa de madera lisa e inclinada, vista de lado, con un pequeño tope en la parte alta y **sin marcas, rayas ni números**. Una sola pieza. |
+
+### Lote J — C6-U05 «Agua en movimiento» (6.º) · 9 imágenes
+*Qué hace el estudiante:* arma un modelo del ciclo del agua eligiendo las piezas (sol, mar, nube, montaña, río, árbol, suelo) y
+conectándolas con flechas que dibuja la app; después revisa qué impulsa cada paso (el Sol y la gravedad).
+| Archivo | Prompt (después del estilo común) |
+|---|---|
+| `cover_c6_u05` | Un paisaje simple: el mar a la izquierda, una montaña con la cima nevada a la derecha, una nube y el sol arriba; sin flechas. Composición centrada con mucho margen. Reconocible en miniatura. |
+| `scene_c6_u05` | Un paisaje amplio de costa y montañas: un río baja de la montaña al mar, nubes ligeras y bosque en las laderas; luz cálida de la mañana. Sin personas, sin carteles, sin flechas. **Zona tranquila a la derecha.** |
+| `prop_sol` | Un sol amarillo y simple con rayos cortos, **sin cara**, de frente. |
+| `prop_nube` | Una nube gris azulada y redondeada de lluvia ligera, **sin gotas dibujadas**, de frente. |
+| `prop_mar` | Un trozo cuadrado de océano en corte, con olas suaves y un borde de arena, visto de frente. |
+| `prop_montana` | Una montaña con la cima nevada y laderas verdes, vista de frente. |
+| `prop_rio` | Un tramo de río serpenteante con orillas verdes, visto desde arriba, recortado como una sola pieza. |
+| `prop_arbol` | Un árbol frondoso de hojas verdes, con tronco marrón, de frente. |
+| `prop_suelo_corte` | Un corte de suelo visto de lado: pasto arriba, capas de tierra y arena debajo y una zona más oscura y húmeda abajo; **sin etiquetas ni flechas**. |
 
 ## Aceptación (la reviso yo al recibirlas)
 
