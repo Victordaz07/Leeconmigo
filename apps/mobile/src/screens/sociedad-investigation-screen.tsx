@@ -32,6 +32,7 @@ import {
   type SourceCardData,
 } from '@lee-conmigo/ui-native';
 import { resolveSocialArt, TEO } from '../sociedad-art';
+import { closingStatsFor } from '../sociedad-closing';
 import { useMovementBreak } from '../movement';
 import { MovementBreakScreen } from './movement-break-screen';
 import type { UnitProgress } from './sociedad-notebook-screen';
@@ -90,10 +91,7 @@ export function SociedadInvestigationScreen({ lang, unit, profileId, profileName
         name={profileName}
         stars={stars}
         reason={t.closingReason[reasonKey][lang]}
-        stats={[
-          { label: lang === 'es' ? 'Pasos' : 'Steps', value: `${session.stepsDone.length}/${total}` },
-          { label: lang === 'es' ? 'Fuentes usadas' : 'Sources used', value: `${session.sourcesSelected.length}/3` },
-        ]}
+        stats={closingStatsFor(unit, session, lang)}
         onAgain={() => onFinish({ stepsDone: session.stepsDone, stars }, undefined)}
         onDone={(selfReport) => onFinish({ stepsDone: session.stepsDone, stars }, selfReport)}
       />

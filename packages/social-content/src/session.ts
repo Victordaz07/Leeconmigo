@@ -84,11 +84,17 @@ export function feedbackFor(step: Extract<SocialStep, { kind: 'fuente' | 'testim
 }
 
 export interface SessionEvaluation {
-  /** Paso "explicar" con al menos `minSources` fuentes marcadas (docs/research §12: usar ≥2 fuentes). */
+  /** Paso "explicar" con al menos `minSources` fuentes marcadas (docs/research §12: usar ≥2 fuentes). En
+   * unidades sin fuentes, es un proxy por `choiceQuality` — ver `hasSources` antes de mostrar nada sobre
+   * "fuentes" al niño o al padre. */
   sourcesUsedEnough: boolean;
-  /** Paso "revisar": eligió el hueco real, no algo que las fuentes ya contaban. */
+  /** Paso "revisar": eligió el hueco real, no algo que las fuentes ya contaban. Mismo proxy que arriba cuando
+   * `hasSources` es falso. */
   gapIdentified: boolean;
   completed: boolean;
+  /** Si la unidad tiene fuentes de verdad (`unit.sources.length > 0`). La UI debe usar esto, no asumir que
+   * toda unidad tiene fuentes: 1.º y 6.º son puro razonamiento, sin ninguna fuente que contar o mostrar. */
+  hasSources: boolean;
 }
 
 /** Qué tan seguido, entre los pasos de elección (fuente/testimonio/elegir), el niño quedó con una opción
@@ -111,6 +117,7 @@ export function evaluateSession(unit: SocialUnit, s: SessionState): SessionEvalu
     sourcesUsedEnough: hasSources ? !!explicar && s.sourcesSelected.length >= explicar.minSources : quality >= 0.5,
     gapIdentified: hasSources ? !!revisar && s.gapChoice === revisar.gapChoiceId : quality === 1,
     completed: unit.steps.every((st) => s.stepsDone.includes(st.id)),
+    hasSources,
   };
 }
 
@@ -121,10 +128,17 @@ export function investigationStars(ev: SessionEvaluation): 0 | 1 | 2 | 3 {
   return (1 + (ev.sourcesUsedEnough ? 1 : 0) + (ev.gapIdentified ? 1 : 0)) as 1 | 2 | 3;
 }
 
-/** Clave de la razón (nunca texto: `@lee-conmigo/ui-core` la vuelve frase ES/EN). */
-export type InvestigationReasonKey = 'sourcesAndGap' | 'sources' | 'gap' | 'completed';
+/** Clave de la razón (nunca texto: `@lee-conmigo/ui-core` la vuelve frase ES/EN). Las claves `source*`/`gap`
+ * mencionan fuentes y solo aplican cuando `hasSources` es verdadero; las unidades sin fuentes (1.º, 6.º) usan
+ * `reasoning*`, que habla de razonar con cuidado, nunca de "fuentes" que no existen en esa unidad. */
+export type InvestigationReasonKey = 'sourcesAndGap' | 'sources' | 'gap' | 'reasoningAndCare' | 'reasoning' | 'completed';
 
 export function investigationReasonKey(ev: SessionEvaluation): InvestigationReasonKey {
+  if (!ev.hasSources) {
+    if (ev.sourcesUsedEnough && ev.gapIdentified) return 'reasoningAndCare';
+    if (ev.sourcesUsedEnough) return 'reasoning';
+    return 'completed';
+  }
   if (ev.sourcesUsedEnough && ev.gapIdentified) return 'sourcesAndGap';
   if (ev.sourcesUsedEnough) return 'sources';
   if (ev.gapIdentified) return 'gap';
