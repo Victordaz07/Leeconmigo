@@ -95,7 +95,10 @@ function Root() {
   if (!fontsLoaded) return <View style={styles.screen} />;
 
   const home = () => setRoute({ name: 'home' });
-  if (route.name === 'parentGate') return <ParentGateScreen savedPin={parentPin} onOpen={openGated} onBack={home} />;
+  // Antes de elegir un niño (p. ej. "Agregar niño") no hay `profile` todavía: se usa el idioma del primer perfil
+  // que ya exista, o español por defecto si de verdad no hay ninguno.
+  const gateLang = (profile ?? profiles[0])?.language === 'en' ? 'en' : 'es';
+  if (route.name === 'parentGate') return <ParentGateScreen savedPin={parentPin} onOpen={openGated} onBack={home} lang={gateLang} />;
   if (route.name === 'settings' && route.isNew) {
     return (
       <ParentSettingsScreen

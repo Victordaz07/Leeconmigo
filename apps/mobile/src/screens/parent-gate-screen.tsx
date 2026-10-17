@@ -2,7 +2,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useEffect, useState } from 'react';
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { GATE_COPY, gateKey, gateMessage, gateSubmit, isLocked, startGate, type PinKey } from '@lee-conmigo/ui-core';
+import { GATE_COPY, gateKey, gateMessage, gateSubmit, isLocked, startGate, type GateLang, type PinKey } from '@lee-conmigo/ui-core';
 import { ChevronLeftIcon, colors, fontFamily, gradients, GradientView, KiteIcon, PinPad, radius, RoundButton, useLayout } from '@lee-conmigo/ui-native';
 import { storyImage } from '../story-assets';
 
@@ -12,6 +12,8 @@ interface ParentGateScreenProps {
   /** Se abrió: con el PIN recién creado, si se creó ahora. */
   onOpen: (createdPin: string | null) => void;
   onBack: () => void;
+  /** Idioma del niño activo (o del primer perfil, si todavía no hay uno elegido — p. ej. "Agregar niño"). */
+  lang: GateLang;
 }
 
 /** Arte de la mitad izquierda: una ilustración que ya existe (el diseño traía una de referencia, sin producir). */
@@ -22,7 +24,7 @@ const HERO = 'stories/la-cometa-roja/cover.webp';
  * "Modo padres" (docs/01, D4). La lógica está en `ui-core/pin.ts`. Sin recuperación por correo (no hay cuentas ni nube):
  * si se olvida, se borran los datos de la app desde Ajustes de Android.
  */
-export function ParentGateScreen({ savedPin, onOpen, onBack }: ParentGateScreenProps) {
+export function ParentGateScreen({ savedPin, onOpen, onBack, lang }: ParentGateScreenProps) {
   const insets = useSafeAreaInsets();
   const [gate, setGate] = useState(() => startGate(savedPin));
   const [now, setNow] = useState(() => Date.now());
@@ -53,25 +55,25 @@ export function ParentGateScreen({ savedPin, onOpen, onBack }: ParentGateScreenP
   };
 
   const creating = gate.phase === 'create' || gate.phase === 'confirm';
-  const title = gate.phase === 'confirm' ? GATE_COPY.confirmTitle : creating ? GATE_COPY.createTitle : GATE_COPY.enterTitle;
-  const hint = gate.phase === 'confirm' ? GATE_COPY.confirmHint : creating ? GATE_COPY.createHint : GATE_COPY.enterHint;
-  const message = gateMessage(locked ? 'locked' : gate.message === 'locked' ? 'none' : gate.message);
+  const title = gate.phase === 'confirm' ? GATE_COPY.confirmTitle[lang] : creating ? GATE_COPY.createTitle[lang] : GATE_COPY.enterTitle[lang];
+  const hint = gate.phase === 'confirm' ? GATE_COPY.confirmHint[lang] : creating ? GATE_COPY.createHint[lang] : GATE_COPY.enterHint[lang];
+  const message = gateMessage(locked ? 'locked' : gate.message === 'locked' ? 'none' : gate.message, lang);
   const hero = storyImage(HERO);
   const layout = useLayout();
   // Teléfono o vertical: sin la mitad de arte; acostado con poca altura, el título a la izquierda y el teclado a la derecha.
   const showArt = !layout.narrow && !layout.portrait && !layout.short;
   const sideBySide = layout.short && !layout.portrait;
   const backButton = (
-    <RoundButton onPress={onBack} label="Volver">
+    <RoundButton onPress={onBack} label={GATE_COPY.back[lang]}>
       <ChevronLeftIcon />
     </RoundButton>
   );
   const heading = (
     <View style={styles.heading}>
-      <Text style={styles.kicker}>{creating ? `PASO ${gate.phase === 'confirm' ? 2 : 1} DE 2 · SOLO PARA PADRES` : 'MODO PADRES'}</Text>
+      <Text style={styles.kicker}>{creating ? GATE_COPY.kickerCreating[lang](gate.phase === 'confirm' ? 2 : 1) : GATE_COPY.kickerEnter[lang]}</Text>
       <Text style={[styles.title, layout.phone && styles.titleSmall]}>{title}</Text>
       <Text style={styles.hint}>{hint}</Text>
-      {!showArt && <Text style={styles.privacySmall}>La voz de tu hijo nunca se graba ni se almacena.</Text>}
+      {!showArt && <Text style={styles.privacySmall}>{GATE_COPY.privacy[lang]}</Text>}
     </View>
   );
   const message_ = (
@@ -108,8 +110,8 @@ export function ParentGateScreen({ savedPin, onOpen, onBack }: ParentGateScreenP
             </GradientView>
             <Text style={styles.brandText}>Kitewise</Text>
           </View>
-          <Text style={styles.tagline}>Aprender en casa, a su ritmo.</Text>
-          <Text style={styles.privacy}>La voz de tu hijo nunca se graba ni se almacena.</Text>
+          <Text style={styles.tagline}>{GATE_COPY.tagline[lang]}</Text>
+          <Text style={styles.privacy}>{GATE_COPY.privacy[lang]}</Text>
         </View>
       </View>
 

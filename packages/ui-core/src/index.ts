@@ -11,7 +11,7 @@ export type { Subject, SubjectId } from './subjects.ts';
 export { effortReason, effortStars, ENERGY_OPTIONS, energyOption, FOCUS_FACES, KITE_SECONDS_PER_METER, kiteMeters } from './effort.ts';
 export type { EffortInput, Energy, EnergyOption, FocusSelfReport } from './effort.ts';
 export { GATE_COPY, gateKey, gateMessage, gateSubmit, isCompletePin, isLocked, MAX_PIN_ATTEMPTS, PIN_LENGTH, PIN_LOCK_SECONDS, startGate } from './pin.ts';
-export type { GateMessage, GatePhase, GateState, PinKey } from './pin.ts';
+export type { GateLang, GateMessage, GatePhase, GateState, PinKey } from './pin.ts';
 export { columnsFor, itemWidth, layoutFor, PHONE_MAX_SHORT_SIDE } from './layout.ts';
 export type { Layout, NavStyle } from './layout.ts';
 export { MATH_COPY } from './math-copy.ts';
