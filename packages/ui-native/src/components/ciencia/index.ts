@@ -14,3 +14,4 @@ export { MagnetBench, type MagnetArt, type MagnetTile } from './magnet-bench.tsx
 export { BalanceBench, SampleStrip, type MatterArt, type SampleChip } from './matter-bench.tsx';
 export { RampBench, type RampArt } from './ramp-bench.tsx';
 export { CartBench, PendulumBench, type ForceArt } from './force-bench.tsx';
+export { LightPathBench, type PathArt, type PathTile } from './light-path-bench.tsx';

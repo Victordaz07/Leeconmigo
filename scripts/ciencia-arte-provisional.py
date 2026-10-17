@@ -3,7 +3,7 @@
 las imágenes de Victor. Usa los MISMOS nombres de archivo que el pedido (docs/design/ciencia/PEDIDO-IMAGENES.md), así que
 `scripts/ciencia-arte.py` los sobrescribe cuando lleguen las reales.
 
-Uso:  python3 scripts/ciencia-arte-provisional.py <lote>   (A, B, H, I)
+Uso:  python3 scripts/ciencia-arte-provisional.py <lote>   (A, B, F, H, I)
 Una unidad con arte provisional NO está lista para el niño: `UNIT_ART_READY` queda en false y solo se ve en un build de demo.
 """
 import os, sys
@@ -204,6 +204,32 @@ def lote_h():
             d.rectangle((int(w * 0.17), int(h * 0.5), int(w * 0.25), int(h * 0.52)), fill=(150, 110, 70))
         bg.convert('RGB').save(f'{OUT}/{folder}/{name}.webp', 'WEBP', quality=80, method=6)
 
-LOTES = {'A': lote_a, 'B': lote_b, 'H': lote_h, 'I': lote_i}
+def marco(name, panel):
+    im, d = canvas()
+    sage, dark = (150, 190, 150), (80, 110, 80)
+    d.rounded_rectangle((200, 120, 824, 800), 30, fill=sage, outline=dark, width=10)
+    d.rounded_rectangle((270, 190, 754, 730), 12, fill=panel, outline=dark, width=6)
+    d.rectangle((420, 800, 604, 880), fill=(120, 150, 120), outline=dark, width=8)
+    save_prop(im, name)
+
+def lote_f():
+    marco('prop_marco_transparente', (225, 240, 250, 90))
+    marco('prop_marco_calco', (246, 246, 240, 225))
+    marco('prop_marco_cartulina', (236, 140, 60, 255))
+    marco('prop_marco_aluminio', (200, 206, 214, 255))
+    for name, folder in (('cover_c1_u03', 'covers'), ('scene_c1_u03', 'bg')):
+        size = (1152, 768) if folder == 'covers' else (1536, 1024)
+        bg = gradient(size[0], size[1], (232, 226, 210), (190, 170, 140)).convert('RGBA')
+        d = ImageDraw.Draw(bg)
+        w, h = size
+        d.rectangle((0, int(h * 0.7), w, h), fill=(150, 112, 80))
+        d.rounded_rectangle((int(w * 0.14), int(h * 0.56), int(w * 0.3), int(h * 0.64)), 14, fill=(244, 196, 48), outline=(150, 110, 20), width=4)
+        d.rounded_rectangle((int(w * 0.44), int(h * 0.3), int(w * 0.56), int(h * 0.68)), 14, fill=(150, 190, 150), outline=(80, 110, 80), width=4)
+        d.rectangle((int(w * 0.46), int(h * 0.34), int(w * 0.54), int(h * 0.62)), fill=(225, 240, 250))
+        if folder == 'bg':
+            d.rectangle((int(w * 0.64), int(h * 0.1), int(w * 0.92), int(h * 0.5)), fill=(244, 240, 228))
+        bg.convert('RGB').save(f'{OUT}/{folder}/{name}.webp', 'WEBP', quality=80, method=6)
+
+LOTES = {'A': lote_a, 'B': lote_b, 'F': lote_f, 'H': lote_h, 'I': lote_i}
 LOTES[sys.argv[1] if len(sys.argv) > 1 else 'A']()
 print('arte provisional listo (reemplaza con las imágenes reales y scripts/ciencia-arte.py)')

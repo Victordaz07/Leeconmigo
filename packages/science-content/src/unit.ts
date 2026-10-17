@@ -5,6 +5,7 @@
  */
 import type { Localized } from '@lee-conmigo/contracts';
 import c1u02 from '../content/c1-u02.json';
+import c1u03 from '../content/c1-u03.json';
 import c2u02 from '../content/c2-u02.json';
 import c3u05 from '../content/c3-u05.json';
 import c3u06 from '../content/c3-u06.json';
@@ -16,6 +17,7 @@ import c6u04 from '../content/c6-u04.json';
 import { practiceMapProblems, PRACTICE_MAPS, bandCount, LADERA_DATASETS, type Dataset } from './datasets.ts';
 import { COVERS, SLOPES, type Cover, type Slope } from './labs/erosion.ts';
 import { LIGHT_OBJECTS, LIGHT_STATES, type LightObject, type LightState } from './labs/luz.ts';
+import { PATH_MATERIALS, lightReachesWall, makesShadow, outcomeOf } from './labs/caminos.ts';
 import { MAX_PUSHES, TABLE_PAIRS, balanced, cartMove, swingSide, travelCm } from './labs/fuerzas.ts';
 import { BLOCK_SLIDE_CM, RELEASE_MARKS, isMark, pushesFarther, slideCm } from './labs/choques.ts';
 import { MIXES, MIX_TESTS, hasBubbles, mixObserved, newSubstance, recoverable, type Mix, type MixTest } from './labs/mezclas.ts';
@@ -156,6 +158,16 @@ export interface ForceSetup {
   static?: boolean;
 }
 
+/** Los caminos de luz de C1-U03: una linterna, un marco con un material y una pared. */
+export interface PathSetup {
+  /** Material fijo del marco. Sin él el niño elige entre los cuatro. */
+  material?: (typeof PATH_MATERIALS)[number];
+  /** Cuántos materiales distintos prueba el niño en este paso. */
+  trials?: number;
+  /** Se muestran los resultados ya hechos (para analizarlos). */
+  static?: boolean;
+}
+
 export interface ChoiceOption {
   id: string;
   text: Localized;
@@ -199,6 +211,7 @@ export interface UnitStep {
   matter?: MatterSetup;
   ramp?: RampSetup;
   forces?: ForceSetup;
+  path?: PathSetup;
   /** Pasos de «arreglar la prueba»: el laboratorio resultante según el arreglo que elija el niño (id de la opción). */
   labFixed?: Record<string, LabSetup>;
   choice?: StepChoice;
@@ -299,7 +312,7 @@ export interface ScienceUnit {
 }
 
 /** Las unidades con contenido, por grado. Una unidad con contenido todavía puede esperar su arte (`UNIT_ART_READY` en la app). */
-export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c3u05 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c4u02 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c5u02 as unknown as ScienceUnit, c5u03 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit];
+export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c1u03 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c3u05 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c4u02 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c5u02 as unknown as ScienceUnit, c5u03 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit];
 export const scienceUnitContent = (id: string): ScienceUnit | undefined => SCIENCE_UNITS.find((u) => u.id === id);
 
 // ------------------------------------------------------------------ evaluar una tarea
@@ -461,6 +474,10 @@ export function unitProblems(u: ScienceUnit): string[] {
       if (!MATERIAL_TESTS.includes(st.material.test)) p.push(`${st.id}: prueba de materiales desconocida`);
       if (st.material.trials !== undefined && (st.material.trials < 1 || st.material.trials > MATERIALS.length)) p.push(`${st.id}: los materiales a probar van de 1 a ${MATERIALS.length}`);
     }
+    if (st.path) {
+      if (st.path.material !== undefined && !PATH_MATERIALS.includes(st.path.material)) p.push(`${st.id}: material desconocido (${st.path.material})`);
+      if (st.path.trials !== undefined && (st.path.trials < 1 || st.path.trials > PATH_MATERIALS.length)) p.push(`${st.id}: los materiales a probar van de 1 a ${PATH_MATERIALS.length}`);
+    }
     if (st.forces) {
       const f = st.forces;
       for (const n of [f.left, f.right]) if (n !== undefined && (!Number.isInteger(n) || n < 0 || n > MAX_PUSHES)) p.push(`${st.id}: los empujones van de 0 a ${MAX_PUSHES}`);
@@ -566,6 +583,7 @@ export function dataTextProblems(u: ScienceUnit): string[] {
   if (u.id === 'C5-U03') return mixTextProblems(u);
   if (u.id === 'C4-U02') return rampTextProblems(u);
   if (u.id === 'C3-U05') return forceTextProblems(u);
+  if (u.id === 'C1-U03') return pathTextProblems(u);
   if (u.id !== 'C4-U06') return p;
   const t5 = u.tasks.find((t) => t.id === 't5');
   const base = LADERA_DATASETS.base.rows;
@@ -878,5 +896,33 @@ function forceTextProblems(u: ScienceUnit): string[] {
   if (expected('s2.1') !== 'empujones') p.push('s2.1: lo que cambia son los empujones');
   // La tabla del niño (s3.2) usa las combinaciones del modelo.
   if (TABLE_PAIRS.length !== 5) p.push('la tabla del carrito debe tener 5 combinaciones');
+  return p;
+}
+
+/** C1-U03: lo que dicen los textos sobre la luz coincide con el modelo de los caminos de luz. */
+function pathTextProblems(u: ScienceUnit): string[] {
+  const p: string[] = [];
+  const steps = u.sessions.flatMap((s) => s.steps);
+  const part = (taskId: string, partId: string) => u.tasks.find((t) => t.id === taskId)?.parts.find((x) => x.id === partId);
+  // Las predicciones apuntan a lo que da el modelo.
+  if (part('t3', 'resultado')?.observedOptionId !== outcomeOf('calco')) p.push('t3.resultado: lo observado con el calco debe ser «poca»');
+  if (part('t4', 'resultado')?.observedOptionId !== outcomeOf('aluminio')) p.push('t4.resultado: lo observado con el aluminio debe ser «rebota»');
+  // t1: el primer paso muestra el plástico transparente: la luz llega a la pared.
+  const first = steps.find((st) => st.id === 's1.1')?.path;
+  if (first?.material !== 'transparente' || !lightReachesWall('transparente')) p.push('s1.1: con el plástico transparente la luz debe llegar a la pared');
+  // t7: el material del parasol es el que hace sombra.
+  const valid = part('t7', 'material')?.options.filter((o) => o.valid).map((o) => o.id);
+  if (valid?.join() !== 'cartulina' || !makesShadow('cartulina') || makesShadow('transparente') || makesShadow('calco')) p.push('t7.material: el parasol debe ser de cartulina (la única que hace sombra sin rebotar)');
+  const expected = (id: string) => steps.find((st) => st.id === id)?.choice?.options.find((o) => o.expected)?.id;
+  if (expected('s3.3') !== 'depende') p.push('s3.3: el patrón esperado es «depende del material»');
+  if (expected('s3.4') !== 'sombra' || !makesShadow('cartulina')) p.push('s3.4: donde la luz no pasa se forma una sombra');
+  if (expected('s2.1') !== 'material') p.push('s2.1: lo que cambia es el material');
+  // t2: las observaciones válidas e inválidas citan el resultado del modelo.
+  const t2 = part('t2', 'observaciones')?.options;
+  const says = (id: string, lang: 'es' | 'en') => t2?.find((o) => o.id === id)?.text[lang].toLowerCase() ?? '';
+  if (!says('toda', 'es').includes('toda') || outcomeOf('transparente') !== 'toda') p.push('t2.toda: el plástico transparente deja pasar toda la luz');
+  if (!says('nada', 'es').includes('no pasa') || outcomeOf('cartulina') !== 'nada') p.push('t2.nada: con la cartulina la luz no pasa');
+  if (outcomeOf('calco') !== 'poca' || !(t2?.find((o) => o.id === 'calco')?.whyNot?.es ?? '').includes('un poco')) p.push('t2.calco: con el calco la luz pasa un poco');
+  if (outcomeOf('aluminio') !== 'rebota' || !(t2?.find((o) => o.id === 'alu')?.whyNot?.es ?? '').includes('rebota')) p.push('t2.alu: con el aluminio la luz rebota');
   return p;
 }

@@ -39,7 +39,7 @@ for s in u['sessions']:
     w('')
     for st in s['steps']:
         extra = []
-        for k in ('scene', 'light', 'material', 'thermal', 'magnet', 'matter', 'ramp', 'forces', 'lab', 'map', 'zones', 'choice', 'glossary'):
+        for k in ('scene', 'light', 'material', 'thermal', 'magnet', 'matter', 'ramp', 'forces', 'path', 'lab', 'map', 'zones', 'choice', 'glossary'):
             if k in st:
                 extra.append(k)
         t = f" · tarea **{st['taskId']}**" if 'taskId' in st else ''

@@ -107,3 +107,6 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
 ## 2026-10-17 · CI-18: C3-U05 «Fuerzas y movimiento» (arte provisional)
 - Fuerzas como empujones contados (equilibrados → no cambia el movimiento) y péndulo para el patrón; dos ideas, 3-PS2-1 (4 tareas) y 3-PS2-2 (3 tareas). Verificada en tableta.
 - Pendiente: arte real del lote H y revisar el giro del péndulo con la barra de la imagen real.
+
+## 2026-10-17 · CI-19: C1-U03 «Caminos de luz» (arte provisional)
+- Cuatro materiales con cuatro resultados distintos (toda / un poco / no pasa / rebota), dos ideas y 1-PS4-3 con 7 tareas; textos cortos para 1.º. Verificada en tableta.

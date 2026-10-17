@@ -204,6 +204,22 @@ export const CIENCIA_COPY = {
     mixHidden: L('Todavía no probamos esta mezcla: ¡predice!', 'We haven’t tested this mixture yet: make a prediction!'),
     mixSafe: L('Todo en vasitos abiertos y con poca cantidad. Nunca se prueba con la boca.', 'Everything in open cups with a small amount. Never tasted.'),
   },
+  /** Caminos de luz: la linterna, el marco y la pared (C1-U03). */
+  path: {
+    benchLabel: (name: string, lit: boolean) => L(lit ? `Linterna encendida con ${name} en el marco.` : `Linterna, marco con ${name} y pared.`, lit ? `Flashlight on with ${name} in the frame.` : `Flashlight, frame with ${name} and wall.`),
+    nothing: L('Linterna, marco y pared.', 'Flashlight, frame and wall.'),
+    on: L('Encender la linterna', 'Turn on the flashlight'),
+    onAgain: L('Encender otra vez', 'Turn it on again'),
+    pickMaterial: L('Toca un material para ponerlo en el marco y enciende la linterna.', 'Tap a material to put it in the frame and turn on the flashlight.'),
+    tested: (n: number, t: number) => L(`Probaste ${n} de ${t} materiales`, `You tested ${n} of ${t} materials`),
+    testedAll: L('Ya probaste lo que hacía falta. Puedes seguir probando.', 'You tested enough. You can keep testing.'),
+    tableTitle: L('Mis resultados', 'My results'),
+    column: L('¿Qué pasó con la luz?', 'What happened to the light?'),
+    pickCell: L('Toca una casilla vacía y mira qué pasó con la luz.', 'Tap an empty box and look at what happened to the light.'),
+    askAbout: (name: string) => L(`Mira qué pasó con la luz con ${name}. ¿Qué anotas?`, `Look at what happened to the light with ${name}. What do you write down?`),
+    lookAgain: L('Mira otra vez la pared y elige de nuevo.', 'Look at the wall again and choose again.'),
+    tableComplete: L('Tu tabla está completa.', 'Your table is complete.'),
+  },
   /** Fuerzas: el carrito con empujones y el péndulo (C3-U05). */
   forces: {
     cartLabel: (l: number, r: number) => L(`Carrito con ${r} empujones hacia la derecha y ${l} hacia la izquierda.`, `Cart with ${r} pushes to the right and ${l} to the left.`),

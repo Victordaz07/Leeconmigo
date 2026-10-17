@@ -18,3 +18,4 @@ export * from './labs/materia.ts';
 export * from './labs/mezclas.ts';
 export * from './labs/choques.ts';
 export * from './labs/fuerzas.ts';
+export * from './labs/caminos.ts';

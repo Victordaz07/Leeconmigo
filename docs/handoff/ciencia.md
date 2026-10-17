@@ -263,3 +263,11 @@ tela, plástico, cartón), vaso de agua compartido con C5 y C6, bandeja con pico
 - **Arte PROVISIONAL** (`scripts/ciencia-arte-provisional.py H`): `prop_carrito`, `prop_pendulo`, `scene_c3_u05`, `cover_c3_u05`; en `PROVISIONAL` de `tests/ciencia-art.test.ts` y `UNIT_ART_READY['C3-U05']` en **false**.
   Al llegar el lote H: `scripts/ciencia-arte.py <carpeta> tanda-3h`, vaciar `PROVISIONAL`, **revisar `PendulumBench`**: la imagen real trae una barra de soporte arriba y el banco gira la imagen entera (`transformOrigin` 50% 4%); si la
   barra gira de más, pedir el péndulo sin barra o recortarla. Poner `UNIT_ART_READY['C3-U05']` en true y sumar `manifest-tanda-3h.json` a `MANIFESTS`.
+
+## Actualización CI-19 (2026-10-17): C1-U03 «Caminos de luz» hecha con arte provisional
+- `labs/caminos.ts`: plástico transparente → la luz pasa toda; papel de calco → un poco; cartulina → no pasa (sombra); papel de aluminio → rebota. Sin luz en números ni otros grosores: `PATH_MODEL` lo declara.
+- `content/c1-u03.json` (6 sesiones / 23 pasos, 8 tareas, 2 ideas: `luz.pasa` y `luz.rebota`; 1-PS4-3 con 7 tareas). `pathTextProblems` ata las respuestas esperadas al modelo (calco = «poca», aluminio = «rebota», parasol = cartulina).
+  Ficha: `unidades/C1-U03.md`. Seguridad: nunca la linterna a los ojos, ni mirar el sol, aluminio sin bordes cortantes.
+- UI: `LightPathBench` (linterna, marco con el material y pared; los haces, la pared iluminada y la sombra los dibuja la app) y `families/path.tsx` (elegir material y encender, tabla de qué pasó con la luz).
+- **Arte PROVISIONAL** (`scripts/ciencia-arte-provisional.py F`): los 4 `prop_marco_*`, `scene_c1_u03` y `cover_c1_u03`; en `PROVISIONAL` de `tests/ciencia-art.test.ts` y `UNIT_ART_READY['C1-U03']` en **false**.
+  Al llegar el lote F: `scripts/ciencia-arte.py <carpeta> tanda-3f`, vaciar `PROVISIONAL`, retocar las posiciones de `LightPathBench` (marco y pared) si hace falta, poner `UNIT_ART_READY['C1-U03']` en true y sumar `manifest-tanda-3f.json` a `MANIFESTS`.
