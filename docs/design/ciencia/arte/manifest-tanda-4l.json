@@ -1,0 +1,54 @@
+{
+ "project": "Kitewise",
+ "subject": "ciencia",
+ "batch": "tanda-4l",
+ "count": 5,
+ "format": "PNG original de GPT, sin recortar; se convierte a WebP (props y poses recortados a su silueta)",
+ "assets": [
+  {
+   "source": "cover_c2_u08.png",
+   "sha256": "bbb368f415e20297a1c7f6aaa71d6034adc4361d6e3185014b571df1415e8450",
+   "bytes": 2020363,
+   "output": "apps/mobile/assets/ciencia/covers/cover_c2_u08.webp",
+   "outputBytes": 103132,
+   "width": 1152,
+   "height": 768
+  },
+  {
+   "source": "prop_canon.png",
+   "sha256": "af7e7449b5bd04361aa743b163c72c2f4502de044f5bfd7930d22bc737176d45",
+   "bytes": 1748196,
+   "output": "apps/mobile/assets/ciencia/props/prop_canon.webp",
+   "outputBytes": 56252,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_duna.png",
+   "sha256": "911d06d9b18e5fcd59d8116c58b2478b67dc20513c59f903d2fca35e0ddb759b",
+   "bytes": 664568,
+   "output": "apps/mobile/assets/ciencia/props/prop_duna.webp",
+   "outputBytes": 15224,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_volcan.png",
+   "sha256": "2fde6d0d0c5d869ce2ace2def666df697908658edaa2a1117590ccdb4df969c9",
+   "bytes": 898878,
+   "output": "apps/mobile/assets/ciencia/props/prop_volcan.webp",
+   "outputBytes": 27552,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "scene_c2_u08.png",
+   "sha256": "6dae07ce4b8db5010a69fab148a8a633bcff7e9b6b12ea25e24add3f6feebc45",
+   "bytes": 2564811,
+   "output": "apps/mobile/assets/ciencia/bg/scene_c2_u08.webp",
+   "outputBytes": 188704,
+   "width": 1536,
+   "height": 1024
+  }
+ ]
+}

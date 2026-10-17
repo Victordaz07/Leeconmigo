@@ -1,0 +1,63 @@
+{
+ "project": "Kitewise",
+ "subject": "ciencia",
+ "batch": "tanda-3g",
+ "count": 6,
+ "format": "PNG original de GPT, sin recortar; se convierte a WebP (props y poses recortados a su silueta)",
+ "assets": [
+  {
+   "source": "cover_c2_u01.png",
+   "sha256": "b0390a482ba7f8b4d5675970745781065f5f456c614a292292c46731f3a9e063",
+   "bytes": 1642699,
+   "output": "apps/mobile/assets/ciencia/covers/cover_c2_u01.webp",
+   "outputBytes": 49000,
+   "width": 1152,
+   "height": 768
+  },
+  {
+   "source": "prop_bloque_madera.png",
+   "sha256": "f6b2ec685661bfe4501d0a162fcc08e4ad09e2ea7da6af07a6b3789589d9997c",
+   "bytes": 857877,
+   "output": "apps/mobile/assets/ciencia/props/prop_bloque_madera.webp",
+   "outputBytes": 20632,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_cuchara_metal.png",
+   "sha256": "75e2aea63a93d7984464332f1211a796dda37728f2bd6c84aadd652c5f8b16f2",
+   "bytes": 220810,
+   "output": "apps/mobile/assets/ciencia/props/prop_cuchara_metal.webp",
+   "outputBytes": 9590,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_esponja.png",
+   "sha256": "2c5c26ed7aac7be20b8ee7257154246fd0a15d1742afb2020ae5b09c46324a81",
+   "bytes": 934987,
+   "output": "apps/mobile/assets/ciencia/props/prop_esponja.webp",
+   "outputBytes": 25010,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_lupa.png",
+   "sha256": "55b142c76817291b13692fd151baab9bd09fc822add07a1d5d21a11a8067a8e2",
+   "bytes": 468035,
+   "output": "apps/mobile/assets/ciencia/props/prop_lupa.webp",
+   "outputBytes": 25842,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "scene_c2_u01.png",
+   "sha256": "000355ab75177619ff8b22c46ef3bbe17a07392fd10ab983875fb01c2fbfef2a",
+   "bytes": 2325045,
+   "output": "apps/mobile/assets/ciencia/bg/scene_c2_u01.webp",
+   "outputBytes": 107414,
+   "width": 1536,
+   "height": 1024
+  }
+ ]
+}

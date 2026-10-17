@@ -1,0 +1,1827 @@
+{
+ "id": "C5-U02",
+ "grade": 5,
+ "area": "materia",
+ "title": {
+  "es": "Cantidad y propiedades",
+  "en": "Amount and properties"
+ },
+ "question": {
+  "es": "¿Qué conservamos y qué identificamos?",
+  "en": "What do we keep, and what do we identify?"
+ },
+ "standards": [
+  "5-PS1-2",
+  "5-PS1-3"
+ ],
+ "standardTasks": {
+  "5-PS1-2": [
+   "t1",
+   "t3",
+   "t5",
+   "t7"
+  ],
+  "5-PS1-3": [
+   "t2",
+   "t4",
+   "t6"
+  ]
+ },
+ "ideas": [
+  {
+   "id": "materia.conserva",
+   "text": {
+    "es": "Cuando algo se disuelve o se derrite en un frasco cerrado, deja de verse pero no deja de estar: la masa total no cambia.",
+    "en": "When something dissolves or melts in a closed jar, you stop seeing it but it is still there: the total mass doesn’t change."
+   },
+   "misconception": {
+    "es": "Si ya no se ve, desapareció y pesa menos.",
+    "en": "If you can’t see it anymore, it disappeared and weighs less."
+   },
+   "contexts": [
+    "sal",
+    "hielo"
+   ]
+  },
+  {
+   "id": "propiedad.identifica",
+   "text": {
+    "es": "Un material se puede identificar por sus propiedades (cómo se ve, qué pasa en agua…); una sola, como el color, no basta: se combinan varias.",
+    "en": "A material can be identified by its properties (how it looks, what happens in water…); a single one, like color, isn’t enough: you combine several."
+   },
+   "misconception": {
+    "es": "Con el color basta para saber qué material es.",
+    "en": "Color is enough to know what material it is."
+   },
+   "contexts": [
+    "muestras",
+    "misteriosa"
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "es": "masa",
+   "en": "mass",
+   "note": {
+    "es": "Cuánta materia hay en algo; la balanza la mide en gramos.",
+    "en": "How much matter there is in something; the scale measures it in grams."
+   }
+  },
+  {
+   "es": "disolver",
+   "en": "to dissolve",
+   "note": {
+    "es": "Cuando una sustancia se reparte tan fina en el agua que ya no se ve, pero sigue ahí.",
+    "en": "When a substance spreads so finely in water that you can’t see it anymore, but it is still there."
+   }
+  },
+  {
+   "es": "propiedad",
+   "en": "property",
+   "note": {
+    "es": "Algo que se puede observar o medir de un material: su color, cómo se ve con la lupa o qué pasa en agua.",
+    "en": "Something you can observe or measure about a material: its color, how it looks with a lens or what happens in water."
+   }
+  }
+ ],
+ "sessions": [
+  {
+   "id": "s1",
+   "title": {
+    "es": "¿Dónde está la sal?",
+    "en": "Where did the salt go?"
+   },
+   "objective": {
+    "es": "Mirar sin interpretar y decir una primera idea.",
+    "en": "Look without interpreting and share a first idea."
+   },
+   "steps": [
+    {
+     "id": "s1.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Sobre la mesa hay un frasco cerrado con agua, una balanza y un platito con sal. Mira lo que pasa cuando la sal se echa en el agua.",
+      "en": "On the table there is a closed jar with water, a scale and a dish of salt. Watch what happens when the salt goes into the water."
+     },
+     "scene": "mesaLab",
+     "matter": {
+      "view": "jar",
+      "substance": "sal",
+      "done": 0,
+      "qualitative": true
+     }
+    },
+    {
+     "id": "s1.2",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "Elige dos cosas que viste.",
+      "en": "Pick two things you saw."
+     },
+     "taskId": "t1",
+     "saves": "observación",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "jar",
+      "substance": "sal",
+      "done": 4,
+      "static": true,
+      "qualitative": true
+     }
+    },
+    {
+     "id": "s1.3",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Creo que la sal…",
+      "en": "I think the salt…"
+     },
+     "saves": "idea inicial",
+     "scene": "mesaLab",
+     "choice": {
+      "id": "ideaInicial",
+      "multi": false,
+      "options": [
+       {
+        "id": "desaparecio",
+        "text": {
+         "es": "desapareció.",
+         "en": "disappeared."
+        }
+       },
+       {
+        "id": "sigue",
+        "text": {
+         "es": "sigue ahí, pero no se ve.",
+         "en": "is still there, but can’t be seen."
+        }
+       },
+       {
+        "id": "agua",
+        "text": {
+         "es": "se convirtió en agua.",
+         "en": "turned into water."
+        }
+       },
+       {
+        "id": "nose",
+        "text": {
+         "es": "todavía no sé.",
+         "en": "I don’t know yet."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s1.4",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "¿Cómo sabemos si la sal sigue ahí? Podemos pesar: la balanza mide cuánta materia hay, aunque no se vea.",
+      "en": "How do we know if the salt is still there? We can weigh: the scale measures how much matter there is, even if you can’t see it."
+     },
+     "scene": "mesaLab"
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "title": {
+    "es": "Pesar antes y después",
+    "en": "Weigh before and after"
+   },
+   "objective": {
+    "es": "Pesar con cuidado, cambiar una sola cosa y comparar con lo que predije.",
+    "en": "Weigh carefully, change only one thing and compare with what I predicted."
+   },
+   "steps": [
+    {
+     "id": "s2.1",
+     "phase": "observa",
+     "kind": "elegir",
+     "text": {
+      "es": "Pesamos el frasco cerrado con la balanza. ¿Qué vamos a comparar?",
+      "en": "We weigh the closed jar on the scale. What are we going to compare?"
+     },
+     "saves": "qué se compara",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "jar",
+      "substance": "sal",
+      "done": 1,
+      "static": true
+     },
+     "choice": {
+      "id": "queCompara",
+      "multi": false,
+      "options": [
+       {
+        "id": "antes",
+        "text": {
+         "es": "Lo que marca la balanza antes de mezclar y después de disolver.",
+         "en": "What the scale shows before mixing and after dissolving."
+        },
+        "expected": true
+       },
+       {
+        "id": "color",
+        "text": {
+         "es": "El color del agua.",
+         "en": "The color of the water."
+        }
+       },
+       {
+        "id": "tapa",
+        "text": {
+         "es": "El color de la tapa.",
+         "en": "The color of the lid."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s2.2",
+     "phase": "explora",
+     "kind": "predecir",
+     "text": {
+      "es": "El frasco con agua marca 220 g y la sal, 10 g. ¿Qué marcará la balanza cuando la sal se disuelva en el frasco cerrado? Porque…",
+      "en": "The jar with water shows 220 g and the salt, 10 g. What will the scale show once the salt dissolves in the closed jar? Because…"
+     },
+     "taskId": "t3",
+     "saves": "predicción",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "jar",
+      "substance": "sal",
+      "done": 2,
+      "static": true
+     }
+    },
+    {
+     "id": "s2.3",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Pesa el frasco, pesa la sal, échala, cierra y vuelve a pesar cuando se disuelva.",
+      "en": "Weigh the jar, weigh the salt, pour it in, close it and weigh again when it has dissolved."
+     },
+     "saves": "observación",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "jar",
+      "substance": "sal",
+      "trials": 1
+     }
+    },
+    {
+     "id": "s2.4",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Compara lo que predijiste con lo que marcó la balanza.",
+      "en": "Compare what you predicted with what the scale showed."
+     },
+     "saves": "comparación",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "jar",
+      "substance": "sal",
+      "done": 4,
+      "static": true
+     },
+     "choice": {
+      "id": "comparacion",
+      "multi": false,
+      "options": [
+       {
+        "id": "coincidio",
+        "text": {
+         "es": "Mi predicción coincidió.",
+         "en": "My prediction matched."
+        }
+       },
+       {
+        "id": "nocoincidio",
+        "text": {
+         "es": "Mi predicción no coincidió.",
+         "en": "My prediction didn’t match."
+        }
+       }
+      ],
+      "compareWith": {
+       "taskId": "t3",
+       "partId": "resultado"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "s3",
+   "title": {
+    "es": "Anotar y buscar el patrón",
+    "en": "Write it down and find the pattern"
+   },
+   "objective": {
+    "es": "Repetir con otra sustancia, anotar las pesadas y buscar el patrón.",
+    "en": "Repeat with another substance, record the weighings and look for the pattern."
+   },
+   "steps": [
+    {
+     "id": "s3.1",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Repite la pesada con sal y con azúcar. Elige una sustancia y sigue los pasos.",
+      "en": "Repeat the weighing with salt and with sugar. Pick a substance and follow the steps."
+     },
+     "saves": "repetición",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "jar",
+      "substances": [
+       "sal",
+       "azucar"
+      ],
+      "trials": 2
+     }
+    },
+    {
+     "id": "s3.2",
+     "phase": "explora",
+     "kind": "registrar",
+     "text": {
+      "es": "Anota lo que marcó la balanza antes de mezclar y después de disolver.",
+      "en": "Write down what the scale showed before mixing and after dissolving."
+     },
+     "saves": "tabla",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "jar",
+      "substances": [
+       "sal",
+       "azucar"
+      ]
+     }
+    },
+    {
+     "id": "s3.3",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Mira tu tabla. ¿Qué patrón ves?",
+      "en": "Look at your table. What pattern do you see?"
+     },
+     "saves": "patrón",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "jar",
+      "substances": [
+       "sal",
+       "azucar"
+      ],
+      "static": true
+     },
+     "choice": {
+      "id": "patron",
+      "multi": false,
+      "options": [
+       {
+        "id": "igual",
+        "text": {
+         "es": "Antes y después marcaron lo mismo, con sal y con azúcar.",
+         "en": "Before and after showed the same, with salt and with sugar."
+        },
+        "expected": true
+       },
+       {
+        "id": "menos",
+        "text": {
+         "es": "Después marcó menos, porque la sustancia se disolvió.",
+         "en": "After showed less, because the substance dissolved."
+        }
+       },
+       {
+        "id": "mas",
+        "text": {
+         "es": "Después marcó más.",
+         "en": "After showed more."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s3.4",
+     "phase": "usa",
+     "kind": "elegir",
+     "text": {
+      "es": "¿Por qué cerramos el frasco?",
+      "en": "Why do we close the jar?"
+     },
+     "saves": "frasco cerrado",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "jar",
+      "substance": "sal",
+      "done": 4,
+      "static": true
+     },
+     "choice": {
+      "id": "cerrado",
+      "multi": false,
+      "options": [
+       {
+        "id": "cerrado",
+        "text": {
+         "es": "Para que nada salga ni entre, y así podamos contar todo lo que hay.",
+         "en": "So nothing leaves or comes in, and we can count everything that is there."
+        },
+        "expected": true
+       },
+       {
+        "id": "adorno",
+        "text": {
+         "es": "Para que se vea más bonito.",
+         "en": "So it looks nicer."
+        }
+       },
+       {
+        "id": "nose",
+        "text": {
+         "es": "No sé.",
+         "en": "I don’t know."
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "s4",
+   "title": {
+    "es": "Explicar lo que vi",
+    "en": "Explaining what I saw"
+   },
+   "objective": {
+    "es": "Armar una explicación con lo que pesé y decir con qué la probé.",
+    "en": "Build an explanation from what I weighed and say what I tested it with."
+   },
+   "steps": [
+    {
+     "id": "s4.1",
+     "phase": "explica",
+     "kind": "texto",
+     "text": {
+      "es": "Palabras nuevas para explicar.",
+      "en": "New words to explain with."
+     },
+     "scene": "mesaLab",
+     "glossary": [
+      "masa",
+      "disolver",
+      "propiedad"
+     ]
+    },
+    {
+     "id": "s4.2",
+     "phase": "explica",
+     "kind": "afirmacion",
+     "text": {
+      "es": "Arma tu explicación: qué dices, qué lo prueba y con qué lo probaste.",
+      "en": "Build your explanation: what you say, what shows it and what you tested it with."
+     },
+     "taskId": "t5",
+     "saves": "explicación",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "jar",
+      "substances": [
+       "sal",
+       "azucar"
+      ],
+      "static": true
+     }
+    },
+    {
+     "id": "s4.3",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "Tu explicación queda como una página de tu cuaderno.",
+      "en": "Your explanation becomes a page in your notebook."
+     },
+     "saves": "entrada del cuaderno",
+     "scene": "mesaLab"
+    }
+   ]
+  },
+  {
+   "id": "s5",
+   "title": {
+    "es": "¿Qué muestra es?",
+    "en": "Which sample is it?"
+   },
+   "objective": {
+    "es": "Comparar propiedades de varios polvos e identificar una muestra misteriosa.",
+    "en": "Compare the properties of several powders and identify a mystery sample."
+   },
+   "steps": [
+    {
+     "id": "s5.1",
+     "phase": "observa",
+     "kind": "elegir",
+     "text": {
+      "es": "Probamos cuatro polvos: su color, cómo se ven con la lupa y qué pasa en agua. Mira la tabla y elige dos cosas.",
+      "en": "We tested four powders: their color, how they look with a lens and what happens in water. Look at the table and pick two things."
+     },
+     "taskId": "t2",
+     "saves": "observación",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "props",
+      "samples": [
+       "sal",
+       "azucar",
+       "arena",
+       "harina"
+      ],
+      "tests": [
+       "color",
+       "granitos",
+       "agua"
+      ],
+      "static": true
+     }
+    },
+    {
+     "id": "s5.2",
+     "phase": "explora",
+     "kind": "predecir",
+     "text": {
+      "es": "Llegó una muestra misteriosa, la X: un polvo blanco. Si la pongo en agua, ¿qué pasará? Porque…",
+      "en": "A mystery sample arrived, X: a white powder. If I put it in water, what will happen? Because…"
+     },
+     "taskId": "t4",
+     "saves": "predicción",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "props",
+      "samples": [
+       "sal",
+       "azucar",
+       "arena",
+       "harina",
+       "X"
+      ],
+      "tests": [
+       "color",
+       "granitos",
+       "agua"
+      ],
+      "static": true
+     }
+    },
+    {
+     "id": "s5.3",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Haz pruebas con la muestra X: elige una casilla de su fila. Haz al menos dos pruebas distintas.",
+      "en": "Run tests on sample X: pick a box in its row. Do at least two different tests."
+     },
+     "saves": "observación",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "props",
+      "samples": [
+       "sal",
+       "azucar",
+       "arena",
+       "harina",
+       "X"
+      ],
+      "tests": [
+       "color",
+       "granitos",
+       "agua"
+      ],
+      "trials": 2
+     }
+    },
+    {
+     "id": "s5.4",
+     "phase": "explica",
+     "kind": "afirmacion",
+     "text": {
+      "es": "¿Qué es la muestra X? Explica con tus pruebas y di con qué la comparaste.",
+      "en": "What is sample X? Explain with your tests and say what you compared it with."
+     },
+     "taskId": "t6",
+     "saves": "explicación",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "props",
+      "samples": [
+       "sal",
+       "azucar",
+       "arena",
+       "harina",
+       "X"
+      ],
+      "tests": [
+       "color",
+       "granitos",
+       "agua"
+      ],
+      "static": true,
+      "revealX": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "s6",
+   "title": {
+    "es": "Un problema para Maya",
+    "en": "A problem for Maya"
+   },
+   "objective": {
+    "es": "Usar lo aprendido en un caso nuevo y revisar mi primera idea.",
+    "en": "Use what I learned in a new case and revisit my first idea."
+   },
+   "steps": [
+    {
+     "id": "s6.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Maya pone un cubo de hielo en un frasco cerrado con agua y lo pesa: marca 240 g.",
+      "en": "Maya puts an ice cube in a closed jar with water and weighs it: it shows 240 g."
+     },
+     "scene": "mesaLab",
+     "matter": {
+      "view": "jar",
+      "substance": "hielo",
+      "done": 3,
+      "static": true
+     }
+    },
+    {
+     "id": "s6.2",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "Cuando el hielo se derrita dentro del frasco cerrado, ¿qué marcará la balanza y por qué?",
+      "en": "When the ice melts inside the closed jar, what will the scale show and why?"
+     },
+     "taskId": "t7",
+     "saves": "problema nuevo",
+     "scene": "mesaLab",
+     "matter": {
+      "view": "jar",
+      "substance": "hielo",
+      "done": 3,
+      "static": true
+     }
+    },
+    {
+     "id": "s6.3",
+     "phase": "explica",
+     "kind": "reflexion",
+     "text": {
+      "es": "Vuelve a mirar tu primera idea. ¿Cambió?",
+      "en": "Look at your first idea again. Did it change?"
+     },
+     "taskId": "t8",
+     "saves": "reflexión",
+     "scene": "mesaLab"
+    },
+    {
+     "id": "s6.4",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "Hoy descubriste que, en un frasco cerrado, lo que se disuelve o se derrite no desaparece: la masa total sigue igual. Y que para saber qué es un material hay que mirar varias de sus propiedades, no solo el color.",
+      "en": "Today you found out that, in a closed jar, what dissolves or melts doesn’t disappear: the total mass stays the same. And that to know what a material is you have to look at several of its properties, not just color."
+     },
+     "saves": "resumen",
+     "scene": "mesaLab"
+    }
+   ]
+  }
+ ],
+ "tasks": [
+  {
+   "id": "t1",
+   "kind": "observar",
+   "ideaIds": [
+    "materia.conserva"
+   ],
+   "contextId": "sal",
+   "sessionId": "s1",
+   "standards": [
+    "5-PS1-2"
+   ],
+   "criterion": {
+    "es": "Dice lo que ve sin inventar: los cristales de sal se fueron y el agua quedó clara, con el frasco cerrado.",
+    "en": "Says what they see without inventing: the salt crystals went away and the water stayed clear, with the jar closed."
+   },
+   "parts": [
+    {
+     "id": "observaciones",
+     "prompt": {
+      "es": "Elige dos cosas que viste.",
+      "en": "Pick two things you saw."
+     },
+     "options": [
+      {
+       "id": "cristales",
+       "text": {
+        "es": "Los cristales de sal se fueron haciendo más chicos hasta que ya no se vieron.",
+        "en": "The salt crystals got smaller and smaller until they could no longer be seen."
+       },
+       "valid": true
+      },
+      {
+       "id": "cerrado",
+       "text": {
+        "es": "El frasco estuvo cerrado todo el tiempo.",
+        "en": "The jar stayed closed the whole time."
+       },
+       "valid": true
+      },
+      {
+       "id": "desaparecio",
+       "text": {
+        "es": "La sal desapareció para siempre.",
+        "en": "The salt disappeared forever."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Eso es una idea, no algo que viste. Lo que viste es que ya no se ve: ¿sigue ahí? Vamos a averiguarlo.",
+        "en": "That is an idea, not something you saw. What you saw is that it can’t be seen anymore: is it still there? Let’s find out."
+       }
+      },
+      {
+       "id": "color",
+       "text": {
+        "es": "El agua se volvió azul oscuro.",
+        "en": "The water turned dark blue."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El agua se quedó clara. Mira de nuevo.",
+        "en": "The water stayed clear. Look again."
+       }
+      },
+      {
+       "id": "tapa",
+       "text": {
+        "es": "Alguien abrió la tapa y sacó la sal.",
+        "en": "Someone opened the lid and took the salt out."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El frasco no se abrió. Mira de nuevo.",
+        "en": "The jar was never opened. Look again."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira los cristales al principio y al final.",
+     "en": "Look at the crystals at the start and at the end."
+    },
+    {
+     "es": "¿Qué ves en el fondo del frasco? ¿Y en el agua?",
+     "en": "What do you see at the bottom of the jar? And in the water?"
+    },
+    {
+     "es": "Ejemplo: cuando se acaba una pastilla efervescente en un vaso, ya no se ve, pero primero estaba.",
+     "en": "Example: when a fizzy tablet is gone in a glass, you can’t see it anymore, but it was there first."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige dos cosas.",
+     "en": "Pick two things."
+    },
+    "wrong": {
+     "es": "Alguna de las cosas que elegiste no pasó. Mira de nuevo.",
+     "en": "Something you picked didn’t happen. Look again."
+    },
+    "ok": {
+     "es": "Observaste con cuidado: primero lo que se ve, después lo que crees.",
+     "en": "You looked carefully: first what you see, then what you think."
+    }
+   }
+  },
+  {
+   "id": "t2",
+   "kind": "observar",
+   "ideaIds": [
+    "propiedad.identifica"
+   ],
+   "contextId": "muestras",
+   "sessionId": "s5",
+   "standards": [
+    "5-PS1-3"
+   ],
+   "criterion": {
+    "es": "Dice lo que muestra la tabla: la sal y el azúcar se disuelven en agua; la arena y la harina no.",
+    "en": "Says what the table shows: salt and sugar dissolve in water; sand and flour don’t."
+   },
+   "parts": [
+    {
+     "id": "observaciones",
+     "prompt": {
+      "es": "Elige dos cosas que ves en la tabla.",
+      "en": "Pick two things you see in the table."
+     },
+     "options": [
+      {
+       "id": "disuelven",
+       "text": {
+        "es": "La sal y el azúcar se disuelven en agua.",
+        "en": "Salt and sugar dissolve in water."
+       },
+       "valid": true
+      },
+      {
+       "id": "arena",
+       "text": {
+        "es": "La arena no se disuelve y es de color beige.",
+        "en": "Sand doesn’t dissolve and is beige."
+       },
+       "valid": true
+      },
+      {
+       "id": "harina",
+       "text": {
+        "es": "La harina se disuelve igual que la sal.",
+        "en": "Flour dissolves just like salt."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira la columna «En agua»: la harina no se disuelve.",
+        "en": "Look at the “In water” column: flour doesn’t dissolve."
+       }
+      },
+      {
+       "id": "blancas",
+       "text": {
+        "es": "Las cuatro muestras son blancas.",
+        "en": "All four samples are white."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira la columna «Color»: la arena es beige.",
+        "en": "Look at the “Color” column: the sand is beige."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Lee la tabla fila por fila.",
+     "en": "Read the table row by row."
+    },
+    {
+     "es": "Mira la columna «En agua»: ¿cuáles se disuelven?",
+     "en": "Look at the “In water” column: which ones dissolve?"
+    },
+    {
+     "es": "Ejemplo: de cuatro juguetes en la bañera, algunos flotan y otros se hunden.",
+     "en": "Example: of four toys in the tub, some float and others sink."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige dos cosas.",
+     "en": "Pick two things."
+    },
+    "wrong": {
+     "es": "Alguna de las cosas que elegiste no está en la tabla. Mírala de nuevo.",
+     "en": "Something you picked isn’t in the table. Look at it again."
+    },
+    "ok": {
+     "es": "Muy bien: miraste lo que muestra cada columna.",
+     "en": "Very good: you looked at what each column shows."
+    }
+   }
+  },
+  {
+   "id": "t3",
+   "kind": "predecir",
+   "ideaIds": [
+    "materia.conserva"
+   ],
+   "contextId": "sal",
+   "sessionId": "s2",
+   "standards": [
+    "5-PS1-2"
+   ],
+   "criterion": {
+    "es": "Predice, antes de pesar, lo que marcará la balanza cuando la sal se disuelva en el frasco cerrado y compara con honestidad. Cualquier predicción es válida.",
+    "en": "Predicts, before weighing, what the scale will show once the salt dissolves in the closed jar and compares honestly. Any prediction is valid."
+   },
+   "parts": [
+    {
+     "id": "resultado",
+     "prompt": {
+      "es": "El frasco con agua marca 220 g y la sal, 10 g. Cuando la sal se disuelva en el frasco cerrado, ¿qué marcará la balanza?",
+      "en": "The jar with water shows 220 g and the salt, 10 g. Once the salt dissolves in the closed jar, what will the scale show?"
+     },
+     "options": [
+      {
+       "id": "menos",
+       "text": {
+        "es": "Menos de 230 g, porque la sal ya no se ve.",
+        "en": "Less than 230 g, because the salt can’t be seen anymore."
+       },
+       "valid": true
+      },
+      {
+       "id": "igual",
+       "text": {
+        "es": "230 g, lo mismo que antes de mezclar.",
+        "en": "230 g, the same as before mixing."
+       },
+       "valid": true
+      },
+      {
+       "id": "mas",
+       "text": {
+        "es": "Más de 230 g.",
+        "en": "More than 230 g."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "No sé.",
+        "en": "I don’t know."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false,
+     "observedOptionId": "igual"
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "Porque…",
+      "en": "Because…"
+     },
+     "options": [
+      {
+       "id": "sigue",
+       "text": {
+        "es": "la sal sigue en el frasco aunque no se vea.",
+        "en": "the salt is still in the jar even if it can’t be seen."
+       },
+       "valid": true
+      },
+      {
+       "id": "desaparece",
+       "text": {
+        "es": "la sal desaparece al disolverse.",
+        "en": "the salt disappears when it dissolves."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "todavía no estoy seguro.",
+        "en": "I’m not sure yet."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    }
+   ],
+   "hints": [
+    {
+     "es": "Piensa: ¿salió algo del frasco cerrado?",
+     "en": "Think: did anything leave the closed jar?"
+    },
+    {
+     "es": "Compara: ¿qué había en el frasco antes y qué hay ahora?",
+     "en": "Compare: what was in the jar before and what is in it now?"
+    },
+    {
+     "es": "Ejemplo: si guardas un cubo de azúcar en una taza de té cerrada, ya no se ve, pero sigue ahí.",
+     "en": "Example: if you put a sugar cube in a closed cup of tea, you can’t see it anymore, but it is still there."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige una predicción y un «porque».",
+     "en": "Pick a prediction and a “because”."
+    },
+    "wrong": {
+     "es": "Elige una de las opciones.",
+     "en": "Pick one of the options."
+    },
+    "ok": {
+     "es": "Anotaste tu predicción. Ahora vamos a pesar.",
+     "en": "You wrote down your prediction. Now let’s weigh."
+    }
+   }
+  },
+  {
+   "id": "t4",
+   "kind": "predecir",
+   "ideaIds": [
+    "propiedad.identifica"
+   ],
+   "contextId": "misteriosa",
+   "sessionId": "s5",
+   "standards": [
+    "5-PS1-3"
+   ],
+   "criterion": {
+    "es": "Predice qué pasará con la muestra X en agua antes de probarla. Cualquier predicción es válida.",
+    "en": "Predicts what will happen to sample X in water before testing it. Any prediction is valid."
+   },
+   "parts": [
+    {
+     "id": "resultado",
+     "prompt": {
+      "es": "La muestra X es un polvo blanco. Si la pongo en agua, ¿qué pasará?",
+      "en": "Sample X is a white powder. If I put it in water, what will happen?"
+     },
+     "options": [
+      {
+       "id": "disuelve",
+       "text": {
+        "es": "Se disolverá.",
+        "en": "It will dissolve."
+       },
+       "valid": true
+      },
+      {
+       "id": "nodisuelve",
+       "text": {
+        "es": "No se disolverá.",
+        "en": "It won’t dissolve."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "No sé.",
+        "en": "I don’t know."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false,
+     "observedOptionId": "disuelve"
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "Porque…",
+      "en": "Because…"
+     },
+     "options": [
+      {
+       "id": "varias",
+       "text": {
+        "es": "algunos polvos blancos se disuelven y otros no, y hay que probar.",
+        "en": "some white powders dissolve and others don’t, so I have to test it."
+       },
+       "valid": true
+      },
+      {
+       "id": "color",
+       "text": {
+        "es": "es blanca, igual que la sal.",
+        "en": "it is white, just like salt."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "todavía no estoy seguro.",
+        "en": "I’m not sure yet."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira la tabla: ¿todos los polvos blancos hicieron lo mismo en agua?",
+     "en": "Look at the table: did all the white powders do the same in water?"
+    },
+    {
+     "es": "¿Basta el color para saber qué pasará?",
+     "en": "Is color enough to know what will happen?"
+    },
+    {
+     "es": "Ejemplo: dos piedras grises pueden ser muy distintas: una flota y otra se hunde.",
+     "en": "Example: two gray stones can be very different: one floats and the other sinks."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige una predicción y un «porque».",
+     "en": "Pick a prediction and a “because”."
+    },
+    "wrong": {
+     "es": "Elige una de las opciones.",
+     "en": "Pick one of the options."
+    },
+    "ok": {
+     "es": "Anotaste tu predicción. Ahora vamos a probar la muestra X.",
+     "en": "You wrote down your prediction. Now let’s test sample X."
+    }
+   }
+  },
+  {
+   "id": "t5",
+   "kind": "evidencia",
+   "ideaIds": [
+    "materia.conserva"
+   ],
+   "contextId": "sal",
+   "sessionId": "s4",
+   "standards": [
+    "5-PS1-2"
+   ],
+   "criterion": {
+    "es": "Afirma que la masa total no cambió al disolverse la sal, apoya con las pesadas de sal y de azúcar y limita la conclusión al frasco cerrado.",
+    "en": "Claims the total mass didn’t change when the salt dissolved, supports it with the salt and sugar weighings and limits the conclusion to the closed jar."
+   },
+   "parts": [
+    {
+     "id": "afirmacion",
+     "prompt": {
+      "es": "Mi afirmación es…",
+      "en": "My claim is…"
+     },
+     "options": [
+      {
+       "id": "conserva",
+       "text": {
+        "es": "La masa total no cambió: la sal sigue ahí, aunque no se vea.",
+        "en": "The total mass didn’t change: the salt is still there, even if it can’t be seen."
+       },
+       "valid": true
+      },
+      {
+       "id": "menos",
+       "text": {
+        "es": "La masa total bajó, porque la sal desapareció.",
+        "en": "The total mass went down, because the salt disappeared."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira tus pesadas: antes marcó 230 g y después, 230 g. No bajó.",
+        "en": "Look at your weighings: before it showed 230 g and after, 230 g. It didn’t go down."
+       }
+      },
+      {
+       "id": "mas",
+       "text": {
+        "es": "La masa total subió, porque la sal se hinchó.",
+        "en": "The total mass went up, because the salt swelled."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira tus pesadas: antes marcó 230 g y después, 230 g. No subió.",
+        "en": "Look at your weighings: before it showed 230 g and after, 230 g. It didn’t go up."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "evidencia",
+     "prompt": {
+      "es": "Mi evidencia es… (elige dos)",
+      "en": "My evidence is… (pick two)"
+     },
+     "options": [
+      {
+       "id": "sal",
+       "text": {
+        "es": "Con sal: el frasco con agua (220 g) más la sal (10 g) sumaban 230 g, y con la sal disuelta marcó 230 g.",
+        "en": "With salt: the jar with water (220 g) plus the salt (10 g) added up to 230 g, and with the salt dissolved it showed 230 g."
+       },
+       "valid": true
+      },
+      {
+       "id": "azucar",
+       "text": {
+        "es": "Con azúcar: 220 g más 15 g sumaban 235 g, y con el azúcar disuelto marcó 235 g.",
+        "en": "With sugar: 220 g plus 15 g added up to 235 g, and with the sugar dissolved it showed 235 g."
+       },
+       "valid": true
+      },
+      {
+       "id": "clara",
+       "text": {
+        "es": "El agua quedó clara.",
+        "en": "The water stayed clear."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Que el agua se vea clara no dice nada sobre la masa: lo dice la balanza.",
+        "en": "Clear water says nothing about mass: the scale does."
+       }
+      },
+      {
+       "id": "chica",
+       "text": {
+        "es": "Los cristales se veían cada vez más chicos.",
+        "en": "The crystals looked smaller and smaller."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Lo que se ve no mide la masa: la mide la balanza.",
+        "en": "What you see doesn’t measure mass: the scale does."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    },
+    {
+     "id": "limite",
+     "prompt": {
+      "es": "Esto lo probé con… (elige una)",
+      "en": "I tested this with… (pick one)"
+     },
+     "options": [
+      {
+       "id": "cerrado",
+       "text": {
+        "es": "un frasco cerrado, sal y azúcar.",
+        "en": "a closed jar, salt and sugar."
+       },
+       "valid": true
+      },
+      {
+       "id": "todo",
+       "text": {
+        "es": "cualquier frasco, abierto o cerrado, y cualquier cosa.",
+        "en": "any jar, open or closed, and anything."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Si el frasco estuviera abierto, algo podría escaparse (como el vapor del agua). Solo probaste un frasco cerrado.",
+        "en": "If the jar were open, something could escape (like water vapor). You only tested a closed jar."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira tus pesadas: ¿cuánto marcó antes y cuánto después?",
+     "en": "Look at your weighings: how much did it show before and after?"
+    },
+    {
+     "es": "Tu evidencia son los números de la balanza, no lo que se ve.",
+     "en": "Your evidence is the scale’s numbers, not what you see."
+    },
+    {
+     "es": "Ejemplo: si pruebas dos tipos de pila en una linterna, no sabes cómo funcionan todas las pilas.",
+     "en": "Example: if you test two kinds of battery in a flashlight, you don’t know how every battery works."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Revisa tu explicación: mira qué parte se apoya en tus pesadas.",
+     "en": "Check your explanation: see which part rests on your weighings."
+    },
+    "ok": {
+     "es": "Tu afirmación, tu evidencia y su límite dicen lo mismo: así se sostiene una explicación.",
+     "en": "Your claim, your evidence and its limit say the same thing: that is how an explanation stands."
+    }
+   }
+  },
+  {
+   "id": "t6",
+   "kind": "modelo",
+   "ideaIds": [
+    "propiedad.identifica"
+   ],
+   "contextId": "misteriosa",
+   "sessionId": "s5",
+   "standards": [
+    "5-PS1-3"
+   ],
+   "criterion": {
+    "es": "Identifica la muestra X con dos propiedades (en agua y con la lupa), sabe que el color solo no basta y limita la conclusión a lo comparado.",
+    "en": "Identifies sample X with two properties (in water and with a lens), knows that color alone isn’t enough and limits the conclusion to what was compared."
+   },
+   "parts": [
+    {
+     "id": "afirmacion",
+     "prompt": {
+      "es": "Mi afirmación es… La muestra X es…",
+      "en": "My claim is… Sample X is…"
+     },
+     "options": [
+      {
+       "id": "azucar",
+       "text": {
+        "es": "azúcar.",
+        "en": "sugar."
+       },
+       "valid": true
+      },
+      {
+       "id": "sal",
+       "text": {
+        "es": "sal.",
+        "en": "salt."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "La X se disuelve, como la sal, pero sus granitos son finos y brillan; los de la sal son cubitos. Mira de nuevo.",
+        "en": "X dissolves, like salt, but its grains are fine and sparkle; salt’s are little cubes. Look again."
+       }
+      },
+      {
+       "id": "arena",
+       "text": {
+        "es": "arena.",
+        "en": "sand."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "La arena no se disuelve y es beige. La X se disolvió. Mira de nuevo.",
+        "en": "Sand doesn’t dissolve and is beige. X dissolved. Look again."
+       }
+      },
+      {
+       "id": "harina",
+       "text": {
+        "es": "harina.",
+        "en": "flour."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "La harina no se disuelve y no tiene granitos. La X se disolvió. Mira de nuevo.",
+        "en": "Flour doesn’t dissolve and has no grains. X dissolved. Look again."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "evidencia",
+     "prompt": {
+      "es": "Mi evidencia es… (elige dos)",
+      "en": "My evidence is… (pick two)"
+     },
+     "options": [
+      {
+       "id": "agua",
+       "text": {
+        "es": "La X se disolvió en agua, como la sal y el azúcar, y no como la arena ni la harina.",
+        "en": "X dissolved in water, like salt and sugar, and unlike sand and flour."
+       },
+       "valid": true
+      },
+      {
+       "id": "granitos",
+       "text": {
+        "es": "Con la lupa, la X tiene granitos finos que brillan, como el azúcar.",
+        "en": "With the lens, X has fine grains that sparkle, like sugar."
+       },
+       "valid": true
+      },
+      {
+       "id": "color",
+       "text": {
+        "es": "La X es blanca.",
+        "en": "X is white."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "La sal, el azúcar y la harina también son blancas: el color solo no alcanza para saber cuál es.",
+        "en": "Salt, sugar and flour are white too: color alone isn’t enough to know which one it is."
+       }
+      },
+      {
+       "id": "casa",
+       "text": {
+        "es": "Se parece al azúcar que hay en mi casa.",
+        "en": "It looks like the sugar at my house."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Una muestra se identifica con pruebas, no por parecerse a algo.",
+        "en": "A sample is identified with tests, not by looking like something."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    },
+    {
+     "id": "limite",
+     "prompt": {
+      "es": "Esto lo probé con… (elige una)",
+      "en": "I tested this with… (pick one)"
+     },
+     "options": [
+      {
+       "id": "dos",
+       "text": {
+        "es": "dos pruebas (en agua y con la lupa), comparando con cuatro muestras conocidas.",
+        "en": "two tests (in water and with a lens), comparing with four known samples."
+       },
+       "valid": true
+      },
+      {
+       "id": "color",
+       "text": {
+        "es": "solo el color, y con eso me basta.",
+        "en": "only color, and that is enough for me."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Con solo el color no se distingue la sal, el azúcar y la harina.",
+        "en": "With color alone you can’t tell salt, sugar and flour apart."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira la fila de la muestra X y compárala con las otras.",
+     "en": "Look at the row for sample X and compare it with the others."
+    },
+    {
+     "es": "Una sola prueba deja varias posibilidades: ¿cuál prueba las separa?",
+     "en": "One test leaves several possibilities: which test separates them?"
+    },
+    {
+     "es": "Ejemplo: para saber de quién es una mochila no basta que sea azul: hay que mirar más cosas.",
+     "en": "Example: to know whose backpack it is, being blue isn’t enough: you have to look at more things."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Mira la tabla: ¿cuál prueba separa a la X de las demás?",
+     "en": "Look at the table: which test separates X from the others?"
+    },
+    "ok": {
+     "es": "Usaste varias propiedades y dijiste con qué comparaste: así se identifica un material.",
+     "en": "You used several properties and said what you compared with: that is how to identify a material."
+    }
+   }
+  },
+  {
+   "id": "t7",
+   "kind": "transferir",
+   "ideaIds": [
+    "materia.conserva"
+   ],
+   "contextId": "hielo",
+   "sessionId": "s6",
+   "standards": [
+    "5-PS1-2"
+   ],
+   "criterion": {
+    "es": "Usa lo aprendido en un caso nuevo: un cubo de hielo que se derrite dentro de un frasco cerrado; predice la balanza y explica por qué.",
+    "en": "Uses what was learned in a new case: an ice cube melting in a closed jar; predicts the scale and explains why."
+   },
+   "parts": [
+    {
+     "id": "resultado",
+     "prompt": {
+      "es": "Maya pone en la balanza un frasco cerrado con agua y un cubo de hielo: marca 240 g. Cuando el hielo se derrita, ¿qué marcará?",
+      "en": "Maya puts a closed jar with water and an ice cube on the scale: it shows 240 g. When the ice melts, what will it show?"
+     },
+     "options": [
+      {
+       "id": "igual",
+       "text": {
+        "es": "240 g, lo mismo.",
+        "en": "240 g, the same."
+       },
+       "valid": true
+      },
+      {
+       "id": "menos",
+       "text": {
+        "es": "Menos de 240 g, porque el hielo desapareció.",
+        "en": "Less than 240 g, because the ice is gone."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El frasco sigue cerrado y nada salió: el hielo se volvió agua, pero sigue ahí. Marcará 240 g.",
+        "en": "The jar is still closed and nothing left: the ice became water, but it is still there. It will show 240 g."
+       }
+      },
+      {
+       "id": "mas",
+       "text": {
+        "es": "Más de 240 g, porque el agua pesa más que el hielo.",
+        "en": "More than 240 g, because water weighs more than ice."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Nada entró al frasco cerrado: marcará 240 g.",
+        "en": "Nothing went into the closed jar: it will show 240 g."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "¿Por qué?",
+      "en": "Why?"
+     },
+     "options": [
+      {
+       "id": "cambia",
+       "text": {
+        "es": "El hielo cambió de forma (de sólido a líquido), pero en un frasco cerrado la cantidad de materia es la misma.",
+        "en": "The ice changed form (from solid to liquid), but in a closed jar the amount of matter is the same."
+       },
+       "valid": true
+      },
+      {
+       "id": "desaparece",
+       "text": {
+        "es": "Lo que se derrite deja de existir.",
+        "en": "What melts stops existing."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Lo que se derrite cambia de forma, pero sigue ahí: igual que la sal disuelta.",
+        "en": "What melts changes form, but it is still there: just like the dissolved salt."
+       }
+      },
+      {
+       "id": "abierto",
+       "text": {
+        "es": "Porque el frasco está abierto.",
+        "en": "Because the jar is open."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El frasco está cerrado: por eso podemos contar todo lo que hay dentro.",
+        "en": "The jar is closed: that is why we can count everything inside."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Piensa en la sal que se disolvió: ¿qué marcó la balanza?",
+     "en": "Think of the salt that dissolved: what did the scale show?"
+    },
+    {
+     "es": "¿Qué cambió con el hielo: su forma o la cantidad de materia?",
+     "en": "What changed with the ice: its form or the amount of matter?"
+    },
+    {
+     "es": "Ejemplo: una nube de vapor en una olla tapada vuelve a ser agua en la tapa, y nada salió.",
+     "en": "Example: steam in a lidded pot turns back into water on the lid, and nothing left."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Piensa en el frasco cerrado: ¿salió o entró algo?",
+     "en": "Think of the closed jar: did anything leave or come in?"
+    },
+    "ok": {
+     "es": "Usaste lo que aprendiste con la sal en un caso nuevo: eso es transferir una idea.",
+     "en": "You used what you learned with salt in a new case: that is transferring an idea."
+    }
+   }
+  },
+  {
+   "id": "t8",
+   "kind": "reflexionar",
+   "ideaIds": [],
+   "contextId": "reflexion",
+   "sessionId": "s6",
+   "standards": [],
+   "criterion": {
+    "es": "Revisa su primera idea con lo que pesó y dice si cambió. Cualquier respuesta honesta es válida.",
+    "en": "Revisits the first idea using what they weighed and says whether it changed. Any honest answer is valid."
+   },
+   "parts": [
+    {
+     "id": "idea",
+     "prompt": {
+      "es": "Mi idea sobre dónde está la sal…",
+      "en": "My idea about where the salt is…"
+     },
+     "options": [
+      {
+       "id": "cambio",
+       "text": {
+        "es": "cambió.",
+        "en": "changed."
+       },
+       "valid": true
+      },
+      {
+       "id": "igual",
+       "text": {
+        "es": "sigue igual.",
+        "en": "stayed the same."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "porque…",
+      "en": "because…"
+     },
+     "options": [
+      {
+       "id": "pese",
+       "text": {
+        "es": "pesé el frasco antes y después, y marcó lo mismo.",
+        "en": "I weighed the jar before and after, and it showed the same."
+       },
+       "valid": true
+      },
+      {
+       "id": "tabla",
+       "text": {
+        "es": "lo vi en mis tablas.",
+        "en": "I saw it in my tables."
+       },
+       "valid": true
+      },
+      {
+       "id": "dijeron",
+       "text": {
+        "es": "alguien me lo dijo.",
+        "en": "someone told me."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Tú lo pesaste: usa lo que viste en la balanza.",
+        "en": "You weighed it yourself: use what you saw on the scale."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira tu idea del principio.",
+     "en": "Look at your first idea."
+    },
+    {
+     "es": "¿Qué pesaste que te hizo pensar así?",
+     "en": "What did you weigh that made you think that?"
+    },
+    {
+     "es": "Ejemplo: si pensabas que lo que no se ve no pesa, ¿qué marcó la balanza con la sal disuelta?",
+     "en": "Example: if you thought that what can’t be seen doesn’t weigh, what did the scale show with the dissolved salt?"
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Piensa en algo que mediste tú.",
+     "en": "Think of something you measured yourself."
+    },
+    "ok": {
+     "es": "Revisar una idea con lo que mediste es hacer ciencia.",
+     "en": "Revisiting an idea with what you measured is doing science."
+    }
+   }
+  }
+ ],
+ "safety": {
+  "title": {
+   "es": "Balanza, frasco y polvos (con un adulto)",
+   "en": "Scale, jar and powders (with an adult)"
+  },
+  "enabledByParent": true,
+  "supervision": {
+   "es": "Un adulto cerca durante toda la actividad (5.º, ≈ 10–11 años).",
+   "en": "An adult nearby during the whole activity (grade 5, about 10–11 years old)."
+  },
+  "materials": {
+   "es": "Una balanza de cocina, un frasco con tapa, agua, cuatro polvos en platitos (sal, azúcar, arena fina limpia, harina), una lupa y cucharitas. Son MUESTRAS para observar, no para comer.",
+   "en": "A kitchen scale, a jar with a lid, water, four powders in small dishes (salt, sugar, clean fine sand, flour), a magnifying lens and teaspoons. They are SAMPLES to observe, not to eat."
+  },
+  "place": {
+   "es": "Una mesa lisa, lejos del borde, con un paño para el agua que se derrame.",
+   "en": "A smooth table, away from the edge, with a cloth for any spilled water."
+  },
+  "hygiene": {
+   "es": "Lavarse las manos antes y después. Nunca probar ni oler de cerca una muestra, y no llevarse las manos a la boca.",
+   "en": "Wash hands before and after. Never taste or sniff a sample up close, and keep hands away from the mouth."
+  },
+  "closing": {
+   "es": "Tirar los polvos mezclados a la basura (no al desagüe si hay arena), lavar el frasco y los platitos y secar la mesa.",
+   "en": "Throw the mixed powders in the trash (not down the drain if there is sand), wash the jar and dishes and dry the table."
+  },
+  "stopIf": [
+   {
+    "es": "Alguien se lleva una muestra a la boca.",
+    "en": "Someone puts a sample in their mouth."
+   },
+   {
+    "es": "Alguien tiene alergia al trigo (la harina) o a otro de los polvos.",
+    "en": "Someone is allergic to wheat (flour) or to another of the powders."
+   },
+   {
+    "es": "Se derrama agua en el piso y hay riesgo de resbalar.",
+    "en": "Water spills on the floor and there is a risk of slipping."
+   },
+   {
+    "es": "El adulto no puede quedarse cerca.",
+    "en": "The adult can’t stay nearby."
+   }
+  ],
+  "excluded": {
+   "es": "Probar o oler las muestras, usar productos de limpieza o sustancias desconocidas, calentar nada, y dejar solo a un niño pequeño con los polvos.",
+   "en": "Tasting or sniffing samples, using cleaning products or unknown substances, heating anything, and leaving a small child alone with the powders."
+  },
+  "data": {
+   "es": "No requiere cámara, micrófono, fotos ni ubicación.",
+   "en": "Needs no camera, microphone, photos or location."
+  },
+  "digitalAlternative": {
+   "es": "Las sesiones S2, S3 y S5 en pantalla reemplazan la actividad completa.",
+   "en": "Sessions S2, S3 and S5 on screen replace the whole activity."
+  },
+  "review": "pendienteDocente"
+ },
+ "review": {
+  "status": "draftPendingTeacherReview",
+  "notes": "Ningún docente ha validado esta unidad. Los códigos son candidatos; solo los ven los padres. No se usa densidad (5-PS1-3); la conservación apoya 5-PS1-2."
+ }
+}

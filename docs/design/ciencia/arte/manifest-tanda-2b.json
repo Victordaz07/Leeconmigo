@@ -1,0 +1,90 @@
+{
+ "project": "Kitewise",
+ "subject": "ciencia",
+ "batch": "tanda-2b",
+ "count": 9,
+ "format": "PNG original de GPT, sin recortar; se convierte a WebP (props y poses recortados a su silueta)",
+ "assets": [
+  {
+   "source": "cover_c2_u02.png",
+   "sha256": "a26e3a78548a426b7160c59fe66d6f52e794c18d42fb5b868a1b81dd31de301c",
+   "bytes": 2428166,
+   "output": "apps/mobile/assets/ciencia/covers/cover_c2_u02.webp",
+   "outputBytes": 115102,
+   "width": 1152,
+   "height": 768
+  },
+  {
+   "source": "prop_bandeja_agua.png",
+   "sha256": "512d122fec348b456de3fa8ad66a99315fb2fb0a6617ade877c9f34562839f99",
+   "bytes": 955526,
+   "output": "apps/mobile/assets/ciencia/props/prop_bandeja_agua.webp",
+   "outputBytes": 19118,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_carton.png",
+   "sha256": "fc9b11f64f11aa3ae2c6d0c0e828a8955269704b5cbe35b5ddbb3741b1b6ebdc",
+   "bytes": 1325934,
+   "output": "apps/mobile/assets/ciencia/props/prop_carton.webp",
+   "outputBytes": 31730,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_muneco.png",
+   "sha256": "90f699a897c811f46322bde308cab204a356c3e5f9f38cf53190e1783c25990f",
+   "bytes": 782701,
+   "output": "apps/mobile/assets/ciencia/props/prop_muneco.webp",
+   "outputBytes": 20898,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_papel_absorbente.png",
+   "sha256": "a2cbf94c8112f5b2477c7785d591c5c94881420b3021ea38858342684dede6dd",
+   "bytes": 1127862,
+   "output": "apps/mobile/assets/ciencia/props/prop_papel_absorbente.webp",
+   "outputBytes": 24234,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_plastico.png",
+   "sha256": "893df911aa1de1120b4908e4a4c2b298eb464c00759c60bd15f1a5d981a13541",
+   "bytes": 811910,
+   "output": "apps/mobile/assets/ciencia/props/prop_plastico.webp",
+   "outputBytes": 42342,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_tela.png",
+   "sha256": "b9b756aa88c421c7c7e6d2e0778c11efcfadf43dd1c2c91f684bf34e30e1f385",
+   "bytes": 1317963,
+   "output": "apps/mobile/assets/ciencia/props/prop_tela.webp",
+   "outputBytes": 72468,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_vaso_agua.png",
+   "sha256": "e3830925437029d3ae0bfeefe285c0ccabe022ffc02a2b6571245c28e7c675e7",
+   "bytes": 992045,
+   "output": "apps/mobile/assets/ciencia/props/prop_vaso_agua.webp",
+   "outputBytes": 24042,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "scene_c2_u02.png",
+   "sha256": "728acf752c91c07b05124fcb426a3d7798a29b1870db8ecd3c534517ce516c0e",
+   "bytes": 2555920,
+   "output": "apps/mobile/assets/ciencia/bg/scene_c2_u02.webp",
+   "outputBytes": 130780,
+   "width": 1536,
+   "height": 1024
+  }
+ ]
+}

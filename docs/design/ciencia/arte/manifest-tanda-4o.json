@@ -1,0 +1,45 @@
+{
+ "project": "Kitewise",
+ "subject": "ciencia",
+ "batch": "tanda-4o",
+ "count": 4,
+ "format": "PNG original de GPT, sin recortar; se convierte a WebP (props y poses recortados a su silueta)",
+ "assets": [
+  {
+   "source": "cover_c5_u01.png",
+   "sha256": "df6db0c00d37a13b1cd94ddcaa2731b3fc62a25410a9a8d0a56df46f7923ace3",
+   "bytes": 1757744,
+   "output": "apps/mobile/assets/ciencia/covers/cover_c5_u01.webp",
+   "outputBytes": 34246,
+   "width": 1152,
+   "height": 768
+  },
+  {
+   "source": "prop_bolsa_aire.png",
+   "sha256": "0a99e2775e89aa702f7dcb77cd18ff9cbb3757fbd7bf99eea97645c513862fc3",
+   "bytes": 1019274,
+   "output": "apps/mobile/assets/ciencia/props/prop_bolsa_aire.webp",
+   "outputBytes": 38004,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_jeringa.png",
+   "sha256": "10b0b50b2b3439f70699cd4aa16bb2727ae114840475d673ce0c7c1c835bd2b8",
+   "bytes": 411367,
+   "output": "apps/mobile/assets/ciencia/props/prop_jeringa.webp",
+   "outputBytes": 13356,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_vaso_colorante.png",
+   "sha256": "ea241b075a48dc05fd9948694c9cb4822c6053b24015c943a9a56fc83e333746",
+   "bytes": 883045,
+   "output": "apps/mobile/assets/ciencia/props/prop_vaso_colorante.webp",
+   "outputBytes": 32168,
+   "width": 384,
+   "height": 384
+  }
+ ]
+}

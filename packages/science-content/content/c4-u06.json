@@ -1,0 +1,2177 @@
+{
+ "id": "C4-U06",
+ "grade": 4,
+ "area": "tierra",
+ "title": {
+  "es": "Superficies y mapas",
+  "en": "Surfaces and maps"
+ },
+ "question": {
+  "es": "¿Cómo se transforma el terreno?",
+  "en": "How does the land change?"
+ },
+ "standards": [
+  "4-ESS2-1",
+  "4-ESS2-2"
+ ],
+ "standardTasks": {
+  "4-ESS2-1": [
+   "t1",
+   "t3",
+   "t5",
+   "t7"
+  ],
+  "4-ESS2-2": [
+   "t2",
+   "t4",
+   "t6"
+  ]
+ },
+ "ideas": [
+  {
+   "id": "erosion.agua",
+   "text": {
+    "es": "El agua en movimiento puede llevarse tierra de un lugar a otro. A eso se le llama erosión.",
+    "en": "Moving water can carry soil from one place to another. This is called erosion."
+   },
+   "misconception": {
+    "es": "La tierra desaparece; la lluvia hace la tierra.",
+    "en": "Soil disappears; rain makes the soil."
+   },
+   "contexts": [
+    "ladera",
+    "bandejas"
+   ]
+  },
+  {
+   "id": "erosion.cobertura",
+   "text": {
+    "es": "En nuestro modelo, la tierra cubierta de plantas pierde menos sedimento que la tierra descubierta.",
+    "en": "In our model, soil covered with plants loses less sediment than bare soil."
+   },
+   "misconception": {
+    "es": "Las plantas siempre evitan toda la erosión.",
+    "en": "Plants always prevent all erosion."
+   },
+   "contexts": [
+    "bandejas",
+    "pendiente"
+   ]
+  },
+  {
+   "id": "prueba.justa",
+   "text": {
+    "es": "Para saber qué causó una diferencia, se cambia una sola cosa a la vez.",
+    "en": "To find out what caused a difference, change only one thing at a time."
+   },
+   "misconception": {
+    "es": "Atribuir una diferencia cuando cambiaron dos cosas.",
+    "en": "Blaming a difference on one thing when two things changed."
+   },
+   "contexts": [
+    "pendiente",
+    "repaso"
+   ]
+  },
+  {
+   "id": "mapa.patrones",
+   "text": {
+    "es": "Los mapas muestran patrones: ciertos rasgos de la Tierra aparecen agrupados.",
+    "en": "Maps show patterns: certain Earth features appear grouped together."
+   },
+   "misconception": {
+    "es": "Decir «todos» cuando es «casi todos»; explicar causas que el mapa no muestra.",
+    "en": "Saying “all” when it is “almost all”; explaining causes the map doesn’t show."
+   },
+   "contexts": [
+    "mapa.A",
+    "mapa.B"
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "es": "erosión",
+   "en": "erosion",
+   "note": {
+    "es": "Movimiento de material; no es lo mismo que meteorización.",
+    "en": "Movement of material; not the same as weathering."
+   }
+  },
+  {
+   "es": "sedimento",
+   "en": "sediment",
+   "note": {
+    "es": "La tierra o arena que se movió.",
+    "en": "The soil or sand that moved."
+   }
+  },
+  {
+   "es": "meteorización",
+   "en": "weathering",
+   "note": {
+    "es": "Desgaste o rotura de la roca; no mueve el material.",
+    "en": "Wearing down or breaking of rock; it doesn’t move the material."
+   }
+  },
+  {
+   "es": "cobertura (plantas, pasto)",
+   "en": "cover (plants, grass)",
+   "note": {
+    "es": "En el modelo: lo que protege la tierra.",
+    "en": "In the model: what protects the soil."
+   }
+  },
+  {
+   "es": "pendiente",
+   "en": "slope",
+   "note": {
+    "es": "Qué tan inclinada está la ladera.",
+    "en": "How steep the hillside is."
+   }
+  },
+  {
+   "es": "prueba / ensayo",
+   "en": "trial",
+   "note": {
+    "es": "Una vez que se riega; «repetir la prueba».",
+    "en": "One time the water is poured; “repeat the trial”."
+   }
+  },
+  {
+   "es": "dato",
+   "en": "data",
+   "note": {
+    "es": "Lo que se anota.",
+    "en": "What gets written down."
+   }
+  },
+  {
+   "es": "patrón",
+   "en": "pattern",
+   "note": {
+    "es": "Algo que se repite o se agrupa.",
+    "en": "Something that repeats or groups together."
+   }
+  },
+  {
+   "es": "cordillera",
+   "en": "mountain range",
+   "note": {
+    "es": "Fila de montañas.",
+    "en": "A line of mountains."
+   }
+  },
+  {
+   "es": "volcán",
+   "en": "volcano",
+   "note": {
+    "es": "Solo ubicación en el mapa; sin explicar cómo se forma.",
+    "en": "Location on the map only; no explanation of how it forms."
+   }
+  },
+  {
+   "es": "sismo",
+   "en": "earthquake",
+   "note": {
+    "es": "Se dice «sismo»; tono de curiosidad, sin imágenes de daño.",
+    "en": "Said “sismo” in Spanish; a curious tone, no images of damage."
+   }
+  }
+ ],
+ "sessions": [
+  {
+   "id": "s1",
+   "title": {
+    "es": "El misterio",
+    "en": "The mystery"
+   },
+   "objective": {
+    "es": "Observar sin interpretar y dejar visible la idea inicial.",
+    "en": "Observe without interpreting and make the first idea visible."
+   },
+   "steps": [
+    {
+     "id": "s1.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Maya llegó a una ladera después de la lluvia. Mira con calma.",
+      "en": "Maya came to a hillside after the rain. Take a careful look."
+     },
+     "scene": "ladera"
+    },
+    {
+     "id": "s1.2",
+     "phase": "explora",
+     "kind": "tocarZonas",
+     "text": {
+      "es": "Toca lo que veas y elige tres cosas que observaste.",
+      "en": "Tap what you see and pick three things you observed."
+     },
+     "taskId": "t1",
+     "saves": "observaciones",
+     "scene": "ladera",
+     "zones": {
+      "part": "observaciones",
+      "items": [
+       {
+        "id": "pasto",
+        "x": 4,
+        "y": 28,
+        "w": 42,
+        "h": 28,
+        "label": {
+         "es": "pasto",
+         "en": "grass"
+        }
+       },
+       {
+        "id": "tierra",
+        "x": 60,
+        "y": 12,
+        "w": 38,
+        "h": 22,
+        "label": {
+         "es": "tierra descubierta",
+         "en": "bare soil"
+        }
+       },
+       {
+        "id": "surco",
+        "x": 66,
+        "y": 36,
+        "w": 20,
+        "h": 28,
+        "label": {
+         "es": "surco",
+         "en": "gully"
+        }
+       },
+       {
+        "id": "pie",
+        "x": 56,
+        "y": 70,
+        "w": 42,
+        "h": 20,
+        "label": {
+         "es": "tierra mojada al pie",
+         "en": "wet soil at the bottom"
+        }
+       },
+       {
+        "id": "arroyo",
+        "x": 2,
+        "y": 68,
+        "w": 46,
+        "h": 22,
+        "label": {
+         "es": "arroyo",
+         "en": "stream"
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s1.3",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Creo que el surco se hizo porque…",
+      "en": "I think the gully formed because…"
+     },
+     "saves": "idea inicial",
+     "scene": "ladera",
+     "choice": {
+      "id": "ideaInicial",
+      "multi": false,
+      "options": [
+       {
+        "id": "agua",
+        "text": {
+         "es": "el agua bajó por la tierra.",
+         "en": "water ran down the soil."
+        }
+       },
+       {
+        "id": "sola",
+        "text": {
+         "es": "la tierra se movió sola.",
+         "en": "the soil moved by itself."
+        }
+       },
+       {
+        "id": "nose",
+        "text": {
+         "es": "todavía no sé.",
+         "en": "I don’t know yet."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s1.4",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "¿Cambia cuánta tierra se lleva el agua si hay pasto? Vamos a probarlo con un modelo.",
+      "en": "Does the amount of soil the water carries change if there is grass? Let’s test it with a model."
+     },
+     "saves": "pregunta aceptada",
+     "scene": "ladera"
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "title": {
+    "es": "Primera exploración",
+    "en": "First exploration"
+   },
+   "objective": {
+    "es": "Predecir, probar y comparar una sola condición, sin números todavía.",
+    "en": "Predict, test and compare a single condition, without numbers yet."
+   },
+   "steps": [
+    {
+     "id": "s2.1",
+     "phase": "observa",
+     "kind": "elegir",
+     "text": {
+      "es": "Las dos bandejas son iguales. ¿Qué es lo que cambia?",
+      "en": "The two trays are the same. What is different?"
+     },
+     "scene": "laboratorio",
+     "lab": {
+      "a": {
+       "cover": "ninguna",
+       "slope": "media"
+      },
+      "b": {
+       "cover": "completa",
+       "slope": "media"
+      }
+     },
+     "choice": {
+      "id": "queCambia",
+      "multi": false,
+      "options": [
+       {
+        "id": "pasto",
+        "text": {
+         "es": "El pasto.",
+         "en": "The grass."
+        },
+        "expected": true
+       },
+       {
+        "id": "regadera",
+        "text": {
+         "es": "La regadera.",
+         "en": "The watering can."
+        }
+       },
+       {
+        "id": "vaso",
+        "text": {
+         "es": "El vaso.",
+         "en": "The cup."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s2.2",
+     "phase": "explora",
+     "kind": "predecir",
+     "text": {
+      "es": "¿De cuál bandeja saldrá más tierra al vaso? Porque…",
+      "en": "Which tray will send more soil into the cup? Because…"
+     },
+     "taskId": "t3",
+     "saves": "predicción",
+     "scene": "laboratorio",
+     "lab": {
+      "a": {
+       "cover": "ninguna",
+       "slope": "media"
+      },
+      "b": {
+       "cover": "completa",
+       "slope": "media"
+      }
+     }
+    },
+    {
+     "id": "s2.3",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Toca la regadera. ¿Qué pasó en cada vaso?",
+      "en": "Tap the watering can. What happened in each cup?"
+     },
+     "saves": "observación por vaso",
+     "scene": "laboratorio",
+     "lab": {
+      "a": {
+       "cover": "ninguna",
+       "slope": "media"
+      },
+      "b": {
+       "cover": "completa",
+       "slope": "media"
+      },
+      "trials": 1,
+      "qualitative": true
+     }
+    },
+    {
+     "id": "s2.4",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Compara lo que predijiste con lo que observaste.",
+      "en": "Compare what you predicted with what you observed."
+     },
+     "saves": "comparación",
+     "scene": "laboratorio",
+     "lab": {
+      "a": {
+       "cover": "ninguna",
+       "slope": "media"
+      },
+      "b": {
+       "cover": "completa",
+       "slope": "media"
+      }
+     },
+     "choice": {
+      "id": "comparacion",
+      "multi": false,
+      "options": [
+       {
+        "id": "coincidio",
+        "text": {
+         "es": "Mi predicción coincidió.",
+         "en": "My prediction matched."
+        }
+       },
+       {
+        "id": "nocoincidio",
+        "text": {
+         "es": "Mi predicción no coincidió.",
+         "en": "My prediction didn’t match."
+        }
+       }
+      ],
+      "compareWith": {
+       "taskId": "t3",
+       "partId": "bandeja"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "s3",
+   "title": {
+    "es": "Mirar con más cuidado",
+    "en": "Looking more carefully"
+   },
+   "objective": {
+    "es": "Repetir la prueba, anotar datos y ver el patrón en una gráfica.",
+    "en": "Repeat the test, record data and see the pattern in a graph."
+   },
+   "steps": [
+    {
+     "id": "s3.1",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Una sola prueba puede engañar. Repitamos tres veces.",
+      "en": "A single trial can fool us. Let’s repeat it three times."
+     },
+     "saves": "pruebas hechas",
+     "scene": "laboratorio",
+     "lab": {
+      "a": {
+       "cover": "ninguna",
+       "slope": "media"
+      },
+      "b": {
+       "cover": "completa",
+       "slope": "media"
+      },
+      "trials": 3
+     }
+    },
+    {
+     "id": "s3.2",
+     "phase": "explora",
+     "kind": "registrar",
+     "text": {
+      "es": "Pesa cada vaso y anota el resultado en tu tabla.",
+      "en": "Weigh each cup and write the result in your table."
+     },
+     "saves": "tabla",
+     "scene": "laboratorio",
+     "lab": {
+      "a": {
+       "cover": "ninguna",
+       "slope": "media"
+      },
+      "b": {
+       "cover": "completa",
+       "slope": "media"
+      },
+      "trials": 3
+     }
+    },
+    {
+     "id": "s3.3",
+     "phase": "explica",
+     "kind": "graficar",
+     "text": {
+      "es": "Construye la gráfica con tu tabla. ¿Qué patrón ves entre las dos bandejas?",
+      "en": "Build the graph from your table. What pattern do you see between the two trays?"
+     },
+     "saves": "gráfica y patrón",
+     "scene": "laboratorio",
+     "lab": {
+      "a": {
+       "cover": "ninguna",
+       "slope": "media"
+      },
+      "b": {
+       "cover": "completa",
+       "slope": "media"
+      },
+      "trials": 3
+     },
+     "choice": {
+      "id": "patron",
+      "multi": false,
+      "options": [
+       {
+        "id": "menos",
+        "text": {
+         "es": "Con cobertura salen menos gramos en las tres pruebas.",
+         "en": "With cover, fewer grams come out in all three trials."
+        },
+        "expected": true
+       },
+       {
+        "id": "mas",
+        "text": {
+         "es": "Con cobertura salen más gramos.",
+         "en": "With cover, more grams come out."
+        }
+       },
+       {
+        "id": "nada",
+        "text": {
+         "es": "No hay ningún patrón.",
+         "en": "There is no pattern."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s3.4",
+     "phase": "usa",
+     "kind": "elegir",
+     "text": {
+      "es": "En las tres pruebas, ¿cuál bandeja dejó más tierra?",
+      "en": "In all three trials, which tray left more soil?"
+     },
+     "saves": "respuesta",
+     "scene": "laboratorio",
+     "lab": {
+      "a": {
+       "cover": "ninguna",
+       "slope": "media"
+      },
+      "b": {
+       "cover": "completa",
+       "slope": "media"
+      },
+      "trials": 3
+     },
+     "choice": {
+      "id": "siempre",
+      "multi": false,
+      "options": [
+       {
+        "id": "siempre",
+        "text": {
+         "es": "Siempre la de la izquierda (sin cobertura).",
+         "en": "Always the left one (no cover)."
+        },
+        "expected": true
+       },
+       {
+        "id": "aveces",
+        "text": {
+         "es": "A veces una y a veces la otra.",
+         "en": "Sometimes one and sometimes the other."
+        }
+       },
+       {
+        "id": "nunca",
+        "text": {
+         "es": "Nunca la de la izquierda.",
+         "en": "Never the left one."
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "s4",
+   "title": {
+    "es": "Construir una explicación",
+    "en": "Building an explanation"
+   },
+   "objective": {
+    "es": "Explicar con afirmación, evidencia y razonamiento, y decir los límites del modelo.",
+    "en": "Explain with claim, evidence and reasoning, and say the model’s limits."
+   },
+   "steps": [
+    {
+     "id": "s4.1",
+     "phase": "explica",
+     "kind": "texto",
+     "text": {
+      "es": "Erosión: el agua o el viento mueven tierra. Sedimento: la tierra que se movió. Aparte: Meteorización: la roca se desgasta o se rompe; no es lo mismo que erosión.",
+      "en": "Erosion: water or wind moves soil. Sediment: the soil that moved. Aside: Weathering: rock wears down or breaks; it is not the same as erosion."
+     },
+     "scene": "laboratorio",
+     "glossary": [
+      "erosión",
+      "sedimento",
+      "meteorización"
+     ]
+    },
+    {
+     "id": "s4.2",
+     "phase": "explica",
+     "kind": "afirmacion",
+     "text": {
+      "es": "Arma tu explicación: afirmación, evidencia y razonamiento. Luego, los límites del modelo.",
+      "en": "Build your explanation: claim, evidence and reasoning. Then, the model’s limits."
+     },
+     "taskId": "t5",
+     "saves": "explicación",
+     "scene": "laboratorio",
+     "lab": {
+      "a": {
+       "cover": "ninguna",
+       "slope": "media"
+      },
+      "b": {
+       "cover": "completa",
+       "slope": "media"
+      },
+      "trials": 3,
+      "static": true
+     }
+    },
+    {
+     "id": "s4.3",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "Tu explicación queda como una entrada de tu cuaderno.",
+      "en": "Your explanation becomes an entry in your notebook."
+     },
+     "saves": "entrada del cuaderno",
+     "scene": "laboratorio"
+    }
+   ]
+  },
+  {
+   "id": "s5",
+   "title": {
+    "es": "Mapas y patrones",
+    "en": "Maps and patterns"
+   },
+   "objective": {
+    "es": "Leer capas de un mapa de práctica y describir un patrón con su límite.",
+    "en": "Read the layers of a practice map and describe a pattern with its limit."
+   },
+   "steps": [
+    {
+     "id": "s5.1",
+     "phase": "observa",
+     "kind": "mapa",
+     "text": {
+      "es": "Enciende las capas y elige lo que veas.",
+      "en": "Turn on the layers and pick what you see."
+     },
+     "taskId": "t2",
+     "saves": "observaciones del mapa",
+     "map": {
+      "id": "A",
+      "tool": null,
+      "hideQuakes": false
+     }
+    },
+    {
+     "id": "s5.2",
+     "phase": "explora",
+     "kind": "mapa",
+     "text": {
+      "es": "Usa la franja: ¿cuántos sismos caen dentro?",
+      "en": "Use the band: how many earthquakes fall inside?"
+     },
+     "saves": "recuento",
+     "map": {
+      "id": "A",
+      "tool": "band",
+      "hideQuakes": false
+     },
+     "choice": {
+      "id": "conteo",
+      "multi": false,
+      "options": [
+       {
+        "id": "9",
+        "text": {
+         "es": "9",
+         "en": "9"
+        }
+       },
+       {
+        "id": "11",
+        "text": {
+         "es": "11",
+         "en": "11"
+        }
+       },
+       {
+        "id": "13",
+        "text": {
+         "es": "13",
+         "en": "13"
+        },
+        "expected": true
+       },
+       {
+        "id": "15",
+        "text": {
+         "es": "15",
+         "en": "15"
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s5.3",
+     "phase": "explica",
+     "kind": "afirmacion",
+     "text": {
+      "es": "Describe el patrón con tu evidencia y di su límite.",
+      "en": "Describe the pattern with your evidence and say its limit."
+     },
+     "taskId": "t6",
+     "saves": "explicación del mapa",
+     "map": {
+      "id": "A",
+      "tool": "band",
+      "hideQuakes": false
+     }
+    },
+    {
+     "id": "s5.4",
+     "phase": "usa",
+     "kind": "mapa",
+     "text": {
+      "es": "En este otro mapa no se ven los sismos. Predice y después se revelan.",
+      "en": "On this other map the earthquakes are hidden. Predict, then they are revealed."
+     },
+     "taskId": "t4",
+     "saves": "predicción y comparación",
+     "map": {
+      "id": "B",
+      "tool": null,
+      "hideQuakes": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "s6",
+   "title": {
+    "es": "Usarlo y revisar",
+    "en": "Use it and review"
+   },
+   "objective": {
+    "es": "Transferir a una prueba con dos cambios, arreglarla y revisar la idea inicial.",
+    "en": "Transfer to a test with two changes, fix it and revisit the first idea."
+   },
+   "steps": [
+    {
+     "id": "s6.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Maya probó otras dos bandejas. La A dejó mucha más tierra.",
+      "en": "Maya tried two new trays. Tray A left much more soil."
+     },
+     "scene": "laboratorio",
+     "lab": {
+      "a": {
+       "cover": "ninguna",
+       "slope": "fuerte"
+      },
+      "b": {
+       "cover": "completa",
+       "slope": "suave"
+      },
+      "trials": 3,
+      "static": true
+     }
+    },
+    {
+     "id": "s6.2",
+     "phase": "explora",
+     "kind": "arreglar",
+     "text": {
+      "es": "¿Podemos decir que fue solo por el pasto? Arregla la prueba para que cambie una sola cosa.",
+      "en": "Can we say it was only because of the grass? Fix the test so only one thing changes."
+     },
+     "taskId": "t7",
+     "saves": "decisión y arreglo",
+     "scene": "laboratorio",
+     "lab": {
+      "a": {
+       "cover": "ninguna",
+       "slope": "fuerte"
+      },
+      "b": {
+       "cover": "completa",
+       "slope": "suave"
+      },
+      "trials": 3,
+      "static": true
+     },
+     "labFixed": {
+      "pendiente": {
+       "a": {
+        "cover": "ninguna",
+        "slope": "fuerte"
+       },
+       "b": {
+        "cover": "completa",
+        "slope": "fuerte"
+       },
+       "trials": 3,
+       "static": true
+      },
+      "cobertura": {
+       "a": {
+        "cover": "ninguna",
+        "slope": "media"
+       },
+       "b": {
+        "cover": "ninguna",
+        "slope": "fuerte"
+       },
+       "trials": 3,
+       "static": true
+      }
+     }
+    },
+    {
+     "id": "s6.3",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Con la prueba justa, ¿cuál es tu evidencia? (elige dos)",
+      "en": "With the fair test, what is your evidence? (pick two)"
+     },
+     "saves": "explicación final",
+     "scene": "laboratorio",
+     "lab": {
+      "a": {
+       "cover": "ninguna",
+       "slope": "fuerte"
+      },
+      "b": {
+       "cover": "completa",
+       "slope": "fuerte"
+      },
+      "trials": 3,
+      "static": true
+     },
+     "choice": {
+      "id": "evidenciaFinal",
+      "multi": true,
+      "options": [
+       {
+        "id": "sin",
+        "text": {
+         "es": "Sin cobertura, muy inclinada: 28, 30 y 29 g.",
+         "en": "No cover, steep: 28, 30 and 29 g."
+        },
+        "expected": true
+       },
+       {
+        "id": "con",
+        "text": {
+         "es": "Con cobertura, muy inclinada: 9, 10 y 8 g.",
+         "en": "With cover, steep: 9, 10 and 8 g."
+        },
+        "expected": true
+       },
+       {
+        "id": "azul",
+        "text": {
+         "es": "La regadera es azul.",
+         "en": "The watering can is blue."
+        }
+       }
+      ]
+     },
+     "choiceByFix": {
+      "cobertura": {
+       "id": "evidenciaFinal",
+       "multi": true,
+       "options": [
+        {
+         "id": "media",
+         "text": {
+          "es": "Sin cobertura, inclinación media: 18, 20 y 19 g.",
+          "en": "No cover, medium slope: 18, 20 and 19 g."
+         },
+         "expected": true
+        },
+        {
+         "id": "fuerte",
+         "text": {
+          "es": "Sin cobertura, muy inclinada: 29, 30 y 28 g.",
+          "en": "No cover, steep: 29, 30 and 28 g."
+         },
+         "expected": true
+        },
+        {
+         "id": "azul",
+         "text": {
+          "es": "La regadera es azul.",
+          "en": "The watering can is blue."
+         }
+        }
+       ]
+      }
+     }
+    },
+    {
+     "id": "s6.4",
+     "phase": "usa",
+     "kind": "reflexion",
+     "text": {
+      "es": "Vuelve a mirar tu primera idea. ¿Cambió?",
+      "en": "Look at your first idea again. Did it change?"
+     },
+     "taskId": "t8",
+     "saves": "reflexión",
+     "scene": "laboratorio"
+    },
+    {
+     "id": "s6.5",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "Hoy investigaste cómo se transforma el terreno.",
+      "en": "Today you investigated how the land changes."
+     },
+     "saves": "resumen",
+     "scene": "humedal"
+    }
+   ]
+  }
+ ],
+ "tasks": [
+  {
+   "id": "t1",
+   "kind": "observar",
+   "ideaIds": [
+    "erosion.agua"
+   ],
+   "contextId": "ladera",
+   "sessionId": "s1",
+   "standards": [
+    "4-ESS2-1"
+   ],
+   "criterion": {
+    "es": "Elige tres observaciones reales de la escena y ninguna inventada.",
+    "en": "Picks three real observations from the scene and none that are made up."
+   },
+   "parts": [
+    {
+     "id": "observaciones",
+     "prompt": {
+      "es": "Elige tres cosas que observaste.",
+      "en": "Pick three things you observed."
+     },
+     "options": [
+      {
+       "id": "pasto",
+       "text": {
+        "es": "Hay pasto en un lado de la ladera.",
+        "en": "There is grass on one side of the hill."
+       },
+       "valid": true
+      },
+      {
+       "id": "tierra",
+       "text": {
+        "es": "Hay tierra descubierta en el otro lado.",
+        "en": "There is bare soil on the other side."
+       },
+       "valid": true
+      },
+      {
+       "id": "surco",
+       "text": {
+        "es": "Hay un surco por donde bajó agua.",
+        "en": "There is a gully where water ran down."
+       },
+       "valid": true
+      },
+      {
+       "id": "pie",
+       "text": {
+        "es": "Hay tierra mojada al pie de la ladera.",
+        "en": "There is wet soil at the bottom of the hill."
+       },
+       "valid": true
+      },
+      {
+       "id": "arroyo",
+       "text": {
+        "es": "Hay un arroyo con agua.",
+        "en": "There is a stream with water."
+       },
+       "valid": true
+      },
+      {
+       "id": "personas",
+       "text": {
+        "es": "Hay personas en la ladera.",
+        "en": "There are people on the hill."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira de nuevo la imagen: no hay personas en la escena.",
+        "en": "Look at the picture again: there are no people in the scene."
+       }
+      },
+      {
+       "id": "cartel",
+       "text": {
+        "es": "Hay un cartel.",
+        "en": "There is a sign."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira de nuevo la imagen: no hay ningún cartel.",
+        "en": "Look at the picture again: there is no sign."
+       }
+      },
+      {
+       "id": "nieve",
+       "text": {
+        "es": "Hay nieve.",
+        "en": "There is snow."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira de nuevo la imagen: no hay nieve.",
+        "en": "Look at the picture again: there is no snow."
+       }
+      }
+     ],
+     "min": 3,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira la imagen de nuevo.",
+     "en": "Look at the picture again."
+    },
+    {
+     "es": "Compara lo que elegiste con cada zona de la escena.",
+     "en": "Compare your picks with each zone of the scene."
+    },
+    {
+     "es": "Ejemplo: en un patio ves un charco y una piedra; no dirías que hay un árbol si no lo ves.",
+     "en": "Example: in a yard you see a puddle and a stone; you wouldn’t say there’s a tree if you can’t see one."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige tres cosas que de verdad veas en la imagen.",
+     "en": "Pick three things you can really see in the picture."
+    },
+    "wrong": {
+     "es": "Alguna de las cosas que elegiste no está en la escena. Mira de nuevo.",
+     "en": "Something you picked is not in the scene. Look again."
+    },
+    "ok": {
+     "es": "Observaste con cuidado: mirar antes de explicar es lo que hace un científico.",
+     "en": "You observed carefully: looking before explaining is what scientists do."
+    }
+   }
+  },
+  {
+   "id": "t2",
+   "kind": "observar",
+   "ideaIds": [
+    "mapa.patrones"
+   ],
+   "contextId": "mapa.A",
+   "sessionId": "s5",
+   "standards": [
+    "4-ESS2-2"
+   ],
+   "criterion": {
+    "es": "Describe al menos dos cosas verdaderas que ve en las capas del mapa; no se le pide explicar causas.",
+    "en": "Describes at least two true things seen in the map layers; no causes are asked for."
+   },
+   "parts": [
+    {
+     "id": "capas",
+     "prompt": {
+      "es": "Enciende las capas y elige lo que veas.",
+      "en": "Turn on the layers and pick what you see."
+     },
+     "options": [
+      {
+       "id": "fila",
+       "text": {
+        "es": "Las montañas forman una fila.",
+        "en": "The mountains form a line."
+       },
+       "valid": true
+      },
+      {
+       "id": "volcanes",
+       "text": {
+        "es": "Los volcanes están sobre las montañas.",
+        "en": "The volcanoes sit on the mountains."
+       },
+       "valid": true
+      },
+      {
+       "id": "sismos",
+       "text": {
+        "es": "Hay sismos cerca de las montañas.",
+        "en": "There are earthquakes near the mountains."
+       },
+       "valid": true
+      },
+      {
+       "id": "lejos",
+       "text": {
+        "es": "Todos los sismos están lejos de las montañas.",
+        "en": "All the earthquakes are far from the mountains."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira la capa de sismos: ¿dónde se juntan la mayoría?",
+        "en": "Look at the earthquake layer: where do most of them gather?"
+       }
+      },
+      {
+       "id": "sinvolcan",
+       "text": {
+        "es": "No hay ningún volcán.",
+        "en": "There is no volcano."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Enciende la capa de volcanes y cuéntalos.",
+        "en": "Turn on the volcano layer and count them."
+       }
+      },
+      {
+       "id": "mar",
+       "text": {
+        "es": "Hay un mar grande a la izquierda.",
+        "en": "There is a big sea on the left."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "En este mapa no hay mar: mira las capas otra vez.",
+        "en": "This map has no sea: look at the layers again."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Fíjate en dónde están las montañas.",
+     "en": "Notice where the mountains are."
+    },
+    {
+     "es": "Enciende una capa a la vez y compara.",
+     "en": "Turn on one layer at a time and compare."
+    },
+    {
+     "es": "Ejemplo: en un mapa de un parque, las bancas están en fila junto al camino.",
+     "en": "Example: on a park map, benches line up along the path."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige al menos dos cosas que veas en el mapa.",
+     "en": "Pick at least two things you see on the map."
+    },
+    "wrong": {
+     "es": "Una de las cosas que elegiste no está en el mapa. Enciende las capas y mira de nuevo.",
+     "en": "Something you picked is not on the map. Turn on the layers and look again."
+    },
+    "ok": {
+     "es": "Muy bien: describiste lo que muestra el mapa, sin inventar.",
+     "en": "Well done: you described what the map shows, without making things up."
+    }
+   }
+  },
+  {
+   "id": "t3",
+   "kind": "predecir",
+   "ideaIds": [
+    "erosion.cobertura"
+   ],
+   "contextId": "bandejas",
+   "sessionId": "s2",
+   "standards": [
+    "4-ESS2-1"
+   ],
+   "criterion": {
+    "es": "Predice antes de regar y después compara con lo observado diciendo con honestidad si coincidió. Cualquier predicción es válida.",
+    "en": "Predicts before watering and then compares with what was observed, saying honestly whether it matched. Any prediction is valid."
+   },
+   "parts": [
+    {
+     "id": "bandeja",
+     "prompt": {
+      "es": "¿De cuál bandeja saldrá más tierra al vaso?",
+      "en": "Which tray will send more soil into the cup?"
+     },
+     "options": [
+      {
+       "id": "izquierda",
+       "text": {
+        "es": "La de la izquierda (sin pasto).",
+        "en": "The left one (no grass)."
+       },
+       "valid": true
+      },
+      {
+       "id": "derecha",
+       "text": {
+        "es": "La de la derecha (con pasto).",
+        "en": "The right one (with grass)."
+       },
+       "valid": true
+      },
+      {
+       "id": "igual",
+       "text": {
+        "es": "Saldrá lo mismo de las dos.",
+        "en": "The same will come out of both."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false,
+     "observedOptionId": "izquierda"
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "Porque…",
+      "en": "Because…"
+     },
+     "options": [
+      {
+       "id": "frena",
+       "text": {
+        "es": "el pasto frena el agua.",
+        "en": "the grass slows the water."
+       },
+       "valid": true
+      },
+      {
+       "id": "nada",
+       "text": {
+        "es": "el pasto no cambia nada.",
+        "en": "the grass changes nothing."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "todavía no estoy seguro.",
+        "en": "I’m not sure yet."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira en qué se parecen y en qué se diferencian las bandejas.",
+     "en": "See how the trays are alike and different."
+    },
+    {
+     "es": "Piensa en cuál bandeja tiene algo que frena el agua.",
+     "en": "Think about which tray has something that slows the water."
+    },
+    {
+     "es": "Ejemplo: en dos rampas, una con alfombra y otra sin ella, una bolita rueda distinto.",
+     "en": "Example: on two ramps, one with a rug and one without, a marble rolls differently."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige una predicción y un «porque».",
+     "en": "Pick a prediction and a “because”."
+    },
+    "wrong": {
+     "es": "Elige una de las opciones.",
+     "en": "Pick one of the options."
+    },
+    "ok": {
+     "es": "Anotaste tu predicción. Ahora vamos a probarla.",
+     "en": "You wrote down your prediction. Now let’s test it."
+    }
+   }
+  },
+  {
+   "id": "t4",
+   "kind": "predecir",
+   "ideaIds": [
+    "mapa.patrones"
+   ],
+   "contextId": "mapa.B",
+   "sessionId": "s5",
+   "standards": [
+    "4-ESS2-2"
+   ],
+   "criterion": {
+    "es": "Predice dónde habría más sismos antes de verlos; se contrasta con los datos revelados sin descontar.",
+    "en": "Predicts where there would be more earthquakes before seeing them; it is compared with the revealed data without penalty."
+   },
+   "parts": [
+    {
+     "id": "zona",
+     "prompt": {
+      "es": "En este mapa no se ven los sismos. ¿Dónde crees que habría más?",
+      "en": "The earthquakes are hidden on this map. Where would you expect more?"
+     },
+     "options": [
+      {
+       "id": "cerca",
+       "text": {
+        "es": "Cerca de la cordillera.",
+        "en": "Near the mountain range."
+       },
+       "valid": true
+      },
+      {
+       "id": "llanura",
+       "text": {
+        "es": "En la llanura lejana.",
+        "en": "On the far plain."
+       },
+       "valid": true
+      },
+      {
+       "id": "mar",
+       "text": {
+        "es": "En el mar.",
+        "en": "At sea."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false,
+     "observedOptionId": "cerca"
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira dónde están las montañas y los volcanes.",
+     "en": "Look where the mountains and volcanoes are."
+    },
+    {
+     "es": "En el mapa A, ¿dónde estaban los sismos?",
+     "en": "On map A, where were the earthquakes?"
+    },
+    {
+     "es": "Ejemplo: si las moras crecen junto a un río en un mapa, ¿dónde buscarías más?",
+     "en": "Example: if berries grow along a river on a map, where would you look for more?"
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige una zona.",
+     "en": "Pick a zone."
+    },
+    "wrong": {
+     "es": "Elige una de las zonas.",
+     "en": "Pick one of the zones."
+    },
+    "ok": {
+     "es": "Anotaste tu predicción. Ahora veamos qué muestran los datos.",
+     "en": "You wrote down your prediction. Now let’s see what the data shows."
+    }
+   }
+  },
+  {
+   "id": "t5",
+   "kind": "evidencia",
+   "ideaIds": [
+    "erosion.agua",
+    "erosion.cobertura"
+   ],
+   "contextId": "bandejas",
+   "sessionId": "s4",
+   "standards": [
+    "4-ESS2-1"
+   ],
+   "criterion": {
+    "es": "Afirmación: con cobertura se lleva menos tierra. Evidencia: los datos de las dos bandejas (no un dato irrelevante). Razonamiento válido: las plantas frenan el agua o sujetan la tierra. Límites: al menos dos verdaderos y ninguno falso.",
+    "en": "Claim: with cover less soil is carried. Evidence: the data from both trays (not an irrelevant fact). Valid reasoning: plants slow the water or hold the soil. Limits: at least two true ones and no false one."
+   },
+   "parts": [
+    {
+     "id": "afirmacion",
+     "prompt": {
+      "es": "Mi afirmación es…",
+      "en": "My claim is…"
+     },
+     "options": [
+      {
+       "id": "menos",
+       "text": {
+        "es": "Con cobertura se lleva menos tierra.",
+        "en": "With cover, less soil is carried away."
+       },
+       "valid": true
+      },
+      {
+       "id": "igual",
+       "text": {
+        "es": "El agua se lleva lo mismo siempre.",
+        "en": "Water always carries the same amount."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Compara las dos bandejas, prueba por prueba: ¿salió lo mismo?",
+        "en": "Compare the two trays, trial by trial: did the same come out?"
+       }
+      },
+      {
+       "id": "mas",
+       "text": {
+        "es": "Sin cobertura se lleva menos tierra.",
+        "en": "Without cover, less soil is carried away."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira tu tabla: ¿cuál bandeja dejó menos gramos?",
+        "en": "Look at your table: which tray left fewer grams?"
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "evidencia",
+     "prompt": {
+      "es": "Mi evidencia es… (elige dos)",
+      "en": "My evidence is… (pick two)"
+     },
+     "options": [
+      {
+       "id": "sin",
+       "text": {
+        "es": "Sin cobertura: 18, 20 y 19 g.",
+        "en": "No cover: 18, 20 and 19 g."
+       },
+       "valid": true
+      },
+      {
+       "id": "con",
+       "text": {
+        "es": "Con cobertura: 6, 7 y 5 g.",
+        "en": "With cover: 6, 7 and 5 g."
+       },
+       "valid": true
+      },
+      {
+       "id": "azul",
+       "text": {
+        "es": "La regadera es azul.",
+        "en": "The watering can is blue."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El color de la regadera no cambió entre las bandejas: no explica la diferencia.",
+        "en": "The watering can’s color didn’t change between the trays: it doesn’t explain the difference."
+       }
+      },
+      {
+       "id": "plastico",
+       "text": {
+        "es": "El vaso es de plástico.",
+        "en": "The cup is plastic."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Los dos vasos son iguales: no explica la diferencia.",
+        "en": "Both cups are the same: it doesn’t explain the difference."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    },
+    {
+     "id": "razonamiento",
+     "prompt": {
+      "es": "Lo explico porque…",
+      "en": "I explain it because…"
+     },
+     "options": [
+      {
+       "id": "frenan",
+       "text": {
+        "es": "las plantas frenan el agua, por eso baja menos tierra.",
+        "en": "plants slow the water, so less soil goes down."
+       },
+       "valid": true
+      },
+      {
+       "id": "sujetan",
+       "text": {
+        "es": "las raíces y las hojas sujetan la tierra.",
+        "en": "roots and leaves hold the soil."
+       },
+       "valid": true
+      },
+      {
+       "id": "beben",
+       "text": {
+        "es": "las plantas se beben toda el agua.",
+        "en": "plants drink all the water."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El agua sigue pasando por la bandeja: mira lo que cayó en el vaso.",
+        "en": "Water still runs through the tray: look at what fell into the cup."
+       }
+      },
+      {
+       "id": "pesa",
+       "text": {
+        "es": "la tierra con plantas pesa más.",
+        "en": "soil with plants weighs more."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Nuestros datos son del sedimento en el vaso, no del peso de la bandeja.",
+        "en": "Our data is the sediment in the cup, not the weight of the tray."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "limites",
+     "prompt": {
+      "es": "¿Qué NO muestra nuestro modelo? (elige dos o más)",
+      "en": "What does our model NOT show? (pick two or more)"
+     },
+     "options": [
+      {
+       "id": "ladera",
+       "text": {
+        "es": "Una ladera real.",
+        "en": "A real hillside."
+       },
+       "valid": true
+      },
+      {
+       "id": "tormentas",
+       "text": {
+        "es": "Tormentas muy fuertes.",
+        "en": "Very strong storms."
+       },
+       "valid": true
+      },
+      {
+       "id": "anios",
+       "text": {
+        "es": "Lo que pasa en muchos años.",
+        "en": "What happens over many years."
+       },
+       "valid": true
+      },
+      {
+       "id": "tierra",
+       "text": {
+        "es": "La tierra.",
+        "en": "The soil."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Sí muestra la tierra: es lo que cae en el vaso.",
+        "en": "It does show soil: that is what falls into the cup."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira tu tabla de datos.",
+     "en": "Look at your data table."
+    },
+    {
+     "es": "Compara las dos bandejas, prueba por prueba.",
+     "en": "Compare the two trays, trial by trial."
+    },
+    {
+     "es": "Ejemplo: dos macetas, una con hojas secas encima y otra sin. Si de la que tiene hojas sale menos tierra al regar, tu evidencia son las pesadas de las dos macetas, no el color de la maceta.",
+     "en": "Example: two pots, one with dry leaves on top and one without. If less soil washes out of the one with leaves, your evidence is the weights from both pots, not the pot’s color."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Te falta completar una parte de tu explicación.",
+     "en": "A part of your explanation is still missing."
+    },
+    "wrong": {
+     "es": "Revisa tu explicación: mira qué parte se apoya en tu tabla.",
+     "en": "Check your explanation: see which part rests on your table."
+    },
+    "ok": {
+     "es": "Tu evidencia son las pesadas de las dos bandejas: así se sostiene una explicación.",
+     "en": "Your evidence is the weights from both trays: that’s how an explanation holds up."
+    }
+   }
+  },
+  {
+   "id": "t6",
+   "kind": "modelo",
+   "ideaIds": [
+    "mapa.patrones"
+   ],
+   "contextId": "mapa.A",
+   "sessionId": "s5",
+   "standards": [
+    "4-ESS2-2"
+   ],
+   "criterion": {
+    "es": "Elige «casi todos», el recuento calculado por la app y el límite (hay puntos lejos). Rechaza «todos» y «en cualquier parte».",
+    "en": "Picks “almost all”, the app-computed count, and the limit (some points are far away). Rejects “all” and “anywhere”."
+   },
+   "parts": [
+    {
+     "id": "afirmacion",
+     "prompt": {
+      "es": "Mi afirmación es…",
+      "en": "My claim is…"
+     },
+     "options": [
+      {
+       "id": "casi",
+       "text": {
+        "es": "Casi todos los sismos están cerca de las montañas.",
+        "en": "Almost all the earthquakes are near the mountains."
+       },
+       "valid": true
+      },
+      {
+       "id": "todos",
+       "text": {
+        "es": "Todos los sismos están en las montañas.",
+        "en": "All the earthquakes are on the mountains."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Cuenta los puntos que están fuera de la franja: ¿hay alguno?",
+        "en": "Count the points outside the band: are there any?"
+       }
+      },
+      {
+       "id": "cualquier",
+       "text": {
+        "es": "Los sismos están en cualquier parte.",
+        "en": "The earthquakes are anywhere."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira la franja: ¿dónde se juntan?",
+        "en": "Look at the band: where do they gather?"
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "evidencia",
+     "prompt": {
+      "es": "Mi evidencia es…",
+      "en": "My evidence is…"
+     },
+     "options": [
+      {
+       "id": "conteo",
+       "text": {
+        "es": "13 de 15 sismos caen dentro de la franja.",
+        "en": "13 of 15 earthquakes fall inside the band."
+       },
+       "valid": true
+      },
+      {
+       "id": "volcanes",
+       "text": {
+        "es": "Hay 3 volcanes.",
+        "en": "There are 3 volcanoes."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Es verdad, pero no dice dónde están los sismos.",
+        "en": "It’s true, but it doesn’t say where the earthquakes are."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "limite",
+     "prompt": {
+      "es": "Esto no pasa en todos los casos porque…",
+      "en": "This doesn’t happen in every case because…"
+     },
+     "options": [
+      {
+       "id": "lejos",
+       "text": {
+        "es": "hay 2 sismos lejos de la franja: el patrón es de casi todos, no de todos.",
+        "en": "2 earthquakes are far from the band: the pattern is for almost all, not all."
+       },
+       "valid": true
+      },
+      {
+       "id": "ninguno",
+       "text": {
+        "es": "no hay excepciones.",
+        "en": "there are no exceptions."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira los puntos fuera de la franja: hay 2.",
+        "en": "Look at the points outside the band: there are 2."
+       }
+      },
+      {
+       "id": "causa",
+       "text": {
+        "es": "los volcanes causan los sismos.",
+        "en": "volcanoes cause the earthquakes."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El mapa muestra dónde están, no por qué.",
+        "en": "The map shows where they are, not why."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Cuenta cuántos puntos caen dentro de la franja.",
+     "en": "Count how many points fall inside the band."
+    },
+    {
+     "es": "¿Hay puntos fuera? Entonces, ¿es «todos» o «casi todos»?",
+     "en": "Are there points outside? So is it “all” or “almost all”?"
+    },
+    {
+     "es": "Ejemplo: si 9 de 10 niños llevan gorra en el patio, ¿dirías «todos»?",
+     "en": "Example: if 9 of 10 kids wear a cap in the yard, would you say “all”?"
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Te falta completar una parte.",
+     "en": "A part is still missing."
+    },
+    "wrong": {
+     "es": "Mira los puntos del mapa otra vez: ¿tu afirmación vale para todos?",
+     "en": "Look at the points on the map again: does your claim hold for all of them?"
+    },
+    "ok": {
+     "es": "Dijiste «casi todos» y lo apoyaste con un recuento: así se describe un patrón.",
+     "en": "You said “almost all” and backed it with a count: that’s how a pattern is described."
+    }
+   }
+  },
+  {
+   "id": "t7",
+   "kind": "transferir",
+   "ideaIds": [
+    "erosion.cobertura",
+    "prueba.justa"
+   ],
+   "contextId": "pendiente",
+   "sessionId": "s6",
+   "standards": [
+    "4-ESS2-1"
+   ],
+   "criterion": {
+    "es": "Reconoce que cambiaron dos cosas y arregla la prueba cambiando una sola (igualar pendiente o igualar cobertura, ambas valen).",
+    "en": "Recognizes that two things changed and fixes the test so only one does (equalizing slope or cover, both are fine)."
+   },
+   "parts": [
+    {
+     "id": "decision",
+     "prompt": {
+      "es": "¿Podemos decir que fue solo por el pasto?",
+      "en": "Can we say it was only because of the grass?"
+     },
+     "options": [
+      {
+       "id": "dos",
+       "text": {
+        "es": "No: cambiaron dos cosas (la inclinación y el pasto).",
+        "en": "No: two things changed (the slope and the grass)."
+       },
+       "valid": true
+      },
+      {
+       "id": "si",
+       "text": {
+        "es": "Sí, fue solo por el pasto.",
+        "en": "Yes, it was only the grass."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira qué más cambió entre A y B: ¿solo el pasto?",
+        "en": "See what else changed between A and B: only the grass?"
+       }
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "No sé.",
+        "en": "I don’t know."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Está bien no saber todavía. Compara qué cambió entre las dos bandejas.",
+        "en": "It’s fine not to know yet. Compare what changed between the two trays."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "arreglo",
+     "prompt": {
+      "es": "Arregla la prueba para que cambie una sola cosa.",
+      "en": "Fix the test so only one thing changes."
+     },
+     "options": [
+      {
+       "id": "pendiente",
+       "text": {
+        "es": "Igualar la inclinación y dejar el pasto como está.",
+        "en": "Make the slope equal and leave the grass as it is."
+       },
+       "valid": true
+      },
+      {
+       "id": "cobertura",
+       "text": {
+        "es": "Igualar el pasto y dejar la inclinación como está.",
+        "en": "Make the grass equal and leave the slope as it is."
+       },
+       "valid": true
+      },
+      {
+       "id": "color",
+       "text": {
+        "es": "Cambiar el color de la regadera.",
+        "en": "Change the watering can’s color."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Eso no cambia ninguna de las dos cosas que son distintas.",
+        "en": "That doesn’t change either of the two things that differ."
+       }
+      },
+      {
+       "id": "quitar",
+       "text": {
+        "es": "Quitar una de las bandejas.",
+        "en": "Take away one of the trays."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Necesitamos las dos para comparar.",
+        "en": "We need both to compare."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira qué cambió entre la bandeja A y la B.",
+     "en": "See what changed between tray A and tray B."
+    },
+    {
+     "es": "Si cambian dos cosas, ¿sabemos cuál causó la diferencia?",
+     "en": "If two things change, can we tell which one caused the difference?"
+    },
+    {
+     "es": "Ejemplo: dos plantas, una al sol y con más agua, otra a la sombra y con menos. ¿Qué pasó por el sol y qué por el agua?",
+     "en": "Example: two plants, one in sun with more water, one in shade with less. What was the sun and what was the water?"
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Te falta una parte.",
+     "en": "A part is still missing."
+    },
+    "wrong": {
+     "es": "Revisa qué cosas son distintas entre las dos bandejas.",
+     "en": "Check which things differ between the two trays."
+    },
+    "ok": {
+     "es": "Cambiaste una sola cosa: ahora sí podemos saber qué causó la diferencia.",
+     "en": "You changed just one thing: now we can tell what caused the difference."
+    }
+   }
+  },
+  {
+   "id": "t8",
+   "kind": "reflexionar",
+   "ideaIds": [],
+   "contextId": "reflexion",
+   "sessionId": "s6",
+   "standards": [],
+   "criterion": {
+    "es": "Compara su idea de la primera sesión con la final y la liga a un dato o prueba; «no cambió» también es válido. No suma dominio (es comunicación).",
+    "en": "Compares the first-session idea with the final one and ties it to data or a test; “it didn’t change” is also valid. It adds no mastery (it is communication)."
+   },
+   "parts": [
+    {
+     "id": "idea",
+     "prompt": {
+      "es": "Mi idea…",
+      "en": "My idea…"
+     },
+     "options": [
+      {
+       "id": "cambio",
+       "text": {
+        "es": "cambió.",
+        "en": "changed."
+       },
+       "valid": true
+      },
+      {
+       "id": "igual",
+       "text": {
+        "es": "no cambió.",
+        "en": "didn’t change."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "porque…",
+      "en": "because…"
+     },
+     "options": [
+      {
+       "id": "datos",
+       "text": {
+        "es": "vi en mis datos que…",
+        "en": "I saw in my data that…"
+       },
+       "valid": true
+      },
+      {
+       "id": "probe",
+       "text": {
+        "es": "probé y…",
+        "en": "I tried it and…"
+       },
+       "valid": true
+      },
+      {
+       "id": "justa",
+       "text": {
+        "es": "la prueba justa me mostró que…",
+        "en": "the fair test showed me that…"
+       },
+       "valid": true
+      },
+      {
+       "id": "dijeron",
+       "text": {
+        "es": "me lo dijeron.",
+        "en": "someone told me."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Piensa qué dato o prueba tuya te hizo pensar eso.",
+        "en": "Think about which of your own data or tests made you think that."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Vuelve a leer tu idea de la primera sesión.",
+     "en": "Reread your idea from the first session."
+    },
+    {
+     "es": "¿Qué dato te hizo pensar distinto o te confirmó?",
+     "en": "Which data made you think differently or confirmed it?"
+    },
+    {
+     "es": "Ejemplo: pensaste que una bolita rodaría igual; la probaste y rodó distinto: «Cambié mi idea porque vi que…».",
+     "en": "Example: you thought a marble would roll the same; you tried it and it rolled differently: “I changed my idea because I saw that…”."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige cómo quedó tu idea y por qué.",
+     "en": "Pick how your idea ended up and why."
+    },
+    "wrong": {
+     "es": "Piensa en un dato o prueba tuya.",
+     "en": "Think about one of your own data or tests."
+    },
+    "ok": {
+     "es": "Revisar una idea con datos es parte de hacer ciencia.",
+     "en": "Revising an idea with data is part of doing science."
+    }
+   }
+  }
+ ],
+ "safety": {
+  "title": {
+   "es": "Bandejas de erosión (con un adulto)",
+   "en": "Erosion trays (with an adult)"
+  },
+  "enabledByParent": true,
+  "supervision": {
+   "es": "Un adulto presente en todo momento (4.º, ≈ 9–10 años).",
+   "en": "An adult present the whole time (grade 4, about 9–10 years old)."
+  },
+  "materials": {
+   "es": "2 bandejas poco profundas con pico; tierra para macetas comprada (no del jardín ni de la calle); un tapete de pasto comprado o una maceta con pasto; regadera pequeña; 2 vasos; toallas.",
+   "en": "2 shallow trays with a spout; store-bought potting soil (not from the yard or street); a store-bought grass mat or a pot with grass; small watering can; 2 cups; towels."
+  },
+  "place": {
+   "es": "Mesa o piso protegido, en interior; nunca en una pendiente real ni cerca de una calle.",
+   "en": "Protected table or floor, indoors; never on a real slope or near a street."
+  },
+  "hygiene": {
+   "es": "Lavarse las manos con jabón al terminar; no tocarse la cara durante la actividad.",
+   "en": "Wash hands with soap afterwards; don’t touch your face during the activity."
+  },
+  "closing": {
+   "es": "Tirar el agua con tierra al jardín o a la basura, no por el desagüe del lavabo; secar y guardar.",
+   "en": "Pour the muddy water in the garden or trash, not down the sink drain; dry and put away."
+  },
+  "stopIf": [
+   {
+    "es": "Hay moho en la tierra.",
+    "en": "There is mold in the soil."
+   },
+   {
+    "es": "Alguien quiere probar la tierra o el agua.",
+    "en": "Someone wants to taste the soil or the water."
+   },
+   {
+    "es": "Hay alergia a la tierra o al polvo.",
+    "en": "There is an allergy to soil or dust."
+   },
+   {
+    "es": "Se derrama demasiado.",
+    "en": "Too much spills."
+   },
+   {
+    "es": "El adulto no puede quedarse.",
+    "en": "The adult can’t stay."
+   }
+  ],
+  "excluded": {
+   "es": "Suelo posiblemente contaminado, tierra de zonas con químicos, mojar enchufes, hacerlo en una pendiente real.",
+   "en": "Possibly contaminated soil, soil from chemically treated areas, wetting outlets, doing it on a real slope."
+  },
+  "data": {
+   "es": "No requiere cámara, micrófono, fotos ni ubicación.",
+   "en": "Needs no camera, microphone, photos or location."
+  },
+  "digitalAlternative": {
+   "es": "Las sesiones S2–S3 en pantalla reemplazan la actividad completa.",
+   "en": "Sessions S2–S3 on screen replace the whole activity."
+  },
+  "review": "pendienteDocente"
+ },
+ "review": {
+  "status": "draftPendingTeacherReview",
+  "notes": "Ningún docente ha validado esta unidad. Los códigos son candidatos; solo los ven los padres."
+ }
+}

@@ -88,14 +88,33 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | ID | Tarea | Estado | Cuenta | Rama / nota |
 |---|---|---|---|---|
 | PREP-1 | Preparación: módulo, registro, paquete vacío, guardado por materia, protocolo | ✅ | A | enchufado como "Pronto" |
-| CI-01 | Prompt de investigación de Ciencia → Victor lo corre | ⬜ | A | **no programar antes** (lección de Matemáticas) |
-| CI-02 | Especificación visual/interactiva en `docs/design/ciencia/` | ⬜ | A | |
-| CI-03 | Lista de imágenes por tandas + manifiesto | ⬜ | A | base: `ART-BRIEF.md` |
-| CI-04 | Dominio puro en `packages/science-content` + pruebas | ⬜ | A | |
-| CI-05 | Textos ES/EN en `ui-core/src/ciencia/` | ⬜ | A | |
-| CI-06 | Pantallas del cuaderno de Ciencia (con Modo Enfoque) | ⬜ | A | |
-| CI-07 | Verificar en 4 tamaños y `available: true` | ⬜ | A | |
+| CI-01 | Investigación de Ciencia | ✅ | A | Victor entregó el informe: `docs/research/ciencia-investigacion.md` |
+| CI-02 | Analizar y adaptar el informe: mapa de 48 unidades como datos validados, especificación, pedido de imágenes, estándares | ✅ | A | `docs/design/ciencia/`, `packages/science-content` (mapa.json + 8 pruebas, cubre las 62 expectativas NGSS 1.º–5.º); **espera DC-1…DC-8 de Victor** |
+| CI-03 | Especificación detallada de la unidad piloto (6 sesiones, 8 tareas, glosario, supuestos del modelo, ficha de seguridad) | ✅ | A | `docs/design/ciencia/unidades/C4-U06.md`; DC-1…DC-8 confirmadas (D13). | recomendada C4-U06; **imágenes de la Tanda 1 ✅ recibidas y en la app** (18 de 18, `assets/ciencia/`, `subjects/ciencia/art.ts`); espera DC-1…DC-8 |
+| CI-04 | Dominio puro de C4-U06 en `packages/science-content`: modelo de erosión, datos y mapas de práctica, `scienceEvidence.v1`, unidad en JSON validado, evaluador de tareas + pruebas | ✅ | A | 56 archivos / 1250 pruebas; los datos salen del modelo y los textos que citan números se comprueban contra ellos |
+| CI-05 | Textos ES/EN en `ui-core/src/ciencia/` | ✅ | A | `copy.ts` (rótulos, píldoras, distintivos, marcos de frase, pantallas) + `effort.ts` (estrellas por esfuerzo, D13) |
+| CI-06 | Pantallas del cuaderno de Ciencia (con Modo Enfoque) | ✅ | A | Unidad C4-U06 jugable: cuaderno de la unidad + reproductor de sesión (6 sesiones / 24 pasos), laboratorio de bandejas, báscula, tabla, gráfica, mapas de práctica, retomar, cierre con estrellas por esfuerzo, progreso guardado por niño |
+| CI-07 | Verificar en 4 tamaños y `available: true` | ✅ | A | Recorrido completo de las 6 sesiones en tableta (horizontal/vertical) y teléfono (vertical/horizontal), Modo Enfoque (sin Maya ni fondo) y «guardar y seguir después». `available: true` |
 | CI-08 | Revisión de un maestro (estándares: borrador) | ⬜ | – | |
+| CI-09 | Pedido de imágenes de la Tanda 2 (5 unidades piloto, 41 imágenes en 5 lotes A–E) | ✅ | A | `docs/design/ciencia/PEDIDO-IMAGENES.md`; espera que Victor las genere |
+| CI-10 | Reproductor de sesión por «familias» de laboratorio (erosión, mapa, escena, luz) y catálogo de las 48 unidades | ✅ | A | `subjects/ciencia/families/`, `catalog-screen.tsx`; una unidad nueva solo agrega su familia |
+| CI-11 | C1-U02 «Ver en la oscuridad»: modelo de la luz, unidad en JSON validado, caja de luz y tabla de observaciones | ✅ | A | Lote A recibido (7 imágenes, `manifest-tanda-2a.json`); `UNIT_ART_READY['C1-U02']=true`; verificada en tableta y teléfono |
+| CI-12 | C2-U02 «Un techo para el muñeco» (probador de materiales): modelo, unidad en JSON validado, familia `materials` | ✅ | A | Lote B recibido (9 imágenes, `manifest-tanda-2b.json`); `UNIT_ART_READY['C2-U02']=true`; verificada en tableta y teléfono |
+| CI-13 | C6-U04 «Energía térmica»: modelo térmico, unidad en JSON validado, banco de la funda y gráfica de líneas | ✅ | A | Lote C recibido (8 imágenes); verificada en tableta y teléfono; 3 expectativas MS-PS3 con ≥ 3 tareas cada una |
+| CI-14 | C3-U06 «Interacciones sin tocar»: modelo del imán, unidad en JSON validado y mesa del imán | ✅ | A | Lote D recibido (9 imágenes); verificada en tableta y teléfono; la electricidad estática del mapa queda pendiente (globo y papelitos ya tienen arte) |
+| CI-15 | C5-U02 «Cantidad y propiedades»: modelo de masa y propiedades, unidad en JSON validado, balanza con frasco cerrado y tabla de muestras | ✅ | A | Lote E recibido (8 imágenes); verificada en tableta y teléfono (ES); con esto **las 6 unidades piloto están jugables** |
+| CI-16 | C5-U03 «Mezclas bajo investigación» (5-PS1-4): modelo de mezclas, unidad en JSON validado y tabla de pruebas | ✅ | A | Sin imágenes nuevas: usa el arte del Lote E y dibuja bicarbonato, vinagre y agua; portada provisional (la de C5-U02). Verificada en tableta (ES) |
+| CI-17 | C4-U02 «Energía en movimiento» (4.º): modelo de la rampa, contenido y banco de la rampa | ✅ | A | Lote I recibido (3 imágenes); verificada en tableta; abierta al niño |
+| CI-18 | C3-U05 «Fuerzas y movimiento» (3.º): carrito con empujones, péndulo y contenido | ✅ | A | Lote H recibido (4 imágenes); verificada en tableta; abierta al niño |
+| CI-19 | C1-U03 «Caminos de luz» (1.º): materiales y luz, contenido y banco de la linterna | ✅ | A | Lote F recibido (6 imágenes); verificada en tableta; abierta al niño |
+| CI-20 | C2-U01 «Detectives de materiales» (2.º): clasificar por propiedades, contenido y mesa del detective | ✅ | A | Lote G recibido (6 imágenes); verificada en tableta; abierta al niño |
+| CI-21 | C6-U05 «Agua en movimiento» (6.º): modelo del ciclo del agua, contenido y constructor de flechas | ✅ | A | Lote J recibido (9 imágenes); verificada en tableta; abierta al niño. Con esto la **Tanda 3 está completa** |
+| CI-22 | C5-U01 «Materia invisible» (5.º) — lote O | ✅ | A | Lote O recibido; modelo de puntitos (colorante, sal, aire en jeringa), familia `particles`, 13.ª unidad abierta; sin mecanismos atómicos formales |
+| CI-23 | C3-U07 «Tiempo y clima» (3.º) — lote M | ✅ | A | Lote M recibido; registro de tres pueblos (tabla, barras de lluvia, comparación), familia `climate`, 14.ª unidad abierta; datos de práctica |
+| CI-24 | C2-U08 «Una Tierra que cambia» (2.º) — lote L | ✅ | A | Lote L recibido; sucesos rápidos y lentos con dos pistas, bandejas con plantas (sin gramos); familia `earth`; 15.ª unidad abierta |
+| CI-25 | C1-U01 «Vibraciones» (1.º) — lote K | ✅ | A | Lote K recibido; mesa de vibraciones (regla, tambor con arroz, ligas), familia `vibration`; 16.ª unidad abierta |
+| CI-26 | C4-U03 «Transferir y transformar» (4.º) — lote N | ✅ | A | Lote N recibido; tres dispositivos (lámpara, campana, molinete), diagrama de lo que entra y lo que sale, familia `energy`; 17.ª unidad abierta |
+| CI-27 | C6-U07 «Evidencias de cambio» (6.º) — lote P | ✅ | A | Lote P recibido; series de práctica (temperatura, CO2, Sol, erupciones) y cadena del mecanismo, familia `trend`; 18.ª unidad abierta. Con esto la **Tanda 4 está completa**. Un docente debe revisar el tono de las conclusiones |
 
 ---
 

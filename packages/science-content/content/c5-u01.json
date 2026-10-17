@@ -1,0 +1,1704 @@
+{
+ "id": "C5-U01",
+ "grade": 5,
+ "area": "materia",
+ "title": {
+  "es": "Materia invisible",
+  "en": "Invisible matter"
+ },
+ "question": {
+  "es": "¿Cómo sabemos que sigue ahí?",
+  "en": "How do we know it is still there?"
+ },
+ "standards": [
+  "5-PS1-1"
+ ],
+ "standardTasks": {
+  "5-PS1-1": [
+   "t1",
+   "t2",
+   "t3",
+   "t4",
+   "t5",
+   "t6",
+   "t7"
+  ]
+ },
+ "ideas": [
+  {
+   "id": "materia.particulas",
+   "text": {
+    "es": "La materia está hecha de partículas tan pequeñas que no se ven y que se mueven; por eso lo que no se ve (colorante o sal disueltos) sigue ahí, repartido.",
+    "en": "Matter is made of particles too small to be seen, and they move; that is why what can’t be seen (dissolved dye or salt) is still there, spread out."
+   },
+   "misconception": {
+    "es": "Lo que ya no se ve desaparece, o la sal se convierte en agua.",
+    "en": "What can’t be seen anymore disappears, or salt turns into water."
+   },
+   "contexts": [
+    "colorante",
+    "tabla",
+    "sal",
+    "azucar",
+    "modelo"
+   ]
+  },
+  {
+   "id": "particulas.espacio",
+   "text": {
+    "es": "Entre las partículas hay espacio: por eso el aire se puede apretar (hasta un tope) y otras sustancias se pueden repartir entre ellas.",
+    "en": "There is space between particles: that is why air can be squeezed (up to a limit) and other substances can spread among them."
+   },
+   "misconception": {
+    "es": "El aire no es nada, o no se puede apretar porque no tiene partes.",
+    "en": "Air is nothing, or it can’t be squeezed because it has no parts."
+   },
+   "contexts": [
+    "jeringa",
+    "tabla",
+    "modelo"
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "es": "partícula",
+   "en": "particle",
+   "note": {
+    "es": "Un pedacito de materia tan pequeño que no se ve. En el modelo se dibuja como un puntito.",
+    "en": "A piece of matter so small it can’t be seen. In the model it is drawn as a dot."
+   }
+  },
+  {
+   "es": "disolver",
+   "en": "dissolve",
+   "note": {
+    "es": "Cuando una sustancia (como la sal) se reparte entre las partículas del agua y ya no se ve, pero sigue ahí.",
+    "en": "When a substance (like salt) spreads among the water’s particles and can no longer be seen, but is still there."
+   }
+  },
+  {
+   "es": "modelo",
+   "en": "model",
+   "note": {
+    "es": "Un dibujo o una idea que ayuda a explicar algo; deja fuera cosas.",
+    "en": "A drawing or an idea that helps explain something; it leaves things out."
+   }
+  }
+ ],
+ "sessions": [
+  {
+   "id": "s1",
+   "title": {
+    "es": "Lo que no se ve",
+    "en": "What can’t be seen"
+   },
+   "objective": {
+    "es": "Mirar sin interpretar y decir una primera idea.",
+    "en": "Look without interpreting and share a first idea."
+   },
+   "steps": [
+    {
+     "id": "s1.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Un vaso de agua con una gota de colorante azul. Mira cómo está el colorante.",
+      "en": "A glass of water with a drop of blue dye. Look at how the dye is."
+     },
+     "scene": "mesaLab",
+     "particle": {
+      "view": "dye",
+      "step": 2,
+      "static": true,
+      "dots": false
+     }
+    },
+    {
+     "id": "s1.2",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "Elige dos cosas que ves.",
+      "en": "Pick two things you see."
+     },
+     "taskId": "t1",
+     "saves": "observación",
+     "scene": "mesaLab",
+     "particle": {
+      "view": "dye",
+      "step": 2,
+      "static": true,
+      "dots": false
+     }
+    },
+    {
+     "id": "s1.3",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Creo que el colorante…",
+      "en": "I think the dye…"
+     },
+     "saves": "idea inicial",
+     "scene": "mesaLab",
+     "choice": {
+      "id": "ideaInicial",
+      "multi": false,
+      "options": [
+       {
+        "id": "partes",
+        "text": {
+         "es": "se reparte en pedacitos muy pequeños que no se ven.",
+         "en": "spreads into tiny pieces that can’t be seen."
+        }
+       },
+       {
+        "id": "desaparece",
+        "text": {
+         "es": "desaparece cuando se mezcla.",
+         "en": "disappears when it mixes."
+        }
+       },
+       {
+        "id": "quieto",
+        "text": {
+         "es": "se queda donde cayó.",
+         "en": "stays where it fell."
+        }
+       },
+       {
+        "id": "nose",
+        "text": {
+         "es": "todavía no sé.",
+         "en": "I don’t know yet."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s1.4",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "Vamos a imaginar lo que no vemos con puntitos: cada puntito es un pedacito muy pequeño de materia. Es un modelo, un dibujo para pensar.",
+      "en": "We will imagine what we can’t see with dots: each dot is a very small piece of matter. It is a model, a drawing to think with."
+     },
+     "scene": "mesaLab"
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "title": {
+    "es": "El colorante se reparte",
+    "en": "The dye spreads"
+   },
+   "objective": {
+    "es": "Predecir y comprobar con el modelo dónde queda el colorante.",
+    "en": "Predict and check with the model where the dye ends up."
+   },
+   "steps": [
+    {
+     "id": "s2.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Esto es el modelo: puntitos del agua y puntitos azules del colorante, recién echados.",
+      "en": "This is the model: water dots and blue dye dots, just added."
+     },
+     "scene": "mesaLab",
+     "particle": {
+      "view": "dye",
+      "step": 0,
+      "static": true
+     }
+    },
+    {
+     "id": "s2.2",
+     "phase": "explora",
+     "kind": "predecir",
+     "text": {
+      "es": "Si esperamos sin revolver, ¿dónde estará el colorante? Porque…",
+      "en": "If we wait without stirring, where will the dye be? Because…"
+     },
+     "taskId": "t3",
+     "saves": "predicción",
+     "scene": "mesaLab",
+     "particle": {
+      "view": "dye",
+      "step": 0,
+      "static": true
+     }
+    },
+    {
+     "id": "s2.3",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Deja pasar el tiempo y mira dónde van los puntitos azules (cuatro veces).",
+      "en": "Let time pass and watch where the blue dots go (four times)."
+     },
+     "saves": "modelo",
+     "scene": "mesaLab",
+     "particle": {
+      "view": "dye",
+      "trials": 4
+     }
+    },
+    {
+     "id": "s2.4",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Compara lo que predijiste con lo que muestra el modelo.",
+      "en": "Compare what you predicted with what the model shows."
+     },
+     "saves": "comparación",
+     "scene": "mesaLab",
+     "particle": {
+      "view": "dye",
+      "step": 4,
+      "static": true
+     },
+     "choice": {
+      "id": "comparacion",
+      "multi": false,
+      "options": [
+       {
+        "id": "coincidio",
+        "text": {
+         "es": "Mi predicción coincidió.",
+         "en": "My prediction matched."
+        }
+       },
+       {
+        "id": "nocoincidio",
+        "text": {
+         "es": "Mi predicción no coincidió.",
+         "en": "My prediction didn’t match."
+        }
+       }
+      ],
+      "compareWith": {
+       "taskId": "t3",
+       "partId": "resultado"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "s3",
+   "title": {
+    "es": "El aire se aprieta",
+    "en": "Air can be squeezed"
+   },
+   "objective": {
+    "es": "Predecir y comprobar con el modelo qué pasa al apretar el aire.",
+    "en": "Predict and check with the model what happens when air is squeezed."
+   },
+   "steps": [
+    {
+     "id": "s3.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Una jeringa tapada con aire dentro. Los puntitos son el aire, dibujado como modelo.",
+      "en": "A capped syringe with air inside. The dots are the air, drawn as a model."
+     },
+     "scene": "mesaLab",
+     "particle": {
+      "view": "syringe",
+      "pos": 3,
+      "static": true
+     }
+    },
+    {
+     "id": "s3.2",
+     "phase": "explora",
+     "kind": "predecir",
+     "text": {
+      "es": "Si apretamos el émbolo con la punta tapada, ¿qué pasará con el aire? Porque…",
+      "en": "If we press the plunger with the tip capped, what will happen to the air? Because…"
+     },
+     "taskId": "t4",
+     "saves": "predicción",
+     "scene": "mesaLab",
+     "particle": {
+      "view": "syringe",
+      "pos": 3,
+      "static": true
+     }
+    },
+    {
+     "id": "s3.3",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Aprieta el émbolo (un poco y hasta el tope) y mira los puntitos del aire.",
+      "en": "Press the plunger (a little and all the way) and watch the air’s dots."
+     },
+     "saves": "modelo",
+     "scene": "mesaLab",
+     "particle": {
+      "view": "syringe",
+      "trials": 2
+     }
+    },
+    {
+     "id": "s3.4",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Compara lo que predijiste con lo que muestra el modelo.",
+      "en": "Compare what you predicted with what the model shows."
+     },
+     "saves": "comparación",
+     "scene": "mesaLab",
+     "particle": {
+      "view": "syringe",
+      "pos": 2,
+      "static": true
+     },
+     "choice": {
+      "id": "comparacion",
+      "multi": false,
+      "options": [
+       {
+        "id": "coincidio",
+        "text": {
+         "es": "Mi predicción coincidió.",
+         "en": "My prediction matched."
+        }
+       },
+       {
+        "id": "nocoincidio",
+        "text": {
+         "es": "Mi predicción no coincidió.",
+         "en": "My prediction didn’t match."
+        }
+       }
+      ],
+      "compareWith": {
+       "taskId": "t4",
+       "partId": "resultado"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "s4",
+   "title": {
+    "es": "Lo invisible sigue ahí",
+    "en": "What is invisible is still there"
+   },
+   "objective": {
+    "es": "Explicar con evidencia por qué la sal disuelta sigue en el agua.",
+    "en": "Explain with evidence why dissolved salt is still in the water."
+   },
+   "steps": [
+    {
+     "id": "s4.1",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Echa sal en el agua y deja pasar el tiempo: ¿a dónde van los puntitos de sal? (tres veces)",
+      "en": "Put salt in the water and let time pass: where do the salt dots go? (three times)"
+     },
+     "saves": "modelo",
+     "scene": "mesaLab",
+     "particle": {
+      "view": "salt",
+      "trials": 3
+     }
+    },
+    {
+     "id": "s4.2",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Mira los tres casos: colorante, aire y sal. ¿Qué patrón ves?",
+      "en": "Look at the three cases: dye, air and salt. What pattern do you see?"
+     },
+     "saves": "patrón",
+     "scene": "mesaLab",
+     "particle": {
+      "view": "table"
+     },
+     "choice": {
+      "id": "patron",
+      "multi": false,
+      "options": [
+       {
+        "id": "siguen",
+        "text": {
+         "es": "En los tres casos hay puntitos que no se ven y se mueven: lo invisible sigue ahí.",
+         "en": "In all three cases there are dots that can’t be seen and that move: what is invisible is still there."
+        },
+        "expected": true
+       },
+       {
+        "id": "desaparece",
+        "text": {
+         "es": "Lo que no se ve ya no está.",
+         "en": "What can’t be seen is no longer there."
+        }
+       },
+       {
+        "id": "quieto",
+        "text": {
+         "es": "Los puntitos nunca cambian de lugar.",
+         "en": "The dots never change place."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s4.3",
+     "phase": "explica",
+     "kind": "texto",
+     "text": {
+      "es": "Palabras nuevas para explicar.",
+      "en": "New words to explain with."
+     },
+     "scene": "mesaLab",
+     "glossary": [
+      "partícula",
+      "disolver",
+      "modelo"
+     ]
+    },
+    {
+     "id": "s4.4",
+     "phase": "explica",
+     "kind": "afirmacion",
+     "text": {
+      "es": "Arma tu explicación: qué dices, qué lo prueba y qué límite tiene tu modelo.",
+      "en": "Build your explanation: what you say, what shows it and what limit your model has."
+     },
+     "taskId": "t5",
+     "saves": "explicación",
+     "scene": "mesaLab",
+     "particle": {
+      "view": "salt",
+      "step": 4,
+      "static": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "s5",
+   "title": {
+    "es": "Probar y evaluar el modelo",
+    "en": "Testing and evaluating the model"
+   },
+   "objective": {
+    "es": "Leer la tabla, probar el modelo hasta el tope y evaluarlo.",
+    "en": "Read the table, test the model up to its limit and evaluate it."
+   },
+   "steps": [
+    {
+     "id": "s5.1",
+     "phase": "observa",
+     "kind": "elegir",
+     "text": {
+      "es": "Mira la tabla de los tres fenómenos y elige dos cosas.",
+      "en": "Look at the table of the three phenomena and pick two things."
+     },
+     "taskId": "t2",
+     "saves": "observación",
+     "scene": "mesaLab",
+     "particle": {
+      "view": "table"
+     }
+    },
+    {
+     "id": "s5.2",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "Con el émbolo hasta el tope, ya no se puede apretar más. ¿Por qué lo explica el modelo?",
+      "en": "With the plunger all the way in, it can’t be squeezed any more. How does the model explain it?"
+     },
+     "saves": "prueba del modelo",
+     "scene": "mesaLab",
+     "particle": {
+      "view": "syringe",
+      "pos": 1,
+      "static": true
+     },
+     "choice": {
+      "id": "tope",
+      "multi": false,
+      "options": [
+       {
+        "id": "tope",
+        "text": {
+         "es": "Los puntitos ya están muy juntos: queda poco espacio para acercarlos más.",
+         "en": "The dots are very close together: there is little space left to bring them closer."
+        },
+        "expected": true
+       },
+       {
+        "id": "desaparecen",
+        "text": {
+         "es": "Los puntitos del aire desaparecen.",
+         "en": "The air’s dots disappear."
+        }
+       },
+       {
+        "id": "nose",
+        "text": {
+         "es": "No sé.",
+         "en": "I don’t know."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s5.3",
+     "phase": "explica",
+     "kind": "afirmacion",
+     "text": {
+      "es": "Evalúa tu modelo: qué muestra, qué no muestra y cómo lo mejorarías.",
+      "en": "Evaluate your model: what it shows, what it doesn’t show and how you would improve it."
+     },
+     "taskId": "t6",
+     "saves": "modelo",
+     "scene": "mesaLab",
+     "particle": {
+      "view": "table"
+     }
+    }
+   ]
+  },
+  {
+   "id": "s6",
+   "title": {
+    "es": "Un problema para Maya",
+    "en": "A problem for Maya"
+   },
+   "objective": {
+    "es": "Usar el modelo en un caso nuevo y revisar mi primera idea.",
+    "en": "Use the model in a new case and revisit my first idea."
+   },
+   "steps": [
+    {
+     "id": "s6.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Maya revuelve una cucharada de azúcar en té tibio. Al rato el azúcar ya no se ve.",
+      "en": "Maya stirs a spoonful of sugar into warm tea. After a while the sugar can no longer be seen."
+     },
+     "scene": "mesaLab"
+    },
+    {
+     "id": "s6.2",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "¿Dónde está el azúcar y cómo lo sabemos?",
+      "en": "Where is the sugar and how do we know?"
+     },
+     "taskId": "t7",
+     "saves": "problema nuevo",
+     "scene": "mesaLab"
+    },
+    {
+     "id": "s6.3",
+     "phase": "explica",
+     "kind": "reflexion",
+     "text": {
+      "es": "Vuelve a mirar tu primera idea. ¿Cambió?",
+      "en": "Look at your first idea again. Did it change?"
+     },
+     "taskId": "t8",
+     "saves": "reflexión",
+     "scene": "mesaLab"
+    },
+    {
+     "id": "s6.4",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "Hoy imaginaste lo invisible con un modelo de puntitos: el colorante y la sal se reparten, el aire se aprieta, y todo sigue ahí. Y dijiste qué deja fuera tu modelo.",
+      "en": "Today you imagined the invisible with a dot model: dye and salt spread out, air gets squeezed, and everything is still there. And you said what your model leaves out."
+     },
+     "saves": "resumen",
+     "scene": "mesaLab"
+    }
+   ]
+  }
+ ],
+ "tasks": [
+  {
+   "id": "t1",
+   "kind": "observar",
+   "ideaIds": [
+    "materia.particulas"
+   ],
+   "contextId": "colorante",
+   "sessionId": "s1",
+   "standards": [
+    "5-PS1-1"
+   ],
+   "criterion": {
+    "es": "Dice lo que ve en el vaso sin inventar: el colorante se extiende por el agua y cerca de la gota el color es más fuerte.",
+    "en": "Says what they see in the glass without inventing: the dye spreads through the water and the color is stronger near the drop."
+   },
+   "parts": [
+    {
+     "id": "observaciones",
+     "prompt": {
+      "es": "Elige dos cosas que ves.",
+      "en": "Pick two things you see."
+     },
+     "options": [
+      {
+       "id": "reparte",
+       "text": {
+        "es": "El colorante azul se va extendiendo por el agua.",
+        "en": "The blue dye is spreading through the water."
+       },
+       "valid": true
+      },
+      {
+       "id": "fuerte",
+       "text": {
+        "es": "Cerca de la gota el agua se ve más azul que lejos.",
+        "en": "Near the drop the water looks bluer than far away."
+       },
+       "valid": true
+      },
+      {
+       "id": "acabo",
+       "text": {
+        "es": "El colorante se acabó.",
+        "en": "The dye ran out."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira de nuevo: el color sigue en el agua, solo cambia dónde está.",
+        "en": "Look again: the color is still in the water, it only changes where it is."
+       }
+      },
+      {
+       "id": "revuelve",
+       "text": {
+        "es": "Alguien revuelve el agua con una cuchara.",
+        "en": "Someone is stirring the water with a spoon."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira de nuevo: nadie revuelve; el colorante se extiende solo.",
+        "en": "Look again: nobody is stirring; the dye spreads by itself."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira la nube azul: ¿hacia dónde se extiende?",
+     "en": "Look at the blue cloud: which way does it spread?"
+    },
+    {
+     "es": "Compara el color cerca de la gota y lejos de ella.",
+     "en": "Compare the color near the drop and far from it."
+    },
+    {
+     "es": "Ejemplo: cuando abres un perfume en un cuarto, el olor llega poco a poco a otros rincones.",
+     "en": "Example: when you open a perfume in a room, the smell slowly reaches other corners."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige dos cosas.",
+     "en": "Pick two things."
+    },
+    "wrong": {
+     "es": "Alguna de las cosas que elegiste no se ve. Mira de nuevo.",
+     "en": "Something you picked can’t be seen. Look again."
+    },
+    "ok": {
+     "es": "Observaste con cuidado: primero lo que se ve, después lo que crees.",
+     "en": "You looked carefully: first what you see, then what you think."
+    }
+   }
+  },
+  {
+   "id": "t2",
+   "kind": "observar",
+   "ideaIds": [
+    "materia.particulas",
+    "particulas.espacio"
+   ],
+   "contextId": "tabla",
+   "sessionId": "s5",
+   "standards": [
+    "5-PS1-1"
+   ],
+   "criterion": {
+    "es": "Lee la tabla de los tres fenómenos y dice lo que hacen los puntitos en cada uno, sin decir que algo desaparece.",
+    "en": "Reads the table of the three phenomena and says what the dots do in each one, without saying anything disappears."
+   },
+   "parts": [
+    {
+     "id": "observaciones",
+     "prompt": {
+      "es": "Mira la tabla y elige dos cosas.",
+      "en": "Look at the table and pick two things."
+     },
+     "options": [
+      {
+       "id": "reparten",
+       "text": {
+        "es": "En el colorante y en la sal, los puntitos se reparten entre los del agua.",
+        "en": "In the dye and the salt, the dots spread among the water’s dots."
+       },
+       "valid": true
+      },
+      {
+       "id": "aire",
+       "text": {
+        "es": "En el aire de la jeringa, los puntitos se acercan al apretar el émbolo.",
+        "en": "In the air of the syringe, the dots move closer when the plunger is pressed."
+       },
+       "valid": true
+      },
+      {
+       "id": "sal",
+       "text": {
+        "es": "La sal desaparece: ya no hay puntitos de sal.",
+        "en": "The salt disappears: there are no salt dots anymore."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira la tabla: los puntitos de sal siguen ahí, entre los del agua.",
+        "en": "Look at the table: the salt dots are still there, among the water’s dots."
+       }
+      },
+      {
+       "id": "quietos",
+       "text": {
+        "es": "Los puntitos no se mueven nunca.",
+        "en": "The dots never move."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira la tabla: los puntitos del colorante y de la sal se mueven y se reparten.",
+        "en": "Look at the table: the dye and salt dots move and spread."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Lee la columna «Con puntitos» fila por fila.",
+     "en": "Read the “With dots” column row by row."
+    },
+    {
+     "es": "Pregúntate: ¿qué cambia: cuántos puntitos hay o dónde están?",
+     "en": "Ask yourself: what changes: how many dots there are or where they are?"
+    },
+    {
+     "es": "Ejemplo: si los puntitos de sal desaparecieran, el modelo no podría explicar por qué el agua sabe salada.",
+     "en": "Example: if the salt dots disappeared, the model couldn’t explain why the water tastes salty."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige dos cosas.",
+     "en": "Pick two things."
+    },
+    "wrong": {
+     "es": "Alguna de las cosas que elegiste no sale en la tabla. Léela de nuevo.",
+     "en": "Something you picked isn’t in the table. Read it again."
+    },
+    "ok": {
+     "es": "Leíste la tabla con cuidado: los puntitos cambian de lugar, no desaparecen.",
+     "en": "You read the table carefully: the dots change place, they don’t disappear."
+    }
+   }
+  },
+  {
+   "id": "t3",
+   "kind": "predecir",
+   "ideaIds": [
+    "materia.particulas"
+   ],
+   "contextId": "colorante",
+   "sessionId": "s2",
+   "standards": [
+    "5-PS1-1"
+   ],
+   "criterion": {
+    "es": "Predice dónde estará el colorante si se espera sin revolver y da una razón con el modelo. Cualquier predicción es válida.",
+    "en": "Predicts where the dye will be if we wait without stirring and gives a reason using the model. Any prediction is valid."
+   },
+   "parts": [
+    {
+     "id": "resultado",
+     "prompt": {
+      "es": "Si esperamos sin revolver, ¿dónde estará el colorante?",
+      "en": "If we wait without stirring, where will the dye be?"
+     },
+     "options": [
+      {
+       "id": "parejo",
+       "text": {
+        "es": "Estará repartido por todo el vaso.",
+        "en": "It will be spread through the whole glass."
+       },
+       "valid": true
+      },
+      {
+       "id": "arriba",
+       "text": {
+        "es": "Seguirá junto, arriba, como una gota.",
+        "en": "It will stay together at the top, like a drop."
+       },
+       "valid": true
+      },
+      {
+       "id": "fondo",
+       "text": {
+        "es": "Se hundirá y se quedará en el fondo.",
+        "en": "It will sink and stay at the bottom."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false,
+     "observedOptionId": "parejo"
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "Porque…",
+      "en": "Because…"
+     },
+     "options": [
+      {
+       "id": "mueven",
+       "text": {
+        "es": "sus puntitos se mueven y se meten entre los del agua.",
+        "en": "its dots move and get in among the water’s dots."
+       },
+       "valid": true
+      },
+      {
+       "id": "creo",
+       "text": {
+        "es": "creo que así pasa.",
+        "en": "I think that is what happens."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "todavía no estoy seguro.",
+        "en": "I’m not sure yet."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    }
+   ],
+   "hints": [
+    {
+     "es": "Imagina los puntitos azules entre los del agua: ¿se quedan quietos?",
+     "en": "Imagine the blue dots among the water’s dots: do they stay still?"
+    },
+    {
+     "es": "Piensa en lo que pasa con el olor de una comida en una casa.",
+     "en": "Think about what happens with the smell of food in a house."
+    },
+    {
+     "es": "Ejemplo: una gota de tinta en agua quieta termina coloreando todo el vaso, aunque nadie la mueva.",
+     "en": "Example: a drop of ink in still water ends up coloring the whole glass, even if nobody moves it."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige una predicción y un «porque».",
+     "en": "Pick a prediction and a “because”."
+    },
+    "wrong": {
+     "es": "Elige una de las opciones.",
+     "en": "Pick one of the options."
+    },
+    "ok": {
+     "es": "Anotaste tu predicción. Ahora lo comprobamos con el modelo.",
+     "en": "You wrote down your prediction. Now we check it with the model."
+    }
+   }
+  },
+  {
+   "id": "t4",
+   "kind": "predecir",
+   "ideaIds": [
+    "particulas.espacio"
+   ],
+   "contextId": "jeringa",
+   "sessionId": "s3",
+   "standards": [
+    "5-PS1-1"
+   ],
+   "criterion": {
+    "es": "Predice qué pasará con el aire al apretar el émbolo con la punta tapada y da una razón con el modelo. Cualquier predicción es válida.",
+    "en": "Predicts what will happen to the air when the plunger is pressed with the tip capped and gives a reason using the model. Any prediction is valid."
+   },
+   "parts": [
+    {
+     "id": "resultado",
+     "prompt": {
+      "es": "Si apretamos el émbolo con la punta tapada, ¿qué pasará con el aire?",
+      "en": "If we press the plunger with the tip capped, what will happen to the air?"
+     },
+     "options": [
+      {
+       "id": "aprieta",
+       "text": {
+        "es": "Se aprieta un poco: el émbolo avanza.",
+        "en": "It gets squeezed a little: the plunger moves forward."
+       },
+       "valid": true
+      },
+      {
+       "id": "nada",
+       "text": {
+        "es": "No se mueve: el émbolo no avanza.",
+        "en": "It doesn’t move: the plunger doesn’t go in."
+       },
+       "valid": true
+      },
+      {
+       "id": "sale",
+       "text": {
+        "es": "El aire se escapa por la punta.",
+        "en": "The air escapes through the tip."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false,
+     "observedOptionId": "aprieta"
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "Porque…",
+      "en": "Because…"
+     },
+     "options": [
+      {
+       "id": "espacio",
+       "text": {
+        "es": "hay espacio entre los puntitos del aire y se pueden acercar.",
+        "en": "there is space between the air’s dots and they can move closer."
+       },
+       "valid": true
+      },
+      {
+       "id": "creo",
+       "text": {
+        "es": "creo que así pasa.",
+        "en": "I think that is what happens."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "todavía no estoy seguro.",
+        "en": "I’m not sure yet."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    }
+   ],
+   "hints": [
+    {
+     "es": "Dibuja en tu mente los puntitos del aire: ¿están pegados o hay espacio?",
+     "en": "Draw the air’s dots in your mind: are they stuck together or is there space?"
+    },
+    {
+     "es": "Piensa en apretar un globo o una pelota blanda.",
+     "en": "Think about squeezing a balloon or a soft ball."
+    },
+    {
+     "es": "Ejemplo: una esponja se aprieta porque tiene huecos; una piedra, no.",
+     "en": "Example: a sponge can be squeezed because it has gaps; a stone can’t."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige una predicción y un «porque».",
+     "en": "Pick a prediction and a “because”."
+    },
+    "wrong": {
+     "es": "Elige una de las opciones.",
+     "en": "Pick one of the options."
+    },
+    "ok": {
+     "es": "Anotaste tu predicción. Ahora lo comprobamos.",
+     "en": "You wrote down your prediction. Now we check it."
+    }
+   }
+  },
+  {
+   "id": "t5",
+   "kind": "evidencia",
+   "ideaIds": [
+    "materia.particulas"
+   ],
+   "contextId": "sal",
+   "sessionId": "s4",
+   "standards": [
+    "5-PS1-1"
+   ],
+   "criterion": {
+    "es": "Afirma que la sal disuelta sigue en el agua, lo apoya con el modelo de puntitos (los mismos puntitos, en otro lugar) y dice qué no muestra el modelo.",
+    "en": "Claims that dissolved salt is still in the water, supports it with the dot model (the same dots, in another place) and says what the model doesn’t show."
+   },
+   "parts": [
+    {
+     "id": "afirmacion",
+     "prompt": {
+      "es": "Mi afirmación es…",
+      "en": "My claim is…"
+     },
+     "options": [
+      {
+       "id": "sigue",
+       "text": {
+        "es": "La sal disuelta sigue en el agua, aunque no se vea.",
+        "en": "Dissolved salt is still in the water, even if it can’t be seen."
+       },
+       "valid": true
+      },
+      {
+       "id": "desaparece",
+       "text": {
+        "es": "La sal desaparece cuando se disuelve.",
+        "en": "Salt disappears when it dissolves."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira el modelo: los puntitos de sal no desaparecen; se reparten entre los del agua.",
+        "en": "Look at the model: the salt dots don’t disappear; they spread among the water’s dots."
+       }
+      },
+      {
+       "id": "agua",
+       "text": {
+        "es": "La sal se convierte en agua.",
+        "en": "Salt turns into water."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira el modelo: los puntitos de sal no se vuelven puntitos de agua; son otros y siguen ahí.",
+        "en": "Look at the model: the salt dots don’t become water dots; they are different and still there."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "evidencia",
+     "prompt": {
+      "es": "Mi evidencia es… (elige dos)",
+      "en": "My evidence is… (pick two)"
+     },
+     "options": [
+      {
+       "id": "cuenta",
+       "text": {
+        "es": "En el modelo hay 18 puntitos de sal antes y 18 después: solo cambia dónde están.",
+        "en": "In the model there are 18 salt dots before and 18 after: only where they are changes."
+       },
+       "valid": true
+      },
+      {
+       "id": "reparte",
+       "text": {
+        "es": "Con el tiempo, los puntitos de sal quedan repartidos entre los del agua.",
+        "en": "Over time, the salt dots end up spread among the water’s dots."
+       },
+       "valid": true
+      },
+      {
+       "id": "novemos",
+       "text": {
+        "es": "Ya no se ve la sal en el vaso.",
+        "en": "You can’t see the salt in the glass anymore."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Que no se vea no prueba que no esté: mira dónde están los puntitos de sal.",
+        "en": "Not being able to see it doesn’t prove it’s gone: look at where the salt dots are."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    },
+    {
+     "id": "limite",
+     "prompt": {
+      "es": "Lo que mi modelo NO muestra…",
+      "en": "What my model does NOT show…"
+     },
+     "options": [
+      {
+       "id": "dibujo",
+       "text": {
+        "es": "Los puntitos son un dibujo: no muestran su tamaño real ni cómo son por dentro.",
+        "en": "The dots are a drawing: they don’t show their real size or what they are like inside."
+       },
+       "valid": true
+      },
+      {
+       "id": "todo",
+       "text": {
+        "es": "Muestra cómo son las partículas de verdad.",
+        "en": "It shows what particles are really like."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Un modelo deja cosas fuera: los puntitos son un dibujo, no una fotografía.",
+        "en": "A model leaves things out: the dots are a drawing, not a photograph."
+       }
+      },
+      {
+       "id": "nada",
+       "text": {
+        "es": "El modelo no tiene límites.",
+        "en": "The model has no limits."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Todo modelo deja cosas fuera: piensa qué no puedes saber mirando los puntitos.",
+        "en": "Every model leaves things out: think about what you can’t know by looking at the dots."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira cuántos puntitos de sal hay al principio y al final.",
+     "en": "Look at how many salt dots there are at the start and at the end."
+    },
+    {
+     "es": "¿Cambió la cantidad de puntitos o solo el lugar donde están?",
+     "en": "Did the number of dots change, or only where they are?"
+    },
+    {
+     "es": "Ejemplo: si guardas 18 canicas en una caja y las riegas por el cuarto, siguen siendo 18, aunque ya no estén juntas.",
+     "en": "Example: if you keep 18 marbles in a box and scatter them around the room, there are still 18, even if they are no longer together."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte: afirmación, evidencia y límite.",
+     "en": "A part is missing: claim, evidence and limit."
+    },
+    "wrong": {
+     "es": "Mira de nuevo el modelo: algo de lo que elegiste no se apoya en los puntitos.",
+     "en": "Look at the model again: something you picked isn’t backed by the dots."
+    },
+    "ok": {
+     "es": "Afirmaste, probaste con el modelo y dijiste qué deja fuera: así se razona en ciencia.",
+     "en": "You made a claim, backed it with the model and said what it leaves out: that is how science reasons."
+    }
+   }
+  },
+  {
+   "id": "t6",
+   "kind": "modelo",
+   "ideaIds": [
+    "materia.particulas",
+    "particulas.espacio"
+   ],
+   "contextId": "modelo",
+   "sessionId": "s5",
+   "standards": [
+    "5-PS1-1"
+   ],
+   "criterion": {
+    "es": "Evalúa el modelo de puntitos: qué muestra, qué deja fuera y cómo lo mejoraría.",
+    "en": "Evaluates the dot model: what it shows, what it leaves out and how they would improve it."
+   },
+   "parts": [
+    {
+     "id": "muestra",
+     "prompt": {
+      "es": "El modelo muestra…",
+      "en": "The model shows…"
+     },
+     "options": [
+      {
+       "id": "espacio",
+       "text": {
+        "es": "Que hay espacio entre las partículas del aire, por eso se puede apretar.",
+        "en": "That there is space between the air’s particles, which is why it can be squeezed."
+       },
+       "valid": true
+      },
+      {
+       "id": "mueven",
+       "text": {
+        "es": "Que las partículas del colorante y de la sal se mueven y se reparten.",
+        "en": "That the dye and salt particles move and spread."
+       },
+       "valid": true
+      },
+      {
+       "id": "tamano",
+       "text": {
+        "es": "Qué tan grandes son las partículas de verdad.",
+        "en": "How big particles really are."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Los puntitos son un dibujo: su tamaño no es el real.",
+        "en": "The dots are a drawing: their size is not the real one."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "falta",
+     "prompt": {
+      "es": "Lo que el modelo deja fuera…",
+      "en": "What the model leaves out…"
+     },
+     "options": [
+      {
+       "id": "dentro",
+       "text": {
+        "es": "Cómo son las partículas por dentro y cómo se unen.",
+        "en": "What particles are like inside and how they join."
+       },
+       "valid": true
+      },
+      {
+       "id": "tam",
+       "text": {
+        "es": "El tamaño real de las partículas y cuántas hay.",
+        "en": "The real size of particles and how many there are."
+       },
+       "valid": true
+      },
+      {
+       "id": "nada",
+       "text": {
+        "es": "Nada: el modelo lo muestra todo.",
+        "en": "Nothing: the model shows everything."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Todo modelo deja cosas fuera. ¿Qué no puedes saber mirando los puntitos?",
+        "en": "Every model leaves things out. What can’t you know by looking at the dots?"
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "mejora",
+     "prompt": {
+      "es": "Para mejorarlo…",
+      "en": "To improve it…"
+     },
+     "options": [
+      {
+       "id": "mas",
+       "text": {
+        "es": "Probarlo con otros materiales (un sólido, otro gas) para ver si sigue sirviendo.",
+        "en": "Test it with other materials (a solid, another gas) to see if it still works."
+       },
+       "valid": true
+      },
+      {
+       "id": "medir",
+       "text": {
+        "es": "Compararlo con mediciones, como el peso de la sal antes y después de disolverla.",
+        "en": "Compare it with measurements, like the weight of the salt before and after dissolving it."
+       },
+       "valid": true
+      },
+      {
+       "id": "colores",
+       "text": {
+        "es": "Cambiar los colores de los puntitos.",
+        "en": "Change the colors of the dots."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Los colores no cambian lo que el modelo explica. Piensa en qué más podrías probar.",
+        "en": "The colors don’t change what the model explains. Think about what else you could test."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Un modelo sirve para explicar algunas cosas, no todas.",
+     "en": "A model helps explain some things, not all of them."
+    },
+    {
+     "es": "Piensa en lo que los puntitos no te dejan saber.",
+     "en": "Think about what the dots don’t let you know."
+    },
+    {
+     "es": "Ejemplo: un mapa muestra dónde están las calles, pero no cuántas personas viven en cada casa.",
+     "en": "Example: a map shows where streets are, but not how many people live in each house."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte: qué muestra, qué deja fuera y cómo mejorarlo.",
+     "en": "A part is missing: what it shows, what it leaves out and how to improve it."
+    },
+    "wrong": {
+     "es": "Mira de nuevo: algo de lo que elegiste no lo muestra el modelo, o no lo mejora.",
+     "en": "Look again: something you picked isn’t shown by the model, or doesn’t improve it."
+    },
+    "ok": {
+     "es": "Evaluaste el modelo con honestidad: eso lo hace más útil.",
+     "en": "You evaluated the model honestly: that makes it more useful."
+    }
+   }
+  },
+  {
+   "id": "t7",
+   "kind": "transferir",
+   "ideaIds": [
+    "materia.particulas"
+   ],
+   "contextId": "azucar",
+   "sessionId": "s6",
+   "standards": [
+    "5-PS1-1"
+   ],
+   "criterion": {
+    "es": "Usa el modelo en un caso nuevo: el azúcar que se disuelve en el té. Dice dónde está y cómo se sabe.",
+    "en": "Uses the model in a new case: sugar dissolving in tea. Says where it is and how we know."
+   },
+   "parts": [
+    {
+     "id": "donde",
+     "prompt": {
+      "es": "Maya revuelve una cucharada de azúcar en té tibio y el azúcar ya no se ve. ¿Dónde está?",
+      "en": "Maya stirs a spoonful of sugar into warm tea and the sugar can no longer be seen. Where is it?"
+     },
+     "options": [
+      {
+       "id": "agua",
+       "text": {
+        "es": "Repartida entre las partículas del agua, en puntitos que no se ven.",
+        "en": "Spread among the water’s particles, in dots that can’t be seen."
+       },
+       "valid": true
+      },
+      {
+       "id": "nada",
+       "text": {
+        "es": "En ninguna parte: ya no existe.",
+        "en": "Nowhere: it no longer exists."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El azúcar sigue ahí: se repartió entre las partículas del agua.",
+        "en": "The sugar is still there: it spread among the water’s particles."
+       }
+      },
+      {
+       "id": "fondo",
+       "text": {
+        "es": "Junta en el fondo, como un montoncito invisible.",
+        "en": "Together at the bottom, like an invisible little pile."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Si siguiera junta se vería; se repartió por todo el té.",
+        "en": "If it were still together it would be seen; it spread through all the tea."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "como",
+     "prompt": {
+      "es": "¿Cómo lo sabemos? (elige una)",
+      "en": "How do we know? (pick one)"
+     },
+     "options": [
+      {
+       "id": "dulce",
+       "text": {
+        "es": "El té sabe dulce, aunque no se vea el azúcar.",
+        "en": "The tea tastes sweet, even if the sugar can’t be seen."
+       },
+       "valid": true
+      },
+      {
+       "id": "pesa",
+       "text": {
+        "es": "Pesa lo mismo que el té y el azúcar por separado.",
+        "en": "It weighs the same as the tea and the sugar separately."
+       },
+       "valid": true
+      },
+      {
+       "id": "transparente",
+       "text": {
+        "es": "El té se ve transparente.",
+        "en": "The tea looks see-through."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Que no se vea no prueba que no esté. Piensa en otra forma de saberlo: el sabor o el peso.",
+        "en": "Not being able to see it doesn’t prove it’s gone. Think of another way to know: taste or weight."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Piensa en los puntitos de azúcar: ¿siguen o desaparecen?",
+     "en": "Think about the sugar dots: do they stay or disappear?"
+    },
+    {
+     "es": "¿Qué otra cosa, además de la vista, te dice que el azúcar está ahí?",
+     "en": "What other sense, besides sight, tells you the sugar is there?"
+    },
+    {
+     "es": "Ejemplo: con la sal en agua, el modelo muestra los mismos puntitos, pero repartidos.",
+     "en": "Example: with salt in water, the model shows the same dots, but spread out."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Piensa en el modelo: los puntitos no desaparecen.",
+     "en": "Think about the model: the dots don’t disappear."
+    },
+    "ok": {
+     "es": "Usaste el modelo en un caso nuevo.",
+     "en": "You used the model in a new case."
+    }
+   }
+  },
+  {
+   "id": "t8",
+   "kind": "reflexionar",
+   "ideaIds": [],
+   "contextId": "reflexion",
+   "sessionId": "s6",
+   "standards": [],
+   "criterion": {
+    "es": "Revisa su primera idea sobre el colorante y dice si cambió. Cualquier respuesta honesta es válida.",
+    "en": "Revisits the first idea about the dye and says whether it changed. Any honest answer is valid."
+   },
+   "parts": [
+    {
+     "id": "idea",
+     "prompt": {
+      "es": "Mi idea sobre lo que no se ve…",
+      "en": "My idea about what can’t be seen…"
+     },
+     "options": [
+      {
+       "id": "cambio",
+       "text": {
+        "es": "cambió.",
+        "en": "changed."
+       },
+       "valid": true
+      },
+      {
+       "id": "igual",
+       "text": {
+        "es": "sigue igual.",
+        "en": "stayed the same."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "porque…",
+      "en": "because…"
+     },
+     "options": [
+      {
+       "id": "modelo",
+       "text": {
+        "es": "miré el modelo de puntitos y vi dónde estaba cada cosa.",
+        "en": "I looked at the dot model and saw where each thing was."
+       },
+       "valid": true
+      },
+      {
+       "id": "jeringa",
+       "text": {
+        "es": "apreté el aire de la jeringa y vi que se acercaban los puntitos.",
+        "en": "I squeezed the air in the syringe and saw the dots move closer."
+       },
+       "valid": true
+      },
+      {
+       "id": "dijeron",
+       "text": {
+        "es": "alguien me lo dijo.",
+        "en": "someone told me."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Tú viste el modelo: usa lo que observaste.",
+        "en": "You saw the model yourself: use what you observed."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira tu idea del principio.",
+     "en": "Look at your first idea."
+    },
+    {
+     "es": "¿Qué viste en el modelo que te hizo pensar así?",
+     "en": "What did you see in the model that made you think that?"
+    },
+    {
+     "es": "Ejemplo: si pensabas que el colorante «desaparece», ¿qué muestran los puntitos azules al final?",
+     "en": "Example: if you thought the dye “disappears”, what do the blue dots show at the end?"
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Piensa en algo que hiciste tú.",
+     "en": "Think of something you did yourself."
+    },
+    "ok": {
+     "es": "Revisar una idea con lo que viste es hacer ciencia.",
+     "en": "Revisiting an idea with what you saw is doing science."
+    }
+   }
+  }
+ ],
+ "safety": {
+  "title": {
+   "es": "Modelo de puntitos (sin riesgos)",
+   "en": "Dot model (no risks)"
+  },
+  "enabledByParent": true,
+  "supervision": {
+   "es": "Un adulto disponible para dudas (5.º, ≈ 10–11 años). La actividad en pantalla no tiene riesgos.",
+   "en": "An adult available for questions (grade 5, about 10–11 years old). The on-screen activity has no risks."
+  },
+  "materials": {
+   "es": "Opcional, para observar fuera de pantalla: un vaso transparente con agua, una gota de colorante de comida, una cucharadita de sal y una jeringa sin aguja (sin punta metálica) para apretar aire.",
+   "en": "Optional, to observe off-screen: a clear glass of water, a drop of food coloring, a teaspoon of salt and a needle-free syringe to squeeze air."
+  },
+  "place": {
+   "es": "Una mesa cubierta, con un trapo a mano.",
+   "en": "A covered table, with a cloth at hand."
+  },
+  "hygiene": {
+   "es": "Lavarse las manos al terminar. No probar el colorante ni la sal del experimento.",
+   "en": "Wash hands afterwards. Don’t taste the dye or the salt from the experiment."
+  },
+  "closing": {
+   "es": "Tirar el agua con colorante en el lavabo y limpiar cualquier derrame.",
+   "en": "Pour the dyed water down the sink and clean any spill."
+  },
+  "stopIf": [
+   {
+    "es": "Alguien intenta probar el colorante o el agua del experimento.",
+    "en": "Someone tries to taste the dye or the water from the experiment."
+   },
+   {
+    "es": "Se usa una jeringa con aguja.",
+    "en": "A syringe with a needle is used."
+   },
+   {
+    "es": "Se aprieta el émbolo con fuerza hasta que se rompa algo.",
+    "en": "The plunger is pressed so hard that something could break."
+   },
+   {
+    "es": "El adulto no puede estar disponible.",
+    "en": "The adult can’t be available."
+   }
+  ],
+  "excluded": {
+   "es": "Agujas, sustancias que no sean agua, sal y colorante de comida, y cualquier cosa que se pueda tragar.",
+   "en": "Needles, substances other than water, salt and food coloring, and anything that could be swallowed."
+  },
+  "data": {
+   "es": "No requiere cámara, micrófono, fotos ni ubicación.",
+   "en": "Needs no camera, microphone, photos or location."
+  },
+  "digitalAlternative": {
+   "es": "Las sesiones S2, S3 y S4 en pantalla reemplazan la actividad completa.",
+   "en": "Sessions S2, S3 and S4 on screen replace the whole activity."
+  },
+  "review": "pendienteDocente"
+ },
+ "review": {
+  "status": "draftPendingTeacherReview",
+  "notes": "Ningún docente ha validado esta unidad. El código es candidato; solo lo ven los padres. Es un modelo de puntitos: no se piden átomos ni moléculas."
+ }
+}

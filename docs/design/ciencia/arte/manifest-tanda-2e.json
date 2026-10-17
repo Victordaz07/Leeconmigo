@@ -1,0 +1,81 @@
+{
+ "project": "Kitewise",
+ "subject": "ciencia",
+ "batch": "tanda-2e",
+ "count": 8,
+ "format": "PNG original de GPT, sin recortar; se convierte a WebP (props y poses recortados a su silueta)",
+ "assets": [
+  {
+   "source": "cover_c5_u02.png",
+   "sha256": "f1e29c1b75aaf0e6bf1d47e6bd6fdda4e3c973128632f4afcf2fdcd57538ad18",
+   "bytes": 2306747,
+   "output": "apps/mobile/assets/ciencia/covers/cover_c5_u02.webp",
+   "outputBytes": 93492,
+   "width": 1152,
+   "height": 768
+  },
+  {
+   "source": "prop_balanza.png",
+   "sha256": "e78c82aa2a7635f67b19a5798ef2f79491a881f70cb1cebc6ac13e35d2ed7701",
+   "bytes": 843870,
+   "output": "apps/mobile/assets/ciencia/props/prop_balanza.webp",
+   "outputBytes": 18890,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_frasco_cerrado.png",
+   "sha256": "09b4185e553789462ee5b96efc27ba28febc81592a0f2b37371f139a7523e6c0",
+   "bytes": 1179331,
+   "output": "apps/mobile/assets/ciencia/props/prop_frasco_cerrado.webp",
+   "outputBytes": 23274,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_muestra_arena.png",
+   "sha256": "520eacb1f4a30eac90ad378120b3351873b374fcf09cfce8f021c744f4f882e1",
+   "bytes": 1218125,
+   "output": "apps/mobile/assets/ciencia/props/prop_muestra_arena.webp",
+   "outputBytes": 35158,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_muestra_azucar.png",
+   "sha256": "ff8a1cfc1b3b6f7fad968add8e98d0c4ee0a4e7001d440c39fd657ccc0ef07bb",
+   "bytes": 944016,
+   "output": "apps/mobile/assets/ciencia/props/prop_muestra_azucar.webp",
+   "outputBytes": 22612,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_muestra_harina.png",
+   "sha256": "88572a8aa0fc3b5f087c8e8907c4f09b33919d189c7ddd1f44357d48ddb31804",
+   "bytes": 964583,
+   "output": "apps/mobile/assets/ciencia/props/prop_muestra_harina.webp",
+   "outputBytes": 24306,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_muestra_sal.png",
+   "sha256": "b227bf20be7065936eac27f26fe441d2e85d623b5283e6008d28d6cd721d2157",
+   "bytes": 1090245,
+   "output": "apps/mobile/assets/ciencia/props/prop_muestra_sal.webp",
+   "outputBytes": 27420,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "scene_c5_u02.png",
+   "sha256": "be44fd6c5b6df7b99d472489b5cfc129ef08620d3f4019faaf774ef6c3ee916c",
+   "bytes": 2322286,
+   "output": "apps/mobile/assets/ciencia/bg/scene_c5_u02.webp",
+   "outputBytes": 104310,
+   "width": 1536,
+   "height": 1024
+  }
+ ]
+}

@@ -1,0 +1,63 @@
+{
+ "project": "Kitewise",
+ "subject": "ciencia",
+ "batch": "tanda-4n",
+ "count": 6,
+ "format": "PNG original de GPT, sin recortar; se convierte a WebP (props y poses recortados a su silueta)",
+ "assets": [
+  {
+   "source": "cover_c4_u03.png",
+   "sha256": "4e7eda57cf0cb22a61f8c59875419c9da44560ab9b937a95b7bf83881e3f6957",
+   "bytes": 1618196,
+   "output": "apps/mobile/assets/ciencia/covers/cover_c4_u03.webp",
+   "outputBytes": 41412,
+   "width": 1152,
+   "height": 768
+  },
+  {
+   "source": "prop_bombilla.png",
+   "sha256": "effc82744f2184af4aecaf046fb4a0fbc804acbe2a8f0c30543b793157d62073",
+   "bytes": 667516,
+   "output": "apps/mobile/assets/ciencia/props/prop_bombilla.webp",
+   "outputBytes": 20352,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_campana.png",
+   "sha256": "58f35a00f61b8b9409b976afae54ff1be6da20c638723c68e91fef958d486c9b",
+   "bytes": 715992,
+   "output": "apps/mobile/assets/ciencia/props/prop_campana.webp",
+   "outputBytes": 23896,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_molinete.png",
+   "sha256": "861d94d9f2624ce793b8ec98fb1308efaef8e89c85996191282db7b6e4b36256",
+   "bytes": 632979,
+   "output": "apps/mobile/assets/ciencia/props/prop_molinete.webp",
+   "outputBytes": 19100,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_pila.png",
+   "sha256": "67a27e812063270e01cfb8f056cd286e298da2ff91da4207685a51b61036f2a1",
+   "bytes": 569069,
+   "output": "apps/mobile/assets/ciencia/props/prop_pila.webp",
+   "outputBytes": 13688,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "scene_c4_u03.png",
+   "sha256": "f9cccaec18bcd9829d3a98ed2137181c611f4b0a000b238ac80b1c7962512af8",
+   "bytes": 2316694,
+   "output": "apps/mobile/assets/ciencia/bg/scene_c4_u03.webp",
+   "outputBytes": 113034,
+   "width": 1536,
+   "height": 1024
+  }
+ ]
+}

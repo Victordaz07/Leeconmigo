@@ -1,2 +1,23 @@
-// Componentes de Ciencia (cuenta de Ciencia). Vacío hasta que haga falta uno compartido.
-export {};
+export { OptionList, type OptionItem } from './option-list.tsx';
+export { MayaSays } from './maya-says.tsx';
+export { SceneZones, type SceneZone } from './scene-zones.tsx';
+export { LabBoard, type LabArt, type TrayView } from './lab-board.tsx';
+export { DataTable, Scale, type TableRow } from './data-table.tsx';
+export { BarChart, type Bar } from './bar-chart.tsx';
+export { LayerToggle, PracticeMap, type MapCell, type MapLayers, type MapView2D } from './practice-map.tsx';
+export { LightBox, type LightArt } from './light-box.tsx';
+export { ResultTable, type ResultCell, type ResultRow } from './result-table.tsx';
+export { MaterialTester, type MaterialArt, type MaterialTile } from './material-tester.tsx';
+export { LineChart, type LineSeries } from './line-chart.tsx';
+export { ThermalBench, type LayerOption, type ThermalArt } from './thermal-bench.tsx';
+export { MagnetBench, type MagnetArt, type MagnetTile } from './magnet-bench.tsx';
+export { BalanceBench, SampleStrip, type MatterArt, type SampleChip } from './matter-bench.tsx';
+export { RampBench, type RampArt } from './ramp-bench.tsx';
+export { CartBench, PendulumBench, type ForceArt } from './force-bench.tsx';
+export { LightPathBench, type PathArt, type PathTile } from './light-path-bench.tsx';
+export { SortBench, type SortArt, type SortBin, type SortTile } from './sort-bench.tsx';
+export { CycleBoard, CYCLE_POSITIONS, type CycleArrow, type CycleArt, type CyclePiece } from './cycle-board.tsx';
+export { ParticleBench, type ParticleDot, type ParticleGroup } from './particle-bench.tsx';
+export { EventBoard, type EventBin, type EventTile } from './event-board.tsx';
+export { VibrationBench } from './vibration-bench.tsx';
+export { DeviceBench } from './device-bench.tsx';

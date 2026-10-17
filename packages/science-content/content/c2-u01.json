@@ -1,0 +1,1749 @@
+{
+ "id": "C2-U01",
+ "grade": 2,
+ "area": "materia",
+ "title": {
+  "es": "Detectives de materiales",
+  "en": "Material detectives"
+ },
+ "question": {
+  "es": "¿Cómo los agrupamos?",
+  "en": "How do we group them?"
+ },
+ "standards": [
+  "2-PS1-1"
+ ],
+ "standardTasks": {
+  "2-PS1-1": [
+   "t1",
+   "t2",
+   "t3",
+   "t4",
+   "t5",
+   "t6",
+   "t7"
+  ]
+ },
+ "ideas": [
+  {
+   "id": "materiales.propiedades",
+   "text": {
+    "es": "Los objetos y los materiales se describen con propiedades que se ven y se sienten: duro o blando, liso o rugoso, brilla o es mate.",
+    "en": "Objects and materials are described by properties you can see and feel: hard or soft, smooth or rough, shiny or dull."
+   },
+   "misconception": {
+    "es": "Para describir algo basta con su color o su nombre.",
+    "en": "To describe something, its color or its name is enough."
+   },
+   "contexts": [
+    "cuchara",
+    "tabla",
+    "esponja",
+    "juguete"
+   ]
+  },
+  {
+   "id": "materiales.agrupar",
+   "text": {
+    "es": "Los objetos se pueden agrupar de varias maneras según la propiedad que se mire; el mismo objeto cae en grupos distintos, y varias propiedades juntas lo describen mejor.",
+    "en": "Objects can be grouped in several ways depending on the property you look at; the same object falls in different groups, and several properties together describe it better."
+   },
+   "misconception": {
+    "es": "Cada objeto va siempre en el mismo grupo y solo hay una manera de agrupar.",
+    "en": "Each object always goes in the same group and there is only one way to group."
+   },
+   "contexts": [
+    "madera",
+    "dos",
+    "comparacion",
+    "juguete"
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "es": "propiedad",
+   "en": "property",
+   "note": {
+    "es": "Algo que se ve o se siente de un objeto: si es duro o blando, liso o rugoso, si brilla.",
+    "en": "Something you see or feel about an object: whether it is hard or soft, smooth or rough, shiny."
+   }
+  },
+  {
+   "es": "clasificar",
+   "en": "to classify",
+   "note": {
+    "es": "Poner los objetos en grupos según una propiedad.",
+    "en": "To put objects into groups according to a property."
+   }
+  },
+  {
+   "es": "material",
+   "en": "material",
+   "note": {
+    "es": "De qué está hecho un objeto, como metal, madera o goma.",
+    "en": "What an object is made of, like metal, wood or rubber."
+   }
+  }
+ ],
+ "sessions": [
+  {
+   "id": "s1",
+   "title": {
+    "es": "Mirar con la lupa",
+    "en": "Looking with the lens"
+   },
+   "objective": {
+    "es": "Mirar sin interpretar y decir una primera idea.",
+    "en": "Look without interpreting and share a first idea."
+   },
+   "steps": [
+    {
+     "id": "s1.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Una detective de materiales mira una cuchara con su lupa. Mira cómo es.",
+      "en": "A material detective looks at a spoon with a lens. Look at what it is like."
+     },
+     "scene": "aula",
+     "sort": {
+      "view": "look",
+      "object": "cuchara",
+      "static": true
+     }
+    },
+    {
+     "id": "s1.2",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "Elige dos cosas de la cuchara.",
+      "en": "Pick two things about the spoon."
+     },
+     "taskId": "t1",
+     "saves": "observación",
+     "scene": "aula",
+     "sort": {
+      "view": "look",
+      "object": "cuchara",
+      "static": true
+     }
+    },
+    {
+     "id": "s1.3",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Para decir cómo es algo, me fijo en…",
+      "en": "To say what something is like, I look at…"
+     },
+     "saves": "idea inicial",
+     "scene": "aula",
+     "choice": {
+      "id": "ideaInicial",
+      "multi": false,
+      "options": [
+       {
+        "id": "propiedades",
+        "text": {
+         "es": "cómo se ve y cómo se siente.",
+         "en": "how it looks and how it feels."
+        }
+       },
+       {
+        "id": "color",
+        "text": {
+         "es": "solo su color.",
+         "en": "only its color."
+        }
+       },
+       {
+        "id": "nombre",
+        "text": {
+         "es": "solo su nombre.",
+         "en": "only its name."
+        }
+       },
+       {
+        "id": "nose",
+        "text": {
+         "es": "todavía no sé.",
+         "en": "I don’t know yet."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s1.4",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "¿Cómo son los otros objetos? Vamos a mirarlos y a agruparlos.",
+      "en": "What are the other objects like? Let’s look at them and group them."
+     },
+     "scene": "aula"
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "title": {
+    "es": "Agrupar por una propiedad",
+    "en": "Grouping by one property"
+   },
+   "objective": {
+    "es": "Agrupar por una sola propiedad y comparar con lo que predije.",
+    "en": "Group by a single property and compare with what I predicted."
+   },
+   "steps": [
+    {
+     "id": "s2.1",
+     "phase": "observa",
+     "kind": "elegir",
+     "text": {
+      "es": "Para agrupar los objetos, ¿en qué nos fijamos?",
+      "en": "To group the objects, what do we look at?"
+     },
+     "saves": "qué se mira",
+     "scene": "aula",
+     "choice": {
+      "id": "queMira",
+      "multi": false,
+      "options": [
+       {
+        "id": "propiedad",
+        "text": {
+         "es": "En una propiedad: por ejemplo, duro o blando.",
+         "en": "In one property: for example, hard or soft."
+        },
+        "expected": true
+       },
+       {
+        "id": "nombre",
+        "text": {
+         "es": "En cómo se llaman.",
+         "en": "In what they are called."
+        }
+       },
+       {
+        "id": "lugar",
+        "text": {
+         "es": "En dónde están en la mesa.",
+         "en": "In where they are on the table."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s2.2",
+     "phase": "explora",
+     "kind": "predecir",
+     "text": {
+      "es": "Voy a agrupar en duro y blando. ¿Dónde irá la esponja? Porque…",
+      "en": "I’m going to group into hard and soft. Where will the sponge go? Because…"
+     },
+     "taskId": "t3",
+     "saves": "predicción",
+     "scene": "aula",
+     "sort": {
+      "view": "sort",
+      "prop": "dureza"
+     }
+    },
+    {
+     "id": "s2.3",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Toca un objeto, míralo con la lupa y toca su grupo. Agrupa los seis por dureza.",
+      "en": "Tap an object, look at it with the lens and tap its group. Group all six by hardness."
+     },
+     "saves": "observación",
+     "scene": "aula",
+     "sort": {
+      "view": "sort",
+      "prop": "dureza"
+     }
+    },
+    {
+     "id": "s2.4",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Compara lo que predijiste con lo que viste.",
+      "en": "Compare what you predicted with what you saw."
+     },
+     "saves": "comparación",
+     "scene": "aula",
+     "sort": {
+      "view": "sort",
+      "prop": "dureza",
+      "static": true
+     },
+     "choice": {
+      "id": "comparacion",
+      "multi": false,
+      "options": [
+       {
+        "id": "coincidio",
+        "text": {
+         "es": "Mi predicción coincidió.",
+         "en": "My prediction matched."
+        }
+       },
+       {
+        "id": "nocoincidio",
+        "text": {
+         "es": "Mi predicción no coincidió.",
+         "en": "My prediction didn’t match."
+        }
+       }
+      ],
+      "compareWith": {
+       "taskId": "t3",
+       "partId": "resultado"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "s3",
+   "title": {
+    "es": "Otra manera de agrupar",
+    "en": "Another way to group"
+   },
+   "objective": {
+    "es": "Agrupar por otra propiedad y ver que el mismo objeto cambia de grupo.",
+    "en": "Group by another property and see that the same object changes groups."
+   },
+   "steps": [
+    {
+     "id": "s3.1",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Ahora agrupa los seis por textura: lisos y rugosos.",
+      "en": "Now group all six by texture: smooth and rough."
+     },
+     "saves": "repetición",
+     "scene": "aula",
+     "sort": {
+      "view": "sort",
+      "prop": "textura"
+     }
+    },
+    {
+     "id": "s3.2",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "Mira la tabla de dureza y brillo. ¿Qué objetos son duros Y brillan?",
+      "en": "Look at the hardness and shine table. Which objects are hard AND shiny?"
+     },
+     "saves": "tabla",
+     "scene": "aula",
+     "sort": {
+      "view": "table",
+      "props": [
+       "dureza",
+       "brillo"
+      ],
+      "static": true
+     },
+     "choice": {
+      "id": "duroBrilla",
+      "multi": false,
+      "options": [
+       {
+        "id": "cuchara_taza",
+        "text": {
+         "es": "La cuchara y la taza.",
+         "en": "The spoon and the cup."
+        },
+        "expected": true
+       },
+       {
+        "id": "esponja_pelota",
+        "text": {
+         "es": "La esponja y la pelota.",
+         "en": "The sponge and the ball."
+        }
+       },
+       {
+        "id": "bloque_tela",
+        "text": {
+         "es": "El bloque y la tela.",
+         "en": "The block and the cloth."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s3.3",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Mira los grupos. ¿Qué patrón ves?",
+      "en": "Look at the groups. What pattern do you see?"
+     },
+     "saves": "patrón",
+     "scene": "aula",
+     "sort": {
+      "view": "table",
+      "props": [
+       "dureza",
+       "textura",
+       "brillo"
+      ],
+      "static": true
+     },
+     "choice": {
+      "id": "patron",
+      "multi": false,
+      "options": [
+       {
+        "id": "distinto",
+        "text": {
+         "es": "El mismo objeto va en grupos distintos según la propiedad: la pelota es blanda y lisa.",
+         "en": "The same object goes in different groups depending on the property: the ball is soft and smooth."
+        },
+        "expected": true
+       },
+       {
+        "id": "igual",
+        "text": {
+         "es": "Cada objeto siempre va en el mismo grupo.",
+         "en": "Each object always goes in the same group."
+        }
+       },
+       {
+        "id": "nunca",
+        "text": {
+         "es": "Los grupos nunca se parecen.",
+         "en": "The groups never look alike."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s3.4",
+     "phase": "usa",
+     "kind": "elegir",
+     "text": {
+      "es": "Si agrupo por brillo, ¿dónde va la pelota?",
+      "en": "If I group by shine, where does the ball go?"
+     },
+     "saves": "brillo",
+     "scene": "aula",
+     "sort": {
+      "view": "sort",
+      "prop": "brillo",
+      "static": true
+     },
+     "choice": {
+      "id": "brillo",
+      "multi": false,
+      "options": [
+       {
+        "id": "mate",
+        "text": {
+         "es": "Con los que no brillan (mate).",
+         "en": "With the ones that don’t shine (dull)."
+        },
+        "expected": true
+       },
+       {
+        "id": "brilla",
+        "text": {
+         "es": "Con los que brillan.",
+         "en": "With the shiny ones."
+        }
+       },
+       {
+        "id": "nose",
+        "text": {
+         "es": "No sé.",
+         "en": "I don’t know."
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "s4",
+   "title": {
+    "es": "Explicar lo que vi",
+    "en": "Explaining what I saw"
+   },
+   "objective": {
+    "es": "Armar una explicación con mis grupos y decir con qué la probé.",
+    "en": "Build an explanation from my groups and say what I tested it with."
+   },
+   "steps": [
+    {
+     "id": "s4.1",
+     "phase": "explica",
+     "kind": "texto",
+     "text": {
+      "es": "Palabras nuevas para explicar.",
+      "en": "New words to explain with."
+     },
+     "scene": "aula",
+     "glossary": [
+      "propiedad",
+      "clasificar",
+      "material"
+     ]
+    },
+    {
+     "id": "s4.2",
+     "phase": "explica",
+     "kind": "afirmacion",
+     "text": {
+      "es": "Arma tu explicación: qué dices, qué lo prueba y con qué lo probaste.",
+      "en": "Build your explanation: what you say, what shows it and what you tested it with."
+     },
+     "taskId": "t5",
+     "saves": "explicación",
+     "scene": "aula",
+     "sort": {
+      "view": "table",
+      "props": [
+       "dureza",
+       "textura",
+       "brillo"
+      ],
+      "static": true
+     }
+    },
+    {
+     "id": "s4.3",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "Tu explicación queda como una página de tu cuaderno.",
+      "en": "Your explanation becomes a page in your notebook."
+     },
+     "saves": "entrada del cuaderno",
+     "scene": "aula"
+    }
+   ]
+  },
+  {
+   "id": "s5",
+   "title": {
+    "es": "Dos propiedades a la vez",
+    "en": "Two properties at once"
+   },
+   "objective": {
+    "es": "Usar dos propiedades para encontrar un objeto y ver que un material tiene propiedades parecidas.",
+    "en": "Use two properties to find an object and see that a material has similar properties."
+   },
+   "steps": [
+    {
+     "id": "s5.1",
+     "phase": "observa",
+     "kind": "elegir",
+     "text": {
+      "es": "Mira la tabla de los seis objetos y elige dos cosas.",
+      "en": "Look at the table of the six objects and pick two things."
+     },
+     "taskId": "t2",
+     "saves": "observación",
+     "scene": "aula",
+     "sort": {
+      "view": "table",
+      "props": [
+       "dureza",
+       "textura",
+       "brillo"
+      ],
+      "static": true
+     }
+    },
+    {
+     "id": "s5.2",
+     "phase": "explora",
+     "kind": "predecir",
+     "text": {
+      "es": "Llega otro bloque, también de madera. ¿Será duro o blando? Porque…",
+      "en": "Another block arrives, also made of wood. Will it be hard or soft? Because…"
+     },
+     "taskId": "t4",
+     "saves": "predicción",
+     "scene": "aula",
+     "sort": {
+      "view": "look",
+      "object": "bloque",
+      "hidden": true
+     }
+    },
+    {
+     "id": "s5.3",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Agrupa los seis por brillo: los que brillan y los que no (mate).",
+      "en": "Group all six by shine: the shiny ones and the dull ones."
+     },
+     "saves": "observación",
+     "scene": "aula",
+     "sort": {
+      "view": "sort",
+      "prop": "brillo"
+     }
+    },
+    {
+     "id": "s5.4",
+     "phase": "explica",
+     "kind": "afirmacion",
+     "text": {
+      "es": "¿Qué objeto es blando y liso a la vez? Explica con tu tabla.",
+      "en": "Which object is soft and smooth at the same time? Explain with your table."
+     },
+     "taskId": "t6",
+     "saves": "modelo",
+     "scene": "aula",
+     "sort": {
+      "view": "table",
+      "props": [
+       "dureza",
+       "textura",
+       "brillo"
+      ],
+      "static": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "s6",
+   "title": {
+    "es": "Un problema para Maya",
+    "en": "A problem for Maya"
+   },
+   "objective": {
+    "es": "Usar lo aprendido en un caso nuevo y revisar mi primera idea.",
+    "en": "Use what I learned in a new case and revisit my first idea."
+   },
+   "steps": [
+    {
+     "id": "s6.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Maya busca un juguete que sea blando y liso.",
+      "en": "Maya is looking for a toy that is soft and smooth."
+     },
+     "scene": "aula"
+    },
+    {
+     "id": "s6.2",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "¿Qué objeto elige Maya y por qué?",
+      "en": "Which object does Maya pick and why?"
+     },
+     "taskId": "t7",
+     "saves": "problema nuevo",
+     "scene": "aula"
+    },
+    {
+     "id": "s6.3",
+     "phase": "explica",
+     "kind": "reflexion",
+     "text": {
+      "es": "Vuelve a mirar tu primera idea. ¿Cambió?",
+      "en": "Look at your first idea again. Did it change?"
+     },
+     "taskId": "t8",
+     "saves": "reflexión",
+     "scene": "aula"
+    },
+    {
+     "id": "s6.4",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "Hoy descubriste que los objetos tienen propiedades (duro o blando, liso o rugoso, brilla o es mate) y que se pueden agrupar de varias maneras.",
+      "en": "Today you found out that objects have properties (hard or soft, smooth or rough, shiny or dull) and that they can be grouped in several ways."
+     },
+     "saves": "resumen",
+     "scene": "aula"
+    }
+   ]
+  }
+ ],
+ "tasks": [
+  {
+   "id": "t1",
+   "kind": "observar",
+   "ideaIds": [
+    "materiales.propiedades"
+   ],
+   "contextId": "cuchara",
+   "sessionId": "s1",
+   "standards": [
+    "2-PS1-1"
+   ],
+   "criterion": {
+    "es": "Dice lo que ve y siente de la cuchara sin inventar: es dura y brilla.",
+    "en": "Says what they see and feel about the spoon without inventing: it is hard and shiny."
+   },
+   "parts": [
+    {
+     "id": "observaciones",
+     "prompt": {
+      "es": "Elige dos cosas de la cuchara.",
+      "en": "Pick two things about the spoon."
+     },
+     "options": [
+      {
+       "id": "dura",
+       "text": {
+        "es": "La cuchara es dura.",
+        "en": "The spoon is hard."
+       },
+       "valid": true
+      },
+      {
+       "id": "brilla",
+       "text": {
+        "es": "La cuchara brilla.",
+        "en": "The spoon is shiny."
+       },
+       "valid": true
+      },
+      {
+       "id": "blanda",
+       "text": {
+        "es": "La cuchara es blanda.",
+        "en": "The spoon is soft."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mírala con la lupa otra vez: la cuchara es dura.",
+        "en": "Look at it with the lens again: the spoon is hard."
+       }
+      },
+      {
+       "id": "rugosa",
+       "text": {
+        "es": "La cuchara es rugosa.",
+        "en": "The spoon is rough."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mírala con la lupa otra vez: la cuchara es lisa.",
+        "en": "Look at it with the lens again: the spoon is smooth."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira la cuchara con la lupa.",
+     "en": "Look at the spoon with the lens."
+    },
+    {
+     "es": "¿Se ve brillante o opaca? ¿Se siente dura o blanda?",
+     "en": "Does it look shiny or dull? Does it feel hard or soft?"
+    },
+    {
+     "es": "Ejemplo: una moneda es dura y brilla.",
+     "en": "Example: a coin is hard and shiny."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige dos cosas.",
+     "en": "Pick two things."
+    },
+    "wrong": {
+     "es": "Alguna de las cosas que elegiste no es así. Mira de nuevo.",
+     "en": "Something you picked isn’t like that. Look again."
+    },
+    "ok": {
+     "es": "Observaste con cuidado: primero lo que ves y sientes.",
+     "en": "You looked carefully: first what you see and feel."
+    }
+   }
+  },
+  {
+   "id": "t2",
+   "kind": "observar",
+   "ideaIds": [
+    "materiales.propiedades"
+   ],
+   "contextId": "tabla",
+   "sessionId": "s5",
+   "standards": [
+    "2-PS1-1"
+   ],
+   "criterion": {
+    "es": "Dice lo que muestra la tabla: la esponja es blanda y rugosa, y la taza es dura, lisa y brilla.",
+    "en": "Says what the table shows: the sponge is soft and rough, and the cup is hard, smooth and shiny."
+   },
+   "parts": [
+    {
+     "id": "observaciones",
+     "prompt": {
+      "es": "Elige dos cosas que ves en la tabla.",
+      "en": "Pick two things you see in the table."
+     },
+     "options": [
+      {
+       "id": "esponja",
+       "text": {
+        "es": "La esponja es blanda y rugosa.",
+        "en": "The sponge is soft and rough."
+       },
+       "valid": true
+      },
+      {
+       "id": "taza",
+       "text": {
+        "es": "La taza es dura, lisa y brilla.",
+        "en": "The cup is hard, smooth and shiny."
+       },
+       "valid": true
+      },
+      {
+       "id": "pelota",
+       "text": {
+        "es": "La pelota es dura.",
+        "en": "The ball is hard."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira la tabla: la pelota es blanda.",
+        "en": "Look at the table: the ball is soft."
+       }
+      },
+      {
+       "id": "tela",
+       "text": {
+        "es": "La tela brilla.",
+        "en": "The cloth is shiny."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira la tabla: la tela es mate, no brilla.",
+        "en": "Look at the table: the cloth is dull, it doesn’t shine."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Lee la tabla fila por fila.",
+     "en": "Read the table row by row."
+    },
+    {
+     "es": "Busca la fila del objeto y mira sus tres casillas.",
+     "en": "Find the object’s row and look at its three boxes."
+    },
+    {
+     "es": "Ejemplo: una almohada es blanda, y un ladrillo es duro.",
+     "en": "Example: a pillow is soft, and a brick is hard."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige dos cosas.",
+     "en": "Pick two things."
+    },
+    "wrong": {
+     "es": "Alguna de las cosas que elegiste no está en la tabla. Mírala de nuevo.",
+     "en": "Something you picked isn’t in the table. Look at it again."
+    },
+    "ok": {
+     "es": "Muy bien: miraste lo que dice cada fila.",
+     "en": "Very good: you looked at what each row says."
+    }
+   }
+  },
+  {
+   "id": "t3",
+   "kind": "predecir",
+   "ideaIds": [
+    "materiales.propiedades"
+   ],
+   "contextId": "esponja",
+   "sessionId": "s2",
+   "standards": [
+    "2-PS1-1"
+   ],
+   "criterion": {
+    "es": "Predice, antes de agrupar, si la esponja es dura o blanda y compara con honestidad. Cualquier predicción es válida.",
+    "en": "Predicts, before grouping, whether the sponge is hard or soft and compares honestly. Any prediction is valid."
+   },
+   "parts": [
+    {
+     "id": "resultado",
+     "prompt": {
+      "es": "Voy a agrupar en duro y blando. ¿Dónde irá la esponja?",
+      "en": "I’m going to group into hard and soft. Where will the sponge go?"
+     },
+     "options": [
+      {
+       "id": "blando",
+       "text": {
+        "es": "Con los blandos.",
+        "en": "With the soft ones."
+       },
+       "valid": true
+      },
+      {
+       "id": "duro",
+       "text": {
+        "es": "Con los duros.",
+        "en": "With the hard ones."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "No sé.",
+        "en": "I don’t know."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false,
+     "observedOptionId": "blando"
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "Porque…",
+      "en": "Because…"
+     },
+     "options": [
+      {
+       "id": "aprieta",
+       "text": {
+        "es": "la esponja se aprieta fácil.",
+        "en": "the sponge squeezes easily."
+       },
+       "valid": true
+      },
+      {
+       "id": "color",
+       "text": {
+        "es": "la esponja es amarilla.",
+        "en": "the sponge is yellow."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "todavía no estoy seguro.",
+        "en": "I’m not sure yet."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    }
+   ],
+   "hints": [
+    {
+     "es": "Piensa en cómo se siente una esponja al apretarla.",
+     "en": "Think of how a sponge feels when you squeeze it."
+    },
+    {
+     "es": "¿Se aprieta fácil o no?",
+     "en": "Does it squeeze easily or not?"
+    },
+    {
+     "es": "Ejemplo: un peluche se aprieta fácil; una piedra, no.",
+     "en": "Example: a stuffed toy squeezes easily; a rock doesn’t."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige una predicción y un «porque».",
+     "en": "Pick a prediction and a “because”."
+    },
+    "wrong": {
+     "es": "Elige una de las opciones.",
+     "en": "Pick one of the options."
+    },
+    "ok": {
+     "es": "Anotaste tu predicción. Ahora vamos a agrupar.",
+     "en": "You wrote down your prediction. Now let’s group."
+    }
+   }
+  },
+  {
+   "id": "t4",
+   "kind": "predecir",
+   "ideaIds": [
+    "materiales.agrupar"
+   ],
+   "contextId": "madera",
+   "sessionId": "s5",
+   "standards": [
+    "2-PS1-1"
+   ],
+   "criterion": {
+    "es": "Predice si otro bloque del mismo material (madera) será duro o blando. Cualquier predicción es válida.",
+    "en": "Predicts whether another block of the same material (wood) will be hard or soft. Any prediction is valid."
+   },
+   "parts": [
+    {
+     "id": "resultado",
+     "prompt": {
+      "es": "Llega otro bloque, también de madera. ¿Será duro o blando?",
+      "en": "Another block arrives, also made of wood. Will it be hard or soft?"
+     },
+     "options": [
+      {
+       "id": "duro",
+       "text": {
+        "es": "Duro, como el otro bloque.",
+        "en": "Hard, like the other block."
+       },
+       "valid": true
+      },
+      {
+       "id": "blando",
+       "text": {
+        "es": "Blando.",
+        "en": "Soft."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "No sé.",
+        "en": "I don’t know."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false,
+     "observedOptionId": "duro"
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "Porque…",
+      "en": "Because…"
+     },
+     "options": [
+      {
+       "id": "material",
+       "text": {
+        "es": "es del mismo material que el otro bloque.",
+        "en": "it is made of the same material as the other block."
+       },
+       "valid": true
+      },
+      {
+       "id": "chico",
+       "text": {
+        "es": "es más chiquito.",
+        "en": "it is smaller."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "todavía no estoy seguro.",
+        "en": "I’m not sure yet."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    }
+   ],
+   "hints": [
+    {
+     "es": "Piensa en el primer bloque de madera: ¿era duro o blando?",
+     "en": "Think of the first wood block: was it hard or soft?"
+    },
+    {
+     "es": "¿Cambia la dureza si el material es el mismo?",
+     "en": "Does the hardness change if the material is the same?"
+    },
+    {
+     "es": "Ejemplo: todas las cucharas de metal son duras.",
+     "en": "Example: all metal spoons are hard."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige una predicción y un «porque».",
+     "en": "Pick a prediction and a “because”."
+    },
+    "wrong": {
+     "es": "Elige una de las opciones.",
+     "en": "Pick one of the options."
+    },
+    "ok": {
+     "es": "Anotaste tu predicción. Ahora veamos qué pasa.",
+     "en": "You wrote down your prediction. Now let’s see what happens."
+    }
+   }
+  },
+  {
+   "id": "t5",
+   "kind": "evidencia",
+   "ideaIds": [
+    "materiales.agrupar"
+   ],
+   "contextId": "comparacion",
+   "sessionId": "s4",
+   "standards": [
+    "2-PS1-1"
+   ],
+   "criterion": {
+    "es": "Afirma que los objetos se agrupan distinto según la propiedad que se mira, apoya con los grupos hechos y limita la conclusión a lo probado.",
+    "en": "Claims that objects group differently depending on the property you look at, supports it with the groups made and limits the conclusion to what was tested."
+   },
+   "parts": [
+    {
+     "id": "afirmacion",
+     "prompt": {
+      "es": "Mi afirmación es…",
+      "en": "My claim is…"
+     },
+     "options": [
+      {
+       "id": "distinto",
+       "text": {
+        "es": "Los objetos se agrupan distinto según la propiedad que miro.",
+        "en": "Objects group differently depending on the property I look at."
+       },
+       "valid": true
+      },
+      {
+       "id": "igual",
+       "text": {
+        "es": "Los objetos siempre van en el mismo grupo.",
+        "en": "Objects always go in the same group."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira tus grupos: la pelota va con los blandos, pero por textura va con los lisos, junto a la cuchara.",
+        "en": "Look at your groups: the ball goes with the soft ones, but by texture it goes with the smooth ones, next to the spoon."
+       }
+      },
+      {
+       "id": "una",
+       "text": {
+        "es": "Solo se puede agrupar de una manera.",
+        "en": "You can only group one way."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Agrupaste por dureza, por textura y por brillo: son tres maneras.",
+        "en": "You grouped by hardness, texture and shine: that is three ways."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "evidencia",
+     "prompt": {
+      "es": "Mi evidencia es… (elige dos)",
+      "en": "My evidence is… (pick two)"
+     },
+     "options": [
+      {
+       "id": "dureza",
+       "text": {
+        "es": "Por dureza: la cuchara, el bloque y la taza son duros; la esponja, la pelota y la tela son blandas.",
+        "en": "By hardness: the spoon, the block and the cup are hard; the sponge, the ball and the cloth are soft."
+       },
+       "valid": true
+      },
+      {
+       "id": "brillo",
+       "text": {
+        "es": "Por brillo: solo la cuchara y la taza brillan.",
+        "en": "By shine: only the spoon and the cup are shiny."
+       },
+       "valid": true
+      },
+      {
+       "id": "colores",
+       "text": {
+        "es": "Algunos objetos son de colores.",
+        "en": "Some objects are colorful."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El color no fue la propiedad con la que agrupaste.",
+        "en": "Color wasn’t the property you grouped by."
+       }
+      },
+      {
+       "id": "una",
+       "text": {
+        "es": "Agrupé una sola vez.",
+        "en": "I only grouped once."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Agrupaste varias veces: esa es tu evidencia.",
+        "en": "You grouped several times: that is your evidence."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    },
+    {
+     "id": "limite",
+     "prompt": {
+      "es": "Esto lo probé con… (elige una)",
+      "en": "I tested this with… (pick one)"
+     },
+     "options": [
+      {
+       "id": "seis",
+       "text": {
+        "es": "seis objetos de casa y tres propiedades.",
+        "en": "six household objects and three properties."
+       },
+       "valid": true
+      },
+      {
+       "id": "todos",
+       "text": {
+        "es": "todos los objetos y todas las propiedades que existen.",
+        "en": "every object and every property that exists."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Solo probaste seis objetos y tres propiedades: no puedes asegurar lo de todos.",
+        "en": "You only tested six objects and three properties: you can’t be sure about everything."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira tus grupos: ¿dónde fue la pelota cada vez?",
+     "en": "Look at your groups: where did the ball go each time?"
+    },
+    {
+     "es": "Tu evidencia nombra dos maneras distintas de agrupar.",
+     "en": "Your evidence names two different ways to group."
+    },
+    {
+     "es": "Ejemplo: tus juguetes se pueden ordenar por color o por tamaño.",
+     "en": "Example: your toys can be sorted by color or by size."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Revisa tu explicación: mira qué parte se apoya en tus grupos.",
+     "en": "Check your explanation: see which part rests on your groups."
+    },
+    "ok": {
+     "es": "Tu afirmación, tu evidencia y su límite dicen lo mismo: así se sostiene una explicación.",
+     "en": "Your claim, your evidence and its limit say the same thing: that is how an explanation stands."
+    }
+   }
+  },
+  {
+   "id": "t6",
+   "kind": "modelo",
+   "ideaIds": [
+    "materiales.agrupar"
+   ],
+   "contextId": "dos",
+   "sessionId": "s5",
+   "standards": [
+    "2-PS1-1"
+   ],
+   "criterion": {
+    "es": "Usa dos propiedades a la vez para encontrar un objeto (blando y liso) y sabe que una sola propiedad deja varios.",
+    "en": "Uses two properties at once to find an object (soft and smooth) and knows that a single property leaves several."
+   },
+   "parts": [
+    {
+     "id": "objeto",
+     "prompt": {
+      "es": "¿Qué objeto es blando y liso a la vez?",
+      "en": "Which object is soft and smooth at the same time?"
+     },
+     "options": [
+      {
+       "id": "pelota",
+       "text": {
+        "es": "La pelota.",
+        "en": "The ball."
+       },
+       "valid": true
+      },
+      {
+       "id": "esponja",
+       "text": {
+        "es": "La esponja.",
+        "en": "The sponge."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "La esponja es blanda, pero es rugosa. Mira la tabla.",
+        "en": "The sponge is soft, but it is rough. Look at the table."
+       }
+      },
+      {
+       "id": "cuchara",
+       "text": {
+        "es": "La cuchara.",
+        "en": "The spoon."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "La cuchara es lisa, pero es dura. Mira la tabla.",
+        "en": "The spoon is smooth, but it is hard. Look at the table."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "evidencia",
+     "prompt": {
+      "es": "Mi evidencia es… (elige dos)",
+      "en": "My evidence is… (pick two)"
+     },
+     "options": [
+      {
+       "id": "blando",
+       "text": {
+        "es": "La pelota está en el grupo de los blandos.",
+        "en": "The ball is in the group of the soft ones."
+       },
+       "valid": true
+      },
+      {
+       "id": "liso",
+       "text": {
+        "es": "La pelota está en el grupo de los lisos.",
+        "en": "The ball is in the group of the smooth ones."
+       },
+       "valid": true
+      },
+      {
+       "id": "roja",
+       "text": {
+        "es": "La pelota es roja y blanca.",
+        "en": "The ball is red and white."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El color no dice si es blanda o lisa.",
+        "en": "Color doesn’t say whether it is soft or smooth."
+       }
+      },
+      {
+       "id": "grande",
+       "text": {
+        "es": "La pelota es grande.",
+        "en": "The ball is big."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El tamaño no dice si es blanda o lisa.",
+        "en": "Size doesn’t say whether it is soft or smooth."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    },
+    {
+     "id": "limite",
+     "prompt": {
+      "es": "Usé… (elige una)",
+      "en": "I used… (pick one)"
+     },
+     "options": [
+      {
+       "id": "dos",
+       "text": {
+        "es": "dos propiedades a la vez.",
+        "en": "two properties at once."
+       },
+       "valid": true
+      },
+      {
+       "id": "una",
+       "text": {
+        "es": "una sola propiedad.",
+        "en": "a single property."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Con una sola propiedad quedan varios objetos: tres son blandos y tres son lisos.",
+        "en": "With a single property several objects remain: three are soft and three are smooth."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Busca los blandos y luego, entre ellos, los lisos.",
+     "en": "Find the soft ones and then, among them, the smooth ones."
+    },
+    {
+     "es": "¿Qué objeto está en los dos grupos?",
+     "en": "Which object is in both groups?"
+    },
+    {
+     "es": "Ejemplo: para encontrar a un amigo, decir «lleva gorra» no basta; «gorra y mochila roja» ayuda más.",
+     "en": "Example: to find a friend, saying “wears a cap” isn’t enough; “cap and a red backpack” helps more."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Mira la tabla: ¿cuál es blando Y liso?",
+     "en": "Look at the table: which one is soft AND smooth?"
+    },
+    "ok": {
+     "es": "Usaste dos propiedades a la vez para encontrarlo: así se clasifica con cuidado.",
+     "en": "You used two properties at once to find it: that is how to classify carefully."
+    }
+   }
+  },
+  {
+   "id": "t7",
+   "kind": "transferir",
+   "ideaIds": [
+    "materiales.propiedades",
+    "materiales.agrupar"
+   ],
+   "contextId": "juguete",
+   "sessionId": "s6",
+   "standards": [
+    "2-PS1-1"
+   ],
+   "criterion": {
+    "es": "Usa lo aprendido en un caso nuevo: elige el objeto blando y liso para jugar y explica por qué con dos propiedades.",
+    "en": "Uses what was learned in a new case: picks the soft and smooth object to play with and explains why with two properties."
+   },
+   "parts": [
+    {
+     "id": "objeto",
+     "prompt": {
+      "es": "Maya busca algo blando y liso para jugar. ¿Cuál elige?",
+      "en": "Maya is looking for something soft and smooth to play with. Which one does she pick?"
+     },
+     "options": [
+      {
+       "id": "pelota",
+       "text": {
+        "es": "La pelota.",
+        "en": "The ball."
+       },
+       "valid": true
+      },
+      {
+       "id": "esponja",
+       "text": {
+        "es": "La esponja.",
+        "en": "The sponge."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "La esponja es blanda, pero rugosa.",
+        "en": "The sponge is soft, but rough."
+       }
+      },
+      {
+       "id": "taza",
+       "text": {
+        "es": "La taza.",
+        "en": "The cup."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "La taza es lisa, pero dura.",
+        "en": "The cup is smooth, but hard."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "¿Por qué?",
+      "en": "Why?"
+     },
+     "options": [
+      {
+       "id": "dos",
+       "text": {
+        "es": "Porque es blanda y lisa: cumple las dos propiedades.",
+        "en": "Because it is soft and smooth: it has both properties."
+       },
+       "valid": true
+      },
+      {
+       "id": "color",
+       "text": {
+        "es": "Porque es de colores.",
+        "en": "Because it is colorful."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El color no dice si es blanda o lisa.",
+        "en": "Color doesn’t say whether it is soft or smooth."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Piensa en tu tabla: ¿cuáles son blandos? ¿Y cuáles son lisos?",
+     "en": "Think of your table: which ones are soft? And which are smooth?"
+    },
+    {
+     "es": "¿Qué objeto está en los dos grupos?",
+     "en": "Which object is in both groups?"
+    },
+    {
+     "es": "Ejemplo: para una cama buscas algo blando y liso, como una sábana.",
+     "en": "Example: for a bed you look for something soft and smooth, like a sheet."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Piensa en las dos propiedades que busca Maya.",
+     "en": "Think of the two properties Maya wants."
+    },
+    "ok": {
+     "es": "Usaste lo que aprendiste en un caso nuevo: eso es usar una idea.",
+     "en": "You used what you learned in a new case: that is using an idea."
+    }
+   }
+  },
+  {
+   "id": "t8",
+   "kind": "reflexionar",
+   "ideaIds": [],
+   "contextId": "reflexion",
+   "sessionId": "s6",
+   "standards": [],
+   "criterion": {
+    "es": "Revisa su primera idea sobre cómo describir un objeto y dice si cambió. Cualquier respuesta honesta es válida.",
+    "en": "Revisits the first idea about how to describe an object and says whether it changed. Any honest answer is valid."
+   },
+   "parts": [
+    {
+     "id": "idea",
+     "prompt": {
+      "es": "Mi idea sobre cómo describir un objeto…",
+      "en": "My idea about how to describe an object…"
+     },
+     "options": [
+      {
+       "id": "cambio",
+       "text": {
+        "es": "cambió.",
+        "en": "changed."
+       },
+       "valid": true
+      },
+      {
+       "id": "igual",
+       "text": {
+        "es": "sigue igual.",
+        "en": "stayed the same."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "porque…",
+      "en": "because…"
+     },
+     "options": [
+      {
+       "id": "probe",
+       "text": {
+        "es": "miré seis objetos con la lupa y los agrupé de varias maneras.",
+        "en": "I looked at six objects with the lens and grouped them in several ways."
+       },
+       "valid": true
+      },
+      {
+       "id": "tabla",
+       "text": {
+        "es": "lo vi en mi tabla.",
+        "en": "I saw it in my table."
+       },
+       "valid": true
+      },
+      {
+       "id": "dijeron",
+       "text": {
+        "es": "alguien me lo dijo.",
+        "en": "someone told me."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Tú lo probaste: usa lo que viste.",
+        "en": "You tested it yourself: use what you saw."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira tu idea del principio.",
+     "en": "Look at your first idea."
+    },
+    {
+     "es": "¿Qué hiciste que te hizo pensar así?",
+     "en": "What did you do that made you think that?"
+    },
+    {
+     "es": "Ejemplo: si pensabas que solo importa el color, ¿qué otras propiedades usaste?",
+     "en": "Example: if you thought only color matters, what other properties did you use?"
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Piensa en algo que hiciste tú.",
+     "en": "Think of something you did yourself."
+    },
+    "ok": {
+     "es": "Revisar una idea con lo que hiciste es hacer ciencia.",
+     "en": "Revisiting an idea with what you did is doing science."
+    }
+   }
+  }
+ ],
+ "safety": {
+  "title": {
+   "es": "Objetos para mirar y agrupar (con un adulto)",
+   "en": "Objects to look at and group (with an adult)"
+  },
+  "enabledByParent": true,
+  "supervision": {
+   "es": "Un adulto presente durante toda la actividad (2.º, ≈ 7–8 años).",
+   "en": "An adult present during the whole activity (grade 2, about 7–8 years old)."
+  },
+  "materials": {
+   "es": "Seis objetos grandes y seguros de casa: una cuchara de metal, un bloque de madera, una esponja, una pelota de goma, una taza de cerámica y un trozo de tela; una lupa y tres bandejas.",
+   "en": "Six large, safe household objects: a metal spoon, a wooden block, a sponge, a rubber ball, a ceramic cup and a piece of cloth; a magnifying lens and three trays."
+  },
+  "place": {
+   "es": "Una mesa lisa y despejada, con las bandejas para los grupos.",
+   "en": "A smooth, clear table, with trays for the groups."
+  },
+  "hygiene": {
+   "es": "Lavarse las manos al terminar. Los objetos no se llevan a la boca.",
+   "en": "Wash hands afterwards. Objects don’t go in the mouth."
+  },
+  "closing": {
+   "es": "Guardar los objetos y contarlos para que no falte ninguno.",
+   "en": "Put the objects away and count them so none is missing."
+  },
+  "stopIf": [
+   {
+    "es": "Alguien se lleva un objeto a la boca.",
+    "en": "Someone puts an object in their mouth."
+   },
+   {
+    "es": "La taza o algo de vidrio se puede romper o está astillado.",
+    "en": "The cup or something made of glass could break or is chipped."
+   },
+   {
+    "es": "Hay objetos pequeños que se pueden tragar.",
+    "en": "There are small objects that could be swallowed."
+   },
+   {
+    "es": "El adulto no puede quedarse.",
+    "en": "The adult can’t stay."
+   }
+  ],
+  "excluded": {
+   "es": "Objetos pequeños que se puedan tragar, vidrio o cerámica rotos, objetos con filo y cualquier cosa que no sea segura para un niño de 2.º.",
+   "en": "Small objects that could be swallowed, broken glass or ceramic, sharp objects and anything not safe for a second grader."
+  },
+  "data": {
+   "es": "No requiere cámara, micrófono, fotos ni ubicación.",
+   "en": "Needs no camera, microphone, photos or location."
+  },
+  "digitalAlternative": {
+   "es": "Las sesiones S2, S3 y S5 en pantalla reemplazan la actividad completa.",
+   "en": "Sessions S2, S3 and S5 on screen replace the whole activity."
+  },
+  "review": "pendienteDocente"
+ },
+ "review": {
+  "status": "draftPendingTeacherReview",
+  "notes": "Ningún docente ha validado esta unidad. El código es candidato; solo lo ven los padres. Objetos grandes y seguros; nada a la boca."
+ }
+}

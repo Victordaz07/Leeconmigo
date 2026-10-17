@@ -1,0 +1,72 @@
+{
+ "project": "Kitewise",
+ "subject": "ciencia",
+ "batch": "tanda-2a",
+ "count": 7,
+ "format": "PNG original de GPT, sin recortar; se convierte a WebP (props y poses recortados a su silueta)",
+ "assets": [
+  {
+   "source": "cover_c1_u02.png",
+   "sha256": "9c27696d1a63556af4daf270bc454c640f8705248756b6b9a4721ce756a00992",
+   "bytes": 2159128,
+   "output": "apps/mobile/assets/ciencia/covers/cover_c1_u02.webp",
+   "outputBytes": 62634,
+   "width": 1152,
+   "height": 768
+  },
+  {
+   "source": "prop_caja_observacion.png",
+   "sha256": "d3a498c0acda77460a8a777097e0e468f71bc7202bd5b49f94e4cdff971504b7",
+   "bytes": 1244659,
+   "output": "apps/mobile/assets/ciencia/props/prop_caja_observacion.webp",
+   "outputBytes": 12622,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_linterna.png",
+   "sha256": "ab4468905b6692c8f79d679384f74786a1e4f97d79a1a6d866b06b7698aed7af",
+   "bytes": 789821,
+   "output": "apps/mobile/assets/ciencia/props/prop_linterna.webp",
+   "outputBytes": 17236,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_objeto_osito.png",
+   "sha256": "6624d9ccd02fc84c401da36b6151996522044de913f40ff5ec31d66e102ee769",
+   "bytes": 1543731,
+   "output": "apps/mobile/assets/ciencia/props/prop_objeto_osito.webp",
+   "outputBytes": 29752,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_objeto_pelota.png",
+   "sha256": "b406d04a720565b5dc815668b0cd6c9516b8967857527f98b51441904f692a17",
+   "bytes": 1176340,
+   "output": "apps/mobile/assets/ciencia/props/prop_objeto_pelota.webp",
+   "outputBytes": 23638,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_objeto_taza.png",
+   "sha256": "400674d0aa46f76231f6dce7faebc32a6a00ce65a4aa62d4768921d2ae4c0143",
+   "bytes": 1374460,
+   "output": "apps/mobile/assets/ciencia/props/prop_objeto_taza.webp",
+   "outputBytes": 25564,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "scene_c1_u02.png",
+   "sha256": "a9ca74a322266ed4af37cef185c6ccea59a39534f314d4038f7756e96f361f9e",
+   "bytes": 2107448,
+   "output": "apps/mobile/assets/ciencia/bg/scene_c1_u02.webp",
+   "outputBytes": 75068,
+   "width": 1536,
+   "height": 1024
+  }
+ ]
+}

@@ -1,0 +1,1748 @@
+{
+ "id": "C3-U05",
+ "grade": 3,
+ "area": "materia",
+ "title": {
+  "es": "Fuerzas y movimiento",
+  "en": "Forces and motion"
+ },
+ "question": {
+  "es": "¿Qué hace que algo cambie su movimiento?",
+  "en": "What makes something change how it moves?"
+ },
+ "standards": [
+  "3-PS2-1",
+  "3-PS2-2"
+ ],
+ "standardTasks": {
+  "3-PS2-1": [
+   "t1",
+   "t3",
+   "t5",
+   "t7"
+  ],
+  "3-PS2-2": [
+   "t2",
+   "t4",
+   "t6"
+  ]
+ },
+ "ideas": [
+  {
+   "id": "fuerzas.equilibrio",
+   "text": {
+    "es": "Si las fuerzas sobre un objeto son iguales y opuestas (equilibradas), su movimiento no cambia; si son desiguales, cambia hacia el lado de la fuerza más fuerte.",
+    "en": "If the forces on an object are equal and opposite (balanced), its motion doesn’t change; if they are unequal, it changes toward the side of the stronger force."
+   },
+   "misconception": {
+    "es": "Un objeto solo se mueve si lo empujan, aunque los empujones sean iguales por los dos lados.",
+    "en": "An object only moves if it is pushed, even when the pushes are equal from both sides."
+   },
+   "contexts": [
+    "carrito",
+    "cuerda",
+    "comparacion"
+   ]
+  },
+  {
+   "id": "movimiento.patron",
+   "text": {
+    "es": "Algunos movimientos siguen un patrón que se repite, y con ese patrón se puede predecir dónde estará el objeto después.",
+    "en": "Some motions follow a pattern that repeats, and with that pattern you can predict where the object will be next."
+   },
+   "misconception": {
+    "es": "No se puede saber dónde estará algo que se mueve: cada momento es distinto.",
+    "en": "You can’t know where something that moves will be: every moment is different."
+   },
+   "contexts": [
+    "pendulo",
+    "columpio"
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "es": "fuerza",
+   "en": "force",
+   "note": {
+    "es": "Un empujón o un jalón que puede hacer que algo se mueva, se detenga o cambie de dirección.",
+    "en": "A push or a pull that can make something move, stop or change direction."
+   }
+  },
+  {
+   "es": "equilibrada",
+   "en": "balanced",
+   "note": {
+    "es": "Cuando dos fuerzas son iguales y van en sentidos opuestos, y se compensan.",
+    "en": "When two forces are equal and go in opposite directions, and cancel each other."
+   }
+  },
+  {
+   "es": "patrón",
+   "en": "pattern",
+   "note": {
+    "es": "Algo que se repite de la misma manera, y por eso se puede predecir.",
+    "en": "Something that repeats the same way, and so can be predicted."
+   }
+  }
+ ],
+ "sessions": [
+  {
+   "id": "s1",
+   "title": {
+    "es": "El carrito que se mueve",
+    "en": "The cart that moves"
+   },
+   "objective": {
+    "es": "Mirar sin interpretar y decir una primera idea.",
+    "en": "Look without interpreting and share a first idea."
+   },
+   "steps": [
+    {
+     "id": "s1.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Sobre una mesa lisa hay un carrito de juguete. Mira lo que pasa cuando lo empujan.",
+      "en": "On a smooth table there is a toy cart. Watch what happens when it is pushed."
+     },
+     "scene": "patio",
+     "forces": {
+      "view": "cart",
+      "left": 0,
+      "right": 2,
+      "static": true
+     }
+    },
+    {
+     "id": "s1.2",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "Elige dos cosas que viste.",
+      "en": "Pick two things you saw."
+     },
+     "taskId": "t1",
+     "saves": "observación",
+     "scene": "patio",
+     "forces": {
+      "view": "cart",
+      "left": 0,
+      "right": 2,
+      "static": true
+     }
+    },
+    {
+     "id": "s1.3",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Creo que el carrito se movió porque…",
+      "en": "I think the cart moved because…"
+     },
+     "saves": "idea inicial",
+     "scene": "patio",
+     "choice": {
+      "id": "ideaInicial",
+      "multi": false,
+      "options": [
+       {
+        "id": "empujaron",
+        "text": {
+         "es": "lo empujaron.",
+         "en": "it was pushed."
+        }
+       },
+       {
+        "id": "solo",
+        "text": {
+         "es": "se movió solo.",
+         "en": "it moved by itself."
+        }
+       },
+       {
+        "id": "viento",
+        "text": {
+         "es": "sopló el viento.",
+         "en": "the wind blew."
+        }
+       },
+       {
+        "id": "nose",
+        "text": {
+         "es": "todavía no sé.",
+         "en": "I don’t know yet."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s1.4",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "¿Qué pasa si lo empujan desde los dos lados? Vamos a preguntar y probar.",
+      "en": "What happens if it is pushed from both sides? Let’s ask and test."
+     },
+     "scene": "patio"
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "title": {
+    "es": "Empujones iguales y distintos",
+    "en": "Equal and different pushes"
+   },
+   "objective": {
+    "es": "Cambiar solo los empujones y comparar con lo que predije.",
+    "en": "Change only the pushes and compare with what I predicted."
+   },
+   "steps": [
+    {
+     "id": "s2.1",
+     "phase": "observa",
+     "kind": "elegir",
+     "text": {
+      "es": "El carrito y la mesa son los mismos. ¿Qué vamos a cambiar?",
+      "en": "The cart and the table stay the same. What are we going to change?"
+     },
+     "saves": "qué cambia",
+     "scene": "patio",
+     "forces": {
+      "view": "cart",
+      "left": 0,
+      "right": 2,
+      "static": true
+     },
+     "choice": {
+      "id": "queCambia",
+      "multi": false,
+      "options": [
+       {
+        "id": "empujones",
+        "text": {
+         "es": "Cuántos empujones vienen de cada lado.",
+         "en": "How many pushes come from each side."
+        },
+        "expected": true
+       },
+       {
+        "id": "carrito",
+        "text": {
+         "es": "El carrito por otro más grande.",
+         "en": "The cart for a bigger one."
+        }
+       },
+       {
+        "id": "mesa",
+        "text": {
+         "es": "La mesa por una rugosa.",
+         "en": "The table for a rough one."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s2.2",
+     "phase": "explora",
+     "kind": "predecir",
+     "text": {
+      "es": "Doy 2 empujones hacia la derecha y 2 hacia la izquierda. ¿Qué hará el carrito? Porque…",
+      "en": "I give 2 pushes to the right and 2 to the left. What will the cart do? Because…"
+     },
+     "taskId": "t3",
+     "saves": "predicción",
+     "scene": "patio",
+     "forces": {
+      "view": "cart",
+      "left": 2,
+      "right": 2
+     }
+    },
+    {
+     "id": "s2.3",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Elige cuántos empujones de cada lado y suelta el carrito. Prueba tres combinaciones distintas.",
+      "en": "Pick how many pushes from each side and let the cart go. Try three different combinations."
+     },
+     "saves": "observación",
+     "scene": "patio",
+     "forces": {
+      "view": "cart",
+      "trials": 3
+     }
+    },
+    {
+     "id": "s2.4",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Compara lo que predijiste con lo que viste.",
+      "en": "Compare what you predicted with what you saw."
+     },
+     "saves": "comparación",
+     "scene": "patio",
+     "forces": {
+      "view": "cart",
+      "left": 2,
+      "right": 2,
+      "static": true
+     },
+     "choice": {
+      "id": "comparacion",
+      "multi": false,
+      "options": [
+       {
+        "id": "coincidio",
+        "text": {
+         "es": "Mi predicción coincidió.",
+         "en": "My prediction matched."
+        }
+       },
+       {
+        "id": "nocoincidio",
+        "text": {
+         "es": "Mi predicción no coincidió.",
+         "en": "My prediction didn’t match."
+        }
+       }
+      ],
+      "compareWith": {
+       "taskId": "t3",
+       "partId": "resultado"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "s3",
+   "title": {
+    "es": "Anotar y buscar el patrón",
+    "en": "Write it down and find the pattern"
+   },
+   "objective": {
+    "es": "Probar varias combinaciones, anotar lo que pasó y buscar el patrón.",
+    "en": "Test several combinations, write down what happened and look for the pattern."
+   },
+   "steps": [
+    {
+     "id": "s3.1",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Prueba cuatro combinaciones distintas de empujones.",
+      "en": "Try four different combinations of pushes."
+     },
+     "saves": "repetición",
+     "scene": "patio",
+     "forces": {
+      "view": "cart",
+      "trials": 4
+     }
+    },
+    {
+     "id": "s3.2",
+     "phase": "explora",
+     "kind": "registrar",
+     "text": {
+      "es": "Anota qué hizo el carrito con cada combinación.",
+      "en": "Write down what the cart did with each combination."
+     },
+     "saves": "tabla",
+     "scene": "patio",
+     "forces": {
+      "view": "cart"
+     }
+    },
+    {
+     "id": "s3.3",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Mira tu tabla. ¿Qué patrón ves?",
+      "en": "Look at your table. What pattern do you see?"
+     },
+     "saves": "patrón",
+     "scene": "patio",
+     "forces": {
+      "view": "cart",
+      "static": true
+     },
+     "choice": {
+      "id": "patron",
+      "multi": false,
+      "options": [
+       {
+        "id": "lado",
+        "text": {
+         "es": "El carrito se mueve hacia donde el empujón es más fuerte; con empujones iguales se queda quieto.",
+         "en": "The cart moves toward the stronger push; with equal pushes it stays still."
+        },
+        "expected": true
+       },
+       {
+        "id": "derecha",
+        "text": {
+         "es": "El carrito siempre se mueve hacia la derecha.",
+         "en": "The cart always moves to the right."
+        }
+       },
+       {
+        "id": "siempre",
+        "text": {
+         "es": "El carrito siempre se mueve, haya los empujones que haya.",
+         "en": "The cart always moves, whatever the pushes are."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s3.4",
+     "phase": "usa",
+     "kind": "elegir",
+     "text": {
+      "es": "¿Qué hace que el movimiento del carrito cambie?",
+      "en": "What makes the cart’s motion change?"
+     },
+     "saves": "explicación",
+     "scene": "patio",
+     "choice": {
+      "id": "cambia",
+      "multi": false,
+      "options": [
+       {
+        "id": "desiguales",
+        "text": {
+         "es": "Que los empujones de los dos lados sean desiguales: uno más fuerte que el otro.",
+         "en": "That the pushes from the two sides are unequal: one stronger than the other."
+        },
+        "expected": true
+       },
+       {
+        "id": "color",
+        "text": {
+         "es": "El color del carrito.",
+         "en": "The cart’s color."
+        }
+       },
+       {
+        "id": "nose",
+        "text": {
+         "es": "No sé.",
+         "en": "I don’t know."
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "s4",
+   "title": {
+    "es": "Explicar lo que vi",
+    "en": "Explaining what I saw"
+   },
+   "objective": {
+    "es": "Armar una explicación con mi tabla y decir con qué la probé.",
+    "en": "Build an explanation from my table and say what I tested it with."
+   },
+   "steps": [
+    {
+     "id": "s4.1",
+     "phase": "explica",
+     "kind": "texto",
+     "text": {
+      "es": "Palabras nuevas para explicar.",
+      "en": "New words to explain with."
+     },
+     "scene": "patio",
+     "glossary": [
+      "fuerza",
+      "equilibrada",
+      "patrón"
+     ]
+    },
+    {
+     "id": "s4.2",
+     "phase": "explica",
+     "kind": "afirmacion",
+     "text": {
+      "es": "Arma tu explicación: qué dices, qué lo prueba y con qué lo probaste.",
+      "en": "Build your explanation: what you say, what shows it and what you tested it with."
+     },
+     "taskId": "t5",
+     "saves": "explicación",
+     "scene": "patio",
+     "forces": {
+      "view": "cart",
+      "static": true
+     }
+    },
+    {
+     "id": "s4.3",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "Tu explicación queda como una página de tu cuaderno.",
+      "en": "Your explanation becomes a page in your notebook."
+     },
+     "saves": "entrada del cuaderno",
+     "scene": "patio"
+    }
+   ]
+  },
+  {
+   "id": "s5",
+   "title": {
+    "es": "Un movimiento que se repite",
+    "en": "A motion that repeats"
+   },
+   "objective": {
+    "es": "Buscar el patrón de un péndulo y usarlo para predecir.",
+    "en": "Find a pendulum’s pattern and use it to predict."
+   },
+   "steps": [
+    {
+     "id": "s5.1",
+     "phase": "observa",
+     "kind": "elegir",
+     "text": {
+      "es": "Miramos un péndulo durante seis latidos. Mira la tabla y elige dos cosas.",
+      "en": "We watched a pendulum for six beats. Look at the table and pick two things."
+     },
+     "taskId": "t2",
+     "saves": "observación",
+     "scene": "patio",
+     "forces": {
+      "view": "swing",
+      "ticks": 6,
+      "static": true
+     }
+    },
+    {
+     "id": "s5.2",
+     "phase": "explora",
+     "kind": "predecir",
+     "text": {
+      "es": "La bola está a la izquierda en el latido 0. ¿Dónde estará en el latido 7? Porque…",
+      "en": "The ball is on the left at beat 0. Where will it be at beat 7? Because…"
+     },
+     "taskId": "t4",
+     "saves": "predicción",
+     "scene": "patio",
+     "forces": {
+      "view": "swing",
+      "ticks": 1
+     }
+    },
+    {
+     "id": "s5.3",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Toca «Siguiente latido» y mira dónde está la bola en cada uno. Mira los seis latidos.",
+      "en": "Tap “Next beat” and see where the ball is at each one. Watch all six beats."
+     },
+     "saves": "observación",
+     "scene": "patio",
+     "forces": {
+      "view": "swing",
+      "trials": 6
+     }
+    },
+    {
+     "id": "s5.4",
+     "phase": "explica",
+     "kind": "afirmacion",
+     "text": {
+      "es": "Usa el patrón: ¿cómo se mueve un columpio vacío y dónde estará en el latido 10?",
+      "en": "Use the pattern: how does an empty swing move and where will it be at beat 10?"
+     },
+     "taskId": "t6",
+     "saves": "modelo",
+     "scene": "patio",
+     "forces": {
+      "view": "swing",
+      "ticks": 6,
+      "static": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "s6",
+   "title": {
+    "es": "Un problema para Maya",
+    "en": "A problem for Maya"
+   },
+   "objective": {
+    "es": "Usar lo aprendido en un caso nuevo y revisar mi primera idea.",
+    "en": "Use what I learned in a new case and revisit my first idea."
+   },
+   "steps": [
+    {
+     "id": "s6.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Maya y sus amigos juegan a jalar una cuerda. Un pañuelo en el medio marca quién gana.",
+      "en": "Maya and her friends play tug-of-war. A scarf in the middle shows who wins."
+     },
+     "scene": "patio"
+    },
+    {
+     "id": "s6.2",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "Cuando los dos equipos jalan igual, ¿qué pasa con el pañuelo y por qué? ¿Y si uno jala más fuerte?",
+      "en": "When both teams pull the same, what happens to the scarf and why? And if one pulls harder?"
+     },
+     "taskId": "t7",
+     "saves": "problema nuevo",
+     "scene": "patio"
+    },
+    {
+     "id": "s6.3",
+     "phase": "explica",
+     "kind": "reflexion",
+     "text": {
+      "es": "Vuelve a mirar tu primera idea. ¿Cambió?",
+      "en": "Look at your first idea again. Did it change?"
+     },
+     "taskId": "t8",
+     "saves": "reflexión",
+     "scene": "patio"
+    },
+    {
+     "id": "s6.4",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "Hoy descubriste que, si las fuerzas son iguales y opuestas, el movimiento no cambia; si son desiguales, cambia hacia el lado más fuerte. Y que un movimiento que se repite se puede predecir.",
+      "en": "Today you found out that, if the forces are equal and opposite, the motion doesn’t change; if they are unequal, it changes toward the stronger side. And that a motion that repeats can be predicted."
+     },
+     "saves": "resumen",
+     "scene": "patio"
+    }
+   ]
+  }
+ ],
+ "tasks": [
+  {
+   "id": "t1",
+   "kind": "observar",
+   "ideaIds": [
+    "fuerzas.equilibrio"
+   ],
+   "contextId": "carrito",
+   "sessionId": "s1",
+   "standards": [
+    "3-PS2-1"
+   ],
+   "criterion": {
+    "es": "Dice lo que ve sin inventar: el carrito se movió hacia la derecha, con 2 empujones hacia la derecha y ninguno hacia la izquierda.",
+    "en": "Says what they see without inventing: the cart moved to the right, with 2 pushes to the right and none to the left."
+   },
+   "parts": [
+    {
+     "id": "observaciones",
+     "prompt": {
+      "es": "Elige dos cosas que viste.",
+      "en": "Pick two things you saw."
+     },
+     "options": [
+      {
+       "id": "derecha",
+       "text": {
+        "es": "El carrito se movió hacia la derecha.",
+        "en": "The cart moved to the right."
+       },
+       "valid": true
+      },
+      {
+       "id": "dos",
+       "text": {
+        "es": "Había 2 empujones hacia la derecha y ninguno hacia la izquierda.",
+        "en": "There were 2 pushes to the right and none to the left."
+       },
+       "valid": true
+      },
+      {
+       "id": "izq",
+       "text": {
+        "es": "El carrito se movió hacia la izquierda.",
+        "en": "The cart moved to the left."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira de nuevo: el carrito se fue hacia la derecha.",
+        "en": "Look again: the cart went to the right."
+       }
+      },
+      {
+       "id": "quieto",
+       "text": {
+        "es": "El carrito se quedó quieto.",
+        "en": "The cart stayed still."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira de nuevo: el carrito sí se movió.",
+        "en": "Look again: the cart did move."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira hacia dónde se fue el carrito.",
+     "en": "Look at which way the cart went."
+    },
+    {
+     "es": "¿Cuántos empujones había de cada lado?",
+     "en": "How many pushes were there on each side?"
+    },
+    {
+     "es": "Ejemplo: si alguien te empuja desde atrás, te mueves hacia adelante.",
+     "en": "Example: if someone pushes you from behind, you move forward."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige dos cosas.",
+     "en": "Pick two things."
+    },
+    "wrong": {
+     "es": "Alguna de las cosas que elegiste no pasó. Mira de nuevo.",
+     "en": "Something you picked didn’t happen. Look again."
+    },
+    "ok": {
+     "es": "Observaste con cuidado: primero lo que pasó, después por qué.",
+     "en": "You looked carefully: first what happened, then why."
+    }
+   }
+  },
+  {
+   "id": "t2",
+   "kind": "observar",
+   "ideaIds": [
+    "movimiento.patron"
+   ],
+   "contextId": "pendulo",
+   "sessionId": "s5",
+   "standards": [
+    "3-PS2-2"
+   ],
+   "criterion": {
+    "es": "Dice lo que muestra la tabla del péndulo: la bola está a la izquierda en los latidos 0, 2 y 4 y a la derecha en 1, 3 y 5.",
+    "en": "Says what the pendulum table shows: the ball is on the left at beats 0, 2 and 4 and on the right at 1, 3 and 5."
+   },
+   "parts": [
+    {
+     "id": "observaciones",
+     "prompt": {
+      "es": "Elige dos cosas que ves en la tabla.",
+      "en": "Pick two things you see in the table."
+     },
+     "options": [
+      {
+       "id": "izq",
+       "text": {
+        "es": "La bola está a la izquierda en los latidos 0, 2 y 4.",
+        "en": "The ball is on the left at beats 0, 2 and 4."
+       },
+       "valid": true
+      },
+      {
+       "id": "der",
+       "text": {
+        "es": "La bola está a la derecha en los latidos 1, 3 y 5.",
+        "en": "The ball is on the right at beats 1, 3 and 5."
+       },
+       "valid": true
+      },
+      {
+       "id": "siempre",
+       "text": {
+        "es": "La bola siempre está a la izquierda.",
+        "en": "The ball is always on the left."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira la tabla: en los latidos 1, 3 y 5 está a la derecha.",
+        "en": "Look at the table: at beats 1, 3 and 5 it is on the right."
+       }
+      },
+      {
+       "id": "centro",
+       "text": {
+        "es": "La bola se queda quieta en el centro.",
+        "en": "The ball stays still in the middle."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira la tabla: la bola va de un lado a otro.",
+        "en": "Look at the table: the ball goes from one side to the other."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Lee la tabla latido por latido.",
+     "en": "Read the table beat by beat."
+    },
+    {
+     "es": "Mira los latidos pares (0, 2, 4) y los impares (1, 3, 5): ¿dónde está la bola en cada grupo?",
+     "en": "Look at the even beats (0, 2, 4) and the odd beats (1, 3, 5): where is the ball in each group?"
+    },
+    {
+     "es": "Ejemplo: un reloj de pared hace tic, tac, tic, tac: se repite.",
+     "en": "Example: a wall clock goes tick, tock, tick, tock: it repeats."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige dos cosas.",
+     "en": "Pick two things."
+    },
+    "wrong": {
+     "es": "Alguna de las cosas que elegiste no está en la tabla. Mírala de nuevo.",
+     "en": "Something you picked isn’t in the table. Look at it again."
+    },
+    "ok": {
+     "es": "Muy bien: miraste lo que muestra cada latido.",
+     "en": "Very good: you looked at what each beat shows."
+    }
+   }
+  },
+  {
+   "id": "t3",
+   "kind": "predecir",
+   "ideaIds": [
+    "fuerzas.equilibrio"
+   ],
+   "contextId": "carrito",
+   "sessionId": "s2",
+   "standards": [
+    "3-PS2-1"
+   ],
+   "criterion": {
+    "es": "Predice, antes de probar, qué hace el carrito con 2 empujones de cada lado y compara con honestidad. Cualquier predicción es válida.",
+    "en": "Predicts, before testing, what the cart does with 2 pushes from each side and compares honestly. Any prediction is valid."
+   },
+   "parts": [
+    {
+     "id": "resultado",
+     "prompt": {
+      "es": "Doy 2 empujones hacia la derecha y 2 hacia la izquierda. ¿Qué hará el carrito?",
+      "en": "I give 2 pushes to the right and 2 to the left. What will the cart do?"
+     },
+     "options": [
+      {
+       "id": "quieto",
+       "text": {
+        "es": "Se quedará quieto.",
+        "en": "It will stay still."
+       },
+       "valid": true
+      },
+      {
+       "id": "derecha",
+       "text": {
+        "es": "Se moverá hacia la derecha.",
+        "en": "It will move to the right."
+       },
+       "valid": true
+      },
+      {
+       "id": "izquierda",
+       "text": {
+        "es": "Se moverá hacia la izquierda.",
+        "en": "It will move to the left."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "No sé.",
+        "en": "I don’t know."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false,
+     "observedOptionId": "quieto"
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "Porque…",
+      "en": "Because…"
+     },
+     "options": [
+      {
+       "id": "iguales",
+       "text": {
+        "es": "los empujones son iguales y se compensan.",
+        "en": "the pushes are equal and cancel each other."
+       },
+       "valid": true
+      },
+      {
+       "id": "derecha",
+       "text": {
+        "es": "siempre gana el empujón de la derecha.",
+        "en": "the push from the right always wins."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "todavía no estoy seguro.",
+        "en": "I’m not sure yet."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    }
+   ],
+   "hints": [
+    {
+     "es": "Piensa en un tira y afloja donde los dos equipos jalan igual.",
+     "en": "Think of a tug-of-war where both teams pull the same."
+    },
+    {
+     "es": "Compara cuántos empujones vienen de cada lado.",
+     "en": "Compare how many pushes come from each side."
+    },
+    {
+     "es": "Ejemplo: dos amigos empujan una puerta desde lados opuestos con la misma fuerza: la puerta no se mueve.",
+     "en": "Example: two friends push a door from opposite sides with the same force: the door doesn’t move."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige una predicción y un «porque».",
+     "en": "Pick a prediction and a “because”."
+    },
+    "wrong": {
+     "es": "Elige una de las opciones.",
+     "en": "Pick one of the options."
+    },
+    "ok": {
+     "es": "Anotaste tu predicción. Ahora vamos a probarla.",
+     "en": "You wrote down your prediction. Now let’s test it."
+    }
+   }
+  },
+  {
+   "id": "t4",
+   "kind": "predecir",
+   "ideaIds": [
+    "movimiento.patron"
+   ],
+   "contextId": "pendulo",
+   "sessionId": "s5",
+   "standards": [
+    "3-PS2-2"
+   ],
+   "criterion": {
+    "es": "Usa el patrón del péndulo para predecir dónde estará la bola en el latido 7. Cualquier predicción es válida.",
+    "en": "Uses the pendulum’s pattern to predict where the ball will be at beat 7. Any prediction is valid."
+   },
+   "parts": [
+    {
+     "id": "resultado",
+     "prompt": {
+      "es": "La bola está a la izquierda en el latido 0. ¿Dónde estará en el latido 7?",
+      "en": "The ball is on the left at beat 0. Where will it be at beat 7?"
+     },
+     "options": [
+      {
+       "id": "derecha",
+       "text": {
+        "es": "A la derecha.",
+        "en": "On the right."
+       },
+       "valid": true
+      },
+      {
+       "id": "izquierda",
+       "text": {
+        "es": "A la izquierda.",
+        "en": "On the left."
+       },
+       "valid": true
+      },
+      {
+       "id": "centro",
+       "text": {
+        "es": "En el centro.",
+        "en": "In the middle."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "No sé.",
+        "en": "I don’t know."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false,
+     "observedOptionId": "derecha"
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "Porque…",
+      "en": "Because…"
+     },
+     "options": [
+      {
+       "id": "patron",
+       "text": {
+        "es": "la bola alterna izquierda y derecha, y los latidos impares están a la derecha.",
+        "en": "the ball alternates left and right, and the odd beats are on the right."
+       },
+       "valid": true
+      },
+      {
+       "id": "azar",
+       "text": {
+        "es": "no se puede saber: cada latido es distinto.",
+        "en": "you can’t know: every beat is different."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "todavía no estoy seguro.",
+        "en": "I’m not sure yet."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    }
+   ],
+   "hints": [
+    {
+     "es": "Piensa en el columpio: ¿va y viene siempre igual?",
+     "en": "Think of a swing: does it always go back and forth the same way?"
+    },
+    {
+     "es": "Mira en qué lado está la bola en cada latido y busca qué se repite.",
+     "en": "Look at which side the ball is on at each beat and find what repeats."
+    },
+    {
+     "es": "Ejemplo: si sabes que el recreo suena cada hora, puedes predecir cuándo sonará la próxima vez.",
+     "en": "Example: if you know the recess bell rings every hour, you can predict when it will ring next."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige una predicción y un «porque».",
+     "en": "Pick a prediction and a “because”."
+    },
+    "wrong": {
+     "es": "Elige una de las opciones.",
+     "en": "Pick one of the options."
+    },
+    "ok": {
+     "es": "Anotaste tu predicción. Ahora la comprobamos con los latidos.",
+     "en": "You wrote down your prediction. Now we check it with the beats."
+    }
+   }
+  },
+  {
+   "id": "t5",
+   "kind": "evidencia",
+   "ideaIds": [
+    "fuerzas.equilibrio"
+   ],
+   "contextId": "comparacion",
+   "sessionId": "s4",
+   "standards": [
+    "3-PS2-1"
+   ],
+   "criterion": {
+    "es": "Afirma que con empujones iguales el movimiento no cambia y con desiguales cambia hacia el lado más fuerte, apoya con la tabla y limita la conclusión a lo probado.",
+    "en": "Claims that with equal pushes the motion doesn’t change and with unequal ones it changes toward the stronger side, supports it with the table and limits the conclusion to what was tested."
+   },
+   "parts": [
+    {
+     "id": "afirmacion",
+     "prompt": {
+      "es": "Mi afirmación es…",
+      "en": "My claim is…"
+     },
+     "options": [
+      {
+       "id": "equilibrio",
+       "text": {
+        "es": "Si los empujones son iguales, el carrito no cambia su movimiento; si son desiguales, se mueve hacia el lado del empujón más fuerte.",
+        "en": "If the pushes are equal, the cart’s motion doesn’t change; if they are unequal, it moves toward the side of the stronger push."
+       },
+       "valid": true
+      },
+      {
+       "id": "siempre",
+       "text": {
+        "es": "El carrito siempre se mueve hacia la derecha.",
+        "en": "The cart always moves to the right."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira tu tabla: con 3 empujones hacia la izquierda y 1 hacia la derecha se movió hacia la izquierda.",
+        "en": "Look at your table: with 3 pushes to the left and 1 to the right it moved to the left."
+       }
+      },
+      {
+       "id": "nunca",
+       "text": {
+        "es": "El carrito se mueve aunque los empujones sean iguales.",
+        "en": "The cart moves even if the pushes are equal."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira tu tabla: con 2 empujones de cada lado se quedó quieto.",
+        "en": "Look at your table: with 2 pushes from each side it stayed still."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "evidencia",
+     "prompt": {
+      "es": "Mi evidencia es… (elige dos)",
+      "en": "My evidence is… (pick two)"
+     },
+     "options": [
+      {
+       "id": "iguales",
+       "text": {
+        "es": "Con 2 empujones de cada lado, el carrito se quedó quieto.",
+        "en": "With 2 pushes from each side, the cart stayed still."
+       },
+       "valid": true
+      },
+      {
+       "id": "desiguales",
+       "text": {
+        "es": "Con 3 empujones hacia la izquierda y 1 hacia la derecha, se movió 24 cm hacia la izquierda.",
+        "en": "With 3 pushes to the left and 1 to the right, it moved 24 cm to the left."
+       },
+       "valid": true
+      },
+      {
+       "id": "color",
+       "text": {
+        "es": "El carrito es rojo.",
+        "en": "The cart is red."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El color del carrito no explica por qué se mueve o no.",
+        "en": "The cart’s color doesn’t explain why it moves or not."
+       }
+      },
+      {
+       "id": "una",
+       "text": {
+        "es": "Probé una sola combinación.",
+        "en": "I only tested one combination."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Probaste varias combinaciones: esa es tu evidencia.",
+        "en": "You tested several combinations: that is your evidence."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    },
+    {
+     "id": "limite",
+     "prompt": {
+      "es": "Esto lo probé con… (elige una)",
+      "en": "I tested this with… (pick one)"
+     },
+     "options": [
+      {
+       "id": "este",
+       "text": {
+        "es": "este carrito, en una mesa lisa, con hasta 3 empujones de cada lado.",
+        "en": "this cart, on a smooth table, with up to 3 pushes from each side."
+       },
+       "valid": true
+      },
+      {
+       "id": "todo",
+       "text": {
+        "es": "todos los objetos, sobre cualquier superficie.",
+        "en": "all objects, on any surface."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Solo probaste un carrito en una mesa lisa: no puedes asegurar lo de todos los objetos.",
+        "en": "You only tested one cart on a smooth table: you can’t be sure about every object."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira tu tabla: ¿qué pasó cuando los empujones eran iguales? ¿Y cuando no?",
+     "en": "Look at your table: what happened when the pushes were equal? And when they weren’t?"
+    },
+    {
+     "es": "Tu evidencia nombra un caso con empujones iguales y otro con desiguales.",
+     "en": "Your evidence names one case with equal pushes and one with unequal ones."
+    },
+    {
+     "es": "Ejemplo: si pruebas una sola pelota, no sabes cómo ruedan todas.",
+     "en": "Example: if you test only one ball, you don’t know how all of them roll."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Revisa tu explicación: mira qué parte se apoya en tu tabla.",
+     "en": "Check your explanation: see which part rests on your table."
+    },
+    "ok": {
+     "es": "Tu afirmación, tu evidencia y su límite dicen lo mismo: así se sostiene una explicación.",
+     "en": "Your claim, your evidence and its limit say the same thing: that is how an explanation stands."
+    }
+   }
+  },
+  {
+   "id": "t6",
+   "kind": "modelo",
+   "ideaIds": [
+    "movimiento.patron"
+   ],
+   "contextId": "columpio",
+   "sessionId": "s5",
+   "standards": [
+    "3-PS2-2"
+   ],
+   "criterion": {
+    "es": "Usa el patrón del péndulo para explicar y predecir el movimiento de un columpio vacío que se mece, y limita su conclusión.",
+    "en": "Uses the pendulum’s pattern to explain and predict the motion of an empty swing rocking, and limits its conclusion."
+   },
+   "parts": [
+    {
+     "id": "patron",
+     "prompt": {
+      "es": "Un columpio vacío se mece como el péndulo. Su movimiento…",
+      "en": "An empty swing rocks like the pendulum. Its motion…"
+     },
+     "options": [
+      {
+       "id": "alterna",
+       "text": {
+        "es": "sigue un patrón que se repite: izquierda, derecha, izquierda, derecha…",
+        "en": "follows a pattern that repeats: left, right, left, right…"
+       },
+       "valid": true
+      },
+      {
+       "id": "azar",
+       "text": {
+        "es": "es distinto cada vez y no se puede saber.",
+        "en": "is different every time and can’t be known."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Tu tabla mostró que se repite cada dos latidos: se puede predecir.",
+        "en": "Your table showed it repeats every two beats: it can be predicted."
+       }
+      },
+      {
+       "id": "lado",
+       "text": {
+        "es": "se queda siempre del mismo lado.",
+        "en": "stays on the same side all the time."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira tu tabla: va de la izquierda a la derecha.",
+        "en": "Look at your table: it goes from left to right."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "prediccion",
+     "prompt": {
+      "es": "Si en el latido 0 está a la izquierda, en el latido 10 estará…",
+      "en": "If at beat 0 it is on the left, at beat 10 it will be…"
+     },
+     "options": [
+      {
+       "id": "izq",
+       "text": {
+        "es": "a la izquierda.",
+        "en": "on the left."
+       },
+       "valid": true
+      },
+      {
+       "id": "der",
+       "text": {
+        "es": "a la derecha.",
+        "en": "on the right."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Los latidos pares (0, 2, 4…) están a la izquierda: el 10 es par.",
+        "en": "Even beats (0, 2, 4…) are on the left: 10 is even."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "evidencia",
+     "prompt": {
+      "es": "Mi evidencia es… (elige dos)",
+      "en": "My evidence is… (pick two)"
+     },
+     "options": [
+      {
+       "id": "tabla",
+       "text": {
+        "es": "En mi tabla, la bola estuvo a la izquierda en los latidos 0, 2 y 4 y a la derecha en 1, 3 y 5.",
+        "en": "In my table, the ball was on the left at beats 0, 2 and 4 and on the right at 1, 3 and 5."
+       },
+       "valid": true
+      },
+      {
+       "id": "repite",
+       "text": {
+        "es": "El patrón se repitió cada 2 latidos.",
+        "en": "The pattern repeated every 2 beats."
+       },
+       "valid": true
+      },
+      {
+       "id": "color",
+       "text": {
+        "es": "La bola es azul.",
+        "en": "The ball is blue."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El color de la bola no dice dónde estará después.",
+        "en": "The ball’s color doesn’t say where it will be next."
+       }
+      },
+      {
+       "id": "hilo",
+       "text": {
+        "es": "El hilo es delgado.",
+        "en": "The string is thin."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El grosor del hilo no explica el patrón que viste.",
+        "en": "The thickness of the string doesn’t explain the pattern you saw."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    },
+    {
+     "id": "limite",
+     "prompt": {
+      "es": "Esto sirve para… (elige una)",
+      "en": "This works for… (pick one)"
+     },
+     "options": [
+      {
+       "id": "este",
+       "text": {
+        "es": "un movimiento que se repite, como este péndulo, mientras nadie lo empuje.",
+        "en": "a motion that repeats, like this pendulum, as long as nobody pushes it."
+       },
+       "valid": true
+      },
+      {
+       "id": "todo",
+       "text": {
+        "es": "todos los movimientos, aunque no se repitan.",
+        "en": "all motions, even if they don’t repeat."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "No todos los movimientos siguen un patrón: una pelota que rebota en el pasto no se repite igual.",
+        "en": "Not all motions follow a pattern: a ball bouncing on grass doesn’t repeat the same way."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira tu tabla: ¿qué se repite?",
+     "en": "Look at your table: what repeats?"
+    },
+    {
+     "es": "Si el patrón se repite cada 2 latidos, ¿cómo es el latido 10?",
+     "en": "If the pattern repeats every 2 beats, what is beat 10 like?"
+    },
+    {
+     "es": "Ejemplo: las luces de un semáforo se repiten en orden, así que sabes cuál sigue.",
+     "en": "Example: traffic lights repeat in order, so you know which comes next."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Piensa en lo que mostró tu tabla del péndulo.",
+     "en": "Think of what your pendulum table showed."
+    },
+    "ok": {
+     "es": "Usaste el patrón para predecir y dijiste hasta dónde sirve: así se concluye con cuidado.",
+     "en": "You used the pattern to predict and said how far it works: that is how to conclude carefully."
+    }
+   }
+  },
+  {
+   "id": "t7",
+   "kind": "transferir",
+   "ideaIds": [
+    "fuerzas.equilibrio"
+   ],
+   "contextId": "cuerda",
+   "sessionId": "s6",
+   "standards": [
+    "3-PS2-1"
+   ],
+   "criterion": {
+    "es": "Usa lo aprendido en un caso nuevo: un juego de jalar la cuerda con fuerzas iguales y luego desiguales.",
+    "en": "Uses what was learned in a new case: a tug-of-war with equal forces and then unequal ones."
+   },
+   "parts": [
+    {
+     "id": "igual",
+     "prompt": {
+      "es": "Dos equipos jalan una cuerda con la misma fuerza y el pañuelo del medio no se mueve. ¿Por qué?",
+      "en": "Two teams pull a rope with the same force and the scarf in the middle doesn’t move. Why?"
+     },
+     "options": [
+      {
+       "id": "equilibrio",
+       "text": {
+        "es": "Las fuerzas son iguales y opuestas (equilibradas), así que su movimiento no cambia.",
+        "en": "The forces are equal and opposite (balanced), so its motion doesn’t change."
+       },
+       "valid": true
+      },
+      {
+       "id": "nadie",
+       "text": {
+        "es": "Porque nadie está jalando.",
+        "en": "Because nobody is pulling."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Los dos equipos sí jalan: lo que pasa es que sus fuerzas son iguales y se compensan.",
+        "en": "Both teams are pulling: it’s just that their forces are equal and cancel out."
+       }
+      },
+      {
+       "id": "pesado",
+       "text": {
+        "es": "Porque el pañuelo es muy pesado.",
+        "en": "Because the scarf is very heavy."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El pañuelo es ligero: no se mueve porque las fuerzas se compensan.",
+        "en": "The scarf is light: it doesn’t move because the forces cancel out."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "desigual",
+     "prompt": {
+      "es": "Si un equipo jala más fuerte, ¿qué pasa con el pañuelo?",
+      "en": "If one team pulls harder, what happens to the scarf?"
+     },
+     "options": [
+      {
+       "id": "mueve",
+       "text": {
+        "es": "Se mueve hacia el lado del equipo más fuerte.",
+        "en": "It moves toward the side of the stronger team."
+       },
+       "valid": true
+      },
+      {
+       "id": "igual",
+       "text": {
+        "es": "Sigue sin moverse.",
+        "en": "It still doesn’t move."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Si las fuerzas ya no son iguales, el movimiento cambia: como el carrito con empujones desiguales.",
+        "en": "If the forces are no longer equal, the motion changes: just like the cart with unequal pushes."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Piensa en el carrito con 2 empujones de cada lado.",
+     "en": "Think of the cart with 2 pushes from each side."
+    },
+    {
+     "es": "¿Qué pasa con el movimiento cuando las fuerzas son iguales? ¿Y cuando no?",
+     "en": "What happens to the motion when the forces are equal? And when they aren’t?"
+    },
+    {
+     "es": "Ejemplo: dos niños en un sube y baja, del mismo peso, se quedan parejos.",
+     "en": "Example: two children on a seesaw, with the same weight, stay level."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Piensa en tu tabla del carrito: ¿qué hizo con empujones iguales y con desiguales?",
+     "en": "Think of your cart table: what did it do with equal and unequal pushes?"
+    },
+    "ok": {
+     "es": "Usaste lo que aprendiste con el carrito en un caso nuevo: eso es transferir una idea.",
+     "en": "You used what you learned with the cart in a new case: that is transferring an idea."
+    }
+   }
+  },
+  {
+   "id": "t8",
+   "kind": "reflexionar",
+   "ideaIds": [],
+   "contextId": "reflexion",
+   "sessionId": "s6",
+   "standards": [],
+   "criterion": {
+    "es": "Revisa su primera idea sobre por qué se mueve el carrito con lo que probó y dice si cambió. Cualquier respuesta honesta es válida.",
+    "en": "Revisits the first idea about why the cart moves using what they tested and says whether it changed. Any honest answer is valid."
+   },
+   "parts": [
+    {
+     "id": "idea",
+     "prompt": {
+      "es": "Mi idea sobre por qué se mueve algo…",
+      "en": "My idea about why something moves…"
+     },
+     "options": [
+      {
+       "id": "cambio",
+       "text": {
+        "es": "cambió.",
+        "en": "changed."
+       },
+       "valid": true
+      },
+      {
+       "id": "igual",
+       "text": {
+        "es": "sigue igual.",
+        "en": "stayed the same."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "porque…",
+      "en": "because…"
+     },
+     "options": [
+      {
+       "id": "probe",
+       "text": {
+        "es": "probé el carrito con empujones distintos y miré el péndulo.",
+        "en": "I tested the cart with different pushes and watched the pendulum."
+       },
+       "valid": true
+      },
+      {
+       "id": "tabla",
+       "text": {
+        "es": "lo vi en mis tablas.",
+        "en": "I saw it in my tables."
+       },
+       "valid": true
+      },
+      {
+       "id": "dijeron",
+       "text": {
+        "es": "alguien me lo dijo.",
+        "en": "someone told me."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Tú lo probaste: usa lo que viste.",
+        "en": "You tested it yourself: use what you saw."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira tu idea del principio.",
+     "en": "Look at your first idea."
+    },
+    {
+     "es": "¿Qué probaste que te hizo pensar así?",
+     "en": "What did you test that made you think that?"
+    },
+    {
+     "es": "Ejemplo: si pensabas que algo se mueve solo porque lo empujan, ¿qué pasó con empujones iguales?",
+     "en": "Example: if you thought something moves just because it is pushed, what happened with equal pushes?"
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Piensa en algo que probaste tú.",
+     "en": "Think of something you tested yourself."
+    },
+    "ok": {
+     "es": "Revisar una idea con lo que probaste es hacer ciencia.",
+     "en": "Revisiting an idea with what you tested is doing science."
+    }
+   }
+  }
+ ],
+ "safety": {
+  "title": {
+   "es": "Carrito y péndulo (con un adulto)",
+   "en": "Cart and pendulum (with an adult)"
+  },
+  "enabledByParent": true,
+  "supervision": {
+   "es": "Un adulto cerca durante toda la actividad (3.º, ≈ 8–9 años).",
+   "en": "An adult nearby during the whole activity (grade 3, about 8–9 years old)."
+  },
+  "materials": {
+   "es": "Un carrito de juguete liviano, una mesa lisa, y un péndulo hecho por el adulto con una bola liviana colgada de un hilo firme, lejos de la cara.",
+   "en": "A light toy cart, a smooth table, and a pendulum made by the adult with a light ball hanging from a firm string, away from faces."
+  },
+  "place": {
+   "es": "Una mesa lisa y despejada, lejos del borde, y un lugar donde el péndulo cuelgue sin golpear a nadie.",
+   "en": "A smooth, clear table away from the edge, and a spot where the pendulum can hang without hitting anyone."
+  },
+  "hygiene": {
+   "es": "Lavarse las manos al terminar.",
+   "en": "Wash hands afterwards."
+  },
+  "closing": {
+   "es": "Guardar el carrito y desarmar el péndulo; recoger todo del piso.",
+   "en": "Put the cart away and take the pendulum down; pick everything up from the floor."
+  },
+  "stopIf": [
+   {
+    "es": "El carrito se cae de la mesa o alguien lo lanza.",
+    "en": "The cart falls off the table or someone throws it."
+   },
+   {
+    "es": "El péndulo golpea a alguien o la bola es pesada o dura.",
+    "en": "The pendulum hits someone or the ball is heavy or hard."
+   },
+   {
+    "es": "Alguien jala o empuja con mucha fuerza a otra persona.",
+    "en": "Someone pulls or pushes another person hard."
+   },
+   {
+    "es": "El adulto no puede quedarse cerca.",
+    "en": "The adult can’t stay nearby."
+   }
+  ],
+  "excluded": {
+   "es": "Juegos de jalar la cuerda o empujar entre personas, péndulos con bolas duras o pesadas, y colgar nada de lugares inestables.",
+   "en": "Tug-of-war or pushing games between people, pendulums with hard or heavy balls, and hanging anything from unsteady places."
+  },
+  "data": {
+   "es": "No requiere cámara, micrófono, fotos ni ubicación.",
+   "en": "Needs no camera, microphone, photos or location."
+  },
+  "digitalAlternative": {
+   "es": "Las sesiones S2, S3 y S5 en pantalla reemplazan la actividad completa.",
+   "en": "Sessions S2, S3 and S5 on screen replace the whole activity."
+  },
+  "review": "pendienteDocente"
+ },
+ "review": {
+  "status": "draftPendingTeacherReview",
+  "notes": "Ningún docente ha validado esta unidad. Los códigos son candidatos; solo los ven los padres. Las fuerzas se cuentan como empujones, no se miden."
+ }
+}

@@ -4,3 +4,26 @@
  * por evidencia y repaso. Lo edita SOLO la cuenta de Ciencia (docs/14-MATERIAS-EN-PARALELO.md).
  */
 export const SUBJECT_ID = 'ciencia' as const;
+export * from './map.ts';
+export * from './labs/erosion.ts';
+export * from './datasets.ts';
+export * from './evidence.ts';
+export * from './unit.ts';
+export * from './progress.ts';
+export * from './labs/luz.ts';
+export * from './labs/materiales.ts';
+export * from './labs/termico.ts';
+export * from './labs/imanes.ts';
+export * from './labs/materia.ts';
+export * from './labs/mezclas.ts';
+export * from './labs/choques.ts';
+export * from './labs/fuerzas.ts';
+export * from './labs/caminos.ts';
+export * from './labs/clasificar.ts';
+export * from './labs/ciclo.ts';
+export * from './labs/particulas.ts';
+export * from './labs/clima.ts';
+export * from './labs/cambios.ts';
+export * from './labs/vibracion.ts';
+export * from './labs/transferencias.ts';
+export * from './labs/series.ts';

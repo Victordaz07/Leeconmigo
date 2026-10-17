@@ -1,0 +1,1700 @@
+{
+ "id": "C1-U03",
+ "grade": 1,
+ "area": "materia",
+ "title": {
+  "es": "Caminos de luz",
+  "en": "Paths of light"
+ },
+ "question": {
+  "es": "¿Qué deja pasar la luz?",
+  "en": "What lets light through?"
+ },
+ "standards": [
+  "1-PS4-3"
+ ],
+ "standardTasks": {
+  "1-PS4-3": [
+   "t1",
+   "t2",
+   "t3",
+   "t4",
+   "t5",
+   "t6",
+   "t7"
+  ]
+ },
+ "ideas": [
+  {
+   "id": "luz.pasa",
+   "text": {
+    "es": "La luz pasa toda, pasa un poco o no pasa, según el material que está en su camino; donde no pasa, se hace sombra.",
+    "en": "Light all passes, a little passes or none passes, depending on the material in its path; where it doesn’t pass, there is shade."
+   },
+   "misconception": {
+    "es": "La luz pasa igual por todos los materiales (o no pasa por ninguno).",
+    "en": "Light passes the same through every material (or doesn’t pass through any)."
+   },
+   "contexts": [
+    "marco",
+    "tabla",
+    "comparacion",
+    "parasol"
+   ]
+  },
+  {
+   "id": "luz.rebota",
+   "text": {
+    "es": "Algunos materiales brillantes y lisos, como el aluminio, hacen que la luz rebote.",
+    "en": "Some shiny, smooth materials, like aluminum foil, make the light bounce back."
+   },
+   "misconception": {
+    "es": "Si la luz no pasa, simplemente desaparece.",
+    "en": "If light doesn’t pass, it simply disappears."
+   },
+   "contexts": [
+    "aluminio",
+    "comparacion",
+    "cuchara"
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "es": "transparente",
+   "en": "transparent",
+   "note": {
+    "es": "Un material que deja pasar toda la luz y por el que se ve bien al otro lado.",
+    "en": "A material that lets all the light through and you can see clearly through it."
+   }
+  },
+  {
+   "es": "sombra",
+   "en": "shadow",
+   "note": {
+    "es": "El lugar oscuro que queda donde algo no deja pasar la luz.",
+    "en": "The dark place that is left where something doesn’t let the light through."
+   }
+  },
+  {
+   "es": "rebotar",
+   "en": "to bounce back",
+   "note": {
+    "es": "Cuando la luz choca con algo y vuelve hacia donde venía.",
+    "en": "When light hits something and goes back where it came from."
+   }
+  }
+ ],
+ "sessions": [
+  {
+   "id": "s1",
+   "title": {
+    "es": "La luz y el marco",
+    "en": "Light and the frame"
+   },
+   "objective": {
+    "es": "Mirar sin interpretar y decir una primera idea.",
+    "en": "Look without interpreting and share a first idea."
+   },
+   "steps": [
+    {
+     "id": "s1.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Una linterna alumbra una pared. Entre las dos hay un marco con plástico transparente. Mira lo que pasa con la luz.",
+      "en": "A flashlight shines on a wall. Between them there is a frame with clear plastic. Watch what happens to the light."
+     },
+     "scene": "sala",
+     "path": {
+      "material": "transparente",
+      "static": true
+     }
+    },
+    {
+     "id": "s1.2",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "Elige dos cosas que viste.",
+      "en": "Pick two things you saw."
+     },
+     "taskId": "t1",
+     "saves": "observación",
+     "scene": "sala",
+     "path": {
+      "material": "transparente",
+      "static": true
+     }
+    },
+    {
+     "id": "s1.3",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Creo que la luz…",
+      "en": "I think light…"
+     },
+     "saves": "idea inicial",
+     "scene": "sala",
+     "choice": {
+      "id": "ideaInicial",
+      "multi": false,
+      "options": [
+       {
+        "id": "todo",
+        "text": {
+         "es": "pasa por todo.",
+         "en": "goes through everything."
+        }
+       },
+       {
+        "id": "nada",
+        "text": {
+         "es": "no pasa por nada.",
+         "en": "doesn’t go through anything."
+        }
+       },
+       {
+        "id": "depende",
+        "text": {
+         "es": "pasa por algunas cosas y por otras no.",
+         "en": "goes through some things and not others."
+        }
+       },
+       {
+        "id": "nose",
+        "text": {
+         "es": "todavía no sé.",
+         "en": "I don’t know yet."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s1.4",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "¿Pasará igual por otros materiales? Vamos a preguntar y probar.",
+      "en": "Will it pass the same through other materials? Let’s ask and test."
+     },
+     "scene": "sala"
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "title": {
+    "es": "Probamos materiales",
+    "en": "Testing materials"
+   },
+   "objective": {
+    "es": "Cambiar solo el material y comparar con lo que predije.",
+    "en": "Change only the material and compare with what I predicted."
+   },
+   "steps": [
+    {
+     "id": "s2.1",
+     "phase": "observa",
+     "kind": "elegir",
+     "text": {
+      "es": "La linterna, la pared y el marco son los mismos. ¿Qué vamos a cambiar?",
+      "en": "The flashlight, the wall and the frame stay the same. What are we going to change?"
+     },
+     "saves": "qué cambia",
+     "scene": "sala",
+     "path": {
+      "material": "transparente",
+      "static": true
+     },
+     "choice": {
+      "id": "queCambia",
+      "multi": false,
+      "options": [
+       {
+        "id": "material",
+        "text": {
+         "es": "El material del marco.",
+         "en": "The material in the frame."
+        },
+        "expected": true
+       },
+       {
+        "id": "pared",
+        "text": {
+         "es": "La pared.",
+         "en": "The wall."
+        }
+       },
+       {
+        "id": "linterna",
+        "text": {
+         "es": "La linterna.",
+         "en": "The flashlight."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s2.2",
+     "phase": "explora",
+     "kind": "predecir",
+     "text": {
+      "es": "Pongo el papel de calco en el marco. ¿Qué pasará con la luz? Porque…",
+      "en": "I put the tracing paper in the frame. What will happen to the light? Because…"
+     },
+     "taskId": "t3",
+     "saves": "predicción",
+     "scene": "sala",
+     "path": {
+      "material": "calco"
+     }
+    },
+    {
+     "id": "s2.3",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Elige un material y enciende la linterna. Prueba tres materiales distintos.",
+      "en": "Pick a material and turn on the flashlight. Try three different materials."
+     },
+     "saves": "observación",
+     "scene": "sala",
+     "path": {
+      "trials": 3
+     }
+    },
+    {
+     "id": "s2.4",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Compara lo que predijiste con lo que viste.",
+      "en": "Compare what you predicted with what you saw."
+     },
+     "saves": "comparación",
+     "scene": "sala",
+     "path": {
+      "material": "calco",
+      "static": true
+     },
+     "choice": {
+      "id": "comparacion",
+      "multi": false,
+      "options": [
+       {
+        "id": "coincidio",
+        "text": {
+         "es": "Mi predicción coincidió.",
+         "en": "My prediction matched."
+        }
+       },
+       {
+        "id": "nocoincidio",
+        "text": {
+         "es": "Mi predicción no coincidió.",
+         "en": "My prediction didn’t match."
+        }
+       }
+      ],
+      "compareWith": {
+       "taskId": "t3",
+       "partId": "resultado"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "s3",
+   "title": {
+    "es": "Anotar y buscar el patrón",
+    "en": "Write it down and find the pattern"
+   },
+   "objective": {
+    "es": "Probar los cuatro materiales, anotar qué pasó y buscar el patrón.",
+    "en": "Test the four materials, write down what happened and look for the pattern."
+   },
+   "steps": [
+    {
+     "id": "s3.1",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Prueba los cuatro materiales, uno por uno.",
+      "en": "Test the four materials, one by one."
+     },
+     "saves": "repetición",
+     "scene": "sala",
+     "path": {
+      "trials": 4
+     }
+    },
+    {
+     "id": "s3.2",
+     "phase": "explora",
+     "kind": "registrar",
+     "text": {
+      "es": "Anota qué pasó con la luz en cada material.",
+      "en": "Write down what happened to the light with each material."
+     },
+     "saves": "tabla",
+     "scene": "sala",
+     "path": {}
+    },
+    {
+     "id": "s3.3",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Mira tu tabla. ¿Qué patrón ves?",
+      "en": "Look at your table. What pattern do you see?"
+     },
+     "saves": "patrón",
+     "scene": "sala",
+     "path": {
+      "static": true
+     },
+     "choice": {
+      "id": "patron",
+      "multi": false,
+      "options": [
+       {
+        "id": "depende",
+        "text": {
+         "es": "La luz pasa distinto según el material.",
+         "en": "The light passes differently depending on the material."
+        },
+        "expected": true
+       },
+       {
+        "id": "igual",
+        "text": {
+         "es": "La luz pasa igual por todos.",
+         "en": "The light passes the same through all of them."
+        }
+       },
+       {
+        "id": "nada",
+        "text": {
+         "es": "La luz no pasa por ninguno.",
+         "en": "The light doesn’t pass through any."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s3.4",
+     "phase": "usa",
+     "kind": "elegir",
+     "text": {
+      "es": "¿Qué se forma en la pared cuando la luz no pasa?",
+      "en": "What forms on the wall when the light doesn’t pass?"
+     },
+     "saves": "sombra",
+     "scene": "sala",
+     "path": {
+      "material": "cartulina",
+      "static": true
+     },
+     "choice": {
+      "id": "sombra",
+      "multi": false,
+      "options": [
+       {
+        "id": "sombra",
+        "text": {
+         "es": "Una sombra.",
+         "en": "A shadow."
+        },
+        "expected": true
+       },
+       {
+        "id": "luz",
+        "text": {
+         "es": "Más luz.",
+         "en": "More light."
+        }
+       },
+       {
+        "id": "nose",
+        "text": {
+         "es": "No sé.",
+         "en": "I don’t know."
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "s4",
+   "title": {
+    "es": "Explicar lo que vi",
+    "en": "Explaining what I saw"
+   },
+   "objective": {
+    "es": "Armar una explicación con mi tabla y decir con qué la probé.",
+    "en": "Build an explanation from my table and say what I tested it with."
+   },
+   "steps": [
+    {
+     "id": "s4.1",
+     "phase": "explica",
+     "kind": "texto",
+     "text": {
+      "es": "Palabras nuevas para explicar.",
+      "en": "New words to explain with."
+     },
+     "scene": "sala",
+     "glossary": [
+      "transparente",
+      "sombra",
+      "rebotar"
+     ]
+    },
+    {
+     "id": "s4.2",
+     "phase": "explica",
+     "kind": "afirmacion",
+     "text": {
+      "es": "Arma tu explicación: qué dices, qué lo prueba y con qué lo probaste.",
+      "en": "Build your explanation: what you say, what shows it and what you tested it with."
+     },
+     "taskId": "t5",
+     "saves": "explicación",
+     "scene": "sala",
+     "path": {
+      "static": true
+     }
+    },
+    {
+     "id": "s4.3",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "Tu explicación queda como una página de tu cuaderno.",
+      "en": "Your explanation becomes a page in your notebook."
+     },
+     "saves": "entrada del cuaderno",
+     "scene": "sala"
+    }
+   ]
+  },
+  {
+   "id": "s5",
+   "title": {
+    "es": "Una luz que rebota",
+    "en": "A light that bounces"
+   },
+   "objective": {
+    "es": "Mirar qué pasa con el aluminio y usarlo para explicar una cuchara.",
+    "en": "See what happens with the foil and use it to explain a spoon."
+   },
+   "steps": [
+    {
+     "id": "s5.1",
+     "phase": "observa",
+     "kind": "elegir",
+     "text": {
+      "es": "Probamos cuatro materiales. Mira la tabla y elige dos cosas.",
+      "en": "We tested four materials. Look at the table and pick two things."
+     },
+     "taskId": "t2",
+     "saves": "observación",
+     "scene": "sala",
+     "path": {
+      "static": true
+     }
+    },
+    {
+     "id": "s5.2",
+     "phase": "explora",
+     "kind": "predecir",
+     "text": {
+      "es": "Pongo el papel de aluminio en el marco. ¿Qué hará la luz? Porque…",
+      "en": "I put the aluminum foil in the frame. What will the light do? Because…"
+     },
+     "taskId": "t4",
+     "saves": "predicción",
+     "scene": "sala",
+     "path": {
+      "material": "aluminio"
+     }
+    },
+    {
+     "id": "s5.3",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Enciende la linterna con el papel de aluminio y mira qué hace la luz.",
+      "en": "Turn on the flashlight with the aluminum foil and see what the light does."
+     },
+     "saves": "observación",
+     "scene": "sala",
+     "path": {
+      "material": "aluminio",
+      "trials": 1
+     }
+    },
+    {
+     "id": "s5.4",
+     "phase": "explica",
+     "kind": "afirmacion",
+     "text": {
+      "es": "Una cuchara de metal brillante: ¿qué hará la luz? Explica con lo que viste.",
+      "en": "A shiny metal spoon: what will the light do? Explain with what you saw."
+     },
+     "taskId": "t6",
+     "saves": "explicación",
+     "scene": "sala",
+     "path": {
+      "static": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "s6",
+   "title": {
+    "es": "Un problema para Maya",
+    "en": "A problem for Maya"
+   },
+   "objective": {
+    "es": "Usar lo aprendido en un caso nuevo y revisar mi primera idea.",
+    "en": "Use what I learned in a new case and revisit my first idea."
+   },
+   "steps": [
+    {
+     "id": "s6.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Hace mucho sol y Maya quiere un parasol que le haga sombra.",
+      "en": "It is very sunny and Maya wants a sunshade that gives her shade."
+     },
+     "scene": "sala"
+    },
+    {
+     "id": "s6.2",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "¿Qué material usa Maya para el parasol y por qué?",
+      "en": "Which material does Maya use for the sunshade and why?"
+     },
+     "taskId": "t7",
+     "saves": "problema nuevo",
+     "scene": "sala"
+    },
+    {
+     "id": "s6.3",
+     "phase": "explica",
+     "kind": "reflexion",
+     "text": {
+      "es": "Vuelve a mirar tu primera idea. ¿Cambió?",
+      "en": "Look at your first idea again. Did it change?"
+     },
+     "taskId": "t8",
+     "saves": "reflexión",
+     "scene": "sala"
+    },
+    {
+     "id": "s6.4",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "Hoy descubriste que la luz pasa toda, pasa un poco, no pasa o rebota, según el material. Y donde no pasa, se hace sombra.",
+      "en": "Today you found out that light all passes, a little passes, none passes or bounces back, depending on the material. And where it doesn’t pass, there is shade."
+     },
+     "saves": "resumen",
+     "scene": "sala"
+    }
+   ]
+  }
+ ],
+ "tasks": [
+  {
+   "id": "t1",
+   "kind": "observar",
+   "ideaIds": [
+    "luz.pasa"
+   ],
+   "contextId": "marco",
+   "sessionId": "s1",
+   "standards": [
+    "1-PS4-3"
+   ],
+   "criterion": {
+    "es": "Dice lo que ve sin inventar: la luz de la linterna pasó por el marco y llegó a la pared.",
+    "en": "Says what they see without inventing: the flashlight’s light went through the frame and reached the wall."
+   },
+   "parts": [
+    {
+     "id": "observaciones",
+     "prompt": {
+      "es": "Elige dos cosas que viste.",
+      "en": "Pick two things you saw."
+     },
+     "options": [
+      {
+       "id": "llego",
+       "text": {
+        "es": "La luz llegó a la pared.",
+        "en": "The light reached the wall."
+       },
+       "valid": true
+      },
+      {
+       "id": "marco",
+       "text": {
+        "es": "La luz pasó por el marco.",
+        "en": "The light went through the frame."
+       },
+       "valid": true
+      },
+      {
+       "id": "sombra",
+       "text": {
+        "es": "Se hizo una sombra en la pared.",
+        "en": "A shadow formed on the wall."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira de nuevo: la pared se iluminó, no se hizo sombra.",
+        "en": "Look again: the wall lit up, no shadow formed."
+       }
+      },
+      {
+       "id": "nollego",
+       "text": {
+        "es": "La luz no llegó a la pared.",
+        "en": "The light didn’t reach the wall."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira de nuevo: la luz sí llegó a la pared.",
+        "en": "Look again: the light did reach the wall."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira la pared antes y después de encender la linterna.",
+     "en": "Look at the wall before and after turning on the flashlight."
+    },
+    {
+     "es": "¿Qué ves en la pared: luz o sombra?",
+     "en": "What do you see on the wall: light or shadow?"
+    },
+    {
+     "es": "Ejemplo: por una ventana limpia entra la luz del sol.",
+     "en": "Example: sunlight comes in through a clean window."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige dos cosas.",
+     "en": "Pick two things."
+    },
+    "wrong": {
+     "es": "Alguna de las cosas que elegiste no pasó. Mira de nuevo.",
+     "en": "Something you picked didn’t happen. Look again."
+    },
+    "ok": {
+     "es": "Observaste con cuidado: primero lo que pasó, después por qué.",
+     "en": "You looked carefully: first what happened, then why."
+    }
+   }
+  },
+  {
+   "id": "t2",
+   "kind": "observar",
+   "ideaIds": [
+    "luz.pasa"
+   ],
+   "contextId": "tabla",
+   "sessionId": "s5",
+   "standards": [
+    "1-PS4-3"
+   ],
+   "criterion": {
+    "es": "Dice lo que muestra la tabla: con el plástico transparente la luz pasa toda y con la cartulina no pasa.",
+    "en": "Says what the table shows: with the clear plastic all the light passes and with the cardstock none passes."
+   },
+   "parts": [
+    {
+     "id": "observaciones",
+     "prompt": {
+      "es": "Elige dos cosas que ves en la tabla.",
+      "en": "Pick two things you see in the table."
+     },
+     "options": [
+      {
+       "id": "toda",
+       "text": {
+        "es": "Con el plástico transparente, la luz pasa toda.",
+        "en": "With the clear plastic, all the light passes."
+       },
+       "valid": true
+      },
+      {
+       "id": "nada",
+       "text": {
+        "es": "Con la cartulina, la luz no pasa.",
+        "en": "With the cardstock, no light passes."
+       },
+       "valid": true
+      },
+      {
+       "id": "calco",
+       "text": {
+        "es": "Con el papel de calco, la luz no pasa.",
+        "en": "With the tracing paper, no light passes."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira la tabla: con el papel de calco la luz pasa un poco.",
+        "en": "Look at the table: with the tracing paper a little light passes."
+       }
+      },
+      {
+       "id": "alu",
+       "text": {
+        "es": "Con el papel de aluminio, la luz pasa toda.",
+        "en": "With the aluminum foil, all the light passes."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira la tabla: con el aluminio la luz rebota.",
+        "en": "Look at the table: with the foil the light bounces back."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Lee la tabla fila por fila.",
+     "en": "Read the table row by row."
+    },
+    {
+     "es": "Mira qué dice cada material.",
+     "en": "Look at what each material says."
+    },
+    {
+     "es": "Ejemplo: una cortina fina deja pasar un poco de luz y una gruesa, casi nada.",
+     "en": "Example: a thin curtain lets a little light through and a thick one, almost none."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige dos cosas.",
+     "en": "Pick two things."
+    },
+    "wrong": {
+     "es": "Alguna de las cosas que elegiste no está en la tabla. Mírala de nuevo.",
+     "en": "Something you picked isn’t in the table. Look at it again."
+    },
+    "ok": {
+     "es": "Muy bien: miraste lo que muestra cada fila.",
+     "en": "Very good: you looked at what each row shows."
+    }
+   }
+  },
+  {
+   "id": "t3",
+   "kind": "predecir",
+   "ideaIds": [
+    "luz.pasa"
+   ],
+   "contextId": "marco",
+   "sessionId": "s2",
+   "standards": [
+    "1-PS4-3"
+   ],
+   "criterion": {
+    "es": "Predice, antes de probar, cuánta luz pasa por el papel de calco y compara con honestidad. Cualquier predicción es válida.",
+    "en": "Predicts, before testing, how much light passes through the tracing paper and compares honestly. Any prediction is valid."
+   },
+   "parts": [
+    {
+     "id": "resultado",
+     "prompt": {
+      "es": "Pongo el papel de calco en el marco. ¿Qué pasará con la luz?",
+      "en": "I put the tracing paper in the frame. What will happen to the light?"
+     },
+     "options": [
+      {
+       "id": "toda",
+       "text": {
+        "es": "La luz pasará toda.",
+        "en": "All the light will pass."
+       },
+       "valid": true
+      },
+      {
+       "id": "poca",
+       "text": {
+        "es": "La luz pasará un poco.",
+        "en": "A little light will pass."
+       },
+       "valid": true
+      },
+      {
+       "id": "nada",
+       "text": {
+        "es": "La luz no pasará.",
+        "en": "No light will pass."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "No sé.",
+        "en": "I don’t know."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false,
+     "observedOptionId": "poca"
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "Porque…",
+      "en": "Because…"
+     },
+     "options": [
+      {
+       "id": "delgado",
+       "text": {
+        "es": "el papel es muy delgado y deja pasar un poco de luz.",
+        "en": "the paper is very thin and lets a little light through."
+       },
+       "valid": true
+      },
+      {
+       "id": "papel",
+       "text": {
+        "es": "es papel y el papel no deja pasar nada.",
+        "en": "it is paper and paper lets nothing through."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "todavía no estoy seguro.",
+        "en": "I’m not sure yet."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    }
+   ],
+   "hints": [
+    {
+     "es": "Piensa en una hoja de papel fina frente a una lámpara.",
+     "en": "Think of a thin sheet of paper in front of a lamp."
+    },
+    {
+     "es": "¿Es tan clara como el plástico transparente?",
+     "en": "Is it as clear as the clear plastic?"
+    },
+    {
+     "es": "Ejemplo: una cortina blanca deja entrar algo de luz, pero no ves a través de ella.",
+     "en": "Example: a white curtain lets some light in, but you can’t see through it."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige una predicción y un «porque».",
+     "en": "Pick a prediction and a “because”."
+    },
+    "wrong": {
+     "es": "Elige una de las opciones.",
+     "en": "Pick one of the options."
+    },
+    "ok": {
+     "es": "Anotaste tu predicción. Ahora vamos a probarla.",
+     "en": "You wrote down your prediction. Now let’s test it."
+    }
+   }
+  },
+  {
+   "id": "t4",
+   "kind": "predecir",
+   "ideaIds": [
+    "luz.rebota"
+   ],
+   "contextId": "aluminio",
+   "sessionId": "s5",
+   "standards": [
+    "1-PS4-3"
+   ],
+   "criterion": {
+    "es": "Predice qué hará la luz con el papel de aluminio. Cualquier predicción es válida.",
+    "en": "Predicts what the light will do with the aluminum foil. Any prediction is valid."
+   },
+   "parts": [
+    {
+     "id": "resultado",
+     "prompt": {
+      "es": "Pongo el papel de aluminio en el marco. ¿Qué hará la luz?",
+      "en": "I put the aluminum foil in the frame. What will the light do?"
+     },
+     "options": [
+      {
+       "id": "rebota",
+       "text": {
+        "es": "Rebotará y volverá hacia la linterna.",
+        "en": "It will bounce back toward the flashlight."
+       },
+       "valid": true
+      },
+      {
+       "id": "toda",
+       "text": {
+        "es": "Pasará toda.",
+        "en": "All of it will pass."
+       },
+       "valid": true
+      },
+      {
+       "id": "nada",
+       "text": {
+        "es": "No pasará y no volverá.",
+        "en": "It won’t pass and won’t come back."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "No sé.",
+        "en": "I don’t know."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false,
+     "observedOptionId": "rebota"
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "Porque…",
+      "en": "Because…"
+     },
+     "options": [
+      {
+       "id": "brilla",
+       "text": {
+        "es": "el aluminio es brillante, como un espejo.",
+        "en": "the foil is shiny, like a mirror."
+       },
+       "valid": true
+      },
+      {
+       "id": "papel",
+       "text": {
+        "es": "es papel y deja pasar la luz.",
+        "en": "it is paper and lets the light through."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "todavía no estoy seguro.",
+        "en": "I’m not sure yet."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    }
+   ],
+   "hints": [
+    {
+     "es": "Piensa en una cuchara de metal: ¿qué ves en ella?",
+     "en": "Think of a metal spoon: what do you see in it?"
+    },
+    {
+     "es": "¿El aluminio es como el plástico transparente?",
+     "en": "Is the foil like the clear plastic?"
+    },
+    {
+     "es": "Ejemplo: en un espejo ves tu cara porque la luz rebota.",
+     "en": "Example: in a mirror you see your face because the light bounces back."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige una predicción y un «porque».",
+     "en": "Pick a prediction and a “because”."
+    },
+    "wrong": {
+     "es": "Elige una de las opciones.",
+     "en": "Pick one of the options."
+    },
+    "ok": {
+     "es": "Anotaste tu predicción. Ahora veamos qué pasa.",
+     "en": "You wrote down your prediction. Now let’s see what happens."
+    }
+   }
+  },
+  {
+   "id": "t5",
+   "kind": "evidencia",
+   "ideaIds": [
+    "luz.pasa",
+    "luz.rebota"
+   ],
+   "contextId": "comparacion",
+   "sessionId": "s4",
+   "standards": [
+    "1-PS4-3"
+   ],
+   "criterion": {
+    "es": "Afirma que lo que pasa con la luz depende del material, apoya con la tabla y limita la conclusión a lo probado.",
+    "en": "Claims that what happens to the light depends on the material, supports it with the table and limits the conclusion to what was tested."
+   },
+   "parts": [
+    {
+     "id": "afirmacion",
+     "prompt": {
+      "es": "Mi afirmación es…",
+      "en": "My claim is…"
+     },
+     "options": [
+      {
+       "id": "depende",
+       "text": {
+        "es": "Depende del material: la luz pasa toda, pasa un poco, no pasa o rebota.",
+        "en": "It depends on the material: the light all passes, a little passes, none passes or it bounces back."
+       },
+       "valid": true
+      },
+      {
+       "id": "todos",
+       "text": {
+        "es": "La luz pasa igual por todos los materiales.",
+        "en": "Light passes the same through every material."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira tu tabla: con la cartulina la luz no pasó.",
+        "en": "Look at your table: with the cardstock the light didn’t pass."
+       }
+      },
+      {
+       "id": "ninguno",
+       "text": {
+        "es": "La luz no pasa por ningún material.",
+        "en": "Light doesn’t pass through any material."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira tu tabla: por el plástico transparente la luz pasó toda.",
+        "en": "Look at your table: through the clear plastic all the light passed."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "evidencia",
+     "prompt": {
+      "es": "Mi evidencia es… (elige dos)",
+      "en": "My evidence is… (pick two)"
+     },
+     "options": [
+      {
+       "id": "transparente",
+       "text": {
+        "es": "Con el plástico transparente, la luz pasó toda y la pared quedó iluminada.",
+        "en": "With the clear plastic, all the light passed and the wall lit up."
+       },
+       "valid": true
+      },
+      {
+       "id": "cartulina",
+       "text": {
+        "es": "Con la cartulina, la luz no pasó y se hizo sombra.",
+        "en": "With the cardstock, the light didn’t pass and a shadow formed."
+       },
+       "valid": true
+      },
+      {
+       "id": "verde",
+       "text": {
+        "es": "El marco es verde.",
+        "en": "The frame is green."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El color del marco no cambia lo que pasa con la luz.",
+        "en": "The frame’s color doesn’t change what happens to the light."
+       }
+      },
+      {
+       "id": "una",
+       "text": {
+        "es": "Probé un solo material.",
+        "en": "I only tested one material."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Probaste varios materiales: esa es tu evidencia.",
+        "en": "You tested several materials: that is your evidence."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    },
+    {
+     "id": "limite",
+     "prompt": {
+      "es": "Esto lo probé con… (elige una)",
+      "en": "I tested this with… (pick one)"
+     },
+     "options": [
+      {
+       "id": "cuatro",
+       "text": {
+        "es": "cuatro materiales delgados y una linterna.",
+        "en": "four thin materials and one flashlight."
+       },
+       "valid": true
+      },
+      {
+       "id": "todos",
+       "text": {
+        "es": "todos los materiales que existen.",
+        "en": "every material that exists."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Solo probaste cuatro materiales: no puedes asegurar lo de todos.",
+        "en": "You only tested four materials: you can’t be sure about every one."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira tu tabla: ¿qué pasó con cada material?",
+     "en": "Look at your table: what happened with each material?"
+    },
+    {
+     "es": "Tu evidencia nombra un material que deja pasar la luz y otro que no.",
+     "en": "Your evidence names one material that lets light through and another that doesn’t."
+    },
+    {
+     "es": "Ejemplo: si pruebas dos tipos de gorra, no sabes cómo son todas las gorras.",
+     "en": "Example: if you test two kinds of cap, you don’t know what every cap is like."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Revisa tu explicación: mira qué parte se apoya en tu tabla.",
+     "en": "Check your explanation: see which part rests on your table."
+    },
+    "ok": {
+     "es": "Tu afirmación, tu evidencia y su límite dicen lo mismo: así se sostiene una explicación.",
+     "en": "Your claim, your evidence and its limit say the same thing: that is how an explanation stands."
+    }
+   }
+  },
+  {
+   "id": "t6",
+   "kind": "modelo",
+   "ideaIds": [
+    "luz.rebota"
+   ],
+   "contextId": "cuchara",
+   "sessionId": "s5",
+   "standards": [
+    "1-PS4-3"
+   ],
+   "criterion": {
+    "es": "Usa lo que vio con el aluminio para explicar qué hará la luz con una cuchara de metal brillante y limita su conclusión.",
+    "en": "Uses what they saw with the foil to explain what the light will do with a shiny metal spoon and limits their conclusion."
+   },
+   "parts": [
+    {
+     "id": "afirmacion",
+     "prompt": {
+      "es": "La linterna alumbra una cuchara de metal brillante. La luz…",
+      "en": "The flashlight shines on a shiny metal spoon. The light…"
+     },
+     "options": [
+      {
+       "id": "rebota",
+       "text": {
+        "es": "rebota en la cuchara, como en el papel de aluminio.",
+        "en": "bounces off the spoon, like off the aluminum foil."
+       },
+       "valid": true
+      },
+      {
+       "id": "pasa",
+       "text": {
+        "es": "pasa por la cuchara, como por el plástico transparente.",
+        "en": "goes through the spoon, like through the clear plastic."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "La cuchara es de metal brillante: la luz no pasa por ella, rebota.",
+        "en": "The spoon is shiny metal: the light doesn’t go through it, it bounces back."
+       }
+      },
+      {
+       "id": "nada",
+       "text": {
+        "es": "no hace nada.",
+        "en": "does nothing."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Con el aluminio la luz rebotó: con la cuchara brillante pasa algo parecido.",
+        "en": "With the foil the light bounced back: with the shiny spoon something similar happens."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "evidencia",
+     "prompt": {
+      "es": "Mi evidencia es… (elige dos)",
+      "en": "My evidence is… (pick two)"
+     },
+     "options": [
+      {
+       "id": "aluminio",
+       "text": {
+        "es": "Con el papel de aluminio, la luz rebotó.",
+        "en": "With the aluminum foil, the light bounced back."
+       },
+       "valid": true
+      },
+      {
+       "id": "brillante",
+       "text": {
+        "es": "El aluminio y la cuchara son brillantes.",
+        "en": "The foil and the spoon are shiny."
+       },
+       "valid": true
+      },
+      {
+       "id": "larga",
+       "text": {
+        "es": "La cuchara es larga.",
+        "en": "The spoon is long."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El largo de la cuchara no dice qué hará la luz.",
+        "en": "The spoon’s length doesn’t say what the light will do."
+       }
+      },
+      {
+       "id": "mango",
+       "text": {
+        "es": "La cuchara tiene mango.",
+        "en": "The spoon has a handle."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El mango no dice qué hará la luz.",
+        "en": "The handle doesn’t say what the light will do."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    },
+    {
+     "id": "limite",
+     "prompt": {
+      "es": "Esto sirve para… (elige una)",
+      "en": "This works for… (pick one)"
+     },
+     "options": [
+      {
+       "id": "parecido",
+       "text": {
+        "es": "un material parecido: brillante y liso.",
+        "en": "a similar material: shiny and smooth."
+       },
+       "valid": true
+      },
+      {
+       "id": "todo",
+       "text": {
+        "es": "cualquier cosa de metal, brillante o no.",
+        "en": "anything made of metal, shiny or not."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Solo probaste el aluminio brillante: un metal opaco y rugoso podría rebotar menos luz.",
+        "en": "You only tested shiny foil: a dull, rough metal might bounce back less light."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Piensa en el papel de aluminio: ¿qué hizo la luz?",
+     "en": "Think of the aluminum foil: what did the light do?"
+    },
+    {
+     "es": "¿En qué se parecen la cuchara y el aluminio?",
+     "en": "How are the spoon and the foil alike?"
+    },
+    {
+     "es": "Ejemplo: en una cuchara brillante ves tu cara chiquita porque la luz rebota.",
+     "en": "Example: in a shiny spoon you see your tiny face because the light bounces back."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Piensa en lo que mostró tu tabla con el aluminio.",
+     "en": "Think of what your table showed with the foil."
+    },
+    "ok": {
+     "es": "Usaste lo que viste con el aluminio para explicar la cuchara y dijiste hasta dónde sirve.",
+     "en": "You used what you saw with the foil to explain the spoon and said how far it works."
+    }
+   }
+  },
+  {
+   "id": "t7",
+   "kind": "transferir",
+   "ideaIds": [
+    "luz.pasa"
+   ],
+   "contextId": "parasol",
+   "sessionId": "s6",
+   "standards": [
+    "1-PS4-3"
+   ],
+   "criterion": {
+    "es": "Elige el material para un parasol que hace sombra y explica por qué, con lo que probó.",
+    "en": "Picks the material for a sunshade that makes shade and explains why, using what they tested."
+   },
+   "parts": [
+    {
+     "id": "material",
+     "prompt": {
+      "es": "Maya quiere un parasol que le haga sombra. ¿Qué material usa?",
+      "en": "Maya wants a sunshade that gives her shade. Which material does she use?"
+     },
+     "options": [
+      {
+       "id": "cartulina",
+       "text": {
+        "es": "Uno que no deja pasar la luz, como la cartulina.",
+        "en": "One that doesn’t let light through, like cardstock."
+       },
+       "valid": true
+      },
+      {
+       "id": "transparente",
+       "text": {
+        "es": "Uno como el plástico transparente.",
+        "en": "One like the clear plastic."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Por el plástico transparente pasa toda la luz: no hace sombra.",
+        "en": "All the light passes through the clear plastic: it makes no shade."
+       }
+      },
+      {
+       "id": "calco",
+       "text": {
+        "es": "Uno como el papel de calco.",
+        "en": "One like the tracing paper."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Por el calco pasa un poco de luz: la sombra sería muy débil.",
+        "en": "A little light passes through the tracing paper: the shade would be very faint."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "¿Por qué?",
+      "en": "Why?"
+     },
+     "options": [
+      {
+       "id": "nopasa",
+       "text": {
+        "es": "Porque la luz no pasa y se hace sombra.",
+        "en": "Because the light doesn’t pass and a shadow forms."
+       },
+       "valid": true
+      },
+      {
+       "id": "bonito",
+       "text": {
+        "es": "Porque es más bonito.",
+        "en": "Because it is prettier."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Lo que importa para la sombra es si la luz pasa o no.",
+        "en": "What matters for shade is whether the light passes or not."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Piensa en tu tabla: ¿con qué material se hizo sombra?",
+     "en": "Think of your table: with which material did a shadow form?"
+    },
+    {
+     "es": "¿La luz pasa o no pasa por el material que sirve para dar sombra?",
+     "en": "Does the light pass or not through the material that gives shade?"
+    },
+    {
+     "es": "Ejemplo: debajo de un árbol hay sombra porque las hojas no dejan pasar el sol.",
+     "en": "Example: under a tree there is shade because the leaves don’t let the sun through."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Piensa: ¿qué le pasa a la luz cuando hay sombra?",
+     "en": "Think: what happens to the light when there is shade?"
+    },
+    "ok": {
+     "es": "Usaste lo que aprendiste en un caso nuevo: eso es usar una idea.",
+     "en": "You used what you learned in a new case: that is using an idea."
+    }
+   }
+  },
+  {
+   "id": "t8",
+   "kind": "reflexionar",
+   "ideaIds": [],
+   "contextId": "reflexion",
+   "sessionId": "s6",
+   "standards": [],
+   "criterion": {
+    "es": "Revisa su primera idea sobre qué pasa con la luz y dice si cambió. Cualquier respuesta honesta es válida.",
+    "en": "Revisits the first idea about what happens to light and says whether it changed. Any honest answer is valid."
+   },
+   "parts": [
+    {
+     "id": "idea",
+     "prompt": {
+      "es": "Mi idea sobre la luz…",
+      "en": "My idea about light…"
+     },
+     "options": [
+      {
+       "id": "cambio",
+       "text": {
+        "es": "cambió.",
+        "en": "changed."
+       },
+       "valid": true
+      },
+      {
+       "id": "igual",
+       "text": {
+        "es": "sigue igual.",
+        "en": "stayed the same."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "porque…",
+      "en": "because…"
+     },
+     "options": [
+      {
+       "id": "probe",
+       "text": {
+        "es": "probé cuatro materiales con la linterna.",
+        "en": "I tested four materials with the flashlight."
+       },
+       "valid": true
+      },
+      {
+       "id": "tabla",
+       "text": {
+        "es": "lo vi en mi tabla.",
+        "en": "I saw it in my table."
+       },
+       "valid": true
+      },
+      {
+       "id": "dijeron",
+       "text": {
+        "es": "alguien me lo dijo.",
+        "en": "someone told me."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Tú lo probaste: usa lo que viste.",
+        "en": "You tested it yourself: use what you saw."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira tu idea del principio.",
+     "en": "Look at your first idea."
+    },
+    {
+     "es": "¿Qué probaste que te hizo pensar así?",
+     "en": "What did you test that made you think that?"
+    },
+    {
+     "es": "Ejemplo: si pensabas que la luz pasa por todo, ¿qué pasó con la cartulina?",
+     "en": "Example: if you thought light passes through everything, what happened with the cardstock?"
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Piensa en algo que probaste tú.",
+     "en": "Think of something you tested yourself."
+    },
+    "ok": {
+     "es": "Revisar una idea con lo que probaste es hacer ciencia.",
+     "en": "Revisiting an idea with what you tested is doing science."
+    }
+   }
+  }
+ ],
+ "safety": {
+  "title": {
+   "es": "Linterna y marcos (con un adulto)",
+   "en": "Flashlight and frames (with an adult)"
+  },
+  "enabledByParent": true,
+  "supervision": {
+   "es": "Un adulto presente durante toda la actividad (1.º, ≈ 6–7 años).",
+   "en": "An adult present during the whole activity (grade 1, about 6–7 years old)."
+  },
+  "materials": {
+   "es": "Una linterna de luz suave, una pared lisa y clara, y cuatro marcos de cartón con una lámina cada uno: plástico transparente, papel de calco, cartulina y papel de aluminio liso (sin bordes cortantes).",
+   "en": "A soft-light flashlight, a smooth light wall, and four cardboard frames with one sheet each: clear plastic, tracing paper, cardstock and smooth aluminum foil (no sharp edges)."
+  },
+  "place": {
+   "es": "Un cuarto con poca luz, sin espejos grandes y lejos de ventanas con mucho sol.",
+   "en": "A dim room, without big mirrors and away from very sunny windows."
+  },
+  "hygiene": {
+   "es": "Lavarse las manos al terminar.",
+   "en": "Wash hands afterwards."
+  },
+  "closing": {
+   "es": "Guardar la linterna y los marcos; tirar el aluminio arrugado a la basura.",
+   "en": "Put the flashlight and frames away; throw crumpled foil in the trash."
+  },
+  "stopIf": [
+   {
+    "es": "Alguien apunta la linterna a los ojos de otra persona.",
+    "en": "Someone points the flashlight at another person’s eyes."
+   },
+   {
+    "es": "Alguien mira el sol o una luz muy fuerte a través de un material.",
+    "en": "Someone looks at the sun or a very strong light through a material."
+   },
+   {
+    "es": "El papel de aluminio tiene bordes que pueden cortar.",
+    "en": "The aluminum foil has edges that could cut."
+   },
+   {
+    "es": "El adulto no puede quedarse.",
+    "en": "The adult can’t stay."
+   }
+  ],
+  "excluded": {
+   "es": "Linternas muy potentes, láseres, mirar el sol, espejos rotos y cualquier lámina con bordes cortantes.",
+   "en": "Very powerful flashlights, lasers, looking at the sun, broken mirrors and any sheet with sharp edges."
+  },
+  "data": {
+   "es": "No requiere cámara, micrófono, fotos ni ubicación.",
+   "en": "Needs no camera, microphone, photos or location."
+  },
+  "digitalAlternative": {
+   "es": "Las sesiones S2, S3 y S5 en pantalla reemplazan la actividad completa.",
+   "en": "Sessions S2, S3 and S5 on screen replace the whole activity."
+  },
+  "review": "pendienteDocente"
+ },
+ "review": {
+  "status": "draftPendingTeacherReview",
+  "notes": "Ningún docente ha validado esta unidad. El código es candidato; solo lo ven los padres. Nunca se apunta la linterna a los ojos."
+ }
+}

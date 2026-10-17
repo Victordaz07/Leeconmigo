@@ -1,0 +1,1708 @@
+{
+ "id": "C4-U02",
+ "grade": 4,
+ "area": "materia",
+ "title": {
+  "es": "Energía en movimiento",
+  "en": "Energy in motion"
+ },
+ "question": {
+  "es": "¿Qué muestran los choques?",
+  "en": "What do collisions show?"
+ },
+ "standards": [
+  "4-PS3-1",
+  "4-PS3-3"
+ ],
+ "standardTasks": {
+  "4-PS3-1": [
+   "t2",
+   "t3",
+   "t5",
+   "t7"
+  ],
+  "4-PS3-3": [
+   "t1",
+   "t4",
+   "t6",
+   "t7"
+  ]
+ },
+ "ideas": [
+  {
+   "id": "rapidez.energia",
+   "text": {
+    "es": "Cuanto más rápido se mueve un objeto, más energía de movimiento tiene: al chocar, empuja más lejos lo que golpea.",
+    "en": "The faster an object moves, the more energy of motion it has: when it hits, it pushes what it strikes farther."
+   },
+   "misconception": {
+    "es": "La altura o la rapidez no cambian lo que hace un objeto al chocar (o: pesa más porque está arriba).",
+    "en": "Height or speed don’t change what an object does when it hits (or: it weighs more because it is up high)."
+   },
+   "contexts": [
+    "tabla",
+    "alto",
+    "comparacion",
+    "carrito"
+   ]
+  },
+  {
+   "id": "choque.transfiere",
+   "text": {
+    "es": "En un choque, la energía de movimiento pasa de un objeto a otro y al sonido: el objeto golpeado se mueve y se oye un golpe; no desaparece.",
+    "en": "In a collision, energy of motion passes from one object to another and to sound: the struck object moves and a knock is heard; it doesn’t disappear."
+   },
+   "misconception": {
+    "es": "Cuando algo se detiene en un choque, su energía desaparece.",
+    "en": "When something stops in a collision, its energy disappears."
+   },
+   "contexts": [
+    "rampa",
+    "sonido",
+    "comparacion",
+    "carrito"
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "es": "energía",
+   "en": "energy",
+   "note": {
+    "es": "Lo que hace posible que algo se mueva o cambie; la que tiene un objeto en movimiento se llama energía de movimiento.",
+    "en": "What makes it possible for something to move or change; the energy of a moving object is called energy of motion."
+   }
+  },
+  {
+   "es": "rapidez",
+   "en": "speed",
+   "note": {
+    "es": "Qué tan rápido se mueve algo.",
+    "en": "How fast something moves."
+   }
+  },
+  {
+   "es": "choque",
+   "en": "collision",
+   "note": {
+    "es": "Cuando un objeto en movimiento golpea a otro y le pasa parte de su energía.",
+    "en": "When a moving object hits another and passes part of its energy to it."
+   }
+  }
+ ],
+ "sessions": [
+  {
+   "id": "s1",
+   "title": {
+    "es": "La bola que empuja",
+    "en": "The ball that pushes"
+   },
+   "objective": {
+    "es": "Mirar sin interpretar y decir una primera idea.",
+    "en": "Look without interpreting and share a first idea."
+   },
+   "steps": [
+    {
+     "id": "s1.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Una bola baja por la rampa y choca con un bloque de madera. Mira lo que pasa.",
+      "en": "A ball rolls down the ramp and hits a wooden block. Watch what happens."
+     },
+     "scene": "mesaRampa",
+     "ramp": {
+      "mark": 3,
+      "static": true
+     }
+    },
+    {
+     "id": "s1.2",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "Elige dos cosas que viste.",
+      "en": "Pick two things you saw."
+     },
+     "taskId": "t1",
+     "saves": "observación",
+     "scene": "mesaRampa",
+     "ramp": {
+      "mark": 3,
+      "static": true
+     }
+    },
+    {
+     "id": "s1.3",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Creo que el bloque se movió porque…",
+      "en": "I think the block moved because…"
+     },
+     "saves": "idea inicial",
+     "scene": "mesaRampa",
+     "choice": {
+      "id": "ideaInicial",
+      "multi": false,
+      "options": [
+       {
+        "id": "bola",
+        "text": {
+         "es": "la bola, que venía rodando, lo empujó.",
+         "en": "the ball, which was rolling, pushed it."
+        }
+       },
+       {
+        "id": "viento",
+        "text": {
+         "es": "sopló el viento.",
+         "en": "the wind blew."
+        }
+       },
+       {
+        "id": "nose",
+        "text": {
+         "es": "todavía no sé.",
+         "en": "I don’t know yet."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s1.4",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "¿Pasará lo mismo si soltamos la bola más arriba? Vamos a preguntar y probar.",
+      "en": "Will the same happen if we let the ball go from higher up? Let’s ask and test."
+     },
+     "scene": "mesaRampa"
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "title": {
+    "es": "Más alto, más rápido",
+    "en": "Higher, faster"
+   },
+   "objective": {
+    "es": "Cambiar solo la altura y comparar con lo que predije.",
+    "en": "Change only the height and compare with what I predicted."
+   },
+   "steps": [
+    {
+     "id": "s2.1",
+     "phase": "observa",
+     "kind": "elegir",
+     "text": {
+      "es": "La bola, el bloque y la rampa son los mismos. ¿Qué vamos a cambiar?",
+      "en": "The ball, the block and the ramp stay the same. What are we going to change?"
+     },
+     "saves": "qué cambia",
+     "scene": "mesaRampa",
+     "ramp": {
+      "mark": 2,
+      "static": true
+     },
+     "choice": {
+      "id": "queCambia",
+      "multi": false,
+      "options": [
+       {
+        "id": "altura",
+        "text": {
+         "es": "La altura desde la que se suelta la bola.",
+         "en": "The height the ball is released from."
+        },
+        "expected": true
+       },
+       {
+        "id": "bola",
+        "text": {
+         "es": "La bola por otra más grande.",
+         "en": "The ball for a bigger one."
+        }
+       },
+       {
+        "id": "bloque",
+        "text": {
+         "es": "El bloque por otro más pesado.",
+         "en": "The block for a heavier one."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s2.2",
+     "phase": "explora",
+     "kind": "predecir",
+     "text": {
+      "es": "Si suelto la bola desde la marca 4, la más alta, ¿qué hará el bloque comparado con la marca 2? Porque…",
+      "en": "If I release the ball from mark 4, the highest, what will the block do compared with mark 2? Because…"
+     },
+     "taskId": "t3",
+     "saves": "predicción",
+     "scene": "mesaRampa",
+     "ramp": {
+      "mark": 4
+     }
+    },
+    {
+     "id": "s2.3",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Elige una marca y suelta la bola. Prueba tres marcas distintas.",
+      "en": "Pick a mark and release the ball. Try three different marks."
+     },
+     "saves": "observación",
+     "scene": "mesaRampa",
+     "ramp": {
+      "trials": 3
+     }
+    },
+    {
+     "id": "s2.4",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Compara lo que predijiste con lo que viste.",
+      "en": "Compare what you predicted with what you saw."
+     },
+     "saves": "comparación",
+     "scene": "mesaRampa",
+     "ramp": {
+      "mark": 4,
+      "static": true
+     },
+     "choice": {
+      "id": "comparacion",
+      "multi": false,
+      "options": [
+       {
+        "id": "coincidio",
+        "text": {
+         "es": "Mi predicción coincidió.",
+         "en": "My prediction matched."
+        }
+       },
+       {
+        "id": "nocoincidio",
+        "text": {
+         "es": "Mi predicción no coincidió.",
+         "en": "My prediction didn’t match."
+        }
+       }
+      ],
+      "compareWith": {
+       "taskId": "t3",
+       "partId": "resultado"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "s3",
+   "title": {
+    "es": "Anotar y buscar el patrón",
+    "en": "Write it down and find the pattern"
+   },
+   "objective": {
+    "es": "Probar las cuatro marcas, anotar las distancias y buscar el patrón.",
+    "en": "Test the four marks, write down the distances and look for the pattern."
+   },
+   "steps": [
+    {
+     "id": "s3.1",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Prueba las cuatro marcas, una por una.",
+      "en": "Test all four marks, one by one."
+     },
+     "saves": "repetición",
+     "scene": "mesaRampa",
+     "ramp": {
+      "trials": 4
+     }
+    },
+    {
+     "id": "s3.2",
+     "phase": "explora",
+     "kind": "registrar",
+     "text": {
+      "es": "Anota cuánto se deslizó el bloque desde cada marca.",
+      "en": "Write down how far the block slid from each mark."
+     },
+     "saves": "tabla",
+     "scene": "mesaRampa",
+     "ramp": {}
+    },
+    {
+     "id": "s3.3",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Mira tu tabla. ¿Qué patrón ves?",
+      "en": "Look at your table. What pattern do you see?"
+     },
+     "saves": "patrón",
+     "scene": "mesaRampa",
+     "ramp": {
+      "static": true
+     },
+     "choice": {
+      "id": "patron",
+      "multi": false,
+      "options": [
+       {
+        "id": "mas",
+        "text": {
+         "es": "Cuanto más alto se suelta la bola, más lejos se desliza el bloque.",
+         "en": "The higher the ball is released, the farther the block slides."
+        },
+        "expected": true
+       },
+       {
+        "id": "igual",
+        "text": {
+         "es": "El bloque se desliza lo mismo desde todas las marcas.",
+         "en": "The block slides the same from every mark."
+        }
+       },
+       {
+        "id": "menos",
+        "text": {
+         "es": "Cuanto más alto se suelta la bola, menos se desliza el bloque.",
+         "en": "The higher the ball is released, the less the block slides."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s3.4",
+     "phase": "usa",
+     "kind": "elegir",
+     "text": {
+      "es": "¿Por qué empuja más lejos la bola que se suelta desde más alto?",
+      "en": "Why does the ball released from higher up push farther?"
+     },
+     "saves": "explicación",
+     "scene": "mesaRampa",
+     "choice": {
+      "id": "porque",
+      "multi": false,
+      "options": [
+       {
+        "id": "rapida",
+        "text": {
+         "es": "Porque llega más rápido, y a más rapidez tiene más energía de movimiento.",
+         "en": "Because it arrives faster, and the faster it goes the more energy of motion it has."
+        },
+        "expected": true
+       },
+       {
+        "id": "pesa",
+        "text": {
+         "es": "Porque pesa más cuando está arriba.",
+         "en": "Because it weighs more when it is up high."
+        }
+       },
+       {
+        "id": "nose",
+        "text": {
+         "es": "No sé.",
+         "en": "I don’t know."
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "s4",
+   "title": {
+    "es": "Explicar lo que vi",
+    "en": "Explaining what I saw"
+   },
+   "objective": {
+    "es": "Armar una explicación con lo que medí y decir con qué la probé.",
+    "en": "Build an explanation from what I measured and say what I tested it with."
+   },
+   "steps": [
+    {
+     "id": "s4.1",
+     "phase": "explica",
+     "kind": "texto",
+     "text": {
+      "es": "Palabras nuevas para explicar.",
+      "en": "New words to explain with."
+     },
+     "scene": "mesaRampa",
+     "glossary": [
+      "energía",
+      "rapidez",
+      "choque"
+     ]
+    },
+    {
+     "id": "s4.2",
+     "phase": "explica",
+     "kind": "afirmacion",
+     "text": {
+      "es": "Arma tu explicación: qué dices, qué lo prueba y con qué lo probaste.",
+      "en": "Build your explanation: what you say, what shows it and what you tested it with."
+     },
+     "taskId": "t5",
+     "saves": "explicación",
+     "scene": "mesaRampa",
+     "ramp": {
+      "static": true
+     }
+    },
+    {
+     "id": "s4.3",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "Tu explicación queda como una página de tu cuaderno.",
+      "en": "Your explanation becomes a page in your notebook."
+     },
+     "saves": "entrada del cuaderno",
+     "scene": "mesaRampa"
+    }
+   ]
+  },
+  {
+   "id": "s5",
+   "title": {
+    "es": "¿A dónde va la energía?",
+    "en": "Where does the energy go?"
+   },
+   "objective": {
+    "es": "Mirar lo que pasa en el choque (bloque y sonido) y armar un modelo.",
+    "en": "Look at what happens in the hit (block and sound) and build a model."
+   },
+   "steps": [
+    {
+     "id": "s5.1",
+     "phase": "observa",
+     "kind": "elegir",
+     "text": {
+      "es": "Probamos las cuatro marcas. Mira la tabla y elige dos cosas.",
+      "en": "We tested the four marks. Look at the table and pick two things."
+     },
+     "taskId": "t2",
+     "saves": "observación",
+     "scene": "mesaRampa",
+     "ramp": {
+      "static": true
+     }
+    },
+    {
+     "id": "s5.2",
+     "phase": "explora",
+     "kind": "predecir",
+     "text": {
+      "es": "Si suelto la bola desde la marca 1, ¿cómo sonará el golpe comparado con el de la marca 4? Porque…",
+      "en": "If I release the ball from mark 1, how will the knock sound compared with mark 4? Because…"
+     },
+     "taskId": "t4",
+     "saves": "predicción",
+     "scene": "mesaRampa",
+     "ramp": {
+      "mark": 1
+     }
+    },
+    {
+     "id": "s5.3",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Suelta la bola desde dos marcas distintas y escucha cómo suena el golpe.",
+      "en": "Release the ball from two different marks and listen to how the knock sounds."
+     },
+     "saves": "observación",
+     "scene": "mesaRampa",
+     "ramp": {
+      "trials": 2
+     }
+    },
+    {
+     "id": "s5.4",
+     "phase": "explica",
+     "kind": "afirmacion",
+     "text": {
+      "es": "¿A dónde fue la energía de la bola? Arma tu modelo con lo que mediste y escuchaste.",
+      "en": "Where did the ball’s energy go? Build your model with what you measured and heard."
+     },
+     "taskId": "t6",
+     "saves": "modelo",
+     "scene": "mesaRampa",
+     "ramp": {
+      "static": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "s6",
+   "title": {
+    "es": "Un problema para Maya",
+    "en": "A problem for Maya"
+   },
+   "objective": {
+    "es": "Usar lo aprendido en un caso nuevo y revisar mi primera idea.",
+    "en": "Use what I learned in a new case and revisit my first idea."
+   },
+   "steps": [
+    {
+     "id": "s6.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Maya tiene un carrito de juguete y una cuesta, con una caja de cartón vacía al final.",
+      "en": "Maya has a toy cart and a slope, with an empty cardboard box at the end."
+     },
+     "scene": "mesaRampa"
+    },
+    {
+     "id": "s6.2",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "¿Cuándo empuja más lejos la caja el carrito y por qué?",
+      "en": "When does the cart push the box farther and why?"
+     },
+     "taskId": "t7",
+     "saves": "problema nuevo",
+     "scene": "mesaRampa"
+    },
+    {
+     "id": "s6.3",
+     "phase": "explica",
+     "kind": "reflexion",
+     "text": {
+      "es": "Vuelve a mirar tu primera idea. ¿Cambió?",
+      "en": "Look at your first idea again. Did it change?"
+     },
+     "taskId": "t8",
+     "saves": "reflexión",
+     "scene": "mesaRampa"
+    },
+    {
+     "id": "s6.4",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "Hoy descubriste que lo que baja más rápido tiene más energía de movimiento y, al chocar, se la pasa a lo que golpea: lo mueve y suena.",
+      "en": "Today you found out that what comes down faster has more energy of motion and, when it hits, passes it on to what it strikes: it moves it and makes a sound."
+     },
+     "saves": "resumen",
+     "scene": "mesaRampa"
+    }
+   ]
+  }
+ ],
+ "tasks": [
+  {
+   "id": "t1",
+   "kind": "observar",
+   "ideaIds": [
+    "choque.transfiere"
+   ],
+   "contextId": "rampa",
+   "sessionId": "s1",
+   "standards": [
+    "4-PS3-3"
+   ],
+   "criterion": {
+    "es": "Dice lo que ve sin inventar: la bola bajó, chocó con el bloque y el bloque se deslizó; se oyó un golpe.",
+    "en": "Says what they see without inventing: the ball rolled down, hit the block and the block slid; a knock was heard."
+   },
+   "parts": [
+    {
+     "id": "observaciones",
+     "prompt": {
+      "es": "Elige dos cosas que viste.",
+      "en": "Pick two things you saw."
+     },
+     "options": [
+      {
+       "id": "desliza",
+       "text": {
+        "es": "El bloque se deslizó después de que la bola chocó con él.",
+        "en": "The block slid after the ball hit it."
+       },
+       "valid": true
+      },
+      {
+       "id": "golpe",
+       "text": {
+        "es": "Se oyó un golpe cuando chocaron.",
+        "en": "A knock was heard when they hit."
+       },
+       "valid": true
+      },
+      {
+       "id": "solo",
+       "text": {
+        "es": "El bloque se movió solo, antes de que llegara la bola.",
+        "en": "The block moved by itself, before the ball arrived."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira de nuevo: el bloque se movió después del choque, no antes.",
+        "en": "Look again: the block moved after the hit, not before."
+       }
+      },
+      {
+       "id": "viento",
+       "text": {
+        "es": "Sopló un viento fuerte y movió el bloque.",
+        "en": "A strong wind blew and moved the block."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "No hubo viento en la escena. Mira de nuevo.",
+        "en": "There was no wind in the scene. Look again."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira el bloque antes y después de que llegue la bola.",
+     "en": "Look at the block before and after the ball arrives."
+    },
+    {
+     "es": "¿Qué pasó primero: el choque o el movimiento del bloque?",
+     "en": "What happened first: the hit or the block moving?"
+    },
+    {
+     "es": "Ejemplo: en los bolos, la bola tira los pinos al llegar a ellos.",
+     "en": "Example: in bowling, the ball knocks the pins over when it reaches them."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige dos cosas.",
+     "en": "Pick two things."
+    },
+    "wrong": {
+     "es": "Alguna de las cosas que elegiste no pasó. Mira de nuevo.",
+     "en": "Something you picked didn’t happen. Look again."
+    },
+    "ok": {
+     "es": "Observaste con cuidado: primero lo que pasó, después por qué.",
+     "en": "You looked carefully: first what happened, then why."
+    }
+   }
+  },
+  {
+   "id": "t2",
+   "kind": "observar",
+   "ideaIds": [
+    "rapidez.energia"
+   ],
+   "contextId": "tabla",
+   "sessionId": "s5",
+   "standards": [
+    "4-PS3-1"
+   ],
+   "criterion": {
+    "es": "Dice lo que muestra la tabla: desde la marca 1 el bloque se deslizó 4 cm y desde la marca 4, 22 cm.",
+    "en": "Says what the table shows: from mark 1 the block slid 4 cm and from mark 4, 22 cm."
+   },
+   "parts": [
+    {
+     "id": "observaciones",
+     "prompt": {
+      "es": "Elige dos cosas que ves en la tabla.",
+      "en": "Pick two things you see in the table."
+     },
+     "options": [
+      {
+       "id": "lejos",
+       "text": {
+        "es": "Desde la marca 4 el bloque se deslizó 22 cm.",
+        "en": "From mark 4 the block slid 22 cm."
+       },
+       "valid": true
+      },
+      {
+       "id": "cerca",
+       "text": {
+        "es": "Desde la marca 1 el bloque se deslizó 4 cm.",
+        "en": "From mark 1 the block slid 4 cm."
+       },
+       "valid": true
+      },
+      {
+       "id": "igual",
+       "text": {
+        "es": "El bloque se deslizó lo mismo desde todas las marcas.",
+        "en": "The block slid the same from every mark."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira la tabla: las distancias son distintas.",
+        "en": "Look at the table: the distances are different."
+       }
+      },
+      {
+       "id": "menos",
+       "text": {
+        "es": "Desde la marca 4 el bloque se deslizó menos que desde la 1.",
+        "en": "From mark 4 the block slid less than from mark 1."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira la tabla: desde la marca 4 se deslizó más.",
+        "en": "Look at the table: from mark 4 it slid more."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Lee la tabla fila por fila.",
+     "en": "Read the table row by row."
+    },
+    {
+     "es": "Compara la marca 1 con la marca 4: ¿cuál desliza más el bloque?",
+     "en": "Compare mark 1 with mark 4: which one slides the block more?"
+    },
+    {
+     "es": "Ejemplo: un balón pateado con más fuerza llega más lejos que uno pateado suave.",
+     "en": "Example: a ball kicked harder goes farther than one kicked softly."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige dos cosas.",
+     "en": "Pick two things."
+    },
+    "wrong": {
+     "es": "Alguna de las cosas que elegiste no está en la tabla. Mírala de nuevo.",
+     "en": "Something you picked isn’t in the table. Look at it again."
+    },
+    "ok": {
+     "es": "Muy bien: miraste los números de cada fila.",
+     "en": "Very good: you looked at the numbers in each row."
+    }
+   }
+  },
+  {
+   "id": "t3",
+   "kind": "predecir",
+   "ideaIds": [
+    "rapidez.energia"
+   ],
+   "contextId": "alto",
+   "sessionId": "s2",
+   "standards": [
+    "4-PS3-1"
+   ],
+   "criterion": {
+    "es": "Predice, antes de probar, qué hará el bloque si la bola se suelta desde la marca más alta y compara con honestidad. Cualquier predicción es válida.",
+    "en": "Predicts, before testing, what the block will do if the ball is released from the highest mark and compares honestly. Any prediction is valid."
+   },
+   "parts": [
+    {
+     "id": "resultado",
+     "prompt": {
+      "es": "Si suelto la bola desde la marca 4 (la más alta), ¿qué hará el bloque comparado con la marca 2?",
+      "en": "If I release the ball from mark 4 (the highest), what will the block do compared with mark 2?"
+     },
+     "options": [
+      {
+       "id": "mas",
+       "text": {
+        "es": "Se deslizará más lejos.",
+        "en": "It will slide farther."
+       },
+       "valid": true
+      },
+      {
+       "id": "igual",
+       "text": {
+        "es": "Se deslizará igual.",
+        "en": "It will slide the same."
+       },
+       "valid": true
+      },
+      {
+       "id": "menos",
+       "text": {
+        "es": "Se deslizará menos.",
+        "en": "It will slide less."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "No sé.",
+        "en": "I don’t know."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false,
+     "observedOptionId": "mas"
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "Porque…",
+      "en": "Because…"
+     },
+     "options": [
+      {
+       "id": "rapido",
+       "text": {
+        "es": "la bola llega más rápido y tiene más energía de movimiento.",
+        "en": "the ball arrives faster and has more energy of motion."
+       },
+       "valid": true
+      },
+      {
+       "id": "pesa",
+       "text": {
+        "es": "la bola pesa más cuando está más arriba.",
+        "en": "the ball weighs more when it is higher up."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "todavía no estoy seguro.",
+        "en": "I’m not sure yet."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    }
+   ],
+   "hints": [
+    {
+     "es": "Piensa en un tobogán: ¿bajas igual de rápido desde la mitad que desde arriba?",
+     "en": "Think of a slide: do you go down as fast from the middle as from the top?"
+    },
+    {
+     "es": "¿Qué cambia si sueltas la bola más arriba: la bola o la rapidez con que llega?",
+     "en": "What changes if you release the ball higher: the ball or how fast it arrives?"
+    },
+    {
+     "es": "Ejemplo: una pelota que cae desde más alto golpea el piso más fuerte.",
+     "en": "Example: a ball dropped from higher hits the floor harder."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige una predicción y un «porque».",
+     "en": "Pick a prediction and a “because”."
+    },
+    "wrong": {
+     "es": "Elige una de las opciones.",
+     "en": "Pick one of the options."
+    },
+    "ok": {
+     "es": "Anotaste tu predicción. Ahora vamos a probarla.",
+     "en": "You wrote down your prediction. Now let’s test it."
+    }
+   }
+  },
+  {
+   "id": "t4",
+   "kind": "predecir",
+   "ideaIds": [
+    "choque.transfiere"
+   ],
+   "contextId": "sonido",
+   "sessionId": "s5",
+   "standards": [
+    "4-PS3-3"
+   ],
+   "criterion": {
+    "es": "Predice cómo sonará el choque desde la marca más baja comparado con la más alta. Cualquier predicción es válida.",
+    "en": "Predicts how the hit will sound from the lowest mark compared with the highest. Any prediction is valid."
+   },
+   "parts": [
+    {
+     "id": "resultado",
+     "prompt": {
+      "es": "Si suelto la bola desde la marca 1, ¿cómo sonará el golpe comparado con el de la marca 4?",
+      "en": "If I release the ball from mark 1, how will the knock sound compared with mark 4?"
+     },
+     "options": [
+      {
+       "id": "suave",
+       "text": {
+        "es": "Más suave.",
+        "en": "Softer."
+       },
+       "valid": true
+      },
+      {
+       "id": "igual",
+       "text": {
+        "es": "Igual.",
+        "en": "The same."
+       },
+       "valid": true
+      },
+      {
+       "id": "fuerte",
+       "text": {
+        "es": "Más fuerte.",
+        "en": "Louder."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "No sé.",
+        "en": "I don’t know."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false,
+     "observedOptionId": "suave"
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "Porque…",
+      "en": "Because…"
+     },
+     "options": [
+      {
+       "id": "energia",
+       "text": {
+        "es": "en el choque parte de la energía de la bola pasa al sonido, y viene con menos energía.",
+        "en": "in the hit part of the ball’s energy goes into the sound, and it comes with less energy."
+       },
+       "valid": true
+      },
+      {
+       "id": "nada",
+       "text": {
+        "es": "el sonido no tiene que ver con la bola.",
+        "en": "the sound has nothing to do with the ball."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "todavía no estoy seguro.",
+        "en": "I’m not sure yet."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    }
+   ],
+   "hints": [
+    {
+     "es": "Piensa en aplaudir: ¿suena igual suave que fuerte?",
+     "en": "Think of clapping: does it sound the same soft and hard?"
+    },
+    {
+     "es": "¿Con qué rapidez llega la bola desde la marca 1?",
+     "en": "How fast does the ball arrive from mark 1?"
+    },
+    {
+     "es": "Ejemplo: una puerta que se cierra despacio casi no suena; si se cierra rápido, hace un golpe fuerte.",
+     "en": "Example: a door that closes slowly barely makes a sound; if it closes fast, it makes a loud knock."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige una predicción y un «porque».",
+     "en": "Pick a prediction and a “because”."
+    },
+    "wrong": {
+     "es": "Elige una de las opciones.",
+     "en": "Pick one of the options."
+    },
+    "ok": {
+     "es": "Anotaste tu predicción. Ahora vamos a escuchar.",
+     "en": "You wrote down your prediction. Now let’s listen."
+    }
+   }
+  },
+  {
+   "id": "t5",
+   "kind": "evidencia",
+   "ideaIds": [
+    "rapidez.energia",
+    "choque.transfiere"
+   ],
+   "contextId": "comparacion",
+   "sessionId": "s4",
+   "standards": [
+    "4-PS3-1"
+   ],
+   "criterion": {
+    "es": "Afirma que soltar la bola más arriba hace que empuje el bloque más lejos, apoya con las distancias medidas y limita la conclusión a lo probado (misma bola, mismo bloque).",
+    "en": "Claims that releasing the ball higher makes it push the block farther, supports it with the measured distances and limits the conclusion to what was tested (same ball, same block)."
+   },
+   "parts": [
+    {
+     "id": "afirmacion",
+     "prompt": {
+      "es": "Mi afirmación es…",
+      "en": "My claim is…"
+     },
+     "options": [
+      {
+       "id": "mas",
+       "text": {
+        "es": "Cuanto más alto se suelta la bola, más lejos empuja el bloque.",
+        "en": "The higher the ball is released, the farther it pushes the block."
+       },
+       "valid": true
+      },
+      {
+       "id": "igual",
+       "text": {
+        "es": "La altura no cambia lo lejos que empuja el bloque.",
+        "en": "The height doesn’t change how far the block is pushed."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira tu tabla: desde la marca 1 se deslizó 4 cm y desde la 4, 22 cm. Sí cambia.",
+        "en": "Look at your table: from mark 1 it slid 4 cm and from mark 4, 22 cm. It does change."
+       }
+      },
+      {
+       "id": "menos",
+       "text": {
+        "es": "Cuanto más alto se suelta la bola, menos lejos empuja el bloque.",
+        "en": "The higher the ball is released, the less far it pushes the block."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira tu tabla: desde la marca 4 se deslizó 22 cm, más que desde la 1.",
+        "en": "Look at your table: from mark 4 it slid 22 cm, more than from mark 1."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "evidencia",
+     "prompt": {
+      "es": "Mi evidencia es… (elige dos)",
+      "en": "My evidence is… (pick two)"
+     },
+     "options": [
+      {
+       "id": "cuatro",
+       "text": {
+        "es": "Desde la marca 4 el bloque se deslizó 22 cm.",
+        "en": "From mark 4 the block slid 22 cm."
+       },
+       "valid": true
+      },
+      {
+       "id": "uno",
+       "text": {
+        "es": "Desde la marca 1 el bloque se deslizó 4 cm.",
+        "en": "From mark 1 the block slid 4 cm."
+       },
+       "valid": true
+      },
+      {
+       "id": "color",
+       "text": {
+        "es": "La bola es roja y blanca.",
+        "en": "The ball is red and white."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El color de la bola no explica por qué el bloque se desliza más o menos.",
+        "en": "The ball’s color doesn’t explain why the block slides more or less."
+       }
+      },
+      {
+       "id": "una",
+       "text": {
+        "es": "Probé una sola marca.",
+        "en": "I only tested one mark."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Probaste varias marcas: esa es tu evidencia.",
+        "en": "You tested several marks: that is your evidence."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    },
+    {
+     "id": "limite",
+     "prompt": {
+      "es": "Esto lo probé con… (elige una)",
+      "en": "I tested this with… (pick one)"
+     },
+     "options": [
+      {
+       "id": "misma",
+       "text": {
+        "es": "la misma bola, el mismo bloque y cuatro alturas.",
+        "en": "the same ball, the same block and four heights."
+       },
+       "valid": true
+      },
+      {
+       "id": "todas",
+       "text": {
+        "es": "todas las bolas y todos los bloques.",
+        "en": "all balls and all blocks."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Solo probaste una bola y un bloque: si cambias también la bola, ya no sabes qué causó el cambio.",
+        "en": "You only tested one ball and one block: if you also change the ball, you no longer know what caused the change."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira tu tabla: ¿cuánto se deslizó el bloque desde cada marca?",
+     "en": "Look at your table: how far did the block slide from each mark?"
+    },
+    {
+     "es": "Tu evidencia son las distancias de dos marcas distintas.",
+     "en": "Your evidence is the distances from two different marks."
+    },
+    {
+     "es": "Ejemplo: si pruebas un solo tipo de bicicleta, no sabes cómo frenan todas.",
+     "en": "Example: if you test only one kind of bike, you don’t know how all of them brake."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Revisa tu explicación: mira qué parte se apoya en tu tabla.",
+     "en": "Check your explanation: see which part rests on your table."
+    },
+    "ok": {
+     "es": "Tu afirmación, tu evidencia y su límite dicen lo mismo: así se sostiene una explicación.",
+     "en": "Your claim, your evidence and its limit say the same thing: that is how an explanation stands."
+    }
+   }
+  },
+  {
+   "id": "t6",
+   "kind": "modelo",
+   "ideaIds": [
+    "choque.transfiere",
+    "rapidez.energia"
+   ],
+   "contextId": "comparacion",
+   "sessionId": "s5",
+   "standards": [
+    "4-PS3-3"
+   ],
+   "criterion": {
+    "es": "Explica con un modelo que, en el choque, la energía de movimiento de la bola pasa al bloque y al sonido, y que no desaparece.",
+    "en": "Explains with a model that in the hit the ball’s energy of motion passes to the block and to the sound, and doesn’t disappear."
+   },
+   "parts": [
+    {
+     "id": "afirmacion",
+     "prompt": {
+      "es": "En el choque, la energía de movimiento de la bola…",
+      "en": "In the hit, the ball’s energy of motion…"
+     },
+     "options": [
+      {
+       "id": "paso",
+       "text": {
+        "es": "pasó al bloque (que se deslizó) y al sonido (el golpe).",
+        "en": "passed to the block (which slid) and to the sound (the knock)."
+       },
+       "valid": true
+      },
+      {
+       "id": "desaparecio",
+       "text": {
+        "es": "desapareció cuando la bola se detuvo.",
+        "en": "disappeared when the ball stopped."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "La energía no desaparece: el bloque se deslizó y se oyó un golpe. Ahí está.",
+        "en": "Energy doesn’t disappear: the block slid and a knock was heard. That is where it went."
+       }
+      },
+      {
+       "id": "quedo",
+       "text": {
+        "es": "se quedó toda en la bola.",
+        "en": "stayed entirely in the ball."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Si se hubiera quedado toda en la bola, el bloque no se habría movido.",
+        "en": "If it had all stayed in the ball, the block wouldn’t have moved."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "evidencia",
+     "prompt": {
+      "es": "Mi evidencia es… (elige dos)",
+      "en": "My evidence is… (pick two)"
+     },
+     "options": [
+      {
+       "id": "bloque",
+       "text": {
+        "es": "El bloque se deslizó desde la marca 4 más lejos (22 cm) que desde la marca 1 (4 cm).",
+        "en": "The block slid farther from mark 4 (22 cm) than from mark 1 (4 cm)."
+       },
+       "valid": true
+      },
+      {
+       "id": "sonido",
+       "text": {
+        "es": "Se oyó un golpe, más fuerte cuando la bola venía de más alto.",
+        "en": "A knock was heard, louder when the ball came from higher up."
+       },
+       "valid": true
+      },
+      {
+       "id": "color",
+       "text": {
+        "es": "La bola es de rayas.",
+        "en": "The ball has stripes."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Las rayas de la bola no dicen a dónde fue la energía.",
+        "en": "The ball’s stripes don’t say where the energy went."
+       }
+      },
+      {
+       "id": "mesa",
+       "text": {
+        "es": "La mesa es de madera.",
+        "en": "The table is made of wood."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El material de la mesa no explica a dónde fue la energía.",
+        "en": "The table’s material doesn’t explain where the energy went."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    },
+    {
+     "id": "limite",
+     "prompt": {
+      "es": "Mi modelo no muestra… (elige uno)",
+      "en": "My model doesn’t show… (pick one)"
+     },
+     "options": [
+      {
+       "id": "numeros",
+       "text": {
+        "es": "cuánta energía hay en números ni todo el recorrido de la energía.",
+        "en": "how much energy there is in numbers or the whole path of the energy."
+       },
+       "valid": true
+      },
+      {
+       "id": "todo",
+       "text": {
+        "es": "nada: lo muestra todo.",
+        "en": "nothing: it shows everything."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Un modelo siempre deja cosas fuera: aquí no se mide la energía en números ni todo su recorrido.",
+        "en": "A model always leaves things out: here energy isn’t measured in numbers or along its whole path."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira qué se movió después del choque y qué se oyó.",
+     "en": "Look at what moved after the hit and what was heard."
+    },
+    {
+     "es": "¿A dónde pudo ir la energía de la bola?",
+     "en": "Where could the ball’s energy have gone?"
+    },
+    {
+     "es": "Ejemplo: al aplaudir, el movimiento de tus manos se convierte en sonido.",
+     "en": "Example: when you clap, the motion of your hands becomes sound."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Piensa: ¿el bloque se movió? ¿Se oyó algo?",
+     "en": "Think: did the block move? Was anything heard?"
+    },
+    "ok": {
+     "es": "Tu modelo dice a dónde fue la energía, con qué lo probaste y qué le falta: así se explica.",
+     "en": "Your model says where the energy went, what you tested it with and what it lacks: that is how to explain."
+    }
+   }
+  },
+  {
+   "id": "t7",
+   "kind": "transferir",
+   "ideaIds": [
+    "rapidez.energia",
+    "choque.transfiere"
+   ],
+   "contextId": "carrito",
+   "sessionId": "s6",
+   "standards": [
+    "4-PS3-1",
+    "4-PS3-3"
+   ],
+   "criterion": {
+    "es": "Usa lo aprendido en un caso nuevo: un carrito que baja una cuesta más rápido empuja una caja más lejos.",
+    "en": "Uses what was learned in a new case: a cart that rolls down a slope faster pushes a box farther."
+   },
+   "parts": [
+    {
+     "id": "resultado",
+     "prompt": {
+      "es": "Maya suelta un carrito de juguete desde la parte baja y luego desde la parte alta de una cuesta. Choca con una caja de cartón vacía. ¿Cuándo empuja más lejos la caja?",
+      "en": "Maya lets a toy cart go from the low part and then from the high part of a slope. It hits an empty cardboard box. When does it push the box farther?"
+     },
+     "options": [
+      {
+       "id": "alta",
+       "text": {
+        "es": "Cuando sale de la parte alta, porque llega más rápido.",
+        "en": "When it starts from the high part, because it arrives faster."
+       },
+       "valid": true
+      },
+      {
+       "id": "baja",
+       "text": {
+        "es": "Cuando sale de la parte baja.",
+        "en": "When it starts from the low part."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Desde la parte baja llega más despacio y tiene menos energía de movimiento: empuja menos.",
+        "en": "From the low part it arrives slower and has less energy of motion: it pushes less."
+       }
+      },
+      {
+       "id": "igual",
+       "text": {
+        "es": "Empuja igual de lejos en los dos casos.",
+        "en": "It pushes just as far in both cases."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Si llega con distinta rapidez, la caja no se desliza igual: como con la bola y el bloque.",
+        "en": "If it arrives at a different speed, the box doesn’t slide the same: just like the ball and the block."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "¿Por qué?",
+      "en": "Why?"
+     },
+     "options": [
+      {
+       "id": "energia",
+       "text": {
+        "es": "A más rapidez, más energía de movimiento para pasarle a la caja.",
+        "en": "The faster it goes, the more energy of motion it has to pass to the box."
+       },
+       "valid": true
+      },
+      {
+       "id": "color",
+       "text": {
+        "es": "Porque el carrito es rojo.",
+        "en": "Because the cart is red."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El color no cambia cuánta energía de movimiento tiene.",
+        "en": "Color doesn’t change how much energy of motion it has."
+       }
+      },
+      {
+       "id": "cartón",
+       "text": {
+        "es": "Porque la caja es de cartón.",
+        "en": "Because the box is made of cardboard."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "La caja es la misma en los dos casos: lo que cambia es la rapidez del carrito.",
+        "en": "The box is the same in both cases: what changes is the cart’s speed."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Piensa en la bola: ¿desde dónde empujaba más lejos el bloque?",
+     "en": "Think of the ball: from where did it push the block farther?"
+    },
+    {
+     "es": "¿Qué cambia entre la parte baja y la alta de la cuesta?",
+     "en": "What changes between the low and the high part of the slope?"
+    },
+    {
+     "es": "Ejemplo: una pelota lanzada fuerte rompe más lejos un castillo de cartas que una lanzada suave.",
+     "en": "Example: a ball thrown hard knocks a card tower farther than one thrown softly."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Piensa en lo que mostró tu tabla de la rampa.",
+     "en": "Think of what your ramp table showed."
+    },
+    "ok": {
+     "es": "Usaste lo que aprendiste con la bola en un caso nuevo: eso es transferir una idea.",
+     "en": "You used what you learned with the ball in a new case: that is transferring an idea."
+    }
+   }
+  },
+  {
+   "id": "t8",
+   "kind": "reflexionar",
+   "ideaIds": [],
+   "contextId": "reflexion",
+   "sessionId": "s6",
+   "standards": [],
+   "criterion": {
+    "es": "Revisa su primera idea sobre por qué se movió el bloque con lo que probó y dice si cambió. Cualquier respuesta honesta es válida.",
+    "en": "Revisits the first idea about why the block moved using what they tested and says whether it changed. Any honest answer is valid."
+   },
+   "parts": [
+    {
+     "id": "idea",
+     "prompt": {
+      "es": "Mi idea sobre por qué se movió el bloque…",
+      "en": "My idea about why the block moved…"
+     },
+     "options": [
+      {
+       "id": "cambio",
+       "text": {
+        "es": "cambió.",
+        "en": "changed."
+       },
+       "valid": true
+      },
+      {
+       "id": "igual",
+       "text": {
+        "es": "sigue igual.",
+        "en": "stayed the same."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "porque…",
+      "en": "because…"
+     },
+     "options": [
+      {
+       "id": "probe",
+       "text": {
+        "es": "probé la bola desde cuatro alturas y medí cuánto se deslizó el bloque.",
+        "en": "I tested the ball from four heights and measured how far the block slid."
+       },
+       "valid": true
+      },
+      {
+       "id": "tabla",
+       "text": {
+        "es": "lo vi en mi tabla.",
+        "en": "I saw it in my table."
+       },
+       "valid": true
+      },
+      {
+       "id": "dijeron",
+       "text": {
+        "es": "alguien me lo dijo.",
+        "en": "someone told me."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Tú lo probaste: usa lo que mediste.",
+        "en": "You tested it yourself: use what you measured."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira tu idea del principio.",
+     "en": "Look at your first idea."
+    },
+    {
+     "es": "¿Qué mediste que te hizo pensar así?",
+     "en": "What did you measure that made you think that?"
+    },
+    {
+     "es": "Ejemplo: si pensabas que la altura no importaba, ¿qué mostró la tabla?",
+     "en": "Example: if you thought height didn’t matter, what did the table show?"
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Piensa en algo que mediste tú.",
+     "en": "Think of something you measured yourself."
+    },
+    "ok": {
+     "es": "Revisar una idea con lo que mediste es hacer ciencia.",
+     "en": "Revisiting an idea with what you measured is doing science."
+    }
+   }
+  }
+ ],
+ "safety": {
+  "title": {
+   "es": "Rampa y bola (con un adulto)",
+   "en": "Ramp and ball (with an adult)"
+  },
+  "enabledByParent": true,
+  "supervision": {
+   "es": "Un adulto cerca durante toda la actividad (4.º, ≈ 9–10 años).",
+   "en": "An adult nearby during the whole activity (grade 4, about 9–10 years old)."
+  },
+  "materials": {
+   "es": "Una tabla lisa para la rampa apoyada en libros, UNA pelota o bola pequeña y ligera, un bloque de madera ligero o una cajita de cartón, una regla y cinta de papel para las marcas.",
+   "en": "A smooth board for the ramp resting on books, ONE small light ball, a light wooden block or a small cardboard box, a ruler and masking tape for the marks."
+  },
+  "place": {
+   "es": "Una mesa o un piso liso y despejado, lejos de ventanas, pantallas y objetos que se rompan.",
+   "en": "A smooth, clear table or floor, away from windows, screens and breakable things."
+  },
+  "hygiene": {
+   "es": "Lavarse las manos al terminar.",
+   "en": "Wash hands afterwards."
+  },
+  "closing": {
+   "es": "Guardar la rampa y las bolas y recoger todo del piso para que nadie resbale.",
+   "en": "Put the ramp and balls away and pick everything up from the floor so nobody slips."
+  },
+  "stopIf": [
+   {
+    "es": "Alguien lanza la bola en vez de soltarla en la rampa.",
+    "en": "Someone throws the ball instead of letting it go on the ramp."
+   },
+   {
+    "es": "La rampa se mueve o no está firme.",
+    "en": "The ramp moves or isn’t steady."
+   },
+   {
+    "es": "Alguien se para delante del bloque, en el camino de la bola.",
+    "en": "Someone stands in front of the block, in the ball’s path."
+   },
+   {
+    "es": "El adulto no puede quedarse cerca.",
+    "en": "The adult can’t stay nearby."
+   }
+  ],
+  "excluded": {
+   "es": "Bolas duras o pesadas (de metal, de golf), objetos que se rompan, rampas altas o inestables, y lanzar cosas a personas.",
+   "en": "Hard or heavy balls (metal, golf), breakable objects, tall or unsteady ramps, and throwing things at people."
+  },
+  "data": {
+   "es": "No requiere cámara, micrófono, fotos ni ubicación.",
+   "en": "Needs no camera, microphone, photos or location."
+  },
+  "digitalAlternative": {
+   "es": "Las sesiones S2, S3 y S5 en pantalla reemplazan la actividad completa.",
+   "en": "Sessions S2, S3 and S5 on screen replace the whole activity."
+  },
+  "review": "pendienteDocente"
+ },
+ "review": {
+  "status": "draftPendingTeacherReview",
+  "notes": "Ningún docente ha validado esta unidad. Los códigos son candidatos; solo los ven los padres. Misma masa y material: solo cambia la altura."
+ }
+}

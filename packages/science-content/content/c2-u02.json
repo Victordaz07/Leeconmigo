@@ -1,0 +1,1705 @@
+{
+ "id": "C2-U02",
+ "grade": 2,
+ "area": "materia",
+ "title": {
+  "es": "Un techo para el muñeco",
+  "en": "A roof for the doll"
+ },
+ "question": {
+  "es": "¿Qué material sirve para un techo?",
+  "en": "Which material works for a roof?"
+ },
+ "standards": [
+  "2-PS1-2"
+ ],
+ "standardTasks": {
+  "2-PS1-2": [
+   "t3",
+   "t5",
+   "t6",
+   "t7"
+  ]
+ },
+ "ideas": [
+  {
+   "id": "material.sirve",
+   "text": {
+    "es": "El mejor material depende de para qué lo necesitamos: se elige con pruebas.",
+    "en": "The best material depends on what we need it for: we choose it with tests."
+   },
+   "misconception": {
+    "es": "Hay un material mejor para todo; el más bonito o el más grueso siempre sirve.",
+    "en": "There is one best material for everything; the prettiest or thickest always works."
+   },
+   "contexts": [
+    "techo",
+    "secar",
+    "bici"
+   ]
+  },
+  {
+   "id": "prueba.justa",
+   "text": {
+    "es": "Para comparar materiales, todo es igual menos el material.",
+    "en": "To compare materials, everything is the same except the material."
+   },
+   "misconception": {
+    "es": "Comparar piezas de distinto tamaño o con distinta cantidad de agua.",
+    "en": "Comparing pieces of different sizes or with different amounts of water."
+   },
+   "contexts": [
+    "techo",
+    "secar"
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "es": "material",
+   "en": "material",
+   "note": {
+    "es": "Aquello de lo que está hecha una cosa.",
+    "en": "What a thing is made of."
+   }
+  },
+  {
+   "es": "propiedad",
+   "en": "property",
+   "note": {
+    "es": "Algo que se puede observar de un material, como si deja pasar el agua.",
+    "en": "Something you can observe about a material, like whether it lets water through."
+   }
+  },
+  {
+   "es": "empaparse",
+   "en": "to soak up",
+   "note": {
+    "es": "Cuando un material guarda agua en su interior.",
+    "en": "When a material keeps water inside it."
+   }
+  }
+ ],
+ "sessions": [
+  {
+   "id": "s1",
+   "title": {
+    "es": "El muñeco mojado",
+    "en": "The wet doll"
+   },
+   "objective": {
+    "es": "Mirar las piezas y decir una primera idea.",
+    "en": "Look at the pieces and share a first idea."
+   },
+   "steps": [
+    {
+     "id": "s1.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Llueve y el muñeco se está mojando. Necesita un techo.",
+      "en": "It is raining and the doll is getting wet. It needs a roof."
+     },
+     "scene": "porche"
+    },
+    {
+     "id": "s1.2",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "Mira las cuatro piezas y elige dos cosas que son iguales.",
+      "en": "Look at the four pieces and pick two things that are the same."
+     },
+     "taskId": "t1",
+     "saves": "piezas",
+     "scene": "porche",
+     "material": {
+      "test": "techo"
+     }
+    },
+    {
+     "id": "s1.3",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Creo que el mejor techo es el material que…",
+      "en": "I think the best roof is the material that…"
+     },
+     "saves": "idea inicial",
+     "scene": "porche",
+     "choice": {
+      "id": "ideaInicial",
+      "multi": false,
+      "options": [
+       {
+        "id": "bonito",
+        "text": {
+         "es": "es más bonito.",
+         "en": "is prettier."
+        }
+       },
+       {
+        "id": "grueso",
+        "text": {
+         "es": "es más grueso.",
+         "en": "is thicker."
+        }
+       },
+       {
+        "id": "nose",
+        "text": {
+         "es": "todavía no sé.",
+         "en": "I don’t know yet."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s1.4",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "Vamos a probar cada material con la misma prueba.",
+      "en": "Let’s test each material with the same test."
+     },
+     "scene": "porche"
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "title": {
+    "es": "Probar un techo",
+    "en": "Testing a roof"
+   },
+   "objective": {
+    "es": "Cambiar solo el material y mirar qué pasa.",
+    "en": "Change only the material and look at what happens."
+   },
+   "steps": [
+    {
+     "id": "s2.1",
+     "phase": "observa",
+     "kind": "elegir",
+     "text": {
+      "es": "Las piezas, la inclinación y el agua son iguales. ¿Qué cambia?",
+      "en": "The pieces, the slope and the water are the same. What changes?"
+     },
+     "saves": "qué cambia",
+     "scene": "porche",
+     "material": {
+      "test": "techo"
+     },
+     "choice": {
+      "id": "queCambia",
+      "multi": false,
+      "options": [
+       {
+        "id": "material",
+        "text": {
+         "es": "El material.",
+         "en": "The material."
+        },
+        "expected": true
+       },
+       {
+        "id": "agua",
+        "text": {
+         "es": "La cantidad de agua.",
+         "en": "The amount of water."
+        }
+       },
+       {
+        "id": "tamano",
+        "text": {
+         "es": "El tamaño de la pieza.",
+         "en": "The size of the piece."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s2.2",
+     "phase": "explora",
+     "kind": "predecir",
+     "text": {
+      "es": "¿Con qué material pasará menos agua? Porque…",
+      "en": "Which material will let the least water through? Because…"
+     },
+     "taskId": "t3",
+     "saves": "predicción",
+     "scene": "porche",
+     "material": {
+      "test": "techo"
+     }
+    },
+    {
+     "id": "s2.3",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Elige un material como techo y toca la regadera. Prueba dos.",
+      "en": "Pick a material as the roof and tap the watering can. Try two."
+     },
+     "saves": "observación",
+     "scene": "porche",
+     "material": {
+      "test": "techo",
+      "trials": 2
+     }
+    },
+    {
+     "id": "s2.4",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Compara lo que predijiste con lo que viste.",
+      "en": "Compare what you predicted with what you saw."
+     },
+     "saves": "comparación",
+     "scene": "porche",
+     "material": {
+      "test": "techo"
+     },
+     "choice": {
+      "id": "comparacion",
+      "multi": false,
+      "options": [
+       {
+        "id": "coincidio",
+        "text": {
+         "es": "Mi predicción coincidió.",
+         "en": "My prediction matched."
+        }
+       },
+       {
+        "id": "nocoincidio",
+        "text": {
+         "es": "Mi predicción no coincidió.",
+         "en": "My prediction didn’t match."
+        }
+       }
+      ],
+      "compareWith": {
+       "taskId": "t3",
+       "partId": "material"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "s3",
+   "title": {
+    "es": "Probar todos y anotar",
+    "en": "Test them all and write it down"
+   },
+   "objective": {
+    "es": "Probar los cuatro materiales y anotar cada resultado.",
+    "en": "Test all four materials and write down each result."
+   },
+   "steps": [
+    {
+     "id": "s3.1",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Prueba los cuatro materiales, uno por uno.",
+      "en": "Test all four materials, one at a time."
+     },
+     "saves": "repetición",
+     "scene": "porche",
+     "material": {
+      "test": "techo",
+      "trials": 4
+     }
+    },
+    {
+     "id": "s3.2",
+     "phase": "explora",
+     "kind": "registrar",
+     "text": {
+      "es": "Anota lo que pasó con cada material.",
+      "en": "Write down what happened with each material."
+     },
+     "saves": "tabla",
+     "scene": "porche",
+     "material": {
+      "test": "techo"
+     }
+    },
+    {
+     "id": "s3.3",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Mira tu tabla. ¿Con cuál material no pasó agua?",
+      "en": "Look at your table. With which material did no water come through?"
+     },
+     "saves": "patrón",
+     "scene": "porche",
+     "material": {
+      "test": "techo",
+      "static": true
+     },
+     "choice": {
+      "id": "patron",
+      "multi": false,
+      "options": [
+       {
+        "id": "plastico",
+        "text": {
+         "es": "Con el plástico.",
+         "en": "With the plastic."
+        },
+        "expected": true
+       },
+       {
+        "id": "tela",
+        "text": {
+         "es": "Con la tela.",
+         "en": "With the cloth."
+        }
+       },
+       {
+        "id": "papel",
+        "text": {
+         "es": "Con el papel absorbente.",
+         "en": "With the paper towel."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s3.4",
+     "phase": "usa",
+     "kind": "elegir",
+     "text": {
+      "es": "¿Dejó pasar más agua la tela o el cartón?",
+      "en": "Did more water come through the cloth or the cardboard?"
+     },
+     "saves": "comparar dos",
+     "scene": "porche",
+     "material": {
+      "test": "techo",
+      "static": true
+     },
+     "choice": {
+      "id": "mas",
+      "multi": false,
+      "options": [
+       {
+        "id": "tela",
+        "text": {
+         "es": "La tela.",
+         "en": "The cloth."
+        },
+        "expected": true
+       },
+       {
+        "id": "carton",
+        "text": {
+         "es": "El cartón.",
+         "en": "The cardboard."
+        }
+       },
+       {
+        "id": "igual",
+        "text": {
+         "es": "Lo mismo.",
+         "en": "The same."
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "s4",
+   "title": {
+    "es": "Elegir con evidencia",
+    "en": "Choosing with evidence"
+   },
+   "objective": {
+    "es": "Elegir el material del techo y explicar por qué.",
+    "en": "Pick the roof material and explain why."
+   },
+   "steps": [
+    {
+     "id": "s4.1",
+     "phase": "explica",
+     "kind": "texto",
+     "text": {
+      "es": "Palabras nuevas para explicar.",
+      "en": "New words to explain with."
+     },
+     "scene": "porche",
+     "glossary": [
+      "material",
+      "propiedad",
+      "empaparse"
+     ]
+    },
+    {
+     "id": "s4.2",
+     "phase": "explica",
+     "kind": "afirmacion",
+     "text": {
+      "es": "Elige tu techo y explica con tu tabla.",
+      "en": "Pick your roof and explain with your table."
+     },
+     "taskId": "t5",
+     "saves": "explicación",
+     "scene": "porche",
+     "material": {
+      "test": "techo",
+      "static": true
+     }
+    },
+    {
+     "id": "s4.3",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "Tu elección queda como una página de tu cuaderno.",
+      "en": "Your choice becomes a page in your notebook."
+     },
+     "saves": "entrada del cuaderno",
+     "scene": "porche"
+    }
+   ]
+  },
+  {
+   "id": "s5",
+   "title": {
+    "es": "Otro propósito: secar",
+    "en": "Another purpose: drying"
+   },
+   "objective": {
+    "es": "Cambiar lo que necesitamos y volver a elegir.",
+    "en": "Change what we need and choose again."
+   },
+   "steps": [
+    {
+     "id": "s5.1",
+     "phase": "observa",
+     "kind": "elegir",
+     "text": {
+      "es": "Ahora hay un derrame. ¿Qué dejamos igual en esta prueba?",
+      "en": "Now there is a spill. What do we keep the same in this test?"
+     },
+     "taskId": "t2",
+     "saves": "piezas",
+     "scene": "porche",
+     "material": {
+      "test": "secar"
+     }
+    },
+    {
+     "id": "s5.2",
+     "phase": "explora",
+     "kind": "predecir",
+     "text": {
+      "es": "¿Con qué material se empapará más agua? Porque…",
+      "en": "Which material will soak up the most water? Because…"
+     },
+     "taskId": "t4",
+     "saves": "predicción",
+     "scene": "porche",
+     "material": {
+      "test": "secar"
+     }
+    },
+    {
+     "id": "s5.3",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Elige un material y toca la regadera sobre el derrame. Prueba los cuatro.",
+      "en": "Pick a material and tap the watering can over the spill. Try all four."
+     },
+     "saves": "observación",
+     "scene": "porche",
+     "material": {
+      "test": "secar",
+      "trials": 4
+     }
+    },
+    {
+     "id": "s5.4",
+     "phase": "explica",
+     "kind": "afirmacion",
+     "text": {
+      "es": "¿Qué material elegirías para secar? Explica.",
+      "en": "Which material would you pick to dry? Explain."
+     },
+     "taskId": "t6",
+     "saves": "explicación",
+     "scene": "porche",
+     "material": {
+      "test": "secar",
+      "static": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "s6",
+   "title": {
+    "es": "Usar lo aprendido",
+    "en": "Using what I learned"
+   },
+   "objective": {
+    "es": "Elegir para un caso nuevo y revisar mi primera idea.",
+    "en": "Choose for a new case and revisit my first idea."
+   },
+   "steps": [
+    {
+     "id": "s6.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Maya quiere cubrir su bici para que no se moje con la lluvia.",
+      "en": "Maya wants to cover her bike so the rain doesn’t get it wet."
+     },
+     "scene": "porche"
+    },
+    {
+     "id": "s6.2",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "¿Qué material elige Maya y por qué?",
+      "en": "Which material does Maya pick, and why?"
+     },
+     "taskId": "t7",
+     "saves": "decisión",
+     "scene": "porche",
+     "material": {
+      "test": "techo",
+      "static": true
+     }
+    },
+    {
+     "id": "s6.3",
+     "phase": "explica",
+     "kind": "reflexion",
+     "text": {
+      "es": "Vuelve a mirar tu primera idea. ¿Cambió?",
+      "en": "Look at your first idea again. Did it change?"
+     },
+     "taskId": "t8",
+     "saves": "reflexión",
+     "scene": "porche"
+    },
+    {
+     "id": "s6.4",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "Hoy descubriste que el mejor material depende de para qué lo necesitas.",
+      "en": "Today you found out that the best material depends on what you need it for."
+     },
+     "saves": "resumen",
+     "scene": "porche"
+    }
+   ]
+  }
+ ],
+ "tasks": [
+  {
+   "id": "t1",
+   "kind": "observar",
+   "ideaIds": [
+    "prueba.justa"
+   ],
+   "contextId": "techo",
+   "sessionId": "s1",
+   "standards": [
+    "2-PS1-2"
+   ],
+   "criterion": {
+    "es": "Mira las cuatro piezas y dice qué es igual en todas (tamaño y forma); no confunde con lo que sí cambia (el material).",
+    "en": "Looks at the four pieces and says what is the same in all (size and shape); doesn’t confuse it with what does change (the material)."
+   },
+   "parts": [
+    {
+     "id": "iguales",
+     "prompt": {
+      "es": "Elige dos cosas que son IGUALES en las cuatro piezas.",
+      "en": "Pick two things that are the SAME in all four pieces."
+     },
+     "options": [
+      {
+       "id": "tamano",
+       "text": {
+        "es": "Todas tienen el mismo tamaño.",
+        "en": "All have the same size."
+       },
+       "valid": true
+      },
+      {
+       "id": "forma",
+       "text": {
+        "es": "Todas son cuadradas.",
+        "en": "All are squares."
+       },
+       "valid": true
+      },
+      {
+       "id": "material",
+       "text": {
+        "es": "Todas son del mismo material.",
+        "en": "All are the same material."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Son cuatro materiales distintos: eso es lo que vamos a comparar.",
+        "en": "They are four different materials: that is what we are going to compare."
+       }
+      },
+      {
+       "id": "color",
+       "text": {
+        "es": "Todas son del mismo color.",
+        "en": "All are the same color."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira bien: los colores son distintos.",
+        "en": "Look closely: the colors are different."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira las cuatro piezas, una al lado de la otra.",
+     "en": "Look at the four pieces, side by side."
+    },
+    {
+     "es": "¿Se parecen en el tamaño? ¿Y en el material?",
+     "en": "Are they alike in size? And in material?"
+    },
+    {
+     "es": "Ejemplo: para comparar dos pelotas, las dos deben pesar igual y venir del mismo lugar; solo cambia el material.",
+     "en": "Example: to compare two balls, both must start from the same place; only the material changes."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige dos cosas.",
+     "en": "Pick two things."
+    },
+    "wrong": {
+     "es": "Alguna cosa que elegiste no es igual en todas. Mira de nuevo.",
+     "en": "Something you picked isn’t the same in all of them. Look again."
+    },
+    "ok": {
+     "es": "Muy bien: para comparar, todo debe ser igual menos el material.",
+     "en": "Very good: to compare, everything must be the same except the material."
+    }
+   }
+  },
+  {
+   "id": "t2",
+   "kind": "observar",
+   "ideaIds": [
+    "prueba.justa"
+   ],
+   "contextId": "secar",
+   "sessionId": "s5",
+   "standards": [
+    "2-PS1-2"
+   ],
+   "criterion": {
+    "es": "Dice qué se deja igual en la prueba de secar: el agua y el tamaño; no el material.",
+    "en": "Says what stays the same in the drying test: the water and the size; not the material."
+   },
+   "parts": [
+    {
+     "id": "iguales",
+     "prompt": {
+      "es": "Elige dos cosas que dejamos IGUALES.",
+      "en": "Pick two things we keep the SAME."
+     },
+     "options": [
+      {
+       "id": "agua",
+       "text": {
+        "es": "La misma cantidad de agua.",
+        "en": "The same amount of water."
+       },
+       "valid": true
+      },
+      {
+       "id": "tamano",
+       "text": {
+        "es": "El mismo tamaño de pieza.",
+        "en": "The same size of piece."
+       },
+       "valid": true
+      },
+      {
+       "id": "material",
+       "text": {
+        "es": "El mismo material.",
+        "en": "The same material."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El material es lo que cambia: queremos saber cuál seca mejor.",
+        "en": "The material is what changes: we want to know which dries best."
+       }
+      },
+      {
+       "id": "color",
+       "text": {
+        "es": "El mismo color de pieza.",
+        "en": "The same color of piece."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Los colores son distintos. Lo importante es el agua y el tamaño.",
+        "en": "The colors are different. What matters is the water and the size."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Esta prueba es otra, pero se hace igual de justa.",
+     "en": "This test is different, but it is just as fair."
+    },
+    {
+     "es": "¿Qué hace falta que sea igual para comparar de verdad?",
+     "en": "What needs to be the same to really compare?"
+    },
+    {
+     "es": "Ejemplo: para ver quién salta más, todos saltan desde la misma línea.",
+     "en": "Example: to see who jumps farthest, everyone jumps from the same line."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige dos cosas.",
+     "en": "Pick two things."
+    },
+    "wrong": {
+     "es": "Alguna cosa que elegiste cambia en la prueba. Mira de nuevo.",
+     "en": "Something you picked changes in the test. Look again."
+    },
+    "ok": {
+     "es": "Otra vez cuidaste que la prueba fuera justa.",
+     "en": "Again you made sure the test was fair."
+    }
+   }
+  },
+  {
+   "id": "t3",
+   "kind": "predecir",
+   "ideaIds": [
+    "material.sirve"
+   ],
+   "contextId": "techo",
+   "sessionId": "s2",
+   "standards": [
+    "2-PS1-2"
+   ],
+   "criterion": {
+    "es": "Predice cuál material dejará pasar menos agua y después compara con honestidad. Cualquier predicción es válida.",
+    "en": "Predicts which material will let the least water through and then compares honestly. Any prediction is valid."
+   },
+   "parts": [
+    {
+     "id": "material",
+     "prompt": {
+      "es": "¿Con qué material pasará MENOS agua?",
+      "en": "Which material will let the LEAST water through?"
+     },
+     "options": [
+      {
+       "id": "papel",
+       "text": {
+        "es": "El papel absorbente.",
+        "en": "The paper towel."
+       },
+       "valid": true
+      },
+      {
+       "id": "tela",
+       "text": {
+        "es": "La tela.",
+        "en": "The cloth."
+       },
+       "valid": true
+      },
+      {
+       "id": "plastico",
+       "text": {
+        "es": "El plástico.",
+        "en": "The plastic."
+       },
+       "valid": true
+      },
+      {
+       "id": "carton",
+       "text": {
+        "es": "El cartón.",
+        "en": "The cardboard."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false,
+     "observedOptionId": "plastico"
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "Porque…",
+      "en": "Because…"
+     },
+     "options": [
+      {
+       "id": "liso",
+       "text": {
+        "es": "es liso y no se moja por dentro.",
+        "en": "it is smooth and doesn’t get wet inside."
+       },
+       "valid": true
+      },
+      {
+       "id": "grueso",
+       "text": {
+        "es": "es grueso.",
+        "en": "it is thick."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "todavía no estoy seguro.",
+        "en": "I’m not sure yet."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    }
+   ],
+   "hints": [
+    {
+     "es": "Piensa en un impermeable: ¿de qué está hecho?",
+     "en": "Think of a raincoat: what is it made of?"
+    },
+    {
+     "es": "¿Qué material deja que el agua lo atraviese?",
+     "en": "Which material lets water go through?"
+    },
+    {
+     "es": "Ejemplo: un paraguas no es de papel.",
+     "en": "Example: an umbrella isn’t made of paper."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige una predicción y un «porque».",
+     "en": "Pick a prediction and a “because”."
+    },
+    "wrong": {
+     "es": "Elige una de las opciones.",
+     "en": "Pick one of the options."
+    },
+    "ok": {
+     "es": "Anotaste tu predicción. Ahora vamos a probarla.",
+     "en": "You wrote down your prediction. Now let’s test it."
+    }
+   }
+  },
+  {
+   "id": "t4",
+   "kind": "predecir",
+   "ideaIds": [
+    "material.sirve"
+   ],
+   "contextId": "secar",
+   "sessionId": "s5",
+   "standards": [
+    "2-PS1-2"
+   ],
+   "criterion": {
+    "es": "Predice cuál material se empapará más (secaría mejor). Cualquier predicción es válida.",
+    "en": "Predicts which material will soak up the most (would dry best). Any prediction is valid."
+   },
+   "parts": [
+    {
+     "id": "material",
+     "prompt": {
+      "es": "¿Con qué material se empapará MÁS agua?",
+      "en": "Which material will soak up the MOST water?"
+     },
+     "options": [
+      {
+       "id": "papel",
+       "text": {
+        "es": "El papel absorbente.",
+        "en": "The paper towel."
+       },
+       "valid": true
+      },
+      {
+       "id": "tela",
+       "text": {
+        "es": "La tela.",
+        "en": "The cloth."
+       },
+       "valid": true
+      },
+      {
+       "id": "plastico",
+       "text": {
+        "es": "El plástico.",
+        "en": "The plastic."
+       },
+       "valid": true
+      },
+      {
+       "id": "carton",
+       "text": {
+        "es": "El cartón.",
+        "en": "The cardboard."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false,
+     "observedOptionId": "papel"
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "Porque…",
+      "en": "Because…"
+     },
+     "options": [
+      {
+       "id": "absorbe",
+       "text": {
+        "es": "se hizo para absorber.",
+        "en": "it is made to absorb."
+       },
+       "valid": true
+      },
+      {
+       "id": "liso",
+       "text": {
+        "es": "es liso.",
+        "en": "it is smooth."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "todavía no estoy seguro.",
+        "en": "I’m not sure yet."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    }
+   ],
+   "hints": [
+    {
+     "es": "Piensa en lo que usas para secar la mesa.",
+     "en": "Think of what you use to dry the table."
+    },
+    {
+     "es": "Un material que deja pasar el agua, ¿también la guarda?",
+     "en": "A material that lets water through, does it also keep it?"
+    },
+    {
+     "es": "Ejemplo: una esponja guarda agua; un plato no.",
+     "en": "Example: a sponge keeps water; a plate doesn’t."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige una predicción y un «porque».",
+     "en": "Pick a prediction and a “because”."
+    },
+    "wrong": {
+     "es": "Elige una de las opciones.",
+     "en": "Pick one of the options."
+    },
+    "ok": {
+     "es": "Anotaste tu predicción. Ahora veamos qué pasa.",
+     "en": "You wrote down your prediction. Now let’s see what happens."
+    }
+   }
+  },
+  {
+   "id": "t5",
+   "kind": "evidencia",
+   "ideaIds": [
+    "material.sirve",
+    "prueba.justa"
+   ],
+   "contextId": "techo",
+   "sessionId": "s4",
+   "standards": [
+    "2-PS1-2"
+   ],
+   "criterion": {
+    "es": "Elige el material para el techo según sus resultados, los cita y razona según lo que el techo necesita.",
+    "en": "Chooses the roof material from the results, cites them and reasons from what a roof needs."
+   },
+   "parts": [
+    {
+     "id": "afirmacion",
+     "prompt": {
+      "es": "Mi afirmación es…",
+      "en": "My claim is…"
+     },
+     "options": [
+      {
+       "id": "plastico",
+       "text": {
+        "es": "El plástico sirve mejor para el techo.",
+        "en": "Plastic works best for the roof."
+       },
+       "valid": true
+      },
+      {
+       "id": "tela",
+       "text": {
+        "es": "La tela sirve mejor para el techo.",
+        "en": "Cloth works best for the roof."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira tu tabla: con la tela pasó mucha agua.",
+        "en": "Look at your table: with the cloth a lot of water came through."
+       }
+      },
+      {
+       "id": "todos",
+       "text": {
+        "es": "Todos sirven igual para el techo.",
+        "en": "All of them work the same for the roof."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira tu tabla: no a todos les pasó lo mismo.",
+        "en": "Look at your table: the same thing didn’t happen with all of them."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "evidencia",
+     "prompt": {
+      "es": "Mi evidencia es… (elige dos)",
+      "en": "My evidence is… (pick two)"
+     },
+     "options": [
+      {
+       "id": "plastico",
+       "text": {
+        "es": "Con el plástico: no pasó agua.",
+        "en": "With the plastic: no water came through."
+       },
+       "valid": true
+      },
+      {
+       "id": "tela",
+       "text": {
+        "es": "Con la tela: pasó mucha agua.",
+        "en": "With the cloth: a lot of water came through."
+       },
+       "valid": true
+      },
+      {
+       "id": "blanco",
+       "text": {
+        "es": "El papel es blanco.",
+        "en": "The paper is white."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El color no dice nada sobre el agua.",
+        "en": "The color says nothing about the water."
+       }
+      },
+      {
+       "id": "cuadrado",
+       "text": {
+        "es": "Las piezas son cuadradas.",
+        "en": "The pieces are squares."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Eso es igual en todas: no ayuda a elegir.",
+        "en": "That is the same in all of them: it doesn’t help choose."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    },
+    {
+     "id": "razonamiento",
+     "prompt": {
+      "es": "Lo elegí porque…",
+      "en": "I chose it because…"
+     },
+     "options": [
+      {
+       "id": "necesita",
+       "text": {
+        "es": "un techo necesita que no pase el agua.",
+        "en": "a roof needs to keep water out."
+       },
+       "valid": true
+      },
+      {
+       "id": "bonito",
+       "text": {
+        "es": "es el más bonito.",
+        "en": "it is the prettiest."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Para un techo importa si deja pasar el agua, no si es bonito.",
+        "en": "For a roof what matters is whether water comes through, not whether it is pretty."
+       }
+      },
+      {
+       "id": "primero",
+       "text": {
+        "es": "fue el primero que probé.",
+        "en": "it was the first one I tried."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Elegir según tus resultados es mejor que elegir el primero.",
+        "en": "Choosing from your results is better than choosing the first one."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira tu tabla: ¿con cuál no pasó agua?",
+     "en": "Look at your table: with which one did no water come through?"
+    },
+    {
+     "es": "Tu evidencia dice qué pasó con cada material y tu razón dice para qué sirve el techo.",
+     "en": "Your evidence says what happened with each material, and your reason says what a roof is for."
+    },
+    {
+     "es": "Ejemplo: para una botella de agua elegimos un material que no deje salir el líquido.",
+     "en": "Example: for a water bottle we choose a material that doesn’t let liquid out."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Revisa tu explicación: mira qué parte se apoya en tu tabla.",
+     "en": "Check your explanation: see which part rests on your table."
+    },
+    "ok": {
+     "es": "Elegiste con tus resultados y según lo que necesitabas: así se decide con evidencia.",
+     "en": "You chose using your results and what you needed: that is how to decide with evidence."
+    }
+   }
+  },
+  {
+   "id": "t6",
+   "kind": "modelo",
+   "ideaIds": [
+    "material.sirve",
+    "prueba.justa"
+   ],
+   "contextId": "secar",
+   "sessionId": "s5",
+   "standards": [
+    "2-PS1-2"
+   ],
+   "criterion": {
+    "es": "Elige el material para secar un derrame según los resultados y razona según el propósito (que se empape).",
+    "en": "Chooses the material for drying a spill from the results and reasons from the purpose (it must soak up water)."
+   },
+   "parts": [
+    {
+     "id": "afirmacion",
+     "prompt": {
+      "es": "Mi afirmación es…",
+      "en": "My claim is…"
+     },
+     "options": [
+      {
+       "id": "papel",
+       "text": {
+        "es": "El papel absorbente sirve mejor para secar.",
+        "en": "The paper towel works best for drying."
+       },
+       "valid": true
+      },
+      {
+       "id": "plastico",
+       "text": {
+        "es": "El plástico sirve mejor para secar.",
+        "en": "Plastic works best for drying."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira tu tabla: el plástico no se empapó.",
+        "en": "Look at your table: the plastic didn’t soak up water."
+       }
+      },
+      {
+       "id": "todos",
+       "text": {
+        "es": "Todos secan igual.",
+        "en": "All of them dry the same."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira tu tabla: no a todos les pasó lo mismo.",
+        "en": "Look at your table: the same thing didn’t happen with all of them."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "evidencia",
+     "prompt": {
+      "es": "Mi evidencia es… (elige dos)",
+      "en": "My evidence is… (pick two)"
+     },
+     "options": [
+      {
+       "id": "papel",
+       "text": {
+        "es": "Con el papel absorbente: se empapó mucho.",
+        "en": "With the paper towel: it soaked up a lot."
+       },
+       "valid": true
+      },
+      {
+       "id": "plastico",
+       "text": {
+        "es": "Con el plástico: no se empapó.",
+        "en": "With the plastic: it didn’t soak up water."
+       },
+       "valid": true
+      },
+      {
+       "id": "cuadrado",
+       "text": {
+        "es": "Las piezas son cuadradas.",
+        "en": "The pieces are squares."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Eso es igual en todas: no ayuda a elegir.",
+        "en": "That is the same in all of them: it doesn’t help choose."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    },
+    {
+     "id": "razonamiento",
+     "prompt": {
+      "es": "Lo elegí porque…",
+      "en": "I chose it because…"
+     },
+     "options": [
+      {
+       "id": "empape",
+       "text": {
+        "es": "para secar necesito un material que se empape.",
+        "en": "to dry I need a material that soaks up water."
+       },
+       "valid": true
+      },
+      {
+       "id": "no",
+       "text": {
+        "es": "para secar necesito un material que no se moje.",
+        "en": "to dry I need a material that doesn’t get wet."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Si no se moja, no seca. Piensa en lo que hace una toalla.",
+        "en": "If it doesn’t get wet, it doesn’t dry. Think of what a towel does."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira tu tabla de «se empapó».",
+     "en": "Look at your “soaked up” table."
+    },
+    {
+     "es": "Secar es lo contrario de un techo: ahora queremos que el agua se quede en la pieza.",
+     "en": "Drying is the opposite of a roof: now we want the water to stay in the piece."
+    },
+    {
+     "es": "Ejemplo: una toalla seca porque guarda el agua.",
+     "en": "Example: a towel dries because it keeps the water."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Piensa: ¿qué necesita un material para secar?",
+     "en": "Think: what does a material need in order to dry?"
+    },
+    "ok": {
+     "es": "Cambió el propósito y cambió el mejor material: así funciona elegir.",
+     "en": "The purpose changed and so did the best material: that is how choosing works."
+    }
+   }
+  },
+  {
+   "id": "t7",
+   "kind": "transferir",
+   "ideaIds": [
+    "material.sirve"
+   ],
+   "contextId": "bici",
+   "sessionId": "s6",
+   "standards": [
+    "2-PS1-2"
+   ],
+   "criterion": {
+    "es": "Elige un material para un propósito nuevo (cubrir una bici de la lluvia) usando lo que aprendió: deja pasar poca agua.",
+    "en": "Picks a material for a new purpose (covering a bike from the rain) using what they learned: it lets little water through."
+   },
+   "parts": [
+    {
+     "id": "material",
+     "prompt": {
+      "es": "Maya quiere cubrir su bici de la lluvia. ¿Qué material elige?",
+      "en": "Maya wants to cover her bike from the rain. Which material does she pick?"
+     },
+     "options": [
+      {
+       "id": "plastico",
+       "text": {
+        "es": "El plástico.",
+        "en": "The plastic."
+       },
+       "valid": true
+      },
+      {
+       "id": "papel",
+       "text": {
+        "es": "El papel absorbente.",
+        "en": "The paper towel."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El papel deja pasar mucha agua: sirve para secar, no para cubrir.",
+        "en": "The paper lets a lot of water through: it is good for drying, not for covering."
+       }
+      },
+      {
+       "id": "tela",
+       "text": {
+        "es": "La tela.",
+        "en": "The cloth."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Con la tela pasó mucha agua cuando la probaste.",
+        "en": "A lot of water came through the cloth when you tested it."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "Lo elige porque…",
+      "en": "She picks it because…"
+     },
+     "options": [
+      {
+       "id": "no",
+       "text": {
+        "es": "para cubrir necesita que no pase el agua.",
+        "en": "to cover it she needs water not to come through."
+       },
+       "valid": true
+      },
+      {
+       "id": "seca",
+       "text": {
+        "es": "es el que mejor seca.",
+        "en": "it dries best."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Secar es otro propósito. Aquí queremos cubrir.",
+        "en": "Drying is a different purpose. Here we want to cover."
+       }
+      },
+      {
+       "id": "color",
+       "text": {
+        "es": "es del color de la bici.",
+        "en": "it is the color of the bike."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El color no ayuda a que el agua no pase.",
+        "en": "Color doesn’t help keep the water out."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "¿Qué necesita Maya: que el agua pase o que no pase?",
+     "en": "What does Maya need: water to come through or not?"
+    },
+    {
+     "es": "Acuérdate de la prueba del techo.",
+     "en": "Remember the roof test."
+    },
+    {
+     "es": "Ejemplo: un impermeable se hace de un material que no deja pasar el agua.",
+     "en": "Example: a raincoat is made of a material that doesn’t let water through."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Piensa en lo que Maya necesita, no en lo que seca mejor.",
+     "en": "Think about what Maya needs, not what dries best."
+    },
+    "ok": {
+     "es": "Usaste lo que aprendiste en un caso nuevo: el material depende del propósito.",
+     "en": "You used what you learned in a new case: the material depends on the purpose."
+    }
+   }
+  },
+  {
+   "id": "t8",
+   "kind": "reflexionar",
+   "ideaIds": [],
+   "contextId": "reflexion",
+   "sessionId": "s6",
+   "standards": [],
+   "criterion": {
+    "es": "Revisa su primera idea con lo que probó y dice si cambió. Cualquier respuesta honesta es válida.",
+    "en": "Revisits the first idea using what they tested and says whether it changed. Any honest answer is valid."
+   },
+   "parts": [
+    {
+     "id": "idea",
+     "prompt": {
+      "es": "Mi idea…",
+      "en": "My idea…"
+     },
+     "options": [
+      {
+       "id": "cambio",
+       "text": {
+        "es": "cambió.",
+        "en": "changed."
+       },
+       "valid": true
+      },
+      {
+       "id": "igual",
+       "text": {
+        "es": "sigue igual.",
+        "en": "stayed the same."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "porque…",
+      "en": "because…"
+     },
+     "options": [
+      {
+       "id": "probe",
+       "text": {
+        "es": "probé los materiales con la misma prueba.",
+        "en": "I tested the materials with the same test."
+       },
+       "valid": true
+      },
+      {
+       "id": "anote",
+       "text": {
+        "es": "lo vi en mis anotaciones.",
+        "en": "I saw it in my notes."
+       },
+       "valid": true
+      },
+      {
+       "id": "dijeron",
+       "text": {
+        "es": "alguien me lo dijo.",
+        "en": "someone told me."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Tú lo probaste: usa lo que viste.",
+        "en": "You tried it yourself: use what you saw."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira tu idea del principio.",
+     "en": "Look at your first idea."
+    },
+    {
+     "es": "¿Qué probaste que te hizo pensar así?",
+     "en": "What did you try that made you think that?"
+    },
+    {
+     "es": "Ejemplo: si pensabas que el más bonito servía, ¿qué viste después?",
+     "en": "Example: if you thought the prettiest one worked, what did you see later?"
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Piensa en algo que probaste tú.",
+     "en": "Think about something you tried yourself."
+    },
+    "ok": {
+     "es": "Revisar una idea con lo que probaste es hacer ciencia.",
+     "en": "Revisiting an idea with what you tried is doing science."
+    }
+   }
+  }
+ ],
+ "safety": {
+  "title": {
+   "es": "Prueba de materiales (con un adulto)",
+   "en": "Materials test (with an adult)"
+  },
+  "enabledByParent": true,
+  "supervision": {
+   "es": "Un adulto presente en todo momento (2.º, ≈ 7–8 años).",
+   "en": "An adult present the whole time (grade 2, about 7–8 years old)."
+  },
+  "materials": {
+   "es": "4 cuadrados iguales (papel absorbente, tela, plástico, cartón) sin bordes cortantes; una bandeja; un vaso de agua; una cuchara o regadera pequeña.",
+   "en": "4 equal squares (paper towel, cloth, plastic, cardboard) with no sharp edges; a tray; a cup of water; a spoon or small watering can."
+  },
+  "place": {
+   "es": "Mesa protegida en interior, con toallas; lejos de enchufes y aparatos eléctricos.",
+   "en": "Protected table indoors, with towels; away from outlets and electrical devices."
+  },
+  "hygiene": {
+   "es": "Lavarse las manos al terminar.",
+   "en": "Wash hands afterwards."
+  },
+  "closing": {
+   "es": "Secar la mesa y los derrames de inmediato; tirar las piezas mojadas; no guardar nada húmedo.",
+   "en": "Dry the table and any spills right away; throw away the wet pieces; don’t store anything damp."
+  },
+  "stopIf": [
+   {
+    "es": "Hay agua cerca de un enchufe o aparato eléctrico.",
+    "en": "There is water near an outlet or electrical device."
+   },
+   {
+    "es": "Alguien se mete una pieza a la boca.",
+    "en": "Someone puts a piece in their mouth."
+   },
+   {
+    "es": "El piso queda mojado y resbaloso.",
+    "en": "The floor gets wet and slippery."
+   },
+   {
+    "es": "El adulto no puede quedarse.",
+    "en": "The adult can’t stay."
+   }
+  ],
+  "excluded": {
+   "es": "Agua caliente, productos de limpieza, piezas pequeñas o con bordes cortantes, tocar enchufes con las manos mojadas.",
+   "en": "Hot water, cleaning products, small or sharp-edged pieces, touching outlets with wet hands."
+  },
+  "data": {
+   "es": "No requiere cámara, micrófono, fotos ni ubicación.",
+   "en": "Needs no camera, microphone, photos or location."
+  },
+  "digitalAlternative": {
+   "es": "Las sesiones S2–S3 y S5 en pantalla reemplazan la actividad completa.",
+   "en": "Sessions S2–S3 and S5 on screen replace the whole activity."
+  },
+  "review": "pendienteDocente"
+ },
+ "review": {
+  "status": "draftPendingTeacherReview",
+  "notes": "Ningún docente ha validado esta unidad. Los códigos son candidatos; solo los ven los padres."
+ }
+}
