@@ -1,0 +1,90 @@
+{
+ "project": "Kitewise",
+ "subject": "ciencia",
+ "batch": "tanda-3j",
+ "count": 9,
+ "format": "PNG original de GPT, sin recortar; se convierte a WebP (props y poses recortados a su silueta)",
+ "assets": [
+  {
+   "source": "cover_c6_u05.png",
+   "sha256": "89c0ef893a33a60c768e7c7a03df25415f9038113ccdb88944af510650004f25",
+   "bytes": 1910445,
+   "output": "apps/mobile/assets/ciencia/covers/cover_c6_u05.webp",
+   "outputBytes": 82056,
+   "width": 1152,
+   "height": 768
+  },
+  {
+   "source": "prop_arbol.png",
+   "sha256": "629402c8e9306957bf62efdbbe93355251711db225bbe090de735a12d3371ae1",
+   "bytes": 1442847,
+   "output": "apps/mobile/assets/ciencia/props/prop_arbol.webp",
+   "outputBytes": 54936,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_mar.png",
+   "sha256": "f19e743d60cdca93d4791f35ef54d91218a7f10e50c558ab32d815138178fbac",
+   "bytes": 811493,
+   "output": "apps/mobile/assets/ciencia/props/prop_mar.webp",
+   "outputBytes": 26032,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_montana.png",
+   "sha256": "476e4106a63ac3ccce4247a9eab103c8487075d5f84e1a7f49d6c294bc62319b",
+   "bytes": 1165881,
+   "output": "apps/mobile/assets/ciencia/props/prop_montana.webp",
+   "outputBytes": 37604,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_nube.png",
+   "sha256": "c307d0ed8c13bd8d6fb5adc69df34bbe9e408f75db232edd660b45b8b50dcf66",
+   "bytes": 743896,
+   "output": "apps/mobile/assets/ciencia/props/prop_nube.webp",
+   "outputBytes": 15260,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_rio.png",
+   "sha256": "7c10805d62dfee44b1538e61c373c1e52683daab40630274fe22f5f7844a7fc6",
+   "bytes": 919772,
+   "output": "apps/mobile/assets/ciencia/props/prop_rio.webp",
+   "outputBytes": 34398,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_sol.png",
+   "sha256": "80844c57ec9b2690aa9cb58a26661bf8711cd3e8c06211b04318c9a56c97763f",
+   "bytes": 786970,
+   "output": "apps/mobile/assets/ciencia/props/prop_sol.webp",
+   "outputBytes": 30080,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_suelo_corte.png",
+   "sha256": "680e2631307b533221fec0d0b542c91a5baf50e233daf46c4e09589cc3ac1021",
+   "bytes": 1566916,
+   "output": "apps/mobile/assets/ciencia/props/prop_suelo_corte.webp",
+   "outputBytes": 59252,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "scene_c6_u05.png",
+   "sha256": "ff562d4cf13b1a9852e056857b6048b6c1bc95cc88ca36bfe4108779a1cdbe99",
+   "bytes": 2672776,
+   "output": "apps/mobile/assets/ciencia/bg/scene_c6_u05.webp",
+   "outputBytes": 212798,
+   "width": 1536,
+   "height": 1024
+  }
+ ]
+}

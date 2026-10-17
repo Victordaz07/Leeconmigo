@@ -1,0 +1,45 @@
+{
+ "project": "Kitewise",
+ "subject": "ciencia",
+ "batch": "tanda-3h",
+ "count": 4,
+ "format": "PNG original de GPT, sin recortar; se convierte a WebP (props y poses recortados a su silueta)",
+ "assets": [
+  {
+   "source": "cover_c3_u05.png",
+   "sha256": "48cb8a8d5361eedf86ecaa915c05fe4604e4b1e9eea1c310c5791422a3dace5e",
+   "bytes": 1470015,
+   "output": "apps/mobile/assets/ciencia/covers/cover_c3_u05.webp",
+   "outputBytes": 30766,
+   "width": 1152,
+   "height": 768
+  },
+  {
+   "source": "prop_carrito.png",
+   "sha256": "cd6f5525559b171dfd4c88068fa23d58c860279943044cc113f39d8f853c0628",
+   "bytes": 635053,
+   "output": "apps/mobile/assets/ciencia/props/prop_carrito.webp",
+   "outputBytes": 16028,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_pendulo.png",
+   "sha256": "03c10eb05d66b51f1e9edf8bd38a298d808589665a6246201275c3ee48165c45",
+   "bytes": 311784,
+   "output": "apps/mobile/assets/ciencia/props/prop_pendulo.webp",
+   "outputBytes": 12918,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "scene_c3_u05.png",
+   "sha256": "8458a27a714b310690b8c119e5d9da131aa040b1218fb00c55a23134fbe0c185",
+   "bytes": 2225833,
+   "output": "apps/mobile/assets/ciencia/bg/scene_c3_u05.webp",
+   "outputBytes": 111354,
+   "width": 1536,
+   "height": 1024
+  }
+ ]
+}

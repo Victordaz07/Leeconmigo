@@ -3,7 +3,7 @@
 las imágenes de Victor. Usa los MISMOS nombres de archivo que el pedido (docs/design/ciencia/PEDIDO-IMAGENES.md), así que
 `scripts/ciencia-arte.py` los sobrescribe cuando lleguen las reales.
 
-Uso:  python3 scripts/ciencia-arte-provisional.py <lote>   (A, B, F, H, I)
+Uso:  python3 scripts/ciencia-arte-provisional.py <lote>   (A, B, F, G, H, I)
 Una unidad con arte provisional NO está lista para el niño: `UNIT_ART_READY` queda en false y solo se ve en un build de demo.
 """
 import os, sys
@@ -230,6 +230,41 @@ def lote_f():
             d.rectangle((int(w * 0.64), int(h * 0.1), int(w * 0.92), int(h * 0.5)), fill=(244, 240, 228))
         bg.convert('RGB').save(f'{OUT}/{folder}/{name}.webp', 'WEBP', quality=80, method=6)
 
-LOTES = {'A': lote_a, 'B': lote_b, 'F': lote_f, 'H': lote_h, 'I': lote_i}
+def lote_g():
+    wood, dark = (214, 170, 110), (120, 80, 40)
+    # lupa
+    im, d = canvas()
+    d.line((300, 760, 560, 500), fill=dark, width=70)
+    d.line((300, 760, 560, 500), fill=wood, width=50)
+    d.ellipse((430, 120, 880, 570), fill=(225, 240, 250, 120), outline=(170, 176, 186), width=34)
+    save_prop(im, 'prop_lupa')
+    # esponja amarilla con poros
+    im, d = canvas()
+    d.rounded_rectangle((170, 300, 854, 740), 60, fill=(244, 210, 70), outline=(170, 130, 20), width=10)
+    for x, y in ((300, 430), (420, 560), (560, 440), (690, 590), (360, 650), (640, 360), (480, 680)):
+        d.ellipse((x - 28, y - 22, x + 28, y + 22), fill=(214, 170, 40))
+    save_prop(im, 'prop_esponja')
+    # cuchara de metal
+    im, d = canvas()
+    d.ellipse((130, 360, 440, 640), fill=(205, 212, 222), outline=(110, 120, 134), width=10)
+    d.polygon([(420, 470), (880, 520), (880, 560), (420, 540)], fill=(205, 212, 222), outline=(110, 120, 134))
+    d.ellipse((200, 400, 300, 470), fill=(245, 248, 252))
+    save_prop(im, 'prop_cuchara_metal')
+    for name, folder in (('cover_c2_u01', 'covers'), ('scene_c2_u01', 'bg')):
+        size = (1152, 768) if folder == 'covers' else (1536, 1024)
+        bg = gradient(size[0], size[1], (226, 232, 226), (190, 176, 150)).convert('RGBA')
+        d = ImageDraw.Draw(bg)
+        w, h = size
+        d.rectangle((0, int(h * 0.7), w, h), fill=(176, 134, 90))
+        for i in range(3):
+            x = int(w * (0.1 + 0.22 * i))
+            d.rounded_rectangle((x, int(h * 0.6), x + int(w * 0.18), int(h * 0.7)), 16, fill=(236, 232, 218), outline=(150, 140, 120), width=4)
+        if folder == 'bg':
+            d.rectangle((int(w * 0.64), int(h * 0.1), int(w * 0.92), int(h * 0.5)), fill=(244, 240, 228))
+        else:
+            d.ellipse((int(w * 0.4), int(h * 0.2), int(w * 0.62), int(h * 0.52)), fill=(225, 240, 250), outline=(170, 176, 186), width=10)
+        bg.convert('RGB').save(f'{OUT}/{folder}/{name}.webp', 'WEBP', quality=80, method=6)
+
+LOTES = {'A': lote_a, 'B': lote_b, 'F': lote_f, 'G': lote_g, 'H': lote_h, 'I': lote_i}
 LOTES[sys.argv[1] if len(sys.argv) > 1 else 'A']()
 print('arte provisional listo (reemplaza con las imágenes reales y scripts/ciencia-arte.py)')

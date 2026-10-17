@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest';
 
 /** Arte PROVISIONAL (dibujado con código) todavía conectado: vacío cuando llegaron todos los lotes de las unidades abiertas. */
-const PROVISIONAL: string[] = ['props/prop_rampa.webp', 'props/prop_bloque_madera.webp', 'bg/scene_c4_u02.webp', 'covers/cover_c4_u02.webp', 'props/prop_carrito.webp', 'props/prop_pendulo.webp', 'bg/scene_c3_u05.webp', 'covers/cover_c3_u05.webp', 'props/prop_marco_transparente.webp', 'props/prop_marco_calco.webp', 'props/prop_marco_cartulina.webp', 'props/prop_marco_aluminio.webp', 'bg/scene_c1_u03.webp', 'covers/cover_c1_u03.webp'];
+const PROVISIONAL: string[] = [];
 /** Un manifiesto por tanda/lote recibido. */
-const MANIFESTS = ['manifest-tanda-1.json', 'manifest-tanda-2a.json', 'manifest-tanda-2b.json', 'manifest-tanda-2c.json', 'manifest-tanda-2d.json', 'manifest-tanda-2e.json'];
+const MANIFESTS = ['manifest-tanda-1.json', 'manifest-tanda-2a.json', 'manifest-tanda-2b.json', 'manifest-tanda-2c.json', 'manifest-tanda-2d.json', 'manifest-tanda-2e.json', 'manifest-tanda-3f.json', 'manifest-tanda-3g.json', 'manifest-tanda-3h.json', 'manifest-tanda-3i.json', 'manifest-tanda-3j.json'];
 
 describe('arte de Ciencia', () => {
   it('cada archivo que art.ts referencia existe, y el manifiesto lo describe', async () => {
@@ -12,8 +12,8 @@ describe('arte de Ciencia', () => {
     const dir = new URL('../src/subjects/ciencia/', import.meta.url);
     const art = readFileSync(new URL('art.ts', dir), 'utf8');
     const files = [...art.matchAll(/require\('([^']+)'\)/g)].map((m) => m[1]);
-    // 18 de la Tanda 1 (la escena de la ladera es solo horizontal) + las 41 de la Tanda 2 (lotes A–E).
-    expect(files.length).toBeGreaterThanOrEqual(59);
+    // 18 de la Tanda 1 (la escena de la ladera es solo horizontal) + las 41 de la Tanda 2 (lotes A–E) + las 28 de la Tanda 3 (lotes F–J).
+    expect(files.length).toBeGreaterThanOrEqual(87);
     for (const f of files) expect(existsSync(new URL(f, dir)), f).toBe(true);
     let total = 0;
     for (const name of MANIFESTS) {
@@ -35,9 +35,8 @@ describe('arte de Ciencia', () => {
     expect(art).toMatch(/'C1-U02': true/);
     expect(art).toMatch(/'C2-U02': true/);
     expect(art).toMatch(/'C4-U06': true/);
-    // C4-U02 sigue con arte provisional (lote I): no se abre al niño hasta que lleguen las imágenes.
-    expect(art).toMatch(/'C4-U02': false/);
-    expect(art).toMatch(/'C3-U05': false/);
-    expect(art).toMatch(/'C1-U03': false/);
+    // Tanda 3: los lotes F–I llegaron y sus unidades están abiertas; el lote J (C6-U05) llegó pero la unidad aún no tiene contenido.
+    for (const id of ['C1-U03', 'C2-U01', 'C3-U05', 'C4-U02']) expect(art).toMatch(new RegExp(`'${id}': true`));
+    expect(art).toMatch(/'C6-U05': false/);
   });
 });

@@ -1,0 +1,36 @@
+{
+ "project": "Kitewise",
+ "subject": "ciencia",
+ "batch": "tanda-3i",
+ "count": 3,
+ "format": "PNG original de GPT, sin recortar; se convierte a WebP (props y poses recortados a su silueta)",
+ "assets": [
+  {
+   "source": "cover_c4_u02.png",
+   "sha256": "d242135759afdc0b48cfe5ecd06ccf70d8d02d41e54a79e8d4aef27ad5210bc9",
+   "bytes": 1259741,
+   "output": "apps/mobile/assets/ciencia/covers/cover_c4_u02.webp",
+   "outputBytes": 17352,
+   "width": 1152,
+   "height": 768
+  },
+  {
+   "source": "prop_rampa.png",
+   "sha256": "477aefa743afe2c26a7ee830548abadda64fa235584b692aeec66a3675ef3eaa",
+   "bytes": 524265,
+   "output": "apps/mobile/assets/ciencia/props/prop_rampa.webp",
+   "outputBytes": 14806,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "scene_c4_u02.png",
+   "sha256": "1cbc4cfb46ab801c715f9c30ee63f534a48ace79d38d310cde5244ca85d21c01",
+   "bytes": 2254332,
+   "output": "apps/mobile/assets/ciencia/bg/scene_c4_u02.webp",
+   "outputBytes": 92614,
+   "width": 1536,
+   "height": 1024
+  }
+ ]
+}

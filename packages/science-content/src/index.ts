@@ -19,3 +19,5 @@ export * from './labs/mezclas.ts';
 export * from './labs/choques.ts';
 export * from './labs/fuerzas.ts';
 export * from './labs/caminos.ts';
+export * from './labs/clasificar.ts';
+export * from './labs/ciclo.ts';

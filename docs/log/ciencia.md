@@ -110,3 +110,6 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
 
 ## 2026-10-17 · CI-19: C1-U03 «Caminos de luz» (arte provisional)
 - Cuatro materiales con cuatro resultados distintos (toda / un poco / no pasa / rebota), dos ideas y 1-PS4-3 con 7 tareas; textos cortos para 1.º. Verificada en tableta.
+
+## 2026-10-17 · Tanda 3 recibida (lotes F–J)
+- 28 imágenes revisadas, convertidas y conectadas; abiertas C1-U03, C2-U01, C3-U05 y C4-U02. Retocados los bancos de la rampa, el carrito y el péndulo con el arte real.

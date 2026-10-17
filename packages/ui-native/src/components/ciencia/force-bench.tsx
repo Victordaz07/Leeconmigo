@@ -7,6 +7,8 @@ export interface ForceArt {
 }
 
 const CM_PER_INNER = 0.006;
+/** Parte de arriba de `prop_pendulo.webp` que ocupa la barra de soporte (fracción de la imagen). */
+const PENDULUM_BAR = 0.13;
 
 interface CartBenchProps {
   art: ForceArt;
@@ -47,7 +49,7 @@ export function CartBench({ art, width, left, right, released, dir, travelCm, re
         <View style={[styles.floor, { top: floor }]} />
         <View style={{ position: 'absolute', left: 8, top: floor - cart * 0.62, width: inner * 0.2, alignItems: 'center' }}>{arrows(right, '➜', colors.brand)}</View>
         <View style={{ position: 'absolute', right: 8, top: floor - cart * 0.62, width: inner * 0.2, alignItems: 'center' }}>{arrows(left, '⬅', colors.orangeDeep)}</View>
-        <Image source={art.carrito} style={{ position: 'absolute', left: (inner - cart) / 2 + shift, top: floor - cart * 0.86, width: cart, height: cart }} resizeMode="contain" accessible={false} />
+        <Image source={art.carrito} style={{ position: 'absolute', left: (inner - cart) / 2 + shift, top: floor - cart * 0.745, width: cart, height: cart }} resizeMode="contain" accessible={false} />
       </View>
       {resultText ? <Text style={styles.result}>{resultText}</Text> : null}
     </View>
@@ -76,7 +78,10 @@ export function PendulumBench({ art, width, side, tickText, resultText, label }:
     <View style={[styles.card, { width }]}>
       <View style={[styles.stage, { height: stageH }]} accessible accessibilityRole="image" accessibilityLabel={label}>
         <View style={[styles.bar, { left: inner * 0.5 - 60 }]} />
-        <Image source={art.pendulo} style={{ position: 'absolute', left: (inner - size) / 2, top: 8, width: size, height: size, transform: [{ rotate: `${angle}deg` }], transformOrigin: '50% 4%' }} resizeMode="contain" accessible={false} />
+        {/* La imagen trae su barra arriba (y < 0.13): se recorta y se gira solo hilo y bola alrededor del soporte que dibuja la app. */}
+        <View style={{ position: 'absolute', left: (inner - size) / 2, top: 12, width: size, height: size * (1 - PENDULUM_BAR), overflow: 'hidden', transform: [{ rotate: `${angle}deg` }], transformOrigin: '50% 0%' }}>
+          <Image source={art.pendulo} style={{ position: 'absolute', left: 0, top: -size * PENDULUM_BAR, width: size, height: size }} resizeMode="contain" accessible={false} />
+        </View>
         {tickText ? <Text style={styles.tick}>{tickText}</Text> : null}
       </View>
       {resultText ? <Text style={styles.result}>{resultText}</Text> : null}

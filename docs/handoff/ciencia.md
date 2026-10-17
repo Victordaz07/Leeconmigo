@@ -271,3 +271,11 @@ tela, plástico, cartón), vaso de agua compartido con C5 y C6, bandeja con pico
 - UI: `LightPathBench` (linterna, marco con el material y pared; los haces, la pared iluminada y la sombra los dibuja la app) y `families/path.tsx` (elegir material y encender, tabla de qué pasó con la luz).
 - **Arte PROVISIONAL** (`scripts/ciencia-arte-provisional.py F`): los 4 `prop_marco_*`, `scene_c1_u03` y `cover_c1_u03`; en `PROVISIONAL` de `tests/ciencia-art.test.ts` y `UNIT_ART_READY['C1-U03']` en **false**.
   Al llegar el lote F: `scripts/ciencia-arte.py <carpeta> tanda-3f`, vaciar `PROVISIONAL`, retocar las posiciones de `LightPathBench` (marco y pared) si hace falta, poner `UNIT_ART_READY['C1-U03']` en true y sumar `manifest-tanda-3f.json` a `MANIFESTS`.
+
+## Actualización Tanda 3 recibida (2026-10-17): lotes F–J (28 imágenes) convertidos y conectados
+- Revisadas: sin texto ni números, marcos y piezas con fondo transparente limpio (el marco transparente es de verdad transparente), rampa alta a la izquierda, centro despejado en las escenas.
+  Convertidas con `scripts/ciencia-arte.py` (manifiestos `manifest-tanda-3f…3j.json`, 1,2 MB en total). **Se acabó el arte provisional**: `PROVISIONAL` está vacío y el pedido provisional se borró al sobrescribirse.
+- `UNIT_ART_READY` en true para **C1-U03, C2-U01, C3-U05 y C4-U02**: están abiertas al niño. C6-U05 tiene el arte (`CIENCIA_AGUA`, escena `costa`, portada `c6u05`) pero aún no contenido: `UNIT_ART_READY['C6-U05']` sigue false.
+- Retoques con el arte real: `RampBench` (pendiente medida en `prop_rampa`: baja de (0.2, 0.28) a (0.78, 0.58), base en y = 0.776), `CartBench` (ruedas sobre la mesa) y `PendulumBench`
+  (la imagen trae su barra de soporte: se recorta el 13 % de arriba y la barra la dibuja la app, para girar solo hilo y bola).
+- Unidades de Ciencia abiertas: **11** (C1-U02, C1-U03, C2-U01, C2-U02, C3-U05, C3-U06, C4-U02, C4-U06, C5-U02, C5-U03, C6-U04). Falta C6-U05 (agua en movimiento, constructor del modelo).

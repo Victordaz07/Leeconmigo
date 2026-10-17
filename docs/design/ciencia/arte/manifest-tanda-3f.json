@@ -1,0 +1,63 @@
+{
+ "project": "Kitewise",
+ "subject": "ciencia",
+ "batch": "tanda-3f",
+ "count": 6,
+ "format": "PNG original de GPT, sin recortar; se convierte a WebP (props y poses recortados a su silueta)",
+ "assets": [
+  {
+   "source": "cover_c1_u03.png",
+   "sha256": "3baa02dd2133354e212f034e1007efeb84da6b3480fcbd4ebb985f14d0a1aa50",
+   "bytes": 1409830,
+   "output": "apps/mobile/assets/ciencia/covers/cover_c1_u03.webp",
+   "outputBytes": 20498,
+   "width": 1152,
+   "height": 768
+  },
+  {
+   "source": "prop_marco_aluminio.png",
+   "sha256": "234700013998e1dd0d4fc39b5911f947e3deed1d1887442b6840cbba8eee0ddf",
+   "bytes": 865742,
+   "output": "apps/mobile/assets/ciencia/props/prop_marco_aluminio.webp",
+   "outputBytes": 16094,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_marco_calco.png",
+   "sha256": "45c14f4c8573e01f9285231409b8fdaa55285cc4a0a8446575b3be7090bb7829",
+   "bytes": 821258,
+   "output": "apps/mobile/assets/ciencia/props/prop_marco_calco.webp",
+   "outputBytes": 13558,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_marco_cartulina.png",
+   "sha256": "b123b99d9a8c4736d0924a6f43ed75ebc4fe45664bda2b98ff456dbb942345cb",
+   "bytes": 894194,
+   "output": "apps/mobile/assets/ciencia/props/prop_marco_cartulina.webp",
+   "outputBytes": 13344,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "prop_marco_transparente.png",
+   "sha256": "7942f1aa934e6d234c12d35192672d7305075ddfc05fbcf9b4d6c378f1bf5b86",
+   "bytes": 540088,
+   "output": "apps/mobile/assets/ciencia/props/prop_marco_transparente.webp",
+   "outputBytes": 13260,
+   "width": 384,
+   "height": 384
+  },
+  {
+   "source": "scene_c1_u03.png",
+   "sha256": "64419e92fd74ef3b58afbb3481e65db484b3cd1f627a75e2c2fdf02de9f45c51",
+   "bytes": 2185225,
+   "output": "apps/mobile/assets/ciencia/bg/scene_c1_u03.webp",
+   "outputBytes": 78524,
+   "width": 1536,
+   "height": 1024
+  }
+ ]
+}

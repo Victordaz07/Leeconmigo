@@ -204,6 +204,21 @@ export const CIENCIA_COPY = {
     mixHidden: L('Todavía no probamos esta mezcla: ¡predice!', 'We haven’t tested this mixture yet: make a prediction!'),
     mixSafe: L('Todo en vasitos abiertos y con poca cantidad. Nunca se prueba con la boca.', 'Everything in open cups with a small amount. Never tasted.'),
   },
+  /** Detectives de materiales: mirar con la lupa y agrupar por una propiedad (C2-U01). */
+  sort: {
+    lens: (name: string) => L(`Con la lupa: ${name}`, `With the lens: ${name}`),
+    pickObject: L('Toca un objeto para mirarlo con la lupa.', 'Tap an object to look at it with the lens.'),
+    hidden: L('Todavía no lo miramos con la lupa: ¡predice!', 'We haven’t looked at it with the lens yet: make a prediction!'),
+    isValue: (name: string, value: string) => L(`${name}: ${value}`, `${name}: ${value}`),
+    groupTitle: (prop: string) => L(`Grupos por ${String(prop).toLowerCase()}`, `Groups by ${String(prop).toLowerCase()}`),
+    pickBin: L('Ahora toca el grupo donde va.', 'Now tap the group where it goes.'),
+    placed: (n: number, t: number) => L(`Agrupaste ${n} de ${t}`, `You grouped ${n} of ${t}`),
+    placedAll: L('¡Agrupaste todos! Puedes cambiar uno si quieres.', 'You grouped them all! You can change one if you like.'),
+    lookAgain: L('Míralo otra vez con la lupa y prueba con el otro grupo.', 'Look at it again with the lens and try the other group.'),
+    tableTitle: L('Mi tabla de propiedades', 'My table of properties'),
+    objectCol: L('Objeto', 'Object'),
+    made: (material: string) => L(`de ${material}`, `made of ${material}`),
+  },
   /** Caminos de luz: la linterna, el marco y la pared (C1-U03). */
   path: {
     benchLabel: (name: string, lit: boolean) => L(lit ? `Linterna encendida con ${name} en el marco.` : `Linterna, marco con ${name} y pared.`, lit ? `Flashlight on with ${name} in the frame.` : `Flashlight, frame with ${name} and wall.`),

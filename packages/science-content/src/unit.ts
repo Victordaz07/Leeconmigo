@@ -6,6 +6,7 @@
 import type { Localized } from '@lee-conmigo/contracts';
 import c1u02 from '../content/c1-u02.json';
 import c1u03 from '../content/c1-u03.json';
+import c2u01 from '../content/c2-u01.json';
 import c2u02 from '../content/c2-u02.json';
 import c3u05 from '../content/c3-u05.json';
 import c3u06 from '../content/c3-u06.json';
@@ -17,6 +18,7 @@ import c6u04 from '../content/c6-u04.json';
 import { practiceMapProblems, PRACTICE_MAPS, bandCount, LADERA_DATASETS, type Dataset } from './datasets.ts';
 import { COVERS, SLOPES, type Cover, type Slope } from './labs/erosion.ts';
 import { LIGHT_OBJECTS, LIGHT_STATES, type LightObject, type LightState } from './labs/luz.ts';
+import { MATERIAL_OF, SORT_OBJECTS, SORT_PROPS, matching, propertyOf, withValue, type SortObject, type SortProp } from './labs/clasificar.ts';
 import { PATH_MATERIALS, lightReachesWall, makesShadow, outcomeOf } from './labs/caminos.ts';
 import { MAX_PUSHES, TABLE_PAIRS, balanced, cartMove, swingSide, travelCm } from './labs/fuerzas.ts';
 import { BLOCK_SLIDE_CM, RELEASE_MARKS, isMark, pushesFarther, slideCm } from './labs/choques.ts';
@@ -168,6 +170,22 @@ export interface PathSetup {
   static?: boolean;
 }
 
+/** Los objetos que se miran con la lupa y se agrupan por una propiedad (C2-U01). */
+export interface SortSetup {
+  /** `look` = mirar un objeto con la lupa · `sort` = agruparlos por una propiedad · `table` = tabla de propiedades. */
+  view: 'look' | 'sort' | 'table';
+  /** look: el objeto que se mira. */
+  object?: SortObject;
+  /** sort: la propiedad por la que se agrupa. */
+  prop?: SortProp;
+  /** table: las propiedades (columnas). */
+  props?: SortProp[];
+  /** Se muestran los resultados ya hechos (para analizarlos). */
+  static?: boolean;
+  /** look: lo que dice la lupa queda oculto (para predecir). */
+  hidden?: boolean;
+}
+
 export interface ChoiceOption {
   id: string;
   text: Localized;
@@ -212,6 +230,7 @@ export interface UnitStep {
   ramp?: RampSetup;
   forces?: ForceSetup;
   path?: PathSetup;
+  sort?: SortSetup;
   /** Pasos de «arreglar la prueba»: el laboratorio resultante según el arreglo que elija el niño (id de la opción). */
   labFixed?: Record<string, LabSetup>;
   choice?: StepChoice;
@@ -312,7 +331,7 @@ export interface ScienceUnit {
 }
 
 /** Las unidades con contenido, por grado. Una unidad con contenido todavía puede esperar su arte (`UNIT_ART_READY` en la app). */
-export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c1u03 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c3u05 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c4u02 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c5u02 as unknown as ScienceUnit, c5u03 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit];
+export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c1u03 as unknown as ScienceUnit, c2u01 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c3u05 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c4u02 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c5u02 as unknown as ScienceUnit, c5u03 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit];
 export const scienceUnitContent = (id: string): ScienceUnit | undefined => SCIENCE_UNITS.find((u) => u.id === id);
 
 // ------------------------------------------------------------------ evaluar una tarea
@@ -474,6 +493,15 @@ export function unitProblems(u: ScienceUnit): string[] {
       if (!MATERIAL_TESTS.includes(st.material.test)) p.push(`${st.id}: prueba de materiales desconocida`);
       if (st.material.trials !== undefined && (st.material.trials < 1 || st.material.trials > MATERIALS.length)) p.push(`${st.id}: los materiales a probar van de 1 a ${MATERIALS.length}`);
     }
+    if (st.sort) {
+      const k = st.sort;
+      if (k.object !== undefined && !SORT_OBJECTS.includes(k.object)) p.push(`${st.id}: objeto desconocido (${k.object})`);
+      if (k.prop !== undefined && !SORT_PROPS.includes(k.prop)) p.push(`${st.id}: propiedad desconocida (${k.prop})`);
+      for (const x of k.props ?? []) if (!SORT_PROPS.includes(x)) p.push(`${st.id}: propiedad desconocida (${x})`);
+      if (k.view === 'look' && !k.object) p.push(`${st.id}: mirar con la lupa necesita un objeto`);
+      if (k.view === 'sort' && !k.prop) p.push(`${st.id}: agrupar necesita una propiedad`);
+      if (k.view === 'table' && !k.props?.length) p.push(`${st.id}: la tabla necesita propiedades`);
+    }
     if (st.path) {
       if (st.path.material !== undefined && !PATH_MATERIALS.includes(st.path.material)) p.push(`${st.id}: material desconocido (${st.path.material})`);
       if (st.path.trials !== undefined && (st.path.trials < 1 || st.path.trials > PATH_MATERIALS.length)) p.push(`${st.id}: los materiales a probar van de 1 a ${PATH_MATERIALS.length}`);
@@ -584,6 +612,7 @@ export function dataTextProblems(u: ScienceUnit): string[] {
   if (u.id === 'C4-U02') return rampTextProblems(u);
   if (u.id === 'C3-U05') return forceTextProblems(u);
   if (u.id === 'C1-U03') return pathTextProblems(u);
+  if (u.id === 'C2-U01') return sortTextProblems(u);
   if (u.id !== 'C4-U06') return p;
   const t5 = u.tasks.find((t) => t.id === 't5');
   const base = LADERA_DATASETS.base.rows;
@@ -924,5 +953,44 @@ function pathTextProblems(u: ScienceUnit): string[] {
   if (!says('nada', 'es').includes('no pasa') || outcomeOf('cartulina') !== 'nada') p.push('t2.nada: con la cartulina la luz no pasa');
   if (outcomeOf('calco') !== 'poca' || !(t2?.find((o) => o.id === 'calco')?.whyNot?.es ?? '').includes('un poco')) p.push('t2.calco: con el calco la luz pasa un poco');
   if (outcomeOf('aluminio') !== 'rebota' || !(t2?.find((o) => o.id === 'alu')?.whyNot?.es ?? '').includes('rebota')) p.push('t2.alu: con el aluminio la luz rebota');
+  return p;
+}
+
+/** C2-U01: lo que dicen los textos sobre los objetos y sus propiedades coincide con el modelo de clasificación. */
+function sortTextProblems(u: ScienceUnit): string[] {
+  const p: string[] = [];
+  const steps = u.sessions.flatMap((s) => s.steps);
+  const part = (taskId: string, partId: string) => u.tasks.find((t) => t.id === taskId)?.parts.find((x) => x.id === partId);
+  const opt = (taskId: string, partId: string, id: string) => part(taskId, partId)?.options.find((o) => o.id === id);
+  // Predicciones: lo observado es lo que da el modelo.
+  if (part('t3', 'resultado')?.observedOptionId !== propertyOf('esponja', 'dureza')) p.push('t3.resultado: la esponja debe ir con los blandos');
+  if (part('t4', 'resultado')?.observedOptionId !== propertyOf('bloque', 'dureza') || MATERIAL_OF.bloque.es !== 'madera') p.push('t4.resultado: el bloque de madera es duro');
+  // t1: la cuchara es dura y brilla (y no es blanda ni rugosa).
+  if (propertyOf('cuchara', 'dureza') !== 'duro' || propertyOf('cuchara', 'brillo') !== 'brilla' || propertyOf('cuchara', 'textura') !== 'liso') p.push('t1: la cuchara debe ser dura, lisa y brillante');
+  // t2: lo que dicen las opciones coincide con la tabla.
+  const t2 = (id: string) => opt('t2', 'observaciones', id);
+  if (propertyOf('esponja', 'dureza') !== 'blando' || propertyOf('esponja', 'textura') !== 'rugoso' || !t2('esponja')?.valid) p.push('t2.esponja: la esponja es blanda y rugosa');
+  if (propertyOf('taza', 'dureza') !== 'duro' || propertyOf('taza', 'textura') !== 'liso' || propertyOf('taza', 'brillo') !== 'brilla' || !t2('taza')?.valid) p.push('t2.taza: la taza es dura, lisa y brilla');
+  if (propertyOf('pelota', 'dureza') !== 'blando' || t2('pelota')?.valid) p.push('t2.pelota: la pelota es blanda');
+  if (propertyOf('tela', 'brillo') !== 'mate' || t2('tela')?.valid) p.push('t2.tela: la tela es mate');
+  // t5: los grupos que cita la evidencia.
+  for (const lang of ['es', 'en'] as const) {
+    const dureza = opt('t5', 'evidencia', 'dureza')?.text[lang] ?? '';
+    const names = withValue('dureza', 'duro').length === 3 && withValue('dureza', 'blando').length === 3;
+    if (!names || !dureza.includes(lang === 'es' ? 'la cuchara, el bloque y la taza son duros' : 'the spoon, the block and the cup are hard')) p.push(`t5.dureza (${lang}): no coincide con los grupos del modelo`);
+    if (!(opt('t5', 'evidencia', 'brillo')?.text[lang] ?? '').includes(lang === 'es' ? 'solo la cuchara y la taza brillan' : 'only the spoon and the cup are shiny') || withValue('brillo', 'brilla').join() !== 'cuchara,taza') p.push(`t5.brillo (${lang}): no coincide con el modelo`);
+  }
+  // t6 y t7: el único objeto blando y liso es la pelota; la esponja es rugosa y la cuchara y la taza, duras.
+  if (matching({ dureza: 'blando', textura: 'liso' }).join() !== 'pelota') p.push('el único objeto blando y liso debe ser la pelota');
+  for (const id of ['t6', 't7']) {
+    const valid = part(id, 'objeto')?.options.filter((o) => o.valid).map((o) => o.id);
+    if (valid?.join() !== 'pelota') p.push(`${id}.objeto: la única respuesta válida debe ser la pelota`);
+  }
+  if (withValue('dureza', 'blando').length !== 3 || withValue('textura', 'liso').length !== 3) p.push('t6.limite: tres objetos son blandos y tres son lisos');
+  const expected = (id: string) => steps.find((st) => st.id === id)?.choice?.options.find((o) => o.expected)?.id;
+  if (expected('s3.2') !== matching({ dureza: 'duro', brillo: 'brilla' }).join('_')) p.push('s3.2: los objetos duros que brillan no coinciden con el modelo');
+  if (expected('s3.3') !== 'distinto') p.push('s3.3: el mismo objeto cae en grupos distintos');
+  if (expected('s3.4') !== propertyOf('pelota', 'brillo')) p.push('s3.4: la pelota va con los que no brillan (mate)');
+  if (expected('s2.1') !== 'propiedad') p.push('s2.1: se agrupa por una propiedad');
   return p;
 }

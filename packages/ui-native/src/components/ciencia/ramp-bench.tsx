@@ -28,7 +28,8 @@ interface RampBenchProps {
 
 // Dónde está la pendiente de la rampa en la imagen (fracciones de su cuadrado): de abajo (marca 1) a arriba (marca más alta).
 // Si cambia el arte, se ajusta aquí.
-const RAMP = { bottom: { x: 0.8, y: 0.6 }, top: { x: 0.27, y: 0.34 }, end: 0.9 };
+// Medido en `prop_rampa.webp` (lote I real): la cara de arriba baja de (0.2, 0.28) a (0.78, 0.58); la base toca la mesa en y = 0.776.
+const RAMP = { bottom: { x: 0.78, y: 0.58 }, top: { x: 0.2, y: 0.283 }, end: 0.99, base: 0.776 };
 const CM_PER_INNER = 0.0085;
 
 /**
@@ -43,13 +44,13 @@ export function RampBench({ art, width, mark, marks, onMark, markLabel, released
   const ballSize = Math.round(inner * 0.07);
   const blockSize = Math.round(inner * 0.17);
   const floor = stageH - 30; // la mesa
-  const rampTop = floor - rs * 0.86;
-  const at = (p: { x: number; y: number }) => ({ x: p.x * rs, y: rampTop + (p.y - 0.12) * rs });
+  const imgTop = floor - rs * RAMP.base;
+  const at = (p: { x: number; y: number }) => ({ x: p.x * rs, y: imgTop + p.y * rs });
   const top = at(RAMP.top);
   const bottom = at(RAMP.bottom);
   const pos = (m: number) => {
     const t = marks.length > 1 ? (m - 1) / (marks.length - 1) : 0;
-    const f = 0.12 + t * 0.78;
+    const f = 0.1 + t * 0.8;
     return { x: bottom.x + (top.x - bottom.x) * f, y: bottom.y + (top.y - bottom.y) * f };
   };
   const blockStart = rs * RAMP.end + inner * 0.02;
@@ -60,9 +61,9 @@ export function RampBench({ art, width, mark, marks, onMark, markLabel, released
   return (
     <View style={[styles.card, { width }]}>
       <View style={[styles.stage, { height: stageH }]} accessible accessibilityRole="image" accessibilityLabel={label}>
-        <Image source={art.rampa} style={{ position: 'absolute', left: 0, top: rampTop - rs * 0.12, width: rs, height: rs }} resizeMode="contain" accessible={false} />
+        <Image source={art.rampa} style={{ position: 'absolute', left: 0, top: imgTop, width: rs, height: rs }} resizeMode="contain" accessible={false} />
         <View style={[styles.floor, { top: floor }]} />
-        <Image source={art.bloque} style={{ position: 'absolute', left: blockStart + shift, top: floor - blockSize * 0.86, width: blockSize, height: blockSize }} resizeMode="contain" accessible={false} />
+        <Image source={art.bloque} style={{ position: 'absolute', left: blockStart + shift, top: floor - blockSize * 0.83, width: blockSize, height: blockSize }} resizeMode="contain" accessible={false} />
         {ball ? <Image source={art.bola} style={{ position: 'absolute', left: ball.x, top: ball.y, width: ballSize, height: ballSize }} resizeMode="contain" accessible={false} /> : null}
         {marks.map((m) => (
           <Pressable key={m} disabled={!onMark} onPress={() => onMark?.(m)} accessibilityRole="button" accessibilityState={{ selected: m === mark }} accessibilityLabel={markLabel(m)} style={[styles.mark, { left: pos(m).x - 17, top: pos(m).y + 2 }, m === mark && styles.markOn]}>

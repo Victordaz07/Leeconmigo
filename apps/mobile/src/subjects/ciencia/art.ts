@@ -25,9 +25,11 @@ export const SCENE_ART: Record<string, { source: ImageSourcePropType; aspect: nu
   alfeizar: { source: require('../../../assets/ciencia/bg/scene_c6_u04.webp'), aspect: 1536 / 1024 },
   taller: { source: require('../../../assets/ciencia/bg/scene_c3_u06.webp'), aspect: 1536 / 1024 },
   mesaLab: { source: require('../../../assets/ciencia/bg/scene_c5_u02.webp'), aspect: 1536 / 1024 },
-  sala: { source: require('../../../assets/ciencia/bg/scene_c1_u03.webp'), aspect: 1536 / 1024 }, // Lote F (provisional)
-  patio: { source: require('../../../assets/ciencia/bg/scene_c3_u05.webp'), aspect: 1536 / 1024 }, // Lote H (provisional)
-  mesaRampa: { source: require('../../../assets/ciencia/bg/scene_c4_u02.webp'), aspect: 1536 / 1024 }, // Lote I (provisional)
+  costa: { source: require('../../../assets/ciencia/bg/scene_c6_u05.webp'), aspect: 1536 / 1024 },
+  aula: { source: require('../../../assets/ciencia/bg/scene_c2_u01.webp'), aspect: 1536 / 1024 },
+  sala: { source: require('../../../assets/ciencia/bg/scene_c1_u03.webp'), aspect: 1536 / 1024 },
+  patio: { source: require('../../../assets/ciencia/bg/scene_c3_u05.webp'), aspect: 1536 / 1024 },
+  mesaRampa: { source: require('../../../assets/ciencia/bg/scene_c4_u02.webp'), aspect: 1536 / 1024 },
 };
 
 const COVER_C5_U02 = require('../../../assets/ciencia/covers/cover_c5_u02.webp');
@@ -35,9 +37,11 @@ const COVER_C5_U02 = require('../../../assets/ciencia/covers/cover_c5_u02.webp')
 /** Portadas: el cuaderno en Inicio y la unidad C4-U06. */
 export const CIENCIA_COVERS = {
   notebook: require('../../../assets/ciencia/covers/cover_ciencia_cuaderno.webp'),
-  c1u03: require('../../../assets/ciencia/covers/cover_c1_u03.webp'), // Lote F (provisional)
-  c3u05: require('../../../assets/ciencia/covers/cover_c3_u05.webp'), // Lote H (provisional)
-  c4u02: require('../../../assets/ciencia/covers/cover_c4_u02.webp'), // Lote I (provisional)
+  c6u05: require('../../../assets/ciencia/covers/cover_c6_u05.webp'),
+  c2u01: require('../../../assets/ciencia/covers/cover_c2_u01.webp'),
+  c1u03: require('../../../assets/ciencia/covers/cover_c1_u03.webp'),
+  c3u05: require('../../../assets/ciencia/covers/cover_c3_u05.webp'),
+  c4u02: require('../../../assets/ciencia/covers/cover_c4_u02.webp'),
   c4u06: require('../../../assets/ciencia/covers/cover_c4_u06.webp'),
   c1u02: require('../../../assets/ciencia/covers/cover_c1_u02.webp'),
   c2u02: require('../../../assets/ciencia/covers/cover_c2_u02.webp'),
@@ -123,20 +127,22 @@ export const CIENCIA_SISTEMAS = {
   },
 } satisfies { frasco: ImageSourcePropType; balanza: ImageSourcePropType; muestras: Record<string, ImageSourcePropType> };
 
-/** Arte de C4-U02 «Energía en movimiento» (Lote I; provisional hasta que lleguen las imágenes): rampa, bloque y la bola de siempre. */
+const BLOQUE_MADERA = require('../../../assets/ciencia/props/prop_bloque_madera.webp');
+
+/** Arte de C4-U02 «Energía en movimiento» (Lote I, recibido): rampa, bloque y la bola de siempre. */
 export const CIENCIA_MOVIMIENTO = {
   rampa: require('../../../assets/ciencia/props/prop_rampa.webp'),
-  bloque: require('../../../assets/ciencia/props/prop_bloque_madera.webp'),
+  bloque: BLOQUE_MADERA,
   bola: CIENCIA_LUZ.objetos.pelota,
 } satisfies { rampa: ImageSourcePropType; bloque: ImageSourcePropType; bola: ImageSourcePropType };
 
-/** Arte de C3-U05 «Fuerzas y movimiento» (Lote H; provisional hasta que lleguen las imágenes): el carrito y el péndulo. */
+/** Arte de C3-U05 «Fuerzas y movimiento» (Lote H, recibido): el carrito y el péndulo. */
 export const CIENCIA_FUERZAS = {
   carrito: require('../../../assets/ciencia/props/prop_carrito.webp'),
   pendulo: require('../../../assets/ciencia/props/prop_pendulo.webp'),
 } satisfies { carrito: ImageSourcePropType; pendulo: ImageSourcePropType };
 
-/** Arte de C1-U03 «Caminos de luz» (Lote F; provisional hasta que lleguen las imágenes): la linterna de siempre y los cuatro marcos. */
+/** Arte de C1-U03 «Caminos de luz» (Lote F, recibido): la linterna de siempre y los cuatro marcos. */
 export const CIENCIA_CAMINOS = {
   linterna: CIENCIA_LUZ.linterna,
   marcos: {
@@ -146,6 +152,30 @@ export const CIENCIA_CAMINOS = {
     aluminio: require('../../../assets/ciencia/props/prop_marco_aluminio.webp'),
   },
 } satisfies { linterna: ImageSourcePropType; marcos: Record<string, ImageSourcePropType> };
+
+/** Arte de C2-U01 «Detectives de materiales» (Lote G, recibido): la lupa y los seis objetos. */
+export const CIENCIA_CLASIFICAR = {
+  lupa: require('../../../assets/ciencia/props/prop_lupa.webp'),
+  objetos: {
+    cuchara: require('../../../assets/ciencia/props/prop_cuchara_metal.webp'),
+    bloque: BLOQUE_MADERA,
+    esponja: require('../../../assets/ciencia/props/prop_esponja.webp'),
+    pelota: CIENCIA_LUZ.objetos.pelota,
+    taza: CIENCIA_LUZ.objetos.taza,
+    tela: CIENCIA_MATERIALES.materiales.tela,
+  },
+} satisfies { lupa: ImageSourcePropType; objetos: Record<string, ImageSourcePropType> };
+
+/** Arte de C6-U05 «Agua en movimiento» (Lote J, recibido: `manifest-tanda-3j.json`): las piezas del modelo del ciclo del agua. */
+export const CIENCIA_AGUA = {
+  sol: require('../../../assets/ciencia/props/prop_sol.webp'),
+  nube: require('../../../assets/ciencia/props/prop_nube.webp'),
+  mar: require('../../../assets/ciencia/props/prop_mar.webp'),
+  montana: require('../../../assets/ciencia/props/prop_montana.webp'),
+  rio: require('../../../assets/ciencia/props/prop_rio.webp'),
+  arbol: require('../../../assets/ciencia/props/prop_arbol.webp'),
+  suelo: require('../../../assets/ciencia/props/prop_suelo_corte.webp'),
+} satisfies Record<string, ImageSourcePropType>;
 
 /** Maya, la guía de Ciencia (DC-4, a confirmar por Victor). Misma niña de la historia `la-isla-que-caminaba`. */
 export type MayaPose = 'saluda' | 'piensa' | 'investiga' | 'apunta' | 'celebra';
@@ -169,9 +199,11 @@ export const UNIT_ART_READY: Record<string, boolean> = {
   'C3-U06': true,
   'C5-U02': true,
   'C5-U03': true, // usa el arte de Lote E (frasco, muestras) y dibuja bicarbonato/vinagre; portada provisional
-  'C1-U03': false, // Lote F pedido (Tanda 3); con arte provisional solo se ve en un build de demo
-  'C3-U05': false, // Lote H pedido (Tanda 3); con arte provisional solo se ve en un build de demo
-  'C4-U02': false, // Lote I pedido (Tanda 3); con arte provisional solo se ve en un build de demo
+  'C2-U01': true, // Lote G recibido (manifest-tanda-3g)
+  'C1-U03': true, // Lote F recibido (manifest-tanda-3f)
+  'C3-U05': true, // Lote H recibido (manifest-tanda-3h)
+  'C4-U02': true, // Lote I recibido (manifest-tanda-3i)
+  'C6-U05': false, // Lote J recibido (manifest-tanda-3j); sin contenido todavía
   'C6-U04': true, // Lote C recibido (manifest-tanda-2c)
 };
 

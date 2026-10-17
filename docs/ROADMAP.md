@@ -104,11 +104,11 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | CI-14 | C3-U06 «Interacciones sin tocar»: modelo del imán, unidad en JSON validado y mesa del imán | ✅ | A | Lote D recibido (9 imágenes); verificada en tableta y teléfono; la electricidad estática del mapa queda pendiente (globo y papelitos ya tienen arte) |
 | CI-15 | C5-U02 «Cantidad y propiedades»: modelo de masa y propiedades, unidad en JSON validado, balanza con frasco cerrado y tabla de muestras | ✅ | A | Lote E recibido (8 imágenes); verificada en tableta y teléfono (ES); con esto **las 6 unidades piloto están jugables** |
 | CI-16 | C5-U03 «Mezclas bajo investigación» (5-PS1-4): modelo de mezclas, unidad en JSON validado y tabla de pruebas | ✅ | A | Sin imágenes nuevas: usa el arte del Lote E y dibuja bicarbonato, vinagre y agua; portada provisional (la de C5-U02). Verificada en tableta (ES) |
-| CI-17 | C4-U02 «Energía en movimiento» (4.º) — lote I | 🟡 | A | modelo de la rampa, contenido (6 sesiones, 8 tareas) y pantallas hechos y verificados en tableta con **arte provisional**; falta el lote I real (3 imágenes + `prop_bloque_madera` del lote G) para abrirla al niño |
-| CI-18 | C3-U05 «Fuerzas y movimiento» (3.º) — lote H | 🟡 | A | modelo (carrito con empujones + péndulo), contenido (6 sesiones, 8 tareas) y pantallas hechos y verificados en tableta con **arte provisional**; falta el lote H real (4 imágenes) para abrirla al niño |
-| CI-19 | C1-U03 «Caminos de luz» (1.º) — lote F | 🟡 | A | modelo (4 materiales: pasa toda / un poco / no pasa / rebota), contenido (6 sesiones, 8 tareas) y pantallas hechos y verificados en tableta con **arte provisional**; falta el lote F real (6 imágenes) para abrirla al niño |
-| CI-20 | C2-U01 «Detectives de materiales» (2.º) — lote G | ⬜ | A | pedido de imágenes hecho (6); falta clasificación por propiedades, contenido y pantallas |
-| CI-21 | C6-U05 «Agua en movimiento» (6.º) — lote J | ⬜ | A | pedido de imágenes hecho (9); falta constructor del ciclo del agua, contenido y pantallas |
+| CI-17 | C4-U02 «Energía en movimiento» (4.º): modelo de la rampa, contenido y banco de la rampa | ✅ | A | Lote I recibido (3 imágenes); verificada en tableta; abierta al niño |
+| CI-18 | C3-U05 «Fuerzas y movimiento» (3.º): carrito con empujones, péndulo y contenido | ✅ | A | Lote H recibido (4 imágenes); verificada en tableta; abierta al niño |
+| CI-19 | C1-U03 «Caminos de luz» (1.º): materiales y luz, contenido y banco de la linterna | ✅ | A | Lote F recibido (6 imágenes); verificada en tableta; abierta al niño |
+| CI-20 | C2-U01 «Detectives de materiales» (2.º): clasificar por propiedades, contenido y mesa del detective | ✅ | A | Lote G recibido (6 imágenes); verificada en tableta; abierta al niño |
+| CI-21 | C6-U05 «Agua en movimiento» (6.º) — lote J | ⬜ | A | arte recibido (9 imágenes, `manifest-tanda-3j`); falta constructor del ciclo del agua, contenido y pantallas |
 
 ---
 
