@@ -1,0 +1,80 @@
+{
+  "id": "s1u01",
+  "grade": 1,
+  "standard": "CA HSS 1.1.1-1.1.2",
+  "standardsReview": {
+    "status": "draftPendingTeacherReview",
+    "confidence": "highAtUnitLevel",
+    "displayAudience": "parentsOnly",
+    "isCertified": false
+  },
+  "title": { "es": "Una regla para compartir", "en": "A rule for sharing" },
+  "cast": ["ines", "teo"],
+  "sources": [],
+  "steps": [
+    {
+      "id": "s1",
+      "kind": "pregunta",
+      "prompt": {
+        "es": "Inés y Teo tienen dos juegos de bloques, pero hoy quieren jugar cuatro niños en el recreo. ¿Cómo deciden quién usa qué?",
+        "en": "Inés and Teo have two sets of blocks, but four kids want to play at recess today. How do they decide who uses what?"
+      }
+    },
+    {
+      "id": "s2",
+      "kind": "elegir",
+      "prompt": {
+        "es": "Los cuatro niños proponen tres ideas entre todos. ¿Cuál te parece mejor?",
+        "en": "The four kids come up with three ideas together. Which one seems best to you?"
+      },
+      "choices": [
+        { "id": "turnos", "text": { "es": "Usar turnos: cada quien juega un rato.", "en": "Take turns: everyone plays for a while." } },
+        { "id": "parejas", "text": { "es": "Jugar en parejas, dos y dos.", "en": "Play in pairs, two and two." } },
+        { "id": "uno", "text": { "es": "El que llegó primero se queda con todo.", "en": "Whoever got there first keeps everything." } }
+      ],
+      "preferredChoiceIds": ["turnos", "parejas"]
+    },
+    {
+      "id": "s3",
+      "kind": "elegir",
+      "prompt": {
+        "es": "Con la idea que elegiste, uno de los cuatro tiene que esperar un buen rato. ¿Qué hacemos?",
+        "en": "With the idea you picked, one of the four has to wait a long while. What do we do?"
+      },
+      "choices": [
+        { "id": "b", "text": { "es": "Buscamos una forma de que nadie espere demasiado.", "en": "We find a way so no one waits too long." } },
+        { "id": "a", "text": { "es": "Está bien, a veces hay que esperar un poco.", "en": "That's okay, sometimes you have to wait a little." } },
+        { "id": "c", "text": { "es": "No importa, el que llegó primero manda.", "en": "It doesn't matter, whoever got there first is in charge." } }
+      ],
+      "preferredChoiceIds": ["b", "a"]
+    },
+    {
+      "id": "s4",
+      "kind": "elegir",
+      "prompt": {
+        "es": "Un amigo necesita más tiempo para terminar su construcción. ¿Qué hacemos con la regla?",
+        "en": "A friend needs more time to finish their building. What do we do with the rule?"
+      },
+      "choices": [
+        { "id": "a", "text": { "es": "Le damos un poco más de tiempo esta vez.", "en": "We give them a little more time this once." } },
+        { "id": "b", "text": { "es": "La regla es la regla, que se apure.", "en": "A rule is a rule, they need to hurry up." } },
+        { "id": "c", "text": { "es": "Que deje de jugar.", "en": "They should stop playing." } }
+      ],
+      "preferredChoiceIds": ["a"]
+    },
+    {
+      "id": "s5",
+      "kind": "elegir",
+      "prompt": {
+        "es": "Piensa en la regla que armaron entre todos. ¿A quién ayuda?",
+        "en": "Think about the rule everyone built together. Who does it help?"
+      },
+      "choices": [
+        { "id": "a", "text": { "es": "A todos, porque cada quien tiene su momento.", "en": "Everyone, because each person gets their turn." } },
+        { "id": "b", "text": { "es": "Solo al más rápido.", "en": "Only the fastest one." } },
+        { "id": "c", "text": { "es": "A nadie en especial.", "en": "No one in particular." } }
+      ],
+      "preferredChoiceIds": ["a"]
+    }
+  ]
+}

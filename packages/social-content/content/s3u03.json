@@ -1,0 +1,134 @@
+{
+  "id": "s3u03",
+  "grade": 3,
+  "standard": "CA HSS 3.3",
+  "standardsReview": {
+    "status": "draftPendingTeacherReview",
+    "confidence": "highAtUnitLevel",
+    "displayAudience": "parentsOnly",
+    "isCertified": false
+  },
+  "title": { "es": "El paso del arroyo", "en": "The creek crossing" },
+  "cast": ["ines", "teo", "elena"],
+  "sources": [
+    {
+      "id": "plano",
+      "kind": "mapa",
+      "title": { "es": "El plano viejo", "en": "The old sketch" },
+      "caption": {
+        "es": "Un plano a lápiz que Inés y Teo encontraron en la caja de mapas de la abuela.",
+        "en": "A pencil sketch Inés and Teo found in grandma's box of old maps."
+      },
+      "art": "planoAntes"
+    },
+    {
+      "id": "foto",
+      "kind": "foto",
+      "title": { "es": "La fotografía de la abuela", "en": "Grandma's photograph" },
+      "caption": {
+        "es": "Una foto antigua: la abuela Elena de niña, cruzando el arroyo.",
+        "en": "An old photo: grandma Elena as a girl, crossing the creek."
+      },
+      "art": "tarjetaFoto"
+    },
+    {
+      "id": "testimonio",
+      "kind": "testimonio",
+      "title": { "es": "Lo que cuenta la abuela", "en": "What grandma tells them" },
+      "caption": {
+        "es": "La abuela Elena cuenta, con sus propias palabras, por qué pidieron el puente.",
+        "en": "Grandma Elena explains, in her own words, why they asked for the bridge."
+      },
+      "art": null
+    }
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "kind": "pregunta",
+      "prompt": {
+        "es": "Inés y Teo encontraron este plano viejo de la calle de la abuela. Así se ve la calle hoy. ¿Qué cambió?",
+        "en": "Inés and Teo found this old sketch of grandma's street. Here's how the street looks today. What changed?"
+      },
+      "layers": [
+        { "id": "antes", "label": { "es": "El plano viejo", "en": "The old sketch" }, "art": "planoAntes" },
+        { "id": "despues", "label": { "es": "La calle hoy", "en": "The street today" }, "art": "planoDespues" }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "comparar",
+      "prompt": {
+        "es": "Mira las dos imágenes. Para cada una, decide: ¿sigue igual o es nuevo?",
+        "en": "Look at both pictures. For each one, decide: is it still the same, or is it new?"
+      },
+      "layers": [
+        { "id": "antes", "label": { "es": "El plano viejo", "en": "The old sketch" }, "art": "planoAntes" },
+        { "id": "despues", "label": { "es": "La calle hoy", "en": "The street today" }, "art": "planoDespues" }
+      ],
+      "statements": [
+        { "id": "casas", "text": { "es": "Las casas están en el mismo lugar.", "en": "The houses are in the same place." }, "status": "igual" },
+        { "id": "arroyo", "text": { "es": "El arroyo pasa por el mismo lugar.", "en": "The creek runs through the same place." }, "status": "igual" },
+        { "id": "puente", "text": { "es": "Hay un puente de piedra sobre el arroyo.", "en": "There's a stone bridge over the creek." }, "status": "nuevo" }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "fuente",
+      "prompt": {
+        "es": "La abuela Elena les muestra esta fotografía. ¿Qué nos dice que el plano no decía?",
+        "en": "Grandma Elena shows them this photograph. What does it tell us that the sketch didn't?"
+      },
+      "sourceId": "foto",
+      "choices": [
+        { "id": "a", "text": { "es": "Que alguien cruzaba el arroyo saltando de piedra en piedra.", "en": "That someone used to cross the creek by jumping from stone to stone." } },
+        { "id": "b", "text": { "es": "Que el arroyo tenía muchos peces.", "en": "That the creek had lots of fish." } },
+        { "id": "c", "text": { "es": "Que había una tienda muy cerca.", "en": "That there was a shop very close by." } }
+      ],
+      "preferredChoiceIds": ["a"]
+    },
+    {
+      "id": "s4",
+      "kind": "testimonio",
+      "prompt": {
+        "es": "Escucha lo que cuenta la abuela. ¿Por qué pidieron el puente?",
+        "en": "Listen to what grandma tells them. Why did they ask for the bridge?"
+      },
+      "sourceId": "testimonio",
+      "quote": {
+        "es": "«Cuando más familias tuvieron bebés y abuelos en la calle, cruzar saltando ya no era seguro para todos. Por eso los vecinos le pidieron un puente al ayuntamiento.»",
+        "en": "“Once more families on the street had babies and grandparents, jumping across wasn't safe for everyone anymore. So the neighbors asked the town for a bridge.”"
+      },
+      "choices": [
+        { "id": "a", "text": { "es": "Porque cruzar saltando ya no era seguro para todos los vecinos.", "en": "Because jumping across wasn't safe for all the neighbors anymore." } },
+        { "id": "b", "text": { "es": "Porque querían un lugar más bonito para pasear.", "en": "Because they wanted a prettier place to walk." } },
+        { "id": "c", "text": { "es": "Porque el arroyo se había secado.", "en": "Because the creek had dried up." } }
+      ],
+      "preferredChoiceIds": ["a"]
+    },
+    {
+      "id": "s5",
+      "kind": "explicar",
+      "prompt": {
+        "es": "Elige al menos 2 fuentes que te ayuden a explicar por qué cambió la calle.",
+        "en": "Pick at least 2 sources that help explain why the street changed."
+      },
+      "sourceIds": ["plano", "foto", "testimonio"],
+      "minSources": 2
+    },
+    {
+      "id": "s6",
+      "kind": "revisar",
+      "prompt": {
+        "es": "Con estas 3 fuentes, ¿qué NO sabemos todavía?",
+        "en": "With these 3 sources, what DON'T we know yet?"
+      },
+      "choices": [
+        { "id": "a", "text": { "es": "Cuánto tiempo tardaron en construir el puente.", "en": "How long it took to build the bridge." } },
+        { "id": "b", "text": { "es": "Que antes se cruzaba saltando de piedra en piedra.", "en": "That people used to cross by jumping from stone to stone." } },
+        { "id": "c", "text": { "es": "Que el arroyo sigue en el mismo lugar.", "en": "That the creek is still in the same place." } }
+      ],
+      "gapChoiceId": "a"
+    }
+  ]
+}
