@@ -4,6 +4,7 @@
  * lo dibuja.
  */
 import type { Localized } from '@lee-conmigo/contracts';
+import c1u01 from '../content/c1-u01.json';
 import c1u02 from '../content/c1-u02.json';
 import c1u03 from '../content/c1-u03.json';
 import c2u01 from '../content/c2-u01.json';
@@ -22,6 +23,7 @@ import c6u05 from '../content/c6-u05.json';
 import { practiceMapProblems, PRACTICE_MAPS, bandCount, LADERA_DATASETS, type Dataset } from './datasets.ts';
 import { COVERS, SLOPES, runTrials, turbidity, type Cover, type Slope } from './labs/erosion.ts';
 import { LIGHT_OBJECTS, LIGHT_STATES, type LightObject, type LightState } from './labs/luz.ts';
+import { VIB_ACTIONS, VIB_OBJECTS, stateOf, type VibAction, type VibObject } from './labs/vibracion.ts';
 import { EARTH_EVENTS, EVENT_SPEED, SPEEDS, speedOf, type EarthEvent } from './labs/cambios.ts';
 import { AFTERNOON_C, MEASURES, RAIN_DAYS, SEASONS, TOWNS, alwaysDrier, peakSeason, peakTown, type Measure, type Town } from './labs/clima.ts';
 import { AIR_COUNT, DYE_COUNT, DYE_STEPS, SYRINGE_POSITIONS, airDots, meanNearest, meanPairDistance, soluteDots, type DyeStep, type SyringePos } from './labs/particulas.ts';
@@ -246,6 +248,20 @@ export interface EarthSetup {
   static?: boolean;
 }
 
+/** La mesa de vibraciones de C1-U01: un objeto que se golpea, se sujeta o se le habla, o la tabla de los tres objetos. */
+export interface VibrationSetup {
+  view: 'bench' | 'table';
+  /** bench: el objeto (o con `objects`, entre cuáles elige el niño). */
+  object?: VibObject;
+  objects?: VibObject[];
+  /** bench: la acción con la que se muestra el paso (con `static`, ya hecha). Sin ella el niño elige. */
+  action?: VibAction;
+  /** bench: cuántas acciones distintas (sin contar «quieta») prueba el niño. */
+  trials?: number;
+  /** Se muestra el resultado ya hecho (para analizarlo). */
+  static?: boolean;
+}
+
 export interface ChoiceOption {
   id: string;
   text: Localized;
@@ -295,6 +311,7 @@ export interface UnitStep {
   particle?: ParticleSetup;
   climate?: ClimateSetup;
   earth?: EarthSetup;
+  vibration?: VibrationSetup;
   /** Pasos de «arreglar la prueba»: el laboratorio resultante según el arreglo que elija el niño (id de la opción). */
   labFixed?: Record<string, LabSetup>;
   choice?: StepChoice;
@@ -395,7 +412,7 @@ export interface ScienceUnit {
 }
 
 /** Las unidades con contenido, por grado. Una unidad con contenido todavía puede esperar su arte (`UNIT_ART_READY` en la app). */
-export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c1u03 as unknown as ScienceUnit, c2u01 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c2u08 as unknown as ScienceUnit, c3u05 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c3u07 as unknown as ScienceUnit, c4u02 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c5u01 as unknown as ScienceUnit, c5u02 as unknown as ScienceUnit, c5u03 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit, c6u05 as unknown as ScienceUnit];
+export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u01 as unknown as ScienceUnit, c1u02 as unknown as ScienceUnit, c1u03 as unknown as ScienceUnit, c2u01 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c2u08 as unknown as ScienceUnit, c3u05 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c3u07 as unknown as ScienceUnit, c4u02 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c5u01 as unknown as ScienceUnit, c5u02 as unknown as ScienceUnit, c5u03 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit, c6u05 as unknown as ScienceUnit];
 export const scienceUnitContent = (id: string): ScienceUnit | undefined => SCIENCE_UNITS.find((u) => u.id === id);
 
 // ------------------------------------------------------------------ evaluar una tarea
@@ -557,6 +574,14 @@ export function unitProblems(u: ScienceUnit): string[] {
       if (!MATERIAL_TESTS.includes(st.material.test)) p.push(`${st.id}: prueba de materiales desconocida`);
       if (st.material.trials !== undefined && (st.material.trials < 1 || st.material.trials > MATERIALS.length)) p.push(`${st.id}: los materiales a probar van de 1 a ${MATERIALS.length}`);
     }
+    if (st.vibration) {
+      const k = st.vibration;
+      for (const o of [...(k.object ? [k.object] : []), ...(k.objects ?? [])]) if (!VIB_OBJECTS.includes(o)) p.push(`${st.id}: objeto desconocido (${o})`);
+      if (k.action !== undefined && !VIB_ACTIONS.includes(k.action)) p.push(`${st.id}: acción desconocida (${k.action})`);
+      if (k.view === 'bench' && !k.object && !k.objects?.length) p.push(`${st.id}: la mesa necesita un objeto`);
+      if (k.view === 'bench' && k.static && !k.action) p.push(`${st.id}: un resultado ya hecho necesita la acción`);
+      if (k.trials !== undefined && (k.trials < 1 || k.trials > VIB_ACTIONS.length - 1)) p.push(`${st.id}: las acciones a probar van de 1 a ${VIB_ACTIONS.length - 1}`);
+    }
     if (st.earth) {
       if (!['photos', 'sort', 'clues'].includes(st.earth.view)) p.push(`${st.id}: vista de los cambios de la Tierra desconocida`);
       if (st.earth.event !== undefined && !EARTH_EVENTS.includes(st.earth.event)) p.push(`${st.id}: suceso desconocido (${st.earth.event})`);
@@ -707,6 +732,7 @@ export function dataTextProblems(u: ScienceUnit): string[] {
   if (u.id === 'C5-U01') return particleTextProblems(u);
   if (u.id === 'C3-U07') return climateTextProblems(u);
   if (u.id === 'C2-U08') return earthTextProblems(u);
+  if (u.id === 'C1-U01') return vibrationTextProblems(u);
   if (u.id !== 'C4-U06') return p;
   const t5 = u.tasks.find((t) => t.id === 't5');
   const base = LADERA_DATASETS.base.rows;
@@ -1086,6 +1112,33 @@ function sortTextProblems(u: ScienceUnit): string[] {
   if (expected('s3.3') !== 'distinto') p.push('s3.3: el mismo objeto cae en grupos distintos');
   if (expected('s3.4') !== propertyOf('pelota', 'brillo')) p.push('s3.4: la pelota va con los que no brillan (mate)');
   if (expected('s2.1') !== 'propiedad') p.push('s2.1: se agrupa por una propiedad');
+  return p;
+}
+
+/** C1-U01: lo que dicen los textos sobre lo que suena, se mueve y salta coincide con la mesa de vibraciones. */
+function vibrationTextProblems(u: ScienceUnit): string[] {
+  const p: string[] = [];
+  const steps = u.sessions.flatMap((s) => s.steps);
+  const part = (taskId: string, partId: string) => u.tasks.find((t) => t.id === taskId)?.parts.find((x) => x.id === partId);
+  const opt = (taskId: string, partId: string, id: string) => part(taskId, partId)?.options.find((o) => o.id === id);
+  const expected = (id: string) => steps.find((st) => st.id === id)?.choice?.options.find((o) => o.expected)?.id;
+  // t1: la regla que suena se mueve y suena.
+  const hit = stateOf('regla', 'golpear');
+  if (!hit.moves || !hit.sound || opt('t1', 'observaciones', 'mueve')?.valid !== true || opt('t1', 'observaciones', 'suena')?.valid !== true || opt('t1', 'observaciones', 'quieta')?.valid !== false) p.push('t1: la regla golpeada se mueve y suena');
+  // t3: sujetar calla.
+  if (stateOf('regla', 'sujetar').sound || part('t3', 'resultado')?.observedOptionId !== 'calla') p.push('t3.resultado: al sujetar la regla deja de sonar («calla»)');
+  // t4: la voz hace saltar el arroz del tambor.
+  if (!stateOf('tambor', 'voz').riceJumps || part('t4', 'resultado')?.observedOptionId !== 'salta') p.push('t4.resultado: con la voz el arroz del tambor salta («salta»)');
+  // t5: el tambor suena porque se mueve; al sujetarlo se calla.
+  if (!stateOf('tambor', 'golpear').riceJumps || stateOf('tambor', 'sujetar').sound) p.push('t5: el arroz salta al golpear y al sujetar el tambor se calla');
+  if (opt('t5', 'afirmacion', 'vibra')?.valid !== true || opt('t5', 'afirmacion', 'quieto')?.valid !== false) p.push('t5.afirmacion: el tambor suena porque vibra');
+  // t2 y t7: nada suena quieto; la voz solo mueve el tambor; la cuerda vibra.
+  if (VIB_OBJECTS.some((o) => stateOf(o, 'quieta').sound)) p.push('t2.quieto: un objeto quieto no suena');
+  if (VIB_OBJECTS.filter((o) => stateOf(o, 'voz').moves).join() !== 'tambor') p.push('t2.voz: la voz solo hace vibrar al tambor');
+  if (opt('t7', 'cuerda', 'vibra')?.valid !== true || opt('t7', 'mano', 'calla')?.valid !== true) p.push('t7: la cuerda vibra y con la mano se calla');
+  // Preguntas del paso con respuesta esperada.
+  if (expected('s4.2') !== 'mueve') p.push('s4.2: lo que suena se mueve muy rápido');
+  if (expected('s5.2') !== 'seMueve') p.push('s5.2: si algo suena, se está moviendo');
   return p;
 }
 

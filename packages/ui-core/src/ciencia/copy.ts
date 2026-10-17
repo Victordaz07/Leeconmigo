@@ -287,6 +287,17 @@ export const CIENCIA_COPY = {
     source: (n: number) => L(`Fuente ${String(n)}`, `Source ${String(n)}`),
     twoSources: L('Dos fuentes dicen más que una.', 'Two sources tell more than one.'),
   },
+  /** La mesa de vibraciones: golpear, sujetar y hablar cerca de un objeto (C1-U01). */
+  vibration: {
+    benchLabel: (what: string) => L(`Mesa de vibraciones: ${what}.`, `Vibration table: ${what}.`),
+    pickAction: L('Elige qué hacer con el objeto.', 'Pick what to do with the object.'),
+    counted: (n: number, t: number) => L(`Probaste ${String(n)} de ${String(t)} cosas`, `You tried ${String(n)} of ${String(t)} things`),
+    done: L('Ya probaste lo que hacía falta. Puedes seguir probando.', 'You tried what was needed. You can keep testing.'),
+    tableTitle: L('Lo que pasó con cada objeto', 'What happened with each object'),
+    object: L('Objeto', 'Object'),
+    voiceLabel: L('Mi voz', 'My voice'),
+    safe: L('Sin riesgos: es una prueba en pantalla.', 'No risks: it is an on-screen test.'),
+  },
   /** Detectives de materiales: mirar con la lupa y agrupar por una propiedad (C2-U01). */
   sort: {
     lens: (name: string) => L(`Con la lupa: ${name}`, `With the lens: ${name}`),

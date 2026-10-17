@@ -19,3 +19,4 @@ export { SortBench, type SortArt, type SortBin, type SortTile } from './sort-ben
 export { CycleBoard, CYCLE_POSITIONS, type CycleArrow, type CycleArt, type CyclePiece } from './cycle-board.tsx';
 export { ParticleBench, type ParticleDot, type ParticleGroup } from './particle-bench.tsx';
 export { EventBoard, type EventBin, type EventTile } from './event-board.tsx';
+export { VibrationBench } from './vibration-bench.tsx';

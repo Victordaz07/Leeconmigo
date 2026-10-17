@@ -131,3 +131,7 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
 ## 2026-10-17 · CI-24: C2-U08 «Una Tierra que cambia»
 - Seis sucesos con dos pistas de fuentes distintas (`labs/cambios.ts`): el niño los clasifica en rápido y lento. Las bandejas de erosión se reutilizan sin gramos (`qualitative`): plantas en parte contra plantas por todas partes. Dos ideas (`tierra.rapidoLento`, `tierra.barreras`); 2-ESS1-1 y 2-ESS2-1 con 4 tareas cada una.
 - Nueva familia `earth` y `EventBoard`; la tabla de gramos se oculta cuando la bandeja es cualitativa. Verificada en tableta. 15 unidades abiertas.
+
+## 2026-10-17 · CI-25: C1-U01 «Vibraciones»
+- Mesa de vibraciones cualitativa (`labs/vibracion.ts`): tres objetos y cuatro acciones; lo que suena se mueve, al sujetarlo se calla y la voz hace saltar el arroz del tambor. Lo que se ve no depende del movimiento: copias del objeto y ondas dibujadas (con Modo Enfoque quedan quietas).
+- Dos ideas (`sonido.vibracion`, `sonido.mueve`); 1-PS4-1 con 7 tareas; textos cortos para 1.º. Nueva familia `vibration` y `VibrationBench`. Verificada en tableta. 16 unidades abiertas.
