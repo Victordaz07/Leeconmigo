@@ -1,0 +1,52 @@
+name: Build Android APK (demo)
+
+# Compila un APK de prueba de Kitewise (firmado con la llave de depuración de Expo, NO para la tienda).
+# Pasos documentados en apps/mobile/README.md "APK de prueba". Se corre a mano desde GitHub Actions porque
+# esta sesión de Claude en la nube no tiene acceso de red a dl.google.com ni huggingface.co, necesarios para
+# bajar el SDK de Android y los modelos de voz; los runners de GitHub Actions sí tienen internet completo.
+on:
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: android-actions/setup-android@v3
+
+      - name: Instalar dependencias del monorepo
+        run: npm ci
+
+      - name: Bajar los modelos de voz (whisper.cpp / Silero VAD)
+        run: npm run models -w @lee-conmigo/mobile
+
+      - name: Generar el proyecto Android (expo prebuild)
+        working-directory: apps/mobile
+        run: npx expo prebuild --platform android --no-install
+
+      - name: Compilar el APK de prueba (release, llave de depuración)
+        working-directory: apps/mobile/android
+        env:
+          EXPO_PUBLIC_DEMO: '1'
+          NODE_ENV: production
+        run: |
+          echo "sdk.dir=$ANDROID_HOME" > local.properties
+          ./gradlew assembleRelease --no-daemon
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kitewise-demo-apk
+          path: apps/mobile/android/app/build/outputs/apk/release/app-release.apk
+          retention-days: 14
+          if-no-files-found: error
