@@ -10,6 +10,9 @@ on:
     branches: [claude/sociedad-victor]
     paths: ['.github/workflows/build-android-apk.yml']
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -61,3 +64,16 @@ jobs:
           path: apps/mobile/android/app/build/outputs/apk/release/app-release.apk
           retention-days: 14
           if-no-files-found: error
+
+      # Además del artifact: los artifacts de Actions solo se bajan desde Azure Blob Storage, que la sesión de
+      # Claude que arma esto no puede alcanzar. Un GitHub Release sí se puede bajar desde ahí (otro dominio).
+      - name: Publicar el APK como GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="apk-demo-${{ github.run_number }}"
+          gh release create "$TAG" \
+            apps/mobile/android/app/build/outputs/apk/release/app-release.apk \
+            --repo "${{ github.repository }}" \
+            --title "Kitewise — APK de prueba #${{ github.run_number }}" \
+            --notes "APK de prueba (firmado con la llave de depuración de Expo, no para la tienda). Build automático desde \`${{ github.ref_name }}\` (${{ github.sha }})."
