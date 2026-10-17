@@ -119,3 +119,7 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
 
 ## 2026-10-17 · «Pronto» fuera del catálogo; Tanda 4 pedida
 - El catálogo solo muestra las 12 unidades jugables. Pedido de imágenes de la Tanda 4 (27 en 6 lotes).
+
+## 2026-10-17 · CI-22: C5-U01 «Materia invisible»
+- Modelo de puntitos determinista (`labs/particulas.ts`): colorante y sal que se reparten entre los puntitos del agua y aire que se aprieta en una jeringa; siempre los mismos puntitos, solo cambia dónde están. Sin átomos ni moléculas.
+- Dos ideas (`materia.particulas`, `particulas.espacio`), 5-PS1-1 con 7 tareas; nueva familia `particles` y `ParticleBench`. Verificada en tableta (1280×800), vertical (800×1280) y teléfono (390×844). 13 unidades de Ciencia abiertas.

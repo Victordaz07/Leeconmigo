@@ -12,6 +12,7 @@ import c3u05 from '../content/c3-u05.json';
 import c3u06 from '../content/c3-u06.json';
 import c4u02 from '../content/c4-u02.json';
 import c4u06 from '../content/c4-u06.json';
+import c5u01 from '../content/c5-u01.json';
 import c5u02 from '../content/c5-u02.json';
 import c5u03 from '../content/c5-u03.json';
 import c6u04 from '../content/c6-u04.json';
@@ -19,6 +20,7 @@ import c6u05 from '../content/c6-u05.json';
 import { practiceMapProblems, PRACTICE_MAPS, bandCount, LADERA_DATASETS, type Dataset } from './datasets.ts';
 import { COVERS, SLOPES, type Cover, type Slope } from './labs/erosion.ts';
 import { LIGHT_OBJECTS, LIGHT_STATES, type LightObject, type LightState } from './labs/luz.ts';
+import { AIR_COUNT, DYE_COUNT, DYE_STEPS, SYRINGE_POSITIONS, airDots, meanNearest, meanPairDistance, soluteDots, type DyeStep, type SyringePos } from './labs/particulas.ts';
 import { FLOWS, checkModel, flowById, type Flow } from './labs/ciclo.ts';
 import { MATERIAL_OF, SORT_OBJECTS, SORT_PROPS, matching, propertyOf, withValue, type SortObject, type SortProp } from './labs/clasificar.ts';
 import { PATH_MATERIALS, lightReachesWall, makesShadow, outcomeOf } from './labs/caminos.ts';
@@ -202,6 +204,21 @@ export interface CycleSetup {
   goal?: 'closed' | 'sun';
 }
 
+/** El modelo de puntitos de C5-U01: colorante o sal que se reparten en el agua, aire que se aprieta en una jeringa, o la tabla de los tres. */
+export interface ParticleSetup {
+  view: 'dye' | 'syringe' | 'salt' | 'table';
+  /** dye/salt: el paso del tiempo (0–4) con el que se muestra el paso. */
+  step?: DyeStep;
+  /** syringe: la posición del émbolo (3 = suelto, 1 = hasta el tope). */
+  pos?: SyringePos;
+  /** dye/salt: cuántas veces deja pasar el tiempo el niño · syringe: cuántas posiciones distintas prueba. */
+  trials?: number;
+  /** Se muestra el resultado ya hecho (para analizarlo). */
+  static?: boolean;
+  /** `false` = solo el dibujo del vaso o la jeringa, sin los puntitos (primera mirada, antes de imaginar el modelo). */
+  dots?: boolean;
+}
+
 export interface ChoiceOption {
   id: string;
   text: Localized;
@@ -248,6 +265,7 @@ export interface UnitStep {
   path?: PathSetup;
   sort?: SortSetup;
   cycle?: CycleSetup;
+  particle?: ParticleSetup;
   /** Pasos de «arreglar la prueba»: el laboratorio resultante según el arreglo que elija el niño (id de la opción). */
   labFixed?: Record<string, LabSetup>;
   choice?: StepChoice;
@@ -348,7 +366,7 @@ export interface ScienceUnit {
 }
 
 /** Las unidades con contenido, por grado. Una unidad con contenido todavía puede esperar su arte (`UNIT_ART_READY` en la app). */
-export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c1u03 as unknown as ScienceUnit, c2u01 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c3u05 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c4u02 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c5u02 as unknown as ScienceUnit, c5u03 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit, c6u05 as unknown as ScienceUnit];
+export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c1u03 as unknown as ScienceUnit, c2u01 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c3u05 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c4u02 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c5u01 as unknown as ScienceUnit, c5u02 as unknown as ScienceUnit, c5u03 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit, c6u05 as unknown as ScienceUnit];
 export const scienceUnitContent = (id: string): ScienceUnit | undefined => SCIENCE_UNITS.find((u) => u.id === id);
 
 // ------------------------------------------------------------------ evaluar una tarea
@@ -510,6 +528,13 @@ export function unitProblems(u: ScienceUnit): string[] {
       if (!MATERIAL_TESTS.includes(st.material.test)) p.push(`${st.id}: prueba de materiales desconocida`);
       if (st.material.trials !== undefined && (st.material.trials < 1 || st.material.trials > MATERIALS.length)) p.push(`${st.id}: los materiales a probar van de 1 a ${MATERIALS.length}`);
     }
+    if (st.particle) {
+      const k = st.particle;
+      if (k.step !== undefined && !(DYE_STEPS as readonly number[]).includes(k.step)) p.push(`${st.id}: paso del tiempo fuera del recorrido`);
+      if (k.pos !== undefined && !(SYRINGE_POSITIONS as readonly number[]).includes(k.pos)) p.push(`${st.id}: posición del émbolo fuera del recorrido`);
+      if (k.trials !== undefined && (k.trials < 1 || k.trials > DYE_STEPS.length - 1)) p.push(`${st.id}: las pruebas van de 1 a ${DYE_STEPS.length - 1}`);
+      if (k.view === 'syringe' && !k.static && k.trials !== undefined && k.trials > SYRINGE_POSITIONS.length - 1) p.push(`${st.id}: el émbolo tiene ${SYRINGE_POSITIONS.length - 1} posiciones para probar`);
+    }
     if (st.cycle) {
       const c = st.cycle;
       for (const id of c.flows ?? []) if (!flowById(id)) p.push(`${st.id}: flecha desconocida (${id})`);
@@ -637,6 +662,7 @@ export function dataTextProblems(u: ScienceUnit): string[] {
   if (u.id === 'C1-U03') return pathTextProblems(u);
   if (u.id === 'C2-U01') return sortTextProblems(u);
   if (u.id === 'C6-U05') return cycleTextProblems(u);
+  if (u.id === 'C5-U01') return particleTextProblems(u);
   if (u.id !== 'C4-U06') return p;
   const t5 = u.tasks.find((t) => t.id === 't5');
   const base = LADERA_DATASETS.base.rows;
@@ -1016,6 +1042,34 @@ function sortTextProblems(u: ScienceUnit): string[] {
   if (expected('s3.3') !== 'distinto') p.push('s3.3: el mismo objeto cae en grupos distintos');
   if (expected('s3.4') !== propertyOf('pelota', 'brillo')) p.push('s3.4: la pelota va con los que no brillan (mate)');
   if (expected('s2.1') !== 'propiedad') p.push('s2.1: se agrupa por una propiedad');
+  return p;
+}
+
+/** C5-U01: lo que dicen los textos sobre los puntitos coincide con el modelo (se reparten, se acercan, siempre los mismos). */
+function particleTextProblems(u: ScienceUnit): string[] {
+  const p: string[] = [];
+  const steps = u.sessions.flatMap((s) => s.steps);
+  const part = (taskId: string, partId: string) => u.tasks.find((t) => t.id === taskId)?.parts.find((x) => x.id === partId);
+  const opt = (taskId: string, partId: string, id: string) => part(taskId, partId)?.options.find((o) => o.id === id);
+  const expected = (id: string) => steps.find((st) => st.id === id)?.choice?.options.find((o) => o.expected)?.id;
+  const spreads = meanPairDistance(soluteDots(4)) > meanPairDistance(soluteDots(0));
+  const squeezes = meanNearest(airDots(1)) < meanNearest(airDots(3));
+  const same = soluteDots(0).length === soluteDots(4).length && airDots(1).length === airDots(3).length;
+  if (!spreads) p.push('t3: los puntitos del colorante deben quedar más repartidos al final');
+  if (part('t3', 'resultado')?.observedOptionId !== 'parejo') p.push('t3.resultado: el colorante queda repartido por todo el vaso («parejo»)');
+  if (!squeezes) p.push('t4: los puntitos del aire deben quedar más juntos con el émbolo apretado');
+  if (part('t4', 'resultado')?.observedOptionId !== 'aprieta') p.push('t4.resultado: el aire se aprieta («aprieta»)');
+  if (!same) p.push('t5: siempre hay los mismos puntitos (ninguno aparece ni desaparece)');
+  const cuenta = opt('t5', 'evidencia', 'cuenta');
+  if (!cuenta?.text.es.includes(`${DYE_COUNT} puntitos de sal antes y ${DYE_COUNT} después`)) p.push(`t5.evidencia.cuenta: el texto ES debe decir «${DYE_COUNT} puntitos de sal antes y ${DYE_COUNT} después»`);
+  if (!cuenta?.text.en.includes(`${DYE_COUNT} salt dots before and ${DYE_COUNT} after`)) p.push(`t5.evidencia.cuenta: el texto EN debe decir «${DYE_COUNT} salt dots before and ${DYE_COUNT} after»`);
+  if (opt('t5', 'afirmacion', 'sigue')?.valid !== true || opt('t5', 'afirmacion', 'desaparece')?.valid !== false) p.push('t5.afirmacion: la sal disuelta sigue en el agua');
+  if (AIR_COUNT < 2) p.push('el aire necesita varios puntitos');
+  if (expected('s4.2') !== 'siguen') p.push('s4.2: el patrón esperado es que lo invisible sigue ahí');
+  if (expected('s5.2') !== 'tope') p.push('s5.2: el émbolo llega al tope porque casi no queda espacio');
+  // El tope: con el émbolo apretado hasta el final los puntitos siguen separados (no se pegan del todo).
+  if (!(meanNearest(airDots(1)) > 0)) p.push('s5.2: los puntitos del tope no deben encimarse');
+  if (opt('t7', 'donde', 'agua')?.valid !== true || opt('t7', 'donde', 'nada')?.valid !== false) p.push('t7: el azúcar sigue ahí, repartida entre las partículas del agua');
   return p;
 }
 
