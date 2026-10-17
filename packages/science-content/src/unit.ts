@@ -8,10 +8,12 @@ import c1u02 from '../content/c1-u02.json';
 import c2u02 from '../content/c2-u02.json';
 import c3u06 from '../content/c3-u06.json';
 import c4u06 from '../content/c4-u06.json';
+import c5u02 from '../content/c5-u02.json';
 import c6u04 from '../content/c6-u04.json';
 import { practiceMapProblems, PRACTICE_MAPS, bandCount, LADERA_DATASETS, type Dataset } from './datasets.ts';
 import { COVERS, SLOPES, type Cover, type Slope } from './labs/erosion.ts';
 import { LIGHT_OBJECTS, LIGHT_STATES, type LightObject, type LightState } from './labs/luz.ts';
+import { JAR_WITH_WATER_G, KNOWN_SAMPLES, MYSTERY_IS, PROPS, SAMPLES, SUBSTANCES, SUBSTANCE_G, confusableWith, dissolves, observed, remainingAfter, totalAfter, totalBefore, type Prop, type Sample, type Substance } from './labs/materia.ts';
 import { MAGNET_MARKS, MAGNET_OBJECTS, magnetMoves, type MagnetObject } from './labs/imanes.ts';
 import { CRITERION_MAX_RISE, LAYER_IDS, MAX_LAYERS, designLabel, meetsCriterion, riseAt10, temperatures, type Layer } from './labs/termico.ts';
 import { bestMaterial, LEVEL_TEXT, MATERIAL_NAME, MATERIAL_TESTS, materialResult, MATERIALS, type MaterialTest } from './labs/materiales.ts';
@@ -98,6 +100,27 @@ export interface MagnetSetup {
   static?: boolean;
 }
 
+/** La materia de C5-U02: el frasco cerrado en la balanza (`jar`) o la tabla de propiedades de las muestras (`props`). */
+export interface MatterSetup {
+  view: 'jar' | 'props';
+  /** jar: la sustancia que se echa (o entre cuáles elige el niño con `substances`). */
+  substance?: Substance;
+  substances?: Substance[];
+  /** jar: cuántas acciones de la pesada (0–4) están hechas al mostrar el paso. */
+  done?: number;
+  /** jar: sustancias distintas que pesa el niño · props: pruebas distintas que hace a la muestra X. */
+  trials?: number;
+  /** Se muestran los resultados ya hechos (para analizarlos). */
+  static?: boolean;
+  /** jar: la balanza no mide todavía (pantalla en blanco): primera mirada, sin números. */
+  qualitative?: boolean;
+  /** props: filas (muestras) y columnas (pruebas) de la tabla. */
+  samples?: Sample[];
+  tests?: Prop[];
+  /** props: la fila de la X se muestra completa aunque no se haya probado. */
+  revealX?: boolean;
+}
+
 export interface ChoiceOption {
   id: string;
   text: Localized;
@@ -138,6 +161,7 @@ export interface UnitStep {
   material?: MaterialSetup;
   thermal?: ThermalSetup;
   magnet?: MagnetSetup;
+  matter?: MatterSetup;
   /** Pasos de «arreglar la prueba»: el laboratorio resultante según el arreglo que elija el niño (id de la opción). */
   labFixed?: Record<string, LabSetup>;
   choice?: StepChoice;
@@ -238,7 +262,7 @@ export interface ScienceUnit {
 }
 
 /** Las unidades con contenido, por grado. Una unidad con contenido todavía puede esperar su arte (`UNIT_ART_READY` en la app). */
-export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit];
+export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c5u02 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit];
 export const scienceUnitContent = (id: string): ScienceUnit | undefined => SCIENCE_UNITS.find((u) => u.id === id);
 
 // ------------------------------------------------------------------ evaluar una tarea
@@ -400,6 +424,16 @@ export function unitProblems(u: ScienceUnit): string[] {
       if (!MATERIAL_TESTS.includes(st.material.test)) p.push(`${st.id}: prueba de materiales desconocida`);
       if (st.material.trials !== undefined && (st.material.trials < 1 || st.material.trials > MATERIALS.length)) p.push(`${st.id}: los materiales a probar van de 1 a ${MATERIALS.length}`);
     }
+    if (st.matter) {
+      const m = st.matter;
+      for (const sub of [...(m.substance ? [m.substance] : []), ...(m.substances ?? [])]) if (!SUBSTANCES.includes(sub)) p.push(`${st.id}: sustancia desconocida (${sub})`);
+      if (m.view === 'jar' && !m.substance && !m.substances?.length) p.push(`${st.id}: el frasco necesita una sustancia`);
+      if (m.done !== undefined && (m.done < 0 || m.done > 4)) p.push(`${st.id}: las acciones de la pesada van de 0 a 4`);
+      if (m.trials !== undefined && (m.trials < 1 || m.trials > 3)) p.push(`${st.id}: las pruebas van de 1 a 3`);
+      for (const x of m.samples ?? []) if (!SAMPLES.includes(x)) p.push(`${st.id}: muestra desconocida (${x})`);
+      for (const x of m.tests ?? []) if (!PROPS.includes(x)) p.push(`${st.id}: prueba desconocida (${x})`);
+      if (m.view === 'props' && (!m.samples?.length || !m.tests?.length)) p.push(`${st.id}: la tabla de propiedades necesita muestras y pruebas`);
+    }
     if (st.map && !(st.map.id === 'A' || st.map.id === 'B')) p.push(`${st.id}: mapa desconocido`);
     for (const g of st.glossary ?? []) if (!u.glossary.some((e) => e.es === g)) p.push(`${st.id}: «${g}» no está en el glosario`);
     if (st.kind === 'arreglar') {
@@ -478,6 +512,7 @@ export function dataTextProblems(u: ScienceUnit): string[] {
   if (u.id === 'C2-U02') return materialTextProblems(u);
   if (u.id === 'C6-U04') return thermalTextProblems(u);
   if (u.id === 'C3-U06') return magnetTextProblems(u);
+  if (u.id === 'C5-U02') return matterTextProblems(u);
   if (u.id !== 'C4-U06') return p;
   const t5 = u.tasks.find((t) => t.id === 't5');
   const base = LADERA_DATASETS.base.rows;
@@ -640,5 +675,56 @@ function magnetTextProblems(u: ScienceUnit): string[] {
   if (expected('s3.4') !== 'no') p.push('s3.4: un imán no mueve desde cualquier distancia');
   // El plástico y el aluminio nunca se mueven: las observaciones válidas de t2 solo dicen eso.
   if (MAGNET_OBJECTS.some((o) => (o === 'bloque' || o === 'aluminio') && MAGNET_MARKS.some((m) => magnetMoves(o, m)))) p.push('t2: el bloque y el aluminio no deben moverse nunca');
+  return p;
+}
+
+/** C5-U02: los números y las propiedades que citan los textos coinciden con el modelo de la masa y de las muestras. */
+function matterTextProblems(u: ScienceUnit): string[] {
+  const p: string[] = [];
+  const steps = u.sessions.flatMap((s) => s.steps);
+  const part = (taskId: string, partId: string) => u.tasks.find((t) => t.id === taskId)?.parts.find((x) => x.id === partId);
+  const opt = (taskId: string, partId: string, id: string) => part(taskId, partId)?.options.find((o) => o.id === id);
+  const need = (where: string, text: string | undefined, needle: string) => {
+    if (!text?.includes(needle)) p.push(`${where}: el texto no dice «${needle}» (modelo)`);
+  };
+  // t3: lo que se observará es el total, igual que antes de mezclar.
+  if (part('t3', 'resultado')?.observedOptionId !== 'igual') p.push('t3.resultado: lo observado debe ser «igual»');
+  for (const lang of ['es', 'en'] as const) {
+    need(`t3.menos (${lang})`, opt('t3', 'resultado', 'menos')?.text[lang], `${totalBefore('sal')} g`);
+    need(`t3.igual (${lang})`, opt('t3', 'resultado', 'igual')?.text[lang], `${totalAfter('sal')} g`);
+    need(`t3 (${lang})`, part('t3', 'resultado')?.prompt[lang], `${JAR_WITH_WATER_G} g`);
+    need(`t3 (${lang})`, part('t3', 'resultado')?.prompt[lang], `${SUBSTANCE_G.sal} g`);
+    // t5: la evidencia cita las pesadas del modelo (antes = suma, después = lectura).
+    for (const sub of ['sal', 'azucar'] as const) {
+      const text = opt('t5', 'evidencia', sub)?.text[lang];
+      need(`t5.evidencia.${sub} (${lang})`, text, `${JAR_WITH_WATER_G} g`);
+      need(`t5.evidencia.${sub} (${lang})`, text, `${SUBSTANCE_G[sub]} g`);
+      need(`t5.evidencia.${sub} (${lang})`, text, `${totalBefore(sub)} g`);
+      if (totalAfter(sub) !== totalBefore(sub)) p.push(`t5: con ${sub} el total no se conserva en el modelo`);
+    }
+    need(`t5.menos motivo (${lang})`, opt('t5', 'afirmacion', 'menos')?.whyNot?.[lang], `${totalBefore('sal')} g`);
+    need(`t5.mas motivo (${lang})`, opt('t5', 'afirmacion', 'mas')?.whyNot?.[lang], `${totalAfter('sal')} g`);
+    // t7: el hielo en el frasco cerrado.
+    need(`t7 (${lang})`, part('t7', 'resultado')?.prompt[lang], `${totalBefore('hielo')} g`);
+    need(`t7.igual (${lang})`, opt('t7', 'resultado', 'igual')?.text[lang], `${totalAfter('hielo')} g`);
+    need(`t7.menos motivo (${lang})`, opt('t7', 'resultado', 'menos')?.whyNot?.[lang], `${totalAfter('hielo')} g`);
+  }
+  if (totalAfter('hielo') !== totalBefore('hielo')) p.push('t7: el hielo derretido debe conservar la masa en el modelo');
+  // t2/t6: las propiedades citadas son las del modelo.
+  if (!dissolves('sal') || !dissolves('azucar') || dissolves('arena') || dissolves('harina')) p.push('t2: solo la sal y el azúcar se disuelven');
+  if (part('t4', 'resultado')?.observedOptionId !== (dissolves('X') ? 'disuelve' : 'nodisuelve')) p.push('t4.resultado: lo observado no coincide con lo que hace la X en agua');
+  const validClaim = part('t6', 'afirmacion')?.options.filter((o) => o.valid).map((o) => o.id);
+  if (validClaim?.length !== 1 || validClaim[0] !== MYSTERY_IS) p.push(`t6.afirmacion: la única respuesta válida debe ser «${MYSTERY_IS}»`);
+  // El color solo no distingue la X; con «en agua» + «granitos» queda una sola posibilidad.
+  if (confusableWith('X', 'color').length < 2) p.push('t6: el color solo debe dejar varias posibilidades');
+  const left = remainingAfter(['agua', 'granitos']);
+  if (left.length !== 1 || left[0] !== MYSTERY_IS) p.push('t6: con «en agua» y «con la lupa» debe quedar solo la muestra misteriosa');
+  if (!KNOWN_SAMPLES.every((k) => observed(k, 'color').es.length > 0)) p.push('t2: falta el color de una muestra');
+  // Preguntas del paso con respuesta esperada.
+  const expected = (id: string) => steps.find((st) => st.id === id)?.choice?.options.find((o) => o.expected)?.id;
+  if (expected('s3.3') !== 'igual') p.push('s3.3: el patrón esperado es «antes y después marcaron lo mismo»');
+  if (expected('s3.4') !== 'cerrado') p.push('s3.4: se cierra el frasco para que nada salga ni entre');
+  // Cada paso con tabla antes/después usa una sustancia que el niño echa en el laboratorio (no el hielo).
+  for (const st of steps) if (st.matter?.view === 'jar' && st.kind !== 'ver' && st.matter.substances?.includes('hielo')) p.push(`${st.id}: el hielo solo se usa en la transferencia`);
   return p;
 }

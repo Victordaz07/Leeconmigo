@@ -210,3 +210,19 @@ tela, plástico, cartón), vaso de agua compartido con C5 y C6, bandeja con pico
 - **Pendiente de C3-U06:** la parte de **electricidad estática** que el mapa menciona (globo frotado y papelitos). El arte ya está
   (`CIENCIA_IMANES.globo` y `papelitos`) pero no se usa: es una sesión extra o una unidad aparte; decidir con Victor.
 - **Siguiente:** CI-15 C5-U02 «Cantidad y propiedades» (sistema cerrado, conservación y propiedades; sin densidad: caución del mapa).
+
+## Actualización CI-15 (2026-10-17): C5-U02 «Cantidad y propiedades» hecha y abierta — **las 6 unidades piloto están completas**
+- `labs/materia.ts`: (1) **masa en un frasco cerrado**: frasco con agua 220 g + sustancia (sal 10 g, azúcar 15 g, hielo 20 g); la balanza marca lo mismo antes y
+  después de disolver/derretir (conservación, 5-PS1-2). Sin volumen ni densidad (caución del mapa); (2) **propiedades de 4 polvos** (sal, azúcar, arena,
+  harina) con tres pruebas (color, granitos con la lupa, en agua) y una **muestra X misteriosa = azúcar**: el color solo deja 3 posibilidades, «en agua»
+  deja 2, «en agua» + lupa deja 1 (5-PS1-3). `MATTER_MODEL` dice qué NO representa (frasco abierto, reacciones, probar con la boca).
+- `content/c5-u02.json` (6 sesiones / 23 pasos, 8 tareas, 2 ideas: `materia.conserva` [sal, hielo] y `propiedad.identifica` [muestras, misteriosa]).
+  5-PS1-2: t1, t3, t5, t7; 5-PS1-3: t2, t4, t6. `matterTextProblems` ata cada número citado (220/10/230/235/240 g) y la respuesta esperada al modelo.
+  Ficha de seguridad: las muestras **nunca se prueban con la boca**; alergia al trigo (harina) como motivo para detener. Ficha: `unidades/C5-U02.md`.
+- `BalanceBench` + `SampleStrip` (ui-native) y `families/matter.tsx`: pesar frasco → pesar sustancia → echar y cerrar → esperar (los cristales dejan de verse
+  y la balanza sigue marcando lo mismo); tabla antes/después que el niño anota (un error deja volver a elegir, sin «incorrecto»); tabla de propiedades con
+  la fila X que el niño prueba casilla por casilla. La pantalla de la balanza está en blanco en la imagen: los números los dibuja la app.
+- Verificado en el navegador: tableta 1180×820 y teléfono 390×780 (ES). El inglés lo cubren las pruebas de textos y de contenido (el idioma sale del perfil
+  del niño; no se recorrió en pantalla).
+- **Siguiente (decidir con Victor):** ampliar el catálogo (quedan 42 unidades «Pronto»: cada una exige investigación → pedido de imágenes → modelo → contenido → pantallas),
+  la revisión de un docente (CI-08), la vista de padres (estándares, actividad fuera de pantalla), el repaso 1-3-7 y el APK cuando lo pida.

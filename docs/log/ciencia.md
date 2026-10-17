@@ -90,3 +90,8 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
 ## 2026-10-17 · CI-14: C3-U06 «Interacciones sin tocar»
 - Modelo del imán (alcances didácticos), unidad con 3 ideas y los dos estándares 3-PS2 (≥ 3 tareas cada uno), mesa del imán con 5 marcas.
 - Decisión: la electricidad estática queda fuera de esta versión (se documenta como pendiente) para no mezclar dos fuerzas en una unidad de 3.º.
+
+## 2026-10-17 · CI-15: C5-U02 «Cantidad y propiedades» (sexta y última unidad piloto)
+- Modelo de masa en frasco cerrado + propiedades de cuatro polvos y una muestra misteriosa; dos ideas, dos estándares 5-PS1 con ≥ 3 tareas cada uno.
+- Decisión: sin densidad ni volumen; el color solo no identifica la muestra X (se combinan «en agua» y «con la lupa»). El hielo derretido es la transferencia de 5-PS1-2.
+- Arte de Lote E conectado (frasco, balanza con pantalla en blanco, 4 muestras). Resultado: C1, C2, C3, C4, C5 y C6 jugables.
