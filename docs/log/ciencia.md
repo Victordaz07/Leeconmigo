@@ -99,3 +99,7 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
 ## 2026-10-17 · CI-16: C5-U03 «Mezclas bajo investigación»
 - Primera unidad del catálogo fuera de los pilotos, elegida porque reutiliza la familia `matter` y el arte del Lote E (cero imágenes nuevas).
 - Decisión: la sustancia nueva se decide con dos pruebas juntas (burbujas + no recuperar); mezclas siempre abiertas y en poca cantidad.
+
+## 2026-10-17 · CI-17: C4-U02 «Energía en movimiento» (arte provisional)
+- Modelo de la rampa con una sola variable (altura), unidad con 2 ideas y los dos estándares 4-PS3 con ≥ 3 tareas cada uno; verificada en tableta con arte dibujado con código.
+- Pendiente: arte real del lote I y retoque de las posiciones de la rampa.

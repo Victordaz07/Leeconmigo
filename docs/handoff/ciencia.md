@@ -243,3 +243,13 @@ tela, plástico, cartón), vaso de agua compartido con C5 y C6, bandeja con pico
   (carrito/rampa, distancias que dibuja la app); `prop_bloque_madera` (lote G) lo usa también C4-U02.
 - Hasta que lleguen las imágenes: modelo, contenido y pruebas pueden avanzar; las unidades quedan con `UNIT_ART_READY` en false (solo se ven con `EXPO_PUBLIC_DEMO=1`).
 - Las filas CI-17…CI-21 del ROADMAP están en ⬜.
+
+## Actualización CI-17 (2026-10-17): C4-U02 «Energía en movimiento» hecha con arte provisional
+- `labs/choques.ts`: la MISMA bola desde 4 marcas de la rampa; el bloque se desliza 4, 9, 15 y 22 cm y el golpe suena más fuerte cuanto más alto (más rápido → más energía de movimiento). Solo cambia la
+  altura (misma masa y material: caución del mapa). Sin energía en números: `RAMP_MODEL` lo declara.
+- `content/c4-u02.json` (6 sesiones / 23 pasos, 8 tareas, 2 ideas: `rapidez.energia` y `choque.transfiere`; 4-PS3-1: t2/t3/t5/t7, 4-PS3-3: t1/t4/t6/t7). `rampTextProblems` ata 4 cm / 22 cm y las respuestas esperadas
+  al modelo. Ficha: `unidades/C4-U02.md`. Seguridad: una pelota ligera, rampa firme, nunca lanzar, nadie delante del bloque.
+- UI: `RampBench` (rampa, bola, bloque y regla dibujada por la app) y `families/ramp.tsx` (soltar desde una marca, tabla de distancias con elección entre 3 valores, tabla de resultados).
+- **Arte PROVISIONAL** (`scripts/ciencia-arte-provisional.py I`): `prop_rampa`, `prop_bloque_madera`, `scene_c4_u02`, `cover_c4_u02`; los cuatro están en `PROVISIONAL` de `tests/ciencia-art.test.ts` y `UNIT_ART_READY['C4-U02']` es **false**.
+  Al llegar el lote I: `python3 -I scripts/ciencia-arte.py <carpeta> tanda-3i`, vaciar esos nombres de `PROVISIONAL`, **retocar `RAMP` en `ramp-bench.tsx`** (donde está la pendiente de la rampa en la imagen real y dónde
+  queda el bloque), poner `UNIT_ART_READY['C4-U02']` en true y actualizar `MANIFESTS` con `manifest-tanda-3i.json`. `prop_bloque_madera` viene en el lote G (se puede pedir antes).
