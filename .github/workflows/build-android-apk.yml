@@ -6,9 +6,14 @@ name: Build Android APK (demo)
 # bajar el SDK de Android y los modelos de voz; los runners de GitHub Actions sí tienen internet completo.
 on:
   workflow_dispatch: {}
+  # El token de la app de GitHub conectada no puede disparar workflow_dispatch por API (403), así que durante
+  # esta ronda de arreglos a pedido de Victor se dispara con cada push que toque el workflow (se "toca" este
+  # archivo con un comentario cuando hace falta un build nuevo) — no con cualquier push a la rama.
   push:
     branches: [claude/sociedad-victor]
     paths: ['.github/workflows/build-android-apk.yml']
+
+# build 4: Modo Padres bilingüe (c949ad8)
 
 permissions:
   contents: write
