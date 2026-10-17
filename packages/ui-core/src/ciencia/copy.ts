@@ -253,6 +253,25 @@ export const CIENCIA_COPY = {
     drawing: L('Los puntitos son un dibujo, no una fotografía.', 'The dots are a drawing, not a photograph.'),
     sameDots: (n: number) => L(`Siempre hay los mismos ${String(n)} puntitos: solo cambia dónde están.`, `There are always the same ${String(n)} dots: only where they are changes.`),
   },
+  /** La mesa de datos del tiempo y el clima (C3-U07). */
+  climate: {
+    tableTitle: (town: string) => L(`Registro de ${town}`, `${town} record`),
+    colRain: L('Días con lluvia', 'Rainy days'),
+    colTemp: L('Tarde', 'Afternoon'),
+    days: (n: number) => L(`${String(n)} ${n === 1 ? 'día' : 'días'}`, `${String(n)} ${n === 1 ? 'day' : 'days'}`),
+    degrees: (n: number) => L(`${String(n)} °C`, `${String(n)} °C`),
+    perMonth: L('Días con lluvia en un mes típico de la estación.', 'Rainy days in a typical month of the season.'),
+    revealPick: L('Toca una casilla tapada para ver su dato.', 'Tap a covered cell to see its data.'),
+    revealCount: (n: number, t: number) => L(`Descubriste ${String(n)} de ${String(t)} casillas`, `You uncovered ${String(n)} of ${String(t)} cells`),
+    revealDone: L('Ya descubriste lo que hacía falta. Puedes seguir mirando.', 'You uncovered what was needed. You can keep looking.'),
+    chartTitle: (town: string) => L(`Días con lluvia en ${town}`, `Rainy days in ${town}`),
+    chartAxis: L('Días con lluvia en un mes típico', 'Rainy days in a typical month'),
+    chartPrompt: L('Toca cada columna a la altura que dice la tabla.', 'Tap each column at the height the table says.'),
+    chartDiffers: L('Alguna barra no coincide con la tabla (en ámbar). Míralas otra vez.', 'A bar doesn’t match the table (in amber). Look at them again.'),
+    chartMatches: L('Tus barras coinciden con la tabla.', 'Your bars match the table.'),
+    chartDescription: (town: string, parts: string) => L(`${town}: ${parts}.`, `${town}: ${parts}.`),
+    unit: L('Datos de práctica: ningún pueblo es real.', 'Practice data: no town is real.'),
+  },
   /** Detectives de materiales: mirar con la lupa y agrupar por una propiedad (C2-U01). */
   sort: {
     lens: (name: string) => L(`Con la lupa: ${name}`, `With the lens: ${name}`),

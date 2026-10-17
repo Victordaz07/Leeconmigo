@@ -27,6 +27,8 @@ interface BarChartProps {
   description: string;
   /** Barras que no coinciden con la tabla (se marcan en ámbar, nunca rojo). */
   flagged?: string[];
+  /** Cada cuánto va una rayita del eje (por defecto 8, los gramos de la erosión). */
+  step?: number;
 }
 
 const STEP = 8;
@@ -70,9 +72,9 @@ function Column({ bar: b, max, plotH, flagged, onSet }: ColumnProps) {
 }
 
 /** Gráfica de barras que CONSTRUYE el niño con sus datos; el eje y los valores son texto, no dibujo. */
-export function BarChart({ title, axisLabel, bars, max, width, height = 220, onSet, description, flagged = [] }: BarChartProps) {
+export function BarChart({ title, axisLabel, bars, max, width, height = 220, onSet, description, flagged = [], step = STEP }: BarChartProps) {
   const ticks: number[] = [];
-  for (let v = 0; v <= max; v += STEP) ticks.push(v);
+  for (let v = 0; v <= max; v += step) ticks.push(v);
   const plotH = height - 36;
   return (
     <View style={[styles.card, { width }]} accessible accessibilityLabel={`${title}. ${description}`}>

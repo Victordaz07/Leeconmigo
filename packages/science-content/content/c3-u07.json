@@ -1,0 +1,1720 @@
+{
+ "id": "C3-U07",
+ "grade": 3,
+ "area": "tierra",
+ "title": {
+  "es": "Tiempo y clima",
+  "en": "Weather and climate"
+ },
+ "question": {
+  "es": "¿Qué dice el registro?",
+  "en": "What does the record say?"
+ },
+ "standards": [
+  "3-ESS2-1",
+  "3-ESS2-2"
+ ],
+ "standardTasks": {
+  "3-ESS2-1": [
+   "t1",
+   "t3",
+   "t4",
+   "t6",
+   "t7"
+  ],
+  "3-ESS2-2": [
+   "t2",
+   "t3",
+   "t5",
+   "t7"
+  ]
+ },
+ "ideas": [
+  {
+   "id": "clima.registro",
+   "text": {
+    "es": "El clima es lo típico que se repite en cada estación; se ve en un registro de muchos años (tablas y barras), no en el tiempo de un solo día.",
+    "en": "Climate is what is typical and repeats in each season; it shows in a record of many years (tables and bars), not in the weather of a single day."
+   },
+   "misconception": {
+    "es": "El clima es el tiempo que hace hoy, o un día de calor cambia el clima.",
+    "en": "Climate is today’s weather, or one hot day changes the climate."
+   },
+   "contexts": [
+    "tabla",
+    "barras",
+    "region",
+    "ciudad"
+   ]
+  },
+  {
+   "id": "clima.regiones",
+   "text": {
+    "es": "Cada región tiene su propio clima, y se describe y se compara con los mismos datos (lluvia y temperatura estación por estación).",
+    "en": "Each region has its own climate, and it is described and compared with the same data (rain and temperature season by season)."
+   },
+   "misconception": {
+    "es": "Todos los lugares tienen el mismo clima, o el clima de un pueblo se decide con un día.",
+    "en": "All places have the same climate, or a town’s climate is decided by one day."
+   },
+   "contexts": [
+    "comparar",
+    "region",
+    "ciudad"
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "es": "tiempo",
+   "en": "weather",
+   "note": {
+    "es": "Cómo está el aire en un lugar y un momento: si llueve, si hace calor o frío hoy. Cambia de un día a otro.",
+    "en": "How the air is in a place and a moment: whether it rains, whether it is hot or cold today. It changes from one day to another."
+   }
+  },
+  {
+   "es": "clima",
+   "en": "climate",
+   "note": {
+    "es": "Lo típico del tiempo en un lugar en cada estación, año tras año.",
+    "en": "What the weather is typically like in a place in each season, year after year."
+   }
+  },
+  {
+   "es": "registro",
+   "en": "record",
+   "note": {
+    "es": "Una lista de datos anotados muchas veces, como la tabla de días con lluvia.",
+    "en": "A list of data written down many times, like the table of rainy days."
+   }
+  }
+ ],
+ "sessions": [
+  {
+   "id": "s1",
+   "title": {
+    "es": "Lo que dice el registro",
+    "en": "What the record says"
+   },
+   "objective": {
+    "es": "Leer una tabla del tiempo sin confundirla con un día.",
+    "en": "Read a weather table without mixing it up with one day."
+   },
+   "steps": [
+    {
+     "id": "s1.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Pueblo Azul lleva un registro: cuántos días llueve y qué temperatura hace en cada estación, año tras año. Mira la tabla.",
+      "en": "Blue Town keeps a record: how many days it rains and the temperature in each season, year after year. Look at the table."
+     },
+     "scene": "pueblo",
+     "climate": {
+      "view": "table",
+      "town": "azul",
+      "static": true
+     }
+    },
+    {
+     "id": "s1.2",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "Elige dos cosas que dice la tabla.",
+      "en": "Pick two things the table says."
+     },
+     "taskId": "t1",
+     "saves": "observación",
+     "scene": "pueblo",
+     "climate": {
+      "view": "table",
+      "town": "azul",
+      "static": true
+     }
+    },
+    {
+     "id": "s1.3",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Creo que el clima de un lugar es…",
+      "en": "I think the climate of a place is…"
+     },
+     "saves": "idea inicial",
+     "scene": "pueblo",
+     "choice": {
+      "id": "ideaInicial",
+      "multi": false,
+      "options": [
+       {
+        "id": "tipico",
+        "text": {
+         "es": "lo que pasa casi siempre en cada estación.",
+         "en": "what happens almost always in each season."
+        }
+       },
+       {
+        "id": "hoy",
+        "text": {
+         "es": "el tiempo que hace hoy.",
+         "en": "the weather today."
+        }
+       },
+       {
+        "id": "nose",
+        "text": {
+         "es": "todavía no sé.",
+         "en": "I don’t know yet."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s1.4",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "Los números de este cuaderno son de práctica, inventados para aprender: ningún pueblo ni registro es real.",
+      "en": "The numbers in this notebook are practice data, made up for learning: no town or record is real."
+     },
+     "scene": "pueblo"
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "title": {
+    "es": "Dibujar las barras",
+    "en": "Drawing the bars"
+   },
+   "objective": {
+    "es": "Pasar una tabla a barras y comprobar una predicción.",
+    "en": "Turn a table into bars and check a prediction."
+   },
+   "steps": [
+    {
+     "id": "s2.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Una gráfica de barras muestra la tabla con dibujos: cada barra es una estación y su altura son los días con lluvia. Estas son las de Pueblo Azul.",
+      "en": "A bar graph shows the table with drawings: each bar is a season and its height is the rainy days. These are Blue Town’s."
+     },
+     "scene": "pueblo",
+     "climate": {
+      "view": "bars",
+      "town": "azul",
+      "static": true
+     }
+    },
+    {
+     "id": "s2.2",
+     "phase": "explora",
+     "kind": "predecir",
+     "text": {
+      "es": "Pueblo Seco está en el desierto. Sus barras de días con lluvia, comparadas con las de Pueblo Azul, ¿cómo serán? Porque…",
+      "en": "Dry Town is in the desert. Its rainy-days bars, compared with Blue Town’s, will be… Because…"
+     },
+     "taskId": "t4",
+     "saves": "predicción",
+     "scene": "pueblo",
+     "climate": {
+      "view": "bars",
+      "town": "azul",
+      "static": true
+     }
+    },
+    {
+     "id": "s2.3",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Dibuja las barras de lluvia de Pueblo Seco: toca cada columna a la altura que dice la tabla.",
+      "en": "Draw the rain bars of Dry Town: tap each column at the height the table says."
+     },
+     "saves": "gráfica",
+     "scene": "pueblo",
+     "climate": {
+      "view": "bars",
+      "town": "seco"
+     }
+    },
+    {
+     "id": "s2.4",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Compara lo que predijiste con tus barras.",
+      "en": "Compare what you predicted with your bars."
+     },
+     "saves": "comparación",
+     "scene": "pueblo",
+     "climate": {
+      "view": "bars",
+      "town": "seco",
+      "static": true
+     },
+     "choice": {
+      "id": "comparacion",
+      "multi": false,
+      "options": [
+       {
+        "id": "coincidio",
+        "text": {
+         "es": "Mi predicción coincidió.",
+         "en": "My prediction matched."
+        }
+       },
+       {
+        "id": "nocoincidio",
+        "text": {
+         "es": "Mi predicción no coincidió.",
+         "en": "My prediction didn’t match."
+        }
+       }
+      ],
+      "compareWith": {
+       "taskId": "t4",
+       "partId": "resultado"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "s3",
+   "title": {
+    "es": "Un pueblo de montaña",
+    "en": "A mountain town"
+   },
+   "objective": {
+    "es": "Predecir y comprobar con el registro cómo es el clima de otro lugar.",
+    "en": "Predict and check with the record what the climate of another place is like."
+   },
+   "steps": [
+    {
+     "id": "s3.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Pueblo Alto está en la montaña, lejos del mar. Su registro está tapado: lo vas a descubrir.",
+      "en": "High Town is in the mountains, far from the sea. Its record is covered: you will uncover it."
+     },
+     "scene": "pueblo"
+    },
+    {
+     "id": "s3.2",
+     "phase": "explora",
+     "kind": "predecir",
+     "text": {
+      "es": "¿En qué estación hará más frío en Pueblo Alto? Porque…",
+      "en": "In which season will it be coldest in High Town? Because…"
+     },
+     "taskId": "t3",
+     "saves": "predicción",
+     "scene": "pueblo"
+    },
+    {
+     "id": "s3.3",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Descubre la tabla de Pueblo Alto: toca cada casilla para ver el dato (cuatro).",
+      "en": "Uncover High Town’s table: tap each cell to see the data (four)."
+     },
+     "saves": "tabla",
+     "scene": "pueblo",
+     "climate": {
+      "view": "reveal",
+      "town": "alto",
+      "trials": 4
+     }
+    },
+    {
+     "id": "s3.4",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Compara lo que predijiste con el registro.",
+      "en": "Compare what you predicted with the record."
+     },
+     "saves": "comparación",
+     "scene": "pueblo",
+     "climate": {
+      "view": "table",
+      "town": "alto",
+      "static": true
+     },
+     "choice": {
+      "id": "comparacion",
+      "multi": false,
+      "options": [
+       {
+        "id": "coincidio",
+        "text": {
+         "es": "Mi predicción coincidió.",
+         "en": "My prediction matched."
+        }
+       },
+       {
+        "id": "nocoincidio",
+        "text": {
+         "es": "Mi predicción no coincidió.",
+         "en": "My prediction didn’t match."
+        }
+       }
+      ],
+      "compareWith": {
+       "taskId": "t3",
+       "partId": "resultado"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "s4",
+   "title": {
+    "es": "Lo típico, no lo de hoy",
+    "en": "What is typical, not today’s"
+   },
+   "objective": {
+    "es": "Distinguir el tiempo de un día del clima y explicar con el registro.",
+    "en": "Tell one day’s weather from climate and explain with the record."
+   },
+   "steps": [
+    {
+     "id": "s4.1",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "Hoy en Pueblo Seco llovió fuerte. ¿Cambia su clima?",
+      "en": "Today it rained hard in Dry Town. Does its climate change?"
+     },
+     "saves": "tiempo y clima",
+     "scene": "pueblo",
+     "climate": {
+      "view": "table",
+      "town": "seco",
+      "static": true
+     },
+     "choice": {
+      "id": "hoy",
+      "multi": false,
+      "options": [
+       {
+        "id": "no",
+        "text": {
+         "es": "No: un día de lluvia no cambia lo típico de todas las estaciones.",
+         "en": "No: one rainy day doesn’t change what is typical of all the seasons."
+        },
+        "expected": true
+       },
+       {
+        "id": "si",
+        "text": {
+         "es": "Sí: ahora es un pueblo lluvioso.",
+         "en": "Yes: now it is a rainy town."
+        }
+       },
+       {
+        "id": "nose",
+        "text": {
+         "es": "No sé.",
+         "en": "I don’t know."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s4.2",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Mira los tres pueblos. ¿Qué patrón ves?",
+      "en": "Look at the three towns. What pattern do you see?"
+     },
+     "saves": "patrón",
+     "scene": "pueblo",
+     "climate": {
+      "view": "compare"
+     },
+     "choice": {
+      "id": "patron",
+      "multi": false,
+      "options": [
+       {
+        "id": "patron",
+        "text": {
+         "es": "Cada pueblo repite su patrón de lluvia y temperatura estación tras estación.",
+         "en": "Each town repeats its pattern of rain and temperature season after season."
+        },
+        "expected": true
+       },
+       {
+        "id": "azar",
+        "text": {
+         "es": "Cada día es distinto: no hay patrón.",
+         "en": "Every day is different: there is no pattern."
+        }
+       },
+       {
+        "id": "igual",
+        "text": {
+         "es": "Los tres pueblos tienen el mismo clima.",
+         "en": "The three towns have the same climate."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s4.3",
+     "phase": "explica",
+     "kind": "texto",
+     "text": {
+      "es": "Palabras nuevas para explicar.",
+      "en": "New words to explain with."
+     },
+     "scene": "pueblo",
+     "glossary": [
+      "tiempo",
+      "clima",
+      "registro"
+     ]
+    },
+    {
+     "id": "s4.4",
+     "phase": "explica",
+     "kind": "afirmacion",
+     "text": {
+      "es": "Arma tu explicación: qué dices del clima de Pueblo Seco, qué lo prueba y qué no puedes saber.",
+      "en": "Build your explanation: what you say about Dry Town’s climate, what shows it and what you can’t know."
+     },
+     "taskId": "t5",
+     "saves": "explicación",
+     "scene": "pueblo",
+     "climate": {
+      "view": "table",
+      "town": "seco",
+      "static": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "s5",
+   "title": {
+    "es": "Comparar pueblos",
+    "en": "Comparing towns"
+   },
+   "objective": {
+    "es": "Comparar los tres pueblos y evaluar la gráfica.",
+    "en": "Compare the three towns and evaluate the graph."
+   },
+   "steps": [
+    {
+     "id": "s5.1",
+     "phase": "observa",
+     "kind": "elegir",
+     "text": {
+      "es": "Mira las tablas de los tres pueblos y elige dos cosas.",
+      "en": "Look at the tables of the three towns and pick two things."
+     },
+     "taskId": "t2",
+     "saves": "observación",
+     "scene": "pueblo",
+     "climate": {
+      "view": "compare"
+     }
+    },
+    {
+     "id": "s5.2",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "En verano, ¿qué pueblo tiene más días con lluvia?",
+      "en": "In summer, which town has the most rainy days?"
+     },
+     "saves": "comparación",
+     "scene": "pueblo",
+     "climate": {
+      "view": "compare",
+      "measure": "lluvia"
+     },
+     "choice": {
+      "id": "verano",
+      "multi": false,
+      "options": [
+       {
+        "id": "alto",
+        "text": {
+         "es": "Pueblo Alto.",
+         "en": "High Town."
+        },
+        "expected": true
+       },
+       {
+        "id": "azul",
+        "text": {
+         "es": "Pueblo Azul.",
+         "en": "Blue Town."
+        }
+       },
+       {
+        "id": "seco",
+        "text": {
+         "es": "Pueblo Seco.",
+         "en": "Dry Town."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s5.3",
+     "phase": "explica",
+     "kind": "afirmacion",
+     "text": {
+      "es": "Evalúa la gráfica: qué muestra, qué le falta y cómo la mejorarías.",
+      "en": "Evaluate the graph: what it shows, what it lacks and how you would improve it."
+     },
+     "taskId": "t6",
+     "saves": "gráfica",
+     "scene": "pueblo",
+     "climate": {
+      "view": "bars",
+      "town": "azul",
+      "static": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "s6",
+   "title": {
+    "es": "Un viaje para Maya",
+    "en": "A trip for Maya"
+   },
+   "objective": {
+    "es": "Usar el registro en un caso nuevo y revisar mi primera idea.",
+    "en": "Use the record in a new case and revisit my first idea."
+   },
+   "steps": [
+    {
+     "id": "s6.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "La familia de Maya quiere visitar Pueblo Alto en invierno y prepara la maleta.",
+      "en": "Maya’s family wants to visit High Town in winter and is packing."
+     },
+     "scene": "pueblo"
+    },
+    {
+     "id": "s6.2",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "¿Qué pueden esperar y qué guardan en la maleta?",
+      "en": "What can they expect and what do they pack?"
+     },
+     "taskId": "t7",
+     "saves": "problema nuevo",
+     "scene": "pueblo",
+     "climate": {
+      "view": "table",
+      "town": "alto",
+      "static": true
+     }
+    },
+    {
+     "id": "s6.3",
+     "phase": "explica",
+     "kind": "reflexion",
+     "text": {
+      "es": "Vuelve a mirar tu primera idea. ¿Cambió?",
+      "en": "Look at your first idea again. Did it change?"
+     },
+     "taskId": "t8",
+     "saves": "reflexión",
+     "scene": "pueblo"
+    },
+    {
+     "id": "s6.4",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "Hoy leíste tablas y barras: el clima es lo típico de cada estación, y cada lugar tiene el suyo. Un día no lo cambia.",
+      "en": "Today you read tables and bars: climate is what is typical of each season, and each place has its own. One day doesn’t change it."
+     },
+     "saves": "resumen",
+     "scene": "pueblo"
+    }
+   ]
+  }
+ ],
+ "tasks": [
+  {
+   "id": "t1",
+   "kind": "observar",
+   "ideaIds": [
+    "clima.registro"
+   ],
+   "contextId": "tabla",
+   "sessionId": "s1",
+   "standards": [
+    "3-ESS2-1",
+    "3-ESS2-2"
+   ],
+   "criterion": {
+    "es": "Lee la tabla de Pueblo Azul y dice dos cosas que se ven en ella, sin decir que es el tiempo de hoy.",
+    "en": "Reads the Blue Town table and says two things shown in it, without saying it is today’s weather."
+   },
+   "parts": [
+    {
+     "id": "observaciones",
+     "prompt": {
+      "es": "Mira la tabla y elige dos cosas.",
+      "en": "Look at the table and pick two things."
+     },
+     "options": [
+      {
+       "id": "invierno",
+       "text": {
+        "es": "En invierno hay 12 días con lluvia.",
+        "en": "In winter there are 12 rainy days."
+       },
+       "valid": true
+      },
+      {
+       "id": "verano",
+       "text": {
+        "es": "En verano casi no llueve: solo 1 día.",
+        "en": "In summer it almost never rains: only 1 day."
+       },
+       "valid": true
+      },
+      {
+       "id": "igual",
+       "text": {
+        "es": "Llueve igual en todas las estaciones.",
+        "en": "It rains the same in every season."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira la tabla: los días con lluvia cambian con la estación.",
+        "en": "Look at the table: the number of rainy days changes with the season."
+       }
+      },
+      {
+       "id": "hoy",
+       "text": {
+        "es": "Hoy está lloviendo en Pueblo Azul.",
+        "en": "It is raining in Blue Town today."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "La tabla no dice qué pasa hoy: dice lo que pasa en un mes típico de cada estación.",
+        "en": "The table doesn’t say what is happening today: it says what happens in a typical month of each season."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Busca la fila de invierno y la de verano.",
+     "en": "Find the winter row and the summer row."
+    },
+    {
+     "es": "Compara los números: ¿cuál es más grande?",
+     "en": "Compare the numbers: which one is bigger?"
+    },
+    {
+     "es": "Ejemplo: si en la tabla el invierno tiene un 12 y el verano un 1, el invierno tiene más días con lluvia.",
+     "en": "Example: if the table has a 12 for winter and a 1 for summer, winter has more rainy days."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige dos cosas.",
+     "en": "Pick two things."
+    },
+    "wrong": {
+     "es": "Alguna de las cosas que elegiste no está en la tabla. Léela de nuevo.",
+     "en": "Something you picked isn’t in the table. Read it again."
+    },
+    "ok": {
+     "es": "Leíste la tabla con cuidado: lo típico de cada estación.",
+     "en": "You read the table carefully: what is typical of each season."
+    }
+   }
+  },
+  {
+   "id": "t2",
+   "kind": "observar",
+   "ideaIds": [
+    "clima.regiones"
+   ],
+   "contextId": "comparar",
+   "sessionId": "s5",
+   "standards": [
+    "3-ESS2-1",
+    "3-ESS2-2"
+   ],
+   "criterion": {
+    "es": "Compara las tablas de los tres pueblos y dice dos cosas que se ven en ellas, sin confundir un día con el clima.",
+    "en": "Compares the tables of the three towns and says two things shown in them, without mixing up one day with the climate."
+   },
+   "parts": [
+    {
+     "id": "observaciones",
+     "prompt": {
+      "es": "Mira las tablas y elige dos cosas.",
+      "en": "Look at the tables and pick two things."
+     },
+     "options": [
+      {
+       "id": "seco",
+       "text": {
+        "es": "Pueblo Seco tiene menos días con lluvia que los otros dos pueblos en todas las estaciones.",
+        "en": "Dry Town has fewer rainy days than the other two towns in every season."
+       },
+       "valid": true
+      },
+      {
+       "id": "frio",
+       "text": {
+        "es": "En invierno, Pueblo Alto es el más frío de los tres.",
+        "en": "In winter, High Town is the coldest of the three."
+       },
+       "valid": true
+      },
+      {
+       "id": "azulverano",
+       "text": {
+        "es": "En verano, Pueblo Azul es el que más llueve.",
+        "en": "In summer, Blue Town is the one where it rains most."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira la fila del verano: Pueblo Alto tiene 5 días con lluvia y Pueblo Azul solo 1.",
+        "en": "Look at the summer row: High Town has 5 rainy days and Blue Town only 1."
+       }
+      },
+      {
+       "id": "ayer",
+       "text": {
+        "es": "El clima de Pueblo Seco cambió porque ayer hizo calor.",
+        "en": "Dry Town’s climate changed because it was hot yesterday."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Un día caluroso es tiempo, no clima: el clima es lo que se repite en cada estación.",
+        "en": "One hot day is weather, not climate: climate is what repeats in each season."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira una estación a la vez y compara los tres pueblos.",
+     "en": "Look at one season at a time and compare the three towns."
+    },
+    {
+     "es": "Fíjate en el número más chico y en el más grande de cada fila.",
+     "en": "Notice the smallest and the biggest number in each row."
+    },
+    {
+     "es": "Ejemplo: si un pueblo tiene el número más chico de lluvia en todas las estaciones, es el que menos llueve.",
+     "en": "Example: if a town has the smallest rain number in every season, it is the one where it rains least."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige dos cosas.",
+     "en": "Pick two things."
+    },
+    "wrong": {
+     "es": "Alguna de las cosas que elegiste no está en las tablas. Léelas de nuevo.",
+     "en": "Something you picked isn’t in the tables. Read them again."
+    },
+    "ok": {
+     "es": "Comparaste con cuidado: cada pueblo tiene su propio clima.",
+     "en": "You compared carefully: each town has its own climate."
+    }
+   }
+  },
+  {
+   "id": "t3",
+   "kind": "predecir",
+   "ideaIds": [
+    "clima.regiones"
+   ],
+   "contextId": "region",
+   "sessionId": "s3",
+   "standards": [
+    "3-ESS2-1",
+    "3-ESS2-2"
+   ],
+   "criterion": {
+    "es": "Predice en qué estación hará más frío en Pueblo Alto y da una razón. Cualquier predicción es válida.",
+    "en": "Predicts which season will be coldest in High Town and gives a reason. Any prediction is valid."
+   },
+   "parts": [
+    {
+     "id": "resultado",
+     "prompt": {
+      "es": "Pueblo Alto está en la montaña. ¿En qué estación hará más frío?",
+      "en": "High Town is in the mountains. In which season will it be coldest?"
+     },
+     "options": [
+      {
+       "id": "invierno",
+       "text": {
+        "es": "En invierno.",
+        "en": "In winter."
+       },
+       "valid": true
+      },
+      {
+       "id": "verano",
+       "text": {
+        "es": "En verano.",
+        "en": "In summer."
+       },
+       "valid": true
+      },
+      {
+       "id": "primavera",
+       "text": {
+        "es": "En primavera.",
+        "en": "In spring."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false,
+     "observedOptionId": "invierno"
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "Porque…",
+      "en": "Because…"
+     },
+     "options": [
+      {
+       "id": "invierno",
+       "text": {
+        "es": "en invierno hace más frío en casi todos los lugares.",
+        "en": "in winter it is colder in almost all places."
+       },
+       "valid": true
+      },
+      {
+       "id": "montana",
+       "text": {
+        "es": "en la montaña el aire es más frío.",
+        "en": "in the mountains the air is colder."
+       },
+       "valid": true
+      },
+      {
+       "id": "creo",
+       "text": {
+        "es": "creo que así es.",
+        "en": "I think that is how it is."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    }
+   ],
+   "hints": [
+    {
+     "es": "Piensa en cómo se siente el aire en cada estación.",
+     "en": "Think about how the air feels in each season."
+    },
+    {
+     "es": "¿En qué estación te pones más abrigo?",
+     "en": "In which season do you put on more warm clothes?"
+    },
+    {
+     "es": "Ejemplo: en un lugar de montaña, la nieve cae cuando hace mucho frío.",
+     "en": "Example: in a mountain place, snow falls when it is very cold."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige una predicción y un «porque».",
+     "en": "Pick a prediction and a “because”."
+    },
+    "wrong": {
+     "es": "Elige una de las opciones.",
+     "en": "Pick one of the options."
+    },
+    "ok": {
+     "es": "Anotaste tu predicción. Ahora la comparamos con el registro.",
+     "en": "You wrote down your prediction. Now we compare it with the record."
+    }
+   }
+  },
+  {
+   "id": "t4",
+   "kind": "predecir",
+   "ideaIds": [
+    "clima.registro"
+   ],
+   "contextId": "barras",
+   "sessionId": "s2",
+   "standards": [
+    "3-ESS2-1",
+    "3-ESS2-2"
+   ],
+   "criterion": {
+    "es": "Predice cómo serán las barras de lluvia de Pueblo Seco comparadas con las de Pueblo Azul y da una razón. Cualquier predicción es válida.",
+    "en": "Predicts how Dry Town’s rain bars will compare with Blue Town’s and gives a reason. Any prediction is valid."
+   },
+   "parts": [
+    {
+     "id": "resultado",
+     "prompt": {
+      "es": "Pueblo Seco está en el desierto. Sus barras de días con lluvia, comparadas con las de Pueblo Azul, ¿cómo serán?",
+      "en": "Dry Town is in the desert. Its rainy-days bars, compared with Blue Town’s, will be…"
+     },
+     "options": [
+      {
+       "id": "bajas",
+       "text": {
+        "es": "Más bajas: llueve menos días.",
+        "en": "Lower: it rains fewer days."
+       },
+       "valid": true
+      },
+      {
+       "id": "iguales",
+       "text": {
+        "es": "Iguales a las de Pueblo Azul.",
+        "en": "The same as Blue Town’s."
+       },
+       "valid": true
+      },
+      {
+       "id": "altas",
+       "text": {
+        "es": "Más altas: llueve más días.",
+        "en": "Taller: it rains more days."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false,
+     "observedOptionId": "bajas"
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "Porque…",
+      "en": "Because…"
+     },
+     "options": [
+      {
+       "id": "desierto",
+       "text": {
+        "es": "un desierto es un lugar donde llueve poco.",
+        "en": "a desert is a place where it rains little."
+       },
+       "valid": true
+      },
+      {
+       "id": "creo",
+       "text": {
+        "es": "creo que así es.",
+        "en": "I think that is how it is."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "todavía no estoy seguro.",
+        "en": "I’m not sure yet."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira otra vez las barras de Pueblo Azul.",
+     "en": "Look at Blue Town’s bars again."
+    },
+    {
+     "es": "¿Qué sabes de los desiertos?",
+     "en": "What do you know about deserts?"
+    },
+    {
+     "es": "Ejemplo: una barra baja quiere decir pocos días con lluvia.",
+     "en": "Example: a low bar means few rainy days."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige una predicción y un «porque».",
+     "en": "Pick a prediction and a “because”."
+    },
+    "wrong": {
+     "es": "Elige una de las opciones.",
+     "en": "Pick one of the options."
+    },
+    "ok": {
+     "es": "Anotaste tu predicción. Ahora dibujas las barras para comprobarla.",
+     "en": "You wrote down your prediction. Now you draw the bars to check it."
+    }
+   }
+  },
+  {
+   "id": "t5",
+   "kind": "evidencia",
+   "ideaIds": [
+    "clima.registro",
+    "clima.regiones"
+   ],
+   "contextId": "region",
+   "sessionId": "s4",
+   "standards": [
+    "3-ESS2-1",
+    "3-ESS2-2"
+   ],
+   "criterion": {
+    "es": "Afirma cómo es el clima de Pueblo Seco, lo apoya con el registro (no con un día) y dice qué no puede saber con esa tabla.",
+    "en": "Claims what Dry Town’s climate is like, backs it with the record (not with one day) and says what can’t be known from that table."
+   },
+   "parts": [
+    {
+     "id": "afirmacion",
+     "prompt": {
+      "es": "Mi afirmación es…",
+      "en": "My claim is…"
+     },
+     "options": [
+      {
+       "id": "seco",
+       "text": {
+        "es": "El clima de Pueblo Seco es caluroso y con muy poca lluvia.",
+        "en": "Dry Town’s climate is hot, with very little rain."
+       },
+       "valid": true
+      },
+      {
+       "id": "cada",
+       "text": {
+        "es": "En Pueblo Seco el tiempo es siempre igual cada día.",
+        "en": "In Dry Town the weather is always the same every day."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El tiempo cambia de un día a otro; el clima es lo que se repite en cada estación.",
+        "en": "Weather changes from day to day; climate is what repeats in each season."
+       }
+      },
+      {
+       "id": "frio",
+       "text": {
+        "es": "Pueblo Seco es frío en invierno.",
+        "en": "Dry Town is cold in winter."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira la tabla: en invierno la tarde llega a 22 °C.",
+        "en": "Look at the table: in winter the afternoon reaches 22 °C."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "evidencia",
+     "prompt": {
+      "es": "Mi evidencia es… (elige dos)",
+      "en": "My evidence is… (pick two)"
+     },
+     "options": [
+      {
+       "id": "verano",
+       "text": {
+        "es": "En verano la tarde llega a 41 °C y llueve 0 días.",
+        "en": "In summer the afternoon reaches 41 °C and it rains 0 days."
+       },
+       "valid": true
+      },
+      {
+       "id": "poca",
+       "text": {
+        "es": "En ninguna estación llueve más de 3 días.",
+        "en": "In no season does it rain more than 3 days."
+       },
+       "valid": true
+      },
+      {
+       "id": "ayer",
+       "text": {
+        "es": "Ayer hizo mucho calor allí.",
+        "en": "Yesterday it was very hot there."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Un día no es el clima: usa lo que dice el registro de todas las estaciones.",
+        "en": "One day is not the climate: use what the record says for all the seasons."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    },
+    {
+     "id": "limite",
+     "prompt": {
+      "es": "Con esta tabla NO puedo saber…",
+      "en": "With this table I CAN’T know…"
+     },
+     "options": [
+      {
+       "id": "dia",
+       "text": {
+        "es": "si lloverá un día en particular.",
+        "en": "whether it will rain on a particular day."
+       },
+       "valid": true
+      },
+      {
+       "id": "practica",
+       "text": {
+        "es": "cómo es un pueblo real: estos números son de práctica.",
+        "en": "what a real town is like: these numbers are practice data."
+       },
+       "valid": true
+      },
+      {
+       "id": "martes",
+       "text": {
+        "es": "si lloverá el martes: la tabla me lo dice.",
+        "en": "if it will rain on Tuesday: the table tells me."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "La tabla dice lo típico de cada estación, no el tiempo de un día.",
+        "en": "The table says what is typical of each season, not the weather of one day."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira todas las estaciones de Pueblo Seco, no solo una.",
+     "en": "Look at all the seasons of Dry Town, not just one."
+    },
+    {
+     "es": "¿Es un dato de un día o de lo típico de la estación?",
+     "en": "Is it data from one day or from what is typical of the season?"
+    },
+    {
+     "es": "Ejemplo: «ayer llovió» es tiempo; «en verano casi nunca llueve» es clima.",
+     "en": "Example: “it rained yesterday” is weather; “in summer it almost never rains” is climate."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte: afirmación, evidencia y límite.",
+     "en": "A part is missing: claim, evidence and limit."
+    },
+    "wrong": {
+     "es": "Mira de nuevo la tabla: algo de lo que elegiste no es un dato del registro.",
+     "en": "Look at the table again: something you picked isn’t record data."
+    },
+    "ok": {
+     "es": "Afirmaste con el registro y dijiste lo que no puedes saber: así se razona en ciencia.",
+     "en": "You made a claim with the record and said what you can’t know: that is how science reasons."
+    }
+   }
+  },
+  {
+   "id": "t6",
+   "kind": "modelo",
+   "ideaIds": [
+    "clima.registro"
+   ],
+   "contextId": "barras",
+   "sessionId": "s5",
+   "standards": [
+    "3-ESS2-1",
+    "3-ESS2-2"
+   ],
+   "criterion": {
+    "es": "Evalúa la gráfica de barras: qué muestra, qué le falta y cómo la mejoraría.",
+    "en": "Evaluates the bar graph: what it shows, what it is missing and how they would improve it."
+   },
+   "parts": [
+    {
+     "id": "muestra",
+     "prompt": {
+      "es": "Las barras muestran…",
+      "en": "The bars show…"
+     },
+     "options": [
+      {
+       "id": "cambia",
+       "text": {
+        "es": "Cómo cambian los días con lluvia de una estación a otra.",
+        "en": "How the number of rainy days changes from one season to another."
+       },
+       "valid": true
+      },
+      {
+       "id": "mas",
+       "text": {
+        "es": "En qué estación llueve más y en cuál menos.",
+        "en": "In which season it rains most and in which least."
+       },
+       "valid": true
+      },
+      {
+       "id": "manana",
+       "text": {
+        "es": "Si lloverá mañana.",
+        "en": "If it will rain tomorrow."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Las barras muestran lo típico de cada estación, no el tiempo de un día.",
+        "en": "The bars show what is typical of each season, not the weather of one day."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "falta",
+     "prompt": {
+      "es": "A la gráfica le falta…",
+      "en": "The graph is missing…"
+     },
+     "options": [
+      {
+       "id": "temp",
+       "text": {
+        "es": "La temperatura: está en otra tabla.",
+        "en": "The temperature: it is in another table."
+       },
+       "valid": true
+      },
+      {
+       "id": "otros",
+       "text": {
+        "es": "Otros pueblos para comparar: solo muestra uno.",
+        "en": "Other towns to compare: it only shows one."
+       },
+       "valid": true
+      },
+      {
+       "id": "nada",
+       "text": {
+        "es": "Nada: lo muestra todo.",
+        "en": "Nothing: it shows everything."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Toda gráfica deja cosas fuera. ¿Qué no puedes saber mirando solo las barras de lluvia?",
+        "en": "Every graph leaves things out. What can’t you know by looking only at the rain bars?"
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "mejora",
+     "prompt": {
+      "es": "Para mejorarla…",
+      "en": "To improve it…"
+     },
+     "options": [
+      {
+       "id": "rotular",
+       "text": {
+        "es": "Escribir un título y el nombre de cada barra.",
+        "en": "Write a title and the name of each bar."
+       },
+       "valid": true
+      },
+      {
+       "id": "juntas",
+       "text": {
+        "es": "Poner al lado las barras de otro pueblo para comparar.",
+        "en": "Put another town’s bars next to them to compare."
+       },
+       "valid": true
+      },
+      {
+       "id": "rojo",
+       "text": {
+        "es": "Pintar todas las barras de rojo.",
+        "en": "Paint all the bars red."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El color no cambia lo que dicen los datos; piensa en algo que ayude a comparar.",
+        "en": "The color doesn’t change what the data say; think of something that helps compare."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Una gráfica sirve para ver patrones, no para saberlo todo.",
+     "en": "A graph helps you see patterns, not know everything."
+    },
+    {
+     "es": "Piensa en lo que las barras no te dicen.",
+     "en": "Think about what the bars don’t tell you."
+    },
+    {
+     "es": "Ejemplo: una gráfica de lluvia no dice cuánto frío hace.",
+     "en": "Example: a rain graph doesn’t say how cold it is."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte: qué muestra, qué le falta y cómo mejorarla.",
+     "en": "A part is missing: what it shows, what it lacks and how to improve it."
+    },
+    "wrong": {
+     "es": "Mira de nuevo: algo de lo que elegiste no lo muestran las barras, o no las mejora.",
+     "en": "Look again: something you picked isn’t shown by the bars, or doesn’t improve them."
+    },
+    "ok": {
+     "es": "Evaluaste la gráfica con honestidad: así se vuelve más útil.",
+     "en": "You evaluated the graph honestly: that makes it more useful."
+    }
+   }
+  },
+  {
+   "id": "t7",
+   "kind": "transferir",
+   "ideaIds": [
+    "clima.registro",
+    "clima.regiones"
+   ],
+   "contextId": "ciudad",
+   "sessionId": "s6",
+   "standards": [
+    "3-ESS2-1",
+    "3-ESS2-2"
+   ],
+   "criterion": {
+    "es": "Usa el registro en un caso nuevo: qué esperar de Pueblo Alto en invierno y qué guardar en la maleta.",
+    "en": "Uses the record in a new case: what to expect in High Town in winter and what to pack."
+   },
+   "parts": [
+    {
+     "id": "esperar",
+     "prompt": {
+      "es": "Una familia viaja a Pueblo Alto en invierno. Según el registro, ¿qué pueden esperar?",
+      "en": "A family is traveling to High Town in winter. According to the record, what can they expect?"
+     },
+     "options": [
+      {
+       "id": "frio",
+       "text": {
+        "es": "Frío (cerca de 0 °C) y muchos días con lluvia o nieve.",
+        "en": "Cold (about 0 °C) and many days of rain or snow."
+       },
+       "valid": true
+      },
+      {
+       "id": "calor",
+       "text": {
+        "es": "Calor, como en verano.",
+        "en": "Heat, like in summer."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira la fila del invierno de Pueblo Alto: la tarde llega a 0 °C.",
+        "en": "Look at High Town’s winter row: the afternoon reaches 0 °C."
+       }
+      },
+      {
+       "id": "hoy",
+       "text": {
+        "es": "Lo que diga el reporte de hoy.",
+        "en": "Whatever today’s report says."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El reporte de hoy dice el tiempo de un día; el registro dice lo típico del invierno.",
+        "en": "Today’s report says the weather of one day; the record says what is typical of winter."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "ropa",
+     "prompt": {
+      "es": "¿Qué es mejor guardar en la maleta?",
+      "en": "What is best to pack?"
+     },
+     "options": [
+      {
+       "id": "abrigo",
+       "text": {
+        "es": "Abrigo y botas que no se mojen.",
+        "en": "A warm coat and boots that keep water out."
+       },
+       "valid": true
+      },
+      {
+       "id": "verano",
+       "text": {
+        "es": "Solo ropa de verano.",
+        "en": "Only summer clothes."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "El registro dice que en invierno hace frío y hay lluvia o nieve: ¿qué te protege?",
+        "en": "The record says it is cold in winter with rain or snow: what protects you?"
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Busca Pueblo Alto, invierno, en la tabla.",
+     "en": "Find High Town, winter, in the table."
+    },
+    {
+     "es": "¿El reporte de hoy dice lo típico o lo de un día?",
+     "en": "Does today’s report say what is typical or what happens on one day?"
+    },
+    {
+     "es": "Ejemplo: para saber qué ropa llevar a una estación, mira el registro de esa estación.",
+     "en": "Example: to know what clothes to take for a season, look at the record for that season."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Piensa en lo que dice el registro del invierno.",
+     "en": "Think about what the record says about winter."
+    },
+    "ok": {
+     "es": "Usaste el registro en un caso nuevo.",
+     "en": "You used the record in a new case."
+    }
+   }
+  },
+  {
+   "id": "t8",
+   "kind": "reflexionar",
+   "ideaIds": [],
+   "contextId": "reflexion",
+   "sessionId": "s6",
+   "standards": [],
+   "criterion": {
+    "es": "Revisa su primera idea sobre el clima y dice si cambió. Cualquier respuesta honesta es válida.",
+    "en": "Revisits the first idea about climate and says whether it changed. Any honest answer is valid."
+   },
+   "parts": [
+    {
+     "id": "idea",
+     "prompt": {
+      "es": "Mi idea sobre el clima…",
+      "en": "My idea about climate…"
+     },
+     "options": [
+      {
+       "id": "cambio",
+       "text": {
+        "es": "cambió.",
+        "en": "changed."
+       },
+       "valid": true
+      },
+      {
+       "id": "igual",
+       "text": {
+        "es": "sigue igual.",
+        "en": "stayed the same."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "porque…",
+      "en": "because…"
+     },
+     "options": [
+      {
+       "id": "tablas",
+       "text": {
+        "es": "miré las tablas y las barras de los pueblos.",
+        "en": "I looked at the towns’ tables and bars."
+       },
+       "valid": true
+      },
+      {
+       "id": "comparar",
+       "text": {
+        "es": "comparé los tres pueblos.",
+        "en": "I compared the three towns."
+       },
+       "valid": true
+      },
+      {
+       "id": "dijeron",
+       "text": {
+        "es": "alguien me lo dijo.",
+        "en": "someone told me."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Tú viste los registros: usa lo que observaste.",
+        "en": "You saw the records yourself: use what you observed."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira tu idea del principio.",
+     "en": "Look at your first idea."
+    },
+    {
+     "es": "¿Qué viste en las tablas que te hizo pensar así?",
+     "en": "What did you see in the tables that made you think that?"
+    },
+    {
+     "es": "Ejemplo: si pensabas que el clima era «el tiempo de hoy», ¿qué muestra el registro de varias estaciones?",
+     "en": "Example: if you thought climate was “today’s weather”, what does the record of several seasons show?"
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Piensa en algo que hiciste tú.",
+     "en": "Think of something you did yourself."
+    },
+    "ok": {
+     "es": "Revisar una idea con lo que viste es hacer ciencia.",
+     "en": "Revisiting an idea with what you saw is doing science."
+    }
+   }
+  }
+ ],
+ "safety": {
+  "title": {
+   "es": "Registro del tiempo (sin riesgos)",
+   "en": "Weather record (no risks)"
+  },
+  "enabledByParent": true,
+  "supervision": {
+   "es": "Un adulto disponible para dudas (3.º, ≈ 8–9 años). La actividad en pantalla no tiene riesgos.",
+   "en": "An adult available for questions (grade 3, about 8–9 years old). The on-screen activity has no risks."
+  },
+  "materials": {
+   "es": "Opcional, para observar fuera de pantalla: un cuaderno para anotar durante una semana si llovió y cómo se sintió la tarde, y un termómetro de pared (no de mercurio).",
+   "en": "Optional, to observe off-screen: a notebook to write down for a week whether it rained and how the afternoon felt, and a wall thermometer (not a mercury one)."
+  },
+  "place": {
+   "es": "Una ventana o un patio, de día, con un adulto cerca.",
+   "en": "A window or a yard, in daytime, with an adult nearby."
+  },
+  "hygiene": {
+   "es": "Lavarse las manos al volver del patio.",
+   "en": "Wash hands after coming in from the yard."
+  },
+  "closing": {
+   "es": "Guardar el cuaderno y el termómetro.",
+   "en": "Put the notebook and the thermometer away."
+  },
+  "stopIf": [
+   {
+    "es": "Hay tormenta eléctrica o viento fuerte: se observa desde adentro.",
+    "en": "There is a thunderstorm or strong wind: observe from inside."
+   },
+   {
+    "es": "Alguien mira directamente al Sol.",
+    "en": "Someone looks directly at the Sun."
+   },
+   {
+    "es": "Se usa un termómetro de mercurio.",
+    "en": "A mercury thermometer is used."
+   },
+   {
+    "es": "El adulto no puede estar disponible.",
+    "en": "The adult can’t be available."
+   }
+  ],
+  "excluded": {
+   "es": "Salir con tormenta, mirar el Sol sin protección y termómetros de mercurio.",
+   "en": "Going out in a storm, looking at the Sun unprotected and mercury thermometers."
+  },
+  "data": {
+   "es": "No requiere cámara, micrófono, fotos ni ubicación.",
+   "en": "Needs no camera, microphone, photos or location."
+  },
+  "digitalAlternative": {
+   "es": "Las sesiones S1, S2 y S3 en pantalla reemplazan la actividad completa.",
+   "en": "Sessions S1, S2 and S3 on screen replace the whole activity."
+  },
+  "review": "pendienteDocente"
+ },
+ "review": {
+  "status": "draftPendingTeacherReview",
+  "notes": "Ningún docente ha validado esta unidad. El código es candidato; solo lo ven los padres. Los datos son de práctica (inventados) y no explican por qué cada lugar tiene su clima."
+ }
+}

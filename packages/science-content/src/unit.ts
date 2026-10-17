@@ -10,6 +10,7 @@ import c2u01 from '../content/c2-u01.json';
 import c2u02 from '../content/c2-u02.json';
 import c3u05 from '../content/c3-u05.json';
 import c3u06 from '../content/c3-u06.json';
+import c3u07 from '../content/c3-u07.json';
 import c4u02 from '../content/c4-u02.json';
 import c4u06 from '../content/c4-u06.json';
 import c5u01 from '../content/c5-u01.json';
@@ -20,6 +21,7 @@ import c6u05 from '../content/c6-u05.json';
 import { practiceMapProblems, PRACTICE_MAPS, bandCount, LADERA_DATASETS, type Dataset } from './datasets.ts';
 import { COVERS, SLOPES, type Cover, type Slope } from './labs/erosion.ts';
 import { LIGHT_OBJECTS, LIGHT_STATES, type LightObject, type LightState } from './labs/luz.ts';
+import { AFTERNOON_C, MEASURES, RAIN_DAYS, SEASONS, TOWNS, alwaysDrier, peakSeason, peakTown, type Measure, type Town } from './labs/clima.ts';
 import { AIR_COUNT, DYE_COUNT, DYE_STEPS, SYRINGE_POSITIONS, airDots, meanNearest, meanPairDistance, soluteDots, type DyeStep, type SyringePos } from './labs/particulas.ts';
 import { FLOWS, checkModel, flowById, type Flow } from './labs/ciclo.ts';
 import { MATERIAL_OF, SORT_OBJECTS, SORT_PROPS, matching, propertyOf, withValue, type SortObject, type SortProp } from './labs/clasificar.ts';
@@ -219,6 +221,20 @@ export interface ParticleSetup {
   dots?: boolean;
 }
 
+/** La mesa de datos de C3-U07: la tabla del registro de un pueblo, las barras de lluvia, o la comparación de los tres pueblos. */
+export interface ClimateSetup {
+  /** `table` = tabla del registro de un pueblo · `reveal` = la misma tabla, tapada (el niño toca cada casilla) · `bars` = barras de días con lluvia · `compare` = los tres pueblos. */
+  view: 'table' | 'reveal' | 'bars' | 'compare';
+  /** table/reveal/bars: el pueblo. */
+  town?: Town;
+  /** compare: solo esta medida (sin ella se muestran las dos). */
+  measure?: Measure;
+  /** reveal: cuántas casillas descubre el niño (1–4). */
+  trials?: number;
+  /** Se muestra el resultado ya hecho (para analizarlo): bars con las barras dibujadas. */
+  static?: boolean;
+}
+
 export interface ChoiceOption {
   id: string;
   text: Localized;
@@ -266,6 +282,7 @@ export interface UnitStep {
   sort?: SortSetup;
   cycle?: CycleSetup;
   particle?: ParticleSetup;
+  climate?: ClimateSetup;
   /** Pasos de «arreglar la prueba»: el laboratorio resultante según el arreglo que elija el niño (id de la opción). */
   labFixed?: Record<string, LabSetup>;
   choice?: StepChoice;
@@ -366,7 +383,7 @@ export interface ScienceUnit {
 }
 
 /** Las unidades con contenido, por grado. Una unidad con contenido todavía puede esperar su arte (`UNIT_ART_READY` en la app). */
-export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c1u03 as unknown as ScienceUnit, c2u01 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c3u05 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c4u02 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c5u01 as unknown as ScienceUnit, c5u02 as unknown as ScienceUnit, c5u03 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit, c6u05 as unknown as ScienceUnit];
+export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c1u03 as unknown as ScienceUnit, c2u01 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c3u05 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c3u07 as unknown as ScienceUnit, c4u02 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c5u01 as unknown as ScienceUnit, c5u02 as unknown as ScienceUnit, c5u03 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit, c6u05 as unknown as ScienceUnit];
 export const scienceUnitContent = (id: string): ScienceUnit | undefined => SCIENCE_UNITS.find((u) => u.id === id);
 
 // ------------------------------------------------------------------ evaluar una tarea
@@ -528,6 +545,14 @@ export function unitProblems(u: ScienceUnit): string[] {
       if (!MATERIAL_TESTS.includes(st.material.test)) p.push(`${st.id}: prueba de materiales desconocida`);
       if (st.material.trials !== undefined && (st.material.trials < 1 || st.material.trials > MATERIALS.length)) p.push(`${st.id}: los materiales a probar van de 1 a ${MATERIALS.length}`);
     }
+    if (st.climate) {
+      const k = st.climate;
+      if (k.town !== undefined && !TOWNS.includes(k.town)) p.push(`${st.id}: pueblo desconocido (${k.town})`);
+      if (k.measure !== undefined && !MEASURES.includes(k.measure)) p.push(`${st.id}: medida desconocida (${k.measure})`);
+      if (k.view !== 'compare' && !k.town) p.push(`${st.id}: la tabla o las barras necesitan un pueblo`);
+      if (k.trials !== undefined && (k.view !== 'reveal' || k.trials < 1 || k.trials > SEASONS.length)) p.push(`${st.id}: las casillas a descubrir van de 1 a ${SEASONS.length} (solo en «reveal»)`);
+      if (k.view === 'reveal' && k.trials === undefined) p.push(`${st.id}: descubrir la tabla necesita cuántas casillas`);
+    }
     if (st.particle) {
       const k = st.particle;
       if (k.step !== undefined && !(DYE_STEPS as readonly number[]).includes(k.step)) p.push(`${st.id}: paso del tiempo fuera del recorrido`);
@@ -663,6 +688,7 @@ export function dataTextProblems(u: ScienceUnit): string[] {
   if (u.id === 'C2-U01') return sortTextProblems(u);
   if (u.id === 'C6-U05') return cycleTextProblems(u);
   if (u.id === 'C5-U01') return particleTextProblems(u);
+  if (u.id === 'C3-U07') return climateTextProblems(u);
   if (u.id !== 'C4-U06') return p;
   const t5 = u.tasks.find((t) => t.id === 't5');
   const base = LADERA_DATASETS.base.rows;
@@ -1042,6 +1068,48 @@ function sortTextProblems(u: ScienceUnit): string[] {
   if (expected('s3.3') !== 'distinto') p.push('s3.3: el mismo objeto cae en grupos distintos');
   if (expected('s3.4') !== propertyOf('pelota', 'brillo')) p.push('s3.4: la pelota va con los que no brillan (mate)');
   if (expected('s2.1') !== 'propiedad') p.push('s2.1: se agrupa por una propiedad');
+  return p;
+}
+
+/** C3-U07: lo que dicen los textos sobre la lluvia y la temperatura de los pueblos coincide con el registro. */
+function climateTextProblems(u: ScienceUnit): string[] {
+  const p: string[] = [];
+  const steps = u.sessions.flatMap((s) => s.steps);
+  const part = (taskId: string, partId: string) => u.tasks.find((t) => t.id === taskId)?.parts.find((x) => x.id === partId);
+  const opt = (taskId: string, partId: string, id: string) => part(taskId, partId)?.options.find((o) => o.id === id);
+  const expected = (id: string) => steps.find((st) => st.id === id)?.choice?.options.find((o) => o.expected)?.id;
+  const need = (where: string, text: string | undefined, needle: string) => {
+    if (!text?.includes(needle)) p.push(`${where}: el texto no dice «${needle}» (registro)`);
+  };
+  // t1: Pueblo Azul, lo que dice la tabla.
+  need('t1.invierno (es)', opt('t1', 'observaciones', 'invierno')?.text.es, `${RAIN_DAYS.azul.invierno} días`);
+  need('t1.invierno (en)', opt('t1', 'observaciones', 'invierno')?.text.en, `${RAIN_DAYS.azul.invierno} rainy days`);
+  need('t1.verano (es)', opt('t1', 'observaciones', 'verano')?.text.es, `solo ${RAIN_DAYS.azul.verano} día`);
+  need('t1.verano (en)', opt('t1', 'observaciones', 'verano')?.text.en, `only ${RAIN_DAYS.azul.verano} day`);
+  if (!(RAIN_DAYS.azul.invierno > RAIN_DAYS.azul.verano)) p.push('t1: en Pueblo Azul llueve más en invierno que en verano');
+  // t2: la comparación de los tres pueblos.
+  if (!alwaysDrier('seco') || opt('t2', 'observaciones', 'seco')?.valid !== true) p.push('t2.seco: Pueblo Seco llueve menos que los otros dos en todas las estaciones');
+  if (peakTown('invierno', 'temp', 'min') !== 'alto' || opt('t2', 'observaciones', 'frio')?.valid !== true) p.push('t2.frio: en invierno Pueblo Alto es el más frío');
+  if (peakTown('verano', 'lluvia') === 'azul' || opt('t2', 'observaciones', 'azulverano')?.valid !== false) p.push('t2.azulverano: en verano no es Pueblo Azul el que más llueve');
+  need('t2.azulverano (es)', opt('t2', 'observaciones', 'azulverano')?.whyNot?.es, `${RAIN_DAYS.alto.verano} días`);
+  need('t2.azulverano (es)', opt('t2', 'observaciones', 'azulverano')?.whyNot?.es, `${RAIN_DAYS.azul.verano}`);
+  // t3 y t4: las predicciones coinciden con el registro.
+  if (part('t3', 'resultado')?.observedOptionId !== peakSeason('alto', 'temp', 'min')) p.push('t3.resultado: la estación más fría de Pueblo Alto es la observada');
+  if (part('t4', 'resultado')?.observedOptionId !== 'bajas' || !SEASONS.every((s) => RAIN_DAYS.seco[s] < RAIN_DAYS.azul[s])) p.push('t4.resultado: las barras de Pueblo Seco son más bajas que las de Pueblo Azul («bajas»)');
+  // t5: el clima de Pueblo Seco.
+  need('t5.verano (es)', opt('t5', 'evidencia', 'verano')?.text.es, `${AFTERNOON_C.seco.verano} °C`);
+  need('t5.verano (es)', opt('t5', 'evidencia', 'verano')?.text.es, `${RAIN_DAYS.seco.verano} días`);
+  const maxRain = Math.max(...SEASONS.map((s) => RAIN_DAYS.seco[s]));
+  need('t5.poca (es)', opt('t5', 'evidencia', 'poca')?.text.es, `más de ${maxRain} días`);
+  need('t5.frio (es)', opt('t5', 'afirmacion', 'frio')?.whyNot?.es, `${AFTERNOON_C.seco.invierno} °C`);
+  // t7: Pueblo Alto en invierno.
+  need('t7.frio (es)', opt('t7', 'esperar', 'frio')?.text.es, `${AFTERNOON_C.alto.invierno} °C`);
+  need('t7.calor (es)', opt('t7', 'esperar', 'calor')?.whyNot?.es, `${AFTERNOON_C.alto.invierno} °C`);
+  if (!(RAIN_DAYS.alto.invierno >= 8)) p.push('t7: en invierno Pueblo Alto tiene muchos días con lluvia o nieve');
+  // Preguntas del paso con respuesta esperada.
+  if (expected('s5.2') !== peakTown('verano', 'lluvia')) p.push('s5.2: en verano llueve más en Pueblo Alto');
+  if (expected('s4.1') !== 'no') p.push('s4.1: un día de lluvia no cambia el clima');
+  if (expected('s4.2') !== 'patron') p.push('s4.2: cada pueblo repite su patrón');
   return p;
 }
 
