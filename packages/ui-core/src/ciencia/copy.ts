@@ -207,7 +207,7 @@ export const CIENCIA_COPY = {
   /** Rampa y bloque (C4-U02). */
   ramp: {
     benchLabel: (mark: number | null, released: boolean, cm: number | null) =>
-      L(mark === null ? 'Rampa, bola y bloque de madera.' : released ? `Bola soltada desde la marca ${mark}: el bloque se deslizó ${cm} centímetros.` : `Bola en la marca ${mark} de la rampa, lista para soltar.`, mark === null ? 'Ramp, ball and wooden block.' : released ? `Ball released from mark ${mark}: the block slid ${cm} centimeters.` : `Ball on mark ${mark} of the ramp, ready to let go.`),
+      L(mark === null ? 'Rampa, bola y bloque de madera.' : released ? `Bola soltada desde la marca ${mark}: el bloque se deslizó ${cm ?? 0} centímetros.` : `Bola en la marca ${mark} de la rampa, lista para soltar.`, mark === null ? 'Ramp, ball and wooden block.' : released ? `Ball released from mark ${mark}: the block slid ${cm ?? 0} centimeters.` : `Ball on mark ${mark} of the ramp, ready to let go.`),
     mark: (n: number) => L(`Marca ${n}`, `Mark ${n}`),
     pickMark: L('Toca una marca de la rampa para poner la bola y suéltala.', 'Tap a mark on the ramp to put the ball there and let it go.'),
     release: L('Soltar la bola', 'Let the ball go'),
