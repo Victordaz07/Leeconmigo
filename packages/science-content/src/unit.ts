@@ -6,6 +6,7 @@
 import type { Localized } from '@lee-conmigo/contracts';
 import c1u02 from '../content/c1-u02.json';
 import c2u02 from '../content/c2-u02.json';
+import c3u05 from '../content/c3-u05.json';
 import c3u06 from '../content/c3-u06.json';
 import c4u02 from '../content/c4-u02.json';
 import c4u06 from '../content/c4-u06.json';
@@ -15,6 +16,7 @@ import c6u04 from '../content/c6-u04.json';
 import { practiceMapProblems, PRACTICE_MAPS, bandCount, LADERA_DATASETS, type Dataset } from './datasets.ts';
 import { COVERS, SLOPES, type Cover, type Slope } from './labs/erosion.ts';
 import { LIGHT_OBJECTS, LIGHT_STATES, type LightObject, type LightState } from './labs/luz.ts';
+import { MAX_PUSHES, TABLE_PAIRS, balanced, cartMove, swingSide, travelCm } from './labs/fuerzas.ts';
 import { BLOCK_SLIDE_CM, RELEASE_MARKS, isMark, pushesFarther, slideCm } from './labs/choques.ts';
 import { MIXES, MIX_TESTS, hasBubbles, mixObserved, newSubstance, recoverable, type Mix, type MixTest } from './labs/mezclas.ts';
 import { JAR_WITH_WATER_G, KNOWN_SAMPLES, MYSTERY_IS, PROPS, SAMPLES, SUBSTANCES, SUBSTANCE_G, confusableWith, dissolves, observed, remainingAfter, totalAfter, totalBefore, type Prop, type Sample, type Substance } from './labs/materia.ts';
@@ -140,6 +142,20 @@ export interface RampSetup {
   static?: boolean;
 }
 
+/** El carrito con empujones (`cart`) o el péndulo (`swing`) de C3-U05. */
+export interface ForceSetup {
+  view: 'cart' | 'swing';
+  /** cart: empujones hacia la izquierda y hacia la derecha (0–3). Sin ellos el niño los elige. */
+  left?: number;
+  right?: number;
+  /** cart: combinaciones distintas que prueba el niño · swing: latidos que mira. */
+  trials?: number;
+  /** swing: cuántos latidos aparecen en la tabla ya hecha. */
+  ticks?: number;
+  /** Se muestran los resultados ya hechos (para analizarlos). */
+  static?: boolean;
+}
+
 export interface ChoiceOption {
   id: string;
   text: Localized;
@@ -182,6 +198,7 @@ export interface UnitStep {
   magnet?: MagnetSetup;
   matter?: MatterSetup;
   ramp?: RampSetup;
+  forces?: ForceSetup;
   /** Pasos de «arreglar la prueba»: el laboratorio resultante según el arreglo que elija el niño (id de la opción). */
   labFixed?: Record<string, LabSetup>;
   choice?: StepChoice;
@@ -282,7 +299,7 @@ export interface ScienceUnit {
 }
 
 /** Las unidades con contenido, por grado. Una unidad con contenido todavía puede esperar su arte (`UNIT_ART_READY` en la app). */
-export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c4u02 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c5u02 as unknown as ScienceUnit, c5u03 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit];
+export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u02 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c3u05 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c4u02 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c5u02 as unknown as ScienceUnit, c5u03 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit];
 export const scienceUnitContent = (id: string): ScienceUnit | undefined => SCIENCE_UNITS.find((u) => u.id === id);
 
 // ------------------------------------------------------------------ evaluar una tarea
@@ -444,6 +461,12 @@ export function unitProblems(u: ScienceUnit): string[] {
       if (!MATERIAL_TESTS.includes(st.material.test)) p.push(`${st.id}: prueba de materiales desconocida`);
       if (st.material.trials !== undefined && (st.material.trials < 1 || st.material.trials > MATERIALS.length)) p.push(`${st.id}: los materiales a probar van de 1 a ${MATERIALS.length}`);
     }
+    if (st.forces) {
+      const f = st.forces;
+      for (const n of [f.left, f.right]) if (n !== undefined && (!Number.isInteger(n) || n < 0 || n > MAX_PUSHES)) p.push(`${st.id}: los empujones van de 0 a ${MAX_PUSHES}`);
+      if (f.trials !== undefined && (f.trials < 1 || f.trials > 6)) p.push(`${st.id}: las pruebas van de 1 a 6`);
+      if (f.ticks !== undefined && (f.ticks < 1 || f.ticks > 8)) p.push(`${st.id}: los latidos van de 1 a 8`);
+    }
     if (st.ramp) {
       if (st.ramp.mark !== undefined && !isMark(st.ramp.mark)) p.push(`${st.id}: marca de la rampa fuera del recorrido`);
       if (st.ramp.trials !== undefined && (st.ramp.trials < 1 || st.ramp.trials > RELEASE_MARKS.length)) p.push(`${st.id}: las pruebas van de 1 a ${RELEASE_MARKS.length}`);
@@ -542,6 +565,7 @@ export function dataTextProblems(u: ScienceUnit): string[] {
   if (u.id === 'C5-U02') return matterTextProblems(u);
   if (u.id === 'C5-U03') return mixTextProblems(u);
   if (u.id === 'C4-U02') return rampTextProblems(u);
+  if (u.id === 'C3-U05') return forceTextProblems(u);
   if (u.id !== 'C4-U06') return p;
   const t5 = u.tasks.find((t) => t.id === 't5');
   const base = LADERA_DATASETS.base.rows;
@@ -820,5 +844,39 @@ function rampTextProblems(u: ScienceUnit): string[] {
   if (expected('s3.4') !== 'rapida') p.push('s3.4: la explicación esperada es la rapidez (energía de movimiento)');
   if (expected('s2.1') !== 'altura') p.push('s2.1: lo que cambia es la altura');
   if (Object.keys(BLOCK_SLIDE_CM).length !== RELEASE_MARKS.length) p.push('el modelo debe dar una distancia por marca');
+  return p;
+}
+
+/** C3-U05: las combinaciones, distancias y patrones que citan los textos coinciden con el modelo de fuerzas. */
+function forceTextProblems(u: ScienceUnit): string[] {
+  const p: string[] = [];
+  const steps = u.sessions.flatMap((s) => s.steps);
+  const part = (taskId: string, partId: string) => u.tasks.find((t) => t.id === taskId)?.parts.find((x) => x.id === partId);
+  const opt = (taskId: string, partId: string, id: string) => part(taskId, partId)?.options.find((o) => o.id === id);
+  const need = (where: string, text: string | undefined, needle: string) => {
+    if (!text?.includes(needle)) p.push(`${where}: el texto no dice «${needle}» (modelo)`);
+  };
+  // t1: 2 empujones hacia la derecha y ninguno hacia la izquierda → se mueve a la derecha.
+  const first = steps.find((st) => st.id === 's1.1')?.forces;
+  if (first?.left !== 0 || first.right !== 2 || cartMove(0, 2) !== 'derecha') p.push('s1.1: con 0 a la izquierda y 2 a la derecha el carrito debe ir a la derecha');
+  // t3: empujones iguales → se queda quieto.
+  if (!balanced(2, 2) || part('t3', 'resultado')?.observedOptionId !== (cartMove(2, 2) === 'quieto' ? 'quieto' : '')) p.push('t3.resultado: con 2 y 2 lo observado debe ser «quieto»');
+  // t5: la evidencia con desiguales cita los 24 cm del modelo hacia la izquierda con 3 y 1.
+  if (cartMove(3, 1) !== 'izquierda') p.push('t5: con 3 a la izquierda y 1 a la derecha el carrito debe ir a la izquierda');
+  for (const lang of ['es', 'en'] as const) {
+    need(`t5.desiguales (${lang})`, opt('t5', 'evidencia', 'desiguales')?.text[lang], `${travelCm(3, 1)} cm`);
+    need(`t5.siempre motivo (${lang})`, opt('t5', 'afirmacion', 'siempre')?.whyNot?.[lang], lang === 'es' ? '3 empujones hacia la izquierda y 1 hacia la derecha' : '3 pushes to the left and 1 to the right');
+  }
+  // t4 y t6: el péndulo (latido 0 a la izquierda; 7 impar → derecha; 10 par → izquierda).
+  if (part('t4', 'resultado')?.observedOptionId !== (swingSide(7) === 'derecha' ? 'derecha' : 'izquierda')) p.push('t4.resultado: lo observado en el latido 7 no coincide con el modelo');
+  const t6 = part('t6', 'prediccion')?.options.filter((o) => o.valid).map((o) => o.id);
+  if (t6?.join() !== (swingSide(10) === 'izquierda' ? 'izq' : 'der')) p.push('t6.prediccion: la respuesta válida para el latido 10 no coincide con el modelo');
+  // Preguntas del paso con respuesta esperada.
+  const expected = (id: string) => steps.find((st) => st.id === id)?.choice?.options.find((o) => o.expected)?.id;
+  if (expected('s3.3') !== 'lado') p.push('s3.3: el patrón esperado es «hacia el empujón más fuerte; iguales, quieto»');
+  if (expected('s3.4') !== 'desiguales') p.push('s3.4: lo que cambia el movimiento son empujones desiguales');
+  if (expected('s2.1') !== 'empujones') p.push('s2.1: lo que cambia son los empujones');
+  // La tabla del niño (s3.2) usa las combinaciones del modelo.
+  if (TABLE_PAIRS.length !== 5) p.push('la tabla del carrito debe tener 5 combinaciones');
   return p;
 }

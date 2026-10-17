@@ -253,3 +253,13 @@ tela, plástico, cartón), vaso de agua compartido con C5 y C6, bandeja con pico
 - **Arte PROVISIONAL** (`scripts/ciencia-arte-provisional.py I`): `prop_rampa`, `prop_bloque_madera`, `scene_c4_u02`, `cover_c4_u02`; los cuatro están en `PROVISIONAL` de `tests/ciencia-art.test.ts` y `UNIT_ART_READY['C4-U02']` es **false**.
   Al llegar el lote I: `python3 -I scripts/ciencia-arte.py <carpeta> tanda-3i`, vaciar esos nombres de `PROVISIONAL`, **retocar `RAMP` en `ramp-bench.tsx`** (donde está la pendiente de la rampa en la imagen real y dónde
   queda el bloque), poner `UNIT_ART_READY['C4-U02']` en true y actualizar `MANIFESTS` con `manifest-tanda-3i.json`. `prop_bloque_madera` viene en el lote G (se puede pedir antes).
+
+## Actualización CI-18 (2026-10-17): C3-U05 «Fuerzas y movimiento» hecha con arte provisional
+- `labs/fuerzas.ts`: el carrito recibe 0–3 empujones desde cada lado: **iguales → se queda quieto (equilibradas)**; desiguales → va hacia el lado más fuerte (10/24/42 cm según la diferencia). Péndulo: izquierda,
+  derecha, izquierda… (latido par = izquierda) para predecir. Sin fuerzas en números ni fricción: `FORCE_MODEL` lo declara.
+- `content/c3-u05.json` (6 sesiones / 23 pasos, 8 tareas, 2 ideas: `fuerzas.equilibrio` y `movimiento.patron`; 3-PS2-1: t1/t3/t5/t7, 3-PS2-2: t2/t4/t6). `forceTextProblems` ata combinaciones, 24 cm y latidos 7 y 10 al
+  modelo. Ficha: `unidades/C3-U05.md`. Seguridad: nada de jalar/empujar entre personas, péndulo con bola liviana y firme.
+- UI: `CartBench` (flechas de empujones que dibuja la app) y `PendulumBench`, y `families/forces.tsx` (elegir empujones y soltar, tabla de qué hizo el carrito, latido a latido del péndulo).
+- **Arte PROVISIONAL** (`scripts/ciencia-arte-provisional.py H`): `prop_carrito`, `prop_pendulo`, `scene_c3_u05`, `cover_c3_u05`; en `PROVISIONAL` de `tests/ciencia-art.test.ts` y `UNIT_ART_READY['C3-U05']` en **false**.
+  Al llegar el lote H: `scripts/ciencia-arte.py <carpeta> tanda-3h`, vaciar `PROVISIONAL`, **revisar `PendulumBench`**: la imagen real trae una barra de soporte arriba y el banco gira la imagen entera (`transformOrigin` 50% 4%); si la
+  barra gira de más, pedir el péndulo sin barra o recortarla. Poner `UNIT_ART_READY['C3-U05']` en true y sumar `manifest-tanda-3h.json` a `MANIFESTS`.

@@ -25,6 +25,7 @@ export const SCENE_ART: Record<string, { source: ImageSourcePropType; aspect: nu
   alfeizar: { source: require('../../../assets/ciencia/bg/scene_c6_u04.webp'), aspect: 1536 / 1024 },
   taller: { source: require('../../../assets/ciencia/bg/scene_c3_u06.webp'), aspect: 1536 / 1024 },
   mesaLab: { source: require('../../../assets/ciencia/bg/scene_c5_u02.webp'), aspect: 1536 / 1024 },
+  patio: { source: require('../../../assets/ciencia/bg/scene_c3_u05.webp'), aspect: 1536 / 1024 }, // Lote H (provisional)
   mesaRampa: { source: require('../../../assets/ciencia/bg/scene_c4_u02.webp'), aspect: 1536 / 1024 }, // Lote I (provisional)
 };
 
@@ -33,6 +34,7 @@ const COVER_C5_U02 = require('../../../assets/ciencia/covers/cover_c5_u02.webp')
 /** Portadas: el cuaderno en Inicio y la unidad C4-U06. */
 export const CIENCIA_COVERS = {
   notebook: require('../../../assets/ciencia/covers/cover_ciencia_cuaderno.webp'),
+  c3u05: require('../../../assets/ciencia/covers/cover_c3_u05.webp'), // Lote H (provisional)
   c4u02: require('../../../assets/ciencia/covers/cover_c4_u02.webp'), // Lote I (provisional)
   c4u06: require('../../../assets/ciencia/covers/cover_c4_u06.webp'),
   c1u02: require('../../../assets/ciencia/covers/cover_c1_u02.webp'),
@@ -126,6 +128,12 @@ export const CIENCIA_MOVIMIENTO = {
   bola: CIENCIA_LUZ.objetos.pelota,
 } satisfies { rampa: ImageSourcePropType; bloque: ImageSourcePropType; bola: ImageSourcePropType };
 
+/** Arte de C3-U05 «Fuerzas y movimiento» (Lote H; provisional hasta que lleguen las imágenes): el carrito y el péndulo. */
+export const CIENCIA_FUERZAS = {
+  carrito: require('../../../assets/ciencia/props/prop_carrito.webp'),
+  pendulo: require('../../../assets/ciencia/props/prop_pendulo.webp'),
+} satisfies { carrito: ImageSourcePropType; pendulo: ImageSourcePropType };
+
 /** Maya, la guía de Ciencia (DC-4, a confirmar por Victor). Misma niña de la historia `la-isla-que-caminaba`. */
 export type MayaPose = 'saluda' | 'piensa' | 'investiga' | 'apunta' | 'celebra';
 export const MAYA: Record<MayaPose, { source: ImageSourcePropType; aspect: number }> = {
@@ -148,6 +156,7 @@ export const UNIT_ART_READY: Record<string, boolean> = {
   'C3-U06': true,
   'C5-U02': true,
   'C5-U03': true, // usa el arte de Lote E (frasco, muestras) y dibuja bicarbonato/vinagre; portada provisional
+  'C3-U05': false, // Lote H pedido (Tanda 3); con arte provisional solo se ve en un build de demo
   'C4-U02': false, // Lote I pedido (Tanda 3); con arte provisional solo se ve en un build de demo
   'C6-U04': true, // Lote C recibido (manifest-tanda-2c)
 };

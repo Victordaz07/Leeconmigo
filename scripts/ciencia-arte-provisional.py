@@ -3,7 +3,7 @@
 las imágenes de Victor. Usa los MISMOS nombres de archivo que el pedido (docs/design/ciencia/PEDIDO-IMAGENES.md), así que
 `scripts/ciencia-arte.py` los sobrescribe cuando lleguen las reales.
 
-Uso:  python3 scripts/ciencia-arte-provisional.py <lote>   (A, B, I)
+Uso:  python3 scripts/ciencia-arte-provisional.py <lote>   (A, B, H, I)
 Una unidad con arte provisional NO está lista para el niño: `UNIT_ART_READY` queda en false y solo se ve en un build de demo.
 """
 import os, sys
@@ -170,6 +170,40 @@ def lote_i():
             d.rectangle((int(w * 0.62), int(h * 0.1), int(w * 0.9), int(h * 0.5)), fill=(240, 236, 220))
         bg.convert('RGB').save(f'{OUT}/{folder}/{name}.webp', 'WEBP', quality=80, method=6)
 
-LOTES = {'A': lote_a, 'B': lote_b, 'I': lote_i}
+def lote_h():
+    # carrito rojo de cuatro ruedas, vacío
+    im, d = canvas()
+    d.rounded_rectangle((150, 380, 874, 640), 36, fill=(214, 70, 60), outline=(120, 30, 30), width=10)
+    d.rectangle((150, 380, 874, 440), fill=(190, 56, 48), outline=(120, 30, 30), width=8)
+    for cx in (290, 734):
+        d.ellipse((cx - 90, 580, cx + 90, 760), fill=(50, 56, 70), outline=(20, 24, 34), width=8)
+        d.ellipse((cx - 30, 640, cx + 30, 700), fill=(180, 186, 196))
+    save_prop(im, 'prop_carrito')
+    # péndulo: bola azul colgada de un hilo (sin barra: la app la dibuja)
+    im, d = canvas()
+    d.line((512, 40, 512, 640), fill=(90, 80, 70), width=8)
+    d.ellipse((372, 600, 652, 880), fill=(70, 120, 190), outline=(30, 60, 110), width=10)
+    d.ellipse((430, 650, 500, 720), fill=(150, 190, 235))
+    save_prop(im, 'prop_pendulo')
+    for name, folder in (('cover_c3_u05', 'covers'), ('scene_c3_u05', 'bg')):
+        size = (1152, 768) if folder == 'covers' else (1536, 1024)
+        bg = gradient(size[0], size[1], (170, 210, 235), (200, 215, 190)).convert('RGBA')
+        d = ImageDraw.Draw(bg)
+        w, h = size
+        d.rectangle((0, int(h * 0.66), w, h), fill=(196, 196, 190))
+        if folder == 'covers':
+            d.rounded_rectangle((int(w * 0.34), int(h * 0.5), int(w * 0.62), int(h * 0.66)), 18, fill=(214, 70, 60), outline=(120, 30, 30), width=5)
+            for cx in (0.4, 0.56):
+                d.ellipse((int(w * cx) - 30, int(h * 0.62), int(w * cx) + 30, int(h * 0.7)), fill=(50, 56, 70))
+            d.ellipse((int(w * 0.18), int(h * 0.58), int(w * 0.26), int(h * 0.68)), fill=(240, 190, 60), outline=(150, 110, 20), width=4)
+        else:
+            d.rectangle((int(w * 0.1), int(h * 0.3), int(w * 0.14), int(h * 0.66)), fill=(150, 110, 70))
+            d.rectangle((int(w * 0.3), int(h * 0.3), int(w * 0.34), int(h * 0.66)), fill=(150, 110, 70))
+            d.rectangle((int(w * 0.08), int(h * 0.28), int(w * 0.36), int(h * 0.31)), fill=(150, 110, 70))
+            d.rectangle((int(w * 0.2), int(h * 0.31), int(w * 0.22), int(h * 0.5)), fill=(90, 80, 70))
+            d.rectangle((int(w * 0.17), int(h * 0.5), int(w * 0.25), int(h * 0.52)), fill=(150, 110, 70))
+        bg.convert('RGB').save(f'{OUT}/{folder}/{name}.webp', 'WEBP', quality=80, method=6)
+
+LOTES = {'A': lote_a, 'B': lote_b, 'H': lote_h, 'I': lote_i}
 LOTES[sys.argv[1] if len(sys.argv) > 1 else 'A']()
 print('arte provisional listo (reemplaza con las imágenes reales y scripts/ciencia-arte.py)')
