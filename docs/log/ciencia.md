@@ -139,3 +139,8 @@ Se agrega al final, una entrada por sesión (formato corto, como `docs/log/SESSI
 ## 2026-10-17 · CI-26: C4-U03 «Transferir y transformar»
 - Modelo cualitativo de tres dispositivos (`labs/transferencias.ts`): qué forma de energía entra y cuáles salen (lámpara: electricidad → luz y calor; campana: movimiento → sonido; molinete: movimiento → movimiento). El niño usa el dispositivo y dibuja el diagrama; la comprobación dice qué falta o sobra sin decir «incorrecto».
 - Dos ideas (`energia.transfiere`, `energia.transforma`); 4-PS3-2 y 4-PS3-4 con 7 tareas cada uno; nueva familia `energy` y `DeviceBench`. Verificada en tableta. 17 unidades abiertas.
+
+## 2026-10-17 · CI-27: C6-U07 «Evidencias de cambio»
+- Cuatro series de práctica de 1900 a 2020 (`labs/series.ts`, con la forma de registros reales pero inventadas y rotuladas así) y la cadena del mecanismo del CO2. El estudiante compara series, descarta el Sol y los volcanes, conecta el CO2 con un mecanismo y distingue tiempo de clima (un día de calor no es prueba).
+- La conclusión enseñada es la que respaldan los registros reales: las actividades humanas son la causa principal del calentamiento de los últimos 100 años. Nueva familia `trend`.
+- Arreglo: `LineChart` dibujaba las líneas dentro de un `View` dentro del `Svg` y en web no se veían; ahora usa `G` (también corrige la gráfica de C6-U04). **Tanda 4 completa: 18 unidades de Ciencia abiertas.**

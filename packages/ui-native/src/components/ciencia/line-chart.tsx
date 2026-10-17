@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { Pressable, StyleSheet, Text, View, type GestureResponderEvent } from 'react-native';
-import Svg, { Circle, Polyline } from 'react-native-svg';
+import Svg, { Circle, G, Polyline } from 'react-native-svg';
 import { colors, fontFamily, radius, shadows } from '../../tokens.ts';
 import { tapPosition } from './tap-position.ts';
 
@@ -31,18 +31,20 @@ interface LineChartProps {
   flagged?: number[];
   /** Lo que dice la gráfica con palabras. */
   description: string;
+  /** Cada cuánto va una rayita del eje (por defecto 2, los °C del vaso). */
+  tick?: number;
 }
 
 const PAD = { left: 38, right: 14, top: 14, bottom: 28 };
 
 /** Gráfica de líneas de temperatura frente a tiempo: varias series y, si se pide, una que el niño traza tocando. Los números son texto. */
-export function LineChart({ title, xLabel, yLabel, columns, yMin, yMax, series, width, height = 240, editableId, onSet, flagged = [], description }: LineChartProps) {
+export function LineChart({ title, xLabel, yLabel, columns, yMin, yMax, series, width, height = 240, editableId, onSet, flagged = [], description, tick = 2 }: LineChartProps) {
   const plotW = width - 28 - PAD.left - PAD.right;
   const plotH = height - PAD.top - PAD.bottom;
   const xAt = (i: number) => PAD.left + (columns.length === 1 ? plotW / 2 : (plotW * i) / (columns.length - 1));
   const yAt = (v: number) => PAD.top + plotH * (1 - (v - yMin) / (yMax - yMin));
   const ticks: number[] = [];
-  for (let v = yMin; v <= yMax; v += 2) ticks.push(v);
+  for (let v = yMin; v <= yMax; v += tick) ticks.push(v);
   return (
     <View style={[styles.card, { width }]} accessible accessibilityLabel={`${title}. ${description}`}>
       <Text style={styles.title}>{title}</Text>
@@ -56,12 +58,12 @@ export function LineChart({ title, xLabel, yLabel, columns, yMin, yMax, series, 
             const pts = s.points.map((v, i) => (v === null ? null : { x: xAt(i), y: yAt(v) }));
             const line = pts.filter((p): p is { x: number; y: number } => p !== null);
             return (
-              <View key={s.id}>
+              <G key={s.id}>
                 {line.length > 1 ? <Polyline points={line.map((p) => `${p.x},${p.y}`).join(' ')} stroke={s.color} strokeWidth={3} fill="none" /> : null}
                 {line.map((p, i) => (
                   <Circle key={i} cx={p.x} cy={p.y} r={5} fill={s.color} stroke="#ffffff" strokeWidth={2} />
                 ))}
-              </View>
+              </G>
             );
           })}
         </Svg>

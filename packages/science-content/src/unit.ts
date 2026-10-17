@@ -21,9 +21,11 @@ import c5u02 from '../content/c5-u02.json';
 import c5u03 from '../content/c5-u03.json';
 import c6u04 from '../content/c6-u04.json';
 import c6u05 from '../content/c6-u05.json';
+import c6u07 from '../content/c6-u07.json';
 import { practiceMapProblems, PRACTICE_MAPS, bandCount, LADERA_DATASETS, type Dataset } from './datasets.ts';
 import { COVERS, SLOPES, runTrials, turbidity, type Cover, type Slope } from './labs/erosion.ts';
 import { LIGHT_OBJECTS, LIGHT_STATES, type LightObject, type LightState } from './labs/luz.ts';
+import { SERIES_IDS, SERIES_VALUES, YEARS, correlation, trendOfSeries, type SeriesId } from './labs/series.ts';
 import { DEVICES, DEVICE_MODEL, EXTRA_DEVICES, FORMS, kindOf, type Device } from './labs/transferencias.ts';
 import { VIB_ACTIONS, VIB_OBJECTS, stateOf, type VibAction, type VibObject } from './labs/vibracion.ts';
 import { EARTH_EVENTS, EVENT_SPEED, SPEEDS, speedOf, type EarthEvent } from './labs/cambios.ts';
@@ -273,6 +275,17 @@ export interface EnergySetup {
   static?: boolean;
 }
 
+/** Las series de datos del clima de C6-U07: gráficas de series (ya hechas, o que el estudiante agrega) y la cadena del mecanismo. */
+export interface TrendSetup {
+  view: 'chart' | 'compare' | 'mechanism';
+  /** chart: las series que se muestran · compare: las que ya están (el estudiante agrega más). */
+  series?: SeriesId[];
+  /** compare: cuántas series agrega el estudiante (1–3). */
+  trials?: number;
+  /** Se muestra el resultado ya hecho (para analizarlo). */
+  static?: boolean;
+}
+
 export interface ChoiceOption {
   id: string;
   text: Localized;
@@ -324,6 +337,7 @@ export interface UnitStep {
   earth?: EarthSetup;
   vibration?: VibrationSetup;
   energy?: EnergySetup;
+  trend?: TrendSetup;
   /** Pasos de «arreglar la prueba»: el laboratorio resultante según el arreglo que elija el niño (id de la opción). */
   labFixed?: Record<string, LabSetup>;
   choice?: StepChoice;
@@ -424,7 +438,7 @@ export interface ScienceUnit {
 }
 
 /** Las unidades con contenido, por grado. Una unidad con contenido todavía puede esperar su arte (`UNIT_ART_READY` en la app). */
-export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u01 as unknown as ScienceUnit, c1u02 as unknown as ScienceUnit, c1u03 as unknown as ScienceUnit, c2u01 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c2u08 as unknown as ScienceUnit, c3u05 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c3u07 as unknown as ScienceUnit, c4u02 as unknown as ScienceUnit, c4u03 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c5u01 as unknown as ScienceUnit, c5u02 as unknown as ScienceUnit, c5u03 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit, c6u05 as unknown as ScienceUnit];
+export const SCIENCE_UNITS: readonly ScienceUnit[] = [c1u01 as unknown as ScienceUnit, c1u02 as unknown as ScienceUnit, c1u03 as unknown as ScienceUnit, c2u01 as unknown as ScienceUnit, c2u02 as unknown as ScienceUnit, c2u08 as unknown as ScienceUnit, c3u05 as unknown as ScienceUnit, c3u06 as unknown as ScienceUnit, c3u07 as unknown as ScienceUnit, c4u02 as unknown as ScienceUnit, c4u03 as unknown as ScienceUnit, c4u06 as unknown as ScienceUnit, c5u01 as unknown as ScienceUnit, c5u02 as unknown as ScienceUnit, c5u03 as unknown as ScienceUnit, c6u04 as unknown as ScienceUnit, c6u05 as unknown as ScienceUnit, c6u07 as unknown as ScienceUnit];
 export const scienceUnitContent = (id: string): ScienceUnit | undefined => SCIENCE_UNITS.find((u) => u.id === id);
 
 // ------------------------------------------------------------------ evaluar una tarea
@@ -585,6 +599,12 @@ export function unitProblems(u: ScienceUnit): string[] {
     if (st.material) {
       if (!MATERIAL_TESTS.includes(st.material.test)) p.push(`${st.id}: prueba de materiales desconocida`);
       if (st.material.trials !== undefined && (st.material.trials < 1 || st.material.trials > MATERIALS.length)) p.push(`${st.id}: los materiales a probar van de 1 a ${MATERIALS.length}`);
+    }
+    if (st.trend) {
+      const k = st.trend;
+      for (const id of k.series ?? []) if (!SERIES_IDS.includes(id)) p.push(`${st.id}: serie desconocida (${id})`);
+      if (k.view === 'chart' && !k.series?.length) p.push(`${st.id}: la gráfica necesita series`);
+      if (k.view === 'compare' && (k.trials === undefined || k.trials < 1 || k.trials > SERIES_IDS.length - (k.series?.length ?? 0))) p.push(`${st.id}: las series a agregar van de 1 a ${SERIES_IDS.length - (k.series?.length ?? 0)}`);
     }
     if (st.energy) {
       const k = st.energy;
@@ -752,6 +772,7 @@ export function dataTextProblems(u: ScienceUnit): string[] {
   if (u.id === 'C2-U08') return earthTextProblems(u);
   if (u.id === 'C1-U01') return vibrationTextProblems(u);
   if (u.id === 'C4-U03') return energyTextProblems(u);
+  if (u.id === 'C6-U07') return trendTextProblems(u);
   if (u.id !== 'C4-U06') return p;
   const t5 = u.tasks.find((t) => t.id === 't5');
   const base = LADERA_DATASETS.base.rows;
@@ -1131,6 +1152,50 @@ function sortTextProblems(u: ScienceUnit): string[] {
   if (expected('s3.3') !== 'distinto') p.push('s3.3: el mismo objeto cae en grupos distintos');
   if (expected('s3.4') !== propertyOf('pelota', 'brillo')) p.push('s3.4: la pelota va con los que no brillan (mate)');
   if (expected('s2.1') !== 'propiedad') p.push('s2.1: se agrupa por una propiedad');
+  return p;
+}
+
+/** C6-U07: lo que dicen los textos sobre las series (temperatura, CO2, Sol, erupciones) coincide con los datos de práctica. */
+function trendTextProblems(u: ScienceUnit): string[] {
+  const p: string[] = [];
+  const steps = u.sessions.flatMap((s) => s.steps);
+  const part = (taskId: string, partId: string) => u.tasks.find((t) => t.id === taskId)?.parts.find((x) => x.id === partId);
+  const opt = (taskId: string, partId: string, id: string) => part(taskId, partId)?.options.find((o) => o.id === id);
+  const expected = (id: string) => steps.find((st) => st.id === id)?.choice?.options.find((o) => o.expected)?.id;
+  const need = (where: string, text: string | undefined, needle: string) => {
+    if (!text?.includes(needle)) p.push(`${where}: el texto no dice «${needle}» (series)`);
+  };
+  const last = YEARS.length - 1;
+  const temp = SERIES_VALUES.temp;
+  const co2 = SERIES_VALUES.co2;
+  const es = (n: number) => String(n).replace('.', ',');
+  // t1: la temperatura sube y más rápido al final.
+  if (trendOfSeries('temp') !== 'sube' || opt('t1', 'observaciones', 'sube')?.valid !== true || opt('t1', 'observaciones', 'baja')?.valid !== false) p.push('t1: la temperatura media sube de 1900 a 2020');
+  const early = (temp[3] - temp[0]) / 3;
+  const late = (temp[last] - temp[3]) / 3;
+  if (!(late > early * 2) || opt('t1', 'observaciones', 'rapido')?.valid !== true) p.push('t1.rapido: en los últimos años la temperatura sube más rápido');
+  // t2: el CO2, el Sol y las erupciones.
+  need('t2.co2 (es)', opt('t2', 'observaciones', 'co2')?.text.es, `de ${co2[0]} a ${co2[last]} ppm`);
+  need('t2.co2 (en)', opt('t2', 'observaciones', 'co2')?.text.en, `from ${co2[0]} to ${co2[last]} ppm`);
+  if (trendOfSeries('sol') !== 'plano' || opt('t2', 'observaciones', 'sol')?.valid !== true || opt('t2', 'observaciones', 'solsube')?.valid !== false) p.push('t2: el brillo del Sol casi no cambia');
+  if (trendOfSeries('volcanes') !== 'irregular' || opt('t2', 'observaciones', 'volcsube')?.valid !== false) p.push('t2: las erupciones suben y bajan sin tendencia');
+  // t3 y t4: las predicciones.
+  if (part('t3', 'resultado')?.observedOptionId !== 'plana' || trendOfSeries('sol') !== 'plano') p.push('t3.resultado: la serie del Sol casi no cambia («plana»)');
+  if (part('t4', 'resultado')?.observedOptionId !== 'sube' || trendOfSeries('co2') !== 'sube') p.push('t4.resultado: la serie del CO2 sube («sube»)');
+  // t5: la evidencia con números y la causa.
+  const ev = opt('t5', 'evidencia', 'co2');
+  need('t5.co2 (es)', ev?.text.es, `de ${co2[0]} a ${co2[last]} ppm`);
+  need('t5.co2 (es)', ev?.text.es, `de ${es(temp[0])} a ${es(temp[last])} °C`);
+  need('t5.co2 (en)', ev?.text.en, `from ${co2[0]} to ${co2[last]} ppm`);
+  need('t5.co2 (en)', ev?.text.en, `from ${temp[0]} to ${temp[last]} °C`);
+  if (correlation(temp, co2) < 0.9 || Math.abs(correlation(temp, SERIES_VALUES.sol)) >= 0.5) p.push('t5: el CO2 sube junto con la temperatura y el Sol no');
+  if (opt('t5', 'afirmacion', 'humanos')?.valid !== true || opt('t5', 'afirmacion', 'sol')?.valid !== false || opt('t5', 'afirmacion', 'volcanes')?.valid !== false) p.push('t5.afirmacion: las actividades humanas son la causa principal; no el Sol ni los volcanes');
+  if (opt('t5', 'evidencia', 'dia')?.valid !== false) p.push('t5.evidencia.dia: un día de calor no es evidencia del clima');
+  // t7 y preguntas del paso.
+  if (opt('t7', 'prueba', 'no')?.valid !== true || opt('t7', 'prueba', 'si')?.valid !== false) p.push('t7.prueba: una semana de calor es tiempo, no prueba del clima');
+  if (expected('s4.1') !== 'masCalor') p.push('s4.1: con más CO2 se atrapa más calor');
+  if (expected('s4.2') !== 'juntas') p.push('s4.2: la temperatura y el CO2 suben a la vez; el Sol y las erupciones no');
+  if (expected('s5.2') !== 'registro') p.push('s5.2: la pregunta que se puede investigar con datos es la del registro del CO2');
   return p;
 }
 

@@ -300,3 +300,8 @@ tela, plástico, cartón), vaso de agua compartido con C5 y C6, bandeja con pico
 - Hechas: **C5-U01** (CI-22, familia `particles`), **C3-U07** (CI-23, familia `climate`), **C2-U08** (CI-24, familia `earth`). Quedan **C1-U01** (CI-25), **C4-U03** (CI-26), **C6-U07** (CI-27); el arte de las tres ya está convertido y conectado (`CIENCIA_VIBRACION`, `CIENCIA_ENERGIA`, `CIENCIA_CLIMA` en `art.ts`) y solo falta poner `UNIT_ART_READY[...] = true` al terminarlas.
 - Cada unidad nueva = modelo en `science-content/src/labs/`, JSON de contenido (generador en el scratchpad de la sesión), setup en `unit.ts` + validador + `*TextProblems`, copy en `ui-core/src/ciencia/copy.ts`, familia en `apps/mobile/src/subjects/ciencia/families/`, fila del ROADMAP y bitácora.
 - Antes de fusionar PR #3: `git fetch origin master && git merge origin/master`, `npm run typecheck`, `npx vitest run`; fusionar solo cuando Victor lo diga.
+
+## 2026-10-17 · Tanda 4 COMPLETA
+- Hechas las seis: C5-U01, C3-U07, C2-U08, C1-U01, C4-U03 y C6-U07 (CI-22…CI-27). Ciencia tiene **18 unidades abiertas** (1.º–6.º: tres por grado).
+- Quedan pendientes (no pedidos): vista de estándares para padres (archivos compartidos), repaso 1-3-7, revisión docente (CI-08, también del tono de C6-U07), portada propia de C5-U03, electricidad estática de C3-U06, APK solo si Victor lo pide.
+- **Siguiente paso:** `git fetch origin master && git merge origin/master`, `npm run typecheck`, `npx vitest run`, y fusionar PR #3 **solo cuando Victor lo confirme**.

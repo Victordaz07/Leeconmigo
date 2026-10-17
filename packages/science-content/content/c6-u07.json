@@ -1,0 +1,1748 @@
+{
+ "id": "C6-U07",
+ "grade": 6,
+ "area": "tierra",
+ "title": {
+  "es": "Evidencias de cambio",
+  "en": "Evidence of change"
+ },
+ "question": {
+  "es": "¿Qué ocurre con el clima?",
+  "en": "What is happening to the climate?"
+ },
+ "standards": [
+  "MS-ESS3-5"
+ ],
+ "standardTasks": {
+  "MS-ESS3-5": [
+   "t1",
+   "t2",
+   "t3",
+   "t4",
+   "t5",
+   "t6",
+   "t7"
+  ]
+ },
+ "ideas": [
+  {
+   "id": "clima.evidencia",
+   "text": {
+    "es": "Para saber qué pasa con el clima se comparan series de datos de muchos años y se hacen preguntas sobre los factores que cambian; un día o una semana de calor es tiempo, no clima.",
+    "en": "To know what is happening with the climate, data series of many years are compared and questions are asked about the factors that change; one day or one week of heat is weather, not climate."
+   },
+   "misconception": {
+    "es": "Un día de calor (o de frío) prueba o desmiente el cambio del clima.",
+    "en": "One hot (or cold) day proves or disproves climate change."
+   },
+   "contexts": [
+    "serie",
+    "comparar",
+    "sol",
+    "factores",
+    "ciudad"
+   ]
+  },
+  {
+   "id": "clima.humanos",
+   "text": {
+    "es": "La evidencia indica que el aumento de CO2 por actividades humanas (quemar carbón, petróleo y gas) es la causa principal del calentamiento de los últimos 100 años: el CO2 atrapa calor, y el Sol y los volcanes no explican la subida.",
+    "en": "The evidence indicates that the increase in CO2 from human activities (burning coal, oil and gas) is the main cause of the warming of the last 100 years: CO2 traps heat, and the Sun and volcanoes don’t explain the rise."
+   },
+   "misconception": {
+    "es": "El Sol o los volcanes son la causa principal del calentamiento actual.",
+    "en": "The Sun or volcanoes are the main cause of the current warming."
+   },
+   "contexts": [
+    "co2",
+    "comparar",
+    "factores",
+    "mecanismo",
+    "ciudad"
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "es": "clima",
+   "en": "climate",
+   "note": {
+    "es": "Lo típico del tiempo en un lugar o en toda la Tierra a lo largo de muchos años.",
+    "en": "What the weather is typically like in a place or on the whole Earth over many years."
+   }
+  },
+  {
+   "es": "gas de efecto invernadero",
+   "en": "greenhouse gas",
+   "note": {
+    "es": "Un gas del aire, como el dióxido de carbono (CO2), que atrapa parte del calor de la Tierra.",
+    "en": "A gas in the air, like carbon dioxide (CO2), that traps part of the Earth’s heat."
+   }
+  },
+  {
+   "es": "serie de datos",
+   "en": "data series",
+   "note": {
+    "es": "Una lista de datos tomados una y otra vez a lo largo del tiempo, como la temperatura cada 20 años.",
+    "en": "A list of data taken again and again over time, like the temperature every 20 years."
+   }
+  }
+ ],
+ "sessions": [
+  {
+   "id": "s1",
+   "title": {
+    "es": "¿Está cambiando la temperatura?",
+    "en": "Is the temperature changing?"
+   },
+   "objective": {
+    "es": "Leer una serie de datos sin confundirla con el tiempo de hoy y decir una primera idea.",
+    "en": "Read a data series without mixing it up with today’s weather and share a first idea."
+   },
+   "steps": [
+    {
+     "id": "s1.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Una serie de datos de práctica: la temperatura media de la Tierra de 1900 a 2020, cada 20 años. Mírala.",
+      "en": "A practice data series: the Earth’s average temperature from 1900 to 2020, every 20 years. Look at it."
+     },
+     "scene": "valle",
+     "trend": {
+      "view": "chart",
+      "series": [
+       "temp"
+      ],
+      "static": true
+     }
+    },
+    {
+     "id": "s1.2",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "Elige dos cosas que muestra la serie.",
+      "en": "Pick two things the series shows."
+     },
+     "taskId": "t1",
+     "saves": "observación",
+     "scene": "valle",
+     "trend": {
+      "view": "chart",
+      "series": [
+       "temp"
+      ],
+      "static": true
+     }
+    },
+    {
+     "id": "s1.3",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Creo que el aumento de la temperatura de los últimos 100 años se debe a…",
+      "en": "I think the rise in temperature over the last 100 years is due to…"
+     },
+     "saves": "idea inicial",
+     "scene": "valle",
+     "choice": {
+      "id": "ideaInicial",
+      "multi": false,
+      "options": [
+       {
+        "id": "humanos",
+        "text": {
+         "es": "las actividades humanas, sobre todo quemar combustibles.",
+         "en": "human activities, mainly burning fuels."
+        }
+       },
+       {
+        "id": "sol",
+        "text": {
+         "es": "que el Sol brilla más.",
+         "en": "the Sun shining more."
+        }
+       },
+       {
+        "id": "volcanes",
+        "text": {
+         "es": "los volcanes.",
+         "en": "volcanoes."
+        }
+       },
+       {
+        "id": "nose",
+        "text": {
+         "es": "todavía no sé.",
+         "en": "I don’t know yet."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s1.4",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "Un científico no se queda con una idea: pregunta qué factores cambian a la vez y busca un mecanismo que los conecte. Los números son de práctica, inventados para aprender, con la forma de los registros reales.",
+      "en": "A scientist doesn’t just keep an idea: they ask which factors change at the same time and look for a mechanism that connects them. The numbers are practice data, made up for learning, shaped like real records."
+     },
+     "scene": "valle"
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "title": {
+    "es": "¿Será el Sol?",
+    "en": "Could it be the Sun?"
+   },
+   "objective": {
+    "es": "Predecir y comprobar si el Sol o los volcanes explican la subida.",
+    "en": "Predict and check whether the Sun or volcanoes explain the rise."
+   },
+   "steps": [
+    {
+     "id": "s2.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Una causa posible es el Sol. Para explicar una subida, su serie también tendría que subir. Falta mirarla.",
+      "en": "One possible cause is the Sun. To explain a rise, its series would also have to rise. We still have to look at it."
+     },
+     "scene": "valle",
+     "trend": {
+      "view": "chart",
+      "series": [
+       "temp"
+      ],
+      "static": true
+     }
+    },
+    {
+     "id": "s2.2",
+     "phase": "explora",
+     "kind": "predecir",
+     "text": {
+      "es": "Entre 1900 y 2020, ¿cómo crees que es la serie del brillo del Sol? Porque…",
+      "en": "Between 1900 and 2020, what do you think the Sun’s brightness series looks like? Because…"
+     },
+     "taskId": "t3",
+     "saves": "predicción",
+     "scene": "valle",
+     "trend": {
+      "view": "chart",
+      "series": [
+       "temp"
+      ],
+      "static": true
+     }
+    },
+    {
+     "id": "s2.3",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Agrega a la gráfica la serie del Sol y la de las erupciones volcánicas (dos).",
+      "en": "Add the Sun series and the volcanic eruptions series to the graph (two)."
+     },
+     "saves": "comparación",
+     "scene": "valle",
+     "trend": {
+      "view": "compare",
+      "series": [
+       "temp"
+      ],
+      "trials": 2
+     }
+    },
+    {
+     "id": "s2.4",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Compara lo que predijiste con la serie del Sol.",
+      "en": "Compare what you predicted with the Sun series."
+     },
+     "saves": "comparación",
+     "scene": "valle",
+     "trend": {
+      "view": "chart",
+      "series": [
+       "temp",
+       "sol"
+      ],
+      "static": true
+     },
+     "choice": {
+      "id": "comparacion",
+      "multi": false,
+      "options": [
+       {
+        "id": "coincidio",
+        "text": {
+         "es": "Mi predicción coincidió.",
+         "en": "My prediction matched."
+        }
+       },
+       {
+        "id": "nocoincidio",
+        "text": {
+         "es": "Mi predicción no coincidió.",
+         "en": "My prediction didn’t match."
+        }
+       }
+      ],
+      "compareWith": {
+       "taskId": "t3",
+       "partId": "resultado"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "s3",
+   "title": {
+    "es": "¿Y el CO2?",
+    "en": "And CO2?"
+   },
+   "objective": {
+    "es": "Predecir y comprobar qué pasa con el CO2 del aire.",
+    "en": "Predict and check what happens with the air’s CO2."
+   },
+   "steps": [
+    {
+     "id": "s3.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Otra posible causa es el CO2, un gas del aire que se produce al quemar carbón, petróleo y gas.",
+      "en": "Another possible cause is CO2, a gas in the air that is produced when burning coal, oil and gas."
+     },
+     "scene": "valle"
+    },
+    {
+     "id": "s3.2",
+     "phase": "explora",
+     "kind": "predecir",
+     "text": {
+      "es": "Entre 1900 y 2020, ¿cómo crees que es la serie del CO2 del aire? Porque…",
+      "en": "Between 1900 and 2020, what do you think the air’s CO2 series looks like? Because…"
+     },
+     "taskId": "t4",
+     "saves": "predicción",
+     "scene": "valle"
+    },
+    {
+     "id": "s3.3",
+     "phase": "explora",
+     "kind": "probar",
+     "text": {
+      "es": "Agrega a la gráfica la serie del CO2.",
+      "en": "Add the CO2 series to the graph."
+     },
+     "saves": "comparación",
+     "scene": "valle",
+     "trend": {
+      "view": "compare",
+      "series": [
+       "temp"
+      ],
+      "trials": 1
+     }
+    },
+    {
+     "id": "s3.4",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Compara lo que predijiste con la serie del CO2.",
+      "en": "Compare what you predicted with the CO2 series."
+     },
+     "saves": "comparación",
+     "scene": "valle",
+     "trend": {
+      "view": "chart",
+      "series": [
+       "temp",
+       "co2"
+      ],
+      "static": true
+     },
+     "choice": {
+      "id": "comparacion",
+      "multi": false,
+      "options": [
+       {
+        "id": "coincidio",
+        "text": {
+         "es": "Mi predicción coincidió.",
+         "en": "My prediction matched."
+        }
+       },
+       {
+        "id": "nocoincidio",
+        "text": {
+         "es": "Mi predicción no coincidió.",
+         "en": "My prediction didn’t match."
+        }
+       }
+      ],
+      "compareWith": {
+       "taskId": "t4",
+       "partId": "resultado"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "s4",
+   "title": {
+    "es": "De los datos al mecanismo",
+    "en": "From the data to the mechanism"
+   },
+   "objective": {
+    "es": "Conectar las series con un mecanismo y explicar con evidencia.",
+    "en": "Connect the series with a mechanism and explain with evidence."
+   },
+   "steps": [
+    {
+     "id": "s4.1",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "Mira cómo el CO2 atrapa calor. Si hay más CO2 en el aire, ¿qué pasa?",
+      "en": "See how CO2 traps heat. If there is more CO2 in the air, what happens?"
+     },
+     "saves": "mecanismo",
+     "scene": "valle",
+     "trend": {
+      "view": "mechanism"
+     },
+     "choice": {
+      "id": "mecanismo",
+      "multi": false,
+      "options": [
+       {
+        "id": "masCalor",
+        "text": {
+         "es": "Se atrapa más calor y la Tierra se calienta.",
+         "en": "More heat is trapped and the Earth warms."
+        },
+        "expected": true
+       },
+       {
+        "id": "menosCalor",
+        "text": {
+         "es": "Se atrapa menos calor.",
+         "en": "Less heat is trapped."
+        }
+       },
+       {
+        "id": "igual",
+        "text": {
+         "es": "No cambia nada.",
+         "en": "Nothing changes."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s4.2",
+     "phase": "explica",
+     "kind": "elegir",
+     "text": {
+      "es": "Mira las cuatro series juntas. ¿Qué patrón ves?",
+      "en": "Look at the four series together. What pattern do you see?"
+     },
+     "saves": "patrón",
+     "scene": "valle",
+     "trend": {
+      "view": "chart",
+      "series": [
+       "temp",
+       "co2",
+       "sol",
+       "volcanes"
+      ],
+      "static": true
+     },
+     "choice": {
+      "id": "patron",
+      "multi": false,
+      "options": [
+       {
+        "id": "juntas",
+        "text": {
+         "es": "La temperatura y el CO2 suben a la vez; el Sol y las erupciones no.",
+         "en": "The temperature and CO2 rise together; the Sun and eruptions do not."
+        },
+        "expected": true
+       },
+       {
+        "id": "todas",
+        "text": {
+         "es": "Las cuatro series suben igual.",
+         "en": "All four series rise the same."
+        }
+       },
+       {
+        "id": "ninguna",
+        "text": {
+         "es": "Ninguna serie tiene relación con otra.",
+         "en": "No series is related to another."
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s4.3",
+     "phase": "explica",
+     "kind": "texto",
+     "text": {
+      "es": "Palabras nuevas para explicar.",
+      "en": "New words to explain with."
+     },
+     "scene": "valle",
+     "glossary": [
+      "clima",
+      "gas de efecto invernadero",
+      "serie de datos"
+     ]
+    },
+    {
+     "id": "s4.4",
+     "phase": "explica",
+     "kind": "afirmacion",
+     "text": {
+      "es": "Arma tu explicación: qué dices de la causa, qué la apoya y qué límite tiene tu razonamiento.",
+      "en": "Build your explanation: what you say about the cause, what supports it and what limit your reasoning has."
+     },
+     "taskId": "t5",
+     "saves": "explicación",
+     "scene": "valle",
+     "trend": {
+      "view": "chart",
+      "series": [
+       "temp",
+       "co2",
+       "sol",
+       "volcanes"
+      ],
+      "static": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "s5",
+   "title": {
+    "es": "Probar y evaluar",
+    "en": "Testing and evaluating"
+   },
+   "objective": {
+    "es": "Comparar las series, hacer una buena pregunta y evaluar el mecanismo.",
+    "en": "Compare the series, ask a good question and evaluate the mechanism."
+   },
+   "steps": [
+    {
+     "id": "s5.1",
+     "phase": "observa",
+     "kind": "elegir",
+     "text": {
+      "es": "Mira las cuatro series y elige dos cosas.",
+      "en": "Look at the four series and pick two things."
+     },
+     "taskId": "t2",
+     "saves": "observación",
+     "scene": "valle",
+     "trend": {
+      "view": "chart",
+      "series": [
+       "temp",
+       "co2",
+       "sol",
+       "volcanes"
+      ],
+      "static": true
+     }
+    },
+    {
+     "id": "s5.2",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "¿Qué pregunta se puede investigar con datos?",
+      "en": "Which question can be investigated with data?"
+     },
+     "saves": "preguntar",
+     "scene": "valle",
+     "choice": {
+      "id": "pregunta",
+      "multi": false,
+      "options": [
+       {
+        "id": "registro",
+        "text": {
+         "es": "¿Cuánto cambió el CO2 del aire entre 1900 y 2020?",
+         "en": "How much did the air’s CO2 change between 1900 and 2020?"
+        },
+        "expected": true
+       },
+       {
+        "id": "culpa",
+        "text": {
+         "es": "¿De quién es la culpa del calor de hoy?",
+         "en": "Whose fault is today’s heat?"
+        }
+       },
+       {
+        "id": "futuro",
+        "text": {
+         "es": "¿Qué día exacto hará 40 grados el año que viene?",
+         "en": "On which exact day will it be 40 degrees next year?"
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "s5.3",
+     "phase": "explica",
+     "kind": "afirmacion",
+     "text": {
+      "es": "Evalúa la cadena del mecanismo: qué muestra, qué deja fuera y cómo la mejorarías.",
+      "en": "Evaluate the mechanism chain: what it shows, what it leaves out and how you would improve it."
+     },
+     "taskId": "t6",
+     "saves": "modelo",
+     "scene": "valle",
+     "trend": {
+      "view": "mechanism"
+     }
+    }
+   ]
+  },
+  {
+   "id": "s6",
+   "title": {
+    "es": "Una ola de calor para Maya",
+    "en": "A heat wave for Maya"
+   },
+   "objective": {
+    "es": "Usar lo aprendido en un caso nuevo y revisar mi primera idea.",
+    "en": "Use what I learned in a new case and revisit my first idea."
+   },
+   "steps": [
+    {
+     "id": "s6.1",
+     "phase": "observa",
+     "kind": "ver",
+     "text": {
+      "es": "Durante una semana hizo mucho calor en la ciudad de Maya. Ella se pregunta si eso prueba el calentamiento de la Tierra.",
+      "en": "For a week it was very hot in Maya’s city. She wonders whether that proves the warming of the Earth."
+     },
+     "scene": "valle"
+    },
+    {
+     "id": "s6.2",
+     "phase": "explora",
+     "kind": "elegir",
+     "text": {
+      "es": "¿Eso lo prueba? ¿Qué pregunta se puede investigar con datos?",
+      "en": "Does that prove it? Which question can be investigated with data?"
+     },
+     "taskId": "t7",
+     "saves": "problema nuevo",
+     "scene": "valle"
+    },
+    {
+     "id": "s6.3",
+     "phase": "explica",
+     "kind": "reflexion",
+     "text": {
+      "es": "Vuelve a mirar tu primera idea. ¿Cambió?",
+      "en": "Look at your first idea again. Did it change?"
+     },
+     "taskId": "t8",
+     "saves": "reflexión",
+     "scene": "valle"
+    },
+    {
+     "id": "s6.4",
+     "phase": "usa",
+     "kind": "texto",
+     "text": {
+      "es": "Hoy comparaste series y un mecanismo: el CO2 que agregan las actividades humanas es la causa principal del calentamiento de los últimos 100 años, y el Sol y los volcanes no explican la subida. Un día de calor no es prueba; los registros de muchos años, sí.",
+      "en": "Today you compared series and a mechanism: the CO2 added by human activities is the main cause of the warming of the last 100 years, and the Sun and volcanoes don’t explain the rise. One hot day is not proof; records of many years are."
+     },
+     "saves": "resumen",
+     "scene": "valle"
+    }
+   ]
+  }
+ ],
+ "tasks": [
+  {
+   "id": "t1",
+   "kind": "observar",
+   "ideaIds": [
+    "clima.evidencia"
+   ],
+   "contextId": "serie",
+   "sessionId": "s1",
+   "standards": [
+    "MS-ESS3-5"
+   ],
+   "criterion": {
+    "es": "Lee la serie de temperatura media y dice dos cosas que se ven en ella, sin decir que es el tiempo de hoy.",
+    "en": "Reads the average temperature series and says two things shown in it, without saying it is today’s weather."
+   },
+   "parts": [
+    {
+     "id": "observaciones",
+     "prompt": {
+      "es": "Mira la serie y elige dos cosas.",
+      "en": "Look at the series and pick two things."
+     },
+     "options": [
+      {
+       "id": "sube",
+       "text": {
+        "es": "La temperatura media sube de 1900 a 2020.",
+        "en": "The average temperature rises from 1900 to 2020."
+       },
+       "valid": true
+      },
+      {
+       "id": "rapido",
+       "text": {
+        "es": "En los últimos años sube más rápido que antes.",
+        "en": "In recent years it rises faster than before."
+       },
+       "valid": true
+      },
+      {
+       "id": "baja",
+       "text": {
+        "es": "La temperatura media baja de 1900 a 2020.",
+        "en": "The average temperature falls from 1900 to 2020."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira la serie: el último punto está más arriba que el primero.",
+        "en": "Look at the series: the last point is higher than the first."
+       }
+      },
+      {
+       "id": "hoy",
+       "text": {
+        "es": "La serie dice que hoy hace calor en mi ciudad.",
+        "en": "The series says it is hot in my city today."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "La serie es de promedios de toda la Tierra cada 20 años, no del tiempo de hoy en un lugar.",
+        "en": "The series is averages for the whole Earth every 20 years, not today’s weather in one place."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Compara el primer punto con el último.",
+     "en": "Compare the first point with the last."
+    },
+    {
+     "es": "Mira cuánto sube entre 1900 y 1960 y entre 1960 y 2020.",
+     "en": "Look at how much it rises between 1900 and 1960 and between 1960 and 2020."
+    },
+    {
+     "es": "Ejemplo: si una línea sube poco al principio y mucho al final, el cambio se aceleró.",
+     "en": "Example: if a line rises a little at the start and a lot at the end, the change sped up."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige dos cosas.",
+     "en": "Pick two things."
+    },
+    "wrong": {
+     "es": "Alguna de las cosas que elegiste no se ve en la serie. Mírala de nuevo.",
+     "en": "Something you picked isn’t in the series. Look at it again."
+    },
+    "ok": {
+     "es": "Leíste la serie con cuidado: primero lo que muestra, después lo que crees.",
+     "en": "You read the series carefully: first what it shows, then what you think."
+    }
+   }
+  },
+  {
+   "id": "t2",
+   "kind": "observar",
+   "ideaIds": [
+    "clima.evidencia",
+    "clima.humanos"
+   ],
+   "contextId": "comparar",
+   "sessionId": "s5",
+   "standards": [
+    "MS-ESS3-5"
+   ],
+   "criterion": {
+    "es": "Compara las cuatro series y dice dos cosas que se ven en ellas.",
+    "en": "Compares the four series and says two things shown in them."
+   },
+   "parts": [
+    {
+     "id": "observaciones",
+     "prompt": {
+      "es": "Mira las series y elige dos cosas.",
+      "en": "Look at the series and pick two things."
+     },
+     "options": [
+      {
+       "id": "co2",
+       "text": {
+        "es": "El CO2 sube de 296 a 413 ppm entre 1900 y 2020.",
+        "en": "CO2 rises from 296 to 413 ppm between 1900 and 2020."
+       },
+       "valid": true
+      },
+      {
+       "id": "sol",
+       "text": {
+        "es": "El brillo del Sol casi no cambia: se queda cerca de 100.",
+        "en": "The Sun’s brightness hardly changes: it stays near 100."
+       },
+       "valid": true
+      },
+      {
+       "id": "volcsube",
+       "text": {
+        "es": "Las erupciones volcánicas suben igual que la temperatura.",
+        "en": "Volcanic eruptions rise just like the temperature."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira la serie de erupciones: sube y baja sin una tendencia.",
+        "en": "Look at the eruptions series: it goes up and down with no trend."
+       }
+      },
+      {
+       "id": "solsube",
+       "text": {
+        "es": "El brillo del Sol sube igual que la temperatura.",
+        "en": "The Sun’s brightness rises just like the temperature."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira la serie del Sol: casi no cambia.",
+        "en": "Look at the Sun series: it hardly changes."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira la forma de cada serie, no solo los números.",
+     "en": "Look at the shape of each series, not just the numbers."
+    },
+    {
+     "es": "¿Cuáles suben y cuáles no?",
+     "en": "Which ones rise and which ones don’t?"
+    },
+    {
+     "es": "Ejemplo: una serie que sube y baja sin orden no tiene una tendencia.",
+     "en": "Example: a series that goes up and down in no order has no trend."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige dos cosas.",
+     "en": "Pick two things."
+    },
+    "wrong": {
+     "es": "Alguna de las cosas que elegiste no se ve en las series. Mira de nuevo.",
+     "en": "Something you picked isn’t in the series. Look again."
+    },
+    "ok": {
+     "es": "Comparaste las series con cuidado.",
+     "en": "You compared the series carefully."
+    }
+   }
+  },
+  {
+   "id": "t3",
+   "kind": "predecir",
+   "ideaIds": [
+    "clima.evidencia"
+   ],
+   "contextId": "sol",
+   "sessionId": "s2",
+   "standards": [
+    "MS-ESS3-5"
+   ],
+   "criterion": {
+    "es": "Predice cómo es la serie del brillo del Sol y da una razón. Cualquier predicción es válida.",
+    "en": "Predicts what the Sun’s brightness series looks like and gives a reason. Any prediction is valid."
+   },
+   "parts": [
+    {
+     "id": "resultado",
+     "prompt": {
+      "es": "Entre 1900 y 2020, ¿cómo crees que es la serie del brillo del Sol?",
+      "en": "Between 1900 and 2020, what do you think the Sun’s brightness series looks like?"
+     },
+     "options": [
+      {
+       "id": "plana",
+       "text": {
+        "es": "Casi no cambia.",
+        "en": "It hardly changes."
+       },
+       "valid": true
+      },
+      {
+       "id": "sube",
+       "text": {
+        "es": "Sube igual que la temperatura.",
+        "en": "It rises just like the temperature."
+       },
+       "valid": true
+      },
+      {
+       "id": "baja",
+       "text": {
+        "es": "Baja.",
+        "en": "It falls."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false,
+     "observedOptionId": "plana"
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "Porque…",
+      "en": "Because…"
+     },
+     "options": [
+      {
+       "id": "estable",
+       "text": {
+        "es": "el Sol brilla casi igual durante muchos siglos.",
+        "en": "the Sun shines almost the same for many centuries."
+       },
+       "valid": true
+      },
+      {
+       "id": "creo",
+       "text": {
+        "es": "creo que así es.",
+        "en": "I think that is how it is."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "todavía no estoy seguro.",
+        "en": "I’m not sure yet."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    }
+   ],
+   "hints": [
+    {
+     "es": "Si el Sol explicara la subida, ¿cómo tendría que ser su serie?",
+     "en": "If the Sun explained the rise, what would its series have to look like?"
+    },
+    {
+     "es": "Piensa en cuánto cambia el brillo del Sol de un siglo a otro.",
+     "en": "Think about how much the Sun’s brightness changes from one century to another."
+    },
+    {
+     "es": "Ejemplo: para que una causa explique una subida, tendría que subir también.",
+     "en": "Example: for a cause to explain a rise, it would have to rise too."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige una predicción y un «porque».",
+     "en": "Pick a prediction and a “because”."
+    },
+    "wrong": {
+     "es": "Elige una de las opciones.",
+     "en": "Pick one of the options."
+    },
+    "ok": {
+     "es": "Anotaste tu predicción. Ahora la comparamos con la serie.",
+     "en": "You wrote down your prediction. Now we compare it with the series."
+    }
+   }
+  },
+  {
+   "id": "t4",
+   "kind": "predecir",
+   "ideaIds": [
+    "clima.humanos"
+   ],
+   "contextId": "co2",
+   "sessionId": "s3",
+   "standards": [
+    "MS-ESS3-5"
+   ],
+   "criterion": {
+    "es": "Predice cómo es la serie del CO2 del aire y da una razón. Cualquier predicción es válida.",
+    "en": "Predicts what the air’s CO2 series looks like and gives a reason. Any prediction is valid."
+   },
+   "parts": [
+    {
+     "id": "resultado",
+     "prompt": {
+      "es": "Entre 1900 y 2020, ¿cómo crees que es la serie del CO2 del aire?",
+      "en": "Between 1900 and 2020, what do you think the air’s CO2 series looks like?"
+     },
+     "options": [
+      {
+       "id": "sube",
+       "text": {
+        "es": "Sube.",
+        "en": "It rises."
+       },
+       "valid": true
+      },
+      {
+       "id": "plana",
+       "text": {
+        "es": "Casi no cambia.",
+        "en": "It hardly changes."
+       },
+       "valid": true
+      },
+      {
+       "id": "baja",
+       "text": {
+        "es": "Baja.",
+        "en": "It falls."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false,
+     "observedOptionId": "sube"
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "Porque…",
+      "en": "Because…"
+     },
+     "options": [
+      {
+       "id": "quemar",
+       "text": {
+        "es": "quemar carbón, petróleo y gas agrega CO2 al aire.",
+        "en": "burning coal, oil and gas adds CO2 to the air."
+       },
+       "valid": true
+      },
+      {
+       "id": "creo",
+       "text": {
+        "es": "creo que así es.",
+        "en": "I think that is how it is."
+       },
+       "valid": true
+      },
+      {
+       "id": "nose",
+       "text": {
+        "es": "todavía no estoy seguro.",
+        "en": "I’m not sure yet."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    }
+   ],
+   "hints": [
+    {
+     "es": "Piensa en lo que se quema para dar energía a autos, fábricas y casas.",
+     "en": "Think about what is burned to give energy to cars, factories and homes."
+    },
+    {
+     "es": "Quemar esas cosas produce CO2: ¿adónde va?",
+     "en": "Burning those things produces CO2: where does it go?"
+    },
+    {
+     "es": "Ejemplo: si agregas agua a una piscina sin sacar nada, el nivel sube.",
+     "en": "Example: if you add water to a pool without taking any out, the level rises."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Elige una predicción y un «porque».",
+     "en": "Pick a prediction and a “because”."
+    },
+    "wrong": {
+     "es": "Elige una de las opciones.",
+     "en": "Pick one of the options."
+    },
+    "ok": {
+     "es": "Anotaste tu predicción. Ahora la comparamos con la serie.",
+     "en": "You wrote down your prediction. Now we compare it with the series."
+    }
+   }
+  },
+  {
+   "id": "t5",
+   "kind": "evidencia",
+   "ideaIds": [
+    "clima.evidencia",
+    "clima.humanos"
+   ],
+   "contextId": "factores",
+   "sessionId": "s4",
+   "standards": [
+    "MS-ESS3-5"
+   ],
+   "criterion": {
+    "es": "Afirma cuál es la causa principal del calentamiento actual con la evidencia (series y mecanismo) y dice qué límite tiene su razonamiento.",
+    "en": "Claims what the main cause of the current warming is with the evidence (series and mechanism) and says what limit its reasoning has."
+   },
+   "parts": [
+    {
+     "id": "afirmacion",
+     "prompt": {
+      "es": "Mi afirmación es…",
+      "en": "My claim is…"
+     },
+     "options": [
+      {
+       "id": "humanos",
+       "text": {
+        "es": "El aumento de CO2 por actividades humanas (quemar carbón, petróleo y gas) es la causa principal del calentamiento de los últimos 100 años.",
+        "en": "The increase in CO2 from human activities (burning coal, oil and gas) is the main cause of the warming of the last 100 years."
+       },
+       "valid": true
+      },
+      {
+       "id": "sol",
+       "text": {
+        "es": "El Sol brilla más y por eso la Tierra se calienta.",
+        "en": "The Sun shines more and that is why the Earth warms."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira la serie del Sol: casi no cambia, así que no explica la subida.",
+        "en": "Look at the Sun series: it hardly changes, so it doesn’t explain the rise."
+       }
+      },
+      {
+       "id": "volcanes",
+       "text": {
+        "es": "Los volcanes son la causa principal del calentamiento.",
+        "en": "Volcanoes are the main cause of the warming."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Mira la serie de erupciones: sube y baja sin tendencia, así que no explica una subida sostenida.",
+        "en": "Look at the eruptions series: it goes up and down with no trend, so it doesn’t explain a sustained rise."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "evidencia",
+     "prompt": {
+      "es": "Mi evidencia es… (elige dos)",
+      "en": "My evidence is… (pick two)"
+     },
+     "options": [
+      {
+       "id": "co2",
+       "text": {
+        "es": "El CO2 sube de 296 a 413 ppm y la temperatura sube de -0,3 a 1,2 °C en los mismos años.",
+        "en": "CO2 rises from 296 to 413 ppm and the temperature rises from -0.3 to 1.2 °C over the same years."
+       },
+       "valid": true
+      },
+      {
+       "id": "descarte",
+       "text": {
+        "es": "El brillo del Sol casi no cambia y las erupciones no tienen tendencia.",
+        "en": "The Sun’s brightness hardly changes and eruptions have no trend."
+       },
+       "valid": true
+      },
+      {
+       "id": "mecanismo",
+       "text": {
+        "es": "El CO2 atrapa parte del calor que sale de la Tierra, y quemar combustibles agrega CO2.",
+        "en": "CO2 traps part of the heat leaving the Earth, and burning fuels adds CO2."
+       },
+       "valid": true
+      },
+      {
+       "id": "dia",
+       "text": {
+        "es": "Ayer hizo mucho calor en mi ciudad.",
+        "en": "Yesterday it was very hot in my city."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Un solo día es tiempo, no clima: hacen falta registros de muchos años.",
+        "en": "One day is weather, not climate: records of many years are needed."
+       }
+      }
+     ],
+     "min": 2,
+     "strict": true
+    },
+    {
+     "id": "limite",
+     "prompt": {
+      "es": "Lo que limita mi razonamiento…",
+      "en": "What limits my reasoning…"
+     },
+     "options": [
+      {
+       "id": "correl",
+       "text": {
+        "es": "que dos series suban juntas no basta: también hace falta un mecanismo y descartar otras causas.",
+        "en": "two series rising together isn’t enough: you also need a mechanism and to rule out other causes."
+       },
+       "valid": true
+      },
+      {
+       "id": "practica",
+       "text": {
+        "es": "los datos son de práctica; los registros reales vienen de muchos laboratorios y se comparan entre sí.",
+        "en": "the data are practice data; real records come from many laboratories and are compared with each other."
+       },
+       "valid": true
+      },
+      {
+       "id": "prueba",
+       "text": {
+        "es": "con una sola serie ya queda probado todo.",
+        "en": "with one series alone everything is proven."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Una serie sola no prueba una causa: se comparan varias y se explica el mecanismo.",
+        "en": "One series alone doesn’t prove a cause: several are compared and the mechanism is explained."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Primero descarta: ¿cuáles series no suben?",
+     "en": "First rule out: which series don’t rise?"
+    },
+    {
+     "es": "Después busca un factor que suba y un mecanismo que lo conecte.",
+     "en": "Then look for a factor that rises and a mechanism that connects it."
+    },
+    {
+     "es": "Ejemplo: si solo una cosa sube a la vez que la temperatura y además hay una razón física, es una buena candidata.",
+     "en": "Example: if only one thing rises at the same time as the temperature and there is also a physical reason, it is a good candidate."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte: afirmación, evidencia y límite.",
+     "en": "A part is missing: claim, evidence and limit."
+    },
+    "wrong": {
+     "es": "Mira de nuevo: algo de lo que elegiste no sale de las series ni del mecanismo.",
+     "en": "Look again: something you picked doesn’t come from the series or the mechanism."
+    },
+    "ok": {
+     "es": "Afirmaste con series y mecanismo, descartaste otras causas y dijiste el límite: así se razona en ciencia.",
+     "en": "You made a claim with series and a mechanism, ruled out other causes and said the limit: that is how science reasons."
+    }
+   }
+  },
+  {
+   "id": "t6",
+   "kind": "modelo",
+   "ideaIds": [
+    "clima.humanos"
+   ],
+   "contextId": "mecanismo",
+   "sessionId": "s5",
+   "standards": [
+    "MS-ESS3-5"
+   ],
+   "criterion": {
+    "es": "Evalúa la cadena del mecanismo: qué muestra, qué deja fuera y cómo mejorarla.",
+    "en": "Evaluates the mechanism chain: what it shows, what it leaves out and how to improve it."
+   },
+   "parts": [
+    {
+     "id": "muestra",
+     "prompt": {
+      "es": "La cadena muestra…",
+      "en": "The chain shows…"
+     },
+     "options": [
+      {
+       "id": "cadena",
+       "text": {
+        "es": "Por qué más CO2 atrapa más calor.",
+        "en": "Why more CO2 traps more heat."
+       },
+       "valid": true
+      },
+      {
+       "id": "humanos",
+       "text": {
+        "es": "Cómo quemar combustibles agrega CO2 al aire.",
+        "en": "How burning fuels adds CO2 to the air."
+       },
+       "valid": true
+      },
+      {
+       "id": "cuanto",
+       "text": {
+        "es": "Cuántos grados subirá la temperatura el año que viene.",
+        "en": "How many degrees the temperature will rise next year."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "La cadena explica el mecanismo, no predice cuántos grados.",
+        "en": "The chain explains the mechanism, it doesn’t predict how many degrees."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "falta",
+     "prompt": {
+      "es": "A la cadena le falta…",
+      "en": "The chain is missing…"
+     },
+     "options": [
+      {
+       "id": "otros",
+       "text": {
+        "es": "Otros gases (como el metano) y el papel de los océanos.",
+        "en": "Other gases (like methane) and the role of the oceans."
+       },
+       "valid": true
+      },
+      {
+       "id": "cantidad",
+       "text": {
+        "es": "Cuánto calor atrapa cada gas.",
+        "en": "How much heat each gas traps."
+       },
+       "valid": true
+      },
+      {
+       "id": "nada",
+       "text": {
+        "es": "Nada: lo explica todo.",
+        "en": "Nothing: it explains everything."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Todo modelo deja cosas fuera. ¿Qué no explica la cadena?",
+        "en": "Every model leaves things out. What doesn’t the chain explain?"
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "mejora",
+     "prompt": {
+      "es": "Para mejorarla…",
+      "en": "To improve it…"
+     },
+     "options": [
+      {
+       "id": "datos",
+       "text": {
+        "es": "Compararla con registros reales de varios laboratorios.",
+        "en": "Compare it with real records from several laboratories."
+       },
+       "valid": true
+      },
+      {
+       "id": "preguntas",
+       "text": {
+        "es": "Hacer preguntas sobre los factores que faltan.",
+        "en": "Ask questions about the missing factors."
+       },
+       "valid": true
+      },
+      {
+       "id": "borrar",
+       "text": {
+        "es": "Quitar el Sol del dibujo.",
+        "en": "Remove the Sun from the drawing."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Sin el Sol no hay calor que atrapar: el Sol es parte del mecanismo.",
+        "en": "Without the Sun there is no heat to trap: the Sun is part of the mechanism."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Un modelo explica algunas cosas, no todas.",
+     "en": "A model explains some things, not all."
+    },
+    {
+     "es": "Piensa en qué factores no aparecen en la cadena.",
+     "en": "Think about which factors don’t appear in the chain."
+    },
+    {
+     "es": "Ejemplo: la cadena habla del CO2, pero no dice cuánto calor atrapa cada gas.",
+     "en": "Example: the chain talks about CO2, but doesn’t say how much heat each gas traps."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte: qué muestra, qué deja fuera y cómo mejorarla.",
+     "en": "A part is missing: what it shows, what it leaves out and how to improve it."
+    },
+    "wrong": {
+     "es": "Mira de nuevo: algo de lo que elegiste no está en la cadena, o no la mejora.",
+     "en": "Look again: something you picked isn’t in the chain, or doesn’t improve it."
+    },
+    "ok": {
+     "es": "Evaluaste el modelo con honestidad: así sirve más.",
+     "en": "You evaluated the model honestly: that makes it more useful."
+    }
+   }
+  },
+  {
+   "id": "t7",
+   "kind": "transferir",
+   "ideaIds": [
+    "clima.evidencia",
+    "clima.humanos"
+   ],
+   "contextId": "ciudad",
+   "sessionId": "s6",
+   "standards": [
+    "MS-ESS3-5"
+   ],
+   "criterion": {
+    "es": "Usa lo aprendido en un caso nuevo: una ola de calor de una semana. Distingue tiempo de clima y propone una pregunta que se pueda investigar con datos.",
+    "en": "Uses what was learned in a new case: a week-long heat wave. Tells weather from climate and proposes a question that can be investigated with data."
+   },
+   "parts": [
+    {
+     "id": "prueba",
+     "prompt": {
+      "es": "Durante una semana hizo mucho calor en la ciudad de Maya. ¿Eso prueba el calentamiento de la Tierra?",
+      "en": "For a week it was very hot in Maya’s city. Does that prove the warming of the Earth?"
+     },
+     "options": [
+      {
+       "id": "no",
+       "text": {
+        "es": "No: una semana de calor es tiempo; el clima se ve en registros de muchos años.",
+        "en": "No: a week of heat is weather; climate shows in records of many years."
+       },
+       "valid": true
+      },
+      {
+       "id": "si",
+       "text": {
+        "es": "Sí: una semana de calor prueba el calentamiento.",
+        "en": "Yes: a week of heat proves the warming."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Una semana es tiempo, no clima: hacen falta registros de muchos años y de muchos lugares.",
+        "en": "A week is weather, not climate: records of many years and many places are needed."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    },
+    {
+     "id": "pregunta",
+     "prompt": {
+      "es": "¿Qué pregunta se puede investigar con datos?",
+      "en": "Which question can be investigated with data?"
+     },
+     "options": [
+      {
+       "id": "registro",
+       "text": {
+        "es": "¿Qué dice el registro de temperaturas de esta ciudad en los últimos 100 años?",
+        "en": "What does this city’s temperature record say for the last 100 years?"
+       },
+       "valid": true
+      },
+      {
+       "id": "series",
+       "text": {
+        "es": "¿Qué otras series (como el CO2 o el Sol) cambian a la vez que la temperatura?",
+        "en": "Which other series (like CO2 or the Sun) change at the same time as the temperature?"
+       },
+       "valid": true
+      },
+      {
+       "id": "culpa",
+       "text": {
+        "es": "¿Quién tiene la culpa de esta semana de calor?",
+        "en": "Who is to blame for this week of heat?"
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Esa pregunta no se puede investigar con datos; es mejor preguntar qué factores cambian y cómo.",
+        "en": "That question can’t be investigated with data; it is better to ask which factors change and how."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Piensa: ¿una semana es tiempo o clima?",
+     "en": "Think: is a week weather or climate?"
+    },
+    {
+     "es": "¿Qué se puede medir y comparar con datos?",
+     "en": "What can be measured and compared with data?"
+    },
+    {
+     "es": "Ejemplo: «¿cuánto subió el CO2 en 100 años?» se contesta con una serie.",
+     "en": "Example: “how much did CO2 rise in 100 years?” is answered with a series."
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Piensa en la diferencia entre tiempo y clima, y en lo que se puede medir.",
+     "en": "Think about the difference between weather and climate, and what can be measured."
+    },
+    "ok": {
+     "es": "Usaste lo aprendido en un caso nuevo.",
+     "en": "You used what you learned in a new case."
+    }
+   }
+  },
+  {
+   "id": "t8",
+   "kind": "reflexionar",
+   "ideaIds": [],
+   "contextId": "reflexion",
+   "sessionId": "s6",
+   "standards": [],
+   "criterion": {
+    "es": "Revisa su primera idea sobre la causa del calentamiento y dice si cambió. Cualquier respuesta honesta es válida.",
+    "en": "Revisits the first idea about the cause of the warming and says whether it changed. Any honest answer is valid."
+   },
+   "parts": [
+    {
+     "id": "idea",
+     "prompt": {
+      "es": "Mi idea sobre la causa del calentamiento…",
+      "en": "My idea about the cause of the warming…"
+     },
+     "options": [
+      {
+       "id": "cambio",
+       "text": {
+        "es": "cambió.",
+        "en": "changed."
+       },
+       "valid": true
+      },
+      {
+       "id": "igual",
+       "text": {
+        "es": "sigue igual.",
+        "en": "stayed the same."
+       },
+       "valid": true
+      }
+     ],
+     "min": 1,
+     "strict": false
+    },
+    {
+     "id": "porque",
+     "prompt": {
+      "es": "porque…",
+      "en": "because…"
+     },
+     "options": [
+      {
+       "id": "series",
+       "text": {
+        "es": "comparé las series de datos y el mecanismo.",
+        "en": "I compared the data series and the mechanism."
+       },
+       "valid": true
+      },
+      {
+       "id": "descarte",
+       "text": {
+        "es": "descarté causas que no cambian.",
+        "en": "I ruled out causes that don’t change."
+       },
+       "valid": true
+      },
+      {
+       "id": "dijeron",
+       "text": {
+        "es": "alguien me lo dijo.",
+        "en": "someone told me."
+       },
+       "valid": false,
+       "whyNot": {
+        "es": "Tú comparaste las series: usa lo que observaste.",
+        "en": "You compared the series yourself: use what you observed."
+       }
+      }
+     ],
+     "min": 1,
+     "strict": true
+    }
+   ],
+   "hints": [
+    {
+     "es": "Mira tu idea del principio.",
+     "en": "Look at your first idea."
+    },
+    {
+     "es": "¿Qué serie o mecanismo te hizo pensar así?",
+     "en": "Which series or mechanism made you think that?"
+    },
+    {
+     "es": "Ejemplo: si pensabas que era el Sol, ¿qué muestra su serie?",
+     "en": "Example: if you thought it was the Sun, what does its series show?"
+    }
+   ],
+   "feedback": {
+    "incomplete": {
+     "es": "Falta una parte.",
+     "en": "A part is missing."
+    },
+    "wrong": {
+     "es": "Piensa en algo que hiciste tú.",
+     "en": "Think of something you did yourself."
+    },
+    "ok": {
+     "es": "Revisar una idea con evidencia es hacer ciencia.",
+     "en": "Revisiting an idea with evidence is doing science."
+    }
+   }
+  }
+ ],
+ "safety": {
+  "title": {
+   "es": "Series de datos del clima (sin riesgos)",
+   "en": "Climate data series (no risks)"
+  },
+  "enabledByParent": true,
+  "supervision": {
+   "es": "Un adulto disponible para dudas (6.º, ≈ 11–12 años). La actividad en pantalla no tiene riesgos.",
+   "en": "An adult available for questions (grade 6, about 11–12 years old). The on-screen activity has no risks."
+  },
+  "materials": {
+   "es": "Opcional: papel y regla para dibujar a mano las series de la pantalla. No requiere materiales peligrosos.",
+   "en": "Optional: paper and a ruler to draw the on-screen series by hand. No hazardous materials needed."
+  },
+  "place": {
+   "es": "Una mesa en la casa o en el salón.",
+   "en": "A table at home or in the classroom."
+  },
+  "hygiene": {
+   "es": "No aplica.",
+   "en": "Not applicable."
+  },
+  "closing": {
+   "es": "Guardar el papel.",
+   "en": "Put the paper away."
+  },
+  "stopIf": [
+   {
+    "es": "Alguien se angustia con el tema del clima: se hace una pausa y se habla con un adulto.",
+    "en": "Someone gets anxious about the climate topic: pause and talk with an adult."
+   },
+   {
+    "es": "Se pide usar los números como si fueran registros reales de una institución.",
+    "en": "Someone asks to use the numbers as if they were real records of an institution."
+   },
+   {
+    "es": "Se saca la conclusión de que un día de calor prueba o desmiente algo.",
+    "en": "Someone concludes that one hot day proves or disproves something."
+   },
+   {
+    "es": "El adulto no puede estar disponible.",
+    "en": "The adult can’t be available."
+   }
+  ],
+  "excluded": {
+   "es": "Presentar los números de práctica como datos de una institución, y alarmar al estudiante en vez de enseñarle a razonar con evidencia.",
+   "en": "Presenting the practice numbers as data from an institution, and alarming the student instead of teaching them to reason with evidence."
+  },
+  "data": {
+   "es": "No requiere cámara, micrófono, fotos ni ubicación.",
+   "en": "Needs no camera, microphone, photos or location."
+  },
+  "digitalAlternative": {
+   "es": "Las sesiones S2, S3 y S4 en pantalla reemplazan la actividad completa.",
+   "en": "Sessions S2, S3 and S4 on screen replace the whole activity."
+  },
+  "review": "pendienteDocente"
+ },
+ "review": {
+  "status": "draftPendingTeacherReview",
+  "notes": "Ningún docente ha validado esta unidad. El código es candidato; solo lo ven los padres. Los números son de práctica (inventados, con la forma de registros reales) y no se atribuyen a ninguna institución; un docente debe revisar el tono de las conclusiones."
+ }
+}

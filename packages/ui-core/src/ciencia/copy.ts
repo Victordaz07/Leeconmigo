@@ -319,6 +319,19 @@ export const CIENCIA_COPY = {
     transfers: L('Se transfiere', 'Is transferred'),
     safe: L('Sin riesgos: es una prueba en pantalla.', 'No risks: it is an on-screen test.'),
   },
+  /** Las series de datos del clima y el mecanismo del CO2 (C6-U07). */
+  trend: {
+    chartTitle: (name: string) => L(name, name),
+    xLabel: L('Año', 'Year'),
+    description: (name: string, trend: string) => L(`${name}: ${trend}.`, `${name}: ${trend}.`),
+    addPick: L('Toca una serie para agregarla a la gráfica.', 'Tap a series to add it to the graph.'),
+    added: (n: number, t: number) => L(`Agregaste ${String(n)} de ${String(t)} series`, `You added ${String(n)} of ${String(t)} series`),
+    done: L('Ya agregaste lo que hacía falta. Puedes seguir mirando.', 'You added what was needed. You can keep looking.'),
+    look: (name: string, trend: string) => L(`${name}: ${trend}.`, `${name}: ${trend}.`),
+    mechanismTitle: L('Cómo el CO2 atrapa calor', 'How CO2 traps heat'),
+    practiceNote: L('Datos de práctica: tienen la forma de registros reales, pero son inventados para aprender.', 'Practice data: shaped like real records, but made up for learning.'),
+    unit: (u: string) => L(`Unidad: ${u}`, `Unit: ${u}`),
+  },
   /** Detectives de materiales: mirar con la lupa y agrupar por una propiedad (C2-U01). */
   sort: {
     lens: (name: string) => L(`Con la lupa: ${name}`, `With the lens: ${name}`),
