@@ -140,7 +140,7 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 |---|---|---|---|---|
 | AR-01 | Investigación de Artes y de los módulos «Para la vida» recibida y copiada | ✅ | A | `docs/research/artes-investigacion.md`, `vida-*.md` |
 | AR-02 | Especificación adaptada al repo + decisión D14 | ✅ | A | `docs/design/artes/ESPECIFICACION.md` |
-| AR-T1 | Prueba técnica de audio: motor puro (`packages/music-engine`), `FakeAudioOutput`, **16 sonidos sintetizados elegibles por fila**, pantalla «Prueba de audio» en Ajustes de padres | 🟡 | A | Código y pruebas listos (34 pruebas); **falta probarla en la tableta de Victor** con un APK nuevo (dependencias nativas nuevas) |
+| AR-T1 | Prueba técnica de audio: motor puro (`packages/music-engine`), `FakeAudioOutput`, **16 sonidos sintetizados elegibles por fila**, pantalla «Prueba de audio» en Ajustes de padres | 🟡 | A | Código y pruebas listos (34 pruebas); tableta de Victor: **140 BPM × 5 min pasa** (0 congelamientos, «parejo»); faltan 60 y 90 BPM |
 | AR-T2 | Prueba técnica del lienzo (Skia) | ⬜ | – | después de AR-T1 |
 | AR-T3 | Prueba técnica 3D (`expo-gl`) | ⬜ | – | después de AR-T2 |
 | AR-03 | Módulo `arte` enchufado + `packages/art-content` + proyecto editable en SQLite | ⬜ | – | tras AR-T1 |
