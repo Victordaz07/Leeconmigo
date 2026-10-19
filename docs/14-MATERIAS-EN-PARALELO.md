@@ -8,6 +8,7 @@ tiempo. Este documento dice cómo, para que no se pisen. Complementa el "Protoco
 |---|---|---|---|---|---|
 | Ciencia | A | `claude/ciencia-*` (o la que asigne la sesión) | `packages/science-content` | `apps/mobile/src/subjects/ciencia/` | `CI-xx` |
 | Sociedad | B | `claude/sociedad-*` (o la que asigne la sesión) | `packages/social-content` | `apps/mobile/src/subjects/sociedad/` | `SO-xx` |
+| Arte y música (D14) | A (por ahora; Victor puede asignar otra) | `claude/artes-*` (o la que asigne la sesión) | `packages/art-content` y `packages/music-engine` | `apps/mobile/src/subjects/arte/` | `AR-xx` |
 
 Si una cuenta cambia de materia, se cambia aquí y en `docs/handoff/`.
 
@@ -17,6 +18,8 @@ Si una cuenta cambia de materia, se cambia aquí y en `docs/handoff/`.
 `docs/log/ciencia.md`, `docs/design/ciencia/**`, `docs/research/*ciencia*`, sus filas `CI-xx`.
 
 **De Sociedad:** lo mismo con `sociedad` / `social-content` / `SO-xx`.
+
+**De Arte y música:** `apps/mobile/src/subjects/arte/**`, `apps/mobile/src/audio/**`, `apps/mobile/src/screens/audio-test-screen.tsx`, `packages/art-content/**`, `packages/music-engine/**`, `packages/ui-core/src/arte/**`, `packages/ui-native/src/components/arte/**`, `apps/mobile/assets/arte/**`, `docs/handoff/artes.md`, `docs/log/artes.md`, `docs/design/artes/**`, `docs/research/artes*`, sus filas `AR-xx`. Los módulos de «Para la vida» (Finanzas, Emociones, Comunicación…) serán cuadernos separados, cada uno con su propia fila de esta tabla cuando se empiece.
 
 **Compartido (NO se edita desde una materia sin avisar a Victor):** `apps/mobile/App.tsx`, `home-screen.tsx`,
 `subjects/registry.ts`, `subjects/types.ts`, `persist/store.ts`, `ui-core/src/index.ts`, `ui-native/src/index.ts`,

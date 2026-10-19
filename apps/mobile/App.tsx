@@ -24,6 +24,7 @@ import { ParentGateScreen } from './src/screens/parent-gate-screen';
 import { ParentHomeScreen } from './src/screens/parent-home-screen';
 import { ParentSettingsScreen } from './src/screens/parent-settings-screen';
 import { ProfilesScreen } from './src/screens/profiles-screen';
+import { AudioTestScreen } from './src/screens/audio-test-screen';
 import { VoiceTestScreen } from './src/screens/voice-test-screen';
 import { ReadingScreen } from './src/screens/reading-screen';
 import { Showcase } from './src/screens/showcase';
@@ -34,6 +35,7 @@ type Route =
   | { name: 'parents' }
   | { name: 'settings'; isNew: boolean }
   | { name: 'voiceTest' }
+  | { name: 'audioTest' }
   | { name: 'mathNotebook' }
   | { name: 'mathLesson'; lessonId: string }
   | { name: 'mathWorkshop' }
@@ -166,6 +168,7 @@ function Root() {
     );
   }
   if (route.name === 'voiceTest') return <VoiceTestScreen language={profile.language === 'en' ? 'en' : 'es'} onBack={() => setRoute({ name: 'settings', isNew: false })} />;
+  if (route.name === 'audioTest') return <AudioTestScreen onBack={() => setRoute({ name: 'settings', isNew: false })} />;
   if (route.name === 'settings') {
     const toPanel = () => setRoute({ name: 'parents' });
     return (
@@ -197,6 +200,7 @@ function Root() {
           setRoute({ name: 'parentGate', next: 'parents' });
         }}
         onVoiceTest={() => setRoute({ name: 'voiceTest' })}
+        onAudioTest={() => setRoute({ name: 'audioTest' })}
       />
     );
   }
