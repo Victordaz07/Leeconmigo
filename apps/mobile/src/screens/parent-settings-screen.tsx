@@ -20,6 +20,8 @@ interface ParentSettingsScreenProps {
   /** Abre la prueba de voz (RN-03). */
   onVoiceTest?: () => void;
   onAudioTest?: () => void;
+  /** Abre la prueba del lienzo de dibujo (AR-T2). */
+  onCanvasTest?: () => void;
 }
 
 const LEVELS = [1, 2, 3, 4, 5, 6];
@@ -33,7 +35,7 @@ const LANGUAGES: { id: LanguageCode; label: string }[] = [
  * lectura libre, Modo Enfoque y privacidad. El nivel es de la app, NO el grado escolar (docs/01). En Modo Enfoque solo
  * aparecen los apoyos que ya cambian algo (no se pone un interruptor que no haga nada).
  */
-export function ParentSettingsScreen({ initial, isNew, onSave, onCancel, onResetProgress, onRemove, onChangePin, onVoiceTest, onAudioTest }: ParentSettingsScreenProps) {
+export function ParentSettingsScreen({ initial, isNew, onSave, onCancel, onResetProgress, onRemove, onChangePin, onVoiceTest, onAudioTest, onCanvasTest }: ParentSettingsScreenProps) {
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const one = layout.narrow || layout.portrait;
@@ -82,6 +84,12 @@ export function ParentSettingsScreen({ initial, isNew, onSave, onCancel, onReset
             <Section title="Arte y música">
               <Text style={styles.note}>Comprueba que el ritmo de ocho pulsos suene parejo en este equipo. No usa micrófono ni cámara.</Text>
               <Button label="Probar el audio del taller" variant="secondary" onPress={onAudioTest} />
+              {onCanvasTest && (
+                <>
+                  <Text style={styles.note}>Comprueba que dibujar con el dedo o el lápiz sea fluido y que no se pierdan trazos.</Text>
+                  <Button label="Probar el lienzo de dibujo" variant="secondary" onPress={onCanvasTest} />
+                </>
+              )}
             </Section>
           )}
 
