@@ -19,6 +19,7 @@ interface ParentSettingsScreenProps {
   onChangePin?: () => void;
   /** Abre la prueba de voz (RN-03). */
   onVoiceTest?: () => void;
+  onAudioTest?: () => void;
 }
 
 const LEVELS = [1, 2, 3, 4, 5, 6];
@@ -32,7 +33,7 @@ const LANGUAGES: { id: LanguageCode; label: string }[] = [
  * lectura libre, Modo Enfoque y privacidad. El nivel es de la app, NO el grado escolar (docs/01). En Modo Enfoque solo
  * aparecen los apoyos que ya cambian algo (no se pone un interruptor que no haga nada).
  */
-export function ParentSettingsScreen({ initial, isNew, onSave, onCancel, onResetProgress, onRemove, onChangePin, onVoiceTest }: ParentSettingsScreenProps) {
+export function ParentSettingsScreen({ initial, isNew, onSave, onCancel, onResetProgress, onRemove, onChangePin, onVoiceTest, onAudioTest }: ParentSettingsScreenProps) {
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const one = layout.narrow || layout.portrait;
@@ -76,6 +77,13 @@ export function ParentSettingsScreen({ initial, isNew, onSave, onCancel, onReset
           </Section>
 
           <FocusSection value={p.focus} onChange={(v) => set('focus', v)} />
+
+          {onAudioTest && (
+            <Section title="Arte y música">
+              <Text style={styles.note}>Comprueba que el ritmo de ocho pulsos suene parejo en este equipo. No usa micrófono ni cámara.</Text>
+              <Button label="Probar el audio del taller" variant="secondary" onPress={onAudioTest} />
+            </Section>
+          )}
 
           <Section title="Privacidad">
             <View style={styles.toggleRow}>
