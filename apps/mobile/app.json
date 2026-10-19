@@ -31,7 +31,16 @@
     },
     "plugins": [
       "expo-font",
-      "expo-navigation-bar"
+      "expo-navigation-bar",
+      [
+        "react-native-audio-api",
+        {
+          "iosBackgroundMode": false,
+          "androidPermissions": [],
+          "androidForegroundService": false,
+          "disableFFmpeg": true
+        }
+      ]
     ]
   }
 }

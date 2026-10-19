@@ -135,3 +135,18 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | SO-10 | Investigación de validación histórica (prompt propio) → correcciones aplicadas | ✅ | B | 4.º y 5.º revisión profunda (cita/opciones corregidas), 1.º/2.º/6.º cambios menores (estándar, enfoque); no sustituye SO-08 |
 | SO-11 | Bug: "Fuentes usadas 0/3" y motivo de fuentes en unidades sin fuentes (1.º, 6.º) | ✅ | B | reportado por la cuenta de Ciencia; `closingStatsFor` + claves de razón nuevas (`reasoning`/`reasoningAndCare`), con pruebas |
 
+## Arte y música — cuaderno `arte` (D14, `docs/design/artes/ESPECIFICACION.md`, `docs/handoff/artes.md`)
+
+| ID | Tarea | Estado | Cuenta | Rama / nota |
+|---|---|---|---|---|
+| AR-01 | Investigación de Artes y de los módulos «Para la vida» recibida y copiada | ✅ | A | `docs/research/artes-investigacion.md`, `vida-*.md` |
+| AR-02 | Especificación adaptada al repo + decisión D14 | ✅ | A | `docs/design/artes/ESPECIFICACION.md` |
+| AR-T1 | Prueba técnica de audio: motor puro (`packages/music-engine`), `FakeAudioOutput`, **16 sonidos sintetizados elegibles por fila**, pantalla «Prueba de audio» en Ajustes de padres | 🟡 | A | Código y pruebas listos (34 pruebas); **falta probarla en la tableta de Victor** con un APK nuevo (dependencias nativas nuevas) |
+| AR-T2 | Prueba técnica del lienzo (Skia) | ⬜ | – | después de AR-T1 |
+| AR-T3 | Prueba técnica 3D (`expo-gl`) | ⬜ | – | después de AR-T2 |
+| AR-03 | Módulo `arte` enchufado + `packages/art-content` + proyecto editable en SQLite | ⬜ | – | tras AR-T1 |
+| AR-04 | Taller de ritmo A1-U04 con Taller libre y portafolio | ⬜ | – | |
+| AR-05 | Pintura y paleta (modelo de mezcla documentado) | ⬜ | – | |
+| AR-06 | Collage y flipbook | ⬜ | – | |
+| AR-07 | Ensamblaje 3D (si AR-T3 pasa) | ⬜ | – | |
+| AR-08 | Cápsulas culturales con permisos y revisión de un maestro | ⬜ | – | |
