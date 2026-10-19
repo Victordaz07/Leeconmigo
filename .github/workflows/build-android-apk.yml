@@ -15,6 +15,7 @@ on:
 
 # build 4: Modo Padres bilingüe (c949ad8)
 # build 5: Modo Padres completo EN/ES + pantalla completa en Android (356d75d)
+# build 6: merge con master (Arte y música de Ciencia, PR #5/#6) (5442ab8)
 
 permissions:
   contents: write
