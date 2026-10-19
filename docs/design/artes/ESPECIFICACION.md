@@ -130,7 +130,7 @@ Hasta que Victor confirme los temas y la escucha cultural, el encuentro 6 queda 
 | **AR-T2** | Lienzo con Skia: trazo con dedo/lápiz, grosor, deshacer, 60 s de dibujo seguido | Sin pérdida de trazos, cancelar un trazo no lo deja colgado, memoria estable | Lienzo de SVG (más simple, menos capas) |
 | **AR-T3** | Escena 3D con 5 sólidos y cámara con `expo-gl` | ≥ 30 cuadros/s en la tableta, vistas frente/lado/arriba correctas | Vistas 2.5D etiquetadas como tales (la investigación ya lo prevé) |
 
-AR-T1 está construido en este paso: pantalla **Prueba de audio** en Ajustes de padres. Resultados a `docs/log/artes.md`.
+AR-T1 (aprobada): pantalla **Prueba de audio** en Ajustes de padres. AR-T2 (construida): pantalla **Prueba del lienzo**, mismo lugar; los toques usan el sistema de gestos de React Native, por lo que no se necesita `react-native-gesture-handler`. Resultados a `docs/log/artes.md`.
 
 ## 7. Evaluación (propuesta por validar; no diagnostica talento)
 
@@ -152,7 +152,7 @@ principal (VA, MU, MA, TH, DA). Los códigos de estándares **no se asignan por 
 | AR-01 | Investigación recibida y copiada (hecho) |
 | AR-02 | Esta especificación y decisión D14 (hecho) |
 | AR-T1 | Prueba técnica de audio: motor puro + `FakeAudioOutput` + pantalla de prueba (✅ aprobada en la tableta, 2026-10-19) |
-| AR-T2 | Prueba técnica del lienzo (Skia) |
+| AR-T2 | Prueba técnica del lienzo (Skia): `packages/art-content` + pantalla de prueba (hecho el código; **falta probar en la tableta**) |
 | AR-T3 | Prueba técnica 3D |
 | AR-03 | Módulo `arte` enchufado como «Pronto» + `packages/art-content` + esquema de proyecto y guardado en SQLite |
 | AR-04 | Taller de ritmo (A1-U04) completo con Taller libre y portafolio |

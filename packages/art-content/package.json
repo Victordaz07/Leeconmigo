@@ -1,0 +1,15 @@
+{
+  "name": "@lee-conmigo/art-content",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Arte y música: lógica pura del lienzo de dibujo (trazos, pincel, deshacer/rehacer, cancelar) y su guardado. Sin pantallas.",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json"
+  }
+}

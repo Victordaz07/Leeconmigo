@@ -15,3 +15,9 @@
 ## 2026-10-19 · AR-T1: audio aprobado en la tableta
 - Cuatro corridas de 5:00 con el secuenciador real (`react-native-audio-api`), todas «parejo», 0 congelamientos y 0 pasos saltados: 60 BPM (hueco máx. 45 ms), 90 BPM (44 ms), 120 BPM (43 ms), 140 BPM (81 ms). Media de 33,3 ms entre llamadas en todas.
 - **Veredicto: el enfoque de audio funciona; AR-T1 pasa en lo esencial (reproducción continua y pareja).** Queda como comprobación corta (30 s) lo que las corridas no ejercitaron («segundo plano» salió 0 en todas): salir de la app a mitad de ritmo y volver, y detener/reanudar.
+
+## 2026-10-19 · AR-T2: lienzo de dibujo (código y pantalla de prueba)
+- Victor aprobó DA-7. Se agregó `@shopify/react-native-skia` 2.6.2 (versión que fija Expo SDK 57). `react-native-gesture-handler` no hizo falta: los toques se manejan con el sistema de gestos de React Native (un segundo dedo o el segundo plano cancelan el trazo).
+- `packages/art-content` (nuevo, 22 pruebas): trazos, trazo activo único, cancelar sin dejarlo colgado, deshacer/rehacer, goma, presión, camino suavizado, topes de memoria y guardado validado.
+- Pantalla «Prueba del lienzo» (Ajustes de padres): prueba de 60 s con contadores y veredicto. Verificada en Chromium con el respaldo SVG (3 trazos, deshacer/rehacer, trazo con dedo puesto → 0 colgados, 0 cuadros lentos) y empaquetada para Android sin errores. 1586 pruebas en verde.
+- Pendiente: probarla en la tableta con un APK nuevo.
