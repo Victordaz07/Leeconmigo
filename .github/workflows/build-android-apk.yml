@@ -1,0 +1,86 @@
+name: Build Android APK (demo)
+
+# Compila un APK de prueba de Kitewise (firmado con la llave de depuración de Expo, NO para la tienda).
+# Pasos documentados en apps/mobile/README.md "APK de prueba". Se corre a mano desde GitHub Actions porque
+# esta sesión de Claude en la nube no tiene acceso de red a dl.google.com ni huggingface.co, necesarios para
+# bajar el SDK de Android y los modelos de voz; los runners de GitHub Actions sí tienen internet completo.
+on:
+  workflow_dispatch: {}
+  # El token de la app de GitHub conectada no puede disparar workflow_dispatch por API (403), así que durante
+  # esta ronda de arreglos a pedido de Victor se dispara con cada push que toque el workflow (se "toca" este
+  # archivo con un comentario cuando hace falta un build nuevo) — no con cualquier push a la rama.
+  push:
+    branches: [claude/sociedad-victor]
+    paths: ['.github/workflows/build-android-apk.yml']
+
+# build 4: Modo Padres bilingüe (c949ad8)
+# build 5: Modo Padres completo EN/ES + pantalla completa en Android (356d75d)
+# build 6: merge con master (Arte y música de Ciencia, PR #5/#6) (5442ab8)
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      # Los runners ubuntu-latest de GitHub ya traen el SDK de Android (ANDROID_HOME) con las licencias
+      # aceptadas. `android-actions/setup-android@v3` fallaba porque intenta instalar el paquete 'tools',
+      # que Google retiró del repositorio hace años.
+      - name: Confirmar el SDK de Android preinstalado
+        run: |
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          echo "$ANDROID_HOME/cmdline-tools/latest/bin" >> "$GITHUB_PATH"
+          echo "$ANDROID_HOME/platform-tools" >> "$GITHUB_PATH"
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses >/dev/null 2>&1 || true
+
+      - name: Instalar dependencias del monorepo
+        run: npm ci
+
+      - name: Bajar los modelos de voz (whisper.cpp / Silero VAD)
+        run: npm run models -w @lee-conmigo/mobile
+
+      - name: Generar el proyecto Android (expo prebuild)
+        working-directory: apps/mobile
+        run: npx expo prebuild --platform android --no-install
+
+      - name: Compilar el APK de prueba (release, llave de depuración)
+        working-directory: apps/mobile/android
+        env:
+          EXPO_PUBLIC_DEMO: '1'
+          NODE_ENV: production
+        run: |
+          echo "sdk.dir=$ANDROID_HOME" > local.properties
+          ./gradlew assembleRelease --no-daemon
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kitewise-demo-apk
+          path: apps/mobile/android/app/build/outputs/apk/release/app-release.apk
+          retention-days: 14
+          if-no-files-found: error
+
+      # Además del artifact: los artifacts de Actions solo se bajan desde Azure Blob Storage, que la sesión de
+      # Claude que arma esto no puede alcanzar. Un GitHub Release sí se puede bajar desde ahí (otro dominio).
+      - name: Publicar el APK como GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="apk-demo-${{ github.run_number }}"
+          gh release create "$TAG" \
+            apps/mobile/android/app/build/outputs/apk/release/app-release.apk \
+            --repo "${{ github.repository }}" \
+            --title "Kitewise — APK de prueba #${{ github.run_number }}" \
+            --notes "APK de prueba (firmado con la llave de depuración de Expo, no para la tienda). Build automático desde \`${{ github.ref_name }}\` (${{ github.sha }})."

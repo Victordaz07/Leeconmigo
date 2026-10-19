@@ -1,5 +1,5 @@
 # HANDOFF — Sociedad
-Actualizado: 2026-10-16 · Cuenta: B · Rama: `claude/sociedad-victor` · Protocolo: `docs/14-MATERIAS-EN-PARALELO.md`
+Actualizado: 2026-10-17 · Cuenta: B · Rama: `claude/sociedad-victor` · Protocolo: `docs/14-MATERIAS-EN-PARALELO.md`
 Tu materia es **Sociedad**; la otra cuenta trabaja **Ciencia** en paralelo. Edita solo lo tuyo (ver docs/14).
 
 ## Dónde estamos
@@ -17,8 +17,34 @@ Sociedad es un camino de 6 paradas (como Matemáticas), no una sola unidad. `ava
 | 5.º | S5-U04 "Un ideal escrito y una realidad histórica" | 2 testimonios + clasificar, tema sensible | no necesita (a propósito) |
 | 6.º | S6-U02 "Un asentamiento junto al río" | simulación ficticia, puro razonamiento | ✅ `asentamiento_mapa` |
 
-Hecho: SO-01 a SO-10 para las 6 (ver checklist). Pendiente real: **solo SO-08** (revisión de un maestro, con
-atención extra a 4.º y 5.º por temas sensibles) y la verificación visual en equipo real.
+Hecho: SO-01 a SO-11 para las 6 (ver checklist). Pendiente real: **solo SO-08** (revisión de un maestro, con
+atención extra a 4.º y 5.º por temas sensibles).
+
+**SO-11 (nuevo, 2026-10-17):** la cuenta de Ciencia (fusionó su PR #3, 18 unidades jugables) reportó, al revisar
+el proyecto en paralelo, que la tarjeta de cierre mostraba «Fuentes usadas 0/3» y un motivo basado en fuentes
+("por usar varias fuentes...") en las unidades de 1.º y 6.º, que son puro razonamiento/simulación sin ninguna
+fuente. Además el "/3" estaba fijo: las unidades que sí tienen fuentes traen 2 o 3, nunca siempre 3. Arreglado:
+- `packages/social-content/src/session.ts`: `SessionEvaluation` ahora lleva `hasSources`; `investigationReasonKey`
+  usa dos claves nuevas (`reasoningAndCare`/`reasoning`) para unidades sin fuentes, que no mencionan "fuentes" ni
+  "hueco" (esas palabras no aplican cuando no hay fuentes que mostrar).
+- `packages/ui-core/src/sociedad/copy.ts`: texto ES/EN de esas dos claves nuevas.
+- `apps/mobile/src/sociedad-closing.ts` (nuevo, función pura `closingStatsFor`): solo agrega el contador de
+  fuentes cuando `unit.sources.length > 0`, con el denominador real (no "/3" fijo). La pantalla de investigación
+  ya lo usa en vez de armar el arreglo de estadísticas a mano.
+- Pruebas nuevas en `session.test.ts` (hasSources y la razón correcta en s1u01 y s6u02, las dos unidades sin
+  fuentes) y `sociedad-closing.test.ts` (el contador no aparece sin fuentes; aparece con el denominador correcto
+  cuando sí hay, probado con 2 y con 3 fuentes).
+
+**SO-07 (completado, 2026-10-17):** verificación visual real en navegador — `npx expo export --platform web` +
+Playwright (Chromium) contra las 6 unidades en los 4 tamaños pedidos (tableta horizontal 1280×800, tableta
+vertical 800×1280, teléfono 390×844, teléfono pequeño 360×640). Flujo automático: perfil de Noah → check-in de
+energía → cuaderno de Sociedad → abrir cada una de las 6 unidades → completar cada paso (fuente/testimonio/
+elegir con la primera opción, comparar con "Sigue igual" en cada afirmación, explicar marcando 2 fuentes) → llegar
+a la tarjeta de cierre. 24 corridas (6 unidades × 4 tamaños), revisión automática de overflow horizontal y de
+botones/opciones con el borde fuera del viewport en cada paso: **0 problemas**. Revisión visual manual adicional
+de una muestra (notebook, mesa de fuentes, mapa por capas con 3 afirmaciones, cierre con y sin fuentes) en
+teléfono pequeño y tableta vertical: sin texto cortado, sin botones fuera de pantalla. No se guardaron las
+capturas (carpeta de trabajo descartada al terminar, no es parte del repo).
 
 **SO-10 (nuevo, 2026-10-17):** le pedí a Victor un prompt de investigación (`docs/research/PROMPT-INVESTIGACION-
 VALIDACION-SOCIEDAD.md`) para verificar con fuentes reales cada afirmación histórica concreta de las 6 unidades
@@ -90,13 +116,12 @@ pasos de elección — nunca de "adivinar".
 1. **SO-08 — revisión de un maestro**, las 6, con **atención extra a 4.º y 5.º** (temas sensibles: misiones,
    esclavitud): se escribió con mucho cuidado (texto propio, no fuentes reales reclamadas, sin escenas gráficas
    ni juegos de dominación, siguiendo las precauciones explícitas de `docs/research/sociedad-investigacion.md`
-   §10), pero un maestro de verdad tiene que confirmar que el tono y el contenido están bien antes de que
-   cualquier niño las use. `standardsReview.confidence: "lowSensitiveTopic"` en esas dos, para que se note la
-   diferencia con las demás.
-2. **Verificación visual en 4 tamaños**: solo se verificó `npm run typecheck` (monorepo completo, limpio) y
-   `npm test` (**1222/1222** ✅). **No se corrió la app real** — `expo export --platform android` llegó hasta
-   1302 módulos y falló en un punto **no relacionado** (modelos de voz `.bin` ausentes, sin red en esta sesión
-   para bajarlos). Falta que Victor la abra en su Android/tablet cuando pida el próximo APK.
+   §10, y corregido con fuentes reales en SO-10), pero un maestro de verdad tiene que confirmar que el tono y el
+   contenido están bien antes de que cualquier niño las use. `standardsReview.confidence: "lowSensitiveTopic"`
+   en esas dos, para que se note la diferencia con las demás. **Único pendiente real que queda.**
+2. **Verificación visual**: ya hecha en navegador (SO-07, ver arriba), pero sigue faltando abrirla en un
+   Android/tablet real (con `whisper.rn`, fuentes del sistema, etc.) — eso solo lo puede hacer Victor cuando
+   pida el próximo APK; no se genera APK desde aquí.
 3. **Sin reanudar a medias**: cerrar una investigación y volver a abrirla empieza de cero. Aceptable por ahora;
    si se siente mal en uso real, guardar `stepIndex` y las respuestas parciales.
 4. **"Otra vez" del cierre** vuelve al cuaderno, no reinicia en el lugar. Simple y seguro, pero no es "otra vez"
@@ -135,6 +160,8 @@ pasos de elección — nunca de "adivinar".
   `testimonio`, `elegir`, `explicar`, `revisar`) antes de inventar un tipo de paso nuevo.
 
 ## Estado de pruebas
-`npm test`: **1222/1222 ✅** (1202 + 20 nuevas: dominio de las 6 unidades, validación, textos ES/EN). `npm run
-typecheck` en todo el monorepo: limpio. `expo export --platform android`: llega a 1302 módulos, falla por
-modelos de voz ausentes (no relacionado con Sociedad).
+`npm test`: **1538/1538 ✅** (incluye las 18 unidades de Ciencia fusionadas en master + 8 pruebas nuevas de
+Sociedad del bugfix SO-11). `npm run typecheck` en todo el monorepo: limpio. `expo export --platform web`:
+exporta limpio (usado para la verificación visual SO-07). `expo export --platform android`: no se volvió a
+correr esta sesión (el bloqueo conocido, modelos de voz `.bin` ausentes sin red, es de infraestructura, no de
+Sociedad).

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { FOCUS_FACES, type FocusSelfReport } from '@lee-conmigo/ui-core';
+import { CLOSING_COPY, FOCUS_FACES, type EffortLang, type FocusSelfReport } from '@lee-conmigo/ui-core';
 import { colors, fontFamily, radius } from '../tokens.ts';
 import { Button } from './button.tsx';
 import { useLayout } from './use-layout.ts';
@@ -18,13 +18,15 @@ interface ClosingCardProps {
   stats: ClosingStat[];
   onAgain: () => void;
   onDone: (focus?: FocusSelfReport) => void;
+  /** Idioma del niño activo. Opcional con default 'es' para no romper a quien todavía no lo pasa (docs/14). */
+  lang?: EffortLang;
 }
 
 /**
  * Cierre de sesión de Kitewise (B13): estrellas POR ESFUERZO (D11), tiempo, papalote, sello del día, palabras que vuelven y
  * "¿Cómo estuvo tu enfoque?" con 3 caritas (autoevaluación, nunca nota). "Guardar en mi cuaderno" llega con Mi cuaderno (K8).
  */
-export function ClosingCard({ name, stars, reason, stats, onAgain, onDone }: ClosingCardProps) {
+export function ClosingCard({ name, stars, reason, stats, onAgain, onDone, lang = 'es' }: ClosingCardProps) {
   const [focus, setFocus] = useState<FocusSelfReport | undefined>();
   const { narrow, short } = useLayout();
   const small = narrow || short;
@@ -32,8 +34,8 @@ export function ClosingCard({ name, stars, reason, stats, onAgain, onDone }: Clo
     <View style={styles.scrim} accessibilityViewIsModal>
       <ScrollView style={styles.flex} contentContainerStyle={[styles.center, small && styles.centerSmall]}>
       <View style={[styles.card, small && styles.cardSmall]}>
-        <Text style={[styles.title, small && styles.titleSmall]}>¡Buen trabajo, {name}!</Text>
-        <View style={styles.stars} accessible accessibilityLabel={`${stars} de 3 estrellas ${reason}`}>
+        <Text style={[styles.title, small && styles.titleSmall]}>{CLOSING_COPY.title[lang](name)}</Text>
+        <View style={styles.stars} accessible accessibilityLabel={`${CLOSING_COPY.starsOf3[lang](stars)} ${reason}`}>
           {[0, 1, 2].map((i) => (
             <Text key={i} style={[styles.star, i === 1 && styles.starBig, small && styles.starSmall, small && i === 1 && styles.starBigSmall, { color: i < stars ? colors.gold : colors.track }]}>
               ★
@@ -52,19 +54,19 @@ export function ClosingCard({ name, stars, reason, stats, onAgain, onDone }: Clo
           ))}
         </View>
         <View style={[styles.focus, small && styles.focusSmall]}>
-          <Text style={[styles.focusText, small && styles.focusTextSmall]}>¿Cómo estuvo tu enfoque?</Text>
+          <Text style={[styles.focusText, small && styles.focusTextSmall]}>{CLOSING_COPY.focusQuestion[lang]}</Text>
           {FOCUS_FACES.map((f) => (
-            <Pressable key={f.value} onPress={() => setFocus(f.value)} accessibilityRole="radio" accessibilityLabel={f.label} accessibilityState={{ selected: focus === f.value }} style={[styles.face, focus === f.value && styles.faceOn]}>
+            <Pressable key={f.value} onPress={() => setFocus(f.value)} accessibilityRole="radio" accessibilityLabel={f.label[lang]} accessibilityState={{ selected: focus === f.value }} style={[styles.face, focus === f.value && styles.faceOn]}>
               <Text style={styles.faceGlyph}>{f.glyph}</Text>
             </Pressable>
           ))}
         </View>
         <View style={[styles.actions, narrow && styles.actionsNarrow]}>
           <View style={styles.flex}>
-            <Button label="Leer de nuevo" variant="secondary" onPress={onAgain} />
+            <Button label={CLOSING_COPY.again[lang]} variant="secondary" onPress={onAgain} />
           </View>
           <View style={styles.flex}>
-            <Button label="Listo" onPress={() => onDone(focus)} />
+            <Button label={CLOSING_COPY.done[lang]} onPress={() => onDone(focus)} />
           </View>
         </View>
       </View>

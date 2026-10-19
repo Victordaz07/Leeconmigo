@@ -136,4 +136,61 @@ describe('unidad sin fuentes (s1u01, puro razonamiento) — pasos "elegir"', () 
     expect(ev.completed).toBe(true);
     expect(investigationStars(ev)).toBe(1);
   });
+
+  it('marca hasSources=false y nunca una razón de "fuentes" (bug: cierre mostraba un motivo de fuentes sin tenerlas)', () => {
+    let s = initialSession;
+    for (const step of s1.steps) {
+      if (step.kind === 'elegir') s = sessionReducer(s, { type: 'choose', stepId: step.id, choiceId: step.preferredChoiceIds[0] });
+      s = sessionReducer(s, { type: 'next', unit: s1 });
+    }
+    const ev = evaluateSession(s1, s);
+    expect(ev.hasSources).toBe(false);
+    const key = investigationReasonKey(ev);
+    expect(key).toBe('reasoningAndCare');
+    expect(['sourcesAndGap', 'sources', 'gap']).not.toContain(key);
+  });
+
+  it('en una unidad sin fuentes, calidad parcial da la razón "reasoning" (nunca "sources")', () => {
+    let s = initialSession;
+    let elegirSeen = 0;
+    for (const step of s1.steps) {
+      if (step.kind === 'elegir') {
+        // La primera elección sale no preferida, el resto preferidas: calidad 0.75 (>=0.5, <1).
+        const choiceId = elegirSeen === 0 ? step.choices.find((c) => !step.preferredChoiceIds.includes(c.id))!.id : step.preferredChoiceIds[0];
+        s = sessionReducer(s, { type: 'choose', stepId: step.id, choiceId });
+        elegirSeen += 1;
+      }
+      s = sessionReducer(s, { type: 'next', unit: s1 });
+    }
+    const ev = evaluateSession(s1, s);
+    expect(ev.hasSources).toBe(false);
+    const key = investigationReasonKey(ev);
+    expect(key).toBe('reasoning');
+    expect(['sourcesAndGap', 'sources', 'gap']).not.toContain(key);
+  });
+});
+
+describe('unidad CON fuentes marca hasSources=true (s3u03)', () => {
+  it('hasSources es true cuando la unidad trae fuentes', () => {
+    const ev = evaluateSession(unit, initialSession);
+    expect(ev.hasSources).toBe(true);
+  });
+});
+
+describe('otra unidad sin fuentes (s6u02) — mismo bug, otro grado', () => {
+  const s6 = socialUnitById('s6u02')!;
+
+  it('marca hasSources=false y da una razón sin "fuentes" ni "hueco"', () => {
+    let s = initialSession;
+    for (const step of s6.steps) {
+      if (step.kind === 'elegir') s = sessionReducer(s, { type: 'choose', stepId: step.id, choiceId: step.preferredChoiceIds[0] });
+      if (step.kind === 'revisar') s = sessionReducer(s, { type: 'pickGap', choiceId: step.gapChoiceId });
+      s = sessionReducer(s, { type: 'next', unit: s6 });
+    }
+    const ev = evaluateSession(s6, s);
+    expect(ev.completed).toBe(true);
+    expect(ev.hasSources).toBe(false);
+    const key = investigationReasonKey(ev);
+    expect(['sourcesAndGap', 'sources', 'gap']).not.toContain(key);
+  });
 });

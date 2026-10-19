@@ -1,16 +1,22 @@
 import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { ENERGY_OPTIONS, type Energy } from '@lee-conmigo/ui-core';
+import { ENERGY_OPTIONS, type EffortLang, type Energy } from '@lee-conmigo/ui-core';
 import { Button, colors, fontFamily, radius, shadows, useLayout } from '@lee-conmigo/ui-native';
 
 const TINT: Record<Energy, string> = { alta: colors.focus, normal: colors.brand100, baja: colors.violet50 };
+
+const ENERGY_SCREEN_COPY = {
+  title: { es: (name: string) => `¿Cómo llegas hoy, ${name}?`, en: (name: string) => `How are you feeling today, ${name}?` },
+  note: { es: 'Cualquier día sirve. Tu racha no cambia.', en: 'Any day works. Your streak stays safe.' },
+  start: { es: 'Empezar', en: 'Start' },
+};
 
 /**
  * "¿Cómo llegas hoy?" (Kitewise B2): el niño elige su energía y eso decide cuánto dura la misión (20/15/8 min). Elegir
  * "Cansado" nunca castiga: "Cualquier día sirve. Tu racha no cambia." (D5).
  */
-export function EnergyScreen({ name, onStart }: { name: string; onStart: (energy: Energy) => void }) {
+export function EnergyScreen({ name, lang = 'es', onStart }: { name: string; lang?: EffortLang; onStart: (energy: Energy) => void }) {
   const [energy, setEnergy] = useState<Energy>('normal');
   const insets = useSafeAreaInsets();
   const { narrow, short, gutter } = useLayout();
@@ -18,18 +24,18 @@ export function EnergyScreen({ name, onStart }: { name: string; onStart: (energy
   const stacked = narrow && !short;
   return (
     <ScrollView style={styles.scroll} contentContainerStyle={[styles.screen, { paddingHorizontal: gutter, paddingTop: insets.top + (short ? 16 : 36), paddingBottom: insets.bottom + (short ? 16 : 28), gap: short ? 16 : 32 }]}>
-      <Text style={[styles.title, (narrow || short) && styles.titleSmall]}>¿Cómo llegas hoy, {name}?</Text>
+      <Text style={[styles.title, (narrow || short) && styles.titleSmall]}>{ENERGY_SCREEN_COPY.title[lang](name)}</Text>
       <View style={[styles.row, stacked && styles.rowStacked]}>
         {ENERGY_OPTIONS.map((o) => {
           const on = o.id === energy;
           return (
-            <Pressable key={o.id} onPress={() => setEnergy(o.id)} accessibilityRole="radio" accessibilityState={{ selected: on }} accessibilityLabel={`${o.title}, ${o.detail}`} style={[styles.card, short && styles.cardShort, stacked && styles.cardStacked, on && styles.cardOn]}>
+            <Pressable key={o.id} onPress={() => setEnergy(o.id)} accessibilityRole="radio" accessibilityState={{ selected: on }} accessibilityLabel={`${o.title[lang]}, ${o.detail[lang]}`} style={[styles.card, short && styles.cardShort, stacked && styles.cardStacked, on && styles.cardOn]}>
               <View style={[styles.circle, (short || stacked) && styles.circleSmall, { backgroundColor: TINT[o.id] }]}>
                 <Text style={[styles.glyph, (short || stacked) && styles.glyphSmall]}>{o.glyph}</Text>
               </View>
               <View style={stacked ? styles.cardTextStacked : styles.cardText}>
-                <Text style={[styles.cardTitle, (short || stacked) && styles.cardTitleSmall]}>{o.title}</Text>
-                <Text style={[styles.detail, stacked && styles.detailStacked]}>{o.detail}</Text>
+                <Text style={[styles.cardTitle, (short || stacked) && styles.cardTitleSmall]}>{o.title[lang]}</Text>
+                <Text style={[styles.detail, stacked && styles.detailStacked]}>{o.detail[lang]}</Text>
               </View>
             </Pressable>
           );
@@ -38,9 +44,9 @@ export function EnergyScreen({ name, onStart }: { name: string; onStart: (energy
       <View style={[styles.footer, narrow && styles.footerNarrow]}>
         <View style={styles.noteRow}>
           <Text style={styles.star}>⭐</Text>
-          <Text style={[styles.note, narrow && styles.noteSmall]}>Cualquier día sirve. Tu racha no cambia.</Text>
+          <Text style={[styles.note, narrow && styles.noteSmall]}>{ENERGY_SCREEN_COPY.note[lang]}</Text>
         </View>
-        <Button label="Empezar" onPress={() => onStart(energy)} />
+        <Button label={ENERGY_SCREEN_COPY.start[lang]} onPress={() => onStart(energy)} />
       </View>
     </ScrollView>
   );
