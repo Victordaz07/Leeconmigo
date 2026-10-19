@@ -5,7 +5,7 @@ Tu materia es **Arte y música** (cuaderno `arte`, ya diseñado en D9, hoy «Pro
 ## Dónde estamos
 - AR-01 ✅ Investigación recibida y copiada a `docs/research/` (`artes-investigacion.md`; `vida-8-modulos.md` y `vida-01/02/03-*.md` para los otros cuadernos).
 - AR-02 ✅ `docs/design/artes/ESPECIFICACION.md`: lectura crítica, ajustes a React Native, arquitectura, pruebas técnicas, fases y decisiones `DA-1…DA-8` **para Victor**.
-- AR-T1 🟡 **Prueba de audio construida. Primer resultado en la tableta: 140 BPM × 5 min, 0 congelamientos, «parejo».** Faltan 60 y 90 BPM para cerrarla.
+- AR-T1 ✅ **Audio aprobado en la tableta:** 4 corridas de 5 min (60/90/120/140 BPM), todas «parejo», 0 congelamientos, 0 pasos saltados. Queda una comprobación de 30 s: salir de la app a mitad de ritmo y volver, y detener/reanudar. Faltan 60 y 90 BPM para cerrarla.
   - `packages/music-engine` (34 pruebas): patrón de 8 pulsos × 4 filas, **catálogo de 16 sonidos sintetizados** en 4 familias (cada fila elige el suyo; `sounds.ts`/`synth.ts`, ESPECIFICACION §3b), secuenciador con anticipación sobre el reloj de audio, tempo que entra en el siguiente ciclo, solo/silencio, `FakeAudioOutput` y `PumpMonitor` (mide congelamientos del hilo de la interfaz).
   - `apps/mobile/src/audio/native-audio-output.ts`: salida real con `react-native-audio-api` (+ `react-native-worklets`).
   - Pantalla **Prueba de audio** en Ajustes de padres (tras el PIN): ritmo editable, **selector de 16 sonidos por fila (se oyen al tocarlos)**, tempo 60/90/120/140, volumen, «Prueba de 5 minutos», veredicto del adulto y resumen para pegar.
@@ -13,7 +13,7 @@ Tu materia es **Arte y música** (cuaderno `arte`, ya diseñado en D9, hoy «Pro
   - Verificada en el navegador (Chromium): arranca, el cursor avanza, 25 ms de media entre llamadas, 0 congelamientos. **No sustituye la prueba en la tableta.**
 
 ## Siguiente paso exacto
-1. (Hecho el APK; 140 BPM ya pasó.) Falta pegar 60 y 90 BPM. Pasos originales: **Victor compila un APK nuevo** (hay dependencias nativas nuevas: `react-native-audio-api` y `react-native-worklets`; pasos en `apps/mobile/README.md`, `EXPO_PUBLIC_DEMO=1`, `npm run models` antes). En la tableta: Padres → Ajustes → «Probar el audio del taller». Hacer la **prueba de 5 minutos** a 60, 90 y 140 BPM (con audífonos y con altavoz) y pegar el «Resultados» en el chat.
+1. (AR-T1 hecho.) Siguiente: **AR-T2, lienzo con Skia**; necesita que Victor apruebe las dependencias nativas nuevas (DA-7: `@shopify/react-native-skia` y `react-native-gesture-handler`) y compile otro APK. Pasos originales de AR-T1: **Victor compila un APK nuevo** (hay dependencias nativas nuevas: `react-native-audio-api` y `react-native-worklets`; pasos en `apps/mobile/README.md`, `EXPO_PUBLIC_DEMO=1`, `npm run models` antes). En la tableta: Padres → Ajustes → «Probar el audio del taller». Hacer la **prueba de 5 minutos** a 60, 90 y 140 BPM (con audífonos y con altavoz) y pegar el «Resultados» en el chat.
 2. Con ese resultado: si pasa (sin huecos ni arrastres, 0 congelamientos), seguir con AR-T2 (lienzo con Skia). Si falla, probar otro enfoque (muestras prehechas en bucle o motor propio) **antes** de construir talleres.
 3. Pedir a Victor las decisiones `DA-1…DA-8` de la especificación.
 

@@ -11,3 +11,7 @@
 ## 2026-10-19 · AR-T1: primer resultado en la tableta
 - Victor compiló el APK y pegó el resultado de la corrida #3: **140 BPM · 5:00 · congelamientos 0 (hueco máx. 81 ms, media 33.3 ms) · pasos saltados 0 · segundo plano 0 · se oyó: parejo.** Es el tempo más exigente y pasa el criterio (sin huecos ni arrastres que se oigan).
 - Falta registrar las corridas a 60 y 90 BPM (y la comparación auriculares/altavoz) para dar AR-T1 por cerrada.
+
+## 2026-10-19 · AR-T1: audio aprobado en la tableta
+- Cuatro corridas de 5:00 con el secuenciador real (`react-native-audio-api`), todas «parejo», 0 congelamientos y 0 pasos saltados: 60 BPM (hueco máx. 45 ms), 90 BPM (44 ms), 120 BPM (43 ms), 140 BPM (81 ms). Media de 33,3 ms entre llamadas en todas.
+- **Veredicto: el enfoque de audio funciona; AR-T1 pasa en lo esencial (reproducción continua y pareja).** Queda como comprobación corta (30 s) lo que las corridas no ejercitaron («segundo plano» salió 0 en todas): salir de la app a mitad de ritmo y volver, y detener/reanudar.

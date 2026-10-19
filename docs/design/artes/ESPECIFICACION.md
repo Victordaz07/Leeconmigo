@@ -151,7 +151,7 @@ principal (VA, MU, MA, TH, DA). Los códigos de estándares **no se asignan por 
 |---|---|
 | AR-01 | Investigación recibida y copiada (hecho) |
 | AR-02 | Esta especificación y decisión D14 (hecho) |
-| AR-T1 | Prueba técnica de audio: motor puro + `FakeAudioOutput` + pantalla de prueba (hecho el código; **falta probar en la tableta**) |
+| AR-T1 | Prueba técnica de audio: motor puro + `FakeAudioOutput` + pantalla de prueba (✅ aprobada en la tableta, 2026-10-19) |
 | AR-T2 | Prueba técnica del lienzo (Skia) |
 | AR-T3 | Prueba técnica 3D |
 | AR-03 | Módulo `arte` enchufado como «Pronto» + `packages/art-content` + esquema de proyecto y guardado en SQLite |
