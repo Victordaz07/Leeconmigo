@@ -2,21 +2,20 @@ import { useEffect, useRef, useState } from 'react';
 import { AppState, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Button, ChevronLeftIcon, colors, fontFamily, radius, RoundButton, shadows, useLayout } from '@lee-conmigo/ui-native';
-import { LAYERS, PumpMonitor, Sequencer, STEPS, emptyPattern, toggleCell, type Layer, type MonitorReport, type Pattern } from '@lee-conmigo/music-engine';
+import { DEFAULT_KIT, FAMILIES, FAMILY_NAME, PumpMonitor, Sequencer, SOUNDS, soundsOf, STEPS, TRACKS, emptyPattern, toggleCell, type Kit, type MonitorReport, type Pattern, type SoundId, type Track } from '@lee-conmigo/music-engine';
 import { DEFAULT_VOLUME, NativeAudioOutput } from '../audio/native-audio-output';
 
 const TEMPOS = [60, 90, 120, 140];
 const PUMP_MS = 25;
 const LONG_TEST_SECONDS = 300;
-const LAYER_NAME: Record<Layer, string> = { grave: 'Grave', palmas: 'Palmas', sonaja: 'Sonaja', voz: 'Voz' };
 
 /** Un ritmo de partida para no empezar con la rejilla vacía. */
 const starter = (): Pattern => {
   let p = emptyPattern();
-  for (const s of [0, 4]) p = toggleCell(p, 'grave', s);
-  for (const s of [2, 6]) p = toggleCell(p, 'palmas', s);
-  for (let s = 0; s < STEPS; s++) p = toggleCell(p, 'sonaja', s);
-  return toggleCell(p, 'voz', 7);
+  for (const s of [0, 4]) p = toggleCell(p, 'a', s);
+  for (const s of [2, 6]) p = toggleCell(p, 'b', s);
+  for (let s = 0; s < STEPS; s++) p = toggleCell(p, 'c', s);
+  return toggleCell(p, 'd', 7);
 };
 
 interface Result {
@@ -41,6 +40,8 @@ export function AudioTestScreen({ onBack }: { onBack: () => void }) {
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const [pattern, setPattern] = useState<Pattern>(starter);
+  const [kit, setKit] = useState<Kit>(DEFAULT_KIT);
+  const [picking, setPicking] = useState<Track | null>(null);
   const [bpm, setBpm] = useState(90);
   const [playing, setPlaying] = useState(false);
   const [long, setLong] = useState(false);
@@ -68,7 +69,7 @@ export function AudioTestScreen({ onBack }: { onBack: () => void }) {
     try {
       const o = new NativeAudioOutput();
       out.current = o;
-      seq.current = new Sequencer(o, { bpm, pattern });
+      seq.current = new Sequencer(o, { bpm, pattern, kit });
       setRate(o.sampleRate);
       return seq.current;
     } catch (e) {
@@ -104,6 +105,7 @@ export function AudioTestScreen({ onBack }: { onBack: () => void }) {
     }
     o.setVolume(volume);
     s.setPattern(pattern);
+    s.setKit(kit);
     s.setTempo(bpm);
     monitor.current.reset();
     backgrounded.current = 0;
@@ -164,10 +166,25 @@ export function AudioTestScreen({ onBack }: { onBack: () => void }) {
     };
   }, []);
 
-  const toggle = (layer: Layer, step: number) => {
-    const next = toggleCell(pattern, layer, step);
+  const toggle = (track: Track, step: number) => {
+    const next = toggleCell(pattern, track, step);
     setPattern(next);
     seq.current?.setPattern(next);
+  };
+  /** El niño elige el sonido de una fila: se guarda y se oye una vez, aunque no esté tocando el ritmo. */
+  const chooseSound = async (track: Track, sound: SoundId) => {
+    setKit((k) => ({ ...k, [track]: sound }));
+    const s = ensure();
+    const o = out.current;
+    if (!s || !o) return;
+    s.setSound(track, sound);
+    try {
+      await o.resume();
+      o.setVolume(volume);
+      o.preview(sound);
+    } catch {
+      // sin audio no se oye la muestra, pero la elección queda
+    }
   };
   const pickBpm = (v: number) => {
     setBpm(v);
@@ -196,25 +213,29 @@ export function AudioTestScreen({ onBack }: { onBack: () => void }) {
         <Text style={[styles.title, layout.phone && styles.titleSmall]}>Prueba de audio</Text>
       </View>
       <Text style={styles.note}>
-        Para Arte y música. Comprueba que el ritmo de ocho pulsos suene parejo. Los sonidos se generan en el equipo: no usa micrófono, cámara, archivos ni internet. Usa audífonos o el altavoz con volumen bajo.
+        Para Arte y música. Comprueba que el ritmo de ocho pulsos suene parejo. Eliges entre 16 sonidos que se generan en el equipo: no usa micrófono, cámara, archivos ni internet. Usa audífonos o el altavoz con volumen bajo.
       </Text>
       {error && <Text style={styles.warn}>{error}</Text>}
 
       <View style={styles.card}>
         <Text style={styles.h3}>Ritmo de ocho pulsos</Text>
         <View style={styles.grid}>
-          {LAYERS.map((layer) => (
-            <View key={layer} style={styles.gridRow}>
-              <Text style={styles.layerName}>{LAYER_NAME[layer]}</Text>
-              {pattern[layer].map((on, step) => (
-                <Pressable key={step} onPress={() => toggle(layer, step)} accessibilityRole="button" accessibilityState={{ selected: on }} accessibilityLabel={`${LAYER_NAME[layer]}, pulso ${step + 1}: ${on ? 'suena' : 'silencio'}`} style={[styles.cell, on && styles.cellOn, cursor === step && styles.cellCursor, step === 4 && styles.cellGroup]}>
+          {TRACKS.map((track) => (
+            <View key={track} style={styles.gridRow}>
+              <Pressable onPress={() => setPicking(picking === track ? null : track)} accessibilityRole="button" accessibilityLabel={`Sonido de la fila ${track.toUpperCase()}: ${SOUNDS[kit[track]].name.es}. Toca para cambiarlo`} accessibilityState={{ expanded: picking === track }} style={[styles.soundBtn, picking === track && styles.soundBtnOn]}>
+                <Text style={styles.soundBtnText} numberOfLines={2}>
+                  {SOUNDS[kit[track]].name.es}
+                </Text>
+              </Pressable>
+              {pattern[track].map((on, step) => (
+                <Pressable key={step} onPress={() => toggle(track, step)} accessibilityRole="button" accessibilityState={{ selected: on }} accessibilityLabel={`${SOUNDS[kit[track]].name.es}, pulso ${step + 1}: ${on ? 'suena' : 'silencio'}`} style={[styles.cell, on && styles.cellOn, cursor === step && styles.cellCursor, step === 4 && styles.cellGroup]}>
                   <Text style={[styles.cellText, on && styles.cellTextOn]}>{on ? '●' : ''}</Text>
                 </Pressable>
               ))}
             </View>
           ))}
           <View style={styles.gridRow}>
-            <Text style={styles.layerName} />
+            <View style={styles.layerName} />
             {Array.from({ length: STEPS }, (_, i) => (
               <Text key={i} style={[styles.stepNum, cursor === i && styles.stepNumOn]}>
                 {i + 1}
@@ -222,6 +243,25 @@ export function AudioTestScreen({ onBack }: { onBack: () => void }) {
             ))}
           </View>
         </View>
+
+        {picking && (
+          <View style={styles.picker}>
+            <Text style={styles.h3}>Sonido de la fila {picking.toUpperCase()}</Text>
+            <Text style={styles.small}>Toca uno para elegirlo: se oye al tocarlo. Puedes repetir el mismo sonido en dos filas.</Text>
+            {FAMILIES.map((f) => (
+              <View key={f} style={styles.family}>
+                <Text style={styles.familyName}>{FAMILY_NAME[f].es}</Text>
+                <View style={styles.chips}>
+                  {soundsOf(f).map((id) => (
+                    <Pressable key={id} onPress={() => void chooseSound(picking, id)} accessibilityRole="button" accessibilityLabel={`${SOUNDS[id].name.es}. ${SOUNDS[id].hint.es}`} accessibilityState={{ selected: kit[picking] === id }} style={[styles.chip, kit[picking] === id && styles.chipOn]}>
+                      <Text style={[styles.chipText, kit[picking] === id && styles.chipTextOn]}>{SOUNDS[id].name.es}</Text>
+                    </Pressable>
+                  ))}
+                </View>
+              </View>
+            ))}
+          </View>
+        )}
 
         <Text style={styles.h3}>Tempo</Text>
         <View style={styles.segmented}>
@@ -298,7 +338,18 @@ const styles = StyleSheet.create({
   card: { backgroundColor: colors.paper, borderRadius: radius.card, padding: 20, gap: 12, boxShadow: shadows.card },
   grid: { gap: 6 },
   gridRow: { flexDirection: 'row', alignItems: 'center', gap: 4 },
-  layerName: { width: 64, fontFamily: fontFamily.ui.extrabold, fontSize: 14, color: colors.ink },
+  layerName: { width: 92 },
+  soundBtn: { width: 92, minHeight: 44, borderRadius: 10, paddingHorizontal: 6, justifyContent: 'center', backgroundColor: colors.chip, borderWidth: 2, borderColor: colors.chip },
+  soundBtnOn: { borderColor: colors.brand, backgroundColor: '#ffffff' },
+  soundBtnText: { fontFamily: fontFamily.ui.extrabold, fontSize: 12, lineHeight: 15, color: colors.ink },
+  picker: { gap: 8, backgroundColor: '#ffffff', borderRadius: radius.tile, padding: 12, boxShadow: shadows.soft },
+  family: { gap: 6 },
+  familyName: { fontFamily: fontFamily.ui.extrabold, fontSize: 13, color: colors.muted },
+  chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+  chip: { minHeight: 44, paddingHorizontal: 14, borderRadius: 12, justifyContent: 'center', backgroundColor: colors.chip, borderWidth: 2, borderColor: colors.chip },
+  chipOn: { backgroundColor: colors.brand, borderColor: colors.brand },
+  chipText: { fontFamily: fontFamily.ui.extrabold, fontSize: 14, color: colors.ink },
+  chipTextOn: { color: '#ffffff' },
   cell: { flex: 1, height: 44, minWidth: 28, borderRadius: 10, borderWidth: 2, borderColor: colors.line, backgroundColor: '#ffffff', alignItems: 'center', justifyContent: 'center' },
   cellGroup: { marginLeft: 6 },
   cellOn: { backgroundColor: colors.brand, borderColor: colors.brand },

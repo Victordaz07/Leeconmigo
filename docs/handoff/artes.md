@@ -6,9 +6,9 @@ Tu materia es **Arte y música** (cuaderno `arte`, ya diseñado en D9, hoy «Pro
 - AR-01 ✅ Investigación recibida y copiada a `docs/research/` (`artes-investigacion.md`; `vida-8-modulos.md` y `vida-01/02/03-*.md` para los otros cuadernos).
 - AR-02 ✅ `docs/design/artes/ESPECIFICACION.md`: lectura crítica, ajustes a React Native, arquitectura, pruebas técnicas, fases y decisiones `DA-1…DA-8` **para Victor**.
 - AR-T1 🟡 **Prueba de audio construida, falta probarla en la tableta.**
-  - `packages/music-engine` (22 pruebas): patrón de 8 pulsos × 4 capas, secuenciador con anticipación sobre el reloj de audio, tempo que entra en el siguiente ciclo, solo/silencio, `FakeAudioOutput`, timbres sintetizados (sin grabaciones) y `PumpMonitor` (mide congelamientos del hilo de la interfaz).
+  - `packages/music-engine` (34 pruebas): patrón de 8 pulsos × 4 filas, **catálogo de 16 sonidos sintetizados** en 4 familias (cada fila elige el suyo; `sounds.ts`/`synth.ts`, ESPECIFICACION §3b), secuenciador con anticipación sobre el reloj de audio, tempo que entra en el siguiente ciclo, solo/silencio, `FakeAudioOutput` y `PumpMonitor` (mide congelamientos del hilo de la interfaz).
   - `apps/mobile/src/audio/native-audio-output.ts`: salida real con `react-native-audio-api` (+ `react-native-worklets`).
-  - Pantalla **Prueba de audio** en Ajustes de padres (tras el PIN): ritmo editable, tempo 60/90/120/140, volumen, «Prueba de 5 minutos», veredicto del adulto y resumen para pegar.
+  - Pantalla **Prueba de audio** en Ajustes de padres (tras el PIN): ritmo editable, **selector de 16 sonidos por fila (se oyen al tocarlos)**, tempo 60/90/120/140, volumen, «Prueba de 5 minutos», veredicto del adulto y resumen para pegar.
   - `app.json`: plugin `react-native-audio-api` **sin** permisos extra, **sin** servicio en primer plano, **sin** audio en segundo plano y **sin** FFmpeg (no se decodifican archivos). Al ir a segundo plano la prueba se detiene.
   - Verificada en el navegador (Chromium): arranca, el cursor avanza, 25 ms de media entre llamadas, 0 congelamientos. **No sustituye la prueba en la tableta.**
 

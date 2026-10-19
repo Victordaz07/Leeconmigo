@@ -68,10 +68,36 @@ se puede recuperar. Se guarda en SQLite, por niño (como el progreso de las otra
 Contrato puro en `packages/music-engine` (ya construido en AR-T1):
 - `Pattern`: 8 columnas (pulsos de negra en 4/4, dos grupos de cuatro) × 4 filas (percusión grave, palmas, sonaja, voz sintetizada).
   **Un paso = un pulso**; si algún día hay corcheas se rotula distinto y se muestra la subdivisión (la investigación lo pide explícito).
+- **Cada fila elige su sonido** entre un catálogo de **16** (§3b). La fila solo dice *cuándo* suena; el niño decide *qué* suena. Se puede repetir el mismo sonido en dos filas. Cambiar un sonido mientras suena vale para los golpes que aún no se programaron.
 - Tempo 60–140 BPM (decisión de diseño revisable); un cambio de tempo se aplica **en el siguiente ciclo** (regla fija, nunca a mitad).
 - Planificador con **anticipación** (lookahead): se programan los golpes en el reloj de audio con ~100 ms de adelanto; el cursor visual
   se sincroniza con ese mismo reloj. **Nunca** se confía en un temporizador de interfaz para disparar sonidos.
 - Repetición sin huecos añadidos: el paso 8 enlaza con el paso 1 sin pausa. Detener/reanudar, solo/silencio por capa, dos versiones A/B.
+
+### 3b. Catálogo de 16 sonidos (4 familias × 4)
+
+Todos **sintetizados por código** (sin grabaciones ni derechos), de corta duración y con un cierre suave. Criterios de selección: (1) cubrir las familias que un niño reconoce (tambores, cuerpo, madera/metal, notas); (2) que sean **distintos entre sí** al oído (grave/medio/agudo, seco/resonante, con tono/sin tono); (3) que sirvan para un ritmo de un golpe por pulso; (4) las notas con tono van **todas en do mayor pentatónico**, para que cualquier mezcla suene bien junta; (5) ninguno se presenta como «auténtico» de una tradición (los bancos culturales llegan después, con permiso y fuente).
+
+| Familia | Sonido | Cómo suena | Con tono |
+|---|---|---|---|
+| Tambores | Bombo | golpe grave y profundo | — |
+| | Tambor medio | tambor redondo, tono medio | — |
+| | Bongó | tambor pequeño, agudo y seco | — |
+| | Caja | golpe seco con «arena» | — |
+| Cuerpo y voz | Palmas | dos manos que aplauden | — |
+| | Chasquido | dedos, muy corto | — |
+| | Pisada | pie que pisa el suelo | — |
+| | Voz «a» | voz sintética original (no es la de nadie) | la (220 Hz) |
+| Madera, metal y sonajas | Claves | dos palitos de madera | — |
+| | Bloque de madera | madera hueca, «toc» | — |
+| | Triángulo | metal brillante, resuena | — |
+| | Sonaja | semillas que se sacuden | — |
+| Con tono (notas) | Marimba | placa de madera | do (523 Hz) |
+| | Campanita | campana clara | sol (784 Hz) |
+| | Cuerda | cuerda pulsada | sol grave (196 Hz) |
+| | Bajo | nota muy grave y redonda | do grave (65 Hz) |
+
+Lo que **no** hay en v1 (a propósito): piano/teclado y flauta (necesitan más de una nota para sonar a instrumento; llegan con «dibuja una melodía»), instrumentos con grabaciones reales y bancos culturales (güira, tambora…). El juego de partida es bombo, palmas, sonaja y voz. El niño escucha cada sonido **al tocarlo** en el selector.
 
 ## 4. Experiencia (cuaderno «Arte y música»)
 
@@ -138,7 +164,7 @@ principal (VA, MU, MA, TH, DA). Los códigos de estándares **no se asignan por 
 ## 10. Decisiones para Victor (propuestas `DA-n`; no se aplican hasta que confirme)
 
 - **DA-1** Primera unidad: **A1-U04 «Mi ritmo de ocho pulsos»** (1.º) y, después, A2-U02 (paleta) y A3-U03 (criatura 3D). Todo abre; lo sugerido se destaca.
-- **DA-2** Timbres **sintetizados por código** en la primera versión; bancos culturales solo con permiso por escrito.
+- **DA-2** Los **16 sonidos** (§3b) **sintetizados por código** en la primera versión; bancos culturales solo con permiso por escrito. ¿Cambiarías alguno del catálogo?
 - **DA-3** Artes **sin micrófono ni cámara** en v1; la galería es privada y no se comparte.
 - **DA-4** Estándares de California: borrador solo para padres hasta validación de un maestro.
 - **DA-5** ¿Qué guía acompaña en Artes? (Maya acompaña Ciencia; ¿otra o la misma?)

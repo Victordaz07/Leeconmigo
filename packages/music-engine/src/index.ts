@@ -3,6 +3,7 @@
  * (docs/design/artes/ESPECIFICACION.md). El sonido real entra por `AudioOutput`.
  */
 export * from './pattern.ts';
+export * from './sounds.ts';
 export * from './output.ts';
 export * from './sequencer.ts';
 export * from './synth.ts';

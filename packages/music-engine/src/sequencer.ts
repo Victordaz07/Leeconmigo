@@ -1,4 +1,5 @@
-import { clampBpm, DEFAULT_BPM, LAYERS, STEPS, stepSeconds, toggleCell, emptyPattern, type Layer, type Pattern } from './pattern.ts';
+import { clampBpm, DEFAULT_BPM, TRACKS, STEPS, stepSeconds, toggleCell, emptyPattern, type Track, type Pattern } from './pattern.ts';
+import { DEFAULT_KIT, type Kit, type SoundId } from './sounds.ts';
 import type { AudioOutput } from './output.ts';
 
 export interface SequencerOptions {
@@ -6,6 +7,8 @@ export interface SequencerOptions {
   lookahead?: number;
   bpm?: number;
   pattern?: Pattern;
+  /** Qué sonido tiene cada fila (por defecto bombo, palmas, sonaja y voz). */
+  kit?: Kit;
 }
 
 /** Un pulso marcado en el reloj de audio: lo usa la interfaz para dibujar el cursor. */
@@ -39,6 +42,7 @@ const MAX_TICKS = 64;
  */
 export class Sequencer {
   private pattern: Pattern;
+  private kit: Kit;
   private bpm: number;
   private pending: number | null = null;
   private readonly lookahead: number;
@@ -46,8 +50,8 @@ export class Sequencer {
   private nextStep = 0;
   private nextTime = 0;
   private cycle = 0;
-  private muted = new Set<Layer>();
-  private solo: Layer | null = null;
+  private muted = new Set<Track>();
+  private solo: Track | null = null;
   private ticks: Tick[] = [];
   private st: SequencerStats = { scheduled: 0, cycles: 0, skippedSteps: 0 };
 
@@ -55,6 +59,7 @@ export class Sequencer {
     this.lookahead = opts.lookahead ?? 0.1;
     this.bpm = clampBpm(opts.bpm ?? DEFAULT_BPM);
     this.pattern = opts.pattern ?? emptyPattern();
+    this.kit = { ...(opts.kit ?? DEFAULT_KIT) };
   }
 
   get playing(): boolean {
@@ -111,31 +116,44 @@ export class Sequencer {
     this.pattern = p;
   }
 
-  toggle(layer: Layer, step: number): void {
-    this.pattern = toggleCell(this.pattern, layer, step);
+  toggle(track: Track, step: number): void {
+    this.pattern = toggleCell(this.pattern, track, step);
   }
 
-  setMuted(layer: Layer, muted: boolean): void {
-    if (muted) this.muted.add(layer);
-    else this.muted.delete(layer);
+  /** Cambia el sonido de una fila: vale para los golpes que todavía no se programaron. */
+  setSound(track: Track, sound: SoundId): void {
+    this.kit = { ...this.kit, [track]: sound };
   }
 
-  isMuted(layer: Layer): boolean {
-    return this.muted.has(layer);
+  getKit(): Kit {
+    return this.kit;
   }
 
-  /** Escuchar una sola capa; `null` quita el solo. */
-  setSolo(layer: Layer | null): void {
-    this.solo = layer;
+  setKit(kit: Kit): void {
+    this.kit = { ...kit };
   }
 
-  get soloLayer(): Layer | null {
+  setMuted(track: Track, muted: boolean): void {
+    if (muted) this.muted.add(track);
+    else this.muted.delete(track);
+  }
+
+  isMuted(track: Track): boolean {
+    return this.muted.has(track);
+  }
+
+  /** Escuchar una sola fila; `null` quita el solo. */
+  setSolo(track: Track | null): void {
+    this.solo = track;
+  }
+
+  get soloTrack(): Track | null {
     return this.solo;
   }
 
-  private audible(layer: Layer): boolean {
-    if (this.solo !== null) return layer === this.solo;
-    return !this.muted.has(layer);
+  private audible(track: Track): boolean {
+    if (this.solo !== null) return track === this.solo;
+    return !this.muted.has(track);
   }
 
   /** El planificador: programa todo lo que caiga dentro de la ventana de anticipación. Se llama cada ~25 ms. */
@@ -152,9 +170,9 @@ export class Sequencer {
       const time = this.nextTime;
       this.ticks.push({ time, step, cycle: this.cycle });
       if (this.ticks.length > MAX_TICKS) this.ticks.shift();
-      for (const layer of LAYERS) {
-        if (this.pattern[layer][step] && this.audible(layer)) {
-          this.out.play(layer, time);
+      for (const track of TRACKS) {
+        if (this.pattern[track][step] && this.audible(track)) {
+          this.out.play(this.kit[track], time);
           this.st.scheduled++;
         }
       }
