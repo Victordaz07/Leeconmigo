@@ -12,7 +12,7 @@ function run(out: FakeAudioOutput, seq: Sequencer, seconds: number, every = 0.02
 
 const allSteps = (): Pattern => {
   let p = emptyPattern();
-  for (let s = 0; s < 8; s++) p = toggleCell(p, 'grave', s);
+  for (let s = 0; s < 8; s++) p = toggleCell(p, 'a', s);
   return p;
 };
 
@@ -30,7 +30,7 @@ describe('secuenciador de ocho pulsos', () => {
 
   it('el paso 8 enlaza con el paso 1 sin pausa añadida (el patrón se repite exacto)', () => {
     const out = new FakeAudioOutput();
-    const seq = new Sequencer(out, { bpm: 90, pattern: toggleCell(emptyPattern(), 'palmas', 0) });
+    const seq = new Sequencer(out, { bpm: 90, pattern: toggleCell(emptyPattern(), 'b', 0) });
     seq.start();
     run(out, seq, 8 * stepSeconds(90) * 3 + 0.5);
     const t = out.events.map((e) => e.time);
@@ -82,7 +82,7 @@ describe('secuenciador de ocho pulsos', () => {
     seq.start();
     run(out, seq, 2);
     expect(out.events).toHaveLength(0);
-    seq.toggle('grave', 4);
+    seq.toggle('a', 4);
     run(out, seq, 10);
     const t = out.events.map((e) => e.time);
     expect(t.length).toBeGreaterThanOrEqual(1);
@@ -92,18 +92,40 @@ describe('secuenciador de ocho pulsos', () => {
   it('solo y silencio por capa', () => {
     const out = new FakeAudioOutput();
     let p = emptyPattern();
-    p = toggleCell(toggleCell(p, 'grave', 0), 'palmas', 0);
+    p = toggleCell(toggleCell(p, 'a', 0), 'b', 0);
     const seq = new Sequencer(out, { bpm: 120, pattern: p });
-    seq.setMuted('palmas', true);
+    seq.setMuted('b', true);
     seq.start();
     run(out, seq, 1);
-    expect(out.events.every((e) => e.layer === 'grave')).toBe(true);
+    expect(out.events.every((e) => e.sound === 'bombo')).toBe(true);
     out.events.length = 0;
-    seq.setMuted('palmas', false);
-    seq.setSolo('palmas');
+    seq.setMuted('b', false);
+    seq.setSolo('b');
     run(out, seq, 8);
     expect(out.events.length).toBeGreaterThan(0);
-    expect(out.events.every((e) => e.layer === 'palmas')).toBe(true);
+    expect(out.events.every((e) => e.sound === 'palmas')).toBe(true);
+  });
+
+  it('cada fila suena con el sonido que el niño le eligió, y cambiarlo vale para lo que aún no se programó', () => {
+    const out = new FakeAudioOutput();
+    const seq = new Sequencer(out, { bpm: 120, pattern: toggleCell(emptyPattern(), 'a', 0), kit: { a: 'bongo', b: 'palmas', c: 'sonaja', d: 'voz' } });
+    seq.start();
+    run(out, seq, 4.2);
+    expect(out.events.length).toBeGreaterThanOrEqual(2);
+    expect(out.events.every((e) => e.sound === 'bongo')).toBe(true);
+    seq.setSound('a', 'marimba');
+    expect(seq.getKit().a).toBe('marimba');
+    out.events.length = 0;
+    run(out, seq, 8.2);
+    expect(out.events.length).toBeGreaterThanOrEqual(2);
+    expect(out.events.every((e) => e.sound === 'marimba')).toBe(true);
+  });
+
+  it('dos filas pueden tener el mismo sonido y por defecto el juego es bombo, palmas, sonaja y voz', () => {
+    const seq = new Sequencer(new FakeAudioOutput());
+    expect(seq.getKit()).toEqual({ a: 'bombo', b: 'palmas', c: 'sonaja', d: 'voz' });
+    seq.setSound('b', 'bombo');
+    expect(seq.getKit().a).toBe(seq.getKit().b);
   });
 
   it('detener corta el sonido y volver a empezar reinicia en el paso 1', () => {

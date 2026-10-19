@@ -1,4 +1,4 @@
-import type { Layer } from './pattern.ts';
+import type { SoundId } from './sounds.ts';
 
 /**
  * Lo único que el secuenciador sabe del sonido (regla de oro: la interfaz nunca depende de una librería de audio).
@@ -8,14 +8,14 @@ import type { Layer } from './pattern.ts';
 export interface AudioOutput {
   /** Reloj de audio en segundos (monótono). */
   now(): number;
-  /** Programa el sonido de una capa para el instante `time` (≥ now()). */
-  play(layer: Layer, time: number): void;
+  /** Programa un sonido del catálogo para el instante `time` (≥ now()). */
+  play(sound: SoundId, time: number): void;
   /** Corta todo lo que esté sonando o programado. */
   stopAll(): void;
 }
 
 export interface PlayedEvent {
-  layer: Layer;
+  sound: SoundId;
   time: number;
 }
 
@@ -37,8 +37,8 @@ export class FakeAudioOutput implements AudioOutput {
     this.t = seconds;
   }
 
-  play(layer: Layer, time: number): void {
-    this.events.push({ layer, time });
+  play(sound: SoundId, time: number): void {
+    this.events.push({ sound, time });
   }
 
   stopAll(): void {
