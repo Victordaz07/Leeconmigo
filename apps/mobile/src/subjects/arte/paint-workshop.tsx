@@ -220,8 +220,8 @@ export function PaintWorkshop({ lang, project, onScene, onRename, onDuplicate, o
                   </View>
                 </Pressable>
                 <Text style={styles.potName}>{rName(p)}</Text>
-                <Pressable onPress={() => { setRecipe(removeDrop(recipe, p)); setMixSaved(false); }} disabled={recipe[p] === 0} accessibilityRole="button" accessibilityLabel={t.mixRemove(rName(p))} style={[styles.potMinus, recipe[p] === 0 && styles.potMinusOff]}>
-                  <Text style={styles.potMinusText}>−</Text>
+                <Pressable onPress={() => { setRecipe(removeDrop(recipe, p)); setMixSaved(false); }} disabled={recipe[p] === 0} accessibilityRole="button" accessibilityLabel={t.mixRemove(rName(p))} accessibilityState={{ disabled: recipe[p] === 0 }} style={[styles.potMinus, recipe[p] === 0 && styles.potMinusOff]}>
+                  <Text style={styles.potMinusText}>− {t.mixRemoveShort}</Text>
                 </Pressable>
               </View>
             ))}
@@ -327,16 +327,16 @@ const styles = StyleSheet.create({
   segmentTextOn: { color: '#ffffff' },
   actions: { flexDirection: 'row', flexWrap: 'wrap', gap: 10, alignItems: 'center' },
   pots: { flexDirection: 'row', flexWrap: 'wrap', gap: 14, justifyContent: 'flex-start' },
-  pot: { alignItems: 'center', gap: 6, width: 96 },
+  pot: { alignItems: 'center', gap: 2, width: 96 },
   jar: { width: 88, height: 88, alignItems: 'center', justifyContent: 'flex-end' },
   jarImg: { position: 'absolute', top: 0, left: 0, width: 88, height: 88 },
   potDot: { width: 46, height: 46, borderRadius: 23, marginBottom: 8, alignItems: 'center', justifyContent: 'center', borderWidth: 3, borderColor: 'rgba(0,0,0,0.15)' },
   potWhite: { borderColor: colors.line },
   potCount: { fontFamily: fontFamily.ui.black, fontSize: 24 },
   potName: { fontFamily: fontFamily.ui.extrabold, fontSize: 14, color: colors.ink },
-  potMinus: { minWidth: 48, minHeight: 40, borderRadius: 12, backgroundColor: colors.chip, alignItems: 'center', justifyContent: 'center' },
+  potMinus: { width: 92, minHeight: 44, borderRadius: 12, backgroundColor: colors.chip, alignItems: 'center', justifyContent: 'center' },
   potMinusOff: { opacity: 0.4 },
-  potMinusText: { fontFamily: fontFamily.ui.black, fontSize: 22, color: colors.inkSoft },
+  potMinusText: { fontFamily: fontFamily.ui.extrabold, fontSize: 14, color: colors.inkSoft },
   mixRow: { flexDirection: 'row', alignItems: 'center', gap: 14 },
   mixSwatch: { width: 96, height: 96, borderRadius: 20, borderWidth: 3, borderColor: colors.line },
   mixSwatchEmpty: { backgroundColor: '#ffffff', borderStyle: 'dashed' },
