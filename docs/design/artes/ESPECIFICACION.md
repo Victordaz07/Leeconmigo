@@ -154,7 +154,7 @@ principal (VA, MU, MA, TH, DA). Los códigos de estándares **no se asignan por 
 | AR-T1 | Prueba técnica de audio: motor puro + `FakeAudioOutput` + pantalla de prueba (✅ aprobada en la tableta, 2026-10-19) |
 | AR-T2 | Prueba técnica del lienzo (Skia): `packages/art-content` + pantalla de prueba (hecho el código; **falta probar en la tableta**) |
 | AR-T3 | Prueba técnica 3D |
-| AR-03 | Módulo `arte` enchufado como «Pronto» + `packages/art-content` + esquema de proyecto y guardado en SQLite |
+| AR-03 | Módulo `arte` enchufado + `packages/art-content` + esquema de proyecto y guardado por niño (✅ hecho; abre con el Taller libre de ritmo) |
 | AR-04 | Taller de ritmo (A1-U04) completo con Taller libre y portafolio |
 | AR-05 | Pintura y paleta (modelo de mezcla documentado) |
 | AR-06 | Collage y flipbook; recorridos «ritmo → composición» y «dibujo → collage → animación» |

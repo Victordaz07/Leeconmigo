@@ -143,7 +143,7 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | AR-T1 | Prueba técnica de audio: motor puro (`packages/music-engine`), `FakeAudioOutput`, 16 sonidos sintetizados elegibles por fila, pantalla «Prueba de audio» | ✅ | A | Tableta de Victor: 4 corridas de 5 min (60/90/120/140 BPM), todas «parejo», 0 congelamientos. Falta solo la comprobación corta de salir a segundo plano y volver |
 | AR-T2 | Prueba técnica del lienzo: `packages/art-content` (22 pruebas) + pantalla «Prueba del lienzo» con motor **SVG** (por defecto) y **Skia** | 🟡 | A | Skia hizo que la app se cerrara en la tableta de Victor (fallo nativo, sin registro). SVG en la tableta: 1 min, 13 trazos, 0 cuadros lentos, «todo bien»; faltan dos dedos/palma y lápiz. Skia queda opcional hasta tener `adb logcat -b crash -d` |
 | AR-T3 | Prueba técnica 3D (`expo-gl`) | ⬜ | – | después de AR-T2 |
-| AR-03 | Módulo `arte` enchufado + `packages/art-content` + proyecto editable en SQLite | ⬜ | – | tras AR-T1 |
+| AR-03 | Módulo `arte` enchufado (portada, inicio con Taller libre y creaciones) + modelo de proyecto editable en `packages/art-content` (guardado validado por niño, versiones A/B, topes) + Taller libre de ritmo con guardado automático | ✅ | A | 37 pruebas del paquete; 1601 en total; verificado en navegador (crear, editar, tocar, nombrar, versiones, duplicar, borrar). Falta probarlo en la tableta con un APK nuevo |
 | AR-04 | Taller de ritmo A1-U04 con Taller libre y portafolio | ⬜ | – | |
 | AR-05 | Pintura y paleta (modelo de mezcla documentado) | ⬜ | – | |
 | AR-06 | Collage y flipbook | ⬜ | – | |
