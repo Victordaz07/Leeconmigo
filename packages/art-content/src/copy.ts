@@ -72,6 +72,8 @@ export interface ArteCopy {
   mixHint: string;
   mixAdd: (pigment: string) => string;
   mixRemove: (pigment: string) => string;
+  /** Letrero corto del botón de quitar una gota (va debajo del nombre de la pintura). */
+  mixRemoveShort: string;
   mixEmpty: string;
   mixResult: string;
   mixSave: string;
@@ -147,6 +149,7 @@ const ES: ArteCopy = {
   mixHint: 'Toca una pintura para echar una gota. Mira qué color sale.',
   mixAdd: (p) => `Echar una gota de ${p}`,
   mixRemove: (p) => `Quitar una gota de ${p}`,
+  mixRemoveShort: 'Quitar',
   mixEmpty: 'Todavía no hay gotas.',
   mixResult: 'Tu mezcla',
   mixSave: 'Guardar este color',
@@ -222,6 +225,7 @@ const EN: ArteCopy = {
   mixHint: 'Tap a paint to add a drop. See what color you get.',
   mixAdd: (p) => `Add a drop of ${p}`,
   mixRemove: (p) => `Remove a drop of ${p}`,
+  mixRemoveShort: 'Remove',
   mixEmpty: 'No drops yet.',
   mixResult: 'Your mix',
   mixSave: 'Save this color',

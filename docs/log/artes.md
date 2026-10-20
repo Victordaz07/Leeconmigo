@@ -83,3 +83,6 @@
 ## 2026-10-20 · `snd_pisada` recibida: Tanda 1 de imágenes completa (31 de 31)
 - La primera copia de `snd_pisada` llegó cortada dentro del zip del Lote B; Victor la pegó en el chat (solo se veía, no había archivo que abrir) y luego la mandó como `snd_pisada.zip`: PNG válido, 1254×1254, fondo transparente limpio. Convertida a WebP (512×512, 45 KB) con `scripts/arte-imagenes.py … lote-b2` y conectada a `SOUND_ART`: los 16 sonidos tienen su dibujo.
 - Lección para próximos lotes: las imágenes pegadas en el chat no llegan como archivo; mandarlas en `.zip`.
+
+## 2026-10-20 · Mezclador: el botón de quitar una gota ahora dice «Quitar»
+- Victor, probando el APK 0.8.0, preguntó para qué era la casilla gris con un «−» debajo del nombre de cada pintura: era el botón de quitar una gota, pero un cuadrito gris con una raya, sin palabra, no se entendía (sobre todo para 1.º y 2.º). Ahora dice «− Quitar» (EN: «− Remove»), es más ancho, queda pegado al bote y se apaga cuando esa pintura tiene 0 gotas. Verificado en Chromium (teléfono): quitar un rojo baja de 2 a 1 gota; «Quitar» de una pintura sin gotas está desactivado.
