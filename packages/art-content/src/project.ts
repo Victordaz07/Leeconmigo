@@ -5,6 +5,7 @@
  * Un `ArtProject` guarda lo que un niño creó: un título, las escenas (hoy solo un ritmo de ocho pulsos; más adelante trazos, collage…) y
  * versiones ligeras («guardar versión» = una copia). Nada de audio grabado (no existe): el ritmo es el patrón + qué sonido tiene cada fila + el tempo.
  */
+import { cloneCollageScene, isCollageScene, newCollageScene, type CollageScene } from './collage.ts';
 import { clonePaintScene, isPaintScene, newPaintScene, type PaintScene } from './paint.ts';
 import { isUnitProgress, UNIT_ID, type UnitProgress } from './unit-model.ts';
 import { isPaintUnitProgress, UNIT2_ID, type PaintUnitProgress } from './unit2-model.ts';
@@ -23,9 +24,9 @@ export interface RhythmScene {
   bpm: number;
 }
 
-/** Una escena es de un taller: ritmo o pintura (el tipo es una unión para que agregar un taller no rompa lo guardado). */
-export type Scene = RhythmScene | PaintScene;
-export type { PaintScene };
+/** Una escena es de un taller: ritmo, pintura o collage (el tipo es una unión para que agregar un taller no rompa lo guardado). */
+export type Scene = RhythmScene | PaintScene | CollageScene;
+export type { PaintScene, CollageScene };
 
 /** Copia ligera de las escenas en un momento (para comparar A/B y poder volver). */
 export interface ProjectVersion {
@@ -63,11 +64,12 @@ export const emptyLibrary = (): ArtLibrary => ({ format: LIBRARY_FORMAT, project
 
 export const newRhythmScene = (): RhythmScene => ({ kind: 'rhythm', pattern: emptyPattern(), kit: { ...DEFAULT_KIT }, bpm: DEFAULT_BPM });
 
-const cloneScene = (s: Scene): Scene => (s.kind === 'rhythm' ? { kind: 'rhythm', pattern: clonePattern(s.pattern), kit: { ...s.kit }, bpm: s.bpm } : clonePaintScene(s));
+const cloneScene = (s: Scene): Scene => (s.kind === 'rhythm' ? { kind: 'rhythm', pattern: clonePattern(s.pattern), kit: { ...s.kit }, bpm: s.bpm } : s.kind === 'painting' ? clonePaintScene(s) : cloneCollageScene(s));
 
-/** La escena de ritmo / de pintura de un proyecto (`undefined` si el proyecto es de otro taller). */
+/** La escena de ritmo / de pintura / de collage de un proyecto (`undefined` si el proyecto es de otro taller). */
 export const rhythmOf = (p: ArtProject): RhythmScene | undefined => (p.scenes[0]?.kind === 'rhythm' ? p.scenes[0] : undefined);
 export const paintOf = (p: ArtProject): PaintScene | undefined => (p.scenes[0]?.kind === 'painting' ? p.scenes[0] : undefined);
+export const collageOf = (p: ArtProject): CollageScene | undefined => (p.scenes[0]?.kind === 'collage' ? p.scenes[0] : undefined);
 
 /** ¿De qué taller es el proyecto? (la primera escena manda). */
 export const kindOf = (p: ArtProject): Scene['kind'] => p.scenes[0]!.kind;
@@ -107,6 +109,14 @@ export function createPaintProject(lib: ArtLibrary, title: string, lang: ArtLang
   if (lib.projects.length >= MAX_PROJECTS) return { lib, id: null };
   const id = nextProjectId(lib);
   const project: ArtProject = { id, title: cleanTitle(title, id), lang, createdAt: now, updatedAt: now, scenes: [newPaintScene()], versions: [] };
+  return { lib: { ...lib, projects: [project, ...lib.projects] }, id };
+}
+
+/** Crea un proyecto con un cartón en blanco para pegar piezas. */
+export function createCollageProject(lib: ArtLibrary, title: string, lang: ArtLang, now: number): { lib: ArtLibrary; id: string | null } {
+  if (lib.projects.length >= MAX_PROJECTS) return { lib, id: null };
+  const id = nextProjectId(lib);
+  const project: ArtProject = { id, title: cleanTitle(title, id), lang, createdAt: now, updatedAt: now, scenes: [newCollageScene()], versions: [] };
   return { lib: { ...lib, projects: [project, ...lib.projects] }, id };
 }
 
@@ -180,6 +190,7 @@ export function isScene(v: unknown): v is Scene {
   if (typeof v !== 'object' || v === null) return false;
   const s = v as Record<string, unknown>;
   if (s.kind === 'painting') return isPaintScene(v);
+  if (s.kind === 'collage') return isCollageScene(v);
   return s.kind === 'rhythm' && isValidPattern(s.pattern) && isValidKit(s.kit) && isNum(s.bpm) && s.bpm >= MIN_BPM && s.bpm <= MAX_BPM;
 }
 

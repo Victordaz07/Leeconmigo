@@ -4,7 +4,7 @@
  */
 import { useMemo, useRef, useState } from 'react';
 import {
-  ARTE_COPY, UNIT2_COPY, UNIT_COPY, ensureUnit2Project, ensureUnitProject, unit2Of, unitOf, createPaintProject, createRhythmProject, kindOf, deleteProject, deleteVersion, duplicateProject, emptyLibrary, isArtLibrary, projectById, renameProject, restoreVersion, saveVersion, updateScene,
+  ARTE_COPY, COLLAGE_COPY, UNIT2_COPY, UNIT_COPY, ensureUnit2Project, ensureUnitProject, unit2Of, unitOf, createCollageProject, createPaintProject, createRhythmProject, kindOf, deleteProject, deleteVersion, duplicateProject, emptyLibrary, isArtLibrary, projectById, renameProject, restoreVersion, saveVersion, updateScene,
   type ArtLang, type ArtLibrary,
 } from '@lee-conmigo/art-content';
 import { progressSegments } from '@lee-conmigo/ui-core';
@@ -12,6 +12,7 @@ import { subjectStorageFor } from '../../app-state';
 import type { SubjectModule, SubjectScreenProps } from '../types';
 import { ARTE_ART } from './art';
 import { ArteHome } from './arte-home';
+import { CollageWorkshop } from './collage-workshop';
 import { PaintWorkshop } from './paint-workshop';
 import { RhythmWorkshop } from './rhythm-workshop';
 import { Unit2Player } from './unit2-player';
@@ -60,6 +61,11 @@ function ArteScreen({ profile, lang, onExit }: SubjectScreenProps) {
           commit(r.lib);
           if (r.id) setOpenId(r.id);
         }}
+        onNewCollage={() => {
+          const r = createCollageProject(latest.current, COLLAGE_COPY[language].defaultTitle, language, Date.now());
+          commit(r.lib);
+          if (r.id) setOpenId(r.id);
+        }}
         onOpen={setOpenId}
         unitDone={unitOf(library).done.length}
         onOpenUnit={() => {
@@ -77,6 +83,27 @@ function ArteScreen({ profile, lang, onExit }: SubjectScreenProps) {
     );
   }
   const id = project.id;
+  if (kindOf(project) === 'collage') {
+    return (
+      <CollageWorkshop
+        key={id}
+        lang={language}
+        project={project}
+        onScene={(scene) => commit(updateScene(latest.current, id, 0, scene, Date.now()))}
+        onRename={(title) => commit(renameProject(latest.current, id, title, Date.now()))}
+        onDuplicate={() => {
+          const r = duplicateProject(latest.current, id, t.copySuffix, Date.now());
+          commit(r.lib);
+          if (r.id) setOpenId(r.id);
+        }}
+        onDelete={() => {
+          commit(deleteProject(latest.current, id));
+          setOpenId(null);
+        }}
+        onBack={() => setOpenId(null)}
+      />
+    );
+  }
   if (kindOf(project) === 'painting') {
     return (
       <PaintWorkshop
