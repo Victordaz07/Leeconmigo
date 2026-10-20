@@ -5,6 +5,7 @@
  * Un `ArtProject` guarda lo que un niño creó: un título, las escenas (hoy solo un ritmo de ocho pulsos; más adelante trazos, collage…) y
  * versiones ligeras («guardar versión» = una copia). Nada de audio grabado (no existe): el ritmo es el patrón + qué sonido tiene cada fila + el tempo.
  */
+import { clonePaintScene, isPaintScene, newPaintScene, type PaintScene } from './paint.ts';
 import { isUnitProgress, type UnitProgress } from './unit-model.ts';
 import { clampBpm, clonePattern, DEFAULT_BPM, DEFAULT_KIT, emptyPattern, isValidKit, isValidPattern, MAX_BPM, MIN_BPM, type Kit, type Pattern } from '@lee-conmigo/music-engine';
 
@@ -21,8 +22,9 @@ export interface RhythmScene {
   bpm: number;
 }
 
-/** Hoy solo hay ritmo; el tipo es una unión para que agregar un taller no rompa lo guardado. */
-export type Scene = RhythmScene;
+/** Una escena es de un taller: ritmo o pintura (el tipo es una unión para que agregar un taller no rompa lo guardado). */
+export type Scene = RhythmScene | PaintScene;
+export type { PaintScene };
 
 /** Copia ligera de las escenas en un momento (para comparar A/B y poder volver). */
 export interface ProjectVersion {
@@ -60,7 +62,14 @@ export const emptyLibrary = (): ArtLibrary => ({ format: LIBRARY_FORMAT, project
 
 export const newRhythmScene = (): RhythmScene => ({ kind: 'rhythm', pattern: emptyPattern(), kit: { ...DEFAULT_KIT }, bpm: DEFAULT_BPM });
 
-const cloneScene = (s: Scene): Scene => ({ kind: 'rhythm', pattern: clonePattern(s.pattern), kit: { ...s.kit }, bpm: s.bpm });
+const cloneScene = (s: Scene): Scene => (s.kind === 'rhythm' ? { kind: 'rhythm', pattern: clonePattern(s.pattern), kit: { ...s.kit }, bpm: s.bpm } : clonePaintScene(s));
+
+/** La escena de ritmo / de pintura de un proyecto (`undefined` si el proyecto es de otro taller). */
+export const rhythmOf = (p: ArtProject): RhythmScene | undefined => (p.scenes[0]?.kind === 'rhythm' ? p.scenes[0] : undefined);
+export const paintOf = (p: ArtProject): PaintScene | undefined => (p.scenes[0]?.kind === 'painting' ? p.scenes[0] : undefined);
+
+/** ¿De qué taller es el proyecto? (la primera escena manda). */
+export const kindOf = (p: ArtProject): Scene['kind'] => p.scenes[0]!.kind;
 
 /** Título limpio: sin espacios sobrantes, con tope de largo; si queda vacío, el de reserva. */
 export function cleanTitle(raw: string, fallback: string): string {
@@ -92,11 +101,22 @@ export function createRhythmProject(lib: ArtLibrary, title: string, lang: ArtLan
   return { lib: { ...lib, projects: [project, ...lib.projects] }, id };
 }
 
+/** Crea un proyecto con un lienzo en blanco y la paleta de partida. */
+export function createPaintProject(lib: ArtLibrary, title: string, lang: ArtLang, now: number): { lib: ArtLibrary; id: string | null } {
+  if (lib.projects.length >= MAX_PROJECTS) return { lib, id: null };
+  const id = nextProjectId(lib);
+  const project: ArtProject = { id, title: cleanTitle(title, id), lang, createdAt: now, updatedAt: now, scenes: [newPaintScene()], versions: [] };
+  return { lib: { ...lib, projects: [project, ...lib.projects] }, id };
+}
+
 /** Guardado automático: reemplaza la escena `index` del proyecto. El tempo se limita a 60–140. */
 export function updateScene(lib: ArtLibrary, id: string, index: number, scene: Scene, now: number): ArtLibrary {
   return replace(lib, id, (p) => {
     if (!Number.isInteger(index) || index < 0 || index >= p.scenes.length) return p;
-    const next = { ...cloneScene(scene), bpm: clampBpm(scene.bpm) } as Scene;
+    // una escena solo se reemplaza por otra del mismo taller; el tempo se limita a 60–140
+    if (p.scenes[index]!.kind !== scene.kind) return p;
+    const copy = cloneScene(scene);
+    const next: Scene = copy.kind === 'rhythm' ? { ...copy, bpm: clampBpm(copy.bpm) } : copy;
     return { ...p, scenes: p.scenes.map((s, i) => (i === index ? next : s)), updatedAt: now };
   });
 }
@@ -158,6 +178,7 @@ const isNum = (v: unknown): v is number => typeof v === 'number' && Number.isFin
 export function isScene(v: unknown): v is Scene {
   if (typeof v !== 'object' || v === null) return false;
   const s = v as Record<string, unknown>;
+  if (s.kind === 'painting') return isPaintScene(v);
   return s.kind === 'rhythm' && isValidPattern(s.pattern) && isValidKit(s.kit) && isNum(s.bpm) && s.bpm >= MIN_BPM && s.bpm <= MAX_BPM;
 }
 

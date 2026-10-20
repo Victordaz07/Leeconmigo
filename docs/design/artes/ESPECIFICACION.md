@@ -156,7 +156,7 @@ principal (VA, MU, MA, TH, DA). Los códigos de estándares **no se asignan por 
 | AR-T3 | Prueba técnica 3D |
 | AR-03 | Módulo `arte` enchufado + `packages/art-content` + esquema de proyecto y guardado por niño (✅ hecho; abre con el Taller libre de ritmo) |
 | AR-04 | Taller de ritmo (A1-U04) completo con Taller libre y portafolio (✅ hecho; la escucha cultural sigue provisional) |
-| AR-05 | Pintura y paleta (modelo de mezcla documentado) |
+| AR-05 | Pintura y paleta (modelo de mezcla documentado en `MODELO-MEZCLA.md`): ✅ taller libre y mezclador; la unidad guiada A2-U02 es AR-05b |
 | AR-06 | Collage y flipbook; recorridos «ritmo → composición» y «dibujo → collage → animación» |
 | AR-07 | Ensamblaje 3D (si AR-T3 pasa) |
 | AR-08 | Cápsulas culturales (con permisos) y revisión de un maestro |

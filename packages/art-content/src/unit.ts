@@ -34,7 +34,10 @@ export function versionsDiffer(project: ArtProject): boolean {
   return seen.size >= 2;
 }
 
-const scene = (project: ArtProject | undefined): RhythmScene | undefined => project?.scenes[0];
+const scene = (project: ArtProject | undefined): RhythmScene | undefined => {
+  const s = project?.scenes[0];
+  return s?.kind === 'rhythm' ? s : undefined;
+};
 
 export function missingFor(id: EncounterId, u: UnitProgress, project: ArtProject | undefined): Missing[] {
   const s = scene(project);

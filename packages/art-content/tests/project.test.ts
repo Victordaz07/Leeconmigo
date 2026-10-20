@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { DEFAULT_KIT, toggleCell } from '@lee-conmigo/music-engine';
 import {
-  ARTE_COPY, MAX_PROJECTS, MAX_TITLE, MAX_VERSIONS, cleanTitle, createRhythmProject, deleteProject, deleteVersion, duplicateProject, emptyLibrary, isArtLibrary,
+  rhythmOf, ARTE_COPY, MAX_PROJECTS, MAX_TITLE, MAX_VERSIONS, cleanTitle, createRhythmProject, deleteProject, deleteVersion, duplicateProject, emptyLibrary, isArtLibrary,
   nextProjectId, projectById, renameProject, restoreVersion, saveVersion, updateScene, type ArtLibrary, type RhythmScene,
 } from '../src/index.ts';
 
@@ -11,7 +11,7 @@ const make = (): { lib: ArtLibrary; id: string } => {
   return { lib: r.lib, id: r.id! };
 };
 const withCell = (lib: ArtLibrary, id: string, step: number, bpm?: number): ArtLibrary => {
-  const s = projectById(lib, id)!.scenes[0]!;
+  const s = rhythmOf(projectById(lib, id)!)!;
   const next: RhythmScene = { ...s, pattern: toggleCell(s.pattern, 'a', step), bpm: bpm ?? s.bpm };
   return updateScene(lib, id, 0, next, NOW + 1);
 };
@@ -21,8 +21,8 @@ describe('crear y editar', () => {
     const { lib, id } = make();
     const p = projectById(lib, id)!;
     expect(p.scenes).toHaveLength(1);
-    expect(p.scenes[0]!.kit).toEqual(DEFAULT_KIT);
-    expect(p.scenes[0]!.pattern.a.some(Boolean)).toBe(false);
+    expect((p.scenes[0] as RhythmScene).kit).toEqual(DEFAULT_KIT);
+    expect((p.scenes[0] as RhythmScene).pattern.a.some(Boolean)).toBe(false);
     expect(p.versions).toEqual([]);
     expect(isArtLibrary(lib)).toBe(true);
   });
@@ -43,7 +43,7 @@ describe('crear y editar', () => {
   it('el guardado automático reemplaza la escena y limita el tempo a 60–140', () => {
     let { lib, id } = make();
     lib = withCell(lib, id, 3, 999);
-    const s = projectById(lib, id)!.scenes[0]!;
+    const s = rhythmOf(projectById(lib, id)!)!;
     expect(s.pattern.a[3]).toBe(true);
     expect(s.bpm).toBe(140);
     expect(projectById(lib, id)!.updatedAt).toBe(NOW + 1);
@@ -52,7 +52,7 @@ describe('crear y editar', () => {
 
   it('actualizar una escena que no existe o un proyecto que no existe no cambia nada', () => {
     const { lib, id } = make();
-    const s = projectById(lib, id)!.scenes[0]!;
+    const s = rhythmOf(projectById(lib, id)!)!;
     expect(updateScene(lib, id, 5, s, NOW)).toBe(lib);
     expect(updateScene(lib, 'zz', 0, s, NOW)).toBe(lib);
   });
@@ -91,9 +91,9 @@ describe('duplicar y versiones', () => {
     const copy = projectById(r.lib, r.id!)!;
     expect(copy.title).toBe('Mi ritmo (otra idea)');
     expect(copy.versions).toEqual([]);
-    expect(copy.scenes[0]!.pattern.a[0]).toBe(true);
+    expect((copy.scenes[0] as RhythmScene).pattern.a[0]).toBe(true);
     const edited = withCell(r.lib, r.id!, 5);
-    expect(projectById(edited, id)!.scenes[0]!.pattern.a[5]).toBe(false);
+    expect(rhythmOf(projectById(edited, id)!)!.pattern.a[5]).toBe(false);
   });
 
   it('las versiones se llaman A, B, C… y guardan una copia de ese momento', () => {
@@ -104,8 +104,8 @@ describe('duplicar y versiones', () => {
     const b = saveVersion(lib, id, NOW + 3);
     const p = projectById(b.lib, id)!;
     expect(p.versions.map((v) => v.label)).toEqual(['A', 'B']);
-    expect(p.versions[0]!.scenes[0]!.pattern.a[4]).toBe(false);
-    expect(p.versions[1]!.scenes[0]!.pattern.a[4]).toBe(true);
+    expect((p.versions[0]!.scenes[0] as RhythmScene).pattern.a[4]).toBe(false);
+    expect((p.versions[1]!.scenes[0] as RhythmScene).pattern.a[4]).toBe(true);
     expect(isArtLibrary(b.lib)).toBe(true);
   });
 
@@ -116,10 +116,10 @@ describe('duplicar y versiones', () => {
     lib = withCell(a.lib, id, 6);
     lib = restoreVersion(lib, id, a.versionId!, NOW + 4);
     const p = projectById(lib, id)!;
-    expect(p.scenes[0]!.pattern.a[6]).toBe(false);
-    expect(p.scenes[0]!.pattern.a[0]).toBe(true);
+    expect((p.scenes[0] as RhythmScene).pattern.a[6]).toBe(false);
+    expect((p.scenes[0] as RhythmScene).pattern.a[0]).toBe(true);
     // lo que había (con el pulso 7 encendido) quedó como versión B
-    expect(p.versions.some((v) => v.scenes[0]!.pattern.a[6])).toBe(true);
+    expect(p.versions.some((v) => (v.scenes[0] as RhythmScene).pattern.a[6])).toBe(true);
   });
 
   it('hay un tope de versiones: se descarta la más vieja', () => {

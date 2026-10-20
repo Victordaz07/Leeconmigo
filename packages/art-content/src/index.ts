@@ -1,4 +1,6 @@
 export * from './canvas.ts';
+export * from './mixing.ts';
+export * from './paint.ts';
 export * from './project.ts';
 export * from './unit.ts';
 export * from './copy.ts';

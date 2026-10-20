@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
-  ARTE_COPY, DEMO_LAYERS, ENCOUNTERS, INTENTIONS, LAYER_NOTES, PRESENT_NOTES, UNIT_COPY, VERSION_REASONS, activeRows, answerReturn, completeEncounter, demoPattern, isDone, markHeard, markSilence, missingFor,
+  ARTE_COPY, DEMO_LAYERS, ENCOUNTERS, INTENTIONS, LAYER_NOTES, PRESENT_NOTES, UNIT_COPY, VERSION_REASONS, activeRows, answerReturn, rhythmOf, completeEncounter, demoPattern, isDone, markHeard, markSilence, missingFor,
   patchUnit, projectById, saveVersion, unitOf, unitStars, updateScene, type ArtLang, type ArtLibrary, type ArtProject, type EncounterId, type RhythmScene,
 } from '@lee-conmigo/art-content';
 import { DEFAULT_BPM, DEFAULT_KIT, silentSteps, toggleCell, type SoundId, type Track } from '@lee-conmigo/music-engine';
@@ -48,10 +48,11 @@ export function UnitPlayer({ lang, library, onChange, onBack }: Props) {
   const [savedLabel, setSavedLabel] = useState<string | null>(null);
   const now = () => Date.now();
 
-  const myScene = project?.scenes[0];
+  const myScene = project ? rhythmOf(project) : undefined;
   const version = listenTo ? project?.versions.find((v) => v.id === listenTo) : undefined;
   // Lo que suena: el ejemplo (encuentro 1), una versión guardada (encuentro 5, si se está escuchando una) o lo que el niño tiene ahora.
-  const scene: RhythmScene = current === 'listen' ? DEMO_SCENE : (version?.scenes[0] ?? myScene ?? DEMO_SCENE);
+  const versionScene = version?.scenes[0]?.kind === 'rhythm' ? version.scenes[0] : undefined;
+  const scene: RhythmScene = current === 'listen' ? DEMO_SCENE : (versionScene ?? myScene ?? DEMO_SCENE);
   const player = useRhythmPlayer(scene.pattern, scene.kit, scene.bpm, undefined, solo);
 
   // Al cambiar de encuentro, el sonido para y se quitan los apoyos del anterior.
