@@ -21,3 +21,10 @@
 - `packages/art-content` (nuevo, 22 pruebas): trazos, trazo activo único, cancelar sin dejarlo colgado, deshacer/rehacer, goma, presión, camino suavizado, topes de memoria y guardado validado.
 - Pantalla «Prueba del lienzo» (Ajustes de padres): prueba de 60 s con contadores y veredicto. Verificada en Chromium con el respaldo SVG (3 trazos, deshacer/rehacer, trazo con dedo puesto → 0 colgados, 0 cuadros lentos) y empaquetada para Android sin errores. 1586 pruebas en verde.
 - Pendiente: probarla en la tableta con un APK nuevo.
+
+## 2026-10-20 · APK demo 0.6.0 (audio de 16 sonidos + prueba del lienzo)
+- Compilado en la nube desde `master` (4a4117d): `Kitewise-demo-0.6.0-arte-audio-lienzo.apk`, arm64-v8a + armeabi-v7a, ~238 MB (Skia, audio-api y worklets agregan ~140 MB; el AAB de tienda será mucho menor). Lleva `EXPO_PUBLIC_DEMO=1`.
+- Dos cosas que hubo que resolver al compilar en la nube (no afectan a una PC con `npm install` normal):
+  1. `npm install --ignore-scripts` no corre el `postinstall` de Skia: hay que correr `node node_modules/@shopify/react-native-skia/scripts/install-libs.js` (copia las librerías nativas a `libs/android`) o el CMake falla con «Skia prebuilt binaries not found».
+  2. `react-native-worklets` usa el plugin `com.diffplug.spotless`, que solo existe en el portal de plugins de Gradle: el script `~/.gradle/init.d/maven-mirror.gradle` (fuera del repo) ahora añade `https://plugins.gradle.org/m2` a `pluginManagement`.
+- Para compilar más rápido: `-PreactNativeArchitectures=arm64-v8a,armeabi-v7a` (por defecto Gradle también compila x86 y x86_64).
