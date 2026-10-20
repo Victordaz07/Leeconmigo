@@ -13,10 +13,10 @@ const StrokeView = memo(function StrokeView({ stroke }: { stroke: Stroke }) {
   return <Path d={d} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth={widthAt(stroke.brush, meanPressure(stroke.points))} stroke={stroke.brush.eraser ? PAPER : stroke.brush.color} />;
 });
 
-export function SvgStrokeLayer({ strokes }: { strokes: readonly Stroke[] }) {
+export function SvgStrokeLayer({ strokes, viewBox }: { strokes: readonly Stroke[]; viewBox?: string }) {
   return (
     <View style={{ flex: 1 }} pointerEvents="none">
-      <Svg width="100%" height="100%">
+      <Svg width="100%" height="100%" viewBox={viewBox}>
         <Rect x={0} y={0} width="100%" height="100%" fill={PAPER} />
         {strokes.map((s) => (
           <StrokeView key={s.id} stroke={s} />

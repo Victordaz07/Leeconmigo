@@ -168,7 +168,13 @@ export interface SavedDrawing {
   strokes: Stroke[];
 }
 
-export const toSaved = (d: Drawing): SavedDrawing => ({ version: 1, strokes: d.strokes });
+const round = (v: number, places: number) => Math.round(v * 10 ** places) / 10 ** places;
+
+/** Lo que se guarda: los puntos se redondean (décimas en x e y, centésimas en la presión) para que un dibujo largo no pese de más. */
+export const toSaved = (d: Drawing): SavedDrawing => ({
+  version: 1,
+  strokes: d.strokes.map((s) => ({ ...s, points: s.points.map((q) => ({ x: round(q.x, 1), y: round(q.y, 1), p: round(q.p, 2) })) })),
+});
 
 const isNum = (v: unknown): v is number => typeof v === 'number' && Number.isFinite(v);
 

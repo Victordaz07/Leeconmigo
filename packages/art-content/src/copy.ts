@@ -49,6 +49,38 @@ export interface ArteCopy {
   audioError: string;
   /** Ritmo en blanco: un empujón amable, no una orden. */
   emptyHint: string;
+  // pintura
+  newPainting: string;
+  paintKind: string;
+  paintTitle: string;
+  defaultPaintTitle: string;
+  paintHint: string;
+  canvasLabel: string;
+  colorsLabel: string;
+  colorLabel: (recipe: string) => string;
+  sizeLabel: string;
+  sizes: [string, string, string];
+  eraser: string;
+  undo: string;
+  redo: string;
+  clearAll: string;
+  clearAsk: string;
+  clearYes: string;
+  mixTitle: string;
+  mixOpen: string;
+  mixClose: string;
+  mixHint: string;
+  mixAdd: (pigment: string) => string;
+  mixRemove: (pigment: string) => string;
+  mixEmpty: string;
+  mixResult: string;
+  mixSave: string;
+  mixSaved: string;
+  mixFull: string;
+  mixClear: string;
+  mixNote: string;
+  removeColor: string;
+  paintEmpty: string;
 }
 
 const ES: ArteCopy = {
@@ -57,7 +89,7 @@ const ES: ArteCopy = {
   intro: 'Aquí inventas tu propia música. No hay notas ni puntos: tú decides cómo suena.',
   privacy: 'Lo que creas se queda en esta tableta.',
   freeTitle: 'Taller libre',
-  freeHint: 'Haz un ritmo a tu manera. Cada cuadro es un pulso.',
+  freeHint: 'Haz música o pinta a tu manera: sin notas, sin prisa.',
   newRhythm: 'Nuevo ritmo',
   challenges: 'Retos',
   creations: 'Tus creaciones',
@@ -93,6 +125,37 @@ const ES: ArteCopy = {
   removeNo: 'No',
   audioError: 'No se pudo abrir el sonido en este equipo.',
   emptyHint: 'Empieza con un cuadro. ¿Cómo suena?',
+  newPainting: 'Nueva pintura',
+  paintKind: 'Pintura',
+  paintTitle: 'Taller de pintura',
+  defaultPaintTitle: 'Mi pintura',
+  paintHint: 'Pinta con tus colores. Para inventar un color nuevo, mezcla pinturas.',
+  canvasLabel: 'Lienzo para pintar',
+  colorsLabel: 'Tus colores',
+  colorLabel: (r) => `Color: ${r}`,
+  sizeLabel: 'Pincel',
+  sizes: ['Fino', 'Medio', 'Grueso'],
+  eraser: 'Goma',
+  undo: 'Deshacer',
+  redo: 'Rehacer',
+  clearAll: 'Borrar todo',
+  clearAsk: '¿Borrar todo lo que pintaste?',
+  clearYes: 'Sí, borrar todo',
+  mixTitle: 'Mezclar pinturas',
+  mixOpen: 'Mezclar pinturas',
+  mixClose: 'Cerrar la mezcla',
+  mixHint: 'Toca una pintura para echar una gota. Mira qué color sale.',
+  mixAdd: (p) => `Echar una gota de ${p}`,
+  mixRemove: (p) => `Quitar una gota de ${p}`,
+  mixEmpty: 'Todavía no hay gotas.',
+  mixResult: 'Tu mezcla',
+  mixSave: 'Guardar este color',
+  mixSaved: 'Guardado en tus colores',
+  mixFull: 'Ya tienes 8 gotas. Quita una para seguir mezclando.',
+  mixClear: 'Vaciar',
+  mixNote: 'Esta mezcla es un juego: la pintura de verdad puede salir un poco distinta, y está bien.',
+  removeColor: 'Quitar de mis colores',
+  paintEmpty: 'Elige un color y pinta con el dedo.',
 };
 
 const EN: ArteCopy = {
@@ -101,7 +164,7 @@ const EN: ArteCopy = {
   intro: 'Here you invent your own music. No grades, no points: you decide how it sounds.',
   privacy: 'What you make stays on this tablet.',
   freeTitle: 'Free workshop',
-  freeHint: 'Make a rhythm your way. Each square is one beat.',
+  freeHint: 'Make music or paint your way: no grades, no rush.',
   newRhythm: 'New rhythm',
   challenges: 'Challenges',
   creations: 'Your creations',
@@ -137,6 +200,37 @@ const EN: ArteCopy = {
   removeNo: 'No',
   audioError: 'The sound could not start on this device.',
   emptyHint: 'Start with one square. How does it sound?',
+  newPainting: 'New painting',
+  paintKind: 'Painting',
+  paintTitle: 'Painting workshop',
+  defaultPaintTitle: 'My painting',
+  paintHint: 'Paint with your colors. To invent a new color, mix paints.',
+  canvasLabel: 'Painting canvas',
+  colorsLabel: 'Your colors',
+  colorLabel: (r) => `Color: ${r}`,
+  sizeLabel: 'Brush',
+  sizes: ['Thin', 'Medium', 'Thick'],
+  eraser: 'Eraser',
+  undo: 'Undo',
+  redo: 'Redo',
+  clearAll: 'Clear all',
+  clearAsk: 'Clear everything you painted?',
+  clearYes: 'Yes, clear all',
+  mixTitle: 'Mix paints',
+  mixOpen: 'Mix paints',
+  mixClose: 'Close mixing',
+  mixHint: 'Tap a paint to add a drop. See what color you get.',
+  mixAdd: (p) => `Add a drop of ${p}`,
+  mixRemove: (p) => `Remove a drop of ${p}`,
+  mixEmpty: 'No drops yet.',
+  mixResult: 'Your mix',
+  mixSave: 'Save this color',
+  mixSaved: 'Saved in your colors',
+  mixFull: 'You already have 8 drops. Remove one to keep mixing.',
+  mixClear: 'Empty',
+  mixNote: 'This mix is a game: real paint can come out a little different, and that is fine.',
+  removeColor: 'Remove from my colors',
+  paintEmpty: 'Pick a color and paint with your finger.',
 };
 
 export const ARTE_COPY: Record<ArtLang, ArteCopy> = { es: ES, en: EN };

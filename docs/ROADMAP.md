@@ -145,7 +145,7 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | AR-T3 | Prueba técnica 3D (`expo-gl`) | ⬜ | – | después de AR-T2 |
 | AR-03 | Módulo `arte` enchufado (portada, inicio con Taller libre y creaciones) + modelo de proyecto editable en `packages/art-content` (guardado validado por niño, versiones A/B, topes) + Taller libre de ritmo con guardado automático | ✅ | A | 37 pruebas del paquete; 1601 en total; verificado en navegador (crear, editar, tocar, nombrar, versiones, duplicar, borrar). Falta probarlo en la tableta con un APK nuevo |
 | AR-04 | Unidad guiada A1-U04 «Mi banda deja respirar al silencio»: 6 encuentros (escucha, armar, silencio, otra capa, dos versiones A/B, presentar) sobre el Taller de ritmo, portafolio («Tu carpeta»), estrellas por esfuerzo, cápsula cultural PROVISIONAL inventada y rotulada | ✅ | A | 52 pruebas del paquete; verificado en navegador de punta a punta. Falta probarlo en la tableta (APK nuevo) y que Victor confirme temas y escucha cultural reales (DA-1…8) |
-| AR-05 | Pintura y paleta (modelo de mezcla documentado) | ⬜ | – | |
+| AR-05 | Taller de pintura (Taller libre): lienzo SVG con trazos guardados, paleta de colores por receta y **mezclador de gotas** con modelo didáctico RYB documentado (`MODELO-MEZCLA.md`); escenas de pintura en el proyecto editable | ✅ | A | 79 pruebas del paquete (17 del mezclador); verificado en navegador. Falta probarlo en la tableta y la unidad guiada A2-U02 «Colores que se relacionan» (AR-05b) |
 | AR-06 | Collage y flipbook | ⬜ | – | |
 | AR-07 | Ensamblaje 3D (si AR-T3 pasa) | ⬜ | – | |
 | AR-08 | Cápsulas culturales con permisos y revisión de un maestro | ⬜ | – | |

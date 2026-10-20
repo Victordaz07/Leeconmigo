@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { toggleCell } from '@lee-conmigo/music-engine';
 import {
-  ENCOUNTERS, UNIT_ID, answerReturn, completeEncounter, deleteProject, emptyLibrary, ensureUnitProject, isArtLibrary, isDone, markHeard, markSilence, missingFor, patchUnit, projectById,
+  rhythmOf, ENCOUNTERS, UNIT_ID, answerReturn, completeEncounter, deleteProject, emptyLibrary, ensureUnitProject, isArtLibrary, isDone, markHeard, markSilence, missingFor, patchUnit, projectById,
   saveVersion, unitOf, unitStars, updateScene, versionsDiffer, type ArtLibrary, type RhythmScene,
 } from '../src/index.ts';
 
@@ -11,7 +11,7 @@ const start = (): { lib: ArtLibrary; id: string } => {
   return { lib: r.lib, id: r.project!.id };
 };
 const cell = (lib: ArtLibrary, id: string, track: 'a' | 'b' | 'c' | 'd', step: number): ArtLibrary => {
-  const s: RhythmScene = projectById(lib, id)!.scenes[0]!;
+  const s: RhythmScene = rhythmOf(projectById(lib, id)!)!;
   return updateScene(lib, id, 0, { ...s, pattern: toggleCell(s.pattern, track, step) }, NOW + 1);
 };
 const u = (lib: ArtLibrary) => unitOf(lib);
@@ -34,7 +34,7 @@ describe('arranque de la unidad', () => {
     lib = deleteProject(lib, id);
     const r = ensureUnitProject(lib, 'Mi banda', 'es', NOW + 9);
     // el proyecto nuevo está en blanco (aunque el id se reutilice, no hereda lo borrado)
-    expect(r.project!.scenes[0]!.pattern.a.some(Boolean)).toBe(false);
+    expect((r.project!.scenes[0] as RhythmScene).pattern.a.some(Boolean)).toBe(false);
     expect(u(r.lib).intention).toBe('calm');
     expect(u(r.lib).projectId).toBe(r.project!.id);
   });

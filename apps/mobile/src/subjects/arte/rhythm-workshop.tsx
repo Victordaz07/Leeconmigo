@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { ARTE_COPY, MAX_TITLE, type ArtLang, type ArtProject, type RhythmScene } from '@lee-conmigo/art-content';
+import { ARTE_COPY, MAX_TITLE, rhythmOf, type ArtLang, type ArtProject, type RhythmScene } from '@lee-conmigo/art-content';
 import { TRACKS, toggleCell, type SoundId, type Track } from '@lee-conmigo/music-engine';
 import { Button, ChevronLeftIcon, colors, fontFamily, radius, RoundButton, shadows, useLayout } from '@lee-conmigo/ui-native';
 import { RhythmGrid } from './rhythm-grid';
@@ -32,7 +32,7 @@ export function RhythmWorkshop({ lang, project, onScene, onRename, onSaveVersion
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const t = ARTE_COPY[lang];
-  const scene = project.scenes[0]!;
+  const scene = rhythmOf(project)!;
   const player = useRhythmPlayer(scene.pattern, scene.kit, scene.bpm);
   const [name, setName] = useState(project.title);
   const [confirmDelete, setConfirmDelete] = useState(false);

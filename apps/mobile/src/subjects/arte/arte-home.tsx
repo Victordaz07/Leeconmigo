@@ -1,6 +1,6 @@
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { ARTE_COPY, UNIT_COPY, type ArtLang, type ArtLibrary } from '@lee-conmigo/art-content';
+import { ARTE_COPY, UNIT_COPY, kindOf, type ArtLang, type ArtLibrary } from '@lee-conmigo/art-content';
 import { Button, ChevronLeftIcon, colors, fontFamily, radius, RoundButton, shadows, useLayout } from '@lee-conmigo/ui-native';
 
 interface Props {
@@ -8,6 +8,7 @@ interface Props {
   library: ArtLibrary;
   onBack: () => void;
   onNewRhythm: () => void;
+  onNewPainting: () => void;
   onOpen: (id: string) => void;
   /** Encuentros hechos de la unidad guiada A1-U04. */
   unitDone: number;
@@ -15,7 +16,7 @@ interface Props {
 }
 
 /** Inicio del cuaderno «Arte y música»: el Taller libre destacado y las creaciones guardadas. Todo abre (D13-1), sin notas ni puntos. */
-export function ArteHome({ lang, library, onBack, onNewRhythm, onOpen, unitDone, onOpenUnit }: Props) {
+export function ArteHome({ lang, library, onBack, onNewRhythm, onNewPainting, onOpen, unitDone, onOpenUnit }: Props) {
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const t = ARTE_COPY[lang];
@@ -33,7 +34,10 @@ export function ArteHome({ lang, library, onBack, onNewRhythm, onOpen, unitDone,
       <View style={styles.free}>
         <Text style={styles.freeTitle}>{t.freeTitle}</Text>
         <Text style={styles.freeHint}>{t.freeHint}</Text>
-        <Button label={t.newRhythm} onPress={onNewRhythm} />
+        <View style={styles.freeButtons}>
+          <Button label={t.newRhythm} onPress={onNewRhythm} />
+          <Button label={t.newPainting} variant="secondary" onPress={onNewPainting} />
+        </View>
       </View>
 
       <Text style={styles.h3}>{t.challenges}</Text>
@@ -54,12 +58,12 @@ export function ArteHome({ lang, library, onBack, onNewRhythm, onOpen, unitDone,
         <View style={styles.list}>
           {library.projects.map((p) => (
             <Pressable key={p.id} onPress={() => onOpen(p.id)} accessibilityRole="button" accessibilityLabel={t.open(p.title)} style={styles.card}>
-              <Text style={styles.cardGlyph}>♪</Text>
+              <Text style={styles.cardGlyph}>{kindOf(p) === 'painting' ? '🎨' : '♪'}</Text>
               <View style={styles.cardText}>
                 <Text style={styles.cardTitle} numberOfLines={1}>
                   {p.title}
                 </Text>
-                <Text style={styles.cardMeta}>{t.rhythmKind}</Text>
+                <Text style={styles.cardMeta}>{kindOf(p) === 'painting' ? t.paintKind : t.rhythmKind}</Text>
               </View>
             </Pressable>
           ))}
@@ -86,6 +90,7 @@ const styles = StyleSheet.create({
   unitTag: { fontFamily: fontFamily.ui.extrabold, fontSize: 12, color: colors.brand },
   unitTitle: { fontFamily: fontFamily.ui.black, fontSize: 20, color: colors.navy },
   unitGo: { fontFamily: fontFamily.ui.black, fontSize: 16, color: colors.brand },
+  freeButtons: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
   list: { gap: 10 },
   card: { flexDirection: 'row', alignItems: 'center', gap: 14, minHeight: 64, backgroundColor: '#ffffff', borderRadius: radius.tile, padding: 14, boxShadow: shadows.soft },
   cardGlyph: { fontSize: 30, color: colors.brand, width: 40, textAlign: 'center' },
