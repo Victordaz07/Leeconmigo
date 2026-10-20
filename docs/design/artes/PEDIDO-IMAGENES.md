@@ -5,12 +5,12 @@
 > `apps/mobile/src/subjects/arte/art.ts`: portada del cuaderno (estantería de Inicio), inicio del cuaderno (`hero_arte_inicio`, su mitad despejada
 > es el crema `#FEF7EA` de la tarjeta), portada de A1-U04 y fondos de ritmo y pintura (horizontal y vertical). Revisadas: sin texto, centro despejado,
 > espacio vacío a propósito en `cover_a1_u04`.
-> **Lotes B y C recibidos (2026-10-20): 23 de 24 conectadas.** Lote C (8 objetos de pintura) completo; Lote B (instrumentos) **15 de 16: falta `snd_pisada`**
-> (el PNG llegó cortado dentro del zip y no se puede leer: hay que **volver a generarla**; `scripts/arte-imagenes.py` avisa de las dañadas y la omite).
+> **Tanda 1 COMPLETA (31 de 31, 2026-10-20).** Lote C (8 objetos de pintura) completo; Lote B (instrumentos) 15 de 16 + `snd_pisada` en el Lote B2 (la primera copia
+> llegó cortada dentro del zip: se volvió a pedir y llegó bien, 1254×1254 con fondo transparente; `scripts/arte-imagenes.py` avisa de las dañadas y las omite).
 > Convertidas a 512×512 (se ven a menos de 100 px): 611 KB (B) + 198 KB (C). Manifiestos `manifest-lote-b.json` y `manifest-lote-c.json`.
 > Conectadas en `subjects/arte/art.ts` (`SOUND_ART`, `PAINT_ART`): cada sonido tiene su dibujo en el botón de la fila y en el selector; los pinceles, la goma,
-> la paleta, el bote y el vaso están en el taller de pintura. `prop_esponja` queda reservada para los sellos y estampas. **Sin dibujo de «Pisada»
-> la interfaz muestra solo el nombre** (funciona igual). Para conectar la que falte: `python3 -I scripts/arte-imagenes.py <carpeta> lote-b2` y agregarla a `SOUND_ART`.
+> la paleta, el bote y el vaso están en el taller de pintura. `prop_esponja` queda reservada para los sellos y estampas. Los 16 sonidos tienen
+> su dibujo. Manifiestos: `manifest-lote-a/b/b2/c.json`.
 > **Para quién:** Victor genera las imágenes y las sube al chat; Claude las convierte a WebP, las nombra y las conecta (igual que en Ciencia).
 > **Si solo se hace una parte, hacer primero el Lote A** (portada + inicio): es lo que se ve al abrir el cuaderno.
 

@@ -1,7 +1,7 @@
 /**
  * Arte de Arte y música (Lote A de la Tanda 1). Solo decorado: la rejilla, los pulsos, la paleta, los colores y todo texto los dibuja la app.
- * Manifiesto con el SHA-256 de los originales: `docs/design/artes/arte/manifest-lote-a.json`. Para agregar el Lote B (instrumentos) y el C
- * (pintura): `python3 -I scripts/arte-imagenes.py <carpeta> lote-b` y se conectan aquí. Si una imagen falta, la app usa lo hecho con código.
+ * Manifiesto con el SHA-256 de los originales: `docs/design/artes/arte/manifest-lote-a.json`. Lotes B, B2 (pisada) y C: ya conectados. Para agregar más:
+ * `python3 -I scripts/arte-imagenes.py <carpeta> <lote>` y se conectan aquí. Si una imagen falta, la app usa lo hecho con código.
  */
 import type { ImageSourcePropType } from 'react-native';
 import type { SoundId } from '@lee-conmigo/music-engine';
@@ -26,7 +26,8 @@ export const ARTE_ART = {
 
 /**
  * Un dibujo por sonido (Lote B, objetos con fondo transparente, 512×512). El sonido `carillon` se llama «Campanita» y su archivo es `snd_campanita`.
- * Falta `pisada` (la imagen llegó cortada y hay que volver a generarla): sin dibujo, la interfaz muestra solo el nombre.
+ * Los 16 sonidos tienen su dibujo (`pisada` llegó después, en el Lote B2, porque la primera copia vino cortada). `Partial` por si se agrega un sonido nuevo
+ * sin dibujo: la interfaz muestra solo el nombre.
  */
 export const SOUND_ART: Partial<Record<SoundId, ImageSourcePropType>> = {
   bombo: require('../../../assets/arte/snd/snd_bombo.webp'),
@@ -35,6 +36,7 @@ export const SOUND_ART: Partial<Record<SoundId, ImageSourcePropType>> = {
   caja: require('../../../assets/arte/snd/snd_caja.webp'),
   palmas: require('../../../assets/arte/snd/snd_palmas.webp'),
   chasquido: require('../../../assets/arte/snd/snd_chasquido.webp'),
+  pisada: require('../../../assets/arte/snd/snd_pisada.webp'),
   voz: require('../../../assets/arte/snd/snd_voz.webp'),
   claves: require('../../../assets/arte/snd/snd_claves.webp'),
   bloque: require('../../../assets/arte/snd/snd_bloque.webp'),

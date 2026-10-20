@@ -79,3 +79,7 @@
 - Conectado: botón de sonido de cada fila y selector de sonidos con su dibujo (sin dibujo, solo el nombre); en pintura, pinceles fino/medio/grueso, goma, paleta junto a «Tus colores», vaso junto a «Mezclar pinturas» y el bote de pintura como cada «pintura» del mezclador (la gota de color va sobre el bote blanco; no se tiñe el bote).
 - Corregido de paso (venía de AR-03): en un teléfono la rejilla de ritmo se salía de la pantalla (el pulso 8 quedaba cortado). Ahora el botón del sonido se estrecha y la tarjeta usa menos margen; caben los ocho pulsos en 390 px.
 - Verificado en Chromium en tableta y teléfono; sin errores de consola.
+
+## 2026-10-20 · `snd_pisada` recibida: Tanda 1 de imágenes completa (31 de 31)
+- La primera copia de `snd_pisada` llegó cortada dentro del zip del Lote B; Victor la pegó en el chat (solo se veía, no había archivo que abrir) y luego la mandó como `snd_pisada.zip`: PNG válido, 1254×1254, fondo transparente limpio. Convertida a WebP (512×512, 45 KB) con `scripts/arte-imagenes.py … lote-b2` y conectada a `SOUND_ART`: los 16 sonidos tienen su dibujo.
+- Lección para próximos lotes: las imágenes pegadas en el chat no llegan como archivo; mandarlas en `.zip`.

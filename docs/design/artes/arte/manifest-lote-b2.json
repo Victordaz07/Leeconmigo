@@ -1,0 +1,11 @@
+[
+  {
+    "source": "snd_pisada.png",
+    "sha256": "ed556af60b8f5f328e7b12bc84d8277c383fa0ebf4b5df4ec881120be39e7b3d",
+    "bytes": 1394094,
+    "output": "apps/mobile/assets/arte/snd/snd_pisada.webp",
+    "outputBytes": 46516,
+    "width": 512,
+    "height": 512
+  }
+]
