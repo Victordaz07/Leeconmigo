@@ -38,3 +38,8 @@
 - Grabación de pantalla de Victor con el APK 0.6.1: la app arranca bien (la carga diferida funcionó), pero al tocar «Probar el lienzo de dibujo» **se cierra** («Kitewise continúa fallando»). Es un fallo nativo al inicializar Skia (`System.loadLibrary("rnskia")`/`SkiaManager`), que `try/catch` de JS no atrapa. Sin `adb logcat` no hay causa; las librerías están completas (libreactnative, libc++_shared, NEEDED correctos, sin minificar).
 - Decisión: el lienzo se prueba primero con el plan B de la especificación (**SVG** con `react-native-svg`, que la app ya trae), y Skia queda como motor opcional que el adulto elige. La pantalla muestra el motor en los resultados para comparar. Verificado en Chromium con SVG: 4 trazos, deshacer/rehacer, 0 colgados, 0 cuadros lentos.
 - Para diagnosticar Skia: con el equipo conectado por USB, `adb logcat -b crash -d` justo después del cierre.
+
+## 2026-10-20 · AR-T2: primer resultado con SVG en la tableta
+- Corrida #1 (APK 0.6.2, motor SVG, 1:00): trazos empezados 14 / guardados 13 / cancelados 0 · en pantalla 13 (1969 puntos) · **cuadros lentos 0 (máx. 29 ms, media 16,7 ms)** · «colgados» 1 · veredicto del adulto: **todo bien**.
+- Lectura: los 60 fps se sostienen con ~2000 puntos y 13 trazos; no se perdió ningún trazo (14 = 13 + el que seguía en curso cuando acabó el minuto). El «colgado 1» fue casi seguro ese trazo en curso al terminar la prueba con el dedo puesto, no un error: la métrica no distinguía los dos casos. Arreglado: ahora «colgado» exige que no haya ningún dedo en el lienzo, y se anota «terminó con el dedo puesto».
+- Sin ejercitar todavía: dos dedos a la vez y palma (cancelados salió 0), lápiz, y que la pantalla no se mueva al dibujar (el veredicto «todo bien» sugiere que no).

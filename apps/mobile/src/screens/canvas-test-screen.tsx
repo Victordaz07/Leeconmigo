@@ -35,7 +35,10 @@ interface Result {
   strokes: number;
   points: number;
   frames: MonitorReport;
+  /** Trazos que quedaron activos SIN ningún dedo puesto (un trazo colgado de verdad). */
   hung: number;
+  /** La prueba terminó (a los 60 s) con un dedo sobre el lienzo: ese trazo en curso no es un error. */
+  fingerDown: boolean;
   verdict: string;
 }
 
@@ -69,6 +72,8 @@ export function CanvasTestScreen({ onBack }: { onBack: () => void }) {
   const countsRef = useRef<Counts>(counts);
   /** true mientras hay más de un dedo: no se dibuja hasta soltarlos todos (evita la palma sobre el lienzo). */
   const multi = useRef(false);
+  /** Dedos que hay sobre el lienzo ahora mismo (según el último evento de toque). */
+  const fingers = useRef(0);
   const monitor = useRef(new PumpMonitor(JANK_MS));
   const startedAt = useRef(0);
   const nextId = useRef(1);
@@ -86,6 +91,7 @@ export function CanvasTestScreen({ onBack }: { onBack: () => void }) {
   };
 
   const onStart = (e: GestureResponderEvent) => {
+    fingers.current = e.nativeEvent.touches.length;
     if (e.nativeEvent.touches.length > 1) {
       // segundo dedo: el trazo en curso se cancela y no se dibuja hasta soltar todo
       multi.current = true;
@@ -100,6 +106,7 @@ export function CanvasTestScreen({ onBack }: { onBack: () => void }) {
     bump('started');
   };
   const onMove = (e: GestureResponderEvent) => {
+    fingers.current = e.nativeEvent.touches.length;
     if (multi.current) return;
     if (e.nativeEvent.touches.length > 1) {
       multi.current = true;
@@ -114,6 +121,7 @@ export function CanvasTestScreen({ onBack }: { onBack: () => void }) {
     if (next !== live.current) apply(next);
   };
   const onEnd = (e: GestureResponderEvent) => {
+    fingers.current = e.nativeEvent.touches.length;
     if (e.nativeEvent.touches.length === 0) {
       const wasMulti = multi.current;
       multi.current = false;
@@ -126,6 +134,7 @@ export function CanvasTestScreen({ onBack }: { onBack: () => void }) {
   };
   /** El sistema le quitó el toque a la pantalla (llamada, gesto de borde, etc.). */
   const onCancel = () => {
+    fingers.current = 0;
     multi.current = false;
     if (live.current.active) {
       apply(cancelStroke(live.current));
@@ -175,8 +184,9 @@ export function CanvasTestScreen({ onBack }: { onBack: () => void }) {
       strokes: d.strokes.length,
       points: totalPoints(d),
       frames: monitor.current.report(),
-      // colgado = trazo activo cuando ya no hay dedo puesto
-      hung: d.active ? 1 : 0,
+      // colgado = trazo activo cuando ya no hay NINGÚN dedo puesto; si la prueba acabó con el dedo abajo, el trazo en curso es normal
+      hung: d.active && fingers.current === 0 ? 1 : 0,
+      fingerDown: fingers.current > 0,
     });
   }
 
@@ -204,7 +214,7 @@ export function CanvasTestScreen({ onBack }: { onBack: () => void }) {
   const summary = results
     .map(
       (r) =>
-        `#${r.id} · motor ${ENGINE_NAME[r.engine]} · ${clock(r.seconds)} · trazos empezados ${r.counts.started} / guardados ${r.counts.ended} / cancelados ${r.counts.cancelled} · en pantalla ${r.strokes} (${r.points} puntos) · colgados ${r.hung} · cuadros lentos (> ${JANK_MS} ms) ${r.frames.stalls} (máx. ${r.frames.maxGapMs} ms, media ${r.frames.meanGapMs} ms) · se vio: ${r.verdict}`,
+        `#${r.id} · motor ${ENGINE_NAME[r.engine]} · ${clock(r.seconds)} · trazos empezados ${r.counts.started} / guardados ${r.counts.ended} / cancelados ${r.counts.cancelled} · en pantalla ${r.strokes} (${r.points} puntos) · colgados ${r.hung}${r.fingerDown ? ' (terminó con el dedo puesto)' : ''} · cuadros lentos (> ${JANK_MS} ms) ${r.frames.stalls} (máx. ${r.frames.maxGapMs} ms, media ${r.frames.meanGapMs} ms) · se vio: ${r.verdict}`,
     )
     .join('\n');
   const active = drawing.active !== null;
@@ -309,7 +319,7 @@ export function CanvasTestScreen({ onBack }: { onBack: () => void }) {
           </Text>
         )}
         <Text style={styles.small}>
-          Empezados = guardados + cancelados (+1 si aún tienes el dedo puesto). Si no cuadra, se perdió un trazo. Un cuadro lento es un tirón al dibujar.
+          Empezados = guardados + cancelados (+1 si la prueba termina con el dedo puesto). Si no cuadra, se perdió un trazo. «Colgado» es un trazo que sigue activo sin ningún dedo en el lienzo. Un cuadro lento es un tirón al dibujar.
         </Text>
       </View>
 
