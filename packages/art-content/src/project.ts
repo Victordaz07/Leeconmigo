@@ -9,6 +9,7 @@ import { cloneCollageScene, isCollageScene, newCollageScene, type CollageScene }
 import { clonePaintScene, isPaintScene, newPaintScene, type PaintScene } from './paint.ts';
 import { isUnitProgress, UNIT_ID, type UnitProgress } from './unit-model.ts';
 import { isPaintUnitProgress, UNIT2_ID, type PaintUnitProgress } from './unit2-model.ts';
+import { isStoryUnitProgress, UNIT3_ID, type StoryUnitProgress } from './unit3-model.ts';
 import { clampBpm, clonePattern, DEFAULT_BPM, DEFAULT_KIT, emptyPattern, isValidKit, isValidPattern, MAX_BPM, MIN_BPM, type Kit, type Pattern } from '@lee-conmigo/music-engine';
 
 /** Versión del formato guardado. Si cambia, `isArtLibrary` rechaza lo viejo y se empieza limpio (o se migra). */
@@ -51,7 +52,7 @@ export interface ArtLibrary {
   format: typeof LIBRARY_FORMAT;
   projects: ArtProject[];
   /** Avance de las unidades guiadas (`unit.ts`), por id de unidad. Ausente en lo guardado antes de AR-04: se lee como vacío. */
-  units?: { [UNIT_ID]?: UnitProgress; [UNIT2_ID]?: PaintUnitProgress };
+  units?: { [UNIT_ID]?: UnitProgress; [UNIT2_ID]?: PaintUnitProgress; [UNIT3_ID]?: StoryUnitProgress };
 }
 
 /** Topes para que lo guardado no crezca sin límite. */
@@ -228,5 +229,5 @@ export function isArtLibrary(v: unknown): v is ArtLibrary {
   if (l.units === undefined) return true;
   if (typeof l.units !== 'object' || l.units === null) return false;
   // cada unidad guardada se valida con su propio modelo; una clave desconocida se rechaza (se empieza limpio)
-  return Object.entries(l.units).every(([key, value]) => (key === UNIT_ID ? isUnitProgress(value) : key === UNIT2_ID ? isPaintUnitProgress(value) : false));
+  return Object.entries(l.units).every(([key, value]) => (key === UNIT_ID ? isUnitProgress(value) : key === UNIT2_ID ? isPaintUnitProgress(value) : key === UNIT3_ID ? isStoryUnitProgress(value) : false));
 }

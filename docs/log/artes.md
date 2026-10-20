@@ -96,3 +96,7 @@
 - Victor aprobó seguir con el collage («funciona perfecto» sobre A2-U02). Dominio puro `collage.ts` + `collage-copy.ts` + pruebas; proyecto de collage en `project.ts` (escena nueva, validación, duplicado sin compartir piezas).
 - Interfaz: `CollageArea` (reutilizable para la unidad A1-U06) y `CollageWorkshop`. Verificado en Chromium (tableta y teléfono): pegar, recolorear, arrastrar, agrandar, girar, capas, copiar, cambiar fondo, deshacer/rehacer, salir y reabrir (queda guardado).
 - Pendiente de probar en la tableta real: arrastre con lápiz y el segundo dedo (cancela el arrastre).
+
+## 2026-10-20 · AR-06b: unidad A1-U06 «Una historia de recortes»
+- Elegida de la investigación (§10: «Ordenar piezas y escenas para contar algo»; no estaba entre los 6 retos desarrollados, así que los encuentros son diseño propio, en el mismo patrón que A1-U04 y A2-U02). Un collage de cuatro cartones (tres de historia y uno para probar piezas). Lo verificable: orden de las escenas, piezas por escena, y que algo cambie entre escenas seguidas (por `id` de pieza: movió, apareció, creció).
+- Verificado en Chromium (tableta y teléfono) de punta a punta; pista suave con un orden equivocado; «Cuéntala» dice si el cambio elegido se ve en las escenas sin bloquear; 3 estrellas al final; sin errores de consola.

@@ -4,7 +4,7 @@
  */
 import { useMemo, useRef, useState } from 'react';
 import {
-  ARTE_COPY, COLLAGE_COPY, UNIT2_COPY, UNIT_COPY, ensureUnit2Project, ensureUnitProject, unit2Of, unitOf, createCollageProject, createPaintProject, createRhythmProject, kindOf, deleteProject, deleteVersion, duplicateProject, emptyLibrary, isArtLibrary, projectById, renameProject, restoreVersion, saveVersion, updateScene,
+  ARTE_COPY, COLLAGE_COPY, UNIT2_COPY, UNIT3_COPY, UNIT_COPY, ensureUnit2Project, ensureUnit3Project, ensureUnitProject, unit2Of, unit3Of, unitOf, createCollageProject, createPaintProject, createRhythmProject, kindOf, deleteProject, deleteVersion, duplicateProject, emptyLibrary, isArtLibrary, projectById, renameProject, restoreVersion, saveVersion, updateScene,
   type ArtLang, type ArtLibrary,
 } from '@lee-conmigo/art-content';
 import { progressSegments } from '@lee-conmigo/ui-core';
@@ -16,6 +16,7 @@ import { CollageWorkshop } from './collage-workshop';
 import { PaintWorkshop } from './paint-workshop';
 import { RhythmWorkshop } from './rhythm-workshop';
 import { Unit2Player } from './unit2-player';
+import { Unit3Player } from './unit3-player';
 import { UnitPlayer } from './unit-player';
 
 const EMPTY_LIBRARY: ArtLibrary = emptyLibrary();
@@ -33,13 +34,16 @@ function ArteScreen({ profile, lang, onExit }: SubjectScreenProps) {
     store.save(next);
   };
   const [openId, setOpenId] = useState<string | null>(null);
-  const [inUnit, setInUnit] = useState<'A1-U04' | 'A2-U02' | null>(null);
+  const [inUnit, setInUnit] = useState<'A1-U04' | 'A2-U02' | 'A1-U06' | null>(null);
   const language: ArtLang = lang === 'en' ? 'en' : 'es';
   const t = ARTE_COPY[language];
   const project = openId ? projectById(library, openId) : undefined;
 
   if (inUnit === 'A1-U04') {
     return <UnitPlayer lang={language} library={library} onChange={commit} onBack={() => setInUnit(null)} />;
+  }
+  if (inUnit === 'A1-U06') {
+    return <Unit3Player lang={language} library={library} onChange={commit} onBack={() => setInUnit(null)} />;
   }
   if (inUnit === 'A2-U02') {
     return <Unit2Player lang={language} library={library} onChange={commit} onBack={() => setInUnit(null)} />;
@@ -78,6 +82,12 @@ function ArteScreen({ profile, lang, onExit }: SubjectScreenProps) {
           // la unidad pinta dos cuadros en su propio proyecto: se crea la primera vez
           commit(ensureUnit2Project(latest.current, UNIT2_COPY[language].title, language, Date.now()).lib);
           setInUnit('A2-U02');
+        }}
+        unit3Done={unit3Of(library).done.length}
+        onOpenUnit3={() => {
+          // la unidad pega recortes en cuatro cartones de su propio proyecto: se crea la primera vez
+          commit(ensureUnit3Project(latest.current, UNIT3_COPY[language].title, language, Date.now()).lib);
+          setInUnit('A1-U06');
         }}
       />
     );
