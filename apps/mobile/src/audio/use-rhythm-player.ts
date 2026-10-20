@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { AppState } from 'react-native';
-import { Sequencer, type Kit, type Pattern, type SoundId } from '@lee-conmigo/music-engine';
+import { Sequencer, type Kit, type Pattern, type SoundId, type Track } from '@lee-conmigo/music-engine';
 import { DEFAULT_VOLUME, NativeAudioOutput } from './native-audio-output';
 
 const PUMP_MS = 25;
@@ -11,7 +11,7 @@ const PUMP_MS = 25;
  * lee de ese mismo reloj. El audio se abre la primera vez que se toca (no al abrir la pantalla) y se cierra al salir. Si la app pasa a segundo
  * plano, el ritmo se detiene. No usa micrófono, archivos ni red.
  */
-export function useRhythmPlayer(pattern: Pattern, kit: Kit, bpm: number, volume = DEFAULT_VOLUME) {
+export function useRhythmPlayer(pattern: Pattern, kit: Kit, bpm: number, volume = DEFAULT_VOLUME, solo: Track | null = null) {
   const [playing, setPlaying] = useState(false);
   const [cursor, setCursor] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -38,6 +38,8 @@ export function useRhythmPlayer(pattern: Pattern, kit: Kit, bpm: number, volume 
   useEffect(() => seq.current?.setKit(kit), [kit]);
   useEffect(() => seq.current?.setTempo(bpm), [bpm]);
   useEffect(() => out.current?.setVolume(volume), [volume]);
+  // «Solo»: se oye una sola capa (las demás quedan en silencio) para escucharla aparte.
+  useEffect(() => seq.current?.setSolo(solo), [solo]);
 
   const stop = useCallback(() => {
     seq.current?.stop();
@@ -59,9 +61,10 @@ export function useRhythmPlayer(pattern: Pattern, kit: Kit, bpm: number, volume 
     s.setPattern(pattern);
     s.setKit(kit);
     s.setTempo(bpm);
+    s.setSolo(solo);
     s.start();
     setPlaying(true);
-  }, [ensure, pattern, kit, bpm]);
+  }, [ensure, pattern, kit, bpm, solo]);
 
   /** Se oye un sonido ahora mismo (al elegirlo), aunque el ritmo no esté sonando. */
   const preview = useCallback(

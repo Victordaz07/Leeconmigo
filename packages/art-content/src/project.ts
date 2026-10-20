@@ -5,6 +5,7 @@
  * Un `ArtProject` guarda lo que un niño creó: un título, las escenas (hoy solo un ritmo de ocho pulsos; más adelante trazos, collage…) y
  * versiones ligeras («guardar versión» = una copia). Nada de audio grabado (no existe): el ritmo es el patrón + qué sonido tiene cada fila + el tempo.
  */
+import { isUnitProgress, type UnitProgress } from './unit-model.ts';
 import { clampBpm, clonePattern, DEFAULT_BPM, DEFAULT_KIT, emptyPattern, isValidKit, isValidPattern, MAX_BPM, MIN_BPM, type Kit, type Pattern } from '@lee-conmigo/music-engine';
 
 /** Versión del formato guardado. Si cambia, `isArtLibrary` rechaza lo viejo y se empieza limpio (o se migra). */
@@ -45,6 +46,8 @@ export interface ArtProject {
 export interface ArtLibrary {
   format: typeof LIBRARY_FORMAT;
   projects: ArtProject[];
+  /** Avance de las unidades guiadas (`unit.ts`), por id de unidad. Ausente en lo guardado antes de AR-04: se lee como vacío. */
+  units?: Record<string, UnitProgress>;
 }
 
 /** Topes para que lo guardado no crezca sin límite. */
@@ -188,5 +191,7 @@ export function isArtLibrary(v: unknown): v is ArtLibrary {
   const l = v as Record<string, unknown>;
   if (l.format !== LIBRARY_FORMAT || !Array.isArray(l.projects) || l.projects.length > MAX_PROJECTS || !l.projects.every(isArtProject)) return false;
   const ids = (l.projects as ArtProject[]).map((p) => p.id);
-  return new Set(ids).size === ids.length;
+  if (new Set(ids).size !== ids.length) return false;
+  if (l.units === undefined) return true;
+  return typeof l.units === 'object' && l.units !== null && Object.values(l.units).every(isUnitProgress);
 }

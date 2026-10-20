@@ -4,7 +4,7 @@
  */
 import { useMemo, useRef, useState } from 'react';
 import {
-  ARTE_COPY, createRhythmProject, deleteProject, deleteVersion, duplicateProject, emptyLibrary, isArtLibrary, projectById, renameProject, restoreVersion, saveVersion, updateScene,
+  ARTE_COPY, UNIT_COPY, ensureUnitProject, unitOf, createRhythmProject, deleteProject, deleteVersion, duplicateProject, emptyLibrary, isArtLibrary, projectById, renameProject, restoreVersion, saveVersion, updateScene,
   type ArtLang, type ArtLibrary,
 } from '@lee-conmigo/art-content';
 import { progressSegments } from '@lee-conmigo/ui-core';
@@ -12,6 +12,7 @@ import { subjectStorageFor } from '../../app-state';
 import type { SubjectModule, SubjectScreenProps } from '../types';
 import { ArteHome } from './arte-home';
 import { RhythmWorkshop } from './rhythm-workshop';
+import { UnitPlayer } from './unit-player';
 
 const EMPTY_LIBRARY: ArtLibrary = emptyLibrary();
 const storage = (profileId: string) => subjectStorageFor('arte', profileId, EMPTY_LIBRARY, isArtLibrary);
@@ -28,9 +29,14 @@ function ArteScreen({ profile, lang, onExit }: SubjectScreenProps) {
     store.save(next);
   };
   const [openId, setOpenId] = useState<string | null>(null);
+  const [inUnit, setInUnit] = useState(false);
   const language: ArtLang = lang === 'en' ? 'en' : 'es';
   const t = ARTE_COPY[language];
   const project = openId ? projectById(library, openId) : undefined;
+
+  if (inUnit) {
+    return <UnitPlayer lang={language} library={library} onChange={commit} onBack={() => setInUnit(false)} />;
+  }
 
   if (!project) {
     return (
@@ -44,6 +50,12 @@ function ArteScreen({ profile, lang, onExit }: SubjectScreenProps) {
           if (r.id) setOpenId(r.id);
         }}
         onOpen={setOpenId}
+        unitDone={unitOf(library).done.length}
+        onOpenUnit={() => {
+          // la unidad trabaja sobre su propio proyecto de ritmo: se crea la primera vez
+          commit(ensureUnitProject(latest.current, UNIT_COPY[language].title, language, Date.now()).lib);
+          setInUnit(true);
+        }}
       />
     );
   }

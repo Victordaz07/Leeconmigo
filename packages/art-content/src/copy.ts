@@ -13,6 +13,7 @@ export interface ArteCopy {
   freeTitle: string;
   freeHint: string;
   newRhythm: string;
+  challenges: string;
   creations: string;
   noCreations: string;
   back: string;
@@ -58,6 +59,7 @@ const ES: ArteCopy = {
   freeTitle: 'Taller libre',
   freeHint: 'Haz un ritmo a tu manera. Cada cuadro es un pulso.',
   newRhythm: 'Nuevo ritmo',
+  challenges: 'Retos',
   creations: 'Tus creaciones',
   noCreations: 'Todavía no hay creaciones. ¡Empieza con un ritmo!',
   back: 'Volver',
@@ -101,6 +103,7 @@ const EN: ArteCopy = {
   freeTitle: 'Free workshop',
   freeHint: 'Make a rhythm your way. Each square is one beat.',
   newRhythm: 'New rhythm',
+  challenges: 'Challenges',
   creations: 'Your creations',
   noCreations: 'No creations yet. Start with a rhythm!',
   back: 'Back',

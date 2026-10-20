@@ -144,7 +144,7 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | AR-T2 | Prueba técnica del lienzo: `packages/art-content` (22 pruebas) + pantalla «Prueba del lienzo» con motor **SVG** (por defecto) y **Skia** | 🟡 | A | Skia hizo que la app se cerrara en la tableta de Victor (fallo nativo, sin registro). SVG en la tableta: 1 min, 13 trazos, 0 cuadros lentos, «todo bien»; faltan dos dedos/palma y lápiz. Skia queda opcional hasta tener `adb logcat -b crash -d` |
 | AR-T3 | Prueba técnica 3D (`expo-gl`) | ⬜ | – | después de AR-T2 |
 | AR-03 | Módulo `arte` enchufado (portada, inicio con Taller libre y creaciones) + modelo de proyecto editable en `packages/art-content` (guardado validado por niño, versiones A/B, topes) + Taller libre de ritmo con guardado automático | ✅ | A | 37 pruebas del paquete; 1601 en total; verificado en navegador (crear, editar, tocar, nombrar, versiones, duplicar, borrar). Falta probarlo en la tableta con un APK nuevo |
-| AR-04 | Taller de ritmo A1-U04 con Taller libre y portafolio | ⬜ | – | |
+| AR-04 | Unidad guiada A1-U04 «Mi banda deja respirar al silencio»: 6 encuentros (escucha, armar, silencio, otra capa, dos versiones A/B, presentar) sobre el Taller de ritmo, portafolio («Tu carpeta»), estrellas por esfuerzo, cápsula cultural PROVISIONAL inventada y rotulada | ✅ | A | 52 pruebas del paquete; verificado en navegador de punta a punta. Falta probarlo en la tableta (APK nuevo) y que Victor confirme temas y escucha cultural reales (DA-1…8) |
 | AR-05 | Pintura y paleta (modelo de mezcla documentado) | ⬜ | – | |
 | AR-06 | Collage y flipbook | ⬜ | – | |
 | AR-07 | Ensamblaje 3D (si AR-T3 pasa) | ⬜ | – | |
