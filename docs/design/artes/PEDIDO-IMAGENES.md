@@ -1,7 +1,11 @@
 # Pedido de imágenes — Arte y música (prompts listos para pegar en GPT)
 
-> **Estado (2026-10-20):** Tanda 1 **pedida**, sin recibir. La app **no espera**: el taller de pintura y el de ritmo ya usan dibujos hechos con código
-> (provisionales); cada imagen que llegue se conecta en `apps/mobile/src/subjects/arte/art.ts` y reemplaza a su provisional.
+> **Estado (2026-10-20):** **Lote A recibido y conectado (7 de 7)** → convertido a WebP en `apps/mobile/assets/arte/` (535 KB en total) con
+> `scripts/arte-imagenes.py`; manifiesto con el SHA-256 de los originales en `docs/design/artes/arte/manifest-lote-a.json`; conectado en
+> `apps/mobile/src/subjects/arte/art.ts`: portada del cuaderno (estantería de Inicio), inicio del cuaderno (`hero_arte_inicio`, su mitad despejada
+> es el crema `#FEF7EA` de la tarjeta), portada de A1-U04 y fondos de ritmo y pintura (horizontal y vertical). Revisadas: sin texto, centro despejado,
+> espacio vacío a propósito en `cover_a1_u04`. **Lotes B (16 instrumentos) y C (8 objetos de pintura): pendientes**; mientras, la app usa
+> lo hecho con código. Para conectarlos: `python3 -I scripts/arte-imagenes.py <carpeta> lote-b` y agregar al mapa de `art.ts`.
 > **Para quién:** Victor genera las imágenes y las sube al chat; Claude las convierte a WebP, las nombra y las conecta (igual que en Ciencia).
 > **Si solo se hace una parte, hacer primero el Lote A** (portada + inicio): es lo que se ve al abrir el cuaderno.
 

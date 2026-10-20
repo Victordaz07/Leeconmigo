@@ -10,6 +10,7 @@ import {
 import { progressSegments } from '@lee-conmigo/ui-core';
 import { subjectStorageFor } from '../../app-state';
 import type { SubjectModule, SubjectScreenProps } from '../types';
+import { ARTE_ART } from './art';
 import { ArteHome } from './arte-home';
 import { PaintWorkshop } from './paint-workshop';
 import { RhythmWorkshop } from './rhythm-workshop';
@@ -117,7 +118,7 @@ export const arteModule: SubjectModule = {
   homeCard: (profile, lang) => {
     const lib = storage(profile.id).load();
     // El cuaderno no tiene «avance»: la portada muestra cuántas creaciones hay (hasta 3 segmentos), nunca una nota.
-    return { subtitle: ARTE_COPY[lang === 'en' ? 'en' : 'es'].cover(lib.projects.length), segments: progressSegments(Math.min(3, lib.projects.length), 3) };
+    return { subtitle: ARTE_COPY[lang === 'en' ? 'en' : 'es'].cover(lib.projects.length), segments: progressSegments(Math.min(3, lib.projects.length), 3), image: ARTE_ART.cover };
   },
   Screen: ArteScreen,
 };

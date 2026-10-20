@@ -35,7 +35,7 @@ Tu materia es **Arte y música** (cuaderno `arte`, ya diseñado en D9, hoy «Pro
   - `packages/art-content`: `mixing.ts` (modelo didáctico RYB, 5 pinturas, recetas de gotas; documentado en `docs/design/artes/MODELO-MEZCLA.md`), `paint.ts` (`PaintScene`: trazos del lienzo + paleta de recetas, lienzo lógico 1000×700), `Scene = RhythmScene | PaintScene` en `project.ts` (`createPaintProject`, `kindOf/rhythmOf/paintOf`; una escena solo se reemplaza por otra del mismo taller). `toSaved` redondea los puntos para que un dibujo largo no pese de más. 79 pruebas.
   - App: `subjects/arte/paint-workshop.tsx` (lienzo con SVG, 3 pinceles + goma, deshacer/rehacer/borrar, paleta, mezclador con gotas +/−, guardar color, quitar color, duplicar/borrar), el inicio tiene «Nuevo ritmo» y «Nueva pintura» y la lista muestra 🎨/♪.
   - Toques: el mismo patrón que se validó en la tableta (respondedor de RN, un segundo dedo cancela el trazo, el desplazamiento se apaga mientras se pinta). **Skia sigue sin usarse.**
-  - **Imágenes:** pedido de la Tanda 1 en `PEDIDO-IMAGENES.md` (sin recibir). Lo visual de la app es provisional (código) hasta que lleguen; conectar en `subjects/arte/art.ts` (por crear al llegar).
+  - **Imágenes:** Lote A (7 imágenes) recibido y conectado: portada en la estantería, inicio del cuaderno, portada de A1-U04 y fondos de ritmo/pintura (`subjects/arte/art.ts`, `art-backdrop.tsx`; encabezados con fondo crema translúcido para leerse sobre el fondo). Lotes B (16 instrumentos) y C (8 objetos de pintura) pendientes: `scripts/arte-imagenes.py <carpeta> lote-b`.
   - Sin versiones A/B en pintura todavía (cada versión copiaría todos los trazos); llegará con A2-U02 con un tope pensado.
 
 ## Siguiente paso exacto

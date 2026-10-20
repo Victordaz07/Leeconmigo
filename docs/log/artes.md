@@ -66,3 +66,9 @@
 - Modelo de mezcla (`MODELO-MEZCLA.md`): cubo RYB con interpolación trilineal para los primarios + blanco/negro por peso de gotas; no promedia RGB (hay prueba); etiquetado como aproximación didáctica. Al escribirlo se corrigió una afirmación falsa del primer borrador (rojo+amarillo en RGB promediado SÍ da naranja; lo que falla es amarillo+azul).
 - Pintura guardada como escena del proyecto (`PaintScene`) en un lienzo lógico fijo para verse igual al girar la tableta; la paleta guarda recetas (el color se calcula).
 - Verificado en Chromium: pintar con 3 colores, mezclar rojo+amarillo → naranja (`#FF8000`), guardarlo y pintar con él, deshacer/rehacer, nombrar, volver a abrir (3 trazos, 6 colores), borrar; sin errores de consola.
+
+## 2026-10-20 · Lote A de imágenes de Arte y música conectado
+- Victor mandó `KiteWise_Arte_Lote_A_7_Imagenes.zip` (7 PNG de GPT, 1536×1024 y 1024×1536). Revisadas una por una: sin texto, el centro de los fondos despejado, la mitad derecha de `hero_arte_inicio` despejada (crema uniforme `#FEF7EA`), espacio vacío a propósito entre instrumentos en `cover_a1_u04`.
+- `scripts/arte-imagenes.py` los convierte a WebP (535 KB en total) y escribe el manifiesto con el SHA-256 de los originales (`docs/design/artes/arte/manifest-lote-a.json`; los PNG no se guardan en el repo). Prueba (`packages/art-content/tests/arte-art.test.ts`) que el manifiesto, los archivos y los tamaños cuadran.
+- Conectado: portada de la estantería (antes un cuadro con una ♪), inicio del cuaderno con el estudio a la izquierda y los botones sobre la mitad crema (en teléfono, la imagen arriba y los botones debajo), miniatura en la tarjeta de A1-U04 y fondos de ritmo y pintura (horizontal/vertical según el giro). Los encabezados llevan un fondo crema translúcido para leerse sobre el fondo. En el teléfono, «Guardado» se acorta a ✓.
+- Verificado en Chromium en tableta horizontal, tableta vertical y teléfono; sin errores de consola.

@@ -1,7 +1,8 @@
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ARTE_COPY, UNIT_COPY, kindOf, type ArtLang, type ArtLibrary } from '@lee-conmigo/art-content';
 import { Button, ChevronLeftIcon, colors, fontFamily, radius, RoundButton, shadows, useLayout } from '@lee-conmigo/ui-native';
+import { ARTE_ART, COVER_ASPECT, HERO_CREAM } from './art';
 
 interface Props {
   lang: ArtLang;
@@ -21,6 +22,11 @@ export function ArteHome({ lang, library, onBack, onNewRhythm, onNewPainting, on
   const layout = useLayout();
   const t = ARTE_COPY[lang];
   const u = UNIT_COPY[lang];
+  const wide = layout.width >= 720;
+  // tamaños explícitos (la proporción de la imagen es 3:2): así se ve igual en el teléfono y en la tableta
+  const innerW = layout.width - 2 * layout.gutter;
+  const heroW = wide ? Math.round(innerW * 0.62) : innerW;
+  const heroH = Math.round(heroW / COVER_ASPECT);
   return (
     <ScrollView style={styles.screen} contentContainerStyle={[styles.content, { paddingTop: insets.top + 16, paddingBottom: insets.bottom + 24, paddingHorizontal: layout.gutter }]}>
       <View style={styles.header}>
@@ -31,17 +37,21 @@ export function ArteHome({ lang, library, onBack, onNewRhythm, onNewPainting, on
       </View>
       <Text style={styles.note}>{t.intro}</Text>
 
-      <View style={styles.free}>
-        <Text style={styles.freeTitle}>{t.freeTitle}</Text>
-        <Text style={styles.freeHint}>{t.freeHint}</Text>
-        <View style={styles.freeButtons}>
-          <Button label={t.newRhythm} onPress={onNewRhythm} />
-          <Button label={t.newPainting} variant="secondary" onPress={onNewPainting} />
+      <View style={[styles.free, wide && styles.freeWide]}>
+        <Image source={ARTE_ART.hero} resizeMode="cover" accessible={false} style={{ width: heroW, height: heroH }} />
+        <View style={[styles.freeText, wide && styles.freeTextWide]}>
+          <Text style={styles.freeTitle}>{t.freeTitle}</Text>
+          <Text style={styles.freeHint}>{t.freeHint}</Text>
+          <View style={styles.freeButtons}>
+            <Button label={t.newRhythm} onPress={onNewRhythm} />
+            <Button label={t.newPainting} variant="secondary" onPress={onNewPainting} />
+          </View>
         </View>
       </View>
 
       <Text style={styles.h3}>{t.challenges}</Text>
       <Pressable onPress={onOpenUnit} accessibilityRole="button" accessibilityLabel={`${u.title}. ${u.card(unitDone)}`} style={styles.unit}>
+        <Image source={ARTE_ART.unitA1U04} resizeMode="cover" accessible={false} style={styles.unitImage} />
         <View style={styles.unitText}>
           <Text style={styles.unitTag}>{u.suggested} · {u.grade}</Text>
           <Text style={styles.unitTitle}>{u.title}</Text>
@@ -82,10 +92,14 @@ const styles = StyleSheet.create({
   titleSmall: { fontSize: 26 },
   h3: { fontFamily: fontFamily.ui.black, fontSize: 20, color: colors.navy },
   note: { fontFamily: fontFamily.ui.semibold, fontSize: 16, lineHeight: 22, color: colors.inkSoft },
-  free: { backgroundColor: colors.paper, borderRadius: radius.card, padding: 20, gap: 10, alignItems: 'flex-start', boxShadow: shadows.card },
+  free: { backgroundColor: HERO_CREAM, borderRadius: radius.card, overflow: 'hidden', boxShadow: shadows.card },
+  freeWide: { flexDirection: 'row' },
+  freeText: { padding: 20, gap: 10, alignItems: 'flex-start' },
+  freeTextWide: { flex: 1, justifyContent: 'center' },
   freeTitle: { fontFamily: fontFamily.ui.black, fontSize: 24, color: colors.navy },
   freeHint: { fontFamily: fontFamily.ui.semibold, fontSize: 16, lineHeight: 22, color: colors.inkSoft },
   unit: { flexDirection: 'row', alignItems: 'center', gap: 14, backgroundColor: colors.paper, borderRadius: radius.card, padding: 18, boxShadow: shadows.card },
+  unitImage: { width: 132, height: Math.round(132 / COVER_ASPECT), borderRadius: 14 },
   unitText: { flex: 1, gap: 4 },
   unitTag: { fontFamily: fontFamily.ui.extrabold, fontSize: 12, color: colors.brand },
   unitTitle: { fontFamily: fontFamily.ui.black, fontSize: 20, color: colors.navy },

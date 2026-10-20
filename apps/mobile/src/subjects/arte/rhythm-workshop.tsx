@@ -5,6 +5,7 @@ import { ARTE_COPY, MAX_TITLE, rhythmOf, type ArtLang, type ArtProject, type Rhy
 import { TRACKS, toggleCell, type SoundId, type Track } from '@lee-conmigo/music-engine';
 import { Button, ChevronLeftIcon, colors, fontFamily, radius, RoundButton, shadows, useLayout } from '@lee-conmigo/ui-native';
 import { RhythmGrid } from './rhythm-grid';
+import { ArtBackdrop } from './art-backdrop';
 import { useRhythmPlayer } from '../../audio/use-rhythm-player';
 
 /** Tres velocidades: 60 BPM resultó demasiado lento para el taller (feedback de Victor en la tableta). */
@@ -47,6 +48,8 @@ export function RhythmWorkshop({ lang, project, onScene, onRename, onSaveVersion
   };
 
   return (
+    <View style={styles.root}>
+      <ArtBackdrop kind="ritmo" />
     <ScrollView style={styles.screen} keyboardShouldPersistTaps="handled" contentContainerStyle={[styles.content, { paddingTop: insets.top + 16, paddingBottom: insets.bottom + 24, paddingHorizontal: layout.gutter }]}>
       <View style={styles.header}>
         <RoundButton onPress={leave} label={t.back}>
@@ -55,8 +58,8 @@ export function RhythmWorkshop({ lang, project, onScene, onRename, onSaveVersion
         <Text style={[styles.title, layout.phone && styles.titleSmall]} numberOfLines={1}>
           {t.freeTitle}
         </Text>
-        <Text style={styles.saved} accessibilityLiveRegion="polite">
-          ✓ {t.saved}
+        <Text style={styles.saved} accessibilityLiveRegion="polite" accessibilityLabel={t.saved}>
+          {layout.phone ? '✓' : `✓ ${t.saved}`}
         </Text>
       </View>
 
@@ -130,13 +133,15 @@ export function RhythmWorkshop({ lang, project, onScene, onRename, onSaveVersion
       </View>
       <Text style={styles.small}>{t.privacy}</Text>
     </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: colors.app },
+  root: { flex: 1, backgroundColor: colors.app },
+  screen: { flex: 1, backgroundColor: 'transparent' },
   content: { gap: 14 },
-  header: { flexDirection: 'row', alignItems: 'center', gap: 14 },
+  header: { flexDirection: 'row', alignItems: 'center', gap: 14, backgroundColor: 'rgba(255,248,236,0.88)', borderRadius: 999, paddingVertical: 6, paddingHorizontal: 8 },
   title: { flex: 1, fontFamily: fontFamily.ui.black, fontSize: 34, color: colors.navy },
   titleSmall: { fontSize: 26 },
   saved: { fontFamily: fontFamily.ui.bold, fontSize: 14, color: colors.muted },
