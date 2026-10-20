@@ -28,3 +28,8 @@
   1. `npm install --ignore-scripts` no corre el `postinstall` de Skia: hay que correr `node node_modules/@shopify/react-native-skia/scripts/install-libs.js` (copia las librerías nativas a `libs/android`) o el CMake falla con «Skia prebuilt binaries not found».
   2. `react-native-worklets` usa el plugin `com.diffplug.spotless`, que solo existe en el portal de plugins de Gradle: el script `~/.gradle/init.d/maven-mirror.gradle` (fuera del repo) ahora añade `https://plugins.gradle.org/m2` a `pluginManagement`.
 - Para compilar más rápido: `-PreactNativeArchitectures=arm64-v8a,armeabi-v7a` (por defecto Gradle también compila x86 y x86_64).
+
+## 2026-10-20 · APK 0.6.0 se cerraba al abrir → Skia pasa a cargarse solo al abrir el lienzo
+- Victor instaló el APK 0.6.0 y Android lo cerró al arrancar («Kitewise se cerró debido a que esta aplicación tiene un error»). No hay registro del error (`adb logcat`), así que la causa exacta no está confirmada. El único cambio nuevo respecto al APK anterior que sí funcionaba era Skia, que se importaba al arrancar (`App.tsx` → pantalla del lienzo → Skia): cualquier fallo al inicializar el módulo nativo mata la app entera.
+- Arreglo (APK 0.6.1): `canvas-surface.tsx` carga Skia con `require` la primera vez que se abre un lienzo y, si falla, la pantalla muestra el mensaje de error en vez de cerrar la app. Así el resto de la app arranca igual que antes.
+- Si 0.6.1 abre bien pero el lienzo falla, el mensaje de la pantalla es la pista; si se cierra al abrir el lienzo, hace falta `adb logcat -b crash` (Victor tiene depuración USB).
