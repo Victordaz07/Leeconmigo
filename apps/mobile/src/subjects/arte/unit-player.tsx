@@ -7,6 +7,7 @@ import {
 } from '@lee-conmigo/art-content';
 import { DEFAULT_BPM, DEFAULT_KIT, silentSteps, toggleCell, type SoundId, type Track } from '@lee-conmigo/music-engine';
 import { Button, ChevronLeftIcon, colors, fontFamily, radius, RoundButton, shadows, useLayout } from '@lee-conmigo/ui-native';
+import { ArtBackdrop } from './art-backdrop';
 import { useRhythmPlayer } from '../../audio/use-rhythm-player';
 import { RhythmGrid } from './rhythm-grid';
 
@@ -232,6 +233,8 @@ export function UnitPlayer({ lang, library, onChange, onBack }: Props) {
   };
 
   return (
+    <View style={styles.root}>
+      <ArtBackdrop kind="ritmo" />
     <ScrollView style={styles.screen} contentContainerStyle={[styles.content, { paddingTop: insets.top + 16, paddingBottom: insets.bottom + 24, paddingHorizontal: layout.gutter }]}>
       <View style={styles.header}>
         <RoundButton onPress={() => { player.stop(); onBack(); }} label={c.back}>
@@ -285,13 +288,15 @@ export function UnitPlayer({ lang, library, onChange, onBack }: Props) {
         </View>
       )}
     </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: colors.app },
+  root: { flex: 1, backgroundColor: colors.app },
+  screen: { flex: 1, backgroundColor: 'transparent' },
   content: { gap: 14 },
-  header: { flexDirection: 'row', alignItems: 'center', gap: 14 },
+  header: { flexDirection: 'row', alignItems: 'center', gap: 14, backgroundColor: 'rgba(255,248,236,0.88)', borderRadius: 999, paddingVertical: 6, paddingHorizontal: 8 },
   title: { flex: 1, fontFamily: fontFamily.ui.black, fontSize: 30, color: colors.navy },
   titleSmall: { fontSize: 22 },
   pills: { flexDirection: 'row', gap: 8, flexWrap: 'wrap' },

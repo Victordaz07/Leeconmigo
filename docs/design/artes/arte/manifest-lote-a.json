@@ -1,0 +1,65 @@
+[
+  {
+    "source": "bg_arte_pintura_horizontal.png",
+    "sha256": "2083382621850475f033a69500a2b24d1b1e6499e6f0685d0bfbfbfc7685580e",
+    "bytes": 1915719,
+    "output": "apps/mobile/assets/arte/bg/bg_arte_pintura_horizontal.webp",
+    "outputBytes": 32566,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "bg_arte_pintura_vertical.png",
+    "sha256": "7b77f3f3557d7013cd87ae318d828230967240ef77107631962cf7f63fe84991",
+    "bytes": 1859022,
+    "output": "apps/mobile/assets/arte/bg/bg_arte_pintura_vertical.webp",
+    "outputBytes": 40020,
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "bg_arte_ritmo_horizontal.png",
+    "sha256": "05e8ca6ac477a4eff612a77eca708cb67e0d2c11d5a316faf8d6ffb90359af15",
+    "bytes": 1989423,
+    "output": "apps/mobile/assets/arte/bg/bg_arte_ritmo_horizontal.webp",
+    "outputBytes": 52514,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "bg_arte_ritmo_vertical.png",
+    "sha256": "ee2ed9d0405a0078d738c8b515cea18fd6219ec08075c224ec48896dfd752d32",
+    "bytes": 2038951,
+    "output": "apps/mobile/assets/arte/bg/bg_arte_ritmo_vertical.webp",
+    "outputBytes": 52910,
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "cover_a1_u04.png",
+    "sha256": "f43edb9da613ca2402926b9a8ec7e1612deff30e31eff48355b7abf0bec2a4dc",
+    "bytes": 2039845,
+    "output": "apps/mobile/assets/arte/covers/cover_a1_u04.webp",
+    "outputBytes": 87098,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "cover_arte_cuaderno.png",
+    "sha256": "d181e5f2f15a28879e32749a363de5f2121eb0cf48c15d57238a53dbfaf32fd9",
+    "bytes": 2518796,
+    "output": "apps/mobile/assets/arte/covers/cover_arte_cuaderno.webp",
+    "outputBytes": 148190,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "hero_arte_inicio.png",
+    "sha256": "423400d5420e53ebd7802c47cb01f94d4d5c2cd55df26d713358641b2064d8cf",
+    "bytes": 2043364,
+    "output": "apps/mobile/assets/arte/covers/hero_arte_inicio.webp",
+    "outputBytes": 135422,
+    "width": 1536,
+    "height": 1024
+  }
+]

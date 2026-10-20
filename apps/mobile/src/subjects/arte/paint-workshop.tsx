@@ -8,6 +8,7 @@ import {
 } from '@lee-conmigo/art-content';
 import { Button, ChevronLeftIcon, colors, fontFamily, radius, RoundButton, shadows, useLayout } from '@lee-conmigo/ui-native';
 import { SvgStrokeLayer } from '../../screens/svg-stroke-layer';
+import { ArtBackdrop } from './art-backdrop';
 
 /** Grosores del pincel en unidades del lienzo lógico (1000 de ancho), y de la goma. */
 const SIZES = [4, 10, 22] as const;
@@ -123,6 +124,8 @@ export function PaintWorkshop({ lang, project, onScene, onRename, onDuplicate, o
   };
 
   return (
+    <View style={styles.root}>
+      <ArtBackdrop kind="pintura" />
     <ScrollView scrollEnabled={!d.active} style={styles.screen} keyboardShouldPersistTaps="handled" contentContainerStyle={[styles.content, { paddingTop: insets.top + 16, paddingBottom: insets.bottom + 24, paddingHorizontal: layout.gutter }]}>
       <View style={styles.header}>
         <RoundButton onPress={onBack} label={t.back}>
@@ -131,8 +134,8 @@ export function PaintWorkshop({ lang, project, onScene, onRename, onDuplicate, o
         <Text style={[styles.title, layout.phone && styles.titleSmall]} numberOfLines={1}>
           {t.paintTitle}
         </Text>
-        <Text style={styles.saved} accessibilityLiveRegion="polite">
-          ✓ {t.saved}
+        <Text style={styles.saved} accessibilityLiveRegion="polite" accessibilityLabel={t.saved}>
+          {layout.phone ? '✓' : `✓ ${t.saved}`}
         </Text>
       </View>
 
@@ -260,6 +263,7 @@ export function PaintWorkshop({ lang, project, onScene, onRename, onDuplicate, o
       </View>
       <Text style={styles.small}>{t.privacy}</Text>
     </ScrollView>
+    </View>
   );
 }
 
@@ -271,9 +275,10 @@ function luminanceDark(hex: string): boolean {
 }
 
 const styles = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: colors.app },
+  root: { flex: 1, backgroundColor: colors.app },
+  screen: { flex: 1, backgroundColor: 'transparent' },
   content: { gap: 14 },
-  header: { flexDirection: 'row', alignItems: 'center', gap: 14 },
+  header: { flexDirection: 'row', alignItems: 'center', gap: 14, backgroundColor: 'rgba(255,248,236,0.88)', borderRadius: 999, paddingVertical: 6, paddingHorizontal: 8 },
   title: { flex: 1, fontFamily: fontFamily.ui.black, fontSize: 34, color: colors.navy },
   titleSmall: { fontSize: 26 },
   saved: { fontFamily: fontFamily.ui.bold, fontSize: 14, color: colors.muted },
