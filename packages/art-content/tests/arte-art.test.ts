@@ -16,6 +16,7 @@ const names = (m: Entry[]) => m.map((e) => e.source.replace('.png', '')).sort();
 describe('arte de Arte y música', () => {
   const a = load('lote-a');
   const b = load('lote-b');
+  const b2 = load('lote-b2');
   const c = load('lote-c');
 
   it('el Lote A trae las siete imágenes pedidas', () => {
@@ -24,9 +25,9 @@ describe('arte de Arte y música', () => {
     );
   });
 
-  it('el Lote B trae los instrumentos (falta `snd_pisada`: llegó cortada y hay que volver a generarla)', () => {
-    expect(names(b)).toEqual(
-      ['snd_bajo', 'snd_bloque', 'snd_bombo', 'snd_bongo', 'snd_caja', 'snd_campanita', 'snd_chasquido', 'snd_claves', 'snd_cuerda', 'snd_marimba', 'snd_palmas', 'snd_sonaja', 'snd_tom', 'snd_triangulo', 'snd_voz'].sort(),
+  it('los Lotes B y B2 traen los 16 sonidos (la pisada llegó aparte porque la primera copia vino cortada)', () => {
+    expect(names([...b, ...b2])).toEqual(
+      ['snd_bajo', 'snd_bloque', 'snd_bombo', 'snd_bongo', 'snd_caja', 'snd_campanita', 'snd_chasquido', 'snd_claves', 'snd_cuerda', 'snd_marimba', 'snd_palmas', 'snd_pisada', 'snd_sonaja', 'snd_tom', 'snd_triangulo', 'snd_voz'].sort(),
     );
   });
 
@@ -35,7 +36,7 @@ describe('arte de Arte y música', () => {
   });
 
   it('cada imagen existe en la app, pesa menos de 350 KB y tiene el tamaño esperado', () => {
-    for (const m of [...a, ...b, ...c]) {
+    for (const m of [...a, ...b, ...b2, ...c]) {
       const path = new URL(`../../../${m.output}`, import.meta.url);
       expect(existsSync(path), m.output).toBe(true);
       expect(statSync(path).size, m.output).toBe(m.outputBytes);
