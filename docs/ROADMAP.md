@@ -141,7 +141,7 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | AR-01 | Investigación de Artes y de los módulos «Para la vida» recibida y copiada | ✅ | A | `docs/research/artes-investigacion.md`, `vida-*.md` |
 | AR-02 | Especificación adaptada al repo + decisión D14 | ✅ | A | `docs/design/artes/ESPECIFICACION.md` |
 | AR-T1 | Prueba técnica de audio: motor puro (`packages/music-engine`), `FakeAudioOutput`, 16 sonidos sintetizados elegibles por fila, pantalla «Prueba de audio» | ✅ | A | Tableta de Victor: 4 corridas de 5 min (60/90/120/140 BPM), todas «parejo», 0 congelamientos. Falta solo la comprobación corta de salir a segundo plano y volver |
-| AR-T2 | Prueba técnica del lienzo: `packages/art-content` (22 pruebas) + pantalla «Prueba del lienzo» con motor **SVG** (por defecto) y **Skia** | 🟡 | A | Skia hizo que la app se cerrara en la tableta de Victor (fallo nativo, sin registro). SVG verificado en navegador; falta probarlo en la tableta. Skia queda opcional hasta tener `adb logcat -b crash -d` |
+| AR-T2 | Prueba técnica del lienzo: `packages/art-content` (22 pruebas) + pantalla «Prueba del lienzo» con motor **SVG** (por defecto) y **Skia** | 🟡 | A | Skia hizo que la app se cerrara en la tableta de Victor (fallo nativo, sin registro). SVG en la tableta: 1 min, 13 trazos, 0 cuadros lentos, «todo bien»; faltan dos dedos/palma y lápiz. Skia queda opcional hasta tener `adb logcat -b crash -d` |
 | AR-T3 | Prueba técnica 3D (`expo-gl`) | ⬜ | – | después de AR-T2 |
 | AR-03 | Módulo `arte` enchufado + `packages/art-content` + proyecto editable en SQLite | ⬜ | – | tras AR-T1 |
 | AR-04 | Taller de ritmo A1-U04 con Taller libre y portafolio | ⬜ | – | |
