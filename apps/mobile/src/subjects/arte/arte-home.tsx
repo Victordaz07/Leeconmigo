@@ -1,6 +1,6 @@
 import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { ARTE_COPY, UNIT_COPY, kindOf, type ArtLang, type ArtLibrary } from '@lee-conmigo/art-content';
+import { ARTE_COPY, EXAMPLE_PALETTES, UNIT2_COPY, UNIT_COPY, kindOf, type ArtLang, type ArtLibrary } from '@lee-conmigo/art-content';
 import { Button, ChevronLeftIcon, colors, fontFamily, radius, RoundButton, shadows, useLayout } from '@lee-conmigo/ui-native';
 import { ARTE_ART, COVER_ASPECT, HERO_CREAM } from './art';
 
@@ -14,14 +14,18 @@ interface Props {
   /** Encuentros hechos de la unidad guiada A1-U04. */
   unitDone: number;
   onOpenUnit: () => void;
+  /** Encuentros hechos de la unidad guiada A2-U02. */
+  unit2Done: number;
+  onOpenUnit2: () => void;
 }
 
 /** Inicio del cuaderno «Arte y música»: el Taller libre destacado y las creaciones guardadas. Todo abre (D13-1), sin notas ni puntos. */
-export function ArteHome({ lang, library, onBack, onNewRhythm, onNewPainting, onOpen, unitDone, onOpenUnit }: Props) {
+export function ArteHome({ lang, library, onBack, onNewRhythm, onNewPainting, onOpen, unitDone, onOpenUnit, unit2Done, onOpenUnit2 }: Props) {
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const t = ARTE_COPY[lang];
   const u = UNIT_COPY[lang];
+  const u2 = UNIT2_COPY[lang];
   const wide = layout.width >= 720;
   // tamaños explícitos (la proporción de la imagen es 3:2): así se ve igual en el teléfono y en la tableta
   const innerW = layout.width - 2 * layout.gutter;
@@ -59,6 +63,20 @@ export function ArteHome({ lang, library, onBack, onNewRhythm, onNewPainting, on
           <Text style={styles.cardMeta}>{u.card(unitDone)}</Text>
         </View>
         <Text style={styles.unitGo}>{unitDone > 0 ? u.resume : u.start} ›</Text>
+      </Pressable>
+      <Pressable onPress={onOpenUnit2} accessibilityRole="button" accessibilityLabel={`${u2.title}. ${u2.card(unit2Done)}`} style={styles.unit}>
+        <View style={styles.unitTile} accessible={false}>
+          {EXAMPLE_PALETTES.A.map((hex) => (
+            <View key={hex} style={[styles.unitTileCell, { backgroundColor: hex }]} />
+          ))}
+        </View>
+        <View style={styles.unitText}>
+          <Text style={styles.unitTag}>{u2.suggested} · {u2.grade}</Text>
+          <Text style={styles.unitTitle}>{u2.title}</Text>
+          <Text style={styles.cardMeta}>{u2.blurb}</Text>
+          <Text style={styles.cardMeta}>{u2.card(unit2Done)}</Text>
+        </View>
+        <Text style={styles.unitGo}>{unit2Done > 0 ? u2.resume : u2.start} ›</Text>
       </Pressable>
 
       <Text style={styles.h3}>{t.creations}</Text>
@@ -103,6 +121,8 @@ const styles = StyleSheet.create({
   unitText: { flex: 1, gap: 4 },
   unitTag: { fontFamily: fontFamily.ui.extrabold, fontSize: 12, color: colors.brand },
   unitTitle: { fontFamily: fontFamily.ui.black, fontSize: 20, color: colors.navy },
+  unitTile: { width: 132, height: Math.round(132 / COVER_ASPECT), borderRadius: 14, overflow: 'hidden', flexDirection: 'row', flexWrap: 'wrap' },
+  unitTileCell: { width: '50%', height: '50%' },
   unitGo: { fontFamily: fontFamily.ui.black, fontSize: 16, color: colors.brand },
   freeButtons: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
   list: { gap: 10 },

@@ -4,7 +4,7 @@
  */
 import { useMemo, useRef, useState } from 'react';
 import {
-  ARTE_COPY, UNIT_COPY, ensureUnitProject, unitOf, createPaintProject, createRhythmProject, kindOf, deleteProject, deleteVersion, duplicateProject, emptyLibrary, isArtLibrary, projectById, renameProject, restoreVersion, saveVersion, updateScene,
+  ARTE_COPY, UNIT2_COPY, UNIT_COPY, ensureUnit2Project, ensureUnitProject, unit2Of, unitOf, createPaintProject, createRhythmProject, kindOf, deleteProject, deleteVersion, duplicateProject, emptyLibrary, isArtLibrary, projectById, renameProject, restoreVersion, saveVersion, updateScene,
   type ArtLang, type ArtLibrary,
 } from '@lee-conmigo/art-content';
 import { progressSegments } from '@lee-conmigo/ui-core';
@@ -14,6 +14,7 @@ import { ARTE_ART } from './art';
 import { ArteHome } from './arte-home';
 import { PaintWorkshop } from './paint-workshop';
 import { RhythmWorkshop } from './rhythm-workshop';
+import { Unit2Player } from './unit2-player';
 import { UnitPlayer } from './unit-player';
 
 const EMPTY_LIBRARY: ArtLibrary = emptyLibrary();
@@ -31,13 +32,16 @@ function ArteScreen({ profile, lang, onExit }: SubjectScreenProps) {
     store.save(next);
   };
   const [openId, setOpenId] = useState<string | null>(null);
-  const [inUnit, setInUnit] = useState(false);
+  const [inUnit, setInUnit] = useState<'A1-U04' | 'A2-U02' | null>(null);
   const language: ArtLang = lang === 'en' ? 'en' : 'es';
   const t = ARTE_COPY[language];
   const project = openId ? projectById(library, openId) : undefined;
 
-  if (inUnit) {
-    return <UnitPlayer lang={language} library={library} onChange={commit} onBack={() => setInUnit(false)} />;
+  if (inUnit === 'A1-U04') {
+    return <UnitPlayer lang={language} library={library} onChange={commit} onBack={() => setInUnit(null)} />;
+  }
+  if (inUnit === 'A2-U02') {
+    return <Unit2Player lang={language} library={library} onChange={commit} onBack={() => setInUnit(null)} />;
   }
 
   if (!project) {
@@ -61,7 +65,13 @@ function ArteScreen({ profile, lang, onExit }: SubjectScreenProps) {
         onOpenUnit={() => {
           // la unidad trabaja sobre su propio proyecto de ritmo: se crea la primera vez
           commit(ensureUnitProject(latest.current, UNIT_COPY[language].title, language, Date.now()).lib);
-          setInUnit(true);
+          setInUnit('A1-U04');
+        }}
+        unit2Done={unit2Of(library).done.length}
+        onOpenUnit2={() => {
+          // la unidad pinta dos cuadros en su propio proyecto: se crea la primera vez
+          commit(ensureUnit2Project(latest.current, UNIT2_COPY[language].title, language, Date.now()).lib);
+          setInUnit('A2-U02');
         }}
       />
     );

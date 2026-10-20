@@ -86,3 +86,8 @@
 
 ## 2026-10-20 · Mezclador: el botón de quitar una gota ahora dice «Quitar»
 - Victor, probando el APK 0.8.0, preguntó para qué era la casilla gris con un «−» debajo del nombre de cada pintura: era el botón de quitar una gota, pero un cuadrito gris con una raya, sin palabra, no se entendía (sobre todo para 1.º y 2.º). Ahora dice «− Quitar» (EN: «− Remove»), es más ancho, queda pegado al bote y se apaga cuando esa pintura tiene 0 gotas. Verificado en Chromium (teléfono): quitar un rojo baja de 2 a 1 gota; «Quitar» de una pintura sin gotas está desactivado.
+
+## 2026-10-20 · AR-05b: unidad A2-U02 «Colores que se relacionan»
+- Dominio puro en `packages/art-content` (`unit2-model.ts`, `unit2.ts`, `unit2-copy.ts`, pruebas `unit2.test.ts`): proyecto de pintura con dos cuadros, paleta de 4 colores elegida entre los guardados (incluye uno mezclado), «los dos cuadros usan solo esa paleta» y «son distintos entre sí» como evidencia verificable, estrellas por esfuerzo. `ArtLibrary.units` ahora admite las dos unidades (cada una con su validador).
+- Interfaz: se extrajeron `PaintArea` (lienzo + paleta + pincel + deshacer/rehacer/borrar) y `PaintMixer` del Taller de pintura para reutilizarlos; nuevo `unit2-player.tsx` y `mini-paint.tsx`. Tarjeta nueva en «Retos» (de momento con un recuadro de cuatro azules hecho con código, sin imagen).
+- Verificado en Chromium (tableta y teléfono) de punta a punta: pista suave al señalar la paleta B, el quinto color no entra, sin «incorrecto», 3 estrellas al final, se queda en «6 de 6 encuentros»; el Taller de pintura sigue igual tras la extracción. Las opciones largas se salían de la tarjeta en el teléfono: corregido (también en A1-U04).
