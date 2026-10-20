@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Arte y música: lógica pura del lienzo de dibujo (trazos, pincel, deshacer/rehacer, cancelar) y su guardado. Sin pantallas.",
+  "description": "Arte y música: modelo del proyecto editable (ritmo, trazos), lienzo de dibujo (trazos, deshacer/rehacer, cancelar), guardado validado y textos. Sin pantallas.",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "exports": {
@@ -11,5 +11,8 @@
   },
   "scripts": {
     "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@lee-conmigo/music-engine": "*"
   }
 }

@@ -43,3 +43,10 @@
 - Corrida #1 (APK 0.6.2, motor SVG, 1:00): trazos empezados 14 / guardados 13 / cancelados 0 · en pantalla 13 (1969 puntos) · **cuadros lentos 0 (máx. 29 ms, media 16,7 ms)** · «colgados» 1 · veredicto del adulto: **todo bien**.
 - Lectura: los 60 fps se sostienen con ~2000 puntos y 13 trazos; no se perdió ningún trazo (14 = 13 + el que seguía en curso cuando acabó el minuto). El «colgado 1» fue casi seguro ese trazo en curso al terminar la prueba con el dedo puesto, no un error: la métrica no distinguía los dos casos. Arreglado: ahora «colgado» exige que no haya ningún dedo en el lienzo, y se anota «terminó con el dedo puesto».
 - Sin ejercitar todavía: dos dedos a la vez y palma (cancelados salió 0), lápiz, y que la pantalla no se mueva al dibujar (el veredicto «todo bien» sugiere que no).
+
+## 2026-10-20 · AR-03: módulo Arte y música + proyecto editable + Taller libre de ritmo
+- Victor: «Sigue con SVG y pasa a AR-03» (Skia queda opcional, sin bloquear). 
+- `packages/art-content`: modelo `ArtLibrary/ArtProject/RhythmScene/ProjectVersion`, operaciones puras (crear, guardado automático, renombrar, duplicar, borrar, guardar/volver/borrar versión), validador y textos ES/EN. 37 pruebas (15 nuevas del proyecto + las 22 del lienzo).
+- App: módulo `arte` (portada «Taller libre» / «N creaciones», inicio con Taller libre + creaciones, taller de ritmo con rejilla de 8 pulsos × 4 filas, 16 sonidos por fila, 4 velocidades con nombre, guardado automático, versiones, duplicar, borrar con confirmación). `useRhythmPlayer` reutiliza el motor de AR-T1.
+- Verificación: typecheck limpio; 1601 pruebas en verde; Chromium: crear → marcar pulsos → cambiar sonido y velocidad → tocar → nombrar → dos versiones → volver a A → duplicar → borrar, sin errores de consola. En la web los dos tempos más rápidos tenían el mismo nombre («Rápido»): se separó en Lento/Medio/Rápido/Muy rápido (con prueba).
+- Pendiente: probarlo en la tableta (APK nuevo, solo cuando Victor lo pida).
