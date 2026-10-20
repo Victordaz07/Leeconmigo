@@ -91,3 +91,8 @@
 - Dominio puro en `packages/art-content` (`unit2-model.ts`, `unit2.ts`, `unit2-copy.ts`, pruebas `unit2.test.ts`): proyecto de pintura con dos cuadros, paleta de 4 colores elegida entre los guardados (incluye uno mezclado), «los dos cuadros usan solo esa paleta» y «son distintos entre sí» como evidencia verificable, estrellas por esfuerzo. `ArtLibrary.units` ahora admite las dos unidades (cada una con su validador).
 - Interfaz: se extrajeron `PaintArea` (lienzo + paleta + pincel + deshacer/rehacer/borrar) y `PaintMixer` del Taller de pintura para reutilizarlos; nuevo `unit2-player.tsx` y `mini-paint.tsx`. Tarjeta nueva en «Retos» (de momento con un recuadro de cuatro azules hecho con código, sin imagen).
 - Verificado en Chromium (tableta y teléfono) de punta a punta: pista suave al señalar la paleta B, el quinto color no entra, sin «incorrecto», 3 estrellas al final, se queda en «6 de 6 encuentros»; el Taller de pintura sigue igual tras la extracción. Las opciones largas se salían de la tarjeta en el teléfono: corregido (también en A1-U04).
+
+## 2026-10-20 · AR-06a: Taller de collage
+- Victor aprobó seguir con el collage («funciona perfecto» sobre A2-U02). Dominio puro `collage.ts` + `collage-copy.ts` + pruebas; proyecto de collage en `project.ts` (escena nueva, validación, duplicado sin compartir piezas).
+- Interfaz: `CollageArea` (reutilizable para la unidad A1-U06) y `CollageWorkshop`. Verificado en Chromium (tableta y teléfono): pegar, recolorear, arrastrar, agrandar, girar, capas, copiar, cambiar fondo, deshacer/rehacer, salir y reabrir (queda guardado).
+- Pendiente de probar en la tableta real: arrastre con lápiz y el segundo dedo (cancela el arrastre).

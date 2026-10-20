@@ -1,6 +1,6 @@
 import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { ARTE_COPY, EXAMPLE_PALETTES, UNIT2_COPY, UNIT_COPY, kindOf, type ArtLang, type ArtLibrary } from '@lee-conmigo/art-content';
+import { ARTE_COPY, COLLAGE_COPY, EXAMPLE_PALETTES, UNIT2_COPY, UNIT_COPY, kindOf, type ArtLang, type ArtLibrary } from '@lee-conmigo/art-content';
 import { Button, ChevronLeftIcon, colors, fontFamily, radius, RoundButton, shadows, useLayout } from '@lee-conmigo/ui-native';
 import { ARTE_ART, COVER_ASPECT, HERO_CREAM } from './art';
 
@@ -10,6 +10,7 @@ interface Props {
   onBack: () => void;
   onNewRhythm: () => void;
   onNewPainting: () => void;
+  onNewCollage: () => void;
   onOpen: (id: string) => void;
   /** Encuentros hechos de la unidad guiada A1-U04. */
   unitDone: number;
@@ -20,12 +21,13 @@ interface Props {
 }
 
 /** Inicio del cuaderno «Arte y música»: el Taller libre destacado y las creaciones guardadas. Todo abre (D13-1), sin notas ni puntos. */
-export function ArteHome({ lang, library, onBack, onNewRhythm, onNewPainting, onOpen, unitDone, onOpenUnit, unit2Done, onOpenUnit2 }: Props) {
+export function ArteHome({ lang, library, onBack, onNewRhythm, onNewPainting, onNewCollage, onOpen, unitDone, onOpenUnit, unit2Done, onOpenUnit2 }: Props) {
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const t = ARTE_COPY[lang];
   const u = UNIT_COPY[lang];
   const u2 = UNIT2_COPY[lang];
+  const cc = COLLAGE_COPY[lang];
   const wide = layout.width >= 720;
   // tamaños explícitos (la proporción de la imagen es 3:2): así se ve igual en el teléfono y en la tableta
   const innerW = layout.width - 2 * layout.gutter;
@@ -49,6 +51,7 @@ export function ArteHome({ lang, library, onBack, onNewRhythm, onNewPainting, on
           <View style={styles.freeButtons}>
             <Button label={t.newRhythm} onPress={onNewRhythm} />
             <Button label={t.newPainting} variant="secondary" onPress={onNewPainting} />
+            <Button label={cc.newCollage} variant="secondary" onPress={onNewCollage} />
           </View>
         </View>
       </View>
@@ -86,12 +89,12 @@ export function ArteHome({ lang, library, onBack, onNewRhythm, onNewPainting, on
         <View style={styles.list}>
           {library.projects.map((p) => (
             <Pressable key={p.id} onPress={() => onOpen(p.id)} accessibilityRole="button" accessibilityLabel={t.open(p.title)} style={styles.card}>
-              <Text style={styles.cardGlyph}>{kindOf(p) === 'painting' ? '🎨' : '♪'}</Text>
+              <Text style={styles.cardGlyph}>{kindOf(p) === 'painting' ? '🎨' : kindOf(p) === 'collage' ? '✂' : '♪'}</Text>
               <View style={styles.cardText}>
                 <Text style={styles.cardTitle} numberOfLines={1}>
                   {p.title}
                 </Text>
-                <Text style={styles.cardMeta}>{kindOf(p) === 'painting' ? t.paintKind : t.rhythmKind}</Text>
+                <Text style={styles.cardMeta}>{kindOf(p) === 'painting' ? t.paintKind : kindOf(p) === 'collage' ? cc.kind : t.rhythmKind}</Text>
               </View>
             </Pressable>
           ))}
