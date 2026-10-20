@@ -7,7 +7,8 @@ import { Button, ChevronLeftIcon, colors, fontFamily, radius, RoundButton, shado
 import { RhythmGrid } from './rhythm-grid';
 import { useRhythmPlayer } from '../../audio/use-rhythm-player';
 
-const TEMPOS = [60, 90, 120, 140];
+/** Tres velocidades: 60 BPM resultó demasiado lento para el taller (feedback de Victor en la tableta). */
+const TEMPOS = [90, 120, 140];
 
 interface Props {
   lang: ArtLang;

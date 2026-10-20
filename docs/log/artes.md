@@ -56,3 +56,7 @@
 - App: `UnitPlayer` (los seis encuentros), `RhythmGrid` extraída y compartida con el Taller libre, `useRhythmPlayer` con `solo`, sección «Retos» en el inicio del cuaderno.
 - La cápsula cultural del encuentro 6 es **inventada y rotulada** hasta que Victor confirme temas y fuentes.
 - Verificado en Chromium de punta a punta: pista amable si el pulso no es el correcto, aviso si el silencio cae donde suena algo, dos versiones distintas, «Tu carpeta», 3 estrellas de esfuerzo, el inicio muestra «6 de 6 encuentros»; sin errores de consola.
+
+## 2026-10-20 · Prueba de AR-03/AR-04 en la tableta (APK 0.7.0)
+- Victor: el Taller libre y la unidad «funcionan bien, guardan y se sienten super bien»; en el ritmo, **«el lento es muy lento y no creo que lo necesitemos a menos que esté ligado a algún tutorial»**. Ningún encuentro de A1-U04 usa 60 BPM (la unidad va a 90), así que el taller pasa de 4 a 3 velocidades: Despacio (90), Medio (120), Rápido (140). El motor sigue aceptando 60–140 (la Prueba de audio de padres conserva 60; lo ya guardado a 60 sigue siendo válido).
+- Observación de Victor: «en Arte y música por ahora solo tenemos el taller de música, no el de arte». Es lo previsto (AR-05 pintura y paleta, AR-06 collage y flipbook, AR-07 3D). El lienzo de AR-T2 (SVG) ya está validado en la tableta.

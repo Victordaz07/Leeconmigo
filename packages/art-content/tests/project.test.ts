@@ -167,8 +167,8 @@ describe('validación de lo guardado', () => {
       expect(all).not.toMatch(/incorrect|wrong|mal\b|error|points: \d|puntos: \d/i);
     }
     expect(Object.keys(ARTE_COPY.es).sort()).toEqual(Object.keys(ARTE_COPY.en).sort());
-    // cada uno de los cuatro tempos del taller tiene un nombre distinto
-    for (const lang of ['es', 'en'] as const) expect(new Set([60, 90, 120, 140].map((b) => ARTE_COPY[lang].tempoWord(b))).size).toBe(4);
+    // cada una de las tres velocidades del taller (90, 120, 140) tiene un nombre distinto
+    for (const lang of ['es', 'en'] as const) expect(new Set([90, 120, 140].map((b) => ARTE_COPY[lang].tempoWord(b))).size).toBe(3);
     expect(ARTE_COPY.es.cover(1)).toBe('1 creación');
     expect(ARTE_COPY.en.cover(2)).toBe('2 creations');
   });
