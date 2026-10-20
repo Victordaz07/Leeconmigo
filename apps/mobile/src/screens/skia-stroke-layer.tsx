@@ -4,11 +4,11 @@ import { meanPressure, PAPER, strokePathData, widthAt, type Stroke } from '@lee-
 import { colors, fontFamily } from '@lee-conmigo/ui-native';
 
 /**
- * Capa que pinta los trazos con Skia (nativo). Los trazos terminados son objetos inmutables: `memo` evita repintar los que no cambiaron, así
- * un dibujo con cientos de trazos sigue fluido mientras se dibuja el último. En la web hay una versión de respaldo con SVG (`canvas-surface.web.tsx`).
+ * Capa que pinta los trazos con Skia (nativo). Es el motor que se compara con el SVG en la prueba del lienzo (AR-T2).
  *
- * Skia se carga AQUÍ, la primera vez que se abre un lienzo, y no al arrancar la app: si el módulo nativo no estuviera disponible en un equipo,
- * el error se muestra en esta pantalla en vez de cerrar toda la aplicación.
+ * Skia se carga AQUÍ, solo si el adulto elige ese motor, y no al arrancar la app. Ojo: en la tableta de Victor (Samsung) el APK 0.6.1 se cerró
+ * (sin mensaje) al inicializar Skia, un fallo nativo que `try/catch` no atrapa; por eso el motor por defecto es SVG. En la web no hay Skia:
+ * `skia-stroke-layer.web.tsx` lo dice.
  */
 type SkiaModule = typeof import('@shopify/react-native-skia');
 let skia: SkiaModule | null = null;
@@ -30,7 +30,7 @@ const StrokeView = memo(function StrokeView({ stroke, S }: { stroke: Stroke; S: 
   return <S.Path path={d} style="stroke" strokeCap="round" strokeJoin="round" strokeWidth={widthAt(stroke.brush, meanPressure(stroke.points))} color={stroke.brush.eraser ? PAPER : stroke.brush.color} />;
 });
 
-export function StrokeLayer({ strokes }: { strokes: readonly Stroke[] }) {
+export function SkiaStrokeLayer({ strokes }: { strokes: readonly Stroke[] }) {
   const S = loadSkia();
   if (!S) {
     return (

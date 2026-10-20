@@ -7,7 +7,8 @@ import {
   BRUSH_COLORS, BRUSH_WIDTHS, ERASER_WIDTH, beginStroke, brush, cancelStroke, canRedo, canUndo, clearDrawing, emptyDrawing, endStroke, extendStroke, redo, totalPoints, undo,
   visibleStrokes, type Brush, type Drawing,
 } from '@lee-conmigo/art-content';
-import { StrokeLayer } from './canvas-surface';
+import { SkiaStrokeLayer } from './skia-stroke-layer';
+import { SvgStrokeLayer } from './svg-stroke-layer';
 
 const TEST_SECONDS = 60;
 const CANVAS_HEIGHT = 380;
@@ -23,8 +24,12 @@ interface Counts {
   cancelled: number;
 }
 
+type Engine = 'svg' | 'skia';
+const ENGINE_NAME: Record<Engine, string> = { svg: 'SVG', skia: 'Skia' };
+
 interface Result {
   id: number;
+  engine: Engine;
   seconds: number;
   counts: Counts;
   strokes: number;
@@ -52,6 +57,7 @@ export function CanvasTestScreen({ onBack }: { onBack: () => void }) {
   const layout = useLayout();
   const [drawing, setDrawing] = useState<Drawing>(emptyDrawing);
   const [bru, setBru] = useState<Brush>(brush());
+  const [engine, setEngine] = useState<Engine>('svg');
   const [testing, setTesting] = useState(false);
   const [elapsed, setElapsed] = useState(0);
   const [counts, setCounts] = useState<Counts>({ started: 0, ended: 0, cancelled: 0 });
@@ -163,6 +169,7 @@ export function CanvasTestScreen({ onBack }: { onBack: () => void }) {
     const d = live.current;
     setAwaiting({
       id: nextId.current++,
+      engine,
       seconds: Math.min(TEST_SECONDS, Math.round((Date.now() - startedAt.current) / 1000)),
       counts: countsRef.current,
       strokes: d.strokes.length,
@@ -197,7 +204,7 @@ export function CanvasTestScreen({ onBack }: { onBack: () => void }) {
   const summary = results
     .map(
       (r) =>
-        `#${r.id} · ${clock(r.seconds)} · trazos empezados ${r.counts.started} / guardados ${r.counts.ended} / cancelados ${r.counts.cancelled} · en pantalla ${r.strokes} (${r.points} puntos) · colgados ${r.hung} · cuadros lentos (> ${JANK_MS} ms) ${r.frames.stalls} (máx. ${r.frames.maxGapMs} ms, media ${r.frames.meanGapMs} ms) · se vio: ${r.verdict}`,
+        `#${r.id} · motor ${ENGINE_NAME[r.engine]} · ${clock(r.seconds)} · trazos empezados ${r.counts.started} / guardados ${r.counts.ended} / cancelados ${r.counts.cancelled} · en pantalla ${r.strokes} (${r.points} puntos) · colgados ${r.hung} · cuadros lentos (> ${JANK_MS} ms) ${r.frames.stalls} (máx. ${r.frames.maxGapMs} ms, media ${r.frames.meanGapMs} ms) · se vio: ${r.verdict}`,
     )
     .join('\n');
   const active = drawing.active !== null;
@@ -215,6 +222,15 @@ export function CanvasTestScreen({ onBack }: { onBack: () => void }) {
       </Text>
 
       <View style={styles.card}>
+        <Text style={styles.h3}>Motor de dibujo</Text>
+        <View style={styles.segmented}>
+          {(['svg', 'skia'] as const).map((e) => (
+            <Pressable key={e} onPress={() => !testing && setEngine(e)} accessibilityRole="button" accessibilityState={{ selected: engine === e, disabled: testing }} style={[styles.segment, engine === e && styles.segmentOn]}>
+              <Text style={[styles.segmentText, engine === e && styles.segmentTextOn]}>{ENGINE_NAME[e]}</Text>
+            </Pressable>
+          ))}
+        </View>
+        {engine === 'skia' && <Text style={styles.small}>Skia es la opción más rápida pero necesita código nativo propio. Si la aplicación se cierra al elegirla, no pasa nada: vuelve a abrirla y usa SVG.</Text>}
         <Text style={styles.h3}>Color</Text>
         <View style={styles.chips}>
           {BRUSH_COLORS.map((c) => {
@@ -255,7 +271,7 @@ export function CanvasTestScreen({ onBack }: { onBack: () => void }) {
           accessible
           accessibilityLabel="Lienzo de dibujo"
         >
-          <StrokeLayer strokes={visibleStrokes(drawing)} />
+          {engine === 'skia' ? <SkiaStrokeLayer strokes={visibleStrokes(drawing)} /> : <SvgStrokeLayer strokes={visibleStrokes(drawing)} />}
         </View>
 
         <View style={styles.actions}>

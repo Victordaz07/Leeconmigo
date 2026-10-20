@@ -12,9 +12,9 @@ Tu materia es **Arte y música** (cuaderno `arte`, ya diseñado en D9, hoy «Pro
   - `app.json`: plugin `react-native-audio-api` **sin** permisos extra, **sin** servicio en primer plano, **sin** audio en segundo plano y **sin** FFmpeg (no se decodifican archivos). Al ir a segundo plano la prueba se detiene.
   - Verificada en el navegador (Chromium): arranca, el cursor avanza, 25 ms de media entre llamadas, 0 congelamientos. **No sustituye la prueba en la tableta.**
 
-- AR-T2 🟡 **Prueba del lienzo construida, falta probarla en la tableta.**
+- AR-T2 🟡 **Skia se cierra de golpe en la tableta de Victor (Samsung) al inicializarse (APK 0.6.1, grabación de pantalla); el lienzo ahora tiene motor SVG por defecto. Falta probar SVG en la tableta y, si se quiere, Skia con `adb logcat -b crash -d`.**
   - `packages/art-content` (22 pruebas): `Drawing` (trazos terminados + un trazo activo), `beginStroke/extendStroke/endStroke`, **`cancelStroke`** (nunca deja un trazo colgado), `undo/redo/clearDrawing`, presión del lápiz (`widthAt`), camino suavizado (`strokePathData`), topes de memoria (500 trazos, 2000 puntos por trazo, 60 000 en total) y guardado validado (`toSaved/fromSaved`, para SQLite en AR-03).
-  - `apps/mobile/src/screens/canvas-test-screen.tsx` + `canvas-surface.tsx` (Skia) y `canvas-surface.web.tsx` (respaldo SVG solo para el navegador). Pantalla en Ajustes de padres → «Probar el lienzo de dibujo»: colores, 3 grosores, goma, deshacer/rehacer/borrar, «Prueba de 60 segundos» con contadores (empezados = guardados + cancelados), cuadros lentos y veredicto.
+  - `apps/mobile/src/screens/canvas-test-screen.tsx` con dos motores elegibles: **SVG** (`svg-stroke-layer.tsx`, por defecto) y **Skia** (`skia-stroke-layer.tsx`, carga diferida; en la web `.web.tsx` solo avisa). Pantalla en Ajustes de padres → «Probar el lienzo de dibujo»: colores, 3 grosores, goma, deshacer/rehacer/borrar, «Prueba de 60 segundos» con contadores (empezados = guardados + cancelados), cuadros lentos y veredicto.
   - Los toques usan el sistema de gestos de React Native (un segundo dedo cancela el trazo; segundo plano también); **no hizo falta `react-native-gesture-handler`**, así que no se agregó. Única dependencia nativa nueva: `@shopify/react-native-skia` 2.6.2 (la que fija Expo SDK 57).
 
 ## Siguiente paso exacto
