@@ -50,3 +50,9 @@
 - App: módulo `arte` (portada «Taller libre» / «N creaciones», inicio con Taller libre + creaciones, taller de ritmo con rejilla de 8 pulsos × 4 filas, 16 sonidos por fila, 4 velocidades con nombre, guardado automático, versiones, duplicar, borrar con confirmación). `useRhythmPlayer` reutiliza el motor de AR-T1.
 - Verificación: typecheck limpio; 1601 pruebas en verde; Chromium: crear → marcar pulsos → cambiar sonido y velocidad → tocar → nombrar → dos versiones → volver a A → duplicar → borrar, sin errores de consola. En la web los dos tempos más rápidos tenían el mismo nombre («Rápido»): se separó en Lento/Medio/Rápido/Muy rápido (con prueba).
 - Pendiente: probarlo en la tableta (APK nuevo, solo cuando Victor lo pida).
+
+## 2026-10-20 · AR-04: unidad guiada A1-U04 «Mi banda deja respirar al silencio»
+- Victor: «sigue con AR-04». Dominio puro en `packages/art-content` (`unit-model.ts`, `unit.ts`, `unit-copy.ts`): seis encuentros, lo que falta para darlos por hechos (verificable, sin «más cuadros = mejor»), avance guardado dentro de la biblioteca (opcional para no invalidar lo ya guardado), estrellas por esfuerzo (D11). 52 pruebas del paquete.
+- App: `UnitPlayer` (los seis encuentros), `RhythmGrid` extraída y compartida con el Taller libre, `useRhythmPlayer` con `solo`, sección «Retos» en el inicio del cuaderno.
+- La cápsula cultural del encuentro 6 es **inventada y rotulada** hasta que Victor confirme temas y fuentes.
+- Verificado en Chromium de punta a punta: pista amable si el pulso no es el correcto, aviso si el silencio cae donde suena algo, dos versiones distintas, «Tu carpeta», 3 estrellas de esfuerzo, el inicio muestra «6 de 6 encuentros»; sin errores de consola.

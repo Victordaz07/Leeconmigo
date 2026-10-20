@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ARTE_COPY, MAX_TITLE, type ArtLang, type ArtProject, type RhythmScene } from '@lee-conmigo/art-content';
-import { FAMILIES, FAMILY_NAME, SOUNDS, soundsOf, STEPS, TRACKS, toggleCell, type SoundId, type Track } from '@lee-conmigo/music-engine';
+import { TRACKS, toggleCell, type SoundId, type Track } from '@lee-conmigo/music-engine';
 import { Button, ChevronLeftIcon, colors, fontFamily, radius, RoundButton, shadows, useLayout } from '@lee-conmigo/ui-native';
+import { RhythmGrid } from './rhythm-grid';
 import { useRhythmPlayer } from '../../audio/use-rhythm-player';
 
 const TEMPOS = [60, 90, 120, 140];
-const ROW_LABEL: Record<Track, string> = { a: 'A', b: 'B', c: 'C', d: 'D' };
 
 interface Props {
   lang: ArtLang;
@@ -33,18 +33,13 @@ export function RhythmWorkshop({ lang, project, onScene, onRename, onSaveVersion
   const t = ARTE_COPY[lang];
   const scene = project.scenes[0]!;
   const player = useRhythmPlayer(scene.pattern, scene.kit, scene.bpm);
-  const [picking, setPicking] = useState<Track | null>(null);
   const [name, setName] = useState(project.title);
   const [confirmDelete, setConfirmDelete] = useState(false);
   const empty = TRACKS.every((r) => !scene.pattern[r].some(Boolean));
-  const soundName = (id: SoundId) => SOUNDS[id].name[lang];
 
   const change = (patch: Partial<RhythmScene>) => onScene({ ...scene, ...patch });
   const toggle = (track: Track, step: number) => change({ pattern: toggleCell(scene.pattern, track, step) });
-  const choose = (track: Track, sound: SoundId) => {
-    change({ kit: { ...scene.kit, [track]: sound } });
-    void player.preview(sound);
-  };
+  const choose = (track: Track, sound: SoundId) => change({ kit: { ...scene.kit, [track]: sound } });
   const leave = () => {
     player.stop();
     onBack();
@@ -77,63 +72,8 @@ export function RhythmWorkshop({ lang, project, onScene, onRename, onSaveVersion
         />
 
         <Text style={styles.note}>{t.gridHint}</Text>
-        <View style={styles.grid}>
-          {TRACKS.map((track) => (
-            <View key={track} style={styles.gridRow}>
-              <Pressable
-                onPress={() => setPicking(picking === track ? null : track)}
-                accessibilityRole="button"
-                accessibilityLabel={t.changeSound(soundName(scene.kit[track]))}
-                accessibilityState={{ expanded: picking === track }}
-                style={[styles.soundBtn, picking === track && styles.soundBtnOn]}
-              >
-                <Text style={styles.soundBtnText} numberOfLines={2}>
-                  {soundName(scene.kit[track])}
-                </Text>
-              </Pressable>
-              {scene.pattern[track].map((on, step) => (
-                <Pressable
-                  key={step}
-                  onPress={() => toggle(track, step)}
-                  accessibilityRole="button"
-                  accessibilityState={{ selected: on }}
-                  accessibilityLabel={on ? t.rowOn(soundName(scene.kit[track]), step + 1) : t.rowOff(soundName(scene.kit[track]), step + 1)}
-                  style={[styles.cell, on && styles.cellOn, player.cursor === step && styles.cellCursor, step === 4 && styles.cellGroup]}
-                >
-                  <Text style={styles.cellText}>{on ? '●' : ''}</Text>
-                </Pressable>
-              ))}
-            </View>
-          ))}
-          <View style={styles.gridRow}>
-            <View style={styles.layerName} />
-            {Array.from({ length: STEPS }, (_, i) => (
-              <Text key={i} style={[styles.stepNum, player.cursor === i && styles.stepNumOn, i === 4 && styles.cellGroup]} accessibilityLabel={t.pulse(i + 1)}>
-                {i + 1}
-              </Text>
-            ))}
-          </View>
-        </View>
+        <RhythmGrid lang={lang} scene={scene} cursor={player.cursor} onToggle={toggle} onChangeSound={choose} onPreview={(id) => void player.preview(id)} />
         {empty && <Text style={styles.hint}>{t.emptyHint}</Text>}
-
-        {picking && (
-          <View style={styles.picker}>
-            <Text style={styles.h3}>{t.pickSound(ROW_LABEL[picking])}</Text>
-            <Text style={styles.small}>{t.pickSoundHint}</Text>
-            {FAMILIES.map((f) => (
-              <View key={f} style={styles.family}>
-                <Text style={styles.familyName}>{FAMILY_NAME[f][lang]}</Text>
-                <View style={styles.chips}>
-                  {soundsOf(f).map((id) => (
-                    <Pressable key={id} onPress={() => choose(picking, id)} accessibilityRole="button" accessibilityLabel={`${soundName(id)}. ${SOUNDS[id].hint[lang]}`} accessibilityState={{ selected: scene.kit[picking] === id }} style={[styles.chip, scene.kit[picking] === id && styles.chipOn]}>
-                      <Text style={[styles.chipText, scene.kit[picking] === id && styles.chipTextOn]}>{soundName(id)}</Text>
-                    </Pressable>
-                  ))}
-                </View>
-              </View>
-            ))}
-          </View>
-        )}
 
         <Text style={styles.h3}>{t.tempo}</Text>
         <View style={styles.segmented}>
@@ -205,27 +145,6 @@ const styles = StyleSheet.create({
   warn: { fontFamily: fontFamily.ui.bold, fontSize: 15, color: colors.orangeDeep, backgroundColor: colors.warnTint, borderRadius: radius.tile, padding: 12, overflow: 'hidden' },
   card: { backgroundColor: colors.paper, borderRadius: radius.card, padding: 20, gap: 12, boxShadow: shadows.card },
   input: { minHeight: 48, borderRadius: 12, borderWidth: 2, borderColor: colors.line, backgroundColor: '#ffffff', paddingHorizontal: 14, fontFamily: fontFamily.ui.extrabold, fontSize: 18, color: colors.ink },
-  grid: { gap: 6 },
-  gridRow: { flexDirection: 'row', alignItems: 'center', gap: 4 },
-  layerName: { width: 92 },
-  soundBtn: { width: 92, minHeight: 48, borderRadius: 10, paddingHorizontal: 6, justifyContent: 'center', backgroundColor: colors.chip, borderWidth: 2, borderColor: colors.chip },
-  soundBtnOn: { borderColor: colors.brand, backgroundColor: '#ffffff' },
-  soundBtnText: { fontFamily: fontFamily.ui.extrabold, fontSize: 12, lineHeight: 15, color: colors.ink },
-  cell: { flex: 1, height: 48, minWidth: 28, borderRadius: 10, borderWidth: 2, borderColor: colors.line, backgroundColor: '#ffffff', alignItems: 'center', justifyContent: 'center' },
-  cellGroup: { marginLeft: 6 },
-  cellOn: { backgroundColor: colors.brand, borderColor: colors.brand },
-  cellCursor: { borderColor: colors.orangeDeep },
-  cellText: { color: '#ffffff', fontSize: 14 },
-  stepNum: { flex: 1, textAlign: 'center', fontFamily: fontFamily.ui.bold, fontSize: 13, color: colors.muted },
-  stepNumOn: { color: colors.orangeDeep, fontFamily: fontFamily.ui.black },
-  picker: { gap: 8, backgroundColor: '#ffffff', borderRadius: radius.tile, padding: 12, boxShadow: shadows.soft },
-  family: { gap: 6 },
-  familyName: { fontFamily: fontFamily.ui.extrabold, fontSize: 13, color: colors.muted },
-  chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
-  chip: { minHeight: 44, paddingHorizontal: 14, borderRadius: 12, justifyContent: 'center', backgroundColor: colors.chip, borderWidth: 2, borderColor: colors.chip },
-  chipOn: { backgroundColor: colors.brand, borderColor: colors.brand },
-  chipText: { fontFamily: fontFamily.ui.extrabold, fontSize: 14, color: colors.ink },
-  chipTextOn: { color: '#ffffff' },
   segmented: { flexDirection: 'row', gap: 6, backgroundColor: colors.chip, borderRadius: 14, padding: 4 },
   segment: { flex: 1, height: 46, borderRadius: 10, alignItems: 'center', justifyContent: 'center' },
   segmentOn: { backgroundColor: colors.brand },
