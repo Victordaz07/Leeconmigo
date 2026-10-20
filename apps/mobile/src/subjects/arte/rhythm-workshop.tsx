@@ -63,7 +63,7 @@ export function RhythmWorkshop({ lang, project, onScene, onRename, onSaveVersion
         </Text>
       </View>
 
-      <View style={styles.card}>
+      <View style={[styles.card, layout.phone && styles.cardPhone]}>
         <Text style={styles.h3}>{t.nameLabel}</Text>
         <TextInput
           value={name}
@@ -92,7 +92,7 @@ export function RhythmWorkshop({ lang, project, onScene, onRename, onSaveVersion
         {player.error && <Text style={styles.warn}>{t.audioError}</Text>}
       </View>
 
-      <View style={styles.card}>
+      <View style={[styles.card, layout.phone && styles.cardPhone]}>
         <Text style={styles.h3}>{t.versions}</Text>
         {project.versions.length === 0 ? (
           <Text style={styles.note}>{t.noVersions}</Text>
@@ -116,7 +116,7 @@ export function RhythmWorkshop({ lang, project, onScene, onRename, onSaveVersion
         </View>
       </View>
 
-      <View style={styles.card}>
+      <View style={[styles.card, layout.phone && styles.cardPhone]}>
         {confirmDelete ? (
           <>
             <Text style={styles.h3}>{t.removeAsk(project.title)}</Text>
@@ -149,6 +149,7 @@ const styles = StyleSheet.create({
   note: { fontFamily: fontFamily.ui.semibold, fontSize: 15, lineHeight: 21, color: colors.inkSoft },
   hint: { fontFamily: fontFamily.ui.bold, fontSize: 15, color: colors.brand },
   warn: { fontFamily: fontFamily.ui.bold, fontSize: 15, color: colors.orangeDeep, backgroundColor: colors.warnTint, borderRadius: radius.tile, padding: 12, overflow: 'hidden' },
+  cardPhone: { padding: 14 },
   card: { backgroundColor: colors.paper, borderRadius: radius.card, padding: 20, gap: 12, boxShadow: shadows.card },
   input: { minHeight: 48, borderRadius: 12, borderWidth: 2, borderColor: colors.line, backgroundColor: '#ffffff', paddingHorizontal: 14, fontFamily: fontFamily.ui.extrabold, fontSize: 18, color: colors.ink },
   segmented: { flexDirection: 'row', gap: 6, backgroundColor: colors.chip, borderRadius: 14, padding: 4 },

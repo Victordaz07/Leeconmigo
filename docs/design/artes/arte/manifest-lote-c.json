@@ -1,0 +1,74 @@
+[
+  {
+    "source": "prop_bote_pintura.png",
+    "sha256": "3fa1742c91b24419de47e8fce3b4f1b6b4640aa26c6dcd2bccc3741f254a305d",
+    "bytes": 570410,
+    "output": "apps/mobile/assets/arte/props/prop_bote_pintura.webp",
+    "outputBytes": 13012,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "prop_esponja.png",
+    "sha256": "0f52d4145cbd70a878ea045484f52060e31d0fa76e3701ba5fc572cce1a59bd8",
+    "bytes": 814050,
+    "output": "apps/mobile/assets/arte/props/prop_esponja.webp",
+    "outputBytes": 25082,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "prop_goma.png",
+    "sha256": "0264e66527cc4286269e0f93c44bcc4107a6078abf78185af95fb9af1541166a",
+    "bytes": 514551,
+    "output": "apps/mobile/assets/arte/props/prop_goma.webp",
+    "outputBytes": 18346,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "prop_paleta.png",
+    "sha256": "de915db4147bd242fbf3c987c52fd3799741f8d9dc3b04b08ef5000b4eef0cd0",
+    "bytes": 962487,
+    "output": "apps/mobile/assets/arte/props/prop_paleta.webp",
+    "outputBytes": 26542,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "prop_pincel_fino.png",
+    "sha256": "351d496b22422edbc1ecb0a91798f68a0fc3cd5d6ee123d072a84c6c95389f3b",
+    "bytes": 236881,
+    "output": "apps/mobile/assets/arte/props/prop_pincel_fino.webp",
+    "outputBytes": 21980,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "prop_pincel_grueso.png",
+    "sha256": "93bfd063f262f9a5efe50458e31566bfecba97f01e5eff28833bb8626f0c930f",
+    "bytes": 796923,
+    "output": "apps/mobile/assets/arte/props/prop_pincel_grueso.webp",
+    "outputBytes": 32034,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "prop_pincel_medio.png",
+    "sha256": "e33970c588a32e032d558fea24ab3ecb8e5932815b608fb1e4109c0b9e2e8a04",
+    "bytes": 346580,
+    "output": "apps/mobile/assets/arte/props/prop_pincel_medio.webp",
+    "outputBytes": 20618,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "prop_vaso_agua.png",
+    "sha256": "3bc1868ac6c10c8ea975f39b081579967618efbc1e5e318a91579f34ec49e93a",
+    "bytes": 856123,
+    "output": "apps/mobile/assets/arte/props/prop_vaso_agua.webp",
+    "outputBytes": 45564,
+    "width": 512,
+    "height": 512
+  }
+]

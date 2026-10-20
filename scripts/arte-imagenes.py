@@ -5,7 +5,8 @@ Uso:  python3 -I scripts/arte-imagenes.py <carpeta con los PNG extraídos> [lote
 Nombres de entrada: cover_*.png, hero_*.png, bg_arte_*_(horizontal|vertical).png, snd_*.png, prop_*.png.
 Salida: apps/mobile/assets/arte/{covers,bg,snd,props}/*.webp  y  docs/design/artes/arte/manifest-<lote>.json
 Los PNG originales NO se guardan en el repo (pesan ~2 MB cada uno): el manifiesto lleva su SHA-256.
-Objetos (snd_, prop_) conservan la transparencia; portadas y fondos van sin alfa.
+Objetos (snd_, prop_) conservan la transparencia y se reducen a 512×512 (se ven a menos de 100 px); portadas y fondos van sin alfa.
+Una imagen dañada o cortada se omite y se avisa (hay que volver a generarla).
 """
 import hashlib, json, os, sys
 from PIL import Image
@@ -43,9 +44,15 @@ for f in sorted(os.listdir(src)):
     else:
         print('se ignora', f)
         continue
-    im = Image.open(orig).convert(mode)
+    try:
+        im = Image.open(orig)
+        im.load()
+    except Exception as e:
+        print(f'SE OMITE {f}: archivo dañado o cortado ({e}); hay que volver a generarla')
+        continue
+    im = im.convert(mode)
     if mode == 'RGBA':
-        im = clean_alpha(im)
+        im = clean_alpha(im).resize((512, 512), Image.LANCZOS)
     path = f'{out}/{folder}/{name}.webp'
     im.save(path, 'WEBP', quality=quality, method=6)
     manifest.append({'source': f, 'sha256': sha(orig), 'bytes': os.path.getsize(orig), 'output': path, 'outputBytes': os.path.getsize(path), 'width': im.width, 'height': im.height})

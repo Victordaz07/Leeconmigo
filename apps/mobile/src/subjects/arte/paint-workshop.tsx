@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { type GestureResponderEvent, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Image, type GestureResponderEvent, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
   ARTE_COPY, MAX_DROPS, MAX_TITLE, PAPER, PAPER_H, PAPER_W, PIGMENTS, PIGMENT_NAME, addDrop, addToPalette, beginStroke, brush, cancelStroke, canRedo, canUndo, clearDrawing, colorOf, drawingOf, dropsOf,
@@ -9,10 +9,12 @@ import {
 import { Button, ChevronLeftIcon, colors, fontFamily, radius, RoundButton, shadows, useLayout } from '@lee-conmigo/ui-native';
 import { SvgStrokeLayer } from '../../screens/svg-stroke-layer';
 import { ArtBackdrop } from './art-backdrop';
+import { PAINT_ART } from './art';
 
 /** Grosores del pincel en unidades del lienzo lógico (1000 de ancho), y de la goma. */
 const SIZES = [4, 10, 22] as const;
 const ERASER_SIZE = 40;
+const BRUSH_IMG = [PAINT_ART.pincelFino, PAINT_ART.pincelMedio, PAINT_ART.pincelGrueso] as const;
 const VIEW_BOX = `0 0 ${PAPER_W} ${PAPER_H}`;
 const PIGMENT_LABEL_COLOR: Record<Pigment, string> = { red: '#FF0000', yellow: '#FFFF00', blue: '#2A5F99', white: '#FFFFFF', black: '#000000' };
 
@@ -139,7 +141,7 @@ export function PaintWorkshop({ lang, project, onScene, onRename, onDuplicate, o
         </Text>
       </View>
 
-      <View style={styles.card}>
+      <View style={[styles.card, layout.phone && styles.cardPhone]}>
         <TextInput value={name} onChangeText={setName} onEndEditing={() => onRename(name)} onBlur={() => onRename(name)} maxLength={MAX_TITLE} accessibilityLabel={t.nameLabel} style={styles.input} />
         <Text style={styles.note}>{t.paintHint}</Text>
 
@@ -163,7 +165,10 @@ export function PaintWorkshop({ lang, project, onScene, onRename, onDuplicate, o
         </View>
         {strokeCount === 0 && <Text style={styles.hint}>{t.paintEmpty}</Text>}
 
-        <Text style={styles.h3}>{t.colorsLabel}</Text>
+        <View style={styles.titleRow}>
+          <Image source={PAINT_ART.paleta} resizeMode="contain" accessible={false} style={styles.titleImg} />
+          <Text style={styles.h3}>{t.colorsLabel}</Text>
+        </View>
         <View style={styles.chips}>
           {scene.palette.map((c) => {
             const on = !eraser && c.id === current.id;
@@ -174,15 +179,19 @@ export function PaintWorkshop({ lang, project, onScene, onRename, onDuplicate, o
             );
           })}
           <Pressable onPress={() => setEraser(true)} accessibilityRole="button" accessibilityState={{ selected: eraser }} style={[styles.chip, eraser && styles.chipOn]}>
-            <Text style={[styles.chipText, eraser && styles.chipTextOn]}>{eraser ? '✓ ' : ''}{t.eraser}</Text>
+            <View style={styles.chipRow}>
+              <Image source={PAINT_ART.goma} resizeMode="contain" accessible={false} style={styles.chipImg} />
+              <Text style={[styles.chipText, eraser && styles.chipTextOn]}>{eraser ? '✓ ' : ''}{t.eraser}</Text>
+            </View>
           </Pressable>
         </View>
 
         <Text style={styles.h3}>{t.sizeLabel}</Text>
         <View style={styles.segmented}>
           {SIZES.map((_, i) => (
-            <Pressable key={i} onPress={() => setSize(i)} accessibilityRole="button" accessibilityState={{ selected: size === i }} style={[styles.segment, size === i && styles.segmentOn]}>
-              <Text style={[styles.segmentText, size === i && styles.segmentTextOn]}>{t.sizes[i]}</Text>
+            <Pressable key={i} onPress={() => setSize(i)} accessibilityRole="button" accessibilityLabel={t.sizes[i]} accessibilityState={{ selected: size === i }} style={[styles.segment, size === i && styles.segmentOn]}>
+              <Image source={BRUSH_IMG[i]} resizeMode="contain" accessible={false} style={styles.brushImg} />
+              <Text style={[styles.segmentText, size === i && styles.segmentTextOn]}>{size === i ? '✓ ' : ''}{t.sizes[i]}</Text>
             </Pressable>
           ))}
         </View>
@@ -195,14 +204,20 @@ export function PaintWorkshop({ lang, project, onScene, onRename, onDuplicate, o
       </View>
 
       {mixing && (
-        <View style={styles.card}>
-          <Text style={styles.h3}>{t.mixTitle}</Text>
+        <View style={[styles.card, layout.phone && styles.cardPhone]}>
+          <View style={styles.titleRow}>
+            <Image source={PAINT_ART.vaso} resizeMode="contain" accessible={false} style={styles.titleImg} />
+            <Text style={styles.h3}>{t.mixTitle}</Text>
+          </View>
           <Text style={styles.note}>{t.mixHint}</Text>
           <View style={styles.pots}>
             {PIGMENTS.map((p) => (
               <View key={p} style={styles.pot}>
-                <Pressable onPress={() => { setRecipe(addDrop(recipe, p)); setMixSaved(false); }} accessibilityRole="button" accessibilityLabel={`${t.mixAdd(rName(p))}. ${recipe[p]}`} style={[styles.potDot, { backgroundColor: PIGMENT_LABEL_COLOR[p] }, p === 'white' && styles.potWhite]}>
-                  <Text style={[styles.potCount, { color: p === 'yellow' || p === 'white' ? '#1E2340' : '#ffffff' }]}>{recipe[p] > 0 ? recipe[p] : '+'}</Text>
+                <Pressable onPress={() => { setRecipe(addDrop(recipe, p)); setMixSaved(false); }} accessibilityRole="button" accessibilityLabel={`${t.mixAdd(rName(p))}. ${recipe[p]}`} style={styles.jar}>
+                  <Image source={PAINT_ART.bote} resizeMode="contain" accessible={false} style={styles.jarImg} />
+                  <View style={[styles.potDot, { backgroundColor: PIGMENT_LABEL_COLOR[p] }, p === 'white' && styles.potWhite]}>
+                    <Text style={[styles.potCount, { color: p === 'yellow' || p === 'white' ? '#1E2340' : '#ffffff' }]}>{recipe[p] > 0 ? recipe[p] : '+'}</Text>
+                  </View>
                 </Pressable>
                 <Text style={styles.potName}>{rName(p)}</Text>
                 <Pressable onPress={() => { setRecipe(removeDrop(recipe, p)); setMixSaved(false); }} disabled={recipe[p] === 0} accessibilityRole="button" accessibilityLabel={t.mixRemove(rName(p))} style={[styles.potMinus, recipe[p] === 0 && styles.potMinusOff]}>
@@ -226,7 +241,7 @@ export function PaintWorkshop({ lang, project, onScene, onRename, onDuplicate, o
         </View>
       )}
 
-      <View style={styles.card}>
+      <View style={[styles.card, layout.phone && styles.cardPhone]}>
         {scene.palette.length > 1 && (
           <View style={styles.actions}>
             <Button label={t.removeColor} variant="secondary" onPress={() => savePalette(removeFromPalette(scene.palette, current.id))} disabled={eraser} />
@@ -247,7 +262,7 @@ export function PaintWorkshop({ lang, project, onScene, onRename, onDuplicate, o
         )}
       </View>
 
-      <View style={styles.card}>
+      <View style={[styles.card, layout.phone && styles.cardPhone]}>
         <View style={styles.actions}>
           <Button label={t.duplicate} variant="secondary" onPress={onDuplicate} />
           {confirmDelete ? (
@@ -288,6 +303,7 @@ const styles = StyleSheet.create({
   small: { fontFamily: fontFamily.ui.semibold, fontSize: 13, lineHeight: 18, color: colors.muted },
   hint: { fontFamily: fontFamily.ui.bold, fontSize: 15, color: colors.brand },
   ok: { fontFamily: fontFamily.ui.bold, fontSize: 15, color: colors.ok },
+  cardPhone: { padding: 14 },
   card: { backgroundColor: colors.paper, borderRadius: radius.card, padding: 20, gap: 12, boxShadow: shadows.card },
   input: { minHeight: 48, borderRadius: 12, borderWidth: 2, borderColor: colors.line, backgroundColor: '#ffffff', paddingHorizontal: 14, fontFamily: fontFamily.ui.extrabold, fontSize: 18, color: colors.ink },
   canvas: { width: '100%', maxWidth: 1100, aspectRatio: PAPER_W / PAPER_H, alignSelf: 'center', borderRadius: radius.tile, overflow: 'hidden', borderWidth: 2, borderColor: colors.line, backgroundColor: PAPER },
@@ -295,19 +311,26 @@ const styles = StyleSheet.create({
   swatch: { width: 52, height: 52, borderRadius: 26, borderWidth: 3, borderColor: colors.line, alignItems: 'center', justifyContent: 'center' },
   swatchOn: { borderColor: colors.brand, borderWidth: 4 },
   swatchCheck: { fontFamily: fontFamily.ui.black, fontSize: 20 },
-  chip: { minHeight: 48, paddingHorizontal: 14, borderRadius: 12, justifyContent: 'center', backgroundColor: colors.chip, borderWidth: 2, borderColor: colors.chip },
+  chip: { minHeight: 56, paddingHorizontal: 14, borderRadius: 12, justifyContent: 'center', backgroundColor: colors.chip, borderWidth: 2, borderColor: colors.chip },
   chipOn: { backgroundColor: colors.brand, borderColor: colors.brand },
   chipText: { fontFamily: fontFamily.ui.extrabold, fontSize: 14, color: colors.ink },
   chipTextOn: { color: '#ffffff' },
+  chipRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  chipImg: { width: 40, height: 40 },
+  titleRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
+  titleImg: { width: 44, height: 44 },
+  brushImg: { width: 44, height: 44 },
   segmented: { flexDirection: 'row', gap: 6, backgroundColor: colors.chip, borderRadius: 14, padding: 4 },
-  segment: { flex: 1, height: 46, borderRadius: 10, alignItems: 'center', justifyContent: 'center' },
+  segment: { flex: 1, minHeight: 64, borderRadius: 10, flexDirection: 'row', gap: 8, alignItems: 'center', justifyContent: 'center' },
   segmentOn: { backgroundColor: colors.brand },
   segmentText: { fontFamily: fontFamily.ui.extrabold, fontSize: 15, color: colors.inkSoft },
   segmentTextOn: { color: '#ffffff' },
   actions: { flexDirection: 'row', flexWrap: 'wrap', gap: 10, alignItems: 'center' },
   pots: { flexDirection: 'row', flexWrap: 'wrap', gap: 14, justifyContent: 'flex-start' },
-  pot: { alignItems: 'center', gap: 6, width: 84 },
-  potDot: { width: 72, height: 72, borderRadius: 36, alignItems: 'center', justifyContent: 'center', borderWidth: 3, borderColor: 'rgba(0,0,0,0.12)' },
+  pot: { alignItems: 'center', gap: 6, width: 96 },
+  jar: { width: 88, height: 88, alignItems: 'center', justifyContent: 'flex-end' },
+  jarImg: { position: 'absolute', top: 0, left: 0, width: 88, height: 88 },
+  potDot: { width: 46, height: 46, borderRadius: 23, marginBottom: 8, alignItems: 'center', justifyContent: 'center', borderWidth: 3, borderColor: 'rgba(0,0,0,0.15)' },
   potWhite: { borderColor: colors.line },
   potCount: { fontFamily: fontFamily.ui.black, fontSize: 24 },
   potName: { fontFamily: fontFamily.ui.extrabold, fontSize: 14, color: colors.ink },

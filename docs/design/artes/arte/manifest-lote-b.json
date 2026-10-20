@@ -1,0 +1,137 @@
+[
+  {
+    "source": "snd_bajo.png",
+    "sha256": "4d7ec44f156772c4b9e5738e33cbf56dd34ab3128be02786937f0bfc7a2e2c99",
+    "bytes": 717701,
+    "output": "apps/mobile/assets/arte/snd/snd_bajo.webp",
+    "outputBytes": 46984,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "snd_bloque.png",
+    "sha256": "9d583175b1318e626ab8e012b9d5e1370c029379c69addfa9c249670f3ced2f6",
+    "bytes": 778616,
+    "output": "apps/mobile/assets/arte/snd/snd_bloque.webp",
+    "outputBytes": 36534,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "snd_bombo.png",
+    "sha256": "64dd47f7b61d04a146a01ceb6fab281f8600f4dd43e3d2bc1c593f70e9c34a6b",
+    "bytes": 1055701,
+    "output": "apps/mobile/assets/arte/snd/snd_bombo.webp",
+    "outputBytes": 40970,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "snd_bongo.png",
+    "sha256": "1d4297f005612515c1e0b43a1c80b3f51cf29b448aa2702a1e31dd2b4bc173ab",
+    "bytes": 1004497,
+    "output": "apps/mobile/assets/arte/snd/snd_bongo.webp",
+    "outputBytes": 41904,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "snd_caja.png",
+    "sha256": "c62dd015efbb23af5e3bb50931efb2b6f49cb025c6a973bf806b191abda2eb29",
+    "bytes": 1043962,
+    "output": "apps/mobile/assets/arte/snd/snd_caja.webp",
+    "outputBytes": 47876,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "snd_campanita.png",
+    "sha256": "21638d7bfb6e37b58ca6df21018878f4968499b2eb6a1d25ecb001fd97f89098",
+    "bytes": 973407,
+    "output": "apps/mobile/assets/arte/snd/snd_campanita.webp",
+    "outputBytes": 43316,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "snd_chasquido.png",
+    "sha256": "0d920a559a067c51d6d66aaef2337c5e1fa55ef8ca0be93c27d65f22e55f89ac",
+    "bytes": 557779,
+    "output": "apps/mobile/assets/arte/snd/snd_chasquido.webp",
+    "outputBytes": 25468,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "snd_claves.png",
+    "sha256": "7e3fb19c38f32e73da672c56a5b32d649345ec75ef02faa914adecad7aa0626a",
+    "bytes": 920398,
+    "output": "apps/mobile/assets/arte/snd/snd_claves.webp",
+    "outputBytes": 39024,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "snd_cuerda.png",
+    "sha256": "41f22d9e1873a66e88df3020bd8aca0e7e8e1d29cc0865584f3a629b22a52fdf",
+    "bytes": 439808,
+    "output": "apps/mobile/assets/arte/snd/snd_cuerda.webp",
+    "outputBytes": 40338,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "snd_marimba.png",
+    "sha256": "7d192a102087101690bd13b96fb6c37a1c01818fea3ccd6f63626302427a343a",
+    "bytes": 1005157,
+    "output": "apps/mobile/assets/arte/snd/snd_marimba.webp",
+    "outputBytes": 53512,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "snd_palmas.png",
+    "sha256": "2220719ffb3a3bb18660026ea0abe91d470c7a3e2f45fdb2d942fa95bf977c80",
+    "bytes": 748977,
+    "output": "apps/mobile/assets/arte/snd/snd_palmas.webp",
+    "outputBytes": 30010,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "snd_sonaja.png",
+    "sha256": "facf6185ee0b6855301f3bcd72abbd3cb3bf8bf8ea04722ffd6cb918ffab023e",
+    "bytes": 895662,
+    "output": "apps/mobile/assets/arte/snd/snd_sonaja.webp",
+    "outputBytes": 49662,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "snd_tom.png",
+    "sha256": "a2b23ad285e4e4f734ff1a709f9c8551ecb9fae2c42f8e99d88b1d06d0a3b2c1",
+    "bytes": 1141489,
+    "output": "apps/mobile/assets/arte/snd/snd_tom.webp",
+    "outputBytes": 48806,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "snd_triangulo.png",
+    "sha256": "74311227cffe50a1ef3f078a4fd9decfa463a8158cfefe205adb6f809ba6edf5",
+    "bytes": 604644,
+    "output": "apps/mobile/assets/arte/snd/snd_triangulo.webp",
+    "outputBytes": 48146,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "snd_voz.png",
+    "sha256": "c4f3ad621ba42d9bc8650ec152b03ca5e5d619c427ec038f6fa325ba3cbd2ef2",
+    "bytes": 660833,
+    "output": "apps/mobile/assets/arte/snd/snd_voz.webp",
+    "outputBytes": 33668,
+    "width": 512,
+    "height": 512
+  }
+]

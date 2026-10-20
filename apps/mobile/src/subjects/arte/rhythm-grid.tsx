@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import { ARTE_COPY, type ArtLang, type RhythmScene } from '@lee-conmigo/art-content';
 import { FAMILIES, FAMILY_NAME, SOUNDS, soundsOf, STEPS, TRACKS, type SoundId, type Track } from '@lee-conmigo/music-engine';
-import { colors, fontFamily, radius, shadows } from '@lee-conmigo/ui-native';
+import { colors, fontFamily, radius, shadows, useLayout } from '@lee-conmigo/ui-native';
+import { SOUND_ART } from './art';
 
 const ROW_LABEL: Record<Track, string> = { a: 'A', b: 'B', c: 'C', d: 'D' };
 
@@ -29,6 +30,8 @@ interface Props {
 /** La rejilla de ocho pulsos × filas con el selector de sonidos. Compartida por el Taller libre y la unidad guiada. */
 export function RhythmGrid({ lang, scene, cursor, rows = TRACKS, onToggle, onChangeSound, onPreview, onStepPress, markStep = null, soloRow = null }: Props) {
   const t = ARTE_COPY[lang];
+  // en un teléfono el botón del sonido se estrecha para que quepan los ocho pulsos
+  const compact = useLayout().width < 560;
   const [picking, setPicking] = useState<Track | null>(null);
   const soundName = (id: SoundId) => SOUNDS[id].name[lang];
   const choose = (track: Track, sound: SoundId) => {
@@ -46,9 +49,10 @@ export function RhythmGrid({ lang, scene, cursor, rows = TRACKS, onToggle, onCha
               accessibilityRole={onChangeSound ? 'button' : 'text'}
               accessibilityLabel={onChangeSound ? t.changeSound(soundName(scene.kit[track])) : soundName(scene.kit[track])}
               accessibilityState={{ expanded: picking === track }}
-              style={[styles.soundBtn, (picking === track || soloRow === track) && styles.soundBtnOn]}
+              style={[styles.soundBtn, compact && styles.soundBtnCompact, (picking === track || soloRow === track) && styles.soundBtnOn]}
             >
-              <Text style={styles.soundBtnText} numberOfLines={2}>
+              {SOUND_ART[scene.kit[track]] && <Image source={SOUND_ART[scene.kit[track]]} resizeMode="contain" accessible={false} style={styles.soundImg} />}
+              <Text style={[styles.soundBtnText, compact && styles.soundBtnTextCompact]} numberOfLines={1}>
                 {soundName(scene.kit[track])}
               </Text>
             </Pressable>
@@ -68,7 +72,7 @@ export function RhythmGrid({ lang, scene, cursor, rows = TRACKS, onToggle, onCha
           </View>
         ))}
         <View style={styles.gridRow}>
-          <View style={styles.layerName} />
+          <View style={[styles.layerName, compact && styles.soundBtnCompact]} />
           {Array.from({ length: STEPS }, (_, i) => (
             <Pressable
               key={i}
@@ -95,6 +99,7 @@ export function RhythmGrid({ lang, scene, cursor, rows = TRACKS, onToggle, onCha
               <View style={styles.chips}>
                 {soundsOf(f).map((id) => (
                   <Pressable key={id} onPress={() => choose(picking, id)} accessibilityRole="button" accessibilityLabel={`${soundName(id)}. ${SOUNDS[id].hint[lang]}`} accessibilityState={{ selected: scene.kit[picking] === id }} style={[styles.chip, scene.kit[picking] === id && styles.chipOn]}>
+                    {SOUND_ART[id] && <Image source={SOUND_ART[id]} resizeMode="contain" accessible={false} style={styles.chipImg} />}
                     <Text style={[styles.chipText, scene.kit[picking] === id && styles.chipTextOn]}>{soundName(id)}</Text>
                   </Pressable>
                 ))}
@@ -114,16 +119,19 @@ const styles = StyleSheet.create({
   grid: { gap: 6 },
   gridRow: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   layerName: { width: 92 },
-  soundBtn: { width: 92, minHeight: 48, borderRadius: 10, paddingHorizontal: 6, justifyContent: 'center', backgroundColor: colors.chip, borderWidth: 2, borderColor: colors.chip },
+  soundBtn: { width: 92, minHeight: 56, borderRadius: 10, paddingHorizontal: 4, paddingVertical: 2, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.chip, borderWidth: 2, borderColor: colors.chip },
+  soundImg: { width: 34, height: 34 },
+  soundBtnCompact: { width: 52, paddingHorizontal: 1 },
+  soundBtnTextCompact: { fontSize: 9, lineHeight: 11 },
   soundBtnOn: { borderColor: colors.brand, backgroundColor: '#ffffff' },
-  soundBtnText: { fontFamily: fontFamily.ui.extrabold, fontSize: 12, lineHeight: 15, color: colors.ink },
-  cell: { flex: 1, height: 48, minWidth: 28, borderRadius: 10, borderWidth: 2, borderColor: colors.line, backgroundColor: '#ffffff', alignItems: 'center', justifyContent: 'center' },
+  soundBtnText: { fontFamily: fontFamily.ui.extrabold, fontSize: 11, lineHeight: 14, color: colors.ink, textAlign: 'center' },
+  cell: { flex: 1, height: 56, minWidth: 24, borderRadius: 10, borderWidth: 2, borderColor: colors.line, backgroundColor: '#ffffff', alignItems: 'center', justifyContent: 'center' },
   cellGroup: { marginLeft: 6 },
   cellOn: { backgroundColor: colors.brand, borderColor: colors.brand },
   cellCursor: { borderColor: colors.orangeDeep },
   cellMark: { borderColor: colors.ok, borderStyle: 'dashed' },
   cellText: { color: '#ffffff', fontSize: 14 },
-  stepBtn: { flex: 1, minWidth: 28, minHeight: 28, alignItems: 'center', justifyContent: 'center', borderRadius: 8 },
+  stepBtn: { flex: 1, minWidth: 24, minHeight: 28, alignItems: 'center', justifyContent: 'center', borderRadius: 8 },
   stepBtnTap: { minHeight: 44, backgroundColor: colors.chip },
   stepBtnMark: { backgroundColor: colors.ok },
   stepNum: { textAlign: 'center', fontFamily: fontFamily.ui.bold, fontSize: 13, color: colors.muted },
@@ -133,7 +141,8 @@ const styles = StyleSheet.create({
   family: { gap: 6 },
   familyName: { fontFamily: fontFamily.ui.extrabold, fontSize: 13, color: colors.muted },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
-  chip: { minHeight: 44, paddingHorizontal: 14, borderRadius: 12, justifyContent: 'center', backgroundColor: colors.chip, borderWidth: 2, borderColor: colors.chip },
+  chip: { minHeight: 56, paddingHorizontal: 12, borderRadius: 14, flexDirection: 'row', alignItems: 'center', gap: 8, backgroundColor: colors.chip, borderWidth: 2, borderColor: colors.chip },
+  chipImg: { width: 40, height: 40 },
   chipOn: { backgroundColor: colors.brand, borderColor: colors.brand },
   chipText: { fontFamily: fontFamily.ui.extrabold, fontSize: 14, color: colors.ink },
   chipTextOn: { color: '#ffffff' },
