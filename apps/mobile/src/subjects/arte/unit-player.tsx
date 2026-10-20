@@ -253,7 +253,7 @@ export function UnitPlayer({ lang, library, onChange, onBack }: Props) {
         ))}
       </View>
 
-      <View style={styles.card}>
+      <View style={[styles.card, layout.phone && styles.cardPhone]}>
         <Text style={styles.kicker}>{c.encounter(ENCOUNTERS.indexOf(current) + 1)}</Text>
         <Text style={styles.h2}>{c.encounters[current].title}</Text>
         <Text style={styles.note}>{c.encounters[current].goal}</Text>
@@ -277,7 +277,7 @@ export function UnitPlayer({ lang, library, onChange, onBack }: Props) {
       </View>
 
       {finished && (
-        <View style={styles.card}>
+        <View style={[styles.card, layout.phone && styles.cardPhone]}>
           <Text style={styles.h2}>{c.doneTitle}</Text>
           <Text style={styles.note}>{c.doneText}</Text>
           <Text style={styles.h3}>{c.starsTitle}</Text>
@@ -304,6 +304,7 @@ const styles = StyleSheet.create({
   pillOn: { backgroundColor: colors.brand, borderColor: colors.brand },
   pillText: { fontFamily: fontFamily.ui.black, fontSize: 18, color: colors.inkSoft },
   pillTextOn: { color: '#ffffff' },
+  cardPhone: { padding: 14 },
   card: { backgroundColor: colors.paper, borderRadius: radius.card, padding: 20, gap: 12, boxShadow: shadows.card },
   kicker: { fontFamily: fontFamily.ui.extrabold, fontSize: 13, color: colors.muted },
   h2: { fontFamily: fontFamily.ui.black, fontSize: 26, color: colors.navy },
