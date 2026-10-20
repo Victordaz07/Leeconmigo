@@ -157,7 +157,7 @@ principal (VA, MU, MA, TH, DA). Los códigos de estándares **no se asignan por 
 | AR-03 | Módulo `arte` enchufado + `packages/art-content` + esquema de proyecto y guardado por niño (✅ hecho; abre con el Taller libre de ritmo) |
 | AR-04 | Taller de ritmo (A1-U04) completo con Taller libre y portafolio (✅ hecho; la escucha cultural sigue provisional) |
 | AR-05 | Pintura y paleta (modelo de mezcla documentado en `MODELO-MEZCLA.md`): ✅ taller libre y mezclador; ✅ AR-05b: unidad guiada A2-U02 |
-| AR-06 | ✅ AR-06a Taller de collage; AR-06b unidad A1-U06 «Una historia de recortes»; AR-06c flipbook. Collage y flipbook; recorridos «ritmo → composición» y «dibujo → collage → animación» |
+| AR-06 | ✅ AR-06a Taller de collage; ✅ AR-06b unidad A1-U06 «Una historia de recortes»; AR-06c flipbook. Collage y flipbook; recorridos «ritmo → composición» y «dibujo → collage → animación» |
 | AR-07 | Ensamblaje 3D (si AR-T3 pasa) |
 | AR-08 | Cápsulas culturales (con permisos) y revisión de un maestro |
 
