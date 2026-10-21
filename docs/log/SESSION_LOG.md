@@ -391,3 +391,7 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
 - **Cierre con estrellas dibujadas:** `ClosingCard` (ui-native) recibe `starImages` opcional y dibuja ganada/grande/dormida; sin la prop sigue usando `★`. Tocado (una línea cada uno): `reading-screen.tsx`, `subjects/ciencia/session-player.tsx`, `screens/sociedad-investigation-screen.tsx`.
 - **Mi cuaderno:** hoja con renglones y margen rosado de fondo, cuaderno vacío en el estado sin palabras, estrella dibujada en el pie.
 - Verificado en Chromium (Logros vacío y con progreso, Mi cuaderno, tarjetas de Arte, cierre). 176 pruebas de mobile + art-content.
+
+## 2026-10-21 · cuenta A · Cierres → cuaderno, grano de papel, Mi museo, informe PDF
+- PRs #32–#34 fusionados: «Guardar en mi cuaderno» en los cierres, grano de papel en la pintura, Mi museo (AR-M2), informe semanal en PDF (K8c, P5). 1725 pruebas verdes.
+- Siguiente: APK a pedido de Victor (módulos nativos nuevos) y verificar en Android; luego AR-06c. Detalle en `docs/handoff/artes.md`.
