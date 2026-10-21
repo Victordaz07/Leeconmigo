@@ -1,0 +1,179 @@
+[
+  {
+    "source": "bg_museo_pared.png",
+    "sha256": "dac669862e8e1569e1f91962520257c3e78fdd89d92e0befbeabe64196a81455",
+    "bytes": 1563765,
+    "output": "apps/mobile/assets/arte/bg/bg_museo_pared.webp",
+    "outputBytes": 26994,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "cut_scrap_kraft.png",
+    "sha256": "a670803377cabf4a848e6334d0cda61049b6b1b8bc2ad3e18912305124f9d6ec",
+    "bytes": 738404,
+    "output": "apps/mobile/assets/arte/cuts/cut_scrap_kraft.webp",
+    "outputBytes": 23250,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "cut_scrap_paper.png",
+    "sha256": "cf50f093e75ea200dbfbe75642e5cc5b85c30f4b0bac0f546e912c3f88d5f922",
+    "bytes": 647255,
+    "output": "apps/mobile/assets/arte/cuts/cut_scrap_paper.webp",
+    "outputBytes": 11942,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "cut_tape_turquoise.png",
+    "sha256": "acaea156b5829a4dfb1f17f3400a3157c52428df8dd8936dc10c5b5f7bf50d33",
+    "bytes": 288789,
+    "output": "apps/mobile/assets/arte/cuts/cut_tape_turquoise.webp",
+    "outputBytes": 12438,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "cut_tape_yellow.png",
+    "sha256": "2245658ab50d6eb98b7c4d35dc67a6ec0c20300fae2273a150cc7cbdda041a81",
+    "bytes": 253559,
+    "output": "apps/mobile/assets/arte/cuts/cut_tape_yellow.webp",
+    "outputBytes": 9436,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "folder_cover_coral.png",
+    "sha256": "1a71f55f584862f77189e33566834aaebe4260d6c8cb5238b8ba547c75c3daf4",
+    "bytes": 777278,
+    "output": "apps/mobile/assets/arte/museo/folder_cover_coral.webp",
+    "outputBytes": 8194,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "folder_cover_turquoise.png",
+    "sha256": "18d45c03ba10b294d129eebca8c510715b93021abe5f8ceb29ec018511a4f09b",
+    "bytes": 789989,
+    "output": "apps/mobile/assets/arte/museo/folder_cover_turquoise.webp",
+    "outputBytes": 9180,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "frame_coral.png",
+    "sha256": "885188ea3f71d4b59a01b032f8c635165fbcd85612b7df2cf55ad3b1faa3b47d",
+    "bytes": 1270669,
+    "output": "apps/mobile/assets/arte/museo/frame_coral.webp",
+    "outputBytes": 24680,
+    "width": 1024,
+    "height": 683,
+    "hole": [
+      0.1191,
+      0.1807,
+      0.7617,
+      0.6221
+    ]
+  },
+  {
+    "source": "frame_turquoise.png",
+    "sha256": "33150d1ee5ea11af9027c58a0b276853de6c8d945cc9ae711da45d126bbb3c9e",
+    "bytes": 1284162,
+    "output": "apps/mobile/assets/arte/museo/frame_turquoise.webp",
+    "outputBytes": 23686,
+    "width": 1024,
+    "height": 683,
+    "hole": [
+      0.1413,
+      0.209,
+      0.7161,
+      0.5801
+    ]
+  },
+  {
+    "source": "frame_violet.png",
+    "sha256": "8107fa0b04c446a6ad0c5221a1fe6dc60a6678ece3749cb97be7b728be21264a",
+    "bytes": 1334649,
+    "output": "apps/mobile/assets/arte/museo/frame_violet.webp",
+    "outputBytes": 26624,
+    "width": 1024,
+    "height": 683,
+    "hole": [
+      0.1497,
+      0.1924,
+      0.7025,
+      0.5977
+    ]
+  },
+  {
+    "source": "frame_yellow.png",
+    "sha256": "d9c9b63b80b71e5320b9ad902cfd173cb94cf672759c9a4b722a10addd8a79c7",
+    "bytes": 1231522,
+    "output": "apps/mobile/assets/arte/museo/frame_yellow.webp",
+    "outputBytes": 21994,
+    "width": 1024,
+    "height": 683,
+    "hole": [
+      0.1367,
+      0.1865,
+      0.7266,
+      0.6201
+    ]
+  },
+  {
+    "source": "mat_cardboard.png",
+    "sha256": "70a933d285b178c62af0b3856b0728c3259c6a6581d3e07982386c71a5e011a1",
+    "bytes": 1776093,
+    "output": "apps/mobile/assets/arte/mats/mat_cardboard.webp",
+    "outputBytes": 21740,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "mat_kraft_thin.png",
+    "sha256": "ed1b2ddc2906b85c5e821c2c170b4acf8365ad008e45f5a917c0c11f07631451",
+    "bytes": 2121099,
+    "output": "apps/mobile/assets/arte/mats/mat_kraft_thin.webp",
+    "outputBytes": 50344,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "mat_paper_drawing.png",
+    "sha256": "e9b5abac5bcbff39042a33b20f667b33a4a6ee5faec01e0845dc31a6b99328a1",
+    "bytes": 1522530,
+    "output": "apps/mobile/assets/arte/mats/mat_paper_drawing.webp",
+    "outputBytes": 7320,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "mat_paper_fibers.png",
+    "sha256": "8c7ffdaa683b462b5af162e23ccf06770000fe91c8756640098d13efea4cfc22",
+    "bytes": 1791494,
+    "output": "apps/mobile/assets/arte/mats/mat_paper_fibers.webp",
+    "outputBytes": 22756,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "mat_paper_tissue.png",
+    "sha256": "60496c7dc7ed30e59f88ee830fcd80f5b8cd70e914aa04a72a6a1b932a3433bc",
+    "bytes": 1179829,
+    "output": "apps/mobile/assets/arte/mats/mat_paper_tissue.webp",
+    "outputBytes": 10746,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "mat_paper_white.png",
+    "sha256": "f5bd50f566d3fef0963ce753f94dadbf63e759dddc011fd59bd86f7cb69e4429",
+    "bytes": 1102342,
+    "output": "apps/mobile/assets/arte/mats/mat_paper_white.webp",
+    "outputBytes": 1436,
+    "width": 512,
+    "height": 512
+  }
+]
