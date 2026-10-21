@@ -14,6 +14,9 @@ export const ARTE_ART = {
   hero: require('../../../assets/arte/covers/hero_arte_inicio.webp') as ImageSourcePropType,
   /** Portada de la unidad A1-U04 «Mi banda deja respirar al silencio» (3:2). */
   unitA1U04: require('../../../assets/arte/covers/cover_a1_u04.webp') as ImageSourcePropType,
+  /** Portada de la unidad A2-U02 «Colores que se relacionan» (3:2) y de A1-U06 «Una historia de recortes» (3:2). */
+  unitA2U02: require('../../../assets/arte/covers/cover_a2_u02.webp') as ImageSourcePropType,
+  unitA1U06: require('../../../assets/arte/covers/cover_a1_u06.webp') as ImageSourcePropType,
   /** Fondos con el centro despejado, horizontal y vertical. */
   ritmo: {
     horizontal: require('../../../assets/arte/bg/bg_arte_ritmo_horizontal.webp') as ImageSourcePropType,

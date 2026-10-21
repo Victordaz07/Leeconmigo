@@ -384,3 +384,10 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
 - Qué hace: **palabras nuevas** (las que le costaron en Lectura, con sílabas y significado de la historia; no se guarda nada aparte), **ideas** (frases de hasta 140 letras con la materia; 3 por día; se pueden quitar; con el cuaderno lleno avisa, no borra) y **dibujos** (sus pinturas y collages de Arte, leídos de ahí). Todo en el dispositivo (D1). Pestañas Todo/Palabras/Ideas/Dibujos; en tableta, dos columnas; en teléfono, una.
 - Sin imágenes nuevas: el espiral y la estrella son código; cuando lleguen `mat_notebook_page`, `star_full`, `empty_notebook` (pedido K8) se cambian sin tocar la lógica.
 - Falta (K8b): el botón «Guardar en mi cuaderno» del cierre de cada materia (hoy las ideas se agregan desde Mi cuaderno), Logros, informe PDF.
+
+## 2026-10-21 · Cuenta A · K8b: Logros, estrellas dibujadas y arte del núcleo conectado
+- Victor mandó los 19 PNG de los lotes K-1/K-2/K-3 (estrellas, sello, papalote, 7 logros, Mi cuaderno y 2 portadas de Arte). Todos válidos. Arte del núcleo en `apps/mobile/assets/kitewise/` con mapa en `apps/mobile/src/kitewise-art.ts`; las dos portadas, en `assets/arte/covers/`.
+- **Logros** (`achievements.ts`, `screens/achievements-screen.tsx`, ruta nueva en `App.tsx` y el botón «Logros» del riel ya abre): 7 pegatinas con las reglas de `docs/01` sobre `computeProgressStats` (las mismas del prototipo web). Ganadas a color; las que faltan, apagadas con lo que hace falta y «2 de 5», sin reproche.
+- **Cierre con estrellas dibujadas:** `ClosingCard` (ui-native) recibe `starImages` opcional y dibuja ganada/grande/dormida; sin la prop sigue usando `★`. Tocado (una línea cada uno): `reading-screen.tsx`, `subjects/ciencia/session-player.tsx`, `screens/sociedad-investigation-screen.tsx`.
+- **Mi cuaderno:** hoja con renglones y margen rosado de fondo, cuaderno vacío en el estado sin palabras, estrella dibujada en el pie.
+- Verificado en Chromium (Logros vacío y con progreso, Mi cuaderno, tarjetas de Arte, cierre). 176 pruebas de mobile + art-content.

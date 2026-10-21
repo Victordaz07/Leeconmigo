@@ -16,6 +16,7 @@ import { EnergyScreen } from './src/screens/energy-screen';
 import { HomeScreen } from './src/screens/home-screen';
 import { MathLessonScreen } from './src/screens/math-lesson-screen';
 import { MathNotebookScreen } from './src/screens/math-notebook-screen';
+import { AchievementsScreen } from './src/screens/achievements-screen';
 import { availableModule } from './src/subjects/registry';
 import { VisualReviewScreen } from './src/screens/math-visual/review-screen';
 import { WorkshopScreen } from './src/screens/math-visual/workshop-screen';
@@ -43,6 +44,7 @@ type Route =
   | { name: 'mathWorkshop' }
   | { name: 'mathReview' }
   | { name: 'subject'; id: SubjectId }
+  | { name: 'achievements' }
   | { name: 'notebook' } | { name: 'reading'; storyId: string; from: 'home' | 'notebook' } | { name: 'dev' } | { name: 'showcase' };
 
 const RAIL: NavRailItem[] = [
@@ -266,6 +268,7 @@ function Root() {
       />
     );
   }
+  if (route.name === 'achievements') return <AchievementsScreen profile={profile} lang={lang} onBack={home} />;
   if (route.name === 'subject') {
     // Materias por módulo (Ciencia, Sociedad…): cada una maneja su navegación interna.
     const mod = availableModule(route.id);
@@ -274,7 +277,7 @@ function Root() {
   if (route.name === 'showcase') return <Showcase onBack={() => setRoute({ name: 'dev' })} />;
   if (route.name === 'dev') return <DevList repository={repository} onOpen={(storyId) => setRoute({ name: 'reading', storyId, from: 'home' })} onShowcase={() => setRoute({ name: 'showcase' })} onMathReview={() => setRoute({ name: 'mathReview' })} onBack={home} />;
 
-  const onNav = (key: string) => (key === 'dev' ? setRoute({ name: 'dev' }) : key === 'padres' ? setRoute({ name: 'parentGate', next: 'parents' }) : undefined);
+  const onNav = (key: string) => (key === 'dev' ? setRoute({ name: 'dev' }) : key === 'logros' ? setRoute({ name: 'achievements' }) : key === 'padres' ? setRoute({ name: 'parentGate', next: 'parents' }) : undefined);
   const nav = <NavRail items={RAIL} bottomItems={RAIL_BOTTOM} active="home" onSelect={onNav} variant={layout.nav} bottomInset={insets.bottom} />;
   return (
     <View style={[styles.row, layout.nav === 'bottom' && styles.column]}>

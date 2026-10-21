@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, type ImageSourcePropType, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { FOCUS_FACES, type FocusSelfReport } from '@lee-conmigo/ui-core';
 import { colors, fontFamily, radius } from '../tokens.ts';
 import { Button } from './button.tsx';
@@ -16,6 +16,8 @@ interface ClosingCardProps {
   /** Frase del esfuerzo que ganó las estrellas ("por volver a intentarlo"). */
   reason: string;
   stats: ClosingStat[];
+  /** Las estrellas dibujadas (ganada, grande, dormida). Sin ellas se usa el texto `★` (la app las da desde `kitewise-art.ts`). */
+  starImages?: { full: ImageSourcePropType; big: ImageSourcePropType; sleep: ImageSourcePropType };
   onAgain: () => void;
   onDone: (focus?: FocusSelfReport) => void;
 }
@@ -24,7 +26,7 @@ interface ClosingCardProps {
  * Cierre de sesión de Kitewise (B13): estrellas POR ESFUERZO (D11), tiempo, papalote, sello del día, palabras que vuelven y
  * "¿Cómo estuvo tu enfoque?" con 3 caritas (autoevaluación, nunca nota). "Guardar en mi cuaderno" llega con Mi cuaderno (K8).
  */
-export function ClosingCard({ name, stars, reason, stats, onAgain, onDone }: ClosingCardProps) {
+export function ClosingCard({ name, stars, reason, stats, starImages, onAgain, onDone }: ClosingCardProps) {
   const [focus, setFocus] = useState<FocusSelfReport | undefined>();
   const { narrow, short } = useLayout();
   const small = narrow || short;
@@ -34,11 +36,15 @@ export function ClosingCard({ name, stars, reason, stats, onAgain, onDone }: Clo
       <View style={[styles.card, small && styles.cardSmall]}>
         <Text style={[styles.title, small && styles.titleSmall]}>¡Buen trabajo, {name}!</Text>
         <View style={styles.stars} accessible accessibilityLabel={`${stars} de 3 estrellas ${reason}`}>
-          {[0, 1, 2].map((i) => (
-            <Text key={i} style={[styles.star, i === 1 && styles.starBig, small && styles.starSmall, small && i === 1 && styles.starBigSmall, { color: i < stars ? colors.gold : colors.track }]}>
-              ★
-            </Text>
-          ))}
+          {[0, 1, 2].map((i) =>
+            starImages ? (
+              <Image key={i} source={i < stars ? (i === 1 ? starImages.big : starImages.full) : starImages.sleep} resizeMode="contain" accessible={false} style={[styles.starImg, i === 1 && styles.starImgBig, small && styles.starImgSmall, small && i === 1 && styles.starImgBigSmall]} />
+            ) : (
+              <Text key={i} style={[styles.star, i === 1 && styles.starBig, small && styles.starSmall, small && i === 1 && styles.starBigSmall, { color: i < stars ? colors.gold : colors.track }]}>
+                ★
+              </Text>
+            ),
+          )}
         </View>
         <Text style={styles.reason}>
           {'★'.repeat(stars)} {reason}
@@ -75,6 +81,10 @@ export function ClosingCard({ name, stars, reason, stats, onAgain, onDone }: Clo
 
 const styles = StyleSheet.create({
   flex: { flex: 1 },
+  starImg: { width: 76, height: 76 },
+  starImgBig: { width: 104, height: 104 },
+  starImgSmall: { width: 58, height: 58 },
+  starImgBigSmall: { width: 78, height: 78 },
   scrim: { ...StyleSheet.absoluteFill, backgroundColor: 'rgba(20, 22, 28, 0.5)' },
   center: { flexGrow: 1, alignItems: 'center', justifyContent: 'center', padding: 24 },
   centerSmall: { padding: 12 },

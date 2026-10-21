@@ -1,0 +1,20 @@
+[
+  {
+    "source": "cover_a1_u06.png",
+    "sha256": "89d7e29e3f0fa1de1e26bf3a77c28615fa26a90707208d347e60d86d85f27550",
+    "bytes": 2444655,
+    "output": "apps/mobile/assets/arte/covers/cover_a1_u06.webp",
+    "outputBytes": 172050,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "cover_a2_u02.png",
+    "sha256": "22bd9fb1633ec273f44db49810bc20f5af2cfeb6fcac8f3b9c85b448883f563e",
+    "bytes": 1977528,
+    "output": "apps/mobile/assets/arte/covers/cover_a2_u02.webp",
+    "outputBytes": 117180,
+    "width": 1536,
+    "height": 1024
+  }
+]
