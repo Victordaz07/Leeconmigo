@@ -1,9 +1,9 @@
 import type { ReactNode } from 'react';
 import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { ARTE_COPY, COLLAGE_COPY, UNIT2_COPY, UNIT3_COPY, UNIT_COPY, kindOf, type ArtLang, type ArtLibrary } from '@lee-conmigo/art-content';
+import { ARTE_COPY, COLLAGE_COPY, MUSEUM_COPY, UNIT2_COPY, UNIT3_COPY, UNIT_COPY, kindOf, type ArtLang, type ArtLibrary } from '@lee-conmigo/art-content';
 import { Button, ChevronLeftIcon, colors, fontFamily, radius, RoundButton, shadows, useLayout } from '@lee-conmigo/ui-native';
-import { ARTE_ART, COVER_ASPECT, HERO_CREAM } from './art';
+import { ARTE_ART, COVER_ASPECT, HERO_CREAM, MUSEO_ART } from './art';
 import { CreationThumb, hasThumb } from './creation-thumb';
 
 /** Cuántas creaciones muestran miniatura (las más recientes). Con muchas, pintar todas a la vez pesaría; «Mi museo» (AR-M2) las guardará ya hechas. */
@@ -17,6 +17,8 @@ interface Props {
   onNewPainting: () => void;
   onNewCollage: () => void;
   onOpen: (id: string) => void;
+  /** «Mi museo» (AR-M2). */
+  onOpenMuseum: () => void;
   /** Encuentros hechos de la unidad guiada A1-U04. */
   unitDone: number;
   onOpenUnit: () => void;
@@ -60,7 +62,7 @@ function UnitCard({ phone, onPress, label, tag, title, blurb, meta, go, children
 }
 
 /** Inicio del cuaderno «Arte y música»: el Taller libre destacado y las creaciones guardadas. Todo abre (D13-1), sin notas ni puntos. */
-export function ArteHome({ lang, library, onBack, onNewRhythm, onNewPainting, onNewCollage, onOpen, unitDone, onOpenUnit, unit2Done, onOpenUnit2, unit3Done, onOpenUnit3 }: Props) {
+export function ArteHome({ lang, library, onBack, onNewRhythm, onNewPainting, onNewCollage, onOpen, onOpenMuseum, unitDone, onOpenUnit, unit2Done, onOpenUnit2, unit3Done, onOpenUnit3 }: Props) {
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const t = ARTE_COPY[lang];
@@ -68,6 +70,7 @@ export function ArteHome({ lang, library, onBack, onNewRhythm, onNewPainting, on
   const u2 = UNIT2_COPY[lang];
   const cc = COLLAGE_COPY[lang];
   const u3 = UNIT3_COPY[lang];
+  const mu = MUSEUM_COPY[lang];
   const wide = layout.width >= 720;
   // tamaños explícitos (la proporción de la imagen es 3:2): así se ve igual en el teléfono y en la tableta
   const innerW = layout.width - 2 * layout.gutter;
@@ -108,6 +111,16 @@ export function ArteHome({ lang, library, onBack, onNewRhythm, onNewPainting, on
       </UnitCard>
 
       <Text style={styles.h3}>{t.creations}</Text>
+      {library.projects.length > 0 && (
+        <Pressable onPress={onOpenMuseum} accessibilityRole="button" accessibilityLabel={`${mu.button}. ${mu.buttonHint}`} style={styles.museumBtn}>
+          <Image source={MUSEO_ART.frames.coral.source} resizeMode="contain" accessible={false} style={styles.museumImg} />
+          <View style={styles.unitText}>
+            <Text style={styles.unitTitle}>{mu.button}</Text>
+            <Text style={styles.cardMeta}>{mu.buttonHint}</Text>
+          </View>
+          <Text style={styles.unitGo}>›</Text>
+        </Pressable>
+      )}
       {library.projects.length === 0 ? (
         <Text style={styles.note}>{t.noCreations}</Text>
       ) : (
@@ -154,6 +167,8 @@ const styles = StyleSheet.create({
   unitTag: { fontFamily: fontFamily.ui.extrabold, fontSize: 12, color: colors.brand },
   unitTitle: { fontFamily: fontFamily.ui.black, fontSize: 20, color: colors.navy },
   unitGo: { fontFamily: fontFamily.ui.black, fontSize: 16, color: colors.brand },
+  museumBtn: { flexDirection: 'row', alignItems: 'center', gap: 14, minHeight: 64, backgroundColor: colors.paper, borderRadius: radius.card, padding: 12, boxShadow: shadows.card },
+  museumImg: { width: 84, height: 56 },
   freeButtons: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
   list: { gap: 10 },
   card: { flexDirection: 'row', alignItems: 'center', gap: 14, minHeight: 64, backgroundColor: '#ffffff', borderRadius: radius.tile, padding: 14, boxShadow: shadows.soft },

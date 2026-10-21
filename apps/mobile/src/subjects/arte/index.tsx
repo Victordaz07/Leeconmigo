@@ -4,7 +4,7 @@
  */
 import { useMemo, useRef, useState } from 'react';
 import {
-  ARTE_COPY, COLLAGE_COPY, UNIT2_COPY, UNIT3_COPY, UNIT_COPY, ensureUnit2Project, ensureUnit3Project, ensureUnitProject, unit2Of, unit3Of, unitOf, createCollageProject, createPaintProject, createRhythmProject, kindOf, deleteProject, deleteVersion, duplicateProject, emptyLibrary, isArtLibrary, projectById, renameProject, restoreVersion, saveVersion, updateScene,
+  ARTE_COPY, COLLAGE_COPY, setFrame, UNIT2_COPY, UNIT3_COPY, UNIT_COPY, ensureUnit2Project, ensureUnit3Project, ensureUnitProject, unit2Of, unit3Of, unitOf, createCollageProject, createPaintProject, createRhythmProject, kindOf, deleteProject, deleteVersion, duplicateProject, emptyLibrary, isArtLibrary, projectById, renameProject, restoreVersion, saveVersion, updateScene,
   type ArtLang, type ArtLibrary,
 } from '@lee-conmigo/art-content';
 import { progressSegments } from '@lee-conmigo/ui-core';
@@ -17,6 +17,7 @@ import { PaintWorkshop } from './paint-workshop';
 import { RhythmWorkshop } from './rhythm-workshop';
 import { Unit2Player } from './unit2-player';
 import { Unit3Player } from './unit3-player';
+import { MuseumScreen } from './museum-screen';
 import { UnitPlayer } from './unit-player';
 
 const EMPTY_LIBRARY: ArtLibrary = emptyLibrary();
@@ -34,6 +35,7 @@ function ArteScreen({ profile, lang, onExit }: SubjectScreenProps) {
     store.save(next);
   };
   const [openId, setOpenId] = useState<string | null>(null);
+  const [inMuseum, setInMuseum] = useState(false);
   const [inUnit, setInUnit] = useState<'A1-U04' | 'A2-U02' | 'A1-U06' | null>(null);
   const language: ArtLang = lang === 'en' ? 'en' : 'es';
   const t = ARTE_COPY[language];
@@ -47,6 +49,10 @@ function ArteScreen({ profile, lang, onExit }: SubjectScreenProps) {
   }
   if (inUnit === 'A2-U02') {
     return <Unit2Player lang={language} library={library} onChange={commit} onBack={() => setInUnit(null)} />;
+  }
+
+  if (!project && inMuseum) {
+    return <MuseumScreen lang={language} library={library} onBack={() => setInMuseum(false)} onOpen={setOpenId} onFrame={(id, frame) => commit(setFrame(latest.current, id, frame, Date.now()))} />;
   }
 
   if (!project) {
@@ -71,6 +77,7 @@ function ArteScreen({ profile, lang, onExit }: SubjectScreenProps) {
           if (r.id) setOpenId(r.id);
         }}
         onOpen={setOpenId}
+        onOpenMuseum={() => setInMuseum(true)}
         unitDone={unitOf(library).done.length}
         onOpenUnit={() => {
           // la unidad trabaja sobre su propio proyecto de ritmo: se crea la primera vez

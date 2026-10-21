@@ -94,7 +94,7 @@ export const CUT_ART = {
 
 /**
  * Mi museo (Tanda 2-C): marcos de colores con el interior transparente (1024×683; `hole` = el hueco, en fracciones del marco, medido al convertir:
- * `docs/design/artes/arte/manifest-lote-2.json`), carpetas y la pared. Todavía no se usan (AR-M2).
+ * `docs/design/artes/arte/manifest-lote-2.json`), carpetas y la pared. Los usa «Mi museo» (`museum-screen.tsx`).
  */
 export const MUSEO_ART = {
   frames: {

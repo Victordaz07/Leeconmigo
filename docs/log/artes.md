@@ -120,3 +120,8 @@
 ## 2026-10-21 · «Guardar en mi cuaderno» en los cierres + grano de papel en la pintura
 - `ClosingCard` acepta `notebook` (frase corta → idea de Mi cuaderno con la materia de la sesión; misma regla de 3 por día y aviso si está lleno). Conectado en Lectura, Ciencia y Sociedad con `notebookSaverFor` (`apps/mobile/src/notebook-save.ts`). Verificado en Chromium: guarda en `kitewise.v1.mi-cuaderno.<niño>`.
 - Pintura: capa de fibras de papel (22 %) ENCIMA de los trazos, ignorada por el toque; así la goma (que pinta del color del papel) no deja una mancha lisa. Los colores siguen limpios.
+
+## 2026-10-21 · AR-M2 «Mi museo»
+- Dominio `museum.ts` (+ `museum-copy.ts`, 6 pruebas): marco por obra (`frame?` opcional en `ArtProject`; si falta, se deduce del id y es estable), `setFrame`, `museumWorks` (recientes primero, filtro por tipo; nunca «la mejor»).
+- Pantalla `museum-screen.tsx`: pared con banderines, obras enmarcadas (la miniatura va ENTERA dentro del hueco medido del marco), placa con el título y 4 botones de color para cambiar de marco, filtros con las carpetas. Toca una obra → abre su taller; al volver regresa al museo. Entrada desde el inicio de Arte (aparece cuando hay creaciones).
+- Verificado en Chromium (tableta y teléfono). Sin exportar nada fuera del equipo (DA-12).
