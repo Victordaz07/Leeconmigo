@@ -36,6 +36,7 @@ import { useMovementBreak } from '../movement';
 import { MovementBreakScreen } from './movement-break-screen';
 import type { UnitProgress } from './sociedad-notebook-screen';
 import { STAR_IMAGES } from '../kitewise-art';
+import { notebookSaverFor } from '../notebook-save';
 
 interface SociedadInvestigationScreenProps {
   lang: SocialLang;
@@ -89,6 +90,7 @@ export function SociedadInvestigationScreen({ lang, unit, profileId, profileName
     return (
       <ClosingCard
           starImages={STAR_IMAGES}
+        notebook={notebookSaverFor(profileId, 'sociedad', lang)}
         name={profileName}
         stars={stars}
         reason={t.closingReason[reasonKey][lang]}

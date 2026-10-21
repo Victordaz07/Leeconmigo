@@ -24,6 +24,7 @@ import { CIENCIA_BACKGROUNDS, MAYA, type MayaPose } from './art';
 import { familyOf, type Local, type StepCtx } from './families';
 import { TaskPanel, type Picks } from './task-panel';
 import { STAR_IMAGES } from '../../kitewise-art';
+import { notebookSaverFor } from '../../notebook-save';
 
 interface SessionPlayerProps {
   profile: ChildProfile;
@@ -285,6 +286,7 @@ export function SessionPlayer({ profile, lang, focus, unit, session, startStep, 
       {closing ? (
         <ClosingCard
           starImages={STAR_IMAGES}
+          notebook={notebookSaverFor(profile.id, 'ciencia', lang)}
           name={profile.name}
           stars={closing.stars}
           reason={closing.reason}

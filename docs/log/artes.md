@@ -116,3 +116,7 @@
 - Victor mandó `KiteWise_Arte_Tanda_2_17_Imagenes.zip` y el zip del Lote 2-A (los mismos 6 papeles). Revisión: 17 de 17 válidas, sin texto, papeles sin costuras, alfa limpio; los marcos vinieron 1536×1024 (3:2), así que `scripts/arte-imagenes.py` ahora mide el hueco de cada marco y lo guarda en el manifiesto.
 - Collage: nuevos papeles de material (kraft, fibras, cartón, seda) y fondos (kraft, cartón) + texturas en crema y blanco. Seda con translucidez. Dominio: `MATERIAL_PAPERS`, ids nuevos en `PAPER_COLORS`/`BACKGROUNDS` (lo guardado antes sigue siendo válido). 132 pruebas del paquete.
 - Verificado en Chromium. Aprendizaje: los identificadores de `ClipPath` deben ser únicos en toda la pantalla (miniaturas), por eso llevan un prefijo con `useId`.
+
+## 2026-10-21 · «Guardar en mi cuaderno» en los cierres + grano de papel en la pintura
+- `ClosingCard` acepta `notebook` (frase corta → idea de Mi cuaderno con la materia de la sesión; misma regla de 3 por día y aviso si está lleno). Conectado en Lectura, Ciencia y Sociedad con `notebookSaverFor` (`apps/mobile/src/notebook-save.ts`). Verificado en Chromium: guarda en `kitewise.v1.mi-cuaderno.<niño>`.
+- Pintura: capa de fibras de papel (22 %) ENCIMA de los trazos, ignorada por el toque; así la goma (que pinta del color del papel) no deja una mancha lisa. Los colores siguen limpios.
