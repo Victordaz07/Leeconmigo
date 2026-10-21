@@ -64,9 +64,9 @@ export function RhythmGrid({ lang, scene, cursor, rows = TRACKS, onToggle, onCha
                 accessibilityRole={onToggle ? 'button' : 'image'}
                 accessibilityState={{ selected: on }}
                 accessibilityLabel={on ? t.rowOn(soundName(scene.kit[track]), step + 1) : t.rowOff(soundName(scene.kit[track]), step + 1)}
-                style={[styles.cell, on && styles.cellOn, cursor === step && styles.cellCursor, markStep === step && styles.cellMark, step === 4 && styles.cellGroup]}
+                style={[styles.cell, on && styles.cellOn, cursor === step && styles.cellCursor, cursor === step && !on && styles.cellCursorEmpty, markStep === step && styles.cellMark, step === 4 && styles.cellGroup]}
               >
-                <Text style={styles.cellText}>{on ? '●' : ''}</Text>
+                {on ? <Text style={styles.cellText}>●</Text> : <View style={styles.cellRest} />}
               </Pressable>
             ))}
           </View>
@@ -129,6 +129,9 @@ const styles = StyleSheet.create({
   cellGroup: { marginLeft: 6 },
   cellOn: { backgroundColor: colors.brand, borderColor: colors.brand },
   cellCursor: { borderColor: colors.orangeDeep },
+  cellCursorEmpty: { backgroundColor: '#FFF1D6' },
+  /** Un silencio también es música: se ve como un círculo hueco suave, no como una casilla «sin llenar». */
+  cellRest: { width: 12, height: 12, borderRadius: 6, borderWidth: 2, borderColor: colors.line },
   cellMark: { borderColor: colors.ok, borderStyle: 'dashed' },
   cellText: { color: '#ffffff', fontSize: 14 },
   stepBtn: { flex: 1, minWidth: 24, minHeight: 28, alignItems: 'center', justifyContent: 'center', borderRadius: 8 },

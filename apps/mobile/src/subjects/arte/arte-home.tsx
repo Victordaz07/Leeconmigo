@@ -1,8 +1,13 @@
+import type { ReactNode } from 'react';
 import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ARTE_COPY, COLLAGE_COPY, EXAMPLE_PALETTES, UNIT2_COPY, UNIT3_COPY, UNIT_COPY, kindOf, type ArtLang, type ArtLibrary } from '@lee-conmigo/art-content';
 import { Button, ChevronLeftIcon, colors, fontFamily, radius, RoundButton, shadows, useLayout } from '@lee-conmigo/ui-native';
 import { ARTE_ART, COVER_ASPECT, HERO_CREAM } from './art';
+import { CreationThumb, hasThumb } from './creation-thumb';
+
+/** Cuántas creaciones muestran miniatura (las más recientes). Con muchas, pintar todas a la vez pesaría; «Mi museo» (AR-M2) las guardará ya hechas. */
+const THUMBS = 12;
 
 interface Props {
   lang: ArtLang;
@@ -21,6 +26,37 @@ interface Props {
   /** Encuentros hechos de la unidad guiada A1-U06. */
   unit3Done: number;
   onOpenUnit3: () => void;
+}
+
+interface UnitCardProps {
+  phone: boolean;
+  onPress: () => void;
+  label: string;
+  tag: string;
+  title: string;
+  blurb: string;
+  meta: string;
+  go: string;
+  children: ReactNode;
+}
+
+/** Tarjeta de una unidad guiada. En una tableta va en una fila; en un teléfono la imagen y el texto van juntos y «Empezar» debajo (si no, el texto quedaba en una columna angosta). */
+function UnitCard({ phone, onPress, label, tag, title, blurb, meta, go, children }: UnitCardProps) {
+  return (
+    <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={label} style={[styles.unit, phone && styles.unitPhone]}>
+      <View style={styles.unitRow}>
+        {children}
+        <View style={styles.unitText}>
+          <Text style={styles.unitTag}>{tag}</Text>
+          <Text style={styles.unitTitle}>{title}</Text>
+          <Text style={styles.cardMeta}>{blurb}</Text>
+          <Text style={styles.cardMeta}>{meta}</Text>
+        </View>
+        {!phone && <Text style={styles.unitGo}>{go}</Text>}
+      </View>
+      {phone && <Text style={[styles.unitGo, styles.unitGoPhone]}>{go}</Text>}
+    </Pressable>
+  );
 }
 
 /** Inicio del cuaderno «Arte y música»: el Taller libre destacado y las creaciones guardadas. Todo abre (D13-1), sin notas ni puntos. */
@@ -61,55 +97,34 @@ export function ArteHome({ lang, library, onBack, onNewRhythm, onNewPainting, on
       </View>
 
       <Text style={styles.h3}>{t.challenges}</Text>
-      <Pressable onPress={onOpenUnit} accessibilityRole="button" accessibilityLabel={`${u.title}. ${u.card(unitDone)}`} style={styles.unit}>
-        <Image source={ARTE_ART.unitA1U04} resizeMode="cover" accessible={false} style={styles.unitImage} />
-        <View style={styles.unitText}>
-          <Text style={styles.unitTag}>{u.suggested} · {u.grade}</Text>
-          <Text style={styles.unitTitle}>{u.title}</Text>
-          <Text style={styles.cardMeta}>{u.blurb}</Text>
-          <Text style={styles.cardMeta}>{u.card(unitDone)}</Text>
-        </View>
-        <Text style={styles.unitGo}>{unitDone > 0 ? u.resume : u.start} ›</Text>
-      </Pressable>
-      <Pressable onPress={onOpenUnit2} accessibilityRole="button" accessibilityLabel={`${u2.title}. ${u2.card(unit2Done)}`} style={styles.unit}>
-        <View style={styles.unitTile} accessible={false}>
+      <UnitCard phone={layout.phone} onPress={onOpenUnit} label={`${u.title}. ${u.card(unitDone)}`} tag={`${u.suggested} · ${u.grade}`} title={u.title} blurb={u.blurb} meta={u.card(unitDone)} go={`${unitDone > 0 ? u.resume : u.start} ›`}>
+        <Image source={ARTE_ART.unitA1U04} resizeMode="cover" accessible={false} style={layout.phone ? styles.unitVisualPhone : styles.unitImage} />
+      </UnitCard>
+      <UnitCard phone={layout.phone} onPress={onOpenUnit2} label={`${u2.title}. ${u2.card(unit2Done)}`} tag={`${u2.suggested} · ${u2.grade}`} title={u2.title} blurb={u2.blurb} meta={u2.card(unit2Done)} go={`${unit2Done > 0 ? u2.resume : u2.start} ›`}>
+        <View style={[styles.unitTile, layout.phone && styles.unitVisualPhone]} accessible={false}>
           {EXAMPLE_PALETTES.A.map((hex) => (
             <View key={hex} style={[styles.unitTileCell, { backgroundColor: hex }]} />
           ))}
         </View>
-        <View style={styles.unitText}>
-          <Text style={styles.unitTag}>{u2.suggested} · {u2.grade}</Text>
-          <Text style={styles.unitTitle}>{u2.title}</Text>
-          <Text style={styles.cardMeta}>{u2.blurb}</Text>
-          <Text style={styles.cardMeta}>{u2.card(unit2Done)}</Text>
-        </View>
-        <Text style={styles.unitGo}>{unit2Done > 0 ? u2.resume : u2.start} ›</Text>
-      </Pressable>
-      <Pressable onPress={onOpenUnit3} accessibilityRole="button" accessibilityLabel={`${u3.title}. ${u3.card(unit3Done)}`} style={styles.unit}>
-        <View style={[styles.unitTile, { backgroundColor: '#CFE8F7' }]} accessible={false}>
+      </UnitCard>
+      <UnitCard phone={layout.phone} onPress={onOpenUnit3} label={`${u3.title}. ${u3.card(unit3Done)}`} tag={`${u3.suggested} · ${u3.grade}`} title={u3.title} blurb={u3.blurb} meta={u3.card(unit3Done)} go={`${unit3Done > 0 ? u3.resume : u3.start} ›`}>
+        <View style={[styles.unitTile, layout.phone && styles.unitVisualPhone, { backgroundColor: '#CFE8F7' }]} accessible={false}>
           {(['#F9D548', '#E4572E', '#3C78D8', '#4CA64C'] as const).map((hex) => (
             <View key={hex} style={styles.unitTileCell}>
               <View style={[styles.unitTileDot, { backgroundColor: hex }]} />
             </View>
           ))}
         </View>
-        <View style={styles.unitText}>
-          <Text style={styles.unitTag}>{u3.suggested} · {u3.grade}</Text>
-          <Text style={styles.unitTitle}>{u3.title}</Text>
-          <Text style={styles.cardMeta}>{u3.blurb}</Text>
-          <Text style={styles.cardMeta}>{u3.card(unit3Done)}</Text>
-        </View>
-        <Text style={styles.unitGo}>{unit3Done > 0 ? u3.resume : u3.start} ›</Text>
-      </Pressable>
+      </UnitCard>
 
       <Text style={styles.h3}>{t.creations}</Text>
       {library.projects.length === 0 ? (
         <Text style={styles.note}>{t.noCreations}</Text>
       ) : (
         <View style={styles.list}>
-          {library.projects.map((p) => (
+          {library.projects.map((p, i) => (
             <Pressable key={p.id} onPress={() => onOpen(p.id)} accessibilityRole="button" accessibilityLabel={t.open(p.title)} style={styles.card}>
-              <Text style={styles.cardGlyph}>{kindOf(p) === 'painting' ? '🎨' : kindOf(p) === 'collage' ? '✂' : '♪'}</Text>
+              {i < THUMBS && hasThumb(p) ? <CreationThumb project={p} width={layout.phone ? 72 : 96} /> : <Text style={styles.cardGlyph}>{kindOf(p) === 'painting' ? '🎨' : kindOf(p) === 'collage' ? '✂' : '♪'}</Text>}
               <View style={styles.cardText}>
                 <Text style={styles.cardTitle} numberOfLines={1}>
                   {p.title}
@@ -139,7 +154,11 @@ const styles = StyleSheet.create({
   freeTextWide: { flex: 1, justifyContent: 'center' },
   freeTitle: { fontFamily: fontFamily.ui.black, fontSize: 24, color: colors.navy },
   freeHint: { fontFamily: fontFamily.ui.semibold, fontSize: 16, lineHeight: 22, color: colors.inkSoft },
-  unit: { flexDirection: 'row', alignItems: 'center', gap: 14, backgroundColor: colors.paper, borderRadius: radius.card, padding: 18, boxShadow: shadows.card },
+  unit: { gap: 10, backgroundColor: colors.paper, borderRadius: radius.card, padding: 18, boxShadow: shadows.card },
+  unitRow: { flexDirection: 'row', alignItems: 'center', gap: 14 },
+  unitPhone: { padding: 14 },
+  unitVisualPhone: { width: 88, height: Math.round(88 / COVER_ASPECT), borderRadius: 12 },
+  unitGoPhone: { alignSelf: 'flex-end' },
   unitImage: { width: 132, height: Math.round(132 / COVER_ASPECT), borderRadius: 14 },
   unitText: { flex: 1, gap: 4 },
   unitTag: { fontFamily: fontFamily.ui.extrabold, fontSize: 12, color: colors.brand },

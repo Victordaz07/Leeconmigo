@@ -106,3 +106,8 @@
 - Lectura crítica en `docs/design/artes/PLAN-MEJORAS.md`: se adopta mesa de creación, materialidad sin Skia, tres pinceles, Mi museo, observar→probar→decidir, jugo moderado; se corrige o pospone lo que depende de decisiones de Victor (guía «Ms. Rosa», estilo gouache apagado vs. el vivo de la Tanda 1, texto en obras reales).
 - Hallazgo verificado: el manifiesto trae `allowBackup="true"` (copia de seguridad de Android) → pedido a lo compartido. `RECORD_AUDIO` es de Lectura; Arte no lo usa.
 - Tanda 2 de imágenes (17: materiales, adornos, museo) preparada en `PEDIDO-IMAGENES.md`, sin pedir todavía.
+
+## 2026-10-21 · Decisiones por delegación + AR-M1 (parte de código)
+- Victor delegó: «puedes decidir tú y luego lo verificamos… vivo, divertido, pero funcional» y pidió que los prompts de imágenes se den siempre en el chat. Decididas DA-5 (guía = la cometa sin cara) y DA-9…13 (estilo vivo; obras con inscripciones tal cual en vista aparte; Mi museo solo en el dispositivo; avisar y nunca borrar en silencio). Tanda 2 reescrita en estilo vivo (marcos y carpetas de colores; papeles neutros).
+- Código de la Etapa 1 que no necesita imágenes (ver handoff). Verificado en Chromium (tableta y teléfono).
+- Bug visto de paso: las tarjetas de «Retos» en teléfono (texto en una columna de ~60 px) → corregido.

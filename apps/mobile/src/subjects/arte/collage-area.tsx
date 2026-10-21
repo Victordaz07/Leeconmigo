@@ -4,12 +4,20 @@ import Svg, { G, Path, Rect } from 'react-native-svg';
 import {
   BACKGROUNDS, BACKGROUND_IDS, COLLAGE_COPY, PAPER_COLORS, PAPER_COLOR_IDS, PAPER_H, PAPER_W, ROTATE_STEP, SCALE_STEP, SHAPES, addPiece, canRedoPieces, canUndoPieces, clearPieces, deletePiece, duplicatePiece,
   extents, hitTest, historyOf, movePiece, pushHistory, recolorPiece, redoPieces, reorderPiece, rotatePiece, scalePiece, setBackground, shapePath, undoPieces, type ArtLang, type CollageHistory, type CollageScene,
-  type Layer, type PaperColor, type Shape,
+  type Layer, type PaperColor, type Piece, type Shape,
 } from '@lee-conmigo/art-content';
 import { Button, colors, fontFamily, radius } from '@lee-conmigo/ui-native';
 
 const VIEW_BOX = `0 0 ${PAPER_W} ${PAPER_H}`;
 const LAYERS: Layer[] = ['front', 'back', 'up', 'down'];
+
+/** Caja del contorno de selección: un poco más grande que la pieza, y nunca menor que la zona donde cabe un dedo. */
+function selBox(p: Piece) {
+  const e = extents(p.shape, p.size);
+  const hw = Math.max(e.hw, 24) + 8;
+  const hh = Math.max(e.hh, 24) + 8;
+  return { x: -hw, y: -hh, width: 2 * hw, height: 2 * hh };
+}
 
 /** Dibuja las piezas de un collage (sin tocar): lo usan el taller y las miniaturas. */
 export function CollageSvg({ scene, selectedId }: { scene: CollageScene; selectedId?: string | null }) {
@@ -24,7 +32,8 @@ export function CollageSvg({ scene, selectedId }: { scene: CollageScene; selecte
       ))}
       {sel && (
         <G transform={`translate(${sel.x} ${sel.y}) rotate(${sel.rot})`}>
-          <Rect x={-Math.max(extents(sel.shape, sel.size).hw, 24) - 8} y={-Math.max(extents(sel.shape, sel.size).hh, 24) - 8} width={2 * Math.max(extents(sel.shape, sel.size).hw, 24) + 16} height={2 * Math.max(extents(sel.shape, sel.size).hh, 24) + 16} rx={8} fill="none" stroke="#1E6FE8" strokeWidth={5} strokeDasharray="14 9" />
+          <Rect {...selBox(sel)} rx={8} fill="none" stroke="#ffffff" strokeWidth={10} />
+          <Rect {...selBox(sel)} rx={8} fill="none" stroke="#1E6FE8" strokeWidth={5} strokeDasharray="14 9" />
         </G>
       )}
     </Svg>
@@ -195,25 +204,6 @@ export function CollageArea({ lang, scene, onScene, onDrawing }: Props) {
       {cur.pieces.length === 0 && <Text style={styles.hint}>{t.empty}</Text>}
       {full && <Text style={styles.hint}>{t.full}</Text>}
 
-      <Text style={styles.h3}>{t.piecesTitle}</Text>
-      <View style={styles.row}>
-        {SHAPES.map((s) => (
-          <ShapeButton key={s} shape={s} color={shownColor} label={t.addShape(t.shapes[s])} onPress={() => add(s)} />
-        ))}
-      </View>
-
-      <Text style={styles.h3}>{t.colorsTitle}</Text>
-      <View style={styles.row}>
-        {PAPER_COLOR_IDS.map((c) => {
-          const on = c === shownColor;
-          return (
-            <Pressable key={c} onPress={() => chooseColor(c)} accessibilityRole="button" accessibilityLabel={t.colorLabel(t.colors[c])} accessibilityState={{ selected: on }} style={[styles.swatch, { backgroundColor: PAPER_COLORS[c] }, on && styles.swatchOn]}>
-              {on && <Text style={[styles.check, { color: c === 'yellow' || c === 'pink' || c === 'orange' ? '#1E2340' : '#ffffff' }]}>✓</Text>}
-            </Pressable>
-          );
-        })}
-      </View>
-
       <Text style={styles.h3}>{t.selectedTitle}</Text>
       {selected ? (
         <View style={styles.row}>
@@ -246,6 +236,25 @@ export function CollageArea({ lang, scene, onScene, onDrawing }: Props) {
           <Button label={t.pickNext} variant="secondary" onPress={pickNext} />
         </View>
       )}
+
+      <Text style={styles.h3}>{t.piecesTitle}</Text>
+      <View style={styles.row}>
+        {SHAPES.map((s) => (
+          <ShapeButton key={s} shape={s} color={shownColor} label={t.addShape(t.shapes[s])} onPress={() => add(s)} />
+        ))}
+      </View>
+
+      <Text style={styles.h3}>{t.colorsTitle}</Text>
+      <View style={styles.row}>
+        {PAPER_COLOR_IDS.map((c) => {
+          const on = c === shownColor;
+          return (
+            <Pressable key={c} onPress={() => chooseColor(c)} accessibilityRole="button" accessibilityLabel={t.colorLabel(t.colors[c])} accessibilityState={{ selected: on }} style={[styles.swatch, { backgroundColor: PAPER_COLORS[c] }, on && styles.swatchOn]}>
+              {on && <Text style={[styles.check, { color: c === 'yellow' || c === 'pink' || c === 'orange' ? '#1E2340' : '#ffffff' }]}>✓</Text>}
+            </Pressable>
+          );
+        })}
+      </View>
 
       <Text style={styles.h3}>{t.backgroundTitle}</Text>
       <View style={styles.row}>

@@ -51,14 +51,16 @@ Cada etapa se cierra con una prueba de 3–5 niños (sin cámara ni grabación: 
 ## Imágenes (Tanda 2) — ver `PEDIDO-IMAGENES.md`
 17 imágenes en tres lotes (materiales, cinta/recortes de adorno, museo). **No se generan pantallas, botones ni personajes.** Los bordes rasgados de cada pieza del collage se calculan en código (una vez por pieza, guardados), no con una imagen por pieza.
 
-## Decisiones propuestas para Victor (`DA-9…`)
-- **DA-9** ¿Un solo estilo para Arte? (a) Mantener el **vivo y alegre** de la Tanda 1 y hacer los materiales neutros; (b) pasar a la guía «gouache apagado» y rehacer portadas/fondos más adelante; (c) vivo para 1.º–4.º y más sobrio («cuaderno de artista») para 5.º–6.º. *Recomendación: (a) ahora, (c) después de probar con un niño de 5.º–6.º.*
-- **DA-10** Obras reales con inscripciones: ¿vista cultural separada que las muestra tal cual, o solo obras sin texto visible?
-- **DA-11** ¿Selección inicial de reproducciones abiertas (Met, AIC, Smithsonian) y presupuesto después para creadores dominicanos, latinos y de la Bahía?
-- **DA-12** «Mi museo»: ¿solo para mirar en el dispositivo, o exportar un archivo con control de un adulto?
-- **DA-13** Almacenamiento: tope de obras y qué pasa al acercarse (avisar, nunca borrar en silencio).
-- **DA-14** ¿Quién revisa los encuentros piloto y acompaña la prueba con 3–5 niños?
-- (Ya abiertas) **DA-5** guía de Artes; **DA-1…8** de `ESPECIFICACION.md` §10.
+## Decisiones `DA-9…14` — **decididas por Claude por delegación de Victor (2026-10-21), pendientes de verificar**
+Victor dijo: «puedes decidir tú y luego lo verificamos, pero no le quites usabilidad al proyecto, quiero que sea vivo, divertido, pero funcional». Se anotan aquí (no en `docs/DECISIONS.md`, que es compartido) hasta que Victor las confirme.
+- **DA-9 · Estilo: (a) vivo y alegre**, como la Tanda 1. Los materiales (papel, cartón) son neutros y cálidos para que los colores del niño se lean; los marcos, carpetas y cintas son **de colores vivos** (coral, turquesa, violeta, amarillo). Más adelante, (c): versión más sobria («cuaderno de artista») para 5.º–6.º, **solo tras probar con un niño mayor**. Regla de funcionalidad: lo vivo va en el contorno y los adornos; **detrás del texto y de la obra, superficies limpias**; lo que se toca siempre se distingue por forma y texto, no solo por color.
+- **DA-10 · Obras con inscripciones:** se muestran **tal cual** en una vista aparte («Mira de cerca») con su crédito; no se borra ni se sustituye el texto original. Para las primeras unidades se prefieren obras **sin** inscripciones visibles. La regla «nunca texto en imagen» sigue valiendo para toda ilustración propia.
+- **DA-11 · Obras reales:** selección inicial de reproducciones abiertas (Met, Art Institute of Chicago, Smithsonian, NGA), cada una con ficha de derechos verificada por archivo (ver §11 del informe). Creadores vivos (dominicanos, latinos, de la Bahía): solo con permiso escrito y presupuesto, **más adelante**.
+- **DA-12 · Mi museo:** **solo para mirar y seguir creando en el dispositivo** en la v1. Exportar un archivo, solo después y detrás del PIN de padres.
+- **DA-13 · Almacenamiento:** ya hay tope de 50 obras y 6 versiones. Al acercarse al tope se **avisa** y se deja elegir qué quitar; **nunca se borra en silencio**.
+- **DA-5 · Guía de Artes: la cometa (la de Kitewise), sin cara ni voz**, como señal de ayuda que se abre al tocarla y da una frase corta. «Ms. Rosa» no está en el repo y no se produce hasta que Victor la confirme; si la confirma, se suma después sin rehacer nada.
+- **DA-14** Quién revisa los encuentros piloto y acompaña la prueba con 3–5 niños: **queda para Victor** (necesita personas).
+- (Siguen abiertas) **DA-1…8** de `ESPECIFICACION.md` §10, salvo DA-5.
 
 ## Qué no cambia
 Privacidad (nada sale del dispositivo, sin micrófono ni cámara en Arte), sin notas ni puntos, estrellas por esfuerzo (D11), Modo Enfoque por el padre (D4), arte y texto separados, cada unidad en su módulo.
