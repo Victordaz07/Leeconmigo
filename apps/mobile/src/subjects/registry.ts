@@ -1,6 +1,7 @@
 import type { SubjectId } from '@lee-conmigo/ui-core';
 import { arteModule } from './arte';
 import { cienciaModule } from './ciencia';
+import { miCuadernoModule } from './mi-cuaderno';
 import { sociedadModule } from './sociedad';
 import type { SubjectModuleId } from './ids';
 import type { SubjectModule } from './types';
@@ -13,6 +14,7 @@ export const SUBJECT_MODULES: Record<SubjectModuleId, SubjectModule> = {
   ciencia: cienciaModule,
   sociedad: sociedadModule,
   arte: arteModule,
+  'mi-cuaderno': miCuadernoModule,
 };
 
 /** El módulo de una materia, si lo tiene y ya tiene contenido. */

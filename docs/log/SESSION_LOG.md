@@ -378,3 +378,9 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
   `/relevo` con materia.
 - Verificado: typecheck, pruebas, y navegador (Ciencia activada de prueba abre y vuelve; Sociedad sigue "Pronto").
 
+
+## 2026-10-21 · Cuenta A · K8a: Mi cuaderno ya se puede usar
+- Victor vio «Mi cuaderno: Pronto» en Inicio y preguntó si se podía ir trabajando. Se construyó como un módulo más (`apps/mobile/src/subjects/mi-cuaderno/`, mismo mecanismo que Ciencia/Sociedad/Arte) con 3 líneas en lo compartido que ya estaba previsto para una materia nueva: `subjects/ids.ts`, `subjects/registry.ts` y `persist/store.ts` (`SUBJECT_KEYS`, así «Borrar el progreso» también lo borra).
+- Qué hace: **palabras nuevas** (las que le costaron en Lectura, con sílabas y significado de la historia; no se guarda nada aparte), **ideas** (frases de hasta 140 letras con la materia; 3 por día; se pueden quitar; con el cuaderno lleno avisa, no borra) y **dibujos** (sus pinturas y collages de Arte, leídos de ahí). Todo en el dispositivo (D1). Pestañas Todo/Palabras/Ideas/Dibujos; en tableta, dos columnas; en teléfono, una.
+- Sin imágenes nuevas: el espiral y la estrella son código; cuando lleguen `mat_notebook_page`, `star_full`, `empty_notebook` (pedido K8) se cambian sin tocar la lógica.
+- Falta (K8b): el botón «Guardar en mi cuaderno» del cierre de cada materia (hoy las ideas se agregan desde Mi cuaderno), Logros, informe PDF.
