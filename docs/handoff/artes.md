@@ -73,26 +73,7 @@ Tu materia es **Arte y música** (cuaderno `arte`, ya diseñado en D9, hoy «Pro
 - **Portadas de A2-U02 y A1-U06 recibidas y conectadas (2026-10-21)** (`ARTE_ART.unitA2U02/unitA1U06`); las tarjetas de «Retos» ya no usan recuadros hechos con código. Las tarjetas de unidades de Arte se ven bien en teléfono (imagen + texto + «Empezar» debajo).
 
 ## Siguiente paso exacto
-0000. **AR-M1 (lo que falta, necesita Tanda 2-A):** papel bajo el lienzo/cartón y bandeja de materiales con muestras; ver `PLAN-MEJORAS.md` Etapa 1. Si llega la Tanda 2-A: `scripts/arte-imagenes.py` hay que ampliarlo con los prefijos `mat_`, `cut_`, `frame_`, `folder_`, `bg_museo_` (opacas las texturas, con alfa los demás).000. **AR-06c (siguiente):** flipbook y recorrido «dibujo → collage → animación» (reutilizar la pintura propia como pieza del collage). Antes: especificar en `ESPECIFICACION.md` (cuadros, duración, reproducir) y decidir si el dibujo propio entra como imagen fija. Alternativas: AR-07 (3D, necesita antes AR-T3 `expo-gl`) o AR-08 (cápsulas culturales, necesitan permisos y un maestro). Ver también las decisiones DA-1…DA-8 pendientes de Victor.
-00. **AR-06b en la tableta (APK nuevo, solo si Victor lo pide):** Retos → «Una historia de recortes»: ordenar las 3 escenas del barco (probar primero un orden equivocado: solo sale una pista), probar piezas, elegir idea y cambio, hacer las 3 escenas («Empezar con las piezas de antes»), «Cuéntala» y ver las 3 estrellas de esfuerzo. Y el arrastre del collage con lápiz y con dos dedos (el segundo dedo cancela el arrastre).
-00. **AR-05b en la tableta (APK nuevo, solo si Victor lo pide):** Arte y música → Retos → «Colores que se relacionan»: recorrer los 6 encuentros (señalar la paleta A, mezclar y guardar un color, elegir 4 colores y cómo se relacionan, pintar dos cuadros con los mismos 4 colores cambiando algo, compararlos). Ver que no hay «incorrecto» y que el final muestra 3 estrellas de esfuerzo.
-0. **AR-03 y AR-04 en la tableta (APK nuevo, solo cuando Victor lo pida):** además de lo de AR-03, abrir «Retos → Mi banda deja respirar al silencio» y recorrer los 6 encuentros (escuchar capas solas, pulso donde vuelve el patrón, marcar un silencio, solo/juntas, guardar dos versiones y escucharlas, terminar y ver las 3 estrellas de esfuerzo). **AR-03:** abrir «Arte y música» en Inicio → «Nuevo ritmo»: tocar cuadros, cambiar el sonido de una fila, cambiar la velocidad, «Tocar», poner nombre, «Guardar esta versión», volver a una versión, «Probar otra idea», salir y volver a entrar (debe seguir ahí), cerrar y abrir la app (debe seguir ahí), «Borrar». Pasar el audio a segundo plano mientras suena (debe parar).
-1. (AR-T2, pendiente) **Victor compila un APK nuevo** (Skia es nativa) y en la tableta: Padres → Ajustes → «Probar el lienzo de dibujo» → «Prueba de 60 segundos»: dibuja sin parar con dedo y con lápiz si hay, prueba dos dedos a la vez y la palma apoyada, deshacer/rehacer, y pega el «Resultados». Fíjate sobre todo en: ¿la pantalla se mueve al dibujar hacia arriba/abajo?, ¿hay tirones?, ¿el trazo va pegado al dedo? (AR-T1 ya está aprobada.) Pasos originales de AR-T1: **Victor compila un APK nuevo** (hay dependencias nativas nuevas: `react-native-audio-api` y `react-native-worklets`; pasos en `apps/mobile/README.md`, `EXPO_PUBLIC_DEMO=1`, `npm run models` antes). En la tableta: Padres → Ajustes → «Probar el audio del taller». Hacer la **prueba de 5 minutos** a 60, 90 y 140 BPM (con audífonos y con altavoz) y pegar el «Resultados» en el chat.
-2. Con ese resultado: si pasa (sin huecos ni arrastres, 0 congelamientos), seguir con AR-T2 (lienzo con Skia). Si falla, probar otro enfoque (muestras prehechas en bucle o motor propio) **antes** de construir talleres.
-3. Pedir a Victor las decisiones `DA-1…DA-8` de la especificación.
-
-## Cuidado con
-- Lo compartido que se tocó en este paso (pedido a Victor, ya hecho con su OK): `apps/mobile/App.tsx` (ruta `audioTest`), `parent-settings-screen.tsx` (botón), `apps/mobile/package.json` (3 dependencias) y `app.json` (plugin). No editar más lo compartido sin avisar.
-- Artes **no usa micrófono ni cámara**; las creaciones no salen del dispositivo (D1 por analogía).
-- Los timbres son sintetizados: no agregar grabaciones ni bancos culturales sin permiso por escrito.
-- Nunca nota al gusto ni por clics/efectos; estrellas por esfuerzo (D11).
-- No hay APK hasta que Victor lo pida; él lo compila desde la app de Claude.
-
-## Decisiones propuestas (Victor confirma; luego pasan a `docs/DECISIONS.md`)
-`DA-1…DA-8` en `docs/design/artes/ESPECIFICACION.md` §10.
-
-## Pedidos a lo compartido
-_(ninguno pendiente)_
-
-## Estado de pruebas
-Al dejar este paso: `npm run typecheck` limpio y `npx vitest run` en verde.
+**Hecho el 2026-10-21 (todo en `master`):** «Guardar en mi cuaderno» en los cierres (Lectura, Ciencia, Sociedad), grano de papel sobre el lienzo de pintura, **Mi museo** (AR-M2: pared, marcos, filtros) e **informe semanal en PDF** (K8c, solo Lectura).
+1. **Pendiente de Victor:** pedir el APK (hay módulos nativos nuevos: `expo-print`, `expo-sharing`) y probar en Android real: texturas del collage con `ClipPath`+`Image`, arrastre con lápiz/dos dedos, el PDF compartido y el grano de papel. Verificar las decisiones delegadas DA-5, DA-9…13. Decidir `allowBackup` (`"android": {"allowBackup": false}` en `app.json`, archivo compartido).
+2. **AR-06c (siguiente de Arte):** flipbook y recorrido «dibujo → collage → animación» (reutilizar la pintura propia como pieza). Antes: especificar en `ESPECIFICACION.md` (cuadros, duración, reproducir). Alternativas: AR-M3 (profundidad: pinceles, simetría, bordes rasgados) o AR-07 (3D, necesita AR-T3 `expo-gl`).
+3. **Informe PDF:** cuando otras materias guarden resúmenes comparables, sumarlas; estándares y «para observar en clase» esperan validación docente.
