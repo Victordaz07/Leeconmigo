@@ -23,6 +23,7 @@ import { WorkshopScreen } from './src/screens/math-visual/workshop-screen';
 import { NotebookScreen } from './src/screens/notebook-screen';
 import { ParentGateScreen } from './src/screens/parent-gate-screen';
 import { ParentHomeScreen } from './src/screens/parent-home-screen';
+import { ParentReportScreen } from './src/screens/parent-report-screen';
 import { ParentSettingsScreen } from './src/screens/parent-settings-screen';
 import { ProfilesScreen } from './src/screens/profiles-screen';
 import { AudioTestScreen } from './src/screens/audio-test-screen';
@@ -35,6 +36,7 @@ type Route =
   | { name: 'home' }
   | { name: 'parentGate'; next: 'parents' | 'addChild' }
   | { name: 'parents' }
+  | { name: 'parentReport' }
   | { name: 'settings'; isNew: boolean }
   | { name: 'voiceTest' }
   | { name: 'audioTest' }
@@ -168,8 +170,12 @@ function Root() {
         repository={repository}
         onBack={home}
         onSettings={() => setRoute({ name: 'settings', isNew: false })}
+        onReport={() => setRoute({ name: 'parentReport' })}
       />
     );
+  }
+  if (route.name === 'parentReport') {
+    return <ParentReportScreen profile={profile} summaries={progressStoreFor(profile.id).summaries()} goalMinutes={minutes} repository={repository} onBack={() => setRoute({ name: 'parents' })} />;
   }
   if (route.name === 'voiceTest') return <VoiceTestScreen language={profile.language === 'en' ? 'en' : 'es'} onBack={() => setRoute({ name: 'settings', isNew: false })} />;
   if (route.name === 'audioTest') return <AudioTestScreen onBack={() => setRoute({ name: 'settings', isNew: false })} />;

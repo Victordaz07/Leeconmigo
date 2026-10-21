@@ -39,7 +39,8 @@
           "androidForegroundService": false,
           "disableFFmpeg": true
         }
-      ]
+      ],
+      "expo-sharing"
     ]
   }
 }
