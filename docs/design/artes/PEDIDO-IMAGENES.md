@@ -80,7 +80,9 @@ Son los mismos 16 sonidos del taller; así cada botón de sonido tiene su dibujo
 
 ---
 
-# Tanda 2 — materialidad y museo (17 imágenes, 3 lotes) · estado: LISTA PARA PEDIR
+# Tanda 2 — materialidad y museo (17 imágenes, 3 lotes) · estado: **RECIBIDA Y CONVERTIDA (2026-10-21)**
+> **Recibida (2026-10-21):** `KiteWise_Arte_Tanda_2_17_Imagenes.zip` (17 PNG; el zip del Lote 2-A traía los mismos 6 papeles). Revisadas una por una: sin texto, papeles sin costuras en 3×3, objetos y marcos con alfa limpio (esquinas 0, interior de los marcos 0), la pared con el centro despejado. Los marcos llegaron en **1536×1024** (no 1024×1024): se conservan 3:2 y se mide su HUECO.
+> Convertidas con `scripts/arte-imagenes.py … lote-2` (305 KB en total; manifiesto `arte/manifest-lote-2.json` con el SHA-256 y, por marco, `hole` = [x, y, ancho, alto] en fracciones). **Conectado:** papeles de material (kraft, fibras, cartón, seda) en las piezas del collage y fondos con textura (crema, blanco, kraft, cartón) en `subjects/arte/art.ts` (`MAT_ART`, `PIECE_TEXTURE`, `BOARD_TEXTURE`). **Guardado para Mi museo (AR-M2):** marcos, carpetas, cintas, recortes rasgados y pared (`CUT_ART`, `MUSEO_ART`). Pintura: la textura del papel NO se puso bajo el lienzo porque la goma pinta del color del papel (se vería la huella); pendiente de resolver con una goma que borre de verdad.
 > Origen: investigación del 21-oct-2026 (`docs/research/artes-mejoras-2026-10-21.md`; plan en `PLAN-MEJORAS.md`). **Son materiales y adornos, no escenas ni pantallas.**
 > **Estilo decidido (DA-9, por delegación de Victor): vivo y alegre**, igual que la Tanda 1. Los papeles son neutros y cálidos (para que los colores del niño se lean); marcos, carpetas y cintas son de colores vivos.
 > **Si solo se hace un lote, el Lote 2-A** (papeles): es lo que más cambia cómo se ve el collage y la pintura.

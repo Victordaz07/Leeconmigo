@@ -23,9 +23,17 @@ export const PAPER_COLORS = {
   pink: '#F28AB2',
   brown: '#8B5E3C',
   black: '#222831',
+  // Papeles de material (con textura en la app; este es su color de fondo y el de las miniaturas sin textura)
+  kraft: '#D9A871',
+  fibers: '#F0E3C8',
+  cardboard: '#C29663',
+  tissue: '#F5EFE3',
 } as const;
 export type PaperColor = keyof typeof PAPER_COLORS;
 export const PAPER_COLOR_IDS = Object.keys(PAPER_COLORS) as PaperColor[];
+/** Los papeles que son un MATERIAL (llevan textura en la app): kraft, fibras, cartón y papel de seda (este último se ve algo translúcido). */
+export const MATERIAL_PAPERS = ['kraft', 'fibers', 'cardboard', 'tissue'] as const satisfies readonly PaperColor[];
+export const isMaterialPaper = (c: PaperColor): boolean => (MATERIAL_PAPERS as readonly string[]).includes(c);
 
 /** Fondos del cartón sobre el que se pega (claros y oscuros). */
 export const BACKGROUNDS = {
@@ -35,6 +43,8 @@ export const BACKGROUNDS = {
   grass: '#D3EBC8',
   sand: '#F3DFB6',
   night: '#1F2A44',
+  kraft: '#D9A871',
+  cardboard: '#C29663',
 } as const;
 export type Background = keyof typeof BACKGROUNDS;
 export const BACKGROUND_IDS = Object.keys(BACKGROUNDS) as Background[];

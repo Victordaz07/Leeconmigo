@@ -1,12 +1,14 @@
-import { useEffect, useRef, useState } from 'react';
-import { type GestureResponderEvent, Pressable, StyleSheet, Text, View } from 'react-native';
-import Svg, { G, Path, Rect } from 'react-native-svg';
+import { useEffect, useId, useRef, useState } from 'react';
+import { Image, type GestureResponderEvent, Pressable, StyleSheet, Text, View } from 'react-native';
+import Svg, { ClipPath, Defs, G, Image as SvgImage, Path, Rect } from 'react-native-svg';
 import {
   BACKGROUNDS, BACKGROUND_IDS, COLLAGE_COPY, PAPER_COLORS, PAPER_COLOR_IDS, PAPER_H, PAPER_W, ROTATE_STEP, SCALE_STEP, SHAPES, addPiece, canRedoPieces, canUndoPieces, clearPieces, deletePiece, duplicatePiece,
   extents, hitTest, historyOf, movePiece, pushHistory, recolorPiece, redoPieces, reorderPiece, rotatePiece, scalePiece, setBackground, shapePath, undoPieces, type ArtLang, type CollageHistory, type CollageScene,
   type Layer, type PaperColor, type Piece, type Shape,
+
 } from '@lee-conmigo/art-content';
 import { Button, colors, fontFamily, radius } from '@lee-conmigo/ui-native';
+import { BOARD_TEXTURE, PIECE_TEXTURE } from './art';
 
 const VIEW_BOX = `0 0 ${PAPER_W} ${PAPER_H}`;
 const LAYERS: Layer[] = ['front', 'back', 'up', 'down'];
@@ -21,15 +23,39 @@ function selBox(p: Piece) {
 
 /** Dibuja las piezas de un collage (sin tocar): lo usan el taller y las miniaturas. */
 export function CollageSvg({ scene, selectedId }: { scene: CollageScene; selectedId?: string | null }) {
+  // Los identificadores de recorte deben ser únicos en toda la pantalla (varias miniaturas a la vez): se les pone un prefijo propio.
+  const uid = useId().replace(/[^a-zA-Z0-9]/g, '');
   const sel = selectedId ? scene.pieces.find((p) => p.id === selectedId) : undefined;
+  const board = BOARD_TEXTURE[scene.background];
   return (
     <Svg width="100%" height="100%" viewBox={VIEW_BOX}>
       <Rect x={0} y={0} width={PAPER_W} height={PAPER_H} fill={BACKGROUNDS[scene.background]} />
-      {scene.pieces.map((p) => (
-        <G key={p.id} transform={`translate(${p.x} ${p.y}) rotate(${p.rot})`}>
-          <Path d={shapePath(p.shape, p.size)} fill={PAPER_COLORS[p.color]} stroke="rgba(0,0,0,0.18)" strokeWidth={2} strokeLinejoin="round" />
-        </G>
-      ))}
+      {board && <SvgImage href={board} x={0} y={0} width={PAPER_W} height={PAPER_H} preserveAspectRatio="xMidYMid slice" />}
+      {scene.pieces.map((p) => {
+        const tex = PIECE_TEXTURE[p.color];
+        const clip = `clip${uid}${p.id}`;
+        const e = extents(p.shape, p.size);
+        const d = shapePath(p.shape, p.size);
+        const seeThrough = p.color === 'tissue';
+        return (
+          <G key={p.id} transform={`translate(${p.x} ${p.y}) rotate(${p.rot})`}>
+            {/* el color liso va siempre debajo: si la textura no carga, la pieza se ve igual */}
+            <Path d={d} fill={PAPER_COLORS[p.color]} fillOpacity={seeThrough ? 0.85 : 1} stroke="rgba(0,0,0,0.18)" strokeWidth={2} strokeLinejoin="round" />
+            {tex && (
+              <>
+                <Defs>
+                  <ClipPath id={clip}>
+                    <Path d={d} />
+                  </ClipPath>
+                </Defs>
+                <G clipPath={`url(#${clip})`} opacity={seeThrough ? 0.8 : 1}>
+                  <SvgImage href={tex} x={-e.hw} y={-e.hh} width={2 * e.hw} height={2 * e.hh} preserveAspectRatio="xMidYMid slice" />
+                </G>
+              </>
+            )}
+          </G>
+        );
+      })}
       {sel && (
         <G transform={`translate(${sel.x} ${sel.y}) rotate(${sel.rot})`}>
           <Rect {...selBox(sel)} rx={8} fill="none" stroke="#ffffff" strokeWidth={10} />
@@ -250,7 +276,8 @@ export function CollageArea({ lang, scene, onScene, onDrawing }: Props) {
           const on = c === shownColor;
           return (
             <Pressable key={c} onPress={() => chooseColor(c)} accessibilityRole="button" accessibilityLabel={t.colorLabel(t.colors[c])} accessibilityState={{ selected: on }} style={[styles.swatch, { backgroundColor: PAPER_COLORS[c] }, on && styles.swatchOn]}>
-              {on && <Text style={[styles.check, { color: c === 'yellow' || c === 'pink' || c === 'orange' ? '#1E2340' : '#ffffff' }]}>✓</Text>}
+              {PIECE_TEXTURE[c] && <Image source={PIECE_TEXTURE[c]} resizeMode="cover" accessible={false} style={styles.swatchTex} />}
+              {on && <Text style={[styles.check, { color: c === 'yellow' || c === 'pink' || c === 'orange' || c === 'fibers' || c === 'tissue' || c === 'kraft' ? '#1E2340' : '#ffffff' }]}>✓</Text>}
             </Pressable>
           );
         })}
@@ -299,6 +326,7 @@ const styles = StyleSheet.create({
   row: { flexDirection: 'row', flexWrap: 'wrap', gap: 10, alignItems: 'center' },
   shapeBtn: { width: 68, height: 68, borderRadius: 16, alignItems: 'center', justifyContent: 'center', backgroundColor: '#ffffff', borderWidth: 2, borderColor: colors.line },
   swatch: { width: 48, height: 48, borderRadius: 24, borderWidth: 3, borderColor: colors.line, alignItems: 'center', justifyContent: 'center' },
+  swatchTex: { position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', borderRadius: 24 },
   swatchOn: { borderColor: colors.brand, borderWidth: 4 },
   check: { fontFamily: fontFamily.ui.black, fontSize: 20 },
   bgChip: { minHeight: 48, paddingHorizontal: 14, borderRadius: 14, justifyContent: 'center', borderWidth: 2, borderColor: colors.line },

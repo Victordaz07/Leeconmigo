@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   MAX_PIECES, MAX_SIZE, MIN_SIZE, PAPER_H, PAPER_W, SHAPES, addPiece, canRedoPieces, canUndoPieces, changesBetween, clearPieces, cloneCollageScene, collageOf, createCollageProject, deletePiece, duplicatePiece, emptyLibrary,
   extents, hitTest, historyOf, isArtLibrary, isCollageScene, kindOf, movePiece, newCollageScene, pushHistory, recolorPiece, redoPieces, reorderPiece, rotatePiece, scalePiece, setBackground, shapePath, undoPieces,
-  updateScene, duplicateProject, type CollageScene,
+  updateScene, duplicateProject, COLLAGE_COPY, BACKGROUND_IDS, MATERIAL_PAPERS, PAPER_COLOR_IDS, isMaterialPaper, type CollageScene,
 } from '../src/index.ts';
 
 const withOne = (shape: (typeof SHAPES)[number] = 'square') => {
@@ -184,5 +184,25 @@ describe('collage: proyecto y guardado', () => {
     expect(isCollageScene({ ...ok, background: 'lava' })).toBe(false);
     expect(isCollageScene({ ...ok, pieces: [ok.pieces[0], ok.pieces[0]] })).toBe(false); // ids repetidos
     expect(isCollageScene({ ...ok, pieces: Array.from({ length: MAX_PIECES + 1 }, (_, i) => ({ ...ok.pieces[0]!, id: `k${i}` })) })).toBe(false);
+  });
+});
+
+describe('collage: papeles de material y fondos con textura', () => {
+  it('los papeles de material y los fondos nuevos se guardan y se validan', () => {
+    for (const color of MATERIAL_PAPERS) {
+      expect(isMaterialPaper(color)).toBe(true);
+      const r = addPiece(newCollageScene(), 'leaf', color);
+      expect(isCollageScene(r.scene)).toBe(true);
+      expect(isCollageScene(JSON.parse(JSON.stringify(r.scene)))).toBe(true);
+    }
+    expect(isMaterialPaper('red')).toBe(false);
+    for (const b of ['kraft', 'cardboard'] as const) expect(isCollageScene(setBackground(newCollageScene(), b))).toBe(true);
+  });
+
+  it('cada papel y cada fondo tiene nombre en español y en inglés', () => {
+    for (const lang of ['es', 'en'] as const) {
+      for (const c of PAPER_COLOR_IDS) expect(COLLAGE_COPY[lang].colors[c], `${lang} ${c}`).toBeTruthy();
+      for (const b of BACKGROUND_IDS) expect(COLLAGE_COPY[lang].backgrounds[b], `${lang} ${b}`).toBeTruthy();
+    }
   });
 });

@@ -47,4 +47,28 @@ describe('arte de Arte y música', () => {
       expect([m.width, m.height], m.source).toEqual(object ? [512, 512] : vertical ? [1024, 1536] : [1536, 1024]);
     }
   });
+
+  it('la Tanda 2 (materiales, adornos y museo) trae las 17 imágenes, bien medidas y con el hueco de cada marco', () => {
+    const t2 = load('lote-2') as (Entry & { hole?: number[] | null })[];
+    expect(names(t2)).toEqual(
+      [
+        'bg_museo_pared', 'cut_scrap_kraft', 'cut_scrap_paper', 'cut_tape_turquoise', 'cut_tape_yellow', 'folder_cover_coral', 'folder_cover_turquoise', 'frame_coral', 'frame_turquoise', 'frame_violet',
+        'frame_yellow', 'mat_cardboard', 'mat_kraft_thin', 'mat_paper_drawing', 'mat_paper_fibers', 'mat_paper_tissue', 'mat_paper_white',
+      ].sort(),
+    );
+    for (const m of t2) {
+      const path = new URL(`../../../${m.output}`, import.meta.url);
+      expect(existsSync(path), m.output).toBe(true);
+      expect(statSync(path).size, m.output).toBe(m.outputBytes);
+      expect(m.outputBytes, m.output).toBeLessThan(350 * 1024);
+      const n = m.source.replace('.png', '');
+      const expected = n.startsWith('frame_') ? [1024, 683] : n === 'bg_museo_pared' ? [1536, 1024] : [512, 512];
+      expect([m.width, m.height], n).toEqual(expected);
+      if (n.startsWith('frame_')) {
+        const [x, y, w, h] = m.hole!;
+        // el hueco queda dentro del marco, con margen a los cuatro lados, y es más ancho que alto como el marco
+        expect(x! > 0.05 && y! > 0.05 && x! + w! < 0.95 && y! + h! < 0.95 && w! > h!, n).toBe(true);
+      }
+    }
+  });
 });

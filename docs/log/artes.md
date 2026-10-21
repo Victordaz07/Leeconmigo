@@ -111,3 +111,8 @@
 - Victor delegó: «puedes decidir tú y luego lo verificamos… vivo, divertido, pero funcional» y pidió que los prompts de imágenes se den siempre en el chat. Decididas DA-5 (guía = la cometa sin cara) y DA-9…13 (estilo vivo; obras con inscripciones tal cual en vista aparte; Mi museo solo en el dispositivo; avisar y nunca borrar en silencio). Tanda 2 reescrita en estilo vivo (marcos y carpetas de colores; papeles neutros).
 - Código de la Etapa 1 que no necesita imágenes (ver handoff). Verificado en Chromium (tableta y teléfono).
 - Bug visto de paso: las tarjetas de «Retos» en teléfono (texto en una columna de ~60 px) → corregido.
+
+## 2026-10-21 · Tanda 2 de imágenes recibida y conectada al collage
+- Victor mandó `KiteWise_Arte_Tanda_2_17_Imagenes.zip` y el zip del Lote 2-A (los mismos 6 papeles). Revisión: 17 de 17 válidas, sin texto, papeles sin costuras, alfa limpio; los marcos vinieron 1536×1024 (3:2), así que `scripts/arte-imagenes.py` ahora mide el hueco de cada marco y lo guarda en el manifiesto.
+- Collage: nuevos papeles de material (kraft, fibras, cartón, seda) y fondos (kraft, cartón) + texturas en crema y blanco. Seda con translucidez. Dominio: `MATERIAL_PAPERS`, ids nuevos en `PAPER_COLORS`/`BACKGROUNDS` (lo guardado antes sigue siendo válido). 132 pruebas del paquete.
+- Verificado en Chromium. Aprendizaje: los identificadores de `ClipPath` deben ser únicos en toda la pantalla (miniaturas), por eso llevan un prefijo con `useId`.
