@@ -100,3 +100,9 @@
 ## 2026-10-20 · AR-06b: unidad A1-U06 «Una historia de recortes»
 - Elegida de la investigación (§10: «Ordenar piezas y escenas para contar algo»; no estaba entre los 6 retos desarrollados, así que los encuentros son diseño propio, en el mismo patrón que A1-U04 y A2-U02). Un collage de cuatro cartones (tres de historia y uno para probar piezas). Lo verificable: orden de las escenas, piezas por escena, y que algo cambie entre escenas seguidas (por `id` de pieza: movió, apareció, creció).
 - Verificado en Chromium (tableta y teléfono) de punta a punta; pista suave con un orden equivocado; «Cuéntala» dice si el cambio elegido se ve en las escenas sin bloquear; 3 estrellas al final; sin errores de consola.
+
+## 2026-10-21 · Informe de mejoras de Arte y música recibido
+- Victor: «se ve super básico». Le di un prompt de súper investigación; devolvió `Kitewise_Arte_Musica_Investigacion_2026-10-21-1.md` (~82 KB, 39 fuentes), copiado a `docs/research/artes-mejoras-2026-10-21.md`.
+- Lectura crítica en `docs/design/artes/PLAN-MEJORAS.md`: se adopta mesa de creación, materialidad sin Skia, tres pinceles, Mi museo, observar→probar→decidir, jugo moderado; se corrige o pospone lo que depende de decisiones de Victor (guía «Ms. Rosa», estilo gouache apagado vs. el vivo de la Tanda 1, texto en obras reales).
+- Hallazgo verificado: el manifiesto trae `allowBackup="true"` (copia de seguridad de Android) → pedido a lo compartido. `RECORD_AUDIO` es de Lectura; Arte no lo usa.
+- Tanda 2 de imágenes (17: materiales, adornos, museo) preparada en `PEDIDO-IMAGENES.md`, sin pedir todavía.

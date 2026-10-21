@@ -152,3 +152,8 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | AR-06c | Flipbook y recorrido «dibujo → collage → animación» (reutilizar la pintura propia como pieza) | ⬜ | – | |
 | AR-07 | Ensamblaje 3D (si AR-T3 pasa) | ⬜ | – | |
 | AR-08 | Cápsulas culturales con permisos y revisión de un maestro | ⬜ | – | |
+| AR-M0 | Mejoras de Arte (informe 21-oct-2026) · Etapa 0: base recuperable (cerrar y reabrir a mitad de una obra en la tableta; áreas táctiles) | ⬜ | A | `docs/design/artes/PLAN-MEJORAS.md` |
+| AR-M1 | Etapa 1 · materialidad y claridad: papel bajo el lienzo, bandeja de materiales con muestras, selección con contorno doble y asas, barra de la pieza junto al cartón (teléfono), celdas vacías legibles, guardado honesto con miniatura | ⬜ | A | Necesita Tanda 2-A (papel). Hay partes solo de código que no esperan imágenes |
+| AR-M2 | Etapa 2 · «Mi museo» (galería, continuar, duplicar, versiones, marcos) | ⬜ | A | Necesita Tanda 2-C y DA-12/13 |
+| AR-M3 | Etapa 3 · profundidad: 3 pinceles, simetría/duplicar, papeles y bordes rasgados, una obra real por unidad con créditos, comparación A/B de ritmo | ⬜ | A | Necesita DA-9/10/11 y licencias verificadas |
+| AR-M4 | Etapa 4 · una sola apuesta grande (flipbook AR-06c, recorte libre o mezcla avanzada) | ⬜ | – | Después del museo y del rendimiento medido |
