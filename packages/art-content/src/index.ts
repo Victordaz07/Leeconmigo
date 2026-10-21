@@ -11,3 +11,5 @@ export * from './unit-copy.ts';
 export * from './unit2-copy.ts';
 export * from './collage-copy.ts';
 export * from './unit3-copy.ts';
+export * from './museum.ts';
+export * from './museum-copy.ts';

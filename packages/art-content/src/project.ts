@@ -46,6 +46,8 @@ export interface ArtProject {
   updatedAt: number;
   scenes: Scene[];
   versions: ProjectVersion[];
+  /** Marco de «Mi museo» (`museum.ts`). Ausente en lo guardado antes de AR-M2: se deduce del id. */
+  frame?: 'coral' | 'turquoise' | 'violet' | 'yellow';
 }
 
 export interface ArtLibrary {
@@ -216,7 +218,8 @@ export function isArtProject(v: unknown): v is ArtProject {
     isScenes(p.scenes) &&
     Array.isArray(p.versions) &&
     p.versions.length <= MAX_VERSIONS &&
-    p.versions.every(isVersion)
+    p.versions.every(isVersion) &&
+    (p.frame === undefined || p.frame === 'coral' || p.frame === 'turquoise' || p.frame === 'violet' || p.frame === 'yellow')
   );
 }
 
