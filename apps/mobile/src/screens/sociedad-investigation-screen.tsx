@@ -35,6 +35,7 @@ import { resolveSocialArt, TEO } from '../sociedad-art';
 import { useMovementBreak } from '../movement';
 import { MovementBreakScreen } from './movement-break-screen';
 import type { UnitProgress } from './sociedad-notebook-screen';
+import { STAR_IMAGES } from '../kitewise-art';
 
 interface SociedadInvestigationScreenProps {
   lang: SocialLang;
@@ -87,6 +88,7 @@ export function SociedadInvestigationScreen({ lang, unit, profileId, profileName
     const reasonKey = investigationReasonKey(ev);
     return (
       <ClosingCard
+          starImages={STAR_IMAGES}
         name={profileName}
         stars={stars}
         reason={t.closingReason[reasonKey][lang]}

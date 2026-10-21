@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { ARTE_COPY, COLLAGE_COPY, EXAMPLE_PALETTES, UNIT2_COPY, UNIT3_COPY, UNIT_COPY, kindOf, type ArtLang, type ArtLibrary } from '@lee-conmigo/art-content';
+import { ARTE_COPY, COLLAGE_COPY, UNIT2_COPY, UNIT3_COPY, UNIT_COPY, kindOf, type ArtLang, type ArtLibrary } from '@lee-conmigo/art-content';
 import { Button, ChevronLeftIcon, colors, fontFamily, radius, RoundButton, shadows, useLayout } from '@lee-conmigo/ui-native';
 import { ARTE_ART, COVER_ASPECT, HERO_CREAM } from './art';
 import { CreationThumb, hasThumb } from './creation-thumb';
@@ -101,20 +101,10 @@ export function ArteHome({ lang, library, onBack, onNewRhythm, onNewPainting, on
         <Image source={ARTE_ART.unitA1U04} resizeMode="cover" accessible={false} style={layout.phone ? styles.unitVisualPhone : styles.unitImage} />
       </UnitCard>
       <UnitCard phone={layout.phone} onPress={onOpenUnit2} label={`${u2.title}. ${u2.card(unit2Done)}`} tag={`${u2.suggested} · ${u2.grade}`} title={u2.title} blurb={u2.blurb} meta={u2.card(unit2Done)} go={`${unit2Done > 0 ? u2.resume : u2.start} ›`}>
-        <View style={[styles.unitTile, layout.phone && styles.unitVisualPhone]} accessible={false}>
-          {EXAMPLE_PALETTES.A.map((hex) => (
-            <View key={hex} style={[styles.unitTileCell, { backgroundColor: hex }]} />
-          ))}
-        </View>
+        <Image source={ARTE_ART.unitA2U02} resizeMode="cover" accessible={false} style={layout.phone ? styles.unitVisualPhone : styles.unitImage} />
       </UnitCard>
       <UnitCard phone={layout.phone} onPress={onOpenUnit3} label={`${u3.title}. ${u3.card(unit3Done)}`} tag={`${u3.suggested} · ${u3.grade}`} title={u3.title} blurb={u3.blurb} meta={u3.card(unit3Done)} go={`${unit3Done > 0 ? u3.resume : u3.start} ›`}>
-        <View style={[styles.unitTile, layout.phone && styles.unitVisualPhone, { backgroundColor: '#CFE8F7' }]} accessible={false}>
-          {(['#F9D548', '#E4572E', '#3C78D8', '#4CA64C'] as const).map((hex) => (
-            <View key={hex} style={styles.unitTileCell}>
-              <View style={[styles.unitTileDot, { backgroundColor: hex }]} />
-            </View>
-          ))}
-        </View>
+        <Image source={ARTE_ART.unitA1U06} resizeMode="cover" accessible={false} style={layout.phone ? styles.unitVisualPhone : styles.unitImage} />
       </UnitCard>
 
       <Text style={styles.h3}>{t.creations}</Text>
@@ -163,9 +153,6 @@ const styles = StyleSheet.create({
   unitText: { flex: 1, gap: 4 },
   unitTag: { fontFamily: fontFamily.ui.extrabold, fontSize: 12, color: colors.brand },
   unitTitle: { fontFamily: fontFamily.ui.black, fontSize: 20, color: colors.navy },
-  unitTile: { width: 132, height: Math.round(132 / COVER_ASPECT), borderRadius: 14, overflow: 'hidden', flexDirection: 'row', flexWrap: 'wrap' },
-  unitTileCell: { width: '50%', height: '50%', alignItems: 'center', justifyContent: 'center' },
-  unitTileDot: { width: 28, height: 28, borderRadius: 14 },
   unitGo: { fontFamily: fontFamily.ui.black, fontSize: 16, color: colors.brand },
   freeButtons: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
   list: { gap: 10 },

@@ -1,6 +1,7 @@
 # Pedido de imágenes — Kitewise «núcleo»: Mi cuaderno, Logros, cierre de sesión y guía (para generar con GPT)
 
-> **Estado (2026-10-21): SIN PEDIR.** Nace de la pregunta de Victor «¿no tenemos más pendientes en lo que genera las imágenes? como la sección de Mi cuaderno».
+> **Estado (2026-10-21): RECIBIDO Y CONECTADO (19 de 19).** `KiteWise_Lotes_K1_K2_K3_19_Imagenes.zip`: revisadas una por una (sin texto, alfa limpio, 7 logros a color, 4 destellos en `star_big`, 3 moños en los papalotes, 7 puntos en `badge_came_back`, 5 banderitas, 7 círculos en `empty_badges`, 4 azules en `cover_a2_u02`). Convertidas con `scripts/kitewise-imagenes.py` (17 del núcleo, 280 KB, manifiesto `arte/manifest-k8.json`) y `scripts/arte-imagenes.py … lote-3` (2 portadas de Arte, 282 KB). Conectadas: estrellas dibujadas en el cierre de Lectura, Ciencia y Sociedad (`ClosingCard` recibe `starImages`), pantalla de **Logros** (7 pegatinas, papalote, álbum vacío), **Mi cuaderno** (hoja con renglones, cuaderno vacío, estrella) y las portadas de las dos unidades de Arte. Guardadas para después: sello del día (`STAMP_IMAGES`) y papalote que celebra (`KITE_IMAGES.cheer`).
+> (Pedido original, sin pedir)  Nace de la pregunta de Victor «¿no tenemos más pendientes en lo que genera las imágenes? como la sección de Mi cuaderno».
 > Revisión de lo pendiente en todo el proyecto (2026-10-21):
 > - **Matemáticas** (44 piezas), **Ciencia** (Tandas 1–4 completas) y **Sociedad** (6 unidades, «todo su arte ya conectado»): sin imágenes pendientes.
 > - **Arte y música:** Tanda 2 (17: materiales, adornos, museo) → `docs/design/artes/PEDIDO-IMAGENES.md`; faltan además **2 portadas de unidad** (A2-U02 y A1-U06, hoy un recuadro hecho con código) → incluidas abajo.

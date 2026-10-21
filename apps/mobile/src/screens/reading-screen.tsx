@@ -11,6 +11,7 @@ import { SHOW_DEV_TOOLS } from '../dev-tools';
 import { useMovementBreak } from '../movement';
 import { MovementBreakScreen } from './movement-break-screen';
 import { storyImage } from '../story-assets';
+import { STAR_IMAGES } from '../kitewise-art';
 
 const lectura = subjectById('lectura');
 
@@ -128,6 +129,7 @@ export function ReadingScreen({ story, profile, energy, goalMinutes, focusReadin
         )}
         {session.closing && (
           <ClosingCard
+          starImages={STAR_IMAGES}
             name={profile.name}
             stars={session.closing.stars}
             reason={session.closing.reason}

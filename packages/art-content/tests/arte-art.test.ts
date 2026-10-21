@@ -71,4 +71,34 @@ describe('arte de Arte y música', () => {
       }
     }
   });
+
+  it('las portadas de las unidades A2-U02 y A1-U06 llegaron (Lote 3) en 1536×1024', () => {
+    const l3 = load('lote-3');
+    expect(names(l3)).toEqual(['cover_a1_u06', 'cover_a2_u02']);
+    for (const m of l3) {
+      expect(existsSync(new URL(`../../../${m.output}`, import.meta.url)), m.output).toBe(true);
+      expect(m.outputBytes, m.output).toBeLessThan(350 * 1024);
+      expect([m.width, m.height]).toEqual([1536, 1024]);
+    }
+  });
+
+  it('el arte del núcleo de Kitewise (estrellas, sello, papalote, 7 logros, Mi cuaderno) llegó completo, medido y liviano (docs/design/kitewise/arte/manifest-k8.json)', () => {
+    const k8 = JSON.parse(readFileSync(new URL('../../../docs/design/kitewise/arte/manifest-k8.json', import.meta.url), 'utf8')) as Entry[];
+    expect(names(k8)).toEqual(
+      [
+        'badge_adventurer', 'badge_came_back', 'badge_explorer', 'badge_first_chapter', 'badge_new_word', 'badge_real_15', 'badge_two_languages', 'empty_badges', 'empty_notebook', 'kite_cheer', 'kite_idle',
+        'mat_notebook_page', 'stamp_daily', 'stamp_empty', 'star_big', 'star_full', 'star_sleep',
+      ].sort(),
+    );
+    for (const m of k8) {
+      const path = new URL(`../../../${m.output}`, import.meta.url);
+      expect(existsSync(path), m.output).toBe(true);
+      expect(statSync(path).size, m.output).toBe(m.outputBytes);
+      expect(m.outputBytes, m.output).toBeLessThan(350 * 1024);
+      expect(m.sha256).toMatch(/^[0-9a-f]{64}$/);
+      const n = m.source.replace('.png', '');
+      const side = n.startsWith('star_') ? 384 : n.startsWith('badge_') || n.startsWith('stamp_') ? 256 : n === 'mat_notebook_page' ? 1024 : 512;
+      expect([m.width, m.height], n).toEqual([side, side]);
+    }
+  });
 });

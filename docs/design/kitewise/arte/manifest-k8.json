@@ -1,0 +1,155 @@
+[
+  {
+    "source": "badge_adventurer.png",
+    "sha256": "7fc299f0d160240c68f42c4d02dbb926af29b1094e8d7416dd7840528724747a",
+    "bytes": 651320,
+    "output": "apps/mobile/assets/kitewise/badges/badge_adventurer.webp",
+    "outputBytes": 13444,
+    "width": 256,
+    "height": 256
+  },
+  {
+    "source": "badge_came_back.png",
+    "sha256": "aa21b8a3e7d7ed9b7005f35c36533d7552a619e076e36bd1e716457973301f84",
+    "bytes": 662421,
+    "output": "apps/mobile/assets/kitewise/badges/badge_came_back.webp",
+    "outputBytes": 13182,
+    "width": 256,
+    "height": 256
+  },
+  {
+    "source": "badge_explorer.png",
+    "sha256": "825ffdd7bc76b2e60dbe519f336a7492c43cf6ee01c84f9780ccdfbfeba357c2",
+    "bytes": 762694,
+    "output": "apps/mobile/assets/kitewise/badges/badge_explorer.webp",
+    "outputBytes": 15008,
+    "width": 256,
+    "height": 256
+  },
+  {
+    "source": "badge_first_chapter.png",
+    "sha256": "c6f2dbafe3d88a9da284c44419beb45fc879fdd4db4966e3ef419caee76ae5bb",
+    "bytes": 837657,
+    "output": "apps/mobile/assets/kitewise/badges/badge_first_chapter.webp",
+    "outputBytes": 13768,
+    "width": 256,
+    "height": 256
+  },
+  {
+    "source": "badge_new_word.png",
+    "sha256": "52af5177bf8e2177888cd8ceadcd6400ec0b321951b3cc8de06295247fae6978",
+    "bytes": 556989,
+    "output": "apps/mobile/assets/kitewise/badges/badge_new_word.webp",
+    "outputBytes": 10692,
+    "width": 256,
+    "height": 256
+  },
+  {
+    "source": "badge_real_15.png",
+    "sha256": "703a062cc02ddbbb85d3a032065e586fdc350f7651ac1c66e830f1c281b5b1ee",
+    "bytes": 669573,
+    "output": "apps/mobile/assets/kitewise/badges/badge_real_15.webp",
+    "outputBytes": 12146,
+    "width": 256,
+    "height": 256
+  },
+  {
+    "source": "badge_two_languages.png",
+    "sha256": "ae2bf15e6d4c8e961fd44354f31268cd5efd40b7cbd6572475a76ccf6441499b",
+    "bytes": 541914,
+    "output": "apps/mobile/assets/kitewise/badges/badge_two_languages.webp",
+    "outputBytes": 8930,
+    "width": 256,
+    "height": 256
+  },
+  {
+    "source": "empty_badges.png",
+    "sha256": "1ffa1258018b3d8b441f996094c7530600ddccd7b5685824196a3a163510b04d",
+    "bytes": 694273,
+    "output": "apps/mobile/assets/kitewise/empty/empty_badges.webp",
+    "outputBytes": 28384,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "empty_notebook.png",
+    "sha256": "bab7403d7bdabfb5055ce1ea82688aa81a5b4890ab979f781d2a7acff0e1440f",
+    "bytes": 507817,
+    "output": "apps/mobile/assets/kitewise/empty/empty_notebook.webp",
+    "outputBytes": 23290,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "kite_cheer.png",
+    "sha256": "28a45e8abdf05938c1ebe494751518915fdd4eeb9f57112fd15f4b75e50f5636",
+    "bytes": 491492,
+    "output": "apps/mobile/assets/kitewise/kites/kite_cheer.webp",
+    "outputBytes": 39128,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "kite_idle.png",
+    "sha256": "8b1b8e2e793fd351b599b475dbdcde29569fcf0890ce8d30d3ed04ae2afff931",
+    "bytes": 473796,
+    "output": "apps/mobile/assets/kitewise/kites/kite_idle.webp",
+    "outputBytes": 24916,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "mat_notebook_page.png",
+    "sha256": "81dd6068ef2d49f55c8d7d0519c6d297c7a0096dc35f7ef8df7985dc6745e5f0",
+    "bytes": 603771,
+    "output": "apps/mobile/assets/kitewise/mats/mat_notebook_page.webp",
+    "outputBytes": 7342,
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "source": "stamp_daily.png",
+    "sha256": "5ef4e089b99ed97c83ee3efbb9526acae40d9a271daf66d4db26a377bbe1a383",
+    "bytes": 705743,
+    "output": "apps/mobile/assets/kitewise/stamps/stamp_daily.webp",
+    "outputBytes": 10528,
+    "width": 256,
+    "height": 256
+  },
+  {
+    "source": "stamp_empty.png",
+    "sha256": "62509b19bd0ef83f5aaf4eea38c9713ef4fcbd8b849d4c8e02c8a09a7dcad9b7",
+    "bytes": 380429,
+    "output": "apps/mobile/assets/kitewise/stamps/stamp_empty.webp",
+    "outputBytes": 12610,
+    "width": 256,
+    "height": 256
+  },
+  {
+    "source": "star_big.png",
+    "sha256": "0729925d90a367905c04082d57aaf4bfb53d29b041809c80d6cfd6d3307141c4",
+    "bytes": 618327,
+    "output": "apps/mobile/assets/kitewise/stars/star_big.webp",
+    "outputBytes": 23460,
+    "width": 384,
+    "height": 384
+  },
+  {
+    "source": "star_full.png",
+    "sha256": "cd4de83ea98f7d57941d2604ebb6dc3e2b78a60047b67d30d0c7ec7d8893b987",
+    "bytes": 559936,
+    "output": "apps/mobile/assets/kitewise/stars/star_full.webp",
+    "outputBytes": 18096,
+    "width": 384,
+    "height": 384
+  },
+  {
+    "source": "star_sleep.png",
+    "sha256": "6d41c0d1e085687283c1b468971a4395ddcb5c9ecadf104a98f9f13ccc6a371d",
+    "bytes": 506058,
+    "output": "apps/mobile/assets/kitewise/stars/star_sleep.webp",
+    "outputBytes": 12378,
+    "width": 384,
+    "height": 384
+  }
+]

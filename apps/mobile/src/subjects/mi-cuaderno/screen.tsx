@@ -1,10 +1,11 @@
 import { useMemo, useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Image, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { isArtLibrary, emptyLibrary } from '@lee-conmigo/art-content';
 import type { MathLang } from '@lee-conmigo/ui-core';
 import { Button, ChevronLeftIcon, colors, fontFamily, radius, RoundButton, shadows, useLayout } from '@lee-conmigo/ui-native';
 import { progressStoreFor, subjectStorageFor, type ChildProfile } from '../../app-state';
+import { EMPTY_IMAGES, NOTEBOOK_PAGE, STAR_IMAGES } from '../../kitewise-art';
 import { CreationThumb, hasThumb } from '../arte/creation-thumb';
 import { NOTEBOOK_COPY } from './copy';
 import { wordsOf } from './vocabulary';
@@ -83,7 +84,10 @@ export function MiCuadernoScreen({ profile, lang, onExit }: Props) {
     <View style={styles.section} key="words">
       <Text style={[styles.kicker, { color: colors.subjLectura }]}>{c.wordsTitle.toUpperCase()}</Text>
       {words.length === 0 ? (
-        <Text style={styles.note}>{c.wordsEmpty}</Text>
+        <View style={styles.empty}>
+          <Image source={EMPTY_IMAGES.notebook} resizeMode="contain" accessible={false} style={styles.emptyImg} />
+          <Text style={styles.note}>{c.wordsEmpty}</Text>
+        </View>
       ) : (
         <>
           {words.map((w) => (
@@ -190,6 +194,7 @@ export function MiCuadernoScreen({ profile, lang, onExit }: Props) {
 
   return (
     <View style={styles.root}>
+      <Image source={NOTEBOOK_PAGE} resizeMode="cover" accessible={false} style={styles.page} />
       <Spiral rows={wide ? 22 : 14} />
       <ScrollView style={styles.screen} keyboardShouldPersistTaps="handled" contentContainerStyle={[styles.content, { paddingTop: insets.top + 16, paddingBottom: insets.bottom + 24, paddingLeft: 44 + (layout.gutter - 16), paddingRight: layout.gutter }]}>
         <View style={styles.header}>
@@ -225,7 +230,7 @@ export function MiCuadernoScreen({ profile, lang, onExit }: Props) {
         )}
 
         <View style={styles.footer}>
-          <Text style={styles.footerStar}>★</Text>
+          <Image source={STAR_IMAGES.full} resizeMode="contain" accessible={false} style={styles.footerStar} />
           <Text style={styles.footerText}>{left === 0 ? c.dailyDone : c.leftToday(left)}</Text>
         </View>
         <Text style={styles.small}>{c.privacy}</Text>
@@ -278,6 +283,9 @@ const styles = StyleSheet.create({
   polaroid: { backgroundColor: '#ffffff', padding: 8, paddingBottom: 6, borderRadius: 6, gap: 6, boxShadow: shadows.card },
   caption: { fontFamily: fontFamily.read.bold, fontSize: 14, color: colors.ink, maxWidth: 176 },
   footer: { flexDirection: 'row', alignItems: 'center', gap: 10, backgroundColor: 'rgba(255,255,255,0.8)', borderRadius: 16, padding: 12 },
-  footerStar: { fontSize: 26, color: '#F5B400' },
+  footerStar: { width: 40, height: 40 },
+  page: { position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' },
+  empty: { alignItems: 'flex-start', gap: 6 },
+  emptyImg: { width: 150, height: 120 },
   footerText: { flex: 1, fontFamily: fontFamily.ui.extrabold, fontSize: 15, color: colors.ink },
 });
