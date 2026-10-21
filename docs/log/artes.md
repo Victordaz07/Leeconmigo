@@ -125,3 +125,9 @@
 - Dominio `museum.ts` (+ `museum-copy.ts`, 6 pruebas): marco por obra (`frame?` opcional en `ArtProject`; si falta, se deduce del id y es estable), `setFrame`, `museumWorks` (recientes primero, filtro por tipo; nunca «la mejor»).
 - Pantalla `museum-screen.tsx`: pared con banderines, obras enmarcadas (la miniatura va ENTERA dentro del hueco medido del marco), placa con el título y 4 botones de color para cambiar de marco, filtros con las carpetas. Toca una obra → abre su taller; al volver regresa al museo. Entrada desde el inicio de Arte (aparece cuando hay creaciones).
 - Verificado en Chromium (tableta y teléfono). Sin exportar nada fuera del equipo (DA-12).
+
+## 2026-10-21 · K8c Informe semanal en PDF (P5)
+- Modo padres → «Informe semanal»: una página con minutos, días con lectura, días con meta, preguntas, minutos por día, historias, palabras para practicar y enfoque que dijo el niño; «Esta semana» / «Semana pasada». Se calcula solo con los resúmenes guardados (`weekly-report.ts`, 6 pruebas) y el mismo HTML se imprime a PDF (`expo-print`) y se comparte con la hoja del sistema (`expo-sharing`). En el navegador abre el cuadro de imprimir.
+- Sin estándares ni «para observar en clase»: no se inventan; esperan validación docente. Solo cuenta Lectura (las otras materias no guardan resúmenes comparables todavía).
+- Privacidad: el PDF no lleva voz ni imágenes; no sube nada; el adulto elige dónde guardarlo. Dependencias nuevas de Expo (primera parte, sin red ni analítica) → hace falta APK nuevo.
+- Tocó lo compartido (mínimo): `App.tsx` (ruta `parentReport`), `parent-home-screen.tsx` (botón), `package.json`/`app.json`/lock.
