@@ -8,6 +8,8 @@ Ciencia (cuenta A) y Sociedad (cuenta B) se trabajan a la vez. Su estado vive en
 `docs/14-MATERIAS-EN-PARALELO.md`. Preparación (PREP-1) hecha: módulos enchufados como "Pronto".
 
 ## Tarea en curso
+**K8a hecho (2026-10-21):** Mi cuaderno ya se abre desde Inicio (palabras de Lectura, ideas escritas por el niño, dibujos de Arte). Falta K8b (Logros, «Guardar en mi cuaderno» en los cierres, informe). Detalle: `docs/log/SESSION_LOG.md`.
+
 Ninguna a medias. Voz (RN-03) PAUSADA por Victor. K6: la primera unidad de Matemáticas (g3u1) ya se juega completa.
 
 ## Hecho en RN-01

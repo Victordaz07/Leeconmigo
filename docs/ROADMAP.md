@@ -26,7 +26,8 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | K7b | Enfoque en Lectura (B10): arte desenfocado de fondo, 1 frase resaltada, 3 botones | ✅ | A | apoyo `focusReading` («Lectura de una línea a la vez»); `FocusPage` en `reading-screen.tsx`, `FocusReadingBar`; la hoja sigue a la línea actual |
 | K7c | Pausa de movimiento (B12): 60–90 s cada ~10 min | ✅ | A | apoyo `movementBreaks`; 60 s, 3 rutinas ES/EN (`ui-core/movement.ts`), `MovementBreak` (ui-native); reloj de actividad compartido (`apps/mobile/src/movement.ts`); sale al terminar página / paso / ejercicio |
 | K7d | Enfoque adaptativo (toques erráticos, pausas largas; sin cámara ni audio) | ⬜ | | el niño no ve avisos |
-| K8 | Mi cuaderno, Logros, informe PDF, foto de tarea | ⬜ | – | foto espera C13 |
+| K8a | **Mi cuaderno (B14)**: palabras nuevas (salen de Lectura), ideas que el niño escribe («Lo que entendí», 140 letras, 3 por día, con materia) y sus dibujos de Arte y música; módulo `apps/mobile/src/subjects/mi-cuaderno/`; sin imágenes nuevas (espiral y estrella hechas con código) | ✅ | A | 11 pruebas; verificado en navegador (tableta y teléfono: ideas, tope diario, palabras, dibujos, reabrir). Propuesta **MC-1**: 3 ideas por día (el diseño decía 1) |
+| K8b | Logros (7 pegatinas, `docs/01`), estrellas dibujadas en el cierre, informe PDF, foto de tarea | ⬜ | – | imágenes pedidas en `docs/design/kitewise/PEDIDO-IMAGENES-K8.md`; foto espera C13 |
 | **RN** | **Migración a React Native + Expo** (D7, `docs/11`) | | | |
 | RN-00 | Registrar decisión, plan de migración y lista legal | ✅ | A | `claude/gracious-shannon-a0238d` |
 | RN-01 | Crear `apps/mobile` (Expo + TS) usando `contracts`/`reading-engine`/`story-engine` | 🟡 | A | código listo y empaquetando; falta verlo en el Android de Victor (`npx expo run:android`) |
