@@ -59,7 +59,8 @@ Tu materia es **Arte y música** (cuaderno `arte`, ya diseñado en D9, hoy «Pro
 
 ## Mejoras tras «se ve básico» (2026-10-21)
 - Victor pidió una súper investigación; llegó `docs/research/artes-mejoras-2026-10-21.md`. Adaptación al repo, decisiones `DA-9…14` y etapas AR-M0…M4: `docs/design/artes/PLAN-MEJORAS.md`. Tanda 2 de imágenes (17, sin pedir aún): `PEDIDO-IMAGENES.md`.
-- **Antes de construir la Etapa 1:** Victor decide DA-9 (un estilo para Arte) y sube la Tanda 2-A si quiere el salto visual completo. Lo que no necesita imágenes (barra de la pieza junto al cartón en teléfono, selección más clara, celdas vacías legibles, guardado honesto) se puede hacer ya.
+- **Decisiones DA-5 y DA-9…13 tomadas por Claude por delegación de Victor (2026-10-21), pendientes de que las verifique:** estilo vivo (a), obras con inscripciones tal cual en vista aparte, Mi museo solo en el dispositivo, aviso (no borrado) al acercarse al tope, guía = la cometa sin cara. Ver `PLAN-MEJORAS.md`. Victor pidió que los prompts de imágenes se den siempre en el chat.
+- **Para el salto visual completo:** Victor sube la Tanda 2-A (papeles). Lo que no necesita imágenes (barra de la pieza junto al cartón en teléfono, selección más clara, celdas vacías legibles, guardado honesto) se puede hacer ya.
 - **Pedido a lo compartido (privacidad, importante):** `android:allowBackup="true"` en el manifiesto generado → Android puede subir las creaciones y el progreso de los niños a Google Drive. Poner `"android": { "allowBackup": false }` en `app.json` (y revisar iOS) antes de publicar, y probar copia/restauración. Lo decide Victor (D1/`docs/12`).
 
 ## Siguiente paso exacto
