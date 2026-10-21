@@ -6,7 +6,7 @@ import {
 } from '@lee-conmigo/art-content';
 import { Button, colors, fontFamily, radius } from '@lee-conmigo/ui-native';
 import { SvgStrokeLayer } from '../../screens/svg-stroke-layer';
-import { PAINT_ART } from './art';
+import { MAT_ART, PAINT_ART } from './art';
 
 /** Grosores del pincel en unidades del lienzo lógico (1000 de ancho), y de la goma. */
 const SIZES = [4, 10, 22] as const;
@@ -135,6 +135,10 @@ export function PaintArea({ lang, scene, palette, selected, onSelect, onScene, o
         accessibilityLabel={t.canvasLabel}
       >
         <SvgStrokeLayer strokes={visibleStrokes(d)} viewBox={VIEW_BOX} />
+        {/* el grano del papel va ENCIMA y muy suave: así la goma (que pinta del color del papel) no deja huella lisa */}
+        <View pointerEvents="none" style={StyleSheet.absoluteFill}>
+          <Image source={MAT_ART.paperFibers} resizeMode="cover" accessible={false} style={styles.grain} />
+        </View>
       </View>
       {showHint && strokeCount === 0 && <Text style={styles.hint}>{t.paintEmpty}</Text>}
 
@@ -197,6 +201,7 @@ const styles = StyleSheet.create({
   h3: { fontFamily: fontFamily.ui.black, fontSize: 18, color: colors.navy },
   hint: { fontFamily: fontFamily.ui.bold, fontSize: 15, color: colors.brand },
   canvas: { width: '100%', maxWidth: 1100, aspectRatio: PAPER_W / PAPER_H, alignSelf: 'center', borderRadius: radius.tile, overflow: 'hidden', borderWidth: 2, borderColor: colors.line, backgroundColor: PAPER },
+  grain: { position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', opacity: 0.22 },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 10, alignItems: 'center' },
   swatch: { width: 52, height: 52, borderRadius: 26, borderWidth: 3, borderColor: colors.line, alignItems: 'center', justifyContent: 'center' },
   swatchOn: { borderColor: colors.brand, borderWidth: 4 },

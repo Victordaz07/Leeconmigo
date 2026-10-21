@@ -31,6 +31,8 @@ export interface NotebookCopy {
   removeAsk: string;
   removeYes: string;
   removeNo: string;
+  /** «Guardar en mi cuaderno» del cierre de una sesión. */
+  closing: { button: string; prompt: string; placeholder: string; saved: string };
   privacy: string;
   on: (day: string) => string;
 }
@@ -63,6 +65,7 @@ const ES: NotebookCopy = {
   removeAsk: '¿Quitar esta idea?',
   removeYes: 'Sí, quitarla',
   removeNo: 'No, dejarla',
+  closing: { button: 'Guardar en mi cuaderno', prompt: '¿Qué entendiste o descubriste hoy?', placeholder: 'Escribe una frase corta…', saved: '✓ Guardado en tu cuaderno' },
   privacy: 'Lo que escribes se queda en esta tableta.',
   on: (d) => d,
 };
@@ -95,6 +98,7 @@ const EN: NotebookCopy = {
   removeAsk: 'Remove this idea?',
   removeYes: 'Yes, remove it',
   removeNo: 'No, keep it',
+  closing: { button: 'Save in my notebook', prompt: 'What did you understand or discover today?', placeholder: 'Write a short sentence…', saved: '✓ Saved in your notebook' },
   privacy: 'What you write stays on this tablet.',
   on: (d) => d,
 };
