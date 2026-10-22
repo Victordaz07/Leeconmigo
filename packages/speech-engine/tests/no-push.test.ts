@@ -15,7 +15,7 @@ describe('avisos sin push remoto', () => {
   });
   it('el plugin quita el servicio de push, su inicializador y el descubridor de componentes', () => {
     const src = read('plugins', 'no-push.js');
-    for (const name of ['ExpoFirebaseMessagingService', 'FirebaseInitProvider', 'ComponentDiscoveryService']) expect(src).toContain(name);
+    for (const name of ['ExpoFirebaseMessagingService', 'FirebaseMessagingService', 'FirebaseInstanceIdReceiver', 'FirebaseInitProvider', 'ComponentDiscoveryService', 'c2dm.permission.RECEIVE']) expect(src).toContain(name);
     expect(src).toContain("'tools:node'");
   });
   it('el código de avisos no usa red ni pide un token de envío', () => {
