@@ -1,0 +1,11 @@
+{
+  "name": "@lee-conmigo/life-content",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "«Para la vida» módulos 02–08 (Emociones, Comunicación, Vida digital, Pensamiento crítico, Autonomía, Organización, Emprendimiento): motor de misiones (elegir y comparar, ordenar, detectar señales) y una mini-misión por módulo. Sin pantallas. Cada módulo es un cuaderno aparte (D14).",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": { ".": "./src/index.ts" },
+  "scripts": { "typecheck": "tsc -p tsconfig.json" }
+}
