@@ -1,3 +1,3 @@
 /** Materias que se enchufan por módulo. Lista pura (sin React Native) para poder probarla; `registry.ts` la completa. */
-export const SUBJECT_MODULE_IDS = ['ciencia', 'sociedad', 'arte', 'finanzas', 'mi-cuaderno'] as const;
+export const SUBJECT_MODULE_IDS = ['ciencia', 'sociedad', 'arte', 'finanzas', 'emociones', 'comunicacion', 'digital', 'critico', 'autonomia', 'organizacion', 'emprendimiento', 'mi-cuaderno'] as const;
 export type SubjectModuleId = (typeof SUBJECT_MODULE_IDS)[number];

@@ -176,3 +176,14 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | FI-06 | Textos ES/EN en `ui-core/src/finanzas/` | ✅ | A | `copy.ts` + prueba |
 | FI-07 | Módulo de app `subjects/finanzas/` (cuaderno, sobres, libro, buzón, proyecto) + estantería «Para la vida» | ✅ | A | arte provisional dibujado en código; compartido tocado: ids, registry, subjects, store, tokens, mi-cuaderno |
 | FI-08 | Verificar en 4 tamaños + revisión de un educador financiero | ⬜ | – | |
+
+## Para la vida 02–08 — cuadernos `emociones`, `comunicacion`, `digital`, `critico`, `autonomia`, `organizacion`, `emprendimiento` (D14/D16; `docs/handoff/vida.md`)
+| ID | Qué | Estado | Cuenta | Notas |
+|---|---|---|---|---|
+| PV-01 | Motor de misiones compartido + validador (`packages/life-content`) | ✅ | A | elegir/ordenar/detectar + «Explica» + estrellas por esfuerzo |
+| PV-02 | 7 misiones «Primer vistazo» ES/EN (3 encuentros cada una) | ✅ | A | 04–08 sin investigación completa: revisión de especialista antes de ampliar |
+| PV-03 | 7 cuadernos en la app + fila «Para la vida» en Inicio | ✅ | A | arte provisional en código |
+| PV-04 | Mega pedido de imágenes (43) | ✅ | A | `docs/design/vida/PEDIDO-IMAGENES-MEGA.md`; Victor las genera |
+| PV-05 | Conectar imágenes reales (portadas, escenas, guías) | ⬜ | A | tras recibirlas |
+| PV-06 | Investigar y ampliar 04–08 (una investigación por módulo) | ⬜ | A | no se programa antes de investigar |
+| PV-07 | Revisión de especialistas y prueba con niños | ⬜ | – | |
