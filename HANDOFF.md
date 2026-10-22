@@ -1,11 +1,22 @@
 # HANDOFF — estado actual
-Actualizado: 2026-10-16 · Cuenta: A · Rama: claude/gracious-shannon-a0238d
+Actualizado: 2026-10-22 · Cuenta: A · Rama: claude/gracious-shannon-a0238d
 Último commit: ver `git log -1`
 
 ## Materias en paralelo (D12, 2026-10-16)
 Ciencia (cuenta A) y Sociedad (cuenta B) se trabajan a la vez. Su estado vive en `docs/handoff/ciencia.md` y
 `docs/handoff/sociedad.md` (usa `/retomar ciencia` o `/retomar sociedad`). Este archivo queda para lo general. Reglas:
 `docs/14-MATERIAS-EN-PARALELO.md`. Preparación (PREP-1) hecha: módulos enchufados como "Pronto".
+
+## Dónde está cada cosa (2026-10-22) — LEER PRIMERO si llegas de otra cuenta
+Todo el trabajo está en `master` de `Victordaz07/Leeconmigo` (rama de trabajo `claude/gracious-shannon-a0238d` se reinicia desde `master` tras cada PR). Estado por materia, con «siguiente paso exacto»:
+- Ciencia → `docs/handoff/ciencia.md` · Sociedad → `docs/handoff/sociedad.md` · Arte y música → `docs/handoff/artes.md`
+- Finanzas («Para la vida» 01) → `docs/handoff/finanzas.md` (motor y app hechos; **arte real pendiente**: Victor genera el Lote A/B de `docs/design/finanzas/PEDIDO-IMAGENES.md`)
+- Para la vida 02–08 (Emociones, Comunicación, Vida digital, Pensamiento crítico, Autonomía, Organización, Emprendimiento) → `docs/handoff/vida.md` (instalados como «Primer vistazo» con arte real; faltan investigación de 04–08 y revisión de especialistas)
+- Decisiones confirmadas: `docs/DECISIONS.md` (D1–D16). Hoja de ruta: `docs/ROADMAP.md`. Bitácora corta: `docs/log/SESSION_LOG.md`.
+- Pedidos de imágenes y manifiestos (SHA-256 de los PNG originales, que NO están en el repo): `docs/design/*/PEDIDO-IMAGENES*.md`, `docs/design/*/arte/manifest-*.json`; conversores en `scripts/*-imagenes.py`.
+- Legal: `docs/12-LEGAL-PRIVACIDAD-PUBLICACION.md`, `docs/legal/`, `apps/mobile/src/legal/config.ts`. **Pendientes de Victor:** nombre de quien publica, correo de contacto, URL pública de la política, ley aplicable (y revisión de un abogado; búsqueda manual de la marca «Kitewise»).
+- Fuera del repo (solo Victor / la sesión): los `.zip` con los PNG originales, los APK (se generan a pedido), y la conversación. Un APK solo se construye cuando Victor lo pide.
+- Verificación: `npm run typecheck --workspaces --if-present`, `npm run typecheck -w apps/mobile`, `npm test` (≈1820 pruebas ✅).
 
 ## Tarea en curso
 **K8a hecho (2026-10-21):** Mi cuaderno ya se abre desde Inicio (palabras de Lectura, ideas escritas por el niño, dibujos de Arte). K8b (Logros), «Guardar en mi cuaderno» en los cierres, Mi museo e informe semanal PDF también hechos (2026-10-21); falta APK para probar en Android. Detalle: `docs/log/SESSION_LOG.md`.
