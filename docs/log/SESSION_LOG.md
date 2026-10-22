@@ -422,3 +422,6 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
 
 ## 2026-10-22 · A · FI-05 Finanzas: unidad F4-U01 en JSON + motor de sesión
 Unidad piloto (6 encuentros ES/EN), validador y motor de sesión puro en `packages/finance-content`; estrellas por esfuerzo. 1806 pruebas verdes. Siguiente: textos ES/EN y pantallas (FI-06/07).
+
+## 2026-10-22 · A · FI-06/07 Finanzas: textos ES/EN y módulo en la app
+Cuaderno + reproductor de la unidad F4-U01 (6 encuentros) con arte provisional en código; tarjeta «Finanzas» en la estantería. Probado en 4 tamaños con Chromium. Siguiente: imágenes de Victor y revisión de un educador.

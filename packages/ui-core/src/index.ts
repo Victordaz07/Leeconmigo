@@ -29,3 +29,6 @@ export * from './ciencia/index.ts';
 
 // ---- Sociedad: lo edita solo la cuenta de Sociedad (docs/14) ----
 export * from './sociedad/index.ts';
+
+// ---- Finanzas («Para la vida»): lo edita solo la cuenta de Finanzas (docs/14) ----
+export * from './finanzas/index.ts';

@@ -173,6 +173,6 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | FI-03 | Dominio puro del piloto: UM, libro de movimientos, sobres/imprevistos, costo de oportunidad, ofertas sospechosas | ✅ | A | `packages/finance-content`, 21 pruebas |
 | FI-04 | Lista de imágenes del piloto (portada, escenas, guía) por tanda | ✅ | A | `PEDIDO-IMAGENES.md`; Victor las genera |
 | FI-05 | Unidad F4-U01 en JSON validado + estrellas por esfuerzo | ✅ | A | `content/f4u01.json`, `session.ts`, `validate.ts`; 44 pruebas |
-| FI-06 | Textos ES/EN en `ui-core/src/finanzas/` | ⬜ | A | |
-| FI-07 | Módulo de app `subjects/finanzas/` (cuaderno, sobres, libro, buzón, proyecto) + estantería «Para la vida» | ⬜ | A | toca lo compartido (ids, registry, subjects, store) |
+| FI-06 | Textos ES/EN en `ui-core/src/finanzas/` | ✅ | A | `copy.ts` + prueba |
+| FI-07 | Módulo de app `subjects/finanzas/` (cuaderno, sobres, libro, buzón, proyecto) + estantería «Para la vida» | ✅ | A | arte provisional dibujado en código; compartido tocado: ids, registry, subjects, store, tokens, mi-cuaderno |
 | FI-08 | Verificar en 4 tamaños + revisión de un educador financiero | ⬜ | – | |

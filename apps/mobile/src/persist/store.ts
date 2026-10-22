@@ -30,7 +30,7 @@ export const KEYS = {
 };
 
 /** Materias con guardado genérico. Agregar una aquí también la incluye en "Borrar el progreso". */
-export const SUBJECT_KEYS = ['ciencia', 'sociedad', 'arte', 'mi-cuaderno'] as const;
+export const SUBJECT_KEYS = ['ciencia', 'sociedad', 'arte', 'finanzas', 'mi-cuaderno'] as const;
 export type SubjectKey = (typeof SUBJECT_KEYS)[number];
 
 export function readJSON<T>(kv: KV, key: string, fallback: T): T {
