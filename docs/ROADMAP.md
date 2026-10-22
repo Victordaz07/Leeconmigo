@@ -196,3 +196,4 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | LE-02 | El mapa de la puerta desaparecida (Inés y Teo): adaptar arte y lectura larga | ✅ | Veinte páginas conservadas, fragmentos estables ES/EN, arte revisado y carta de Elena nueva; recorridos completos, ayuda, reanudación, preguntas y repaso comprobados. Pendiente dispositivo físico |
 | LE-03 | Integrar ambos cuentos en master por petición de Victor | ✅ | Fast-forward sin conflictos; requisitos de APK resueltos en LE-04 |
 | LE-04 | Preparar herramientas y generar APK con ambos cuentos | ✅ | Release universal desde 4fefbef, 610 tareas; firma, alineación y modelos/arte verificados. Metadatos en `docs/design/reading-pilot/APK-VERIFICATION.json`; pendiente probar en dispositivo |
+| LE-05 | Alojar APK en una descarga HTTPS para el teléfono | 🟡 | Flujo de publicación por etiqueta preparado y validado con actionlint; pendiente ejecución y descarga comprobada |
