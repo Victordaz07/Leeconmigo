@@ -46,9 +46,13 @@ Los textos alternativos de cada escena se conservan en ambos idiomas. El texto n
 - 1.838 pruebas aprobadas en 125 archivos; TypeScript de todos los paquetes y lint de los archivos afectados aprobados.
 - Build de producción de la app web anterior y exportación web de la app Expo aprobados.
 - Cuatro recorridos completos en Chromium: puente ES/EN nivel 3 y mapa ES/EN nivel 6. Cada uno comprueba los cuatro tamaños, ayuda de vocabulario y petición de pronunciación, reintento, relectura, tres preguntas, tres palabras de repaso, salida/reanudación, preferencias y guardado final. Las pruebas de dominio cubren las ocho variantes de los dos cuentos.
-- Las voces se simulan en las comprobaciones automáticas. Calidad audible, TalkBack/VoiceOver, ergonomía y persistencia del sistema requieren una prueba en Android/iOS real. No se generó APK ni se activó reconocimiento de voz.
-- Integrados en `master` por petición de Victor (2026-10-22), desde `codex/lectura-puente-y-mapa` (12b7030). No se publicó en tienda ni se generó APK.
-- Comprobación adicional de Android: la exportación se detiene por los modelos de voz ausentes (`assets/models/*.bin`, excluidos de Git). `npm run models -w @lee-conmigo/mobile` es el requisito previo habitual; aquí Hugging Face está bloqueado por el proxy (HTTP 403). Descargar los modelos en el entorno de compilación antes de producir el APK.
+- Las voces se simulan en las comprobaciones automáticas. Calidad audible, TalkBack/VoiceOver, ergonomía y persistencia del sistema requieren una prueba en Android/iOS real. El APK se generó posteriormente por petición de Victor; no se activó reconocimiento de voz.
+- Integrados en `master` por petición de Victor (2026-10-22), desde `codex/lectura-puente-y-mapa` (12b7030). Después se generó el APK instalable solicitado, desde el código de 4fefbef. No se publicó en tienda.
+- Android verificado: modelos reales con sus SHA-256 originales, exportación Android, bundle nativo de 506 recursos y `assembleRelease` (610 tareas). Se resolvieron los bloqueos de red de Hugging Face y `repo.reactnative.dev`, y se prepararon SDK 36, NDK 27.1, Gradle 9.3.1 y JDK 17 completo fuera del checkout. Sin cambios de dependencias ni de código para eludir requisitos.
+
+APK de esta entrega: `/workspace/Kitewise-lectura.apk` (335.416.322 bytes), universal para arm64-v8a, armeabi-v7a, x86 y x86_64; `com.kitewise.app`, 0.1.0, Android 7+ (minSdk 24). Release sin servidor, firmado con la llave de pruebas existente de Expo. Firma, alineación ZIP de 16 KB, bundle y los tres modelos/dos ilustraciones nuevas verificados; metadatos y SHA-256 en `APK-VERIFICATION.json`. El binario y los modelos no se versionan. Sigue pendiente la prueba en un dispositivo real.
+
+La preparación y el comando de compilación `/workspace/android-tools/build-apk.sh` están guardados en el borrador de configuración del entorno. Revisar, guardar y publicar el entorno permite conservar esa preparación; guardar el borrador no demuestra restauración en una tarea nueva.
 
 Capturas de la app real:
 

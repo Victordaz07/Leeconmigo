@@ -194,4 +194,5 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 |---|---|---|---|
 | LE-01 | El puente de las luciérnagas: escenas, letra ajustable, ayuda de todas las palabras, preguntas y repaso | ✅ | Lector libre nativo, ES/EN; lógica, TypeScript y recorrido Chromium en cuatro tamaños. `docs/design/reading-pilot/README.md` |
 | LE-02 | El mapa de la puerta desaparecida (Inés y Teo): adaptar arte y lectura larga | ✅ | Veinte páginas conservadas, fragmentos estables ES/EN, arte revisado y carta de Elena nueva; recorridos completos, ayuda, reanudación, preguntas y repaso comprobados. Pendiente dispositivo físico |
-| LE-03 | Integrar ambos cuentos en master por petición de Victor | ✅ | Fast-forward sin conflictos; APK pendiente de modelos locales de voz (Hugging Face bloqueado aquí por proxy HTTP 403) |
+| LE-03 | Integrar ambos cuentos en master por petición de Victor | ✅ | Fast-forward sin conflictos; requisitos de APK resueltos en LE-04 |
+| LE-04 | Preparar herramientas y generar APK con ambos cuentos | ✅ | Release universal desde 4fefbef, 610 tareas; firma, alineación y modelos/arte verificados. Metadatos en `docs/design/reading-pilot/APK-VERIFICATION.json`; pendiente probar en dispositivo |

@@ -1,0 +1,32 @@
+{
+  "apk": "/workspace/Kitewise-lectura.apk",
+  "sourceCommit": "4fefbef2aa41c633fd5b8462dbf692e6f554beec",
+  "bytes": 335416322,
+  "sha256": "3d3889fac86150874b878dd45500023ebe06ffe7659fd4bdc139ce901dfdbdca",
+  "signatureVerified": true,
+  "debuggable": false,
+  "architectures": [
+    "arm64-v8a",
+    "armeabi-v7a",
+    "x86",
+    "x86_64"
+  ],
+  "assetsVerified": {
+    "apps/mobile/assets/models/ggml-tiny-q8_0.bin": "res/01.bin",
+    "apps/mobile/assets/models/ggml-silero-v6.2.0.bin": "res/1d.bin",
+    "apps/reader/public/stories/el-puente-de-las-luciernagas/reader/scene-01.webp": "res/IS.webp",
+    "apps/mobile/assets/models/ggml-base-q5_1.bin": "res/_A.bin",
+    "apps/reader/public/stories/mapa-de-la-puerta-desaparecida/reader/letter.webp": "res/uL.webp"
+  },
+  "deviceTested": false,
+  "date": "2026-10-22",
+  "build": "assembleRelease",
+  "buildSuccessful": true,
+  "actionableTasks": 610,
+  "zipAlignment16KBVerified": true,
+  "signing": "Existing Expo debug key; installable family-test release APK, not a Play Store signing identity",
+  "package": "com.kitewise.app",
+  "version": "0.1.0",
+  "minSdk": 24,
+  "targetSdk": 36
+}

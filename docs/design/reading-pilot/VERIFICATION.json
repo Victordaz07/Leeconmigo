@@ -1,6 +1,6 @@
 {
   "date": "2026-10-22",
-  "scope": "Prepared free-reading editions; no APK, deployment or audible-device validation",
+  "scope": "Prepared free-reading editions and installable Android test APK; no store publication or audible-device validation",
   "tests": {
     "command": "npm test -- --maxWorkers=3",
     "filesPassed": 125,
@@ -52,5 +52,8 @@
       "result": "passed"
     }
   ],
-  "manual": "Source artwork, curated rectangles and actual app captures inspected; spoken output and native device ergonomics remain to be checked."
+  "manual": "Source artwork, curated rectangles and actual app captures inspected; spoken output and native device ergonomics remain to be checked.",
+  "androidExport": "passed with real models",
+  "androidReleaseBuild": "passed: assembleRelease, 610 actionable tasks",
+  "apkVerification": "APK-VERIFICATION.json: signature, ZIP alignment, embedded bundle, four architectures, original model/art hashes"
 }
