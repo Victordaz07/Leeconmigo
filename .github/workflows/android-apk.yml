@@ -43,7 +43,7 @@ jobs:
           PY
       - name: Instalar dependencias y modelos verificados
         run: |
-          npm ci --no-audit --no-fund
+          npm ci --include=dev --no-audit --no-fund
           npm run models -w @lee-conmigo/mobile
       - name: Generar proyecto Android
         run: npm exec --workspace @lee-conmigo/mobile -- expo prebuild --platform android --no-install

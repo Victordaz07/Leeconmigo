@@ -26,6 +26,8 @@ function sources(dir) {
     e.isDirectory() ? sources(path.join(dir, e.name)) : e.name.endsWith('.cpp') ? [path.join(dir, e.name)] : []);
 }
 try {
+  assert.ok(ts.ModuleKind && ts.JsxEmit && ts.transpileModule,
+    'Mobile TypeScript compiler API missing: install development tools with npm ci --include=dev.');
   const binary = path.join(temp, 'probe');
   run(process.env.CXX || 'g++', ['-std=c++20', '-O0', '-I', yoga,
     path.join(root, 'scripts/notebook-layout-probe.cpp'), ...sources(path.join(yoga, 'yoga')), '-o', binary]);
@@ -62,6 +64,10 @@ try {
     }
   }
   console.log(`PASS: ${checked} notebook layouts, six phone/tablet sizes, native Yoga from installed React Native.`);
+} catch (error) {
+  // Surface useful diagnostics via the Checks API even when CI log storage is unavailable.
+  if (process.env.GITHUB_ACTIONS) console.error(`::error::${String(error).replaceAll('%', '%25').replaceAll('\r', '%0D').replaceAll('\n', '%0A')}`);
+  throw error;
 } finally {
   fs.rmSync(temp, { recursive: true, force: true });
 }
