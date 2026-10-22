@@ -4,13 +4,14 @@
  * Se guarda en el equipo (RN-08, `persist/`): SQLite local, sin red. Solo datos derivados, nunca audio (docs/07). Agregar
  * o editar niños se hace en Modo padres con PIN (K4). El nivel es de la app, NO el grado escolar (docs/01).
  */
+import { isLegalConsent, type LegalConsent } from './legal/consent';
 import { emptyReminders, isReminderSettings, type ReminderSettings } from './reminders/model';
 import type { FocusSettings, ReadingProfile } from '@lee-conmigo/contracts';
 import { DEFAULT_FOCUS, normalizeFocus, type ProgressStore } from '@lee-conmigo/session-engine';
 import type { MathAttempt, ReviewEntry } from '@lee-conmigo/math-content';
 import { DEFAULT_DAILY_GOAL_MINUTES } from '@lee-conmigo/ui-core';
 import { deviceKV } from './persist/kv';
-import { eraseChild, KEYS, loadMath, loadSubject, PersistentProgressStore, readJSON, saveMath, saveSubject, writeJSON, type KV, type SubjectKey } from './persist/store';
+import { eraseChild, eraseEverything, KEYS, loadMath, loadSubject, PersistentProgressStore, readJSON, saveMath, saveSubject, writeJSON, type KV, type SubjectKey } from './persist/store';
 
 export interface ChildProfile extends ReadingProfile {
   id: string;
@@ -64,6 +65,21 @@ export const loadReminderSettings = (): ReminderSettings => {
   return isReminderSettings(v) ? v : emptyReminders();
 };
 export const saveReminderSettings = (s: ReminderSettings) => writeJSON(kv, KEYS.reminders, s);
+
+/** Aceptación del aviso legal (docs/12 §2). Lo guardado con otra forma se ignora (se vuelve a pedir). */
+export const loadLegalConsent = (): LegalConsent | null => {
+  const v = readJSON<unknown>(kv, KEYS.legal, {});
+  return isLegalConsent(v) ? v : null;
+};
+export const saveLegalConsent = (c: LegalConsent) => writeJSON(kv, KEYS.legal, c);
+
+/** «Borrar todos los datos» (Modo padres → Legal y privacidad): deja la app como recién instalada. */
+export function eraseAllData(): void {
+  const ids = [...new Set([...loadProfiles().map((p) => p.id), ...PROFILES.map((p) => p.id)])];
+  stores.clear();
+  mathStores.clear();
+  eraseEverything(kv, ids);
+}
 
 const stores = new Map<string, ProgressStore>();
 

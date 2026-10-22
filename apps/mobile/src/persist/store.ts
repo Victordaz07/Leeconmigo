@@ -19,6 +19,8 @@ export const KEYS = {
   pin: `${PREFIX}pin`,
   /** Recordatorios locales (Modo padres). */
   reminders: `${PREFIX}reminders`,
+  /** Aceptación del aviso legal por el adulto (versión + fecha). */
+  legal: `${PREFIX}legal`,
   reading: (id: string) => `${PREFIX}reading.${id}`,
   math: (id: string) => `${PREFIX}math.${id}`,
   /** Datos de una materia nueva (Ciencia, Sociedad…) de un niño: `kitewise.v1.<materia>.<niño>`. */
@@ -116,6 +118,15 @@ export function loadSubject<T>(kv: KV, subject: SubjectKey, id: string, fallback
   return valid(v) ? v : fallback;
 }
 export const saveSubject = (kv: KV, subject: SubjectKey, id: string, value: unknown) => writeJSON(kv, KEYS.subject(subject, id), value);
+
+/** «Borrar todos los datos» (docs/12 §6): perfiles, PIN, recordatorios, aceptación legal y el progreso de TODOS los niños. */
+export function eraseEverything(kv: KV, childIds: string[]) {
+  for (const id of childIds) eraseChild(kv, id);
+  kv.remove(KEYS.profiles);
+  kv.remove(KEYS.pin);
+  kv.remove(KEYS.reminders);
+  kv.remove(KEYS.legal);
+}
 
 /** "Borrar el progreso" de un niño (docs/12 §6): Lectura, Matemáticas y las demás materias. */
 export function eraseChild(kv: KV, id: string) {
