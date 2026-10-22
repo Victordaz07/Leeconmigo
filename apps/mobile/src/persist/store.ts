@@ -17,6 +17,8 @@ const PREFIX = 'kitewise.v1.';
 export const KEYS = {
   profiles: `${PREFIX}profiles`,
   pin: `${PREFIX}pin`,
+  /** Recordatorios locales (Modo padres). */
+  reminders: `${PREFIX}reminders`,
   reading: (id: string) => `${PREFIX}reading.${id}`,
   math: (id: string) => `${PREFIX}math.${id}`,
   /** Datos de una materia nueva (Ciencia, Sociedad…) de un niño: `kitewise.v1.<materia>.<niño>`. */

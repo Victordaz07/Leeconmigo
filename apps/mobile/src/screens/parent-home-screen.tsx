@@ -15,6 +15,8 @@ interface ParentHomeScreenProps {
   onSettings: () => void;
   /** Informe semanal en PDF (Kitewise P5). */
   onReport: () => void;
+  /** Recordatorios locales. */
+  onReminders: () => void;
 }
 
 const WEEKDAY = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
@@ -26,7 +28,7 @@ const BAR_MAX = 120;
  * dice ("Hoy todavía no ha leído"), nunca se rellena. Sin grabaciones porque no existen (docs/01, docs/07). Las partes del
  * diseño que dependen de funciones que aún no existen (Aula/foto de tarea, Enfoque adaptativo) no se muestran.
  */
-export function ParentHomeScreen({ profile, report, repository, onBack, onSettings, onReport }: ParentHomeScreenProps) {
+export function ParentHomeScreen({ profile, report, repository, onBack, onSettings, onReport, onReminders }: ParentHomeScreenProps) {
   const insets = useSafeAreaInsets();
   const r = report;
   const layout = useLayout();
@@ -42,6 +44,7 @@ export function ParentHomeScreen({ profile, report, repository, onBack, onSettin
           <Text style={styles.kicker}>Modo padres · {WEEKDAY[new Date().getDay()]}</Text>
           <Text style={[styles.title, layout.phone && styles.titleSmall]}>Hoy con {profile.name}</Text>
         </View>
+        <Button label="Recordatorios" variant="secondary" onPress={onReminders} />
         <Button label="Informe semanal" variant="secondary" onPress={onReport} />
         <Button label="Ajustes" variant="secondary" onPress={onSettings} />
         <View style={[styles.childChip, layout.narrow && styles.hidden]}>

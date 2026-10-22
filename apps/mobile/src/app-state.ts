@@ -4,6 +4,7 @@
  * Se guarda en el equipo (RN-08, `persist/`): SQLite local, sin red. Solo datos derivados, nunca audio (docs/07). Agregar
  * o editar niños se hace en Modo padres con PIN (K4). El nivel es de la app, NO el grado escolar (docs/01).
  */
+import { emptyReminders, isReminderSettings, type ReminderSettings } from './reminders/model';
 import type { FocusSettings, ReadingProfile } from '@lee-conmigo/contracts';
 import { DEFAULT_FOCUS, normalizeFocus, type ProgressStore } from '@lee-conmigo/session-engine';
 import type { MathAttempt, ReviewEntry } from '@lee-conmigo/math-content';
@@ -56,6 +57,13 @@ export const saveProfiles = (list: ChildProfile[]) => writeJSON(kv, KEYS.profile
 /** PIN de padres. Es un candado para que el niño no entre solo, no una contraseña: vive en el equipo. */
 export const loadPin = (): string | null => kv.get(KEYS.pin);
 export const savePin = (pin: string | null) => (pin ? kv.set(KEYS.pin, pin) : kv.remove(KEYS.pin));
+
+/** Recordatorios (Modo padres → Recordatorios): ajustes del equipo; lo guardado que no tenga la forma esperada se ignora. */
+export const loadReminderSettings = (): ReminderSettings => {
+  const v = readJSON<unknown>(kv, KEYS.reminders, emptyReminders());
+  return isReminderSettings(v) ? v : emptyReminders();
+};
+export const saveReminderSettings = (s: ReminderSettings) => writeJSON(kv, KEYS.reminders, s);
 
 const stores = new Map<string, ProgressStore>();
 

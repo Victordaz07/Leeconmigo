@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
+import { AppState, FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Button, Card, colors, fontFamily, GearIcon, HomeIcon, MathArtProvider, NavRail, TrophyIcon, useLayout, type NavRailItem } from '@lee-conmigo/ui-native';
 import { resolveFocus, todayReport } from '@lee-conmigo/session-engine';
@@ -23,6 +23,8 @@ import { WorkshopScreen } from './src/screens/math-visual/workshop-screen';
 import { NotebookScreen } from './src/screens/notebook-screen';
 import { ParentGateScreen } from './src/screens/parent-gate-screen';
 import { ParentHomeScreen } from './src/screens/parent-home-screen';
+import { ParentRemindersScreen } from './src/screens/parent-reminders-screen';
+import { syncReminders } from './src/reminders/sync';
 import { ParentReportScreen } from './src/screens/parent-report-screen';
 import { ParentSettingsScreen } from './src/screens/parent-settings-screen';
 import { ProfilesScreen } from './src/screens/profiles-screen';
@@ -37,6 +39,7 @@ type Route =
   | { name: 'parentGate'; next: 'parents' | 'addChild' }
   | { name: 'parents' }
   | { name: 'parentReport' }
+  | { name: 'parentReminders' }
   | { name: 'settings'; isNew: boolean }
   | { name: 'voiceTest' }
   | { name: 'audioTest' }
@@ -98,6 +101,12 @@ function Root() {
   );
   // Sube cada vez que cambia el progreso (se salió de una lectura, se borró): hay que recalcular Inicio y el cuaderno.
   const [progressVersion, setProgressVersion] = useState(0);
+  // Los avisos locales se reprograman al abrir la app, al volver a ella y al terminar una sesión (si hoy ya leyó, hoy no se avisa).
+  useEffect(() => {
+    void syncReminders(profiles);
+    const sub = AppState.addEventListener('change', (state) => state === 'active' && void syncReminders(profiles));
+    return () => sub.remove();
+  }, [profiles, progressVersion]);
   const model = useMemo(() => (profile ? buildLibraryModel(repository, progressStoreFor(profile.id), profile) : null), [repository, profile, progressVersion]);
 
   if (!fontsLoaded) return <View style={styles.screen} />;
@@ -171,9 +180,11 @@ function Root() {
         onBack={home}
         onSettings={() => setRoute({ name: 'settings', isNew: false })}
         onReport={() => setRoute({ name: 'parentReport' })}
+        onReminders={() => setRoute({ name: 'parentReminders' })}
       />
     );
   }
+  if (route.name === 'parentReminders') return <ParentRemindersScreen profiles={profiles} onBack={() => setRoute({ name: 'parents' })} />;
   if (route.name === 'parentReport') {
     return <ParentReportScreen profile={profile} summaries={progressStoreFor(profile.id).summaries()} goalMinutes={minutes} repository={repository} onBack={() => setRoute({ name: 'parents' })} />;
   }

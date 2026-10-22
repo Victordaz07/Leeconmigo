@@ -395,3 +395,9 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
 ## 2026-10-21 · cuenta A · Cierres → cuaderno, grano de papel, Mi museo, informe PDF
 - PRs #32–#34 fusionados: «Guardar en mi cuaderno» en los cierres, grano de papel en la pintura, Mi museo (AR-M2), informe semanal en PDF (K8c, P5). 1725 pruebas verdes.
 - Siguiente: APK a pedido de Victor (módulos nativos nuevos) y verificar en Android; luego AR-06c. Detalle en `docs/handoff/artes.md`.
+
+## 2026-10-22 · cuenta A · Recordatorios locales (K8d)
+- Modo padres → «Recordatorios»: aviso diario de lectura por niño (hora y días a elección; por defecto apagado, L–V 16:30) y aviso semanal de que el resumen está listo. Todo local; el permiso de notificaciones se pide solo al activar un aviso.
+- Reglas: amables y sin culpa (D5); si hoy ya leyó no se avisa; solo se programan 7 días hacia adelante (si no abre la app en una semana, se acaban solos); se reprograman al abrir la app, al volver a ella y al terminar una sesión.
+- Privacidad: `expo-notifications` trae Firebase por dentro → plugin `no-push.js` lo quita del manifiesto + prueba de guardia. Pendiente verificar el manifiesto final del APK.
+- Toca lo compartido (mínimo): `App.tsx`, `parent-home-screen.tsx`, `app-state.ts`, `persist/store.ts`, `app.json`, `package.json`/lock.
