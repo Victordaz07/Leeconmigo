@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { SessionSummary } from '@lee-conmigo/contracts';
-import { eraseChild, KEYS, loadMath, loadSubject, PersistentProgressStore, saveMath, saveSubject, SUBJECT_KEYS, type KV } from '../src/persist/store.ts';
+import { eraseChild, eraseEverything, KEYS, loadMath, loadSubject, PersistentProgressStore, saveMath, saveSubject, SUBJECT_KEYS, type KV } from '../src/persist/store.ts';
 
 const memoryKV = (): KV & { data: Map<string, string> } => {
   const data = new Map<string, string>();
@@ -8,6 +8,16 @@ const memoryKV = (): KV & { data: Map<string, string> } => {
 };
 
 describe('guardar en el equipo (RN-08)', () => {
+  it('borrar progreso conserva el tamaño de lectura; borrar todos los datos lo elimina por niño', () => {
+    const kv = memoryKV();
+    kv.set(KEYS.readerPrefs('noah'), '{"size":31}');
+    kv.set(KEYS.readerPrefs('ana'), '{"size":27}');
+    eraseChild(kv, 'noah');
+    expect(kv.get(KEYS.readerPrefs('noah'))).toBe('{"size":31}');
+    eraseEverything(kv, ['noah']);
+    expect(kv.get(KEYS.readerPrefs('noah'))).toBeNull();
+    expect(kv.get(KEYS.readerPrefs('ana'))).toBe('{"size":27}');
+  });
   it('el progreso de Lectura sobrevive a "cerrar y abrir" la app', () => {
     const kv = memoryKV();
     const a = new PersistentProgressStore(kv, KEYS.reading('noah'));

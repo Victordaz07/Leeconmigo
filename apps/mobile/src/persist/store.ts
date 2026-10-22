@@ -137,7 +137,10 @@ export function applyFreeReadingDefault<P extends { freeReading: boolean }>(kv: 
 
 /** «Borrar todos los datos» (docs/12 §6): perfiles, PIN, recordatorios, aceptación legal y el progreso de TODOS los niños. */
 export function eraseEverything(kv: KV, childIds: string[]) {
-  for (const id of childIds) eraseChild(kv, id);
+  for (const id of childIds) {
+    eraseChild(kv, id);
+    kv.remove(KEYS.readerPrefs(id));
+  }
   kv.remove(KEYS.profiles);
   kv.remove(KEYS.pin);
   kv.remove(KEYS.reminders);
@@ -148,7 +151,6 @@ export function eraseEverything(kv: KV, childIds: string[]) {
 /** "Borrar el progreso" de un niño (docs/12 §6): Lectura, Matemáticas y las demás materias. */
 export function eraseChild(kv: KV, id: string) {
   kv.remove(KEYS.reading(id));
-  kv.remove(KEYS.readerPrefs(id));
   kv.remove(KEYS.math(id));
   for (const s of SUBJECT_KEYS) kv.remove(KEYS.subject(s, id));
 }

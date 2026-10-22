@@ -11,7 +11,7 @@ Petición de Victor, 2026-10-22: preparar primero **El puente de las luciérnaga
 - Tocar cualquier palabra abre su ayuda y solicita pronunciación mediante el servicio `tts.ts` existente. El botón de la ficha permite repetirla. Se conserva el vocabulario editorial y no se generan definiciones al vuelo.
 - Hasta tres preguntas del contenido existente, en límites de página, con pista, reintento y relectura del pasaje; después, repaso de tres palabras por sílabas usando el motor compartido.
 - El marcador conserva página editorial, bloque y párrafo. Los marcadores antiguos de página siguen siendo válidos. Cambiar orientación o letra mantiene el fragmento. El cierre guarda una sola sesión y distingue tiempo de lectura libre de voz/simulación.
-- Las preferencias de letra se incluyen en el borrado por niño.
+- Borrar todos los datos elimina las preferencias de letra. Borrar solo el progreso conserva esos ajustes de accesibilidad.
 
 ## Organización
 
@@ -33,6 +33,27 @@ El script crea perfiles de prueba en un contexto de navegador aislado, comprueba
 
 LE-01: suite completa 1.834 pruebas aprobadas; TypeScript de todos los paquetes aprobado; recorrido completo ES/EN del puente aprobado en Chromium. Quedan para dispositivo físico la calidad de voz, accesibilidad del sistema y ergonomía táctil.
 
-## Siguiente cuento
+## Segundo cuento: El mapa de la puerta desaparecida
 
-LE-02: adaptar **El mapa de la puerta desaparecida** con su estilo de lectura de nivel 6, conservando sus veinte páginas editoriales y todas sus palabras. Revisar qué imagen corresponde a cada momento antes de definir los encuadres y los fragmentos.
+LE-02 terminado después de cerrar LE-01. Se conservan las veinte páginas editoriales, todas sus palabras, preguntas y vocabulario de nivel 6 en ES/EN. La edición las presenta en 47 fragmentos ES y 44 EN, cortados únicamente entre párrafos; el tamaño de pantalla no altera esos límites ni sus marcadores.
+
+Los encuadres recuperan la parte ilustrada del libro original y excluyen las zonas reservadas para texto. Se corrigieron las asociaciones de «Alguien tras la verja», «El jardín de hoy», «Un círculo bajo las hojas» y «Un camino seguro», reutilizando escenas pertinentes del mismo libro. «Una carta devuelta» tiene una ilustración nueva de Elena escribiendo en casa con Inés y Teo; ya no usa la escena de Nora con el álbum. Las dos imágenes nuevas conservan sus referencias de personajes. Inventario, dimensiones y SHA-256: `ART-MANIFEST.json`.
+
+Los textos alternativos de cada escena se conservan en ambos idiomas. El texto narrativo original permanece intacto. No se produjeron imágenes nuevas para sustituir arte que podía recuperarse con un encuadre revisado.
+
+## Resultado final y revisión
+
+- 1.838 pruebas aprobadas en 125 archivos; TypeScript de todos los paquetes y lint de los archivos afectados aprobados.
+- Build de producción de la app web anterior y exportación web de la app Expo aprobados.
+- Cuatro recorridos completos en Chromium: puente ES/EN nivel 3 y mapa ES/EN nivel 6. Cada uno comprueba los cuatro tamaños, ayuda de vocabulario y petición de pronunciación, reintento, relectura, tres preguntas, tres palabras de repaso, salida/reanudación, preferencias y guardado final. Las pruebas de dominio cubren las ocho variantes de los dos cuentos.
+- Las voces se simulan en las comprobaciones automáticas. Calidad audible, TalkBack/VoiceOver, ergonomía y persistencia del sistema requieren una prueba en Android/iOS real. No se generó APK ni se activó reconocimiento de voz.
+- Los cambios están en `codex/lectura-puente-y-mapa`; no se fusionaron en `master`.
+
+Capturas de la app real:
+
+| | Tableta | Teléfono | Ayuda de palabra |
+|---|---|---|---|
+| Puente | [Ver](previews/bridge-tablet.webp) | [Ver](previews/bridge-phone.webp) | [Ver](previews/bridge-word-help.webp) |
+| Mapa | [Ver](previews/map-tablet.webp) | [Ver](previews/map-phone.webp) | [Ver](previews/map-word-help.webp) |
+
+Para repetir ambos recorridos, omitir el último argumento de `scripts/reading-pilot-smoke.mjs`. Los resultados estructurados se guardan en `VERIFICATION.json`. No se publicó ni se desplegó una web. La aplicación sigue funcionando localmente y la ayuda utiliza el TTS existente.

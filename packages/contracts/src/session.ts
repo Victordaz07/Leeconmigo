@@ -35,7 +35,7 @@ export interface SessionSummary {
   completedAt: string;
 }
 
-/** Dónde retomar una historia a medias. Granularidad de página: se retoma al inicio de la página. */
+/** Dónde retomar una historia a medias. Sin ancla de bloque/párrafo se retoma al inicio de la página editorial. */
 export interface ResumePoint {
   storyId: string;
   pageIndex: number;

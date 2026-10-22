@@ -1,0 +1,401 @@
+{
+  "version": 1,
+  "familyId": "mapa-de-la-puerta-desaparecida",
+  "maxWordsPerUnit": 150,
+  "scenes": [
+    {
+      "pageId": "p01",
+      "blockId": "b01",
+      "illustration": {
+        "src": "stories/mapa-de-la-puerta-desaparecida/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Inés y Teo examinan un mapa antiguo junto a un libro abierto."
+      },
+      "crop": {
+        "x": 770,
+        "y": 0,
+        "width": 766,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Inés y Teo examinan un mapa antiguo junto a un libro abierto.",
+        "en": "Inés and Teo examine an old map beside an open book."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b02",
+      "illustration": {
+        "src": "stories/mapa-de-la-puerta-desaparecida/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Inés señala el arco tapiado mientras Teo compara el mapa."
+      },
+      "crop": {
+        "x": 0,
+        "y": 520,
+        "width": 1536,
+        "height": 504
+      },
+      "alt": {
+        "es": "Inés señala el arco tapiado mientras Teo compara el mapa.",
+        "en": "Inés points to the bricked-up arch while Teo compares the map."
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b03",
+      "illustration": {
+        "src": "stories/mapa-de-la-puerta-desaparecida/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Elena muestra a sus nietos una fotografía del antiguo jardín."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 750,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Elena muestra a sus nietos una fotografía del antiguo jardín.",
+        "en": "Elena shows her grandchildren a photograph of the old garden."
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b04",
+      "illustration": {
+        "src": "stories/mapa-de-la-puerta-desaparecida/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Elena recuerda el arco y una fotografía de la tormenta."
+      },
+      "crop": {
+        "x": 0,
+        "y": 400,
+        "width": 1536,
+        "height": 624
+      },
+      "alt": {
+        "es": "Elena recuerda el arco y una fotografía de la tormenta.",
+        "en": "Elena recalls the arch and a photograph of the storm."
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b05",
+      "illustration": {
+        "src": "stories/mapa-de-la-puerta-desaparecida/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Inés y Teo comparan su mapa con la calle y una verja azul."
+      },
+      "crop": {
+        "x": 0,
+        "y": 290,
+        "width": 1536,
+        "height": 734
+      },
+      "alt": {
+        "es": "Inés y Teo comparan su mapa con la calle y una verja azul.",
+        "en": "Inés and Teo compare their map with the street and a blue gate."
+      }
+    },
+    {
+      "pageId": "p06",
+      "blockId": "b06",
+      "illustration": {
+        "src": "stories/mapa-de-la-puerta-desaparecida/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Los primos estudian las líneas y los dobleces del mapa."
+      },
+      "crop": {
+        "x": 0,
+        "y": 290,
+        "width": 1536,
+        "height": 734
+      },
+      "alt": {
+        "es": "Los primos estudian las líneas y los dobleces del mapa.",
+        "en": "The cousins study the lines and folds of the map."
+      }
+    },
+    {
+      "pageId": "p07",
+      "blockId": "b07",
+      "illustration": {
+        "src": "stories/mapa-de-la-puerta-desaparecida/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Samuel conversa con Inés y Teo junto a la verja del jardín."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 842,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Samuel conversa con Inés y Teo junto a la verja del jardín.",
+        "en": "Samuel talks with Inés and Teo near the garden gate."
+      }
+    },
+    {
+      "pageId": "p08",
+      "blockId": "b08",
+      "illustration": {
+        "src": "stories/mapa-de-la-puerta-desaparecida/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Los primos escuchan al vecino y observan la verja sin entrar."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 842,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Los primos escuchan al vecino y observan la verja sin entrar.",
+        "en": "The cousins listen to their neighbor and look at the gate without entering."
+      }
+    },
+    {
+      "pageId": "p09",
+      "blockId": "b09",
+      "illustration": {
+        "src": "stories/mapa-de-la-puerta-desaparecida/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Una adulta ayuda a los primos a ordenar fotografías antiguas."
+      },
+      "crop": {
+        "x": 0,
+        "y": 450,
+        "width": 1536,
+        "height": 574
+      },
+      "alt": {
+        "es": "Una adulta ayuda a los primos a ordenar fotografías antiguas.",
+        "en": "An adult helps the cousins put old photographs in order."
+      }
+    },
+    {
+      "pageId": "p10",
+      "blockId": "b10",
+      "illustration": {
+        "src": "stories/mapa-de-la-puerta-desaparecida/page-11.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Nora aparece al otro lado de la verja azul."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 842,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Nora aparece al otro lado de la verja azul.",
+        "en": "Nora appears on the other side of the blue gate."
+      }
+    },
+    {
+      "pageId": "p11",
+      "blockId": "b11",
+      "illustration": {
+        "src": "stories/mapa-de-la-puerta-desaparecida/page-11.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Nora abre la verja para recibir a Inés y Teo."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 842,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Nora abre la verja para recibir a Inés y Teo.",
+        "en": "Nora opens the gate to welcome Inés and Teo."
+      }
+    },
+    {
+      "pageId": "p12",
+      "blockId": "b12",
+      "illustration": {
+        "src": "stories/mapa-de-la-puerta-desaparecida/page-13.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Nora y los primos observan las plantas del jardín actual."
+      },
+      "crop": {
+        "x": 0,
+        "y": 345,
+        "width": 1536,
+        "height": 679
+      },
+      "alt": {
+        "es": "Nora y los primos observan las plantas del jardín actual.",
+        "en": "Nora and the cousins look at the plants in the garden today."
+      }
+    },
+    {
+      "pageId": "p13",
+      "blockId": "b13",
+      "illustration": {
+        "src": "stories/mapa-de-la-puerta-desaparecida/page-13.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Nora muestra semillas a Inés y Teo en una mesa del jardín."
+      },
+      "crop": {
+        "x": 0,
+        "y": 345,
+        "width": 1536,
+        "height": 679
+      },
+      "alt": {
+        "es": "Nora muestra semillas a Inés y Teo en una mesa del jardín.",
+        "en": "Nora shows seeds to Inés and Teo at a garden table."
+      }
+    },
+    {
+      "pageId": "p14",
+      "blockId": "b14",
+      "illustration": {
+        "src": "stories/mapa-de-la-puerta-desaparecida/page-15.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Inés y Teo observan un círculo de piedras entre las hojas."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 874,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Inés y Teo observan un círculo de piedras entre las hojas.",
+        "en": "Inés and Teo examine a circle of stones among the leaves."
+      }
+    },
+    {
+      "pageId": "p15",
+      "blockId": "b15",
+      "illustration": {
+        "src": "stories/mapa-de-la-puerta-desaparecida/page-15.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Los primos estudian la marca de piedras del antiguo jardín."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 874,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Los primos estudian la marca de piedras del antiguo jardín.",
+        "en": "The cousins study the stone mark in the old garden."
+      }
+    },
+    {
+      "pageId": "p16",
+      "blockId": "b16",
+      "illustration": {
+        "src": "stories/mapa-de-la-puerta-desaparecida/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Los primos revisan un camino que llega a la verja azul."
+      },
+      "crop": {
+        "x": 0,
+        "y": 290,
+        "width": 1536,
+        "height": 734
+      },
+      "alt": {
+        "es": "Los primos revisan un camino que llega a la verja azul.",
+        "en": "The cousins check a route leading to the blue gate."
+      }
+    },
+    {
+      "pageId": "p17",
+      "blockId": "b17",
+      "illustration": {
+        "src": "stories/mapa-de-la-puerta-desaparecida/page-17.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Nora comparte con Inés y Teo un álbum de recuerdos."
+      },
+      "crop": {
+        "x": 0,
+        "y": 480,
+        "width": 1536,
+        "height": 544
+      },
+      "alt": {
+        "es": "Nora comparte con Inés y Teo un álbum de recuerdos.",
+        "en": "Nora shares an album of memories with Inés and Teo."
+      }
+    },
+    {
+      "pageId": "p18",
+      "blockId": "b18",
+      "illustration": {
+        "src": "stories/mapa-de-la-puerta-desaparecida/reader/letter.webp",
+        "width": 1448,
+        "height": 1086,
+        "alt": "Elena escribe una carta en casa mientras Inés y Teo la acompañan."
+      },
+      "alt": {
+        "es": "Elena escribe una carta en casa mientras Inés y Teo la acompañan.",
+        "en": "Elena writes a letter at home while Inés and Teo keep her company."
+      }
+    },
+    {
+      "pageId": "p19",
+      "blockId": "b19",
+      "illustration": {
+        "src": "stories/mapa-de-la-puerta-desaparecida/page-19.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Elena regresa al jardín con sus nietos."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 946,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Elena regresa al jardín con sus nietos.",
+        "en": "Elena returns to the garden with her grandchildren."
+      }
+    },
+    {
+      "pageId": "p20",
+      "blockId": "b20",
+      "illustration": {
+        "src": "stories/mapa-de-la-puerta-desaparecida/page-20.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Elena, Nora y los niños comparten libros bajo el naranjo."
+      },
+      "crop": {
+        "x": 0,
+        "y": 400,
+        "width": 1536,
+        "height": 624
+      },
+      "alt": {
+        "es": "Elena, Nora y los niños comparten libros bajo el naranjo.",
+        "en": "Elena, Nora and the children share books under the orange tree."
+      }
+    }
+  ]
+}

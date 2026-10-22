@@ -5,7 +5,7 @@ export interface ReadingEdition {
   version: 1;
   familyId: string;
   maxWordsPerUnit: number;
-  scenes: Array<{ pageId: string; blockId: string; illustration: IllustrationRef; crop?: PixelRect }>;
+  scenes: Array<{ pageId: string; blockId: string; illustration: IllustrationRef; crop?: PixelRect; alt?: Partial<Record<Story['language'], string>> }>;
 }
 
 export interface ReadingAnchor {
@@ -61,7 +61,7 @@ export function prepareReading(story: Story, edition: ReadingEdition): PreparedR
         const { layout: _layout, ...text } = block;
         pages.push({
           id: `${page.id}-${block.id}-l${start}`,
-          illustration: scene.illustration,
+          illustration: { ...scene.illustration, alt: scene.alt?.[story.language] ?? scene.illustration.alt },
           blocks: [{ ...text, lines: block.lines.slice(start, end) }],
           ...(lastInPage && page.checkpoint ? { checkpoint: page.checkpoint } : {}),
         });

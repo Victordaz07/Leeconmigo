@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-22",
+  "scope": "Prepared free-reading editions; no APK, deployment or audible-device validation",
+  "tests": {
+    "command": "npm test -- --maxWorkers=3",
+    "filesPassed": 125,
+    "testsPassed": 1838
+  },
+  "typecheck": "all workspaces passed",
+  "lint": "changed TypeScript files passed",
+  "webBuild": "apps/reader production build passed",
+  "expoExport": "web export passed",
+  "browser": [
+    {
+      "story": "el-puente-de-las-luciernagas-es-n3",
+      "parts": 10,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "el-puente-de-las-luciernagas-en-n3",
+      "parts": 10,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "mapa-de-la-puerta-desaparecida-es-n6",
+      "parts": 47,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "mapa-de-la-puerta-desaparecida-en-n6",
+      "parts": 44,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    }
+  ],
+  "manual": "Source artwork, curated rectangles and actual app captures inspected; spoken output and native device ergonomics remain to be checked."
+}

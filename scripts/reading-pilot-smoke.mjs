@@ -5,6 +5,7 @@ import assert from 'node:assert/strict';
 import { chromium } from 'playwright-core';
 import { prepareReading } from '../packages/story-engine/src/reading-edition.ts';
 import { tileOrder } from '../packages/session-engine/src/review.ts';
+import { vocabularyKey } from '../packages/reading-engine/src/normalize.ts';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = process.argv[2] ?? 'http://localhost:8082';
@@ -76,6 +77,8 @@ try {
       let questions = 0;
       let reviews = 0;
       let resumeChecked = false;
+      let dictionaryChecked = false;
+      let helpedInSession = [];
       let guard = 0;
       while (++guard < prepared.story.pages.length * 4 + 20) {
         if (await page.getByText('¡Buen trabajo, Noah!', { exact: true }).isVisible()) break;
@@ -98,7 +101,7 @@ try {
           const summary = await page.evaluate(() => JSON.parse(localStorage.getItem('kitewise.v1.reading.pilot')));
           assert.ok(summary.resumes.length > 0);
           // The domain chooses base words when a tapped name has no syllable entry.
-          const keys = source.reviewWords.filter(key => (source.vocabulary[key]?.syllables?.length ?? 0) > 1).slice(0, 3);
+          const keys = [...new Set([...helpedInSession, ...source.reviewWords].filter(key => (source.vocabulary[key]?.syllables?.length ?? 0) > 1))].slice(0, 3);
           const key = keys[reviews];
           const syllables = source.vocabulary[key].syllables;
           const order = tileOrder(syllables.length);
@@ -122,6 +125,26 @@ try {
           await page.getByText(part(2)).waitFor();
           assert.equal(JSON.parse(await page.evaluate(() => localStorage.getItem('kitewise.v1.reader-prefs.pilot'))).size, savedSize);
           resumeChecked = true;
+          helpedInSession = [];
+        }
+        if (!dictionaryChecked) {
+          const token = prepared.story.pages[index].blocks.flatMap(b => b.lines.flatMap(line => line.split(' '))).find(word => source.vocabulary[vocabularyKey(word)]);
+          if (token) {
+            const key = vocabularyKey(token);
+            const entry = source.vocabulary[key];
+            await page.getByRole('button', { name: token, exact: true }).first().click();
+            const sheet = page.getByLabel('Cerrar ayuda', { exact: true });
+            if (entry.syllables?.length) await sheet.getByText(entry.syllables.join('·'), { exact: true }).waitFor();
+            if (entry.definition) await sheet.getByText(entry.definition, { exact: false }).waitFor();
+            if (entry.synonym) assert.ok((await sheet.getByText(entry.definition, { exact: false }).innerText()).includes(entry.synonym));
+            if (entry.example) await sheet.getByText(entry.example, { exact: false }).waitFor();
+            await page.waitForTimeout(350); // Capture the settled native modal, after its fade transition.
+            await page.screenshot({ path: path.join(output, `${edition.familyId}-${lang}-word-help.png`) });
+            await sheet.getByRole('button', { name: 'Seguir leyendo', exact: true }).click();
+            await sheet.waitFor({ state: 'hidden' });
+            helpedInSession.push(key);
+            dictionaryChecked = true;
+          }
         }
         await page.locator('#root').getByRole('button', { name: index === prepared.story.pages.length - 1 ? (isEs ? 'Terminé el cuento' : 'I finished the story') : (isEs ? 'Seguir leyendo' : 'Keep reading'), exact: true }).click();
         await page.waitForTimeout(500);
@@ -135,12 +158,14 @@ try {
       assert.equal(saved.summaries.reduce((n, s) => n + s.comprehensionTotal, 0), 3);
       assert.equal(questions, 3);
       assert.equal(reviews, 3);
+      assert.equal(dictionaryChecked, true);
       assert.equal(saved.resumes.length, 0);
       assert.deepEqual(errors, []);
-      evidence.push({ story: source.id, parts: prepared.story.pages.length, questions, reviews, resumeChecked, speech: 'request routing simulated; audible speech requires a device', result: 'passed' });
+      evidence.push({ story: source.id, parts: prepared.story.pages.length, questions, reviews, resumeChecked, dictionaryChecked, speech: 'request routing simulated; audible speech requires a device', result: 'passed' });
       console.log('PASS', source.id, prepared.story.pages.length, 'parts, 4 sizes, help, resume, 3 questions, 3 review words, saved completion');
       await context.close();
     }
   }
+  assert.ok(evidence.length >= 2, 'No complete story edition was exercised');
   fs.writeFileSync(path.join(output, 'results.json'), JSON.stringify(evidence, null, 2));
 } finally { await browser.close(); }

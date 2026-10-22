@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "file": "apps/reader/public/stories/el-puente-de-las-luciernagas/reader/scene-01.webp",
+      "sha256": "d3cdf2b747f3d36809a5e01f53f535a5d4dcd2f0cc3205f0abaaee22bc3234b0",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 321980,
+      "kind": "generated"
+    },
+    {
+      "file": "apps/reader/public/stories/el-puente-de-las-luciernagas/page-01.webp",
+      "sha256": "b6131e5992787a1e6b63a35a81b8a3ddb6169e829495ccb44104e583fc02b569",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 294910,
+      "kind": "generated"
+    },
+    {
+      "file": "apps/reader/public/stories/el-puente-de-las-luciernagas/page-02.webp",
+      "sha256": "9e74ffb807ca177d41ee42b1255eadfe97664c0df0d1d3205b4a706aca2bd5b9",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 301302,
+      "kind": "generated"
+    },
+    {
+      "file": "apps/reader/public/stories/el-puente-de-las-luciernagas/page-03.webp",
+      "sha256": "52f9e8834d27119012d6e9cf29843d2d710c3b5c3d729e0c665e7c96a63f630a",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 335866,
+      "kind": "generated"
+    },
+    {
+      "file": "apps/reader/public/stories/el-puente-de-las-luciernagas/page-04.webp",
+      "sha256": "b1cc3688e538d8c4da95f3a4cd9a7fd3edb666db664f75035f5b95664a331630",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 329346,
+      "kind": "generated"
+    },
+    {
+      "file": "apps/reader/public/stories/el-puente-de-las-luciernagas/page-05.webp",
+      "sha256": "7f13ecb18bf38eee0c6364ca8786e8fc73fa3c08e1c17220fe4d9e4af05cffb5",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 335540,
+      "kind": "generated"
+    },
+    {
+      "file": "apps/reader/public/stories/mapa-de-la-puerta-desaparecida/page-01.webp",
+      "sha256": "fd34463c1439222411e16f59eef37d619b8ef4c83f1581665a83d164f3e9908a",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 224992,
+      "kind": "generated"
+    },
+    {
+      "file": "apps/reader/public/stories/mapa-de-la-puerta-desaparecida/page-02.webp",
+      "sha256": "eedba4138de9ab8f287acb9ceba4d3e06c8dc25c72aded28cbfffa4d591f64af",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 285698,
+      "kind": "generated"
+    },
+    {
+      "file": "apps/reader/public/stories/mapa-de-la-puerta-desaparecida/page-03.webp",
+      "sha256": "143907d8479666b668f77251068738eae355b371cf92be34260cd364218ffff0",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 307088,
+      "kind": "generated"
+    },
+    {
+      "file": "apps/reader/public/stories/mapa-de-la-puerta-desaparecida/page-04.webp",
+      "sha256": "f783aec68f60cb601f8cb844d2ca9aded3bd630adc72178c2e59816ce7b3b8e1",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 431046,
+      "kind": "generated"
+    },
+    {
+      "file": "apps/reader/public/stories/mapa-de-la-puerta-desaparecida/page-05.webp",
+      "sha256": "ebb7fa79c40e055ec6e2876378d16de7eedd6dd56e64be5e24f48c2f9b01ad44",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 404626,
+      "kind": "generated"
+    },
+    {
+      "file": "apps/reader/public/stories/mapa-de-la-puerta-desaparecida/page-07.webp",
+      "sha256": "a48491c638191555d59d1ed6401028f89dab841a725fe2bbcd7b11091b0d010f",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 333294,
+      "kind": "generated"
+    },
+    {
+      "file": "apps/reader/public/stories/mapa-de-la-puerta-desaparecida/page-09.webp",
+      "sha256": "5f1f71b3560a91cf8366028d737d34530029025c869ea2225e69506276ecc76c",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 268224,
+      "kind": "generated"
+    },
+    {
+      "file": "apps/reader/public/stories/mapa-de-la-puerta-desaparecida/page-11.webp",
+      "sha256": "d8b835e4d228e39305e2b87ac3bf3d04df7748c941bb4796f597af8e065c0fa8",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 351556,
+      "kind": "generated"
+    },
+    {
+      "file": "apps/reader/public/stories/mapa-de-la-puerta-desaparecida/page-13.webp",
+      "sha256": "92cfe2076b15bd03db36c2c07bb1b684b6b5765a15f06774b442ef9ef7408b7b",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 363986,
+      "kind": "generated"
+    },
+    {
+      "file": "apps/reader/public/stories/mapa-de-la-puerta-desaparecida/page-15.webp",
+      "sha256": "3c54f308a5c50c39bb81f6a69f2e6f18f2270b967c9d2cfeb51adb656dc61528",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 341830,
+      "kind": "generated"
+    },
+    {
+      "file": "apps/reader/public/stories/mapa-de-la-puerta-desaparecida/page-17.webp",
+      "sha256": "b947592f9d3c19376f491ce358d5216e71795ee31711a93e40ba19403ccde764",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 325986,
+      "kind": "generated"
+    },
+    {
+      "file": "apps/reader/public/stories/mapa-de-la-puerta-desaparecida/reader/letter.webp",
+      "sha256": "877579a0a077c506a5fb5bf27e9123f445e5a888b346792ceb57190a038339ab",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 314060,
+      "kind": "generated"
+    },
+    {
+      "file": "apps/reader/public/stories/mapa-de-la-puerta-desaparecida/page-19.webp",
+      "sha256": "8717a2adfc45a132ff1dcebf46b172bbb0f3dbe39fdd1f78af13052ae95068d6",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 411482,
+      "kind": "generated"
+    },
+    {
+      "file": "apps/reader/public/stories/mapa-de-la-puerta-desaparecida/page-20.webp",
+      "sha256": "4b2b07cafee3baae44a866e0be15164aad70aa0c84a216ee13c7c12717512e3f",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 337400,
+      "kind": "generated"
+    }
+  ],
+  "generated": [
+    {
+      "file": "apps/reader/public/stories/el-puente-de-las-luciernagas/reader/scene-01.webp",
+      "references": [
+        "apps/reader/public/stories/el-puente-de-las-luciernagas/page-01.webp"
+      ],
+      "brief": "Una escena continua de Mila y Pipo entre luciérnagas; conservar personajes y estilo, sin globos ni tipografía."
+    },
+    {
+      "file": "apps/reader/public/stories/mapa-de-la-puerta-desaparecida/reader/letter.webp",
+      "references": [
+        "apps/reader/public/stories/mapa-de-la-puerta-desaparecida/page-03.webp",
+        "apps/reader/public/stories/mapa-de-la-puerta-desaparecida/page-01.webp"
+      ],
+      "brief": "Elena escribe una carta con Inés y Teo en casa; conservar acuarela, vestuario y personajes; sin cajas de texto."
+    }
+  ]
+}

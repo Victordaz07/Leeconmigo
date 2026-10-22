@@ -11,6 +11,10 @@
         "width": 1448,
         "height": 1086,
         "alt": "Mila y Pipo caminan entre luciérnagas junto al arroyo."
+      },
+      "alt": {
+        "es": "Mila y Pipo caminan entre luciérnagas junto al arroyo.",
+        "en": "Mila and Pipo walk among fireflies beside the stream."
       }
     },
     {
@@ -27,6 +31,10 @@
         "y": 180,
         "width": 748,
         "height": 836
+      },
+      "alt": {
+        "es": "Mila, Pipo y un erizo miran el arroyo donde falta el puente.",
+        "en": "Mila, Pipo and a hedgehog look at the stream where the bridge is missing."
       }
     },
     {
@@ -43,6 +51,10 @@
         "y": 180,
         "width": 748,
         "height": 836
+      },
+      "alt": {
+        "es": "Una hoja se dobla en el agua mientras Mila y Pipo la observan.",
+        "en": "A leaf bends into the water while Mila and Pipo watch."
       }
     },
     {
@@ -59,6 +71,10 @@
         "y": 180,
         "width": 748,
         "height": 836
+      },
+      "alt": {
+        "es": "Pipo intenta empujar una rama demasiado pesada.",
+        "en": "Pipo tries to push a branch that is too heavy."
       }
     },
     {
@@ -75,6 +91,10 @@
         "y": 180,
         "width": 748,
         "height": 836
+      },
+      "alt": {
+        "es": "Mila sostiene corteza junto a dos piedras lisas.",
+        "en": "Mila holds a piece of bark beside two smooth stones."
       }
     },
     {
@@ -91,6 +111,10 @@
         "y": 180,
         "width": 748,
         "height": 836
+      },
+      "alt": {
+        "es": "Mila coloca corteza sobre dos piedras para formar un puente.",
+        "en": "Mila places bark on two stones to make a bridge."
       }
     },
     {
@@ -107,6 +131,10 @@
         "y": 180,
         "width": 748,
         "height": 836
+      },
+      "alt": {
+        "es": "Mila prueba la firmeza del puente con una piedrita.",
+        "en": "Mila tests the bridge with a small pebble."
       }
     },
     {
@@ -123,6 +151,10 @@
         "y": 180,
         "width": 748,
         "height": 836
+      },
+      "alt": {
+        "es": "El erizo espera mientras Mila y Pipo están cerca del paso.",
+        "en": "The hedgehog waits while Mila and Pipo stand close to the crossing."
       }
     },
     {
@@ -139,6 +171,10 @@
         "y": 180,
         "width": 748,
         "height": 836
+      },
+      "alt": {
+        "es": "Mila y Pipo se apartan para dejar libre el camino.",
+        "en": "Mila and Pipo move back to leave the path clear."
       }
     },
     {
@@ -155,6 +191,10 @@
         "y": 180,
         "width": 748,
         "height": 836
+      },
+      "alt": {
+        "es": "El erizo cruza la corteza y Mila y Pipo lo observan desde lejos.",
+        "en": "The hedgehog crosses the bark as Mila and Pipo watch from a distance."
       }
     }
   ]
