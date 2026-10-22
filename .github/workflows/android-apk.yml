@@ -47,6 +47,8 @@ jobs:
           npm run models -w @lee-conmigo/mobile
       - name: Generar proyecto Android
         run: npm exec --workspace @lee-conmigo/mobile -- expo prebuild --platform android --no-install
+      - name: Comprobar ancho nativo de los cuadernos
+        run: npm run test:native-layout
       - name: Compilar APK sin servidor
         working-directory: apps/mobile/android
         run: ./gradlew assembleRelease --console=plain --max-workers=2
@@ -78,6 +80,8 @@ jobs:
           APK instalable de Kitewise con «El puente de las luciérnagas» y «El mapa de la puerta desaparecida» (Inés y Teo), en español e inglés.
 
           Conserva la pronunciación y la ayuda al tocar cada palabra. Incluye imágenes por escena, letra ajustable, reanudación, comprensión y repaso.
+
+          Corregida la desaparición visual de los cuadernos en Inicio de Android: las tarjetas conservan su ancho y se distribuyen en filas según la pantalla. Regresión comprobada con el motor Yoga de React Native en seis tamaños de teléfono/tableta.
 
           Descarga Kitewise-lectura.apk en el teléfono y abre el archivo para instalarlo. Android 7 o posterior. No necesita un servidor de desarrollo. Se adjunta su suma SHA-256.
 

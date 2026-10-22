@@ -1,0 +1,442 @@
+{
+  "checkedAt": "2026-10-22T22:52:00.968171+00:00",
+  "cause": "Yoga processFlexBasis resolves positive flex with auto basis to zero, overriding the requested card width when grow and shrink are zero.",
+  "before": {
+    "command": "node scripts/check-notebook-layout.mjs",
+    "passed": false,
+    "firstFailure": {
+      "viewport": [
+        320,
+        720
+      ],
+      "subject": "lectura",
+      "expectedWidth": 288,
+      "actualWidth": 0
+    }
+  },
+  "after": {
+    "command": "npm run test:native-layout",
+    "passed": true,
+    "nativeEngine": "C++ Yoga bundled with installed React Native 0.86.3, default native configuration",
+    "cardsChecked": 84,
+    "viewportSizes": [
+      [
+        320,
+        720
+      ],
+      [
+        375,
+        812
+      ],
+      [
+        390,
+        844
+      ],
+      [
+        844,
+        390
+      ],
+      [
+        800,
+        1280
+      ],
+      [
+        1280,
+        800
+      ]
+    ]
+  },
+  "browser": {
+    "results": [
+      {
+        "width": 375,
+        "height": 812,
+        "cards": [
+          {
+            "name": "Lectura",
+            "width": 150,
+            "height": 240
+          },
+          {
+            "name": "Matemáticas",
+            "width": 150,
+            "height": 240
+          },
+          {
+            "name": "Ciencia",
+            "width": 150,
+            "height": 202
+          },
+          {
+            "name": "Sociedad",
+            "width": 150,
+            "height": 202
+          },
+          {
+            "name": "Arte y música",
+            "width": 150,
+            "height": 228
+          },
+          {
+            "name": "Finanzas",
+            "width": 150,
+            "height": 250
+          },
+          {
+            "name": "Emociones",
+            "width": 150,
+            "height": 250
+          },
+          {
+            "name": "Comunicación",
+            "width": 150,
+            "height": 276
+          },
+          {
+            "name": "Vida digital",
+            "width": 150,
+            "height": 276
+          },
+          {
+            "name": "Pensamiento crítico",
+            "width": 150,
+            "height": 276
+          },
+          {
+            "name": "Autonomía",
+            "width": 150,
+            "height": 276
+          },
+          {
+            "name": "Organización",
+            "width": 150,
+            "height": 276
+          },
+          {
+            "name": "Emprendimiento",
+            "width": 150,
+            "height": 276
+          },
+          {
+            "name": "Mi cuaderno",
+            "width": 150,
+            "height": 228
+          }
+        ]
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "cards": [
+          {
+            "name": "Lectura",
+            "width": 150,
+            "height": 245
+          },
+          {
+            "name": "Matemáticas",
+            "width": 150,
+            "height": 245
+          },
+          {
+            "name": "Ciencia",
+            "width": 150,
+            "height": 207
+          },
+          {
+            "name": "Sociedad",
+            "width": 150,
+            "height": 207
+          },
+          {
+            "name": "Arte y música",
+            "width": 150,
+            "height": 233
+          },
+          {
+            "name": "Finanzas",
+            "width": 150,
+            "height": 250
+          },
+          {
+            "name": "Emociones",
+            "width": 150,
+            "height": 250
+          },
+          {
+            "name": "Comunicación",
+            "width": 150,
+            "height": 276
+          },
+          {
+            "name": "Vida digital",
+            "width": 150,
+            "height": 276
+          },
+          {
+            "name": "Pensamiento crítico",
+            "width": 150,
+            "height": 276
+          },
+          {
+            "name": "Autonomía",
+            "width": 150,
+            "height": 276
+          },
+          {
+            "name": "Organización",
+            "width": 150,
+            "height": 276
+          },
+          {
+            "name": "Emprendimiento",
+            "width": 150,
+            "height": 276
+          },
+          {
+            "name": "Mi cuaderno",
+            "width": 150,
+            "height": 233
+          }
+        ]
+      },
+      {
+        "width": 844,
+        "height": 390,
+        "cards": [
+          {
+            "name": "Lectura",
+            "width": 150,
+            "height": 242
+          },
+          {
+            "name": "Matemáticas",
+            "width": 150,
+            "height": 242
+          },
+          {
+            "name": "Ciencia",
+            "width": 150,
+            "height": 242
+          },
+          {
+            "name": "Sociedad",
+            "width": 150,
+            "height": 242
+          },
+          {
+            "name": "Arte y música",
+            "width": 150,
+            "height": 230
+          },
+          {
+            "name": "Finanzas",
+            "width": 150,
+            "height": 268
+          },
+          {
+            "name": "Emociones",
+            "width": 150,
+            "height": 268
+          },
+          {
+            "name": "Comunicación",
+            "width": 150,
+            "height": 268
+          },
+          {
+            "name": "Vida digital",
+            "width": 150,
+            "height": 268
+          },
+          {
+            "name": "Pensamiento crítico",
+            "width": 150,
+            "height": 268
+          },
+          {
+            "name": "Autonomía",
+            "width": 150,
+            "height": 268
+          },
+          {
+            "name": "Organización",
+            "width": 150,
+            "height": 268
+          },
+          {
+            "name": "Emprendimiento",
+            "width": 150,
+            "height": 268
+          },
+          {
+            "name": "Mi cuaderno",
+            "width": 150,
+            "height": 230
+          }
+        ]
+      },
+      {
+        "width": 800,
+        "height": 1280,
+        "cards": [
+          {
+            "name": "Lectura",
+            "width": 150,
+            "height": 248
+          },
+          {
+            "name": "Matemáticas",
+            "width": 150,
+            "height": 248
+          },
+          {
+            "name": "Ciencia",
+            "width": 150,
+            "height": 248
+          },
+          {
+            "name": "Sociedad",
+            "width": 150,
+            "height": 248
+          },
+          {
+            "name": "Arte y música",
+            "width": 150,
+            "height": 236
+          },
+          {
+            "name": "Finanzas",
+            "width": 150,
+            "height": 275
+          },
+          {
+            "name": "Emociones",
+            "width": 150,
+            "height": 275
+          },
+          {
+            "name": "Comunicación",
+            "width": 150,
+            "height": 275
+          },
+          {
+            "name": "Vida digital",
+            "width": 150,
+            "height": 275
+          },
+          {
+            "name": "Pensamiento crítico",
+            "width": 150,
+            "height": 275
+          },
+          {
+            "name": "Autonomía",
+            "width": 150,
+            "height": 275
+          },
+          {
+            "name": "Organización",
+            "width": 150,
+            "height": 275
+          },
+          {
+            "name": "Emprendimiento",
+            "width": 150,
+            "height": 275
+          },
+          {
+            "name": "Mi cuaderno",
+            "width": 150,
+            "height": 236
+          }
+        ]
+      },
+      {
+        "width": 1280,
+        "height": 800,
+        "cards": [
+          {
+            "name": "Lectura",
+            "width": 150,
+            "height": 243
+          },
+          {
+            "name": "Matemáticas",
+            "width": 150,
+            "height": 243
+          },
+          {
+            "name": "Ciencia",
+            "width": 150,
+            "height": 243
+          },
+          {
+            "name": "Sociedad",
+            "width": 150,
+            "height": 243
+          },
+          {
+            "name": "Arte y música",
+            "width": 150,
+            "height": 243
+          },
+          {
+            "name": "Finanzas",
+            "width": 150,
+            "height": 254
+          },
+          {
+            "name": "Emociones",
+            "width": 150,
+            "height": 254
+          },
+          {
+            "name": "Comunicación",
+            "width": 150,
+            "height": 254
+          },
+          {
+            "name": "Vida digital",
+            "width": 150,
+            "height": 254
+          },
+          {
+            "name": "Pensamiento crítico",
+            "width": 150,
+            "height": 254
+          },
+          {
+            "name": "Autonomía",
+            "width": 150,
+            "height": 254
+          },
+          {
+            "name": "Organización",
+            "width": 150,
+            "height": 254
+          },
+          {
+            "name": "Emprendimiento",
+            "width": 150,
+            "height": 254
+          },
+          {
+            "name": "Mi cuaderno",
+            "width": 150,
+            "height": 243
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "url": "http://localhost:8082/"
+  },
+  "checks": {
+    "tests": "125 files / 1838 tests passed",
+    "typecheck": "all workspaces passed",
+    "lint": "NotebookCover passed",
+    "workflow": "actionlint passed"
+  },
+  "limits": "Yoga validates native layout; browser validates visible cards and navigation. Android device rendering and audible TTS not tested in this environment."
+}
