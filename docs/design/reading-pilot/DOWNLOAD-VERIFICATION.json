@@ -1,0 +1,37 @@
+{
+  "apk": "/workspace/download-publication/Kitewise-lectura.apk",
+  "sourceCommit": "203f0c9fa290780f2d43a22b9c1ebcd9e6527833",
+  "bytes": 335432702,
+  "sha256": "4c40f656bf8e3792571fb491374396e305312d9e6f6680338ebb9d3fd7eb202a",
+  "signatureVerified": true,
+  "debuggable": false,
+  "architectures": [
+    "arm64-v8a",
+    "armeabi-v7a",
+    "x86",
+    "x86_64"
+  ],
+  "assetsVerified": {
+    "apps/mobile/assets/models/ggml-tiny-q8_0.bin": "res/01.bin",
+    "apps/mobile/assets/models/ggml-silero-v6.2.0.bin": "res/1d.bin",
+    "apps/reader/public/stories/el-puente-de-las-luciernagas/reader/scene-01.webp": "res/IS.webp",
+    "apps/mobile/assets/models/ggml-base-q5_1.bin": "res/_A.bin",
+    "apps/reader/public/stories/mapa-de-la-puerta-desaparecida/reader/letter.webp": "res/uL.webp"
+  },
+  "deviceTested": false,
+  "date": "2026-10-22",
+  "releasePage": "https://github.com/Victordaz07/Leeconmigo/releases/tag/apk-lectura-2026-10-22",
+  "downloadUrl": "https://github.com/Victordaz07/Leeconmigo/releases/download/apk-lectura-2026-10-22/Kitewise-lectura.apk",
+  "checksumUrl": "https://github.com/Victordaz07/Leeconmigo/releases/download/apk-lectura-2026-10-22/Kitewise-lectura.apk.sha256",
+  "publicRelease": true,
+  "prerelease": true,
+  "downloadHttpStatus": 200,
+  "checksumMatched": true,
+  "zipAlignment16KBVerified": true,
+  "workflowUrl": "https://github.com/Victordaz07/Leeconmigo/actions/runs/39857520145",
+  "workflowAttempt": 2,
+  "workflowConclusion": "success",
+  "workflowDuration": "29m36s",
+  "signerCertificateSha256": "fac61745dc0903786fb9ede62a962b399f7348f0bb6f899b8332667591033b9c",
+  "signing": "Existing Expo debug signing identity; family test release, not Play Store publication"
+}

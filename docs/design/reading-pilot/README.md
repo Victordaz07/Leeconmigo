@@ -2,6 +2,14 @@
 
 Petición de Victor, 2026-10-22: preparar primero **El puente de las luciérnagas** y después **El mapa de la puerta desaparecida** (Inés y Teo). La ayuda de TODAS las palabras es requisito central: pronunciación, sílabas y, cuando existen, significado, sinónimos y ejemplo.
 
+## Descargar el APK en Android
+
+[Descargar Kitewise-lectura.apk (335 MB)](https://github.com/Victordaz07/Leeconmigo/releases/download/apk-lectura-2026-10-22/Kitewise-lectura.apk) · [Página de descarga](https://github.com/Victordaz07/Leeconmigo/releases/tag/apk-lectura-2026-10-22)
+
+Abrir el enlace en el navegador del teléfono y, al terminar la descarga, abrir el archivo `.apk` para instalarlo. Es un prerelease para pruebas familiares; no requiere iniciar sesión en GitHub ni un servidor de desarrollo.
+
+GitHub Actions compiló y publicó la etiqueta `apk-lectura-2026-10-22` desde 203f0c9. Se descargó el archivo publicado completo por HTTPS (HTTP 200) y se verificaron SHA-256, firma, alineación, cuatro arquitecturas y los modelos/ilustraciones originales. Metadatos: `DOWNLOAD-VERIFICATION.json`. La prueba audible de voz y el manejo físico siguen pendientes. Para futuros APK solicitados, una etiqueta `apk-lectura-*` activa el flujo; los cambios normales de master no generan APK.
+
 ## Primer cuento: El puente de las luciérnagas
 
 - Integrado en `apps/mobile` para lectura libre. El modo guiado existente y los demás cuentos conservan su presentación anterior.
@@ -50,7 +58,7 @@ Los textos alternativos de cada escena se conservan en ambos idiomas. El texto n
 - Integrados en `master` por petición de Victor (2026-10-22), desde `codex/lectura-puente-y-mapa` (12b7030). Después se generó el APK instalable solicitado, desde el código de 4fefbef. No se publicó en tienda.
 - Android verificado: modelos reales con sus SHA-256 originales, exportación Android, bundle nativo de 506 recursos y `assembleRelease` (610 tareas). Se resolvieron los bloqueos de red de Hugging Face y `repo.reactnative.dev`, y se prepararon SDK 36, NDK 27.1, Gradle 9.3.1 y JDK 17 completo fuera del checkout. Sin cambios de dependencias ni de código para eludir requisitos.
 
-APK de esta entrega: `/workspace/Kitewise-lectura.apk` (335.416.322 bytes), universal para arm64-v8a, armeabi-v7a, x86 y x86_64; `com.kitewise.app`, 0.1.0, Android 7+ (minSdk 24). Release sin servidor, firmado con la llave de pruebas existente de Expo. Firma, alineación ZIP de 16 KB, bundle y los tres modelos/dos ilustraciones nuevas verificados; metadatos y SHA-256 en `APK-VERIFICATION.json`. El binario y los modelos no se versionan. Sigue pendiente la prueba en un dispositivo real.
+APK local inicial (anterior a la publicación por GitHub): `/workspace/Kitewise-lectura.apk` (335.416.322 bytes), universal para arm64-v8a, armeabi-v7a, x86 y x86_64; `com.kitewise.app`, 0.1.0, Android 7+ (minSdk 24). Release sin servidor, firmado con la llave de pruebas existente de Expo. Firma, alineación ZIP de 16 KB, bundle y los tres modelos/dos ilustraciones nuevas verificados; metadatos y SHA-256 en `APK-VERIFICATION.json`. El binario y los modelos no se versionan. Sigue pendiente la prueba en un dispositivo real.
 
 La preparación y el comando de compilación `/workspace/android-tools/build-apk.sh` están guardados en el borrador de configuración del entorno. Revisar, guardar y publicar el entorno permite conservar esa preparación; guardar el borrador no demuestra restauración en una tarea nueva.
 
