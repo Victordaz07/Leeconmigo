@@ -3,11 +3,20 @@
  * Siempre texto real de la app. El estado se dice con palabra o forma, no solo con color (docs/06). El color de acento es el del cuaderno.
  */
 import type { ReactNode } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Image, type ImageSourcePropType, Pressable, StyleSheet, Text, View } from 'react-native';
 import { colors, fontFamily, minTouch, radius, shadows } from '@lee-conmigo/ui-native';
 
 export function Card({ children, tone = 'plain', accent }: { children: ReactNode; tone?: 'plain' | 'soft' | 'warm'; accent?: string }) {
   return <View style={[styles.card, tone === 'soft' && { backgroundColor: `${accent ?? colors.brand}18` }, tone === 'warm' && styles.cardWarm]}>{children}</View>;
+}
+
+/** Una ilustración con proporción fija. En React Native Web el alto de una imagen solo se respeta dentro de un marco con `aspectRatio` y la imagen a 100 %. */
+export function Frame({ source, ratio = 3 / 2, radiusPx = radius.tile }: { source: ImageSourcePropType; ratio?: number; radiusPx?: number }) {
+  return (
+    <View style={[styles.frame, { aspectRatio: ratio, borderRadius: radiusPx }]}>
+      <Image source={source} style={styles.frameImage} resizeMode="cover" accessible={false} />
+    </View>
+  );
 }
 
 export function SectionTitle({ children, accent }: { children: string; accent: string }) {
@@ -56,6 +65,8 @@ export function Tile({ label, state, onPress, accent, role = 'button', badge }: 
 }
 
 const styles = StyleSheet.create({
+  frame: { width: '100%', overflow: 'hidden', backgroundColor: colors.chip },
+  frameImage: { width: '100%', height: '100%' },
   card: { backgroundColor: '#ffffff', borderRadius: radius.card, padding: 16, gap: 10, boxShadow: shadows.card },
   cardWarm: { backgroundColor: '#fff6df' },
   sectionTitle: { fontFamily: fontFamily.ui.black, fontSize: 15, letterSpacing: 0.4, textTransform: 'uppercase' },

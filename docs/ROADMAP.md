@@ -184,6 +184,6 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | PV-02 | 7 misiones «Primer vistazo» ES/EN (3 encuentros cada una) | ✅ | A | 04–08 sin investigación completa: revisión de especialista antes de ampliar |
 | PV-03 | 7 cuadernos en la app + fila «Para la vida» en Inicio | ✅ | A | arte provisional en código |
 | PV-04 | Mega pedido de imágenes (43) | ✅ | A | `docs/design/vida/PEDIDO-IMAGENES-MEGA.md`; Victor las genera |
-| PV-05 | Conectar imágenes reales (portadas, escenas, guías) | ⬜ | A | tras recibirlas |
+| PV-05 | Conectar imágenes reales (portadas, escenas, guías) | ✅ | A | 43 imágenes (Partes 1 y 2) en WebP, `subjects/vida/art.ts`, manifiesto SHA-256 |
 | PV-06 | Investigar y ampliar 04–08 (una investigación por módulo) | ⬜ | A | no se programa antes de investigar |
 | PV-07 | Revisión de especialistas y prueba con niños | ⬜ | – | |

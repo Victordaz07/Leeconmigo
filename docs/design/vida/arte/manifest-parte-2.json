@@ -1,0 +1,218 @@
+[
+  {
+    "source": "bg_autonomia_horizontal.png",
+    "sha256": "93fea8c8200618ab96baf6974c5743e5cd611afd4092c55346bd4d6de98232d9",
+    "bytes": 1274890,
+    "output": "apps/mobile/assets/vida/bg/bg_autonomia_horizontal.webp",
+    "outputBytes": 66284,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "bg_critico_horizontal.png",
+    "sha256": "4d4c5c8cabb2331c903c3d04f096b95f76d5335d34bf6417efa5904cbe00543c",
+    "bytes": 1297351,
+    "output": "apps/mobile/assets/vida/bg/bg_critico_horizontal.webp",
+    "outputBytes": 58386,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "bg_emprendimiento_horizontal.png",
+    "sha256": "ee8750c773eeafd7347736a47220599b23680d72701e59c52b8020e83305f52b",
+    "bytes": 1657928,
+    "output": "apps/mobile/assets/vida/bg/bg_emprendimiento_horizontal.webp",
+    "outputBytes": 79318,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "bg_organizacion_horizontal.png",
+    "sha256": "400dc020a63727de5419200c065b981c906d4e6419492a705eff1b59535dd97e",
+    "bytes": 1368271,
+    "output": "apps/mobile/assets/vida/bg/bg_organizacion_horizontal.webp",
+    "outputBytes": 60394,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "cover_autonomia_cuaderno.png",
+    "sha256": "2363a1a4927de91eba0c17c524278e438a8cf3f7ab33103a32eb08d6184df73f",
+    "bytes": 1178826,
+    "output": "apps/mobile/assets/vida/covers/cover_autonomia_cuaderno.webp",
+    "outputBytes": 57584,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "cover_critico_cuaderno.png",
+    "sha256": "5d26bc16823a0d5d0cd056e11d4992b481f24ff019dbbb841351837b48525717",
+    "bytes": 1051675,
+    "output": "apps/mobile/assets/vida/covers/cover_critico_cuaderno.webp",
+    "outputBytes": 52420,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "cover_emprendimiento_cuaderno.png",
+    "sha256": "74adaa3fb8050f3ff86e01b5275c35b008143fbe2d40bc8b3982cca04de5d32c",
+    "bytes": 1104736,
+    "output": "apps/mobile/assets/vida/covers/cover_emprendimiento_cuaderno.webp",
+    "outputBytes": 36896,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "cover_organizacion_cuaderno.png",
+    "sha256": "3fd40905a7fcb03e2c55d576358dc01f157f1a1b55ee56a4f69ccc17d3e6d960",
+    "bytes": 1084877,
+    "output": "apps/mobile/assets/vida/covers/cover_organizacion_cuaderno.webp",
+    "outputBytes": 45994,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "guide_dique_neutral.png",
+    "sha256": "b98c1cdfd7759827d6d1e2e91db22e09d4022529f4594426e309df28129f7d12",
+    "bytes": 527669,
+    "output": "apps/mobile/assets/vida/guides/guide_dique_neutral.webp",
+    "outputBytes": 29254,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "guide_lupa_neutral.png",
+    "sha256": "b5f446482da06aacfc50274638aba5d156448e3d0e6b0dc4b88b7e6b3d77fbc8",
+    "bytes": 614571,
+    "output": "apps/mobile/assets/vida/guides/guide_lupa_neutral.webp",
+    "outputBytes": 33506,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "guide_paso_neutral.png",
+    "sha256": "78154f94ed1f2be0406123f932322ab25b351bf077c5531090232e232a2591a2",
+    "bytes": 489573,
+    "output": "apps/mobile/assets/vida/guides/guide_paso_neutral.webp",
+    "outputBytes": 27666,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "guide_ruta_neutral.png",
+    "sha256": "a3824231716dc3e71eb5c80cd936b543096b3342c35e30a43a88c31eb6e17e9c",
+    "bytes": 338832,
+    "output": "apps/mobile/assets/vida/guides/guide_ruta_neutral.webp",
+    "outputBytes": 24164,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "scene_autonomia_1.png",
+    "sha256": "b225f48726405f62455677f6c33f65ff920c63bf6000490feeca457b8c92d714",
+    "bytes": 1344794,
+    "output": "apps/mobile/assets/vida/scenes/scene_autonomia_1.webp",
+    "outputBytes": 72638,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "scene_autonomia_2.png",
+    "sha256": "a4cbb66f5c7f9fe668da0c106907d6d9620592d354089ca02e721e020baaaa1d",
+    "bytes": 1257131,
+    "output": "apps/mobile/assets/vida/scenes/scene_autonomia_2.webp",
+    "outputBytes": 69602,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "scene_autonomia_3.png",
+    "sha256": "0d46219ca73f371565549b43843d98a15a4a3fc0aafd7b92d12cdb352204e1d0",
+    "bytes": 1261622,
+    "output": "apps/mobile/assets/vida/scenes/scene_autonomia_3.webp",
+    "outputBytes": 60330,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "scene_critico_1.png",
+    "sha256": "a8ffcb11a846857e1e63fa639eb030c1e344c2cf86de3232d09331a9646caa29",
+    "bytes": 1324860,
+    "output": "apps/mobile/assets/vida/scenes/scene_critico_1.webp",
+    "outputBytes": 66390,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "scene_critico_2.png",
+    "sha256": "5f0ee005aa9f771710ac8cfe92e91b4de3032b0f68a3d2ff7f21d4ac692a00b9",
+    "bytes": 1391802,
+    "output": "apps/mobile/assets/vida/scenes/scene_critico_2.webp",
+    "outputBytes": 75886,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "scene_critico_3.png",
+    "sha256": "82917ac5d92ce38e9f42871e1e38607674d0c3405a2641521e9624899fcf36d2",
+    "bytes": 1302324,
+    "output": "apps/mobile/assets/vida/scenes/scene_critico_3.webp",
+    "outputBytes": 57022,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "scene_emprendimiento_1.png",
+    "sha256": "92deda6424cc2686dd69081dff2407685a2dbc62717799a74ffde31178a92c82",
+    "bytes": 1436482,
+    "output": "apps/mobile/assets/vida/scenes/scene_emprendimiento_1.webp",
+    "outputBytes": 92220,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "scene_emprendimiento_2.png",
+    "sha256": "227ced11ba074b99630d2752e31a9d5de9699233b4996d70e1dc4d799946ecc5",
+    "bytes": 1603359,
+    "output": "apps/mobile/assets/vida/scenes/scene_emprendimiento_2.webp",
+    "outputBytes": 102520,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "scene_emprendimiento_3.png",
+    "sha256": "ef561d8bcd0b11c36619fb073009dd65298788f157a9ed457268e6d035b01e5c",
+    "bytes": 1507432,
+    "output": "apps/mobile/assets/vida/scenes/scene_emprendimiento_3.webp",
+    "outputBytes": 105520,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "scene_organizacion_1.png",
+    "sha256": "4fa0b7329679f0b80655bfd563b6349736c64e533e87ec6da89a1128e359be12",
+    "bytes": 1285100,
+    "output": "apps/mobile/assets/vida/scenes/scene_organizacion_1.webp",
+    "outputBytes": 66066,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "scene_organizacion_2.png",
+    "sha256": "3d9087ea76967fb4a202a904821ee776d08664ea3bbbb0ebbad6507521bd938d",
+    "bytes": 1104127,
+    "output": "apps/mobile/assets/vida/scenes/scene_organizacion_2.webp",
+    "outputBytes": 51248,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "scene_organizacion_3.png",
+    "sha256": "17f0dee17763b73b00035124696284703604a99c6bb6d21d97aab2a4db194f64",
+    "bytes": 1217176,
+    "output": "apps/mobile/assets/vida/scenes/scene_organizacion_3.webp",
+    "outputBytes": 68952,
+    "width": 1536,
+    "height": 1024
+  }
+]

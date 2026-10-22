@@ -9,6 +9,7 @@ import { progressSegments, subjectById, VIDA_COPY, VIDA_MODULES } from '@lee-con
 import { colors } from '@lee-conmigo/ui-native';
 import { subjectStorageFor } from '../../app-state';
 import type { SubjectModule } from '../types';
+import { VIDA_ART } from './art';
 import { VidaNotebook, type VidaProgress } from './notebook';
 import { VidaPlayer } from './player';
 
@@ -30,7 +31,7 @@ function makeModule(id: LifeModuleId): SubjectModule {
     available: true,
     homeCard: (profile, lang) => {
       const done = (storageFor(profile.id).load()[mission.id]?.stars ?? 0) > 0;
-      return { subtitle: done ? (lang === 'es' ? '1/1 misión' : '1/1 mission') : VIDA_COPY.preview[lang], segments: progressSegments(done ? 1 : 0, 1) };
+      return { subtitle: done ? (lang === 'es' ? '1/1 misión' : '1/1 mission') : VIDA_COPY.preview[lang], segments: progressSegments(done ? 1 : 0, 1), image: VIDA_ART[id].cover };
     },
     Screen: ({ profile, lang, focus, onExit }) => {
       const storage = storageFor(profile.id);
@@ -43,6 +44,7 @@ function makeModule(id: LifeModuleId): SubjectModule {
             lang={lang}
             mission={mission}
             accent={accent}
+            art={VIDA_ART[id]}
             profileId={profile.id}
             profileName={profile.name}
             focus={focus}
@@ -58,7 +60,7 @@ function makeModule(id: LifeModuleId): SubjectModule {
           />
         );
       }
-      return <VidaNotebook lang={lang} module={id} gradient={subject.gradientToken} accent={accent} glyph={subject.glyph} mission={mission} progress={progress} onBack={onExit} onOpen={() => setOpen(true)} />;
+      return <VidaNotebook lang={lang} module={id} gradient={subject.gradientToken} accent={accent} art={VIDA_ART[id]} glyph={subject.glyph} mission={mission} progress={progress} onBack={onExit} onOpen={() => setOpen(true)} />;
     },
   };
 }

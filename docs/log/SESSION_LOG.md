@@ -428,3 +428,6 @@ Cuaderno + reproductor de la unidad F4-U01 (6 encuentros) con arte provisional e
 
 ## 2026-10-22 · A · PV-01..04 «Para la vida» 02–08 instalados (Primer vistazo) + mega pedido de imágenes
 Motor de misiones compartido (`life-content`), 7 misiones ES/EN, 7 cuadernos aparte con fila «Para la vida» en Inicio, probados de punta a punta en Chromium en 4 tamaños. Mega prompt de 43 imágenes entregado en el chat y en `docs/design/vida/`. Siguiente: imágenes de Victor y revisión de especialistas.
+
+## 2026-10-22 · A · PV-05 Arte real de «Para la vida» 02–08 conectado
+Victor generó las 43 imágenes (Partes 1 y 2). Convertidas a WebP (2,6 MB) con manifiesto SHA-256; portadas en la estantería (4×2), banner del estante, guía y escena en cada misión. Probado en 4 tamaños. Finanzas sigue con arte provisional.

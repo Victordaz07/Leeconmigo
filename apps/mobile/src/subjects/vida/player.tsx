@@ -1,5 +1,5 @@
 import { useReducer, useState } from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { FocusSupports } from '@lee-conmigo/contracts';
 import {
@@ -12,8 +12,9 @@ import { STAR_IMAGES } from '../../kitewise-art';
 import { useMovementBreak } from '../../movement';
 import { notebookSaverFor } from '../../notebook-save';
 import { MovementBreakScreen } from '../../screens/movement-break-screen';
+import type { VidaArt } from './art';
 import { ChooseBody, SortBody, SpotBody } from './bodies';
-import { Card, Choices, Hint, SectionTitle } from './parts';
+import { Card, Choices, Frame, Hint, SectionTitle } from './parts';
 
 export interface MissionProgress {
   stepsDone: string[];
@@ -24,6 +25,7 @@ interface PlayerProps {
   lang: VidaLang;
   mission: LifeMission;
   accent: string;
+  art: VidaArt;
   profileId: string;
   profileName: string;
   focus: FocusSupports;
@@ -37,7 +39,7 @@ const t = VIDA_COPY;
  * Una misión de «Para la vida» encuentro por encuentro. Nunca «incorrecto» (docs/06): lo que no encaja da una pista y se puede cambiar; solo FALTA algo bloquea seguir.
  * Estrellas por esfuerzo (D11). Modo Enfoque: pausa de movimiento como en las demás materias.
  */
-export function VidaPlayer({ lang, mission, accent, profileId, profileName, focus, onExit, onFinish }: PlayerProps) {
+export function VidaPlayer({ lang, mission, accent, art, profileId, profileName, focus, onExit, onFinish }: PlayerProps) {
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const [session, dispatch] = useReducer(sessionReducer, initialSession);
@@ -89,6 +91,9 @@ export function VidaPlayer({ lang, mission, accent, profileId, profileName, focu
       <Text style={styles.title} accessibilityRole="header">{step.title[lang]}</Text>
       {session.stepIndex === 0 && <Text style={styles.safety}>{mission.safety[lang]}</Text>}
 
+      {/* Modo Enfoque: con `reducedMotion` no hay dibujos alrededor del ejercicio (el contenido no cambia). */}
+      {!focus.reducedMotion && <Frame source={art.scenes[Math.min(session.stepIndex, 2)]!} radiusPx={radius.card} />}
+
       <Card tone="soft" accent={accent}>
         <SectionTitle accent={accent}>{t.learn[lang]}</SectionTitle>
         <Text style={styles.learn}>{step.learn[lang]}</Text>
@@ -96,8 +101,11 @@ export function VidaPlayer({ lang, mission, accent, profileId, profileName, focu
         {showExample && <Text style={styles.example}>{step.example[lang]}</Text>}
       </Card>
 
-      <View style={styles.bubble}>
-        <Text style={styles.prompt}>{step.prompt[lang]}</Text>
+      <View style={styles.guideRow}>
+        {!focus.reducedMotion && <Image source={art.guide} style={styles.guide} resizeMode="contain" accessible={false} />}
+        <View style={[styles.bubble, styles.bubbleFlex]}>
+          <Text style={styles.prompt}>{step.prompt[lang]}</Text>
+        </View>
       </View>
 
       <StepBody step={step} lang={lang} session={session} dispatch={dispatch} accent={accent} />
@@ -148,6 +156,9 @@ const styles = StyleSheet.create({
   safety: { fontFamily: fontFamily.ui.bold, fontSize: 14, lineHeight: 20, color: colors.muted },
   learn: { fontFamily: fontFamily.read.regular, fontSize: 17, lineHeight: 25, color: colors.ink },
   example: { fontFamily: fontFamily.read.regular, fontSize: 16, lineHeight: 24, color: colors.inkSoft, backgroundColor: '#ffffff', borderRadius: radius.tile, padding: 12 },
+  guideRow: { flexDirection: 'row', alignItems: 'flex-end', gap: 10 },
+  guide: { width: 84, height: 84 },
+  bubbleFlex: { flex: 1 },
   bubble: { backgroundColor: '#ffffff', borderRadius: radius.tile, paddingHorizontal: 16, paddingVertical: 12, boxShadow: shadows.chip },
   prompt: { fontFamily: fontFamily.ui.extrabold, fontSize: 17, lineHeight: 23, color: colors.ink },
   footer: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: 12, marginTop: 4 },

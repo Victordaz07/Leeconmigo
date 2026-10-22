@@ -8,6 +8,7 @@ import type { LibraryModel } from '../library-model';
 import { storyImage } from '../story-assets';
 import { MATH_COVERS } from '../math-art';
 import { availableModule } from '../subjects/registry';
+import { VIDA_BANNER } from '../subjects/vida/art';
 
 const LANGUAGE_NAME = { es: 'Español', en: 'English' } as const;
 
@@ -39,11 +40,13 @@ export function HomeScreen({ profile, minutes, model, onContinue, onOpenReading,
   const gap = narrow ? 12 : 14;
   const cols = columnsFor(available, narrow ? 150 : 160, gap);
   const coverWidth = itemWidth(available, cols, gap);
+  // «Para la vida» tiene nombres largos («Pensamiento crítico»): sus portadas son un poco más anchas.
+  const lifeWidth = itemWidth(available, columnsFor(available, 200, gap), gap);
   const { featured, featuredStory, stats } = model;
   const cover = featuredStory.cover ? storyImage(featuredStory.cover.src) : storyImage(featuredStory.pages[0].illustration.src);
   const resumeLabel = featured.resumePage !== null && featured.resumePage > 0 ? `${featuredStory.title} · página ${featured.resumePage + 1}` : featuredStory.title;
 
-  const renderSubject = (s: Subject) => {
+  const renderSubject = (s: Subject, width: number = coverWidth) => {
     const isReading = s.id === 'lectura';
     const isMath = s.id === 'mate';
     const mod = availableModule(s.id);
@@ -60,7 +63,7 @@ export function HomeScreen({ profile, minutes, model, onContinue, onOpenReading,
         segments={isReading ? model.readingSegments : isMath ? math.segments : (card?.segments ?? 0)}
         soon={!s.available && !mod}
         onPress={isReading ? onOpenReading : isMath ? onOpenMath : mod ? () => onOpenSubject(s.id) : undefined}
-        width={coverWidth}
+        width={width}
       />
     );
   };
@@ -110,14 +113,17 @@ export function HomeScreen({ profile, minutes, model, onContinue, onOpenReading,
         </Text>
       </View>
       <View style={[styles.shelf, { gap }]}>
-        {SUBJECTS.filter((s) => s.group !== 'vida').map(renderSubject)}
+        {SUBJECTS.filter((s) => s.group !== 'vida').map((s) => renderSubject(s))}
       </View>
 
       <View style={styles.shelfHeader}>
         <Text style={styles.h2}>{VIDA_COPY.shelf[profile.language === 'en' ? 'en' : 'es']}</Text>
       </View>
+      <View style={styles.vidaBanner}>
+        <Image source={VIDA_BANNER} style={FILL} resizeMode="cover" accessible={false} />
+      </View>
       <View style={[styles.shelf, { gap }]}>
-        {LIFE_SUBJECTS.map(renderSubject)}
+        {LIFE_SUBJECTS.map((s) => renderSubject(s, lifeWidth))}
       </View>
     </ScrollView>
   );
@@ -130,6 +136,7 @@ const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: colors.app },
   content: { gap: 22 },
   header: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: 12 },
+  vidaBanner: { width: '100%', aspectRatio: 2.4, borderRadius: radius.card, overflow: 'hidden', backgroundColor: colors.chip },
   greeting: { flex: 1, minWidth: 220 },
   greetingNarrow: { flexBasis: '100%' },
   hello: { fontFamily: fontFamily.ui.black, fontSize: 38, color: colors.navy },
