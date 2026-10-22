@@ -33,7 +33,7 @@ Formato: fondos **1536×1024** (horizontal) y **1024×1536** (vertical); portada
 | `guide_nuez_sorpresa` | La misma ardilla Nuez, ojos muy abiertos, una patita en la mejilla, un poco sorprendida pero **no asustada** (ha aparecido un imprevisto). Fondo transparente. |
 | `guide_nuez_ayuda` | La misma ardilla Nuez, sentada, ofreciendo una patita abierta hacia adelante como invitando a pedir ayuda, expresión cálida. Fondo transparente. |
 
-(Con Nuez te cuento: para mantenerla igual, **adjunta la primera imagen aprobada** como referencia en los siguientes prompts.)
+(Para que Nuez salga igual en las 5 poses: genera primero `guide_nuez_neutral`, y en los siguientes prompts **adjunta esa imagen aprobada** como referencia.)
 
 ## Lote B — objetos sueltos (8; 1024×1024, transparente, una sola pieza)
 | Archivo | Prompt |
