@@ -1,9 +1,10 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { LifeMission } from '@lee-conmigo/life-content';
 import { VIDA_COPY, VIDA_MODULES, type VidaLang, type VidaModuleId } from '@lee-conmigo/ui-core';
 import { Button, ChevronLeftIcon, colors, fontFamily, GradientView, radius, RoundButton, shadows, useLayout, type GradientName, gradients } from '@lee-conmigo/ui-native';
-import { Card } from './parts';
+import { Card, Frame } from './parts';
+import type { VidaArt } from './art';
 import type { MissionProgress } from './player';
 
 export type VidaProgress = Record<string, MissionProgress>;
@@ -13,6 +14,7 @@ interface NotebookProps {
   module: VidaModuleId;
   gradient: GradientName;
   accent: string;
+  art: VidaArt;
   glyph: string;
   mission: LifeMission;
   progress: VidaProgress;
@@ -23,7 +25,7 @@ interface NotebookProps {
 const t = VIDA_COPY;
 
 /** Ficha de un cuaderno de «Para la vida»: de qué trata, su primera misión («Primer vistazo») y el aviso de que todo es inventado. Sin bloqueos (D9). */
-export function VidaNotebook({ lang, module, gradient, accent, glyph, mission, progress, onBack, onOpen }: NotebookProps) {
+export function VidaNotebook({ lang, module, gradient, accent, art, glyph, mission, progress, onBack, onOpen }: NotebookProps) {
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const meta = VIDA_MODULES[module];
@@ -42,14 +44,18 @@ export function VidaNotebook({ lang, module, gradient, accent, glyph, mission, p
       </View>
 
       <GradientView gradient={gradients[gradient]} style={styles.banner}>
-        <Text style={styles.bannerGlyph}>{glyph}</Text>
-        <Text style={styles.bannerText}>{meta.tagline[lang]}</Text>
-        <Text style={styles.bannerGuide}>{t.guideSays[lang](meta.guide)}</Text>
+        <View style={styles.bannerTexts}>
+          <Text style={styles.bannerGlyph}>{glyph}</Text>
+          <Text style={styles.bannerText}>{meta.tagline[lang]}</Text>
+          <Text style={styles.bannerGuide}>{t.guideSays[lang](meta.guide)}</Text>
+        </View>
+        <Image source={art.guide} style={styles.guide} resizeMode="contain" accessible={false} />
       </GradientView>
 
       <Text style={styles.intro}>{meta.intro[lang]}</Text>
 
       <Card>
+        <Frame source={art.scenes[0]} />
         <Text style={[styles.badge, { color: accent }]}>{t.preview[lang].toUpperCase()}</Text>
         <Text style={styles.grade}>{t.mission[lang](mission.grade)} · {t.meetings[lang](mission.steps.length)}</Text>
         <Text style={styles.missionTitle}>{mission.title[lang]}</Text>
@@ -73,7 +79,9 @@ const styles = StyleSheet.create({
   pill: { borderRadius: radius.pill, paddingHorizontal: 16, paddingVertical: 8 },
   pillText: { fontFamily: fontFamily.ui.black, fontSize: 16, color: '#ffffff' },
   shelf: { fontFamily: fontFamily.ui.extrabold, fontSize: 13, color: colors.muted },
-  banner: { borderRadius: radius.panel, padding: 22, gap: 8, boxShadow: shadows.card },
+  banner: { borderRadius: radius.panel, padding: 22, paddingRight: 8, flexDirection: 'row', alignItems: 'center', gap: 8, minHeight: 170, overflow: 'hidden', boxShadow: shadows.card },
+  bannerTexts: { flex: 1, gap: 8 },
+  guide: { width: 150, height: 150 },
   bannerGlyph: { fontFamily: fontFamily.ui.black, fontSize: 40, color: '#ffffff' },
   bannerText: { fontFamily: fontFamily.ui.black, fontSize: 24, lineHeight: 30, color: '#ffffff' },
   bannerGuide: { fontFamily: fontFamily.ui.bold, fontSize: 14, color: 'rgba(255,255,255,0.9)' },

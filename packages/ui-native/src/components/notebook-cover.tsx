@@ -25,7 +25,7 @@ const SPIRAL_DOTS = 9;
 export function NotebookCover({ title, subtitle, image, glyph, color, gradient, segments, soon, onPress, width }: NotebookCoverProps) {
   const artHeight = width ? Math.round(Math.min(150, Math.max(96, width * 0.62))) : 150;
   return (
-    <Pressable onPress={soon ? undefined : onPress} disabled={soon} accessibilityRole="button" accessibilityLabel={soon ? `${title}, pronto` : title} style={({ pressed }) => [styles.card, width ? { width, flex: undefined, minWidth: undefined } : null, pressed && styles.pressed]}>
+    <Pressable onPress={soon ? undefined : onPress} disabled={soon} accessibilityRole="button" accessibilityLabel={soon ? `${title}, pronto` : title} style={({ pressed }) => [styles.card, width ? { width, flexGrow: 0, flexShrink: 0, flexBasis: 'auto', minWidth: undefined } : null, pressed && styles.pressed]}>
       <View style={[styles.art, { height: artHeight }]}>
         {image ? <Image source={image} style={FILL} resizeMode="cover" /> : <GradientView gradient={gradient} style={[StyleSheet.absoluteFill, styles.placeholder]}><Text style={styles.bigGlyph}>{glyph}</Text></GradientView>}
         <View style={styles.spiral} pointerEvents="none">

@@ -1,6 +1,6 @@
 # Mega pedido de imágenes — «Para la vida» módulos 02–08 (prompts listos para pegar en GPT)
 
-> Estado (2026-10-22): propuesta. 43 imágenes (7 módulos × 6 + 1 banner). Finanzas ya tiene su propio pedido (`docs/design/finanzas/PEDIDO-IMAGENES.md`).
+> Estado (2026-10-22): **recibidas y conectadas** (Partes 1 y 2, 43 imágenes; `docs/design/vida/arte/`). Pedido original: 43 imágenes (7 módulos × 6 + 1 banner). Finanzas ya tiene su propio pedido (`docs/design/finanzas/PEDIDO-IMAGENES.md`).
 > Las guías (animales) son **propuestas** hasta que Victor las apruebe. Mientras llegan, la app usa arte provisional dibujado en código.
 
 **Regla de oro:** la imagen es **escena**, no contenido. Todo texto, número, mensaje, pantalla y etiqueta lo dibuja la app. Por eso en TODAS las imágenes:

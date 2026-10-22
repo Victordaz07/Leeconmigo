@@ -9,8 +9,11 @@ Estado (2026-10-22): los siete módulos están instalados como cuadernos aparte 
 - Mi cuaderno: las ideas guardadas desde estos cuadernos usan la materia «Otra cosa».
 - Mega pedido de imágenes: `docs/design/vida/PEDIDO-IMAGENES-MEGA.md` (43 imágenes).
 
+- Arte real conectado (2026-10-22, Partes 1 y 2, 43 imágenes): `scripts/vida-imagenes.py` → `apps/mobile/assets/vida/**` (2,6 MB), manifiesto en `docs/design/vida/arte/manifest-parte-*.json`, mapa en `subjects/vida/art.ts`. Portada en Inicio, banner del estante sobre la fila «Para la vida», guía y escena de cada encuentro dentro de la misión (Modo Enfoque `reducedMotion` los oculta). Prueba de que existen y pesan poco: `packages/life-content/tests/art.test.ts`.
+- `NotebookCover` (ui-native): con `width` fijo ahora también anula `flexGrow/flexBasis` (antes solo `flex: undefined`, que en web no lo anulaba).
+
 ## Siguiente paso exacto
-1. Cuando Victor mande las imágenes: convertir a WebP + manifiesto SHA-256 en `docs/design/vida/arte/`, mapa en `subjects/vida/art.ts`, portadas en `homeCard.image`, guías y escenas en las pantallas.
+1. Finanzas (01) sigue con arte provisional: esperar su Lote A/B (`docs/design/finanzas/PEDIDO-IMAGENES.md`).
 2. Por módulo, antes de ampliar: investigación (04–08) → especificación → misiones nuevas → revisión de un especialista. Emociones (02) y Comunicación (03) ya tienen investigación completa (8 lecciones por grado).
 3. Probar en un Android real y con niños: ¿entienden la situación, comparan caminos y justifican?
 

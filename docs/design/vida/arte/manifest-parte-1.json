@@ -1,0 +1,173 @@
+[
+  {
+    "source": "banner_para_la_vida.png",
+    "sha256": "65ac6500e6531f09bbb2933c4d04628c19690ba1ad28e0aa897df43ba0d0d4da",
+    "bytes": 1052448,
+    "output": "apps/mobile/assets/vida/banner/banner_para_la_vida.webp",
+    "outputBytes": 48244,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "bg_comunicacion_horizontal.png",
+    "sha256": "51b365bb301357f4c24b507683437e2a9450f5007e1324ea6b3624883c46ce83",
+    "bytes": 1276650,
+    "output": "apps/mobile/assets/vida/bg/bg_comunicacion_horizontal.webp",
+    "outputBytes": 73444,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "bg_digital_horizontal.png",
+    "sha256": "a52cb6a96d13a7d63462a169a02fde7ea263a30c19a8a739cc27093628542b25",
+    "bytes": 1377770,
+    "output": "apps/mobile/assets/vida/bg/bg_digital_horizontal.webp",
+    "outputBytes": 70814,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "bg_emociones_horizontal.png",
+    "sha256": "4be9386e2bcb736521253c8907f5ae4dcc5927aab91d43dc5a82f2311ac4b706",
+    "bytes": 1292663,
+    "output": "apps/mobile/assets/vida/bg/bg_emociones_horizontal.webp",
+    "outputBytes": 58850,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "cover_comunicacion_cuaderno.png",
+    "sha256": "3f56b1378146f999a7441d07469717c9f0905fe964c5a3aba15cff8e6bb253c3",
+    "bytes": 1058278,
+    "output": "apps/mobile/assets/vida/covers/cover_comunicacion_cuaderno.webp",
+    "outputBytes": 34102,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "cover_digital_cuaderno.png",
+    "sha256": "a04a96d826935293214d31e4f7c896b45ef681680cfede1a07f69483e1fd577f",
+    "bytes": 1045509,
+    "output": "apps/mobile/assets/vida/covers/cover_digital_cuaderno.webp",
+    "outputBytes": 24870,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "cover_emociones_cuaderno.png",
+    "sha256": "89500966513d649c2a1c1fc72939b09b754ee5251f0fd068474f04727e0a19ef",
+    "bytes": 1075830,
+    "output": "apps/mobile/assets/vida/covers/cover_emociones_cuaderno.webp",
+    "outputBytes": 40732,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "guide_chispa_neutral.png",
+    "sha256": "9722efdf0abe22992a0f78c521b469512ff65f172c689ada611edda898b2eb5a",
+    "bytes": 501025,
+    "output": "apps/mobile/assets/vida/guides/guide_chispa_neutral.webp",
+    "outputBytes": 30432,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "guide_eco_neutral.png",
+    "sha256": "fbfac0f7665b2422c82346c620914e7d25abaddc2d9309acc72d1f9d3c6c5061",
+    "bytes": 555240,
+    "output": "apps/mobile/assets/vida/guides/guide_eco_neutral.webp",
+    "outputBytes": 32002,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "guide_miel_neutral.png",
+    "sha256": "89019c1583a4c385f63df08d4966b46cdcbf83cedc87596c6932cfba85c1bbd2",
+    "bytes": 491420,
+    "output": "apps/mobile/assets/vida/guides/guide_miel_neutral.webp",
+    "outputBytes": 24646,
+    "width": 512,
+    "height": 512
+  },
+  {
+    "source": "scene_comunicacion_1.png",
+    "sha256": "d5e73db3dbc3512fd88ec2d352e43f0a01a8d7dc307a6c9383330fa13c0a3460",
+    "bytes": 1446397,
+    "output": "apps/mobile/assets/vida/scenes/scene_comunicacion_1.webp",
+    "outputBytes": 82978,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "scene_comunicacion_2.png",
+    "sha256": "8cc78be4ea853ede34801e5c242fe3702542c1147a4fbf352ae1b226475d834e",
+    "bytes": 1615993,
+    "output": "apps/mobile/assets/vida/scenes/scene_comunicacion_2.webp",
+    "outputBytes": 88966,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "scene_comunicacion_3.png",
+    "sha256": "63cc8a69ec23b2812103dc745ac5f6d02146d37e1b1125c2f15c63b192044ccf",
+    "bytes": 1390549,
+    "output": "apps/mobile/assets/vida/scenes/scene_comunicacion_3.webp",
+    "outputBytes": 82238,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "scene_digital_1.png",
+    "sha256": "48a92e7fc7232f1c49c5a46e0b9ae8458c4ef85e82838ec97c66018a9d40ca7d",
+    "bytes": 1203074,
+    "output": "apps/mobile/assets/vida/scenes/scene_digital_1.webp",
+    "outputBytes": 64820,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "scene_digital_2.png",
+    "sha256": "942b601504797c59e57b941440cf449d05d078abfed5df9dac8b679a1085055e",
+    "bytes": 1184122,
+    "output": "apps/mobile/assets/vida/scenes/scene_digital_2.webp",
+    "outputBytes": 64280,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "scene_digital_3.png",
+    "sha256": "9e8cce2f28340a220266a12303c53d5faf12a8b57797016787ca2d6467514bd6",
+    "bytes": 1282360,
+    "output": "apps/mobile/assets/vida/scenes/scene_digital_3.webp",
+    "outputBytes": 69406,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "scene_emociones_1.png",
+    "sha256": "e405b9ca6414d515fafc2f69a4c334ea7d72b7a536625e0ae2eeda5192400642",
+    "bytes": 1255108,
+    "output": "apps/mobile/assets/vida/scenes/scene_emociones_1.webp",
+    "outputBytes": 66492,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "scene_emociones_2.png",
+    "sha256": "b8d6286dd84905c450b307e260fbb34596840ecb32c2abb967679295d2c9d861",
+    "bytes": 1201721,
+    "output": "apps/mobile/assets/vida/scenes/scene_emociones_2.webp",
+    "outputBytes": 56980,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "source": "scene_emociones_3.png",
+    "sha256": "fee69e06bceacc2d98a32278bc3221de7eefb9a6b62fca7bc112ccc9ebe05c03",
+    "bytes": 1413222,
+    "output": "apps/mobile/assets/vida/scenes/scene_emociones_3.webp",
+    "outputBytes": 74796,
+    "width": 1536,
+    "height": 1024
+  }
+]
