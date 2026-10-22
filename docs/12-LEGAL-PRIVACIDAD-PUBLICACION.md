@@ -75,9 +75,11 @@ lista antes de agregarse.
       permitido, quién es dueño de las imágenes).
 - [ ] Historias originales: confirmar que ninguna copia personajes o textos con derechos de terceros.
 - [ ] Nombre **"Kitewise"** (D10): buscar si ya existe una marca o app con ese nombre (USPTO, Play Store, App Store) y el dominio.
-      Avance 2026-10-22 (NO concluyente): búsqueda web general sin resultados para «Kitewise»; Victor buscó en Play Store (escribió «katewise», con a: repetir
-      con «kitewise» exacto y sin el filtro «Este dispositivo»). Cerca: «KIDWISE» (marca de 1995, software educativo, estado desconocido) y «WiggleWise» (app infantil).
-      Falta: USPTO (clases 9, 41 y 42), App Store, dominio (.com/.app) y revisión del abogado.
+      Avance 2026-10-22 (revisión técnica, NO es asesoría legal): Google Play (búsqueda «kitewise» desde US, GB, DE, JP, BR e IN) y App Store (US, GB, AU, CA;
+      sin resultados en JP/BR/MX/ES/FR) no muestran ninguna app con ese nombre; solo apps de cometas/kitesurf. Dominios: `kitewise.com` está REGISTRADO desde 2003
+      (renovado hasta 2027-01, redirige a una página tipo «lander»: probablemente en venta); `kitewise.app` y `kitewise.io` no figuran registrados (verificar en un registrador).
+      Marcas: la búsqueda web no encontró «Kitewise»; cerca hay «KIDWISE» (1995, software educativo, estado desconocido). NO se pudo consultar USPTO/WIPO/EUIPO desde la nube
+      (bloquean automatizaciones): falta la búsqueda manual (clases 9, 41 y 42) y la revisión del abogado.
 - [ ] Fuentes (Andika, Nunito): licencia OFL, permite uso en apps — incluir el aviso de licencia.
 - [ ] Revisión humana de todo el contenido para niños (ya es regla en F7).
 
