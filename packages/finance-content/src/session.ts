@@ -10,7 +10,7 @@ import { isValidPlan, moveBetween, payUnexpected, type Plan } from './plan.ts';
 import type { AlternativesStep, FinanceStep, FinanceUnit, LedgerCase, LedgerStep, Localized, OfferStep, PrioritiesStep, ProjectStep, ReserveStep } from './unit.ts';
 
 export type ConditionState = { outdoor: boolean; hasCover: boolean };
-const condKey = (c: ConditionState) => `${c.outdoor ? 'out' : 'in'}-${c.hasCover ? 'cover' : 'nocover'}`;
+export const condKey = (c: ConditionState) => `${c.outdoor ? 'out' : 'in'}-${c.hasCover ? 'cover' : 'nocover'}`;
 
 export interface SessionState {
   stepIndex: number;

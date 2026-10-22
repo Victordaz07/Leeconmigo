@@ -1,6 +1,7 @@
 import type { SubjectId } from '@lee-conmigo/ui-core';
 import { arteModule } from './arte';
 import { cienciaModule } from './ciencia';
+import { finanzasModule } from './finanzas';
 import { miCuadernoModule } from './mi-cuaderno';
 import { sociedadModule } from './sociedad';
 import type { SubjectModuleId } from './ids';
@@ -14,6 +15,7 @@ export const SUBJECT_MODULES: Record<SubjectModuleId, SubjectModule> = {
   ciencia: cienciaModule,
   sociedad: sociedadModule,
   arte: arteModule,
+  finanzas: finanzasModule,
   'mi-cuaderno': miCuadernoModule,
 };
 

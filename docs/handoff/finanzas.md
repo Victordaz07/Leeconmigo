@@ -9,7 +9,17 @@ Estado (2026-10-22, cuenta A): investigación recibida (`docs/research/vida-01-e
 - D15: DF-1…DF-8 confirmadas. Lista de imágenes (Tanda 1) en `PEDIDO-IMAGENES.md`; Victor las genera.
 - Unidad F4-U01 (`content/f4u01.json`, 6 encuentros ES/EN) + `validate.ts` + `session.ts` (reductor, vistas, retroalimentación por CLAVES, estrellas por esfuerzo). 44 pruebas.
 
-## Siguiente paso exacto (actualizado)
+## Hecho (3) — FI-06/07
+- Textos ES/EN: `packages/ui-core/src/finanzas/copy.ts`. Módulo: `apps/mobile/src/subjects/finanzas/` (`index`, `notebook`, `player`, `bodies`, `parts`), `available: true`.
+- Verificado en Chromium (web) en 1180×900, 800×1280, 390×844 y 844×390: unidad completa de principio a fin, sin errores de consola ni desborde.
+- Compartido tocado (una línea cada uno): `subjects/ids.ts`, `registry.ts`, `ui-core/src/subjects.ts` (+`finanzas`), `persist/store.ts` (SUBJECT_KEYS), `ui-native/src/tokens.ts` (`subjFinanzas`), `ui-core/src/index.ts`, `mi-cuaderno/model.ts`+`copy.ts` (materia «Finanzas» para guardar ideas), `apps/mobile/package.json`.
+
+## Siguiente paso exacto (actualizado 2)
+1. Cuando Victor mande las imágenes (Lote A y B): convertir a WebP + manifiesto SHA-256 y reemplazar el arte provisional (portada, sobres, buzón, guía Nuez si DF-9 se aprueba).
+2. FI-08: revisión de un educador financiero y probar en Android real.
+3. Después: Emociones (módulo 02) y Comunicación (módulo 03), cada uno cuaderno aparte (D14).
+
+## (anterior)
 FI-06/07: textos ES/EN en `ui-core/src/finanzas/copy.ts` y módulo `apps/mobile/src/subjects/finanzas/` con arte provisional (dibujado en código); registrar en lo compartido. Las imágenes reales se conectan cuando Victor las mande.
 
 ## (anterior)

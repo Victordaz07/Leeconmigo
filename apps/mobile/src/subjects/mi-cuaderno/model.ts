@@ -9,8 +9,8 @@
 import type { SessionSummary, VocabularyEntry } from '@lee-conmigo/contracts';
 
 export const NOTEBOOK_FORMAT = 1;
-export type NoteSubject = 'lectura' | 'mate' | 'ciencia' | 'sociedad' | 'arte' | 'otra';
-export const NOTE_SUBJECTS: readonly NoteSubject[] = ['lectura', 'mate', 'ciencia', 'sociedad', 'arte', 'otra'];
+export type NoteSubject = 'lectura' | 'mate' | 'ciencia' | 'sociedad' | 'arte' | 'finanzas' | 'otra';
+export const NOTE_SUBJECTS: readonly NoteSubject[] = ['lectura', 'mate', 'ciencia', 'sociedad', 'arte', 'finanzas', 'otra'];
 
 export interface Note {
   id: string;

@@ -80,6 +80,7 @@ export const colors = {
   subjCiencia: '#22a95c',
   subjSociedad: '#f08a10',
   subjArte: '#ff5e7e',
+  subjFinanzas: '#12a594',
   phaseAprender: '#ffe45c',
   phaseAprenderLedge: '#e8c630',
   phaseExplorar: '#9cc8ff',
@@ -149,6 +150,7 @@ export const gradients = {
   subjCiencia: { angle: 160, colors: ['#6be39e', '#22a95c'] },
   subjSociedad: { angle: 160, colors: ['#ffc658', '#f08a10'] },
   subjArte: { angle: 160, colors: ['#ff8a3d', '#ff5e7e'] },
+  subjFinanzas: { angle: 160, colors: ['#5fe0cf', '#12a594'] },
   pause: { angle: 180, colors: ['#fff1c2', '#ffe08a'] },
 } as const satisfies Record<string, Gradient>;
 

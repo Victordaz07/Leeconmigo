@@ -5,7 +5,7 @@
  * `available`: Lectura (las historias) y Matemáticas (la primera unidad, K6) tienen contenido. Las demás se muestran como
  * "Pronto" — no se inventa contenido ni arte (`docs/design/kitewise/ART-BRIEF.md`).
  */
-export type SubjectId = 'lectura' | 'mate' | 'ciencia' | 'sociedad' | 'arte' | 'mi-cuaderno';
+export type SubjectId = 'lectura' | 'mate' | 'ciencia' | 'sociedad' | 'arte' | 'finanzas' | 'mi-cuaderno';
 
 export interface Subject {
   id: SubjectId;
@@ -16,8 +16,8 @@ export interface Subject {
   /** Glifo del ícono de la materia (texto de la app, nunca imagen). */
   glyph: string;
   /** Token de color (`colors.<colorToken>`) y de degradado (`gradients.<gradientToken>`) en ui-native. */
-  colorToken: 'subjLectura' | 'subjMate' | 'subjCiencia' | 'subjSociedad' | 'subjArte';
-  gradientToken: 'subjLectura' | 'subjMate' | 'subjCiencia' | 'subjSociedad' | 'subjArte';
+  colorToken: 'subjLectura' | 'subjMate' | 'subjCiencia' | 'subjSociedad' | 'subjArte' | 'subjFinanzas';
+  gradientToken: 'subjLectura' | 'subjMate' | 'subjCiencia' | 'subjSociedad' | 'subjArte' | 'subjFinanzas';
   available: boolean;
 }
 
@@ -27,6 +27,7 @@ export const SUBJECTS: readonly Subject[] = [
   { id: 'ciencia', name: 'Ciencia', tab: 'Ciencia', glyph: '✳', colorToken: 'subjCiencia', gradientToken: 'subjCiencia', available: false },
   { id: 'sociedad', name: 'Sociedad', tab: 'Sociedad', glyph: '⚑', colorToken: 'subjSociedad', gradientToken: 'subjSociedad', available: true },
   { id: 'arte', name: 'Arte y música', tab: 'Arte y música', glyph: '♪', colorToken: 'subjArte', gradientToken: 'subjArte', available: false },
+  { id: 'finanzas', name: 'Finanzas', tab: 'Finanzas', glyph: '◎', colorToken: 'subjFinanzas', gradientToken: 'subjFinanzas', available: false },
   { id: 'mi-cuaderno', name: 'Mi cuaderno', tab: 'Mi cuaderno', glyph: '✎', colorToken: 'subjLectura', gradientToken: 'subjLectura', available: false },
 ];
 
