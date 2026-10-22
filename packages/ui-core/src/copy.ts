@@ -200,7 +200,7 @@ export const copy = {
     },
     start: 'Comenzar lectura',
     /** En lectura libre no se escucha: el consejo 2 se cambia por este (el micrófono nunca miente, docs/06). */
-    freeTip: 'Cuando termines una página, toca › para seguir.',
+    freeTip: 'Cuando termines una página, toca › para seguir. Con ‹ puedes volver.',
   },
 
   reading: {
@@ -272,7 +272,7 @@ export const copy = {
     voiceFreeReading: 'Leer con botón (modo libre)',
     keepReading: 'Seguir leyendo',
     nextPage: 'Siguiente página',
-    freeHint: 'Lee la página y toca › para seguir.',
+    freeHint: 'Lee la página y toca › para seguir (‹ para volver).',
   },
 
   end: {

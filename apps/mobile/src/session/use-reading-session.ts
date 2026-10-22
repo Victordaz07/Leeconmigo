@@ -17,9 +17,14 @@ import { buildSessionSummary, formatDuration, initialFlow, reduceFlow, type Flow
 import { tokenizePage, type StoryWord } from '@lee-conmigo/story-engine';
 import { cleanWord, defaultPrefs, deriveReadingView, effortReason, effortStars, kiteMeters, type Energy, type FocusSelfReport, type ReaderPrefs } from '@lee-conmigo/ui-core';
 import { speak, stopSpeaking } from '../tts';
+import { canNavigate, creditedMs, tickDelta } from './free-clock';
 
 /** Cuánto se ve el aviso de "página completa" antes de seguir sola (igual que en la app web). */
 const PAGE_DONE_MS = 600;
+/** En lectura libre no hay aviso que esperar: se sigue casi enseguida (un instante, para que el reloj y la pausa de movimiento alcancen a verse). */
+const FREE_PAGE_DONE_MS = 200;
+/** Cuánto se ve la ayuda del coach en lectura libre. */
+const FREE_HINT_MS = 8000;
 
 /** Claves de vocabulario (sin repetidos) de las palabras de la página que costaron o necesitaron ayuda. */
 const practicedKeysOf = (indices: number[], words: StoryWord[]): string[] => [...new Set(indices.map((i) => vocabularyKey(words[i]?.text ?? '')).filter(Boolean))];
@@ -70,11 +75,21 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
   const [pauseDismissed, setPauseDismissed] = useState(false);
   /** Instante en que se cargó la página actual (modo libre: el tiempo real leído se acredita al pasar de página). */
   const pageStartedAt = useRef(now().getTime());
+  /**
+   * Reloj de lectura libre (`free-clock.ts`): milisegundos ACTIVOS en la página actual (pantalla de lectura y app en primer plano), el último
+   * pulso del reloj y el último cambio de página (anti doble toque).
+   */
+  const freeClock = useRef({ pageMs: 0, lastTick: now().getTime(), lastNavAt: null as number | null });
+  const [freePageMs, setFreePageMs] = useState(0);
+  /** Páginas ya leídas en esta sesión (las anteriores a la de partida cuentan como leídas): volver a una y seguir no la cuenta de nuevo. */
+  const completedPages = useRef(new Set<number>());
 
   const wordsRef = useRef(words);
   wordsRef.current = words;
   const flowRef = useRef(flow);
   flowRef.current = flow;
+  const freeRef = useRef(freeReading);
+  freeRef.current = freeReading;
   /** Ya se guardó el resumen de esta sesión (para no guardarlo dos veces). */
   const summarySaved = useRef(false);
   /** Esfuerzo de la sesión para las estrellas del cierre (D11): ¿pidió ayuda o reintentó? ¿cuántas pausas largas? */
@@ -112,6 +127,7 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
       if (event?.type === 'help.requested' || event?.type === 'word.repeated' || state.recovered) effort.current.helpedOrRetried = true;
       if (event?.type === 'pause.detected' && state.pause === 'long') effort.current.longPauses += 1;
       if (event?.type === 'page.completed') {
+        completedPages.current.add(flowRef.current.pageIndex);
         const w = wordsRef.current;
         dispatch({ type: 'reading.pageCompleted', stats: { errorCount: state.errorCount, wordCount: w.length, practicedKeys: practicedKeysOf(state.practicedWordIndices, w) } });
       }
@@ -119,6 +135,14 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
     const tick = setInterval(() => {
       setTimer(engine.getTimerSnapshot());
       setAuto(engine.isAutoReading);
+      // Lectura libre: el reloj corre solo mientras se lee con la app a la vista (el segundo plano no suma).
+      const t = now().getTime();
+      const dt = tickDelta(freeClock.current.lastTick, t);
+      freeClock.current.lastTick = t;
+      if (dt > 0 && freeRef.current && screenRef.current === 'reading' && AppState.currentState === 'active') {
+        freeClock.current.pageMs += dt;
+        setFreePageMs(freeClock.current.pageMs);
+      }
     }, 250);
     return () => {
       off();
@@ -144,16 +168,23 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
     if (next === flow) return;
     dispatch(action);
     if (next.screen === 'reading' && next.pageIndex !== flow.pageIndex) {
-      engine.loadPage(tokenizePage(story.pages[next.pageIndex]));
-      pageStartedAt.current = now().getTime();
-      saveResume(next.pageIndex);
+      goToPage(next.pageIndex);
     }
+  };
+
+  /** Carga una página en el motor y deja el reloj de la página en cero. */
+  const goToPage = (index: number) => {
+    engine.loadPage(tokenizePage(story.pages[index]));
+    pageStartedAt.current = now().getTime();
+    freeClock.current.pageMs = 0;
+    setFreePageMs(0);
+    saveResume(index);
   };
 
   // Al terminar una página, seguir sola tras el aviso. TODO(RN-06): pregunta de comprensión y repaso por sílabas.
   useEffect(() => {
     if (flow.screen !== 'pageDone' || options.holdAtPageEnd) return;
-    const id = setTimeout(() => advance({ type: 'page.next', words: [], isLastPage }), PAGE_DONE_MS);
+    const id = setTimeout(() => advance({ type: 'page.next', words: [], isLastPage }), freeReading ? FREE_PAGE_DONE_MS : PAGE_DONE_MS);
     return () => clearTimeout(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [flow.screen, options.holdAtPageEnd]);
@@ -172,9 +203,16 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
     if (reading.pause !== 'long') setPauseDismissed(false);
   }, [reading.pause]);
 
+  const resetFreeClock = (startPage: number) => {
+    freeClock.current = { pageMs: 0, lastTick: now().getTime(), lastNavAt: null };
+    setFreePageMs(0);
+    completedPages.current = new Set(Array.from({ length: startPage }, (_, i) => i));
+  };
+
   const begin = () => {
     summarySaved.current = false;
     effort.current = { helpedOrRetried: false, longPauses: 0 };
+    resetFreeClock(flow.pageIndex);
     pageStartedAt.current = now().getTime();
     engine.startSession(words);
     saveResume(flow.pageIndex);
@@ -184,6 +222,7 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
   const restart = () => {
     summarySaved.current = false;
     effort.current = { helpedOrRetried: false, longPauses: 0 };
+    resetFreeClock(0);
     engine.simulate.autoRead(false);
     engine.startSession(tokenizePage(story.pages[0]));
     saveResume(0);
@@ -192,24 +231,58 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
 
   /** Salir de la lectura (botón Volver): lo leído hasta ahora cuenta y queda guardado dónde retomar. */
   const leave = () => {
+    if (flowRef.current.screen === 'reading') creditFreePage(); // lo que se alcanzó a leer de esta página también cuenta
     persistSession();
     engine.simulate.autoRead(false);
     engine.stopSession();
     stopSpeaking();
   };
 
+  /** Acredita al motor el tiempo activo de la página actual (con tope, `free-clock.ts`) y deja el reloj de la página en cero. Solo en lectura libre. */
+  const creditFreePage = () => {
+    if (!freeRef.current) return;
+    const ms = creditedMs(freeClock.current.pageMs, wordsRef.current.length);
+    freeClock.current.pageMs = 0;
+    setFreePageMs(0);
+    if (ms <= 0) return;
+    const from = engine.timer.machine.confirmedMs;
+    engine.timer.machine.ingest({ fromMs: from, toMs: from + ms, valid: true });
+    setTimer(engine.getTimerSnapshot());
+  };
+
   /**
-   * Modo libre: el niño (o el padre) confirma con un botón que la página ya se leyó. Se acredita como tiempo válido el tiempo
-   * real desde que se cargó la página y se termina la página por el mismo camino que el panel DEV (igual que la web).
+   * Modo libre: el niño (o el padre) confirma con un botón que la página ya se leyó. Se acredita el tiempo ACTIVO de la página (con tope) y se
+   * termina la página por el mismo camino que el panel DEV. Si la página ya se había leído (se volvió atrás), solo se sigue: no cuenta dos veces.
    */
   const freeAdvance = () => {
-    const elapsedMs = Math.max(0, now().getTime() - pageStartedAt.current);
-    const from = engine.timer.machine.confirmedMs;
-    if (elapsedMs > 0) engine.timer.machine.ingest({ fromMs: from, toMs: from + elapsedMs, valid: true });
-    engine.simulate.completePage();
+    const f = flowRef.current;
+    const t = now().getTime();
+    if (f.screen !== 'reading' || !canNavigate(freeClock.current.lastNavAt, t)) return;
+    freeClock.current.lastNavAt = t;
+    creditFreePage();
+    if (completedPages.current.has(f.pageIndex)) {
+      const last = f.pageIndex === story.pages.length - 1;
+      dispatch({ type: 'free.forward', isLastPage: last });
+      if (!last) goToPage(f.pageIndex + 1);
+    } else {
+      engine.simulate.completePage();
+    }
+  };
+
+  /** Modo libre: volver a la página anterior (sin repetir preguntas ni perder lo leído). En la primera página no hace nada. */
+  const freeBack = () => {
+    const f = flowRef.current;
+    const t = now().getTime();
+    if (f.screen !== 'reading' || f.pageIndex <= 0 || !canNavigate(freeClock.current.lastNavAt, t)) return;
+    freeClock.current.lastNavAt = t;
+    creditFreePage();
+    dispatch({ type: 'free.back' });
+    goToPage(f.pageIndex - 1);
   };
 
   const startFreeReading = () => {
+    freeClock.current = { pageMs: 0, lastTick: now().getTime(), lastNavAt: null };
+    setFreePageMs(0);
     setFreeReading(true);
     setVoiceProblem(null);
     engine.simulate.autoRead(false);
@@ -272,14 +345,18 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
     flow,
     reading,
     prefs,
-    view: deriveReadingView({ screen: flow.screen, reading, words, prefs }),
+    view: deriveReadingView({ screen: flow.screen, reading, words, prefs, freeReading }),
     /** Tiempo LEÍDO (docs/06: cuenta hacia arriba; solo avanza con lectura válida). */
-    elapsed: formatDuration(timer.validSeconds),
+    elapsed: formatDuration(timer.validSeconds + (freeReading && flow.screen === 'reading' ? creditedMs(freePageMs, words.length) / 1000 : 0)),
     help: helpWord ? { word: cleanWord(helpWord.text), entry: story.vocabulary[helpKey] } : null,
     /** Párrafo que se está leyendo (para atenuar los siguientes); `null` antes de oír la voz. */
     currentParagraph: current ? { block: current.blockIndex, line: current.lineIndex } : null,
     voiceProblem,
     freeReading,
+    /** Lectura libre: ¿se puede volver a una página anterior? */
+    canGoBack: freeReading && pageIndex > 0,
+    /** Lectura libre: la ayuda del coach («toca › para seguir») solo se ve unos segundos al llegar a la página de partida; después tapaba el texto. */
+    freeHintVisible: freeReading && pageIndex === flow.startPage && freePageMs < FREE_HINT_MS,
     closing,
     /** Tarjeta "Te espero…" de la pausa larga (B11). Nunca en modo libre: nadie le habla al micrófono. */
     showPauseCard: flow.screen === 'reading' && reading.pause === 'long' && !pauseDismissed && !freeReading && reading.helpWordIndex === null,
@@ -296,6 +373,7 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
       /** "Listo" en el cierre: guarda el resumen con la carita de enfoque elegida. */
       finish: (focus?: FocusSelfReport) => persistSession(focus),
       freeAdvance,
+      freeBack,
       startFreeReading,
       /** "Pedir permiso": con el motor real abrirá el permiso del sistema (RN-07). Con el simulador solo cierra el aviso. */
       requestVoicePermission: () => setVoiceProblem(null),

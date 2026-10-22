@@ -19,6 +19,8 @@ export const KEYS = {
   pin: `${PREFIX}pin`,
   /** Recordatorios locales (Modo padres). */
   reminders: `${PREFIX}reminders`,
+  /** Migraciones de una sola vez ya aplicadas (p. ej. `freeReadingDefault`). */
+  migrations: `${PREFIX}migrations`,
   /** Aceptación del aviso legal por el adulto (versión + fecha). */
   legal: `${PREFIX}legal`,
   reading: (id: string) => `${PREFIX}reading.${id}`,
@@ -119,6 +121,19 @@ export function loadSubject<T>(kv: KV, subject: SubjectKey, id: string, fallback
 }
 export const saveSubject = (kv: KV, subject: SubjectKey, id: string, value: unknown) => writeJSON(kv, KEYS.subject(subject, id), value);
 
+/**
+ * Lectura libre como modo por defecto (la lectura con escucha todavía no está lista): UNA sola vez se enciende en los perfiles que ya existían.
+ * Después, lo que el adulto decida se respeta. `hadSaved`: había perfiles guardados (hay que reescribirlos); si no, son los de partida (ya vienen encendidos).
+ */
+export function applyFreeReadingDefault<P extends { freeReading: boolean }>(kv: KV, list: P[], hadSaved: boolean): P[] {
+  const done = readJSON<Record<string, boolean>>(kv, KEYS.migrations, {});
+  if (done.freeReadingDefault) return list;
+  const next = list.map((p) => ({ ...p, freeReading: true }));
+  if (hadSaved) writeJSON(kv, KEYS.profiles, next);
+  writeJSON(kv, KEYS.migrations, { ...done, freeReadingDefault: true });
+  return next;
+}
+
 /** «Borrar todos los datos» (docs/12 §6): perfiles, PIN, recordatorios, aceptación legal y el progreso de TODOS los niños. */
 export function eraseEverything(kv: KV, childIds: string[]) {
   for (const id of childIds) eraseChild(kv, id);
@@ -126,6 +141,7 @@ export function eraseEverything(kv: KV, childIds: string[]) {
   kv.remove(KEYS.pin);
   kv.remove(KEYS.reminders);
   kv.remove(KEYS.legal);
+  kv.remove(KEYS.migrations);
 }
 
 /** "Borrar el progreso" de un niño (docs/12 §6): Lectura, Matemáticas y las demás materias. */

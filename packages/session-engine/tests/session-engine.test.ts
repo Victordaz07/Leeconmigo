@@ -62,6 +62,32 @@ describe('flujo de pantallas', () => {
   });
 });
 
+describe('lectura libre: ir y volver entre páginas', () => {
+  const reading = (pageIndex: number): FlowState => ({ ...initialFlow, screen: 'reading', pageIndex, startPage: 0 });
+  it('volver baja una página y nunca pasa de la primera', () => {
+    expect(reduceFlow(reading(2), { type: 'free.back' }).pageIndex).toBe(1);
+    expect(reduceFlow(reading(0), { type: 'free.back' }).pageIndex).toBe(0);
+  });
+  it('volver y seguir no suma páginas leídas', () => {
+    let s = play([{ type: 'reading.pageCompleted' }], reading(1)); // lee la página 2
+    s = reduceFlow(s, { type: 'page.next', words: [], isLastPage: false });
+    expect(s.pageIndex).toBe(2);
+    const pagesRead = s.totals.pagesRead;
+    s = reduceFlow(s, { type: 'free.back' });
+    s = reduceFlow(s, { type: 'free.forward', isLastPage: false });
+    expect(s.pageIndex).toBe(2);
+    expect(s.screen).toBe('reading');
+    expect(s.totals.pagesRead).toBe(pagesRead);
+  });
+  it('seguir desde la última página ya leída va al final', () => {
+    expect(reduceFlow(reading(5), { type: 'free.forward', isLastPage: true }).screen).toBe('end');
+  });
+  it('seguir solo vale mientras se lee', () => {
+    const s = { ...initialFlow, screen: 'pageDone' as const };
+    expect(reduceFlow(s, { type: 'free.forward', isLastPage: false })).toBe(s);
+  });
+});
+
 describe('repaso por sílabas', () => {
   it('tileOrder es una permutación válida para 2 a 5 sílabas', () => {
     for (const n of [2, 3, 4, 5]) expect([...tileOrder(n)].sort()).toEqual(Array.from({ length: n }, (_, i) => i));

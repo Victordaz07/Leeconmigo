@@ -3,7 +3,7 @@ export { Button } from './components/button.tsx';
 export { Card } from './components/card.tsx';
 export { GradientView } from './components/gradient-view.tsx';
 export { gradientPoints } from './gradient-points.ts';
-export { ChevronLeftIcon, GearIcon, HelpIcon, HomeIcon, KiteIcon, MicIcon, MicOffIcon, SpeakerIcon, TrophyIcon } from './components/icons.tsx';
+export { ChevronLeftIcon, ChevronRightIcon, GearIcon, HelpIcon, HomeIcon, KiteIcon, MicIcon, MicOffIcon, SpeakerIcon, TrophyIcon } from './components/icons.tsx';
 export { MicBadge } from './components/mic-badge.tsx';
 export type { MicTone } from '@lee-conmigo/ui-core';
 export { useReducedMotion } from './components/use-reduced-motion.ts';
