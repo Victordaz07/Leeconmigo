@@ -40,7 +40,14 @@
           "disableFFmpeg": true
         }
       ],
-      "expo-sharing"
+      "expo-sharing",
+      [
+        "expo-notifications",
+        {
+          "color": "#1E6FE8"
+        }
+      ],
+      "./plugins/no-push.js"
     ]
   }
 }

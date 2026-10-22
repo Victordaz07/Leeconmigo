@@ -88,6 +88,12 @@ lista antes de agregarse.
 - [ ] Prueba automática que falle si aparece código que suba audio o archivos de audio (`*.wav`, etc. ya
       están en `.gitignore`).
 
+- [x] **Avisos (recordatorios)**: son solo locales (`expo-notifications`, programados en el equipo). La librería trae por dentro el envío
+      remoto de Firebase (FCM); `apps/mobile/plugins/no-push.js` quita ese servicio, su inicializador y el descubridor de componentes del
+      manifiesto, y `packages/speech-engine/tests/no-push.test.ts` falla si vuelve o si el código de avisos usa red. Los mensajes no llevan
+      el nombre del niño con un solo perfil ni hablan de rachas perdidas (D5). **Para el abogado/Play:** declarar el permiso
+      `POST_NOTIFICATIONS` y que no hay push ni token de envío; verificar en el manifiesto final del APK que no queda nada de Firebase.
+
 ## 7. Pendientes de decidir (en `docs/DECISIONS.md`)
 
 - C10 — **Modelo de negocio**: ¿gratis, pago único, suscripción? Cobrar agrega reglas (compras dentro de la
