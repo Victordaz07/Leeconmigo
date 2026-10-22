@@ -5,7 +5,15 @@
  */
 const { withAndroidManifest } = require('expo/config-plugins');
 
-const REMOVE = ['expo.modules.notifications.service.ExpoFirebaseMessagingService', 'com.google.firebase.provider.FirebaseInitProvider', 'com.google.firebase.components.ComponentDiscoveryService'];
+const REMOVE = [
+  'expo.modules.notifications.service.ExpoFirebaseMessagingService',
+  'com.google.firebase.messaging.FirebaseMessagingService',
+  'com.google.firebase.iid.FirebaseInstanceIdReceiver',
+  'com.google.firebase.provider.FirebaseInitProvider',
+  'com.google.firebase.components.ComponentDiscoveryService',
+];
+/** Permiso para recibir mensajes push de Google: la app no los usa. */
+const REMOVE_PERMISSIONS = ['com.google.android.c2dm.permission.RECEIVE'];
 
 module.exports = function withNoPush(config) {
   return withAndroidManifest(config, (cfg) => {
@@ -15,9 +23,13 @@ module.exports = function withNoPush(config) {
     app.service = app.service ?? [];
     app.provider = app.provider ?? [];
     for (const name of REMOVE) {
-      const isProvider = name.endsWith('Provider');
-      const list = isProvider ? app.provider : app.service;
-      if (!list.some((x) => x.$['android:name'] === name)) list.push({ $: { 'android:name': name, 'tools:node': 'remove' } });
+      const kind = name.endsWith('Provider') ? 'provider' : name.endsWith('Receiver') ? 'receiver' : 'service';
+      app[kind] = app[kind] ?? [];
+      if (!app[kind].some((x) => x.$['android:name'] === name)) app[kind].push({ $: { 'android:name': name, 'tools:node': 'remove' } });
+    }
+    manifest['uses-permission'] = manifest['uses-permission'] ?? [];
+    for (const name of REMOVE_PERMISSIONS) {
+      if (!manifest['uses-permission'].some((x) => x.$['android:name'] === name)) manifest['uses-permission'].push({ $: { 'android:name': name, 'tools:node': 'remove' } });
     }
     return cfg;
   });

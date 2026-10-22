@@ -97,7 +97,7 @@ lista antes de agregarse.
       remoto de Firebase (FCM); `apps/mobile/plugins/no-push.js` quita ese servicio, su inicializador y el descubridor de componentes del
       manifiesto, y `packages/speech-engine/tests/no-push.test.ts` falla si vuelve o si el código de avisos usa red. Los mensajes no llevan
       el nombre del niño con un solo perfil ni hablan de rachas perdidas (D5). **Para el abogado/Play:** declarar el permiso
-      `POST_NOTIFICATIONS` y que no hay push ni token de envío; verificar en el manifiesto final del APK que no queda nada de Firebase.
+      `POST_NOTIFICATIONS` y que no hay push ni token de envío; verificado en el manifiesto final (2026-10-22): ya no quedan el servicio, el receptor, el inicializador ni el permiso de Firebase/c2dm; solo dos etiquetas de color/ícono de avisos, inertes.
 
 ## 7. Pendientes de decidir (en `docs/DECISIONS.md`)
 
