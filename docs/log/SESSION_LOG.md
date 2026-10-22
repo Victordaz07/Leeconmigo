@@ -425,3 +425,6 @@ Unidad piloto (6 encuentros ES/EN), validador y motor de sesión puro en `packag
 
 ## 2026-10-22 · A · FI-06/07 Finanzas: textos ES/EN y módulo en la app
 Cuaderno + reproductor de la unidad F4-U01 (6 encuentros) con arte provisional en código; tarjeta «Finanzas» en la estantería. Probado en 4 tamaños con Chromium. Siguiente: imágenes de Victor y revisión de un educador.
+
+## 2026-10-22 · A · PV-01..04 «Para la vida» 02–08 instalados (Primer vistazo) + mega pedido de imágenes
+Motor de misiones compartido (`life-content`), 7 misiones ES/EN, 7 cuadernos aparte con fila «Para la vida» en Inicio, probados de punta a punta en Chromium en 4 tamaños. Mega prompt de 43 imágenes entregado en el chat y en `docs/design/vida/`. Siguiente: imágenes de Victor y revisión de especialistas.

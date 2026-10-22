@@ -1,7 +1,7 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { columnsFor, itemWidth, SUBJECTS, type SubjectId } from '@lee-conmigo/ui-core';
+import { columnsFor, itemWidth, LIFE_SUBJECTS, SUBJECTS, VIDA_COPY, type Subject, type SubjectId } from '@lee-conmigo/ui-core';
 import { Button, colors, fontFamily, gradients, GradientView, navRailWidth, NotebookCover, radius, SessionPhases, StatChip, useLayout } from '@lee-conmigo/ui-native';
 import type { ChildProfile } from '../app-state';
 import type { LibraryModel } from '../library-model';
@@ -42,6 +42,28 @@ export function HomeScreen({ profile, minutes, model, onContinue, onOpenReading,
   const { featured, featuredStory, stats } = model;
   const cover = featuredStory.cover ? storyImage(featuredStory.cover.src) : storyImage(featuredStory.pages[0].illustration.src);
   const resumeLabel = featured.resumePage !== null && featured.resumePage > 0 ? `${featuredStory.title} · página ${featured.resumePage + 1}` : featuredStory.title;
+
+  const renderSubject = (s: Subject) => {
+    const isReading = s.id === 'lectura';
+    const isMath = s.id === 'mate';
+    const mod = availableModule(s.id);
+    const card = mod?.homeCard(profile, profile.language === 'en' ? 'en' : 'es');
+    return (
+      <NotebookCover
+        key={s.id}
+        title={s.name}
+        subtitle={isReading ? resumeLabel : isMath ? math.subtitle : (card?.subtitle ?? '')}
+        image={isReading ? cover : isMath ? MATH_COVERS.notebook : card?.image}
+        glyph={s.glyph}
+        color={colors[s.colorToken]}
+        gradient={gradients[s.gradientToken]}
+        segments={isReading ? model.readingSegments : isMath ? math.segments : (card?.segments ?? 0)}
+        soon={!s.available && !mod}
+        onPress={isReading ? onOpenReading : isMath ? onOpenMath : mod ? () => onOpenSubject(s.id) : undefined}
+        width={coverWidth}
+      />
+    );
+  };
 
   return (
     <ScrollView style={styles.screen} contentContainerStyle={[styles.content, { paddingHorizontal: gutter, paddingTop: insets.top + (narrow ? 16 : 28), paddingBottom: (layout.nav === 'bottom' ? 0 : insets.bottom) + 24 }]}>
@@ -88,27 +110,14 @@ export function HomeScreen({ profile, minutes, model, onContinue, onOpenReading,
         </Text>
       </View>
       <View style={[styles.shelf, { gap }]}>
-        {SUBJECTS.map((s) => {
-          const isReading = s.id === 'lectura';
-          const isMath = s.id === 'mate';
-          const mod = availableModule(s.id);
-          const card = mod?.homeCard(profile, profile.language === 'en' ? 'en' : 'es');
-          return (
-            <NotebookCover
-              key={s.id}
-              title={s.name}
-              subtitle={isReading ? resumeLabel : isMath ? math.subtitle : (card?.subtitle ?? '')}
-              image={isReading ? cover : isMath ? MATH_COVERS.notebook : card?.image}
-              glyph={s.glyph}
-              color={colors[s.colorToken]}
-              gradient={gradients[s.gradientToken]}
-              segments={isReading ? model.readingSegments : isMath ? math.segments : (card?.segments ?? 0)}
-              soon={!s.available && !mod}
-              onPress={isReading ? onOpenReading : isMath ? onOpenMath : mod ? () => onOpenSubject(s.id) : undefined}
-              width={coverWidth}
-            />
-          );
-        })}
+        {SUBJECTS.filter((s) => s.group !== 'vida').map(renderSubject)}
+      </View>
+
+      <View style={styles.shelfHeader}>
+        <Text style={styles.h2}>{VIDA_COPY.shelf[profile.language === 'en' ? 'en' : 'es']}</Text>
+      </View>
+      <View style={[styles.shelf, { gap }]}>
+        {LIFE_SUBJECTS.map(renderSubject)}
       </View>
     </ScrollView>
   );

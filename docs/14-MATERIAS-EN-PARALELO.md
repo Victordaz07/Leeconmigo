@@ -9,6 +9,7 @@ tiempo. Este documento dice cómo, para que no se pisen. Complementa el "Protoco
 | Ciencia | A | `claude/ciencia-*` (o la que asigne la sesión) | `packages/science-content` | `apps/mobile/src/subjects/ciencia/` | `CI-xx` |
 | Sociedad | B | `claude/sociedad-*` (o la que asigne la sesión) | `packages/social-content` | `apps/mobile/src/subjects/sociedad/` | `SO-xx` |
 | Finanzas (D14, «Para la vida» 01) | A | `claude/finanzas-*` (o la que asigne la sesión) | `packages/finance-content` | `apps/mobile/src/subjects/finanzas/` | `FI-xx` |
+| Para la vida 02–08 (D14/D16) | A | `claude/vida-*` (o la que asigne la sesión) | `packages/life-content` | `apps/mobile/src/subjects/vida/` | `PV-xx` |
 | Arte y música (D14) | A (por ahora; Victor puede asignar otra) | `claude/artes-*` (o la que asigne la sesión) | `packages/art-content` y `packages/music-engine` | `apps/mobile/src/subjects/arte/` | `AR-xx` |
 
 Si una cuenta cambia de materia, se cambia aquí y en `docs/handoff/`.
