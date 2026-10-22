@@ -15,7 +15,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#F6F8FE",
+        "backgroundColor": "#1E6FE8",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
@@ -44,6 +44,7 @@
       [
         "expo-notifications",
         {
+          "icon": "./assets/brand/notification-icon.png",
           "color": "#1E6FE8"
         }
       ],

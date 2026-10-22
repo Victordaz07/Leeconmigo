@@ -401,3 +401,6 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
 - Reglas: amables y sin culpa (D5); si hoy ya leyó no se avisa; solo se programan 7 días hacia adelante (si no abre la app en una semana, se acaban solos); se reprograman al abrir la app, al volver a ella y al terminar una sesión.
 - Privacidad: `expo-notifications` trae Firebase por dentro → plugin `no-push.js` lo quita del manifiesto + prueba de guardia. Pendiente verificar el manifiesto final del APK.
 - Toca lo compartido (mínimo): `App.tsx`, `parent-home-screen.tsx`, `app-state.ts`, `persist/store.ts`, `app.json`, `package.json`/lock.
+
+## 2026-10-22 · cuenta A · Marca (K8e)
+- Logo e íconos de Kitewise hechos en código (`scripts/marca.mjs`): cometa de cuatro paños sobre el azul de la marca. Reemplazan los íconos de plantilla de Expo (`icon`, adaptable, monocromo, favicon, splash) y se agregó el ícono de avisos y los gráficos de Google Play. `app.json`: fondo adaptable `#1E6FE8` e ícono del plugin de avisos. Guía: `docs/design/kitewise/BRAND.md`.
