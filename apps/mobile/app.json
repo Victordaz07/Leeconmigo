@@ -24,6 +24,13 @@
       "package": "com.kitewise.app",
       "permissions": [
         "android.permission.RECORD_AUDIO"
+      ],
+      "allowBackup": false,
+      "blockedPermissions": [
+        "android.permission.INTERNET",
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE"
       ]
     },
     "web": {

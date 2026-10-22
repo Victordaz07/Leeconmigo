@@ -6,7 +6,7 @@ import { Button, Card, colors, fontFamily, GearIcon, HomeIcon, MathArtProvider, 
 import { resolveFocus, todayReport } from '@lee-conmigo/session-engine';
 import { energyOption, progressSegments, type Energy, type SubjectId } from '@lee-conmigo/ui-core';
 import { MATH_UNITS } from '@lee-conmigo/math-content';
-import { loadPin, loadProfiles, mathProgressFor, newChildProfile, savePin, saveProfiles, progressStoreFor, resetProgressFor, type ChildProfile } from './src/app-state';
+import { eraseAllData, loadLegalConsent, saveLegalConsent, loadPin, loadProfiles, mathProgressFor, newChildProfile, savePin, saveProfiles, progressStoreFor, resetProgressFor, type ChildProfile } from './src/app-state';
 import { createBundledRepository } from './src/bundled-stories';
 import { SHOW_DEV_TOOLS } from './src/dev-tools';
 import { MATH_ART } from './src/math-art';
@@ -23,6 +23,10 @@ import { WorkshopScreen } from './src/screens/math-visual/workshop-screen';
 import { NotebookScreen } from './src/screens/notebook-screen';
 import { ParentGateScreen } from './src/screens/parent-gate-screen';
 import { ParentHomeScreen } from './src/screens/parent-home-screen';
+import { LegalCenterScreen } from './src/screens/legal-center-screen';
+import { LegalWelcomeScreen } from './src/screens/legal-welcome-screen';
+import { LEGAL_VERSION } from './src/legal/config';
+import { needsConsent, newConsent, type LegalConsent } from './src/legal/consent';
 import { ParentRemindersScreen } from './src/screens/parent-reminders-screen';
 import { syncReminders } from './src/reminders/sync';
 import { ParentReportScreen } from './src/screens/parent-report-screen';
@@ -40,6 +44,7 @@ type Route =
   | { name: 'parents' }
   | { name: 'parentReport' }
   | { name: 'parentReminders' }
+  | { name: 'legal' }
   | { name: 'settings'; isNew: boolean }
   | { name: 'voiceTest' }
   | { name: 'audioTest' }
@@ -60,6 +65,9 @@ const RAIL_BOTTOM: NavRailItem[] = [
   { key: 'padres', label: 'Padres', icon: () => <GearIcon /> },
   ...(SHOW_DEV_TOOLS ? [{ key: 'dev', label: 'DEV', icon: () => <Text style={{ fontSize: 20 }}>⚙</Text> }] : []),
 ];
+
+/** Idioma del dispositivo para el aviso legal (antes de que exista un perfil): inglés si el teléfono está en inglés; si no, español. */
+const deviceLang = (): 'es' | 'en' => ((Intl.DateTimeFormat().resolvedOptions().locale ?? 'es').toLowerCase().startsWith('en') ? 'en' : 'es');
 
 /**
  * Kitewise (D9/D10, docs/13): ¿Quién aprende hoy? (B1) → ¿Cómo llegas hoy? (B2, si el padre lo dejó activo) → Inicio con la estantería de cuadernos (B3) → cuaderno de Lectura (B4) → lectura. Logros y
@@ -90,6 +98,8 @@ function Root() {
   const [energy, setEnergy] = useState<Energy | null | undefined>(undefined);
   const [route, setRoute] = useState<Route>({ name: 'home' });
   const [parentPin, setParentPin] = useState<string | null>(loadPin);
+  // Aviso legal: sin la aceptación de un adulto (de la versión vigente de los textos) no se entra a la app.
+  const [consent, setConsent] = useState<LegalConsent | null>(loadLegalConsent);
   useEffect(() => savePin(parentPin), [parentPin]);
   const gateNext = route.name === 'parentGate' ? route.next : 'parents';
   const openGated = useCallback(
@@ -110,6 +120,19 @@ function Root() {
   const model = useMemo(() => (profile ? buildLibraryModel(repository, progressStoreFor(profile.id), profile) : null), [repository, profile, progressVersion]);
 
   if (!fontsLoaded) return <View style={styles.screen} />;
+  if (needsConsent(consent, LEGAL_VERSION)) {
+    return (
+      <LegalWelcomeScreen
+        version={LEGAL_VERSION}
+        initialLang={deviceLang()}
+        onAccept={(lang) => {
+          const c = newConsent(LEGAL_VERSION, lang);
+          saveLegalConsent(c);
+          setConsent(c);
+        }}
+      />
+    );
+  }
 
   const home = () => setRoute({ name: 'home' });
   if (route.name === 'parentGate') return <ParentGateScreen savedPin={parentPin} onOpen={openGated} onBack={home} />;
@@ -181,6 +204,27 @@ function Root() {
         onSettings={() => setRoute({ name: 'settings', isNew: false })}
         onReport={() => setRoute({ name: 'parentReport' })}
         onReminders={() => setRoute({ name: 'parentReminders' })}
+        onLegal={() => setRoute({ name: 'legal' })}
+      />
+    );
+  }
+  if (route.name === 'legal') {
+    return (
+      <LegalCenterScreen
+        lang={consent?.lang ?? deviceLang()}
+        consent={consent}
+        onBack={() => setRoute({ name: 'parents' })}
+        onErase={() => {
+          eraseAllData();
+          void syncReminders([]);
+          setProfiles(loadProfiles());
+          setProfileId(null);
+          setParentPin(null);
+          setConsent(null);
+          setEnergy(undefined);
+          setProgressVersion((v) => v + 1);
+          setRoute({ name: 'home' });
+        }}
       />
     );
   }

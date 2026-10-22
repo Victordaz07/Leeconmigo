@@ -404,3 +404,9 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
 
 ## 2026-10-22 · cuenta A · Marca (K8e)
 - Logo e íconos de Kitewise hechos en código (`scripts/marca.mjs`): cometa de cuatro paños sobre el azul de la marca. Reemplazan los íconos de plantilla de Expo (`icon`, adaptable, monocromo, favicon, splash) y se agregó el ícono de avisos y los gráficos de Google Play. `app.json`: fondo adaptable `#1E6FE8` e ícono del plugin de avisos. Guía: `docs/design/kitewise/BRAND.md`.
+
+## 2026-10-22 · cuenta A · Aviso legal al iniciar (K9)
+- Pantalla «Antes de empezar» (ES/EN) antes de entrar a la app: resumen de avisos, pregunta de adultos, casilla de aceptación en nombre propio y del menor; guarda versión + fecha y vuelve a pedir si cambian los textos. Modo padres → «Legal y privacidad»: textos completos, contacto y «Borrar todos los datos».
+- Textos BORRADOR (avisos, política de privacidad, términos) en `apps/mobile/src/legal/copy.ts` y generados a `docs/legal/*.md` (`node scripts/legal-docs.mjs`). Paquete para el abogado: `docs/legal/REVISION-ABOGADO.md` (mapa de datos para Play, permisos, 12 preguntas).
+- Privacidad técnica: `allowBackup=false`; permisos quitados: INTERNET, SYSTEM_ALERT_WINDOW, almacenamiento externo (verificar en Android real). Pruebas de guardia nuevas.
+- Faltan datos de Victor (marcados [PENDIENTE]): nombre legal del editor (C11), correo de contacto, URL de la política, ley aplicable.

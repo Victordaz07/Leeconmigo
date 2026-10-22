@@ -34,11 +34,11 @@ lista antes de agregarse.
 
 ## 2. Documentos que hay que tener
 
-- [ ] **Política de privacidad** en una URL pública (las dos tiendas la exigen) y dentro de la app. En
+- [~] **Política de privacidad** (BORRADOR hecho: `docs/legal/politica-de-privacidad.*.md` y dentro de la app; falta URL pública, datos del editor y revisión del abogado) en una URL pública (las dos tiendas la exigen) y dentro de la app. En
       lenguaje claro: qué se guarda (solo estadísticas en el dispositivo), qué NO (audio, texto reconocido),
       que nada sale del dispositivo, cómo borrar todo, contacto.
-- [ ] **Términos de uso.**
-- [ ] **Aviso para padres** al primer uso (antes de pedir el micrófono): qué hace la app con la voz.
+- [~] **Términos de uso** (BORRADOR hecho en la app y en `docs/legal/`; falta revisión del abogado).
+- [~] **Aviso para padres** al primer uso (HECHO en la app: pantalla «Antes de empezar» con pregunta de adultos y casilla de aceptación; falta revisión legal) (antes de pedir el micrófono): qué hace la app con la voz.
       Ya existe la frase de `docs/01`: "La voz de tu hijo nunca se graba ni se almacena."
 - [ ] **Descargos** (disclaimers):
   - [ ] Herramienta de práctica de lectura; **no es tratamiento, diagnóstico ni terapia** (D3). Nunca
@@ -46,7 +46,7 @@ lista antes de agregarse.
         describe por lo que hace (menos distracciones, bloques cortos), no por un diagnóstico.
   - [ ] El reconocimiento de voz puede equivocarse; no es una evaluación oficial de lectura.
   - [ ] No reemplaza a la escuela ni al maestro.
-- [ ] Contacto de soporte (correo) visible.
+- [ ] Contacto de soporte (correo) visible (la app ya lo muestra; falta el correo real en `legal/config.ts`).
 
 ## 3. Google Play (Android, primero)
 
@@ -86,9 +86,9 @@ lista antes de agregarse.
 ## 6. Técnicas (las hace Claude Code, se verifican en revisión)
 
 - [ ] Cero SDKs de terceros que recojan datos (analítica, anuncios, reporte de errores, "attribution").
-- [ ] Permisos de red: la app no necesita internet para leer. Si en el futuro descarga contenido, solo
+- [x] Permisos: se quitaron `INTERNET`, `SYSTEM_ALERT_WINDOW` y almacenamiento externo (`blockedPermissions`); copia de seguridad de Android apagada. Verificar en un dispositivo real. Antes: permisos de red: la app no necesita internet para leer. Si en el futuro descarga contenido, solo
       descarga, nunca sube datos del niño.
-- [ ] Botón en Modo padres: **"Borrar todos los datos"**.
+- [x] Botón en Modo padres: **"Borrar todos los datos"** (Legal y privacidad).
 - [ ] Sin enlaces externos accesibles al niño sin pasar por el candado de padres.
 - [ ] Prueba automática que falle si aparece código que suba audio o archivos de audio (`*.wav`, etc. ya
       están en `.gitignore`).

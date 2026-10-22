@@ -24,4 +24,16 @@ describe('avisos sin push remoto', () => {
       expect(code, f).not.toMatch(/\bfetch\s*\(|XMLHttpRequest|WebSocket|getExpoPushTokenAsync|getDevicePushTokenAsync|addPushTokenListener/);
     }
   });
+  it('la copia de seguridad de Android está apagada (la política de privacidad dice que la app no participa)', () => {
+    expect(JSON.parse(read('app.json')).expo.android.allowBackup).toBe(false);
+  });
+  it('el aviso legal está conectado: la app no abre sin aceptación y existe «Borrar todos los datos»', () => {
+    const app = read('App.tsx');
+    expect(app).toContain('needsConsent(consent, LEGAL_VERSION)');
+    expect(app).toContain('eraseAllData()');
+  });
+  it('la app no pide permisos que no usa: sin Internet, sin superposición ni almacenamiento externo', () => {
+    const blocked: string[] = JSON.parse(read('app.json')).expo.android.blockedPermissions;
+    for (const p of ['INTERNET', 'SYSTEM_ALERT_WINDOW', 'READ_EXTERNAL_STORAGE', 'WRITE_EXTERNAL_STORAGE']) expect(blocked).toContain(`android.permission.${p}`);
+  });
 });
