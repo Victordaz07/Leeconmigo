@@ -431,3 +431,9 @@ Motor de misiones compartido (`life-content`), 7 misiones ES/EN, 7 cuadernos apa
 
 ## 2026-10-22 · A · PV-05 Arte real de «Para la vida» 02–08 conectado
 Victor generó las 43 imágenes (Partes 1 y 2). Convertidas a WebP (2,6 MB) con manifiesto SHA-256; portadas en la estantería (4×2), banner del estante, guía y escena en cada misión. Probado en 4 tamaños. Finanzas sigue con arte provisional.
+
+## 2026-10-22 · Codex · LE-01 puente: lector por escenas y ayuda por palabra
+- Pedido de Victor: dos cuentos en secuencia; segundo confirmado como «El mapa de la puerta desaparecida», no el conejo. Se conserva TTS y la ayuda de TODAS las palabras como función central.
+- Puente integrado en lectura libre: diez escenas en sus seis variantes, arte original encuadrado + ilustración de muestra, letra ajustable por niño, anclas compatibles con marcadores antiguos, hasta tres preguntas y tres palabras de repaso con lógica compartida.
+- Comprobado: 1.834 pruebas de la suite, TypeScript en todos los paquetes, lint sin errores y recorrido Chromium ES/EN con cuatro tamaños, ayuda, reanudación, preguntas, repaso y guardado. Voz audible/Android pendientes de dispositivo; no se genera APK.
+- Siguiente: LE-02. Detalle: `docs/design/reading-pilot/README.md`.

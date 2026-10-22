@@ -1,0 +1,26 @@
+export const READER_COPY = {
+  es: {
+    back: 'Volver al cuaderno', smaller: 'Reducir letra', larger: 'Aumentar letra',
+    part: (n: number, total: number) => `Fragmento ${n} de ${total}`,
+    free: 'Lectura libre', hint: 'Toca cualquier palabra para escucharla. Lee a tu ritmo.',
+    previous: 'Fragmento anterior', next: 'Seguir leyendo', finish: 'Terminé el cuento', start: 'Empezar a leer',
+    welcome: 'Sin prisa. La historia te espera.', welcomeHint: 'Lee a tu ritmo. Si una palabra te cuesta, tócala. Puedes volver atrás cuando quieras.',
+    question: 'Una pausa para recordar', reread: 'Volver al texto', hideText: 'Cerrar el texto', continue: 'Continuar',
+    review: 'Palabras que vuelven', reviewHint: 'Toca las sílabas para construir la palabra. Puedes escucharla cuando quieras.',
+    listen: 'Escuchar palabra', tryTile: 'Probemos con otra sílaba.', built: 'La armaste. Escucha cómo suena.',
+    nextWord: 'Otra palabra', doneReview: 'Terminar el repaso',
+    practice: 'Tiempo de práctica', words: 'Palabras consultadas',
+  },
+  en: {
+    back: 'Back to the notebook', smaller: 'Smaller text', larger: 'Larger text',
+    part: (n: number, total: number) => `Part ${n} of ${total}`,
+    free: 'Read at your own pace', hint: 'Tap any word to hear it. Take your time.',
+    previous: 'Previous part', next: 'Keep reading', finish: 'I finished the story', start: 'Start reading',
+    welcome: 'Take your time. The story is waiting.', welcomeHint: 'Read at your own pace. Tap a word if you need help. You can go back whenever you like.',
+    question: 'A moment to remember', reread: 'Read the passage again', hideText: 'Close the passage', continue: 'Continue',
+    review: 'Words to explore again', reviewHint: 'Tap the syllables to build the word. You can listen whenever you like.',
+    listen: 'Listen to the word', tryTile: 'Let’s try another syllable.', built: 'You built it. Listen to how it sounds.',
+    nextWord: 'Another word', doneReview: 'Finish the practice',
+    practice: 'Practice time', words: 'Words explored',
+  },
+} as const;

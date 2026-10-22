@@ -13,6 +13,8 @@ export interface SessionSummary {
   category?: string;
   /** Tiempo de lectura VÁLIDA (el que llena la barra de metas del padre). */
   validReadingSeconds: number;
+  /** Procedencia del tiempo: lectura libre estimada, simulador o reconocimiento real. Ausente en resúmenes antiguos. */
+  readingMode?: 'free' | 'simulated' | 'voice';
   sessionSeconds: number;
   comprehensionCorrect: number;
   comprehensionTotal: number;
@@ -37,5 +39,8 @@ export interface SessionSummary {
 export interface ResumePoint {
   storyId: string;
   pageIndex: number;
+  /** Ancla opcional del lector por escenas; pageIndex conserva la página editorial para clientes anteriores. */
+  blockId?: string;
+  lineIndex?: number;
   updatedAt: string;
 }

@@ -64,7 +64,7 @@ export function ReadingText({ page, words, markOf, onWordPress, fontSize = 27, c
 const Word = memo(function Word({ word, mark, onPress }: { word: StoryWord; mark: WordMark; onPress: (i: number) => void }) {
   return (
     <Text>
-      <Text style={wordStyle(mark)} onPress={() => onPress(word.index)} suppressHighlighting={false}>
+      <Text style={wordStyle(mark)} accessibilityRole="button" accessibilityLabel={word.text} onPress={() => onPress(word.index)} suppressHighlighting={false}>
         {word.text}
       </Text>{' '}
     </Text>

@@ -187,3 +187,10 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | PV-05 | Conectar imágenes reales (portadas, escenas, guías) | ✅ | A | 43 imágenes (Partes 1 y 2) en WebP, `subjects/vida/art.ts`, manifiesto SHA-256 |
 | PV-06 | Investigar y ampliar 04–08 (una investigación por módulo) | ⬜ | A | no se programa antes de investigar |
 | PV-07 | Revisión de especialistas y prueba con niños | ⬜ | – | |
+# Piloto de lectura por escenas (Victor, 2026-10-22)
+
+| ID | Tarea | Estado | Nota |
+|---|---|---|---|
+| LE-01 | El puente de las luciérnagas: escenas, letra ajustable, ayuda de todas las palabras, preguntas y repaso | ✅ | Lector libre nativo, ES/EN; lógica, TypeScript y recorrido Chromium en cuatro tamaños. `docs/design/reading-pilot/README.md` |
+| LE-02 | El mapa de la puerta desaparecida (Inés y Teo): adaptar arte y lectura larga | 🟡 | Después de cerrar LE-01; conservar texto/vocabulario y comprobar el recorrido completo |
+

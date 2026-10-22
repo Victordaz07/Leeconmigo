@@ -13,8 +13,8 @@ import { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { AppState } from 'react-native';
 import type { ReadingSessionState, ReadingTimerSnapshot, Story } from '@lee-conmigo/contracts';
 import { FakeReadingEngine, vocabularyKey } from '@lee-conmigo/reading-engine';
-import { buildSessionSummary, formatDuration, initialFlow, reduceFlow, type FlowAction, type ProgressStore } from '@lee-conmigo/session-engine';
-import { tokenizePage, type StoryWord } from '@lee-conmigo/story-engine';
+import { buildSessionSummary, formatDuration, initialFlow, reduceFlow, selectCheckpointPages, type FlowAction, type ProgressStore } from '@lee-conmigo/session-engine';
+import { reviewWordsFromKeys, tokenizePage, type StoryWord } from '@lee-conmigo/story-engine';
 import { cleanWord, defaultPrefs, deriveReadingView, effortReason, effortStars, kiteMeters, type Energy, type FocusSelfReport, type ReaderPrefs } from '@lee-conmigo/ui-core';
 import { speak, stopSpeaking } from '../tts';
 import { canNavigate, creditedMs, tickDelta } from './free-clock';
@@ -47,10 +47,14 @@ export interface ReadingSessionOptions {
   freeReading?: boolean;
   /** Quedarse en "página completa" sin pasar a la siguiente (mientras dura una pausa de movimiento, B12). */
   holdAtPageEnd?: boolean;
+  /** Prepared editions opt into the shared comprehension and syllable-review flow. */
+  enablePractice?: boolean;
 }
 
 export function useReadingSession(story: Story, options: ReadingSessionOptions) {
   const { store, prefs = defaultPrefs, now = () => new Date(), energy, dailyGoalMinutes = 15 } = options;
+  const clockRef = useRef(now);
+  clockRef.current = now;
   const [engine] = useState(() => new FakeReadingEngine());
   // Se retoma donde se quedó (a nivel de página), como en la app web.
   const [flow, dispatch] = useReducer(reduceFlow, null, () => {
@@ -61,6 +65,10 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
   const page = story.pages[pageIndex];
   const isLastPage = pageIndex === story.pages.length - 1;
   const words = useMemo(() => tokenizePage(page), [page]);
+  const checkpointPages = useMemo(() => selectCheckpointPages(story.pages), [story]);
+  const checkpoint = options.enablePractice && checkpointPages.has(pageIndex) ? (page.checkpoint?.variants.find(v => v.audience === prefs.audience) ?? page.checkpoint?.variants[0]) : undefined;
+  const answeredPages = useRef(new Set<number>());
+  const helpedKeys = useRef(new Set<string>());
   const [reading, setReading] = useState<ReadingSessionState>(engine.getState());
   const [timer, setTimer] = useState<ReadingTimerSnapshot>(engine.getTimerSnapshot());
   const [auto, setAuto] = useState(false);
@@ -103,9 +111,8 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
    */
   const persistSession = (focusSelfReport?: FocusSelfReport) => {
     const f = flowRef.current;
-    if (summarySaved.current || f.totals.pagesRead === 0) return;
-    summarySaved.current = true;
     const t = engine.getTimerSnapshot();
+    if (summarySaved.current || (f.totals.pagesRead === 0 && !(options.enablePractice && (t.validSeconds > 0 || helpedKeys.current.size > 0)))) return;
     const base = buildSessionSummary({
       story: { id: story.id, language: story.language, level: story.level, pageCount: story.pages.length, category: story.category },
       flow: f,
@@ -115,7 +122,9 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
     });
     const stars = effortStars({ completed: base.completion >= 1, ...effort.current });
     const { stars: _accuracyStars, ...rest } = base;
-    store.saveSummary({ ...rest, ...(stars ? { stars } : {}), ...(focusSelfReport ? { focusSelfReport } : {}), ...(energy ? { energy } : {}) });
+    store.saveSummary({ ...rest, readingMode: freeRef.current ? 'free' : 'simulated', wordsHelped: [...new Set([...rest.wordsHelped, ...helpedKeys.current])], ...(stars ? { stars } : {}), ...(focusSelfReport ? { focusSelfReport } : {}), ...(energy ? { energy } : {}) });
+    summarySaved.current = true;
+    if (options.enablePractice && f.screen === 'end') store.clearResumePoint(story.id);
   };
   const screenRef = useRef(flow.screen);
   screenRef.current = flow.screen;
@@ -136,7 +145,7 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
       setTimer(engine.getTimerSnapshot());
       setAuto(engine.isAutoReading);
       // Lectura libre: el reloj corre solo mientras se lee con la app a la vista (el segundo plano no suma).
-      const t = now().getTime();
+      const t = clockRef.current().getTime();
       const dt = tickDelta(freeClock.current.lastTick, t);
       freeClock.current.lastTick = t;
       if (dt > 0 && freeRef.current && screenRef.current === 'reading' && AppState.currentState === 'active') {
@@ -172,6 +181,8 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
     }
   };
 
+  const reviewItems = () => reviewWordsFromKeys(story, [...flowRef.current.totals.practicedKeys, ...helpedKeys.current]).map(key => ({ key, syllables: story.vocabulary[key].syllables! }));
+
   /** Carga una página en el motor y deja el reloj de la página en cero. */
   const goToPage = (index: number) => {
     engine.loadPage(tokenizePage(story.pages[index]));
@@ -181,10 +192,13 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
     saveResume(index);
   };
 
-  // Al terminar una página, seguir sola tras el aviso. TODO(RN-06): pregunta de comprensión y repaso por sílabas.
+  // Prepared editions use at most three checkpoints at natural page boundaries; other stories retain their existing flow.
   useEffect(() => {
     if (flow.screen !== 'pageDone' || options.holdAtPageEnd) return;
-    const id = setTimeout(() => advance({ type: 'page.next', words: [], isLastPage }), freeReading ? FREE_PAGE_DONE_MS : PAGE_DONE_MS);
+    const id = setTimeout(() => {
+      if (checkpoint && !answeredPages.current.has(pageIndex)) advance({ type: 'question.open' });
+      else advance({ type: 'page.next', words: options.enablePractice && isLastPage ? reviewItems() : [], isLastPage });
+    }, freeReading ? FREE_PAGE_DONE_MS : PAGE_DONE_MS);
     return () => clearTimeout(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [flow.screen, options.holdAtPageEnd]);
@@ -194,7 +208,7 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
   useEffect(() => {
     if (flow.screen !== 'end') return;
     engine.simulate.completeStory();
-    store.clearResumePoint(story.id);
+    if (!options.enablePractice) store.clearResumePoint(story.id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [flow.screen, engine]);
 
@@ -212,6 +226,8 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
   const begin = () => {
     summarySaved.current = false;
     effort.current = { helpedOrRetried: false, longPauses: 0 };
+    helpedKeys.current.clear();
+    answeredPages.current.clear();
     resetFreeClock(flow.pageIndex);
     pageStartedAt.current = now().getTime();
     engine.startSession(words);
@@ -222,6 +238,8 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
   const restart = () => {
     summarySaved.current = false;
     effort.current = { helpedOrRetried: false, longPauses: 0 };
+    helpedKeys.current.clear();
+    answeredPages.current.clear();
     resetFreeClock(0);
     engine.simulate.autoRead(false);
     engine.startSession(tokenizePage(story.pages[0]));
@@ -261,8 +279,12 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
     freeClock.current.lastNavAt = t;
     creditFreePage();
     if (completedPages.current.has(f.pageIndex)) {
+      if (checkpoint && !answeredPages.current.has(f.pageIndex)) {
+        dispatch({ type: 'question.open' });
+        return;
+      }
       const last = f.pageIndex === story.pages.length - 1;
-      dispatch({ type: 'free.forward', isLastPage: last });
+      dispatch({ type: 'free.forward', isLastPage: last, words: options.enablePractice && last ? reviewItems() : [] });
       if (!last) goToPage(f.pageIndex + 1);
     } else {
       engine.simulate.completePage();
@@ -302,7 +324,7 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
       /** Sello del día: la lectura de hoy ya llegó a la meta del padre. */
       dailyStamp: todaySeconds >= dailyGoalMinutes * 60,
       /** Palabras que costaron: vuelven en el repaso. */
-      returning: flow.totals.practicedKeys.length,
+      returning: new Set([...flow.totals.practicedKeys, ...helpedKeys.current]).size,
     };
   })();
 
@@ -358,9 +380,27 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
     /** Lectura libre: la ayuda del coach («toca › para seguir») solo se ve unos segundos al llegar a la página de partida; después tapaba el texto. */
     freeHintVisible: freeReading && pageIndex === flow.startPage && freePageMs < FREE_HINT_MS,
     closing,
+    checkpoint,
     /** Tarjeta "Te espero…" de la pausa larga (B11). Nunca en modo libre: nadie le habla al micrófono. */
     showPauseCard: flow.screen === 'reading' && reading.pause === 'long' && !pauseDismissed && !freeReading && reading.helpWordIndex === null,
     actions: {
+      rememberWord: (key: string) => {
+        helpedKeys.current.add(key);
+        effort.current.helpedOrRetried = true;
+      },
+      answerQuestion: (index: number) => {
+        if (checkpoint && flowRef.current.screen === 'question') dispatch({ type: 'question.pick', index, correctIndex: checkpoint.correctIndex });
+      },
+      continueQuestion: () => {
+        if (!checkpoint || flowRef.current.screen !== 'question' || flowRef.current.answer !== checkpoint.correctIndex) return;
+        answeredPages.current.add(pageIndex);
+        advance({ type: 'question.finish', correctIndex: checkpoint.correctIndex, isLastPage, words: isLastPage ? reviewItems() : [] });
+      },
+      reviewTap: (tile: number) => dispatch({ type: 'review.tap', tile }),
+      reviewNext: () => {
+        if (flowRef.current.screen !== 'review') return;
+        advance({ type: 'review.next' });
+      },
       begin,
       restart,
       leave,

@@ -8,6 +8,7 @@ export * from './layout-file.ts';
 export * from './templates.ts';
 export * from './tokenize.ts';
 export * from './validate.ts';
+export * from './reading-edition.ts';
 
 /**
  * Historia piloto del prototipo de Reading Session ("La luna y la puerta azul", español).

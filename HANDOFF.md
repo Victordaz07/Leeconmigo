@@ -19,9 +19,11 @@ Todo el trabajo está en `master` de `Victordaz07/Leeconmigo` (rama de trabajo `
 - Verificación: `npm run typecheck --workspaces --if-present`, `npm run typecheck -w apps/mobile`, `npm test` (≈1820 pruebas ✅).
 
 ## Tarea en curso
+**Codex · LE-01 listo, LE-02 en curso (2026-10-22):** Victor autorizó preparar dos cuentos, primero «El puente de las luciérnagas», después «El mapa de la puerta desaparecida» (confirmado en el chat). Rama `codex/lectura-puente-y-mapa`. El puente ya tiene lector por escenas en modo libre, ayuda en cada palabra, letra ajustable, preguntas y repaso. Pruebas de lógica, 1.834 de la suite, TypeScript y recorrido Chromium ES/EN aprobados. Detalle y comandos: `docs/design/reading-pilot/README.md`. No generar APK ni fusionar sin petición. La voz real sigue pausada; se mantiene TTS.
+
 **K8a hecho (2026-10-21):** Mi cuaderno ya se abre desde Inicio (palabras de Lectura, ideas escritas por el niño, dibujos de Arte). K8b (Logros), «Guardar en mi cuaderno» en los cierres, Mi museo e informe semanal PDF también hechos (2026-10-21); falta APK para probar en Android. Detalle: `docs/log/SESSION_LOG.md`.
 
-Ninguna a medias. Voz (RN-03) PAUSADA por Victor. K6: la primera unidad de Matemáticas (g3u1) ya se juega completa.
+Voz (RN-03) PAUSADA por Victor. K6: la primera unidad de Matemáticas (g3u1) ya se juega completa.
 
 ## Hecho en RN-01
 - [x] `apps/mobile` (Expo SDK 57, RN 0.86, TS) dentro del monorepo

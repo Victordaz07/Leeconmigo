@@ -24,6 +24,7 @@ export const KEYS = {
   /** Aceptación del aviso legal por el adulto (versión + fecha). */
   legal: `${PREFIX}legal`,
   reading: (id: string) => `${PREFIX}reading.${id}`,
+  readerPrefs: (id: string) => `${PREFIX}reader-prefs.${id}`,
   math: (id: string) => `${PREFIX}math.${id}`,
   /** Datos de una materia nueva (Ciencia, Sociedad…) de un niño: `kitewise.v1.<materia>.<niño>`. */
   subject: (subject: SubjectKey, id: string) => `${PREFIX}${subject}.${id}`,
@@ -147,6 +148,7 @@ export function eraseEverything(kv: KV, childIds: string[]) {
 /** "Borrar el progreso" de un niño (docs/12 §6): Lectura, Matemáticas y las demás materias. */
 export function eraseChild(kv: KV, id: string) {
   kv.remove(KEYS.reading(id));
+  kv.remove(KEYS.readerPrefs(id));
   kv.remove(KEYS.math(id));
   for (const s of SUBJECT_KEYS) kv.remove(KEYS.subject(s, id));
 }

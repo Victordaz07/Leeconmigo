@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { BackHandler, Image, Pressable, ScrollView, StyleSheet, Text, View, type LayoutChangeEvent } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { Story } from '@lee-conmigo/contracts';
@@ -13,6 +13,8 @@ import { MovementBreakScreen } from './movement-break-screen';
 import { storyImage } from '../story-assets';
 import { STAR_IMAGES } from '../kitewise-art';
 import { notebookSaverFor } from '../notebook-save';
+import { preparedReadingFor } from '../reading/edition';
+import { SceneReadingScreen } from './scene-reading-screen';
 
 const lectura = subjectById('lectura');
 
@@ -38,7 +40,7 @@ type PageMode = 'side' | 'stack' | 'split';
  * como estrella con globo. Estados: pausa ámbar (B11), sin micrófono (G11), ayuda de palabra (G13).
  * Con `FakeReadingEngine` la lectura se simula con el panel DEV (solo en desarrollo) hasta la voz real (RN-07).
  */
-interface ReadingScreenProps {
+export interface ReadingScreenProps {
   story: Story;
   profile: ChildProfile;
   /** Lo que eligió en "¿Cómo llegas hoy?" (B2), si se preguntó. */
@@ -52,7 +54,12 @@ interface ReadingScreenProps {
   onExit: () => void;
 }
 
-export function ReadingScreen({ story, profile, energy, goalMinutes, focusReading = false, movementBreaks = false, onExit }: ReadingScreenProps) {
+export function ReadingScreen(props: ReadingScreenProps) {
+  const prepared = useMemo(() => props.profile.freeReading ? preparedReadingFor(props.story) : null, [props.story, props.profile.freeReading]);
+  return prepared ? <SceneReadingScreen {...props} prepared={prepared} /> : <LegacyReadingScreen {...props} />;
+}
+
+function LegacyReadingScreen({ story, profile, energy, goalMinutes, focusReading = false, movementBreaks = false, onExit }: ReadingScreenProps) {
   const [resting, setResting] = useState(false);
   const session = useReadingSession(story, { store: progressStoreFor(profile.id), energy: energy ?? undefined, dailyGoalMinutes: goalMinutes, freeReading: profile.freeReading, holdAtPageEnd: resting });
   // Pausa de movimiento (B12): el reloj cuenta mientras lee; si ya toca, se ofrece al terminar una página (no la última,

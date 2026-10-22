@@ -97,7 +97,7 @@ export type FlowAction =
    * "Modo lectura libre": pasa a la página siguiente de una página YA leída (el niño había vuelto atrás). No suma páginas leídas ni
    * repite la pregunta. Si era la última página, va al final.
    */
-  | { type: 'free.forward'; isLastPage: boolean }
+  | { type: 'free.forward'; isLastPage: boolean; words?: ReviewWord[] }
   /** Salto directo (solo herramientas de desarrollo: panel "Ir a pantalla"). */
   | { type: 'debug.set'; state: FlowState };
 
@@ -185,7 +185,7 @@ export function reduceFlow(s: FlowState, a: FlowAction): FlowState {
       return { ...s, screen: 'reading', pageIndex: Math.max(0, s.pageIndex - 1), answer: null, attempts: 0, review: null };
     case 'free.forward':
       if (s.screen !== 'reading') return s;
-      return a.isLastPage ? { ...s, screen: 'end', review: null } : { ...s, pageIndex: s.pageIndex + 1, answer: null, attempts: 0, review: null };
+      return advance(s, a.isLastPage, a.words ?? []);
     case 'debug.set':
       return a.state;
   }

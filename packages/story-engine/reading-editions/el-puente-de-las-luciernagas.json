@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "familyId": "el-puente-de-las-luciernagas",
+  "maxWordsPerUnit": 100,
+  "scenes": [
+    {
+      "pageId": "p01",
+      "blockId": "b01",
+      "illustration": {
+        "src": "stories/el-puente-de-las-luciernagas/reader/scene-01.webp",
+        "width": 1448,
+        "height": 1086,
+        "alt": "Mila y Pipo caminan entre luciérnagas junto al arroyo."
+      }
+    },
+    {
+      "pageId": "p01",
+      "blockId": "b02",
+      "illustration": {
+        "src": "stories/el-puente-de-las-luciernagas/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mila, Pipo y un erizo miran el arroyo donde falta el puente."
+      },
+      "crop": {
+        "x": 780,
+        "y": 180,
+        "width": 748,
+        "height": 836
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b03",
+      "illustration": {
+        "src": "stories/el-puente-de-las-luciernagas/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Una hoja se dobla en el agua mientras Mila y Pipo la observan."
+      },
+      "crop": {
+        "x": 8,
+        "y": 180,
+        "width": 748,
+        "height": 836
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b04",
+      "illustration": {
+        "src": "stories/el-puente-de-las-luciernagas/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Pipo intenta empujar una rama demasiado pesada."
+      },
+      "crop": {
+        "x": 780,
+        "y": 180,
+        "width": 748,
+        "height": 836
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b05",
+      "illustration": {
+        "src": "stories/el-puente-de-las-luciernagas/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mila sostiene corteza junto a dos piedras lisas."
+      },
+      "crop": {
+        "x": 8,
+        "y": 180,
+        "width": 748,
+        "height": 836
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b06",
+      "illustration": {
+        "src": "stories/el-puente-de-las-luciernagas/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mila coloca corteza sobre dos piedras para formar un puente."
+      },
+      "crop": {
+        "x": 780,
+        "y": 180,
+        "width": 748,
+        "height": 836
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b07",
+      "illustration": {
+        "src": "stories/el-puente-de-las-luciernagas/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mila prueba la firmeza del puente con una piedrita."
+      },
+      "crop": {
+        "x": 8,
+        "y": 180,
+        "width": 748,
+        "height": 836
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b08",
+      "illustration": {
+        "src": "stories/el-puente-de-las-luciernagas/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El erizo espera mientras Mila y Pipo están cerca del paso."
+      },
+      "crop": {
+        "x": 780,
+        "y": 180,
+        "width": 748,
+        "height": 836
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b09",
+      "illustration": {
+        "src": "stories/el-puente-de-las-luciernagas/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mila y Pipo se apartan para dejar libre el camino."
+      },
+      "crop": {
+        "x": 8,
+        "y": 180,
+        "width": 748,
+        "height": 836
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b10",
+      "illustration": {
+        "src": "stories/el-puente-de-las-luciernagas/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El erizo cruza la corteza y Mila y Pipo lo observan desde lejos."
+      },
+      "crop": {
+        "x": 780,
+        "y": 180,
+        "width": 748,
+        "height": 836
+      }
+    }
+  ]
+}
