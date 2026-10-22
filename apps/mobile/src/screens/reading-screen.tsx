@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
-import { Image, Pressable, ScrollView, StyleSheet, Text, View, type LayoutChangeEvent } from 'react-native';
+import { BackHandler, Image, Pressable, ScrollView, StyleSheet, Text, View, type LayoutChangeEvent } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { Story } from '@lee-conmigo/contracts';
 import { copy, isBalloonPage, subjectById, wordMark, type WordMark } from '@lee-conmigo/ui-core';
@@ -75,6 +75,27 @@ export function ReadingScreen({ story, profile, energy, goalMinutes, focusReadin
     onExit();
   };
 
+  // Botón "atrás" de Android: sale de la lectura GUARDANDO lo leído (antes cerraba la app y se perdía la sesión). Primero cierra lo que esté abierto.
+  const backRef = useRef<() => boolean>(() => false);
+  backRef.current = () => {
+    if (resting) return true; // la pausa de movimiento no se interrumpe
+    if (session.help) {
+      actions.closeHelp();
+      return true;
+    }
+    if (session.closing) {
+      actions.finish();
+      onExit();
+      return true;
+    }
+    exit();
+    return true;
+  };
+  useEffect(() => {
+    const sub = BackHandler.addEventListener('hardwareBackPress', () => backRef.current());
+    return () => sub.remove();
+  }, []);
+
   // El indicador del micrófono nunca miente (docs/06): antes de empezar no escucha; sin permiso o en modo libre no hay micrófono.
   const mic = session.freeReading || session.voiceProblem ? null : { tone: flow.screen === 'reading' ? view.micTone : ('idle' as const), listening: flow.screen === 'reading' && view.listening };
   const inReading = flow.screen === 'reading';
@@ -87,6 +108,8 @@ export function ReadingScreen({ story, profile, energy, goalMinutes, focusReadin
       onHelp={inReading && !session.freeReading ? actions.askHelp : undefined}
       onListen={inReading && !session.freeReading ? actions.readStart : undefined}
       onNextPage={inReading && session.freeReading ? actions.freeAdvance : undefined}
+      onPrevPage={inReading && session.freeReading ? actions.freeBack : undefined}
+      prevDisabled={!session.canGoBack}
       horizontal={horizontalBar}
       compact={layout.phone}
       bottomInset={insets.bottom}
@@ -99,6 +122,8 @@ export function ReadingScreen({ story, profile, energy, goalMinutes, focusReadin
       onHelp={inReading && !session.freeReading ? actions.askHelp : undefined}
       onListen={inReading && !session.freeReading ? actions.readStart : undefined}
       onNextPage={inReading && session.freeReading ? actions.freeAdvance : undefined}
+      onPrevPage={inReading && session.freeReading ? actions.freeBack : undefined}
+      prevDisabled={!session.canGoBack}
       compact={layout.phone}
     />
   );
@@ -114,7 +139,7 @@ export function ReadingScreen({ story, profile, energy, goalMinutes, focusReadin
         )}
 
         {/* En Modo Enfoque no hay globo del coach: la línea resaltada y el micrófono bastan (menos cosas en pantalla). */}
-        {inReading && !session.showPauseCard && !focusReading && (
+        {inReading && !session.showPauseCard && !focusReading && (!session.freeReading || session.freeHintVisible) && (
           <View style={[styles.coach, layout.phone && styles.coachSmall]} pointerEvents="none">
             <CoachBubble message={session.freeReading ? copy.states.freeHint : view.feedback} compact={layout.phone} />
           </View>
@@ -123,7 +148,7 @@ export function ReadingScreen({ story, profile, energy, goalMinutes, focusReadin
         {SHOW_DEV_TOOLS && <DevPanel session={session} />}
 
         {flow.screen === 'prep' && <PrepOverlay session={session} />}
-        {flow.screen === 'pageDone' && (
+        {flow.screen === 'pageDone' && !session.freeReading && (
           <View style={styles.toast} pointerEvents="none">
             <Text style={styles.toastText}>{copy.pageDone.title}</Text>
           </View>
@@ -232,7 +257,7 @@ function PageView({ session, markOf, mode, phone }: { session: ReadingSession; m
 
   // Página de texto (B9): la ilustración y el texto en una hoja de papel. El texto manda (docs/05). En pantallas chicas,
   // ilustración arriba y texto abajo (G5) o lado a lado. Un cómic con globos ilegibles a este tamaño se lee igual aquí.
-  const progress = words.length ? Math.min(1, (reading.hasHeardVoice ? reading.currentWordIndex : 0) / words.length) : 0;
+  const progress = session.freeReading ? (session.pageIndex + 1) / story.pages.length : words.length ? Math.min(1, (reading.hasHeardVoice ? reading.currentWordIndex : 0) / words.length) : 0;
   const pageMode: PageMode = balloon && mode === 'side' ? 'split' : mode;
   const artBox =
     pageMode === 'stack'
@@ -254,7 +279,7 @@ function PageView({ session, markOf, mode, phone }: { session: ReadingSession; m
           </View>
           <Text style={styles.elapsed}>{copy.reading.elapsed(session.elapsed)}</Text>
         </View>
-        <ScrollView style={styles.flex} contentContainerStyle={[styles.sheetBody, pageMode !== 'side' && styles.sheetBodySmall]}>
+        <ScrollView key={session.pageIndex} style={styles.flex} contentContainerStyle={[styles.sheetBody, pageMode !== 'side' && styles.sheetBodySmall]}>
           <ReadingText page={page} words={words} markOf={markOf} onWordPress={actions.tapWord} fontSize={readFontFor(story.level, phone)} currentParagraph={session.currentParagraph} />
         </ScrollView>
       </View>
@@ -275,7 +300,7 @@ function PageView({ session, markOf, mode, phone }: { session: ReadingSession; m
 function FocusPage({ session, markOf, phone, onBack, bar, bottomInset }: { session: ReadingSession; markOf: (i: number) => WordMark; phone: boolean; onBack: () => void; bar: ReactNode; bottomInset: number }) {
   const { story, page, words, actions, reading } = session;
   const image = storyImage(page.illustration.src);
-  const progress = words.length ? Math.min(1, (reading.hasHeardVoice ? reading.currentWordIndex : 0) / words.length) : 0;
+  const progress = session.freeReading ? (session.pageIndex + 1) / story.pages.length : words.length ? Math.min(1, (reading.hasHeardVoice ? reading.currentWordIndex : 0) / words.length) : 0;
   // La hoja sigue a la línea que se lee: queda en el primer tercio de la vista, con la anterior todavía visible.
   const scroll = useRef<ScrollView>(null);
   const lineY = useRef(new Map<string, number>()).current;
@@ -301,7 +326,7 @@ function FocusPage({ session, markOf, phone, onBack, bar, bottomInset }: { sessi
           {session.pageIndex + 1} / {story.pages.length}
         </Text>
       </View>
-      <ScrollView ref={scroll} style={styles.flex} onLayout={(e) => setViewH(e.nativeEvent.layout.height)} contentContainerStyle={[styles.focusBody, phone && styles.focusBodySmall]}>
+      <ScrollView key={session.pageIndex} ref={scroll} style={styles.flex} onLayout={(e) => setViewH(e.nativeEvent.layout.height)} contentContainerStyle={[styles.focusBody, phone && styles.focusBodySmall]}>
         <View style={styles.focusColumn} onLayout={(e) => lineY.set('top', e.nativeEvent.layout.y)}>
           <ReadingText
             page={page}

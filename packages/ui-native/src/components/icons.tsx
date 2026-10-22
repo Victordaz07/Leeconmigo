@@ -23,6 +23,15 @@ export function ChevronLeftIcon({ size = 24, color = '#1b2a6b' }: { size?: numbe
   );
 }
 
+/** Flecha «siguiente» (la de «volver» al revés). */
+export function ChevronRightIcon({ size = 24, color = '#1E6FE8' }: { size?: number; color?: string }) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeLinecap="round" strokeLinejoin="round" strokeWidth={3.2}>
+      <Path d="M9 5l7 7-7 7" />
+    </Svg>
+  );
+}
+
 /** Casa (Inicio). */
 export function HomeIcon({ size = 26, active }: { size?: number; active?: boolean }) {
   return (

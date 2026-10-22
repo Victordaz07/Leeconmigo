@@ -11,7 +11,7 @@ import { DEFAULT_FOCUS, normalizeFocus, type ProgressStore } from '@lee-conmigo/
 import type { MathAttempt, ReviewEntry } from '@lee-conmigo/math-content';
 import { DEFAULT_DAILY_GOAL_MINUTES } from '@lee-conmigo/ui-core';
 import { deviceKV } from './persist/kv';
-import { eraseChild, eraseEverything, KEYS, loadMath, loadSubject, PersistentProgressStore, readJSON, saveMath, saveSubject, writeJSON, type KV, type SubjectKey } from './persist/store';
+import { applyFreeReadingDefault, eraseChild, eraseEverything, KEYS, loadMath, loadSubject, PersistentProgressStore, readJSON, saveMath, saveSubject, writeJSON, type KV, type SubjectKey } from './persist/store';
 
 export interface ChildProfile extends ReadingProfile {
   id: string;
@@ -28,7 +28,7 @@ export interface ChildProfile extends ReadingProfile {
 }
 
 export const PROFILES: ChildProfile[] = [
-  { id: 'noah', name: 'Noah', language: 'es', level: 3, dailyGoalMinutes: DEFAULT_DAILY_GOAL_MINUTES, avatar: 'sunDiag', askEnergy: true, freeReading: false, focus: DEFAULT_FOCUS },
+  { id: 'noah', name: 'Noah', language: 'es', level: 3, dailyGoalMinutes: DEFAULT_DAILY_GOAL_MINUTES, avatar: 'sunDiag', askEnergy: true, freeReading: true, focus: DEFAULT_FOCUS },
 ];
 
 const AVATARS: ChildProfile['avatar'][] = ['sunDiag', 'blueDiag', 'violetDiag', 'greenDiag', 'coralDiag'];
@@ -36,7 +36,7 @@ const AVATARS: ChildProfile['avatar'][] = ['sunDiag', 'blueDiag', 'violetDiag', 
 /** Perfil nuevo ("Agregar niño", tras el PIN): valores de partida que el padre ajusta antes de guardar. */
 export function newChildProfile(existing: ChildProfile[]): ChildProfile {
   const n = existing.length;
-  return { id: `child-${Date.now().toString(36)}`, name: '', language: 'es', level: 1, dailyGoalMinutes: DEFAULT_DAILY_GOAL_MINUTES, avatar: AVATARS[n % AVATARS.length], askEnergy: true, freeReading: false, focus: DEFAULT_FOCUS };
+  return { id: `child-${Date.now().toString(36)}`, name: '', language: 'es', level: 1, dailyGoalMinutes: DEFAULT_DAILY_GOAL_MINUTES, avatar: AVATARS[n % AVATARS.length], askEnergy: true, freeReading: true, focus: DEFAULT_FOCUS };
 }
 
 /** Almacén del equipo (las pruebas usan uno en memoria). */
@@ -47,11 +47,16 @@ export const useKVForTests = (k: KV) => {
   mathStores.clear();
 };
 
-/** Perfiles guardados; la primera vez, el de partida. */
+/**
+ * Perfiles guardados; la primera vez, el de partida. La lectura libre es el modo POR DEFECTO (la lectura con escucha todavía no está lista):
+ * una sola vez (`migrations.freeReadingDefault`) se enciende en los perfiles que ya existían; si después el adulto la apaga, se respeta.
+ */
 export function loadProfiles(): ChildProfile[] {
   const saved = readJSON<ChildProfile[]>(kv, KEYS.profiles, []);
+  const hadSaved = Array.isArray(saved) && saved.length > 0;
   // Perfiles guardados antes del Modo Enfoque (o a medias): se completan, sin perder lo demás.
-  return Array.isArray(saved) && saved.length ? saved.map((p) => ({ ...p, focus: normalizeFocus(p.focus) })) : PROFILES;
+  const list = hadSaved ? saved.map((p) => ({ ...p, focus: normalizeFocus(p.focus) })) : PROFILES;
+  return applyFreeReadingDefault(kv, list, hadSaved);
 }
 export const saveProfiles = (list: ChildProfile[]) => writeJSON(kv, KEYS.profiles, list);
 

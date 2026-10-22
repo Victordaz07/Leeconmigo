@@ -93,6 +93,11 @@ export type FlowAction =
   | { type: 'restart' }
   /** "Modo lectura libre" (Modo padres): vuelve a la página anterior sin pedir la pregunta de nuevo. */
   | { type: 'free.back' }
+  /**
+   * "Modo lectura libre": pasa a la página siguiente de una página YA leída (el niño había vuelto atrás). No suma páginas leídas ni
+   * repite la pregunta. Si era la última página, va al final.
+   */
+  | { type: 'free.forward'; isLastPage: boolean }
   /** Salto directo (solo herramientas de desarrollo: panel "Ir a pantalla"). */
   | { type: 'debug.set'; state: FlowState };
 
@@ -178,6 +183,9 @@ export function reduceFlow(s: FlowState, a: FlowAction): FlowState {
     }
     case 'free.back':
       return { ...s, screen: 'reading', pageIndex: Math.max(0, s.pageIndex - 1), answer: null, attempts: 0, review: null };
+    case 'free.forward':
+      if (s.screen !== 'reading') return s;
+      return a.isLastPage ? { ...s, screen: 'end', review: null } : { ...s, pageIndex: s.pageIndex + 1, answer: null, attempts: 0, review: null };
     case 'debug.set':
       return a.state;
   }
