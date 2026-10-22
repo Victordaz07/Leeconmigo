@@ -1,5 +1,5 @@
 # HANDOFF — estado actual
-Actualizado: 2026-10-22 · Cuenta: A · Rama: claude/gracious-shannon-a0238d
+Actualizado: 2026-10-22 · Cuenta: Codex · Rama: master
 Último commit: ver `git log -1`
 
 ## Materias en paralelo (D12, 2026-10-16)
@@ -19,7 +19,7 @@ Todo el trabajo está en `master` de `Victordaz07/Leeconmigo` (rama de trabajo `
 - Verificación: `npm run typecheck --workspaces --if-present`, `npm run typecheck -w apps/mobile`, `npm test` (≈1820 pruebas ✅).
 
 ## Tarea en curso
-**Codex · LE-01 y LE-02 listos (2026-10-22):** Victor autorizó preparar dos cuentos, primero «El puente de las luciérnagas», después «El mapa de la puerta desaparecida» (Inés y Teo, confirmado en el chat). Rama subida `codex/lectura-puente-y-mapa`, sin fusionar. Ambos tienen lector por escenas en modo libre, ayuda en TODAS las palabras, TTS, letra ajustable, preguntas y repaso. Texto y vocabulario originales conservados. Comprobados: 1.838 pruebas, TypeScript, lint, build web anterior, exportación web Expo y cuatro recorridos completos ES/EN en Chromium con cuatro tamaños, ayuda, reanudación y guardado. Detalle, capturas y comandos: `docs/design/reading-pilot/README.md`. Siguiente: Victor revisa las capturas y prueba en su Android cuando pida APK. No generar APK ni fusionar sin petición. La voz real sigue pausada; se mantiene TTS.
+**Codex · LE-01 y LE-02 integrados en master (2026-10-22):** Victor confirmó que funciona y pidió fusionar para preparar el APK. Integración fast-forward de `codex/lectura-puente-y-mapa` (12b7030), conservando ambas entregas. Los dos cuentos usan el lector por escenas en modo libre, ayuda en TODAS las palabras, TTS, letra ajustable, preguntas y repaso; texto y vocabulario originales conservados. Verificación previa sobre el mismo código: 1.838 pruebas, TypeScript, lint, build web y exportación web Expo, cuatro recorridos completos ES/EN en cuatro tamaños. Detalle y capturas: `docs/design/reading-pilot/README.md`. **Antes de compilar Android:** ejecutar `npm run models -w @lee-conmigo/mobile` en un entorno con acceso a Hugging Face. Aquí faltan los tres modelos locales de voz y el proxy devuelve HTTP 403; por ello la exportación Android se detiene al resolver esos archivos. No se cambió ni desactivó la voz para eludirlo. Siguiente: descargar modelos, compilar APK y comprobar voz/tacto en dispositivo. No se generó APK ni se publicó en tienda. Reconocimiento de voz sigue pausado; TTS se conserva.
 
 **K8a hecho (2026-10-21):** Mi cuaderno ya se abre desde Inicio (palabras de Lectura, ideas escritas por el niño, dibujos de Arte). K8b (Logros), «Guardar en mi cuaderno» en los cierres, Mi museo e informe semanal PDF también hechos (2026-10-21); falta APK para probar en Android. Detalle: `docs/log/SESSION_LOG.md`.
 

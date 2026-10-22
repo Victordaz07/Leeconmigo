@@ -47,7 +47,8 @@ Los textos alternativos de cada escena se conservan en ambos idiomas. El texto n
 - Build de producción de la app web anterior y exportación web de la app Expo aprobados.
 - Cuatro recorridos completos en Chromium: puente ES/EN nivel 3 y mapa ES/EN nivel 6. Cada uno comprueba los cuatro tamaños, ayuda de vocabulario y petición de pronunciación, reintento, relectura, tres preguntas, tres palabras de repaso, salida/reanudación, preferencias y guardado final. Las pruebas de dominio cubren las ocho variantes de los dos cuentos.
 - Las voces se simulan en las comprobaciones automáticas. Calidad audible, TalkBack/VoiceOver, ergonomía y persistencia del sistema requieren una prueba en Android/iOS real. No se generó APK ni se activó reconocimiento de voz.
-- Los cambios están en `codex/lectura-puente-y-mapa`; no se fusionaron en `master`.
+- Integrados en `master` por petición de Victor (2026-10-22), desde `codex/lectura-puente-y-mapa` (12b7030). No se publicó en tienda ni se generó APK.
+- Comprobación adicional de Android: la exportación se detiene por los modelos de voz ausentes (`assets/models/*.bin`, excluidos de Git). `npm run models -w @lee-conmigo/mobile` es el requisito previo habitual; aquí Hugging Face está bloqueado por el proxy (HTTP 403). Descargar los modelos en el entorno de compilación antes de producir el APK.
 
 Capturas de la app real:
 
