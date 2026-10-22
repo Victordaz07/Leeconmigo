@@ -2,13 +2,19 @@
 
 Petición de Victor, 2026-10-22: preparar primero **El puente de las luciérnagas** y después **El mapa de la puerta desaparecida** (Inés y Teo). La ayuda de TODAS las palabras es requisito central: pronunciación, sílabas y, cuando existen, significado, sinónimos y ejemplo.
 
-## Descargar el APK en Android
+## Descargar el APK corregido en Android
 
-[Descargar Kitewise-lectura.apk (335 MB)](https://github.com/Victordaz07/Leeconmigo/releases/download/apk-lectura-2026-10-22/Kitewise-lectura.apk) · [Página de descarga](https://github.com/Victordaz07/Leeconmigo/releases/tag/apk-lectura-2026-10-22)
+[Descargar Kitewise-lectura.apk (335 MB)](https://github.com/Victordaz07/Leeconmigo/releases/download/apk-lectura-2026-10-22-cuadernos-r2/Kitewise-lectura.apk) · [Página de descarga](https://github.com/Victordaz07/Leeconmigo/releases/tag/apk-lectura-2026-10-22-cuadernos-r2)
 
-Abrir el enlace en el navegador del teléfono y, al terminar la descarga, abrir el archivo `.apk` para instalarlo. Es un prerelease para pruebas familiares; no requiere iniciar sesión en GitHub ni un servidor de desarrollo.
+Corrige las portadas invisibles de Inicio en Android. Abrir el enlace en el teléfono, descargar e instalar **sobre la versión actual** para conservar sus datos. Mismo paquete y certificado de firma; no requiere iniciar sesión en GitHub ni un servidor de desarrollo.
 
-GitHub Actions compiló y publicó la etiqueta `apk-lectura-2026-10-22` desde 203f0c9. Se descargó el archivo publicado completo por HTTPS (HTTP 200) y se verificaron SHA-256, firma, alineación, cuatro arquitecturas y los modelos/ilustraciones originales. Metadatos: `DOWNLOAD-VERIFICATION.json`. La prueba audible de voz y el manejo físico siguen pendientes. Para futuros APK solicitados, una etiqueta `apk-lectura-*` activa el flujo; los cambios normales de master no generan APK.
+GitHub Actions `39868481194` compiló y publicó la etiqueta desde `1e6135f`, con la prueba de Yoga nativo correcta (19m37s de job). Descarga completa HTTP 200, SHA-256, firma, alineación de 16 KB, cuatro arquitecturas y modelos/ilustraciones originales verificados. El bundle difiere de la versión anterior. Metadatos: `DOWNLOAD-CUADERNOS-VERIFICATION.json`. Es un prerelease para pruebas familiares con la llave de pruebas existente; la comprobación física y audible siguen pendientes. La descarga inicial queda como referencia histórica en `DOWNLOAD-VERIFICATION.json`. Para futuros APK solicitados, las etiquetas `apk-lectura-*` activan el flujo; los pushes normales a master no generan APK.
+
+## Regresión de cuadernos en Android (LE-06)
+
+La captura del teléfono mostró los encabezados y espacios vacíos porque `NotebookCover` heredaba `flex: 1` junto a una base automática y crecimiento cero. Yoga nativo resolvía el ancho de cada tarjeta a cero. La variante con ancho calculado ahora usa `flex: 0`; no se modifican datos ni progreso.
+
+`npm run test:native-layout` requiere las dependencias de desarrollo (`npm ci --include=dev`) y un compilador C++20 (`g++` o `CXX`). Compila el Yoga incluido con React Native, obtiene los estilos efectivos del componente real y verifica ancho, distribución y límites de 84 tarjetas en seis tamaños. No necesita SDK Android ni emulador. El componente anterior falla con ancho 0 frente a 288 esperados; el corregido pasa. GitHub también ejecuta esta comprobación antes del APK. Evidencia y límites: `NOTEBOOK-LAYOUT-VERIFICATION.json`; Chromium confirma las 14 portadas en cinco tamaños y la apertura de Lectura. La validación física sigue pendiente.
 
 ## Primer cuento: El puente de las luciérnagas
 

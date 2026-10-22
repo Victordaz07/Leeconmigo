@@ -1,0 +1,37 @@
+{
+  "apk": "/workspace/download-cuadernos/Kitewise-lectura.apk",
+  "sourceCommit": "1e6135f408b836f5440c66a7b6922fe019f69447",
+  "bytes": 335432702,
+  "sha256": "d11bac825e1c06da8404b490c05b91c37eaf73c7a72665032debbf72b17e444a",
+  "signatureVerified": true,
+  "debuggable": false,
+  "architectures": [
+    "arm64-v8a",
+    "armeabi-v7a",
+    "x86",
+    "x86_64"
+  ],
+  "assetsVerified": {
+    "apps/mobile/assets/models/ggml-tiny-q8_0.bin": "res/01.bin",
+    "apps/mobile/assets/models/ggml-silero-v6.2.0.bin": "res/1d.bin",
+    "apps/reader/public/stories/el-puente-de-las-luciernagas/reader/scene-01.webp": "res/IS.webp",
+    "apps/mobile/assets/models/ggml-base-q5_1.bin": "res/_A.bin",
+    "apps/reader/public/stories/mapa-de-la-puerta-desaparecida/reader/letter.webp": "res/uL.webp"
+  },
+  "deviceTested": false,
+  "verifiedAt": "2026-10-22T23:18:21.221998+00:00",
+  "releaseTag": "apk-lectura-2026-10-22-cuadernos-r2",
+  "releaseUrl": "https://github.com/Victordaz07/Leeconmigo/releases/tag/apk-lectura-2026-10-22-cuadernos-r2",
+  "downloadUrl": "https://github.com/Victordaz07/Leeconmigo/releases/download/apk-lectura-2026-10-22-cuadernos-r2/Kitewise-lectura.apk",
+  "downloadHttpStatus": 200,
+  "downloadChecksumMatches": true,
+  "zipAlignment16KB": true,
+  "signerCertificateSha256": "fac61745dc0903786fb9ede62a962b399f7348f0bb6f899b8332667591033b9c",
+  "sameSignerAsPreviousRelease": true,
+  "bundleSha256": "8c5a5a48ef7c342920612b4fbdbcea31a5efa329b51d2f1c17241b5e1273e356",
+  "bundleDiffersFromPreviousRelease": true,
+  "ciRun": 39868481194,
+  "ciJob": 120136618797,
+  "ciNativeLayoutCheck": "success",
+  "nativeLayoutEvidence": "NOTEBOOK-LAYOUT-VERIFICATION.json"
+}
