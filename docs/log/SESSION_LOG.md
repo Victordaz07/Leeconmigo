@@ -419,3 +419,6 @@ La historia detallada anterior a este log (2026-09-27 → 2026-09-30) está en `
 ## 2026-10-22 · cuenta A · Finanzas (FI-01…03) y manifiesto sin Firebase
 - Fix: el plugin `no-push` quita TODO el envío remoto de Firebase (servicio, receptor, permiso c2dm); verificado en el manifiesto fusionado (PR 42).
 - Revisados los documentos de «Para la vida» que entregó Victor (`vida-8-modulos`, módulos 01–03). Se empieza por **Finanzas** (módulo 01): especificación adaptada con piloto 4.º «Un evento que resiste cambios» y decisiones DF-1…DF-8 (propuestas), y el dominio puro en `packages/finance-content` (UM, libro de movimientos, sobres con imprevistos, costo de oportunidad, ofertas sospechosas) con 21 pruebas que reproducen los ejemplos del manual. Sin pantallas todavía. Siguiente: confirmar DF, lista de imágenes, unidad JSON validada, textos ES/EN, módulo de app.
+
+## 2026-10-22 · A · FI-05 Finanzas: unidad F4-U01 en JSON + motor de sesión
+Unidad piloto (6 encuentros ES/EN), validador y motor de sesión puro en `packages/finance-content`; estrellas por esfuerzo. 1806 pruebas verdes. Siguiente: textos ES/EN y pantallas (FI-06/07).

@@ -5,7 +5,14 @@ Estado (2026-10-22, cuenta A): investigación recibida (`docs/research/vida-01-e
 - `docs/design/finanzas/ESPECIFICACION.md` (adaptación, piloto 4.º, decisiones DF-1…DF-8 PROPUESTAS).
 - `packages/finance-content`: `money`, `ledger` (registro de movimientos), `plan` (sobres, imprevistos, reserva), `opportunity` (costo de oportunidad), `offers` (ofertas sospechosas). 21 pruebas con los ejemplos resueltos del manual.
 
-## Siguiente paso exacto
+## Hecho (2)
+- D15: DF-1…DF-8 confirmadas. Lista de imágenes (Tanda 1) en `PEDIDO-IMAGENES.md`; Victor las genera.
+- Unidad F4-U01 (`content/f4u01.json`, 6 encuentros ES/EN) + `validate.ts` + `session.ts` (reductor, vistas, retroalimentación por CLAVES, estrellas por esfuerzo). 44 pruebas.
+
+## Siguiente paso exacto (actualizado)
+FI-06/07: textos ES/EN en `ui-core/src/finanzas/copy.ts` y módulo `apps/mobile/src/subjects/finanzas/` con arte provisional (dibujado en código); registrar en lo compartido. Las imágenes reales se conectan cuando Victor las mande.
+
+## (anterior)
 1. Victor confirma DF-1…DF-8 (o los ajusta) y mira la lista de imágenes (`PEDIDO-IMAGENES.md`, aún por escribir al confirmar).
 2. Unidad F4-U01 como JSON validado (`packages/finance-content/content/`) con los 6 encuentros, validador (todo cuadra: sumas, ejemplos del manual) y estrellas por esfuerzo.
 3. Textos ES/EN en `packages/ui-core/src/finanzas/`; módulo `apps/mobile/src/subjects/finanzas/` (registrar UNA línea en `subjects/ids.ts`, `registry.ts`, `ui-core/subjects.ts`, `persist/store.ts` SUBJECT_KEYS: compartido, avisar).

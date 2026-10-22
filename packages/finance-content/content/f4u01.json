@@ -1,0 +1,202 @@
+{
+  "id": "F4-U01",
+  "grade": 4,
+  "strands": ["gastos", "ahorro", "gestión del riesgo"],
+  "title": { "es": "Un evento que resiste cambios", "en": "An event that handles changes" },
+  "blurb": { "es": "Decide qué atender primero, compara opciones, lleva un registro, aparta una reserva y ajusta tu plan cuando llega un imprevisto.", "en": "Decide what comes first, compare options, keep a record, set aside a reserve and adjust your plan when something unexpected happens." },
+  "steps": [
+    {
+      "id": "prioridades", "kind": "priorities", "lesson": "F4.1",
+      "title": { "es": "Qué atender primero", "en": "What comes first" },
+      "learn": { "es": "Una prioridad depende de la situación, el plazo y las consecuencias. Lo más barato no siempre resuelve el problema.", "en": "A priority depends on the situation, the deadline and the consequences. The cheapest thing does not always solve the problem." },
+      "example": { "es": "Para una actividad al aire libre hace falta una protección para la lluvia de 12 UM. Una decoración cuesta 8 UM. Con 15 UM y sin otra protección, primero van 12 UM a la protección y quedan 3 UM. La decoración puede esperar.", "en": "An outdoor activity needs rain cover that costs 12 UM. A decoration costs 8 UM. With 15 UM and no other cover, 12 UM go to the cover first and 3 UM are left. The decoration can wait." },
+      "prompt": { "es": "Cambia las condiciones y elige qué pagar primero con 15 UM. Prueba más de una situación.", "en": "Change the conditions and choose what to pay for first with 15 UM. Try more than one situation." },
+      "budget": 15,
+      "conditions": [
+        { "id": "outdoor", "on": { "es": "Es al aire libre", "en": "It is outdoors" }, "off": { "es": "Es bajo techo", "en": "It is indoors" } },
+        { "id": "hasCover", "on": { "es": "Ya hay otra protección", "en": "There is already other cover" }, "off": { "es": "No hay otra protección", "en": "There is no other cover" } }
+      ],
+      "items": [
+        { "id": "rain", "label": { "es": "Protección para la lluvia", "en": "Rain cover" }, "cost": 12, "neededWhen": { "outdoor": true, "hasCover": false } },
+        { "id": "deco", "label": { "es": "Decoración", "en": "Decoration" }, "cost": 8 }
+      ],
+      "explain": {
+        "prompt": { "es": "¿Por qué cambió tu decisión según la situación?", "en": "Why did your decision change with the situation?" },
+        "choices": [
+          { "id": "needs", "text": { "es": "Porque cambió lo que de verdad hacía falta.", "en": "Because what was really needed changed." } },
+          { "id": "look", "text": { "es": "Porque me gusta más la decoración.", "en": "Because I like the decoration more." } },
+          { "id": "same", "text": { "es": "No debería cambiar nunca.", "en": "It should never change." } }
+        ],
+        "preferredChoiceIds": ["needs"]
+      }
+    },
+    {
+      "id": "alternativas", "kind": "alternatives", "lesson": "F4.2",
+      "title": { "es": "Alternativas de verdad", "en": "Real alternatives" },
+      "learn": { "es": "Antes de elegir, mira qué opciones caben en tu dinero y cuál prefieres. Lo que dejas tiene que ser una posibilidad real: una opción que no cabía no es lo que sacrificaste.", "en": "Before choosing, see which options fit your money and which you prefer. What you give up has to be a real possibility: an option that did not fit is not what you gave up." },
+      "example": { "es": "Tienes 20 UM. El taller A cuesta 15 UM, el B cuesta 18 UM y el C cuesta 30 UM. Prefieres A y después B. Eliges A: lo que dejaste es B. El C no cabía.", "en": "You have 20 UM. Workshop A costs 15 UM, B costs 18 UM and C costs 30 UM. You prefer A and then B. You choose A: what you gave up is B. C did not fit." },
+      "prompt": { "es": "Tienes 20 UM para un taller. Mira los precios y decide.", "en": "You have 20 UM for a workshop. Look at the prices and decide." },
+      "budget": 20,
+      "options": [
+        { "id": "A", "label": { "es": "Taller de pintura", "en": "Painting workshop" }, "cost": 15 },
+        { "id": "B", "label": { "es": "Taller de música", "en": "Music workshop" }, "cost": 18 },
+        { "id": "C", "label": { "es": "Taller de cerámica", "en": "Pottery workshop" }, "cost": 30 }
+      ],
+      "tapNotFit": { "es": "Toca el taller que NO cabe en 20 UM.", "en": "Tap the workshop that does NOT fit in 20 UM." },
+      "preferPrompt": { "es": "De los que caben, toca primero el que más quieres y después el otro.", "en": "Of the ones that fit, tap the one you want most first, then the other." },
+      "leftPrompt": { "es": "Al elegir tu primera opción, ¿qué taller que sí cabía dejas?", "en": "When you choose your first option, which workshop that did fit do you leave?" },
+      "leftoverPrompt": { "es": "Después de pagar tu taller te sobran algunas UM. ¿Qué pasa con ellas?", "en": "After paying for your workshop you have a few UM left. What happens to them?" },
+      "leftoverChoices": [
+        { "id": "remain", "text": { "es": "Siguen siendo mías: las puedo guardar o usar en otra cosa.", "en": "They are still mine: I can keep them or use them for something else." } },
+        { "id": "vanish", "text": { "es": "Desaparecen.", "en": "They disappear." } }
+      ],
+      "explain": {
+        "prompt": { "es": "¿Por qué el taller que no cabía no cuenta como lo que dejaste?", "en": "Why does the workshop that did not fit not count as what you gave up?" },
+        "choices": [
+          { "id": "notViable", "text": { "es": "Porque no cabía en mi dinero: yo no podía elegirlo.", "en": "Because it did not fit my money: I could not choose it." } },
+          { "id": "ugly", "text": { "es": "Porque no me gusta.", "en": "Because I do not like it." } },
+          { "id": "free", "text": { "es": "Porque era gratis.", "en": "Because it was free." } }
+        ],
+        "preferredChoiceIds": ["notViable"]
+      }
+    },
+    {
+      "id": "registro", "kind": "ledger", "lesson": "F4.3",
+      "title": { "es": "Un registro en orden", "en": "A tidy record" },
+      "learn": { "es": "Anota cada movimiento en orden: qué fue, si entró o salió dinero y cuánto queda. El orden dice si había dinero cuando pagaste. Una misma compra no se anota dos veces.", "en": "Write each movement down in order: what it was, whether money came in or went out, and how much is left. The order tells you whether you had money when you paid. The same purchase is not written twice." },
+      "example": { "es": "Saldo inicial 50 UM. Compra de 18 UM → quedan 32. Ingreso de 12 UM → 44. Compra de 9 UM → 35. Comprobación: 50 + 12 − 18 − 9 = 35.", "en": "Starting balance 50 UM. Purchase of 18 UM → 32 left. Income of 12 UM → 44. Purchase of 9 UM → 35. Check: 50 + 12 − 18 − 9 = 35." },
+      "prompt": { "es": "Sigue el registro de arriba abajo y encuentra el saldo final.", "en": "Follow the record from top to bottom and find the final balance." },
+      "cases": [
+        {
+          "start": 40,
+          "movements": [
+            { "id": "m1", "concept": { "es": "Compra de pinturas", "en": "Paint purchase" }, "kind": "out", "amount": 11 },
+            { "id": "m2", "concept": { "es": "Ingreso por una venta", "en": "Income from a sale" }, "kind": "in", "amount": 6 },
+            { "id": "m3", "concept": { "es": "Compra de cinta", "en": "Tape purchase" }, "kind": "out", "amount": 8 }
+          ],
+          "missing": { "concept": { "es": "una compra de papel", "en": "a paper purchase" }, "amount": 5 }
+        }
+      ],
+      "balancePrompt": { "es": "Saldo inicial 40 UM. ¿Cuánto queda al final?", "en": "Starting balance 40 UM. How much is left at the end?" },
+      "missingPrompt": { "es": "Se te olvidó anotar una compra de 5 UM. El saldo que anotaste, ¿queda por encima o por debajo del real?", "en": "You forgot to write down a 5 UM purchase. Is the balance you wrote above or below the real one?" },
+      "missingChoices": [
+        { "id": "above", "text": { "es": "Por encima: el registro muestra dinero que ya se gastó.", "en": "Above: the record shows money that was already spent." } },
+        { "id": "below", "text": { "es": "Por debajo.", "en": "Below." } },
+        { "id": "equal", "text": { "es": "Igual.", "en": "The same." } }
+      ],
+      "explain": {
+        "prompt": { "es": "¿Por qué conviene anotar los movimientos en orden?", "en": "Why is it useful to write movements down in order?" },
+        "choices": [
+          { "id": "know", "text": { "es": "Para saber si había dinero cuando pagué.", "en": "To know whether I had money when I paid." } },
+          { "id": "pretty", "text": { "es": "Para que se vea bonito.", "en": "So that it looks pretty." } },
+          { "id": "nothing", "text": { "es": "No sirve para nada.", "en": "It is not useful at all." } }
+        ],
+        "preferredChoiceIds": ["know"]
+      }
+    },
+    {
+      "id": "reserva", "kind": "reserve", "lesson": "F4.4",
+      "title": { "es": "Una reserva para imprevistos", "en": "A reserve for surprises" },
+      "learn": { "es": "Una reserva aparta dinero para lo inesperado. No lo resuelve todo. Cuando la usas, actualizas el saldo y decides si puedes volver a llenarla.", "en": "A reserve sets money aside for the unexpected. It does not solve everything. When you use it, you update the balance and decide whether you can refill it." },
+      "example": { "es": "De 80 UM: 50 UM para la actividad, 20 UM de reserva y 10 UM libres. Una reparación imprevista de 12 UM se paga con la reserva: quedan 8 UM en ella. Las 10 UM libres no cambian.", "en": "Of 80 UM: 50 UM for the activity, 20 UM reserve and 10 UM free. An unexpected repair of 12 UM is paid from the reserve: 8 UM stay in it. The 10 free UM do not change." },
+      "prompt": { "es": "Aquí está el plan. Primero llega un imprevisto pequeño; después, uno más grande.", "en": "Here is the plan. First a small surprise arrives; then a bigger one." },
+      "plan": {
+        "budget": 80,
+        "envelopes": [
+          { "id": "act", "label": { "es": "La actividad", "en": "The activity" }, "kind": "essential", "amount": 50, "cost": 50 },
+          { "id": "res", "label": { "es": "Reserva", "en": "Reserve" }, "kind": "reserve", "amount": 20 },
+          { "id": "free", "label": { "es": "Libres", "en": "Free" }, "kind": "free", "amount": 10 }
+        ]
+      },
+      "smallUnexpected": 12,
+      "bigUnexpected": 25,
+      "unexpectedLabel": { "es": "Una reparación imprevista", "en": "An unexpected repair" },
+      "adjustPrompt": { "es": "La reserva no alcanza: faltan algunas UM. Ningún problema: ¿qué ajuste eliges?", "en": "The reserve is not enough: a few UM are missing. No problem: which adjustment do you choose?" },
+      "adjustChoices": [
+        { "id": "useFree", "text": { "es": "Usar el dinero libre.", "en": "Use the free money." } },
+        { "id": "changePlan", "text": { "es": "Cambiar el plan de la actividad.", "en": "Change the activity plan." } },
+        { "id": "askHelp", "text": { "es": "Pedir apoyo a un adulto.", "en": "Ask an adult for help." } }
+      ],
+      "rebuildPrompt": { "es": "Ya usaste la reserva. ¿Qué haces ahora?", "en": "You used the reserve. What do you do now?" },
+      "rebuildChoices": [
+        { "id": "rebuild", "text": { "es": "Veo si puedo volver a llenarla poco a poco.", "en": "I see if I can refill it little by little." } },
+        { "id": "later", "text": { "es": "La dejo así por ahora y lo decido después.", "en": "I leave it like this for now and decide later." } },
+        { "id": "ask", "text": { "es": "Hablo con un adulto sobre cómo reconstruirla.", "en": "I talk to an adult about how to rebuild it." } }
+      ],
+      "explain": {
+        "prompt": { "es": "Cuando usas la reserva, ¿qué tienes que hacer con tu saldo?", "en": "When you use the reserve, what do you have to do with your balance?" },
+        "choices": [
+          { "id": "update", "text": { "es": "Actualizarlo: la reserva ahora tiene menos.", "en": "Update it: the reserve now has less." } },
+          { "id": "ignore", "text": { "es": "Dejarlo igual.", "en": "Leave it the same." } },
+          { "id": "blame", "text": { "es": "Culparme por no haber ahorrado más.", "en": "Blame myself for not saving more." } }
+        ],
+        "preferredChoiceIds": ["update"]
+      }
+    },
+    {
+      "id": "oferta", "kind": "offer", "lesson": "F4.7",
+      "title": { "es": "Una oferta sospechosa", "en": "A suspicious offer" },
+      "learn": { "es": "Si un mensaje te apura, te pide guardar un secreto, te pide pagar antes o te pide un código o datos, detente y pide ayuda. Un logo o una foto no prueban que sea verdad.", "en": "If a message rushes you, asks you to keep a secret, asks you to pay first or asks for a code or details, stop and ask for help. A logo or a photo does not prove it is true." },
+      "example": { "es": "«Ganaste 500 UM; paga 10 UM ahora para recibirlas y no se lo cuentes a nadie». La prisa, el pago previo y el secreto son señales para parar y pedir ayuda.", "en": "“You won 500 UM; pay 10 UM now to get them and do not tell anyone.” The rush, the upfront payment and the secret are signs to stop and ask for help." },
+      "prompt": { "es": "Este buzón es de mentira. Revisa cada mensaje.", "en": "This mailbox is pretend. Check each message." },
+      "messages": [
+        { "id": "ganaste", "text": { "es": "¡Ganaste 500 UM! Paga 10 UM ahora para recibirlas y no se lo cuentes a nadie.", "en": "You won 500 UM! Pay 10 UM now to get them and do not tell anyone." }, "signals": ["tooGood", "prepay", "secrecy", "urgency"], "preferredActions": ["stop-and-ask", "verify-official"] },
+        { "id": "codigo", "text": { "es": "Tu cuenta de juegos se cerrará hoy. Envía el código que te llegó para confirmar.", "en": "Your game account will close today. Send the code you received to confirm." }, "signals": ["urgency", "personalData"], "preferredActions": ["do-not-share-code", "stop-and-ask", "verify-official"] },
+        { "id": "cumple", "text": { "es": "Tu amiga Lía te invita a su cumpleaños el sábado. ¿Puedes venir? Pregúntale a tu mamá o a tu papá.", "en": "Your friend Lía invites you to her birthday on Saturday. Can you come? Ask your mom or dad." }, "signals": [], "preferredActions": ["reply"] }
+      ],
+      "signalLabels": {
+        "urgency": { "es": "Te apura", "en": "It rushes you" },
+        "secrecy": { "es": "Pide un secreto", "en": "It asks for a secret" },
+        "prepay": { "es": "Pide pagar antes", "en": "It asks you to pay first" },
+        "personalData": { "es": "Pide un código o datos", "en": "It asks for a code or details" },
+        "tooGood": { "es": "Parece demasiado bueno", "en": "It sounds too good" }
+      },
+      "actionLabels": {
+        "stop-and-ask": { "es": "Parar y pedir ayuda a un adulto de confianza", "en": "Stop and ask a trusted adult" },
+        "verify-official": { "es": "Verificar por un canal oficial que ya conozco", "en": "Check through an official channel I already know" },
+        "do-not-share-code": { "es": "No compartir el código", "en": "Do not share the code" },
+        "do-not-open-link": { "es": "No abrir el enlace", "en": "Do not open the link" },
+        "reply": { "es": "Responder con un adulto cerca", "en": "Reply with an adult nearby" }
+      },
+      "signalsPrompt": { "es": "¿Qué señales tiene? Marca todas las que veas (puede que no tenga ninguna).", "en": "Which signs does it have? Mark all you see (it may have none)." },
+      "actionPrompt": { "es": "¿Qué haces?", "en": "What do you do?" },
+      "explain": {
+        "prompt": { "es": "Si ya compartiste algo por error, ¿qué haces?", "en": "If you already shared something by mistake, what do you do?" },
+        "choices": [
+          { "id": "askNow", "text": { "es": "Pido ayuda enseguida. Pasa y no hay vergüenza.", "en": "I ask for help right away. It happens and there is no shame." } },
+          { "id": "hide", "text": { "es": "Lo escondo para que no se enteren.", "en": "I hide it so nobody finds out." } },
+          { "id": "wait", "text": { "es": "Espero a ver qué pasa.", "en": "I wait and see what happens." } }
+        ],
+        "preferredChoiceIds": ["askNow"]
+      }
+    },
+    {
+      "id": "proyecto", "kind": "project", "lesson": "F4.8",
+      "title": { "es": "Proyecto: un evento que resiste cambios", "en": "Project: an event that handles changes" },
+      "learn": { "es": "Un plan se puede ajustar. Cuando llega un gasto necesario, decide qué proteges y qué cambias. Dos planes distintos pueden ser buenos: no gana el que guarda más dinero, sino el que protege lo importante.", "en": "A plan can be adjusted. When a necessary expense arrives, decide what you protect and what you change. Two different plans can both be good: the winner is not the one that keeps more money, but the one that protects what matters." },
+      "example": { "es": "Con 100 UM: materiales 45, transporte 20, decoración 15 y reserva 20. Llega un gasto necesario de 25 UM. Se usan las 20 de la reserva y se baja la decoración de 15 a 10: 45 + 20 + 10 + 25 = 100. La reserva queda agotada y se anota.", "en": "With 100 UM: materials 45, transport 20, decoration 15 and reserve 20. A necessary expense of 25 UM arrives. The 20 of the reserve are used and the decoration goes from 15 to 10: 45 + 20 + 10 + 25 = 100. The reserve is used up and written down." },
+      "prompt": { "es": "Llegó un gasto necesario de 25 UM y no hay más dinero. Mueve dinero entre los sobres hasta que todo lo esencial quede cubierto.", "en": "A necessary expense of 25 UM arrived and there is no more money. Move money between the envelopes until everything essential is covered." },
+      "plan": {
+        "budget": 100,
+        "envelopes": [
+          { "id": "mat", "label": { "es": "Materiales", "en": "Materials" }, "kind": "essential", "amount": 45, "cost": 45 },
+          { "id": "trans", "label": { "es": "Transporte", "en": "Transport" }, "kind": "essential", "amount": 20, "cost": 20 },
+          { "id": "deco", "label": { "es": "Decoración", "en": "Decoration" }, "kind": "optional", "amount": 15, "cost": 15 },
+          { "id": "res", "label": { "es": "Reserva", "en": "Reserve" }, "kind": "reserve", "amount": 20 }
+        ]
+      },
+      "unexpected": { "id": "unexp", "label": { "es": "Gasto necesario nuevo", "en": "New necessary expense" }, "cost": 25 },
+      "step": 5,
+      "comparePrompt": { "es": "Compara tu plan nuevo con el primero.", "en": "Compare your new plan with the first one." },
+      "explain": {
+        "prompt": { "es": "¿Qué protegiste y qué cambiaste?", "en": "What did you protect and what did you change?" },
+        "choices": [
+          { "id": "protectEssential", "text": { "es": "Protegí lo esencial y cambié lo opcional o la reserva.", "en": "I protected what is essential and changed the optional or the reserve." } },
+          { "id": "cutEssential", "text": { "es": "Quité algo esencial para conservar la decoración.", "en": "I cut something essential to keep the decoration." } },
+          { "id": "nothing", "text": { "es": "No cambié nada.", "en": "I changed nothing." } }
+        ],
+        "preferredChoiceIds": ["protectEssential"]
+      }
+    }
+  ]
+}
