@@ -163,3 +163,16 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | AR-M2 | Etapa 2 · «Mi museo» (galería, continuar, duplicar, versiones, marcos) | ✅ | A | Pared + marcos de colores (elige el niño) + filtros con carpetas; solo en el dispositivo (DA-12). Duplicar/versiones siguen dentro de cada taller |
 | AR-M3 | Etapa 3 · profundidad: 3 pinceles, simetría/duplicar, papeles y bordes rasgados, una obra real por unidad con créditos, comparación A/B de ritmo | ⬜ | A | Necesita DA-9/10/11 y licencias verificadas |
 | AR-M4 | Etapa 4 · una sola apuesta grande (flipbook AR-06c, recorte libre o mezcla avanzada) | ⬜ | – | Después del museo y del rendimiento medido |
+
+## Finanzas — cuaderno `finanzas` («Para la vida» módulo 01, D14; `docs/design/finanzas/ESPECIFICACION.md`, `docs/handoff/finanzas.md`)
+
+| ID | Tarea | Estado | Cuenta | Rama / nota |
+|---|---|---|---|---|
+| FI-01 | Investigación del módulo recibida y copiada | ✅ | A | `docs/research/vida-01-economia-finanzas.md` |
+| FI-02 | Especificación adaptada al repo + piloto 4.º + decisiones DF-1…DF-8 (propuestas) | ✅ | A | pendiente de confirmar por Victor |
+| FI-03 | Dominio puro del piloto: UM, libro de movimientos, sobres/imprevistos, costo de oportunidad, ofertas sospechosas | ✅ | A | `packages/finance-content`, 21 pruebas |
+| FI-04 | Lista de imágenes del piloto (portada, escenas, guía) por tanda | ⬜ | A | tras confirmar DF-1…DF-8 |
+| FI-05 | Unidad F4-U01 en JSON validado + estrellas por esfuerzo | ⬜ | A | |
+| FI-06 | Textos ES/EN en `ui-core/src/finanzas/` | ⬜ | A | |
+| FI-07 | Módulo de app `subjects/finanzas/` (cuaderno, sobres, libro, buzón, proyecto) + estantería «Para la vida» | ⬜ | A | toca lo compartido (ids, registry, subjects, store) |
+| FI-08 | Verificar en 4 tamaños + revisión de un educador financiero | ⬜ | – | |
