@@ -1,0 +1,11 @@
+{
+  "name": "@lee-conmigo/finance-content",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Cuaderno de Finanzas («Para la vida», D14): dinero ficticio (UM), planes con sobres, registro de movimientos, costo de oportunidad, ofertas sospechosas y unidades. Sin pantallas.",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": { ".": "./src/index.ts" },
+  "scripts": { "typecheck": "tsc -p tsconfig.json" }
+}
