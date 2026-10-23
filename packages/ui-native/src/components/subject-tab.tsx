@@ -1,3 +1,4 @@
+import { useTranslation } from '../interface-language.tsx';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { fontFamily, sizes, type Gradient } from '../tokens.ts';
 import { GradientView } from './gradient-view.tsx';
@@ -14,12 +15,13 @@ interface SubjectTabProps {
 /** Pestaña de materia en el borde derecho del cuaderno (B4): vertical, del color de la materia; la activa sobresale más. */
 export function SubjectTab({ label, gradient, active, soon, onPress }: SubjectTabProps) {
   const width = active ? sizes.tabActive : sizes.tab;
+  const { t } = useTranslation();
   return (
-    <Pressable onPress={soon ? undefined : onPress} disabled={soon} accessibilityRole="tab" accessibilityLabel={soon ? `${label}, pronto` : label} accessibilityState={{ selected: active }}>
+    <Pressable onPress={soon ? undefined : onPress} disabled={soon} accessibilityRole="tab" accessibilityLabel={soon ? `${t(label)}, ${t('Pronto')}` : t(label)} accessibilityState={{ selected: active }}>
       <GradientView gradient={gradient} style={[styles.tab, { width, opacity: soon ? 0.55 : 1 }]}>
         <View style={styles.rotate}>
           <Text style={styles.text} numberOfLines={1}>
-            {label}
+            {t(label)}
           </Text>
         </View>
       </GradientView>

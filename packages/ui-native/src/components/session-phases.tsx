@@ -1,3 +1,4 @@
+import { useTranslation } from '../interface-language.tsx';
 import { StyleSheet, Text, View } from 'react-native';
 import { colors, fontFamily, radius } from '../tokens.ts';
 
@@ -11,11 +12,12 @@ export interface Phase {
  * que faltan translúcidas. Pensadas para ir sobre una imagen oscura (banner "Misión de hoy").
  */
 export function SessionPhases({ phases }: { phases: Phase[] }) {
+  const { t } = useTranslation();
   return (
     <View style={styles.row}>
       {phases.map((p, i) => (
         <View key={p.label} style={[styles.pill, p.state === 'done' && styles.done, p.state === 'current' && styles.current]}>
-          <Text style={[styles.text, p.state === 'current' && styles.textCurrent]}>{p.state === 'done' ? `✓ ${p.label}` : `${i + 1} ${p.label}`}</Text>
+          <Text style={[styles.text, p.state === 'current' && styles.textCurrent]}>{p.state === 'done' ? `✓ ${t(p.label)}` : `${i + 1} ${t(p.label)}`}</Text>
         </View>
       ))}
     </View>

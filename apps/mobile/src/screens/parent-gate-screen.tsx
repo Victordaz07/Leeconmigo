@@ -1,3 +1,4 @@
+import { useTranslation } from '@lee-conmigo/ui-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useEffect, useState } from 'react';
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
@@ -23,6 +24,8 @@ const HERO = 'stories/la-cometa-roja/cover.webp';
  * si se olvida, se borran los datos de la app desde Ajustes de Android.
  */
 export function ParentGateScreen({ savedPin, onOpen, onBack }: ParentGateScreenProps) {
+  const { t: ui } = useTranslation();
+
   const insets = useSafeAreaInsets();
   const [gate, setGate] = useState(() => startGate(savedPin));
   const [now, setNow] = useState(() => Date.now());
@@ -62,21 +65,21 @@ export function ParentGateScreen({ savedPin, onOpen, onBack }: ParentGateScreenP
   const showArt = !layout.narrow && !layout.portrait && !layout.short;
   const sideBySide = layout.short && !layout.portrait;
   const backButton = (
-    <RoundButton onPress={onBack} label="Volver">
+    <RoundButton onPress={onBack} label={ui("Volver")}>
       <ChevronLeftIcon />
     </RoundButton>
   );
   const heading = (
     <View style={styles.heading}>
-      <Text style={styles.kicker}>{creating ? `PASO ${gate.phase === 'confirm' ? 2 : 1} DE 2 · SOLO PARA PADRES` : 'MODO PADRES'}</Text>
-      <Text style={[styles.title, layout.phone && styles.titleSmall]}>{title}</Text>
-      <Text style={styles.hint}>{hint}</Text>
-      {!showArt && <Text style={styles.privacySmall}>La voz de tu hijo nunca se graba ni se almacena.</Text>}
+      <Text style={styles.kicker}>{creating ? ui("PASO {0} DE 2 · SOLO PARA PADRES", gate.phase === 'confirm' ? 2 : 1) : ui("MODO PADRES")}</Text>
+      <Text style={[styles.title, layout.phone && styles.titleSmall]}>{ui(title)}</Text>
+      <Text style={styles.hint}>{ui(hint)}</Text>
+      {!showArt && <Text style={styles.privacySmall}>{ui("La voz de tu hijo nunca se graba ni se almacena.")}</Text>}
     </View>
   );
   const message_ = (
     <Text style={styles.message} accessibilityLiveRegion="polite">
-      {message ?? ' '}
+      {message ? ui(message) : ' '}
     </Text>
   );
 
@@ -108,8 +111,8 @@ export function ParentGateScreen({ savedPin, onOpen, onBack }: ParentGateScreenP
             </GradientView>
             <Text style={styles.brandText}>Kitewise</Text>
           </View>
-          <Text style={styles.tagline}>Aprender en casa, a su ritmo.</Text>
-          <Text style={styles.privacy}>La voz de tu hijo nunca se graba ni se almacena.</Text>
+          <Text style={styles.tagline}>{ui("Aprender en casa, a su ritmo.")}</Text>
+          <Text style={styles.privacy}>{ui("La voz de tu hijo nunca se graba ni se almacena.")}</Text>
         </View>
       </View>
 

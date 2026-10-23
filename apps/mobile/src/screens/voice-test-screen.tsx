@@ -1,3 +1,4 @@
+import { useTranslation } from '@lee-conmigo/ui-native';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { AppState, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -41,6 +42,7 @@ interface Row extends VoiceUtterance {
  * no usa internet. Está en Modo padres (tras el PIN).
  */
 export function VoiceTestScreen({ language: initialLanguage, onBack }: { language: 'es' | 'en'; onBack: () => void }) {
+  const { t: ui } = useTranslation();
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const [model, setModel] = useState<VoiceModel>('tiny');
@@ -110,20 +112,18 @@ export function VoiceTestScreen({ language: initialLanguage, onBack }: { languag
   return (
     <ScrollView style={styles.screen} contentContainerStyle={[styles.content, { paddingTop: insets.top + 16, paddingBottom: insets.bottom + 24, paddingHorizontal: layout.gutter }]}>
       <View style={styles.header}>
-        <RoundButton onPress={onBack} label="Volver">
+        <RoundButton onPress={onBack} label={ui("Volver")}>
           <ChevronLeftIcon />
         </RoundButton>
-        <Text style={[styles.title, layout.phone && styles.titleSmall]}>Prueba de voz</Text>
+        <Text style={[styles.title, layout.phone && styles.titleSmall]}>{ui("Prueba de voz")}</Text>
       </View>
       <Text style={styles.note}>
-        Toca Empezar y lee la frase en voz alta. Las palabras que el reconocimiento entienda se pintan de verde, y abajo ves exactamente lo que
-        escribió. Todo pasa en este equipo: nada se graba ni se envía.
-      </Text>
-      {!supported && <Text style={styles.warn}>En la vista web no hay micrófono: esta prueba funciona en la app instalada.</Text>}
+        {ui("Toca Empezar y lee la frase en voz alta. Las palabras que el reconocimiento entienda se pintan de verde, y abajo ves exactamente lo que escribió. Todo pasa en este equipo: nada se graba ni se envía.")}</Text>
+      {!supported && <Text style={styles.warn}>{ui("En la vista web no hay micrófono: esta prueba funciona en la app instalada.")}</Text>}
 
       <View style={[styles.row, layout.narrow && styles.rowWrap]}>
         <Segmented
-          label="Modelo"
+          label={ui("Modelo")}
           options={[
             { id: 'tiny', label: 'Rápido' },
             { id: 'base', label: 'Preciso' },
@@ -135,7 +135,7 @@ export function VoiceTestScreen({ language: initialLanguage, onBack }: { languag
           }}
         />
         <Segmented
-          label="Idioma"
+          label={ui("Idioma")}
           options={[
             { id: 'es', label: 'Español' },
             { id: 'en', label: 'English' },
@@ -162,28 +162,28 @@ export function VoiceTestScreen({ language: initialLanguage, onBack }: { languag
           <View style={styles.track}>
             <View style={[styles.fill, { width: `${coverage}%` }]} />
           </View>
-          <Text style={styles.coverageText}>{coverage} % de la frase reconocida</Text>
+          <Text style={styles.coverageText}>{coverage} {" " + ui("% de la frase reconocida")}</Text>
         </View>
         <View style={styles.cardActions}>
           <Button
-            label="Otra frase"
+            label={ui("Otra frase")}
             variant="secondary"
             onPress={() => {
               setSampleIdx((i) => i + 1);
               setRows([]);
             }}
           />
-          <Button label="Volver a empezar" variant="secondary" onPress={resetReading} />
+          <Button label={ui("Volver a empezar")} variant="secondary" onPress={resetReading} />
         </View>
       </View>
 
       <View style={styles.statusRow}>
         <MicBadge tone={tone} pulsing={status === 'ready' && voice} size={56} />
         <View style={styles.flex}>
-          <Text style={styles.status}>{STATUS_TEXT[status]}</Text>
-          {status === 'ready' && <Text style={styles.small}>{diag?.transcribing ? 'Escribiendo lo que oyó…' : voice ? 'Oigo voz…' : 'Esperando voz'}</Text>}
+          <Text style={styles.status}>{ui(STATUS_TEXT[status])}</Text>
+          {status === 'ready' && <Text style={styles.small}>{diag?.transcribing ? ui("Escribiendo lo que oyó…") : voice ? ui("Oigo voz…") : ui("Esperando voz")}</Text>}
         </View>
-        {listening ? <Button label="Detener" variant="secondary" onPress={() => void stop()} /> : <Button label="Empezar" onPress={() => void start()} disabled={!supported} />}
+        {listening ? <Button label={ui("Detener")} variant="secondary" onPress={() => void stop()} /> : <Button label={ui("Empezar")} onPress={() => void start()} disabled={!supported} />}
       </View>
       {error && <Text style={styles.warn}>{error}</Text>}
 
@@ -191,38 +191,38 @@ export function VoiceTestScreen({ language: initialLanguage, onBack }: { languag
       {diag && (
         <View style={styles.diag}>
           <View style={styles.levelRow}>
-            <Text style={styles.small}>Micrófono</Text>
+            <Text style={styles.small}>{ui("Micrófono")}</Text>
             <View style={styles.levelTrack}>
               <View style={[styles.levelFill, { width: `${Math.round(diag.level * 100)}%` }]} />
             </View>
-            <Text style={styles.small}>{Math.round(diag.audioSeconds)} s de audio</Text>
+            <Text style={styles.small}>{Math.round(diag.audioSeconds)} {" " + ui("s de audio")}</Text>
           </View>
           <Text style={styles.small}>
-            Frases detectadas {diag.detected} · escritas {diag.transcribed} · no eran voz {diag.skipped} · perdidas {diag.dropped}
-            {diag.queued ? ` · en espera ${diag.queued}` : ''}
+            {ui("Frases detectadas")}{diag.detected} {" " + ui("· escritas") + " "}{diag.transcribed} {" " + ui("· no eran voz") + " "}{diag.skipped} {" " + ui("· perdidas") + " "}{diag.dropped}
+            {diag.queued ? ui(" · en espera {0}", diag.queued) : ''}
             {diag.errors ? ` · errores ${diag.errors}` : ''}
           </Text>
-          {diag.dropped > 0 && status === 'loading-model' && <Text style={styles.small}>(Mientras carga el reconocimiento, lo que se lee no se escribe.)</Text>}
+          {diag.dropped > 0 && status === 'loading-model' && <Text style={styles.small}>{ui("(Mientras carga el reconocimiento, lo que se lee no se escribe.)")}</Text>}
         </View>
       )}
 
       {/* Lo que escribió */}
       <View style={styles.card}>
-        <Text style={styles.h3}>Lo que entendió</Text>
+        <Text style={styles.h3}>{ui("Lo que entendió")}</Text>
         {transcripts.length ? (
           <Text style={styles.transcript}>{[...transcripts].reverse().map((r) => r.text).join(' ')}</Text>
         ) : (
-          <Text style={styles.small}>{listening ? 'Todavía nada. Lee la frase en voz alta y haz una pausa corta al final.' : 'Toca Empezar.'}</Text>
+          <Text style={styles.small}>{listening ? ui("Todavía nada. Lee la frase en voz alta y haz una pausa corta al final.") : ui("Toca Empezar.")}</Text>
         )}
-        {avgMs !== null && <Text style={styles.summary}>Tarda en promedio {(avgMs / 1000).toFixed(1)} s por frase.</Text>}
+        {avgMs !== null && <Text style={styles.summary}>{ui("Tarda en promedio") + " "}{(avgMs / 1000).toFixed(1)} {" " + ui("s por frase.")}</Text>}
       </View>
 
       {rows.map((r) => (
         <View key={r.id} style={styles.result}>
-          <Text style={[styles.resultText, r.skipped && styles.skipped]}>{r.skipped ? '(no era voz: no se envió al reconocimiento)' : r.text || '(no entendió nada)'}</Text>
+          <Text style={[styles.resultText, r.skipped && styles.skipped]}>{r.skipped ? ui("(no era voz: no se envió al reconocimiento)") : r.text || ui("(no entendió nada)")}</Text>
           <Text style={styles.small}>
-            frase de {(r.audioMs / 1000).toFixed(1)} s · tardó {(r.transcribeMs / 1000).toFixed(1)} s
-            {r.heard ? ` · coinciden ${r.heard.matched} de ${r.heard.recognized} palabras con el texto` : ''}
+            {ui("frase de")}{(r.audioMs / 1000).toFixed(1)} {" " + ui("s · tardó") + " "}{(r.transcribeMs / 1000).toFixed(1)} s
+            {r.heard ? ui(" · coinciden {0} de {1} palabras con el texto", r.heard.matched, r.heard.recognized) : ''}
           </Text>
         </View>
       ))}

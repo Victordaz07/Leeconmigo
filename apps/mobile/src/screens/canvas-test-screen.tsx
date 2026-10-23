@@ -1,3 +1,4 @@
+import { useTranslation } from '@lee-conmigo/ui-native';
 import { useEffect, useRef, useState } from 'react';
 import { AppState, type GestureResponderEvent, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -56,6 +57,7 @@ const pressureOf = (e: GestureResponderEvent): number => {
  * micrófono, cámara, archivos ni internet. Está en Modo padres (tras el PIN).
  */
 export function CanvasTestScreen({ onBack }: { onBack: () => void }) {
+  const { t: ui } = useTranslation();
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const [drawing, setDrawing] = useState<Drawing>(emptyDrawing);
@@ -214,7 +216,7 @@ export function CanvasTestScreen({ onBack }: { onBack: () => void }) {
   const summary = results
     .map(
       (r) =>
-        `#${r.id} · motor ${ENGINE_NAME[r.engine]} · ${clock(r.seconds)} · trazos empezados ${r.counts.started} / guardados ${r.counts.ended} / cancelados ${r.counts.cancelled} · en pantalla ${r.strokes} (${r.points} puntos) · colgados ${r.hung}${r.fingerDown ? ' (terminó con el dedo puesto)' : ''} · cuadros lentos (> ${JANK_MS} ms) ${r.frames.stalls} (máx. ${r.frames.maxGapMs} ms, media ${r.frames.meanGapMs} ms) · se vio: ${r.verdict}`,
+        ui("#{0} · motor {1} · {2} · trazos empezados {3} / guardados {4} / cancelados {5} · en pantalla {6} ({7} puntos) · colgados {8}{9} · cuadros lentos (> {10} ms) {11} (máx. {12} ms, media {13} ms) · se vio: {14}", r.id, ENGINE_NAME[r.engine], clock(r.seconds), r.counts.started, r.counts.ended, r.counts.cancelled, r.strokes, r.points, r.hung, r.fingerDown ? ' (terminó con el dedo puesto)' : '', JANK_MS, r.frames.stalls, r.frames.maxGapMs, r.frames.meanGapMs, r.verdict),
     )
     .join('\n');
   const active = drawing.active !== null;
@@ -222,17 +224,16 @@ export function CanvasTestScreen({ onBack }: { onBack: () => void }) {
   return (
     <ScrollView scrollEnabled={!active} style={styles.screen} contentContainerStyle={[styles.content, { paddingTop: insets.top + 16, paddingBottom: insets.bottom + 24, paddingHorizontal: layout.gutter }]}>
       <View style={styles.header}>
-        <RoundButton onPress={onBack} label="Volver">
+        <RoundButton onPress={onBack} label={ui("Volver")}>
           <ChevronLeftIcon />
         </RoundButton>
-        <Text style={[styles.title, layout.phone && styles.titleSmall]}>Prueba del lienzo</Text>
+        <Text style={[styles.title, layout.phone && styles.titleSmall]}>{ui("Prueba del lienzo")}</Text>
       </View>
       <Text style={styles.note}>
-        Para Arte y música. Comprueba que dibujar con el dedo o el lápiz sea fluido y que no se pierdan trazos. No usa micrófono, cámara, archivos ni internet; el dibujo no sale del equipo.
-      </Text>
+        {ui("Para Arte y música. Comprueba que dibujar con el dedo o el lápiz sea fluido y que no se pierdan trazos. No usa micrófono, cámara, archivos ni internet; el dibujo no sale del equipo.")}</Text>
 
       <View style={styles.card}>
-        <Text style={styles.h3}>Motor de dibujo</Text>
+        <Text style={styles.h3}>{ui("Motor de dibujo")}</Text>
         <View style={styles.segmented}>
           {(['svg', 'skia'] as const).map((e) => (
             <Pressable key={e} onPress={() => !testing && setEngine(e)} accessibilityRole="button" accessibilityState={{ selected: engine === e, disabled: testing }} style={[styles.segment, engine === e && styles.segmentOn]}>
@@ -240,7 +241,7 @@ export function CanvasTestScreen({ onBack }: { onBack: () => void }) {
             </Pressable>
           ))}
         </View>
-        {engine === 'skia' && <Text style={styles.small}>Skia es la opción más rápida pero necesita código nativo propio. Si la aplicación se cierra al elegirla, no pasa nada: vuelve a abrirla y usa SVG.</Text>}
+        {engine === 'skia' && <Text style={styles.small}>{ui("Skia es la opción más rápida pero necesita código nativo propio. Si la aplicación se cierra al elegirla, no pasa nada: vuelve a abrirla y usa SVG.")}</Text>}
         <Text style={styles.h3}>Color</Text>
         <View style={styles.chips}>
           {BRUSH_COLORS.map((c) => {
@@ -249,11 +250,11 @@ export function CanvasTestScreen({ onBack }: { onBack: () => void }) {
               <Pressable key={c} onPress={() => setBru(brush(c, bru.eraser ? BRUSH_WIDTHS[1] : bru.width))} accessibilityRole="button" accessibilityLabel={`Color ${c}`} accessibilityState={{ selected: on }} style={[styles.swatch, { backgroundColor: c }, on && styles.swatchOn]} />
             );
           })}
-          <Pressable onPress={() => setBru(brush('#FFFFFF', ERASER_WIDTH, true))} accessibilityRole="button" accessibilityLabel="Goma" accessibilityState={{ selected: bru.eraser }} style={[styles.chip, bru.eraser && styles.chipOn]}>
-            <Text style={[styles.chipText, bru.eraser && styles.chipTextOn]}>Goma</Text>
+          <Pressable onPress={() => setBru(brush('#FFFFFF', ERASER_WIDTH, true))} accessibilityRole="button" accessibilityLabel={ui("Goma")} accessibilityState={{ selected: bru.eraser }} style={[styles.chip, bru.eraser && styles.chipOn]}>
+            <Text style={[styles.chipText, bru.eraser && styles.chipTextOn]}>{ui("Goma")}</Text>
           </Pressable>
         </View>
-        <Text style={styles.h3}>Grosor</Text>
+        <Text style={styles.h3}>{ui("Grosor")}</Text>
         <View style={styles.segmented}>
           {BRUSH_WIDTHS.map((w, i) => {
             const on = !bru.eraser && bru.width === w;
@@ -279,53 +280,52 @@ export function CanvasTestScreen({ onBack }: { onBack: () => void }) {
             if (e.nativeEvent.touches.length > 1) onStart(e);
           }}
           accessible
-          accessibilityLabel="Lienzo de dibujo"
+          accessibilityLabel={ui("Lienzo de dibujo")}
         >
           {engine === 'skia' ? <SkiaStrokeLayer strokes={visibleStrokes(drawing)} /> : <SvgStrokeLayer strokes={visibleStrokes(drawing)} />}
         </View>
 
         <View style={styles.actions}>
-          <Button label="Deshacer" variant="secondary" onPress={doUndo} disabled={!canUndo(drawing)} />
-          <Button label="Rehacer" variant="secondary" onPress={doRedo} disabled={!canRedo(drawing)} />
-          <Button label="Borrar todo" variant="secondary" onPress={doClear} />
-          {!testing && <Button label={`Prueba de ${TEST_SECONDS} segundos`} onPress={startTest} />}
-          {testing && <Button label="Terminar ya" variant="secondary" onPress={finish} />}
+          <Button label={ui("Deshacer")} variant="secondary" onPress={doUndo} disabled={!canUndo(drawing)} />
+          <Button label={ui("Rehacer")} variant="secondary" onPress={doRedo} disabled={!canRedo(drawing)} />
+          <Button label={ui("Borrar todo")} variant="secondary" onPress={doClear} />
+          {!testing && <Button label={ui("Prueba de {0} segundos", TEST_SECONDS)} onPress={startTest} />}
+          {testing && <Button label={ui("Terminar ya")} variant="secondary" onPress={finish} />}
         </View>
-        {testing && <Text style={styles.small}>Prueba en curso: {clock(elapsed)} de {clock(TEST_SECONDS)}. Dibuja sin parar: líneas largas, círculos, garabatos. Prueba también con dos dedos a la vez y apoyando la palma.</Text>}
+        {testing && <Text style={styles.small}>{ui("Prueba en curso:") + " "}{clock(elapsed)} {" " + ui("de") + " "}{clock(TEST_SECONDS)}{ui(". Dibuja sin parar: líneas largas, círculos, garabatos. Prueba también con dos dedos a la vez y apoyando la palma.")}</Text>}
       </View>
 
       {awaiting && (
         <View style={styles.card}>
-          <Text style={styles.h3}>Terminó la prueba de {clock(awaiting.seconds)}</Text>
-          <Text style={styles.note}>¿Cómo se vio y se sintió?</Text>
+          <Text style={styles.h3}>{ui("Terminó la prueba de") + " "}{clock(awaiting.seconds)}</Text>
+          <Text style={styles.note}>{ui("¿Cómo se vio y se sintió?")}</Text>
           <View style={styles.actions}>
-            <Button label="Todo bien" onPress={() => verdict('todo bien')} />
-            <Button label="Perdió trazos" variant="secondary" onPress={() => verdict('perdió trazos')} />
-            <Button label="Quedó un trazo colgado" variant="secondary" onPress={() => verdict('trazo colgado')} />
-            <Button label="Con tirones" variant="secondary" onPress={() => verdict('con tirones')} />
-            <Button label="La pantalla se movió al dibujar" variant="secondary" onPress={() => verdict('la pantalla se movió al dibujar')} />
-            <Button label="El trazo iba detrás del dedo" variant="secondary" onPress={() => verdict('el trazo iba detrás del dedo')} />
+            <Button label={ui("Todo bien")} onPress={() => verdict(ui("todo bien"))} />
+            <Button label={ui("Perdió trazos")} variant="secondary" onPress={() => verdict(ui("perdió trazos"))} />
+            <Button label={ui("Quedó un trazo colgado")} variant="secondary" onPress={() => verdict(ui("trazo colgado"))} />
+            <Button label={ui("Con tirones")} variant="secondary" onPress={() => verdict(ui("con tirones"))} />
+            <Button label={ui("La pantalla se movió al dibujar")} variant="secondary" onPress={() => verdict(ui("la pantalla se movió al dibujar"))} />
+            <Button label={ui("El trazo iba detrás del dedo")} variant="secondary" onPress={() => verdict(ui("el trazo iba detrás del dedo"))} />
           </View>
         </View>
       )}
 
       <View style={styles.diag}>
-        <Text style={styles.h3}>Lo que mide</Text>
-        <Text style={styles.small}>Trazos: empezados {counts.started} · guardados {counts.ended} · cancelados {counts.cancelled}</Text>
-        <Text style={styles.small}>En pantalla: {drawing.strokes.length} trazos · {totalPoints(drawing)} puntos · {active ? 'dedo puesto' : 'sin trazo en curso'}</Text>
+        <Text style={styles.h3}>{ui("Lo que mide")}</Text>
+        <Text style={styles.small}>{ui("Trazos: empezados") + " "}{counts.started} {" " + ui("· guardados") + " "}{counts.ended} {" " + ui("· cancelados") + " "}{counts.cancelled}</Text>
+        <Text style={styles.small}>{ui("En pantalla:") + " "}{drawing.strokes.length} {" " + ui("trazos ·") + " "}{totalPoints(drawing)} {" " + ui("puntos ·") + " "}{active ? ui("dedo puesto") : ui("sin trazo en curso")}</Text>
         {frames && (
           <Text style={styles.small}>
-            Cuadros: {frames.pumps} · media {frames.meanGapMs} ms · cuadro más lento {frames.maxGapMs} ms · lentos (&gt; {JANK_MS} ms): {frames.stalls}
+            {ui("Cuadros:")}{frames.pumps} {" " + ui("· media") + " "}{frames.meanGapMs} {" " + ui("ms · cuadro más lento") + " "}{frames.maxGapMs} {" " + ui("ms · lentos (&gt;") + " "}{JANK_MS} ms): {frames.stalls}
           </Text>
         )}
         <Text style={styles.small}>
-          Empezados = guardados + cancelados (+1 si la prueba termina con el dedo puesto). Si no cuadra, se perdió un trazo. «Colgado» es un trazo que sigue activo sin ningún dedo en el lienzo. Un cuadro lento es un tirón al dibujar.
-        </Text>
+          {ui("Empezados = guardados + cancelados (+1 si la prueba termina con el dedo puesto). Si no cuadra, se perdió un trazo. «Colgado» es un trazo que sigue activo sin ningún dedo en el lienzo. Un cuadro lento es un tirón al dibujar.")}</Text>
       </View>
 
       {results.length > 0 && (
         <View style={styles.diag}>
-          <Text style={styles.h3}>Resultados (para pasárselos a Claude)</Text>
+          <Text style={styles.h3}>{ui("Resultados (para pasárselos a Claude)")}</Text>
           <Text selectable style={styles.mono}>
             {summary}
           </Text>

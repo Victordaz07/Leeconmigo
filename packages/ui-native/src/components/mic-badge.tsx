@@ -1,3 +1,4 @@
+import { useTranslation } from '../interface-language.tsx';
 import { useEffect, useRef } from 'react';
 import { Animated, Easing, StyleSheet, View } from 'react-native';
 import type { MicTone } from '@lee-conmigo/ui-core';
@@ -23,6 +24,7 @@ interface MicBadgeProps {
 
 /** Círculo del micrófono: cambia de color según el estado en vez de mostrar texto técnico (docs/06). */
 export function MicBadge({ tone, size = 96, pulsing = false }: MicBadgeProps) {
+  const { t: ui } = useTranslation();
   const t = TONE[tone];
   const reduced = useReducedMotion();
   const animate = pulsing && !reduced;
@@ -41,7 +43,7 @@ export function MicBadge({ tone, size = 96, pulsing = false }: MicBadgeProps) {
 
   const ring = size + 26; // aro blanco (8 px) + aro de color (13 px) del prototipo, redondeado
   return (
-    <View style={{ width: ring, height: ring, alignItems: 'center', justifyContent: 'center' }} accessibilityRole="image" accessibilityLabel="Micrófono">
+    <View style={{ width: ring, height: ring, alignItems: 'center', justifyContent: 'center' }} accessibilityRole="image" accessibilityLabel={ui("Micrófono")}>
       {animate && (
         <Animated.View
           pointerEvents="none"

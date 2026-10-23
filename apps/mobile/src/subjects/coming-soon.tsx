@@ -1,16 +1,17 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Button, colors, fontFamily } from '@lee-conmigo/ui-native';
+import { useTranslation, Button, colors, fontFamily } from '@lee-conmigo/ui-native';
 import type { SubjectScreenProps } from './types';
 
 /** Pantalla de relleno de una materia que todavía no tiene contenido (no se puede llegar a ella: está "Pronto"). */
 export function ComingSoon({ title, onExit }: Pick<SubjectScreenProps, 'onExit'> & { title: string }) {
+  const { t } = useTranslation();
   const insets = useSafeAreaInsets();
   return (
     <View style={[styles.screen, { paddingTop: insets.top + 24 }]}>
-      <Text style={styles.title}>{title}</Text>
-      <Text style={styles.text}>Pronto.</Text>
-      <Button label="‹ Inicio" variant="secondary" onPress={onExit} />
+      <Text style={styles.title}>{t(title)}</Text>
+      <Text style={styles.text}>{t('Pronto')}</Text>
+      <Button label={`‹ ${t('Inicio')}`} variant="secondary" onPress={onExit} />
     </View>
   );
 }

@@ -35,3 +35,5 @@ export * from './finanzas/index.ts';
 
 // ---- «Para la vida» 02–08: lo edita solo la cuenta de Finanzas/Vida (docs/14) ----
 export * from './vida/index.ts';
+export { EN_INTERFACE, translate, type InterfaceLanguage } from './interface-language.ts';
+export { readingCopy } from './reading-copy.ts';

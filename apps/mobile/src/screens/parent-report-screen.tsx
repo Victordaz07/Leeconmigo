@@ -1,3 +1,4 @@
+import { useTranslation } from '@lee-conmigo/ui-native';
 import { useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -30,6 +31,8 @@ const MESSAGE: Record<ExportResult, string> = {
  * imprime (`weeklyReportHtml`), así lo que ve el adulto aquí es lo que sale en el PDF. Solo hay datos de lectura por ahora; el informe lo dice.
  */
 export function ParentReportScreen({ profile, summaries, goalMinutes, repository, onBack }: Props) {
+
+  const { language, t: ui } = useTranslation();
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const [weeksAgo, setWeeksAgo] = useState(0);
@@ -38,13 +41,13 @@ export function ParentReportScreen({ profile, summaries, goalMinutes, repository
   const report = useMemo(() => weeklyReport(summaries, goalMinutes, new Date(), weeksAgo), [summaries, goalMinutes, weeksAgo]);
   const titleOf = (id: string) => repository.get(id)?.title ?? id;
   const maxMin = Math.max(report.goalMinutes, ...report.days.map((d) => d.minutes), 1);
-  const q = report.comprehensionTotal > 0 ? `${report.comprehensionCorrect} de ${report.comprehensionTotal}` : 'Ninguna';
+  const q = report.comprehensionTotal > 0 ? ui("{0} de {1}", report.comprehensionCorrect, report.comprehensionTotal) : ui("Ninguna");
   const focusTotal = report.focus[1] + report.focus[2] + report.focus[3];
 
   const doExport = async () => {
     setBusy(true);
     setNotice('');
-    const result = await exportReportPdf(weeklyReportHtml({ childName: profile.name, report, titleOf }), `Kitewise · ${profile.name} · ${weekRange(report.monday, report.sunday)}`);
+    const result = await exportReportPdf(weeklyReportHtml({ childName: profile.name, report, titleOf, language }), `Kitewise · ${profile.name} · ${weekRange(report.monday, report.sunday, language)}`);
     setNotice(MESSAGE[result]);
     setBusy(false);
   };
@@ -52,63 +55,63 @@ export function ParentReportScreen({ profile, summaries, goalMinutes, repository
   return (
     <ScrollView style={styles.screen} contentContainerStyle={[styles.content, { paddingHorizontal: layout.gutter, paddingTop: insets.top + (layout.phone ? 12 : 24), paddingBottom: insets.bottom + 28 }]}>
       <View style={styles.header}>
-        <RoundButton onPress={onBack} label="Volver al panel de padres">
+        <RoundButton onPress={onBack} label={ui("Volver al panel de padres")}>
           <ChevronLeftIcon />
         </RoundButton>
         <View style={styles.flex}>
-          <Text style={styles.kicker}>Modo padres</Text>
-          <Text style={[styles.title, layout.phone && styles.titleSmall]}>Informe semanal</Text>
+          <Text style={styles.kicker}>{ui("Modo padres")}</Text>
+          <Text style={[styles.title, layout.phone && styles.titleSmall]}>{ui("Informe semanal")}</Text>
         </View>
       </View>
 
       <View style={styles.tabs} accessibilityRole="tablist">
         {([0, 1] as const).map((w) => (
           <Pressable key={w} onPress={() => setWeeksAgo(w)} accessibilityRole="tab" accessibilityState={{ selected: weeksAgo === w }} style={[styles.tab, weeksAgo === w && styles.tabOn]}>
-            <Text style={[styles.tabText, weeksAgo === w && styles.tabTextOn]}>{w === 0 ? 'Esta semana' : 'Semana pasada'}</Text>
+            <Text style={[styles.tabText, weeksAgo === w && styles.tabTextOn]}>{w === 0 ? ui("Esta semana") : ui("Semana pasada")}</Text>
           </Pressable>
         ))}
       </View>
 
       <View style={styles.paper}>
         <View style={styles.paperHead}>
-          <Text style={styles.brand}>Kitewise · resumen semanal</Text>
-          <Text style={styles.range}>{weekRange(report.monday, report.sunday)}</Text>
+          <Text style={styles.brand}>{ui("Kitewise · resumen semanal")}</Text>
+          <Text style={styles.range}>{weekRange(report.monday, report.sunday, language)}</Text>
         </View>
         <Text style={styles.child}>{profile.name}</Text>
         <View style={[styles.cards, layout.narrow && styles.wrap]}>
-          <Card label="Minutos de lectura" value={String(report.totalMinutes)} />
-          <Card label="Días con lectura" value={`${report.activeDays} de 7`} />
-          <Card label={`Días con su meta (${report.goalMinutes} min)`} value={String(report.goalDays)} />
-          <Card label="Preguntas acertadas" value={q} />
+          <Card label={ui("Minutos de lectura")} value={String(report.totalMinutes)} />
+          <Card label={ui("Días con lectura")} value={ui("{0} de 7", report.activeDays)} />
+          <Card label={ui("Días con su meta ({0} min)", report.goalMinutes)} value={String(report.goalDays)} />
+          <Card label={ui("Preguntas acertadas")} value={q} />
         </View>
 
-        <Text style={styles.h3}>Minutos por día</Text>
-        <View style={styles.week} accessibilityLabel={`Minutos por día: ${report.days.map((d) => `${d.label} ${d.minutes}`).join(', ')}`}>
+        <Text style={styles.h3}>{ui("Minutos por día")}</Text>
+        <View style={styles.week} accessibilityLabel={ui("Minutos por día: {0}", report.days.map((d) => `${ui(d.label)} ${d.minutes}`).join(', '))}>
           {report.days.map((d) => (
-            <View key={d.label} style={styles.barCol}>
+            <View key={ui(d.label)} style={styles.barCol}>
               <Text style={styles.barNum}>{d.minutes > 0 ? d.minutes : ''}</Text>
               <View style={[styles.bar, { height: d.minutes > 0 ? Math.max(6, (d.minutes / maxMin) * BAR_MAX) : 3, backgroundColor: d.minutes >= report.goalMinutes ? '#22A95C' : d.minutes > 0 ? '#4B97FF' : colors.track }]} />
-              <Text style={styles.barLabel}>{d.label}</Text>
+              <Text style={styles.barLabel}>{ui(d.label)}</Text>
             </View>
           ))}
         </View>
 
-        <Text style={styles.h3}>Lo que leyó</Text>
+        <Text style={styles.h3}>{ui("Lo que leyó")}</Text>
         {report.stories.length === 0 ? (
-          <Text style={styles.muted}>Esta semana no hubo lectura.</Text>
+          <Text style={styles.muted}>{ui("Esta semana no hubo lectura.")}</Text>
         ) : (
           report.stories.map((s) => (
             <View key={s.storyId} style={styles.row}>
               <Text style={[styles.rowTitle, styles.flex]} numberOfLines={1}>
                 {titleOf(s.storyId)}
               </Text>
-              <Text style={styles.rowMeta}>{s.minutes < 1 ? 'Menos de 1 min' : `${s.minutes} min`}</Text>
-              <Text style={styles.rowState}>{s.completed ? 'La terminó' : `Va en ${Math.round(s.completion * 100)} %`}</Text>
+              <Text style={styles.rowMeta}>{s.minutes < 1 ? ui("Menos de 1 min") : `${s.minutes} min`}</Text>
+              <Text style={styles.rowState}>{s.completed ? ui("La terminó") : ui("Va en {0} %", Math.round(s.completion * 100))}</Text>
             </View>
           ))
         )}
 
-        <Text style={styles.h3}>Para practicar juntos</Text>
+        <Text style={styles.h3}>{ui("Para practicar juntos")}</Text>
         {report.words.length ? (
           <View style={styles.words}>
             {report.words.slice(0, 12).map((w) => (
@@ -118,21 +121,21 @@ export function ParentReportScreen({ profile, summaries, goalMinutes, repository
             ))}
           </View>
         ) : (
-          <Text style={styles.muted}>No pidió ayuda con ninguna palabra.</Text>
+          <Text style={styles.muted}>{ui("No pidió ayuda con ninguna palabra.")}</Text>
         )}
 
-        <Text style={styles.h3}>Enfoque (según {profile.name})</Text>
-        <Text style={styles.body}>{focusTotal ? `Bien: ${report.focus[3]} · Más o menos: ${report.focus[2]} · Le costó: ${report.focus[1]}` : `${profile.name} no marcó cómo estuvo su enfoque.`}</Text>
+        <Text style={styles.h3}>{ui("Enfoque (según") + " "}{profile.name})</Text>
+        <Text style={styles.body}>{focusTotal ? ui("Bien: {0} · Más o menos: {1} · Le costó: {2}", report.focus[3], report.focus[2], report.focus[1]) : ui("{0} no marcó cómo estuvo su enfoque.", profile.name)}</Text>
 
-        <Text style={styles.footer}>Generado en la tableta. Sin datos de voz ni imágenes: la voz nunca se graba ni se guarda. Es una herramienta de práctica, no una evaluación oficial.</Text>
+        <Text style={styles.footer}>{ui("Generado en la tableta. Sin datos de voz ni imágenes: la voz nunca se graba ni se guarda. Es una herramienta de práctica, no una evaluación oficial.")}</Text>
       </View>
 
       <View style={styles.actions}>
-        <Button label={busy ? 'Preparando…' : 'Guardar o compartir PDF'} onPress={doExport} disabled={busy} />
-        <Text style={styles.hint}>El PDF se crea en este dispositivo. Tú eliges si lo guardas o a quién se lo mandas.</Text>
+        <Button label={busy ? ui("Preparando…") : ui("Guardar o compartir PDF")} onPress={doExport} disabled={busy} />
+        <Text style={styles.hint}>{ui("El PDF se crea en este dispositivo. Tú eliges si lo guardas o a quién se lo mandas.")}</Text>
         {notice !== '' && (
           <Text style={styles.notice} accessibilityLiveRegion="polite">
-            {notice}
+            {ui(notice)}
           </Text>
         )}
       </View>

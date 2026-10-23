@@ -1,3 +1,4 @@
+import { useTranslation } from '../interface-language.tsx';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { PIN_LENGTH, type PinKey } from '@lee-conmigo/ui-core';
 import { colors, fontFamily, gradients, radius, shadows } from '../tokens.ts';
@@ -21,11 +22,13 @@ const ROWS: PinKey[][] = [
 
 /** Teclado del PIN de padres (Kitewise P1): 4 puntos + teclas físicas grandes, ⌫ y ✓ verde. */
 export function PinPad({ filled, onKey, onSubmit, disabled, compact }: PinPadProps) {
+  const { t: ui } = useTranslation();
+
   const ready = filled === PIN_LENGTH && !disabled;
   const key = compact ? { width: 76, height: 52 } : null;
   return (
     <View style={[styles.wrap, compact && styles.wrapCompact]}>
-      <View style={styles.dots} accessibilityLabel={`${filled} de ${PIN_LENGTH} dígitos`}>
+      <View style={styles.dots} accessibilityLabel={ui("{0} de {1} dígitos", filled, PIN_LENGTH)}>
         {Array.from({ length: PIN_LENGTH }, (_, i) => (
           <View key={i} style={[styles.dot, i < filled && styles.dotOn]} />
         ))}
@@ -39,9 +42,9 @@ export function PinPad({ filled, onKey, onSubmit, disabled, compact }: PinPadPro
           </View>
         ))}
         <View style={[styles.row, compact && styles.gridCompact]}>
-          <Key label="⌫" a11y="Borrar" tone="soft" onPress={() => onKey('back')} disabled={disabled} size={key} />
+          <Key label="⌫" a11y={ui("Borrar")} tone="soft" onPress={() => onKey('back')} disabled={disabled} size={key} />
           <Key label="0" onPress={() => onKey('0')} disabled={disabled} size={key} />
-          <Pressable onPress={onSubmit} disabled={!ready} accessibilityRole="button" accessibilityLabel="Listo" accessibilityState={{ disabled: !ready }} style={!ready && styles.notReady}>
+          <Pressable onPress={onSubmit} disabled={!ready} accessibilityRole="button" accessibilityLabel={ui("Listo")} accessibilityState={{ disabled: !ready }} style={!ready && styles.notReady}>
             {({ pressed }) => (
               <View style={[styles.okLedge, { paddingBottom: pressed ? 1 : 5, paddingTop: pressed ? 4 : 0 }]}>
                 <GradientView gradient={gradients.green} style={[styles.key, key]}>

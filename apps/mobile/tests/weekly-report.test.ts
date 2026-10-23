@@ -40,6 +40,18 @@ describe('weeklyReport', () => {
 });
 
 describe('weeklyReportHtml', () => {
+  it('exports English labels and dates while escaping names and preserving story titles', () => {
+    const report = weeklyReport([base], 10, NOW);
+    const html = weeklyReportHtml({ childName: '<Noah>', report, titleOf: () => 'Authored story title', language: 'en' });
+    expect(html).toContain('<html lang="en">');
+    expect(html).toContain('Reading minutes');
+    expect(html).toContain('weekly summary');
+    expect(html).toContain('Mon');
+    expect(html).toContain('&lt;Noah&gt;');
+    expect(html).toContain('Authored story title');
+    expect(html).not.toContain('Minutos de lectura');
+    expect(weekRange(report.monday, report.sunday, 'en')).toBe('19–25 Oct');
+  });
   it('escapa los datos y no trae nada externo', () => {
     const r = weeklyReport([{ ...base, wordsHelped: ['<script>alert(1)</script>'] }], 10, NOW);
     const html = weeklyReportHtml({ childName: 'Noah "<b>"', report: r, titleOf: (id) => `Título <${id}>` });

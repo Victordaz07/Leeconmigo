@@ -1,6 +1,7 @@
+import { useTranslation } from '../interface-language.tsx';
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import type { Audience, VocabularyEntry } from '@lee-conmigo/contracts';
-import { copy } from '@lee-conmigo/ui-core';
+import { readingCopy } from '@lee-conmigo/ui-core';
 import { colors, fontFamily, radius } from '../tokens.ts';
 import { Button } from './button.tsx';
 import { SpeakerIcon } from './icons.tsx';
@@ -20,10 +21,12 @@ interface HelpSheetProps {
  * "Guardar en mi cuaderno" llega con Mi cuaderno (K8); hasta entonces no se muestra un botón que no hace nada.
  */
 export function HelpSheet({ word, entry, audience, onListen, onClose }: HelpSheetProps) {
+  const { language, t } = useTranslation();
+  const copy = readingCopy(language);
   const syllables = entry?.syllables?.length ? entry.syllables.join('·') : (word ?? '');
   return (
     <Modal visible={word !== null} transparent animationType="fade" onRequestClose={onClose} supportedOrientations={['portrait', 'landscape']}>
-      <Pressable style={styles.scrim} onPress={onClose} accessibilityLabel="Cerrar ayuda">
+      <Pressable style={styles.scrim} onPress={onClose} accessibilityLabel={t("Cerrar ayuda")}>
         <ScrollView style={styles.scroll} contentContainerStyle={styles.center}>
         <Pressable style={styles.card} onPress={() => {}} accessibilityViewIsModal>
           <View style={styles.head}>

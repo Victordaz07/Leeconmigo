@@ -367,7 +367,7 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
     flow,
     reading,
     prefs,
-    view: deriveReadingView({ screen: flow.screen, reading, words, prefs, freeReading }),
+    view: deriveReadingView({ screen: flow.screen, reading, words, prefs, freeReading, language: story.language === 'en' ? 'en' : 'es' }),
     /** Tiempo LEÍDO (docs/06: cuenta hacia arriba; solo avanza con lectura válida). */
     elapsed: formatDuration(timer.validSeconds + (freeReading && flow.screen === 'reading' ? creditedMs(freePageMs, words.length) / 1000 : 0)),
     help: helpWord ? { word: cleanWord(helpWord.text), entry: story.vocabulary[helpKey] } : null,

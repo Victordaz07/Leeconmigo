@@ -1,8 +1,9 @@
+import { useTranslation } from '@lee-conmigo/ui-native';
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { BackHandler, Image, Pressable, ScrollView, StyleSheet, Text, View, type LayoutChangeEvent } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { Story } from '@lee-conmigo/contracts';
-import { copy, isBalloonPage, subjectById, wordMark, type WordMark } from '@lee-conmigo/ui-core';
+import { readingCopy, isBalloonPage, subjectById, wordMark, type WordMark } from '@lee-conmigo/ui-core';
 import { Button, Card, ChevronLeftIcon, ClosingCard, CoachBubble, colors, ComicPage, DialogCard, FocusReadingBar, fontFamily, gradients, GradientView, HelpSheet, MicBadge, MicOffIcon, radius, readSize, ReadingRail, ReadingText, RoundButton, SubjectTab, useLayout } from '@lee-conmigo/ui-native';
 import type { Energy } from '@lee-conmigo/ui-core';
 import { progressStoreFor, type ChildProfile } from '../app-state';
@@ -60,6 +61,9 @@ export function ReadingScreen(props: ReadingScreenProps) {
 }
 
 function LegacyReadingScreen({ story, profile, energy, goalMinutes, focusReading = false, movementBreaks = false, onExit }: ReadingScreenProps) {
+  const { t: ui } = useTranslation();
+  const { language } = useTranslation();
+  const copy = readingCopy(language);
   const [resting, setResting] = useState(false);
   const session = useReadingSession(story, { store: progressStoreFor(profile.id), energy: energy ?? undefined, dailyGoalMinutes: goalMinutes, freeReading: profile.freeReading, holdAtPageEnd: resting });
   // Pausa de movimiento (B12): el reloj cuenta mientras lee; si ya toca, se ofrece al terminar una página (no la última,
@@ -171,7 +175,7 @@ function LegacyReadingScreen({ story, profile, energy, goalMinutes, focusReading
               { label: 'Tiempo', value: `${session.closing.minutes} min` },
               { label: 'Papalote', value: `+${session.closing.kiteMeters} m ↑` },
               { label: 'Sello del día', value: session.closing.dailyStamp ? '★' : '–' },
-              { label: 'Vuelven', value: `${session.closing.returning} ${session.closing.returning === 1 ? 'palabra' : 'palabras'}` },
+              { label: 'Vuelven', value: `${session.closing.returning} ${session.closing.returning === 1 ? ui("palabra") : ui("palabras")}` },
             ]}
             onAgain={() => {
               actions.finish();
@@ -225,6 +229,8 @@ function LegacyReadingScreen({ story, profile, energy, goalMinutes, focusReading
 
 /** La página según su tipo, a lo más grande que quepa en el espacio disponible. */
 function PageView({ session, markOf, mode, phone }: { session: ReadingSession; markOf: (i: number) => WordMark; mode: PageMode; phone: boolean }) {
+  const { language } = useTranslation();
+  const copy = readingCopy(language);
   const { story, page, words, actions, view, flow, reading } = session;
   const [area, setArea] = useState({ width: 0, height: 0 });
   const onLayout = (e: LayoutChangeEvent) => {
@@ -305,6 +311,8 @@ function PageView({ session, markOf, mode, phone }: { session: ReadingSession; m
  * (arte y texto son capas separadas, docs/05).
  */
 function FocusPage({ session, markOf, phone, onBack, bar, bottomInset }: { session: ReadingSession; markOf: (i: number) => WordMark; phone: boolean; onBack: () => void; bar: ReactNode; bottomInset: number }) {
+  const { t: ui } = useTranslation();
+
   const { story, page, words, actions, reading } = session;
   const image = storyImage(page.illustration.src);
   const progress = session.freeReading ? (session.pageIndex + 1) / story.pages.length : words.length ? Math.min(1, (reading.hasHeardVoice ? reading.currentWordIndex : 0) / words.length) : 0;
@@ -323,13 +331,13 @@ function FocusPage({ session, markOf, phone, onBack, bar, bottomInset }: { sessi
     <View style={[styles.textArea, styles.focusArea]}>
       {image && <Image source={image} style={[FILL, styles.focusArt]} blurRadius={14} resizeMode="cover" accessibilityLabel={page.illustration.alt ?? ''} />}
       <View style={[styles.focusTop, phone && styles.focusTopSmall]}>
-        <RoundButton onPress={onBack} label="Volver">
+        <RoundButton onPress={onBack} label={ui("Volver")}>
           <ChevronLeftIcon />
         </RoundButton>
         <View style={styles.track}>
           <View style={[styles.fill, { width: `${Math.round(progress * 100)}%` }]} />
         </View>
-        <Text style={styles.focusCount} accessibilityLabel={`Página ${session.pageIndex + 1} de ${story.pages.length}`}>
+        <Text style={styles.focusCount} accessibilityLabel={ui("Página {0} de {1}", session.pageIndex + 1, story.pages.length)}>
           {session.pageIndex + 1} / {story.pages.length}
         </Text>
       </View>
@@ -353,6 +361,8 @@ function FocusPage({ session, markOf, phone, onBack, bar, bottomInset }: { sessi
 }
 
 function PrepOverlay({ session }: { session: ReadingSession }) {
+  const { language } = useTranslation();
+  const copy = readingCopy(language);
   const audience = session.prefs.audience;
   const { narrow, short } = useLayout();
   const small = narrow || short;

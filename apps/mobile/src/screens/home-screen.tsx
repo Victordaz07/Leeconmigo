@@ -1,3 +1,4 @@
+import { useTranslation } from '@lee-conmigo/ui-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -33,6 +34,8 @@ interface HomeScreenProps {
  * estantería de cuadernos. Hoy solo Lectura tiene contenido; las demás materias se ven como "Pronto" (no se inventan).
  */
 export function HomeScreen({ profile, minutes, model, onContinue, onOpenReading, math, onOpenMath, onOpenSubject, onSwitchProfile }: HomeScreenProps) {
+  const { t: ui } = useTranslation();
+
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const { narrow, gutter } = layout;
@@ -44,7 +47,7 @@ export function HomeScreen({ profile, minutes, model, onContinue, onOpenReading,
   const lifeWidth = itemWidth(available, columnsFor(available, 200, gap), gap);
   const { featured, featuredStory, stats } = model;
   const cover = featuredStory.cover ? storyImage(featuredStory.cover.src) : storyImage(featuredStory.pages[0].illustration.src);
-  const resumeLabel = featured.resumePage !== null && featured.resumePage > 0 ? `${featuredStory.title} · página ${featured.resumePage + 1}` : featuredStory.title;
+  const resumeLabel = featured.resumePage !== null && featured.resumePage > 0 ? ui("{0} · página {1}", featuredStory.title, featured.resumePage + 1) : featuredStory.title;
 
   const renderSubject = (s: Subject, width: number = coverWidth) => {
     const isReading = s.id === 'lectura';
@@ -54,7 +57,7 @@ export function HomeScreen({ profile, minutes, model, onContinue, onOpenReading,
     return (
       <NotebookCover
         key={s.id}
-        title={s.name}
+        title={ui(s.name)}
         subtitle={isReading ? resumeLabel : isMath ? math.subtitle : (card?.subtitle ?? '')}
         image={isReading ? cover : isMath ? MATH_COVERS.notebook : card?.image}
         glyph={s.glyph}
@@ -73,13 +76,13 @@ export function HomeScreen({ profile, minutes, model, onContinue, onOpenReading,
       <View style={styles.header}>
         <View style={[styles.greeting, narrow && styles.greetingNarrow]}>
           <Text style={[styles.hello, narrow && styles.helloNarrow]} numberOfLines={1} adjustsFontSizeToFit>
-            ¡Hola, {profile.name}!
+            {ui("¡Hola,") + " "}{profile.name}!
           </Text>
-          <Text style={styles.sub}>Hoy son {minutes} minutos. Yo te guío.</Text>
+          <Text style={styles.sub}>{ui("Hoy son") + " "}{minutes} {" " + ui("minutos. Yo te guío.")}</Text>
         </View>
-        <StatChip icon={<Text style={styles.flame}>🔥</Text>} label={`${stats.streakDays} ${stats.streakDays === 1 ? 'día' : 'días'}`} accessibilityLabel={`Racha de ${stats.streakDays} días`} />
-        <StatChip icon={<Text style={styles.star}>★</Text>} label={String(stats.starsTotal)} accessibilityLabel={`${stats.starsTotal} estrellas`} />
-        <Pressable onPress={onSwitchProfile} accessibilityRole="button" accessibilityLabel="Cambiar de niño">
+        <StatChip icon={<Text style={styles.flame}>🔥</Text>} label={`${stats.streakDays} ${stats.streakDays === 1 ? ui("día") : ui("días")}`} accessibilityLabel={ui("Racha de {0} días", stats.streakDays)} />
+        <StatChip icon={<Text style={styles.star}>★</Text>} label={String(stats.starsTotal)} accessibilityLabel={ui("{0} estrellas", stats.starsTotal)} />
+        <Pressable onPress={onSwitchProfile} accessibilityRole="button" accessibilityLabel={ui("Cambiar de niño")}>
           <GradientView gradient={gradients[profile.avatar]} style={styles.avatar}>
             <Text style={styles.avatarText}>{profile.name.slice(0, 1).toUpperCase()}</Text>
           </GradientView>
@@ -94,7 +97,7 @@ export function HomeScreen({ profile, minutes, model, onContinue, onOpenReading,
           <LinearGradient colors={['rgba(16,24,64,0.9)', 'rgba(16,24,64,0.55)', 'rgba(16,24,64,0)']} locations={[0, 0.45, 0.8]} start={{ x: 0, y: 0.5 }} end={{ x: 1, y: 0.5 }} style={StyleSheet.absoluteFill} />
         )}
         <View style={[styles.missionText, narrow && styles.missionTextNarrow]}>
-          <Text style={styles.missionKicker}>MISIÓN DE HOY · {minutes} MIN</Text>
+          <Text style={styles.missionKicker}>{ui("MISIÓN DE HOY ·") + " "}{minutes} MIN</Text>
           <Text style={[styles.missionTitle, narrow && styles.missionTitleNarrow]} numberOfLines={2}>
             {featuredStory.title}
           </Text>
@@ -102,14 +105,14 @@ export function HomeScreen({ profile, minutes, model, onContinue, onOpenReading,
           <SessionPhases phases={[{ label: 'Leer', state: 'current' }, { label: 'Preguntas', state: 'todo' }, { label: 'Repaso', state: 'todo' }]} />
         </View>
         <View style={[styles.missionCta, narrow && styles.missionCtaNarrow]}>
-          <Button label="Seguir ›" variant="cta" large onPress={onContinue} />
+          <Button label={ui("Seguir ›")} variant="cta" large onPress={onContinue} />
         </View>
       </View>
 
       <View style={styles.shelfHeader}>
-        <Text style={styles.h2}>Tus cuadernos</Text>
+        <Text style={styles.h2}>{ui("Tus cuadernos")}</Text>
         <Text style={styles.shelfMeta}>
-          Nivel {profile.level} · {LANGUAGE_NAME[profile.language]}
+          {ui("Nivel") + " "}{profile.level} · {LANGUAGE_NAME[profile.language]}
         </Text>
       </View>
       <View style={[styles.shelf, { gap }]}>

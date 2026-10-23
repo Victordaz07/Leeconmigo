@@ -9,7 +9,8 @@
 import type { ReadingSessionState, Story } from '@lee-conmigo/contracts';
 import type { Screen } from '@lee-conmigo/session-engine';
 import type { StoryWord } from '@lee-conmigo/story-engine';
-import { copy } from './copy.ts';
+import { readingCopy } from './reading-copy.ts';
+import type { InterfaceLanguage } from './interface-language.ts';
 import type { ReaderPrefs } from './types.ts';
 
 /** Quita la puntuación de una palabra de pantalla ("puerta." → "puerta"), conservando mayúsculas y acentos. */
@@ -60,11 +61,13 @@ export interface ReadingViewInput {
   /** "Modo lectura libre": nadie está hablándole al micrófono, así que una pausa larga no significa nada — nunca debe
    * oscurecer la pantalla ni pedir "¿necesitas ayuda?" como si el niño se hubiera quedado callado. */
   freeReading?: boolean;
+  language?: InterfaceLanguage;
 }
 
 const SESSION_END_SCREENS: Screen[] = ['pageDone', 'question', 'review'];
 
-export function deriveReadingView({ screen, reading: s, words, prefs, freeReading }: ReadingViewInput): ReadingView {
+export function deriveReadingView({ screen, reading: s, words, prefs, freeReading, language = 'es' }: ReadingViewInput): ReadingView {
+  const copy = readingCopy(language);
   const F = copy.feedback[prefs.audience];
   const inReading = screen === 'reading';
   const waiting = inReading && !s.hasHeardVoice;

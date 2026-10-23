@@ -1,6 +1,7 @@
 import { Image, Pressable, StyleSheet, Text, View, type ImageSourcePropType } from 'react-native';
 import { colors, fontFamily, radius, shadows, type Gradient } from '../tokens.ts';
 import { GradientView } from './gradient-view.tsx';
+import { useTranslation } from '../interface-language.tsx';
 
 interface NotebookCoverProps {
   title: string;
@@ -23,11 +24,12 @@ const SPIRAL_DOTS = 9;
 
 /** Portada de un cuaderno en la estantería de Inicio (B3): espiral, arte, ícono de materia, título y progreso. */
 export function NotebookCover({ title, subtitle, image, glyph, color, gradient, segments, soon, onPress, width }: NotebookCoverProps) {
+  const { t } = useTranslation();
   const artHeight = width ? Math.round(Math.min(150, Math.max(96, width * 0.62))) : 150;
   // Yoga resolves positive `flex` + `flexBasis: 'auto'` to a zero basis.
   // Fixed grid cards must also reset the default flex, or Android collapses them.
   return (
-    <Pressable onPress={soon ? undefined : onPress} disabled={soon} accessibilityRole="button" accessibilityLabel={soon ? `${title}, pronto` : title} style={({ pressed }) => [styles.card, width ? { width, flex: 0, flexGrow: 0, flexShrink: 0, minWidth: undefined } : null, pressed && styles.pressed]}>
+    <Pressable onPress={soon ? undefined : onPress} disabled={soon} accessibilityRole="button" accessibilityLabel={soon ? `${title}, ${t('Pronto')}` : title} style={({ pressed }) => [styles.card, width ? { width, flex: 0, flexGrow: 0, flexShrink: 0, minWidth: undefined } : null, pressed && styles.pressed]}>
       <View style={[styles.art, { height: artHeight }]}>
         {image ? <Image source={image} style={FILL} resizeMode="cover" /> : <GradientView gradient={gradient} style={[StyleSheet.absoluteFill, styles.placeholder]}><Text style={styles.bigGlyph}>{glyph}</Text></GradientView>}
         <View style={styles.spiral} pointerEvents="none">
@@ -44,7 +46,7 @@ export function NotebookCover({ title, subtitle, image, glyph, color, gradient, 
           {title}
         </Text>
         <Text style={styles.subtitle} numberOfLines={3}>
-          {soon ? 'Pronto' : subtitle}
+          {soon ? t('Pronto') : subtitle}
         </Text>
         <View style={styles.bar}>
           {[0, 1, 2].map((i) => (

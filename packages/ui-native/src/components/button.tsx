@@ -24,19 +24,21 @@ interface ButtonProps {
   disabled?: boolean;
   /** Tamaño grande (CTA "Comenzar"): 68 px de alto como en el prototipo. */
   large?: boolean;
+  /** Compact adult navigation; keeps a 48 dp touch target. */
+  compact?: boolean;
 }
 
 /** Botón píldora con borde inferior sólido; al tocarlo, la cara baja y el borde se aplana (como un botón de verdad). */
-export function Button({ label, onPress, variant = 'primary', icon, disabled, large }: ButtonProps) {
+export function Button({ label, onPress, variant = 'primary', icon, disabled, large, compact }: ButtonProps) {
   const v = VARIANT[variant];
-  const height = large ? 68 : minTouch;
+  const height = large ? 68 : compact ? 48 : minTouch;
   return (
     <Pressable onPress={onPress} disabled={disabled} accessibilityRole="button" accessibilityLabel={label} accessibilityState={{ disabled }} style={disabled ? styles.disabled : undefined}>
       {({ pressed }) => (
         <View style={[styles.ledge, { backgroundColor: v.ledge, paddingTop: pressed ? LEDGE - 1 : 0, paddingBottom: pressed ? 1 : LEDGE, boxShadow: pressed ? undefined : v.glow }]}>
-          <GradientView gradient={v.face} style={[styles.face, { height }]}>
+          <GradientView gradient={v.face} style={[styles.face, { height, paddingHorizontal: compact ? 16 : 28 }]}>
             {icon}
-            <Text style={[styles.label, { color: v.text, fontSize: large ? 22 : 18 }]}>{label}</Text>
+            <Text style={[styles.label, { color: v.text, fontSize: large ? 22 : compact ? 16 : 18 }]}>{label}</Text>
           </GradientView>
         </View>
       )}

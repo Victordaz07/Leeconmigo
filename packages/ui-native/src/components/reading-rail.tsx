@@ -1,3 +1,4 @@
+import { useTranslation } from '../interface-language.tsx';
 import type { ReactNode } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import type { MicTone } from '@lee-conmigo/ui-core';
@@ -31,16 +32,17 @@ interface ReadingRailProps {
  * alargada en azul), y abajo el micrófono, la ayuda y escuchar. Botones de ≥ 64 px (docs/06).
  */
 export function ReadingRail({ page, pageCount, onBack, mic, onHelp, onListen, onNextPage, onPrevPage, prevDisabled, horizontal, compact, bottomInset = 0 }: ReadingRailProps) {
+  const { t: ui } = useTranslation();
   const size = compact ? 52 : 64;
   const btn = { width: size, height: size };
   if (horizontal) {
     return (
       <View style={[styles.bar, { paddingBottom: 8 + bottomInset }]}>
-        <RoundButton onPress={onBack} label="Volver">
+        <RoundButton onPress={onBack} label={ui("Volver")}>
           <ChevronLeftIcon />
         </RoundButton>
         <View style={styles.barMiddle}>
-          <Text style={styles.count} accessibilityLabel={`Página ${page} de ${pageCount}`}>
+          <Text style={styles.count} accessibilityLabel={ui("Página {0} de {1}", page, pageCount)}>
             {page} / {pageCount}
           </Text>
           <View style={styles.dotsRow} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
@@ -49,20 +51,20 @@ export function ReadingRail({ page, pageCount, onBack, mic, onHelp, onListen, on
             ))}
           </View>
         </View>
-        {onPrevPage && <RailButton style={btn} label="Página anterior" onPress={onPrevPage} tint={colors.brand50} ledge={colors.brandLedgeSoft} disabled={prevDisabled}><ChevronLeftIcon size={30} color={colors.brand} /></RailButton>}
-        {onNextPage && <RailButton style={btn} label="Siguiente página" onPress={onNextPage} tint={colors.brand50} ledge={colors.brandLedgeSoft}><ChevronRightIcon size={30} /></RailButton>}
-        {onHelp && <RailButton style={btn} label="Ayuda" onPress={onHelp} tint={colors.brand50} ledge={colors.brandLedgeSoft}><HelpIcon /></RailButton>}
-        {onListen && <RailButton style={btn} label="Léeme el comienzo" onPress={onListen} tint="#fff1e6" ledge="#f7be9c"><SpeakerIcon /></RailButton>}
+        {onPrevPage && <RailButton style={btn} label={ui("Página anterior")} onPress={onPrevPage} tint={colors.brand50} ledge={colors.brandLedgeSoft} disabled={prevDisabled}><ChevronLeftIcon size={30} color={colors.brand} /></RailButton>}
+        {onNextPage && <RailButton style={btn} label={ui("Siguiente página")} onPress={onNextPage} tint={colors.brand50} ledge={colors.brandLedgeSoft}><ChevronRightIcon size={30} /></RailButton>}
+        {onHelp && <RailButton style={btn} label={ui("Ayuda")} onPress={onHelp} tint={colors.brand50} ledge={colors.brandLedgeSoft}><HelpIcon /></RailButton>}
+        {onListen && <RailButton style={btn} label={ui("Léeme el comienzo")} onPress={onListen} tint="#fff1e6" ledge="#f7be9c"><SpeakerIcon /></RailButton>}
         {mic && <MicBadge tone={mic.tone} pulsing={mic.listening} size={48} />}
       </View>
     );
   }
   return (
     <View style={[styles.rail, compact && styles.railCompact]}>
-      <RoundButton onPress={onBack} label="Volver">
+      <RoundButton onPress={onBack} label={ui("Volver")}>
         <ChevronLeftIcon />
       </RoundButton>
-      <Text style={styles.count} accessibilityLabel={`Página ${page} de ${pageCount}`}>
+      <Text style={styles.count} accessibilityLabel={ui("Página {0} de {1}", page, pageCount)}>
         {page} / {pageCount}
       </Text>
       <View style={[styles.dots, compact && styles.dotsCompact]} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
@@ -72,10 +74,10 @@ export function ReadingRail({ page, pageCount, onBack, mic, onHelp, onListen, on
       </View>
       <View style={styles.spacer} />
       {mic && <MicBadge tone={mic.tone} pulsing={mic.listening} size={compact ? 46 : 58} />}
-      {onNextPage && onPrevPage && <RailButton style={btn} label="Página anterior" onPress={onPrevPage} tint={colors.brand50} ledge={colors.brandLedgeSoft} disabled={prevDisabled}><ChevronLeftIcon size={30} color={colors.brand} /></RailButton>}
-      {onNextPage && <RailButton style={btn} label="Siguiente página" onPress={onNextPage} tint={colors.brand50} ledge={colors.brandLedgeSoft}><ChevronRightIcon size={30} /></RailButton>}
-      {onHelp && <RailButton style={btn} label="Ayuda" onPress={onHelp} tint={colors.brand50} ledge={colors.brandLedgeSoft}><HelpIcon /></RailButton>}
-      {onListen && <RailButton style={btn} label="Léeme el comienzo" onPress={onListen} tint="#fff1e6" ledge="#f7be9c"><SpeakerIcon /></RailButton>}
+      {onNextPage && onPrevPage && <RailButton style={btn} label={ui("Página anterior")} onPress={onPrevPage} tint={colors.brand50} ledge={colors.brandLedgeSoft} disabled={prevDisabled}><ChevronLeftIcon size={30} color={colors.brand} /></RailButton>}
+      {onNextPage && <RailButton style={btn} label={ui("Siguiente página")} onPress={onNextPage} tint={colors.brand50} ledge={colors.brandLedgeSoft}><ChevronRightIcon size={30} /></RailButton>}
+      {onHelp && <RailButton style={btn} label={ui("Ayuda")} onPress={onHelp} tint={colors.brand50} ledge={colors.brandLedgeSoft}><HelpIcon /></RailButton>}
+      {onListen && <RailButton style={btn} label={ui("Léeme el comienzo")} onPress={onListen} tint="#fff1e6" ledge="#f7be9c"><SpeakerIcon /></RailButton>}
     </View>
   );
 }
@@ -85,27 +87,28 @@ export function ReadingRail({ page, pageCount, onBack, mic, onHelp, onListen, on
  * el micrófono (o "Siguiente" en lectura libre) al centro y escuchar a la derecha.
  */
 export function FocusReadingBar({ mic, onHelp, onListen, onNextPage, onPrevPage, prevDisabled, compact }: Pick<ReadingRailProps, 'mic' | 'onHelp' | 'onListen' | 'onNextPage' | 'onPrevPage' | 'prevDisabled' | 'compact'>) {
+  const { t: ui } = useTranslation();
   const size = compact ? 56 : 64;
   const btn = { width: size, height: size };
   return (
     <View style={styles.focusBar}>
       <View style={styles.focusSide}>
         {onPrevPage ? (
-          <RailButton style={btn} label="Página anterior" onPress={onPrevPage} tint={colors.brand50} ledge={colors.brandLedgeSoft} disabled={prevDisabled}>
+          <RailButton style={btn} label={ui("Página anterior")} onPress={onPrevPage} tint={colors.brand50} ledge={colors.brandLedgeSoft} disabled={prevDisabled}>
             <ChevronLeftIcon size={30} color={colors.brand} />
           </RailButton>
         ) : (
-          onHelp && <RailButton style={btn} label="Ayuda" onPress={onHelp} tint={colors.brand50} ledge={colors.brandLedgeSoft}><HelpIcon /></RailButton>
+          onHelp && <RailButton style={btn} label={ui("Ayuda")} onPress={onHelp} tint={colors.brand50} ledge={colors.brandLedgeSoft}><HelpIcon /></RailButton>
         )}
       </View>
       {onNextPage ? (
-        <Pressable onPress={onNextPage} accessibilityRole="button" accessibilityLabel="Siguiente página" style={({ pressed }) => [styles.focusNext, pressed && styles.pressed]}>
+        <Pressable onPress={onNextPage} accessibilityRole="button" accessibilityLabel={ui("Siguiente página")} style={({ pressed }) => [styles.focusNext, pressed && styles.pressed]}>
           <Text style={styles.focusNextText}>Siguiente ›</Text>
         </Pressable>
       ) : mic ? (
         <MicBadge tone={mic.tone} pulsing={mic.listening} size={compact ? 56 : 68} />
       ) : null}
-      <View style={[styles.focusSide, styles.focusRight]}>{onListen && <RailButton style={btn} label="Léeme el comienzo" onPress={onListen} tint="#fff1e6" ledge="#f7be9c"><SpeakerIcon /></RailButton>}</View>
+      <View style={[styles.focusSide, styles.focusRight]}>{onListen && <RailButton style={btn} label={ui("Léeme el comienzo")} onPress={onListen} tint="#fff1e6" ledge="#f7be9c"><SpeakerIcon /></RailButton>}</View>
     </View>
   );
 }

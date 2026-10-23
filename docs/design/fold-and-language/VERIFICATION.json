@@ -1,0 +1,166 @@
+{
+  "cases": [
+    {
+      "screen": "parents",
+      "width": 360,
+      "height": 800
+    },
+    {
+      "screen": "parents",
+      "width": 720,
+      "height": 800
+    },
+    {
+      "screen": "parents",
+      "width": 800,
+      "height": 720
+    },
+    {
+      "screen": "parents",
+      "width": 900,
+      "height": 740
+    },
+    {
+      "screen": "parents",
+      "width": 740,
+      "height": 900
+    },
+    {
+      "screen": "parents",
+      "width": 720,
+      "height": 720
+    },
+    {
+      "screen": "parents",
+      "width": 844,
+      "height": 390
+    },
+    {
+      "screen": "parents",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "screen": "settings",
+      "width": 360,
+      "height": 800
+    },
+    {
+      "screen": "settings",
+      "width": 720,
+      "height": 800
+    },
+    {
+      "screen": "settings",
+      "width": 800,
+      "height": 720
+    },
+    {
+      "screen": "settings",
+      "width": 900,
+      "height": 740
+    },
+    {
+      "screen": "settings",
+      "width": 740,
+      "height": 900
+    },
+    {
+      "screen": "settings",
+      "width": 720,
+      "height": 720
+    },
+    {
+      "screen": "settings",
+      "width": 844,
+      "height": 390
+    },
+    {
+      "screen": "settings",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "screen": "reading",
+      "width": 360,
+      "height": 800
+    },
+    {
+      "screen": "reading",
+      "width": 720,
+      "height": 800
+    },
+    {
+      "screen": "reading",
+      "width": 800,
+      "height": 720
+    },
+    {
+      "screen": "reading",
+      "width": 900,
+      "height": 740
+    },
+    {
+      "screen": "reading",
+      "width": 740,
+      "height": 900
+    },
+    {
+      "screen": "reading",
+      "width": 720,
+      "height": 720
+    },
+    {
+      "screen": "reading",
+      "width": 844,
+      "height": 390
+    },
+    {
+      "screen": "reading",
+      "width": 1280,
+      "height": 800
+    }
+  ],
+  "errors": [],
+  "languageSwitch": "en → es, persisted after reload",
+  "pronunciation": "word help and repeat requested speech synthesis",
+  "deviceTested": false,
+  "verifiedAt": "2026-10-23T00:47:53.670700+00:00",
+  "fullSuite": {
+    "files": 126,
+    "tests": 1843,
+    "result": "passed"
+  },
+  "typecheck": "all workspaces passed",
+  "lint": {
+    "errors": 0,
+    "existingWarnings": 3,
+    "details": "Root progressVersion memo dependency and canvas diagnostic effect dependencies were already present."
+  },
+  "nativeLayout": {
+    "cards": 168,
+    "sizes": 12,
+    "engine": "Yoga C++ bundled with React Native 0.86.3",
+    "command": "npm run test:native-layout"
+  },
+  "readingFlows": [
+    "bridge ES / 10 parts",
+    "bridge EN / 10 parts",
+    "map ES / 47 parts",
+    "map EN / 44 parts"
+  ],
+  "readingFlowChecks": [
+    "four viewports",
+    "word pronunciation request and vocabulary",
+    "font persistence",
+    "resume",
+    "questions with retry and reread",
+    "syllable review",
+    "single completion record"
+  ],
+  "limits": [
+    "No physical Z Fold 7 available",
+    "No audible device TTS test",
+    "Browser models viewport resizing; native Yoga validates notebook layout, not Android system UI"
+  ]
+}

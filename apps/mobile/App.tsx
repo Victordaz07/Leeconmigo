@@ -1,3 +1,5 @@
+import { InterfaceLanguageProvider, useTranslation } from '@lee-conmigo/ui-native';
+import { loadInterfaceLanguage, saveInterfaceLanguage } from './src/app-state';
 import { StatusBar } from 'expo-status-bar';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { AppState, FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
@@ -74,17 +76,20 @@ const deviceLang = (): 'es' | 'en' => ((Intl.DateTimeFormat().resolvedOptions().
  * Padres llegan en K4/K8. En desarrollo, "DEV" abre la lista completa de historias y la muestra de componentes.
  */
 export default function App() {
+  const [language, setLanguage] = useState(() => loadInterfaceLanguage(deviceLang()));
+  useEffect(() => saveInterfaceLanguage(language), [language]);
   return (
     <SafeAreaProvider>
       <MathArtProvider art={MATH_ART}>
-        <Root />
+        <InterfaceLanguageProvider language={language}><Root onLanguageChange={setLanguage} /></InterfaceLanguageProvider>
       </MathArtProvider>
       <StatusBar style="dark" />
     </SafeAreaProvider>
   );
 }
 
-function Root() {
+function Root({ onLanguageChange }: { onLanguageChange: (language: 'es' | 'en') => void }) {
+  const { language: interfaceLanguage, t: ui } = useTranslation();
   const fontsLoaded = useAppFonts();
   const layout = useLayout();
   const insets = useSafeAreaInsets();
@@ -94,6 +99,8 @@ function Root() {
   useEffect(() => saveProfiles(profiles), [profiles]);
   const [profileId, setProfileId] = useState<string | null>(null);
   const profile = profiles.find((p) => p.id === profileId) ?? null;
+  const selectedLanguage = profile?.language;
+  useEffect(() => { if (selectedLanguage) onLanguageChange(selectedLanguage === 'en' ? 'en' : 'es'); }, [selectedLanguage, onLanguageChange]);
   // `undefined` = todavía no respondió "¿Cómo llegas hoy?"; `null` = no se pregunta (ajuste de padres).
   const [energy, setEnergy] = useState<Energy | null | undefined>(undefined);
   const [route, setRoute] = useState<Route>({ name: 'home' });
@@ -124,8 +131,9 @@ function Root() {
     return (
       <LegalWelcomeScreen
         version={LEGAL_VERSION}
-        initialLang={deviceLang()}
+        initialLang={interfaceLanguage}
         onAccept={(lang) => {
+          onLanguageChange(lang);
           const c = newConsent(LEGAL_VERSION, lang);
           saveLegalConsent(c);
           setConsent(c);
@@ -211,7 +219,7 @@ function Root() {
   if (route.name === 'legal') {
     return (
       <LegalCenterScreen
-        lang={consent?.lang ?? deviceLang()}
+        lang={interfaceLanguage}
         consent={consent}
         onBack={() => setRoute({ name: 'parents' })}
         onErase={() => {
@@ -339,7 +347,7 @@ function Root() {
   if (route.name === 'dev') return <DevList repository={repository} onOpen={(storyId) => setRoute({ name: 'reading', storyId, from: 'home' })} onShowcase={() => setRoute({ name: 'showcase' })} onMathReview={() => setRoute({ name: 'mathReview' })} onBack={home} />;
 
   const onNav = (key: string) => (key === 'dev' ? setRoute({ name: 'dev' }) : key === 'logros' ? setRoute({ name: 'achievements' }) : key === 'padres' ? setRoute({ name: 'parentGate', next: 'parents' }) : undefined);
-  const nav = <NavRail items={RAIL} bottomItems={RAIL_BOTTOM} active="home" onSelect={onNav} variant={layout.nav} bottomInset={insets.bottom} />;
+  const nav = <NavRail items={RAIL.map(item => ({ ...item, label: ui(item.label) }))} bottomItems={RAIL_BOTTOM.map(item => ({ ...item, label: ui(item.label) }))} active="home" onSelect={onNav} variant={layout.nav} bottomInset={insets.bottom} />;
   return (
     <View style={[styles.row, layout.nav === 'bottom' && styles.column]}>
       {layout.nav !== 'bottom' && nav}

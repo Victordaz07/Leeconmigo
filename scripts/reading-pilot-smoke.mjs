@@ -42,7 +42,7 @@ try {
       page.on('pageerror', e => errors.push(e.message));
       async function enter() {
         await page.getByRole('button', { name: 'Noah', exact: true }).click();
-        await page.getByRole('button', { name: 'Seguir ›', exact: true }).click();
+        await page.getByRole('button', { name: isEs ? 'Seguir ›' : 'Continue ›', exact: true }).click();
         await page.getByRole('button', { name: isEs ? 'Empezar a leer' : 'Start reading', exact: true }).click();
       }
       await page.goto(base, { timeout: 60000 });
@@ -63,12 +63,12 @@ try {
       await page.setViewportSize({ width: 390, height: 844 });
       const word = prepared.story.pages[0].blocks[0].lines[0].split(' ')[0];
       await page.getByRole('button', { name: word, exact: true }).first().click();
-      await page.getByRole('button', { name: 'Escuchar la palabra', exact: true }).waitFor();
-      await page.getByRole('button', { name: 'Escuchar la palabra', exact: true }).click();
+      await page.getByRole('button', { name: isEs ? 'Escuchar la palabra' : 'Hear the word', exact: true }).waitFor();
+      await page.getByRole('button', { name: isEs ? 'Escuchar la palabra' : 'Hear the word', exact: true }).click();
       assert.ok((await page.evaluate(() => window.readingPilotSpeech)).length >= 2);
       assert.equal((await page.evaluate(() => window.readingPilotSpeech)).at(-1).language, isEs ? 'es-US' : 'en-US');
-      await page.getByRole('button', { name: 'Seguir leyendo', exact: true }).last().click();
-      await page.getByLabel('Cerrar ayuda', { exact: true }).waitFor({ state: 'hidden' });
+      await page.getByRole('button', { name: isEs ? 'Seguir leyendo' : 'Keep reading', exact: true }).last().click();
+      await page.getByLabel(isEs ? 'Cerrar ayuda' : 'Close word help', { exact: true }).waitFor({ state: 'hidden' });
       await page.getByText(part(1)).waitFor();
       await page.getByRole('button', { name: isEs ? 'Aumentar letra' : 'Larger text', exact: true }).click();
       const savedSize = JSON.parse(await page.evaluate(() => localStorage.getItem('kitewise.v1.reader-prefs.pilot'))).size;
@@ -81,7 +81,7 @@ try {
       let helpedInSession = [];
       let guard = 0;
       while (++guard < prepared.story.pages.length * 4 + 20) {
-        if (await page.getByText('¡Buen trabajo, Noah!', { exact: true }).isVisible()) break;
+        if (await page.getByText(isEs ? '¡Buen trabajo, Noah!' : 'Well done, Noah!', { exact: true }).isVisible()) break;
         if (await page.getByText(isEs ? 'Una pausa para recordar' : 'A moment to remember', { exact: true }).isVisible()) {
           const heading = await page.getByText(new RegExp(`^${isEs ? 'Fragmento' : 'Part'} \\d+`)).first().innerText();
           const index = Number(heading.match(/\d+/)[0]) - 1;
@@ -133,14 +133,14 @@ try {
             const key = vocabularyKey(token);
             const entry = source.vocabulary[key];
             await page.getByRole('button', { name: token, exact: true }).first().click();
-            const sheet = page.getByLabel('Cerrar ayuda', { exact: true });
+            const sheet = page.getByLabel(isEs ? 'Cerrar ayuda' : 'Close word help', { exact: true });
             if (entry.syllables?.length) await sheet.getByText(entry.syllables.join('·'), { exact: true }).waitFor();
             if (entry.definition) await sheet.getByText(entry.definition, { exact: false }).waitFor();
             if (entry.synonym) assert.ok((await sheet.getByText(entry.definition, { exact: false }).innerText()).includes(entry.synonym));
             if (entry.example) await sheet.getByText(entry.example, { exact: false }).waitFor();
             await page.waitForTimeout(350); // Capture the settled native modal, after its fade transition.
             await page.screenshot({ path: path.join(output, `${edition.familyId}-${lang}-word-help.png`) });
-            await sheet.getByRole('button', { name: 'Seguir leyendo', exact: true }).click();
+            await sheet.getByRole('button', { name: isEs ? 'Seguir leyendo' : 'Keep reading', exact: true }).click();
             await sheet.waitFor({ state: 'hidden' });
             helpedInSession.push(key);
             dictionaryChecked = true;
@@ -149,8 +149,8 @@ try {
         await page.locator('#root').getByRole('button', { name: index === prepared.story.pages.length - 1 ? (isEs ? 'Terminé el cuento' : 'I finished the story') : (isEs ? 'Seguir leyendo' : 'Keep reading'), exact: true }).click();
         await page.waitForTimeout(500);
       }
-      await page.getByText('¡Buen trabajo, Noah!', { exact: true }).waitFor();
-      await page.getByRole('button', { name: 'Listo', exact: true }).click();
+      await page.getByText(isEs ? '¡Buen trabajo, Noah!' : 'Well done, Noah!', { exact: true }).waitFor();
+      await page.getByRole('button', { name: isEs ? 'Listo' : 'Done', exact: true }).click();
       const saved = await page.evaluate(() => JSON.parse(localStorage.getItem('kitewise.v1.reading.pilot')));
       const finished = saved.summaries.filter(s => s.completion === 1);
       assert.equal(finished.length, 1);

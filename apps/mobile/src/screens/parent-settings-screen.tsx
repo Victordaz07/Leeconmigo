@@ -1,3 +1,4 @@
+import { useTranslation } from '@lee-conmigo/ui-native';
 import { useState, type ReactNode } from 'react';
 import { Pressable, ScrollView, StyleSheet, Switch, Text, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -36,83 +37,86 @@ const LANGUAGES: { id: LanguageCode; label: string }[] = [
  * aparecen los apoyos que ya cambian algo (no se pone un interruptor que no haga nada).
  */
 export function ParentSettingsScreen({ initial, isNew, onSave, onCancel, onResetProgress, onRemove, onChangePin, onVoiceTest, onAudioTest, onCanvasTest }: ParentSettingsScreenProps) {
+  const { t: ui } = useTranslation();
+
   const insets = useSafeAreaInsets();
   const layout = useLayout();
-  const one = layout.narrow || layout.portrait;
+  const one = layout.width < 900;
   const [p, setP] = useState(initial);
   const [confirm, setConfirm] = useState<'reset' | 'remove' | null>(null);
   const set = <K extends keyof ChildProfile>(key: K, value: ChildProfile[K]) => setP((prev) => ({ ...prev, [key]: value }));
   const name = p.name.trim();
 
   return (
-    <View style={styles.screen}>
+    <View style={[styles.screen, { paddingLeft: insets.left, paddingRight: insets.right }]}>
       <View style={[styles.header, { paddingTop: insets.top + (layout.phone ? 10 : 20), paddingHorizontal: layout.gutter }]}>
-        <RoundButton onPress={onCancel} label="Volver sin guardar">
+        <RoundButton onPress={onCancel} label={ui("Volver sin guardar")}>
           <ChevronLeftIcon />
         </RoundButton>
-        <Text style={[styles.title, layout.phone && styles.titleSmall]} numberOfLines={2}>{isNew ? 'Agregar niño' : `Ajustes de ${initial.name}`}</Text>
-        <Button label={isNew ? 'Agregar' : 'Guardar'} onPress={() => onSave({ ...p, name })} disabled={!name || !scheduleOk(p.focus)} />
+        <Text style={[styles.title, layout.phone && styles.titleSmall]} numberOfLines={2}>{isNew ? ui("Agregar niño") : ui("Ajustes de {0}", initial.name)}</Text>
+        <Button compact label={isNew ? ui("Agregar") : ui("Guardar")} onPress={() => onSave({ ...p, name })} disabled={!name || !scheduleOk(p.focus)} />
       </View>
-      <ScrollView contentContainerStyle={[styles.content, one && styles.contentOne, { paddingHorizontal: layout.gutter, paddingBottom: insets.bottom + 32 }]}>
-        <View style={styles.column}>
-          <Section title="Perfil">
-            <TextInput value={p.name} onChangeText={(v) => set('name', v)} placeholder="Nombre" placeholderTextColor={colors.muted} style={styles.input} maxLength={24} accessibilityLabel="Nombre del niño" />
-            <Text style={styles.label}>Nivel de lectura en la app</Text>
+      <ScrollView style={styles.scroll} keyboardShouldPersistTaps="handled" contentContainerStyle={[styles.content, one && styles.contentOne, { paddingHorizontal: layout.gutter, paddingBottom: insets.bottom + 32 }]}>
+        <View style={[styles.column, one && styles.columnOne]}>
+          <Section title={ui("Perfil")}>
+            <TextInput value={p.name} onChangeText={(v) => set('name', v)} placeholder={ui("Nombre")} placeholderTextColor={colors.muted} style={styles.input} maxLength={24} accessibilityLabel={ui("Nombre del niño")} />
+            <Text style={styles.label}>{ui("Nivel de lectura en la app")}</Text>
             <Segmented options={LEVELS.map((l) => ({ id: l, label: String(l) }))} value={p.level} onChange={(v) => set('level', v)} />
-            <Text style={styles.note}>No es el grado escolar: elige el nivel en el que lee cómodo. Puedes cambiarlo cuando quieras.</Text>
+            <Text style={styles.note}>{ui("No es el grado escolar: elige el nivel en el que lee cómodo. Puedes cambiarlo cuando quieras.")}</Text>
+            <Text style={styles.label}>{ui("Idioma de la app y de lectura")}</Text>
             <Segmented options={LANGUAGES} value={p.language} onChange={(v) => set('language', v)} />
           </Section>
 
-          <Section title="Tiempo diario">
+          <Section title={ui("Tiempo diario")}>
             <Segmented options={DAILY_GOAL_PRESETS.map((m) => ({ id: m, label: `${m} min` }))} value={p.dailyGoalMinutes} onChange={(v) => set('dailyGoalMinutes', v)} />
-            <Toggle label="Preguntar «¿Cómo llegas?» al empezar" value={p.askEnergy} onChange={(v) => set('askEnergy', v)} />
-            <Text style={styles.note}>Si lo pregunta, la misión dura 20, 15 u 8 minutos según cómo llegue. Si no, se usa el tiempo de arriba.</Text>
+            <Toggle label={ui("Preguntar «¿Cómo llegas?» al empezar")} value={p.askEnergy} onChange={(v) => set('askEnergy', v)} />
+            <Text style={styles.note}>{ui("Si lo pregunta, la misión dura 20, 15 u 8 minutos según cómo llegue. Si no, se usa el tiempo de arriba.")}</Text>
           </Section>
 
         </View>
 
-        <View style={styles.column}>
-          <Section title="Lectura">
-            <Toggle label="Lectura libre" value={p.freeReading} onChange={(v) => set('freeReading', v)} />
-            <Text style={styles.note}>Un adulto lee en voz alta (o el niño lee solo) y la página se pasa con un botón, sin micrófono. Las preguntas siguen apareciendo.</Text>
-            {onVoiceTest && <Button label="Probar el micrófono" variant="secondary" onPress={onVoiceTest} />}
+        <View style={[styles.column, one && styles.columnOne]}>
+          <Section title={ui("Lectura")}>
+            <Toggle label={ui("Lectura libre")} value={p.freeReading} onChange={(v) => set('freeReading', v)} />
+            <Text style={styles.note}>{ui("Un adulto lee en voz alta (o el niño lee solo) y la página se pasa con un botón, sin micrófono. Las preguntas siguen apareciendo.")}</Text>
+            {onVoiceTest && <Button label={ui("Probar el micrófono")} variant="secondary" onPress={onVoiceTest} />}
           </Section>
 
           <FocusSection value={p.focus} onChange={(v) => set('focus', v)} />
 
           {onAudioTest && (
-            <Section title="Arte y música">
-              <Text style={styles.note}>Comprueba que el ritmo de ocho pulsos suene parejo en este equipo. No usa micrófono ni cámara.</Text>
-              <Button label="Probar el audio del taller" variant="secondary" onPress={onAudioTest} />
+            <Section title={ui("Arte y música")}>
+              <Text style={styles.note}>{ui("Comprueba que el ritmo de ocho pulsos suene parejo en este equipo. No usa micrófono ni cámara.")}</Text>
+              <Button label={ui("Probar el audio del taller")} variant="secondary" onPress={onAudioTest} />
               {onCanvasTest && (
                 <>
-                  <Text style={styles.note}>Comprueba que dibujar con el dedo o el lápiz sea fluido y que no se pierdan trazos.</Text>
-                  <Button label="Probar el lienzo de dibujo" variant="secondary" onPress={onCanvasTest} />
+                  <Text style={styles.note}>{ui("Comprueba que dibujar con el dedo o el lápiz sea fluido y que no se pierdan trazos.")}</Text>
+                  <Button label={ui("Probar el lienzo de dibujo")} variant="secondary" onPress={onCanvasTest} />
                 </>
               )}
             </Section>
           )}
 
-          <Section title="Privacidad">
+          <Section title={ui("Privacidad")}>
             <View style={styles.toggleRow}>
-              <Text style={styles.toggleLabel}>Guardar audio</Text>
-              <Text style={styles.never}>Nunca</Text>
+              <Text style={styles.toggleLabel}>{ui("Guardar audio")}</Text>
+              <Text style={styles.never}>{ui("Nunca")}</Text>
             </View>
-            <Text style={styles.note}>La voz se procesa en la tableta y no se guarda ni se envía. Kitewise solo guarda tiempos, preguntas y palabras que costaron.</Text>
+            <Text style={styles.note}>{ui("La voz se procesa en la tableta y no se guarda ni se envía. Kitewise solo guarda tiempos, preguntas y palabras que costaron.")}</Text>
           </Section>
           {!isNew && (
-            <Section title="Datos">
-              {onChangePin && <Button label="Cambiar el PIN" variant="secondary" onPress={onChangePin} />}
+            <Section title={ui("Datos")}>
+              {onChangePin && <Button label={ui("Cambiar el PIN")} variant="secondary" onPress={onChangePin} />}
               {confirm === 'reset' ? (
-                <Confirm text={`¿Borrar todo el progreso de ${initial.name}? No se puede deshacer.`} yes="Sí, borrar" onYes={() => onResetProgress?.()} onNo={() => setConfirm(null)} />
+                <Confirm text={ui("¿Borrar todo el progreso de {0}? No se puede deshacer.", initial.name)} yes={ui("Sí, borrar")} onYes={() => onResetProgress?.()} onNo={() => setConfirm(null)} />
               ) : (
-                <Button label={`Borrar el progreso de ${initial.name}`} variant="secondary" onPress={() => setConfirm('reset')} />
+                <Button label={ui("Borrar el progreso de {0}", initial.name)} variant="secondary" onPress={() => setConfirm('reset')} />
               )}
               {onRemove &&
                 (confirm === 'remove' ? (
-                  <Confirm text={`¿Quitar a ${initial.name} y su progreso?`} yes="Sí, quitar" onYes={onRemove} onNo={() => setConfirm(null)} />
+                  <Confirm text={ui("¿Quitar a {0} y su progreso?", initial.name)} yes={ui("Sí, quitar")} onYes={onRemove} onNo={() => setConfirm(null)} />
                 ) : (
-                  <Button label={`Quitar a ${initial.name}`} variant="secondary" onPress={() => setConfirm('remove')} />
+                  <Button label={ui("Quitar a {0}", initial.name)} variant="secondary" onPress={() => setConfirm('remove')} />
                 ))}
             </Section>
           )}
@@ -138,30 +142,32 @@ const scheduleOk = (f: FocusSettings) => !f.schedule || (f.schedule.days.length 
  * no hay ningún aviso ni etiqueta: solo ve menos cosas alrededor del ejercicio y rondas más cortas.
  */
 function FocusSection({ value, onChange }: { value: FocusSettings; onChange: (v: FocusSettings) => void }) {
+  const { t: ui } = useTranslation();
+
   const set = (patch: Partial<FocusSettings>) => onChange({ ...value, ...patch });
   const s = value.schedule;
   return (
-    <Section title="Modo Enfoque">
-      <Segmented options={FOCUS_MODES} value={value.mode} onChange={(mode) => set({ mode })} />
+    <Section title={ui("Modo Enfoque")}>
+      <Segmented options={FOCUS_MODES.map(mode => ({ ...mode, label: ui(mode.label) }))} value={value.mode} onChange={(mode) => set({ mode })} />
       <Text style={styles.note}>
         {value.mode === 'off'
-          ? 'Todo como siempre.'
+          ? ui("Todo como siempre.")
           : value.mode === 'on'
-            ? 'Lectura de una línea a la vez, menos dibujos y animaciones, pausa de movimiento de 1 minuto cada 10 y rondas de 4 en el Taller de Matemáticas.'
-            : 'Elige cada apoyo.'}
+            ? ui("Lectura de una línea a la vez, menos dibujos y animaciones, pausa de movimiento de 1 minuto cada 10 y rondas de 4 en el Taller de Matemáticas.")
+            : ui("Elige cada apoyo.")}
       </Text>
       {value.mode === 'custom' && (
         <>
-          <Toggle label="Lectura de una línea a la vez" value={value.custom.focusReading} onChange={(v) => set({ custom: { ...value.custom, focusReading: v } })} />
-          <Toggle label="Menos dibujos y animaciones" value={value.custom.reducedMotion} onChange={(v) => set({ custom: { ...value.custom, reducedMotion: v } })} />
-          <Toggle label="Pausa de movimiento cada 10 minutos" value={value.custom.movementBreaks} onChange={(v) => set({ custom: { ...value.custom, movementBreaks: v } })} />
-          <Text style={styles.label}>Ejercicios por ronda en el Taller</Text>
+          <Toggle label={ui("Lectura de una línea a la vez")} value={value.custom.focusReading} onChange={(v) => set({ custom: { ...value.custom, focusReading: v } })} />
+          <Toggle label={ui("Menos dibujos y animaciones")} value={value.custom.reducedMotion} onChange={(v) => set({ custom: { ...value.custom, reducedMotion: v } })} />
+          <Toggle label={ui("Pausa de movimiento cada 10 minutos")} value={value.custom.movementBreaks} onChange={(v) => set({ custom: { ...value.custom, movementBreaks: v } })} />
+          <Text style={styles.label}>{ui("Ejercicios por ronda en el Taller")}</Text>
           <Segmented options={[3, 4, 5, 6].map((n) => ({ id: n, label: String(n) }))} value={value.custom.roundSize} onChange={(roundSize) => set({ custom: { ...value.custom, roundSize } })} />
         </>
       )}
       {value.mode !== 'off' && (
         <>
-          <Toggle label="Solo en un horario" value={!!s} onChange={(v) => set({ schedule: v ? { days: [1, 2, 3, 4, 5], from: '15:00', to: '19:00' } : undefined })} />
+          <Toggle label={ui("Solo en un horario")} value={!!s} onChange={(v) => set({ schedule: v ? { days: [1, 2, 3, 4, 5], from: '15:00', to: '19:00' } : undefined })} />
           {s && (
             <>
               <View style={styles.days}>
@@ -173,21 +179,21 @@ function FocusSection({ value, onChange }: { value: FocusSettings; onChange: (v:
                       onPress={() => set({ schedule: { ...s, days: on ? s.days.filter((x) => x !== i) : [...s.days, i].sort() } })}
                       accessibilityRole="checkbox"
                       accessibilityState={{ checked: on }}
-                      accessibilityLabel={DAY_NAMES[i]}
+                      accessibilityLabel={ui(DAY_NAMES[i])}
                       style={[styles.day, on && styles.segmentOn]}
                     >
-                      <Text style={[styles.segmentText, on && styles.segmentTextOn]}>{d}</Text>
+                      <Text style={[styles.segmentText, on && styles.segmentTextOn]}>{ui(DAY_NAMES[i]).slice(0, 1).toUpperCase()}</Text>
                     </Pressable>
                   );
                 })}
               </View>
               <View style={styles.timeRow}>
-                <Text style={styles.label}>De</Text>
-                <TextInput value={s.from} onChangeText={(from) => set({ schedule: { ...s, from } })} style={[styles.input, styles.time]} maxLength={5} keyboardType="numbers-and-punctuation" accessibilityLabel="Hora de inicio" />
-                <Text style={styles.label}>a</Text>
-                <TextInput value={s.to} onChangeText={(to) => set({ schedule: { ...s, to } })} style={[styles.input, styles.time]} maxLength={5} keyboardType="numbers-and-punctuation" accessibilityLabel="Hora de fin" />
+                <Text style={styles.label}>{ui("De")}</Text>
+                <TextInput value={s.from} onChangeText={(from) => set({ schedule: { ...s, from } })} style={[styles.input, styles.time]} maxLength={5} keyboardType="numbers-and-punctuation" accessibilityLabel={ui("Hora de inicio")} />
+                <Text style={styles.label}>{ui("a")}</Text>
+                <TextInput value={s.to} onChangeText={(to) => set({ schedule: { ...s, to } })} style={[styles.input, styles.time]} maxLength={5} keyboardType="numbers-and-punctuation" accessibilityLabel={ui("Hora de fin")} />
               </View>
-              <Text style={styles.note}>{scheduleOk(value) ? 'Fuera de ese horario, todo como siempre.' : 'Elige al menos un día y escribe las horas como 15:00.'}</Text>
+              <Text style={styles.note}>{scheduleOk(value) ? ui("Fuera de ese horario, todo como siempre.") : ui("Elige al menos un día y escribe las horas como 15:00.")}</Text>
             </>
           )}
         </>
@@ -197,11 +203,13 @@ function FocusSection({ value, onChange }: { value: FocusSettings; onChange: (v:
 }
 
 function Section({ title, soon, children }: { title: string; soon?: boolean; children: ReactNode }) {
+  const { t: ui } = useTranslation();
+
   return (
     <View style={[styles.card, soon && styles.cardSoon]}>
       <View style={styles.sectionHead}>
         <Text style={styles.h3}>{title}</Text>
-        {soon && <Text style={styles.soon}>Pronto</Text>}
+        {soon && <Text style={styles.soon}>{ui("Pronto")}</Text>}
       </View>
       {children}
     </View>
@@ -233,11 +241,13 @@ function Toggle({ label, value, onChange }: { label: string; value: boolean; onC
 }
 
 function Confirm({ text, yes, onYes, onNo }: { text: string; yes: string; onYes: () => void; onNo: () => void }) {
+  const { t: ui } = useTranslation();
+
   return (
     <View style={styles.confirm}>
       <Text style={styles.confirmText}>{text}</Text>
       <View style={styles.confirmRow}>
-        <Button label="Cancelar" variant="secondary" onPress={onNo} />
+        <Button label={ui("Cancelar")} variant="secondary" onPress={onNo} />
         <Button label={yes} onPress={onYes} />
       </View>
     </View>
@@ -245,13 +255,14 @@ function Confirm({ text, yes, onYes, onNo }: { text: string; yes: string; onYes:
 }
 
 const styles = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: colors.app },
-  header: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingBottom: 12 },
+  screen: { flex: 1, minHeight: 0, backgroundColor: colors.app },
+  scroll: { flex: 1, minHeight: 0 }, columnOne: { flex: 0, flexBasis: 'auto', flexGrow: 0, flexShrink: 0, width: '100%' },
+  header: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingBottom: 8 },
   titleSmall: { fontSize: 24 },
   contentOne: { flexDirection: 'column', alignItems: 'stretch' },
   title: { flex: 1, fontFamily: fontFamily.ui.black, fontSize: 34, color: colors.navy },
   content: { flexDirection: 'row', gap: 16, alignItems: 'flex-start' },
-  column: { flex: 1, flexBasis: 'auto', gap: 16 },
+  column: { flex: 1, minWidth: 0, gap: 16 },
   card: { backgroundColor: '#ffffff', borderRadius: radius.card, padding: 22, gap: 12, boxShadow: shadows.card },
   cardSoon: { opacity: 0.7 },
   sectionHead: { flexDirection: 'row', alignItems: 'center', gap: 10 },

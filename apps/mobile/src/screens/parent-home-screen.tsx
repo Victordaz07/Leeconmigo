@@ -1,3 +1,4 @@
+import { useTranslation } from '@lee-conmigo/ui-native';
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { TodayReport } from '@lee-conmigo/session-engine';
@@ -31,49 +32,52 @@ const BAR_MAX = 120;
  * diseño que dependen de funciones que aún no existen (Aula/foto de tarea, Enfoque adaptativo) no se muestran.
  */
 export function ParentHomeScreen({ profile, report, repository, onBack, onSettings, onReport, onReminders, onLegal }: ParentHomeScreenProps) {
+  const { t: ui } = useTranslation();
+
   const insets = useSafeAreaInsets();
   const r = report;
   const layout = useLayout();
-  const one = layout.narrow || layout.portrait;
+  const one = layout.width < 1000;
   const maxWeek = Math.max(r.goalMinutes, ...r.week.map((d) => d.minutes));
   return (
-    <ScrollView style={styles.screen} contentContainerStyle={[styles.content, { paddingHorizontal: layout.gutter, paddingTop: insets.top + (layout.phone ? 12 : 24), paddingBottom: insets.bottom + 24 }]}>
-      <View style={[styles.header, layout.narrow && styles.headerNarrow]}>
-        <RoundButton onPress={onBack} label="Salir de Modo padres">
+    <View style={[styles.screen, { paddingTop: insets.top, paddingLeft: insets.left, paddingRight: insets.right }]}>
+      <View style={[styles.header, { paddingHorizontal: layout.gutter, paddingVertical: 8 }]}>
+        <RoundButton onPress={onBack} label={ui("Salir de Modo padres")}>
           <ChevronLeftIcon />
         </RoundButton>
         <View style={styles.flex}>
-          <Text style={styles.kicker}>Modo padres · {WEEKDAY[new Date().getDay()]}</Text>
-          <Text style={[styles.title, layout.phone && styles.titleSmall]}>Hoy con {profile.name}</Text>
+          <Text style={styles.kicker}>{ui("Modo padres ·") + " "}{ui(WEEKDAY[new Date().getDay()])}</Text>
+          <Text style={[styles.title, layout.phone && styles.titleSmall]}>{ui("Hoy con") + " "}{profile.name}</Text>
         </View>
-        <Button label="Legal y privacidad" variant="secondary" onPress={onLegal} />
-        <Button label="Recordatorios" variant="secondary" onPress={onReminders} />
-        <Button label="Informe semanal" variant="secondary" onPress={onReport} />
-        <Button label="Ajustes" variant="secondary" onPress={onSettings} />
-        <View style={[styles.childChip, layout.narrow && styles.hidden]}>
-          <GradientView gradient={gradients[profile.avatar]} style={styles.childAvatar}>
-            <Text style={styles.childInitial}>{profile.name.slice(0, 1).toUpperCase()}</Text>
-          </GradientView>
-          <Text style={styles.childName}>{profile.name}</Text>
-        </View>
+
       </View>
 
-      <View style={[styles.statsRow, layout.narrow && styles.wrap]}>
-        <Stat glyph="⏱" gradient="brand" label="Minutos de lectura" value={`${r.validMinutes} de ${r.goalMinutes}`} />
-        <Stat glyph="◎" gradient="green" label="Preguntas" value={r.comprehensionTotal ? `${r.comprehensionCorrect} de ${r.comprehensionTotal}` : 'Ninguna hoy'} />
-        <Stat glyph="☺" gradient="goldDiag" label={`Enfoque (según ${profile.name})`} value={r.focusSelfReport ? FOCUS_LABEL[r.focusSelfReport] : 'No lo dijo hoy'} />
+      <View style={styles.toolbar}>
+        <ScrollView horizontal showsHorizontalScrollIndicator contentContainerStyle={{ gap: 8, paddingHorizontal: layout.gutter, paddingBottom: 5 }}>
+        <Button compact label={ui("Legal y privacidad")} variant="secondary" onPress={onLegal} />
+        <Button compact label={ui("Recordatorios")} variant="secondary" onPress={onReminders} />
+        <Button compact label={ui("Informe semanal")} variant="secondary" onPress={onReport} />
+        <Button compact label={ui("Ajustes")} variant="secondary" onPress={onSettings} />
+        </ScrollView>
+      </View>
+      <ScrollView style={styles.scroll} contentContainerStyle={[styles.content, { paddingHorizontal: layout.gutter, paddingTop: 16, paddingBottom: insets.bottom + 24 }]}>
+
+      <View style={[styles.statsRow, layout.width < 1000 && styles.wrap]}>
+        <Stat glyph="⏱" gradient="brand" label={ui("Minutos de lectura")} value={ui("{0} de {1}", r.validMinutes, r.goalMinutes)} />
+        <Stat glyph="◎" gradient="green" label={ui("Preguntas")} value={r.comprehensionTotal ? ui("{0} de {1}", r.comprehensionCorrect, r.comprehensionTotal) : ui("Ninguna hoy")} />
+        <Stat glyph="☺" gradient="goldDiag" label={ui("Enfoque (según {0})", profile.name)} value={r.focusSelfReport ? ui(FOCUS_LABEL[r.focusSelfReport]) : ui("No lo dijo hoy")} />
       </View>
 
       <View style={[styles.columns, one && styles.columnsOne]}>
         <View style={[styles.card, styles.left, one && styles.leftOne]}>
-          <Text style={styles.h3}>Lo que hizo hoy</Text>
+          <Text style={styles.h3}>{ui("Lo que hizo hoy")}</Text>
           {r.activities.length === 0 ? (
-            <Text style={styles.empty}>Hoy todavía no ha leído.</Text>
+            <Text style={styles.empty}>{ui("Hoy todavía no ha leído.")}</Text>
           ) : (
             r.activities.map((a) => {
               const story = repository.get(a.storyId);
               const img = story ? storyImage(story.cover?.src ?? story.pages[0].illustration.src) : undefined;
-              const state = a.completed ? 'La terminó' : `Va en ${Math.round(a.completion * 100)} %`;
+              const state = a.completed ? ui("La terminó") : ui("Va en {0} %", Math.round(a.completion * 100));
               return (
                 <View key={a.storyId} style={styles.activity}>
                   {img ? <Image source={img} style={styles.thumb} resizeMode="cover" /> : <View style={styles.thumb} />}
@@ -82,7 +86,7 @@ export function ParentHomeScreen({ profile, report, repository, onBack, onSettin
                       {story?.title ?? a.storyId}
                     </Text>
                     <Text style={styles.activityMeta}>
-                      {a.minutes < 1 ? 'Menos de 1 min' : `${a.minutes} min`} · {state}
+                      {a.minutes < 1 ? ui("Menos de 1 min") : `${a.minutes} min`} · {state}
                     </Text>
                   </View>
                   <GradientView gradient={gradients.subjLectura} style={styles.subjectBadge}>
@@ -93,8 +97,8 @@ export function ParentHomeScreen({ profile, report, repository, onBack, onSettin
             })
           )}
           <View style={styles.flex} />
-          <Text style={styles.h3}>Esta semana</Text>
-          <View style={styles.week} accessibilityLabel={`Minutos esta semana: ${r.week.map((d) => `${d.day} ${d.minutes}`).join(', ')}`}>
+          <Text style={styles.h3}>{ui("Esta semana")}</Text>
+          <View style={styles.week} accessibilityLabel={ui("Minutos esta semana: {0}", r.week.map((d) => `${d.day} ${d.minutes}`).join(', '))}>
             {r.week.map((d) => {
               const h = d.minutes > 0 ? Math.max(10, (d.minutes / maxWeek) * BAR_MAX) : 4;
               return (
@@ -102,20 +106,20 @@ export function ParentHomeScreen({ profile, report, repository, onBack, onSettin
                   <View style={styles.barTrack}>
                     {d.minutes > 0 ? <GradientView gradient={d.minutes >= r.goalMinutes ? gradients.green : gradients.barLow} style={[styles.bar, { height: h }]} /> : <View style={styles.barEmpty} />}
                   </View>
-                  <Text style={styles.barLabel}>{d.day.slice(0, 1)}</Text>
+                  <Text style={styles.barLabel}>{ui(d.day).slice(0, 1)}</Text>
                 </View>
               );
             })}
           </View>
-          <Text style={styles.weekNote}>Verde: llegó a la meta de {r.goalMinutes} min.</Text>
+          <Text style={styles.weekNote}>{ui("Verde: llegó a la meta de") + " "}{r.goalMinutes} min.</Text>
         </View>
 
         <View style={[styles.right, one && styles.rightOne]}>
           <View style={styles.card}>
-            <Text style={styles.h3}>Para practicar juntos</Text>
+            <Text style={styles.h3}>{ui("Para practicar juntos")}</Text>
             {r.wordsToday.length ? (
               <>
-                <Text style={styles.body}>Pídele que lea estas palabras contigo. Dos minutos bastan.</Text>
+                <Text style={styles.body}>{ui("Pídele que lea estas palabras contigo. Dos minutos bastan.")}</Text>
                 <View style={styles.words}>
                   {r.wordsToday.slice(0, 8).map((w) => (
                     <Text key={w} style={styles.word}>
@@ -125,24 +129,24 @@ export function ParentHomeScreen({ profile, report, repository, onBack, onSettin
                 </View>
               </>
             ) : (
-              <Text style={styles.body}>Hoy no pidió ayuda con ninguna palabra.</Text>
+              <Text style={styles.body}>{ui("Hoy no pidió ayuda con ninguna palabra.")}</Text>
             )}
           </View>
           {r.energy && (
             <View style={styles.card}>
-              <Text style={styles.h3}>Cómo llegó hoy</Text>
+              <Text style={styles.h3}>{ui("Cómo llegó hoy")}</Text>
               <Text style={styles.body}>
-                {energyOption(r.energy).title} · {energyOption(r.energy).minutes} min de misión
-              </Text>
+                {ui(energyOption(r.energy).title)} · {energyOption(r.energy).minutes} {ui("min de misión")}</Text>
             </View>
           )}
           <View style={[styles.card, styles.privacy]}>
-            <Text style={styles.h3}>Privacidad</Text>
-            <Text style={styles.body}>La voz de {profile.name} nunca se graba ni se almacena. Aquí solo ves tiempos, preguntas y palabras.</Text>
+            <Text style={styles.h3}>{ui("Privacidad")}</Text>
+            <Text style={styles.body}>{ui("La voz de") + " "}{profile.name} {" " + ui("nunca se graba ni se almacena. Aquí solo ves tiempos, preguntas y palabras.")}</Text>
           </View>
         </View>
       </View>
-    </ScrollView>
+      </ScrollView>
+    </View>
   );
 }
 
@@ -164,15 +168,16 @@ function Stat({ glyph, gradient, label, value }: { glyph: string; gradient: keyo
 
 const styles = StyleSheet.create({
   flex: { flex: 1 },
-  screen: { flex: 1, backgroundColor: colors.app },
+  screen: { flex: 1, minHeight: 0, backgroundColor: colors.app },
+  scroll: { flex: 1, minHeight: 0 }, toolbar: { flexGrow: 0, flexShrink: 0, paddingVertical: 4 },
   content: { gap: 18, flexGrow: 1 },
   headerNarrow: { flexWrap: 'wrap' },
   titleSmall: { fontSize: 26 },
   hidden: { display: 'none' },
   wrap: { flexWrap: 'wrap' },
   columnsOne: { flexDirection: 'column' },
-  leftOne: { flexGrow: 0, flexShrink: 0, flexBasis: 'auto', minHeight: 0 },
-  rightOne: { flexGrow: 0, flexBasis: 'auto' },
+  leftOne: { flex: 0, flexBasis: 'auto', flexGrow: 0, flexShrink: 0, minHeight: 0, width: '100%' },
+  rightOne: { flex: 0, flexBasis: 'auto', flexGrow: 0, flexShrink: 0, width: '100%' },
   header: { flexDirection: 'row', alignItems: 'center', gap: 16 },
   kicker: { fontFamily: fontFamily.ui.bold, fontSize: 14, color: colors.muted },
   title: { fontFamily: fontFamily.ui.black, fontSize: 34, color: colors.navy },
@@ -187,7 +192,7 @@ const styles = StyleSheet.create({
   statGlyph: { fontSize: 26, color: '#ffffff' },
   statLabel: { fontFamily: fontFamily.ui.bold, fontSize: 14, color: colors.muted },
   statValue: { fontFamily: fontFamily.ui.black, fontSize: 24, color: colors.navy },
-  columns: { flexDirection: 'row', gap: 16, flexGrow: 1 },
+  columns: { flexDirection: 'row', gap: 16 },
   left: { flex: 1, minHeight: 420 },
   right: { flex: 0.9, gap: 16 },
   h3: { fontFamily: fontFamily.ui.black, fontSize: 20, color: colors.navy },

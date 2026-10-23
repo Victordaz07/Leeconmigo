@@ -1,3 +1,4 @@
+import { useTranslation } from '@lee-conmigo/ui-native';
 import { useEffect, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Switch, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -22,6 +23,8 @@ const MINUTE_STEP = 5;
  * (sin racha ni culpa); si hoy ya leyó, no se manda; y si pasa una semana sin abrir la app, los avisos se acaban solos.
  */
 export function ParentRemindersScreen({ profiles, onBack }: Props) {
+
+  const { language, t: ui } = useTranslation();
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const [settings, setSettings] = useState<ReminderSettings>(loadReminderSettings);
@@ -39,29 +42,29 @@ export function ParentRemindersScreen({ profiles, onBack }: Props) {
       p = await askPermission();
       setPerm(p);
     }
-    setNotice(anyReminderOn(next) && p === 'denied' ? 'Los avisos están bloqueados para Kitewise. Actívalos en los Ajustes del teléfono (Aplicaciones → Kitewise → Notificaciones).' : anyReminderOn(next) && p === 'unavailable' ? 'Este dispositivo no puede mostrar avisos (en el navegador no funcionan).' : '');
+    setNotice(anyReminderOn(next) && p === 'denied' ? ui("Los avisos están bloqueados para Kitewise. Actívalos en los Ajustes del teléfono (Aplicaciones → Kitewise → Notificaciones).") : anyReminderOn(next) && p === 'unavailable' ? ui("Este dispositivo no puede mostrar avisos (en el navegador no funcionan).") : '');
     await syncReminders(profiles, next);
   };
 
   const test = async () => {
-    const copy = REMINDER_COPY[profiles[0]?.language === 'en' ? 'en' : 'es'];
+    const copy = REMINDER_COPY[language];
     const ok = await sendTestReminder(copy.childTitle, copy.childBodies[0]!);
-    setNotice(ok ? 'Te llegará un aviso de prueba en unos 5 segundos.' : 'Para probar, primero activa algún aviso y permite las notificaciones.');
+    setNotice(ok ? ui("Te llegará un aviso de prueba en unos 5 segundos.") : ui("Para probar, primero activa algún aviso y permite las notificaciones."));
   };
 
   const par = settings.parent;
   return (
     <ScrollView style={styles.screen} contentContainerStyle={[styles.content, { paddingHorizontal: layout.gutter, paddingTop: insets.top + (layout.phone ? 12 : 24), paddingBottom: insets.bottom + 28 }]}>
       <View style={styles.header}>
-        <RoundButton onPress={onBack} label="Volver al panel de padres">
+        <RoundButton onPress={onBack} label={ui("Volver al panel de padres")}>
           <ChevronLeftIcon />
         </RoundButton>
         <View style={styles.flex}>
-          <Text style={styles.kicker}>Modo padres</Text>
-          <Text style={[styles.title, layout.phone && styles.titleSmall]}>Recordatorios</Text>
+          <Text style={styles.kicker}>{ui("Modo padres")}</Text>
+          <Text style={[styles.title, layout.phone && styles.titleSmall]}>{ui("Recordatorios")}</Text>
         </View>
       </View>
-      <Text style={styles.body}>Avisos amables para que leer sea un hábito, sin presión. Se programan solo en este dispositivo: no se envía nada a ningún servidor.</Text>
+      <Text style={styles.body}>{ui("Avisos amables para que leer sea un hábito, sin presión. Se programan solo en este dispositivo: no se envía nada a ningún servidor.")}</Text>
 
       {profiles.map((p) => {
         const c = childReminderOf(settings, p.id);
@@ -69,14 +72,14 @@ export function ParentRemindersScreen({ profiles, onBack }: Props) {
           <View key={p.id} style={styles.card}>
             <View style={styles.row}>
               <View style={styles.flex}>
-                <Text style={styles.h3}>Lectura de {p.name}</Text>
-                <Text style={styles.muted}>Una invitación a leer, los días que elijas.</Text>
+                <Text style={styles.h3}>{ui("Lectura de") + " "}{p.name}</Text>
+                <Text style={styles.muted}>{ui("Una invitación a leer, los días que elijas.")}</Text>
               </View>
-              <Switch value={c.enabled} onValueChange={(enabled) => void apply(setChildReminder(settings, p.id, { enabled }))} accessibilityLabel={`Recordatorio de lectura de ${p.name}`} />
+              <Switch value={c.enabled} onValueChange={(enabled) => void apply(setChildReminder(settings, p.id, { enabled }))} accessibilityLabel={ui("Recordatorio de lectura de {0}", p.name)} />
             </View>
             {c.enabled && (
               <>
-                <TimeStepper hour={c.hour} minute={c.minute} onChange={(hour, minute) => void apply(setChildReminder(settings, p.id, { hour, minute }))} label={`Hora del aviso de ${p.name}`} />
+                <TimeStepper hour={c.hour} minute={c.minute} onChange={(hour, minute) => void apply(setChildReminder(settings, p.id, { hour, minute }))} label={ui("Hora del aviso de {0}", p.name)} />
                 <View style={styles.days}>
                   {DAYS.map((d, i) => (
                     <Pressable
@@ -84,14 +87,14 @@ export function ParentRemindersScreen({ profiles, onBack }: Props) {
                       onPress={() => void apply(setChildReminder(settings, p.id, { days: c.days.map((v, j) => (j === i ? !v : v)) }))}
                       accessibilityRole="checkbox"
                       accessibilityState={{ checked: c.days[i] }}
-                      accessibilityLabel={DAY_NAMES[i]}
+                      accessibilityLabel={ui(DAY_NAMES[i])}
                       style={[styles.day, c.days[i] && styles.dayOn]}
                     >
-                      <Text style={[styles.dayText, c.days[i] && styles.dayTextOn]}>{d}</Text>
+                      <Text style={[styles.dayText, c.days[i] && styles.dayTextOn]}>{ui(DAY_NAMES[i]).slice(0, 1).toUpperCase()}</Text>
                     </Pressable>
                   ))}
                 </View>
-                <Text style={styles.muted}>Si hoy ya leyó, no se avisa. Si pasa una semana sin abrir la app, los avisos se detienen solos.</Text>
+                <Text style={styles.muted}>{ui("Si hoy ya leyó, no se avisa. Si pasa una semana sin abrir la app, los avisos se detienen solos.")}</Text>
               </>
             )}
           </View>
@@ -101,39 +104,41 @@ export function ParentRemindersScreen({ profiles, onBack }: Props) {
       <View style={styles.card}>
         <View style={styles.row}>
           <View style={styles.flex}>
-            <Text style={styles.h3}>Resumen semanal para ti</Text>
-            <Text style={styles.muted}>Te avisa que el informe de la semana está listo.</Text>
+            <Text style={styles.h3}>{ui("Resumen semanal para ti")}</Text>
+            <Text style={styles.muted}>{ui("Te avisa que el informe de la semana está listo.")}</Text>
           </View>
-          <Switch value={par.enabled} onValueChange={(enabled) => void apply(setParentReminder(settings, { enabled }))} accessibilityLabel="Aviso del resumen semanal" />
+          <Switch value={par.enabled} onValueChange={(enabled) => void apply(setParentReminder(settings, { enabled }))} accessibilityLabel={ui("Aviso del resumen semanal")} />
         </View>
         {par.enabled && (
           <>
             <View style={styles.days}>
               {DAYS.map((d, i) => (
-                <Pressable key={d} onPress={() => void apply(setParentReminder(settings, { weekday: i }))} accessibilityRole="radio" accessibilityState={{ checked: par.weekday === i }} accessibilityLabel={DAY_NAMES[i]} style={[styles.day, par.weekday === i && styles.dayOn]}>
-                  <Text style={[styles.dayText, par.weekday === i && styles.dayTextOn]}>{d}</Text>
+                <Pressable key={d} onPress={() => void apply(setParentReminder(settings, { weekday: i }))} accessibilityRole="radio" accessibilityState={{ checked: par.weekday === i }} accessibilityLabel={ui(DAY_NAMES[i])} style={[styles.day, par.weekday === i && styles.dayOn]}>
+                  <Text style={[styles.dayText, par.weekday === i && styles.dayTextOn]}>{ui(DAY_NAMES[i]).slice(0, 1).toUpperCase()}</Text>
                 </Pressable>
               ))}
             </View>
-            <TimeStepper hour={par.hour} minute={par.minute} onChange={(hour, minute) => void apply(setParentReminder(settings, { hour, minute }))} label="Hora del resumen semanal" />
+            <TimeStepper hour={par.hour} minute={par.minute} onChange={(hour, minute) => void apply(setParentReminder(settings, { hour, minute }))} label={ui("Hora del resumen semanal")} />
           </>
         )}
       </View>
 
       <View style={styles.actions}>
-        <Button label="Enviarme un aviso de prueba" variant="secondary" onPress={test} />
+        <Button label={ui("Enviarme un aviso de prueba")} variant="secondary" onPress={test} />
         {notice !== '' && (
           <Text style={styles.notice} accessibilityLiveRegion="polite">
             {notice}
           </Text>
         )}
-        <Text style={styles.muted}>Los avisos nunca llevan el nombre del niño cuando hay un solo perfil, ni hablan de rachas perdidas.</Text>
+        <Text style={styles.muted}>{ui("Los avisos nunca llevan el nombre del niño cuando hay un solo perfil, ni hablan de rachas perdidas.")}</Text>
       </View>
     </ScrollView>
   );
 }
 
 function TimeStepper({ hour, minute, onChange, label }: { hour: number; minute: number; onChange: (hour: number, minute: number) => void; label: string }) {
+  const { t: ui } = useTranslation();
+
   const total = hour * 60 + minute;
   const shift = (delta: number) => {
     const t = (total + delta + 1440) % 1440;
@@ -141,11 +146,11 @@ function TimeStepper({ hour, minute, onChange, label }: { hour: number; minute: 
   };
   return (
     <View style={styles.stepper} accessibilityRole="adjustable" accessibilityLabel={`${label}: ${timeLabel(hour, minute)}`}>
-      <Step label="Una hora antes" glyph="−" onPress={() => shift(-60)} />
-      <Step label="Cinco minutos antes" glyph="‹" onPress={() => shift(-MINUTE_STEP)} />
+      <Step label={ui("Una hora antes")} glyph="−" onPress={() => shift(-60)} />
+      <Step label={ui("Cinco minutos antes")} glyph="‹" onPress={() => shift(-MINUTE_STEP)} />
       <Text style={styles.time}>{timeLabel(hour, minute)}</Text>
-      <Step label="Cinco minutos después" glyph="›" onPress={() => shift(MINUTE_STEP)} />
-      <Step label="Una hora después" glyph="+" onPress={() => shift(60)} />
+      <Step label={ui("Cinco minutos después")} glyph="›" onPress={() => shift(MINUTE_STEP)} />
+      <Step label={ui("Una hora después")} glyph="+" onPress={() => shift(60)} />
     </View>
   );
 }

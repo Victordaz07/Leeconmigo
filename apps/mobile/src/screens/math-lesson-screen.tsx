@@ -1,3 +1,4 @@
+import { useTranslation } from '@lee-conmigo/ui-native';
 import { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -53,6 +54,8 @@ interface MathLessonScreenProps {
  * aquí solo se dibuja. Cada reto terminado se guarda como intento (para dominio y repaso), nunca como calificación.
  */
 export function MathLessonScreen({ lang, unit, lesson, minutes, progress, calm = false, movementBreaks = false, profileId, onExit }: MathLessonScreenProps) {
+  const { t: ui } = useTranslation();
+
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const t = MATH_COPY;
@@ -89,7 +92,7 @@ export function MathLessonScreen({ lang, unit, lesson, minutes, progress, calm =
     <View style={styles.screen}>
       <View style={[styles.header, { paddingTop: insets.top + 12, paddingHorizontal: layout.gutter }]}>
         <View style={styles.headerRow}>
-          <RoundButton onPress={onExit} label="Volver">
+          <RoundButton onPress={onExit} label={ui("Volver")}>
             <ChevronLeftIcon />
           </RoundButton>
           <GradientView gradient={gradients.subjMate} style={styles.pill}>

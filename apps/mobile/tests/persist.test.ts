@@ -12,11 +12,14 @@ describe('guardar en el equipo (RN-08)', () => {
     const kv = memoryKV();
     kv.set(KEYS.readerPrefs('noah'), '{"size":31}');
     kv.set(KEYS.readerPrefs('ana'), '{"size":27}');
+    kv.set(KEYS.language, '"en"');
     eraseChild(kv, 'noah');
     expect(kv.get(KEYS.readerPrefs('noah'))).toBe('{"size":31}');
+    expect(kv.get(KEYS.language)).toBe('"en"');
     eraseEverything(kv, ['noah']);
     expect(kv.get(KEYS.readerPrefs('noah'))).toBeNull();
     expect(kv.get(KEYS.readerPrefs('ana'))).toBe('{"size":27}');
+    expect(kv.get(KEYS.language)).toBeNull();
   });
   it('el progreso de Lectura sobrevive a "cerrar y abrir" la app', () => {
     const kv = memoryKV();

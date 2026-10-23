@@ -1,3 +1,4 @@
+import { useTranslation } from '@lee-conmigo/ui-native';
 import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -16,6 +17,8 @@ interface Props {
 
 /** Modo padres · Legal y privacidad: los textos aceptados, el contacto y «Borrar todos los datos» (docs/12 §6). */
 export function LegalCenterScreen({ lang, consent, onErase, onBack }: Props) {
+  const { t: ui } = useTranslation();
+
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const t = LEGAL_UI[lang];
@@ -30,7 +33,7 @@ export function LegalCenterScreen({ lang, consent, onErase, onBack }: Props) {
           <ChevronLeftIcon />
         </RoundButton>
         <View style={styles.flex}>
-          <Text style={styles.kicker}>{lang === 'es' ? 'Modo padres' : 'Parent mode'}</Text>
+          <Text style={styles.kicker}>{lang === 'es' ? ui("Modo padres") : 'Parent mode'}</Text>
           <Text style={[styles.title, layout.phone && styles.titleSmall]} accessibilityRole="header">
             {t.legalTitle}
           </Text>

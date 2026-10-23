@@ -81,9 +81,11 @@ jobs:
 
           Conserva la pronunciación y la ayuda al tocar cada palabra. Incluye imágenes por escena, letra ajustable, reanudación, comprensión y repaso.
 
-          Corregida la desaparición visual de los cuadernos en Inicio de Android: las tarjetas conservan su ancho y se distribuyen en filas según la pantalla. Regresión comprobada con el motor Yoga de React Native en seis tamaños de teléfono/tableta.
+          Lectura adaptable: ilustración arriba en vertical y a la izquierda en horizontal, texto con desplazamiento independiente y avance compacto de 48 dp. Panel de padres con accesos persistentes, ajustes que se redistribuyen según el ancho e interfaz ES/EN coherente, incluida la ayuda de palabras y el PDF semanal.
 
-          Descarga Kitewise-lectura.apk en el teléfono y abre el archivo para instalarlo. Android 7 o posterior. No necesita un servidor de desarrollo. Se adjunta su suma SHA-256.
+          Conserva la corrección de las portadas de cuadernos. Regresión comprobada con Yoga nativo en 12 tamaños y recorridos web con cambios de ventana, incluidos formatos de plegables. No se ha probado en un Z Fold físico.
+
+          Descarga Kitewise-lectura.apk en el teléfono e instálalo como actualización sobre la versión actual para conservar los datos. Android 7 o posterior. No necesita un servidor de desarrollo. Se adjunta su suma SHA-256.
 
           Versión para pruebas familiares, firmada con la llave de pruebas existente de Expo; no es una publicación en Google Play. La comprobación audible de TTS y la ergonomía en un dispositivo real siguen pendientes.
           NOTES

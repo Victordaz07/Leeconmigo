@@ -27,6 +27,15 @@ export interface ChildProfile extends ReadingProfile {
   focus: FocusSettings;
 }
 
+/** Last interface language also applies to the profile picker and parent PIN screen. */
+export function loadInterfaceLanguage(fallback: 'es' | 'en' = 'es'): 'es' | 'en' {
+  const saved = readJSON<string>(deviceKV, KEYS.language, '');
+  if (saved === 'en' || saved === 'es') return saved;
+  const first = readJSON<ChildProfile[]>(deviceKV, KEYS.profiles, [])[0];
+  return first ? first.language === 'en' ? 'en' : 'es' : fallback;
+}
+export const saveInterfaceLanguage = (language: 'es' | 'en') => writeJSON(deviceKV, KEYS.language, language);
+
 export const PROFILES: ChildProfile[] = [
   { id: 'noah', name: 'Noah', language: 'es', level: 3, dailyGoalMinutes: DEFAULT_DAILY_GOAL_MINUTES, avatar: 'sunDiag', askEnergy: true, freeReading: true, focus: DEFAULT_FOCUS },
 ];

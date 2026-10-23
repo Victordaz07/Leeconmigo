@@ -1,3 +1,4 @@
+import { useTranslation } from '@lee-conmigo/ui-native';
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { MathUnit } from '@lee-conmigo/contracts';
@@ -22,6 +23,8 @@ interface MathNotebookScreenProps {
  * todo abre; lo sugerido se destaca (docs/13). Los estándares NO se muestran al niño (solo a padres, en borrador).
  */
 export function MathNotebookScreen({ lang, unit, progress, onBack, onOpenLesson, onOpenWorkshop }: MathNotebookScreenProps) {
+  const { t: ui } = useTranslation();
+
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const t = MATH_COPY;
@@ -33,14 +36,14 @@ export function MathNotebookScreen({ lang, unit, progress, onBack, onOpenLesson,
   return (
     <ScrollView style={styles.screen} contentContainerStyle={[styles.content, { paddingTop: insets.top + 16, paddingBottom: insets.bottom + 24, paddingHorizontal: layout.gutter }]}>
       <View style={styles.header}>
-        <RoundButton onPress={onBack} label="Volver">
+        <RoundButton onPress={onBack} label={ui("Volver")}>
           <ChevronLeftIcon />
         </RoundButton>
         <GradientView gradient={gradients.subjMate} style={styles.pill}>
           <Text style={styles.pillText}>½ {t.subject[lang]}</Text>
         </GradientView>
         <View style={styles.flex} />
-        <Text style={styles.meta}>Nivel {unit.practiceLevel}</Text>
+        <Text style={styles.meta}>{ui("Nivel") + " "}{unit.practiceLevel}</Text>
       </View>
       <View style={[styles.banner, { height: layout.phone ? 150 : 220 }]}>
         <Image source={MATH_COVERS.g3u1} style={styles.bannerImage} resizeMode="cover" accessible={false} />

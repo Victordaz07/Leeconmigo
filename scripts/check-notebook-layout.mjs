@@ -38,11 +38,12 @@ try {
     if (id === 'react-native') return { Image: 'Image', Pressable: 'Pressable', Text: 'Text', View: 'View', StyleSheet: { create: s => s, absoluteFill: {} } };
     if (id === '../tokens.ts') return { colors: {}, fontFamily: { ui: {} }, radius: {}, shadows: {} };
     if (id === './gradient-view.tsx') return { GradientView: 'GradientView' };
+    if (id === '../interface-language.tsx') return { useTranslation: () => ({ t: text => text }) };
     return require(id);
   } });
   const { NotebookCover } = module.exports;
   let checked = 0;
-  for (const [width, height] of [[320, 720], [375, 812], [390, 844], [844, 390], [800, 1280], [1280, 800]]) {
+  for (const [width, height] of [[320, 720], [375, 812], [390, 844], [844, 390], [800, 1280], [1280, 800], [360, 800], [720, 800], [800, 720], [900, 740], [740, 900], [720, 720]]) {
     const layout = layoutFor(width, height);
     const rail = layout.nav === 'bottom' ? 0 : layout.nav === 'railCompact' ? 80 : 112;
     const available = width - rail - 2 * layout.gutter;
@@ -63,7 +64,7 @@ try {
       }
     }
   }
-  console.log(`PASS: ${checked} notebook layouts, six phone/tablet sizes, native Yoga from installed React Native.`);
+  console.log(`PASS: ${checked} notebook layouts, 12 phone/tablet/foldable sizes, native Yoga from installed React Native.`);
 } catch (error) {
   // Surface useful diagnostics via the Checks API even when CI log storage is unavailable.
   if (process.env.GITHUB_ACTIONS) console.error(`::error::${String(error).replaceAll('%', '%25').replaceAll('\r', '%0D').replaceAll('\n', '%0A')}`);

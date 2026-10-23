@@ -1,3 +1,4 @@
+import { useTranslation } from '@lee-conmigo/ui-native';
 import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -11,6 +12,8 @@ const TINT: Record<Energy, string> = { alta: colors.focus, normal: colors.brand1
  * "Cansado" nunca castiga: "Cualquier día sirve. Tu racha no cambia." (D5).
  */
 export function EnergyScreen({ name, onStart }: { name: string; onStart: (energy: Energy) => void }) {
+  const { t: ui } = useTranslation();
+
   const [energy, setEnergy] = useState<Energy>('normal');
   const insets = useSafeAreaInsets();
   const { narrow, short, gutter } = useLayout();
@@ -18,18 +21,18 @@ export function EnergyScreen({ name, onStart }: { name: string; onStart: (energy
   const stacked = narrow && !short;
   return (
     <ScrollView style={styles.scroll} contentContainerStyle={[styles.screen, { paddingHorizontal: gutter, paddingTop: insets.top + (short ? 16 : 36), paddingBottom: insets.bottom + (short ? 16 : 28), gap: short ? 16 : 32 }]}>
-      <Text style={[styles.title, (narrow || short) && styles.titleSmall]}>¿Cómo llegas hoy, {name}?</Text>
+      <Text style={[styles.title, (narrow || short) && styles.titleSmall]}>{ui("¿Cómo llegas hoy,") + " "}{name}?</Text>
       <View style={[styles.row, stacked && styles.rowStacked]}>
         {ENERGY_OPTIONS.map((o) => {
           const on = o.id === energy;
           return (
-            <Pressable key={o.id} onPress={() => setEnergy(o.id)} accessibilityRole="radio" accessibilityState={{ selected: on }} accessibilityLabel={`${o.title}, ${o.detail}`} style={[styles.card, short && styles.cardShort, stacked && styles.cardStacked, on && styles.cardOn]}>
+            <Pressable key={o.id} onPress={() => setEnergy(o.id)} accessibilityRole="radio" accessibilityState={{ selected: on }} accessibilityLabel={`${ui(o.title)}, ${ui(o.detail)}`} style={[styles.card, short && styles.cardShort, stacked && styles.cardStacked, on && styles.cardOn]}>
               <View style={[styles.circle, (short || stacked) && styles.circleSmall, { backgroundColor: TINT[o.id] }]}>
                 <Text style={[styles.glyph, (short || stacked) && styles.glyphSmall]}>{o.glyph}</Text>
               </View>
               <View style={stacked ? styles.cardTextStacked : styles.cardText}>
-                <Text style={[styles.cardTitle, (short || stacked) && styles.cardTitleSmall]}>{o.title}</Text>
-                <Text style={[styles.detail, stacked && styles.detailStacked]}>{o.detail}</Text>
+                <Text style={[styles.cardTitle, (short || stacked) && styles.cardTitleSmall]}>{ui(o.title)}</Text>
+                <Text style={[styles.detail, stacked && styles.detailStacked]}>{ui(o.detail)}</Text>
               </View>
             </Pressable>
           );
@@ -38,9 +41,9 @@ export function EnergyScreen({ name, onStart }: { name: string; onStart: (energy
       <View style={[styles.footer, narrow && styles.footerNarrow]}>
         <View style={styles.noteRow}>
           <Text style={styles.star}>⭐</Text>
-          <Text style={[styles.note, narrow && styles.noteSmall]}>Cualquier día sirve. Tu racha no cambia.</Text>
+          <Text style={[styles.note, narrow && styles.noteSmall]}>{ui("Cualquier día sirve. Tu racha no cambia.")}</Text>
         </View>
-        <Button label="Empezar" onPress={() => onStart(energy)} />
+        <Button label={ui("Empezar")} onPress={() => onStart(energy)} />
       </View>
     </ScrollView>
   );

@@ -1,3 +1,4 @@
+import { useTranslation } from '@lee-conmigo/ui-native';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { colors, fontFamily, gradients, GradientView, KiteIcon, radius, shadows, useLayout } from '@lee-conmigo/ui-native';
@@ -15,6 +16,8 @@ interface ProfilesScreenProps {
  * abre Ajustes con un perfil nuevo (P4). El encabezado usa un cielo de color: el arte del diseño era solo referencia.
  */
 export function ProfilesScreen({ profiles, onPick, onAdd }: ProfilesScreenProps) {
+  const { t: ui } = useTranslation();
+
   const insets = useSafeAreaInsets();
   const { narrow, short, width, gutter } = useLayout();
   // Tarjetas: 2 por fila en un teléfono vertical; más bajas si hay poca altura.
@@ -31,7 +34,7 @@ export function ProfilesScreen({ profiles, onPick, onAdd }: ProfilesScreenProps)
           </GradientView>
           <Text style={styles.brandText}>Kitewise</Text>
         </View>
-        <Text style={[styles.question, small && styles.questionSmall]}>¿Quién aprende hoy?</Text>
+        <Text style={[styles.question, small && styles.questionSmall]}>{ui("¿Quién aprende hoy?")}</Text>
       </GradientView>
       <View style={[styles.row, { paddingHorizontal: gutter, gap: small ? 16 : 32, paddingVertical: short ? 16 : 32, paddingBottom: insets.bottom + 24 }]}>
         {profiles.map((p) => (
@@ -40,13 +43,13 @@ export function ProfilesScreen({ profiles, onPick, onAdd }: ProfilesScreenProps)
               <Text style={[styles.initial, { fontSize: avatar * 0.44 }]}>{p.name.slice(0, 1).toUpperCase()}</Text>
             </GradientView>
             <Text style={styles.name}>{p.name}</Text>
-            <Text style={styles.meta}>Nivel {p.level}</Text>
+            <Text style={styles.meta}>{ui("Nivel") + " "}{p.level}</Text>
           </Pressable>
         ))}
-        <Pressable onPress={onAdd} accessibilityRole="button" accessibilityLabel="Agregar niño, con PIN de padres" style={({ pressed }) => [styles.card, card, styles.add, pressed && styles.pressed]}>
+        <Pressable onPress={onAdd} accessibilityRole="button" accessibilityLabel={ui("Agregar niño, con PIN de padres")} style={({ pressed }) => [styles.card, card, styles.add, pressed && styles.pressed]}>
           <Text style={styles.plus}>+</Text>
-          <Text style={styles.addText}>Agregar niño</Text>
-          <Text style={styles.addMeta}>con PIN de padres</Text>
+          <Text style={styles.addText}>{ui("Agregar niño")}</Text>
+          <Text style={styles.addMeta}>{ui("con PIN de padres")}</Text>
         </Pressable>
       </View>
     </ScrollView>

@@ -39,7 +39,9 @@ export function SceneReadingScreen({ prepared, profile, energy, goalMinutes, foc
   const sourcePage = original.pages[anchor.pageIndex];
   const movement = useMovementBreak(movementBreaks, profile.id, flow.screen === 'reading');
   const sourcePageDone = prepared.anchors[pageIndex + 1]?.pageIndex !== anchor.pageIndex;
-  const sideBySide = !layout.portrait && !layout.short && layout.width >= 960;
+  const sideBySide = !layout.portrait;
+  const artHeight = Math.max(80, layout.height - insets.top - insets.bottom - 128);
+
 
   useEffect(() => saveReaderFont(profile.id, fontSize), [profile.id, fontSize]);
   useEffect(() => {
@@ -73,6 +75,9 @@ export function SceneReadingScreen({ prepared, profile, energy, goalMinutes, foc
     return () => sub.remove();
   }, []);
 
+  const illustration = <SceneArt illustration={page.illustration} crop={anchor.crop} maxHeight={focusReading ? Math.min(160, artHeight) : sideBySide ? artHeight : Math.min(300, layout.height * 0.30)} />;
+  const passage = <><ReadingText page={page} words={session.words} markOf={normalWord} onWordPress={openFragmentWord} fontSize={fontSize} /><Text style={styles.hint}>{c.hint}</Text></>;
+
   return (
     <View style={[styles.screen, { paddingTop: insets.top, paddingLeft: insets.left, paddingRight: insets.right }]}>
       <View style={[styles.header, layout.phone && styles.headerSmall]}>
@@ -92,21 +97,31 @@ export function SceneReadingScreen({ prepared, profile, energy, goalMinutes, foc
       ) : flow.screen === 'review' && flow.review ? (
         <SyllableReview session={session} language={original.language} />
       ) : (
-        <ScrollView key={page.id} style={styles.flex} contentContainerStyle={[styles.readingBody, layout.phone && styles.readingBodySmall, sideBySide && styles.columns]}>
-          <View style={[styles.artColumn, sideBySide && styles.artSide]}>
-            <SceneArt illustration={page.illustration} crop={anchor.crop} maxHeight={focusReading ? 160 : sideBySide ? 500 : layout.phone ? 300 : 380} />
+        sideBySide ? (
+          <View style={styles.landscapeBody}>
+            <View style={styles.artSide}>{illustration}</View>
+            <ScrollView key={page.id} style={styles.textScroll} contentContainerStyle={styles.landscapeText}>
+              {passage}
+            </ScrollView>
           </View>
-          <View style={[styles.textColumn, sideBySide && styles.textSide]}>
-            <ReadingText page={page} words={session.words} markOf={normalWord} onWordPress={openFragmentWord} fontSize={fontSize} />
-            <Text style={styles.hint}>{c.hint}</Text>
-          </View>
-        </ScrollView>
+        ) : (
+          <ScrollView key={page.id} style={styles.flex} contentContainerStyle={styles.portraitBody}>
+            <View style={styles.artColumn}>{illustration}</View>
+            <View style={styles.textColumn}>{passage}</View>
+          </ScrollView>
+        )
       )}
 
       {(flow.screen === 'reading' || flow.screen === 'pageDone') && (
-        <View style={[styles.footer, { paddingBottom: insets.bottom + 12 }]}>
+        <View style={[styles.footer, { paddingBottom: insets.bottom + 4 }]}>
           <FontButton label={c.previous} glyph="‹" disabled={!session.canGoBack || flow.screen !== 'reading'} onPress={actions.freeBack} />
-          <View style={sideBySide ? styles.nextSide : styles.flex}><Button label={pageIndex === prepared.story.pages.length - 1 ? c.finish : c.next} onPress={actions.freeAdvance} disabled={flow.screen !== 'reading'} /></View>
+          <View style={styles.progress} accessible accessibilityLabel={c.part(pageIndex + 1, prepared.story.pages.length)}>
+            <View style={styles.track}><View style={[styles.fill, { width: `${100 * (pageIndex + 1) / prepared.story.pages.length}%` }]} /></View>
+            <Text style={styles.part}>{pageIndex + 1}/{prepared.story.pages.length}</Text>
+          </View>
+          <Pressable accessibilityRole="button" accessibilityLabel={pageIndex === prepared.story.pages.length - 1 ? c.finish : c.next} accessibilityState={{ disabled: flow.screen !== 'reading' }} disabled={flow.screen !== 'reading'} onPress={actions.freeAdvance} style={styles.nextButton}>
+            <Text style={styles.nextGlyph}>{pageIndex === prepared.story.pages.length - 1 ? '✓' : '›'}</Text>
+          </Pressable>
         </View>
       )}
 
@@ -178,15 +193,19 @@ function SyllableReview({ session, language }: { session: ReadingSession; langua
 
 const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: colors.paper }, flex: { flex: 1 },
-  header: { paddingHorizontal: 24, paddingVertical: 14, flexDirection: 'row', alignItems: 'center', gap: 14, borderBottomWidth: 1, borderBottomColor: colors.line },
-  headerSmall: { paddingHorizontal: 12, paddingVertical: 10, gap: 8 }, heading: { flex: 1, minWidth: 0, gap: 4 },
+  header: { paddingHorizontal: 24, paddingVertical: 4, flexDirection: 'row', alignItems: 'center', gap: 14, borderBottomWidth: 1, borderBottomColor: colors.line },
+  headerSmall: { paddingHorizontal: 12, paddingVertical: 4, gap: 8 }, heading: { flex: 1, minWidth: 0, gap: 4 },
   bookTitle: { fontFamily: fontFamily.ui.extrabold, fontSize: 15, color: colors.navy }, part: { fontFamily: fontFamily.ui.semibold, fontSize: 12, color: colors.inkSoft },
   fontTools: { flexDirection: 'row', gap: 6 }, fontButton: { minWidth: 44, minHeight: 48, paddingHorizontal: 8, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: colors.line, borderRadius: 14, backgroundColor: '#fff' },
   fontGlyph: { fontFamily: fontFamily.ui.extrabold, fontSize: 21, color: colors.navy }, disabled: { opacity: 0.35 },
-  readingBody: { padding: 32, gap: 28, alignItems: 'center' }, readingBodySmall: { padding: 20, gap: 24 }, columns: { flexDirection: 'row', alignItems: 'flex-start', paddingTop: 36, gap: 40, maxWidth: 1280, alignSelf: 'center', width: '100%' },
-  artColumn: { width: '100%', maxWidth: 740 }, artSide: { flex: 1, minWidth: 0 }, textColumn: { width: '100%', maxWidth: 740 }, textSide: { flex: 1, minWidth: 0 },
-  hint: { fontFamily: fontFamily.ui.semibold, fontSize: 14, lineHeight: 22, color: colors.inkSoft, marginTop: 24 },
-  footer: { flexDirection: 'row', alignItems: 'center', gap: 14, paddingHorizontal: 20, paddingTop: 12, borderTopWidth: 1, borderTopColor: colors.line, backgroundColor: colors.paper, maxWidth: 1280, width: '100%', alignSelf: 'center' }, nextSide: { width: 300, marginLeft: 'auto' },
+  portraitBody: { padding: 16, gap: 18, alignItems: 'center' },
+  landscapeBody: { flex: 1, minHeight: 0, flexDirection: 'row', gap: 12, padding: 12 },
+  artColumn: { width: '100%', maxWidth: 740 }, artSide: { width: '38%', justifyContent: 'center' },
+  textColumn: { width: '100%', maxWidth: 740 }, textScroll: { flex: 1, minWidth: 0 }, landscapeText: { paddingHorizontal: 12, paddingVertical: 8 },
+  hint: { fontFamily: fontFamily.ui.semibold, fontSize: 13, lineHeight: 20, color: colors.inkSoft, marginTop: 16 },
+  footer: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingHorizontal: 16, paddingTop: 4, backgroundColor: colors.paper },
+  progress: { flex: 1, gap: 3 }, track: { height: 3, backgroundColor: colors.line, borderRadius: 2 }, fill: { height: 3, backgroundColor: colors.gold, borderRadius: 2 },
+  nextButton: { width: 48, height: 48, borderRadius: 24, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.gold, boxShadow: '0px 3px 8px rgba(40,30,0,0.15)' }, nextGlyph: { fontFamily: fontFamily.ui.black, fontSize: 32, lineHeight: 38, color: colors.navy },
   overlay: { ...StyleSheet.absoluteFill, backgroundColor: 'rgba(20,22,28,.4)' }, prepCenter: { flexGrow: 1, alignItems: 'center', justifyContent: 'center', padding: 20 },
   prepCard: { width: '100%', maxWidth: 540, borderRadius: 24, padding: 28, gap: 24, backgroundColor: colors.paper }, prepTitle: { fontFamily: fontFamily.ui.black, fontSize: 28, color: colors.navy }, prepText: { fontFamily: fontFamily.read.regular, fontSize: 21, lineHeight: 34, color: colors.ink },
   practiceBody: { padding: 24, alignItems: 'center', flexGrow: 1, justifyContent: 'center' }, practiceColumn: { width: '100%', maxWidth: 740, gap: 20 }, eyebrow: { fontFamily: fontFamily.ui.extrabold, fontSize: 15, color: colors.navy },

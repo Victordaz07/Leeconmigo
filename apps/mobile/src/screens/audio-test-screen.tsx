@@ -1,3 +1,4 @@
+import { useTranslation } from '@lee-conmigo/ui-native';
 import { useEffect, useRef, useState } from 'react';
 import { AppState, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -37,6 +38,7 @@ const clock = (s: number) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60))
  * código; no usa micrófono, ni cámara, ni archivos de audio, ni internet. Está en Modo padres (tras el PIN).
  */
 export function AudioTestScreen({ onBack }: { onBack: () => void }) {
+  const { language, t: ui } = useTranslation();
   const insets = useSafeAreaInsets();
   const layout = useLayout();
   const [pattern, setPattern] = useState<Pattern>(starter);
@@ -73,7 +75,7 @@ export function AudioTestScreen({ onBack }: { onBack: () => void }) {
       setRate(o.sampleRate);
       return seq.current;
     } catch (e) {
-      setError(`No se pudo abrir el audio en este dispositivo: ${e instanceof Error ? e.message : String(e)}`);
+      setError(ui("No se pudo abrir el audio en este dispositivo: {0}", e instanceof Error ? e.message : String(e)));
       return null;
     }
   };
@@ -100,7 +102,7 @@ export function AudioTestScreen({ onBack }: { onBack: () => void }) {
     try {
       await o.resume();
     } catch (e) {
-      setError(`El audio no quiso arrancar: ${e instanceof Error ? e.message : String(e)}`);
+      setError(ui("El audio no quiso arrancar: {0}", e instanceof Error ? e.message : String(e)));
       return;
     }
     o.setVolume(volume);
@@ -201,34 +203,33 @@ export function AudioTestScreen({ onBack }: { onBack: () => void }) {
   };
 
   const summary = results
-    .map((r) => `#${r.id} · ${r.bpm} BPM · ${clock(r.seconds)} · congelamientos ${r.report.stalls} (hueco máx. ${r.report.maxGapMs} ms, media ${r.report.meanGapMs} ms) · pasos saltados ${r.skipped} · segundo plano ${r.backgrounded} · se oyó: ${r.verdict}`)
+    .map((r) => ui("#{0} · {1} BPM · {2} · congelamientos {3} (hueco máx. {4} ms, media {5} ms) · pasos saltados {6} · segundo plano {7} · se oyó: {8}", r.id, r.bpm, clock(r.seconds), r.report.stalls, r.report.maxGapMs, r.report.meanGapMs, r.skipped, r.backgrounded, r.verdict))
     .join('\n');
 
   return (
     <ScrollView style={styles.screen} contentContainerStyle={[styles.content, { paddingTop: insets.top + 16, paddingBottom: insets.bottom + 24, paddingHorizontal: layout.gutter }]}>
       <View style={styles.header}>
-        <RoundButton onPress={onBack} label="Volver">
+        <RoundButton onPress={onBack} label={ui("Volver")}>
           <ChevronLeftIcon />
         </RoundButton>
-        <Text style={[styles.title, layout.phone && styles.titleSmall]}>Prueba de audio</Text>
+        <Text style={[styles.title, layout.phone && styles.titleSmall]}>{ui("Prueba de audio")}</Text>
       </View>
       <Text style={styles.note}>
-        Para Arte y música. Comprueba que el ritmo de ocho pulsos suene parejo. Eliges entre 16 sonidos que se generan en el equipo: no usa micrófono, cámara, archivos ni internet. Usa audífonos o el altavoz con volumen bajo.
-      </Text>
+        {ui("Para Arte y música. Comprueba que el ritmo de ocho pulsos suene parejo. Eliges entre 16 sonidos que se generan en el equipo: no usa micrófono, cámara, archivos ni internet. Usa audífonos o el altavoz con volumen bajo.")}</Text>
       {error && <Text style={styles.warn}>{error}</Text>}
 
       <View style={styles.card}>
-        <Text style={styles.h3}>Ritmo de ocho pulsos</Text>
+        <Text style={styles.h3}>{ui("Ritmo de ocho pulsos")}</Text>
         <View style={styles.grid}>
           {TRACKS.map((track) => (
             <View key={track} style={styles.gridRow}>
-              <Pressable onPress={() => setPicking(picking === track ? null : track)} accessibilityRole="button" accessibilityLabel={`Sonido de la fila ${track.toUpperCase()}: ${SOUNDS[kit[track]].name.es}. Toca para cambiarlo`} accessibilityState={{ expanded: picking === track }} style={[styles.soundBtn, picking === track && styles.soundBtnOn]}>
+              <Pressable onPress={() => setPicking(picking === track ? null : track)} accessibilityRole="button" accessibilityLabel={ui("Sonido de la fila {0}: {1}. Toca para cambiarlo", track.toUpperCase(), SOUNDS[kit[track]].name[language])} accessibilityState={{ expanded: picking === track }} style={[styles.soundBtn, picking === track && styles.soundBtnOn]}>
                 <Text style={styles.soundBtnText} numberOfLines={2}>
-                  {SOUNDS[kit[track]].name.es}
+                  {SOUNDS[kit[track]].name[language]}
                 </Text>
               </Pressable>
               {pattern[track].map((on, step) => (
-                <Pressable key={step} onPress={() => toggle(track, step)} accessibilityRole="button" accessibilityState={{ selected: on }} accessibilityLabel={`${SOUNDS[kit[track]].name.es}, pulso ${step + 1}: ${on ? 'suena' : 'silencio'}`} style={[styles.cell, on && styles.cellOn, cursor === step && styles.cellCursor, step === 4 && styles.cellGroup]}>
+                <Pressable key={step} onPress={() => toggle(track, step)} accessibilityRole="button" accessibilityState={{ selected: on }} accessibilityLabel={ui("{0}, pulso {1}: {2}", SOUNDS[kit[track]].name[language], step + 1, on ? 'suena' : 'silencio')} style={[styles.cell, on && styles.cellOn, cursor === step && styles.cellCursor, step === 4 && styles.cellGroup]}>
                   <Text style={[styles.cellText, on && styles.cellTextOn]}>{on ? '●' : ''}</Text>
                 </Pressable>
               ))}
@@ -246,15 +247,15 @@ export function AudioTestScreen({ onBack }: { onBack: () => void }) {
 
         {picking && (
           <View style={styles.picker}>
-            <Text style={styles.h3}>Sonido de la fila {picking.toUpperCase()}</Text>
-            <Text style={styles.small}>Toca uno para elegirlo: se oye al tocarlo. Puedes repetir el mismo sonido en dos filas.</Text>
+            <Text style={styles.h3}>{ui("Sonido de la fila") + " "}{picking.toUpperCase()}</Text>
+            <Text style={styles.small}>{ui("Toca uno para elegirlo: se oye al tocarlo. Puedes repetir el mismo sonido en dos filas.")}</Text>
             {FAMILIES.map((f) => (
               <View key={f} style={styles.family}>
-                <Text style={styles.familyName}>{FAMILY_NAME[f].es}</Text>
+                <Text style={styles.familyName}>{FAMILY_NAME[f][language]}</Text>
                 <View style={styles.chips}>
                   {soundsOf(f).map((id) => (
-                    <Pressable key={id} onPress={() => void chooseSound(picking, id)} accessibilityRole="button" accessibilityLabel={`${SOUNDS[id].name.es}. ${SOUNDS[id].hint.es}`} accessibilityState={{ selected: kit[picking] === id }} style={[styles.chip, kit[picking] === id && styles.chipOn]}>
-                      <Text style={[styles.chipText, kit[picking] === id && styles.chipTextOn]}>{SOUNDS[id].name.es}</Text>
+                    <Pressable key={id} onPress={() => void chooseSound(picking, id)} accessibilityRole="button" accessibilityLabel={`${SOUNDS[id].name[language]}. ${SOUNDS[id].hint[language]}`} accessibilityState={{ selected: kit[picking] === id }} style={[styles.chip, kit[picking] === id && styles.chipOn]}>
+                      <Text style={[styles.chipText, kit[picking] === id && styles.chipTextOn]}>{SOUNDS[id].name[language]}</Text>
                     </Pressable>
                   ))}
                 </View>
@@ -271,9 +272,9 @@ export function AudioTestScreen({ onBack }: { onBack: () => void }) {
             </Pressable>
           ))}
         </View>
-        {pendingBpm !== null && <Text style={styles.small}>El tempo cambia a {pendingBpm} BPM al empezar el siguiente ciclo.</Text>}
+        {pendingBpm !== null && <Text style={styles.small}>{ui("El tempo cambia a") + " "}{pendingBpm} {" " + ui("BPM al empezar el siguiente ciclo.")}</Text>}
 
-        <Text style={styles.h3}>Volumen</Text>
+        <Text style={styles.h3}>{ui("Volumen")}</Text>
         <View style={styles.segmented}>
           {[0.3, 0.6, 0.9].map((v) => (
             <Pressable key={v} onPress={() => pickVolume(v)} accessibilityRole="button" accessibilityState={{ selected: volume === v }} style={[styles.segment, volume === v && styles.segmentOn]}>
@@ -283,40 +284,40 @@ export function AudioTestScreen({ onBack }: { onBack: () => void }) {
         </View>
 
         <View style={styles.actions}>
-          {!playing ? <Button label="Tocar" onPress={() => void start(false)} /> : <Button label="Detener" variant="secondary" onPress={stop} />}
-          {!playing && <Button label="Prueba de 5 minutos" variant="secondary" onPress={() => void start(true)} />}
+          {!playing ? <Button label={ui("Tocar")} onPress={() => void start(false)} /> : <Button label={ui("Detener")} variant="secondary" onPress={stop} />}
+          {!playing && <Button label={ui("Prueba de 5 minutos")} variant="secondary" onPress={() => void start(true)} />}
         </View>
-        {playing && long && <Text style={styles.small}>Prueba larga en curso: {clock(elapsed)} de {clock(LONG_TEST_SECONDS)}. Escucha con atención y no cambies de aplicación.</Text>}
+        {playing && long && <Text style={styles.small}>{ui("Prueba larga en curso:") + " "}{clock(elapsed)} {" " + ui("de") + " "}{clock(LONG_TEST_SECONDS)}{ui(". Escucha con atención y no cambies de aplicación.")}</Text>}
       </View>
 
       {awaiting && (
         <View style={styles.card}>
-          <Text style={styles.h3}>Terminó la prueba de {clock(awaiting.seconds)} a {awaiting.bpm} BPM</Text>
-          <Text style={styles.note}>¿Cómo se oyó?</Text>
+          <Text style={styles.h3}>{ui("Terminó la prueba de") + " "}{clock(awaiting.seconds)} {" " + ui("a") + " "}{awaiting.bpm} BPM</Text>
+          <Text style={styles.note}>{ui("¿Cómo se oyó?")}</Text>
           <View style={styles.actions}>
-            <Button label="Parejo" onPress={() => verdict('parejo')} />
-            <Button label="Hubo huecos" variant="secondary" onPress={() => verdict('huecos')} />
-            <Button label="Se arrastró" variant="secondary" onPress={() => verdict('se arrastró')} />
-            <Button label="Sonó desfasado del cursor" variant="secondary" onPress={() => verdict('desfasado del cursor')} />
+            <Button label={ui("Parejo")} onPress={() => verdict(ui("parejo"))} />
+            <Button label={ui("Hubo huecos")} variant="secondary" onPress={() => verdict(ui("huecos"))} />
+            <Button label={ui("Se arrastró")} variant="secondary" onPress={() => verdict(ui("se arrastró"))} />
+            <Button label={ui("Sonó desfasado del cursor")} variant="secondary" onPress={() => verdict(ui("desfasado del cursor"))} />
           </View>
         </View>
       )}
 
       <View style={styles.diag}>
-        <Text style={styles.h3}>Lo que mide</Text>
-        <Text style={styles.small}>Audio: {ctxState} · {rate ? `${rate} Hz` : 'sin abrir'}</Text>
-        <Text style={styles.small}>Ciclos: {stats.cycles} · golpes programados: {stats.scheduled} · pasos saltados: {stats.skipped}</Text>
+        <Text style={styles.h3}>{ui("Lo que mide")}</Text>
+        <Text style={styles.small}>Audio: {ctxState} · {rate ? `${rate} Hz` : ui("sin abrir")}</Text>
+        <Text style={styles.small}>{ui("Ciclos:") + " "}{stats.cycles} {" " + ui("· golpes programados:") + " "}{stats.scheduled} {" " + ui("· pasos saltados:") + " "}{stats.skipped}</Text>
         {report && (
           <Text style={styles.small}>
-            Planificador: {report.pumps} llamadas · media {report.meanGapMs} ms · hueco máx. {report.maxGapMs} ms · congelamientos (&gt; 100 ms): {report.stalls}
+            {ui("Planificador:")}{report.pumps} {" " + ui("llamadas · media") + " "}{report.meanGapMs} {" " + ui("ms · hueco máx.") + " "}{report.maxGapMs} {" " + ui("ms · congelamientos (&gt; 100 ms):") + " "}{report.stalls}
           </Text>
         )}
-        <Text style={styles.small}>Un congelamiento es un momento en que la aplicación tardó más de 100 ms en responder: es lo que provoca un hueco en el sonido.</Text>
+        <Text style={styles.small}>{ui("Un congelamiento es un momento en que la aplicación tardó más de 100 ms en responder: es lo que provoca un hueco en el sonido.")}</Text>
       </View>
 
       {results.length > 0 && (
         <View style={styles.diag}>
-          <Text style={styles.h3}>Resultados (para pasárselos a Claude)</Text>
+          <Text style={styles.h3}>{ui("Resultados (para pasárselos a Claude)")}</Text>
           <Text selectable style={styles.mono}>
             {summary}
           </Text>

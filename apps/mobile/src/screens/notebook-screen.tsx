@@ -1,3 +1,4 @@
+import { useTranslation } from '@lee-conmigo/ui-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useState } from 'react';
 import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
@@ -25,6 +26,8 @@ const lectura = subjectById('lectura');
  * lo sugerido (la misión de hoy) se destaca (docs/13).
  */
 export function NotebookScreen({ profile, model, repository, onBack, onRead }: NotebookScreenProps) {
+  const { t: ui } = useTranslation();
+
   const insets = useSafeAreaInsets();
   const [selectedId, setSelectedId] = useState(model.featured.entry.id);
   const selected = model.stories.find((s) => s.entry.id === selectedId) ?? model.featured;
@@ -34,28 +37,28 @@ export function NotebookScreen({ profile, model, repository, onBack, onRead }: N
   const bannerImage = storyImage(model.featuredStory.cover?.src ?? model.featuredStory.pages[0].illustration.src);
   const minutes = readingMinutesOfWordCount(selected.entry.wordCount);
   const questions = Math.min(3, story.pages.filter((p) => p.checkpoint).length);
-  const cta = selected.resumePage !== null && selected.resumePage > 0 ? `Seguir en la página ${selected.resumePage + 1} ›` : selected.completed ? 'Leer otra vez ›' : 'Empezar ›';
+  const cta = selected.resumePage !== null && selected.resumePage > 0 ? ui("Seguir en la página {0} ›", selected.resumePage + 1) : selected.completed ? ui("Leer otra vez ›") : ui("Empezar ›");
   const layout = useLayout();
 
   // Teléfono (o tablet en vertical): una sola columna que se desplaza — primero la historia elegida, luego el índice.
-  if (layout.narrow || layout.short || layout.portrait) {
+  if (layout.width < 1000 || layout.short || layout.portrait) {
     const g = layout.gutter;
     return (
       <ScrollView style={styles.paperScreen} contentContainerStyle={{ paddingTop: insets.top + 12, paddingBottom: insets.bottom + 24, paddingLeft: insets.left + g, paddingRight: insets.right + g, gap: 14 }}>
         <View style={styles.topRow}>
-          <RoundButton onPress={onBack} label="Volver">
+          <RoundButton onPress={onBack} label={ui("Volver")}>
             <ChevronLeftIcon />
           </RoundButton>
           <GradientView gradient={gradients.subjLectura} style={styles.subjectPill}>
             <Text style={styles.subjectPillText}>
-              {lectura.glyph} {lectura.name}
+              {lectura.glyph} {ui(lectura.name)}
             </Text>
           </GradientView>
           <View style={styles.flex} />
-          <Text style={styles.meta}>Nivel {profile.level}</Text>
+          <Text style={styles.meta}>{ui("Nivel") + " "}{profile.level}</Text>
         </View>
         <Text style={[styles.kicker, { color: colors.subjLectura }]}>
-          HISTORIA {index + 1} DE {model.stories.length}
+          {ui("HISTORIA") + " "}{index + 1} {" " + ui("DE") + " "}{model.stories.length}
         </Text>
         <Text style={[styles.title, styles.titleNarrow]} numberOfLines={3}>
           {story.title}
@@ -63,13 +66,13 @@ export function NotebookScreen({ profile, model, repository, onBack, onRead }: N
         {story.description ? <Text style={styles.desc}>{story.description}</Text> : null}
         {cover && <Image source={cover} style={[styles.cover, { height: Math.min(220, Math.round((layout.width - 2 * g) * 0.5)) }]} resizeMode="cover" />}
         <View style={styles.cards}>
-          <MomentCard title="Leer" detail={`${minutes.min}–${minutes.max} min`} color={colors.phaseAprender} ledge={colors.phaseAprenderLedge} small={layout.phone} />
-          <MomentCard title="Preguntas" detail={questions ? `${questions} ${questions === 1 ? 'pregunta' : 'preguntas'}` : 'Sin preguntas'} color={colors.phaseExplorar} ledge={colors.phaseExplorarLedge} small={layout.phone} />
-          <MomentCard title="Repaso" detail="Por sílabas" color={colors.phasePracticar} ledge={colors.phasePracticarLedge} small={layout.phone} />
+          <MomentCard title={ui("Leer")} detail={`${minutes.min}–${minutes.max} min`} color={colors.phaseAprender} ledge={colors.phaseAprenderLedge} small={layout.phone} />
+          <MomentCard title={ui("Preguntas")} detail={questions ? `${questions} ${questions === 1 ? ui("pregunta") : ui("preguntas")}` : ui("Sin preguntas")} color={colors.phaseExplorar} ledge={colors.phaseExplorarLedge} small={layout.phone} />
+          <MomentCard title={ui("Repaso")} detail={ui("Por sílabas")} color={colors.phasePracticar} ledge={colors.phasePracticarLedge} small={layout.phone} />
         </View>
         <Button label={cta} large onPress={() => onRead(story.id)} />
-        <Text style={styles.footerText}>★ Las palabras que te cuesten vuelven en el repaso.</Text>
-        <Text style={[styles.h3, { marginTop: 8 }]}>Índice</Text>
+        <Text style={styles.footerText}>{ui("★ Las palabras que te cuesten vuelven en el repaso.")}</Text>
+        <Text style={[styles.h3, { marginTop: 8 }]}>{ui("Índice")}</Text>
         <View style={styles.index}>
           {model.stories.map((s, i) => (
             <IndexRow key={s.entry.id} n={i + 1} item={s} selected={s.entry.id === selected.entry.id} suggested={s.entry.id === model.featured.entry.id} onPress={() => setSelectedId(s.entry.id)} />
@@ -85,23 +88,23 @@ export function NotebookScreen({ profile, model, repository, onBack, onRead }: N
         {/* Página izquierda: índice */}
         <View style={styles.page}>
           <View style={styles.topRow}>
-            <RoundButton onPress={onBack} label="Volver">
+            <RoundButton onPress={onBack} label={ui("Volver")}>
               <ChevronLeftIcon />
             </RoundButton>
             <GradientView gradient={gradients.subjLectura} style={styles.subjectPill}>
               <Text style={styles.subjectPillText}>
-                {lectura.glyph} {lectura.name}
+                {lectura.glyph} {ui(lectura.name)}
               </Text>
             </GradientView>
             <View style={styles.flex} />
-            <Text style={styles.meta}>Nivel {profile.level}</Text>
+            <Text style={styles.meta}>{ui("Nivel") + " "}{profile.level}</Text>
           </View>
           <View style={styles.banner}>
             {bannerImage && <Image source={bannerImage} style={FILL} resizeMode="cover" />}
             <LinearGradient colors={['rgba(16,24,64,0)', 'rgba(16,24,64,0.65)']} style={StyleSheet.absoluteFill} />
-            <Text style={styles.bannerText}>Mi cuaderno de lectura</Text>
+            <Text style={styles.bannerText}>{ui("Mi cuaderno de lectura")}</Text>
           </View>
-          <Text style={styles.h3}>Índice</Text>
+          <Text style={styles.h3}>{ui("Índice")}</Text>
           <ScrollView style={styles.flex} contentContainerStyle={styles.index}>
             {model.stories.map((s, i) => (
               <IndexRow key={s.entry.id} n={i + 1} item={s} selected={s.entry.id === selected.entry.id} suggested={s.entry.id === model.featured.entry.id} onPress={() => setSelectedId(s.entry.id)} />
@@ -114,7 +117,7 @@ export function NotebookScreen({ profile, model, repository, onBack, onRead }: N
         {/* Página derecha: la historia elegida */}
         <View style={[styles.page, styles.rightPage]}>
           <Text style={[styles.kicker, { color: colors.subjLectura }]}>
-            HISTORIA {index + 1} DE {model.stories.length}
+            {ui("HISTORIA") + " "}{index + 1} {" " + ui("DE") + " "}{model.stories.length}
           </Text>
           <Text style={styles.title} numberOfLines={2}>
             {story.title}
@@ -126,14 +129,14 @@ export function NotebookScreen({ profile, model, repository, onBack, onRead }: N
           ) : null}
           {cover && <Image source={cover} style={styles.cover} resizeMode="cover" />}
           <View style={styles.cards}>
-            <MomentCard title="Leer" detail={`${minutes.min}–${minutes.max} min`} color={colors.phaseAprender} ledge={colors.phaseAprenderLedge} />
-            <MomentCard title="Preguntas" detail={questions ? `${questions} ${questions === 1 ? 'pregunta' : 'preguntas'}` : 'Sin preguntas'} color={colors.phaseExplorar} ledge={colors.phaseExplorarLedge} />
-            <MomentCard title="Repaso" detail="Por sílabas" color={colors.phasePracticar} ledge={colors.phasePracticarLedge} />
+            <MomentCard title={ui("Leer")} detail={`${minutes.min}–${minutes.max} min`} color={colors.phaseAprender} ledge={colors.phaseAprenderLedge} />
+            <MomentCard title={ui("Preguntas")} detail={questions ? `${questions} ${questions === 1 ? ui("pregunta") : ui("preguntas")}` : ui("Sin preguntas")} color={colors.phaseExplorar} ledge={colors.phaseExplorarLedge} />
+            <MomentCard title={ui("Repaso")} detail={ui("Por sílabas")} color={colors.phasePracticar} ledge={colors.phasePracticarLedge} />
           </View>
           <View style={styles.flex} />
           <View style={styles.footer}>
             <Text style={styles.footerStar}>★</Text>
-            <Text style={styles.footerText}>Las palabras que te cuesten vuelven en el repaso.</Text>
+            <Text style={styles.footerText}>{ui("Las palabras que te cuesten vuelven en el repaso.")}</Text>
             <Button label={cta} onPress={() => onRead(story.id)} />
           </View>
         </View>
@@ -149,7 +152,9 @@ export function NotebookScreen({ profile, model, repository, onBack, onRead }: N
 }
 
 function IndexRow({ n, item, selected, suggested, onPress }: { n: number; item: StoryEntry; selected: boolean; suggested: boolean; onPress: () => void }) {
-  const label = item.completed ? 'Leída' : suggested ? 'Aquí' : '';
+  const { t: ui } = useTranslation();
+
+  const label = item.completed ? ui("Leída") : suggested ? ui("Aquí") : '';
   return (
     <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={item.entry.title} accessibilityState={{ selected }} style={[styles.row, selected && styles.rowSelected]}>
       <View style={[styles.num, item.completed && styles.numDone, suggested && !item.completed && styles.numHere]}>

@@ -43,3 +43,4 @@ export * from './components/ciencia/index.ts';
 
 // ---- Sociedad: lo edita solo la cuenta de Sociedad (docs/14) ----
 export * from './components/sociedad/index.ts';
+export { InterfaceLanguageProvider, useTranslation } from './interface-language.tsx';

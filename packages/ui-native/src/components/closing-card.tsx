@@ -1,3 +1,4 @@
+import { useTranslation } from '../interface-language.tsx';
 import { useState } from 'react';
 import { Image, type ImageSourcePropType, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { FOCUS_FACES, type FocusSelfReport } from '@lee-conmigo/ui-core';
@@ -43,6 +44,8 @@ interface ClosingCardProps {
  * "¿Cómo estuvo tu enfoque?" con 3 caritas (autoevaluación, nunca nota). "Guardar en mi cuaderno" llega con Mi cuaderno (K8).
  */
 export function ClosingCard({ name, stars, reason, stats, starImages, notebook, onAgain, onDone }: ClosingCardProps) {
+  const { t: ui } = useTranslation();
+
   const [focus, setFocus] = useState<FocusSelfReport | undefined>();
   const [writing, setWriting] = useState(false);
   const [idea, setIdea] = useState('');
@@ -55,8 +58,8 @@ export function ClosingCard({ name, stars, reason, stats, starImages, notebook, 
     <View style={styles.scrim} accessibilityViewIsModal>
       <ScrollView style={styles.flex} contentContainerStyle={[styles.center, small && styles.centerSmall]}>
       <View style={[styles.card, small && styles.cardSmall]}>
-        <Text style={[styles.title, small && styles.titleSmall]}>¡Buen trabajo, {name}!</Text>
-        <View style={styles.stars} accessible accessibilityLabel={`${stars} de 3 estrellas ${reason}`}>
+        <Text style={[styles.title, small && styles.titleSmall]}>{ui("¡Buen trabajo,") + " "}{name}!</Text>
+        <View style={styles.stars} accessible accessibilityLabel={ui("{0} de 3 estrellas {1}", stars, reason)}>
           {[0, 1, 2].map((i) =>
             starImages ? (
               <Image key={i} source={i < stars ? (i === 1 ? starImages.big : starImages.full) : starImages.sleep} resizeMode="contain" accessible={false} style={[styles.starImg, i === 1 && styles.starImgBig, small && styles.starImgSmall, small && i === 1 && styles.starImgBigSmall]} />
@@ -68,20 +71,20 @@ export function ClosingCard({ name, stars, reason, stats, starImages, notebook, 
           )}
         </View>
         <Text style={styles.reason}>
-          {'★'.repeat(stars)} {reason}
+          {'★'.repeat(stars)} {ui(reason)}
         </Text>
         <View style={styles.stats}>
           {stats.map((s) => (
             <View key={s.label} style={[styles.stat, small && styles.statSmall]}>
-              <Text style={styles.statLabel}>{s.label}</Text>
+              <Text style={styles.statLabel}>{ui(s.label)}</Text>
               <Text style={[styles.statValue, small && styles.statValueSmall]}>{s.value}</Text>
             </View>
           ))}
         </View>
         <View style={[styles.focus, small && styles.focusSmall]}>
-          <Text style={[styles.focusText, small && styles.focusTextSmall]}>¿Cómo estuvo tu enfoque?</Text>
+          <Text style={[styles.focusText, small && styles.focusTextSmall]}>{ui("¿Cómo estuvo tu enfoque?")}</Text>
           {FOCUS_FACES.map((f) => (
-            <Pressable key={f.value} onPress={() => setFocus(f.value)} accessibilityRole="radio" accessibilityLabel={f.label} accessibilityState={{ selected: focus === f.value }} style={[styles.face, focus === f.value && styles.faceOn]}>
+            <Pressable key={f.value} onPress={() => setFocus(f.value)} accessibilityRole="radio" accessibilityLabel={ui(f.label)} accessibilityState={{ selected: focus === f.value }} style={[styles.face, focus === f.value && styles.faceOn]}>
               <Text style={styles.faceGlyph}>{f.glyph}</Text>
             </Pressable>
           ))}
@@ -111,10 +114,10 @@ export function ClosingCard({ name, stars, reason, stats, starImages, notebook, 
         {savedLabel && <Text style={styles.notebookSaved} accessibilityLiveRegion="polite">{savedLabel}</Text>}
         <View style={[styles.actions, narrow && styles.actionsNarrow]}>
           <View style={styles.flex}>
-            <Button label="Leer de nuevo" variant="secondary" onPress={onAgain} />
+            <Button label={ui("Leer de nuevo")} variant="secondary" onPress={onAgain} />
           </View>
           <View style={styles.flex}>
-            <Button label="Listo" onPress={() => onDone(focus)} />
+            <Button label={ui("Listo")} onPress={() => onDone(focus)} />
           </View>
         </View>
       </View>

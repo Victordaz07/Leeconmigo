@@ -15,6 +15,7 @@ export interface KV {
 
 const PREFIX = 'kitewise.v1.';
 export const KEYS = {
+  language: 'kitewise.v1.language',
   profiles: `${PREFIX}profiles`,
   pin: `${PREFIX}pin`,
   /** Recordatorios locales (Modo padres). */
@@ -146,6 +147,7 @@ export function eraseEverything(kv: KV, childIds: string[]) {
   kv.remove(KEYS.reminders);
   kv.remove(KEYS.legal);
   kv.remove(KEYS.migrations);
+  kv.remove(KEYS.language);
 }
 
 /** "Borrar el progreso" de un niño (docs/12 §6): Lectura, Matemáticas y las demás materias. */
