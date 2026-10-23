@@ -54,7 +54,7 @@ Inventario de escenas y fragmentos por variante: [CATALOG.json](CATALOG.json).
 - Visor: 12 casos ES/EN en 390×844, 844×390, 800×1280, 1280×800, 853×690 y 690×853; botones, límites, pellizco con eventos táctiles de Chromium, arrastre, giro sin recargar, cierre, Escape y pronunciación simulada posterior. `ZOOM-VERIFICATION.json`, capturas en `previews/zoom-*`.
 - 49 recorridos completos (cada familia ES/EN disponible, nivel mayor) en cuatro tamaños, 991 fragmentos y 145 preguntas: ayuda/pronunciación simulada, definición/sinónimo/ejemplo cuando existen, reintento, repaso, reanudación tras recargar y un único cierre guardado. Exportación Android: 2.255 módulos / 501 recursos, bundle Hermes generado. Resultados: `VERIFICATION.json`.
 
-Verificación de navegador y geometría nativa; no sustituye una prueba física de gestos/TTS audible en el Fold. Esta tarea no genera ni publica un APK: la descarga anterior 0.1.1 todavía no incluye estos cambios.
+Verificación de navegador y geometría nativa; no sustituye una prueba física de gestos/TTS audible en el Fold. LE-08/09 prepararon el código; LE-10 genera y publica la actualización solicitada, descrita abajo.
 
 Para repetir (Expo web en `http://localhost:8082`):
 
@@ -65,3 +65,11 @@ npm run test:native-layout
 node scripts/illustration-zoom-smoke.mjs
 node scripts/reading-pilot-smoke.mjs http://localhost:8082 <familia>
 ```
+
+## APK 0.1.2 publicado y verificado (LE-10)
+
+[Descargar Kitewise-lectura.apk](https://github.com/Victordaz07/Leeconmigo/releases/download/apk-lectura-2026-10-22-catalogo-zoom/Kitewise-lectura.apk) · [Publicación](https://github.com/Victordaz07/Leeconmigo/releases/tag/apk-lectura-2026-10-22-catalogo-zoom). Instalar sobre la versión anterior para conservar datos, sin desinstalar.
+
+Fuente `a7f3942911236c835029407365296878a684ae7b`; `com.kitewise.app`, versión 0.1.2 / código 3. CI `39897427468` / job `120230978328` aprobado en 19m43s. Descarga HTTP 200 completa: 335.490.378 bytes, SHA-256 `bc90cccb2a4325c4a8c6164a16ed5d807c7a6663a9c3fd3f76ba1e79cb3e8a3b`, coincidente con el checksum publicado y el digest de GitHub. Firma v2 y alineación ZIP de 16 KB verificadas; mismo certificado que 0.1.1, cuatro arquitecturas y sin modo debug. Verificados por hash 166 recursos de ilustración y tres modelos originales, además de los nombres de las 25 ediciones y el control de zoom dentro del bundle Hermes, distinto del anterior.
+
+Detalle: `APK-VERIFICATION.json`. Release para pruebas familiares con la misma llave de Expo; no es una publicación en Google Play. Gestos y TTS audible del Fold físico pendientes de comprobación.
