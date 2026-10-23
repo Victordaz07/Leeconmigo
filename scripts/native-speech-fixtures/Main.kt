@@ -24,7 +24,7 @@ fun main() {
     AudioRecord.failInitialization = true
     AudioRecord.released = false
     val failed = ExpoAudioRecorder(android.content.Context(), null)
-    failed.start()
+    check(runCatching { failed.start() }.isFailure) { "Uninitialized microphone reported successful startup" }
     failed.stop()
     check(AudioRecord.released) { "Uninitialized microphone leaked" }
     val originalHandler = Thread.getDefaultUncaughtExceptionHandler()

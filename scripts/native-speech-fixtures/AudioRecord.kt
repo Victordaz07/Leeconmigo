@@ -16,7 +16,7 @@ class AudioRecord(source: Int, rate: Int, channel: Int, encoding: Int, size: Int
     fun read(data: ByteArray, offset: Int, size: Int, mode: Int = 0): Int {
         reading.countDown()
         check(stopped.await(3, TimeUnit.SECONDS)) { "Test did not interrupt read" }
-        // Simulate the Android implementation throwing when release interrupts read.
+        // Inject a platform exception while release interrupts a pending read.
         throw IllegalStateException("Recorder released during pending read")
     }
     companion object {

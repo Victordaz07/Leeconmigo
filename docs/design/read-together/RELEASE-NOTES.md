@@ -1,6 +1,6 @@
 Kitewise 0.2.1 · estabilidad al iniciar Leer juntos.
 
-Se protegen errores nativos de inicio y parada del reconocedor Android y del micrófono. Los fallos de consulta de idiomas vuelven a la interfaz en vez de escapar del hilo principal. Se corrigen la liberación tras una inicialización fallida y errores de lectura durante la parada.
+Se protegen errores nativos de inicio y parada del reconocedor Android y del micrófono. Los fallos de consulta de idiomas vuelven a la interfaz en vez de escapar del hilo principal. Un micrófono que no se inicializa ya no aparenta haber arrancado: se devuelve el error y se libera. También se contienen errores de lectura durante la parada.
 
 La prueba del micrófono de Ajustes conserva Android/Whisper y añade, si existe, un informe técnico local del último cierre inesperado. Incluye únicamente versión, clases, métodos y líneas del programa: nunca mensajes de excepción, transcripciones ni audio. No se envía automáticamente. Puede compartirse una captura para identificar el fallo si persiste. No detecta todos los tipos de cierre del sistema.
 

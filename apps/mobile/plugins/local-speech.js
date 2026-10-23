@@ -60,6 +60,7 @@ function hardenSpeech(projectRoot) {
     ['tempFileOutputStream.flush()', 'tempFileOutputStream?.flush()'],
     ['tempFileOutputStream.close()', 'tempFileOutputStream?.close()'],
   ]) recorder = replace(recorder, before, after);
+  recorder = replace(recorder, '            if (this.state != AudioRecord.STATE_INITIALIZED) {\n                return\n            }', '            check(this.state == AudioRecord.STATE_INITIALIZED) { "Microphone could not initialize" }');
   recorder = replace(recorder, '    private var isRecordingAudio = false', '    @Volatile private var isRecordingAudio = false');
   recorder = replace(recorder, '    private var audioRecorder: AudioRecord? = null', '    @Volatile private var audioRecorder: AudioRecord? = null');
   recorder = replace(recorder, '        audioRecorder?.stop()\n        audioRecorder?.release()\n        audioRecorder = null', `        // Detach before stopping: a worker may still hold a read in progress.

@@ -6,7 +6,7 @@ Victor informa: entrar en un cuento → Leer juntos → unos dos segundos escuch
 
 El plugin reproducible de `expo-speech-recognition@57.0.0` ahora protege la consulta de capacidades publicada en el hilo principal: los errores de creación/consulta rechazan la promesa para permitir la recuperación de la interfaz. Sus callbacks usan el ejecutor principal, sin crear un ejecutor privado por consulta. La limpieza previa al inicio también entra en el bloque de error del servicio.
 
-La captura publica sus indicadores entre hilos (`@Volatile`), separa el objeto antes de detenerlo, libera un grabador aunque `stop` falle por no estar inicializado, y contiene `IllegalStateException` en una lectura interrumpida. El código anterior dejaba escapar esos errores. Son defectos de contención comprobados con dobles de ciclo de vida; **no una reproducción física del fallo del Fold**.
+La captura publica sus indicadores entre hilos (`@Volatile`), separa el objeto antes de detenerlo, rechaza inmediatamente un grabador no inicializado (antes devolvía éxito sin capturar), lo libera aunque `stop` falle por ese estado, y contiene `IllegalStateException` en una lectura interrumpida. El código anterior dejaba escapar esos errores. Son defectos de contención comprobados con dobles de ciclo de vida; **no una reproducción física del fallo del Fold**.
 
 La primera hipótesis sobre `SpeechRecognizer.destroy` desde un hilo secundario no se considera causa demostrada. La implementación AOSP consultada (`SpeechRecognizerImpl.destroy`) encola su trabajo. Usar el hilo principal sigue siendo una mejora de coherencia, no evidencia de la excepción del usuario.
 
