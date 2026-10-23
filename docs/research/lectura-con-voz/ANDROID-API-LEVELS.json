@@ -1,0 +1,72 @@
+{
+  "source": "Official installed Android SDK platform android-36/data/api-versions.xml",
+  "sourceSha256": "923f7e6367759e127679b6b5a4156ee801100e3cc07dc1d99cb811e791e45435",
+  "method": "Parse since attributes from official SDK metadata; no device runtime test.",
+  "entries": [
+    {
+      "class": "android/speech/RecognitionListener",
+      "name": "onSegmentResults(Landroid/os/Bundle;)V",
+      "since": "33"
+    },
+    {
+      "class": "android/speech/RecognizerIntent",
+      "name": "EXTRA_AUDIO_SOURCE",
+      "since": "33"
+    },
+    {
+      "class": "android/speech/RecognizerIntent",
+      "name": "EXTRA_AUDIO_SOURCE_CHANNEL_COUNT",
+      "since": "33"
+    },
+    {
+      "class": "android/speech/RecognizerIntent",
+      "name": "EXTRA_AUDIO_SOURCE_ENCODING",
+      "since": "33"
+    },
+    {
+      "class": "android/speech/RecognizerIntent",
+      "name": "EXTRA_AUDIO_SOURCE_SAMPLING_RATE",
+      "since": "33"
+    },
+    {
+      "class": "android/speech/RecognizerIntent",
+      "name": "EXTRA_REQUEST_WORD_CONFIDENCE",
+      "since": "34"
+    },
+    {
+      "class": "android/speech/RecognizerIntent",
+      "name": "EXTRA_REQUEST_WORD_TIMING",
+      "since": "34"
+    },
+    {
+      "class": "android/speech/RecognizerIntent",
+      "name": "EXTRA_SEGMENTED_SESSION",
+      "since": "33"
+    },
+    {
+      "class": "android/speech/SpeechRecognizer",
+      "name": "checkRecognitionSupport(Landroid/content/Intent;Ljava/util/concurrent/Executor;Landroid/speech/RecognitionSupportCallback;)V",
+      "since": "33"
+    },
+    {
+      "class": "android/speech/SpeechRecognizer",
+      "name": "createOnDeviceSpeechRecognizer(Landroid/content/Context;)Landroid/speech/SpeechRecognizer;",
+      "since": "31"
+    },
+    {
+      "class": "android/speech/SpeechRecognizer",
+      "name": "isOnDeviceRecognitionAvailable(Landroid/content/Context;)Z",
+      "since": "31"
+    },
+    {
+      "class": "android/speech/SpeechRecognizer",
+      "name": "triggerModelDownload(Landroid/content/Intent;)V",
+      "since": "33"
+    },
+    {
+      "class": "android/speech/SpeechRecognizer",
+      "name": "triggerModelDownload(Landroid/content/Intent;Ljava/util/concurrent/Executor;Landroid/speech/ModelDownloadListener;)V",
+      "since": "34"
+    }
+  ]
+}

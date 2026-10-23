@@ -1,0 +1,1936 @@
+{
+  "clientDate": "2026-10-22",
+  "timezone": "America/Los_Angeles",
+  "compiledAtUtc": "2026-10-23T06:00:48.185968+00:00",
+  "method": "Read-only HTTP retrieval, official source mirrors, registry tarball integrity verification, static repo inspection and text-only matcher reproduction. No voice recording or cloud audio calls.",
+  "citations": [
+    {
+      "citation": "S01",
+      "title": "Android SpeechRecognizer: código y JavaDocs AOSP",
+      "evidence": "API oficial; fábrica local, disponibilidad, ciclo de vida y advertencia de uso continuo. No prueba soporte de cada teléfono.",
+      "id": "android-speechrecognizer",
+      "url": "https://raw.githubusercontent.com/aosp-mirror/platform_frameworks_base/master/core/java/android/speech/SpeechRecognizer.java",
+      "status": 200,
+      "bytes": 25594,
+      "sha256": "c8baaee0455c3642729d75dba5fa28b1939c002822974087917bd89cec0f4b4a"
+    },
+    {
+      "citation": "S02",
+      "title": "Android RecognizerIntent: opciones y condiciones",
+      "evidence": "API oficial; preferencia offline, audio source, segmentación, sesgo y opciones de palabras. Varias opciones dependen del proveedor.",
+      "id": "android-intent",
+      "url": "https://raw.githubusercontent.com/aosp-mirror/platform_frameworks_base/master/core/java/android/speech/RecognizerIntent.java",
+      "status": 200,
+      "bytes": 33117,
+      "sha256": "551b1b1b6c19023042990f891c17bacf82d9f7b78ba4a041457f5b0270c8fd45"
+    },
+    {
+      "citation": "S03",
+      "title": "Android RecognitionListener",
+      "evidence": "API oficial; eventos parciales, finales y segmentados. No garantiza frecuencia de parciales.",
+      "id": "android-listener",
+      "url": "https://raw.githubusercontent.com/aosp-mirror/platform_frameworks_base/master/core/java/android/speech/RecognitionListener.java",
+      "status": 200,
+      "bytes": 6979,
+      "sha256": "cf3d144c6a11adb379a63aeacee6072bdeab3668bf5001063659a61351237d1c"
+    },
+    {
+      "citation": "S04",
+      "title": "Android RecognitionSupport",
+      "evidence": "API oficial; diferencia de idiomas instalados, soportados, pendientes y online.",
+      "id": "recognition-support",
+      "url": "https://raw.githubusercontent.com/aosp-mirror/platform_frameworks_base/master/core/java/android/speech/RecognitionSupport.java",
+      "status": 200,
+      "bytes": 16190,
+      "sha256": "c4d130a55fd6719bb827633e360b4b11cc00dc32b2a0a8c207c6721bbe5c140e"
+    },
+    {
+      "citation": "S05",
+      "title": "Android RecognitionPart",
+      "evidence": "API oficial; representación de palabras y metadatos. No es una evaluación fonética.",
+      "id": "recognition-part",
+      "url": "https://raw.githubusercontent.com/aosp-mirror/platform_frameworks_base/master/core/java/android/speech/RecognitionPart.java",
+      "status": 200,
+      "bytes": 19709,
+      "sha256": "f2e57de87335584b5893437d434cd03d4bbd7a4f2e7b9086edad9200fa2c2fb4"
+    },
+    {
+      "citation": "S06",
+      "title": "expo-speech-recognition: documentación del proyecto",
+      "evidence": "Documentación del wrapper; API, compatibilidad SDK 57, parciales/segmentos, grabación y limitaciones por plataforma. Leer junto al código versionado.",
+      "id": "expo-recognition",
+      "url": "https://raw.githubusercontent.com/jamsch/expo-speech-recognition/main/README.md",
+      "status": 200,
+      "bytes": 68453,
+      "sha256": "5957ad79d94ac813246763c3c21e69824db6632654f89c79f779debb165d3c12"
+    },
+    {
+      "citation": "S07",
+      "title": "Registro npm: expo-speech-recognition 57.0.0",
+      "evidence": "Metadatos de versión, integridad SHA-512, tarball y gitHead. Verificado sin instalar el paquete.",
+      "id": "expo57-registry",
+      "url": "https://registry.npmjs.org/expo-speech-recognition/57.0.0",
+      "status": 200,
+      "bytes": 2653,
+      "sha256": "8df4e150be1564935194617ec4f417fab6ddd6353932c80d82bd68cfc1d149ab"
+    },
+    {
+      "citation": "S08",
+      "title": "Artefacto publicado expo-speech-recognition 57.0.0",
+      "evidence": "Tarball inspeccionado; integridad comparada con npm; sin ejecución. Contiene la versión concreta auditada, no solo main.",
+      "id": "expo57-tarball",
+      "url": "https://registry.npmjs.org/expo-speech-recognition/-/expo-speech-recognition-57.0.0.tgz",
+      "status": 200,
+      "bytes": 118105,
+      "sha256": "189a055bd7dec9539db16ebd2c6e3cda764bd8b831cd4665643762526952b6f5"
+    },
+    {
+      "citation": "S09",
+      "title": "ExpoSpeechService.kt fijado al commit de 57.0.0",
+      "evidence": "Código Android auditado: fábrica local desde API 33, alternativas anteriores, sesiones y mensajes de diagnóstico.",
+      "id": "pinned-expo-service-url",
+      "url": "https://raw.githubusercontent.com/jamsch/expo-speech-recognition/996258b7473ee723e9ffb5bb73d8694f091254ba/android/src/main/java/expo/modules/speechrecognition/ExpoSpeechService.kt",
+      "status": 200,
+      "bytes": 30129,
+      "sha256": "bb311000553445383325d76d6f156a937bbcb76503a8e8088abfb9d0c7d89da1"
+    },
+    {
+      "citation": "S10",
+      "title": "ExpoAudioRecorder.kt fijado al commit de 57.0.0",
+      "evidence": "Código de captura: pipe, creación de temporal y escritura PCM condicionada a outputFilePath. persist false no escribe muestras en esa rama, aunque crea un archivo vacío.",
+      "id": "pinned-expo-recorder-url",
+      "url": "https://raw.githubusercontent.com/jamsch/expo-speech-recognition/996258b7473ee723e9ffb5bb73d8694f091254ba/android/src/main/java/expo/modules/speechrecognition/ExpoAudioRecorder.kt",
+      "status": 200,
+      "bytes": 8699,
+      "sha256": "fe986fc34a41e08f9754413ee2a28b603ac1ea06be84c00f1da549301754bb9e"
+    },
+    {
+      "citation": "S11",
+      "title": "ExpoSpeechRecognizer.swift fijado al commit de 57.0.0",
+      "evidence": "Código iOS: asignación condicional de requiresOnDeviceRecognition cuando el reconocedor declara soporte. Contrastar con issue 169.",
+      "id": "pinned-expo-ios-url",
+      "url": "https://raw.githubusercontent.com/jamsch/expo-speech-recognition/996258b7473ee723e9ffb5bb73d8694f091254ba/ios/ExpoSpeechRecognizer.swift",
+      "status": 200,
+      "bytes": 34204,
+      "sha256": "eba1f22d1d43d3be0d3baadf1231fda424ac7211b359043ad5e70a3a0745f142"
+    },
+    {
+      "citation": "S12",
+      "title": "whisper.rn: documentación y ejemplos",
+      "evidence": "Binding nativo y ejemplo realtime; es necesario separar API disponible de la ruta que hoy usa Kitewise.",
+      "id": "whisper-rn",
+      "url": "https://raw.githubusercontent.com/mybigday/whisper.rn/main/README.md",
+      "status": 200,
+      "bytes": 18435,
+      "sha256": "40c8c93ed2a0e25480d5d5b216396cf0e137d4c36eff491669035f50835cbc0c"
+    },
+    {
+      "citation": "S13",
+      "title": "Registro npm: versión estable de whisper.rn",
+      "evidence": "Al consultar latest devolvió 0.7.4. Una corrección fusionada en main no queda por eso incluida en esta versión.",
+      "id": "whisper-rn-npm-latest",
+      "url": "https://registry.npmjs.org/whisper.rn/latest",
+      "status": 200,
+      "bytes": 4083,
+      "sha256": "78ae03f85f513ef6d16400e33f34ddbd8745b0e0b10a562c0de46b97c67cde22"
+    },
+    {
+      "citation": "S14",
+      "title": "whisper.cpp",
+      "evidence": "Motor local, plataformas y modelos; no implica por sí solo latencia de palabra ni calidad infantil.",
+      "id": "whisper-cpp",
+      "url": "https://raw.githubusercontent.com/ggml-org/whisper.cpp/master/README.md",
+      "status": 200,
+      "bytes": 40988,
+      "sha256": "43451813ec96b5ea286c6d676f467bdffb053224c110c257ce3d67d911e774e7"
+    },
+    {
+      "citation": "S15",
+      "title": "Whisper: ficha de modelo oficial",
+      "evidence": "Limitaciones, alucinaciones, variación entre lenguas y grupos. No evalúa nuestro Fold.",
+      "id": "whisper-card",
+      "url": "https://raw.githubusercontent.com/openai/whisper/main/model-card.md",
+      "status": 200,
+      "bytes": 7307,
+      "sha256": "3c2dc15e0c4bf2f1067db8530b1ecd6675abb431c4bc09fad3bc4453434f3333"
+    },
+    {
+      "citation": "S16",
+      "title": "WhisperStreaming",
+      "evidence": "Técnicas de acuerdo local y streaming sobre Whisper; declara su reemplazo por SimulStreaming y un resultado de 3,3 s en su escenario.",
+      "id": "whisper-streaming",
+      "url": "https://raw.githubusercontent.com/ufal/whisper_streaming/main/README.md",
+      "status": 200,
+      "bytes": 17011,
+      "sha256": "7b68e94644904bb38ab2353f56369ef3f68379259161517dc4fb31c91ce92655"
+    },
+    {
+      "citation": "S17",
+      "title": "SimulStreaming",
+      "evidence": "Proyecto posterior de streaming; implementación/entorno no equivalen a un SDK Android ya integrado.",
+      "id": "simulstreaming",
+      "url": "https://raw.githubusercontent.com/ufal/SimulStreaming/main/README.md",
+      "status": 200,
+      "bytes": 29778,
+      "sha256": "ed0ce81b97d5c2f24232fb318076d3707d6ad965a97df2a9463a163bbeb32cc2"
+    },
+    {
+      "citation": "S18",
+      "title": "Silero VAD",
+      "evidence": "Detector de actividad de voz; no determina si el niño leyó el cuento o si un fonema fue correcto.",
+      "id": "silero",
+      "url": "https://raw.githubusercontent.com/snakers4/silero-vad/master/README.md",
+      "status": 200,
+      "bytes": 9725,
+      "sha256": "cd0ee56c91b8042e62a714c0c94bc8b74dbea127a483e390f8033bb8ec8cec78"
+    },
+    {
+      "citation": "S19",
+      "title": "Vosk API",
+      "evidence": "Runtime de reconocimiento local. El rendimiento y la licencia de cada modelo requieren revisión separada.",
+      "id": "vosk",
+      "url": "https://raw.githubusercontent.com/alphacep/vosk-api/master/README.md",
+      "status": 200,
+      "bytes": 1107,
+      "sha256": "5f56ab2addced6c3655d22dbeeaf05dd5fc75ab9aa8e5e6a9f18b622fe68e5bb"
+    },
+    {
+      "citation": "S20",
+      "title": "Vosk: ejemplo oficial Android",
+      "evidence": "Ejemplo de integración y ciclo de reconocimiento local; no es un benchmark infantil.",
+      "id": "vosk-streaming-android",
+      "url": "https://raw.githubusercontent.com/alphacep/vosk-android-demo/master/app/src/main/java/org/vosk/demo/VoskActivity.java",
+      "status": 200,
+      "bytes": 9146,
+      "sha256": "83c371d0ca278e67829dcebc9e6e3ebe1124f1645db4265c282131e5600667c0"
+    },
+    {
+      "citation": "S21",
+      "title": "Vosk: licencia del código",
+      "evidence": "Apache-2.0 del código consultado; no generalizar a todos los pesos.",
+      "id": "vosk-license",
+      "url": "https://raw.githubusercontent.com/alphacep/vosk-api/master/COPYING",
+      "status": 200,
+      "bytes": 10173,
+      "sha256": "bb618af833c817ab01c1564bd3ec75ba4b4f9cf30910a4a2168e30a674ee8cc6"
+    },
+    {
+      "citation": "S22",
+      "title": "Sherpa-ONNX",
+      "evidence": "Runtime y familias de modelos. Distinguir capacidades del runtime de un modelo específico.",
+      "id": "sherpa-onnx",
+      "url": "https://raw.githubusercontent.com/k2-fsa/sherpa-onnx/master/README.md",
+      "status": 200,
+      "bytes": 58648,
+      "sha256": "e9e425854ec9c1c5f8d18cbc041e2590a6e875ec69b90951f95e4d3cfdfa1ed5"
+    },
+    {
+      "citation": "S23",
+      "title": "react-native-sherpa-onnx: wrapper comunitario",
+      "evidence": "TurboModule, modelos y opciones. Compatibilidad con Kitewise y madurez deben probarse.",
+      "id": "sherpa-rn-readme",
+      "url": "https://raw.githubusercontent.com/XDcobra/react-native-sherpa-onnx/main/README.md",
+      "status": 200,
+      "bytes": 27091,
+      "sha256": "e7e92d290f1bb997a1eeb2fd5b152c2d0f3aa6094c4fba54a5c6b63a9c2d7e6c"
+    },
+    {
+      "citation": "S24",
+      "title": "Wrapper Sherpa RN: guía de streaming",
+      "evidence": "Tipos/configuración de streaming y entradas. No demuestra soporte español infantil de cualquier checkpoint.",
+      "id": "sherpa-streaming-rn",
+      "url": "https://raw.githubusercontent.com/XDcobra/react-native-sherpa-onnx/main/docs/stt-streaming.md",
+      "status": 200,
+      "bytes": 13551,
+      "sha256": "1845cfe827f8e98b117d9fdaff8c3eead5efce82cded03fe38390a2acc616128"
+    },
+    {
+      "citation": "S25",
+      "title": "Sherpa-ONNX: licencia del código",
+      "evidence": "Apache-2.0. Revisar también modelos y dependencias.",
+      "id": "sherpa-license",
+      "url": "https://raw.githubusercontent.com/k2-fsa/sherpa-onnx/master/LICENSE",
+      "status": 200,
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "citation": "S26",
+      "title": "Moonshine Voice: documentación del proyecto",
+      "evidence": "Toolkit local, bindings y alcance declarado. Sus afirmaciones comparativas no se tratan como resultados independientes.",
+      "id": "moonshine",
+      "url": "https://raw.githubusercontent.com/moonshine-ai/moonshine/main/README.md",
+      "status": 200,
+      "bytes": 2636,
+      "sha256": "d666f3f97157caf3e769e2555e9b2929a3dbb25a3e123efff950f4fd346f8904"
+    },
+    {
+      "citation": "S27",
+      "title": "Moonshine: catálogo de modelos disponible",
+      "evidence": "Declara Tiny/Small Streaming EN/ES y licencias. WER del catálogo no es precisión infantil del Fold.",
+      "id": "moonshine-available-models",
+      "url": "https://raw.githubusercontent.com/moonshine-ai/moonshine/main/docs/models/available-models.md",
+      "status": 200,
+      "bytes": 5014,
+      "sha256": "1d0fbcd81c57311023766d9f6021bb1b25b58bc16386ef2517f3cfd67ef903d6"
+    },
+    {
+      "citation": "S28",
+      "title": "Moonshine: metodología y precisión publicada",
+      "evidence": "Paneles, diferencias de métricas/condiciones y cuantización; importante para no comparar cifras incompatibles.",
+      "id": "moonshine-accuracy",
+      "url": "https://raw.githubusercontent.com/moonshine-ai/moonshine/main/docs/models/accuracy.md",
+      "status": 200,
+      "bytes": 8826,
+      "sha256": "b1f73052c143a5a2ef1cb0119b2f7d51fed21bffcb146a14880f16ef5960b064"
+    },
+    {
+      "citation": "S29",
+      "title": "Moonshine: licencia actual y excepciones de modelos",
+      "evidence": "Streaming MIT frente a modelos antiguos no ingleses enumerados bajo Community. Elegir artefacto preciso.",
+      "id": "moonshine-license",
+      "url": "https://raw.githubusercontent.com/moonshine-ai/moonshine/main/LICENSE",
+      "status": 200,
+      "bytes": 14180,
+      "sha256": "fa7d1174dd8af6a7cd280be20b80d10095ed4c19b5b20b61a7715c3ad790dc5f"
+    },
+    {
+      "citation": "S30",
+      "title": "Moonshine: build del binding Android",
+      "evidence": "Declara minSdk 26 y tres ABIs. Nuestra app usa minSdk 24 y cuatro ABIs: integración no validada.",
+      "id": "moonshine-android-binding",
+      "url": "https://raw.githubusercontent.com/moonshine-ai/moonshine/main/language-bindings/android/build.gradle.kts",
+      "status": 200,
+      "bytes": 4782,
+      "sha256": "78c22e83260b0428b07067b0fb9e6638c5a82c706646a8be4f6f4f24398c22eb"
+    },
+    {
+      "citation": "S31",
+      "title": "Moonshine: adaptación de dominio",
+      "evidence": "Contexto y personalización; no permite inferir que texto inducido pruebe lectura correcta.",
+      "id": "moonshine-customization",
+      "url": "https://raw.githubusercontent.com/moonshine-ai/moonshine/main/docs/models/domain-customization.md",
+      "status": 200,
+      "bytes": 26188,
+      "sha256": "013e71ce694a62f7c06cf83baafd97d34add10e5b8c96bac0a417120189eae73"
+    },
+    {
+      "citation": "S32",
+      "title": "Google ML Kit GenAI Speech: muestra oficial",
+      "evidence": "Existencia del ejemplo y flujo de disponibilidad/descarga. Documentación completa del producto no accesible.",
+      "id": "mlkit-speech-readme",
+      "url": "https://raw.githubusercontent.com/googlesamples/mlkit/master/android/speech/README.md",
+      "status": 200,
+      "bytes": 1361,
+      "sha256": "75d1cd8d03c9b994cc179fb6b05b461c3b413b148008c7a2a881cf1a8ff0a4c8"
+    },
+    {
+      "citation": "S33",
+      "title": "ML Kit: actividad de reconocimiento de voz",
+      "evidence": "Parciales/finales, checkStatus, modos y rutas fromMic/fromPfd; la muestra con descriptor escribe PCM temporal.",
+      "id": "mlkit-speech-activity",
+      "url": "https://raw.githubusercontent.com/googlesamples/mlkit/master/android/speech/app/src/main/java/com/google/mlkit/genai/speech/demo/SpeechRecognitionActivity.kt",
+      "status": 200,
+      "bytes": 16748,
+      "sha256": "0f23c0c79b9ce05692e1e4b929eb384ad875d0b5693e31223add038b6b17d589"
+    },
+    {
+      "citation": "S34",
+      "title": "ML Kit Speech: dependencia del ejemplo",
+      "evidence": "La muestra utiliza genai-speech-recognition 1.0.0-alpha1. No es una garantía de estabilidad productiva.",
+      "id": "mlkit-speech-build",
+      "url": "https://raw.githubusercontent.com/googlesamples/mlkit/master/android/speech/app/build.gradle",
+      "status": 200,
+      "bytes": 2453,
+      "sha256": "45c1c100cbfb84e40c21112d89b1304f182ee139bad9d4b7e5d1e5c25086efd0"
+    },
+    {
+      "citation": "S35",
+      "title": "ML Kit Speech: selector de idiomas/modos",
+      "evidence": "El selector incluye es-US, es-ES y en-US. Un selector no es una matriz comprobada de soporte en el Fold.",
+      "id": "mlkit-speech-locales",
+      "url": "https://raw.githubusercontent.com/googlesamples/mlkit/master/android/speech/app/src/main/res/values/arrays.xml",
+      "status": 200,
+      "bytes": 1621,
+      "sha256": "cabc8d623c7111b01c9aaf3afc63a988ed86a172efeeccca9bc00a0b4b4cbedd"
+    },
+    {
+      "citation": "S36",
+      "title": "Picovoice Cheetah",
+      "evidence": "STT streaming local con inglés/español declarados y AccessKey. Condiciones comerciales y red de licencia no verificadas.",
+      "id": "picovoice-cheetah",
+      "url": "https://raw.githubusercontent.com/Picovoice/cheetah/master/README.md",
+      "status": 200,
+      "bytes": 24126,
+      "sha256": "6689bf9383f3621d2a7207f0cc4a6132779a6a5e2a27724997a24fbee70ac564"
+    },
+    {
+      "citation": "S37",
+      "title": "Picovoice Leopard",
+      "evidence": "Alternativa local de transcripción por bloques. No confundir con streaming de Cheetah.",
+      "id": "picovoice-leopard",
+      "url": "https://raw.githubusercontent.com/Picovoice/leopard/master/README.md",
+      "status": 200,
+      "bytes": 21989,
+      "sha256": "bf9246cffd7e41b670f29c76ade6431b9593611613e344ebc4fab23d3760d571"
+    },
+    {
+      "citation": "S38",
+      "title": "Azure: muestra oficial Python de Pronunciation Assessment",
+      "evidence": "Texto de referencia, miscue, granularidad, prosodia y distintas modalidades; muestra conectada al servicio.",
+      "id": "azure-pronunciation-code",
+      "url": "https://raw.githubusercontent.com/Azure-Samples/cognitive-services-speech-sdk/master/scenarios/python/console/language-learning/pronunciation_assessment.py",
+      "status": 200,
+      "bytes": 23550,
+      "sha256": "2d001527a2fd6962df3dbfbb46a01a66e9c02ccfad4d6138e9b810bdccea9387"
+    },
+    {
+      "citation": "S39",
+      "title": "Azure: evaluación de pronunciación continua",
+      "evidence": "Muestra oficial de tratamiento de resultados y comparación en lectura larga. Capacidades por idioma se deben verificar.",
+      "id": "azure-pronunciation-continuous",
+      "url": "https://raw.githubusercontent.com/Azure-Samples/cognitive-services-speech-sdk/master/scenarios/javascript/node/language-learning/pronunciationAssessmentContinue.js",
+      "status": 200,
+      "bytes": 13024,
+      "sha256": "752369c0c96670720a2e6c2936e7dac4e836c7333de81620602c5afd87aac3fa"
+    },
+    {
+      "citation": "S40",
+      "title": "Azure: documentación de fonemas pronunciados",
+      "evidence": "Distingue hipótesis acústicas/fonéticas y evaluación. No valida diagnóstico infantil.",
+      "id": "azure-pronunciation-phonemes",
+      "url": "https://raw.githubusercontent.com/Azure-Samples/cognitive-services-speech-sdk/master/docs/pronunciationassessment/how-to-get-spoken-phonemes.md",
+      "status": 200,
+      "bytes": 8675,
+      "sha256": "f4841348a68d54c7124e78eca6cba27d57b6e9444fcf8e2c271eb9b270976e6d"
+    },
+    {
+      "citation": "S41",
+      "title": "Google Cloud Speech-to-Text v2: contrato proto oficial",
+      "evidence": "Streaming, configuración y respuestas por modelo. No es Android SpeechRecognizer ni una política de cuenta o tarifa.",
+      "id": "google-proto-v2",
+      "url": "https://raw.githubusercontent.com/googleapis/googleapis/master/google/cloud/speech/v2/cloud_speech.proto",
+      "status": 200,
+      "bytes": 91891,
+      "sha256": "9b1e8e7b58b96e7436a8d8b7a8555bb9ef29f698672a40d4a136f4458b9a49ef"
+    },
+    {
+      "citation": "S42",
+      "title": "Google Cloud Speech-to-Text v1: contrato proto oficial",
+      "evidence": "Contrato de una versión diferente de la API; no generalizar capacidades de v2 o de Android. No documenta por sí solo tarifas ni retención.",
+      "id": "google-proto-v1",
+      "url": "https://raw.githubusercontent.com/googleapis/googleapis/master/google/cloud/speech/v1/cloud_speech.proto",
+      "status": 200,
+      "bytes": 44032,
+      "sha256": "8187c689a1404876b5351a87ddff813a9a262e677634d37be70f378496715ff8"
+    },
+    {
+      "citation": "S43",
+      "title": "OpenAI Audio: transcripción de voz",
+      "evidence": "Misma fuente primaria, referenciada para la distinción entre ASR y razonamiento/reescritura.",
+      "id": "openai-sdk-transcriptions",
+      "url": "https://raw.githubusercontent.com/openai/openai-python/main/src/openai/resources/audio/transcriptions.py",
+      "status": 200,
+      "bytes": 54758,
+      "sha256": "8bfaa74f7b00a61984e2ee801357dbf29fdda7f7388d245df7458f0c20820ea9"
+    },
+    {
+      "citation": "S44",
+      "title": "OpenAI: tipo oficial de configuración realtime transcription",
+      "evidence": "Confirma una modalidad distinta de transcripción. No se realizaron llamadas ni se verificó rendimiento infantil.",
+      "id": "openai-realtime-transcription",
+      "url": "https://raw.githubusercontent.com/openai/openai-python/main/src/openai/types/realtime/realtime_transcription_session_create_request_param.py",
+      "status": 200,
+      "bytes": 991,
+      "sha256": "02bee674cd6b16ca93dcb8c7dde7ba9aeb2f927709ba72c811cef4ac15bd8719"
+    },
+    {
+      "citation": "S45",
+      "title": "Deepgram: SDK oficial",
+      "evidence": "Ejemplos streaming, Listen/Flux/Nova y selección de idioma. No inferir que todos sus modelos sean bilingües equivalentes.",
+      "id": "deepgram-sdk",
+      "url": "https://raw.githubusercontent.com/deepgram/deepgram-python-sdk/main/README.md",
+      "status": 200,
+      "bytes": 14275,
+      "sha256": "465f47cbe5cca379d9f7236a5b69f898f3c7c224395d9a73cd8a1e32753183a4"
+    },
+    {
+      "citation": "S46",
+      "title": "Speechmatics: SDK oficial",
+      "evidence": "Parciales/finales en realtime y configuración; sin benchmark común infantil.",
+      "id": "speechmatics-sdk-correct",
+      "url": "https://raw.githubusercontent.com/speechmatics/speechmatics-python-sdk/main/README.md",
+      "status": 200,
+      "bytes": 51805,
+      "sha256": "d12ab4583dfb066c710f96f8ea1b369f449b76eaf3016d0d7f902be2cd52a28e"
+    },
+    {
+      "citation": "S47",
+      "title": "Soniox: SDK oficial",
+      "evidence": "Streaming y separación de tokens finales/no finales; ejemplo de protocolo incremental.",
+      "id": "soniox-sdk",
+      "url": "https://raw.githubusercontent.com/soniox/soniox-python/main/README.md",
+      "status": 200,
+      "bytes": 8465,
+      "sha256": "6b43c545bc6d14bba16081854032e1a44545754675952e9dd1f6c4dd38253572"
+    },
+    {
+      "citation": "S48",
+      "title": "AssemblyAI: SDK oficial",
+      "evidence": "Streaming y rutas de dictado/transcripción; algunas rutas permiten reescritura opcional, que no es evidencia de lectura.",
+      "id": "assemblyai-sdk",
+      "url": "https://raw.githubusercontent.com/AssemblyAI/assemblyai-python-sdk/master/README.md",
+      "status": 200,
+      "bytes": 92171,
+      "sha256": "9a91421e9e8eb135f392e5bab0cd429a2ba761da51f192510f5f7145b3b38697"
+    },
+    {
+      "citation": "S49",
+      "title": "SpeechAce: muestras oficiales",
+      "evidence": "API de pronunciación que recibe audio; descripción centrada en inglés. No se verificaron tarifas ni soporte español actual.",
+      "id": "speechace-readme",
+      "url": "https://raw.githubusercontent.com/speechace/speechace-api-samples/master/README.md",
+      "status": 200,
+      "bytes": 1554,
+      "sha256": "a187cfa0c3408e305d2f6c83d887ea28d07171dc7d983f803bde2066c1a93ad5"
+    },
+    {
+      "citation": "S50",
+      "title": "Autores: Adaptation of Whisper models to child speech recognition",
+      "evidence": "Repositorio con tablas MyST/PFSTAR/CMU y adaptación. Se leyó también el resumen indexado del artículo 2307.13008; no su PDF completo.",
+      "id": "whisper-child-research",
+      "url": "https://raw.githubusercontent.com/c3imaging/whisper_child_speech/main/README.md",
+      "status": 200,
+      "bytes": 4950,
+      "sha256": "92f5882ee064875fa0170ef683a57f8465b1723e510c17372c432eefe5e18af4"
+    },
+    {
+      "citation": "S51",
+      "title": "Autores: comparación Conformer-Transducer, Whisper y wav2vec2 infantil",
+      "evidence": "Repositorio y resumen indexado del artículo 2311.04936; evidencia de adaptación y variación entre corpus, no Fold/ES.",
+      "id": "child-conformer-research",
+      "url": "https://raw.githubusercontent.com/C3Imaging/child_asr_conformer/main/README.md",
+      "status": 200,
+      "bytes": 1435,
+      "sha256": "91aa327740a69d016cecc6099cb8fba525f1438908e60706f9a09e91f399ab12"
+    },
+    {
+      "citation": "S52",
+      "title": "LiteChildASR: adaptación ligera de Whisper infantil",
+      "evidence": "Repositorio de autores y resumen 2507.14451. tiny.en/MyST/Pi; trabajo en progreso y peso enlazado no accesible para auditar licencia.",
+      "id": "litechild-readme",
+      "url": "https://raw.githubusercontent.com/SatwikDutta/LiteChildASR/master/README.md",
+      "status": 200,
+      "bytes": 1570,
+      "sha256": "d045dc63337312995e7749abcab84205218a1b519e16a8e22cf3f077f6af95f5"
+    },
+    {
+      "citation": "S53",
+      "title": "DrivenData: reto infantil Word/Phonetic, referencia",
+      "evidence": "Separación explícita entre palabras y fonemas, tutoriales y restricciones de datos.",
+      "id": "childrens-challenge",
+      "url": "https://raw.githubusercontent.com/drivendataorg/childrens-speech-recognition-benchmark-pub/main/README.md",
+      "status": 200,
+      "bytes": 10000,
+      "sha256": "1be0b9b7843e4178d17b78f34a65fa4c9a7173d16cccbd97a85d51241015c703"
+    },
+    {
+      "citation": "S54",
+      "title": "DrivenData: runtime del reto infantil",
+      "evidence": "Infraestructura de evaluación; no confundir con un motor móvil listo.",
+      "id": "childrens-runtime",
+      "url": "https://raw.githubusercontent.com/drivendataorg/childrens-speech-recognition-runtime/main/README.md",
+      "status": 200,
+      "bytes": 18513,
+      "sha256": "2266b6d91a91f34e6e6337d16ae6f7d257daea09c9f5a3d2987a12730d610584"
+    },
+    {
+      "citation": "S55",
+      "title": "Classroom-ASR: repositorio en preparación",
+      "evidence": "Acceso controlado y licencia pendiente; no hay autorización general para obtener/redistribuir audio infantil ni resultados verificables en el README consultado.",
+      "id": "classroom-asr",
+      "url": "https://raw.githubusercontent.com/WuZhongdi/classroom-asr/main/README.md",
+      "status": 200,
+      "bytes": 1183,
+      "sha256": "af94d4c3fe18ca9fa7afbf7652262c0ae6ebae68bb9507b7b988dade856f75c7"
+    },
+    {
+      "citation": "S56",
+      "title": "WhisperX",
+      "evidence": "Transcripción/alineación y contexto de sincronización. La alineación forzada no prueba por sí sola la lectura del texto esperado.",
+      "id": "whisperx",
+      "url": "https://raw.githubusercontent.com/m-bain/whisperX/main/README.md",
+      "status": 200,
+      "bytes": 16507,
+      "sha256": "98ebee691ebee0ca5bdd9257dad72e1e74a9c216ff3adb7fa68d5164007a84ea"
+    },
+    {
+      "citation": "S57",
+      "title": "Montreal Forced Aligner",
+      "evidence": "Herramienta de alineación forzada; distinta de seguimiento vivo con capacidad de rechazo.",
+      "id": "montreal-forced-aligner",
+      "url": "https://raw.githubusercontent.com/MontrealCorpusTools/Montreal-Forced-Aligner/main/README.md",
+      "status": 200,
+      "bytes": 4334,
+      "sha256": "6d2984839ae2ab96e894791bacad79c7a7b75d8cb0f498458ee372766eed0bc5"
+    },
+    {
+      "citation": "S58",
+      "title": "ReadAlongs Studio",
+      "evidence": "Creación de lecturas audio/texto sincronizadas; no equivale al motor de Google Read Along ni a un tutor en vivo.",
+      "id": "readalong-studio",
+      "url": "https://raw.githubusercontent.com/ReadAlongs/Studio/main/README.md",
+      "status": 200,
+      "bytes": 13774,
+      "sha256": "394f2d68623cd087ca450dd748002b071968c69cbdacc68a64002643078b486d"
+    },
+    {
+      "citation": "S59",
+      "title": "PocketSphinx",
+      "evidence": "Reconocimiento y gramáticas; referencia de enfoques restringidos, no garantía de lectura infantil bilingüe.",
+      "id": "pocketsphinx",
+      "url": "https://raw.githubusercontent.com/cmusphinx/pocketsphinx/main/README.md",
+      "status": 200,
+      "bytes": 9413,
+      "sha256": "0090e976185f91253ace457805c6a80574ee32b529c20112cfe4499c276d0f4d"
+    },
+    {
+      "citation": "S60",
+      "title": "NVIDIA NeMo",
+      "evidence": "Herramientas de entrenamiento/inferencia; desplegar modelos grandes en Android exige trabajo adicional.",
+      "id": "nemo",
+      "url": "https://raw.githubusercontent.com/NVIDIA/NeMo/main/README.md",
+      "status": 200,
+      "bytes": 10646,
+      "sha256": "f7f63002e9f9fc053094e26f6828687dccdfda41a2e13c13cf2587fcacf556f8"
+    },
+    {
+      "citation": "S61",
+      "title": "SpeechBrain",
+      "evidence": "Toolkit de investigación; no constituye por sí solo un módulo Expo de lectura.",
+      "id": "speechbrain",
+      "url": "https://raw.githubusercontent.com/speechbrain/speechbrain/develop/README.md",
+      "status": 200,
+      "bytes": 23162,
+      "sha256": "2a14565733f68dd73f8d64006cb2b9ff0d8c3027ef26c80b5a3d34cce75bb92b"
+    },
+    {
+      "citation": "S62",
+      "title": "NVIDIA Parakeet TDT 0.6b v2: ficha de modelo",
+      "evidence": "Variante inglesa concreta; no extrapolar su alcance a toda la familia Parakeet.",
+      "id": "parakeet-model",
+      "url": "https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2/raw/main/README.md",
+      "status": 200,
+      "bytes": 23599,
+      "sha256": "e2d10f955eb14a871092de134d2e82a59f494f001a181111fb95c74805763c65"
+    },
+    {
+      "citation": "S63",
+      "title": "React Native Voice: aviso de deprecación",
+      "evidence": "El README se declara deprecado/archivado y recomienda expo-speech-recognition. Evita basar la implementación en tutoriales antiguos.",
+      "id": "react-native-voice",
+      "url": "https://raw.githubusercontent.com/react-native-voice/voice/master/README.md",
+      "status": 200,
+      "bytes": 12500,
+      "sha256": "13527989d234d27545fe63a76f65d7a1376760545ce76e131bb53f48d849f063"
+    },
+    {
+      "citation": "S64",
+      "title": "Moonshine: ejemplo oficial Transcriber Android",
+      "evidence": "Ejemplo nativo y requisitos de build; no demuestra integración RN ni precisión con niños.",
+      "id": "moonshine-android-example",
+      "url": "https://raw.githubusercontent.com/moonshine-ai/moonshine/main/examples/android/Transcriber/app/build.gradle.kts",
+      "status": 200,
+      "bytes": 821,
+      "sha256": "34b3124622e2d21876aaf66a3466a5ea4f88a20d85d1ddaaa8978f2e79dcace8"
+    },
+    {
+      "citation": "S65",
+      "title": "Google Cloud: ejemplo oficial de streaming prolongado",
+      "evidence": "Demuestra gestión de límites, reinicios y audio superpuesto; no es un streaming infinito garantizado por el servicio.",
+      "id": "google-streaming-example",
+      "url": "https://raw.githubusercontent.com/GoogleCloudPlatform/python-docs-samples/main/speech/microphone/transcribe_streaming_infinite.py",
+      "status": 200,
+      "bytes": 11100,
+      "sha256": "f8ef2cfbe802bcd59eab326a8c57ecc2d101727b61fe34c02698e75d622d0a93"
+    },
+    {
+      "citation": "S66",
+      "title": "Google: muestra general de ML Kit GenAI",
+      "evidence": "Contexto de la familia de APIs; no sustituye el contrato específico de Speech.",
+      "id": "mlkit-genai-readme",
+      "url": "https://raw.githubusercontent.com/googlesamples/mlkit/master/android/genai/README.md",
+      "status": 200,
+      "bytes": 1888,
+      "sha256": "682239cc769a9eecb30f1b72e50629726e492aba33c1c085cc588506f523d8db"
+    },
+    {
+      "citation": "F01",
+      "title": "Pérdida de final al detener Android continuo",
+      "evidence": "Reporte concreto, no prevalencia poblacional.",
+      "itemNumber": 165,
+      "publicUrl": "https://github.com/jamsch/expo-speech-recognition/issues/165",
+      "id": "expo-issues-list",
+      "url": "https://api.github.com/repos/jamsch/expo-speech-recognition/issues?state=all&per_page=100",
+      "status": 200,
+      "bytes": 426917,
+      "sha256": "aa69b2cae31e1c23fb5878c102dfce49a1852daa557f10d486a765d5a8430b34"
+    },
+    {
+      "citation": "F02",
+      "title": "Carrera al cerrar el flujo local y perder el final",
+      "evidence": "Reporte en API/locale/versiones concretas; no generalizar a todos los teléfonos.",
+      "itemNumber": 158,
+      "publicUrl": "https://github.com/jamsch/expo-speech-recognition/issues/158",
+      "id": "expo-issues-list",
+      "url": "https://api.github.com/repos/jamsch/expo-speech-recognition/issues?state=all&per_page=100",
+      "status": 200,
+      "bytes": 426917,
+      "sha256": "aa69b2cae31e1c23fb5878c102dfce49a1852daa557f10d486a765d5a8430b34"
+    },
+    {
+      "citation": "F03",
+      "title": "Sustitución de hipótesis después de una pausa",
+      "evidence": "Motiva manejar segmento/revisión y no concatenar ciegamente.",
+      "itemNumber": 87,
+      "publicUrl": "https://github.com/jamsch/expo-speech-recognition/issues/87",
+      "id": "expo-issues-list",
+      "url": "https://api.github.com/repos/jamsch/expo-speech-recognition/issues?state=all&per_page=100",
+      "status": 200,
+      "bytes": 426917,
+      "sha256": "aa69b2cae31e1c23fb5878c102dfce49a1852daa557f10d486a765d5a8430b34"
+    },
+    {
+      "citation": "F04",
+      "title": "iOS: degradación silenciosa del requisito local",
+      "evidence": "Se inspeccionó código 57.0.0 y la respuesta pública del mantenedor. No habilitar por defecto la ruta remota.",
+      "itemNumber": 169,
+      "publicUrl": "https://github.com/jamsch/expo-speech-recognition/issues/169",
+      "id": "expo-issues-list",
+      "url": "https://api.github.com/repos/jamsch/expo-speech-recognition/issues?state=all&per_page=100",
+      "status": 200,
+      "bytes": 426917,
+      "sha256": "aa69b2cae31e1c23fb5878c102dfce49a1852daa557f10d486a765d5a8430b34"
+    },
+    {
+      "citation": "F05",
+      "title": "PR de corrección de stop en Android",
+      "evidence": "API GitHub: abierto y merged=false durante la consulta. No tratar como corrección distribuida.",
+      "itemNumber": 163,
+      "publicUrl": "https://github.com/jamsch/expo-speech-recognition/pull/163",
+      "id": "expo-pr163",
+      "url": "https://api.github.com/repos/jamsch/expo-speech-recognition/pulls/163",
+      "status": 200,
+      "bytes": 17113,
+      "sha256": "0ad1778d3c1cd0144fee400eb3d5f599abebcc7076688233af6c82f22540eb9a"
+    },
+    {
+      "citation": "F06",
+      "title": "Crecimiento de memoria/cola en RealtimeTranscriber",
+      "evidence": "Reporte sobre 0.7.4 y ruta realtime; no es la ruta transcribeData usada actualmente por Kitewise.",
+      "itemNumber": 339,
+      "publicUrl": "https://github.com/mybigday/whisper.rn/issues/339",
+      "id": "whisper-rn-issues-list",
+      "url": "https://api.github.com/repos/mybigday/whisper.rn/issues?state=all&per_page=100",
+      "status": 200,
+      "bytes": 664222,
+      "sha256": "10e4e73fd907beffcc0d7e5685d9877757dff0ede4fff44e1e8727ffa10d932f"
+    },
+    {
+      "citation": "F07",
+      "title": "PR de unidades del pre-roll VAD",
+      "evidence": "API GitHub: merged=true el 2026-09-29; no implica inclusión en npm 0.7.4.",
+      "itemNumber": 338,
+      "publicUrl": "https://github.com/mybigday/whisper.rn/pull/338",
+      "id": "whisper-pr338",
+      "url": "https://api.github.com/repos/mybigday/whisper.rn/pulls/338",
+      "status": 200,
+      "bytes": 17307,
+      "sha256": "2e87bb1787dcecd2a92b0a7583781e24e17a5f30d22f42c8a6c55b1eb758b89c"
+    },
+    {
+      "citation": "F08",
+      "title": "PR de límites de memoria/trabajo realtime",
+      "evidence": "API GitHub: merged=true el 2026-10-06; distinguir main del paquete estable.",
+      "itemNumber": 340,
+      "publicUrl": "https://github.com/mybigday/whisper.rn/pull/340",
+      "id": "whisper-pr340",
+      "url": "https://api.github.com/repos/mybigday/whisper.rn/pulls/340",
+      "status": 200,
+      "bytes": 20736,
+      "sha256": "7521e5eff58c9fb9728a8a49f08272b98c9ffc745865bd20147f9f6b477fb048"
+    },
+    {
+      "citation": "F09",
+      "title": "Ruta sin VAD y callback estabilizado sin salida",
+      "evidence": "Reporte específico; conservar como caso de reproducción al ensayar esa API.",
+      "itemNumber": 330,
+      "publicUrl": "https://github.com/mybigday/whisper.rn/issues/330",
+      "id": "whisper-rn-issues-list",
+      "url": "https://api.github.com/repos/mybigday/whisper.rn/issues?state=all&per_page=100",
+      "status": 200,
+      "bytes": 664222,
+      "sha256": "10e4e73fd907beffcc0d7e5685d9877757dff0ede4fff44e1e8727ffa10d932f"
+    },
+    {
+      "citation": "F10",
+      "title": "PR para reconocimiento con minificación R8",
+      "evidence": "API GitHub: merged=true; justifica comprobar el APK release y la versión exacta, sin suponer incidencia actual en Kitewise.",
+      "itemNumber": 174,
+      "publicUrl": "https://github.com/jamsch/expo-speech-recognition/pull/174",
+      "id": "expo-pr174",
+      "url": "https://api.github.com/repos/jamsch/expo-speech-recognition/pulls/174",
+      "status": 200,
+      "bytes": 20137,
+      "sha256": "5b4496c0f9b9bd31abbea3594408978e5b2be2e5aed77b7889bbaa2ae83541ca"
+    }
+  ],
+  "additionalEvidence": [
+    "expo-issue169-comments",
+    "child-papers"
+  ],
+  "attempts": [
+    {
+      "id": "azure-assessment-howto",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-ai-docs/main/articles/ai-services/speech-service/how-to-pronunciation-assessment.md",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "azure-assessment-guide",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-ai-docs/main/articles/ai-services/speech-service/how-to-pronunciation-assessment.md",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "azure-assessment-languages",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-ai-docs/main/articles/ai-services/speech-service/language-support.md",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "azure-assessment-sample",
+      "url": "https://raw.githubusercontent.com/Azure-Samples/cognitive-services-speech-sdk/master/samples/python/console/speech_sample.py",
+      "status": 200,
+      "bytes": 52021,
+      "sha256": "6586d7465c57365aeadef0be99ba73c270a082682d107bb1b3ec3212a627828a",
+      "retrievedAtUtc": "2026-10-23T05:33:13.039370+00:00"
+    },
+    {
+      "id": "google-proto-v2",
+      "url": "https://raw.githubusercontent.com/googleapis/googleapis/master/google/cloud/speech/v2/cloud_speech.proto",
+      "status": 200,
+      "bytes": 91891,
+      "sha256": "9b1e8e7b58b96e7436a8d8b7a8555bb9ef29f698672a40d4a136f4458b9a49ef",
+      "retrievedAtUtc": "2026-10-23T05:33:13.098162+00:00"
+    },
+    {
+      "id": "google-proto-v1",
+      "url": "https://raw.githubusercontent.com/googleapis/googleapis/master/google/cloud/speech/v1/cloud_speech.proto",
+      "status": 200,
+      "bytes": 44032,
+      "sha256": "8187c689a1404876b5351a87ddff813a9a262e677634d37be70f378496715ff8",
+      "retrievedAtUtc": "2026-10-23T05:33:13.012250+00:00"
+    },
+    {
+      "id": "openai-sdk-transcriptions",
+      "url": "https://raw.githubusercontent.com/openai/openai-python/main/src/openai/resources/audio/transcriptions.py",
+      "status": 200,
+      "bytes": 54758,
+      "sha256": "8bfaa74f7b00a61984e2ee801357dbf29fdda7f7388d245df7458f0c20820ea9",
+      "retrievedAtUtc": "2026-10-23T05:33:13.110857+00:00"
+    },
+    {
+      "id": "openai-realtime-transcription",
+      "url": "https://raw.githubusercontent.com/openai/openai-python/main/src/openai/types/realtime/realtime_transcription_session_create_request_param.py",
+      "status": 200,
+      "bytes": 991,
+      "sha256": "02bee674cd6b16ca93dcb8c7dde7ba9aeb2f927709ba72c811cef4ac15bd8719",
+      "retrievedAtUtc": "2026-10-23T05:33:13.012250+00:00"
+    },
+    {
+      "id": "whisper-streaming",
+      "url": "https://raw.githubusercontent.com/ufal/whisper_streaming/main/README.md",
+      "status": 200,
+      "bytes": 17011,
+      "sha256": "7b68e94644904bb38ab2353f56369ef3f68379259161517dc4fb31c91ce92655",
+      "retrievedAtUtc": "2026-10-23T05:33:13.164500+00:00"
+    },
+    {
+      "id": "simulstreaming",
+      "url": "https://raw.githubusercontent.com/ufal/SimulStreaming/main/README.md",
+      "status": 200,
+      "bytes": 29778,
+      "sha256": "ed0ce81b97d5c2f24232fb318076d3707d6ad965a97df2a9463a163bbeb32cc2",
+      "retrievedAtUtc": "2026-10-23T05:33:13.204722+00:00"
+    },
+    {
+      "id": "sherpa-reactnative",
+      "url": "https://api.github.com/search/repositories?q=sherpa+onnx+react+native&sort=stars&per_page=8",
+      "status": 200,
+      "bytes": 49611,
+      "sha256": "c9a5774a3b5ddad464a4f30fe9d65cc8eb32516fbe57426ab3071cffcd73cc53",
+      "retrievedAtUtc": "2026-10-23T05:33:13.679246+00:00"
+    },
+    {
+      "id": "sherpa-spanish",
+      "url": "https://api.github.com/search/code?q=spanish+repo:k2-fsa/sherpa-onnx",
+      "status": 200,
+      "bytes": 134911,
+      "sha256": "44c4a4d6b826346521bc339d0eb4d9747495516fa550388050b24692637a588e",
+      "retrievedAtUtc": "2026-10-23T05:33:13.732328+00:00"
+    },
+    {
+      "id": "vosk-android",
+      "url": "https://raw.githubusercontent.com/alphacep/vosk-android-demo/master/README.md",
+      "status": 200,
+      "bytes": 368,
+      "sha256": "67da0c2bc123de7691fced3ba752ccf347812c73a19a99be9c7a7ce9782683c0",
+      "retrievedAtUtc": "2026-10-23T05:33:13.324317+00:00"
+    },
+    {
+      "id": "vosk-models",
+      "url": "https://alphacephei.com/vosk/models",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "react-native-voice",
+      "url": "https://raw.githubusercontent.com/react-native-voice/voice/master/README.md",
+      "status": 200,
+      "bytes": 12500,
+      "sha256": "13527989d234d27545fe63a76f65d7a1376760545ce76e131bb53f48d849f063",
+      "retrievedAtUtc": "2026-10-23T05:33:13.306152+00:00"
+    },
+    {
+      "id": "litechildasr",
+      "url": "https://raw.githubusercontent.com/SatwikDutta/LiteChildASR/main/README.md",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "childrens-challenge",
+      "url": "https://raw.githubusercontent.com/drivendataorg/childrens-speech-recognition-benchmark-pub/main/README.md",
+      "status": 200,
+      "bytes": 10000,
+      "sha256": "1be0b9b7843e4178d17b78f34a65fa4c9a7173d16cccbd97a85d51241015c703",
+      "retrievedAtUtc": "2026-10-23T05:33:13.377844+00:00"
+    },
+    {
+      "id": "childrens-runtime",
+      "url": "https://raw.githubusercontent.com/drivendataorg/childrens-speech-recognition-runtime/main/README.md",
+      "status": 200,
+      "bytes": 18513,
+      "sha256": "2266b6d91a91f34e6e6337d16ae6f7d257daea09c9f5a3d2987a12730d610584",
+      "retrievedAtUtc": "2026-10-23T05:33:13.426261+00:00"
+    },
+    {
+      "id": "child-solution",
+      "url": "https://raw.githubusercontent.com/ZFTurbo/Children-Speech-Recognition-Challenge-Solution/main/README.md",
+      "status": 200,
+      "bytes": 1718,
+      "sha256": "41e47fd35b9a0ef21097f5c6c942d289c023217f69b665fe442765acf14e2193",
+      "retrievedAtUtc": "2026-10-23T05:33:13.462059+00:00"
+    },
+    {
+      "id": "whisperx",
+      "url": "https://raw.githubusercontent.com/m-bain/whisperX/main/README.md",
+      "status": 200,
+      "bytes": 16507,
+      "sha256": "98ebee691ebee0ca5bdd9257dad72e1e74a9c216ff3adb7fa68d5164007a84ea",
+      "retrievedAtUtc": "2026-10-23T05:33:13.527926+00:00"
+    },
+    {
+      "id": "montreal-forced-aligner",
+      "url": "https://raw.githubusercontent.com/MontrealCorpusTools/Montreal-Forced-Aligner/main/README.md",
+      "status": 200,
+      "bytes": 4334,
+      "sha256": "6d2984839ae2ab96e894791bacad79c7a7b75d8cb0f498458ee372766eed0bc5",
+      "retrievedAtUtc": "2026-10-23T05:33:13.558657+00:00"
+    },
+    {
+      "id": "readalong-studio",
+      "url": "https://raw.githubusercontent.com/ReadAlongs/Studio/main/README.md",
+      "status": 200,
+      "bytes": 13774,
+      "sha256": "394f2d68623cd087ca450dd748002b071968c69cbdacc68a64002643078b486d",
+      "retrievedAtUtc": "2026-10-23T05:33:13.622893+00:00"
+    },
+    {
+      "id": "silero",
+      "url": "https://raw.githubusercontent.com/snakers4/silero-vad/master/README.md",
+      "status": 200,
+      "bytes": 9725,
+      "sha256": "cd0ee56c91b8042e62a714c0c94bc8b74dbea127a483e390f8033bb8ec8cec78",
+      "retrievedAtUtc": "2026-10-23T05:33:13.531127+00:00"
+    },
+    {
+      "id": "picovoice-cheetah",
+      "url": "https://raw.githubusercontent.com/Picovoice/cheetah/master/README.md",
+      "status": 200,
+      "bytes": 24126,
+      "sha256": "6689bf9383f3621d2a7207f0cc4a6132779a6a5e2a27724997a24fbee70ac564",
+      "retrievedAtUtc": "2026-10-23T05:33:13.708421+00:00"
+    },
+    {
+      "id": "picovoice-leopard",
+      "url": "https://raw.githubusercontent.com/Picovoice/leopard/master/README.md",
+      "status": 200,
+      "bytes": 21989,
+      "sha256": "bf9246cffd7e41b670f29c76ade6431b9593611613e344ebc4fab23d3760d571",
+      "retrievedAtUtc": "2026-10-23T05:33:13.683938+00:00"
+    },
+    {
+      "id": "speechace",
+      "url": "https://api.github.com/repos/speechace/speechace-api-samples",
+      "status": 200,
+      "bytes": 6856,
+      "sha256": "9808272140463c4c0c3f5be5dc90d531f1cd0e795dc96a547977e07c15560ff5",
+      "retrievedAtUtc": "2026-10-23T05:33:13.914804+00:00"
+    },
+    {
+      "id": "soapbox-org",
+      "url": "https://api.github.com/orgs/soapboxlabs/repos?per_page=20",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "mlkit-genai",
+      "url": "https://api.github.com/repos/googlesamples/mlkit/contents/android",
+      "status": 200,
+      "bytes": 14154,
+      "sha256": "658303e82c1980030074e9776adc5c5437e9efa67d06d72c22697e70ba7114b2",
+      "retrievedAtUtc": "2026-10-23T05:33:13.891955+00:00"
+    },
+    {
+      "id": "child-papers",
+      "url": "https://huggingface.co/api/papers/search?q=children%20speech%20recognition",
+      "status": 200,
+      "bytes": 659711,
+      "sha256": "8e902254f32a878c8bc1e3d4bd063368339e36a13aa886722ac0c95c9d486085",
+      "retrievedAtUtc": "2026-10-23T05:33:14.092649+00:00"
+    },
+    {
+      "id": "speechbrain",
+      "url": "https://raw.githubusercontent.com/speechbrain/speechbrain/develop/README.md",
+      "status": 200,
+      "bytes": 23162,
+      "sha256": "2a14565733f68dd73f8d64006cb2b9ff0d8c3027ef26c80b5a3d34cce75bb92b",
+      "retrievedAtUtc": "2026-10-23T05:33:13.977939+00:00"
+    },
+    {
+      "id": "nemo",
+      "url": "https://raw.githubusercontent.com/NVIDIA/NeMo/main/README.md",
+      "status": 200,
+      "bytes": 10646,
+      "sha256": "f7f63002e9f9fc053094e26f6828687dccdfda41a2e13c13cf2587fcacf556f8",
+      "retrievedAtUtc": "2026-10-23T05:33:13.911582+00:00"
+    },
+    {
+      "id": "parakeet-model",
+      "url": "https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2/raw/main/README.md",
+      "status": 200,
+      "bytes": 23599,
+      "sha256": "e2d10f955eb14a871092de134d2e82a59f494f001a181111fb95c74805763c65",
+      "retrievedAtUtc": "2026-10-23T05:33:13.834306+00:00"
+    },
+    {
+      "id": "moonshine",
+      "url": "https://raw.githubusercontent.com/moonshine-ai/moonshine/main/README.md",
+      "status": 200,
+      "bytes": 2636,
+      "sha256": "d666f3f97157caf3e769e2555e9b2929a3dbb25a3e123efff950f4fd346f8904",
+      "retrievedAtUtc": "2026-10-23T05:33:13.910021+00:00"
+    },
+    {
+      "id": "moonshine-models",
+      "url": "https://raw.githubusercontent.com/moonshine-ai/moonshine/main/moonshine_voice/README.md",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "expo-speech-issues",
+      "url": "https://api.github.com/search/issues?q=repo:jamsch/expo-speech-recognition+android+continuous&sort=updated&per_page=10",
+      "error": "HTTP Error 422: Unprocessable Entity"
+    },
+    {
+      "id": "whisper-rn-issues",
+      "url": "https://api.github.com/search/issues?q=repo:mybigday/whisper.rn+realtime+android&sort=updated&per_page=8",
+      "error": "HTTP Error 422: Unprocessable Entity"
+    },
+    {
+      "id": "android-speech-issues",
+      "url": "https://api.github.com/search/issues?q=SpeechRecognizer+onPartialResults+android+language+Samsung&sort=comments&per_page=8",
+      "error": "HTTP Error 422: Unprocessable Entity"
+    },
+    {
+      "id": "gboard-github",
+      "url": "https://api.github.com/search/repositories?q=gboard+voice+typing+offline&per_page=5",
+      "status": 200,
+      "bytes": 55,
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "retrievedAtUtc": "2026-10-23T05:33:14.399477+00:00"
+    },
+    {
+      "id": "google-readalong-search2",
+      "url": "https://api.github.com/search/repositories?q=readalong+in:name&sort=stars&per_page=15",
+      "status": 200,
+      "bytes": 84566,
+      "sha256": "bbd9f844be597251390df89e9378c04af5e5740a70d3a7ccf4185a469a0e008e",
+      "retrievedAtUtc": "2026-10-23T05:33:15.045951+00:00"
+    },
+    {
+      "id": "children-asr-papers-search",
+      "url": "https://api.github.com/search/repositories?q=children+ASR+benchmark&sort=stars&per_page=10",
+      "status": 200,
+      "bytes": 17895,
+      "sha256": "09d18eee7e9762a9ae7acd25e923aa251adc5e77d29fe6087f65dc8143e08c1e",
+      "retrievedAtUtc": "2026-10-23T05:33:14.420576+00:00"
+    },
+    {
+      "id": "azure-doc-search",
+      "url": "https://api.github.com/search/code?q=pronunciation-assessment+repo:MicrosoftDocs/azure-ai-docs&per_page=8",
+      "status": 200,
+      "bytes": 54,
+      "sha256": "715c8ec822e91115573715cd88b7104d3f672a3dc7a97450663bfa88ef2ecc21",
+      "retrievedAtUtc": "2026-10-23T05:34:44.093755+00:00"
+    },
+    {
+      "id": "expo-issues-list",
+      "url": "https://api.github.com/repos/jamsch/expo-speech-recognition/issues?state=all&per_page=100",
+      "status": 200,
+      "bytes": 426917,
+      "sha256": "aa69b2cae31e1c23fb5878c102dfce49a1852daa557f10d486a765d5a8430b34",
+      "retrievedAtUtc": "2026-10-23T05:34:44.710367+00:00"
+    },
+    {
+      "id": "whisper-rn-issues-list",
+      "url": "https://api.github.com/repos/mybigday/whisper.rn/issues?state=all&per_page=100",
+      "status": 200,
+      "bytes": 664222,
+      "sha256": "10e4e73fd907beffcc0d7e5685d9877757dff0ede4fff44e1e8727ffa10d932f",
+      "retrievedAtUtc": "2026-10-23T05:34:44.699764+00:00"
+    },
+    {
+      "id": "expo-native-service",
+      "url": "https://raw.githubusercontent.com/jamsch/expo-speech-recognition/main/android/src/main/java/expo/modules/speechrecognition/ExpoSpeechRecognitionService.kt",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "expo-package",
+      "url": "https://raw.githubusercontent.com/jamsch/expo-speech-recognition/main/package.json",
+      "status": 200,
+      "bytes": 1799,
+      "sha256": "972202cf70d937c0112919a96ee655644f3236d6c11da783ff63c14de8a3db0d",
+      "retrievedAtUtc": "2026-10-23T05:34:43.924238+00:00"
+    },
+    {
+      "id": "sherpa-rn-readme",
+      "url": "https://raw.githubusercontent.com/XDcobra/react-native-sherpa-onnx/main/README.md",
+      "status": 200,
+      "bytes": 27091,
+      "sha256": "e7e92d290f1bb997a1eeb2fd5b152c2d0f3aa6094c4fba54a5c6b63a9c2d7e6c",
+      "retrievedAtUtc": "2026-10-23T05:34:43.882028+00:00"
+    },
+    {
+      "id": "sherpa-streaming-es-doc",
+      "url": "https://api.github.com/repos/k2-fsa/sherpa-onnx/contents/scripts/whisper",
+      "status": 200,
+      "bytes": 11760,
+      "sha256": "e82a5ea806b1a045a4fbc4ffd880dd076831ec6c3640bea338a97a619ace86ab",
+      "retrievedAtUtc": "2026-10-23T05:34:43.960456+00:00"
+    },
+    {
+      "id": "sherpa-model-search",
+      "url": "https://huggingface.co/api/models?search=sherpa%20spanish&limit=10",
+      "status": 200,
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "retrievedAtUtc": "2026-10-23T05:34:43.774726+00:00"
+    },
+    {
+      "id": "litechild-readme",
+      "url": "https://raw.githubusercontent.com/SatwikDutta/LiteChildASR/master/README.md",
+      "status": 200,
+      "bytes": 1570,
+      "sha256": "d045dc63337312995e7749abcab84205218a1b519e16a8e22cf3f077f6af95f5",
+      "retrievedAtUtc": "2026-10-23T05:34:44.007391+00:00"
+    },
+    {
+      "id": "litechild-meta",
+      "url": "https://api.github.com/repos/SatwikDutta/LiteChildASR",
+      "status": 200,
+      "bytes": 5637,
+      "sha256": "f6d55fb62ac0fa3302a8dfa1e9db7f1b5e402fe885f017a6099f02cab46e4711",
+      "retrievedAtUtc": "2026-10-23T05:34:44.139542+00:00"
+    },
+    {
+      "id": "mlkit-speech-readme",
+      "url": "https://raw.githubusercontent.com/googlesamples/mlkit/master/android/speech/README.md",
+      "status": 200,
+      "bytes": 1361,
+      "sha256": "75d1cd8d03c9b994cc179fb6b05b461c3b413b148008c7a2a881cf1a8ff0a4c8",
+      "retrievedAtUtc": "2026-10-23T05:34:44.159363+00:00"
+    },
+    {
+      "id": "mlkit-speech-content",
+      "url": "https://api.github.com/repos/googlesamples/mlkit/contents/android/speech",
+      "status": 200,
+      "bytes": 4211,
+      "sha256": "7a1be6f28a123e54755db76a84401d930e63e59b08425045706f8dd64aa6648c",
+      "retrievedAtUtc": "2026-10-23T05:34:44.268173+00:00"
+    },
+    {
+      "id": "mlkit-genai-content",
+      "url": "https://api.github.com/repos/googlesamples/mlkit/contents/android/genai",
+      "status": 200,
+      "bytes": 4182,
+      "sha256": "73b3156ff5cc54790d29497f99eb6271ac339a89d2dcf17d67835a9e8077ffd5",
+      "retrievedAtUtc": "2026-10-23T05:34:44.244776+00:00"
+    },
+    {
+      "id": "moonshine-readme-new",
+      "url": "https://raw.githubusercontent.com/moonshine-ai/moonshine/main/README.md",
+      "status": 200,
+      "bytes": 2636,
+      "sha256": "d666f3f97157caf3e769e2555e9b2929a3dbb25a3e123efff950f4fd346f8904",
+      "retrievedAtUtc": "2026-10-23T05:34:44.038684+00:00"
+    },
+    {
+      "id": "moonshine-content",
+      "url": "https://api.github.com/repos/moonshine-ai/moonshine/contents",
+      "status": 200,
+      "bytes": 12385,
+      "sha256": "9556e8eb06fe976fd59546e951fbfb1a2935b07d6d1249e4e9dc05e6cbfe55d6",
+      "retrievedAtUtc": "2026-10-23T05:34:44.344887+00:00"
+    },
+    {
+      "id": "speechace-readme",
+      "url": "https://raw.githubusercontent.com/speechace/speechace-api-samples/master/README.md",
+      "status": 200,
+      "bytes": 1554,
+      "sha256": "a187cfa0c3408e305d2f6c83d887ea28d07171dc7d983f803bde2066c1a93ad5",
+      "retrievedAtUtc": "2026-10-23T05:34:44.367338+00:00"
+    },
+    {
+      "id": "soapbox-search",
+      "url": "https://api.github.com/search/repositories?q=soapboxlabs&sort=stars&per_page=5",
+      "status": 200,
+      "bytes": 10940,
+      "sha256": "a57177cfc3dee9bbc39376ed13cfe070cb475e5366db264e31ec75efb7af6eb5",
+      "retrievedAtUtc": "2026-10-23T05:34:44.635668+00:00"
+    },
+    {
+      "id": "deepgram-sdk",
+      "url": "https://raw.githubusercontent.com/deepgram/deepgram-python-sdk/main/README.md",
+      "status": 200,
+      "bytes": 14275,
+      "sha256": "465f47cbe5cca379d9f7236a5b69f898f3c7c224395d9a73cd8a1e32753183a4",
+      "retrievedAtUtc": "2026-10-23T05:34:44.435814+00:00"
+    },
+    {
+      "id": "speechmatics-sdk",
+      "url": "https://raw.githubusercontent.com/speechmatics/speechmatics-python/main/README.md",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "soniox-sdk",
+      "url": "https://raw.githubusercontent.com/soniox/soniox-python/main/README.md",
+      "status": 200,
+      "bytes": 8465,
+      "sha256": "6b43c545bc6d14bba16081854032e1a44545754675952e9dd1f6c4dd38253572",
+      "retrievedAtUtc": "2026-10-23T05:34:44.544590+00:00"
+    },
+    {
+      "id": "assemblyai-sdk",
+      "url": "https://raw.githubusercontent.com/AssemblyAI/assemblyai-python-sdk/master/README.md",
+      "status": 200,
+      "bytes": 92171,
+      "sha256": "9a91421e9e8eb135f392e5bab0cd429a2ba761da51f192510f5f7145b3b38697",
+      "retrievedAtUtc": "2026-10-23T05:34:44.573780+00:00"
+    },
+    {
+      "id": "phonetic-papers",
+      "url": "https://huggingface.co/api/papers/search?q=child%20reading%20miscue%20detection",
+      "status": 200,
+      "bytes": 717399,
+      "sha256": "f708c527441fb6fc9102c8333581f01667f7c5c5e71dc91d65fede4e12821563",
+      "retrievedAtUtc": "2026-10-23T05:34:44.908548+00:00"
+    },
+    {
+      "id": "readalong-papers",
+      "url": "https://huggingface.co/api/papers/search?q=reading%20tutor%20speech%20recognition",
+      "status": 200,
+      "bytes": 635967,
+      "sha256": "8b7585dfc6ff417b13752f84b6955e0fa131ff44b6392f4a4215cd1630fef2b5",
+      "retrievedAtUtc": "2026-10-23T05:34:44.952811+00:00"
+    },
+    {
+      "id": "classroom-asr",
+      "url": "https://raw.githubusercontent.com/WuZhongdi/classroom-asr/main/README.md",
+      "status": 200,
+      "bytes": 1183,
+      "sha256": "af94d4c3fe18ca9fa7afbf7652262c0ae6ebae68bb9507b7b988dade856f75c7",
+      "retrievedAtUtc": "2026-10-23T05:34:44.702913+00:00"
+    },
+    {
+      "id": "recognition-support",
+      "url": "https://raw.githubusercontent.com/aosp-mirror/platform_frameworks_base/master/core/java/android/speech/RecognitionSupport.java",
+      "status": 200,
+      "bytes": 16190,
+      "sha256": "c4d130a55fd6719bb827633e360b4b11cc00dc32b2a0a8c207c6721bbe5c140e",
+      "retrievedAtUtc": "2026-10-23T05:34:44.756032+00:00"
+    },
+    {
+      "id": "recognition-part",
+      "url": "https://raw.githubusercontent.com/aosp-mirror/platform_frameworks_base/master/core/java/android/speech/RecognitionPart.java",
+      "status": 200,
+      "bytes": 19709,
+      "sha256": "f2e57de87335584b5893437d434cd03d4bbd7a4f2e7b9086edad9200fa2c2fb4",
+      "retrievedAtUtc": "2026-10-23T05:34:44.779175+00:00"
+    },
+    {
+      "id": "api-versions",
+      "url": "https://raw.githubusercontent.com/aosp-mirror/platform_frameworks_base/master/core/api/api-versions.xml",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "azure-articles",
+      "url": "https://api.github.com/repos/MicrosoftDocs/azure-ai-docs/contents/articles",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "azure-doc-legacy",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/main/articles/cognitive-services/Speech-Service/how-to-pronunciation-assessment.md",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "expo-tree",
+      "url": "https://api.github.com/repos/jamsch/expo-speech-recognition/git/trees/main?recursive=1",
+      "status": 200,
+      "bytes": 26442,
+      "sha256": "e8d6d35a4e230ea2907308b86b0ac54ccd891037d23929851c555201c7cea387",
+      "retrievedAtUtc": "2026-10-23T05:36:50.407298+00:00"
+    },
+    {
+      "id": "expo57-registry",
+      "url": "https://registry.npmjs.org/expo-speech-recognition/57.0.0",
+      "status": 200,
+      "bytes": 2653,
+      "sha256": "8df4e150be1564935194617ec4f417fab6ddd6353932c80d82bd68cfc1d149ab",
+      "retrievedAtUtc": "2026-10-23T05:36:50.263416+00:00"
+    },
+    {
+      "id": "mlkit-tree",
+      "url": "https://api.github.com/repos/googlesamples/mlkit/git/trees/master?recursive=1",
+      "status": 200,
+      "bytes": 407890,
+      "sha256": "6733a5615ebd01adc5fd5f7cd45d4d216c69465330cbe82c8b3a912356498499",
+      "retrievedAtUtc": "2026-10-23T05:36:50.502037+00:00"
+    },
+    {
+      "id": "moonshine-model-doc",
+      "url": "https://raw.githubusercontent.com/moonshine-ai/moonshine/main/docs/models.md",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "moonshine-license",
+      "url": "https://raw.githubusercontent.com/moonshine-ai/moonshine/main/LICENSE",
+      "status": 200,
+      "bytes": 14180,
+      "sha256": "fa7d1174dd8af6a7cd280be20b80d10095ed4c19b5b20b61a7715c3ad790dc5f",
+      "retrievedAtUtc": "2026-10-23T05:36:50.290184+00:00"
+    },
+    {
+      "id": "moonshine-android",
+      "url": "https://raw.githubusercontent.com/moonshine-ai/moonshine/main/docs/platforms/android.md",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "sherpa-pretrained-tree",
+      "url": "https://api.github.com/repos/k2-fsa/sherpa-onnx/git/trees/master?recursive=1",
+      "status": 200,
+      "bytes": 2321039,
+      "sha256": "79246fb374377eeef05be15706e31b4d0a0d651e6231ad7572ba815c916b6caf",
+      "retrievedAtUtc": "2026-10-23T05:36:50.918620+00:00"
+    },
+    {
+      "id": "kid-whisper-model",
+      "url": "https://huggingface.co/SatwikDutta/kid-whisper-tiny-en-myst/raw/main/README.md",
+      "error": "HTTP Error 401: Unauthorized"
+    },
+    {
+      "id": "whisper-child-research",
+      "url": "https://raw.githubusercontent.com/c3imaging/whisper_child_speech/main/README.md",
+      "status": 200,
+      "bytes": 4950,
+      "sha256": "92f5882ee064875fa0170ef683a57f8465b1723e510c17372c432eefe5e18af4",
+      "retrievedAtUtc": "2026-10-23T05:36:50.542630+00:00"
+    },
+    {
+      "id": "child-conformer-research",
+      "url": "https://raw.githubusercontent.com/C3Imaging/child_asr_conformer/main/README.md",
+      "status": 200,
+      "bytes": 1435,
+      "sha256": "91aa327740a69d016cecc6099cb8fba525f1438908e60706f9a09e91f399ab12",
+      "retrievedAtUtc": "2026-10-23T05:36:50.577703+00:00"
+    },
+    {
+      "id": "myst-modelcard",
+      "url": "https://huggingface.co/datasets/myst-project/myst/raw/main/README.md",
+      "error": "HTTP Error 401: Unauthorized"
+    },
+    {
+      "id": "vosk-models-repomirror",
+      "url": "https://raw.githubusercontent.com/alphacep/alphacep.github.io/master/vosk/models.md",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "vosk-grammar",
+      "url": "https://raw.githubusercontent.com/alphacep/vosk-api/master/python/example/test_words.py",
+      "status": 200,
+      "bytes": 864,
+      "sha256": "50f38578e8bebe99fa8b2046aabc813ac92cce6bab2c53c774814c91b8a7af4a",
+      "retrievedAtUtc": "2026-10-23T05:36:50.674977+00:00"
+    },
+    {
+      "id": "vosk-streaming-android",
+      "url": "https://raw.githubusercontent.com/alphacep/vosk-android-demo/master/app/src/main/java/org/vosk/demo/VoskActivity.java",
+      "status": 200,
+      "bytes": 9146,
+      "sha256": "83c371d0ca278e67829dcebc9e6e3ebe1124f1645db4265c282131e5600667c0",
+      "retrievedAtUtc": "2026-10-23T05:36:50.688167+00:00"
+    },
+    {
+      "id": "expo-current-meta",
+      "url": "https://api.github.com/repos/jamsch/expo-speech-recognition",
+      "status": 200,
+      "bytes": 5843,
+      "sha256": "bd984b1da6f84e92629740a2fa847e23b90d1cbf0e3d19c959677561d347aa6b",
+      "retrievedAtUtc": "2026-10-23T05:36:50.885032+00:00"
+    },
+    {
+      "id": "whisper-current-meta",
+      "url": "https://api.github.com/repos/mybigday/whisper.rn",
+      "status": 200,
+      "bytes": 6368,
+      "sha256": "5cd04dfeea89c12bb10e7a44ae9efb954be5065783403b33fdb9fdfc53175d11",
+      "retrievedAtUtc": "2026-10-23T05:36:51.005129+00:00"
+    },
+    {
+      "id": "azure-assessment-sdk-test",
+      "url": "https://raw.githubusercontent.com/Azure-Samples/cognitive-services-speech-sdk/master/samples/javascript/node/pronunciationAssessment.js",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "mlkit-speech-activity",
+      "url": "https://raw.githubusercontent.com/googlesamples/mlkit/master/android/speech/app/src/main/java/com/google/mlkit/genai/speech/demo/SpeechRecognitionActivity.kt",
+      "status": 200,
+      "bytes": 16748,
+      "sha256": "0f23c0c79b9ce05692e1e4b929eb384ad875d0b5693e31223add038b6b17d589",
+      "retrievedAtUtc": "2026-10-23T05:37:44.247960+00:00"
+    },
+    {
+      "id": "mlkit-speech-build",
+      "url": "https://raw.githubusercontent.com/googlesamples/mlkit/master/android/speech/app/build.gradle",
+      "status": 200,
+      "bytes": 2453,
+      "sha256": "45c1c100cbfb84e40c21112d89b1304f182ee139bad9d4b7e5d1e5c25086efd0",
+      "retrievedAtUtc": "2026-10-23T05:37:44.152494+00:00"
+    },
+    {
+      "id": "mlkit-speech-locales",
+      "url": "https://raw.githubusercontent.com/googlesamples/mlkit/master/android/speech/app/src/main/res/values/arrays.xml",
+      "status": 200,
+      "bytes": 1621,
+      "sha256": "cabc8d623c7111b01c9aaf3afc63a988ed86a172efeeccca9bc00a0b4b4cbedd",
+      "retrievedAtUtc": "2026-10-23T05:37:44.184611+00:00"
+    },
+    {
+      "id": "expo-native-service-real",
+      "url": "https://raw.githubusercontent.com/jamsch/expo-speech-recognition/main/android/src/main/java/expo/modules/speechrecognition/ExpoSpeechService.kt",
+      "status": 200,
+      "bytes": 30956,
+      "sha256": "a2b2f31655217c205982a3afde494b64ffac291ff4126889a1c46b6bf85bb4f1",
+      "retrievedAtUtc": "2026-10-23T05:37:44.146806+00:00"
+    },
+    {
+      "id": "expo-native-recorder",
+      "url": "https://raw.githubusercontent.com/jamsch/expo-speech-recognition/main/android/src/main/java/expo/modules/speechrecognition/ExpoAudioRecorder.kt",
+      "status": 200,
+      "bytes": 8881,
+      "sha256": "5c4e19f5f7533df9cdf973fe7ff7268d5273109a69114fc22c5412a19c233199",
+      "retrievedAtUtc": "2026-10-23T05:37:44.190790+00:00"
+    },
+    {
+      "id": "expo-ios-service",
+      "url": "https://raw.githubusercontent.com/jamsch/expo-speech-recognition/main/ios/ExpoSpeechRecognizer.swift",
+      "status": 200,
+      "bytes": 34771,
+      "sha256": "79a0e97280c3a8aba191279fbe59aa6d7b30d037a2c1517af985e1771a21a8d7",
+      "retrievedAtUtc": "2026-10-23T05:37:44.155451+00:00"
+    },
+    {
+      "id": "expo57-tarball",
+      "url": "https://registry.npmjs.org/expo-speech-recognition/-/expo-speech-recognition-57.0.0.tgz",
+      "status": 200,
+      "bytes": 118105,
+      "sha256": "189a055bd7dec9539db16ebd2c6e3cda764bd8b831cd4665643762526952b6f5",
+      "retrievedAtUtc": "2026-10-23T05:37:44.003334+00:00"
+    },
+    {
+      "id": "azure-samples-tree",
+      "url": "https://api.github.com/repos/Azure-Samples/cognitive-services-speech-sdk/git/trees/master?recursive=1",
+      "status": 200,
+      "bytes": 955659,
+      "sha256": "fec2024c85c062475dc8731d1196eac0f3244c569c54611e906675310919e4ee",
+      "retrievedAtUtc": "2026-10-23T05:37:44.646172+00:00"
+    },
+    {
+      "id": "moonshine-tree",
+      "url": "https://api.github.com/repos/moonshine-ai/moonshine/git/trees/main?recursive=1",
+      "status": 200,
+      "bytes": 761192,
+      "sha256": "006adba0b443e3775a7ca2507469f5348d2c8229d21ff78906134aae81029f6b",
+      "retrievedAtUtc": "2026-10-23T05:37:44.512017+00:00"
+    },
+    {
+      "id": "speechmatics-sdk-correct",
+      "url": "https://raw.githubusercontent.com/speechmatics/speechmatics-python-sdk/main/README.md",
+      "status": 200,
+      "bytes": 51805,
+      "sha256": "d12ab4583dfb066c710f96f8ea1b369f449b76eaf3016d0d7f902be2cd52a28e",
+      "retrievedAtUtc": "2026-10-23T05:37:44.392710+00:00"
+    },
+    {
+      "id": "pocketsphinx",
+      "url": "https://raw.githubusercontent.com/cmusphinx/pocketsphinx/main/README.md",
+      "status": 200,
+      "bytes": 9413,
+      "sha256": "0090e976185f91253ace457805c6a80574ee32b529c20112cfe4499c276d0f4d",
+      "retrievedAtUtc": "2026-10-23T05:37:44.417232+00:00"
+    },
+    {
+      "id": "listen",
+      "url": "https://www.cs.cmu.edu/~listen/",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "vosk-site-repo",
+      "url": "https://api.github.com/repos/alphacep/vosk-api/contents/doc",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "google-mlkit-doc",
+      "url": "https://developers.google.com/ml-kit/genai/speech-recognition",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "google-voice-sdk",
+      "url": "https://support.google.com/gboard/answer/11197787?hl=en",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "microsoft-learning-tools",
+      "url": "https://raw.githubusercontent.com/microsoft/learning-tools/master/README.md",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "azure-pronunciation-code",
+      "url": "https://raw.githubusercontent.com/Azure-Samples/cognitive-services-speech-sdk/master/scenarios/python/console/language-learning/pronunciation_assessment.py",
+      "status": 200,
+      "bytes": 23550,
+      "sha256": "2d001527a2fd6962df3dbfbb46a01a66e9c02ccfad4d6138e9b810bdccea9387",
+      "retrievedAtUtc": "2026-10-23T05:39:29.867523+00:00"
+    },
+    {
+      "id": "azure-pronunciation-continuous",
+      "url": "https://raw.githubusercontent.com/Azure-Samples/cognitive-services-speech-sdk/master/scenarios/javascript/node/language-learning/pronunciationAssessmentContinue.js",
+      "status": 200,
+      "bytes": 13024,
+      "sha256": "752369c0c96670720a2e6c2936e7dac4e836c7333de81620602c5afd87aac3fa",
+      "retrievedAtUtc": "2026-10-23T05:39:29.877462+00:00"
+    },
+    {
+      "id": "azure-pronunciation-phonemes",
+      "url": "https://raw.githubusercontent.com/Azure-Samples/cognitive-services-speech-sdk/master/docs/pronunciationassessment/how-to-get-spoken-phonemes.md",
+      "status": 200,
+      "bytes": 8675,
+      "sha256": "f4841348a68d54c7124e78eca6cba27d57b6e9444fcf8e2c271eb9b270976e6d",
+      "retrievedAtUtc": "2026-10-23T05:39:29.905591+00:00"
+    },
+    {
+      "id": "moonshine-available-models",
+      "url": "https://raw.githubusercontent.com/moonshine-ai/moonshine/main/docs/models/available-models.md",
+      "status": 200,
+      "bytes": 5014,
+      "sha256": "1d0fbcd81c57311023766d9f6021bb1b25b58bc16386ef2517f3cfd67ef903d6",
+      "retrievedAtUtc": "2026-10-23T05:39:29.863743+00:00"
+    },
+    {
+      "id": "moonshine-accuracy",
+      "url": "https://raw.githubusercontent.com/moonshine-ai/moonshine/main/docs/models/accuracy.md",
+      "status": 200,
+      "bytes": 8826,
+      "sha256": "b1f73052c143a5a2ef1cb0119b2f7d51fed21bffcb146a14880f16ef5960b064",
+      "retrievedAtUtc": "2026-10-23T05:39:29.885836+00:00"
+    },
+    {
+      "id": "moonshine-customization",
+      "url": "https://raw.githubusercontent.com/moonshine-ai/moonshine/main/docs/models/domain-customization.md",
+      "status": 200,
+      "bytes": 26188,
+      "sha256": "013e71ce694a62f7c06cf83baafd97d34add10e5b8c96bac0a417120189eae73",
+      "retrievedAtUtc": "2026-10-23T05:39:29.903122+00:00"
+    },
+    {
+      "id": "whisper-rn-npm-latest",
+      "url": "https://registry.npmjs.org/whisper.rn/latest",
+      "status": 200,
+      "bytes": 4083,
+      "sha256": "78ae03f85f513ef6d16400e33f34ddbd8745b0e0b10a562c0de46b97c67cde22",
+      "retrievedAtUtc": "2026-10-23T05:39:29.824784+00:00"
+    },
+    {
+      "id": "sherpa-moonshine-v2",
+      "url": "https://raw.githubusercontent.com/k2-fsa/sherpa-onnx/master/scripts/moonshine/v2/README.md",
+      "status": 200,
+      "bytes": 397,
+      "sha256": "608d6d486fd83724596a5b6ac7f1c545e70c701a0ed95b9d41c4547ff056fe6e",
+      "retrievedAtUtc": "2026-10-23T05:39:29.888842+00:00"
+    },
+    {
+      "id": "sherpa-nemo-es",
+      "url": "https://raw.githubusercontent.com/k2-fsa/sherpa-onnx/master/python-api-examples/offline-speech-enhancement-with-gtcrn.py",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "whisper-pr340",
+      "url": "https://api.github.com/repos/mybigday/whisper.rn/pulls/340",
+      "status": 200,
+      "bytes": 20736,
+      "sha256": "7521e5eff58c9fb9728a8a49f08272b98c9ffc745865bd20147f9f6b477fb048",
+      "retrievedAtUtc": "2026-10-23T05:41:36.884290+00:00"
+    },
+    {
+      "id": "whisper-pr338",
+      "url": "https://api.github.com/repos/mybigday/whisper.rn/pulls/338",
+      "status": 200,
+      "bytes": 17307,
+      "sha256": "2e87bb1787dcecd2a92b0a7583781e24e17a5f30d22f42c8a6c55b1eb758b89c",
+      "retrievedAtUtc": "2026-10-23T05:41:36.896992+00:00"
+    },
+    {
+      "id": "expo-pr163",
+      "url": "https://api.github.com/repos/jamsch/expo-speech-recognition/pulls/163",
+      "status": 200,
+      "bytes": 17113,
+      "sha256": "0ad1778d3c1cd0144fee400eb3d5f599abebcc7076688233af6c82f22540eb9a",
+      "retrievedAtUtc": "2026-10-23T05:41:36.852244+00:00"
+    },
+    {
+      "id": "expo-pr174",
+      "url": "https://api.github.com/repos/jamsch/expo-speech-recognition/pulls/174",
+      "status": 200,
+      "bytes": 20137,
+      "sha256": "5b4496c0f9b9bd31abbea3594408978e5b2be2e5aed77b7889bbaa2ae83541ca",
+      "retrievedAtUtc": "2026-10-23T05:41:36.863440+00:00"
+    },
+    {
+      "id": "expo-issue165-comments",
+      "url": "https://api.github.com/repos/jamsch/expo-speech-recognition/issues/165/comments",
+      "status": 200,
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "retrievedAtUtc": "2026-10-23T05:41:36.701548+00:00"
+    },
+    {
+      "id": "expo-issue169-comments",
+      "url": "https://api.github.com/repos/jamsch/expo-speech-recognition/issues/169/comments",
+      "status": 200,
+      "bytes": 2282,
+      "sha256": "10a1597df318faa82176018e20aa8fad7890ad7a75318726ccd94ed2f029013d",
+      "retrievedAtUtc": "2026-10-23T05:41:36.734347+00:00"
+    },
+    {
+      "id": "vosk-web-tree",
+      "url": "https://api.github.com/repos/alphacep/alphacephei.com/git/trees/master?recursive=1",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "soapbox-sdk-source",
+      "url": "https://raw.githubusercontent.com/soapboxlabs/soapbox-client/master/README.md",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "azure-pronunciation-sample-readme",
+      "url": "https://raw.githubusercontent.com/Azure-Samples/cognitive-services-speech-sdk/master/scenarios/README.md",
+      "status": 200,
+      "bytes": 10664,
+      "sha256": "e15a2d933aa5142a6ddae2a43a3797dcbab9d04f5f110ddd835a5bbec05fea65",
+      "retrievedAtUtc": "2026-10-23T05:41:36.788777+00:00"
+    },
+    {
+      "id": "moonshine-quickstart",
+      "url": "https://raw.githubusercontent.com/moonshine-ai/moonshine/main/docs/quickstart/index.md",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "sherpa-license",
+      "url": "https://raw.githubusercontent.com/k2-fsa/sherpa-onnx/master/LICENSE",
+      "status": 200,
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "retrievedAtUtc": "2026-10-23T05:41:36.892805+00:00"
+    },
+    {
+      "id": "vosk-license",
+      "url": "https://raw.githubusercontent.com/alphacep/vosk-api/master/COPYING",
+      "status": 200,
+      "bytes": 10173,
+      "sha256": "bb618af833c817ab01c1564bd3ec75ba4b4f9cf30910a4a2168e30a674ee8cc6",
+      "retrievedAtUtc": "2026-10-23T05:41:36.937356+00:00"
+    },
+    {
+      "id": "moonshine-android-example",
+      "url": "https://raw.githubusercontent.com/moonshine-ai/moonshine/main/examples/android/Transcriber/app/build.gradle.kts",
+      "status": 200,
+      "bytes": 821,
+      "sha256": "34b3124622e2d21876aaf66a3466a5ea4f88a20d85d1ddaaa8978f2e79dcace8",
+      "retrievedAtUtc": "2026-10-23T05:42:58.944487+00:00"
+    },
+    {
+      "id": "moonshine-android-binding",
+      "url": "https://raw.githubusercontent.com/moonshine-ai/moonshine/main/language-bindings/android/build.gradle.kts",
+      "status": 200,
+      "bytes": 4782,
+      "sha256": "78c22e83260b0428b07067b0fb9e6638c5a82c706646a8be4f6f4f24398c22eb",
+      "retrievedAtUtc": "2026-10-23T05:42:58.965800+00:00"
+    },
+    {
+      "id": "moonshine-quickstart-real",
+      "url": "https://raw.githubusercontent.com/moonshine-ai/moonshine/main/docs/quickstart.md",
+      "status": 200,
+      "bytes": 7230,
+      "sha256": "ee6b6fb39c8a0dc744708d220170af05090eac7bf5b9588329ec8555e8cacf30",
+      "retrievedAtUtc": "2026-10-23T05:42:58.964514+00:00"
+    },
+    {
+      "id": "sherpa-streaming-rn",
+      "url": "https://raw.githubusercontent.com/XDcobra/react-native-sherpa-onnx/main/docs/stt-streaming.md",
+      "status": 200,
+      "bytes": 13551,
+      "sha256": "1845cfe827f8e98b117d9fdaff8c3eead5efce82cded03fe38390a2acc616128",
+      "retrievedAtUtc": "2026-10-23T05:42:59.006874+00:00"
+    },
+    {
+      "id": "google-streaming-example",
+      "url": "https://raw.githubusercontent.com/GoogleCloudPlatform/python-docs-samples/main/speech/microphone/transcribe_streaming_infinite.py",
+      "status": 200,
+      "bytes": 11100,
+      "sha256": "f8ef2cfbe802bcd59eab326a8c57ecc2d101727b61fe34c02698e75d622d0a93",
+      "retrievedAtUtc": "2026-10-23T05:42:58.985317+00:00"
+    },
+    {
+      "id": "soapbox-api-search",
+      "url": "https://api.github.com/search/repositories?q=soapbox+speech+api&sort=stars&per_page=5",
+      "status": 200,
+      "bytes": 55,
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "retrievedAtUtc": "2026-10-23T05:42:59.153160+00:00"
+    },
+    {
+      "id": "mlkit-genai-readme",
+      "url": "https://raw.githubusercontent.com/googlesamples/mlkit/master/android/genai/README.md",
+      "status": 200,
+      "bytes": 1888,
+      "sha256": "682239cc769a9eecb30f1b72e50629726e492aba33c1c085cc588506f523d8db",
+      "retrievedAtUtc": "2026-10-23T05:44:22.181231+00:00"
+    },
+    {
+      "id": "pinned-expo-service-url",
+      "url": "https://raw.githubusercontent.com/jamsch/expo-speech-recognition/996258b7473ee723e9ffb5bb73d8694f091254ba/android/src/main/java/expo/modules/speechrecognition/ExpoSpeechService.kt",
+      "status": 200,
+      "bytes": 30129,
+      "sha256": "bb311000553445383325d76d6f156a937bbcb76503a8e8088abfb9d0c7d89da1",
+      "retrievedAtUtc": "2026-10-23T05:44:22.244903+00:00"
+    },
+    {
+      "id": "pinned-expo-recorder-url",
+      "url": "https://raw.githubusercontent.com/jamsch/expo-speech-recognition/996258b7473ee723e9ffb5bb73d8694f091254ba/android/src/main/java/expo/modules/speechrecognition/ExpoAudioRecorder.kt",
+      "status": 200,
+      "bytes": 8699,
+      "sha256": "fe986fc34a41e08f9754413ee2a28b603ac1ea06be84c00f1da549301754bb9e",
+      "retrievedAtUtc": "2026-10-23T05:44:22.201288+00:00"
+    },
+    {
+      "id": "pinned-expo-ios-url",
+      "url": "https://raw.githubusercontent.com/jamsch/expo-speech-recognition/996258b7473ee723e9ffb5bb73d8694f091254ba/ios/ExpoSpeechRecognizer.swift",
+      "status": 200,
+      "bytes": 34204,
+      "sha256": "eba1f22d1d43d3be0d3baadf1231fda424ac7211b359043ad5e70a3a0745f142",
+      "retrievedAtUtc": "2026-10-23T05:44:22.202114+00:00"
+    },
+    {
+      "id": "android-speechrecognizer",
+      "url": "https://raw.githubusercontent.com/aosp-mirror/platform_frameworks_base/master/core/java/android/speech/SpeechRecognizer.java",
+      "status": 200,
+      "bytes": 25594,
+      "sha256": "c8baaee0455c3642729d75dba5fa28b1939c002822974087917bd89cec0f4b4a",
+      "retrievedAtUtc": "2026-10-23T05:31:22.675891+00:00"
+    },
+    {
+      "id": "android-intent",
+      "url": "https://raw.githubusercontent.com/aosp-mirror/platform_frameworks_base/master/core/java/android/speech/RecognizerIntent.java",
+      "status": 200,
+      "bytes": 33117,
+      "sha256": "551b1b1b6c19023042990f891c17bacf82d9f7b78ba4a041457f5b0270c8fd45",
+      "retrievedAtUtc": "2026-10-23T05:31:22.733725+00:00"
+    },
+    {
+      "id": "android-listener",
+      "url": "https://raw.githubusercontent.com/aosp-mirror/platform_frameworks_base/master/core/java/android/speech/RecognitionListener.java",
+      "status": 200,
+      "bytes": 6979,
+      "sha256": "cf3d144c6a11adb379a63aeacee6072bdeab3668bf5001063659a61351237d1c",
+      "retrievedAtUtc": "2026-10-23T05:31:22.733392+00:00"
+    },
+    {
+      "id": "expo-recognition",
+      "url": "https://raw.githubusercontent.com/jamsch/expo-speech-recognition/main/README.md",
+      "status": 200,
+      "bytes": 68453,
+      "sha256": "5957ad79d94ac813246763c3c21e69824db6632654f89c79f779debb165d3c12",
+      "retrievedAtUtc": "2026-10-23T05:31:22.571072+00:00"
+    },
+    {
+      "id": "whisper-rn",
+      "url": "https://raw.githubusercontent.com/mybigday/whisper.rn/main/README.md",
+      "status": 200,
+      "bytes": 18435,
+      "sha256": "40c8c93ed2a0e25480d5d5b216396cf0e137d4c36eff491669035f50835cbc0c",
+      "retrievedAtUtc": "2026-10-23T05:31:22.750922+00:00"
+    },
+    {
+      "id": "whisper-cpp",
+      "url": "https://raw.githubusercontent.com/ggml-org/whisper.cpp/master/README.md",
+      "status": 200,
+      "bytes": 40988,
+      "sha256": "43451813ec96b5ea286c6d676f467bdffb053224c110c257ce3d67d911e774e7",
+      "retrievedAtUtc": "2026-10-23T05:31:22.731768+00:00"
+    },
+    {
+      "id": "whisper-card",
+      "url": "https://raw.githubusercontent.com/openai/whisper/main/model-card.md",
+      "status": 200,
+      "bytes": 7307,
+      "sha256": "3c2dc15e0c4bf2f1067db8530b1ecd6675abb431c4bc09fad3bc4453434f3333",
+      "retrievedAtUtc": "2026-10-23T05:31:22.652701+00:00"
+    },
+    {
+      "id": "vosk",
+      "url": "https://raw.githubusercontent.com/alphacep/vosk-api/master/README.md",
+      "status": 200,
+      "bytes": 1107,
+      "sha256": "5f56ab2addced6c3655d22dbeeaf05dd5fc75ab9aa8e5e6a9f18b622fe68e5bb",
+      "retrievedAtUtc": "2026-10-23T05:31:22.729420+00:00"
+    },
+    {
+      "id": "sherpa-onnx",
+      "url": "https://raw.githubusercontent.com/k2-fsa/sherpa-onnx/master/README.md",
+      "status": 200,
+      "bytes": 58648,
+      "sha256": "e9e425854ec9c1c5f8d18cbc041e2590a6e875ec69b90951f95e4d3cfdfa1ed5",
+      "retrievedAtUtc": "2026-10-23T05:31:22.797661+00:00"
+    },
+    {
+      "id": "android-docs",
+      "url": "https://developer.android.com/reference/android/speech/SpeechRecognizer",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "azure-pronunciation",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/how-to-pronunciation-assessment",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "google-stt",
+      "url": "https://cloud.google.com/speech-to-text/docs/streaming-recognize",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "openai-stt",
+      "url": "https://developers.openai.com/api/docs/guides/speech-to-text",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "arxiv",
+      "url": "https://arxiv.org/search/?query=children+speech+recognition&searchtype=all",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "crossref",
+      "url": "https://api.crossref.org/works?query=children%20speech%20recognition%20whisper&rows=5",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "bing",
+      "url": "https://www.bing.com/search?q=child+speech+recognition+read+along+benchmark",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "duckduckgo",
+      "url": "https://html.duckduckgo.com/html/?q=child+speech+recognition+read+along+benchmark",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "stackoverflow",
+      "url": "https://stackoverflow.com/questions/tagged/android-speechrecognition",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "gboard-help",
+      "url": "https://support.google.com/gboard/answer/11197787?hl=en",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "google-readalong",
+      "url": "https://readalong.google/",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "google-research",
+      "url": "https://research.google/blog/reading-with-children/",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "hf-search",
+      "url": "https://huggingface.co/api/models?search=children%20speech&limit=10",
+      "status": 200,
+      "bytes": 1452,
+      "sha256": "279ae50af5dde468101a5d8784fca8ec66e24e007f6f55e58386c85d6bb20b93",
+      "retrievedAtUtc": "2026-10-23T05:31:22.860244+00:00"
+    },
+    {
+      "id": "github-child-search",
+      "url": "https://api.github.com/search/repositories?q=child+speech+recognition&sort=stars&per_page=10",
+      "status": 200,
+      "bytes": 64648,
+      "sha256": "65e9f33e253b3bb886d9bc800e30de8139e680df57e30078f741438ff972c164",
+      "retrievedAtUtc": "2026-10-23T05:31:23.683644+00:00"
+    },
+    {
+      "id": "github-readalong-search",
+      "url": "https://api.github.com/search/repositories?q=read+along+speech&sort=stars&per_page=10",
+      "status": 200,
+      "bytes": 346926,
+      "sha256": "97dd1613de023af2e6fbcd551b88a4bc06e417912b4989fd197035536431322d",
+      "retrievedAtUtc": "2026-10-23T05:31:23.483982+00:00"
+    }
+  ],
+  "expo57Artifact": {
+    "version": "57.0.0",
+    "gitHead": "996258b7473ee723e9ffb5bb73d8694f091254ba",
+    "npmIntegrity": "sha512-eUHnlNPhYemXIYi2y/bGigDjefE8y0hySAx+tAbaKwEVStYJxJKPHDYWll0z3ELHFLzdyx22V8qhZic9Q6yhNA==",
+    "integrityVerified": true,
+    "packageInstalledOrExecuted": false
+  },
+  "limitations": [
+    "Official product/reference sites blocked by environment are recorded as unread.",
+    "No Fold, child-speech or provider runtime benchmark was performed.",
+    "No live pricing, account retention policy or commercial contract was verified."
+  ]
+}

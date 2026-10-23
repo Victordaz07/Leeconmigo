@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-22",
+  "timezone": "America/Los_Angeles",
+  "scope": "VZ-01 research and documentation only",
+  "appCodeInspectedAt": "63a8dde",
+  "sources": {
+    "citations": 76,
+    "distinctPublicResources": 76,
+    "httpAttempts": 157,
+    "successfulRetrievals": 115,
+    "cachedSha256Checks": "passed",
+    "expo57TarballIntegritySha512": "passed"
+  },
+  "documents": {
+    "localLinks": "passed",
+    "citationDefinitions": "passed",
+    "codeFences": "passed",
+    "pdfPages": 54,
+    "pdfVisualReview": [
+      "cover",
+      "page 12",
+      "page 54"
+    ],
+    "pdfContainsJavaScript": false,
+    "textOnlyMatcherCases": 2
+  },
+  "runtime": {
+    "newPackagesInstalled": false,
+    "voiceActivated": false,
+    "childAudioRecorded": false,
+    "childAudioUploaded": false,
+    "physicalDeviceOrAcousticBenchmark": false,
+    "appTestsRerun": false,
+    "appTestReason": "Application source unchanged; last validated application suite 1943 tests. Documentation checked separately."
+  },
+  "artifactSha256": {
+    "ANDROID-API-LEVELS.json": "67fe568dd3453e1e9a1a49f6f6a0767238bc5ccb3d09285058de9673691a68e1",
+    "AUDITORIA-CODIGO.md": "5b4f2aed7c02e6e2c862bd0690ed2d99e75440d5f0c7d7c63ebe901ba2dec02e",
+    "FUENTES.md": "7814495c375ecad9fd80c4e39bae8809c30009791ba37ecc43a9d629079f04aa",
+    "INFORME.md": "94eb5a22b688465473507840bc8f72adb11b4795b60fd5034fbb8fb9983359c2",
+    "Kitewise-investigacion-motor-de-lectura.pdf": "1d0bae281c7bd728cbbeae492b559c79ca81f312e35c47bd0dc9e12579fea068",
+    "PLAN-DE-PRUEBAS.md": "31a2877872a97b7f5e039d93906b29f0e1a64069a55f8ac66f55eb0e09f1cce2",
+    "README.md": "55daf9bd083f7bf2f6bc395b2a9f85f39e7fcadeb58c1546652552a6addbd851",
+    "REPRODUCCION-MATCHER.json": "c27f2f41edce2eec0b460f0756a069d1e64e180cea46fdba53f6e154f72f756e",
+    "SOURCE-MANIFEST.json": "919b0256e6906310e38a3c5db770b0655f264c1f1b1a0bf38eebdbce9529a11d"
+  }
+}

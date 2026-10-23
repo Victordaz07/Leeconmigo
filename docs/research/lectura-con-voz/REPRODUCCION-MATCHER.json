@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-22",
+  "codeCommit": "63a8dde",
+  "method": "Text-only matcher execution plus static inspection of RealReadingEngine consumer; no audio, no end-to-end device test.",
+  "cases": [
+    {
+      "expected": "La niña abrió la puerta azul y entró al jardín.",
+      "recognized": "jardín",
+      "match": {
+        "recognizedWords": 1,
+        "matched": 1,
+        "score": 1,
+        "matchedIdx": [
+          9
+        ],
+        "startIdx": 9,
+        "endIdx": 9
+      },
+      "acceptsWithCurrentDefaults": true,
+      "consumerLoopWouldEmitIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "expected": "El gato mira al gato junto al río.",
+      "recognized": "río",
+      "match": {
+        "recognizedWords": 1,
+        "matched": 1,
+        "score": 1,
+        "matchedIdx": [
+          7
+        ],
+        "startIdx": 7,
+        "endIdx": 7
+      },
+      "acceptsWithCurrentDefaults": true,
+      "consumerLoopWouldEmitIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    }
+  ]
+}

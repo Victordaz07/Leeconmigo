@@ -202,3 +202,15 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | LE-08 | Ilustraciones ampliables: pellizco, arrastre, botones, volver al mismo fragmento y cambios de orientación | ✅ | 12 casos táctiles ES/EN; zoom 1–4×, controles 48 dp, sin dependencias nuevas. `docs/design/reading-catalog/` |
 | LE-09 | Continuar el resto de los cuentos con el lector por escenas | ✅ | 23 familias nuevas, 25 totales / 81 variantes; arte y texto preservados, encuadres revisados, texto solo cuando no hay ilustración. 1.943 pruebas, 49 recorridos completos, exportación Android; sin APK nuevo |
 | LE-10 | Publicar APK con zoom y los 25 cuentos adaptados | ✅ | 0.1.2 / código 3 publicado; HTTP 200, checksum/digest, misma firma, 169 recursos, 25 ediciones y zoom verificados. `docs/design/reading-catalog/APK-VERIFICATION.json` |
+
+## Motor de lectura con voz (investigación solicitada por Victor, 2026-10-22)
+
+| ID | Tarea | Estado | Nota |
+|---|---|---|---|
+| VZ-01 | Investigar Gboard/Android, motores locales, APIs, estudios infantiles y proyectos similares | ✅ | Informe, auditoría, plan, 76 referencias y PDF de 54 páginas en `docs/research/lectura-con-voz/`; sin activar voz ni alterar D1 |
+| VZ-02 | Separar hipótesis/cursor/cobertura y corregir falsos avances del motor experimental | ⬜ | Casos textuales reproducidos; revisiones, generaciones, repeticiones y evidencia temporal antes de conectar audio |
+| VZ-03 | Diagnóstico Android de reconocimiento estrictamente local ES/EN en Fold | ⬜ | Servicio/modelo/idioma, parciales, segmentos, stop/abort y prueba release; sin fallback a red |
+| VZ-04 | Comparar streaming local EN/ES con referencia Whisper | ⬜ | Moonshine candidato; Sherpa/Picovoice alternativas. Compatibilidad, licencia, latencia, falsos avances, memoria y batería |
+| VZ-05 | Integrar primer recorrido acompañado preservando manual y ayuda por palabra | ⬜ | Micrófono único, TTS coordinado, errores recuperables, anclas y tiempo |
+| VZ-06 | Calibración breve con lectura real sin grabar/subir voz | ⬜ | Sesiones amables y métricas agregadas; no generalizar una voz a toda la población infantil |
+| VZ-07 | Elegir motor y alcance publicable según resultados | ⬜ | Dispositivos/idiomas comprobados, limitaciones explícitas; pronunciación fonética evaluada como proyecto aparte |
