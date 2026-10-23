@@ -12,3 +12,8 @@
 APK 0.2.0/código 4 publicado y descargado completo: HTTPS 200, checksum/digest de GitHub coincidentes, certificado igual a 0.1.2, sin permiso INTERNET, cuatro ABIs, 169 recursos, 25 ediciones, lector nuevo y guarda nativa comprobados. CI 39918040689 aprobado desde d407328 en 31m27s. `APK-VERIFICATION.json` registra la evidencia y la descarga definitiva r3.
 
 **No probado aún en dispositivo:** permiso/micrófono/servicio e idiomas instalados del Fold, TTS audible, velocidad/precisión con Noah, ruido/TV/otros lectores, batería/calor y continuidad al plegar durante captura real. La compilación y los mocks no sustituyen esas pruebas. Prueba de voz de Ajustes se conserva precisamente para comprobarlas y seguir depurando.
+
+
+## Actualización VZ-08 · 0.2.1 / código 5
+
+1.991 pruebas/135 archivos, TypeScript y lint correctos. Compilación Kotlin release aprobada y regresión JVM del archivo Kotlin real: parada interrumpida, repetida, rechazo de grabador no inicializado, liberación y redacción/delegación del informe local. Fuente limpia del registro produce exactamente el mismo parche. Ambos accesos de Ajustes ES/EN conservados en cuatro tamaños por idioma. CI 40015852789 aprobado desde 0a34584; APK descargado/verificado con mismo certificado/paquete, SHA-256/digest GitHub, 169 recursos, 25 ediciones y diagnóstico local presente. Detalles en `CRASH-FIX.md` y `CRASH-FIX-VERIFICATION.json`. Sin dispositivo/logcat: no se afirma que el cierre específico del Fold esté resuelto ni que la inyección JVM reproduzca su causa.

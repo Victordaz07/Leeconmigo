@@ -44,10 +44,18 @@ Pendiente: Fold físico, habla infantil real, acentos, ruido/TV/hermanos, latenc
 
 `expo-speech-recognition` 57.0.0, Copyright (c) 2024 jamsch, licencia MIT. Se conserva el aviso íntegro en [SPEECH-RECOGNITION-LICENSE.txt](SPEECH-RECOGNITION-LICENSE.txt). Los cambios locales del wrapper se describen arriba y en `apps/mobile/plugins/local-speech.js`.
 
-## Descarga verificada · 23 de octubre de 2026
+## Actualización de estabilidad · 0.2.1 / código 5
+
+[Descargar Kitewise 0.2.1 para Android](https://github.com/Victordaz07/Leeconmigo/releases/download/apk-lectura-2026-10-23-voz-estable-r2/Kitewise-lectura.apk) · 335,567,138 bytes. Instalar encima de la versión anterior sin desinstalar para conservar datos.
+
+Contiene protección de errores de inicio/parada nativos, rechazo inmediato del micrófono no inicializado y un diagnóstico técnico local mínimo en Ajustes → Probar el micrófono. No guarda voz, transcripciones ni mensajes de excepción. Detalles y prueba física pendiente: [CRASH-FIX.md](CRASH-FIX.md).
+
+CI 40015852789 aprobado desde 0a34584; descarga HTTP 200, checksum/digest GitHub, mismo certificado/paquete, alineación de 16 KB, cuatro arquitecturas, 169 recursos y 25 ediciones comprobados. Diagnóstico nativo y su interfaz incluidos en el APK. SHA-256: `0e3daa28b5a3d9830d0517800312822bd68bc11e72c169c6a623ff4dd3fb3b99`. Evidencia: [CRASH-FIX-VERIFICATION.json](CRASH-FIX-VERIFICATION.json). El primer intento `voz-estable` fue cancelado antes de publicar; usar la etiqueta final `apk-lectura-2026-10-23-voz-estable-r2`. La causa exacta y la resolución del cierre informado requieren confirmación en el Fold.
+
+## Descarga anterior · 0.2.0 · histórica
 
 [Descargar Kitewise 0.2.0 para Android](https://github.com/Victordaz07/Leeconmigo/releases/download/apk-lectura-2026-10-23-motor-lectura-r3/Kitewise-lectura.apk) · código 4 · 335.565.866 bytes. Instalar sobre 0.1.2 sin desinstalar para conservar datos.
 
-CI 39918040689 aprobado en 31m27s desde d407328; descarga HTTPS 200 completa, SHA-256/digest de GitHub, firma idéntica, alineación 16 KB, cuatro arquitecturas, 169 recursos, 25 ediciones, lector nuevo y guarda nativa verificados. Sin permiso INTERNET. Evidencia íntegra: `APK-VERIFICATION.json`. Las etiquetas anteriores de este motor se cancelaron antes de publicar; usar solo la descarga r3.
+CI 39918040689 aprobado en 31m27s desde d407328; descarga HTTPS 200 completa, SHA-256/digest de GitHub, firma idéntica, alineación 16 KB, cuatro arquitecturas, 169 recursos, 25 ediciones, lector nuevo y guarda nativa verificados. Sin permiso INTERNET. Evidencia íntegra: `APK-VERIFICATION.json`. Las etiquetas anteriores de este motor se cancelaron antes de publicar; r3 identifica esa entrega histórica; la actualización actual es 0.2.1 enlazada arriba.
 
 SHA-256: `429466c4f956b2deb7661023e372ed78ccba58797529f6eb91c6ba6fa79457b8`. Falta la prueba física de reconocimiento/latencia/TTS/plegado con captura real. La revisión de campo se hace desde los dos laboratorios preservados y el protocolo anterior.
