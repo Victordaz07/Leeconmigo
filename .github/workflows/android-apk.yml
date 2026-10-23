@@ -45,6 +45,12 @@ jobs:
         run: |
           npm ci --include=dev --no-audit --no-fund
           npm run models -w @lee-conmigo/mobile
+      - name: Verificar motor, tipos y regresiones
+        env:
+          NODE_ENV: test
+        run: |
+          npm run typecheck
+          npm test
       - name: Generar proyecto Android
         run: npm exec --workspace @lee-conmigo/mobile -- expo prebuild --platform android --no-install
       - name: Comprobar ancho nativo de los cuadernos
@@ -75,26 +81,16 @@ jobs:
           required = {hashlib.sha256(path.read_bytes()).hexdigest() for path in expected}
           apk = Path(os.environ['RUNNER_TEMP']) / 'kitewise-release/Kitewise-lectura.apk'
           with zipfile.ZipFile(apk) as archive:
+              dex = b''.join(archive.read(name) for name in archive.namelist() if name.endswith('.dex'))
+              assert b'Kitewise requires strict local recognition' in dex, 'Falta guarda de privacidad del reconocedor nativo'
+              bundle = archive.read('assets/index.android.bundle')
+              assert b'Read together' in bundle, 'Falta lector acompañado en el bundle'
               found = {hashlib.sha256(archive.read(name)).hexdigest() for name in archive.namelist() if name.endswith(('.bin', '.webp'))}
           assert required <= found, 'El APK no contiene todos los modelos y las ilustraciones esperados'
           PY
           cd "$RUNNER_TEMP/kitewise-release"
           sha256sum Kitewise-lectura.apk > Kitewise-lectura.apk.sha256
-          cat > release-notes.md <<'NOTES'
-          Kitewise 0.1.2: lector adaptado para los 25 cuentos del catálogo, con 81 variantes originales de idioma y nivel.
-
-          Nuevo visor de ilustraciones: toca la imagen o su lupa para ampliarla hasta 4×, mueve la imagen con el dedo y usa pellizco o botones. Volver a leer conserva el fragmento. El visor permanece abierto al girar o cambiar el tamaño de la pantalla y reajusta la imagen.
-
-          Conserva todas las ilustraciones y textos originales, pronunciación al tocar cada palabra, ayuda de vocabulario, letra ajustable, reanudación, comprensión y repaso. Las páginas sin ilustración aprovechan el espacio para el texto.
-
-          Incluye los arreglos anteriores de cuadernos, lectura vertical/horizontal, pantallas plegables e interfaz ES/EN.
-
-          Verificado: 1.943 pruebas, 49 recorridos completos de cuentos (991 fragmentos), visor en 12 casos táctiles ES/EN y 168 portadas con Yoga nativo en 12 tamaños. Falta comprobar los nuevos gestos en un Fold físico y el TTS audible del dispositivo.
-
-          Descarga Kitewise-lectura.apk e instálalo sobre la versión actual para conservar tus datos. Android 7 o posterior. Funciona sin servidor de desarrollo. Se adjunta la suma SHA-256.
-
-          Versión para pruebas familiares, firmada con la misma llave de pruebas de Expo. No es una publicación en Google Play.
-          NOTES
+          cp "$GITHUB_WORKSPACE/docs/design/read-together/RELEASE-NOTES.md" release-notes.md
           printf '\nCódigo fuente: %s\n' "$GITHUB_SHA" >> release-notes.md
       - name: Publicar descarga en GitHub
         env:
@@ -102,6 +98,6 @@ jobs:
           RELEASE_TAG: ${{ github.ref_name }}
         run: |
           cd "$RUNNER_TEMP/kitewise-release"
-          gh release create "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --verify-tag --draft --prerelease --title 'Kitewise 0.1.2 · 25 cuentos y zoom · Android' --notes-file release-notes.md
+          gh release create "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --verify-tag --draft --prerelease --title 'Kitewise 0.2.0 · Leer juntos · Android' --notes-file release-notes.md
           gh release upload "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" Kitewise-lectura.apk Kitewise-lectura.apk.sha256
           gh release edit "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --draft=false --prerelease
