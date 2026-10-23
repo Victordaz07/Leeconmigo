@@ -211,6 +211,6 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | VZ-02 | Separar hipótesis/cursor/cobertura y corregir falsos avances del motor experimental | ✅ | `ReadingFollower`, controlador y regresiones de falsos rangos; evidencia final y tiempos limitados. |
 | VZ-03 | Diagnóstico Android de reconocimiento estrictamente local ES/EN en Fold | 🟡 | Código/lifecycle/compilación release aprobados; Prueba de voz conserva Whisper y añade Android. Fold/idiomas reales pendientes. |
 | VZ-04 | Comparar streaming local EN/ES con referencia Whisper | ⬜ | Moonshine candidato; Sherpa/Picovoice alternativas. Compatibilidad, licencia, latencia, falsos avances, memoria y batería |
-| VZ-05 | Integrar primer recorrido acompañado preservando manual y ayuda por palabra | ✅ | `docs/design/read-together/`: Android local, alternativa Whisper, micrófono único, TTS/zoom/pausas y tiempos. Validación física pendiente. |
+| VZ-05 | Integrar primer recorrido acompañado preservando manual y ayuda por palabra | ✅ | `docs/design/read-together/`: Android local, alternativa Whisper, micrófono único, TTS/zoom/pausas y tiempos. APK 0.2.0/código 4 r3 publicado y verificado; validación física pendiente. |
 | VZ-06 | Calibración breve con lectura real sin grabar/subir voz | ⬜ | Sesiones amables y métricas agregadas; no generalizar una voz a toda la población infantil |
 | VZ-07 | Elegir motor y alcance publicable según resultados | ⬜ | Dispositivos/idiomas comprobados, limitaciones explícitas; pronunciación fonética evaluada como proyecto aparte |

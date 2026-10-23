@@ -9,6 +9,6 @@
 - `scripts/illustration-zoom-smoke.mjs`: doce casos táctiles ES/EN con pellizco/arrastre/ajuste/cambio de orientación.
 - `npm run test:native-layout`: 168 portadas con Yoga nativo en doce tamaños.
 
-APK: preparación/publicación en curso. Se verificará descarga, checksum, certificado igual a 0.1.2, permisos, cuatro ABIs y los 169 recursos originales antes de compartir enlace.
+APK 0.2.0/código 4 publicado y descargado completo: HTTPS 200, checksum/digest de GitHub coincidentes, certificado igual a 0.1.2, sin permiso INTERNET, cuatro ABIs, 169 recursos, 25 ediciones, lector nuevo y guarda nativa comprobados. CI 39918040689 aprobado desde d407328 en 31m27s. `APK-VERIFICATION.json` registra la evidencia y la descarga definitiva r3.
 
 **No probado aún en dispositivo:** permiso/micrófono/servicio e idiomas instalados del Fold, TTS audible, velocidad/precisión con Noah, ruido/TV/otros lectores, batería/calor y continuidad al plegar durante captura real. La compilación y los mocks no sustituyen esas pruebas. Prueba de voz de Ajustes se conserva precisamente para comprobarlas y seguir depurando.

@@ -39,3 +39,15 @@ Pendiente: Fold físico, habla infantil real, acentos, ruido/TV/hermanos, latenc
 4. Pausar/reanudar, ampliar ilustración, cambiar de fragmento, girar, abrir/cerrar el Fold y mandar la app al fondo. La escucha debe respetar cada pausa y nunca trasladar una frase antigua al fragmento nuevo.
 5. Si Android no está disponible, **Probar otra escucha local**; o continuar sin micrófono. En el laboratorio, comparar también Whisper Rápido/Preciso. No es necesario habilitar red para Whisper.
 6. Anotar solo motor, idioma, fragmento, demora aproximada y comportamiento observado. No grabar/subir la voz de Noah. Estos resultados decidirán el siguiente ajuste; no se promete precisión perfecta por haber pasado las pruebas de código.
+
+## Atribución de la dependencia nueva
+
+`expo-speech-recognition` 57.0.0, Copyright (c) 2024 jamsch, licencia MIT. Se conserva el aviso íntegro en [SPEECH-RECOGNITION-LICENSE.txt](SPEECH-RECOGNITION-LICENSE.txt). Los cambios locales del wrapper se describen arriba y en `apps/mobile/plugins/local-speech.js`.
+
+## Descarga verificada · 23 de octubre de 2026
+
+[Descargar Kitewise 0.2.0 para Android](https://github.com/Victordaz07/Leeconmigo/releases/download/apk-lectura-2026-10-23-motor-lectura-r3/Kitewise-lectura.apk) · código 4 · 335.565.866 bytes. Instalar sobre 0.1.2 sin desinstalar para conservar datos.
+
+CI 39918040689 aprobado en 31m27s desde d407328; descarga HTTPS 200 completa, SHA-256/digest de GitHub, firma idéntica, alineación 16 KB, cuatro arquitecturas, 169 recursos, 25 ediciones, lector nuevo y guarda nativa verificados. Sin permiso INTERNET. Evidencia íntegra: `APK-VERIFICATION.json`. Las etiquetas anteriores de este motor se cancelaron antes de publicar; usar solo la descarga r3.
+
+SHA-256: `429466c4f956b2deb7661023e372ed78ccba58797529f6eb91c6ba6fa79457b8`. Falta la prueba física de reconocimiento/latencia/TTS/plegado con captura real. La revisión de campo se hace desde los dos laboratorios preservados y el protocolo anterior.
