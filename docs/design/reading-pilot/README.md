@@ -2,13 +2,13 @@
 
 Petición de Victor, 2026-10-22: preparar primero **El puente de las luciérnagas** y después **El mapa de la puerta desaparecida** (Inés y Teo). La ayuda de TODAS las palabras es requisito central: pronunciación, sílabas y, cuando existen, significado, sinónimos y ejemplo.
 
-## Descargar el APK corregido en Android
+## Descargar el APK actual en Android
 
-[Descargar Kitewise-lectura.apk (335 MB)](https://github.com/Victordaz07/Leeconmigo/releases/download/apk-lectura-2026-10-22-cuadernos-r2/Kitewise-lectura.apk) · [Página de descarga](https://github.com/Victordaz07/Leeconmigo/releases/tag/apk-lectura-2026-10-22-cuadernos-r2)
+[Descargar Kitewise 0.1.1 · APK (335 MB)](https://github.com/Victordaz07/Leeconmigo/releases/download/apk-lectura-2026-10-22-fold-idioma/Kitewise-lectura.apk) · [Página de descarga](https://github.com/Victordaz07/Leeconmigo/releases/tag/apk-lectura-2026-10-22-fold-idioma)
 
-Corrige las portadas invisibles de Inicio en Android. Abrir el enlace en el teléfono, descargar e instalar **sobre la versión actual** para conservar sus datos. Mismo paquete y certificado de firma; no requiere iniciar sesión en GitHub ni un servidor de desarrollo.
+Incluye ambos cuentos, la corrección de portadas, el lector compacto adaptable a ventanas plegables y la interfaz ES/EN. Descargar e instalar sobre la versión actual para conservar los datos: mismo paquete/certificado, versión 0.1.1 / versionCode 2. No requiere iniciar sesión en GitHub ni servidor de desarrollo.
 
-GitHub Actions `39868481194` compiló y publicó la etiqueta desde `1e6135f`, con la prueba de Yoga nativo correcta (19m37s de job). Descarga completa HTTP 200, SHA-256, firma, alineación de 16 KB, cuatro arquitecturas y modelos/ilustraciones originales verificados. El bundle difiere de la versión anterior. Metadatos: `DOWNLOAD-CUADERNOS-VERIFICATION.json`. Es un prerelease para pruebas familiares con la llave de pruebas existente; la comprobación física y audible siguen pendientes. La descarga inicial queda como referencia histórica en `DOWNLOAD-VERIFICATION.json`. Para futuros APK solicitados, las etiquetas `apk-lectura-*` activan el flujo; los pushes normales a master no generan APK.
+CI `39880337558` compiló desde `2b29847` y publicó en 27m33s. Archivo completo descargado por HTTPS (HTTP 200), checksum, firma, alineación de 16 KB, cuatro arquitecturas y modelos/arte comprobados. Detalle actualizado: `../fold-and-language/README.md` y `../fold-and-language/APK-VERIFICATION.json`. Es un prerelease para pruebas familiares; Fold físico y TTS audible pendientes. Las evidencias de versiones anteriores se conservan en `DOWNLOAD-VERIFICATION.json` y `DOWNLOAD-CUADERNOS-VERIFICATION.json`. Solo las etiquetas solicitadas `apk-lectura-*` generan APK; los pushes normales no lo hacen.
 
 ## Regresión de cuadernos en Android (LE-06)
 

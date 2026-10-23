@@ -26,4 +26,8 @@ No se dispone de un Z Fold físico. Los cambios de ventana en navegador y el mot
 
 ## Entrega
 
-Código listo para versión 0.1.1 / versionCode 2. Mismo paquete y llave de pruebas: se instalará sobre el APK anterior para conservar datos. Compilación/publicación y comprobación de la nueva descarga pendientes; no confundir el APK anterior con esta corrección.
+[Descargar Kitewise 0.1.1 · APK Android · 335 MB](https://github.com/Victordaz07/Leeconmigo/releases/download/apk-lectura-2026-10-22-fold-idioma/Kitewise-lectura.apk) · [Página de descarga](https://github.com/Victordaz07/Leeconmigo/releases/tag/apk-lectura-2026-10-22-fold-idioma)
+
+Versión 0.1.1 / versionCode 2. Instalar **sobre la versión actual** para conservar los datos: mismo paquete `com.kitewise.app` y certificado de firma. GitHub Actions `39880337558` compiló desde `2b29847` y publicó en 27m33s. Descarga completa comprobada (HTTP 200, 335.456.214 bytes), checksum publicado coincidente, firma, alineación de 16 KB, cuatro arquitecturas y modelos/arte originales. Metadatos en `APK-VERIFICATION.json`.
+
+Es una versión instalable para pruebas familiares con la llave de pruebas existente; no se publicó en Google Play. Pendiente comprobar tacto, teclado, plegado y TTS audible en el Z Fold físico de Victor.

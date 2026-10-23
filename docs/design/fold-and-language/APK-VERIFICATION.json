@@ -1,0 +1,40 @@
+{
+  "apk": "/workspace/download-fold-idioma/Kitewise-lectura.apk",
+  "sourceCommit": "2b298475a320797230856939689a8063ed14aaa0",
+  "bytes": 335456214,
+  "sha256": "7fc155c067d1009ab903d5525b8ad435a27bc6bdf50c63f0141b9ac48e191b31",
+  "signatureVerified": true,
+  "debuggable": false,
+  "architectures": [
+    "arm64-v8a",
+    "armeabi-v7a",
+    "x86",
+    "x86_64"
+  ],
+  "assetsVerified": {
+    "apps/mobile/assets/models/ggml-tiny-q8_0.bin": "res/01.bin",
+    "apps/mobile/assets/models/ggml-silero-v6.2.0.bin": "res/1d.bin",
+    "apps/reader/public/stories/el-puente-de-las-luciernagas/reader/scene-01.webp": "res/IS.webp",
+    "apps/mobile/assets/models/ggml-base-q5_1.bin": "res/_A.bin",
+    "apps/reader/public/stories/mapa-de-la-puerta-desaparecida/reader/letter.webp": "res/uL.webp"
+  },
+  "deviceTested": false,
+  "package": "com.kitewise.app",
+  "versionName": "0.1.1",
+  "versionCode": 2,
+  "signerCertificateSha256": "fac61745dc0903786fb9ede62a962b399f7348f0bb6f899b8332667591033b9c",
+  "sameSignerAsPreviousRelease": true,
+  "zipAlignment16KB": true,
+  "verifiedAt": "2026-10-23T01:18:41.535087+00:00",
+  "releaseTag": "apk-lectura-2026-10-22-fold-idioma",
+  "releaseUrl": "https://github.com/Victordaz07/Leeconmigo/releases/tag/apk-lectura-2026-10-22-fold-idioma",
+  "downloadUrl": "https://github.com/Victordaz07/Leeconmigo/releases/download/apk-lectura-2026-10-22-fold-idioma/Kitewise-lectura.apk",
+  "downloadHttpStatus": 200,
+  "downloadChecksumMatches": true,
+  "ciRun": 39880337558,
+  "ciJob": 120175939662,
+  "ciDurationSeconds": 1653,
+  "ciNativeLayoutCheck": "passed",
+  "testingRelease": true,
+  "googlePlayPublished": false
+}
