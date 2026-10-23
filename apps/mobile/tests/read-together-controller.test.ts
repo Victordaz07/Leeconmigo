@@ -94,7 +94,7 @@ describe('read together: evidence and microphone lifecycle', () => {
     voice.hear('la cometa roja');
     expect(controller.snapshot().error).toBe('permission-denied');
     expect(controller.snapshot().confirmed).toEqual([]);
-    await controller.configure('a', words, 'es', true);
+    await controller.configure('a', words, 'es', true, 1);
     voice.hear('la cometa roja');
     expect(controller.snapshot().error).toBe(null);
     expect(controller.snapshot().confirmed).toEqual([0, 1, 2]);
@@ -115,4 +115,25 @@ describe('read together: evidence and microphone lifecycle', () => {
     expect(voice.finals.size).toBe(0);
     expect(credits).toEqual([]);
   });
+});
+
+it('does not retry denied permission on background return or a new fragment', async () => {
+  const { voice, controller } = setup();
+  await controller.configure('a', words, 'es', true);
+  voice.errors.forEach(cb => cb({ code: 'permission-denied', message: 'denied' }));
+  await controller.configure('a', words, 'es', false);
+  await controller.configure('a', words, 'es', true);
+  await controller.configure('b', words, 'es', true);
+  expect(voice.starts).toBe(1);
+  expect(controller.snapshot().error).toBe('permission-denied');
+  await controller.configure('b', words, 'es', true, 1);
+  expect(voice.starts).toBe(2);
+});
+it('a new reading run resets coverage even for the same single-page story', async () => {
+  const { voice, controller } = setup();
+  await controller.configure('run1:a', words, 'es', true);
+  voice.hear('la cometa roja volaba alto');
+  expect(controller.snapshot().complete).toBe(true);
+  await controller.configure('run2:a', words, 'es', true);
+  expect(controller.snapshot().confirmed).toEqual([]);
 });

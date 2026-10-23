@@ -56,7 +56,7 @@ export interface ReadingScreenProps {
 }
 
 export function ReadingScreen(props: ReadingScreenProps) {
-  const prepared = useMemo(() => props.profile.freeReading ? preparedReadingFor(props.story) : null, [props.story, props.profile.freeReading]);
+  const prepared = useMemo(() => preparedReadingFor(props.story), [props.story]);
   return prepared ? <SceneReadingScreen {...props} prepared={prepared} /> : <LegacyReadingScreen {...props} />;
 }
 

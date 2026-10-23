@@ -28,7 +28,7 @@ export function useReadTogether(options: {
   }, [controller]);
   useEffect(() => {
     if (!controller) return;
-    void controller.configure(options.pageKey, options.words, options.language, options.enabled && !options.blocked && foreground);
+    void controller.configure(options.pageKey, options.words, options.language, options.enabled && !options.blocked && foreground, retry);
     return () => { void controller.pause(); };
   }, [controller, options.pageKey, options.words, options.language, options.enabled, options.blocked, foreground, retry]);
   return { ...state, pause: () => controller?.pause() ?? Promise.resolve(), retry: () => setRetry(n => n + 1) };

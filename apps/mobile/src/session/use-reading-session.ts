@@ -57,6 +57,7 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
   const { store, prefs = defaultPrefs, now = () => new Date(), energy, dailyGoalMinutes = 15 } = options;
   const clockRef = useRef(now);
   clockRef.current = now;
+  const [runId, setRunId] = useState(0);
   const [engine] = useState(() => new FakeReadingEngine());
   // Se retoma donde se quedó (a nivel de página), como en la app web.
   const [flow, dispatch] = useReducer(reduceFlow, null, () => {
@@ -231,6 +232,7 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
   };
 
   const begin = () => {
+    setRunId(id => id + 1);
     summarySaved.current = false;
     timeSources.current = { free: false, voice: false };
     effort.current = { helpedOrRetried: false, longPauses: 0 };
@@ -244,6 +246,7 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
   };
 
   const restart = () => {
+    setRunId(id => id + 1);
     summarySaved.current = false;
     timeSources.current = { free: false, voice: false };
     effort.current = { helpedOrRetried: false, longPauses: 0 };
@@ -370,6 +373,7 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
   ];
 
   return {
+    runId,
     story,
     page,
     pageIndex,

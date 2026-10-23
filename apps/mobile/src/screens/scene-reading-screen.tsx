@@ -45,7 +45,7 @@ export function SceneReadingScreen({ prepared, profile, energy, goalMinutes, foc
   const actionsRef = useRef(actions);
   actionsRef.current = actions;
   const spokenWords = useMemo(() => session.words.map(word => word.text), [session.words]);
-  const voice = useReadTogether({ pageKey: page.id, words: spokenWords, language: original.language,
+  const voice = useReadTogether({ pageKey: `${session.runId}:${page.id}`, words: spokenWords, language: original.language,
     enabled: voiceEnabled && !voicePaused, blocked: flow.screen !== 'reading' || !!helpWord || artOpen || resting,
     provider, credit: actions.creditVoice });
   const voiceRef = useRef(voice); voiceRef.current = voice;
@@ -158,7 +158,7 @@ export function SceneReadingScreen({ prepared, profile, energy, goalMinutes, foc
           </View>
           <Pressable accessibilityRole="button" accessibilityLabel={!voiceEnabled ? vc.together : voicePaused || voice.status === 'stopped' || voice.error ? vc.resume : vc.pause}
             onPress={() => {
-              if (!voiceEnabled) { setVoiceEnabled(true); setVoicePaused(false); }
+              if (!voiceEnabled) { setVoiceEnabled(true); setVoicePaused(false); voice.retry(); }
               else if (voicePaused || voice.status === 'stopped' || voice.error) { setVoicePaused(false); voice.retry(); }
               else { void voice.pause(); setVoicePaused(true); }
             }} style={styles.fontButton}>
@@ -177,7 +177,7 @@ export function SceneReadingScreen({ prepared, profile, energy, goalMinutes, foc
               <Text style={styles.prepTitle}>{c.welcome}</Text>
               <Text style={styles.prepText}>{c.welcomeHint}</Text>
               <Text style={styles.voiceMessage}>{vc.intro}</Text>
-              <Button label={vc.together} onPress={() => { setVoiceEnabled(true); setVoicePaused(false); actions.begin(); }} />
+              <Button label={vc.together} onPress={() => { setVoiceEnabled(true); setVoicePaused(false); voice.retry(); actions.begin(); }} />
               <Button label={c.start} variant="secondary" onPress={() => { setVoiceEnabled(false); actions.begin(); }} />
             </View>
           </ScrollView>

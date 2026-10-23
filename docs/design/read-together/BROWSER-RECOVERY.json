@@ -1,6 +1,16 @@
 [
   {
     "language": "es",
+    "profileFreeReading": true,
+    "sizes": 5,
+    "unsupported": "recovered manually",
+    "pronunciationRequests": 2,
+    "networkCapableBrowserAsrCalls": 0,
+    "errors": []
+  },
+  {
+    "language": "es",
+    "profileFreeReading": false,
     "sizes": 5,
     "unsupported": "recovered manually",
     "pronunciationRequests": 2,
@@ -9,6 +19,16 @@
   },
   {
     "language": "en",
+    "profileFreeReading": true,
+    "sizes": 5,
+    "unsupported": "recovered manually",
+    "pronunciationRequests": 2,
+    "networkCapableBrowserAsrCalls": 0,
+    "errors": []
+  },
+  {
+    "language": "en",
+    "profileFreeReading": false,
     "sizes": 5,
     "unsupported": "recovered manually",
     "pronunciationRequests": 2,

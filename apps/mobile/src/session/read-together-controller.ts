@@ -17,6 +17,7 @@ export class ReadTogetherController {
   private status: VoiceStatus = 'idle';
   private error: SpeechError['code'] | null = null;
   private pageKey: string | null = null;
+  private retryTicket = 0;
   private lastPartialAt: number | null = null;
   private pendingMs = 0;
   private listeners = new Set<(state: TogetherState) => void>();
@@ -51,7 +52,7 @@ export class ReadTogetherController {
   }
 
   /** Call for a page, lifecycle or user-intent change. Stop invalidates native callbacks synchronously. */
-  async configure(pageKey: string, words: readonly string[], language: string, active: boolean): Promise<void> {
+  async configure(pageKey: string, words: readonly string[], language: string, active: boolean, retryTicket = 0): Promise<void> {
     const generation = ++this.generation;
     this.active = false;
     this.accepting = false;
@@ -61,11 +62,11 @@ export class ReadTogetherController {
       this.pageKey = pageKey;
       this.follower = new ReadingFollower(words);
     } else this.follower.discardHypothesis();
-    this.error = null;
-    this.status = active ? 'loading-model' : 'stopped';
+    if (retryTicket !== this.retryTicket) { this.error = null; this.retryTicket = retryTicket; }
+    this.status = this.error ? 'error' : active ? 'loading-model' : 'stopped';
     this.emit();
     await this.voice.stop();
-    if (this.disposed || generation !== this.generation || !active) return;
+    if (this.disposed || generation !== this.generation || !active || this.error) return;
     this.active = true;
     this.accepting = true;
     await this.voice.start(language).catch(() => {

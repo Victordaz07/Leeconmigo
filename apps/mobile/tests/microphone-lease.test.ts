@@ -42,3 +42,13 @@ describe('one microphone for reader and parent laboratory', () => {
     expect(b.start).not.toHaveBeenCalled();
   });
 });
+
+it('does not hand uncertain capture shutdown to another provider', async () => {
+  const a = make();
+  const b = make();
+  (a.engine as ReadingVoice).isMicrophoneReleased = () => false;
+  await a.engine.start('es');
+  await a.engine.stop();
+  await expect(b.engine.start('en')).rejects.toThrow('shutdown was not acknowledged');
+  expect(b.start).not.toHaveBeenCalled();
+});
