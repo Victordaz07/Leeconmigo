@@ -58,6 +58,8 @@ jobs:
       - name: Compilar APK sin servidor
         working-directory: apps/mobile/android
         run: ./gradlew assembleRelease --console=plain --max-workers=2
+      - name: Probar parada nativa del micrófono
+        run: python3 scripts/check-native-speech.py
       - name: Comprobar y preparar descarga
         run: |
           mkdir -p "$RUNNER_TEMP/kitewise-release"
@@ -83,6 +85,7 @@ jobs:
           with zipfile.ZipFile(apk) as archive:
               dex = b''.join(archive.read(name) for name in archive.namelist() if name.endswith('.dex'))
               assert b'Kitewise requires strict local recognition' in dex, 'Falta guarda de privacidad del reconocedor nativo'
+              assert b'getLastSpeechFailure' in dex, 'Falta diagnóstico técnico local nativo'
               bundle = archive.read('assets/index.android.bundle')
               assert b'Read together' in bundle, 'Falta lector acompañado en el bundle'
               found = {hashlib.sha256(archive.read(name)).hexdigest() for name in archive.namelist() if name.endswith(('.bin', '.webp'))}
@@ -91,6 +94,7 @@ jobs:
           cd "$RUNNER_TEMP/kitewise-release"
           sha256sum Kitewise-lectura.apk > Kitewise-lectura.apk.sha256
           cp "$GITHUB_WORKSPACE/docs/design/read-together/RELEASE-NOTES.md" release-notes.md
+          cat "$GITHUB_WORKSPACE/docs/design/read-together/SPEECH-RECOGNITION-LICENSE.txt" >> release-notes.md
           printf '\nCódigo fuente: %s\n' "$GITHUB_SHA" >> release-notes.md
       - name: Publicar descarga en GitHub
         env:
@@ -98,6 +102,6 @@ jobs:
           RELEASE_TAG: ${{ github.ref_name }}
         run: |
           cd "$RUNNER_TEMP/kitewise-release"
-          gh release create "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --verify-tag --draft --prerelease --title 'Kitewise 0.2.0 · Leer juntos · Android' --notes-file release-notes.md
+          gh release create "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --verify-tag --draft --prerelease --title 'Kitewise 0.2.1 · Estabilidad de voz · Android' --notes-file release-notes.md
           gh release upload "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" Kitewise-lectura.apk Kitewise-lectura.apk.sha256
           gh release edit "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --draft=false --prerelease

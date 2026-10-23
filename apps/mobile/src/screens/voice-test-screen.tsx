@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { AppState, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Button, ChevronLeftIcon, colors, fontFamily, MicBadge, radius, RoundButton, shadows, useLayout } from '@lee-conmigo/ui-native';
+import { getVoiceFailureSummary } from '../speech/voice-failure-summary';
 import { createReadingVoice } from '../speech/create-reading-voice';
 import type { ReadingVoice, ReadingVoiceProvider } from '../speech/reading-voice';
 import { ReadAlong, type HeardResult } from '../speech/read-along';
@@ -47,6 +48,7 @@ export function VoiceTestScreen({ language: initialLanguage, onBack }: { languag
   const { t: ui } = useTranslation();
   const insets = useSafeAreaInsets();
   const layout = useLayout();
+  const [lastFailure] = useState(getVoiceFailureSummary);
   const [provider, setProvider] = useState<ReadingVoiceProvider>('android');
   const [partial, setPartial] = useState('');
   const runId = useRef(0);
@@ -220,6 +222,12 @@ export function VoiceTestScreen({ language: initialLanguage, onBack }: { languag
       </View>
       {!!partial && <Text accessibilityLiveRegion="polite" style={styles.transcript}>{ui("Hipótesis provisional")}: {partial}</Text>}
       {error && <Text style={styles.warn}>{error}</Text>}
+
+      {lastFailure && <View style={styles.card}>
+        <Text style={styles.h3}>{initialLanguage === 'en' ? 'Previous unexpected close' : 'Último cierre inesperado'}</Text>
+        <Text style={styles.small}>{initialLanguage === 'en' ? 'Local technical codes. No voice or recognized text is saved. You can share a screenshot for troubleshooting.' : 'Códigos técnicos locales. No se guarda voz ni texto reconocido. Puedes compartir una captura para revisar el fallo.'}</Text>
+        <Text selectable style={styles.small}>{lastFailure}</Text>
+      </View>}
 
       {/* Diagnóstico: en qué paso va la voz */}
       {diag && (

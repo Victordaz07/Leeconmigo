@@ -19,6 +19,36 @@ function hardenSpeech(projectRoot) {
   service = replace(service,
     'private fun createSpeechRecognizer(options: SpeechRecognitionOptions): SpeechRecognizer? {',
     'private fun createSpeechRecognizer(options: SpeechRecognitionOptions): SpeechRecognizer? {\n        check(Build.VERSION.SDK_INT >= 33 && options.requiresOnDeviceRecognition == true) { "Kitewise requires strict local recognition" }');
+  service = replace(service, '            log("Start recognition.")\n\n            // Destroy', '            log("Start recognition.")\n            try {\n            // Destroy');
+  service = service.replace('            try {\n                val intent = createSpeechIntent(options)', '                val intent = createSpeechIntent(options)');
+  // Android callbacks and teardown must stay on the main executor. Provider failures
+  // must reject the promise, not escape the posted Runnable and terminate the process.
+  let module = fs.readFileSync(path.join(dir, 'ExpoSpeechRecognitionModule.kt'), 'utf8');
+  module = replace(module, 'Executors.newSingleThreadExecutor(),\n                @RequiresApi', 'appContext.mainExecutor,\n                @RequiresApi');
+  module = replace(module, '            val recognizer =\n                if (serviceComponent', '            var recognizer: SpeechRecognizer? = null\n            try {\n            recognizer =\n                if (serviceComponent');
+  const unsafeCleanup = '                        recognizer.destroy()';
+  const safeCleanup = '                        try { recognizer?.destroy() } catch (_: Exception) {}';
+  if (!module.includes(unsafeCleanup) && !module.includes(safeCleanup)) throw new Error('Missing recognition cleanup sites');
+  module = module.replaceAll(unsafeCleanup, safeCleanup);
+  module = replace(module, '            )\n        }\n    }\n}', `            )
+            } catch (e: Exception) {
+                try { recognizer?.destroy() } catch (_: Exception) {}
+                if (settled.compareAndSet(false, true)) {
+                    promise.reject("local_recognition_unavailable", "Local recognition capability check failed", e)
+                }
+            }
+        }
+    }
+}`);
+  module = replace(module, '            OnDestroy {', `            OnCreate {
+                appContext.reactContext?.let { KitewiseSpeechFailure.install(it) }
+            }
+            Function("getLastSpeechFailure") {
+                appContext.reactContext?.let { KitewiseSpeechFailure.read(it) }
+            }
+            OnDestroy {`);
+  fs.copyFileSync(path.join(__dirname, 'KitewiseSpeechFailure.kt'), path.join(dir, 'KitewiseSpeechFailure.kt'));
+  fs.writeFileSync(path.join(dir, 'ExpoSpeechRecognitionModule.kt'), module);
   fs.writeFileSync(path.join(dir, 'ExpoSpeechService.kt'), service);
   let recorder = fs.readFileSync(path.join(dir, 'ExpoAudioRecorder.kt'), 'utf8');
   for (const [before, after] of [
@@ -30,6 +60,26 @@ function hardenSpeech(projectRoot) {
     ['tempFileOutputStream.flush()', 'tempFileOutputStream?.flush()'],
     ['tempFileOutputStream.close()', 'tempFileOutputStream?.close()'],
   ]) recorder = replace(recorder, before, after);
+  recorder = replace(recorder, '    private var isRecordingAudio = false', '    @Volatile private var isRecordingAudio = false');
+  recorder = replace(recorder, '    private var audioRecorder: AudioRecord? = null', '    @Volatile private var audioRecorder: AudioRecord? = null');
+  recorder = replace(recorder, '        audioRecorder?.stop()\n        audioRecorder?.release()\n        audioRecorder = null', `        // Detach before stopping: a worker may still hold a read in progress.
+        val recorder = audioRecorder
+        audioRecorder = null
+        try { recorder?.stop() } catch (_: IllegalStateException) {
+            // Initialization failure or an already-stopped Android recorder.
+        } finally {
+            recorder?.release()
+        }`);
+  recorder = replace(recorder, '            val read =\n                if (Build.VERSION.SDK_INT', '            val read = try {\n                if (Build.VERSION.SDK_INT');
+  recorder = replace(recorder, '                    recorder.read(data, 0, data.size)\n                }\n\n            when', `                    recorder.read(data, 0, data.size)
+                }
+            } catch (_: IllegalStateException) {
+                // Android may throw when stop/release interrupts a pending read.
+                // Never let this race escape the worker and kill the whole app.
+                break
+            }
+
+            when`);
   fs.writeFileSync(path.join(dir, 'ExpoAudioRecorder.kt'), recorder);
 }
 module.exports = config => withDangerousMod(config, ['android', async cfg => { hardenSpeech(cfg.modRequest.projectRoot); return cfg; }]);
