@@ -44,7 +44,15 @@ Pendiente: Fold físico, habla infantil real, acentos, ruido/TV/hermanos, latenc
 
 `expo-speech-recognition` 57.0.0, Copyright (c) 2024 jamsch, licencia MIT. Se conserva el aviso íntegro en [SPEECH-RECOGNITION-LICENSE.txt](SPEECH-RECOGNITION-LICENSE.txt). Los cambios locales del wrapper se describen arriba y en `apps/mobile/plugins/local-speech.js`.
 
-## Actualización de estabilidad · 0.2.1 / código 5
+## Descarga actual · 0.2.2 / código 6 · permiso y reporte
+
+[Descargar Kitewise 0.2.2 para Android](https://github.com/Victordaz07/Leeconmigo/releases/download/apk-lectura-2026-10-23-permiso-reporte/Kitewise-lectura.apk) · 335,584,006 bytes. Actualizar sin desinstalar para conservar datos.
+
+En Padres → Ajustes → Probar el micrófono aparecen siempre Permiso del micrófono y Reporte de voz · 0.2.2, con Conceder permiso, Abrir ajustes de Android, Ver reporte y Compartir reporte. Si Android no permite solicitarlo otra vez, usar sus ajustes: Permisos → Micrófono → Permitir mientras se usa la app; volver y pulsar Empezar. El reporte existe aunque no haya excepción Java: solo etapas del programa y metadata de salidas de Android, sin voz/texto reconocido/trazas. Compartir requiere acción explícita del adulto.
+
+2.004 pruebas/137 archivos, TypeScript/lint, Kotlin release/harness y controles ES/EN/4 tamaños aprobados; CI 40023754028, fuente 2232ad5. Descarga HTTP 200, checksum/digest GitHub, firma/paquete iguales, 16 KB/cuatro ABIs, 169 recursos y 25 ediciones; reporte y correcciones presentes en el APK. SHA-256: `54d3e64dd8cccf148d899a9d59f949bc03a2a12d314ad3fa9ec95b6f94925d45`. Evidencia: [PERMISSION-VERIFICATION.json](PERMISSION-VERIFICATION.json) y [PERMISSION-TOOLS.json](PERMISSION-TOOLS.json). Análisis/protocolo: [PERMISSION-FIX.md](PERMISSION-FIX.md). La actualización 0.2.1 no resolvió el caso del usuario; la causa exacta y esta nueva recuperación necesitan confirmación en el Fold.
+
+## Descarga anterior · 0.2.1 · histórica
 
 [Descargar Kitewise 0.2.1 para Android](https://github.com/Victordaz07/Leeconmigo/releases/download/apk-lectura-2026-10-23-voz-estable-r2/Kitewise-lectura.apk) · 335,567,138 bytes. Instalar encima de la versión anterior sin desinstalar para conservar datos.
 

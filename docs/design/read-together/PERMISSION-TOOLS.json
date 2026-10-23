@@ -1,0 +1,40 @@
+[
+  {
+    "language": "es",
+    "microphoneToolAvailable": true,
+    "permissionControlsVisible": true,
+    "reportAvailableWithoutJavaFailure": true,
+    "savedStagesVisible": true,
+    "androidAndWhisperOptions": true,
+    "modelLabels": [
+      "Android",
+      "Whisper",
+      "Rápido",
+      "Preciso",
+      "Español",
+      "English"
+    ],
+    "audioWorkshopToolAvailable": true,
+    "voiceToolSizes": 4,
+    "errors": []
+  },
+  {
+    "language": "en",
+    "microphoneToolAvailable": true,
+    "permissionControlsVisible": true,
+    "reportAvailableWithoutJavaFailure": true,
+    "savedStagesVisible": true,
+    "androidAndWhisperOptions": true,
+    "modelLabels": [
+      "Android",
+      "Whisper",
+      "Fast",
+      "Accurate",
+      "Español",
+      "English"
+    ],
+    "audioWorkshopToolAvailable": true,
+    "voiceToolSizes": 4,
+    "errors": []
+  }
+]

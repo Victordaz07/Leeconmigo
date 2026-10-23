@@ -17,3 +17,8 @@ APK 0.2.0/código 4 publicado y descargado completo: HTTPS 200, checksum/digest 
 ## Actualización VZ-08 · 0.2.1 / código 5
 
 1.991 pruebas/135 archivos, TypeScript y lint correctos. Compilación Kotlin release aprobada y regresión JVM del archivo Kotlin real: parada interrumpida, repetida, rechazo de grabador no inicializado, liberación y redacción/delegación del informe local. Fuente limpia del registro produce exactamente el mismo parche. Ambos accesos de Ajustes ES/EN conservados en cuatro tamaños por idioma. CI 40015852789 aprobado desde 0a34584; APK descargado/verificado con mismo certificado/paquete, SHA-256/digest GitHub, 169 recursos, 25 ediciones y diagnóstico local presente. Detalles en `CRASH-FIX.md` y `CRASH-FIX-VERIFICATION.json`. Sin dispositivo/logcat: no se afirma que el cierre específico del Fold esté resuelto ni que la inyección JVM reproduzca su causa.
+
+
+## VZ-09 · 0.2.2 / código 6
+
+2.004 pruebas/137 archivos, TypeScript/lint, Kotlin release/harness correctos. Puerta de permisos, concurrencia/bloqueo/plazos/concesión tardía, etapas locales y proyección de metadata Android; no diálogo físico. Controles y reporte sin excepción Java, intento previo y ambos accesos de Ajustes ES/EN/4 tamaños, sin desbordamiento. CI 40023754028 aprobado desde 2232ad5. APK descargado HTTP 200 y verificado: mismo certificado/paquete, checksum/digest GitHub, 169 recursos/25 ediciones, nuevas funciones y UI dentro del APK. Evidencias `PERMISSION-VERIFICATION.json` y `PERMISSION-TOOLS.json`. 0.2.1 no resolvió el caso; confirmación de diálogo/causa/resolución física pendiente.
