@@ -5,7 +5,7 @@ export interface ReadingEdition {
   version: 1;
   familyId: string;
   maxWordsPerUnit: number;
-  scenes: Array<{ pageId: string; blockId: string; illustration: IllustrationRef; crop?: PixelRect; alt?: Partial<Record<Story['language'], string>> }>;
+  scenes: Array<{ pageId: string; blockId: string; illustration: IllustrationRef; crop?: PixelRect; artHidden?: boolean; alt?: Partial<Record<Story['language'], string>> }>;
 }
 
 export interface ReadingAnchor {
@@ -13,6 +13,7 @@ export interface ReadingAnchor {
   blockId: string;
   lineIndex: number;
   crop?: PixelRect;
+  artHidden?: boolean;
 }
 
 export interface PreparedReading {
@@ -65,7 +66,7 @@ export function prepareReading(story: Story, edition: ReadingEdition): PreparedR
           blocks: [{ ...text, lines: block.lines.slice(start, end) }],
           ...(lastInPage && page.checkpoint ? { checkpoint: page.checkpoint } : {}),
         });
-        anchors.push({ pageIndex, blockId: block.id, lineIndex: start, ...(scene.crop ? { crop: scene.crop } : {}) });
+        anchors.push({ pageIndex, blockId: block.id, lineIndex: start, ...(scene.artHidden ? { artHidden: true } : {}), ...(scene.crop ? { crop: scene.crop } : {}) });
         start = end;
       }
     });

@@ -1,0 +1,217 @@
+{
+  "version": 1,
+  "familyId": "la-mision-que-perdio-la-tierra",
+  "maxWordsPerUnit": 100,
+  "scenes": [
+    {
+      "pageId": "p01",
+      "blockId": "b01",
+      "illustration": {
+        "src": "stories/la-mision-que-perdio-la-tierra/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de el casco que le quedaba grande."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 910,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de el casco que le quedaba grande.",
+        "en": "Scene of the helmet that felt too big."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b02",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b03",
+      "illustration": {
+        "src": "stories/la-mision-que-perdio-la-tierra/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de el borde del cráter."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 910,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de el borde del cráter.",
+        "en": "Scene of the crater rim."
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b04",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b05",
+      "illustration": {
+        "src": "stories/la-mision-que-perdio-la-tierra/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de una pelota entre dos voces."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 950,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de una pelota entre dos voces.",
+        "en": "Scene of a ball between two voices."
+      }
+    },
+    {
+      "pageId": "p06",
+      "blockId": "b06",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p07",
+      "blockId": "b07",
+      "illustration": {
+        "src": "stories/la-mision-que-perdio-la-tierra/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de un mensaje demasiado temprano."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 870,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de un mensaje demasiado temprano.",
+        "en": "Scene of a message too early."
+      }
+    },
+    {
+      "pageId": "p08",
+      "blockId": "b08",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p09",
+      "blockId": "b09",
+      "illustration": {
+        "src": "stories/la-mision-que-perdio-la-tierra/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de una fotografía nueva."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 950,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de una fotografía nueva.",
+        "en": "Scene of a new photograph."
+      }
+    },
+    {
+      "pageId": "p10",
+      "blockId": "b10",
+      "illustration": {
+        "src": "stories/la-mision-que-perdio-la-tierra/page-10.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de la feria de los futuros."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 822,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de la feria de los futuros.",
+        "en": "Scene of the future fair."
+      }
+    },
+    {
+      "pageId": "p11",
+      "blockId": "b11",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p12",
+      "blockId": "b12",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    }
+  ]
+}

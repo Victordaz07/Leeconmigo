@@ -1,0 +1,327 @@
+{
+  "version": 1,
+  "familyId": "la-cupula-que-parpadeaba",
+  "maxWordsPerUnit": 100,
+  "scenes": [
+    {
+      "pageId": "p01",
+      "blockId": "b01",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Vera, Ivo, Mara y Pico ven un destello en la vieja cúpula a través del pasillo de cristal."
+      },
+      "crop": {
+        "x": 570,
+        "y": 0,
+        "width": 966,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Vera, Ivo, Mara y Pico ven un destello en la vieja cúpula a través del pasillo de cristal.",
+        "en": "Vera, Ivo, Mara and Pico spot a light inside the old dome through a glass corridor."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b02",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Los niños cuentan destellos; Pico los imita y un vaso refleja la luz lejana."
+      },
+      "crop": {
+        "x": 0,
+        "y": 362,
+        "width": 1536,
+        "height": 662
+      },
+      "alt": {
+        "es": "Los niños cuentan destellos; Pico los imita y un vaso refleja la luz lejana.",
+        "en": "The children count flashes, Pico copies them, and a cup reflects the distant light."
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b03",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Los niños cuentan destellos; Pico los imita y un vaso refleja la luz lejana."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Los niños cuentan destellos; Pico los imita y un vaso refleja la luz lejana.",
+        "en": "The children count flashes, Pico copies them, and a cup reflects the distant light."
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b04",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mara y los niños contemplan la tormenta roja que se acerca a la cúpula."
+      },
+      "crop": {
+        "x": 0,
+        "y": 274,
+        "width": 1536,
+        "height": 750
+      },
+      "alt": {
+        "es": "Mara y los niños contemplan la tormenta roja que se acerca a la cúpula.",
+        "en": "Mara and the children watch a red dust storm approach the dome."
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b05",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Desde la estación, miran por un telescopio la cúpula distante; un detalle muestra el ventilador ante la lámpara."
+      },
+      "crop": {
+        "x": 690,
+        "y": 0,
+        "width": 846,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Desde la estación, miran por un telescopio la cúpula distante; un detalle muestra el ventilador ante la lámpara.",
+        "en": "From the station they study the distant dome by telescope; a detail shows the fan in front of the lamp."
+      }
+    },
+    {
+      "pageId": "p06",
+      "blockId": "b06",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mara comprueba una puerta del túnel protegido mientras los niños esperan detrás."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 886,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Mara comprueba una puerta del túnel protegido mientras los niños esperan detrás.",
+        "en": "Mara checks a door in the enclosed tunnel while the children wait behind her."
+      }
+    },
+    {
+      "pageId": "p07",
+      "blockId": "b07",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mara comprueba una puerta del túnel protegido mientras los niños esperan detrás."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Mara comprueba una puerta del túnel protegido mientras los niños esperan detrás.",
+        "en": "Mara checks a door in the enclosed tunnel while the children wait behind her."
+      }
+    },
+    {
+      "pageId": "p08",
+      "blockId": "b08",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Nido, un robot cobrizo, da una gota de agua a un brote bajo una campana."
+      },
+      "crop": {
+        "x": 0,
+        "y": 242,
+        "width": 1536,
+        "height": 782
+      },
+      "alt": {
+        "es": "Nido, un robot cobrizo, da una gota de agua a un brote bajo una campana.",
+        "en": "Nido, a copper gardener robot, waters a shoot under a clear cover."
+      }
+    },
+    {
+      "pageId": "p09",
+      "blockId": "b09",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "La tormenta oscurece el cielo mientras Nido protege el brote y los niños observan desde dentro."
+      },
+      "crop": {
+        "x": 618,
+        "y": 0,
+        "width": 918,
+        "height": 1024
+      },
+      "alt": {
+        "es": "La tormenta oscurece el cielo mientras Nido protege el brote y los niños observan desde dentro.",
+        "en": "The storm darkens the sky as Nido protects a shoot and the children watch from indoors."
+      }
+    },
+    {
+      "pageId": "p10",
+      "blockId": "b10",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "La tormenta oscurece el cielo mientras Nido protege el brote y los niños observan desde dentro."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 1024
+      },
+      "alt": {
+        "es": "La tormenta oscurece el cielo mientras Nido protege el brote y los niños observan desde dentro.",
+        "en": "The storm darkens the sky as Nido protects a shoot and the children watch from indoors."
+      }
+    },
+    {
+      "pageId": "p11",
+      "blockId": "b11",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-11.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mara gira la válvula atascada; Vera ilumina, Ivo observa y Pico se enreda."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 830,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Mara gira la válvula atascada; Vera ilumina, Ivo observa y Pico se enreda.",
+        "en": "Mara turns a stuck valve; Vera holds a lamp, Ivo watches, and Pico tangles its own arm."
+      }
+    },
+    {
+      "pageId": "p12",
+      "blockId": "b12",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-12.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El polvo queda atrapado en una caja transparente cuando Mara cambia el filtro; Pico retrocede."
+      },
+      "crop": {
+        "x": 0,
+        "y": 394,
+        "width": 1536,
+        "height": 630
+      },
+      "alt": {
+        "es": "El polvo queda atrapado en una caja transparente cuando Mara cambia el filtro; Pico retrocede.",
+        "en": "Dust stays inside a clear service box as Mara changes the filter and Pico reverses."
+      }
+    },
+    {
+      "pageId": "p13",
+      "blockId": "b13",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-13.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Vera dibuja el ventilador y la lámpara al comprender la causa de los destellos."
+      },
+      "crop": {
+        "x": 650,
+        "y": 0,
+        "width": 886,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Vera dibuja el ventilador y la lámpara al comprender la causa de los destellos.",
+        "en": "Vera draws the fan and lamp after discovering why the light seemed to blink."
+      }
+    },
+    {
+      "pageId": "p14",
+      "blockId": "b14",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-13.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Vera dibuja el ventilador y la lámpara al comprender la causa de los destellos."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Vera dibuja el ventilador y la lámpara al comprender la causa de los destellos.",
+        "en": "Vera draws the fan and lamp after discovering why the light seemed to blink."
+      }
+    },
+    {
+      "pageId": "p15",
+      "blockId": "b15",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-15.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Las familias conocen el vivero reparado y una flor naranja; los dos robots cuidan los brotes."
+      },
+      "crop": {
+        "x": 0,
+        "y": 283,
+        "width": 1536,
+        "height": 741
+      },
+      "alt": {
+        "es": "Las familias conocen el vivero reparado y una flor naranja; los dos robots cuidan los brotes.",
+        "en": "Families visit the restored nursery and an orange flower while both robots tend the shoots."
+      }
+    },
+    {
+      "pageId": "p16",
+      "blockId": "b16",
+      "illustration": {
+        "src": "stories/la-cupula-que-parpadeaba/page-16.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Los niños prueban una luz de bienvenida junto al jardín; Pico la imita a su manera."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 982,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Los niños prueban una luz de bienvenida junto al jardín; Pico la imita a su manera.",
+        "en": "The children test a welcome light by the garden, and Pico copies it in its own way."
+      }
+    }
+  ]
+}

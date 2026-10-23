@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "familyId": "nico-03-el-heroe-fuera-del-libro",
+  "maxWordsPerUnit": 100,
+  "scenes": [
+    {
+      "pageId": "b3-p01",
+      "blockId": "b01",
+      "illustration": {
+        "src": "stories/nico-03-el-heroe-fuera-del-libro/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Ilustración de el agua de verdad."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1078,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Ilustración de el agua de verdad.",
+        "en": "Illustration of real water."
+      }
+    },
+    {
+      "pageId": "b3-p02",
+      "blockId": "b02",
+      "illustration": {
+        "src": "stories/nico-03-el-heroe-fuera-del-libro/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Ilustración de el puente que se cayó."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1094,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Ilustración de el puente que se cayó.",
+        "en": "Illustration of the bridge that fell."
+      }
+    },
+    {
+      "pageId": "b3-p03",
+      "blockId": "b03",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "b3-p04",
+      "blockId": "b04",
+      "illustration": {
+        "src": "stories/nico-03-el-heroe-fuera-del-libro/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Ilustración de una voz muy pequeña."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1212,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Ilustración de una voz muy pequeña.",
+        "en": "Illustration of a very quiet voice."
+      }
+    },
+    {
+      "pageId": "b3-p05",
+      "blockId": "b05",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "b3-p06",
+      "blockId": "b06",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "b3-p07",
+      "blockId": "b07",
+      "illustration": {
+        "src": "stories/nico-03-el-heroe-fuera-del-libro/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Ilustración de el discurso sin capa."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1134,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Ilustración de el discurso sin capa.",
+        "en": "Illustration of the speech without a cape."
+      }
+    },
+    {
+      "pageId": "b3-p08",
+      "blockId": "b08",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "b3-p09",
+      "blockId": "b09",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "b3-p10",
+      "blockId": "b10",
+      "illustration": {
+        "src": "stories/nico-03-el-heroe-fuera-del-libro/page-10.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Ilustración de una puerta que sigue abierta."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1142,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Ilustración de una puerta que sigue abierta.",
+        "en": "Illustration of a door that stays open."
+      }
+    }
+  ]
+}

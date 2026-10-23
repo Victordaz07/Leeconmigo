@@ -1,0 +1,197 @@
+{
+  "version": 1,
+  "familyId": "la-luna-y-la-puerta-azul",
+  "maxWordsPerUnit": 70,
+  "scenes": [
+    {
+      "pageId": "p01",
+      "blockId": "b01",
+      "illustration": {
+        "src": "stories/la-luna-y-la-puerta-azul/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Un conejo descubre una puerta azul en el bosque bajo la luna"
+      },
+      "crop": {
+        "x": 0,
+        "y": 70,
+        "width": 405,
+        "height": 235
+      },
+      "alt": {
+        "es": "Un conejo descubre una puerta azul en el bosque bajo la luna"
+      }
+    },
+    {
+      "pageId": "p01",
+      "blockId": "b02",
+      "illustration": {
+        "src": "stories/la-luna-y-la-puerta-azul/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Un conejo descubre una puerta azul en el bosque bajo la luna"
+      },
+      "crop": {
+        "x": 405,
+        "y": 70,
+        "width": 365,
+        "height": 235
+      },
+      "alt": {
+        "es": "Un conejo descubre una puerta azul en el bosque bajo la luna"
+      }
+    },
+    {
+      "pageId": "p01",
+      "blockId": "b03",
+      "illustration": {
+        "src": "stories/la-luna-y-la-puerta-azul/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Un conejo descubre una puerta azul en el bosque bajo la luna"
+      },
+      "crop": {
+        "x": 770,
+        "y": 70,
+        "width": 320,
+        "height": 250
+      },
+      "alt": {
+        "es": "Un conejo descubre una puerta azul en el bosque bajo la luna"
+      }
+    },
+    {
+      "pageId": "p01",
+      "blockId": "b04",
+      "illustration": {
+        "src": "stories/la-luna-y-la-puerta-azul/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Un conejo descubre una puerta azul en el bosque bajo la luna"
+      },
+      "crop": {
+        "x": 1090,
+        "y": 70,
+        "width": 446,
+        "height": 260
+      },
+      "alt": {
+        "es": "Un conejo descubre una puerta azul en el bosque bajo la luna"
+      }
+    },
+    {
+      "pageId": "p01",
+      "blockId": "b05",
+      "illustration": {
+        "src": "stories/la-luna-y-la-puerta-azul/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Un conejo descubre una puerta azul en el bosque bajo la luna"
+      },
+      "crop": {
+        "x": 0,
+        "y": 385,
+        "width": 560,
+        "height": 255
+      },
+      "alt": {
+        "es": "Un conejo descubre una puerta azul en el bosque bajo la luna"
+      }
+    },
+    {
+      "pageId": "p01",
+      "blockId": "b06",
+      "illustration": {
+        "src": "stories/la-luna-y-la-puerta-azul/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Un conejo descubre una puerta azul en el bosque bajo la luna"
+      },
+      "crop": {
+        "x": 540,
+        "y": 390,
+        "width": 420,
+        "height": 280
+      },
+      "alt": {
+        "es": "Un conejo descubre una puerta azul en el bosque bajo la luna"
+      }
+    },
+    {
+      "pageId": "p01",
+      "blockId": "b07",
+      "illustration": {
+        "src": "stories/la-luna-y-la-puerta-azul/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Un conejo descubre una puerta azul en el bosque bajo la luna"
+      },
+      "crop": {
+        "x": 960,
+        "y": 400,
+        "width": 576,
+        "height": 290
+      },
+      "alt": {
+        "es": "Un conejo descubre una puerta azul en el bosque bajo la luna"
+      }
+    },
+    {
+      "pageId": "p01",
+      "blockId": "b08",
+      "illustration": {
+        "src": "stories/la-luna-y-la-puerta-azul/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Un conejo descubre una puerta azul en el bosque bajo la luna"
+      },
+      "crop": {
+        "x": 0,
+        "y": 720,
+        "width": 460,
+        "height": 304
+      },
+      "alt": {
+        "es": "Un conejo descubre una puerta azul en el bosque bajo la luna"
+      }
+    },
+    {
+      "pageId": "p01",
+      "blockId": "b09",
+      "illustration": {
+        "src": "stories/la-luna-y-la-puerta-azul/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Un conejo descubre una puerta azul en el bosque bajo la luna"
+      },
+      "crop": {
+        "x": 460,
+        "y": 750,
+        "width": 490,
+        "height": 274
+      },
+      "alt": {
+        "es": "Un conejo descubre una puerta azul en el bosque bajo la luna"
+      }
+    },
+    {
+      "pageId": "p01",
+      "blockId": "b10",
+      "illustration": {
+        "src": "stories/la-luna-y-la-puerta-azul/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Un conejo descubre una puerta azul en el bosque bajo la luna"
+      },
+      "crop": {
+        "x": 950,
+        "y": 760,
+        "width": 586,
+        "height": 264
+      },
+      "alt": {
+        "es": "Un conejo descubre una puerta azul en el bosque bajo la luna"
+      }
+    }
+  ]
+}

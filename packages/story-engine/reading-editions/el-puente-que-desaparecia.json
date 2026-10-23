@@ -1,0 +1,217 @@
+{
+  "version": 1,
+  "familyId": "el-puente-que-desaparecia",
+  "maxWordsPerUnit": 100,
+  "scenes": [
+    {
+      "pageId": "p01",
+      "blockId": "b01",
+      "illustration": {
+        "src": "stories/el-puente-que-desaparecia/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de un robot y una isla."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 982,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de un robot y una isla.",
+        "en": "Scene of a robot and an island."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b02",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b03",
+      "illustration": {
+        "src": "stories/el-puente-que-desaparecia/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de el puente invisible."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 958,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de el puente invisible.",
+        "en": "Scene of the invisible bridge."
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b04",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b05",
+      "illustration": {
+        "src": "stories/el-puente-que-desaparecia/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de una versión distinta."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1047,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de una versión distinta.",
+        "en": "Scene of a different version."
+      }
+    },
+    {
+      "pageId": "p06",
+      "blockId": "b06",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p07",
+      "blockId": "b07",
+      "illustration": {
+        "src": "stories/el-puente-que-desaparecia/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de otra persona, otra pista."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1070,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de otra persona, otra pista.",
+        "en": "Scene of another player, another clue."
+      }
+    },
+    {
+      "pageId": "p08",
+      "blockId": "b08",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p09",
+      "blockId": "b09",
+      "illustration": {
+        "src": "stories/el-puente-que-desaparecia/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de el ensayo final."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 998,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de el ensayo final.",
+        "en": "Scene of the final rehearsal."
+      }
+    },
+    {
+      "pageId": "p10",
+      "blockId": "b10",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p11",
+      "blockId": "b11",
+      "illustration": {
+        "src": "stories/el-puente-que-desaparecia/page-11.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de todos cruzan."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1084,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de todos cruzan.",
+        "en": "Scene of everyone crosses."
+      }
+    },
+    {
+      "pageId": "p12",
+      "blockId": "b12",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    }
+  ]
+}

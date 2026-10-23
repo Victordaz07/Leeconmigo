@@ -1,0 +1,217 @@
+{
+  "version": 1,
+  "familyId": "la-luz-que-no-estaba-en-el-mapa",
+  "maxWordsPerUnit": 100,
+  "scenes": [
+    {
+      "pageId": "p01",
+      "blockId": "b01",
+      "illustration": {
+        "src": "stories/la-luz-que-no-estaba-en-el-mapa/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de un punto azul."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 990,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de un punto azul.",
+        "en": "Scene of a blue spark."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b02",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b03",
+      "illustration": {
+        "src": "stories/la-luz-que-no-estaba-en-el-mapa/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de la baranda del muelle."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1070,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de la baranda del muelle.",
+        "en": "Scene of the pier railing."
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b04",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b05",
+      "illustration": {
+        "src": "stories/la-luz-que-no-estaba-en-el-mapa/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de la segunda noche."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 958,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de la segunda noche.",
+        "en": "Scene of the second night."
+      }
+    },
+    {
+      "pageId": "p06",
+      "blockId": "b06",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p07",
+      "blockId": "b07",
+      "illustration": {
+        "src": "stories/la-luz-que-no-estaba-en-el-mapa/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de la mañana sin brillo."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1070,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de la mañana sin brillo.",
+        "en": "Scene of the morning without a glow."
+      }
+    },
+    {
+      "pageId": "p08",
+      "blockId": "b08",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p09",
+      "blockId": "b09",
+      "illustration": {
+        "src": "stories/la-luz-que-no-estaba-en-el-mapa/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de dos dibujos."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1150,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de dos dibujos.",
+        "en": "Scene of two drawings."
+      }
+    },
+    {
+      "pageId": "p10",
+      "blockId": "b10",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p11",
+      "blockId": "b11",
+      "illustration": {
+        "src": "stories/la-luz-que-no-estaba-en-el-mapa/page-11.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de la mesa del océano."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 958,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de la mesa del océano.",
+        "en": "Scene of the ocean table."
+      }
+    },
+    {
+      "pageId": "p12",
+      "blockId": "b12",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    }
+  ]
+}

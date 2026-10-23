@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "familyId": "la-cometa-roja",
+  "maxWordsPerUnit": 70,
+  "scenes": [
+    {
+      "pageId": "p01",
+      "blockId": "b01",
+      "illustration": {
+        "src": "stories/la-cometa-roja/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Nia y Teo en el patio de la escuela con su cometa roja después de la lluvia."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 979,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Nia y Teo en el patio de la escuela con su cometa roja después de la lluvia.",
+        "en": "Nia and Teo in the schoolyard with their red kite after the rain."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b02",
+      "illustration": {
+        "src": "stories/la-cometa-roja/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "La cometa roja queda atrapada en la rama alta de un roble."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 979,
+        "height": 1024
+      },
+      "alt": {
+        "es": "La cometa roja queda atrapada en la rama alta de un roble.",
+        "en": "The red kite gets caught on a high branch of an oak tree."
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b03",
+      "illustration": {
+        "src": "stories/la-cometa-roja/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Nia y Teo piden ayuda al encargado del patio para recuperar la cometa."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 979,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Nia y Teo piden ayuda al encargado del patio para recuperar la cometa.",
+        "en": "Nia and Teo ask the schoolyard caretaker for help getting the kite back."
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b04",
+      "illustration": {
+        "src": "stories/la-cometa-roja/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El encargado del patio usa una vara larga para bajar la cometa del árbol."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 979,
+        "height": 1024
+      },
+      "alt": {
+        "es": "El encargado del patio usa una vara larga para bajar la cometa del árbol.",
+        "en": "The caretaker uses a long pole to bring the kite down from the tree."
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b05",
+      "illustration": {
+        "src": "stories/la-cometa-roja/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Nia y Teo ponen un parche a la cometa en una mesa del patio."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 979,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Nia y Teo ponen un parche a la cometa en una mesa del patio.",
+        "en": "Nia and Teo patch the kite at a courtyard table."
+      }
+    },
+    {
+      "pageId": "p06",
+      "blockId": "b06",
+      "illustration": {
+        "src": "stories/la-cometa-roja/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "La cometa roja parchada vuela alto sobre el roble bajo el sol."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 979,
+        "height": 1024
+      },
+      "alt": {
+        "es": "La cometa roja parchada vuela alto sobre el roble bajo el sol.",
+        "en": "The patched red kite flies high over the oak tree in the sunshine."
+      }
+    }
+  ]
+}

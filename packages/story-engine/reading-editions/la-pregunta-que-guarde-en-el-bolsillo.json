@@ -1,0 +1,222 @@
+{
+  "version": 1,
+  "familyId": "la-pregunta-que-guarde-en-el-bolsillo",
+  "maxWordsPerUnit": 100,
+  "scenes": [
+    {
+      "pageId": "p01",
+      "blockId": "b01",
+      "illustration": {
+        "src": "stories/la-pregunta-que-guarde-en-el-bolsillo/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Amara escribiendo en su libreta en su cuarto de noche."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1092,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Amara escribiendo en su libreta en su cuarto de noche.",
+        "en": "Amara writing in her notebook in her room at night."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b02",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b03",
+      "illustration": {
+        "src": "stories/la-pregunta-que-guarde-en-el-bolsillo/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Gabriel muestra su mapa sobre la mesa mientras Amara se queda callada."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1129,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Gabriel muestra su mapa sobre la mesa mientras Amara se queda callada.",
+        "en": "Gabriel shows his map on the table while Amara stays silent."
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b04",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b05",
+      "illustration": {
+        "src": "stories/la-pregunta-que-guarde-en-el-bolsillo/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Amara sentada en la alfombra de su cuarto, pensativa."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1025,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Amara sentada en la alfombra de su cuarto, pensativa.",
+        "en": "Amara sitting on her bedroom rug, deep in thought."
+      }
+    },
+    {
+      "pageId": "p06",
+      "blockId": "b06",
+      "illustration": {
+        "src": "stories/la-pregunta-que-guarde-en-el-bolsillo/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Amara y su abuela Celia conversan en la cocina."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1125,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Amara y su abuela Celia conversan en la cocina.",
+        "en": "Amara and her grandmother Celia talk in the kitchen."
+      }
+    },
+    {
+      "pageId": "p07",
+      "blockId": "b07",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p08",
+      "blockId": "b08",
+      "illustration": {
+        "src": "stories/la-pregunta-que-guarde-en-el-bolsillo/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Amara habla con Gabriel junto a los casilleros de la escuela."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1180,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Amara habla con Gabriel junto a los casilleros de la escuela.",
+        "en": "Amara talks with Gabriel by the school lockers."
+      }
+    },
+    {
+      "pageId": "p09",
+      "blockId": "b09",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p10",
+      "blockId": "b10",
+      "illustration": {
+        "src": "stories/la-pregunta-que-guarde-en-el-bolsillo/page-10.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Amara y Gabriel revisan juntos el mapa en clase."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 983,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Amara y Gabriel revisan juntos el mapa en clase.",
+        "en": "Amara and Gabriel review the map together in class."
+      }
+    },
+    {
+      "pageId": "p11",
+      "blockId": "b11",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p12",
+      "blockId": "b12",
+      "illustration": {
+        "src": "stories/la-pregunta-que-guarde-en-el-bolsillo/page-12.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Amara escribe en su libreta, acostada en la alfombra de noche."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1043,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Amara escribe en su libreta, acostada en la alfombra de noche.",
+        "en": "Amara writing in her notebook, lying on the rug at night."
+      }
+    }
+  ]
+}

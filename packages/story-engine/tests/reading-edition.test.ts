@@ -10,8 +10,15 @@ const editions = readdirSync(join(root, 'packages/story-engine/reading-editions'
 const variants = ['es', 'en'].flatMap(lang => readdirSync(join(root, 'packages/story-engine/stories', lang)).map(file => JSON.parse(readFileSync(join(root, 'packages/story-engine/stories', lang, file), 'utf8')) as Story));
 
 describe('prepared reading editions', () => {
+  it('covers every published family and language/level variant, excluding development fixtures', () => {
+    const published = variants.filter(s => !s.dev);
+    expect(new Set(editions.map(e => e.familyId))).toEqual(new Set(published.map(s => s.familyId ?? s.id)));
+    for (const source of published) expect(validateReadingEdition(source, editions.find(e => e.familyId === (source.familyId ?? source.id))!)).toEqual([]);
+  });
   for (const edition of editions) it(`${edition.familyId}: all art references match the actual bundled images`, async () => {
     for (const scene of edition.scenes) {
+      expect(scene.artHidden ?? false).toBe(scene.illustration.src === 'stories/_shared/reading-pause.webp');
+      for (const alt of Object.values(scene.alt ?? {})) expect(alt?.trim()).toBeTruthy();
       const image = await sharp(join(root, 'apps/reader/public', scene.illustration.src)).metadata();
       expect(image.width).toBe(scene.illustration.width);
       expect(image.height).toBe(scene.illustration.height);

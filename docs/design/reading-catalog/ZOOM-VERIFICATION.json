@@ -1,0 +1,98 @@
+[
+  {
+    "lang": "es",
+    "width": 390,
+    "height": 844,
+    "pinchPercent": 257,
+    "pan": true,
+    "resize": true
+  },
+  {
+    "lang": "es",
+    "width": 844,
+    "height": 390,
+    "pinchPercent": 257,
+    "pan": true,
+    "resize": true
+  },
+  {
+    "lang": "es",
+    "width": 800,
+    "height": 1280,
+    "pinchPercent": 257,
+    "pan": true,
+    "resize": true
+  },
+  {
+    "lang": "es",
+    "width": 1280,
+    "height": 800,
+    "pinchPercent": 257,
+    "pan": true,
+    "resize": true
+  },
+  {
+    "lang": "es",
+    "width": 853,
+    "height": 690,
+    "pinchPercent": 257,
+    "pan": true,
+    "resize": true
+  },
+  {
+    "lang": "es",
+    "width": 690,
+    "height": 853,
+    "pinchPercent": 257,
+    "pan": true,
+    "resize": true
+  },
+  {
+    "lang": "en",
+    "width": 390,
+    "height": 844,
+    "pinchPercent": 257,
+    "pan": true,
+    "resize": true
+  },
+  {
+    "lang": "en",
+    "width": 844,
+    "height": 390,
+    "pinchPercent": 257,
+    "pan": true,
+    "resize": true
+  },
+  {
+    "lang": "en",
+    "width": 800,
+    "height": 1280,
+    "pinchPercent": 257,
+    "pan": true,
+    "resize": true
+  },
+  {
+    "lang": "en",
+    "width": 1280,
+    "height": 800,
+    "pinchPercent": 257,
+    "pan": true,
+    "resize": true
+  },
+  {
+    "lang": "en",
+    "width": 853,
+    "height": 690,
+    "pinchPercent": 257,
+    "pan": true,
+    "resize": true
+  },
+  {
+    "lang": "en",
+    "width": 690,
+    "height": 853,
+    "pinchPercent": 257,
+    "pan": true,
+    "resize": true
+  }
+]

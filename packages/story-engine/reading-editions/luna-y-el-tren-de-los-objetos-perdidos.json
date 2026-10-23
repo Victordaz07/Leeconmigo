@@ -1,0 +1,1027 @@
+{
+  "version": 1,
+  "familyId": "luna-y-el-tren-de-los-objetos-perdidos",
+  "maxWordsPerUnit": 70,
+  "scenes": [
+    {
+      "pageId": "p01",
+      "blockId": "b01",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Luna camina hacia la estación con una cesta, al atardecer, con el tren esperando"
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 700
+      },
+      "alt": {
+        "es": "Luna camina hacia la estación con una cesta, al atardecer, con el tren esperando",
+        "en": "Luna walks toward the station with a basket, at sunset, with the train waiting"
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b02",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Teo, en el jardín, muestra un guante zurcido, un barquito de papel y una bufanda naranja con una luna bordada"
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 505,
+        "height": 637
+      },
+      "alt": {
+        "es": "Teo, en el jardín, muestra un guante zurcido, un barquito de papel y una bufanda naranja con una luna bordada",
+        "en": "Teo, in the garden, shows a mended mitten, a paper boat, and an orange scarf with a moon stitched on it"
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b03",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Teo, en el jardín, muestra un guante zurcido, un barquito de papel y una bufanda naranja con una luna bordada"
+      },
+      "crop": {
+        "x": 515,
+        "y": 0,
+        "width": 505,
+        "height": 637
+      },
+      "alt": {
+        "es": "Teo, en el jardín, muestra un guante zurcido, un barquito de papel y una bufanda naranja con una luna bordada",
+        "en": "Teo, in the garden, shows a mended mitten, a paper boat, and an orange scarf with a moon stitched on it"
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b04",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Teo, en el jardín, muestra un guante zurcido, un barquito de papel y una bufanda naranja con una luna bordada"
+      },
+      "crop": {
+        "x": 1030,
+        "y": 0,
+        "width": 506,
+        "height": 637
+      },
+      "alt": {
+        "es": "Teo, en el jardín, muestra un guante zurcido, un barquito de papel y una bufanda naranja con una luna bordada",
+        "en": "Teo, in the garden, shows a mended mitten, a paper boat, and an orange scarf with a moon stitched on it"
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b05",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Teo camina hacia la estación: pisa una tabla floja, salpica un charco, ve el tren soltar vapor, se pone nervioso, Dora silba y se ve un vagón de carga con cajas"
+      },
+      "crop": {
+        "x": 0,
+        "y": 170,
+        "width": 505,
+        "height": 337
+      },
+      "alt": {
+        "es": "Teo camina hacia la estación: pisa una tabla floja, salpica un charco, ve el tren soltar vapor, se pone nervioso, Dora silba y se ve un vagón de carga con cajas",
+        "en": "Teo walks to the station: steps on a loose board, splashes a puddle, sees the train puff steam, gets nervous, Dora whistles, and a freight car full of boxes"
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b06",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Teo camina hacia la estación: pisa una tabla floja, salpica un charco, ve el tren soltar vapor, se pone nervioso, Dora silba y se ve un vagón de carga con cajas"
+      },
+      "crop": {
+        "x": 515,
+        "y": 170,
+        "width": 505,
+        "height": 337
+      },
+      "alt": {
+        "es": "Teo camina hacia la estación: pisa una tabla floja, salpica un charco, ve el tren soltar vapor, se pone nervioso, Dora silba y se ve un vagón de carga con cajas",
+        "en": "Teo walks to the station: steps on a loose board, splashes a puddle, sees the train puff steam, gets nervous, Dora whistles, and a freight car full of boxes"
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b07",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Teo camina hacia la estación: pisa una tabla floja, salpica un charco, ve el tren soltar vapor, se pone nervioso, Dora silba y se ve un vagón de carga con cajas"
+      },
+      "crop": {
+        "x": 1030,
+        "y": 170,
+        "width": 506,
+        "height": 337
+      },
+      "alt": {
+        "es": "Teo camina hacia la estación: pisa una tabla floja, salpica un charco, ve el tren soltar vapor, se pone nervioso, Dora silba y se ve un vagón de carga con cajas",
+        "en": "Teo walks to the station: steps on a loose board, splashes a puddle, sees the train puff steam, gets nervous, Dora whistles, and a freight car full of boxes"
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b08",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Teo camina hacia la estación: pisa una tabla floja, salpica un charco, ve el tren soltar vapor, se pone nervioso, Dora silba y se ve un vagón de carga con cajas"
+      },
+      "crop": {
+        "x": 0,
+        "y": 687,
+        "width": 505,
+        "height": 337
+      },
+      "alt": {
+        "es": "Teo camina hacia la estación: pisa una tabla floja, salpica un charco, ve el tren soltar vapor, se pone nervioso, Dora silba y se ve un vagón de carga con cajas",
+        "en": "Teo walks to the station: steps on a loose board, splashes a puddle, sees the train puff steam, gets nervous, Dora whistles, and a freight car full of boxes"
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b09",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Teo camina hacia la estación: pisa una tabla floja, salpica un charco, ve el tren soltar vapor, se pone nervioso, Dora silba y se ve un vagón de carga con cajas"
+      },
+      "crop": {
+        "x": 515,
+        "y": 687,
+        "width": 505,
+        "height": 337
+      },
+      "alt": {
+        "es": "Teo camina hacia la estación: pisa una tabla floja, salpica un charco, ve el tren soltar vapor, se pone nervioso, Dora silba y se ve un vagón de carga con cajas",
+        "en": "Teo walks to the station: steps on a loose board, splashes a puddle, sees the train puff steam, gets nervous, Dora whistles, and a freight car full of boxes"
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b10",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Teo camina hacia la estación: pisa una tabla floja, salpica un charco, ve el tren soltar vapor, se pone nervioso, Dora silba y se ve un vagón de carga con cajas"
+      },
+      "crop": {
+        "x": 1030,
+        "y": 687,
+        "width": 506,
+        "height": 337
+      },
+      "alt": {
+        "es": "Teo camina hacia la estación: pisa una tabla floja, salpica un charco, ve el tren soltar vapor, se pone nervioso, Dora silba y se ve un vagón de carga con cajas",
+        "en": "Teo walks to the station: steps on a loose board, splashes a puddle, sees the train puff steam, gets nervous, Dora whistles, and a freight car full of boxes"
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b11",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Una banca vacía junto al tren con un reloj; Luna llega preocupada con su cesta; Teo llora en el andén; Dora se acerca a ayudar"
+      },
+      "crop": {
+        "x": 0,
+        "y": 170,
+        "width": 763,
+        "height": 337
+      },
+      "alt": {
+        "es": "Una banca vacía junto al tren con un reloj; Luna llega preocupada con su cesta; Teo llora en el andén; Dora se acerca a ayudar",
+        "en": "An empty bench by the train with a clock; Luna arrives worried with her basket; Teo cries on the platform; Dora comes over to help"
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b12",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Una banca vacía junto al tren con un reloj; Luna llega preocupada con su cesta; Teo llora en el andén; Dora se acerca a ayudar"
+      },
+      "crop": {
+        "x": 773,
+        "y": 170,
+        "width": 763,
+        "height": 337
+      },
+      "alt": {
+        "es": "Una banca vacía junto al tren con un reloj; Luna llega preocupada con su cesta; Teo llora en el andén; Dora se acerca a ayudar",
+        "en": "An empty bench by the train with a clock; Luna arrives worried with her basket; Teo cries on the platform; Dora comes over to help"
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b13",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Una banca vacía junto al tren con un reloj; Luna llega preocupada con su cesta; Teo llora en el andén; Dora se acerca a ayudar"
+      },
+      "crop": {
+        "x": 0,
+        "y": 687,
+        "width": 763,
+        "height": 337
+      },
+      "alt": {
+        "es": "Una banca vacía junto al tren con un reloj; Luna llega preocupada con su cesta; Teo llora en el andén; Dora se acerca a ayudar",
+        "en": "An empty bench by the train with a clock; Luna arrives worried with her basket; Teo cries on the platform; Dora comes over to help"
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b14",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Una banca vacía junto al tren con un reloj; Luna llega preocupada con su cesta; Teo llora en el andén; Dora se acerca a ayudar"
+      },
+      "crop": {
+        "x": 773,
+        "y": 687,
+        "width": 763,
+        "height": 337
+      },
+      "alt": {
+        "es": "Una banca vacía junto al tren con un reloj; Luna llega preocupada con su cesta; Teo llora en el andén; Dora se acerca a ayudar",
+        "en": "An empty bench by the train with a clock; Luna arrives worried with her basket; Teo cries on the platform; Dora comes over to help"
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b15",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Teo espera un poco más tranquilo en el andén; Luna señala el tren con una sonrisa, junto a Dora"
+      },
+      "crop": {
+        "x": 0,
+        "y": 170,
+        "width": 806,
+        "height": 854
+      },
+      "alt": {
+        "es": "Teo espera un poco más tranquilo en el andén; Luna señala el tren con una sonrisa, junto a Dora",
+        "en": "Teo waits a bit calmer on the platform; Luna points at the train with a smile, next to Dora"
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b16",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Teo espera un poco más tranquilo en el andén; Luna señala el tren con una sonrisa, junto a Dora"
+      },
+      "crop": {
+        "x": 748,
+        "y": 170,
+        "width": 788,
+        "height": 854
+      },
+      "alt": {
+        "es": "Teo espera un poco más tranquilo en el andén; Luna señala el tren con una sonrisa, junto a Dora",
+        "en": "Teo waits a bit calmer on the platform; Luna points at the train with a smile, next to Dora"
+      }
+    },
+    {
+      "pageId": "p06",
+      "blockId": "b17",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Luna y Teo se agachan curiosos junto a las ruedas del tren; después suben los primeros escalones mientras Dora los observa"
+      },
+      "crop": {
+        "x": 0,
+        "y": 179,
+        "width": 765,
+        "height": 845
+      },
+      "alt": {
+        "es": "Luna y Teo se agachan curiosos junto a las ruedas del tren; después suben los primeros escalones mientras Dora los observa",
+        "en": "Luna and Teo crouch to look at the train's wheels; then they climb the first steps while Dora watches"
+      }
+    },
+    {
+      "pageId": "p06",
+      "blockId": "b18",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Luna y Teo se agachan curiosos junto a las ruedas del tren; después suben los primeros escalones mientras Dora los observa"
+      },
+      "crop": {
+        "x": 774,
+        "y": 169,
+        "width": 762,
+        "height": 855
+      },
+      "alt": {
+        "es": "Luna y Teo se agachan curiosos junto a las ruedas del tren; después suben los primeros escalones mientras Dora los observa",
+        "en": "Luna and Teo crouch to look at the train's wheels; then they climb the first steps while Dora watches"
+      }
+    },
+    {
+      "pageId": "p07",
+      "blockId": "b19",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El tren espera con la puerta abierta; Luna sube los escalones; Teo conversa con Dora en el andén"
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 552
+      },
+      "alt": {
+        "es": "El tren espera con la puerta abierta; Luna sube los escalones; Teo conversa con Dora en el andén",
+        "en": "The train waits with its door open; Luna climbs the steps; Teo talks with Dora on the platform"
+      }
+    },
+    {
+      "pageId": "p07",
+      "blockId": "b20",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El tren espera con la puerta abierta; Luna sube los escalones; Teo conversa con Dora en el andén"
+      },
+      "crop": {
+        "x": 0,
+        "y": 526,
+        "width": 756,
+        "height": 498
+      },
+      "alt": {
+        "es": "El tren espera con la puerta abierta; Luna sube los escalones; Teo conversa con Dora en el andén",
+        "en": "The train waits with its door open; Luna climbs the steps; Teo talks with Dora on the platform"
+      }
+    },
+    {
+      "pageId": "p07",
+      "blockId": "b21",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El tren espera con la puerta abierta; Luna sube los escalones; Teo conversa con Dora en el andén"
+      },
+      "crop": {
+        "x": 718,
+        "y": 480,
+        "width": 818,
+        "height": 544
+      },
+      "alt": {
+        "es": "El tren espera con la puerta abierta; Luna sube los escalones; Teo conversa con Dora en el andén",
+        "en": "The train waits with its door open; Luna climbs the steps; Teo talks with Dora on the platform"
+      }
+    },
+    {
+      "pageId": "p08",
+      "blockId": "b22",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Teo y Luna suben al tren: muestran el boleto, señalan, Dora agita el ala, la manija de la puerta, Dora abre la puerta y ambos entran"
+      },
+      "crop": {
+        "x": 0,
+        "y": 170,
+        "width": 505,
+        "height": 337
+      },
+      "alt": {
+        "es": "Teo y Luna suben al tren: muestran el boleto, señalan, Dora agita el ala, la manija de la puerta, Dora abre la puerta y ambos entran",
+        "en": "Teo and Luna board the train: they show a ticket, point, Dora waves a wing, the door handle, Dora opens the door and both step in"
+      }
+    },
+    {
+      "pageId": "p08",
+      "blockId": "b23",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Teo y Luna suben al tren: muestran el boleto, señalan, Dora agita el ala, la manija de la puerta, Dora abre la puerta y ambos entran"
+      },
+      "crop": {
+        "x": 515,
+        "y": 170,
+        "width": 505,
+        "height": 337
+      },
+      "alt": {
+        "es": "Teo y Luna suben al tren: muestran el boleto, señalan, Dora agita el ala, la manija de la puerta, Dora abre la puerta y ambos entran",
+        "en": "Teo and Luna board the train: they show a ticket, point, Dora waves a wing, the door handle, Dora opens the door and both step in"
+      }
+    },
+    {
+      "pageId": "p08",
+      "blockId": "b24",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Teo y Luna suben al tren: muestran el boleto, señalan, Dora agita el ala, la manija de la puerta, Dora abre la puerta y ambos entran"
+      },
+      "crop": {
+        "x": 1030,
+        "y": 170,
+        "width": 506,
+        "height": 337
+      },
+      "alt": {
+        "es": "Teo y Luna suben al tren: muestran el boleto, señalan, Dora agita el ala, la manija de la puerta, Dora abre la puerta y ambos entran",
+        "en": "Teo and Luna board the train: they show a ticket, point, Dora waves a wing, the door handle, Dora opens the door and both step in"
+      }
+    },
+    {
+      "pageId": "p08",
+      "blockId": "b25",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Teo y Luna suben al tren: muestran el boleto, señalan, Dora agita el ala, la manija de la puerta, Dora abre la puerta y ambos entran"
+      },
+      "crop": {
+        "x": 0,
+        "y": 687,
+        "width": 505,
+        "height": 337
+      },
+      "alt": {
+        "es": "Teo y Luna suben al tren: muestran el boleto, señalan, Dora agita el ala, la manija de la puerta, Dora abre la puerta y ambos entran",
+        "en": "Teo and Luna board the train: they show a ticket, point, Dora waves a wing, the door handle, Dora opens the door and both step in"
+      }
+    },
+    {
+      "pageId": "p08",
+      "blockId": "b26",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Teo y Luna suben al tren: muestran el boleto, señalan, Dora agita el ala, la manija de la puerta, Dora abre la puerta y ambos entran"
+      },
+      "crop": {
+        "x": 515,
+        "y": 687,
+        "width": 505,
+        "height": 337
+      },
+      "alt": {
+        "es": "Teo y Luna suben al tren: muestran el boleto, señalan, Dora agita el ala, la manija de la puerta, Dora abre la puerta y ambos entran",
+        "en": "Teo and Luna board the train: they show a ticket, point, Dora waves a wing, the door handle, Dora opens the door and both step in"
+      }
+    },
+    {
+      "pageId": "p08",
+      "blockId": "b27",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Teo y Luna suben al tren: muestran el boleto, señalan, Dora agita el ala, la manija de la puerta, Dora abre la puerta y ambos entran"
+      },
+      "crop": {
+        "x": 1030,
+        "y": 687,
+        "width": 506,
+        "height": 337
+      },
+      "alt": {
+        "es": "Teo y Luna suben al tren: muestran el boleto, señalan, Dora agita el ala, la manija de la puerta, Dora abre la puerta y ambos entran",
+        "en": "Teo and Luna board the train: they show a ticket, point, Dora waves a wing, the door handle, Dora opens the door and both step in"
+      }
+    },
+    {
+      "pageId": "p09",
+      "blockId": "b28",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Las puertas del tren se cierran de golpe con un gran estallido de sonido mientras el tren arranca; abajo, Luna y Teo se sobresaltan"
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 470
+      },
+      "alt": {
+        "es": "Las puertas del tren se cierran de golpe con un gran estallido de sonido mientras el tren arranca; abajo, Luna y Teo se sobresaltan",
+        "en": "The train doors slam shut with a huge burst of sound as the train starts moving; below, Luna and Teo are startled"
+      }
+    },
+    {
+      "pageId": "p09",
+      "blockId": "b29",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Las puertas del tren se cierran de golpe con un gran estallido de sonido mientras el tren arranca; abajo, Luna y Teo se sobresaltan"
+      },
+      "crop": {
+        "x": 0,
+        "y": 506,
+        "width": 1536,
+        "height": 518
+      },
+      "alt": {
+        "es": "Las puertas del tren se cierran de golpe con un gran estallido de sonido mientras el tren arranca; abajo, Luna y Teo se sobresaltan",
+        "en": "The train doors slam shut with a huge burst of sound as the train starts moving; below, Luna and Teo are startled"
+      }
+    },
+    {
+      "pageId": "p10",
+      "blockId": "b30",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-10.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Se sientan y Dora se asoma a saludar; notan un bolso bajo el asiento; se agachan a mirarlo; lo abren juntos"
+      },
+      "crop": {
+        "x": 0,
+        "y": 170,
+        "width": 763,
+        "height": 337
+      },
+      "alt": {
+        "es": "Se sientan y Dora se asoma a saludar; notan un bolso bajo el asiento; se agachan a mirarlo; lo abren juntos",
+        "en": "They sit down and Dora peeks in to say hello; they notice a bag under the seat; they crouch to look; they open it together"
+      }
+    },
+    {
+      "pageId": "p10",
+      "blockId": "b31",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-10.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Se sientan y Dora se asoma a saludar; notan un bolso bajo el asiento; se agachan a mirarlo; lo abren juntos"
+      },
+      "crop": {
+        "x": 773,
+        "y": 170,
+        "width": 763,
+        "height": 337
+      },
+      "alt": {
+        "es": "Se sientan y Dora se asoma a saludar; notan un bolso bajo el asiento; se agachan a mirarlo; lo abren juntos",
+        "en": "They sit down and Dora peeks in to say hello; they notice a bag under the seat; they crouch to look; they open it together"
+      }
+    },
+    {
+      "pageId": "p10",
+      "blockId": "b32",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-10.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Se sientan y Dora se asoma a saludar; notan un bolso bajo el asiento; se agachan a mirarlo; lo abren juntos"
+      },
+      "crop": {
+        "x": 0,
+        "y": 665,
+        "width": 763,
+        "height": 359
+      },
+      "alt": {
+        "es": "Se sientan y Dora se asoma a saludar; notan un bolso bajo el asiento; se agachan a mirarlo; lo abren juntos",
+        "en": "They sit down and Dora peeks in to say hello; they notice a bag under the seat; they crouch to look; they open it together"
+      }
+    },
+    {
+      "pageId": "p10",
+      "blockId": "b33",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-10.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Se sientan y Dora se asoma a saludar; notan un bolso bajo el asiento; se agachan a mirarlo; lo abren juntos"
+      },
+      "crop": {
+        "x": 773,
+        "y": 665,
+        "width": 763,
+        "height": 359
+      },
+      "alt": {
+        "es": "Se sientan y Dora se asoma a saludar; notan un bolso bajo el asiento; se agachan a mirarlo; lo abren juntos",
+        "en": "They sit down and Dora peeks in to say hello; they notice a bag under the seat; they crouch to look; they open it together"
+      }
+    },
+    {
+      "pageId": "p11",
+      "blockId": "b34",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-11.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El bolso tiembla; avisan a Dora; caminan hacia ella; le muestran el bolso"
+      },
+      "crop": {
+        "x": 0,
+        "y": 170,
+        "width": 763,
+        "height": 337
+      },
+      "alt": {
+        "es": "El bolso tiembla; avisan a Dora; caminan hacia ella; le muestran el bolso",
+        "en": "The bag shakes; they tell Dora; they walk toward her; they show her the bag"
+      }
+    },
+    {
+      "pageId": "p11",
+      "blockId": "b35",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-11.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El bolso tiembla; avisan a Dora; caminan hacia ella; le muestran el bolso"
+      },
+      "crop": {
+        "x": 773,
+        "y": 170,
+        "width": 763,
+        "height": 337
+      },
+      "alt": {
+        "es": "El bolso tiembla; avisan a Dora; caminan hacia ella; le muestran el bolso",
+        "en": "The bag shakes; they tell Dora; they walk toward her; they show her the bag"
+      }
+    },
+    {
+      "pageId": "p11",
+      "blockId": "b36",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-11.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El bolso tiembla; avisan a Dora; caminan hacia ella; le muestran el bolso"
+      },
+      "crop": {
+        "x": 0,
+        "y": 661,
+        "width": 763,
+        "height": 363
+      },
+      "alt": {
+        "es": "El bolso tiembla; avisan a Dora; caminan hacia ella; le muestran el bolso",
+        "en": "The bag shakes; they tell Dora; they walk toward her; they show her the bag"
+      }
+    },
+    {
+      "pageId": "p11",
+      "blockId": "b37",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-11.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El bolso tiembla; avisan a Dora; caminan hacia ella; le muestran el bolso"
+      },
+      "crop": {
+        "x": 773,
+        "y": 661,
+        "width": 763,
+        "height": 363
+      },
+      "alt": {
+        "es": "El bolso tiembla; avisan a Dora; caminan hacia ella; le muestran el bolso",
+        "en": "The bag shakes; they tell Dora; they walk toward her; they show her the bag"
+      }
+    },
+    {
+      "pageId": "p12",
+      "blockId": "b38",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-12.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Luna sentada, pensativa, junto a una bufanda naranja con una luna bordada"
+      },
+      "crop": {
+        "x": 0,
+        "y": 201,
+        "width": 1536,
+        "height": 823
+      },
+      "alt": {
+        "es": "Luna sentada, pensativa, junto a una bufanda naranja con una luna bordada",
+        "en": "Luna sitting, thoughtful, next to an orange scarf with a moon stitched on it"
+      }
+    },
+    {
+      "pageId": "p13",
+      "blockId": "b41",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-13.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Dora abre un cofre con más objetos guardados; conversan; Luna señala algo emocionada; celebran; encuentran otra bufanda parecida"
+      },
+      "crop": {
+        "x": 0,
+        "y": 170,
+        "width": 716,
+        "height": 170
+      },
+      "alt": {
+        "es": "Dora abre un cofre con más objetos guardados; conversan; Luna señala algo emocionada; celebran; encuentran otra bufanda parecida",
+        "en": "Dora opens a chest with more kept objects; they talk; Luna points, excited; they celebrate; they find another similar scarf"
+      }
+    },
+    {
+      "pageId": "p13",
+      "blockId": "b42",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-13.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Dora abre un cofre con más objetos guardados; conversan; Luna señala algo emocionada; celebran; encuentran otra bufanda parecida"
+      },
+      "crop": {
+        "x": 666,
+        "y": 170,
+        "width": 870,
+        "height": 170
+      },
+      "alt": {
+        "es": "Dora abre un cofre con más objetos guardados; conversan; Luna señala algo emocionada; celebran; encuentran otra bufanda parecida",
+        "en": "Dora opens a chest with more kept objects; they talk; Luna points, excited; they celebrate; they find another similar scarf"
+      }
+    },
+    {
+      "pageId": "p13",
+      "blockId": "b43",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-13.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Dora abre un cofre con más objetos guardados; conversan; Luna señala algo emocionada; celebran; encuentran otra bufanda parecida"
+      },
+      "crop": {
+        "x": 0,
+        "y": 499,
+        "width": 556,
+        "height": 191
+      },
+      "alt": {
+        "es": "Dora abre un cofre con más objetos guardados; conversan; Luna señala algo emocionada; celebran; encuentran otra bufanda parecida",
+        "en": "Dora opens a chest with more kept objects; they talk; Luna points, excited; they celebrate; they find another similar scarf"
+      }
+    },
+    {
+      "pageId": "p13",
+      "blockId": "b44",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-13.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Dora abre un cofre con más objetos guardados; conversan; Luna señala algo emocionada; celebran; encuentran otra bufanda parecida"
+      },
+      "crop": {
+        "x": 536,
+        "y": 499,
+        "width": 1000,
+        "height": 191
+      },
+      "alt": {
+        "es": "Dora abre un cofre con más objetos guardados; conversan; Luna señala algo emocionada; celebran; encuentran otra bufanda parecida",
+        "en": "Dora opens a chest with more kept objects; they talk; Luna points, excited; they celebrate; they find another similar scarf"
+      }
+    },
+    {
+      "pageId": "p13",
+      "blockId": "b45",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-13.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Dora abre un cofre con más objetos guardados; conversan; Luna señala algo emocionada; celebran; encuentran otra bufanda parecida"
+      },
+      "crop": {
+        "x": 0,
+        "y": 841,
+        "width": 896,
+        "height": 183
+      },
+      "alt": {
+        "es": "Dora abre un cofre con más objetos guardados; conversan; Luna señala algo emocionada; celebran; encuentran otra bufanda parecida",
+        "en": "Dora opens a chest with more kept objects; they talk; Luna points, excited; they celebrate; they find another similar scarf"
+      }
+    },
+    {
+      "pageId": "p13",
+      "blockId": "b46",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-13.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Dora abre un cofre con más objetos guardados; conversan; Luna señala algo emocionada; celebran; encuentran otra bufanda parecida"
+      },
+      "crop": {
+        "x": 856,
+        "y": 839,
+        "width": 680,
+        "height": 185
+      },
+      "alt": {
+        "es": "Dora abre un cofre con más objetos guardados; conversan; Luna señala algo emocionada; celebran; encuentran otra bufanda parecida",
+        "en": "Dora opens a chest with more kept objects; they talk; Luna points, excited; they celebrate; they find another similar scarf"
+      }
+    },
+    {
+      "pageId": "p14",
+      "blockId": "b47",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-14.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Luna y Teo miran un estante con un sombrero, una caja y un paraguas; Dora guarda el bolso en el cofre de los objetos perdidos"
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 765,
+        "height": 707
+      },
+      "alt": {
+        "es": "Luna y Teo miran un estante con un sombrero, una caja y un paraguas; Dora guarda el bolso en el cofre de los objetos perdidos",
+        "en": "Luna and Teo look at a shelf with a hat, a box, and an umbrella; Dora places the bag in the lost-and-found chest"
+      }
+    },
+    {
+      "pageId": "p14",
+      "blockId": "b48",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-14.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Luna y Teo miran un estante con un sombrero, una caja y un paraguas; Dora guarda el bolso en el cofre de los objetos perdidos"
+      },
+      "crop": {
+        "x": 774,
+        "y": 0,
+        "width": 762,
+        "height": 707
+      },
+      "alt": {
+        "es": "Luna y Teo miran un estante con un sombrero, una caja y un paraguas; Dora guarda el bolso en el cofre de los objetos perdidos",
+        "en": "Luna and Teo look at a shelf with a hat, a box, and an umbrella; Dora places the bag in the lost-and-found chest"
+      }
+    },
+    {
+      "pageId": "p15",
+      "blockId": "b49",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-15.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "De vuelta al asiento, encuentran el barquito de papel olvidado; lo recuperan; caminan hacia la puerta del tren"
+      },
+      "crop": {
+        "x": 0,
+        "y": 170,
+        "width": 763,
+        "height": 337
+      },
+      "alt": {
+        "es": "De vuelta al asiento, encuentran el barquito de papel olvidado; lo recuperan; caminan hacia la puerta del tren",
+        "en": "Back at their seat, they find the forgotten paper boat; they grab it; they walk toward the train door"
+      }
+    },
+    {
+      "pageId": "p15",
+      "blockId": "b50",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-15.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "De vuelta al asiento, encuentran el barquito de papel olvidado; lo recuperan; caminan hacia la puerta del tren"
+      },
+      "crop": {
+        "x": 773,
+        "y": 170,
+        "width": 763,
+        "height": 337
+      },
+      "alt": {
+        "es": "De vuelta al asiento, encuentran el barquito de papel olvidado; lo recuperan; caminan hacia la puerta del tren",
+        "en": "Back at their seat, they find the forgotten paper boat; they grab it; they walk toward the train door"
+      }
+    },
+    {
+      "pageId": "p15",
+      "blockId": "b51",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-15.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "De vuelta al asiento, encuentran el barquito de papel olvidado; lo recuperan; caminan hacia la puerta del tren"
+      },
+      "crop": {
+        "x": 0,
+        "y": 663,
+        "width": 763,
+        "height": 361
+      },
+      "alt": {
+        "es": "De vuelta al asiento, encuentran el barquito de papel olvidado; lo recuperan; caminan hacia la puerta del tren",
+        "en": "Back at their seat, they find the forgotten paper boat; they grab it; they walk toward the train door"
+      }
+    },
+    {
+      "pageId": "p15",
+      "blockId": "b52",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-15.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "De vuelta al asiento, encuentran el barquito de papel olvidado; lo recuperan; caminan hacia la puerta del tren"
+      },
+      "crop": {
+        "x": 773,
+        "y": 663,
+        "width": 763,
+        "height": 361
+      },
+      "alt": {
+        "es": "De vuelta al asiento, encuentran el barquito de papel olvidado; lo recuperan; caminan hacia la puerta del tren",
+        "en": "Back at their seat, they find the forgotten paper boat; they grab it; they walk toward the train door"
+      }
+    },
+    {
+      "pageId": "p16",
+      "blockId": "b53",
+      "illustration": {
+        "src": "stories/luna-y-el-tren-de-los-objetos-perdidos/page-16.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Luna y Teo bajan del tren y se despiden de Dora en el andén"
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 707
+      },
+      "alt": {
+        "es": "Luna y Teo bajan del tren y se despiden de Dora en el andén",
+        "en": "Luna and Teo step off the train and wave goodbye to Dora on the platform"
+      }
+    }
+  ]
+}

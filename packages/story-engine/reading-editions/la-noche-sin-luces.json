@@ -1,0 +1,807 @@
+{
+  "version": 1,
+  "familyId": "la-noche-sin-luces",
+  "maxWordsPerUnit": 70,
+  "scenes": [
+    {
+      "pageId": "p01",
+      "blockId": "b01",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mila sale de casa con un frasco vacío y Pipo la acompaña al jardín al atardecer."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 700
+      },
+      "alt": {
+        "es": "Mila sale de casa con un frasco vacío y Pipo la acompaña al jardín al atardecer.",
+        "en": "Mila steps out of the house with an empty jar, and Pipo joins her in the garden at sunset."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b02",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El jardín oscuro, Mila con el frasco, Pipo olfateando el suelo y Tito llorando, en cuatro viñetas."
+      },
+      "crop": {
+        "x": 0,
+        "y": 170,
+        "width": 763,
+        "height": 337
+      },
+      "alt": {
+        "es": "El jardín oscuro, Mila con el frasco, Pipo olfateando el suelo y Tito llorando, en cuatro viñetas.",
+        "en": "The dark garden, Mila holding the jar, Pipo sniffing the ground, and Tito crying in four panels."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b03",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El jardín oscuro, Mila con el frasco, Pipo olfateando el suelo y Tito llorando, en cuatro viñetas."
+      },
+      "crop": {
+        "x": 773,
+        "y": 170,
+        "width": 763,
+        "height": 337
+      },
+      "alt": {
+        "es": "El jardín oscuro, Mila con el frasco, Pipo olfateando el suelo y Tito llorando, en cuatro viñetas.",
+        "en": "The dark garden, Mila holding the jar, Pipo sniffing the ground, and Tito crying in four panels."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b04",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El jardín oscuro, Mila con el frasco, Pipo olfateando el suelo y Tito llorando, en cuatro viñetas."
+      },
+      "crop": {
+        "x": 0,
+        "y": 681,
+        "width": 763,
+        "height": 343
+      },
+      "alt": {
+        "es": "El jardín oscuro, Mila con el frasco, Pipo olfateando el suelo y Tito llorando, en cuatro viñetas.",
+        "en": "The dark garden, Mila holding the jar, Pipo sniffing the ground, and Tito crying in four panels."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b05",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El jardín oscuro, Mila con el frasco, Pipo olfateando el suelo y Tito llorando, en cuatro viñetas."
+      },
+      "crop": {
+        "x": 773,
+        "y": 681,
+        "width": 763,
+        "height": 343
+      },
+      "alt": {
+        "es": "El jardín oscuro, Mila con el frasco, Pipo olfateando el suelo y Tito llorando, en cuatro viñetas.",
+        "en": "The dark garden, Mila holding the jar, Pipo sniffing the ground, and Tito crying in four panels."
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b06",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Tito señala la nube que cubre la luna; Mila y Pipo se preparan para ayudarlo."
+      },
+      "crop": {
+        "x": 0,
+        "y": 170,
+        "width": 806,
+        "height": 854
+      },
+      "alt": {
+        "es": "Tito señala la nube que cubre la luna; Mila y Pipo se preparan para ayudarlo.",
+        "en": "Tito points to a cloud covering the moon; Mila and Pipo get ready to help him."
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b07",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Tito señala la nube que cubre la luna; Mila y Pipo se preparan para ayudarlo."
+      },
+      "crop": {
+        "x": 748,
+        "y": 170,
+        "width": 788,
+        "height": 854
+      },
+      "alt": {
+        "es": "Tito señala la nube que cubre la luna; Mila y Pipo se preparan para ayudarlo.",
+        "en": "Tito points to a cloud covering the moon; Mila and Pipo get ready to help him."
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b08",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Una ramita rota, Pipo en un charco, un búho, Tito asustado, Pipo estornudando y el arroyo."
+      },
+      "crop": {
+        "x": 0,
+        "y": 170,
+        "width": 505,
+        "height": 337
+      },
+      "alt": {
+        "es": "Una ramita rota, Pipo en un charco, un búho, Tito asustado, Pipo estornudando y el arroyo.",
+        "en": "A snapped twig, Pipo in a puddle, an owl, frightened Tito, Pipo sneezing, and the stream."
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b09",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Una ramita rota, Pipo en un charco, un búho, Tito asustado, Pipo estornudando y el arroyo."
+      },
+      "crop": {
+        "x": 515,
+        "y": 170,
+        "width": 505,
+        "height": 337
+      },
+      "alt": {
+        "es": "Una ramita rota, Pipo en un charco, un búho, Tito asustado, Pipo estornudando y el arroyo.",
+        "en": "A snapped twig, Pipo in a puddle, an owl, frightened Tito, Pipo sneezing, and the stream."
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b10",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Una ramita rota, Pipo en un charco, un búho, Tito asustado, Pipo estornudando y el arroyo."
+      },
+      "crop": {
+        "x": 1030,
+        "y": 170,
+        "width": 506,
+        "height": 337
+      },
+      "alt": {
+        "es": "Una ramita rota, Pipo en un charco, un búho, Tito asustado, Pipo estornudando y el arroyo.",
+        "en": "A snapped twig, Pipo in a puddle, an owl, frightened Tito, Pipo sneezing, and the stream."
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b11",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Una ramita rota, Pipo en un charco, un búho, Tito asustado, Pipo estornudando y el arroyo."
+      },
+      "crop": {
+        "x": 0,
+        "y": 687,
+        "width": 505,
+        "height": 337
+      },
+      "alt": {
+        "es": "Una ramita rota, Pipo en un charco, un búho, Tito asustado, Pipo estornudando y el arroyo.",
+        "en": "A snapped twig, Pipo in a puddle, an owl, frightened Tito, Pipo sneezing, and the stream."
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b12",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Una ramita rota, Pipo en un charco, un búho, Tito asustado, Pipo estornudando y el arroyo."
+      },
+      "crop": {
+        "x": 515,
+        "y": 687,
+        "width": 505,
+        "height": 337
+      },
+      "alt": {
+        "es": "Una ramita rota, Pipo en un charco, un búho, Tito asustado, Pipo estornudando y el arroyo.",
+        "en": "A snapped twig, Pipo in a puddle, an owl, frightened Tito, Pipo sneezing, and the stream."
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b13",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Una ramita rota, Pipo en un charco, un búho, Tito asustado, Pipo estornudando y el arroyo."
+      },
+      "crop": {
+        "x": 1030,
+        "y": 687,
+        "width": 506,
+        "height": 337
+      },
+      "alt": {
+        "es": "Una ramita rota, Pipo en un charco, un búho, Tito asustado, Pipo estornudando y el arroyo.",
+        "en": "A snapped twig, Pipo in a puddle, an owl, frightened Tito, Pipo sneezing, and the stream."
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b14",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El puente de corteza sobre el arroyo; Tito cruza mientras Pipo y Mila esperan su turno."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 552
+      },
+      "alt": {
+        "es": "El puente de corteza sobre el arroyo; Tito cruza mientras Pipo y Mila esperan su turno.",
+        "en": "The bark bridge over the stream; Tito crosses while Pipo and Mila wait for their turns."
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b15",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El puente de corteza sobre el arroyo; Tito cruza mientras Pipo y Mila esperan su turno."
+      },
+      "crop": {
+        "x": 0,
+        "y": 526,
+        "width": 756,
+        "height": 498
+      },
+      "alt": {
+        "es": "El puente de corteza sobre el arroyo; Tito cruza mientras Pipo y Mila esperan su turno.",
+        "en": "The bark bridge over the stream; Tito crosses while Pipo and Mila wait for their turns."
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b16",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El puente de corteza sobre el arroyo; Tito cruza mientras Pipo y Mila esperan su turno."
+      },
+      "crop": {
+        "x": 718,
+        "y": 480,
+        "width": 818,
+        "height": 544
+      },
+      "alt": {
+        "es": "El puente de corteza sobre el arroyo; Tito cruza mientras Pipo y Mila esperan su turno.",
+        "en": "The bark bridge over the stream; Tito crosses while Pipo and Mila wait for their turns."
+      }
+    },
+    {
+      "pageId": "p06",
+      "blockId": "b17",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mila, Pipo y Tito ante el árbol hueco; Dora sostiene su libro azul con una estrella."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 763,
+        "height": 700
+      },
+      "alt": {
+        "es": "Mila, Pipo y Tito ante el árbol hueco; Dora sostiene su libro azul con una estrella.",
+        "en": "Mila, Pipo, and Tito visit the hollow tree; Dora holds her blue book with a yellow star."
+      }
+    },
+    {
+      "pageId": "p06",
+      "blockId": "b18",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mila, Pipo y Tito ante el árbol hueco; Dora sostiene su libro azul con una estrella."
+      },
+      "crop": {
+        "x": 773,
+        "y": 0,
+        "width": 763,
+        "height": 700
+      },
+      "alt": {
+        "es": "Mila, Pipo y Tito ante el árbol hueco; Dora sostiene su libro azul con una estrella.",
+        "en": "Mila, Pipo, and Tito visit the hollow tree; Dora holds her blue book with a yellow star."
+      }
+    },
+    {
+      "pageId": "p07",
+      "blockId": "b19",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Un relámpago cruza el cielo; Tito se esconde detrás de Mila bajo una estrella vacía de cómic."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 470
+      },
+      "alt": {
+        "es": "Un relámpago cruza el cielo; Tito se esconde detrás de Mila bajo una estrella vacía de cómic.",
+        "en": "Lightning crosses the sky; Tito hides behind Mila beneath an empty comic burst shape."
+      }
+    },
+    {
+      "pageId": "p07",
+      "blockId": "b20",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Un relámpago cruza el cielo; Tito se esconde detrás de Mila bajo una estrella vacía de cómic."
+      },
+      "crop": {
+        "x": 0,
+        "y": 506,
+        "width": 1536,
+        "height": 518
+      },
+      "alt": {
+        "es": "Un relámpago cruza el cielo; Tito se esconde detrás de Mila bajo una estrella vacía de cómic.",
+        "en": "Lightning crosses the sky; Tito hides behind Mila beneath an empty comic burst shape."
+      }
+    },
+    {
+      "pageId": "p08",
+      "blockId": "b21",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mila sentada pensando, con una bombilla amarilla sobre la cabeza y un libro a su lado."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Mila sentada pensando, con una bombilla amarilla sobre la cabeza y un libro a su lado.",
+        "en": "Mila sits thinking, with a yellow light bulb above her head and a book beside her."
+      }
+    },
+    {
+      "pageId": "p08",
+      "blockId": "b22",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mila sentada pensando, con una bombilla amarilla sobre la cabeza y un libro a su lado."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Mila sentada pensando, con una bombilla amarilla sobre la cabeza y un libro a su lado.",
+        "en": "Mila sits thinking, with a yellow light bulb above her head and a book beside her."
+      }
+    },
+    {
+      "pageId": "p08",
+      "blockId": "b23",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Mila sentada pensando, con una bombilla amarilla sobre la cabeza y un libro a su lado."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Mila sentada pensando, con una bombilla amarilla sobre la cabeza y un libro a su lado.",
+        "en": "Mila sits thinking, with a yellow light bulb above her head and a book beside her."
+      }
+    },
+    {
+      "pageId": "p09",
+      "blockId": "b24",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Un libro abierto, Mila respirando, Dora contando con uno, dos y tres dedos, y Mila cantando."
+      },
+      "crop": {
+        "x": 0,
+        "y": 170,
+        "width": 716,
+        "height": 170
+      },
+      "alt": {
+        "es": "Un libro abierto, Mila respirando, Dora contando con uno, dos y tres dedos, y Mila cantando.",
+        "en": "An open book, Mila breathing, Dora counting one, two, and three on her fingers, and Mila singing."
+      }
+    },
+    {
+      "pageId": "p09",
+      "blockId": "b25",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Un libro abierto, Mila respirando, Dora contando con uno, dos y tres dedos, y Mila cantando."
+      },
+      "crop": {
+        "x": 666,
+        "y": 167,
+        "width": 870,
+        "height": 173
+      },
+      "alt": {
+        "es": "Un libro abierto, Mila respirando, Dora contando con uno, dos y tres dedos, y Mila cantando.",
+        "en": "An open book, Mila breathing, Dora counting one, two, and three on her fingers, and Mila singing."
+      }
+    },
+    {
+      "pageId": "p09",
+      "blockId": "b26",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Un libro abierto, Mila respirando, Dora contando con uno, dos y tres dedos, y Mila cantando."
+      },
+      "crop": {
+        "x": 0,
+        "y": 521,
+        "width": 556,
+        "height": 169
+      },
+      "alt": {
+        "es": "Un libro abierto, Mila respirando, Dora contando con uno, dos y tres dedos, y Mila cantando.",
+        "en": "An open book, Mila breathing, Dora counting one, two, and three on her fingers, and Mila singing."
+      }
+    },
+    {
+      "pageId": "p09",
+      "blockId": "b27",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Un libro abierto, Mila respirando, Dora contando con uno, dos y tres dedos, y Mila cantando."
+      },
+      "crop": {
+        "x": 536,
+        "y": 521,
+        "width": 1000,
+        "height": 169
+      },
+      "alt": {
+        "es": "Un libro abierto, Mila respirando, Dora contando con uno, dos y tres dedos, y Mila cantando.",
+        "en": "An open book, Mila breathing, Dora counting one, two, and three on her fingers, and Mila singing."
+      }
+    },
+    {
+      "pageId": "p09",
+      "blockId": "b28",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Un libro abierto, Mila respirando, Dora contando con uno, dos y tres dedos, y Mila cantando."
+      },
+      "crop": {
+        "x": 0,
+        "y": 863,
+        "width": 896,
+        "height": 161
+      },
+      "alt": {
+        "es": "Un libro abierto, Mila respirando, Dora contando con uno, dos y tres dedos, y Mila cantando.",
+        "en": "An open book, Mila breathing, Dora counting one, two, and three on her fingers, and Mila singing."
+      }
+    },
+    {
+      "pageId": "p09",
+      "blockId": "b29",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Un libro abierto, Mila respirando, Dora contando con uno, dos y tres dedos, y Mila cantando."
+      },
+      "crop": {
+        "x": 856,
+        "y": 861,
+        "width": 680,
+        "height": 163
+      },
+      "alt": {
+        "es": "Un libro abierto, Mila respirando, Dora contando con uno, dos y tres dedos, y Mila cantando.",
+        "en": "An open book, Mila breathing, Dora counting one, two, and three on her fingers, and Mila singing."
+      }
+    },
+    {
+      "pageId": "p10",
+      "blockId": "b30",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-10.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Tres luciérnagas en columnas separadas, con brillos de intensidad creciente."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 505,
+        "height": 660
+      },
+      "alt": {
+        "es": "Tres luciérnagas en columnas separadas, con brillos de intensidad creciente.",
+        "en": "Three fireflies in separate columns, each glowing more brightly than the last."
+      }
+    },
+    {
+      "pageId": "p10",
+      "blockId": "b31",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-10.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Tres luciérnagas en columnas separadas, con brillos de intensidad creciente."
+      },
+      "crop": {
+        "x": 515,
+        "y": 0,
+        "width": 505,
+        "height": 660
+      },
+      "alt": {
+        "es": "Tres luciérnagas en columnas separadas, con brillos de intensidad creciente.",
+        "en": "Three fireflies in separate columns, each glowing more brightly than the last."
+      }
+    },
+    {
+      "pageId": "p10",
+      "blockId": "b32",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-10.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Tres luciérnagas en columnas separadas, con brillos de intensidad creciente."
+      },
+      "crop": {
+        "x": 1030,
+        "y": 0,
+        "width": 506,
+        "height": 660
+      },
+      "alt": {
+        "es": "Tres luciérnagas en columnas separadas, con brillos de intensidad creciente.",
+        "en": "Three fireflies in separate columns, each glowing more brightly than the last."
+      }
+    },
+    {
+      "pageId": "p11",
+      "blockId": "b33",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-11.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Seis luces sobre el cielo oscuro; otras tres aparecen mientras la nube se aleja y los amigos miran."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 688
+      },
+      "alt": {
+        "es": "Seis luces sobre el cielo oscuro; otras tres aparecen mientras la nube se aleja y los amigos miran.",
+        "en": "Six lights in the dark sky; three more appear as the cloud drifts away and the friends watch."
+      }
+    },
+    {
+      "pageId": "p11",
+      "blockId": "b34",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-11.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Seis luces sobre el cielo oscuro; otras tres aparecen mientras la nube se aleja y los amigos miran."
+      },
+      "crop": {
+        "x": 0,
+        "y": 412,
+        "width": 1536,
+        "height": 612
+      },
+      "alt": {
+        "es": "Seis luces sobre el cielo oscuro; otras tres aparecen mientras la nube se aleja y los amigos miran.",
+        "en": "Six lights in the dark sky; three more appear as the cloud drifts away and the friends watch."
+      }
+    },
+    {
+      "pageId": "p12",
+      "blockId": "b35",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-12.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El cielo se llena de luciérnagas y la nube se aleja; Tito ríe feliz."
+      },
+      "crop": {
+        "x": 0,
+        "y": 179,
+        "width": 765,
+        "height": 845
+      },
+      "alt": {
+        "es": "El cielo se llena de luciérnagas y la nube se aleja; Tito ríe feliz.",
+        "en": "The sky fills with fireflies as the cloud moves away; Tito laughs happily."
+      }
+    },
+    {
+      "pageId": "p12",
+      "blockId": "b36",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-12.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "El cielo se llena de luciérnagas y la nube se aleja; Tito ríe feliz."
+      },
+      "crop": {
+        "x": 774,
+        "y": 179,
+        "width": 762,
+        "height": 845
+      },
+      "alt": {
+        "es": "El cielo se llena de luciérnagas y la nube se aleja; Tito ríe feliz.",
+        "en": "The sky fills with fireflies as the cloud moves away; Tito laughs happily."
+      }
+    },
+    {
+      "pageId": "p13",
+      "blockId": "b37",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-13.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Pipo lleva el frasco luminoso, los amigos cruzan el puente y Mila contempla el cielo."
+      },
+      "crop": {
+        "x": 0,
+        "y": 161,
+        "width": 763,
+        "height": 357
+      },
+      "alt": {
+        "es": "Pipo lleva el frasco luminoso, los amigos cruzan el puente y Mila contempla el cielo.",
+        "en": "Pipo carries the glowing jar, the friends cross the bridge, and Mila looks up at the sky."
+      }
+    },
+    {
+      "pageId": "p13",
+      "blockId": "b38",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-13.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Pipo lleva el frasco luminoso, los amigos cruzan el puente y Mila contempla el cielo."
+      },
+      "crop": {
+        "x": 774,
+        "y": 159,
+        "width": 762,
+        "height": 359
+      },
+      "alt": {
+        "es": "Pipo lleva el frasco luminoso, los amigos cruzan el puente y Mila contempla el cielo.",
+        "en": "Pipo carries the glowing jar, the friends cross the bridge, and Mila looks up at the sky."
+      }
+    },
+    {
+      "pageId": "p13",
+      "blockId": "b39",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-13.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Pipo lleva el frasco luminoso, los amigos cruzan el puente y Mila contempla el cielo."
+      },
+      "crop": {
+        "x": 0,
+        "y": 651,
+        "width": 1536,
+        "height": 373
+      },
+      "alt": {
+        "es": "Pipo lleva el frasco luminoso, los amigos cruzan el puente y Mila contempla el cielo.",
+        "en": "Pipo carries the glowing jar, the friends cross the bridge, and Mila looks up at the sky."
+      }
+    },
+    {
+      "pageId": "p14",
+      "blockId": "b40",
+      "illustration": {
+        "src": "stories/la-noche-sin-luces/page-14.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "La casa y el jardín bajo un cielo nocturno lleno de luces amarillas."
+      },
+      "crop": {
+        "x": 0,
+        "y": 201,
+        "width": 1536,
+        "height": 823
+      },
+      "alt": {
+        "es": "La casa y el jardín bajo un cielo nocturno lleno de luces amarillas.",
+        "en": "The house and garden beneath a night sky full of tiny yellow lights."
+      }
+    }
+  ]
+}

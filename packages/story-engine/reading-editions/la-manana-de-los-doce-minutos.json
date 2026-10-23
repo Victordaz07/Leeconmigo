@@ -1,0 +1,217 @@
+{
+  "version": 1,
+  "familyId": "la-manana-de-los-doce-minutos",
+  "maxWordsPerUnit": 100,
+  "scenes": [
+    {
+      "pageId": "p01",
+      "blockId": "b01",
+      "illustration": {
+        "src": "stories/la-manana-de-los-doce-minutos/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de una cometa dos veces."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 982,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de una cometa dos veces.",
+        "en": "Scene of a kite, twice."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b02",
+      "illustration": {
+        "src": "stories/la-manana-de-los-doce-minutos/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de el vaso que vuelve."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 934,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de el vaso que vuelve.",
+        "en": "Scene of the returning cup."
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b03",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b04",
+      "illustration": {
+        "src": "stories/la-manana-de-los-doce-minutos/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de la sombra de la cometa."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 966,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de la sombra de la cometa.",
+        "en": "Scene of the kite’s shadow."
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b05",
+      "illustration": {
+        "src": "stories/la-manana-de-los-doce-minutos/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de el espejo distinto."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 942,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de el espejo distinto.",
+        "en": "Scene of the mirror out of line."
+      }
+    },
+    {
+      "pageId": "p06",
+      "blockId": "b06",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p07",
+      "blockId": "b07",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p08",
+      "blockId": "b08",
+      "illustration": {
+        "src": "stories/la-manana-de-los-doce-minutos/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de la campana se adelanta."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 918,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de la campana se adelanta.",
+        "en": "Scene of the bell comes early."
+      }
+    },
+    {
+      "pageId": "p09",
+      "blockId": "b09",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p10",
+      "blockId": "b10",
+      "illustration": {
+        "src": "stories/la-manana-de-los-doce-minutos/page-10.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de la feria no se repite."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 966,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de la feria no se repite.",
+        "en": "Scene of the fair does not repeat."
+      }
+    },
+    {
+      "pageId": "p11",
+      "blockId": "b11",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p12",
+      "blockId": "b12",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    }
+  ]
+}

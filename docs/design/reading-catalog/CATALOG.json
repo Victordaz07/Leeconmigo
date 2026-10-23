@@ -1,0 +1,688 @@
+[
+  {
+    "family": "el-puente-de-las-luciernagas",
+    "title": "El puente de las luciérnagas",
+    "scenes": 10,
+    "textOnlyScenes": 0,
+    "variants": [
+      {
+        "id": "el-puente-de-las-luciernagas-es-n1",
+        "language": "es",
+        "level": 1,
+        "parts": 10
+      },
+      {
+        "id": "el-puente-de-las-luciernagas-es-n2",
+        "language": "es",
+        "level": 2,
+        "parts": 10
+      },
+      {
+        "id": "el-puente-de-las-luciernagas-es-n3",
+        "language": "es",
+        "level": 3,
+        "parts": 10
+      },
+      {
+        "id": "el-puente-de-las-luciernagas-en-n1",
+        "language": "en",
+        "level": 1,
+        "parts": 10
+      },
+      {
+        "id": "el-puente-de-las-luciernagas-en-n2",
+        "language": "en",
+        "level": 2,
+        "parts": 10
+      },
+      {
+        "id": "el-puente-de-las-luciernagas-en-n3",
+        "language": "en",
+        "level": 3,
+        "parts": 10
+      }
+    ]
+  },
+  {
+    "family": "el-puente-de-lolo",
+    "title": "El puente de Lolo",
+    "scenes": 20,
+    "textOnlyScenes": 0,
+    "variants": [
+      {
+        "id": "el-puente-de-lolo-es-n1",
+        "language": "es",
+        "level": 1,
+        "parts": 20
+      },
+      {
+        "id": "el-puente-de-lolo-es-n2",
+        "language": "es",
+        "level": 2,
+        "parts": 20
+      },
+      {
+        "id": "el-puente-de-lolo-es-n3",
+        "language": "es",
+        "level": 3,
+        "parts": 20
+      },
+      {
+        "id": "el-puente-de-lolo-en-n1",
+        "language": "en",
+        "level": 1,
+        "parts": 20
+      },
+      {
+        "id": "el-puente-de-lolo-en-n2",
+        "language": "en",
+        "level": 2,
+        "parts": 20
+      },
+      {
+        "id": "el-puente-de-lolo-en-n3",
+        "language": "en",
+        "level": 3,
+        "parts": 20
+      }
+    ]
+  },
+  {
+    "family": "el-puente-que-desaparecia",
+    "title": "El puente que desaparecía",
+    "scenes": 12,
+    "textOnlyScenes": 6,
+    "variants": [
+      {
+        "id": "el-puente-que-desaparecia-es-n6",
+        "language": "es",
+        "level": 6,
+        "parts": 12
+      },
+      {
+        "id": "el-puente-que-desaparecia-en-n6",
+        "language": "en",
+        "level": 6,
+        "parts": 12
+      }
+    ]
+  },
+  {
+    "family": "estrella-desaparecida-c1",
+    "title": "1. La pista que no caminaba",
+    "scenes": 12,
+    "textOnlyScenes": 0,
+    "variants": [
+      {
+        "id": "estrella-desaparecida-c1-es-n1",
+        "language": "es",
+        "level": 1,
+        "parts": 12
+      },
+      {
+        "id": "estrella-desaparecida-c1-es-n2",
+        "language": "es",
+        "level": 2,
+        "parts": 12
+      },
+      {
+        "id": "estrella-desaparecida-c1-es-n3",
+        "language": "es",
+        "level": 3,
+        "parts": 12
+      },
+      {
+        "id": "estrella-desaparecida-c1-en-n1",
+        "language": "en",
+        "level": 1,
+        "parts": 12
+      },
+      {
+        "id": "estrella-desaparecida-c1-en-n2",
+        "language": "en",
+        "level": 2,
+        "parts": 12
+      },
+      {
+        "id": "estrella-desaparecida-c1-en-n3",
+        "language": "en",
+        "level": 3,
+        "parts": 12
+      }
+    ]
+  },
+  {
+    "family": "estrella-desaparecida-c2",
+    "title": "2. La sombra que engañaba",
+    "scenes": 12,
+    "textOnlyScenes": 0,
+    "variants": [
+      {
+        "id": "estrella-desaparecida-c2-es-n1",
+        "language": "es",
+        "level": 1,
+        "parts": 12
+      },
+      {
+        "id": "estrella-desaparecida-c2-es-n2",
+        "language": "es",
+        "level": 2,
+        "parts": 12
+      },
+      {
+        "id": "estrella-desaparecida-c2-es-n3",
+        "language": "es",
+        "level": 3,
+        "parts": 12
+      },
+      {
+        "id": "estrella-desaparecida-c2-en-n1",
+        "language": "en",
+        "level": 1,
+        "parts": 12
+      },
+      {
+        "id": "estrella-desaparecida-c2-en-n2",
+        "language": "en",
+        "level": 2,
+        "parts": 12
+      },
+      {
+        "id": "estrella-desaparecida-c2-en-n3",
+        "language": "en",
+        "level": 3,
+        "parts": 12
+      }
+    ]
+  },
+  {
+    "family": "estrella-desaparecida-c3",
+    "title": "3. Lo que ocurrió de verdad",
+    "scenes": 12,
+    "textOnlyScenes": 0,
+    "variants": [
+      {
+        "id": "estrella-desaparecida-c3-es-n1",
+        "language": "es",
+        "level": 1,
+        "parts": 12
+      },
+      {
+        "id": "estrella-desaparecida-c3-es-n2",
+        "language": "es",
+        "level": 2,
+        "parts": 12
+      },
+      {
+        "id": "estrella-desaparecida-c3-es-n3",
+        "language": "es",
+        "level": 3,
+        "parts": 12
+      },
+      {
+        "id": "estrella-desaparecida-c3-en-n1",
+        "language": "en",
+        "level": 1,
+        "parts": 12
+      },
+      {
+        "id": "estrella-desaparecida-c3-en-n2",
+        "language": "en",
+        "level": 2,
+        "parts": 12
+      },
+      {
+        "id": "estrella-desaparecida-c3-en-n3",
+        "language": "en",
+        "level": 3,
+        "parts": 12
+      }
+    ]
+  },
+  {
+    "family": "la-cometa-roja",
+    "title": "La cometa roja",
+    "scenes": 6,
+    "textOnlyScenes": 0,
+    "variants": [
+      {
+        "id": "la-cometa-roja-es-n3",
+        "language": "es",
+        "level": 3,
+        "parts": 6
+      },
+      {
+        "id": "la-cometa-roja-en-n3",
+        "language": "en",
+        "level": 3,
+        "parts": 7
+      }
+    ]
+  },
+  {
+    "family": "la-cupula-que-parpadeaba",
+    "title": "La cúpula que parpadeaba",
+    "scenes": 16,
+    "textOnlyScenes": 0,
+    "variants": [
+      {
+        "id": "la-cupula-que-parpadeaba-es-n6",
+        "language": "es",
+        "level": 6,
+        "parts": 33
+      },
+      {
+        "id": "la-cupula-que-parpadeaba-en-n6",
+        "language": "en",
+        "level": 6,
+        "parts": 33
+      }
+    ]
+  },
+  {
+    "family": "la-isla-que-caminaba",
+    "title": "La isla que caminaba",
+    "scenes": 12,
+    "textOnlyScenes": 6,
+    "variants": [
+      {
+        "id": "la-isla-que-caminaba-es-n6",
+        "language": "es",
+        "level": 6,
+        "parts": 24
+      },
+      {
+        "id": "la-isla-que-caminaba-en-n6",
+        "language": "en",
+        "level": 6,
+        "parts": 23
+      }
+    ]
+  },
+  {
+    "family": "la-luna-y-la-puerta-azul",
+    "title": "La luna y la puerta azul",
+    "scenes": 10,
+    "textOnlyScenes": 0,
+    "variants": [
+      {
+        "id": "la-luna-y-la-puerta-azul",
+        "language": "es",
+        "level": 1,
+        "parts": 10
+      }
+    ]
+  },
+  {
+    "family": "la-luz-que-no-estaba-en-el-mapa",
+    "title": "La luz que no estaba en el mapa",
+    "scenes": 12,
+    "textOnlyScenes": 6,
+    "variants": [
+      {
+        "id": "la-luz-que-no-estaba-en-el-mapa-es-n6",
+        "language": "es",
+        "level": 6,
+        "parts": 12
+      },
+      {
+        "id": "la-luz-que-no-estaba-en-el-mapa-en-n6",
+        "language": "en",
+        "level": 6,
+        "parts": 12
+      }
+    ]
+  },
+  {
+    "family": "la-manana-de-los-doce-minutos",
+    "title": "La mañana de los doce minutos",
+    "scenes": 12,
+    "textOnlyScenes": 6,
+    "variants": [
+      {
+        "id": "la-manana-de-los-doce-minutos-es-n6",
+        "language": "es",
+        "level": 6,
+        "parts": 24
+      },
+      {
+        "id": "la-manana-de-los-doce-minutos-en-n6",
+        "language": "en",
+        "level": 6,
+        "parts": 24
+      }
+    ]
+  },
+  {
+    "family": "la-mision-que-perdio-la-tierra",
+    "title": "La misión que perdió la Tierra",
+    "scenes": 12,
+    "textOnlyScenes": 6,
+    "variants": [
+      {
+        "id": "la-mision-que-perdio-la-tierra-es-n6",
+        "language": "es",
+        "level": 6,
+        "parts": 24
+      },
+      {
+        "id": "la-mision-que-perdio-la-tierra-en-n6",
+        "language": "en",
+        "level": 6,
+        "parts": 24
+      }
+    ]
+  },
+  {
+    "family": "la-noche-sin-luces",
+    "title": "Mila, Pipo y la noche en que se apagaron las luciérnagas",
+    "scenes": 40,
+    "textOnlyScenes": 0,
+    "variants": [
+      {
+        "id": "la-noche-sin-luces-es-n1",
+        "language": "es",
+        "level": 1,
+        "parts": 40
+      },
+      {
+        "id": "la-noche-sin-luces-es-n2",
+        "language": "es",
+        "level": 2,
+        "parts": 40
+      },
+      {
+        "id": "la-noche-sin-luces-es-n3",
+        "language": "es",
+        "level": 3,
+        "parts": 42
+      },
+      {
+        "id": "la-noche-sin-luces-en-n1",
+        "language": "en",
+        "level": 1,
+        "parts": 40
+      },
+      {
+        "id": "la-noche-sin-luces-en-n2",
+        "language": "en",
+        "level": 2,
+        "parts": 40
+      },
+      {
+        "id": "la-noche-sin-luces-en-n3",
+        "language": "en",
+        "level": 3,
+        "parts": 41
+      }
+    ]
+  },
+  {
+    "family": "la-octava-linterna",
+    "title": "La octava linterna",
+    "scenes": 8,
+    "textOnlyScenes": 0,
+    "variants": [
+      {
+        "id": "la-octava-linterna-es-n5",
+        "language": "es",
+        "level": 5,
+        "parts": 8
+      },
+      {
+        "id": "la-octava-linterna-en-n5",
+        "language": "en",
+        "level": 5,
+        "parts": 9
+      }
+    ]
+  },
+  {
+    "family": "la-pregunta-que-guarde-en-el-bolsillo",
+    "title": "La pregunta que guardé en el bolsillo",
+    "scenes": 12,
+    "textOnlyScenes": 5,
+    "variants": [
+      {
+        "id": "la-pregunta-que-guarde-en-el-bolsillo-es-n6",
+        "language": "es",
+        "level": 6,
+        "parts": 12
+      },
+      {
+        "id": "la-pregunta-que-guarde-en-el-bolsillo-en-n6",
+        "language": "en",
+        "level": 6,
+        "parts": 16
+      }
+    ]
+  },
+  {
+    "family": "la-puerta-que-deje-entreabierta",
+    "title": "La puerta que dejé entreabierta",
+    "scenes": 12,
+    "textOnlyScenes": 5,
+    "variants": [
+      {
+        "id": "la-puerta-que-deje-entreabierta-es-n6",
+        "language": "es",
+        "level": 6,
+        "parts": 12
+      },
+      {
+        "id": "la-puerta-que-deje-entreabierta-en-n6",
+        "language": "en",
+        "level": 6,
+        "parts": 16
+      }
+    ]
+  },
+  {
+    "family": "la-salida-que-nadie-contaba",
+    "title": "La salida que nadie contaba",
+    "scenes": 12,
+    "textOnlyScenes": 6,
+    "variants": [
+      {
+        "id": "la-salida-que-nadie-contaba-es-n6",
+        "language": "es",
+        "level": 6,
+        "parts": 24
+      },
+      {
+        "id": "la-salida-que-nadie-contaba-en-n6",
+        "language": "en",
+        "level": 6,
+        "parts": 24
+      }
+    ]
+  },
+  {
+    "family": "la-torre-que-se-volvio-bosque",
+    "title": "La torre que se volvió bosque",
+    "scenes": 12,
+    "textOnlyScenes": 6,
+    "variants": [
+      {
+        "id": "la-torre-que-se-volvio-bosque-es-n6",
+        "language": "es",
+        "level": 6,
+        "parts": 24
+      },
+      {
+        "id": "la-torre-que-se-volvio-bosque-en-n6",
+        "language": "en",
+        "level": 6,
+        "parts": 24
+      }
+    ]
+  },
+  {
+    "family": "luna-y-el-tren-de-los-objetos-perdidos",
+    "title": "Luna y el tren de los objetos perdidos",
+    "scenes": 51,
+    "textOnlyScenes": 0,
+    "variants": [
+      {
+        "id": "luna-y-el-tren-de-los-objetos-perdidos-es-n1",
+        "language": "es",
+        "level": 1,
+        "parts": 51
+      },
+      {
+        "id": "luna-y-el-tren-de-los-objetos-perdidos-es-n2",
+        "language": "es",
+        "level": 2,
+        "parts": 51
+      },
+      {
+        "id": "luna-y-el-tren-de-los-objetos-perdidos-es-n3",
+        "language": "es",
+        "level": 3,
+        "parts": 51
+      },
+      {
+        "id": "luna-y-el-tren-de-los-objetos-perdidos-en-n1",
+        "language": "en",
+        "level": 1,
+        "parts": 51
+      },
+      {
+        "id": "luna-y-el-tren-de-los-objetos-perdidos-en-n2",
+        "language": "en",
+        "level": 2,
+        "parts": 51
+      },
+      {
+        "id": "luna-y-el-tren-de-los-objetos-perdidos-en-n3",
+        "language": "en",
+        "level": 3,
+        "parts": 51
+      }
+    ]
+  },
+  {
+    "family": "mapa-de-la-puerta-desaparecida",
+    "title": "El mapa de la puerta desaparecida",
+    "scenes": 20,
+    "textOnlyScenes": 0,
+    "variants": [
+      {
+        "id": "mapa-de-la-puerta-desaparecida-es-n6",
+        "language": "es",
+        "level": 6,
+        "parts": 47
+      },
+      {
+        "id": "mapa-de-la-puerta-desaparecida-en-n6",
+        "language": "en",
+        "level": 6,
+        "parts": 44
+      }
+    ]
+  },
+  {
+    "family": "mi-mochila-hace-achis",
+    "title": "Mi mochila hace ¡achís!",
+    "scenes": 7,
+    "textOnlyScenes": 0,
+    "variants": [
+      {
+        "id": "mi-mochila-hace-achis-es-n1",
+        "language": "es",
+        "level": 1,
+        "parts": 7
+      },
+      {
+        "id": "mi-mochila-hace-achis-es-n2",
+        "language": "es",
+        "level": 2,
+        "parts": 7
+      },
+      {
+        "id": "mi-mochila-hace-achis-es-n3",
+        "language": "es",
+        "level": 3,
+        "parts": 7
+      },
+      {
+        "id": "mi-mochila-hace-achis-en-n1",
+        "language": "en",
+        "level": 1,
+        "parts": 7
+      },
+      {
+        "id": "mi-mochila-hace-achis-en-n2",
+        "language": "en",
+        "level": 2,
+        "parts": 7
+      },
+      {
+        "id": "mi-mochila-hace-achis-en-n3",
+        "language": "en",
+        "level": 3,
+        "parts": 7
+      }
+    ]
+  },
+  {
+    "family": "nico-01-la-puerta-de-papel",
+    "title": "1. La puerta de papel",
+    "scenes": 10,
+    "textOnlyScenes": 5,
+    "variants": [
+      {
+        "id": "nico-01-la-puerta-de-papel-es-n6",
+        "language": "es",
+        "level": 6,
+        "parts": 20
+      },
+      {
+        "id": "nico-01-la-puerta-de-papel-en-n6",
+        "language": "en",
+        "level": 6,
+        "parts": 20
+      }
+    ]
+  },
+  {
+    "family": "nico-02-el-ultimo-nivel",
+    "title": "2. El último nivel",
+    "scenes": 10,
+    "textOnlyScenes": 5,
+    "variants": [
+      {
+        "id": "nico-02-el-ultimo-nivel-es-n6",
+        "language": "es",
+        "level": 6,
+        "parts": 20
+      },
+      {
+        "id": "nico-02-el-ultimo-nivel-en-n6",
+        "language": "en",
+        "level": 6,
+        "parts": 20
+      }
+    ]
+  },
+  {
+    "family": "nico-03-el-heroe-fuera-del-libro",
+    "title": "3. El héroe fuera del libro",
+    "scenes": 10,
+    "textOnlyScenes": 5,
+    "variants": [
+      {
+        "id": "nico-03-el-heroe-fuera-del-libro-es-n6",
+        "language": "es",
+        "level": 6,
+        "parts": 20
+      },
+      {
+        "id": "nico-03-el-heroe-fuera-del-libro-en-n6",
+        "language": "en",
+        "level": 6,
+        "parts": 20
+      }
+    ]
+  }
+]

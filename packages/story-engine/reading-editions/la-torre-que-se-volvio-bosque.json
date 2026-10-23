@@ -1,0 +1,217 @@
+{
+  "version": 1,
+  "familyId": "la-torre-que-se-volvio-bosque",
+  "maxWordsPerUnit": 100,
+  "scenes": [
+    {
+      "pageId": "p01",
+      "blockId": "b01",
+      "illustration": {
+        "src": "stories/la-torre-que-se-volvio-bosque/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de un postre de tres pisos."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1022,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de un postre de tres pisos.",
+        "en": "Scene of a three-story dessert."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b02",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b03",
+      "illustration": {
+        "src": "stories/la-torre-que-se-volvio-bosque/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de un temblor de fresa."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1046,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de un temblor de fresa.",
+        "en": "Scene of a strawberry tremor."
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b04",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b05",
+      "illustration": {
+        "src": "stories/la-torre-que-se-volvio-bosque/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de dos torres pequeñas."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 926,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de dos torres pequeñas.",
+        "en": "Scene of two small towers."
+      }
+    },
+    {
+      "pageId": "p06",
+      "blockId": "b06",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p07",
+      "blockId": "b07",
+      "illustration": {
+        "src": "stories/la-torre-que-se-volvio-bosque/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de el vaso transparente."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 958,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de el vaso transparente.",
+        "en": "Scene of the clear cup."
+      }
+    },
+    {
+      "pageId": "p08",
+      "blockId": "b08",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p09",
+      "blockId": "b09",
+      "illustration": {
+        "src": "stories/la-torre-que-se-volvio-bosque/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de la prueba del pasillo."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 926,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de la prueba del pasillo.",
+        "en": "Scene of the hallway test."
+      }
+    },
+    {
+      "pageId": "p10",
+      "blockId": "b10",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p11",
+      "blockId": "b11",
+      "illustration": {
+        "src": "stories/la-torre-que-se-volvio-bosque/page-11.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de visitantes del bosque."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1104,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de visitantes del bosque.",
+        "en": "Scene of visitors to the forest."
+      }
+    },
+    {
+      "pageId": "p12",
+      "blockId": "b12",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    }
+  ]
+}

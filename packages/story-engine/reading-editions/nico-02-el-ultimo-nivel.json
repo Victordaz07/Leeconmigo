@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "familyId": "nico-02-el-ultimo-nivel",
+  "maxWordsPerUnit": 100,
+  "scenes": [
+    {
+      "pageId": "b2-p01",
+      "blockId": "b01",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "b2-p02",
+      "blockId": "b02",
+      "illustration": {
+        "src": "stories/nico-02-el-ultimo-nivel/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Ilustración de el nombre del enemigo."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1034,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Ilustración de el nombre del enemigo.",
+        "en": "Illustration of the enemy's name."
+      }
+    },
+    {
+      "pageId": "b2-p03",
+      "blockId": "b03",
+      "illustration": {
+        "src": "stories/nico-02-el-ultimo-nivel/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Ilustración de tres caminos."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1054,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Ilustración de tres caminos.",
+        "en": "Illustration of three paths."
+      }
+    },
+    {
+      "pageId": "b2-p04",
+      "blockId": "b04",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "b2-p05",
+      "blockId": "b05",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "b2-p06",
+      "blockId": "b06",
+      "illustration": {
+        "src": "stories/nico-02-el-ultimo-nivel/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Ilustración de el borrador."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1034,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Ilustración de el borrador.",
+        "en": "Illustration of the eraser."
+      }
+    },
+    {
+      "pageId": "b2-p07",
+      "blockId": "b07",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "b2-p08",
+      "blockId": "b08",
+      "illustration": {
+        "src": "stories/nico-02-el-ultimo-nivel/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Ilustración de el final que nadie escribió solo."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1197,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Ilustración de el final que nadie escribió solo.",
+        "en": "Illustration of an ending no one wrote alone."
+      }
+    },
+    {
+      "pageId": "b2-p09",
+      "blockId": "b09",
+      "illustration": {
+        "src": "stories/nico-02-el-ultimo-nivel/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Ilustración de una goma útil."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 942,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Ilustración de una goma útil.",
+        "en": "Illustration of an eraser with a purpose."
+      }
+    },
+    {
+      "pageId": "b2-p10",
+      "blockId": "b10",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    }
+  ]
+}

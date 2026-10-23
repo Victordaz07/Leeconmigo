@@ -1,0 +1,528 @@
+{
+  "date": "2026-10-22",
+  "scope": "LE-08 / LE-09",
+  "catalog": {
+    "families": 25,
+    "sourceVariants": 81,
+    "sceneAssociations": 362,
+    "textOnlyScenes": 67,
+    "completeBrowserSessions": 49,
+    "partsTraversed": 991,
+    "questionsAnswered": 145
+  },
+  "checks": {
+    "suite": {
+      "passed": 1943,
+      "files": 127
+    },
+    "typecheck": "all workspaces passed",
+    "lint": "changed TypeScript files passed, zero warnings",
+    "nativeYoga": {
+      "cards": 168,
+      "sizes": 12
+    },
+    "androidExport": {
+      "result": "passed",
+      "modules": 2255,
+      "assets": 501,
+      "bundle": "index-0cea6dc04b1c7464e75585858c6d00fb.hbc"
+    },
+    "zoom": "12 ES/EN touch and resize cases; see ZOOM-VERIFICATION.json"
+  },
+  "limitations": [
+    "No physical Fold gesture or audible TTS test in this environment.",
+    "No new APK built or published in this task."
+  ],
+  "sessions": [
+    {
+      "story": "el-puente-de-las-luciernagas-en-n3",
+      "parts": 10,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "el-puente-de-las-luciernagas-es-n3",
+      "parts": 10,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "el-puente-de-lolo-en-n3",
+      "parts": 20,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "el-puente-de-lolo-es-n3",
+      "parts": 20,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "el-puente-que-desaparecia-en-n6",
+      "parts": 12,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "el-puente-que-desaparecia-es-n6",
+      "parts": 12,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "estrella-desaparecida-c1-en-n3",
+      "parts": 12,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "estrella-desaparecida-c1-es-n3",
+      "parts": 12,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "estrella-desaparecida-c2-en-n3",
+      "parts": 12,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "estrella-desaparecida-c2-es-n3",
+      "parts": 12,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "estrella-desaparecida-c3-en-n3",
+      "parts": 12,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "estrella-desaparecida-c3-es-n3",
+      "parts": 12,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "la-cometa-roja-en-n3",
+      "parts": 7,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "la-cometa-roja-es-n3",
+      "parts": 6,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "la-cupula-que-parpadeaba-en-n6",
+      "parts": 33,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "la-cupula-que-parpadeaba-es-n6",
+      "parts": 33,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "la-isla-que-caminaba-en-n6",
+      "parts": 23,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "la-isla-que-caminaba-es-n6",
+      "parts": 24,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "la-luna-y-la-puerta-azul",
+      "parts": 10,
+      "questions": 1,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "la-luz-que-no-estaba-en-el-mapa-en-n6",
+      "parts": 12,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "la-luz-que-no-estaba-en-el-mapa-es-n6",
+      "parts": 12,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "la-manana-de-los-doce-minutos-en-n6",
+      "parts": 24,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "la-manana-de-los-doce-minutos-es-n6",
+      "parts": 24,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "la-mision-que-perdio-la-tierra-en-n6",
+      "parts": 24,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "la-mision-que-perdio-la-tierra-es-n6",
+      "parts": 24,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "la-noche-sin-luces-en-n3",
+      "parts": 41,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "la-noche-sin-luces-es-n3",
+      "parts": 42,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "la-octava-linterna-en-n5",
+      "parts": 9,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "la-octava-linterna-es-n5",
+      "parts": 8,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "la-pregunta-que-guarde-en-el-bolsillo-en-n6",
+      "parts": 16,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "la-pregunta-que-guarde-en-el-bolsillo-es-n6",
+      "parts": 12,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "la-puerta-que-deje-entreabierta-en-n6",
+      "parts": 16,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "la-puerta-que-deje-entreabierta-es-n6",
+      "parts": 12,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "la-salida-que-nadie-contaba-en-n6",
+      "parts": 24,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "la-salida-que-nadie-contaba-es-n6",
+      "parts": 24,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "la-torre-que-se-volvio-bosque-en-n6",
+      "parts": 24,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "la-torre-que-se-volvio-bosque-es-n6",
+      "parts": 24,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "luna-y-el-tren-de-los-objetos-perdidos-en-n3",
+      "parts": 51,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "luna-y-el-tren-de-los-objetos-perdidos-es-n3",
+      "parts": 51,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "mapa-de-la-puerta-desaparecida-en-n6",
+      "parts": 44,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "mapa-de-la-puerta-desaparecida-es-n6",
+      "parts": 47,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "mi-mochila-hace-achis-en-n3",
+      "parts": 7,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "mi-mochila-hace-achis-es-n3",
+      "parts": 7,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "nico-01-la-puerta-de-papel-en-n6",
+      "parts": 20,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "nico-01-la-puerta-de-papel-es-n6",
+      "parts": 20,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "nico-02-el-ultimo-nivel-en-n6",
+      "parts": 20,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "nico-02-el-ultimo-nivel-es-n6",
+      "parts": 20,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "nico-03-el-heroe-fuera-del-libro-en-n6",
+      "parts": 20,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    },
+    {
+      "story": "nico-03-el-heroe-fuera-del-libro-es-n6",
+      "parts": 20,
+      "questions": 3,
+      "reviews": 3,
+      "resumeChecked": true,
+      "dictionaryChecked": true,
+      "speech": "request routing simulated; audible speech requires a device",
+      "result": "passed"
+    }
+  ]
+}

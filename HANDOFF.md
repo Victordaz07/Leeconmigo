@@ -2,6 +2,8 @@
 Actualizado: 2026-10-22 · Cuenta: Codex · Rama: master
 Último commit: ver `git log -1`
 
+**Codex · LE-08 / LE-09 terminados (2026-10-22):** Victor probó y aprobó los dos cuentos; pide ampliar ilustraciones y continuar el resto. Visor ES/EN con lupa, pellizco 1–4×, arrastre acotado, botones de 48 dp, ajustar y volver a leer; mantiene el fragmento y el visor al girar/desplegar (se reajusta la imagen). Se incorporan las 23 familias restantes al lector libre: 25 familias / 81 variantes originales, 362 asociaciones de escena; 67 escenas editoriales sin ilustración usan todo el ancho para texto. Arte y textos originales conservados; pronunciación de TODAS las palabras intacta. Encuadres revisados, corrección de las tres columnas del tren y descripciones faltantes en imágenes repetidas de la cúpula, solo en la nueva presentación. 1.943 pruebas / 127 archivos, TypeScript, lint sin avisos, 168 portadas Yoga, 12 casos táctiles ES/EN del visor y 49 recorridos completos de cuentos (991 fragmentos, 145 preguntas), exportación Android Hermes aprobada. Evidencias: `docs/design/reading-catalog/`. Commit y push en master; **sin nuevo APK en esta tarea**, la descarga pública 0.1.1 anterior no incluye el zoom ni las nuevas ediciones. Siguiente cuando Victor pida APK: incrementar versión/código, compilar con el workflow existente, publicar y verificar descarga/firma; probar gestos y TTS audible en Fold físico. No se requiere generar ilustraciones nuevas para este trabajo.
+
 ## Materias en paralelo (D12, 2026-10-16)
 Ciencia (cuenta A) y Sociedad (cuenta B) se trabajan a la vez. Su estado vive en `docs/handoff/ciencia.md` y
 `docs/handoff/sociedad.md` (usa `/retomar ciencia` o `/retomar sociedad`). Este archivo queda para lo general. Reglas:

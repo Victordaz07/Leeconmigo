@@ -1,0 +1,247 @@
+{
+  "version": 1,
+  "familyId": "estrella-desaparecida-c2",
+  "maxWordsPerUnit": 70,
+  "scenes": [
+    {
+      "pageId": "p04",
+      "blockId": "b13",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c2/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "La sombra cambia, llaman a la puerta y Pico abre con un farol junto a un perchero."
+      },
+      "crop": {
+        "x": 0,
+        "y": 137,
+        "width": 763,
+        "height": 370
+      },
+      "alt": {
+        "es": "La sombra cambia, llaman a la puerta y Pico abre con un farol junto a un perchero.",
+        "en": "The shadow changes; they knock, and Pico opens with a lantern near a coat stand."
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b14",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c2/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "La sombra cambia, llaman a la puerta y Pico abre con un farol junto a un perchero."
+      },
+      "crop": {
+        "x": 773,
+        "y": 137,
+        "width": 763,
+        "height": 370
+      },
+      "alt": {
+        "es": "La sombra cambia, llaman a la puerta y Pico abre con un farol junto a un perchero.",
+        "en": "The shadow changes; they knock, and Pico opens with a lantern near a coat stand."
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b15",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c2/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "La sombra cambia, llaman a la puerta y Pico abre con un farol junto a un perchero."
+      },
+      "crop": {
+        "x": 0,
+        "y": 650,
+        "width": 763,
+        "height": 374
+      },
+      "alt": {
+        "es": "La sombra cambia, llaman a la puerta y Pico abre con un farol junto a un perchero.",
+        "en": "The shadow changes; they knock, and Pico opens with a lantern near a coat stand."
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b16",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c2/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "La sombra cambia, llaman a la puerta y Pico abre con un farol junto a un perchero."
+      },
+      "crop": {
+        "x": 773,
+        "y": 650,
+        "width": 763,
+        "height": 374
+      },
+      "alt": {
+        "es": "La sombra cambia, llaman a la puerta y Pico abre con un farol junto a un perchero.",
+        "en": "The shadow changes; they knock, and Pico opens with a lantern near a coat stand."
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b17",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c2/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Comprueban la sombra del abrigo y descubren barro y cinta en una rueda del carro."
+      },
+      "crop": {
+        "x": 0,
+        "y": 136,
+        "width": 763,
+        "height": 371
+      },
+      "alt": {
+        "es": "Comprueban la sombra del abrigo y descubren barro y cinta en una rueda del carro.",
+        "en": "They check the coat’s shadow and discover mud and ribbon on a cart wheel."
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b18",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c2/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Comprueban la sombra del abrigo y descubren barro y cinta en una rueda del carro."
+      },
+      "crop": {
+        "x": 773,
+        "y": 135,
+        "width": 763,
+        "height": 372
+      },
+      "alt": {
+        "es": "Comprueban la sombra del abrigo y descubren barro y cinta en una rueda del carro.",
+        "en": "They check the coat’s shadow and discover mud and ribbon on a cart wheel."
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b19",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c2/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Comprueban la sombra del abrigo y descubren barro y cinta en una rueda del carro."
+      },
+      "crop": {
+        "x": 0,
+        "y": 615,
+        "width": 763,
+        "height": 409
+      },
+      "alt": {
+        "es": "Comprueban la sombra del abrigo y descubren barro y cinta en una rueda del carro.",
+        "en": "They check the coat’s shadow and discover mud and ribbon on a cart wheel."
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b20",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c2/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Comprueban la sombra del abrigo y descubren barro y cinta en una rueda del carro."
+      },
+      "crop": {
+        "x": 773,
+        "y": 615,
+        "width": 763,
+        "height": 409
+      },
+      "alt": {
+        "es": "Comprueban la sombra del abrigo y descubren barro y cinta en una rueda del carro.",
+        "en": "They check the coat’s shadow and discover mud and ribbon on a cart wheel."
+      }
+    },
+    {
+      "pageId": "p06",
+      "blockId": "b21",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c2/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Relacionan el recorrido del carro con el gancho y descubren una punta amarilla bajo la tela."
+      },
+      "crop": {
+        "x": 0,
+        "y": 135,
+        "width": 763,
+        "height": 372
+      },
+      "alt": {
+        "es": "Relacionan el recorrido del carro con el gancho y descubren una punta amarilla bajo la tela.",
+        "en": "They connect the cart’s route to the hook and uncover a yellow point beneath cloth."
+      }
+    },
+    {
+      "pageId": "p06",
+      "blockId": "b22",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c2/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Relacionan el recorrido del carro con el gancho y descubren una punta amarilla bajo la tela."
+      },
+      "crop": {
+        "x": 773,
+        "y": 134,
+        "width": 763,
+        "height": 373
+      },
+      "alt": {
+        "es": "Relacionan el recorrido del carro con el gancho y descubren una punta amarilla bajo la tela.",
+        "en": "They connect the cart’s route to the hook and uncover a yellow point beneath cloth."
+      }
+    },
+    {
+      "pageId": "p06",
+      "blockId": "b23",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c2/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Relacionan el recorrido del carro con el gancho y descubren una punta amarilla bajo la tela."
+      },
+      "crop": {
+        "x": 0,
+        "y": 614,
+        "width": 763,
+        "height": 410
+      },
+      "alt": {
+        "es": "Relacionan el recorrido del carro con el gancho y descubren una punta amarilla bajo la tela.",
+        "en": "They connect the cart’s route to the hook and uncover a yellow point beneath cloth."
+      }
+    },
+    {
+      "pageId": "p06",
+      "blockId": "b24",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c2/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Relacionan el recorrido del carro con el gancho y descubren una punta amarilla bajo la tela."
+      },
+      "crop": {
+        "x": 773,
+        "y": 613,
+        "width": 763,
+        "height": 411
+      },
+      "alt": {
+        "es": "Relacionan el recorrido del carro con el gancho y descubren una punta amarilla bajo la tela.",
+        "en": "They connect the cart’s route to the hook and uncover a yellow point beneath cloth."
+      }
+    }
+  ]
+}

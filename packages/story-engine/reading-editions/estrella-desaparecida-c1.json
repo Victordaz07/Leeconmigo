@@ -1,0 +1,247 @@
+{
+  "version": 1,
+  "familyId": "estrella-desaparecida-c1",
+  "maxWordsPerUnit": 70,
+  "scenes": [
+    {
+      "pageId": "p01",
+      "blockId": "b01",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c1/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Preparan una fiesta con una estrella; luego el gancho aparece vacío y hay dos rastros en el barro."
+      },
+      "crop": {
+        "x": 0,
+        "y": 135,
+        "width": 763,
+        "height": 372
+      },
+      "alt": {
+        "es": "Preparan una fiesta con una estrella; luego el gancho aparece vacío y hay dos rastros en el barro.",
+        "en": "They decorate for a party; the star disappears, leaving an empty hook and two trails in the mud."
+      }
+    },
+    {
+      "pageId": "p01",
+      "blockId": "b02",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c1/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Preparan una fiesta con una estrella; luego el gancho aparece vacío y hay dos rastros en el barro."
+      },
+      "crop": {
+        "x": 773,
+        "y": 135,
+        "width": 763,
+        "height": 372
+      },
+      "alt": {
+        "es": "Preparan una fiesta con una estrella; luego el gancho aparece vacío y hay dos rastros en el barro.",
+        "en": "They decorate for a party; the star disappears, leaving an empty hook and two trails in the mud."
+      }
+    },
+    {
+      "pageId": "p01",
+      "blockId": "b03",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c1/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Preparan una fiesta con una estrella; luego el gancho aparece vacío y hay dos rastros en el barro."
+      },
+      "crop": {
+        "x": 0,
+        "y": 646,
+        "width": 763,
+        "height": 378
+      },
+      "alt": {
+        "es": "Preparan una fiesta con una estrella; luego el gancho aparece vacío y hay dos rastros en el barro.",
+        "en": "They decorate for a party; the star disappears, leaving an empty hook and two trails in the mud."
+      }
+    },
+    {
+      "pageId": "p01",
+      "blockId": "b04",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c1/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Preparan una fiesta con una estrella; luego el gancho aparece vacío y hay dos rastros en el barro."
+      },
+      "crop": {
+        "x": 773,
+        "y": 646,
+        "width": 763,
+        "height": 378
+      },
+      "alt": {
+        "es": "Preparan una fiesta con una estrella; luego el gancho aparece vacío y hay dos rastros en el barro.",
+        "en": "They decorate for a party; the star disappears, leaving an empty hook and two trails in the mud."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b05",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c1/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Siguen huellas hasta un gato, buscan junto al banco y regresan al otro camino."
+      },
+      "crop": {
+        "x": 0,
+        "y": 121,
+        "width": 763,
+        "height": 386
+      },
+      "alt": {
+        "es": "Siguen huellas hasta un gato, buscan junto al banco y regresan al otro camino.",
+        "en": "They follow pawprints to a cat, search by the bench, and return to the other trail."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b06",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c1/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Siguen huellas hasta un gato, buscan junto al banco y regresan al otro camino."
+      },
+      "crop": {
+        "x": 773,
+        "y": 121,
+        "width": 763,
+        "height": 386
+      },
+      "alt": {
+        "es": "Siguen huellas hasta un gato, buscan junto al banco y regresan al otro camino.",
+        "en": "They follow pawprints to a cat, search by the bench, and return to the other trail."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b07",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c1/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Siguen huellas hasta un gato, buscan junto al banco y regresan al otro camino."
+      },
+      "crop": {
+        "x": 0,
+        "y": 633,
+        "width": 763,
+        "height": 391
+      },
+      "alt": {
+        "es": "Siguen huellas hasta un gato, buscan junto al banco y regresan al otro camino.",
+        "en": "They follow pawprints to a cat, search by the bench, and return to the other trail."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b08",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c1/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Siguen huellas hasta un gato, buscan junto al banco y regresan al otro camino."
+      },
+      "crop": {
+        "x": 773,
+        "y": 633,
+        "width": 763,
+        "height": 391
+      },
+      "alt": {
+        "es": "Siguen huellas hasta un gato, buscan junto al banco y regresan al otro camino.",
+        "en": "They follow pawprints to a cat, search by the bench, and return to the other trail."
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b09",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c1/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Encuentran cinta de puntos junto a marcas de ruedas y llegan a una ventana con una gran sombra."
+      },
+      "crop": {
+        "x": 0,
+        "y": 144,
+        "width": 763,
+        "height": 363
+      },
+      "alt": {
+        "es": "Encuentran cinta de puntos junto a marcas de ruedas y llegan a una ventana con una gran sombra.",
+        "en": "Dotted ribbon beside wheel marks leads them to a window with a huge shadow."
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b10",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c1/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Encuentran cinta de puntos junto a marcas de ruedas y llegan a una ventana con una gran sombra."
+      },
+      "crop": {
+        "x": 773,
+        "y": 144,
+        "width": 763,
+        "height": 363
+      },
+      "alt": {
+        "es": "Encuentran cinta de puntos junto a marcas de ruedas y llegan a una ventana con una gran sombra.",
+        "en": "Dotted ribbon beside wheel marks leads them to a window with a huge shadow."
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b11",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c1/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Encuentran cinta de puntos junto a marcas de ruedas y llegan a una ventana con una gran sombra."
+      },
+      "crop": {
+        "x": 0,
+        "y": 635,
+        "width": 763,
+        "height": 389
+      },
+      "alt": {
+        "es": "Encuentran cinta de puntos junto a marcas de ruedas y llegan a una ventana con una gran sombra.",
+        "en": "Dotted ribbon beside wheel marks leads them to a window with a huge shadow."
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b12",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c1/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Encuentran cinta de puntos junto a marcas de ruedas y llegan a una ventana con una gran sombra."
+      },
+      "crop": {
+        "x": 773,
+        "y": 635,
+        "width": 763,
+        "height": 389
+      },
+      "alt": {
+        "es": "Encuentran cinta de puntos junto a marcas de ruedas y llegan a una ventana con una gran sombra.",
+        "en": "Dotted ribbon beside wheel marks leads them to a window with a huge shadow."
+      }
+    }
+  ]
+}

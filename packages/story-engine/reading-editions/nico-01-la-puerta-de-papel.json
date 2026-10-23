@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "familyId": "nico-01-la-puerta-de-papel",
+  "maxWordsPerUnit": 100,
+  "scenes": [
+    {
+      "pageId": "b1-p01",
+      "blockId": "b01",
+      "illustration": {
+        "src": "stories/nico-01-la-puerta-de-papel/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Ilustración de el salto que no salió."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 990,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Ilustración de el salto que no salió.",
+        "en": "Illustration of the jump that failed."
+      }
+    },
+    {
+      "pageId": "b1-p02",
+      "blockId": "b02",
+      "illustration": {
+        "src": "stories/nico-01-la-puerta-de-papel/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Ilustración de la primera regla."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 987,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Ilustración de la primera regla.",
+        "en": "Illustration of the first rule."
+      }
+    },
+    {
+      "pageId": "b1-p03",
+      "blockId": "b03",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "b1-p04",
+      "blockId": "b04",
+      "illustration": {
+        "src": "stories/nico-01-la-puerta-de-papel/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Ilustración de la puerta sin manija."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 902,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Ilustración de la puerta sin manija.",
+        "en": "Illustration of the door without a handle."
+      }
+    },
+    {
+      "pageId": "b1-p05",
+      "blockId": "b05",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "b1-p06",
+      "blockId": "b06",
+      "illustration": {
+        "src": "stories/nico-01-la-puerta-de-papel/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Ilustración de la luz equivocada."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1143,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Ilustración de la luz equivocada.",
+        "en": "Illustration of the wrong light."
+      }
+    },
+    {
+      "pageId": "b1-p07",
+      "blockId": "b07",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "b1-p08",
+      "blockId": "b08",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "b1-p09",
+      "blockId": "b09",
+      "illustration": {
+        "src": "stories/nico-01-la-puerta-de-papel/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Ilustración de la ciudad se despide."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1174,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Ilustración de la ciudad se despide.",
+        "en": "Illustration of the city says goodbye."
+      }
+    },
+    {
+      "pageId": "b1-p10",
+      "blockId": "b10",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    }
+  ]
+}

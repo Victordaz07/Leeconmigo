@@ -1,0 +1,217 @@
+{
+  "version": 1,
+  "familyId": "la-salida-que-nadie-contaba",
+  "maxWordsPerUnit": 100,
+  "scenes": [
+    {
+      "pageId": "p01",
+      "blockId": "b01",
+      "illustration": {
+        "src": "stories/la-salida-que-nadie-contaba/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de la carrera equivocada."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 990,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de la carrera equivocada.",
+        "en": "Scene of the wrong race."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b02",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b03",
+      "illustration": {
+        "src": "stories/la-salida-que-nadie-contaba/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de el dragón se queda."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1046,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de el dragón se queda.",
+        "en": "Scene of the dragon stays behind."
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b04",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b05",
+      "illustration": {
+        "src": "stories/la-salida-que-nadie-contaba/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de las cajas junto a la puerta."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1054,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de las cajas junto a la puerta.",
+        "en": "Scene of boxes beside the door."
+      }
+    },
+    {
+      "pageId": "p06",
+      "blockId": "b06",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p07",
+      "blockId": "b07",
+      "illustration": {
+        "src": "stories/la-salida-que-nadie-contaba/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de el pasillo cambia."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 990,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de el pasillo cambia.",
+        "en": "Scene of the hallway changes."
+      }
+    },
+    {
+      "pageId": "p08",
+      "blockId": "b08",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p09",
+      "blockId": "b09",
+      "illustration": {
+        "src": "stories/la-salida-que-nadie-contaba/page-09.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de el otro grupo."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1078,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de el otro grupo.",
+        "en": "Scene of the other group."
+      }
+    },
+    {
+      "pageId": "p10",
+      "blockId": "b10",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p11",
+      "blockId": "b11",
+      "illustration": {
+        "src": "stories/la-salida-que-nadie-contaba/page-11.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de la feria de las dos salidas."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1014,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de la feria de las dos salidas.",
+        "en": "Scene of the fair with two exits."
+      }
+    },
+    {
+      "pageId": "p12",
+      "blockId": "b12",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    }
+  ]
+}

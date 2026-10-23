@@ -1,0 +1,167 @@
+{
+  "version": 1,
+  "familyId": "la-octava-linterna",
+  "maxWordsPerUnit": 100,
+  "scenes": [
+    {
+      "pageId": "p01",
+      "blockId": "b01",
+      "illustration": {
+        "src": "stories/la-octava-linterna/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Luz cuenta las linternas de papel y encuentra un gancho vacío."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 979,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Luz cuenta las linternas de papel y encuentra un gancho vacío.",
+        "en": "Luz counts the paper lanterns and finds one empty hook."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b02",
+      "illustration": {
+        "src": "stories/la-octava-linterna/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Luz y Nico preguntan a la organizadora de la fiesta por la linterna que falta."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 979,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Luz y Nico preguntan a la organizadora de la fiesta por la linterna que falta.",
+        "en": "Luz and Nico ask the festival organizer about the missing lantern."
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b03",
+      "illustration": {
+        "src": "stories/la-octava-linterna/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Luz encuentra una foto vieja de doña Sabina con la linterna de la estrella azul."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 979,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Luz encuentra una foto vieja de doña Sabina con la linterna de la estrella azul.",
+        "en": "Luz finds an old photo of Doña Sabina with the blue-star lantern."
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b04",
+      "illustration": {
+        "src": "stories/la-octava-linterna/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Luz y Nico ven a doña Sabina junto a la linterna a través de la ventana."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 979,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Luz y Nico ven a doña Sabina junto a la linterna a través de la ventana.",
+        "en": "Luz and Nico see Doña Sabina and the lantern through her window."
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b05",
+      "illustration": {
+        "src": "stories/la-octava-linterna/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Doña Sabina les explica desde la entrada por qué se quedó en casa."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 979,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Doña Sabina les explica desde la entrada por qué se quedó en casa.",
+        "en": "Doña Sabina explains from her doorway why she stayed home."
+      }
+    },
+    {
+      "pageId": "p06",
+      "blockId": "b06",
+      "illustration": {
+        "src": "stories/la-octava-linterna/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Doña Sabina conversa con Luz y Nico sobre cambiar el recorrido de la fiesta."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 979,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Doña Sabina conversa con Luz y Nico sobre cambiar el recorrido de la fiesta.",
+        "en": "Doña Sabina talks with Luz and Nico about changing the festival route."
+      }
+    },
+    {
+      "pageId": "p07",
+      "blockId": "b07",
+      "illustration": {
+        "src": "stories/la-octava-linterna/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Los vecinos revisan la calle lateral para el nuevo recorrido de las linternas."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 979,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Los vecinos revisan la calle lateral para el nuevo recorrido de las linternas.",
+        "en": "Neighbors check the side lane for the new lantern route."
+      }
+    },
+    {
+      "pageId": "p08",
+      "blockId": "b08",
+      "illustration": {
+        "src": "stories/la-octava-linterna/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "La octava linterna brilla junto a la puerta de doña Sabina mientras el barrio se reúne."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 979,
+        "height": 1024
+      },
+      "alt": {
+        "es": "La octava linterna brilla junto a la puerta de doña Sabina mientras el barrio se reúne.",
+        "en": "The eighth lantern glows beside Doña Sabina's door as the neighborhood gathers."
+      }
+    }
+  ]
+}

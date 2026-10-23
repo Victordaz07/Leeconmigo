@@ -1,0 +1,247 @@
+{
+  "version": 1,
+  "familyId": "estrella-desaparecida-c3",
+  "maxWordsPerUnit": 70,
+  "scenes": [
+    {
+      "pageId": "p07",
+      "blockId": "b25",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c3/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Destapan la estrella, examinan las pistas y prueban cómo se abre el lazo flojo."
+      },
+      "crop": {
+        "x": 0,
+        "y": 135,
+        "width": 763,
+        "height": 372
+      },
+      "alt": {
+        "es": "Destapan la estrella, examinan las pistas y prueban cómo se abre el lazo flojo.",
+        "en": "They uncover the star, examine the evidence, and test the loose bow."
+      }
+    },
+    {
+      "pageId": "p07",
+      "blockId": "b26",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c3/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Destapan la estrella, examinan las pistas y prueban cómo se abre el lazo flojo."
+      },
+      "crop": {
+        "x": 773,
+        "y": 134,
+        "width": 763,
+        "height": 373
+      },
+      "alt": {
+        "es": "Destapan la estrella, examinan las pistas y prueban cómo se abre el lazo flojo.",
+        "en": "They uncover the star, examine the evidence, and test the loose bow."
+      }
+    },
+    {
+      "pageId": "p07",
+      "blockId": "b27",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c3/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Destapan la estrella, examinan las pistas y prueban cómo se abre el lazo flojo."
+      },
+      "crop": {
+        "x": 0,
+        "y": 613,
+        "width": 763,
+        "height": 411
+      },
+      "alt": {
+        "es": "Destapan la estrella, examinan las pistas y prueban cómo se abre el lazo flojo.",
+        "en": "They uncover the star, examine the evidence, and test the loose bow."
+      }
+    },
+    {
+      "pageId": "p07",
+      "blockId": "b28",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c3/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Destapan la estrella, examinan las pistas y prueban cómo se abre el lazo flojo."
+      },
+      "crop": {
+        "x": 773,
+        "y": 613,
+        "width": 763,
+        "height": 411
+      },
+      "alt": {
+        "es": "Destapan la estrella, examinan las pistas y prueban cómo se abre el lazo flojo.",
+        "en": "They uncover the star, examine the evidence, and test the loose bow."
+      }
+    },
+    {
+      "pageId": "p08",
+      "blockId": "b29",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c3/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reconstrucción: viento, lazo suelto, estrella que cae y queda tapada, carro que deja rastros."
+      },
+      "crop": {
+        "x": 0,
+        "y": 133,
+        "width": 763,
+        "height": 374
+      },
+      "alt": {
+        "es": "Reconstrucción: viento, lazo suelto, estrella que cae y queda tapada, carro que deja rastros.",
+        "en": "Reconstruction: wind loosens the bow, the star falls and is covered, and the cart leaves traces."
+      }
+    },
+    {
+      "pageId": "p08",
+      "blockId": "b30",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c3/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reconstrucción: viento, lazo suelto, estrella que cae y queda tapada, carro que deja rastros."
+      },
+      "crop": {
+        "x": 773,
+        "y": 133,
+        "width": 763,
+        "height": 374
+      },
+      "alt": {
+        "es": "Reconstrucción: viento, lazo suelto, estrella que cae y queda tapada, carro que deja rastros.",
+        "en": "Reconstruction: wind loosens the bow, the star falls and is covered, and the cart leaves traces."
+      }
+    },
+    {
+      "pageId": "p08",
+      "blockId": "b31",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c3/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reconstrucción: viento, lazo suelto, estrella que cae y queda tapada, carro que deja rastros."
+      },
+      "crop": {
+        "x": 0,
+        "y": 613,
+        "width": 763,
+        "height": 411
+      },
+      "alt": {
+        "es": "Reconstrucción: viento, lazo suelto, estrella que cae y queda tapada, carro que deja rastros.",
+        "en": "Reconstruction: wind loosens the bow, the star falls and is covered, and the cart leaves traces."
+      }
+    },
+    {
+      "pageId": "p08",
+      "blockId": "b32",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c3/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Reconstrucción: viento, lazo suelto, estrella que cae y queda tapada, carro que deja rastros."
+      },
+      "crop": {
+        "x": 773,
+        "y": 612,
+        "width": 763,
+        "height": 412
+      },
+      "alt": {
+        "es": "Reconstrucción: viento, lazo suelto, estrella que cae y queda tapada, carro que deja rastros.",
+        "en": "Reconstruction: wind loosens the bow, the star falls and is covered, and the cart leaves traces."
+      }
+    },
+    {
+      "pageId": "p09",
+      "blockId": "b33",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c3/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Llevan la estrella de vuelta, hacen un nudo doble, lo prueban y celebran la fiesta."
+      },
+      "crop": {
+        "x": 0,
+        "y": 132,
+        "width": 763,
+        "height": 375
+      },
+      "alt": {
+        "es": "Llevan la estrella de vuelta, hacen un nudo doble, lo prueban y celebran la fiesta.",
+        "en": "They return the star, tie a double knot, test it, and enjoy the party."
+      }
+    },
+    {
+      "pageId": "p09",
+      "blockId": "b34",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c3/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Llevan la estrella de vuelta, hacen un nudo doble, lo prueban y celebran la fiesta."
+      },
+      "crop": {
+        "x": 773,
+        "y": 132,
+        "width": 763,
+        "height": 375
+      },
+      "alt": {
+        "es": "Llevan la estrella de vuelta, hacen un nudo doble, lo prueban y celebran la fiesta.",
+        "en": "They return the star, tie a double knot, test it, and enjoy the party."
+      }
+    },
+    {
+      "pageId": "p09",
+      "blockId": "b35",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c3/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Llevan la estrella de vuelta, hacen un nudo doble, lo prueban y celebran la fiesta."
+      },
+      "crop": {
+        "x": 0,
+        "y": 611,
+        "width": 763,
+        "height": 413
+      },
+      "alt": {
+        "es": "Llevan la estrella de vuelta, hacen un nudo doble, lo prueban y celebran la fiesta.",
+        "en": "They return the star, tie a double knot, test it, and enjoy the party."
+      }
+    },
+    {
+      "pageId": "p09",
+      "blockId": "b36",
+      "illustration": {
+        "src": "stories/estrella-desaparecida-c3/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Llevan la estrella de vuelta, hacen un nudo doble, lo prueban y celebran la fiesta."
+      },
+      "crop": {
+        "x": 773,
+        "y": 611,
+        "width": 763,
+        "height": 413
+      },
+      "alt": {
+        "es": "Llevan la estrella de vuelta, hacen un nudo doble, lo prueban y celebran la fiesta.",
+        "en": "They return the star, tie a double knot, test it, and enjoy the party."
+      }
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "familyId": "mi-mochila-hace-achis",
+  "maxWordsPerUnit": 70,
+  "scenes": [
+    {
+      "pageId": "p01",
+      "blockId": "b01",
+      "illustration": {
+        "src": "stories/mi-mochila-hace-achis/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de cómic: La mochila se mueve, Un visitante diminuto, Burbujas por todas partes."
+      },
+      "crop": {
+        "x": 0,
+        "y": 161,
+        "width": 763,
+        "height": 357
+      },
+      "alt": {
+        "es": "Página de cómic: La mochila se mueve, Un visitante diminuto, Burbujas por todas partes.",
+        "en": "Comic page: A wiggling backpack, A tiny visitor, Bubbles everywhere."
+      }
+    },
+    {
+      "pageId": "p01",
+      "blockId": "b02",
+      "illustration": {
+        "src": "stories/mi-mochila-hace-achis/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de cómic: La mochila se mueve, Un visitante diminuto, Burbujas por todas partes."
+      },
+      "crop": {
+        "x": 774,
+        "y": 159,
+        "width": 762,
+        "height": 359
+      },
+      "alt": {
+        "es": "Página de cómic: La mochila se mueve, Un visitante diminuto, Burbujas por todas partes.",
+        "en": "Comic page: A wiggling backpack, A tiny visitor, Bubbles everywhere."
+      }
+    },
+    {
+      "pageId": "p01",
+      "blockId": "b03",
+      "illustration": {
+        "src": "stories/mi-mochila-hace-achis/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de cómic: La mochila se mueve, Un visitante diminuto, Burbujas por todas partes."
+      },
+      "crop": {
+        "x": 0,
+        "y": 651,
+        "width": 1536,
+        "height": 373
+      },
+      "alt": {
+        "es": "Página de cómic: La mochila se mueve, Un visitante diminuto, Burbujas por todas partes.",
+        "en": "Comic page: A wiggling backpack, A tiny visitor, Bubbles everywhere."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b04",
+      "illustration": {
+        "src": "stories/mi-mochila-hace-achis/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de cómic: Un poco de agua, La pista amarilla."
+      },
+      "crop": {
+        "x": 0,
+        "y": 179,
+        "width": 765,
+        "height": 845
+      },
+      "alt": {
+        "es": "Página de cómic: Un poco de agua, La pista amarilla.",
+        "en": "Comic page: A drink of water, The yellow clue."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b05",
+      "illustration": {
+        "src": "stories/mi-mochila-hace-achis/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de cómic: Un poco de agua, La pista amarilla."
+      },
+      "crop": {
+        "x": 774,
+        "y": 179,
+        "width": 762,
+        "height": 845
+      },
+      "alt": {
+        "es": "Página de cómic: Un poco de agua, La pista amarilla.",
+        "en": "Comic page: A drink of water, The yellow clue."
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b06",
+      "illustration": {
+        "src": "stories/mi-mochila-hace-achis/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de cómic: Se acabaron las cosquillas, Un amigo tranquilo."
+      },
+      "crop": {
+        "x": 0,
+        "y": 179,
+        "width": 765,
+        "height": 845
+      },
+      "alt": {
+        "es": "Página de cómic: Se acabaron las cosquillas, Un amigo tranquilo.",
+        "en": "Comic page: No more tickles, A peaceful new friend."
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b07",
+      "illustration": {
+        "src": "stories/mi-mochila-hace-achis/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de cómic: Se acabaron las cosquillas, Un amigo tranquilo."
+      },
+      "crop": {
+        "x": 774,
+        "y": 179,
+        "width": 762,
+        "height": 845
+      },
+      "alt": {
+        "es": "Página de cómic: Se acabaron las cosquillas, Un amigo tranquilo.",
+        "en": "Comic page: No more tickles, A peaceful new friend."
+      }
+    }
+  ]
+}

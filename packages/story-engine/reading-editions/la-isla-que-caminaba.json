@@ -1,0 +1,217 @@
+{
+  "version": 1,
+  "familyId": "la-isla-que-caminaba",
+  "maxWordsPerUnit": 100,
+  "scenes": [
+    {
+      "pageId": "p01",
+      "blockId": "b01",
+      "illustration": {
+        "src": "stories/la-isla-que-caminaba/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de la cinta roja."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1202,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de la cinta roja.",
+        "en": "Scene of the red ribbon."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b02",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b03",
+      "illustration": {
+        "src": "stories/la-isla-que-caminaba/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de dos dibujos diferentes."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1078,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de dos dibujos diferentes.",
+        "en": "Scene of two different drawings."
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b04",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b05",
+      "illustration": {
+        "src": "stories/la-isla-que-caminaba/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de el agua que sube."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 998,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de el agua que sube.",
+        "en": "Scene of when the water rises."
+      }
+    },
+    {
+      "pageId": "p06",
+      "blockId": "b06",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p07",
+      "blockId": "b07",
+      "illustration": {
+        "src": "stories/la-isla-que-caminaba/page-07.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de lo que había debajo."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1306,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de lo que había debajo.",
+        "en": "Scene of what lay beneath."
+      }
+    },
+    {
+      "pageId": "p08",
+      "blockId": "b08",
+      "illustration": {
+        "src": "stories/la-isla-que-caminaba/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de un problema para las barcas."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1142,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de un problema para las barcas.",
+        "en": "Scene of a problem for boats."
+      }
+    },
+    {
+      "pageId": "p09",
+      "blockId": "b09",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p10",
+      "blockId": "b10",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p11",
+      "blockId": "b11",
+      "illustration": {
+        "src": "stories/la-isla-que-caminaba/page-11.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Escena de la isla y el nombre."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1254,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Escena de la isla y el nombre.",
+        "en": "Scene of the island and its name."
+      }
+    },
+    {
+      "pageId": "p12",
+      "blockId": "b12",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    }
+  ]
+}

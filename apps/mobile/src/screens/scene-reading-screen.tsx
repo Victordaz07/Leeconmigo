@@ -15,6 +15,7 @@ import { speak, stopSpeaking } from '../tts';
 import { editionProgressStore } from '../reading/progress';
 import { READER_COPY } from '../reading/copy';
 import { loadReaderFont, MAX_READER_FONT, MIN_READER_FONT, saveReaderFont } from '../reading/preferences';
+import { IllustrationViewer } from '../reading/illustration-viewer';
 import { SceneArt } from '../reading/scene-art';
 import { MovementBreakScreen } from './movement-break-screen';
 import type { ReadingScreenProps } from './reading-screen';
@@ -27,6 +28,7 @@ export function SceneReadingScreen({ prepared, profile, energy, goalMinutes, foc
   const insets = useSafeAreaInsets();
   const c = READER_COPY[original.language];
   const [fontSize, setFontSize] = useState(() => loadReaderFont(profile.id, original.level));
+  const [artOpen, setArtOpen] = useState(false);
   const [helpWord, setHelpWord] = useState<string | null>(null);
   const [resting, setResting] = useState(false);
   const store = useMemo(() => editionProgressStore(progressStoreFor(profile.id), prepared), [profile.id, prepared]);
@@ -39,10 +41,11 @@ export function SceneReadingScreen({ prepared, profile, energy, goalMinutes, foc
   const sourcePage = original.pages[anchor.pageIndex];
   const movement = useMovementBreak(movementBreaks, profile.id, flow.screen === 'reading');
   const sourcePageDone = prepared.anchors[pageIndex + 1]?.pageIndex !== anchor.pageIndex;
-  const sideBySide = !layout.portrait;
+  const sideBySide = !layout.portrait && !anchor.artHidden;
   const artHeight = Math.max(80, layout.height - insets.top - insets.bottom - 128);
 
 
+  useEffect(() => setArtOpen(false), [page.id]);
   useEffect(() => saveReaderFont(profile.id, fontSize), [profile.id, fontSize]);
   useEffect(() => {
     if (movement.due && flow.screen === 'pageDone' && sourcePageDone && pageIndex < prepared.story.pages.length - 1) setResting(true);
@@ -75,7 +78,7 @@ export function SceneReadingScreen({ prepared, profile, energy, goalMinutes, foc
     return () => sub.remove();
   }, []);
 
-  const illustration = <SceneArt illustration={page.illustration} crop={anchor.crop} maxHeight={focusReading ? Math.min(160, artHeight) : sideBySide ? artHeight : Math.min(300, layout.height * 0.30)} />;
+  const illustration = <SceneArt key={page.id} language={original.language} onEnlarge={() => setArtOpen(true)} illustration={page.illustration} crop={anchor.crop} maxHeight={focusReading ? Math.min(160, artHeight) : sideBySide ? artHeight : Math.min(300, layout.height * 0.30)} />;
   const passage = <><ReadingText page={page} words={session.words} markOf={normalWord} onWordPress={openFragmentWord} fontSize={fontSize} /><Text style={styles.hint}>{c.hint}</Text></>;
 
   return (
@@ -106,7 +109,7 @@ export function SceneReadingScreen({ prepared, profile, energy, goalMinutes, foc
           </View>
         ) : (
           <ScrollView key={page.id} style={styles.flex} contentContainerStyle={styles.portraitBody}>
-            <View style={styles.artColumn}>{illustration}</View>
+            {!anchor.artHidden && <View style={styles.artColumn}>{illustration}</View>}
             <View style={styles.textColumn}>{passage}</View>
           </ScrollView>
         )
@@ -140,6 +143,7 @@ export function SceneReadingScreen({ prepared, profile, energy, goalMinutes, foc
         <ClosingCard name={profile.name} stars={session.closing.stars} reason={session.closing.reason} starImages={STAR_IMAGES} notebook={notebookSaverFor(profile.id, 'lectura', original.language)} stats={[{ label: c.practice, value: session.elapsed }, { label: c.words, value: String(session.closing.returning) }]} onAgain={() => { actions.finish(); actions.restart(); }} onDone={focus => { actions.finish(focus); onExit(); }} />
       )}
       {resting && <MovementBreakScreen n={movement.count} lang={original.language} onDone={() => { movement.taken(); setResting(false); }} />}
+      {artOpen && <IllustrationViewer illustration={page.illustration} crop={anchor.crop} language={original.language} onClose={() => setArtOpen(false)} />}
       <HelpSheet word={helpWord} entry={helpWord ? lookupVocabulary(original, helpWord) : undefined} audience={prefs.audience} onListen={() => { if (helpWord) speak(helpWord, original.language); }} onClose={closeHelp} />
     </View>
   );

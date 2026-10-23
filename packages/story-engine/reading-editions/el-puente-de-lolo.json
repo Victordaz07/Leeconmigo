@@ -1,0 +1,407 @@
+{
+  "version": 1,
+  "familyId": "el-puente-de-lolo",
+  "maxWordsPerUnit": 70,
+  "scenes": [
+    {
+      "pageId": "p01",
+      "blockId": "b01",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Ada y Bruno saludan a Lolo; un charco lo separa de una hoja verde."
+      },
+      "crop": {
+        "x": 0,
+        "y": 143,
+        "width": 763,
+        "height": 364
+      },
+      "alt": {
+        "es": "Ada y Bruno saludan a Lolo; un charco lo separa de una hoja verde.",
+        "en": "Ada and Bruno greet Lolo; a puddle separates him from a green leaf."
+      }
+    },
+    {
+      "pageId": "p01",
+      "blockId": "b02",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Ada y Bruno saludan a Lolo; un charco lo separa de una hoja verde."
+      },
+      "crop": {
+        "x": 773,
+        "y": 143,
+        "width": 763,
+        "height": 364
+      },
+      "alt": {
+        "es": "Ada y Bruno saludan a Lolo; un charco lo separa de una hoja verde.",
+        "en": "Ada and Bruno greet Lolo; a puddle separates him from a green leaf."
+      }
+    },
+    {
+      "pageId": "p01",
+      "blockId": "b03",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Ada y Bruno saludan a Lolo; un charco lo separa de una hoja verde."
+      },
+      "crop": {
+        "x": 0,
+        "y": 658,
+        "width": 763,
+        "height": 366
+      },
+      "alt": {
+        "es": "Ada y Bruno saludan a Lolo; un charco lo separa de una hoja verde.",
+        "en": "Ada and Bruno greet Lolo; a puddle separates him from a green leaf."
+      }
+    },
+    {
+      "pageId": "p01",
+      "blockId": "b04",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Ada y Bruno saludan a Lolo; un charco lo separa de una hoja verde."
+      },
+      "crop": {
+        "x": 773,
+        "y": 658,
+        "width": 763,
+        "height": 366
+      },
+      "alt": {
+        "es": "Ada y Bruno saludan a Lolo; un charco lo separa de una hoja verde.",
+        "en": "Ada and Bruno greet Lolo; a puddle separates him from a green leaf."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b05",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Prueban una hoja amarilla como puente; se dobla y la retiran."
+      },
+      "crop": {
+        "x": 0,
+        "y": 131,
+        "width": 763,
+        "height": 376
+      },
+      "alt": {
+        "es": "Prueban una hoja amarilla como puente; se dobla y la retiran.",
+        "en": "They test a yellow leaf as a bridge; it bends and they remove it."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b06",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Prueban una hoja amarilla como puente; se dobla y la retiran."
+      },
+      "crop": {
+        "x": 773,
+        "y": 131,
+        "width": 763,
+        "height": 376
+      },
+      "alt": {
+        "es": "Prueban una hoja amarilla como puente; se dobla y la retiran.",
+        "en": "They test a yellow leaf as a bridge; it bends and they remove it."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b07",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Prueban una hoja amarilla como puente; se dobla y la retiran."
+      },
+      "crop": {
+        "x": 0,
+        "y": 644,
+        "width": 763,
+        "height": 380
+      },
+      "alt": {
+        "es": "Prueban una hoja amarilla como puente; se dobla y la retiran.",
+        "en": "They test a yellow leaf as a bridge; it bends and they remove it."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b08",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Prueban una hoja amarilla como puente; se dobla y la retiran."
+      },
+      "crop": {
+        "x": 773,
+        "y": 644,
+        "width": 763,
+        "height": 380
+      },
+      "alt": {
+        "es": "Prueban una hoja amarilla como puente; se dobla y la retiran.",
+        "en": "They test a yellow leaf as a bridge; it bends and they remove it."
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b09",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Recogen corteza y dos piedras y preparan los apoyos en las orillas."
+      },
+      "crop": {
+        "x": 0,
+        "y": 123,
+        "width": 763,
+        "height": 384
+      },
+      "alt": {
+        "es": "Recogen corteza y dos piedras y preparan los apoyos en las orillas.",
+        "en": "They collect bark and two stones and prepare the supports on the banks."
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b10",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Recogen corteza y dos piedras y preparan los apoyos en las orillas."
+      },
+      "crop": {
+        "x": 773,
+        "y": 123,
+        "width": 763,
+        "height": 384
+      },
+      "alt": {
+        "es": "Recogen corteza y dos piedras y preparan los apoyos en las orillas.",
+        "en": "They collect bark and two stones and prepare the supports on the banks."
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b11",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Recogen corteza y dos piedras y preparan los apoyos en las orillas."
+      },
+      "crop": {
+        "x": 0,
+        "y": 636,
+        "width": 763,
+        "height": 388
+      },
+      "alt": {
+        "es": "Recogen corteza y dos piedras y preparan los apoyos en las orillas.",
+        "en": "They collect bark and two stones and prepare the supports on the banks."
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b12",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-03.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Recogen corteza y dos piedras y preparan los apoyos en las orillas."
+      },
+      "crop": {
+        "x": 773,
+        "y": 636,
+        "width": 763,
+        "height": 388
+      },
+      "alt": {
+        "es": "Recogen corteza y dos piedras y preparan los apoyos en las orillas.",
+        "en": "They collect bark and two stones and prepare the supports on the banks."
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b13",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Colocan la corteza, comprueban el puente y Lolo comienza a subir."
+      },
+      "crop": {
+        "x": 0,
+        "y": 144,
+        "width": 763,
+        "height": 363
+      },
+      "alt": {
+        "es": "Colocan la corteza, comprueban el puente y Lolo comienza a subir.",
+        "en": "They place the bark, test the bridge, and Lolo begins to climb onto it."
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b14",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Colocan la corteza, comprueban el puente y Lolo comienza a subir."
+      },
+      "crop": {
+        "x": 773,
+        "y": 144,
+        "width": 763,
+        "height": 363
+      },
+      "alt": {
+        "es": "Colocan la corteza, comprueban el puente y Lolo comienza a subir.",
+        "en": "They place the bark, test the bridge, and Lolo begins to climb onto it."
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b15",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Colocan la corteza, comprueban el puente y Lolo comienza a subir."
+      },
+      "crop": {
+        "x": 0,
+        "y": 652,
+        "width": 763,
+        "height": 372
+      },
+      "alt": {
+        "es": "Colocan la corteza, comprueban el puente y Lolo comienza a subir.",
+        "en": "They place the bark, test the bridge, and Lolo begins to climb onto it."
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b16",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Colocan la corteza, comprueban el puente y Lolo comienza a subir."
+      },
+      "crop": {
+        "x": 773,
+        "y": 652,
+        "width": 763,
+        "height": 372
+      },
+      "alt": {
+        "es": "Colocan la corteza, comprueban el puente y Lolo comienza a subir.",
+        "en": "They place the bark, test the bridge, and Lolo begins to climb onto it."
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b17",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Lolo cruza, come una hoja y una hormiga también utiliza el puente."
+      },
+      "crop": {
+        "x": 0,
+        "y": 122,
+        "width": 763,
+        "height": 385
+      },
+      "alt": {
+        "es": "Lolo cruza, come una hoja y una hormiga también utiliza el puente.",
+        "en": "Lolo crosses, eats a leaf, and an ant also uses the bridge."
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b18",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Lolo cruza, come una hoja y una hormiga también utiliza el puente."
+      },
+      "crop": {
+        "x": 773,
+        "y": 122,
+        "width": 763,
+        "height": 385
+      },
+      "alt": {
+        "es": "Lolo cruza, come una hoja y una hormiga también utiliza el puente.",
+        "en": "Lolo crosses, eats a leaf, and an ant also uses the bridge."
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b19",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Lolo cruza, come una hoja y una hormiga también utiliza el puente."
+      },
+      "crop": {
+        "x": 0,
+        "y": 642,
+        "width": 763,
+        "height": 382
+      },
+      "alt": {
+        "es": "Lolo cruza, come una hoja y una hormiga también utiliza el puente.",
+        "en": "Lolo crosses, eats a leaf, and an ant also uses the bridge."
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b20",
+      "illustration": {
+        "src": "stories/el-puente-de-lolo/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Lolo cruza, come una hoja y una hormiga también utiliza el puente."
+      },
+      "crop": {
+        "x": 773,
+        "y": 642,
+        "width": 763,
+        "height": 382
+      },
+      "alt": {
+        "es": "Lolo cruza, come una hoja y una hormiga también utiliza el puente.",
+        "en": "Lolo crosses, eats a leaf, and an ant also uses the bridge."
+      }
+    }
+  ]
+}

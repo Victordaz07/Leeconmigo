@@ -1,0 +1,216 @@
+{
+  "version": 1,
+  "familyId": "la-puerta-que-deje-entreabierta",
+  "maxWordsPerUnit": 100,
+  "scenes": [
+    {
+      "pageId": "p01",
+      "blockId": "b01",
+      "illustration": {
+        "src": "stories/la-puerta-que-deje-entreabierta/page-01.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Isa y su mamá doblando estrellas de papel en la mesa de la cocina."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 960,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Isa y su mamá doblando estrellas de papel en la mesa de la cocina.",
+        "en": "Isa and her mom folding paper stars at the kitchen table."
+      }
+    },
+    {
+      "pageId": "p02",
+      "blockId": "b02",
+      "illustration": {
+        "src": "stories/la-puerta-que-deje-entreabierta/page-02.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Isa con audífonos puestos mientras su mamá le habla en la mesa."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 660
+      },
+      "alt": {
+        "es": "Isa con audífonos puestos mientras su mamá le habla en la mesa.",
+        "en": "Isa wearing headphones while her mom talks to her at the table."
+      }
+    },
+    {
+      "pageId": "p03",
+      "blockId": "b03",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p04",
+      "blockId": "b04",
+      "illustration": {
+        "src": "stories/la-puerta-que-deje-entreabierta/page-04.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Isa incómoda mientras su mamá cuenta una anécdota frente a la familia."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 660
+      },
+      "alt": {
+        "es": "Isa incómoda mientras su mamá cuenta una anécdota frente a la familia.",
+        "en": "Isa feeling uncomfortable as her mom tells a story in front of the family."
+      }
+    },
+    {
+      "pageId": "p05",
+      "blockId": "b05",
+      "illustration": {
+        "src": "stories/la-puerta-que-deje-entreabierta/page-05.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Isa sentada en el piso de su cuarto, con la puerta entreabierta y su mamá al otro lado."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 960,
+        "height": 1024
+      },
+      "alt": {
+        "es": "Isa sentada en el piso de su cuarto, con la puerta entreabierta y su mamá al otro lado.",
+        "en": "Isa sitting on her bedroom floor, the door left ajar with her mom on the other side."
+      }
+    },
+    {
+      "pageId": "p06",
+      "blockId": "b06",
+      "illustration": {
+        "src": "stories/la-puerta-que-deje-entreabierta/page-06.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Isa y Marisol revisando fotos del proyecto en una mesa del patio escolar."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 660
+      },
+      "alt": {
+        "es": "Isa y Marisol revisando fotos del proyecto en una mesa del patio escolar.",
+        "en": "Isa and Marisol looking over project photos at a schoolyard table."
+      }
+    },
+    {
+      "pageId": "p07",
+      "blockId": "b07",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p08",
+      "blockId": "b08",
+      "illustration": {
+        "src": "stories/la-puerta-que-deje-entreabierta/page-08.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Isa y su mamá conversando con tazas calientes en la cocina."
+      },
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 660
+      },
+      "alt": {
+        "es": "Isa y su mamá conversando con tazas calientes en la cocina.",
+        "en": "Isa and her mom talking over warm mugs in the kitchen."
+      }
+    },
+    {
+      "pageId": "p09",
+      "blockId": "b09",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p10",
+      "blockId": "b10",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    },
+    {
+      "pageId": "p11",
+      "blockId": "b11",
+      "illustration": {
+        "src": "stories/la-puerta-que-deje-entreabierta/page-11.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Isa fotografiando un mural mientras su mamá la observa."
+      },
+      "alt": {
+        "es": "Isa fotografiando un mural mientras su mamá la observa.",
+        "en": "Isa photographing a mural while her mom watches."
+      }
+    },
+    {
+      "pageId": "p12",
+      "blockId": "b12",
+      "illustration": {
+        "src": "stories/_shared/reading-pause.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Página de lectura, sin ilustración."
+      },
+      "artHidden": true,
+      "alt": {
+        "es": "Página de lectura, sin ilustración.",
+        "en": "Reading page, no illustration."
+      }
+    }
+  ]
+}

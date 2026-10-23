@@ -37,3 +37,4 @@ export * from './finanzas/index.ts';
 export * from './vida/index.ts';
 export { EN_INTERFACE, translate, type InterfaceLanguage } from './interface-language.ts';
 export { readingCopy } from './reading-copy.ts';
+export { fitArt, constrainArt, pinchArt, MAX_ART_ZOOM, INITIAL_ART_POSE, type ArtSize, type ArtPose } from './illustration-zoom.ts';
