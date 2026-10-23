@@ -51,6 +51,13 @@ describe('frases (UtteranceSegmenter)', () => {
     expect(ev.filter((e) => e.type === 'utterance')).toHaveLength(1);
   });
 
+  it('does not learn immediate speech as startup noise', () => {
+    const vad = new EnergyVad();
+    const voice = Float32Array.from({ length: FRAME_SAMPLES }, (_, i) => .15 * Math.sin(i / 3));
+    expect(vad.probability(voice)).toBeGreaterThan(.8);
+    for (let i = 0; i < 60; i++) expect(vad.probability(voice)).toBeGreaterThan(.8);
+  });
+
   it('el VAD por energía distingue silencio de voz fuerte', () => {
     const vad = new EnergyVad();
     for (let i = 0; i < 20; i++) vad.probability(new Float32Array(FRAME_SAMPLES).fill(0.0005));

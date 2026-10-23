@@ -21,7 +21,7 @@ export class EnergyVad {
     for (let i = 0; i < frame.length; i++) sum += frame[i] * frame[i];
     const db = 10 * Math.log10(sum / frame.length + 1e-10);
     this.frames++;
-    if (this.frames < 10) this.floorDb = Math.max(this.floorDb, db); // arranque: primeros ~0.3 s
+    if (this.frames < 10 && db < -45) this.floorDb = Math.max(this.floorDb, db); // Do not learn an immediate first syllable as the noise floor.
     else if (db < this.floorDb) this.floorDb = this.floorDb * 0.9 + db * 0.1; // baja rápido
     else this.floorDb += 0.002 * (db - this.floorDb); // sube muy lento
     const margin = db - Math.max(this.floorDb, -70);

@@ -15,3 +15,6 @@ export function speak(text: string, language: LanguageCode, rate = 0.8): void {
 export function stopSpeaking(): void {
   Speech.stop();
 }
+
+/** Hardware completion barrier before restarting capture after pronunciation help. */
+export async function stopSpeakingAsync(): Promise<void> { await Speech.stop(); }

@@ -1,0 +1,18 @@
+[
+  {
+    "language": "es",
+    "sizes": 5,
+    "unsupported": "recovered manually",
+    "pronunciationRequests": 2,
+    "networkCapableBrowserAsrCalls": 0,
+    "errors": []
+  },
+  {
+    "language": "en",
+    "sizes": 5,
+    "unsupported": "recovered manually",
+    "pronunciationRequests": 2,
+    "networkCapableBrowserAsrCalls": 0,
+    "errors": []
+  }
+]

@@ -20,6 +20,8 @@ export interface SpeechResult {
   confidence?: number;
   /** Instante (ms desde `start`) al que corresponde el resultado. */
   atMs: number;
+  /** Duration of detected speech in this final chunk, when the local provider supplies it. */
+  audioDurationMs?: number;
 }
 
 export type SpeechErrorCode = 'permission-denied' | 'not-available' | 'network-required' | 'unknown';

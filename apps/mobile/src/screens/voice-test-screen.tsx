@@ -3,9 +3,11 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { AppState, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Button, ChevronLeftIcon, colors, fontFamily, MicBadge, radius, RoundButton, shadows, useLayout } from '@lee-conmigo/ui-native';
+import { createReadingVoice } from '../speech/create-reading-voice';
+import type { ReadingVoice, ReadingVoiceProvider } from '../speech/reading-voice';
 import { ReadAlong, type HeardResult } from '../speech/read-along';
 import type { VoiceDiagnostics, VoiceModel, VoiceStatus, VoiceUtterance } from '../speech/voice-types';
-import { isNativeVoiceSupported, WhisperNativeSpeechEngine } from '../speech/whisper-native-speech-engine';
+import { isNativeVoiceSupported } from '../speech/whisper-native-speech-engine';
 
 /** Frases para leer en la prueba (de historias que ya existen). */
 const SAMPLES: Record<'es' | 'en', string[]> = {
@@ -45,6 +47,9 @@ export function VoiceTestScreen({ language: initialLanguage, onBack }: { languag
   const { t: ui } = useTranslation();
   const insets = useSafeAreaInsets();
   const layout = useLayout();
+  const [provider, setProvider] = useState<ReadingVoiceProvider>('android');
+  const [partial, setPartial] = useState('');
+  const runId = useRef(0);
   const [model, setModel] = useState<VoiceModel>('tiny');
   const [language, setLanguage] = useState<'es' | 'en'>(initialLanguage);
   const [sampleIdx, setSampleIdx] = useState(0);
@@ -54,7 +59,7 @@ export function VoiceTestScreen({ language: initialLanguage, onBack }: { languag
   const [rows, setRows] = useState<Row[]>([]);
   const [diag, setDiag] = useState<VoiceDiagnostics | null>(null);
   const [, setTick] = useState(0);
-  const engine = useRef<WhisperNativeSpeechEngine | null>(null);
+  const engine = useRef<ReadingVoice | null>(null);
   const nextId = useRef(0);
   const sample = SAMPLES[language][sampleIdx % SAMPLES[language].length];
   const readAlong = useMemo(() => new ReadAlong(sample), [sample]);
@@ -63,29 +68,52 @@ export function VoiceTestScreen({ language: initialLanguage, onBack }: { languag
   const listening = status === 'requesting-mic' || status === 'loading-model' || status === 'ready';
 
   const stop = async () => {
-    await engine.current?.stop();
+    ++runId.current;
+    const previous = engine.current;
     engine.current = null;
     setVoice(false);
+    setPartial('');
+    setStatus('stopped');
+    await previous?.stop();
   };
 
   const start = async () => {
-    await stop();
+    const stopping = stop();
+    const id = runId.current;
+    await stopping;
+    if (id !== runId.current) return;
     setError(null);
     setDiag(null);
-    const e = new WhisperNativeSpeechEngine({ model });
+    const e = createReadingVoice(provider, model);
     engine.current = e;
-    e.onStatus(setStatus);
-    e.onVoiceActivity(setVoice);
-    e.onDiagnostics(setDiag);
-    e.onError((err) => setError(err.message));
-    e.onUtterance((u) => {
-      const heard = !u.skipped && u.text ? readAlongRef.current.hear(u.text) : undefined;
-      setRows((r) => [{ ...u, heard, id: nextId.current++ }, ...r].slice(0, 30));
-    });
-    await e.start(language);
+    const live = () => id === runId.current;
+    e.onStatus(status => { if (live()) setStatus(status); });
+    e.onVoiceActivity(active => { if (live()) setVoice(active); });
+    e.onError(err => { if (live()) setError(err.code === 'permission-denied'
+      ? ui('El micrófono no tiene permiso. Puedes volver a intentarlo.')
+      : ui('Escucha local no disponible para este idioma. Prueba Whisper o comprueba los idiomas sin conexión del sistema.')); });
+    if ('onDiagnostics' in e) {
+      const native = e as import('../speech/voice-types').NativeVoiceEngine;
+      native.onDiagnostics(d => { if (live()) setDiag(d); });
+      native.onUtterance(u => {
+        if (!live()) return;
+        const heard = !u.skipped && u.text ? readAlongRef.current.hear(u.text) : undefined;
+        setRows(rows => [{ ...u, heard, id: nextId.current++ }, ...rows].slice(0, 30));
+      });
+    } else {
+      e.onPartialResult(result => { if (live()) setPartial(result.text); });
+      e.onFinalResult(result => {
+        if (!live()) return;
+        setPartial('');
+        const heard = readAlongRef.current.hear(result.text);
+        setRows(rows => [{ text: result.text, audioMs: result.audioDurationMs ?? 0, transcribeMs: 0, skipped: false, heard, id: nextId.current++ }, ...rows].slice(0, 30));
+      });
+    }
+    try { await e.start(language); } catch { if (live()) { setStatus('error'); setError(ui('Escucha local no disponible para este idioma. Prueba Whisper o comprueba los idiomas sin conexión del sistema.')); } }
   };
 
   const resetReading = () => {
+    void stop();
     readAlong.reset();
     setRows([]);
     setTick((t) => t + 1);
@@ -121,8 +149,11 @@ export function VoiceTestScreen({ language: initialLanguage, onBack }: { languag
         {ui("Toca Empezar y lee la frase en voz alta. Las palabras que el reconocimiento entienda se pintan de verde, y abajo ves exactamente lo que escribió. Todo pasa en este equipo: nada se graba ni se envía.")}</Text>
       {!supported && <Text style={styles.warn}>{ui("En la vista web no hay micrófono: esta prueba funciona en la app instalada.")}</Text>}
 
+      <Segmented label={ui('Motor local')} options={[{ id: 'android', label: 'Android' }, { id: 'whisper', label: 'Whisper' }]} value={provider}
+        onChange={value => { void stop(); setProvider(value as ReadingVoiceProvider); resetReading(); }} />
+      {provider === 'android' && <Text style={styles.note}>{ui('Android 13 o posterior, con el idioma instalado para reconocimiento local. Si no está disponible, no se usa la nube. Los parciales pueden cambiar antes del resultado final.')}</Text>}
       <View style={[styles.row, layout.narrow && styles.rowWrap]}>
-        <Segmented
+        {provider === 'whisper' && <Segmented
           label={ui("Modelo")}
           options={[
             { id: 'tiny', label: 'Rápido' },
@@ -130,10 +161,11 @@ export function VoiceTestScreen({ language: initialLanguage, onBack }: { languag
           ]}
           value={model}
           onChange={(m) => {
-            setModel(m as VoiceModel);
             void stop();
+            setModel(m as VoiceModel);
+            resetReading();
           }}
-        />
+        />}
         <Segmented
           label={ui("Idioma")}
           options={[
@@ -169,6 +201,7 @@ export function VoiceTestScreen({ language: initialLanguage, onBack }: { languag
             label={ui("Otra frase")}
             variant="secondary"
             onPress={() => {
+              void stop();
               setSampleIdx((i) => i + 1);
               setRows([]);
             }}
@@ -185,6 +218,7 @@ export function VoiceTestScreen({ language: initialLanguage, onBack }: { languag
         </View>
         {listening ? <Button label={ui("Detener")} variant="secondary" onPress={() => void stop()} /> : <Button label={ui("Empezar")} onPress={() => void start()} disabled={!supported} />}
       </View>
+      {!!partial && <Text accessibilityLiveRegion="polite" style={styles.transcript}>{ui("Hipótesis provisional")}: {partial}</Text>}
       {error && <Text style={styles.warn}>{error}</Text>}
 
       {/* Diagnóstico: en qué paso va la voz */}
@@ -221,7 +255,8 @@ export function VoiceTestScreen({ language: initialLanguage, onBack }: { languag
         <View key={r.id} style={styles.result}>
           <Text style={[styles.resultText, r.skipped && styles.skipped]}>{r.skipped ? ui("(no era voz: no se envió al reconocimiento)") : r.text || ui("(no entendió nada)")}</Text>
           <Text style={styles.small}>
-            {ui("frase de")}{(r.audioMs / 1000).toFixed(1)} {" " + ui("s · tardó") + " "}{(r.transcribeMs / 1000).toFixed(1)} s
+            {provider === 'android' ? ui("Resultado local final · tiempos de inferencia no disponibles") : null}
+            {provider === 'whisper' && <>{ui("frase de")}{(r.audioMs / 1000).toFixed(1)} {" " + ui("s · tardó") + " "}{(r.transcribeMs / 1000).toFixed(1)} s</>}
             {r.heard ? ui(" · coinciden {0} de {1} palabras con el texto", r.heard.matched, r.heard.recognized) : ''}
           </Text>
         </View>

@@ -5,10 +5,10 @@
 import Svg, { Path, Rect } from 'react-native-svg';
 
 /** Micrófono blanco (sobre el círculo del mic). */
-export function MicIcon({ size = 24, big }: { size?: number; big?: boolean }) {
+export function MicIcon({ size = 24, big, color = '#fff' }: { size?: number; big?: boolean; color?: string }) {
   return (
-    <Svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth={big ? 2.3 : 2.4}>
-      <Rect x={big ? 8.8 : 9} y={big ? 2.8 : 3} width={big ? 6.4 : 6} height={big ? 11.4 : 11} rx={big ? 3.2 : 3} fill="#fff" />
+    <Svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeLinecap="round" strokeLinejoin="round" strokeWidth={big ? 2.3 : 2.4}>
+      <Rect x={big ? 8.8 : 9} y={big ? 2.8 : 3} width={big ? 6.4 : 6} height={big ? 11.4 : 11} rx={big ? 3.2 : 3} fill={color} />
       <Path d="M5.5 11a6.5 6.5 0 0013 0M12 17.5V21M9 21h6" />
     </Svg>
   );

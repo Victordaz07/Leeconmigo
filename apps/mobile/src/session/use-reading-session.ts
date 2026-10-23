@@ -3,11 +3,10 @@
  * ÚNICA capa de la app nativa que conoce al motor: los componentes de `@lee-conmigo/ui-native` solo reciben estado y
  * callbacks (docs/02, regla de desacoplamiento).
  *
- * Versión nativa reducida de `apps/reader/src/use-session.ts` (RN-04, docs/11): mismo `FakeReadingEngine`, mismo
- * `reduceFlow` y mismo modelo de vista (`@lee-conmigo/ui-core`). Todavía SIN preguntas de comprensión ni repaso (RN-06):
- * al terminar una página se pasa a la siguiente y, tras la última, al fin. El progreso (resumen de la sesión y dónde
- * retomar) se guarda en el `ProgressStore` que se le pase — solo datos derivados (docs/07).
- * Cuando exista el motor de voz nativo (RN-07), se cambia aquí la línea que crea el motor.
+ * Shared navigation, practice, progress and timer for the native reader. Manual page confirmation
+ * reuses FakeReadingEngine's existing domain commands; no simulated voice is enabled in the scene reader.
+ * The optional local companion is coordinated by ReadTogetherController and contributes only bounded
+ * final-match timing via creditVoice. Provisional speech never becomes persisted reading evidence.
  */
 import { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { AppState } from 'react-native';
@@ -49,6 +48,9 @@ export interface ReadingSessionOptions {
   holdAtPageEnd?: boolean;
   /** Prepared editions opt into the shared comprehension and syllable-review flow. */
   enablePractice?: boolean;
+  /** Voice companion: no wall-clock credit while enabled, paused, loading, or showing help. */
+  voiceReading?: boolean;
+  readingBlocked?: boolean;
 }
 
 export function useReadingSession(story: Story, options: ReadingSessionOptions) {
@@ -96,6 +98,11 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
   wordsRef.current = words;
   const flowRef = useRef(flow);
   flowRef.current = flow;
+  const voiceRef = useRef(options.voiceReading ?? false);
+  voiceRef.current = options.voiceReading ?? false;
+  const blockedRef = useRef(options.readingBlocked ?? false);
+  blockedRef.current = options.readingBlocked ?? false;
+  const timeSources = useRef({ free: false, voice: false });
   const freeRef = useRef(freeReading);
   freeRef.current = freeReading;
   /** Ya se guardó el resumen de esta sesión (para no guardarlo dos veces). */
@@ -122,7 +129,7 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
     });
     const stars = effortStars({ completed: base.completion >= 1, ...effort.current });
     const { stars: _accuracyStars, ...rest } = base;
-    store.saveSummary({ ...rest, readingMode: freeRef.current ? 'free' : 'simulated', wordsHelped: [...new Set([...rest.wordsHelped, ...helpedKeys.current])], ...(stars ? { stars } : {}), ...(focusSelfReport ? { focusSelfReport } : {}), ...(energy ? { energy } : {}) });
+    store.saveSummary({ ...rest, readingMode: timeSources.current.voice ? (timeSources.current.free ? 'mixed' : 'voice') : freeRef.current ? 'free' : 'simulated', wordsHelped: [...new Set([...rest.wordsHelped, ...helpedKeys.current])], ...(stars ? { stars } : {}), ...(focusSelfReport ? { focusSelfReport } : {}), ...(energy ? { energy } : {}) });
     summarySaved.current = true;
     if (options.enablePractice && f.screen === 'end') store.clearResumePoint(story.id);
   };
@@ -148,7 +155,7 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
       const t = clockRef.current().getTime();
       const dt = tickDelta(freeClock.current.lastTick, t);
       freeClock.current.lastTick = t;
-      if (dt > 0 && freeRef.current && screenRef.current === 'reading' && AppState.currentState === 'active') {
+      if (dt > 0 && freeRef.current && !voiceRef.current && !blockedRef.current && screenRef.current === 'reading' && AppState.currentState === 'active') {
         freeClock.current.pageMs += dt;
         setFreePageMs(freeClock.current.pageMs);
       }
@@ -225,6 +232,7 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
 
   const begin = () => {
     summarySaved.current = false;
+    timeSources.current = { free: false, voice: false };
     effort.current = { helpedOrRetried: false, longPauses: 0 };
     helpedKeys.current.clear();
     answeredPages.current.clear();
@@ -237,6 +245,7 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
 
   const restart = () => {
     summarySaved.current = false;
+    timeSources.current = { free: false, voice: false };
     effort.current = { helpedOrRetried: false, longPauses: 0 };
     helpedKeys.current.clear();
     answeredPages.current.clear();
@@ -263,6 +272,7 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
     freeClock.current.pageMs = 0;
     setFreePageMs(0);
     if (ms <= 0) return;
+    timeSources.current.free = true;
     const from = engine.timer.machine.confirmedMs;
     engine.timer.machine.ingest({ fromMs: from, toMs: from + ms, valid: true });
     setTimer(engine.getTimerSnapshot());
@@ -384,6 +394,14 @@ export function useReadingSession(story: Story, options: ReadingSessionOptions) 
     /** Tarjeta "Te espero…" de la pausa larga (B11). Nunca en modo libre: nadie le habla al micrófono. */
     showPauseCard: flow.screen === 'reading' && reading.pause === 'long' && !pauseDismissed && !freeReading && reading.helpWordIndex === null,
     actions: {
+      /** Called only with bounded final-match timing evidence by the voice session controller. */
+      creditVoice: (ms: number) => {
+        if (!voiceRef.current || screenRef.current !== 'reading' || blockedRef.current || AppState.currentState !== 'active' || !Number.isFinite(ms) || ms <= 0) return;
+        timeSources.current.voice = true;
+        const from = engine.timer.machine.confirmedMs;
+        engine.timer.machine.ingest({ fromMs: from, toMs: from + Math.min(ms, 10000), valid: true });
+        setTimer(engine.getTimerSnapshot());
+      },
       rememberWord: (key: string) => {
         helpedKeys.current.add(key);
         effort.current.helpedOrRetried = true;

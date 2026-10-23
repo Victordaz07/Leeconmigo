@@ -1,9 +1,9 @@
 /**
  * "¿Sabe lo que estoy leyendo?" (Prueba de voz, RN-03): compara lo que reconoció la voz con la frase que se lee, con el
- * MISMO comparador que usa la lectura de verdad (`ReadingProgressTracker` de reading-engine), y dice qué palabras del
+ * MISMO comparador que usa la lectura de verdad (`ReadingFollower` de reading-engine), y dice qué palabras del
  * texto ya se oyeron. Módulo puro.
  */
-import { normalizeText, ReadingProgressTracker } from '@lee-conmigo/reading-engine';
+import { normalizeText, ReadingFollower } from '@lee-conmigo/reading-engine';
 
 export interface ReadAlongWord {
   /** Tal como se muestra (con puntuación y acentos). */
@@ -36,36 +36,33 @@ export function splitForReadAlong(text: string): ReadAlongWord[] {
 
 export class ReadAlong {
   readonly words: ReadAlongWord[];
-  private tracker: ReadingProgressTracker;
+  private follower: ReadingFollower;
+  private sequence = 0;
 
   constructor(text: string) {
     this.words = splitForReadAlong(text);
-    this.tracker = new ReadingProgressTracker(text);
+    this.follower = new ReadingFollower(this.words.map(word => word.text));
   }
 
   /** Agrega una frase reconocida: marca las palabras del texto que coincidieron. */
   hear(recognized: string): HeardResult {
-    const m = this.tracker.match(recognized);
-    this.tracker.commit(m);
-    return { recognized: m.recognizedWords, matched: m.matched, score: m.score };
+    const state = this.follower.accept(recognized, false, ++this.sequence);
+    this.follower.accept(recognized, true, this.sequence);
+    const count = normalizeText(recognized).length;
+    const matched = state.preview.length;
+    return { recognized: count, matched, score: count ? matched / count : 0 };
   }
 
-  /** Índices (de `words`) ya oídos. */
-  heardWords(): Set<number> {
-    const covered = new Set(this.tracker.coveredIndices());
-    const out = new Set<number>();
-    this.words.forEach((w, i) => {
-      if (w.idx.some((k) => covered.has(k))) out.add(i);
-    });
-    return out;
-  }
+  /** Indices are the exact displayed words, not a range from cursor to last match. */
+  heardWords(): Set<number> { return new Set(this.follower.snapshot().confirmed); }
 
   /** 0–1: cuánto del texto ya se oyó. */
   coverage(): number {
-    return this.tracker.state().coverage;
+    return this.follower.snapshot().confirmed.length / Math.max(1, this.words.filter(w => normalizeText(w.text).length).length);
   }
 
   reset(): void {
-    this.tracker.reset();
+    this.follower = new ReadingFollower(this.words.map(word => word.text));
+    this.sequence = 0;
   }
 }

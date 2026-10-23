@@ -14,7 +14,7 @@ export interface SessionSummary {
   /** Tiempo de lectura VÁLIDA (el que llena la barra de metas del padre). */
   validReadingSeconds: number;
   /** Procedencia del tiempo: lectura libre estimada, simulador o reconocimiento real. Ausente en resúmenes antiguos. */
-  readingMode?: 'free' | 'simulated' | 'voice';
+  readingMode?: 'free' | 'simulated' | 'voice' | 'mixed';
   sessionSeconds: number;
   comprehensionCorrect: number;
   comprehensionTotal: number;

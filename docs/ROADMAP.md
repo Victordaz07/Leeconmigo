@@ -208,9 +208,9 @@ Regla: tareas de ~30–45 min. Si una crece, se divide aquí (`F2-04a`, `F2-04b`
 | ID | Tarea | Estado | Nota |
 |---|---|---|---|
 | VZ-01 | Investigar Gboard/Android, motores locales, APIs, estudios infantiles y proyectos similares | ✅ | Informe, auditoría, plan, 76 referencias y PDF de 54 páginas en `docs/research/lectura-con-voz/`; sin activar voz ni alterar D1 |
-| VZ-02 | Separar hipótesis/cursor/cobertura y corregir falsos avances del motor experimental | ⬜ | Casos textuales reproducidos; revisiones, generaciones, repeticiones y evidencia temporal antes de conectar audio |
-| VZ-03 | Diagnóstico Android de reconocimiento estrictamente local ES/EN en Fold | ⬜ | Servicio/modelo/idioma, parciales, segmentos, stop/abort y prueba release; sin fallback a red |
+| VZ-02 | Separar hipótesis/cursor/cobertura y corregir falsos avances del motor experimental | ✅ | `ReadingFollower`, controlador y regresiones de falsos rangos; evidencia final y tiempos limitados. |
+| VZ-03 | Diagnóstico Android de reconocimiento estrictamente local ES/EN en Fold | 🟡 | Código/lifecycle/compilación release aprobados; Prueba de voz conserva Whisper y añade Android. Fold/idiomas reales pendientes. |
 | VZ-04 | Comparar streaming local EN/ES con referencia Whisper | ⬜ | Moonshine candidato; Sherpa/Picovoice alternativas. Compatibilidad, licencia, latencia, falsos avances, memoria y batería |
-| VZ-05 | Integrar primer recorrido acompañado preservando manual y ayuda por palabra | ⬜ | Micrófono único, TTS coordinado, errores recuperables, anclas y tiempo |
+| VZ-05 | Integrar primer recorrido acompañado preservando manual y ayuda por palabra | ✅ | `docs/design/read-together/`: Android local, alternativa Whisper, micrófono único, TTS/zoom/pausas y tiempos. Validación física pendiente. |
 | VZ-06 | Calibración breve con lectura real sin grabar/subir voz | ⬜ | Sesiones amables y métricas agregadas; no generalizar una voz a toda la población infantil |
 | VZ-07 | Elegir motor y alcance publicable según resultados | ⬜ | Dispositivos/idiomas comprobados, limitaciones explícitas; pronunciación fonética evaluada como proyecto aparte |

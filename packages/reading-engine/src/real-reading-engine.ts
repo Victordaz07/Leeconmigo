@@ -289,18 +289,16 @@ export class RealReadingEngine implements ReadingEngine {
   }
 
   private onRecognized(text: string): void {
-    if (!this.live() || !this.tracker) return;
+    if (!this.live() || this.state.helpWordIndex !== null || !this.tracker) return;
     const m = this.tracker.match(text);
     const valid = m.matched >= this.o.minMatchedWords && m.score >= this.o.minScore;
-    if (!valid) return;
+    if (!valid || m.startIdx > this.state.currentWordIndex + 2) return;
     this.tracker.commit(m);
     this.lastValidAt = this.sched.now();
     this.pausedShort = false;
     this.pausedLong = false;
-    const s = this.state;
-    const from = s.currentWordIndex;
-    const to = Math.min(m.endIdx, s.wordCount - 1);
-    for (let i = from; i <= to; i++) {
+    for (const i of m.matchedIdx) {
+      if (i < 0 || i >= this.state.wordCount || this.state.wordMarks[i] === 'read') continue;
       this.emit({ type: 'word.correct', wordIndex: i });
       this.timer.onValidReading();
     }

@@ -56,7 +56,9 @@
           "color": "#1E6FE8"
         }
       ],
-      "./plugins/no-push.js"
+      "./plugins/no-push.js",
+      "expo-speech-recognition",
+      "./plugins/local-speech.js"
     ]
   }
 }

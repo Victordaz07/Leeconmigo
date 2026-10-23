@@ -19,13 +19,12 @@ import type { NativeVoiceEngine, NativeVoiceOptions, VoiceDiagnostics, VoiceMode
 
 const emptyDiagnostics = (): VoiceDiagnostics => ({ audioSeconds: 0, level: 0, detected: 0, skipped: 0, dropped: 0, transcribed: 0, transcribing: false, queued: 0, errors: 0 });
 
-/* eslint-disable @typescript-eslint/no-require-imports -- Metro empaqueta los modelos como recursos de la app. */
+// Metro requires literal resource paths for bundling the local models.
 const MODEL_ASSET: Record<VoiceModel, number> = {
   tiny: require('../../assets/models/ggml-tiny-q8_0.bin'),
   base: require('../../assets/models/ggml-base-q5_1.bin'),
 };
 const VAD_ASSET: number = require('../../assets/models/ggml-silero-v6.2.0.bin');
-/* eslint-enable @typescript-eslint/no-require-imports */
 
 /** Cargar un modelo tarda: se carga una vez y se reutiliza entre lecturas. */
 const whisperCache = new Map<VoiceModel, Promise<WhisperContext>>();
@@ -58,6 +57,9 @@ export class WhisperNativeSpeechEngine implements NativeVoiceEngine {
   private language = 'es';
   private status: VoiceStatus = 'idle';
   private running = false;
+  private generation = 0;
+  private stopping: Promise<void> = Promise.resolve();
+  private cancelTranscription: (() => Promise<void>) | null = null;
   private startedAt = 0;
   private segmenter = new UtteranceSegmenter();
   private energy = new EnergyVad();
@@ -65,6 +67,7 @@ export class WhisperNativeSpeechEngine implements NativeVoiceEngine {
   private vad: WhisperVadContext | null = null;
   private queue: { audio: Float32Array; atMs: number }[] = [];
   private busy = false;
+  private draining: Promise<void> | null = null;
   private dataSub: { remove(): void } | null = null;
 
   private finalCbs: ((r: SpeechResult) => void)[] = [];
@@ -81,61 +84,62 @@ export class WhisperNativeSpeechEngine implements NativeVoiceEngine {
     this.model = opts.model ?? 'tiny';
   }
 
-  /** Pide el micrófono primero (lo urgente para la UI) y carga el modelo después, sin bloquear. */
+  /** Load models before opening capture; stopping cancels permission/model continuations too. */
   async start(language: string): Promise<void> {
     if (this.running) return;
+    const generation = ++this.generation;
+    await this.stopping;
+    if (generation !== this.generation || this.running) return;
     this.language = language.startsWith('en') ? 'en' : 'es';
     this.setStatus('requesting-mic');
-    if (!(await this.askPermission())) {
-      this.setStatus('error');
-      this.emitError({ code: 'permission-denied', message: 'Sin permiso para usar el micrófono.' });
-      return;
-    }
-    this.segmenter.reset();
-    this.energy.reset();
-    this.queue = [];
-    this.diag = emptyDiagnostics();
-    this.emitDiag(true);
     try {
-      AudioRecord.init({ sampleRate: SAMPLE_RATE, channels: 1, bitsPerSample: 16, audioSource: 6, bufferSize: 4096 });
-      this.dataSub = AudioRecord.on('data', (b64) => this.onData(b64));
-      AudioRecord.start();
-    } catch (err) {
-      this.setStatus('error');
-      this.emitError({ code: 'not-available', message: `No se pudo abrir el micrófono: ${String(err)}` });
-      return;
-    }
-    this.running = true;
-    this.startedAt = Date.now();
-    this.setStatus('loading-model');
-    void Promise.all([loadWhisper(this.model), loadVad()])
-      .then(([w, v]) => {
-        if (!this.running) return;
-        this.whisper = w;
-        this.vad = v;
-        this.setStatus('ready');
-      })
-      .catch((err) => {
+      const permitted = await this.askPermission();
+      if (generation !== this.generation) return;
+      if (!permitted) {
         this.setStatus('error');
-        this.emitError({ code: 'not-available', message: `No se pudo cargar el reconocimiento de voz: ${String(err)}` });
-        void this.stop();
-      });
+        this.emitError({ code: 'permission-denied', message: 'Microphone permission denied' });
+        return;
+      }
+      this.setStatus('loading-model');
+      const [whisper, vad] = await Promise.all([loadWhisper(this.model), loadVad()]);
+      if (generation !== this.generation) return;
+      this.whisper = whisper;
+      this.vad = vad;
+      this.segmenter.reset();
+      this.energy.reset();
+      this.queue = [];
+      this.diag = emptyDiagnostics();
+      AudioRecord.init({ sampleRate: SAMPLE_RATE, channels: 1, bitsPerSample: 16, audioSource: 6, bufferSize: 4096 });
+      this.dataSub = AudioRecord.on('data', b64 => { if (generation === this.generation) this.onData(b64); });
+      this.running = true;
+      this.startedAt = Date.now();
+      AudioRecord.start();
+      this.setStatus('ready');
+      this.emitDiag(true);
+    } catch {
+      if (generation !== this.generation) return;
+      this.setStatus('error');
+      this.emitError({ code: 'not-available', message: 'Local speech unavailable' });
+      void this.stop();
+    }
   }
 
-  async stop(): Promise<void> {
-    if (!this.running) return;
+  stop(): Promise<void> {
+    ++this.generation;
+    const wasRunning = this.running;
     this.running = false;
     this.dataSub?.remove();
     this.dataSub = null;
-    try {
-      await AudioRecord.stop();
-    } catch {
-      // ya estaba detenido
-    }
     this.segmenter.reset();
     this.queue = [];
-    if (this.status !== 'error') this.setStatus('stopped');
-    this.voiceCbs.forEach((cb) => cb(false));
+    const cancel = this.cancelTranscription;
+    this.cancelTranscription = null;
+    this.stopping = this.stopping.then(async () => {
+      await Promise.all([wasRunning ? AudioRecord.stop().catch(() => {}) : Promise.resolve(), cancel?.().catch(() => {}), this.draining]);
+      if (this.status !== 'error') this.setStatus('stopped');
+    });
+    this.voiceCbs.forEach(cb => cb(false));
+    return this.stopping;
   }
 
   onPartialResult(cb: (r: SpeechResult) => void): Unsubscribe {
@@ -173,10 +177,10 @@ export class WhisperNativeSpeechEngine implements NativeVoiceEngine {
   private async askPermission(): Promise<boolean> {
     if (Platform.OS !== 'android') return true; // iOS lo pide el sistema al abrir el micrófono (NSMicrophoneUsageDescription)
     const res = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.RECORD_AUDIO, {
-      title: 'Kitewise quiere usar el micrófono',
-      message: 'Para seguir la lectura en voz alta. La voz se procesa en este equipo y nunca se graba ni se envía.',
-      buttonPositive: 'Permitir',
-      buttonNegative: 'Ahora no',
+      title: this.language === 'en' ? 'Kitewise would like to use the microphone' : 'Kitewise quiere usar el micrófono',
+      message: this.language === 'en' ? 'To follow your reading aloud. Your voice is processed on this device, never saved or sent.' : 'Para seguir la lectura en voz alta. La voz se procesa en este equipo y nunca se graba ni se envía.',
+      buttonPositive: this.language === 'en' ? 'Allow' : 'Permitir',
+      buttonNegative: this.language === 'en' ? 'Not now' : 'Ahora no',
     });
     return res === PermissionsAndroid.RESULTS.GRANTED;
   }
@@ -201,7 +205,7 @@ export class WhisperNativeSpeechEngine implements NativeVoiceEngine {
           this.queue.shift();
           this.diag.dropped++;
         }
-        void this.drain();
+        if (!this.busy) this.draining = this.drain();
       }
     }
     this.emitDiag();
@@ -233,13 +237,19 @@ export class WhisperNativeSpeechEngine implements NativeVoiceEngine {
   private async transcribe(audio: Float32Array, atMs: number): Promise<void> {
     const whisper = this.whisper;
     if (!whisper) return;
+    const generation = this.generation;
+    const live = () => this.running && generation === this.generation;
     const audioMs = Math.round((audio.length / SAMPLE_RATE) * 1000);
     const t0 = Date.now();
     try {
       const buf = audio.buffer.slice(audio.byteOffset, audio.byteOffset + audio.byteLength) as ArrayBuffer;
+      let speechMs = audioMs;
       // Silero confirma que hubo voz: Whisper inventa frases con ruido o silencio.
       if (this.vad) {
         const segments = await this.vad.detectSpeechData(buf, { threshold: 0.5, minSpeechDurationMs: 200, minSilenceDurationMs: 100, speechPadMs: 30 });
+        if (!live()) return;
+        // whisper.cpp VAD boundaries are centiseconds, not seconds. Exclude closing silence.
+        speechMs = Math.min(audioMs, segments.reduce((ms, segment) => ms + Math.max(0, segment.t1 - segment.t0) * 10, 0));
         if (!segments.length) {
           this.diag.skipped++;
           this.emitDiag(true);
@@ -248,17 +258,23 @@ export class WhisperNativeSpeechEngine implements NativeVoiceEngine {
         }
       }
       this.emitDiag(true);
-      const { promise } = whisper.transcribeData(buf, { language: this.language, maxThreads: 4, translate: false });
+      if (!live()) return;
+      const { promise, stop } = whisper.transcribeData(buf, { language: this.language, maxThreads: 4, translate: false });
+      this.cancelTranscription = stop;
       const r = await promise;
+      if (!live()) return;
+      this.cancelTranscription = null;
       const text = cleanTranscript(r.result);
       this.diag.transcribed++;
       this.emitDiag(true);
       this.utteranceCbs.forEach((cb) => cb({ audioMs, transcribeMs: Date.now() - t0, text, skipped: false }));
-      if (text && this.running) this.finalCbs.forEach((cb) => cb({ text, isFinal: true, atMs }));
-    } catch (err) {
+      if (text && live()) this.finalCbs.forEach((cb) => cb({ text, isFinal: true, atMs, audioDurationMs: speechMs }));
+    } catch {
+      if (!live()) return;
+      this.cancelTranscription = null;
       this.diag.errors++;
       this.emitDiag(true);
-      this.emitError({ code: 'unknown', message: `Error al reconocer: ${String(err)}` });
+      this.emitError({ code: 'unknown', message: 'Local transcription failed' });
     }
   }
 

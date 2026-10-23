@@ -5,13 +5,15 @@ import { defaultPrefs, type WordMark } from '@lee-conmigo/ui-core';
 import { vocabularyKey } from '@lee-conmigo/reading-engine';
 import { isWordComplete, tilesOf } from '@lee-conmigo/session-engine';
 import { lookupVocabulary, tokenizePage, type PreparedReading, type StoryWord } from '@lee-conmigo/story-engine';
-import { Button, ChevronLeftIcon, ClosingCard, colors, fontFamily, HelpSheet, ReadingText, RoundButton, useLayout } from '@lee-conmigo/ui-native';
+import { Button, ChevronLeftIcon, ClosingCard, colors, fontFamily, HelpSheet, MicIcon, ReadingText, RoundButton, useLayout } from '@lee-conmigo/ui-native';
+import { useReadTogether } from '../session/use-read-together';
+import type { ReadingVoiceProvider } from '../speech/reading-voice';
 import { progressStoreFor } from '../app-state';
 import { STAR_IMAGES } from '../kitewise-art';
 import { notebookSaverFor } from '../notebook-save';
 import { useMovementBreak } from '../movement';
 import { useReadingSession, type ReadingSession } from '../session/use-reading-session';
-import { speak, stopSpeaking } from '../tts';
+import { speak, stopSpeaking, stopSpeakingAsync } from '../tts';
 import { editionProgressStore } from '../reading/progress';
 import { READER_COPY } from '../reading/copy';
 import { loadReaderFont, MAX_READER_FONT, MIN_READER_FONT, saveReaderFont } from '../reading/preferences';
@@ -22,7 +24,7 @@ import type { ReadingScreenProps } from './reading-screen';
 
 const normalWord = (): WordMark => ({ dotted: false, echoText: false, pulse: false });
 
-/** The prepared reader reuses the session domain; its only audio capability is word pronunciation. */
+/** Prepared reader: manual navigation and optional local reading companion share the same story flow. */
 export function SceneReadingScreen({ prepared, profile, energy, goalMinutes, focusReading = false, movementBreaks = false, onExit, story: original }: ReadingScreenProps & { prepared: PreparedReading }) {
   const layout = useLayout();
   const insets = useSafeAreaInsets();
@@ -31,12 +33,29 @@ export function SceneReadingScreen({ prepared, profile, energy, goalMinutes, foc
   const [artOpen, setArtOpen] = useState(false);
   const [helpWord, setHelpWord] = useState<string | null>(null);
   const [resting, setResting] = useState(false);
+  const [voiceEnabled, setVoiceEnabled] = useState(false);
+  const [voicePaused, setVoicePaused] = useState(false);
+  const [provider, setProvider] = useState<ReadingVoiceProvider>('android');
+  const helpEpoch = useRef(0);
+  const vc = VOICE_COPY[original.language];
   const store = useMemo(() => editionProgressStore(progressStoreFor(profile.id), prepared), [profile.id, prepared]);
   const prefs = useMemo(() => ({ ...defaultPrefs, audience: original.level <= 2 ? 'explorador' as const : 'lector' as const, textSize: fontSize }), [original.level, fontSize]);
-  const session = useReadingSession(prepared.story, { store, prefs, freeReading: true, enablePractice: true, energy: energy ?? undefined, dailyGoalMinutes: goalMinutes, holdAtPageEnd: resting });
+  const session = useReadingSession(prepared.story, { store, prefs, freeReading: true, enablePractice: true, energy: energy ?? undefined, dailyGoalMinutes: goalMinutes, holdAtPageEnd: resting, voiceReading: voiceEnabled, readingBlocked: !!helpWord || artOpen || resting });
   const { flow, page, pageIndex, actions } = session;
   const actionsRef = useRef(actions);
   actionsRef.current = actions;
+  const spokenWords = useMemo(() => session.words.map(word => word.text), [session.words]);
+  const voice = useReadTogether({ pageKey: page.id, words: spokenWords, language: original.language,
+    enabled: voiceEnabled && !voicePaused, blocked: flow.screen !== 'reading' || !!helpWord || artOpen || resting,
+    provider, credit: actions.creditVoice });
+  const voiceRef = useRef(voice); voiceRef.current = voice;
+  const wordMarks = (index: number): WordMark => {
+    const mark = normalWord();
+    if (!voiceEnabled) return mark;
+    if (voice.confirmed.includes(index)) mark.fill = 'okTint';
+    if (voice.preview.includes(index)) mark.fill = 'focus';
+    return mark;
+  };
   const anchor = prepared.anchors[pageIndex];
   const sourcePage = original.pages[anchor.pageIndex];
   const movement = useMovementBreak(movementBreaks, profile.id, flow.screen === 'reading');
@@ -51,20 +70,28 @@ export function SceneReadingScreen({ prepared, profile, energy, goalMinutes, foc
     if (movement.due && flow.screen === 'pageDone' && sourcePageDone && pageIndex < prepared.story.pages.length - 1) setResting(true);
   }, [movement.due, flow.screen, sourcePageDone, pageIndex, prepared.story.pages.length]);
   useEffect(() => {
-    const listener = AppState.addEventListener('change', state => { if (state !== 'active') stopSpeaking(); });
-    return () => { listener.remove(); stopSpeaking(); };
+    const epoch = helpEpoch;
+    const listener = AppState.addEventListener('change', state => { if (state !== 'active') { ++epoch.current; stopSpeaking(); } });
+    return () => { ++epoch.current; listener.remove(); stopSpeaking(); };
   }, []);
 
-  const closeHelp = () => { stopSpeaking(); setHelpWord(null); };
+  const closeHelp = () => {
+    const epoch = ++helpEpoch.current;
+    void stopSpeakingAsync().then(() => {
+      // Let the speaker tail settle before releasing the microphone gate.
+      setTimeout(() => { if (epoch === helpEpoch.current) setHelpWord(null); }, 250);
+    });
+  };
   const openWord = useCallback((word: StoryWord) => {
     const clean = word.text.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, '');
     if (!clean) return;
+    const epoch = ++helpEpoch.current;
     actionsRef.current.rememberWord(vocabularyKey(clean));
     setHelpWord(clean);
-    speak(clean, original.language);
+    void voiceRef.current.pause().then(() => { if (epoch === helpEpoch.current) speak(clean, original.language); });
   }, [original.language]);
   const openFragmentWord = useCallback((index: number) => openWord(session.words[index]), [openWord, session.words]);
-  const exit = () => { stopSpeaking(); actions.leave(); onExit(); };
+  const exit = () => { ++helpEpoch.current; void voice.pause(); stopSpeaking(); actions.leave(); onExit(); };
   const exitRef = useRef<() => boolean>(() => false);
   exitRef.current = () => {
     if (resting) return true;
@@ -79,7 +106,14 @@ export function SceneReadingScreen({ prepared, profile, energy, goalMinutes, foc
   }, []);
 
   const illustration = <SceneArt key={page.id} language={original.language} onEnlarge={() => setArtOpen(true)} illustration={page.illustration} crop={anchor.crop} maxHeight={focusReading ? Math.min(160, artHeight) : sideBySide ? artHeight : Math.min(300, layout.height * 0.30)} />;
-  const passage = <><ReadingText page={page} words={session.words} markOf={normalWord} onWordPress={openFragmentWord} fontSize={fontSize} /><Text style={styles.hint}>{c.hint}</Text></>;
+  const passage = <><ReadingText page={page} words={session.words} markOf={wordMarks} onWordPress={openFragmentWord} fontSize={fontSize} /><Text style={styles.hint}>{voiceEnabled ? vc.hint : c.hint}</Text>
+    {voiceEnabled && voice.error && <View style={styles.voiceNotice}>
+      <Text accessibilityLiveRegion="polite" style={styles.voiceMessage}>{voice.error === 'permission-denied' ? vc.permission : vc.unavailable}</Text>
+      <Button label={vc.manual} variant="secondary" onPress={() => { void voice.pause(); setVoiceEnabled(false); }} />
+      {provider === 'android' && voice.error !== 'permission-denied' && <Button label={vc.alternative} variant="secondary" onPress={() => setProvider('whisper')} />}
+      <Button label={vc.retry} variant="secondary" onPress={voice.retry} />
+    </View>}
+  </>;
 
   return (
     <View style={[styles.screen, { paddingTop: insets.top, paddingLeft: insets.left, paddingRight: insets.right }]}>
@@ -87,7 +121,7 @@ export function SceneReadingScreen({ prepared, profile, energy, goalMinutes, foc
         <RoundButton label={c.back} onPress={exit}><ChevronLeftIcon /></RoundButton>
         <View style={styles.heading}>
           <Text style={styles.bookTitle} numberOfLines={1} accessibilityLabel={original.title}>{original.title}</Text>
-          <Text style={styles.part}>{c.part(pageIndex + 1, prepared.story.pages.length)} · {c.free}</Text>
+          <Text style={styles.part}>{c.part(pageIndex + 1, prepared.story.pages.length)} · {voiceEnabled ? vc.together : c.free}</Text>
         </View>
         <View style={styles.fontTools}>
           <FontButton label={c.smaller} glyph="A−" disabled={fontSize <= MIN_READER_FONT} onPress={() => setFontSize(n => Math.max(MIN_READER_FONT, n - 2))} />
@@ -117,12 +151,20 @@ export function SceneReadingScreen({ prepared, profile, energy, goalMinutes, foc
 
       {(flow.screen === 'reading' || flow.screen === 'pageDone') && (
         <View style={[styles.footer, { paddingBottom: insets.bottom + 4 }]}>
-          <FontButton label={c.previous} glyph="‹" disabled={!session.canGoBack || flow.screen !== 'reading'} onPress={actions.freeBack} />
+          <FontButton label={c.previous} glyph="‹" disabled={!session.canGoBack || flow.screen !== 'reading'} onPress={() => { void voice.pause(); actions.freeBack(); }} />
           <View style={styles.progress} accessible accessibilityLabel={c.part(pageIndex + 1, prepared.story.pages.length)}>
             <View style={styles.track}><View style={[styles.fill, { width: `${100 * (pageIndex + 1) / prepared.story.pages.length}%` }]} /></View>
-            <Text style={styles.part}>{pageIndex + 1}/{prepared.story.pages.length}</Text>
+            <Text style={styles.part} accessibilityLiveRegion="polite">{pageIndex + 1}/{prepared.story.pages.length}{voiceEnabled ? ` · ${voice.error ? vc.off : voicePaused ? vc.paused : voice.complete ? vc.complete : voice.status === 'ready' ? vc.listening : voice.status === 'loading-model' || voice.status === 'requesting-mic' ? vc.preparing : vc.paused}` : ''}</Text>
           </View>
-          <Pressable accessibilityRole="button" accessibilityLabel={pageIndex === prepared.story.pages.length - 1 ? c.finish : c.next} accessibilityState={{ disabled: flow.screen !== 'reading' }} disabled={flow.screen !== 'reading'} onPress={actions.freeAdvance} style={styles.nextButton}>
+          <Pressable accessibilityRole="button" accessibilityLabel={!voiceEnabled ? vc.together : voicePaused || voice.status === 'stopped' || voice.error ? vc.resume : vc.pause}
+            onPress={() => {
+              if (!voiceEnabled) { setVoiceEnabled(true); setVoicePaused(false); }
+              else if (voicePaused || voice.status === 'stopped' || voice.error) { setVoicePaused(false); voice.retry(); }
+              else { void voice.pause(); setVoicePaused(true); }
+            }} style={styles.fontButton}>
+            {voiceEnabled && !voicePaused && voice.status === 'ready' ? <Text style={styles.micGlyph}>Ⅱ</Text> : <MicIcon size={22} color={colors.brand} />}
+          </Pressable>
+          <Pressable accessibilityRole="button" accessibilityLabel={pageIndex === prepared.story.pages.length - 1 ? c.finish : c.next} accessibilityState={{ disabled: flow.screen !== 'reading' }} disabled={flow.screen !== 'reading'} onPress={() => { void voice.pause(); actions.freeAdvance(); }} style={styles.nextButton}>
             <Text style={styles.nextGlyph}>{pageIndex === prepared.story.pages.length - 1 ? '✓' : '›'}</Text>
           </Pressable>
         </View>
@@ -134,17 +176,19 @@ export function SceneReadingScreen({ prepared, profile, energy, goalMinutes, foc
             <View style={styles.prepCard}>
               <Text style={styles.prepTitle}>{c.welcome}</Text>
               <Text style={styles.prepText}>{c.welcomeHint}</Text>
-              <Button label={c.start} onPress={actions.begin} />
+              <Text style={styles.voiceMessage}>{vc.intro}</Text>
+              <Button label={vc.together} onPress={() => { setVoiceEnabled(true); setVoicePaused(false); actions.begin(); }} />
+              <Button label={c.start} variant="secondary" onPress={() => { setVoiceEnabled(false); actions.begin(); }} />
             </View>
           </ScrollView>
         </View>
       )}
       {session.closing && (
-        <ClosingCard name={profile.name} stars={session.closing.stars} reason={session.closing.reason} starImages={STAR_IMAGES} notebook={notebookSaverFor(profile.id, 'lectura', original.language)} stats={[{ label: c.practice, value: session.elapsed }, { label: c.words, value: String(session.closing.returning) }]} onAgain={() => { actions.finish(); actions.restart(); }} onDone={focus => { actions.finish(focus); onExit(); }} />
+        <ClosingCard name={profile.name} stars={session.closing.stars} reason={session.closing.reason} starImages={STAR_IMAGES} notebook={notebookSaverFor(profile.id, 'lectura', original.language)} stats={[{ label: c.practice, value: session.elapsed }, { label: c.words, value: String(session.closing.returning) }]} onAgain={() => { actions.finish(); setVoicePaused(false); actions.restart(); }} onDone={focus => { actions.finish(focus); onExit(); }} />
       )}
       {resting && <MovementBreakScreen n={movement.count} lang={original.language} onDone={() => { movement.taken(); setResting(false); }} />}
       {artOpen && <IllustrationViewer illustration={page.illustration} crop={anchor.crop} language={original.language} onClose={() => setArtOpen(false)} />}
-      <HelpSheet word={helpWord} entry={helpWord ? lookupVocabulary(original, helpWord) : undefined} audience={prefs.audience} onListen={() => { if (helpWord) speak(helpWord, original.language); }} onClose={closeHelp} />
+      <HelpSheet word={helpWord} entry={helpWord ? lookupVocabulary(original, helpWord) : undefined} audience={prefs.audience} onListen={() => { const epoch = helpEpoch.current; void voice.pause().then(() => { if (helpWord && epoch === helpEpoch.current) speak(helpWord, original.language); }); }} onClose={closeHelp} />
     </View>
   );
 }
@@ -196,6 +240,9 @@ function SyllableReview({ session, language }: { session: ReadingSession; langua
 }
 
 const styles = StyleSheet.create({
+  micGlyph: { fontFamily: fontFamily.ui.extrabold, fontSize: 22, color: colors.brand },
+  voiceNotice: { gap: 10, marginTop: 16, padding: 16, borderRadius: 16, backgroundColor: colors.brand50 },
+  voiceMessage: { fontFamily: fontFamily.ui.semibold, fontSize: 15, lineHeight: 23, color: colors.inkSoft },
   screen: { flex: 1, backgroundColor: colors.paper }, flex: { flex: 1 },
   header: { paddingHorizontal: 24, paddingVertical: 4, flexDirection: 'row', alignItems: 'center', gap: 14, borderBottomWidth: 1, borderBottomColor: colors.line },
   headerSmall: { paddingHorizontal: 12, paddingVertical: 4, gap: 8 }, heading: { flex: 1, minWidth: 0, gap: 4 },
@@ -211,9 +258,30 @@ const styles = StyleSheet.create({
   progress: { flex: 1, gap: 3 }, track: { height: 3, backgroundColor: colors.line, borderRadius: 2 }, fill: { height: 3, backgroundColor: colors.gold, borderRadius: 2 },
   nextButton: { width: 48, height: 48, borderRadius: 24, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.gold, boxShadow: '0px 3px 8px rgba(40,30,0,0.15)' }, nextGlyph: { fontFamily: fontFamily.ui.black, fontSize: 32, lineHeight: 38, color: colors.navy },
   overlay: { ...StyleSheet.absoluteFill, backgroundColor: 'rgba(20,22,28,.4)' }, prepCenter: { flexGrow: 1, alignItems: 'center', justifyContent: 'center', padding: 20 },
-  prepCard: { width: '100%', maxWidth: 540, borderRadius: 24, padding: 28, gap: 24, backgroundColor: colors.paper }, prepTitle: { fontFamily: fontFamily.ui.black, fontSize: 28, color: colors.navy }, prepText: { fontFamily: fontFamily.read.regular, fontSize: 21, lineHeight: 34, color: colors.ink },
+  prepCard: { width: '100%', maxWidth: 540, borderRadius: 24, padding: 28, gap: 16, backgroundColor: colors.paper }, prepTitle: { fontFamily: fontFamily.ui.black, fontSize: 28, color: colors.navy }, prepText: { fontFamily: fontFamily.read.regular, fontSize: 21, lineHeight: 34, color: colors.ink },
   practiceBody: { padding: 24, alignItems: 'center', flexGrow: 1, justifyContent: 'center' }, practiceColumn: { width: '100%', maxWidth: 740, gap: 20 }, eyebrow: { fontFamily: fontFamily.ui.extrabold, fontSize: 15, color: colors.navy },
   question: { fontFamily: fontFamily.read.bold, color: colors.ink, lineHeight: 40 }, option: { borderRadius: 18, padding: 20, borderWidth: 2, borderColor: colors.line, backgroundColor: '#fff' }, optionSelected: { borderColor: colors.brand, backgroundColor: colors.brand50 }, optionText: { fontFamily: fontFamily.read.regular, color: colors.ink, lineHeight: 38 },
   feedback: { fontFamily: fontFamily.read.regular, fontSize: 21, lineHeight: 32, color: colors.navy }, excerpt: { paddingVertical: 20, borderTopWidth: 1, borderTopColor: colors.line },
   tiles: { flexDirection: 'row', flexWrap: 'wrap', gap: 14 }, tile: { minWidth: 64, minHeight: 64, borderRadius: 16, padding: 16, backgroundColor: colors.brand50, borderWidth: 2, borderColor: colors.brand100, alignItems: 'center', justifyContent: 'center' }, tileText: { fontFamily: fontFamily.read.bold, fontSize: 27, color: colors.navy }, builtWord: { fontFamily: fontFamily.read.bold, fontSize: 34, lineHeight: 50, color: colors.navy, minHeight: 64 },
 });
+
+const VOICE_COPY = {
+  es: {
+    together: 'Leer juntos', intro: 'Si lees en voz alta, te acompañamos. La voz se procesa aquí, sin guardarla ni enviarla.',
+    hint: 'Lee en voz alta, sin prisa. Toca una palabra para escucharla. Tú decides cuándo pasar.',
+    pause: 'Pausar escucha', resume: 'Reanudar escucha', paused: 'En pausa', preparing: 'Preparando escucha…', listening: 'Te escucho', off: 'Escucha apagada',
+    complete: 'Lo leímos. Sigue cuando quieras.',
+    permission: 'El micrófono está apagado. Puedes seguir leyendo sin él o volver a pedir permiso.',
+    unavailable: 'Esta escucha local no está disponible. Puedes leer sin micrófono o probar otra escucha local.',
+    manual: 'Seguir sin micrófono', alternative: 'Probar otra escucha local', retry: 'Volver a intentar',
+  },
+  en: {
+    together: 'Read together', intro: 'Read aloud and we’ll follow along. Your voice stays on this device; it isn’t saved or sent anywhere.',
+    hint: 'Read aloud at your own pace. Tap any word to hear it. You choose when to turn the page.',
+    pause: 'Pause listening', resume: 'Resume listening', paused: 'Paused', preparing: 'Getting ready…', listening: 'Listening', off: 'Listening is off',
+    complete: 'We read it. Continue when you’re ready.',
+    permission: 'The microphone is off. Keep reading without it or try permission again.',
+    unavailable: 'This local listening option isn’t available. Read without a microphone or try another local option.',
+    manual: 'Continue without a microphone', alternative: 'Try another local option', retry: 'Try again',
+  },
+} as const;
