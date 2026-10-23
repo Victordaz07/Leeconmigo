@@ -2,7 +2,7 @@
   "expo": {
     "name": "Kitewise",
     "slug": "kitewise",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "orientation": "default",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -32,7 +32,7 @@
         "android.permission.READ_EXTERNAL_STORAGE",
         "android.permission.WRITE_EXTERNAL_STORAGE"
       ],
-      "versionCode": 2
+      "versionCode": 3
     },
     "web": {
       "favicon": "./assets/favicon.png"

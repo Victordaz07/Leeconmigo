@@ -59,7 +59,7 @@ jobs:
           "$ANDROID_HOME/build-tools/36.0.0/apksigner" verify "$RUNNER_TEMP/kitewise-release/Kitewise-lectura.apk"
           "$ANDROID_HOME/build-tools/36.0.0/zipalign" -c -P 16 4 "$RUNNER_TEMP/kitewise-release/Kitewise-lectura.apk"
           python3 - <<'PY'
-          import hashlib, os, zipfile
+          import hashlib, json, os, zipfile
           from pathlib import Path
           expected = [
               Path('apps/mobile/assets/models') / name
@@ -68,6 +68,10 @@ jobs:
               Path('apps/reader/public/stories/el-puente-de-las-luciernagas/reader/scene-01.webp'),
               Path('apps/reader/public/stories/mapa-de-la-puerta-desaparecida/reader/letter.webp'),
           ]
+          for edition_file in Path('packages/story-engine/reading-editions').glob('*.json'):
+              edition = json.loads(edition_file.read_text())
+              expected.extend(Path('apps/reader/public') / scene['illustration']['src'] for scene in edition['scenes'])
+          expected = set(expected)
           required = {hashlib.sha256(path.read_bytes()).hexdigest() for path in expected}
           apk = Path(os.environ['RUNNER_TEMP']) / 'kitewise-release/Kitewise-lectura.apk'
           with zipfile.ZipFile(apk) as archive:
@@ -77,17 +81,19 @@ jobs:
           cd "$RUNNER_TEMP/kitewise-release"
           sha256sum Kitewise-lectura.apk > Kitewise-lectura.apk.sha256
           cat > release-notes.md <<'NOTES'
-          APK instalable de Kitewise con «El puente de las luciérnagas» y «El mapa de la puerta desaparecida» (Inés y Teo), en español e inglés.
+          Kitewise 0.1.2: lector adaptado para los 25 cuentos del catálogo, con 81 variantes originales de idioma y nivel.
 
-          Conserva la pronunciación y la ayuda al tocar cada palabra. Incluye imágenes por escena, letra ajustable, reanudación, comprensión y repaso.
+          Nuevo visor de ilustraciones: toca la imagen o su lupa para ampliarla hasta 4×, mueve la imagen con el dedo y usa pellizco o botones. Volver a leer conserva el fragmento. El visor permanece abierto al girar o cambiar el tamaño de la pantalla y reajusta la imagen.
 
-          Lectura adaptable: ilustración arriba en vertical y a la izquierda en horizontal, texto con desplazamiento independiente y avance compacto de 48 dp. Panel de padres con accesos persistentes, ajustes que se redistribuyen según el ancho e interfaz ES/EN coherente, incluida la ayuda de palabras y el PDF semanal.
+          Conserva todas las ilustraciones y textos originales, pronunciación al tocar cada palabra, ayuda de vocabulario, letra ajustable, reanudación, comprensión y repaso. Las páginas sin ilustración aprovechan el espacio para el texto.
 
-          Conserva la corrección de las portadas de cuadernos. Regresión comprobada con Yoga nativo en 12 tamaños y recorridos web con cambios de ventana, incluidos formatos de plegables. No se ha probado en un Z Fold físico.
+          Incluye los arreglos anteriores de cuadernos, lectura vertical/horizontal, pantallas plegables e interfaz ES/EN.
 
-          Descarga Kitewise-lectura.apk en el teléfono e instálalo como actualización sobre la versión actual para conservar los datos. Android 7 o posterior. No necesita un servidor de desarrollo. Se adjunta su suma SHA-256.
+          Verificado: 1.943 pruebas, 49 recorridos completos de cuentos (991 fragmentos), visor en 12 casos táctiles ES/EN y 168 portadas con Yoga nativo en 12 tamaños. Falta comprobar los nuevos gestos en un Fold físico y el TTS audible del dispositivo.
 
-          Versión para pruebas familiares, firmada con la llave de pruebas existente de Expo; no es una publicación en Google Play. La comprobación audible de TTS y la ergonomía en un dispositivo real siguen pendientes.
+          Descarga Kitewise-lectura.apk e instálalo sobre la versión actual para conservar tus datos. Android 7 o posterior. Funciona sin servidor de desarrollo. Se adjunta la suma SHA-256.
+
+          Versión para pruebas familiares, firmada con la misma llave de pruebas de Expo. No es una publicación en Google Play.
           NOTES
           printf '\nCódigo fuente: %s\n' "$GITHUB_SHA" >> release-notes.md
       - name: Publicar descarga en GitHub
@@ -96,6 +102,6 @@ jobs:
           RELEASE_TAG: ${{ github.ref_name }}
         run: |
           cd "$RUNNER_TEMP/kitewise-release"
-          gh release create "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --verify-tag --draft --prerelease --title 'Kitewise · Lectura · APK para Android' --notes-file release-notes.md
+          gh release create "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --verify-tag --draft --prerelease --title 'Kitewise 0.1.2 · 25 cuentos y zoom · Android' --notes-file release-notes.md
           gh release upload "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" Kitewise-lectura.apk Kitewise-lectura.apk.sha256
           gh release edit "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --draft=false --prerelease
