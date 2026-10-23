@@ -27,6 +27,9 @@ describe('reproducible native privacy guard', () => {
       expect(recorder).toContain('tempPcmFile = if (outputFilePath != null) createTempPcmFile() else null');
       expect(recorder).toContain('val tempFileOutputStream = tempPcmFile?.let { FileOutputStream(it) }');
       expect(module).toContain('appContext.mainExecutor,');
+      expect(module.match(/runOnQueue\(Queues.MAIN\)/g)).toHaveLength(2);
+      expect(module.match(/Function\("getLastAppExitInfo"\)/g)).toHaveLength(1);
+      expect(module.match(/Function\("getLastSpeechFailure"\)/g)).toHaveLength(1);
       expect(module.slice(module.indexOf('private fun getSupportedLocales('))).not.toContain('Executors.newSingleThreadExecutor(),');
       expect(module).toContain('promise.reject("local_recognition_unavailable"');
       expect(module).not.toContain('                        recognizer.destroy()');

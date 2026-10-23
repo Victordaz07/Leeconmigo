@@ -6,6 +6,7 @@ import { vocabularyKey } from '@lee-conmigo/reading-engine';
 import { isWordComplete, tilesOf } from '@lee-conmigo/session-engine';
 import { lookupVocabulary, tokenizePage, type PreparedReading, type StoryWord } from '@lee-conmigo/story-engine';
 import { Button, ChevronLeftIcon, ClosingCard, colors, fontFamily, HelpSheet, MicIcon, ReadingText, RoundButton, useLayout } from '@lee-conmigo/ui-native';
+import { openMicrophoneSettings } from '../speech/microphone-access';
 import { useReadTogether } from '../session/use-read-together';
 import type { ReadingVoiceProvider } from '../speech/reading-voice';
 import { progressStoreFor } from '../app-state';
@@ -111,6 +112,7 @@ export function SceneReadingScreen({ prepared, profile, energy, goalMinutes, foc
       <Text accessibilityLiveRegion="polite" style={styles.voiceMessage}>{voice.error === 'permission-denied' ? vc.permission : vc.unavailable}</Text>
       <Button label={vc.manual} variant="secondary" onPress={() => { void voice.pause(); setVoiceEnabled(false); }} />
       {provider === 'android' && voice.error !== 'permission-denied' && <Button label={vc.alternative} variant="secondary" onPress={() => setProvider('whisper')} />}
+      <Button label={vc.settings} variant="secondary" onPress={() => { void voice.pause(); void openMicrophoneSettings().catch(() => {}); }} />
       <Button label={vc.retry} variant="secondary" onPress={voice.retry} />
     </View>}
   </>;
@@ -273,6 +275,7 @@ const VOICE_COPY = {
     complete: 'Lo leímos. Sigue cuando quieras.',
     permission: 'El micrófono está apagado. Puedes seguir leyendo sin él o volver a pedir permiso.',
     unavailable: 'Esta escucha local no está disponible. Puedes leer sin micrófono o probar otra escucha local.',
+    settings: 'Abrir ajustes de Android',
     manual: 'Seguir sin micrófono', alternative: 'Probar otra escucha local', retry: 'Volver a intentar',
   },
   en: {
@@ -282,6 +285,7 @@ const VOICE_COPY = {
     complete: 'We read it. Continue when you’re ready.',
     permission: 'The microphone is off. Keep reading without it or try permission again.',
     unavailable: 'This local listening option isn’t available. Read without a microphone or try another local option.',
+    settings: 'Open Android settings',
     manual: 'Continue without a microphone', alternative: 'Try another local option', retry: 'Try again',
   },
 } as const;

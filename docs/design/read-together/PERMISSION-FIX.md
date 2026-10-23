@@ -1,0 +1,24 @@
+# VZ-09 · permiso pendiente y reporte visible · 2026-10-23
+
+Victor confirma que 0.2.1 vuelve a cerrarse. Su captura de Prueba de voz muestra «Pidiendo permiso del micrófono…» sin diálogo y no encuentra el reporte. La actualización anterior no resolvió el caso físico. El reporte anterior solo aparecía si el manejador Java había guardado una excepción; su ausencia no demuestra que no hubiera cierre.
+
+## Cambios 0.2.2 / código 6
+
+- Las dos solicitudes de micrófono del wrapper Expo 57 fijado usan explícitamente `Queues.MAIN`. El código inspeccionado de Expo ejecuta por defecto `AsyncFunction` en `modulesQueue`; su servicio de permisos llama directamente a la actividad. El parche aplica también la instalación del manejador al solicitar el permiso, cuando ya existe el contexto React. Compilación Kotlin release aprobada. Esto corrige el despacho; no prueba por sí solo la causa exacta del cierre del Fold.
+- Android local y Whisper comparten una puerta de permisos. Primero consulta si ya está concedido; en ese caso no solicita otro diálogo. Si Android indica que no puede pedirlo otra vez, devuelve el estado bloqueado y dirige al adulto a Ajustes. Consultas limitadas a 3 s y solicitudes a 20 s para no dejar «Pidiendo permiso…» indefinidamente. Una solicitud nativa que expire sigue retenida hasta resolverse: los reintentos no crean diálogos duplicados y una concesión tardía no reanuda una captura cancelada.
+- Prueba de voz muestra siempre «Permiso del micrófono» y «Reporte de voz · 0.2.2». Acciones Conceder permiso, Abrir ajustes de Android, Ver reporte y Compartir reporte. Si está bloqueado, la vía válida es Ajustes; en navegador los controles nativos están desactivados. Al volver de los ajustes se vuelve a consultar el permiso. Compartir abre el menú del sistema únicamente tras pulsación explícita; el texto también es seleccionable.
+- El lector añade acceso a los ajustes de Android en su recuperación de error. Las dos herramientas de Ajustes siguen presentes.
+- El reporte incluye versión, estado del permiso, último intento anterior y actual (proveedor y hasta doce códigos de etapa), excepción Java redactada si existe y hasta cinco salidas de proceso informadas por Android 11+. La API de Android devuelve motivo, estado y fecha del propio proceso, y puede ayudar con cierres nativos o señales que no pasan por el manejador Java. No se leen descripciones, trazas/tombstones ni resúmenes de estado del proceso. Una actualización o cambio de permiso también puede generar una salida: los códigos no prueban automáticamente la causa del fallo.
+- Las etapas se guardan localmente antes de solicitar permisos/cargar/capturar. Solo aceptan códigos de una lista fija; sin audio, transcripciones, nombres, idioma, cuento, perfil ni mensajes de excepciones. El intento anterior se conserva en memoria durante la ejecución actual para que abrir el laboratorio no lo sustituya. «Borrar todos los datos» elimina la nueva clave SQLite. El reporte antiguo Java tiene almacenamiento privado propio; no confundirlo con audio.
+
+Se mantienen procesamiento local, ausencia de INTERNET, modelos incluidos, ayuda por palabra, manual, ilustraciones y zoom. No se guardan ni se envían voces. Compartir el reporte técnico es una decisión explícita del adulto.
+
+## Validación y límites
+
+2.004 pruebas / 137 archivos; Kotlin release, TypeScript y lint. Regresiones de permiso ya concedido, bloqueado, concurrencia, tiempos límite, respuesta tardía y vuelta desde Ajustes. Diario con almacenamiento roto, reinicio, límite de tamaño, callbacks viejos y descarte de campos/textos ajenos. El harness JVM compila el archivo Kotlin real y verifica captura/parada, redacción/delegación y que la salida de Android solo incluya razón/estado/fecha. El parche sigue siendo idempotente y se comprueba que ambas solicitudes usan la cola principal.
+
+Navegador ES/EN, cuatro tamaños por idioma: controles del permiso, reporte visible sin excepción Java, etapas del intento previo, botones dentro de la pantalla, Android/Whisper/modelos y herramienta de audio del taller. Las pruebas web no solicitan un micrófono ni prueban el diálogo de Android. No se dispone del Fold/logcat ni de un emulador con su servicio de voz: confirmación física y motivo exacto pendientes. APK y verificación de descarga se registrarán al publicar.
+
+## Prueba en el Fold
+
+Actualizar sin desinstalar. Padres → Ajustes → Probar el micrófono: verificar «Reporte de voz · 0.2.2». Pulsar Conceder permiso si está disponible; si está bloqueado o no aparece el diálogo, Abrir ajustes de Android → Permisos → Micrófono → Permitir mientras se usa la app. Volver y pulsar Empezar. Si se cierra, reabrir esta misma pantalla → Ver reporte / Compartir reporte, aunque no aparezca una excepción Java. No grabar ni subir la voz. Los códigos nuevos de etapa no recuperan retroactivamente el intento de 0.2.1; el historial de salidas de Android puede conservar información previa según el sistema.

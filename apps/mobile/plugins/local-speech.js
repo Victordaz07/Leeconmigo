@@ -40,13 +40,45 @@ function hardenSpeech(projectRoot) {
         }
     }
 }`);
-  module = replace(module, '            OnDestroy {', `            OnCreate {
+  module = replace(module, 'import expo.modules.kotlin.Promise', 'import expo.modules.kotlin.functions.Queues\nimport expo.modules.kotlin.Promise');
+  for (const name of ['requestPermissionsAsync', 'requestMicrophonePermissionsAsync']) {
+    const before = `            AsyncFunction("${name}") { promise: Promise ->
+                askForPermissionsWithPermissionsManager(
+                    appContext.permissions,
+                    promise,
+                    RECORD_AUDIO,
+                )
+            }`;
+    const after = `            AsyncFunction("${name}") { promise: Promise ->
+                appContext.reactContext?.let { KitewiseSpeechFailure.install(it) }
+                askForPermissionsWithPermissionsManager(
+                    appContext.permissions,
+                    promise,
+                    RECORD_AUDIO,
+                )
+            }.runOnQueue(Queues.MAIN)`;
+    module = replace(module, before, after);
+  }
+  const oldHooks = `            OnCreate {
                 appContext.reactContext?.let { KitewiseSpeechFailure.install(it) }
             }
             Function("getLastSpeechFailure") {
                 appContext.reactContext?.let { KitewiseSpeechFailure.read(it) }
             }
-            OnDestroy {`);
+            OnDestroy {`;
+  const hooks = `            OnCreate {
+                appContext.reactContext?.let { KitewiseSpeechFailure.install(it) }
+            }
+            Function("getLastAppExitInfo") {
+                appContext.reactContext?.let { KitewiseSpeechFailure.lastExits(it) }
+            }
+            Function("getLastSpeechFailure") {
+                appContext.reactContext?.let { KitewiseSpeechFailure.read(it) }
+            }
+            OnDestroy {`;
+  if (!module.includes('Function("getLastAppExitInfo")')) {
+    module = replace(module, module.includes(oldHooks) ? oldHooks : '            OnDestroy {', hooks);
+  }
   fs.copyFileSync(path.join(__dirname, 'KitewiseSpeechFailure.kt'), path.join(dir, 'KitewiseSpeechFailure.kt'));
   fs.writeFileSync(path.join(dir, 'ExpoSpeechRecognitionModule.kt'), module);
   fs.writeFileSync(path.join(dir, 'ExpoSpeechService.kt'), service);

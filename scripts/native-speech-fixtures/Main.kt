@@ -40,5 +40,6 @@ fun main() {
     check(!report.contains("PRIVATE")) { "Exception content leaked to disk" }
     check(delegated == 1) { "Original crash handler not called exactly once" }
     Thread.setDefaultUncaughtExceptionHandler(originalHandler)
+    check(KitewiseSpeechFailure.lastExits(context) == listOf(mapOf("reason" to 5L, "status" to 11L, "timestamp" to 1000L)))
     println("PASS: interrupted read, worker termination, repeated stop, failed initialization cleanup; local report redaction and original handler delegation")
 }

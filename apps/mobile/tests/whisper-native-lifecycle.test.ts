@@ -13,6 +13,7 @@ const mocks = vi.hoisted(() => ({
   initWhisper: vi.fn(async () => ({})), initVad: vi.fn(async () => ({})),
 }));
 vi.mock('react-native', () => ({ Platform: { OS: 'android' }, PermissionsAndroid: { request: mocks.permission, PERMISSIONS: { RECORD_AUDIO: 'record' }, RESULTS: { GRANTED: 'granted' } } }));
+vi.mock('../src/speech/microphone-access', () => ({ requestMicrophonePermission: async () => ({ granted: (await mocks.permission()) === 'granted' }) }));
 vi.mock('@fugood/react-native-audio-pcm-stream', () => ({ default: { init: mocks.init, start: mocks.start, stop: mocks.stop, on: mocks.on } }));
 vi.mock('whisper.rn/index', () => ({ initWhisper: mocks.initWhisper, initWhisperVad: mocks.initVad }));
 beforeEach(() => { vi.resetModules(); vi.clearAllMocks(); mocks.on.mockImplementation(() => ({ remove: mocks.remove })); });

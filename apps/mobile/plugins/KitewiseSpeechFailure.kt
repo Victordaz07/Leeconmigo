@@ -1,6 +1,8 @@
 package expo.modules.speechrecognition
 
 import android.content.Context
+import android.app.ActivityManager
+import android.os.Build
 
 /** Local failure codes only. Never persist exception messages, JS stacks, audio or transcripts.
  * Chaining Android's handler preserves normal crash behavior; this is not an error suppressor.
@@ -21,7 +23,7 @@ internal object KitewiseSpeechFailure {
                 // Class/method names and source line numbers are static program identifiers.
                 // Deliberately omit Throwable.message/toString and JavascriptException's JS stack.
                 val summary = buildString {
-                    append("Kitewise 0.2.1\n")
+                    append("Kitewise 0.2.2\n")
                     var cause: Throwable? = error
                     repeat(3) {
                         val current = cause ?: return@repeat
@@ -41,6 +43,18 @@ internal object KitewiseSpeechFailure {
             }
         }
         installed = true
+    }
+
+    // OS metadata also covers native signals and permission-related process exits.
+    // Never read descriptions, tombstones, traceInputStream or process state summaries.
+    fun lastExits(context: Context): List<Map<String, Long>> {
+        if (Build.VERSION.SDK_INT < 30) return emptyList()
+        return try {
+            val manager = context.getSystemService(Context.ACTIVITY_SERVICE) as? ActivityManager
+            manager?.getHistoricalProcessExitReasons(context.packageName, 0, 5)?.map {
+                mapOf("reason" to it.reason.toLong(), "status" to it.status.toLong(), "timestamp" to it.timestamp)
+            } ?: emptyList()
+        } catch (_: Exception) { emptyList() }
     }
 
     fun read(context: Context): String? = try {

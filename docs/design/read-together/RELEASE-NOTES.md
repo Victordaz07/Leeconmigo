@@ -1,11 +1,13 @@
-Kitewise 0.2.1 · estabilidad al iniciar Leer juntos.
+Kitewise 0.2.2 · permiso del micrófono y reporte accesible.
 
-Se protegen errores nativos de inicio y parada del reconocedor Android y del micrófono. Los fallos de consulta de idiomas vuelven a la interfaz en vez de escapar del hilo principal. Un micrófono que no se inicializa ya no aparenta haber arrancado: se devuelve el error y se libera. También se contienen errores de lectura durante la parada.
+Prueba de voz muestra siempre el estado del permiso, Conceder permiso, Abrir ajustes de Android, Ver reporte y Compartir reporte. Si Android bloqueó nuevas solicitudes, permite concederlo desde sus ajustes. Al volver se actualiza el estado.
 
-La prueba del micrófono de Ajustes conserva Android/Whisper y añade, si existe, un informe técnico local del último cierre inesperado. Incluye únicamente versión, clases, métodos y líneas del programa: nunca mensajes de excepción, transcripciones ni audio. No se envía automáticamente. Puede compartirse una captura para identificar el fallo si persiste. No detecta todos los tipos de cierre del sistema.
+Las solicitudes del wrapper se ejecutan en el hilo de interfaz. Android y Whisper comparten el permiso: primero comprueban si ya está concedido. Una solicitud sin respuesta deja de bloquear la interfaz; los reintentos no abren diálogos duplicados y una concesión tardía no reactiva una captura cancelada.
 
-Se mantienen todas las ilustraciones, zoom, lectura manual, pronunciación al tocar palabras y ambas herramientas de pruebas en Ajustes. Reconocimiento exclusivamente local, sin permiso INTERNET ni audio guardado.
+El reporte local ya no depende de que se haya registrado una excepción Java. Incluye versión, códigos de las últimas etapas y salidas que Android haya registrado (motivo/estado/fecha). No incluye voz, transcripciones, mensajes de excepciones ni trazas del sistema. Solo se comparte si el adulto pulsa Compartir reporte y lo envía desde el menú de Android.
 
-Verificación: pruebas del código Kotlin de captura con fallos de ciclo de vida inyectados y comprobación de privacidad del informe; compilación Android release, suite completa y TypeScript. No hay acceso al Fold ni a su logcat: la causa exacta del cierre informado y su resolución requieren confirmación en el teléfono.
+Se conservan lectura manual, pronunciación por palabra, ilustraciones/zoom y ambas herramientas de Ajustes. Sin permiso INTERNET, audio guardado ni reconocimiento en la nube.
 
-Instala Kitewise-lectura.apk encima de la versión anterior para conservar tus datos. Versión 0.2.1 / código 5, mismo paquete y llave de pruebas de Expo. Android 7 o posterior; Android 13+ e idioma instalado para el reconocedor local del sistema. Incluye Whisper sin servidor de desarrollo. SHA-256 adjunto. Prueba familiar; no publicación en Google Play.
+Verificación: 2.004 pruebas/137 archivos, TypeScript/lint, módulo Kotlin release, harness del código nativo con fallos inyectados y metadata Android, controles/reporte ES/EN en cuatro tamaños por idioma. Sin acceso al Fold: aún hay que confirmar el diálogo y si esta actualización resuelve su cierre específico.
+
+Instala el APK encima del anterior para conservar datos. Versión 0.2.2 / código 6, mismo paquete y certificado de pruebas. Android 7+; Android 13+ e idioma instalado para reconocimiento del sistema. Whisper incluido. Descarga con SHA-256 adjunto. Prueba familiar, no publicación en Google Play.

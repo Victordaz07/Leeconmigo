@@ -12,6 +12,7 @@ try {
   await context.addInitScript(({lang})=>{
    localStorage.setItem('kitewise.v1.legal',JSON.stringify({version:'2026-10-22-borrador',acceptedAt:new Date().toISOString(),lang}));
    localStorage.setItem('kitewise.v1.pin','1234');
+   localStorage.setItem('kitewise.v1.voice-diagnostics',JSON.stringify({version:'0.2.2',provider:'android',steps:['start','requesting-permission']}));
    localStorage.setItem('kitewise.v1.profiles',JSON.stringify([{id:'tools',name:'Noah',language:lang,level:3,dailyGoalMinutes:15,avatar:'sunDiag',askEnergy:false,freeReading:true,focus:{mode:'off'}}]));
   },{lang});
   const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
@@ -23,6 +24,11 @@ try {
   await page.getByRole('button',{name:es?'Ajustes':'Settings',exact:true}).click();
   await page.getByRole('button',{name:es?'Probar el micrófono':'Test microphone',exact:true}).click();
   await page.getByText(es?'Prueba de voz':'Voice test',{exact:true}).waitFor();
+  await page.getByRole('button',{name:es?'Conceder permiso':'Grant microphone permission',exact:true}).waitFor();
+  await page.getByRole('button',{name:es?'Abrir ajustes de Android':'Open Android settings',exact:true}).waitFor();
+  await page.getByRole('button',{name:es?'Ver reporte':'View report',exact:true}).click();
+  await page.getByText(/previous: 0.2.2 \/ android \/ start > requesting-permission/).waitFor();
+  await page.getByRole('button',{name:es?'Compartir reporte':'Share report',exact:true}).waitFor();
   await page.getByRole('radio',{name:'Android',exact:true}).click();
   await page.getByRole('radio',{name:'Whisper',exact:true}).click();
   const modelLabels=await page.getByRole('radio').allTextContents();
@@ -31,12 +37,16 @@ try {
   for(const [width,height]of [[360,800],[720,800],[844,390],[1280,800]]){
    await page.setViewportSize({width,height});await page.waitForTimeout(100);
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+   for(const label of [es?'Conceder permiso':'Grant microphone permission',es?'Abrir ajustes de Android':'Open Android settings',es?'Ocultar reporte':'Hide report',es?'Compartir reporte':'Share report']) {
+    const button=page.getByRole('button',{name:label,exact:true});await button.scrollIntoViewIfNeeded();
+    const box=await button.boundingBox();assert.ok(box&&box.x>=0&&box.x+box.width<=width+1,`${lang} ${width}: ${label} overflows`);
+   }
   }
   await page.getByRole('button',{name:es?'Volver':'Back',exact:true}).click();
   await page.getByRole('button',{name:es?'Probar el audio del taller':'Test workshop audio',exact:true}).click();
   await page.getByText(es?'Prueba de audio':'Audio test',{exact:true}).waitFor();
   assert.deepEqual(errors,[]);
-  evidence.push({language:lang,microphoneToolAvailable:true,androidAndWhisperOptions:true,modelLabels,audioWorkshopToolAvailable:true,voiceToolSizes:4,errors});
+  evidence.push({language:lang,microphoneToolAvailable:true,permissionControlsVisible:true,reportAvailableWithoutJavaFailure:true,savedStagesVisible:true,androidAndWhisperOptions:true,modelLabels,audioWorkshopToolAvailable:true,voiceToolSizes:4,errors});
   await context.close();
  }
 }finally{await browser.close();}

@@ -11,8 +11,9 @@
  * parciales (Whisper no transcribe en streaming).
  */
 import AudioRecord from '@fugood/react-native-audio-pcm-stream';
-import { PermissionsAndroid, Platform } from 'react-native';
+import { Platform } from 'react-native';
 import { initWhisper, initWhisperVad, type WhisperContext, type WhisperVadContext } from 'whisper.rn/index'; // el paquete solo exporta subrutas
+import { requestMicrophonePermission } from './microphone-access';
 import type { SpeechError, SpeechResult, Unsubscribe } from '@lee-conmigo/contracts';
 import { cleanTranscript, EnergyVad, pcm16Base64ToFloat32, SAMPLE_RATE, UtteranceSegmenter } from '@lee-conmigo/speech-engine/core';
 import type { NativeVoiceEngine, NativeVoiceOptions, VoiceDiagnostics, VoiceModel, VoiceStatus, VoiceUtterance } from './voice-types';
@@ -176,13 +177,7 @@ export class WhisperNativeSpeechEngine implements NativeVoiceEngine {
 
   private async askPermission(): Promise<boolean> {
     if (Platform.OS !== 'android') return true; // iOS lo pide el sistema al abrir el micrófono (NSMicrophoneUsageDescription)
-    const res = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.RECORD_AUDIO, {
-      title: this.language === 'en' ? 'Kitewise would like to use the microphone' : 'Kitewise quiere usar el micrófono',
-      message: this.language === 'en' ? 'To follow your reading aloud. Your voice is processed on this device, never saved or sent.' : 'Para seguir la lectura en voz alta. La voz se procesa en este equipo y nunca se graba ni se envía.',
-      buttonPositive: this.language === 'en' ? 'Allow' : 'Permitir',
-      buttonNegative: this.language === 'en' ? 'Not now' : 'Ahora no',
-    });
-    return res === PermissionsAndroid.RESULTS.GRANTED;
+    return (await requestMicrophonePermission()).granted;
   }
 
   private onData(b64: string): void {

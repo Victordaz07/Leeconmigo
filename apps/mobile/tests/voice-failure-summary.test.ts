@@ -1,9 +1,9 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-const bridge = vi.hoisted(() => ({} as { getLastSpeechFailure?: () => string | null }));
+const bridge = vi.hoisted(() => ({} as { getLastSpeechFailure?: () => string | null; getLastAppExitInfo?: () => unknown }));
 vi.mock('expo-speech-recognition', () => ({ ExpoSpeechRecognitionModule: bridge }));
-import { getVoiceFailureSummary } from '../src/speech/voice-failure-summary';
+import { getLastAppExits, getVoiceFailureSummary } from '../src/speech/voice-failure-summary';
 import { getVoiceFailureSummary as webSummary } from '../src/speech/voice-failure-summary.web';
-afterEach(() => { delete bridge.getLastSpeechFailure; });
+afterEach(() => { delete bridge.getLastSpeechFailure; delete bridge.getLastAppExitInfo; });
 describe('local failure summary compatibility', () => {
   it('works with an older native module without the optional diagnostic', () => {
     expect(getVoiceFailureSummary()).toBeNull();
@@ -19,4 +19,9 @@ describe('local failure summary compatibility', () => {
   it('does not access native diagnostics on the web', () => {
     expect(webSummary()).toBeNull();
   });
+});
+
+it('keeps only numeric OS exit metadata, never private descriptions or traces', () => {
+  bridge.getLastAppExitInfo = () => [{ reason: 5, status: 11, timestamp: 1000, description: 'PRIVATE', trace: 'PRIVATE' }, { reason: 'PRIVATE' }];
+  expect(getLastAppExits()).toEqual([{ reason: 5, status: 11, timestamp: 1000 }]);
 });
