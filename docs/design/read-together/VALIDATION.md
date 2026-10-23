@@ -5,6 +5,7 @@
 - Expo prebuild Android correcto. `:expo-speech-recognition:compileReleaseKotlin` correcto con el endurecimiento de privacidad aplicado.
 - Puente ES/EN completos: 10+10 fragmentos; mapa ES/EN completos: 47+44 fragmentos; cuatro ventanas por historia, palabras/TTS simulado, reanudación, tres preguntas por recorrido, repaso y cierre guardado.
 - `scripts/read-together-smoke.mjs`: ES/EN × dos preferencias de perfil × cinco tamaños (360×800, 720×800, 800×720, 844×390, 1280×800), fallo cerrado de voz web, alternativa local, recuperación manual, controles ≤60 dp visibles, pronunciación simulada conservada y **cero invocaciones de SpeechRecognition de navegador**; cero errores JavaScript. La prueba no simula disponibilidad Android real.
+- `scripts/voice-tools-smoke.mjs`: ambos accesos reales de Ajustes conservados, Android/Whisper y modelos ES/EN comprobados; ocho tamaños/idiomas del laboratorio sin desbordamiento. No se mide audio físico.
 - `scripts/illustration-zoom-smoke.mjs`: doce casos táctiles ES/EN con pellizco/arrastre/ajuste/cambio de orientación.
 - `npm run test:native-layout`: 168 portadas con Yoga nativo en doce tamaños.
 

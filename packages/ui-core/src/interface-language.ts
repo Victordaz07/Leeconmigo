@@ -156,6 +156,7 @@ export const EN_INTERFACE: Readonly<Record<string, string>> = {
   "En la vista web no hay micrófono: esta prueba funciona en la app instalada.": "The microphone test works in the installed app, not in the browser.",
   "Modelo": "Model",
   "Rápido": "Fast",
+  "Preciso": "Accurate",
   "Idioma": "Language",
   "% de la frase reconocida": "% of sentence recognized",
   "Otra frase": "Another sentence",

@@ -1,0 +1,34 @@
+[
+  {
+    "language": "es",
+    "microphoneToolAvailable": true,
+    "androidAndWhisperOptions": true,
+    "modelLabels": [
+      "Android",
+      "Whisper",
+      "Rápido",
+      "Preciso",
+      "Español",
+      "English"
+    ],
+    "audioWorkshopToolAvailable": true,
+    "voiceToolSizes": 4,
+    "errors": []
+  },
+  {
+    "language": "en",
+    "microphoneToolAvailable": true,
+    "androidAndWhisperOptions": true,
+    "modelLabels": [
+      "Android",
+      "Whisper",
+      "Fast",
+      "Accurate",
+      "Español",
+      "English"
+    ],
+    "audioWorkshopToolAvailable": true,
+    "voiceToolSizes": 4,
+    "errors": []
+  }
+]

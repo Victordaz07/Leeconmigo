@@ -156,8 +156,8 @@ export function VoiceTestScreen({ language: initialLanguage, onBack }: { languag
         {provider === 'whisper' && <Segmented
           label={ui("Modelo")}
           options={[
-            { id: 'tiny', label: 'Rápido' },
-            { id: 'base', label: 'Preciso' },
+            { id: 'tiny', label: ui('Rápido') },
+            { id: 'base', label: ui('Preciso') },
           ]}
           value={model}
           onChange={(m) => {

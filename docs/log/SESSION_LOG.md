@@ -506,3 +506,5 @@ Validación final del código: 1.984/134, TypeScript y lint correctos; zoom 12 c
 Preparación de entrega 2026-10-23: 0.2.0/código 4, misma identidad/firma; CI ejecutará suite/TypeScript antes de compilar y comprobará la guarda nativa estricta y el lector nuevo dentro del APK. Etiqueta prevista `apk-lectura-2026-10-23-motor-lectura`.
 
 Revisión previa a descarga: se cancela CI inicial antes de publicar para corregir dos casos con regresiones: errores/permiso retenidos hasta reintento explícito (sin nuevas solicitudes al volver del fondo o pasar de fragmento), y cobertura reiniciada al repetir un cuento de un solo fragmento. Se prepara etiqueta r2, mismo 0.2.0/código 4; no hubo APK anterior 0.2.0 publicado.
+
+Comprobados ambos accesos reales de Ajustes: Probar el micrófono (laboratorio de voz ampliado) y Probar el audio del taller (secuenciador conservado). La comprobación ES/EN detecta dos etiquetas antiguas de modelo sin traducir; corregidas antes de publicar. CI r2 cancelado antes de descarga; etiqueta final r3 con los mismos cambios funcionales y 0.2.0/código 4.
